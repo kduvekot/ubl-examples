@@ -10,6 +10,12 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.0 Committee Specification (2006-10-12)
+
+Tag `cs-UBL-2.0` · <https://docs.oasis-open.org/ubl/cs-UBL-2.0/xml/> · 13 files
+
+No changes to the sample documents since `prd3r1-UBL-2.0`.
+
 ### UBL 2.0 Public Review Draft 3, revision 1 (2006-10-05)
 
 Tag `prd3r1-UBL-2.0` · <https://docs.oasis-open.org/ubl/prd3r1-UBL-2.0/xml/> · 13 files
