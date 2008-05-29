@@ -10,6 +10,12 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.0 OASIS Standard Update (2008-05-29)
+
+Tag `os-UBL-2.0-update` · <https://docs.oasis-open.org/ubl/os-UBL-2.0-update/xml/> · 13 files
+
+No changes to the sample documents since `os-UBL-2.0`.
+
 ### UBL 2.0 OASIS Standard (2006-12-12)
 
 Tag `os-UBL-2.0` · <https://docs.oasis-open.org/ubl/os-UBL-2.0/xml/> · 13 files
