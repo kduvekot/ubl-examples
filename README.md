@@ -10,6 +10,61 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.1 Public Review Draft 1 (2010-09-25)
+
+Tag `prd1-UBL-2.1` · <https://docs.oasis-open.org/ubl/prd1-UBL-2.1/xml/> · 45 files
+
+Added (32):
+
+- `MyTransportationStatus.xml`
+- `UBL-CreditNote-2.1-Example.xml`
+- `UBL-DebitNote-2.1-Example.xml`
+- `UBL-ExceptionCriteria-2.1-Example.xml`
+- `UBL-ExceptionNotification-2.1-Example.xml`
+- `UBL-Forecast-2.1-Example.xml`
+- `UBL-ForecastRevision-2.1-Example.xml`
+- `UBL-FreightInvoice-2.1-Example.xml`
+- `UBL-InstructionForReturns-2.1-Example.xml`
+- `UBL-InventoryReport-2.1-Example.xml`
+- `UBL-Invoice-2.0-Signed.xml`
+- `UBL-Invoice-2.1-Example.xml`
+- `UBL-Order-2.1-Example.xml`
+- `UBL-OrderCancellation-2.1-Example.xml`
+- `UBL-OrderChange-2.1-Example.xml`
+- `UBL-OrderResponse-2.1-Example.xml`
+- `UBL-OrderResponseSimple-2.1-Example.xml`
+- `UBL-PerformanceHistory-2.1-Example.xml`
+- `UBL-ProductActivity-2.1-Example-1.xml`
+- `UBL-ProductActivity-2.1-Example-2.xml`
+- `UBL-ProductActivity-2.1-Example-3.xml`
+- `UBL-Quotation-2.1-Example.xml`
+- `UBL-Reminder-2.1-Example.xml`
+- `UBL-RequestForQuotation-2.1-Example.xml`
+- `UBL-RetailEvent-2.1-Example.xml`
+- `UBL-SelfBilledCreditNote-2.1-Example.xml`
+- `UBL-StockAvailabilityReport-2.1-Example.xml`
+- `UBL-TradeItemLocationProfile-2.1-Example.xml`
+- `UBL-TransportExecutionPlan-2.1-Example.xml`
+- `UBL-TransportExecutionStatus-2.1-Example.xml`
+- `UBL-TransportOperationStatus-2.1-Example.xml`
+- `UBL-TransportationStatus-2.1-Example.xml`
+
+Updated (13):
+
+- `UBL-CreditNote-2.0-Example.xml`
+- `UBL-DespatchAdvice-2.0-Example.xml`
+- `UBL-ForwardingInstructions-2.0-Example-International.xml`
+- `UBL-Invoice-2.0-Example.xml`
+- `UBL-Order-2.0-Example-International.xml`
+- `UBL-Order-2.0-Example.xml`
+- `UBL-OrderResponseSimple-2.0-Example.xml`
+- `UBL-Quotation-2.0-Example.xml`
+- `UBL-ReceiptAdvice-2.0-Example.xml`
+- `UBL-RemittanceAdvice-2.0-Example.xml`
+- `UBL-RequestForQuotation-2.0-Example.xml`
+- `UBL-Statement-2.0-Example.xml`
+- `UBL-Waybill-2.0-Example-International.xml`
+
 ### UBL 2.0 OASIS Standard Update (2008-05-29)
 
 Tag `os-UBL-2.0-update` · <https://docs.oasis-open.org/ubl/os-UBL-2.0-update/xml/> · 13 files
