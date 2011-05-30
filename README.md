@@ -10,6 +10,37 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.1 Public Review Draft 2 (2011-05-30)
+
+Tag `prd2-UBL-2.1` · <https://docs.oasis-open.org/ubl/prd2-UBL-2.1/xml/> · 53 files
+
+Added (10):
+
+- `UBL-GoodsItemItinerary-2.1-Example.xml`
+- `UBL-Invoice-2.0-Detached-Signature.xml`
+- `UBL-Invoice-2.0-Detached.xml`
+- `UBL-Invoice-2.0-Enveloped.xml`
+- `UBL-Invoice-2.0-Example-NS1.xml`
+- `UBL-Invoice-2.0-Example-NS2.xml`
+- `UBL-Invoice-2.0-Example-NS3.xml`
+- `UBL-Invoice-2.0-Example-NS4.xml`
+- `UBL-TransportProgressStatus-2.1-Example.xml`
+- `UBL-TransportServiceDescription-2.1-Example.xml`
+
+Updated (6):
+
+- `UBL-ExceptionNotification-2.1-Example.xml`
+- `UBL-ForwardingInstructions-2.0-Example-International.xml`
+- `UBL-Order-2.0-Example-International.xml`
+- `UBL-TransportExecutionPlan-2.1-Example.xml`
+- `UBL-TransportExecutionStatus-2.1-Example.xml`
+- `UBL-Waybill-2.0-Example-International.xml`
+
+Removed (2):
+
+- `UBL-Invoice-2.0-Signed.xml`
+- `UBL-TransportOperationStatus-2.1-Example.xml`
+
 ### UBL 2.1 Public Review Draft 1 (2010-09-25)
 
 Tag `prd1-UBL-2.1` · <https://docs.oasis-open.org/ubl/prd1-UBL-2.1/xml/> · 45 files
