@@ -10,6 +10,56 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.1 Public Review Draft 3 (2013-02-23)
+
+Tag `prd3-UBL-2.1` · <https://docs.oasis-open.org/ubl/prd3-UBL-2.1/xml/> · 57 files
+
+Added (6):
+
+- `UBL-FulfilmentCancellation-2.1-Example.xml`
+- `UBL-Invoice-2.1-Example-Trivial.xml`
+- `UBL-TransportExecutionPlanRequest-2.1-Example.xml`
+- `UBL-TransportProgressStatusRequest-2.1-Example.xml`
+- `UBL-TransportServiceDescriptionRequest-2.1-Example.xml`
+- `UBL-TransportationStatusRequest-2.1-Example.xml`
+
+Updated (29):
+
+- `UBL-CreditNote-2.0-Example.xml`
+- `UBL-DespatchAdvice-2.0-Example.xml`
+- `UBL-ExceptionCriteria-2.1-Example.xml`
+- `UBL-ExceptionNotification-2.1-Example.xml`
+- `UBL-Forecast-2.1-Example.xml`
+- `UBL-ForecastRevision-2.1-Example.xml`
+- `UBL-GoodsItemItinerary-2.1-Example.xml`
+- `UBL-Invoice-2.0-Detached-Signature.xml`
+- `UBL-Invoice-2.0-Detached.xml`
+- `UBL-Invoice-2.0-Enveloped.xml`
+- `UBL-Invoice-2.0-Example-NS1.xml`
+- `UBL-Invoice-2.0-Example-NS2.xml`
+- `UBL-Invoice-2.0-Example-NS3.xml`
+- `UBL-Invoice-2.0-Example-NS4.xml`
+- `UBL-Invoice-2.0-Example.xml`
+- `UBL-Order-2.0-Example.xml`
+- `UBL-OrderResponseSimple-2.0-Example.xml`
+- `UBL-ProductActivity-2.1-Example-1.xml`
+- `UBL-Quotation-2.0-Example.xml`
+- `UBL-ReceiptAdvice-2.0-Example.xml`
+- `UBL-RemittanceAdvice-2.0-Example.xml`
+- `UBL-RequestForQuotation-2.0-Example.xml`
+- `UBL-RetailEvent-2.1-Example.xml`
+- `UBL-Statement-2.0-Example.xml`
+- `UBL-TradeItemLocationProfile-2.1-Example.xml`
+- `UBL-TransportExecutionPlan-2.1-Example.xml`
+- `UBL-TransportProgressStatus-2.1-Example.xml`
+- `UBL-TransportServiceDescription-2.1-Example.xml`
+- `UBL-TransportationStatus-2.1-Example.xml`
+
+Removed (2):
+
+- `UBL-PerformanceHistory-2.1-Example.xml`
+- `UBL-TransportExecutionStatus-2.1-Example.xml`
+
 ### UBL 2.1 Public Review Draft 2 (2011-05-30)
 
 Tag `prd2-UBL-2.1` · <https://docs.oasis-open.org/ubl/prd2-UBL-2.1/xml/> · 53 files
