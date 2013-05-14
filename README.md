@@ -10,6 +10,12 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.1 Committee Specification Draft 4 (2013-05-14)
+
+Tag `csd4-UBL-2.1` · <https://docs.oasis-open.org/ubl/csd4-UBL-2.1/xml/> · 57 files
+
+No changes to the sample documents since `prd3-UBL-2.1`.
+
 ### UBL 2.1 Public Review Draft 3 (2013-02-23)
 
 Tag `prd3-UBL-2.1` · <https://docs.oasis-open.org/ubl/prd3-UBL-2.1/xml/> · 57 files
