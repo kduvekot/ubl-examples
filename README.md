@@ -10,6 +10,12 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.1 OASIS Standard (2013-11-04)
+
+Tag `os-UBL-2.1` · <https://docs.oasis-open.org/ubl/os-UBL-2.1/xml/> · 57 files
+
+No changes to the sample documents since `cos1-UBL-2.1`.
+
 ### UBL 2.1 Candidate OASIS Standard 1 (2013-07-15)
 
 Tag `cos1-UBL-2.1` · <https://docs.oasis-open.org/ubl/cos1-UBL-2.1/xml/> · 57 files
