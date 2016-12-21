@@ -10,6 +10,21 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.2 Committee Specification Public Review Draft 01 (2016-12-21)
+
+Tag `csprd01-UBL-2.2` · <https://docs.oasis-open.org/ubl/csprd01-UBL-2.2/xml/> · 65 files
+
+Added (8):
+
+- `UBL-BusinessCard-2.2-Example.xml`
+- `UBL-DigitalAgreement-2.2-Example-Multilateral.xml`
+- `UBL-DigitalAgreement-2.2-Example.xml`
+- `UBL-DigitalCapability-2.2-Example.xml`
+- `UBL-ExpressionOfInterestRequest-2.2-Example.xml`
+- `UBL-PriorInformationNotice-2.2-Example-Embedded.xml`
+- `UBL-PriorInformationNotice-2.2-Example-External.xml`
+- `UBL-WeightStatement-2.2-Example.xml`
+
 ### UBL 2.1 OASIS Standard (2013-11-04)
 
 Tag `os-UBL-2.1` · <https://docs.oasis-open.org/ubl/os-UBL-2.1/xml/> · 57 files
