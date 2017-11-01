@@ -10,6 +10,16 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.2 Committee Specification Public Review Draft 02 (2017-11-01)
+
+Tag `csprd02-UBL-2.2` · <https://docs.oasis-open.org/ubl/csprd02-UBL-2.2/xml/> · 65 files
+
+Updated (3):
+
+- `UBL-BusinessCard-2.2-Example.xml`
+- `UBL-DigitalCapability-2.2-Example.xml`
+- `UBL-OrderResponse-2.1-Example.xml`
+
 ### UBL 2.2 Committee Specification Public Review Draft 01 (2016-12-21)
 
 Tag `csprd01-UBL-2.2` · <https://docs.oasis-open.org/ubl/csprd01-UBL-2.2/xml/> · 65 files
