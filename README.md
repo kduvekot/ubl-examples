@@ -10,6 +10,12 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.2 Committee Specification 01 (2018-03-22)
+
+Tag `cs01-UBL-2.2` · <https://docs.oasis-open.org/ubl/cs01-UBL-2.2/xml/> · 65 files
+
+No changes to the sample documents since `csprd03-UBL-2.2`.
+
 ### UBL 2.2 Committee Specification Public Review Draft 03 (2018-02-21)
 
 Tag `csprd03-UBL-2.2` · <https://docs.oasis-open.org/ubl/csprd03-UBL-2.2/xml/> · 65 files
