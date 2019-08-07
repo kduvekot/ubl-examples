@@ -10,6 +10,14 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.3 Committee Specification Public Review Draft 01 (2019-08-07)
+
+Tag `csprd01-UBL-2.3` · <https://docs.oasis-open.org/ubl/csprd01-UBL-2.3/xml/> · 65 files
+
+Updated (1):
+
+- `UBL-ProductActivity-2.1-Example-1.xml`
+
 ### UBL 2.2 OASIS Standard (2018-07-09)
 
 Tag `os-UBL-2.2` · <https://docs.oasis-open.org/ubl/os-UBL-2.2/xml/> · 65 files
