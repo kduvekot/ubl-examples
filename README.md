@@ -10,6 +10,18 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.3 Committee Specification Public Review Draft 02 (2020-01-29)
+
+Tag `csprd02-UBL-2.3` · <https://docs.oasis-open.org/ubl/csprd02-UBL-2.3/xml/> · 70 files
+
+Added (5):
+
+- `UBL-ExportCustomsDeclaration-2.3-Example.xml`
+- `UBL-GoodsCertificate-2.3-Example.xml`
+- `UBL-GoodsItemPassport-2.3-Example-Issued.xml`
+- `UBL-ProofOfReexportation-2.3-Example.xml`
+- `UBL-ProofOfReexportationRequest-2.3-Example.xml`
+
 ### UBL 2.3 Committee Specification Public Review Draft 01 (2019-08-07)
 
 Tag `csprd01-UBL-2.3` · <https://docs.oasis-open.org/ubl/csprd01-UBL-2.3/xml/> · 65 files
