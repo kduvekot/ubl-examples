@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<n1:ProofOfReexportationReminder xmlns:cbc="urn:X-test:UBL:TSC:CommonBasic" xmlns:cac="urn:X-test:UBL:TSC:CommonAggregate" xmlns:n1="urn:X-test:UBL:TSC:RequestForProofOfReexportation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ProofOfReexportationRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" >
 	<cbc:ID>A2344</cbc:ID>
 	<cbc:IssueDate>2019-06-21</cbc:IssueDate>
-	<cbc:ProcedureCode>A-letter</cbc:ProcedureCode>
-	<cac:ProofOfReexportationRequestDocumentReference>
-		<cbc:ID>req03245345</cbc:ID>
-	</cac:ProofOfReexportationRequestDocumentReference>
-	<cac:ExportingGuarantorParty>
-		<cac:PartyName>
-			<cbc:Name>Dansk Erhverv</cbc:Name>
-		</cac:PartyName>
-		<cac:PostalAddress>
-			<cbc:StreetName>Slotsholmsgade</cbc:StreetName>
-			<cbc:BuildingNumber>1</cbc:BuildingNumber>
-			<cbc:CityName>København K</cbc:CityName>
-			<cbc:PostalZone>1216</cbc:PostalZone>
-			<cac:Country>
-				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
-			</cac:Country>
-		</cac:PostalAddress>
-		<cac:PartyLegalEntity>
-			<cbc:CompanyID>DK43232010</cbc:CompanyID>
-		</cac:PartyLegalEntity>
-	</cac:ExportingGuarantorParty>
+	<cbc:GoodsItemPassportID>234222</cbc:GoodsItemPassportID>
+	
 	<cac:ImportingGuarantorParty>
 		<cac:PartyName>
 			<cbc:Name>Deutscher Industrie- und Handelskammertag e.V.</cbc:Name>
@@ -40,12 +21,30 @@
 			<cbc:CompanyID>DE122125278</cbc:CompanyID>
 		</cac:PartyLegalEntity>
 	</cac:ImportingGuarantorParty>
-	<cac:CustomsParty>
+	<cac:ExportingGuarantorParty>
 		<cac:PartyName>
-			<cbc:Name>Zollamt</cbc:Name>			
+			<cbc:Name>Dansk Erhverv</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
-		<cbc:StreetName>Tollbrettkoppel</cbc:StreetName>
+			<cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+			<cbc:BuildingNumber>1</cbc:BuildingNumber>
+			<cbc:CityName>København K</cbc:CityName>
+			<cbc:PostalZone>1216</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DK43232010</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:ExportingGuarantorParty>
+	
+	<cac:ImportingCustomsParty>
+		<cac:PartyName>
+			<cbc:Name>Zollamt</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Tollbrettkoppel</cbc:StreetName>
 			<cbc:BuildingNumber>8</cbc:BuildingNumber>
 			<cbc:CityName>Heiligenhafen</cbc:CityName>
 			<cbc:PostalZone>23774</cbc:PostalZone>
@@ -53,12 +52,6 @@
 				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
-	</cac:CustomsParty>
-	<cac:GoodsItemPassportCounterfoil>
-		<cbc:ID>645634567</cbc:ID>
-		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
-		<cac:VoucherDocumentReference>
-			<cbc:ID>23445567</cbc:ID>
-		</cac:VoucherDocumentReference>		
-	</cac:GoodsItemPassportCounterfoil>
-</n1:ProofOfReexportationReminder>
+	</cac:ImportingCustomsParty>
+	
+</ProofOfReexportationRequest>
