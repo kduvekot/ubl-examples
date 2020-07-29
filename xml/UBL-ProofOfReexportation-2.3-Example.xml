@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<n1:ProofOfReexportation xmlns:cbc="urn:X-test:UBL:TSC:CommonBasic" xmlns:cac="urn:X-test:UBL:TSC:CommonAggregate" xmlns:n1="urn:X-test:UBL:TSC:ProofOfReexportation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:X-test:UBL:TSC:ProofOfReexportation file:///C:/Users/plb12/Downloads/artefacts-ubl-2.3-TSC-tsc04-20190318-2000z/artefacts-ubl-2.3-TSC-tsc04-20190318-2000z/xsdrt/maindoc/UBL-ProofOfReexportation-2.3-TSC.xsd">
+<ProofOfReexportation xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
 	<cbc:ID>23424244</cbc:ID>
 	<cbc:IssueDate>2019-05-08</cbc:IssueDate>
 	<cac:ImportingGuarantorParty>
@@ -38,15 +38,17 @@
 	</cac:ExportingGuarantorParty>
 	<cac:GoodsItemPassportCounterfoil>
 		<cbc:ID>645634567</cbc:ID>
+		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
 		<cac:CustomsOfficeLocation>
 			<cbc:Name>Heiligenhafen</cbc:Name>
 		</cac:CustomsOfficeLocation>
 		<cac:VoucherDocumentReference>
 			<cbc:ID>5234533222</cbc:ID>
-		</cac:VoucherDocumentReference>		
+		</cac:VoucherDocumentReference>
 	</cac:GoodsItemPassportCounterfoil>
 	<cac:GoodsItemPassportCounterfoil>
 		<cbc:ID>634563324</cbc:ID>
+		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
 		<cac:CustomsOfficeLocation>
 			<cbc:Name>Bietingen</cbc:Name>
 		</cac:CustomsOfficeLocation>
@@ -54,4 +56,12 @@
 			<cbc:ID>52345423423</cbc:ID>
 		</cac:VoucherDocumentReference>
 	</cac:GoodsItemPassportCounterfoil>
-</n1:ProofOfReexportation>
+	<cac:ReexportationEvidence>
+			<cbc:EvidenceTypeCode>mail</cbc:EvidenceTypeCode>
+			<cbc:Description>Received mail from Frau Gerlung</cbc:Description>
+			<cac:DocumentReference>
+				<cbc:ID>34563456</cbc:ID>
+				<cbc:DocumentType>ATA carnet, paper</cbc:DocumentType>
+			</cac:DocumentReference>
+	</cac:ReexportationEvidence>
+</ProofOfReexportation>
