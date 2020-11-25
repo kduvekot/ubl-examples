@@ -10,6 +10,16 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.3 Committee Specification Draft 04 (2020-11-25)
+
+Tag `csd04-UBL-2.3` · <https://docs.oasis-open.org/ubl/csd04-UBL-2.3/xml/> · 76 files
+
+Added (3):
+
+- `UBL-CommonTransportationReport-2.3-Example.xml`
+- `UBL-Manifest-2.3-Example-Reference-Only.xml`
+- `UBL-Manifest-2.3-Example-Shipment.xml`
+
 ### UBL 2.3 Committee Specification Draft 03 (2020-07-29)
 
 Tag `csd03-UBL-2.3` · <https://docs.oasis-open.org/ubl/csd03-UBL-2.3/xml/> · 73 files
