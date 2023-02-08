@@ -10,6 +10,37 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.4 Committee Specification Draft 01 (2023-02-08)
+
+Tag `csd01-UBL-2.4` · <https://docs.oasis-open.org/ubl/csd01-UBL-2.4/xml/> · 77 files
+
+Added (1):
+
+- `UBL-PurchaseReceipt-2.4-Example.xml`
+
+Updated (20):
+
+- `UBL-DigitalAgreement-2.2-Example-Multilateral.xml`
+- `UBL-DigitalAgreement-2.2-Example.xml`
+- `UBL-ExceptionNotification-2.1-Example.xml`
+- `UBL-ExportCustomsDeclaration-2.3-Example.xml`
+- `UBL-Forecast-2.1-Example.xml`
+- `UBL-ForecastRevision-2.1-Example.xml`
+- `UBL-ImportCustomsDeclaration-2.3-Example.xml`
+- `UBL-InventoryReport-2.1-Example.xml`
+- `UBL-Invoice-2.1-Example.xml`
+- `UBL-Order-2.1-Example.xml`
+- `UBL-OrderCancellation-2.1-Example.xml`
+- `UBL-OrderChange-2.1-Example.xml`
+- `UBL-OrderResponse-2.1-Example.xml`
+- `UBL-OrderResponseSimple-2.1-Example.xml`
+- `UBL-ProductActivity-2.1-Example-1.xml`
+- `UBL-RetailEvent-2.1-Example.xml`
+- `UBL-StockAvailabilityReport-2.1-Example.xml`
+- `UBL-TradeItemLocationProfile-2.1-Example.xml`
+- `UBL-TransitCustomsDeclaration-2.3-Example.xml`
+- `UBL-WeightStatement-2.2-Example.xml`
+
 ### UBL 2.3 OASIS Standard (2021-06-15)
 
 Tag `os-UBL-2.3` · <https://docs.oasis-open.org/ubl/os-UBL-2.3/xml/> · 76 files
