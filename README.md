@@ -10,6 +10,19 @@ below is tagged with the name of its directory on
 
 ## Releases
 
+### UBL 2.5 Committee Specification Draft 01 (2025-08-28)
+
+Tag `csd01-UBL-2.5` · <https://docs.oasis-open.org/ubl/csd01-UBL-2.5/xml/> · 76 files
+
+Added (1):
+
+- `UBL-DebitNote-2.5-Example.xml`
+
+Removed (2):
+
+- `UBL-DebitNote-2.1-Example.xml`
+- `UBL-FreightInvoice-2.1-Example.xml`
+
 ### UBL 2.4 OASIS Standard (2024-06-20)
 
 Tag `os-UBL-2.4` · <https://docs.oasis-open.org/ubl/os-UBL-2.4/xml/> · 77 files
