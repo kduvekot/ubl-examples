@@ -4,6 +4,17 @@ This document defines the **15 domain groups** used to organise all 310 ABIE typ
 
 It is the authoritative reference for how the [element reference files](./ubl-element-reference.md) and any future grouping of UBL sample documents are organised.
 
+A companion document, [ubl-process-groups.md](./ubl-process-groups.md), provides the same 310 types organised **top-down by business process** (13 groups derived from the 101 document types) rather than bottom-up by semantic meaning.
+
+---
+
+## Relationship to CBC elements
+
+UBL 2.5 defines **1,202 CBC (Common Basic Component) elements** — the leaf-level fields such as `Amount`, `Name`, `Code`, and `Indicator` that carry actual values. These are not classified separately here because:
+
+- **1,100 CBCs** are referenced inside one or more of the 310 ABIE types. Covering the ABIE types implicitly covers these CBCs in their usage context.
+- **102 CBCs** are used only at the document-header level (e.g., `UBLVersionID`, `DocumentCurrencyCode`, `LineCountNumeric`). These are assigned to the same group as the document type that uses them; they have no ABIE parent.
+
 ---
 
 ## Basis for classification
