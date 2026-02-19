@@ -548,14 +548,14 @@ _1 elements_
 #### `cbc:EmbeddedDocumentBinaryObject`
 
 ```xml
-<cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+<cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxN...RU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
 ```
 
 **`@mimeCode`**
 
 ```xml
-<cbc:EmbeddedDocumentBinaryObject mimeCode="application/CSTAdata+xml">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+<cbc:EmbeddedDocumentBinaryObject mimeCode="application/CSTAdata+xml">UjBsR09EbGhjZ0dTQUxN...RU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf">UjBsR09EbGhjZ0dTQUxN...RU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
 ```
 
 ### Code (`udt:CodeType`)
