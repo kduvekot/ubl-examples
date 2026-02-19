@@ -25,59 +25,83 @@ _34 elements_
 
 #### `cbc:AllowanceTotalAmount`
 
+```xml
+<cbc:AllowanceTotalAmount>10.00</cbc:AllowanceTotalAmount>
+<cbc:AllowanceTotalAmount>100</cbc:AllowanceTotalAmount>
+<cbc:AllowanceTotalAmount>5.00</cbc:AllowanceTotalAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:AllowanceTotalAmount currencyID="EUR">100</cbc:AllowanceTotalAmount>
-<cbc:AllowanceTotalAmount currencyID="EUR">5.00</cbc:AllowanceTotalAmount>
 <cbc:AllowanceTotalAmount currencyID="GBP">10.00</cbc:AllowanceTotalAmount>
 <cbc:AllowanceTotalAmount currencyID="SEK">100</cbc:AllowanceTotalAmount>
 ```
 
 #### `cbc:Amount`
 
+```xml
+<cbc:Amount>0.0</cbc:Amount>
+<cbc:Amount>0.00</cbc:Amount>
+<cbc:Amount>0.275</cbc:Amount>
+<cbc:Amount>1.00</cbc:Amount>
+<cbc:Amount>10</cbc:Amount>
+<cbc:Amount>10.00</cbc:Amount>
+<cbc:Amount>100</cbc:Amount>
+<cbc:Amount>100.0</cbc:Amount>
+<cbc:Amount>12</cbc:Amount>
+<cbc:Amount>12.70</cbc:Amount>
+<cbc:Amount>225</cbc:Amount>
+<cbc:Amount>2500</cbc:Amount>
+<cbc:Amount>254.00</cbc:Amount>
+<cbc:Amount>4.80</cbc:Amount>
+<cbc:Amount>5.00</cbc:Amount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:Amount currencyID="DKK">0.00</cbc:Amount>
 <cbc:Amount currencyID="EUR">0.275</cbc:Amount>
-<cbc:Amount currencyID="EUR">1.00</cbc:Amount>
-<cbc:Amount currencyID="EUR">10</cbc:Amount>
-<cbc:Amount currencyID="EUR">10.00</cbc:Amount>
-<cbc:Amount currencyID="EUR">100</cbc:Amount>
-<cbc:Amount currencyID="EUR">12</cbc:Amount>
-<cbc:Amount currencyID="EUR">225</cbc:Amount>
-<cbc:Amount currencyID="EUR">2500</cbc:Amount>
-<cbc:Amount currencyID="EUR">4.80</cbc:Amount>
-<cbc:Amount currencyID="EUR">5.00</cbc:Amount>
 <cbc:Amount currencyID="GBP">0.0</cbc:Amount>
-<cbc:Amount currencyID="GBP">10.00</cbc:Amount>
-<cbc:Amount currencyID="GBP">100.0</cbc:Amount>
 <cbc:Amount currencyID="SEK">100</cbc:Amount>
 <cbc:Amount currencyID="USD">12.70</cbc:Amount>
-<cbc:Amount currencyID="USD">254.00</cbc:Amount>
 ```
 
 #### `cbc:BalanceAmount`
+
+```xml
+<cbc:BalanceAmount>-107.50</cbc:BalanceAmount>
+<cbc:BalanceAmount>107.50</cbc:BalanceAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:BalanceAmount currencyID="GBP">-107.50</cbc:BalanceAmount>
-<cbc:BalanceAmount currencyID="GBP">107.50</cbc:BalanceAmount>
 ```
 
 #### `cbc:BaseAmount`
+
+```xml
+<cbc:BaseAmount>1500</cbc:BaseAmount>
+<cbc:BaseAmount>2.75</cbc:BaseAmount>
+<cbc:BaseAmount>254.00</cbc:BaseAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:BaseAmount currencyID="EUR">1500</cbc:BaseAmount>
-<cbc:BaseAmount currencyID="EUR">2.75</cbc:BaseAmount>
 <cbc:BaseAmount currencyID="USD">254.00</cbc:BaseAmount>
 ```
 
 #### `cbc:CashChangeAmount`
+
+```xml
+<cbc:CashChangeAmount>5.00</cbc:CashChangeAmount>
+```
 
 **`@currencyID`**
 
@@ -87,34 +111,50 @@ _34 elements_
 
 #### `cbc:ChargeTotalAmount`
 
+```xml
+<cbc:ChargeTotalAmount>1.00</cbc:ChargeTotalAmount>
+<cbc:ChargeTotalAmount>10.00</cbc:ChargeTotalAmount>
+<cbc:ChargeTotalAmount>100</cbc:ChargeTotalAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:ChargeTotalAmount currencyID="EUR">1.00</cbc:ChargeTotalAmount>
-<cbc:ChargeTotalAmount currencyID="EUR">10.00</cbc:ChargeTotalAmount>
-<cbc:ChargeTotalAmount currencyID="EUR">100</cbc:ChargeTotalAmount>
 <cbc:ChargeTotalAmount currencyID="SEK">100</cbc:ChargeTotalAmount>
 ```
 
 #### `cbc:CreditLineAmount`
 
+```xml
+<cbc:CreditLineAmount>0.00</cbc:CreditLineAmount>
+<cbc:CreditLineAmount>107.50</cbc:CreditLineAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:CreditLineAmount currencyID="GBP">0.00</cbc:CreditLineAmount>
-<cbc:CreditLineAmount currencyID="GBP">107.50</cbc:CreditLineAmount>
 ```
 
 #### `cbc:DebitLineAmount`
+
+```xml
+<cbc:DebitLineAmount>0.00</cbc:DebitLineAmount>
+<cbc:DebitLineAmount>107.50</cbc:DebitLineAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:DebitLineAmount currencyID="GBP">0.00</cbc:DebitLineAmount>
-<cbc:DebitLineAmount currencyID="GBP">107.50</cbc:DebitLineAmount>
 ```
 
 #### `cbc:DeclaredCarriageValueAmount`
+
+```xml
+<cbc:DeclaredCarriageValueAmount>1500.00</cbc:DeclaredCarriageValueAmount>
+```
 
 **`@currencyID`**
 
@@ -124,104 +164,138 @@ _34 elements_
 
 #### `cbc:DeclaredCustomsValueAmount`
 
+```xml
+<cbc:DeclaredCustomsValueAmount>0.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>1000.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>10000.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>1500.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>2000.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>2500.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>3000.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>500.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>5000.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>750.00</cbc:DeclaredCustomsValueAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:DeclaredCustomsValueAmount currencyID="DKK">0.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">1000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">10000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">1500.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">2000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">2500.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">3000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">500.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">5000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount currencyID="DKK">750.00</cbc:DeclaredCustomsValueAmount>
 <cbc:DeclaredCustomsValueAmount currencyID="EUR">0.00</cbc:DeclaredCustomsValueAmount>
 <cbc:DeclaredCustomsValueAmount currencyID="GBP">524.80</cbc:DeclaredCustomsValueAmount>
 ```
 
 #### `cbc:DeclaredStatisticsValueAmount`
 
+```xml
+<cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>10000.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>10050.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>1500.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>182.62</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>2000.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>250.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>2500.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>3000.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>34800.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>4500.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>500.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>5000.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>750.00</cbc:DeclaredStatisticsValueAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:DeclaredStatisticsValueAmount currencyID="DKK">1000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">10000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">10050.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">2000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">2500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">3000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">34800.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">4500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">5000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="DKK">750.00</cbc:DeclaredStatisticsValueAmount>
 <cbc:DeclaredStatisticsValueAmount currencyID="EUR">182.62</cbc:DeclaredStatisticsValueAmount>
 <cbc:DeclaredStatisticsValueAmount currencyID="USD">1000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount currencyID="USD">250.00</cbc:DeclaredStatisticsValueAmount>
 ```
 
 #### `cbc:FreeOnBoardValueAmount`
+
+```xml
+<cbc:FreeOnBoardValueAmount>1200.00</cbc:FreeOnBoardValueAmount>
+<cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:FreeOnBoardValueAmount currencyID="USD">1200.00</cbc:FreeOnBoardValueAmount>
-<cbc:FreeOnBoardValueAmount currencyID="USD">1241.30</cbc:FreeOnBoardValueAmount>
 ```
 
 #### `cbc:InsuranceValueAmount`
+
+```xml
+<cbc:InsuranceValueAmount>1000.00</cbc:InsuranceValueAmount>
+<cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:InsuranceValueAmount currencyID="USD">1000.00</cbc:InsuranceValueAmount>
-<cbc:InsuranceValueAmount currencyID="USD">1241.30</cbc:InsuranceValueAmount>
 ```
 
 #### `cbc:InventoryValueAmount`
+
+```xml
+<cbc:InventoryValueAmount>200</cbc:InventoryValueAmount>
+<cbc:InventoryValueAmount>300</cbc:InventoryValueAmount>
+<cbc:InventoryValueAmount>750</cbc:InventoryValueAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:InventoryValueAmount currencyID="EUR">200</cbc:InventoryValueAmount>
-<cbc:InventoryValueAmount currencyID="EUR">300</cbc:InventoryValueAmount>
-<cbc:InventoryValueAmount currencyID="EUR">750</cbc:InventoryValueAmount>
 ```
 
 #### `cbc:LineExtensionAmount`
+
+```xml
+<cbc:LineExtensionAmount>-25</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>-3.96</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>1000.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>120.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>12000</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>1273</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>1436.5</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>150500.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>16.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>1750.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>187.5</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>197750.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>200.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>225</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>23.20</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>4.96</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>43750.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>6000</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>6225</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>7.20</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>80.00</cbc:LineExtensionAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:LineExtensionAmount currencyID="CAD">100.00</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="DKK">150500.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="DKK">1750.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="DKK">197750.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="DKK">43750.00</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="EUR">-25</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">-3.96</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">120.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">1436.5</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">16.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">187.5</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">200.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">23.20</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">4.96</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">7.20</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">80.00</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="GBP">100.00</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="SEK">12000</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="SEK">225</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="SEK">6000</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="SEK">6225</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="USD">1000.00</cbc:LineExtensionAmount>
 ```
 
 #### `cbc:PaidAmount`
+
+```xml
+<cbc:PaidAmount>25.00</cbc:PaidAmount>
+```
 
 **`@currencyID`**
 
@@ -231,6 +305,10 @@ _34 elements_
 
 #### `cbc:PaidCashAmount`
 
+```xml
+<cbc:PaidCashAmount>30.00</cbc:PaidCashAmount>
+```
+
 **`@currencyID`**
 
 ```xml
@@ -239,23 +317,35 @@ _34 elements_
 
 #### `cbc:PayableAmount`
 
+```xml
+<cbc:PayableAmount>100.00</cbc:PayableAmount>
+<cbc:PayableAmount>1000.00</cbc:PayableAmount>
+<cbc:PayableAmount>107.50</cbc:PayableAmount>
+<cbc:PayableAmount>2000</cbc:PayableAmount>
+<cbc:PayableAmount>247.55</cbc:PayableAmount>
+<cbc:PayableAmount>247187.50</cbc:PayableAmount>
+<cbc:PayableAmount>25.00</cbc:PayableAmount>
+<cbc:PayableAmount>300</cbc:PayableAmount>
+<cbc:PayableAmount>6225</cbc:PayableAmount>
+<cbc:PayableAmount>729</cbc:PayableAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:PayableAmount currencyID="CAD">100.00</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="DKK">247187.50</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="EUR">2000</cbc:PayableAmount>
-<cbc:PayableAmount currencyID="EUR">247.55</cbc:PayableAmount>
-<cbc:PayableAmount currencyID="EUR">25.00</cbc:PayableAmount>
-<cbc:PayableAmount currencyID="EUR">300</cbc:PayableAmount>
-<cbc:PayableAmount currencyID="EUR">729</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="GBP">100.00</cbc:PayableAmount>
-<cbc:PayableAmount currencyID="GBP">107.50</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="SEK">6225</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="USD">1000.00</cbc:PayableAmount>
 ```
 
 #### `cbc:PayableRoundingAmount`
+
+```xml
+<cbc:PayableRoundingAmount>0.30</cbc:PayableRoundingAmount>
+```
 
 **`@currencyID`**
 
@@ -265,6 +355,10 @@ _34 elements_
 
 #### `cbc:PrepaidAmount`
 
+```xml
+<cbc:PrepaidAmount>1000</cbc:PrepaidAmount>
+```
+
 **`@currencyID`**
 
 ```xml
@@ -273,113 +367,155 @@ _34 elements_
 
 #### `cbc:PriceAmount`
 
+```xml
+<cbc:PriceAmount>0.75</cbc:PriceAmount>
+<cbc:PriceAmount>1.00</cbc:PriceAmount>
+<cbc:PriceAmount>10.00</cbc:PriceAmount>
+<cbc:PriceAmount>100.00</cbc:PriceAmount>
+<cbc:PriceAmount>12.00</cbc:PriceAmount>
+<cbc:PriceAmount>120.00</cbc:PriceAmount>
+<cbc:PriceAmount>1250.00</cbc:PriceAmount>
+<cbc:PriceAmount>1273</cbc:PriceAmount>
+<cbc:PriceAmount>15</cbc:PriceAmount>
+<cbc:PriceAmount>16.00</cbc:PriceAmount>
+<cbc:PriceAmount>2.48</cbc:PriceAmount>
+<cbc:PriceAmount>25</cbc:PriceAmount>
+<cbc:PriceAmount>3.96</cbc:PriceAmount>
+<cbc:PriceAmount>40.00</cbc:PriceAmount>
+<cbc:PriceAmount>4300.00</cbc:PriceAmount>
+<cbc:PriceAmount>50</cbc:PriceAmount>
+<cbc:PriceAmount>50.00</cbc:PriceAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:PriceAmount currencyID="DKK">1250.00</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="DKK">4300.00</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="DKK">50.00</cbc:PriceAmount>
 <cbc:PriceAmount currencyID="EUR">0.75</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">12.00</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">120.00</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">1273</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">16.00</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">2.48</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">25</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">3.96</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">40.00</cbc:PriceAmount>
 <cbc:PriceAmount currencyID="GBP">1.00</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="GBP">100.00</cbc:PriceAmount>
 <cbc:PriceAmount currencyID="SEK">15</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="SEK">50</cbc:PriceAmount>
 <cbc:PriceAmount currencyID="USD">10.00</cbc:PriceAmount>
 ```
 
 #### `cbc:TaxAmount`
 
+```xml
+<cbc:TaxAmount>-0.396</cbc:TaxAmount>
+<cbc:TaxAmount>0</cbc:TaxAmount>
+<cbc:TaxAmount>0.00</cbc:TaxAmount>
+<cbc:TaxAmount>0.1</cbc:TaxAmount>
+<cbc:TaxAmount>0.496</cbc:TaxAmount>
+<cbc:TaxAmount>1.80</cbc:TaxAmount>
+<cbc:TaxAmount>100</cbc:TaxAmount>
+<cbc:TaxAmount>17.50</cbc:TaxAmount>
+<cbc:TaxAmount>254.6</cbc:TaxAmount>
+<cbc:TaxAmount>292.1</cbc:TaxAmount>
+<cbc:TaxAmount>292.20</cbc:TaxAmount>
+<cbc:TaxAmount>37.5</cbc:TaxAmount>
+<cbc:TaxAmount>4.00</cbc:TaxAmount>
+<cbc:TaxAmount>42.55</cbc:TaxAmount>
+<cbc:TaxAmount>5.80</cbc:TaxAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:TaxAmount currencyID="EUR">-0.396</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">0.00</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">0.1</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">0.496</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">1.80</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">254.6</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">292.1</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">292.20</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">37.5</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">4.00</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">42.55</cbc:TaxAmount>
-<cbc:TaxAmount currencyID="EUR">5.80</cbc:TaxAmount>
 <cbc:TaxAmount currencyID="GBP">17.50</cbc:TaxAmount>
 <cbc:TaxAmount currencyID="SEK">100</cbc:TaxAmount>
 ```
 
 #### `cbc:TaxExclusiveAmount`
 
+```xml
+<cbc:TaxExclusiveAmount>1436.5</cbc:TaxExclusiveAmount>
+<cbc:TaxExclusiveAmount>205.00</cbc:TaxExclusiveAmount>
+<cbc:TaxExclusiveAmount>23.20</cbc:TaxExclusiveAmount>
+<cbc:TaxExclusiveAmount>49437.50</cbc:TaxExclusiveAmount>
+<cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:TaxExclusiveAmount currencyID="DKK">49437.50</cbc:TaxExclusiveAmount>
 <cbc:TaxExclusiveAmount currencyID="EUR">1436.5</cbc:TaxExclusiveAmount>
-<cbc:TaxExclusiveAmount currencyID="EUR">205.00</cbc:TaxExclusiveAmount>
-<cbc:TaxExclusiveAmount currencyID="EUR">23.20</cbc:TaxExclusiveAmount>
 <cbc:TaxExclusiveAmount currencyID="GBP">90.00</cbc:TaxExclusiveAmount>
 ```
 
 #### `cbc:TaxInclusiveAmount`
+
+```xml
+<cbc:TaxInclusiveAmount>1.00</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>1729</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>20.00</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>247.55</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>247187.50</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>5.00</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>6.00</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>9.00</cbc:TaxInclusiveAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:TaxInclusiveAmount currencyID="DKK">247187.50</cbc:TaxInclusiveAmount>
 <cbc:TaxInclusiveAmount currencyID="EUR">1.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount currencyID="EUR">1729</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount currencyID="EUR">20.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount currencyID="EUR">247.55</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount currencyID="EUR">29.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount currencyID="EUR">5.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount currencyID="EUR">6.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount currencyID="EUR">9.00</cbc:TaxInclusiveAmount>
 ```
 
 #### `cbc:TaxInclusiveLineExtensionAmount`
+
+```xml
+<cbc:TaxInclusiveLineExtensionAmount>20.00</cbc:TaxInclusiveLineExtensionAmount>
+<cbc:TaxInclusiveLineExtensionAmount>9.00</cbc:TaxInclusiveLineExtensionAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:TaxInclusiveLineExtensionAmount currencyID="EUR">20.00</cbc:TaxInclusiveLineExtensionAmount>
-<cbc:TaxInclusiveLineExtensionAmount currencyID="EUR">9.00</cbc:TaxInclusiveLineExtensionAmount>
 ```
 
 #### `cbc:TaxInclusivePriceAmount`
+
+```xml
+<cbc:TaxInclusivePriceAmount>15.00</cbc:TaxInclusivePriceAmount>
+<cbc:TaxInclusivePriceAmount>20.00</cbc:TaxInclusivePriceAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:TaxInclusivePriceAmount currencyID="EUR">15.00</cbc:TaxInclusivePriceAmount>
-<cbc:TaxInclusivePriceAmount currencyID="EUR">20.00</cbc:TaxInclusivePriceAmount>
 ```
 
 #### `cbc:TaxableAmount`
+
+```xml
+<cbc:TaxableAmount>-25</cbc:TaxableAmount>
+<cbc:TaxableAmount>1</cbc:TaxableAmount>
+<cbc:TaxableAmount>1.00</cbc:TaxableAmount>
+<cbc:TaxableAmount>100.00</cbc:TaxableAmount>
+<cbc:TaxableAmount>1460.5</cbc:TaxableAmount>
+<cbc:TaxableAmount>16.00</cbc:TaxableAmount>
+<cbc:TaxableAmount>202.50</cbc:TaxableAmount>
+<cbc:TaxableAmount>23.20</cbc:TaxableAmount>
+<cbc:TaxableAmount>7.20</cbc:TaxableAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:TaxableAmount currencyID="EUR">-25</cbc:TaxableAmount>
-<cbc:TaxableAmount currencyID="EUR">1</cbc:TaxableAmount>
-<cbc:TaxableAmount currencyID="EUR">1.00</cbc:TaxableAmount>
-<cbc:TaxableAmount currencyID="EUR">1460.5</cbc:TaxableAmount>
-<cbc:TaxableAmount currencyID="EUR">16.00</cbc:TaxableAmount>
-<cbc:TaxableAmount currencyID="EUR">202.50</cbc:TaxableAmount>
-<cbc:TaxableAmount currencyID="EUR">23.20</cbc:TaxableAmount>
-<cbc:TaxableAmount currencyID="EUR">7.20</cbc:TaxableAmount>
 <cbc:TaxableAmount currencyID="GBP">100.00</cbc:TaxableAmount>
 ```
 
 #### `cbc:TotalBalanceAmount`
+
+```xml
+<cbc:TotalBalanceAmount>-107.50</cbc:TotalBalanceAmount>
+```
 
 **`@currencyID`**
 
@@ -389,23 +525,36 @@ _34 elements_
 
 #### `cbc:TotalCreditAmount`
 
+```xml
+<cbc:TotalCreditAmount>0.00</cbc:TotalCreditAmount>
+<cbc:TotalCreditAmount>107.50</cbc:TotalCreditAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:TotalCreditAmount currencyID="GBP">0.00</cbc:TotalCreditAmount>
-<cbc:TotalCreditAmount currencyID="GBP">107.50</cbc:TotalCreditAmount>
 ```
 
 #### `cbc:TotalDebitAmount`
+
+```xml
+<cbc:TotalDebitAmount>0.00</cbc:TotalDebitAmount>
+<cbc:TotalDebitAmount>107.50</cbc:TotalDebitAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:TotalDebitAmount currencyID="GBP">0.00</cbc:TotalDebitAmount>
-<cbc:TotalDebitAmount currencyID="GBP">107.50</cbc:TotalDebitAmount>
 ```
 
 #### `cbc:TotalInvoiceAmount`
+
+```xml
+<cbc:TotalInvoiceAmount>10500.00</cbc:TotalInvoiceAmount>
+<cbc:TotalInvoiceAmount>44250.00</cbc:TotalInvoiceAmount>
+```
 
 **`@currencyID`**
 
@@ -416,6 +565,10 @@ _34 elements_
 
 #### `cbc:TotalPaymentAmount`
 
+```xml
+<cbc:TotalPaymentAmount>107.50</cbc:TotalPaymentAmount>
+```
+
 **`@currencyID`**
 
 ```xml
@@ -424,25 +577,36 @@ _34 elements_
 
 #### `cbc:TotalTaxAmount`
 
+```xml
+<cbc:TotalTaxAmount>10</cbc:TotalTaxAmount>
+<cbc:TotalTaxAmount>10937.50</cbc:TotalTaxAmount>
+<cbc:TotalTaxAmount>17.50</cbc:TotalTaxAmount>
+<cbc:TotalTaxAmount>20</cbc:TotalTaxAmount>
+<cbc:TotalTaxAmount>37625.00</cbc:TotalTaxAmount>
+<cbc:TotalTaxAmount>437.50</cbc:TotalTaxAmount>
+```
+
 **`@currencyID`**
 
 ```xml
 <cbc:TotalTaxAmount currencyID="DKK">10937.50</cbc:TotalTaxAmount>
-<cbc:TotalTaxAmount currencyID="DKK">37625.00</cbc:TotalTaxAmount>
-<cbc:TotalTaxAmount currencyID="DKK">437.50</cbc:TotalTaxAmount>
 <cbc:TotalTaxAmount currencyID="GBP">17.50</cbc:TotalTaxAmount>
 <cbc:TotalTaxAmount currencyID="SEK">10</cbc:TotalTaxAmount>
-<cbc:TotalTaxAmount currencyID="SEK">20</cbc:TotalTaxAmount>
 ```
 
 #### `cbc:ValueAmount`
+
+```xml
+<cbc:ValueAmount>1000.00</cbc:ValueAmount>
+<cbc:ValueAmount>10500.00</cbc:ValueAmount>
+<cbc:ValueAmount>250</cbc:ValueAmount>
+```
 
 **`@currencyID`**
 
 ```xml
 <cbc:ValueAmount currencyID="DKK">10500.00</cbc:ValueAmount>
 <cbc:ValueAmount currencyID="USD">1000.00</cbc:ValueAmount>
-<cbc:ValueAmount currencyID="USD">250</cbc:ValueAmount>
 ```
 
 ### Binary Object (`udt:BinaryObjectType`)
@@ -450,6 +614,10 @@ _34 elements_
 _1 elements_
 
 #### `cbc:EmbeddedDocumentBinaryObject`
+
+```xml
+<cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+```
 
 **`@mimeCode`**
 
@@ -476,6 +644,11 @@ _84 elements_
 ```
 
 #### `cbc:AddressFormatCode`
+
+```xml
+<cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
+<cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
+```
 
 **`@listAgencyID`**
 
@@ -513,28 +686,28 @@ _84 elements_
 
 #### `cbc:AvailabilityStatusCode`
 
+```xml
+<cbc:AvailabilityStatusCode>1</cbc:AvailabilityStatusCode>
+<cbc:AvailabilityStatusCode>2</cbc:AvailabilityStatusCode>
+<cbc:AvailabilityStatusCode>8</cbc:AvailabilityStatusCode>
+```
+
 **`@listAgencyName`**
 
 ```xml
 <cbc:AvailabilityStatusCode listAgencyName="UN/ECE">1</cbc:AvailabilityStatusCode>
-<cbc:AvailabilityStatusCode listAgencyName="UN/ECE">2</cbc:AvailabilityStatusCode>
-<cbc:AvailabilityStatusCode listAgencyName="UN/ECE">8</cbc:AvailabilityStatusCode>
 ```
 
 **`@listID`**
 
 ```xml
 <cbc:AvailabilityStatusCode listID="7011">1</cbc:AvailabilityStatusCode>
-<cbc:AvailabilityStatusCode listID="7011">2</cbc:AvailabilityStatusCode>
-<cbc:AvailabilityStatusCode listID="7011">8</cbc:AvailabilityStatusCode>
 ```
 
 **`@listURI`**
 
 ```xml
 <cbc:AvailabilityStatusCode listURI="http://www.unece.org/trade/untdid/d09b/tred/tred7011.htm">1</cbc:AvailabilityStatusCode>
-<cbc:AvailabilityStatusCode listURI="http://www.unece.org/trade/untdid/d09b/tred/tred7011.htm">2</cbc:AvailabilityStatusCode>
-<cbc:AvailabilityStatusCode listURI="http://www.unece.org/trade/untdid/d09b/tred/tred7011.htm">8</cbc:AvailabilityStatusCode>
 ```
 
 #### `cbc:CapabilityTypeCode`
@@ -628,6 +801,12 @@ _84 elements_
 
 #### `cbc:DocumentCurrencyCode`
 
+```xml
+<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+<cbc:DocumentCurrencyCode>GBP</cbc:DocumentCurrencyCode>
+<cbc:DocumentCurrencyCode>SEK</cbc:DocumentCurrencyCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
@@ -640,13 +819,6 @@ _84 elements_
 <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:DocumentCurrencyCode>
 ```
 
-**Values (no attributes)**
-
-```xml
-<cbc:DocumentCurrencyCode>GBP</cbc:DocumentCurrencyCode>
-<cbc:DocumentCurrencyCode>SEK</cbc:DocumentCurrencyCode>
-```
-
 #### `cbc:DocumentStatusCode`
 
 ```xml
@@ -657,13 +829,25 @@ _84 elements_
 
 #### `cbc:DocumentTypeCode`
 
+```xml
+<cbc:DocumentTypeCode>315</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>381</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>704</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>741</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>CONTRACT</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>Certificate of shipment</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>N380</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+<cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
 <cbc:DocumentTypeCode listAgencyID="306">SM1</cbc:DocumentTypeCode>
 <cbc:DocumentTypeCode listAgencyID="6">380</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode listAgencyID="6">381</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode listAgencyID="6">BN</cbc:DocumentTypeCode>
 ```
 
 **`@listAgencyName`**
@@ -676,21 +860,8 @@ _84 elements_
 
 ```xml
 <cbc:DocumentTypeCode listID="UN/ECE 1001">380</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode listID="UN/ECE 1001">381</cbc:DocumentTypeCode>
 <cbc:DocumentTypeCode listID="UN/ECE 1153">BN</cbc:DocumentTypeCode>
 <cbc:DocumentTypeCode listID="VGM">SM1</cbc:DocumentTypeCode>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:DocumentTypeCode>315</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode>704</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode>741</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode>CONTRACT</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode>Certificate of shipment</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode>N380</cbc:DocumentTypeCode>
-<cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
 ```
 
 #### `cbc:EnvironmentalEmissionTypeCode`
@@ -740,6 +911,12 @@ _84 elements_
 
 #### `cbc:FullnessIndicationCode`
 
+```xml
+<cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+<cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
+<cbc:FullnessIndicationCode>FTL</cbc:FullnessIndicationCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
@@ -752,13 +929,6 @@ _84 elements_
 <cbc:FullnessIndicationCode listID="UN/ECE 8169">5</cbc:FullnessIndicationCode>
 ```
 
-**Values (no attributes)**
-
-```xml
-<cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-<cbc:FullnessIndicationCode>FTL</cbc:FullnessIndicationCode>
-```
-
 #### `cbc:HandlingCode`
 
 ```xml
@@ -767,27 +937,13 @@ _84 elements_
 
 #### `cbc:IdentificationCode`
 
-**`@listAgencyID`**
-
-```xml
-<cbc:IdentificationCode listAgencyID="6">BE</cbc:IdentificationCode>
-<cbc:IdentificationCode listAgencyID="6">DK</cbc:IdentificationCode>
-```
-
-**`@listID`**
-
-```xml
-<cbc:IdentificationCode listID="ISO3166-1">BE</cbc:IdentificationCode>
-<cbc:IdentificationCode listID="ISO3166-1">DK</cbc:IdentificationCode>
-```
-
-**Values (no attributes)**
-
 ```xml
 <cbc:IdentificationCode>AT</cbc:IdentificationCode>
+<cbc:IdentificationCode>BE</cbc:IdentificationCode>
 <cbc:IdentificationCode>CH</cbc:IdentificationCode>
 <cbc:IdentificationCode>CN</cbc:IdentificationCode>
 <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+<cbc:IdentificationCode>DK</cbc:IdentificationCode>
 <cbc:IdentificationCode>FI</cbc:IdentificationCode>
 <cbc:IdentificationCode>GB</cbc:IdentificationCode>
 <cbc:IdentificationCode>IT</cbc:IdentificationCode>
@@ -801,34 +957,47 @@ _84 elements_
 <cbc:IdentificationCode>US</cbc:IdentificationCode>
 ```
 
+**`@listAgencyID`**
+
+```xml
+<cbc:IdentificationCode listAgencyID="6">BE</cbc:IdentificationCode>
+```
+
+**`@listID`**
+
+```xml
+<cbc:IdentificationCode listID="ISO3166-1">BE</cbc:IdentificationCode>
+```
+
 #### `cbc:IndustryClassificationCode`
+
+```xml
+<cbc:IndustryClassificationCode>CA</cbc:IndustryClassificationCode>
+<cbc:IndustryClassificationCode>Dairy</cbc:IndustryClassificationCode>
+<cbc:IndustryClassificationCode>Public Rail Authorities</cbc:IndustryClassificationCode>
+<cbc:IndustryClassificationCode>SPC</cbc:IndustryClassificationCode>
+<cbc:IndustryClassificationCode>TR</cbc:IndustryClassificationCode>
+<cbc:IndustryClassificationCode>WPA</cbc:IndustryClassificationCode>
+```
 
 **`@listAgencyID`**
 
 ```xml
 <cbc:IndustryClassificationCode listAgencyID="6">CA</cbc:IndustryClassificationCode>
-<cbc:IndustryClassificationCode listAgencyID="6">SPC</cbc:IndustryClassificationCode>
-<cbc:IndustryClassificationCode listAgencyID="6">TR</cbc:IndustryClassificationCode>
-<cbc:IndustryClassificationCode listAgencyID="6">WPA</cbc:IndustryClassificationCode>
 ```
 
 **`@listID`**
 
 ```xml
 <cbc:IndustryClassificationCode listID="UN/ECE 3035">CA</cbc:IndustryClassificationCode>
-<cbc:IndustryClassificationCode listID="UN/ECE 3035">SPC</cbc:IndustryClassificationCode>
-<cbc:IndustryClassificationCode listID="UN/ECE 3035">TR</cbc:IndustryClassificationCode>
-<cbc:IndustryClassificationCode listID="UN/ECE 3035">WPA</cbc:IndustryClassificationCode>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:IndustryClassificationCode>Dairy</cbc:IndustryClassificationCode>
-<cbc:IndustryClassificationCode>Public Rail Authorities</cbc:IndustryClassificationCode>
 ```
 
 #### `cbc:InvoiceTypeCode`
+
+```xml
+<cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+<cbc:InvoiceTypeCode>SalesInvoice</cbc:InvoiceTypeCode>
+```
 
 **`@listAgencyID`**
 
@@ -842,46 +1011,33 @@ _84 elements_
 <cbc:InvoiceTypeCode listID="UN/ECE 1001 Subset">380</cbc:InvoiceTypeCode>
 ```
 
-**Values (no attributes)**
+#### `cbc:ItemClassificationCode`
 
 ```xml
-<cbc:InvoiceTypeCode>SalesInvoice</cbc:InvoiceTypeCode>
+<cbc:ItemClassificationCode>12344321</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>12344322</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>12344325</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>65434564</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>65434565</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>65434566</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>65434567</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>65434568</cbc:ItemClassificationCode>
+<cbc:ItemClassificationCode>8518309590</cbc:ItemClassificationCode>
 ```
-
-#### `cbc:ItemClassificationCode`
 
 **`@listAgencyID`**
 
 ```xml
 <cbc:ItemClassificationCode listAgencyID="113">12344321</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listAgencyID="113">12344322</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listAgencyID="113">12344325</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listAgencyID="113">32344324</cbc:ItemClassificationCode>
 <cbc:ItemClassificationCode listAgencyID="2">65434564</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listAgencyID="2">65434565</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listAgencyID="2">65434566</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listAgencyID="2">65434567</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listAgencyID="2">65434568</cbc:ItemClassificationCode>
 ```
 
 **`@listID`**
 
 ```xml
 <cbc:ItemClassificationCode listID="CPV">65434564</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listID="CPV">65434565</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listID="CPV">65434566</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listID="CPV">65434567</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listID="CPV">65434568</cbc:ItemClassificationCode>
 <cbc:ItemClassificationCode listID="UNSPSC">12344321</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listID="UNSPSC">12344322</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listID="UNSPSC">12344325</cbc:ItemClassificationCode>
-<cbc:ItemClassificationCode listID="UNSPSC">32344324</cbc:ItemClassificationCode>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:ItemClassificationCode>8518309590</cbc:ItemClassificationCode>
 ```
 
 #### `cbc:LatitudeDirectionCode`
@@ -892,41 +1048,30 @@ _84 elements_
 
 #### `cbc:LineStatusCode`
 
+```xml
+<cbc:LineStatusCode>Disputed</cbc:LineStatusCode>
+<cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+<cbc:LineStatusCode>Revised</cbc:LineStatusCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
 <cbc:LineStatusCode listAgencyID="UBL">Disputed</cbc:LineStatusCode>
-<cbc:LineStatusCode listAgencyID="UBL">NoStatus</cbc:LineStatusCode>
-<cbc:LineStatusCode listAgencyID="UBL">Revised</cbc:LineStatusCode>
 ```
 
 **`@listName`**
 
 ```xml
 <cbc:LineStatusCode listName="Line Status">Disputed</cbc:LineStatusCode>
-<cbc:LineStatusCode listName="Line Status">NoStatus</cbc:LineStatusCode>
-<cbc:LineStatusCode listName="Line Status">Revised</cbc:LineStatusCode>
 ```
 
 #### `cbc:LocationTypeCode`
 
-**`@listAgencyName`**
-
-```xml
-<cbc:LocationTypeCode listAgencyName="UN">34</cbc:LocationTypeCode>
-```
-
-**`@listName`**
-
-```xml
-<cbc:LocationTypeCode listName="UN/EDIFACT 3227">34</cbc:LocationTypeCode>
-```
-
-**Values (no attributes)**
-
 ```xml
 <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
 <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
+<cbc:LocationTypeCode>34</cbc:LocationTypeCode>
 <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
 <cbc:LocationTypeCode>7</cbc:LocationTypeCode>
 <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
@@ -938,6 +1083,18 @@ _84 elements_
 <cbc:LocationTypeCode>Place of despatch</cbc:LocationTypeCode>
 <cbc:LocationTypeCode>Place of transhipment</cbc:LocationTypeCode>
 <cbc:LocationTypeCode>RAILWAY STATION</cbc:LocationTypeCode>
+```
+
+**`@listAgencyName`**
+
+```xml
+<cbc:LocationTypeCode listAgencyName="UN">34</cbc:LocationTypeCode>
+```
+
+**`@listName`**
+
+```xml
+<cbc:LocationTypeCode listName="UN/EDIFACT 3227">34</cbc:LocationTypeCode>
 ```
 
 #### `cbc:LongitudeDirectionCode`
@@ -981,6 +1138,14 @@ _84 elements_
 
 #### `cbc:PackagingTypeCode`
 
+```xml
+<cbc:PackagingTypeCode>CS</cbc:PackagingTypeCode>
+<cbc:PackagingTypeCode>CT</cbc:PackagingTypeCode>
+<cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+<cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+<cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
@@ -993,15 +1158,6 @@ _84 elements_
 <cbc:PackagingTypeCode listID="UN/ECE rec 21">TB</cbc:PackagingTypeCode>
 ```
 
-**Values (no attributes)**
-
-```xml
-<cbc:PackagingTypeCode>CS</cbc:PackagingTypeCode>
-<cbc:PackagingTypeCode>CT</cbc:PackagingTypeCode>
-<cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-<cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
-```
-
 #### `cbc:PaymentChannelCode`
 
 ```xml
@@ -1010,17 +1166,16 @@ _84 elements_
 
 #### `cbc:PaymentMeansCode`
 
+```xml
+<cbc:PaymentMeansCode>10</cbc:PaymentMeansCode>
+<cbc:PaymentMeansCode>20</cbc:PaymentMeansCode>
+<cbc:PaymentMeansCode>31</cbc:PaymentMeansCode>
+```
+
 **`@listID`**
 
 ```xml
 <cbc:PaymentMeansCode listID="UN/ECE 4461">10</cbc:PaymentMeansCode>
-<cbc:PaymentMeansCode listID="UN/ECE 4461">31</cbc:PaymentMeansCode>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:PaymentMeansCode>20</cbc:PaymentMeansCode>
 ```
 
 #### `cbc:PerformanceMetricTypeCode`
@@ -1086,24 +1241,22 @@ _84 elements_
 
 #### `cbc:RoleCode`
 
+```xml
+<cbc:RoleCode>BN</cbc:RoleCode>
+<cbc:RoleCode>Champer</cbc:RoleCode>
+<cbc:RoleCode>RP</cbc:RoleCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
 <cbc:RoleCode listAgencyID="6">BN</cbc:RoleCode>
-<cbc:RoleCode listAgencyID="6">RP</cbc:RoleCode>
 ```
 
 **`@listID`**
 
 ```xml
 <cbc:RoleCode listID="UN/ECE 3139">BN</cbc:RoleCode>
-<cbc:RoleCode listID="UN/ECE 3139">RP</cbc:RoleCode>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:RoleCode>Champer</cbc:RoleCode>
 ```
 
 #### `cbc:ServiceTypeCode`
@@ -1119,6 +1272,10 @@ _84 elements_
 ```
 
 #### `cbc:SizeTypeCode`
+
+```xml
+<cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+```
 
 **`@listAgencyID`**
 
@@ -1183,6 +1340,10 @@ _84 elements_
 
 #### `cbc:TaxExemptionReasonCode`
 
+```xml
+<cbc:TaxExemptionReasonCode>AAM</cbc:TaxExemptionReasonCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
@@ -1209,6 +1370,15 @@ _84 elements_
 
 #### `cbc:TransportEquipmentTypeCode`
 
+```xml
+<cbc:TransportEquipmentTypeCode>AD</cbc:TransportEquipmentTypeCode>
+<cbc:TransportEquipmentTypeCode>AE</cbc:TransportEquipmentTypeCode>
+<cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+<cbc:TransportEquipmentTypeCode>EFP</cbc:TransportEquipmentTypeCode>
+<cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+<cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
@@ -1221,16 +1391,6 @@ _84 elements_
 <cbc:TransportEquipmentTypeCode listID="UN/ECE 8053">CN</cbc:TransportEquipmentTypeCode>
 ```
 
-**Values (no attributes)**
-
-```xml
-<cbc:TransportEquipmentTypeCode>AD</cbc:TransportEquipmentTypeCode>
-<cbc:TransportEquipmentTypeCode>AE</cbc:TransportEquipmentTypeCode>
-<cbc:TransportEquipmentTypeCode>EFP</cbc:TransportEquipmentTypeCode>
-<cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-<cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
-```
-
 #### `cbc:TransportExecutionStatusCode`
 
 ```xml
@@ -1238,6 +1398,13 @@ _84 elements_
 ```
 
 #### `cbc:TransportHandlingUnitTypeCode`
+
+```xml
+<cbc:TransportHandlingUnitTypeCode>122</cbc:TransportHandlingUnitTypeCode>
+<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+<cbc:TransportHandlingUnitTypeCode>PA</cbc:TransportHandlingUnitTypeCode>
+<cbc:TransportHandlingUnitTypeCode>Palletized cargo</cbc:TransportHandlingUnitTypeCode>
+```
 
 **`@listAgencyName`**
 
@@ -1249,14 +1416,6 @@ _84 elements_
 
 ```xml
 <cbc:TransportHandlingUnitTypeCode listID="TRED 8053">PA</cbc:TransportHandlingUnitTypeCode>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:TransportHandlingUnitTypeCode>122</cbc:TransportHandlingUnitTypeCode>
-<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-<cbc:TransportHandlingUnitTypeCode>Palletized cargo</cbc:TransportHandlingUnitTypeCode>
 ```
 
 #### `cbc:TransportMeansTypeCode`
@@ -1274,30 +1433,29 @@ _84 elements_
 
 #### `cbc:TransportModeCode`
 
+```xml
+<cbc:TransportModeCode>1</cbc:TransportModeCode>
+<cbc:TransportModeCode>2</cbc:TransportModeCode>
+<cbc:TransportModeCode>3</cbc:TransportModeCode>
+<cbc:TransportModeCode>4</cbc:TransportModeCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
 <cbc:TransportModeCode listAgencyID="6">3</cbc:TransportModeCode>
-<cbc:TransportModeCode listAgencyID="6">4</cbc:TransportModeCode>
 ```
 
 **`@listID`**
 
 ```xml
 <cbc:TransportModeCode listID="UN/ECE rec 16">3</cbc:TransportModeCode>
-<cbc:TransportModeCode listID="UN/ECE rec 16">4</cbc:TransportModeCode>
 ```
 
 **`@name`**
 
 ```xml
 <cbc:TransportModeCode name="Sea">1</cbc:TransportModeCode>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:TransportModeCode>2</cbc:TransportModeCode>
 ```
 
 #### `cbc:TransportServiceCode`
@@ -1327,6 +1485,10 @@ _84 elements_
 
 #### `cbc:WeighingMethodCode`
 
+```xml
+<cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+```
+
 **`@listAgencyID`**
 
 ```xml
@@ -1340,6 +1502,10 @@ _84 elements_
 ```
 
 #### `cbc:WeightStatementTypeCode`
+
+```xml
+<cbc:WeightStatementTypeCode>749</cbc:WeightStatementTypeCode>
+```
 
 **`@listAgencyID`**
 
@@ -1699,14 +1865,38 @@ _54 elements_
 
 #### `cbc:CompanyID`
 
+```xml
+<cbc:CompanyID>12356478</cbc:CompanyID>
+<cbc:CompanyID>1323421212</cbc:CompanyID>
+<cbc:CompanyID>16077593</cbc:CompanyID>
+<cbc:CompanyID>175 269 2355</cbc:CompanyID>
+<cbc:CompanyID>18296799</cbc:CompanyID>
+<cbc:CompanyID>43232010</cbc:CompanyID>
+<cbc:CompanyID>45789034</cbc:CompanyID>
+<cbc:CompanyID>5402697509</cbc:CompanyID>
+<cbc:CompanyID>5532331183</cbc:CompanyID>
+<cbc:CompanyID>5532332283</cbc:CompanyID>
+<cbc:CompanyID>5645342123</cbc:CompanyID>
+<cbc:CompanyID>6411982340</cbc:CompanyID>
+<cbc:CompanyID>945030345</cbc:CompanyID>
+<cbc:CompanyID>989987876</cbc:CompanyID>
+<cbc:CompanyID>BE54321</cbc:CompanyID>
+<cbc:CompanyID>BE987654321</cbc:CompanyID>
+<cbc:CompanyID>DE122125278</cbc:CompanyID>
+<cbc:CompanyID>DK12345</cbc:CompanyID>
+<cbc:CompanyID>DK12345678</cbc:CompanyID>
+<cbc:CompanyID>DK123456789</cbc:CompanyID>
+<cbc:CompanyID>DK18296799</cbc:CompanyID>
+<cbc:CompanyID>DK43232010</cbc:CompanyID>
+<cbc:CompanyID>DK59873677</cbc:CompanyID>
+<cbc:CompanyID>DK89343487</cbc:CompanyID>
+<cbc:CompanyID>SE1234567801</cbc:CompanyID>
+```
+
 **`@schemeAgencyID`**
 
 ```xml
 <cbc:CompanyID schemeAgencyID="ZZZ">5402697509</cbc:CompanyID>
-<cbc:CompanyID schemeAgencyID="ZZZ">5645342123</cbc:CompanyID>
-<cbc:CompanyID schemeAgencyID="ZZZ">6411982340</cbc:CompanyID>
-<cbc:CompanyID schemeAgencyID="ZZZ">BE54321</cbc:CompanyID>
-<cbc:CompanyID schemeAgencyID="ZZZ">DK12345</cbc:CompanyID>
 ```
 
 **`@schemeID`**
@@ -1715,35 +1905,11 @@ _54 elements_
 <cbc:CompanyID schemeID="BEVAT">BE54321</cbc:CompanyID>
 <cbc:CompanyID schemeID="CVR">5402697509</cbc:CompanyID>
 <cbc:CompanyID schemeID="DK:CVR">18296799</cbc:CompanyID>
-<cbc:CompanyID schemeID="DK:CVR">DK12345678</cbc:CompanyID>
-<cbc:CompanyID schemeID="DK:CVR">DK18296799</cbc:CompanyID>
-<cbc:CompanyID schemeID="DK:CVR">DK59873677</cbc:CompanyID>
 <cbc:CompanyID schemeID="DK:SE">DK12345678</cbc:CompanyID>
-<cbc:CompanyID schemeID="DK:SE">DK18296799</cbc:CompanyID>
 <cbc:CompanyID schemeID="DKVAT">DK12345</cbc:CompanyID>
 <cbc:CompanyID schemeID="SE:ORGNR">5532331183</cbc:CompanyID>
-<cbc:CompanyID schemeID="SE:ORGNR">5532332283</cbc:CompanyID>
 <cbc:CompanyID schemeID="UK:CH">6411982340</cbc:CompanyID>
 <cbc:CompanyID schemeID="ZZZ">5645342123</cbc:CompanyID>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:CompanyID>12356478</cbc:CompanyID>
-<cbc:CompanyID>1323421212</cbc:CompanyID>
-<cbc:CompanyID>16077593</cbc:CompanyID>
-<cbc:CompanyID>175 269 2355</cbc:CompanyID>
-<cbc:CompanyID>43232010</cbc:CompanyID>
-<cbc:CompanyID>45789034</cbc:CompanyID>
-<cbc:CompanyID>945030345</cbc:CompanyID>
-<cbc:CompanyID>989987876</cbc:CompanyID>
-<cbc:CompanyID>BE987654321</cbc:CompanyID>
-<cbc:CompanyID>DE122125278</cbc:CompanyID>
-<cbc:CompanyID>DK123456789</cbc:CompanyID>
-<cbc:CompanyID>DK43232010</cbc:CompanyID>
-<cbc:CompanyID>DK89343487</cbc:CompanyID>
-<cbc:CompanyID>SE1234567801</cbc:CompanyID>
 ```
 
 #### `cbc:ContractFolderID`
@@ -1800,16 +1966,25 @@ _54 elements_
 
 #### `cbc:EndpointID`
 
+```xml
+<cbc:EndpointID>01841111111111</cbc:EndpointID>
+<cbc:EndpointID>01842222222222</cbc:EndpointID>
+<cbc:EndpointID>1234567890123</cbc:EndpointID>
+<cbc:EndpointID>1234567987654</cbc:EndpointID>
+<cbc:EndpointID>5798000416604</cbc:EndpointID>
+<cbc:EndpointID>7300072311115</cbc:EndpointID>
+<cbc:EndpointID>7302347231111</cbc:EndpointID>
+<cbc:EndpointID>9994567987654</cbc:EndpointID>
+<cbc:EndpointID>DK18296799</cbc:EndpointID>
+<cbc:EndpointID>www.consignee.com/statusnotifications/</cbc:EndpointID>
+<cbc:EndpointID>www.consignee.de/statusnotifications/</cbc:EndpointID>
+<cbc:EndpointID>www.consignor.cn/statusnotifications/</cbc:EndpointID>
+```
+
 **`@schemeAgencyID`**
 
 ```xml
 <cbc:EndpointID schemeAgencyID="9">01842222222222</cbc:EndpointID>
-<cbc:EndpointID schemeAgencyID="9">1234567890123</cbc:EndpointID>
-<cbc:EndpointID schemeAgencyID="9">1234567987654</cbc:EndpointID>
-<cbc:EndpointID schemeAgencyID="9">5798000416604</cbc:EndpointID>
-<cbc:EndpointID schemeAgencyID="9">7300072311115</cbc:EndpointID>
-<cbc:EndpointID schemeAgencyID="9">7302347231111</cbc:EndpointID>
-<cbc:EndpointID schemeAgencyID="9">9994567987654</cbc:EndpointID>
 ```
 
 **`@schemeID`**
@@ -1817,21 +1992,7 @@ _54 elements_
 ```xml
 <cbc:EndpointID schemeID="DK:CVR">DK18296799</cbc:EndpointID>
 <cbc:EndpointID schemeID="FI:OVT">01841111111111</cbc:EndpointID>
-<cbc:EndpointID schemeID="FI:OVT">01842222222222</cbc:EndpointID>
 <cbc:EndpointID schemeID="GLN">1234567890123</cbc:EndpointID>
-<cbc:EndpointID schemeID="GLN">1234567987654</cbc:EndpointID>
-<cbc:EndpointID schemeID="GLN">5798000416604</cbc:EndpointID>
-<cbc:EndpointID schemeID="GLN">7300072311115</cbc:EndpointID>
-<cbc:EndpointID schemeID="GLN">7302347231111</cbc:EndpointID>
-<cbc:EndpointID schemeID="GLN">9994567987654</cbc:EndpointID>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:EndpointID>www.consignee.com/statusnotifications/</cbc:EndpointID>
-<cbc:EndpointID>www.consignee.de/statusnotifications/</cbc:EndpointID>
-<cbc:EndpointID>www.consignor.cn/statusnotifications/</cbc:EndpointID>
 ```
 
 #### `cbc:EndpointURI`
@@ -1858,156 +2019,6 @@ _54 elements_
 
 #### `cbc:ID`
 
-**`@schemeAgencyID`**
-
-```xml
-<cbc:ID schemeAgencyID="306">XXX</cbc:ID>
-<cbc:ID schemeAgencyID="320">63</cbc:ID>
-<cbc:ID schemeAgencyID="5">TRHU1652173</cbc:ID>
-<cbc:ID schemeAgencyID="6">123452340123</cbc:ID>
-<cbc:ID schemeAgencyID="6">1234567890123</cbc:ID>
-<cbc:ID schemeAgencyID="6">AA</cbc:ID>
-<cbc:ID schemeAgencyID="6">E</cbc:ID>
-<cbc:ID schemeAgencyID="6">FOT</cbc:ID>
-<cbc:ID schemeAgencyID="6">GBBRS</cbc:ID>
-<cbc:ID schemeAgencyID="6">GBLHR</cbc:ID>
-<cbc:ID schemeAgencyID="6">S</cbc:ID>
-<cbc:ID schemeAgencyID="6">USBOS</cbc:ID>
-<cbc:ID schemeAgencyID="6">VAT</cbc:ID>
-<cbc:ID schemeAgencyID="9">098740918237</cbc:ID>
-<cbc:ID schemeAgencyID="9">0987654321123</cbc:ID>
-<cbc:ID schemeAgencyID="9">0987678321123</cbc:ID>
-<cbc:ID schemeAgencyID="9">1231412341324</cbc:ID>
-<cbc:ID schemeAgencyID="9">1234567890123</cbc:ID>
-<cbc:ID schemeAgencyID="9">1234567890124</cbc:ID>
-<cbc:ID schemeAgencyID="9">1234567890125</cbc:ID>
-<cbc:ID schemeAgencyID="9">1234567890126</cbc:ID>
-<cbc:ID schemeAgencyID="9">1234567890127</cbc:ID>
-<cbc:ID schemeAgencyID="9">1234567890128</cbc:ID>
-<cbc:ID schemeAgencyID="9">1238764941386</cbc:ID>
-<cbc:ID schemeAgencyID="9">5398000392577</cbc:ID>
-<cbc:ID schemeAgencyID="9">5790000127777</cbc:ID>
-<cbc:ID schemeAgencyID="9">5798000416604</cbc:ID>
-<cbc:ID schemeAgencyID="9">6754238987648</cbc:ID>
-<cbc:ID schemeAgencyID="9">67654328394567</cbc:ID>
-<cbc:ID schemeAgencyID="9">7300070011115</cbc:ID>
-<cbc:ID schemeAgencyID="ZZZ">EmployeeXXX</cbc:ID>
-```
-
-**`@schemeAgencyName`**
-
-```xml
-<cbc:ID schemeAgencyName="GS1">12345698</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">123465</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">1236541</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4058673821325</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4058673827000</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4058673827100</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4058673827112</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4058673827123</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4058673827641</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4058675698641</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">43125678</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">4568763527610</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">7365566156191234567</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">89767764</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">987456123</cbc:ID>
-<cbc:ID schemeAgencyName="GS1">987654321</cbc:ID>
-<cbc:ID schemeAgencyName="INCOTERMS">EXW</cbc:ID>
-<cbc:ID schemeAgencyName="SMDG">XXX</cbc:ID>
-<cbc:ID schemeAgencyName="UN">CNSHA</cbc:ID>
-<cbc:ID schemeAgencyName="UN">DEBREV</cbc:ID>
-<cbc:ID schemeAgencyName="UN">DEHAM</cbc:ID>
-<cbc:ID schemeAgencyName="UN">ITGOA</cbc:ID>
-<cbc:ID schemeAgencyName="UN">MAPTM</cbc:ID>
-<cbc:ID schemeAgencyName="UN">NOOSL</cbc:ID>
-<cbc:ID schemeAgencyName="WCO">2005US12345678998765432112345678</cbc:ID>
-```
-
-**`@schemeID`**
-
-```xml
-<cbc:ID schemeID="AuthorisationNumber">M165</cbc:ID>
-<cbc:ID schemeID="DK:CVR">DK12345678</cbc:ID>
-<cbc:ID schemeID="DK:CVR">DK18296799</cbc:ID>
-<cbc:ID schemeID="GB:VAT">GB999999973</cbc:ID>
-<cbc:ID schemeID="GLN">098740918237</cbc:ID>
-<cbc:ID schemeID="GLN">0987654321123</cbc:ID>
-<cbc:ID schemeID="GLN">0987678321123</cbc:ID>
-<cbc:ID schemeID="GLN">1231412341324</cbc:ID>
-<cbc:ID schemeID="GLN">1234567890123</cbc:ID>
-<cbc:ID schemeID="GLN">1238764941386</cbc:ID>
-<cbc:ID schemeID="GLN">5398000392577</cbc:ID>
-<cbc:ID schemeID="GLN">5790000127777</cbc:ID>
-<cbc:ID schemeID="GLN">5798000416604</cbc:ID>
-<cbc:ID schemeID="GLN">6754238987648</cbc:ID>
-<cbc:ID schemeID="GLN">67654328394567</cbc:ID>
-<cbc:ID schemeID="GLN">7300070011115</cbc:ID>
-<cbc:ID schemeID="GTIN">123452340123</cbc:ID>
-<cbc:ID schemeID="GTIN">1234567890123</cbc:ID>
-<cbc:ID schemeID="GTIN">1234567890124</cbc:ID>
-<cbc:ID schemeID="GTIN">1234567890125</cbc:ID>
-<cbc:ID schemeID="GTIN">1234567890126</cbc:ID>
-<cbc:ID schemeID="GTIN">1234567890127</cbc:ID>
-<cbc:ID schemeID="GTIN">1234567890128</cbc:ID>
-<cbc:ID schemeID="IMCOTERM">FOT</cbc:ID>
-<cbc:ID schemeID="ISO 6346">TRHU1652173</cbc:ID>
-<cbc:ID schemeID="IT:VAT">IT01234567890</cbc:ID>
-<cbc:ID schemeID="LINES">XXX</cbc:ID>
-<cbc:ID schemeID="Passport">325334535</cbc:ID>
-<cbc:ID schemeID="Skat.dk">DK10035643</cbc:ID>
-<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
-<cbc:ID schemeID="UN/ECE 5305">AA</cbc:ID>
-<cbc:ID schemeID="UN/ECE 5305">E</cbc:ID>
-<cbc:ID schemeID="UN/ECE 5305">O</cbc:ID>
-<cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
-<cbc:ID schemeID="UN/LOCODE">GBBRS</cbc:ID>
-<cbc:ID schemeID="UN/LOCODE">GBLHR</cbc:ID>
-<cbc:ID schemeID="UN/LOCODE">USBOS</cbc:ID>
-<cbc:ID schemeID="ZZZ">123456789</cbc:ID>
-<cbc:ID schemeID="ZZZ">345KS5324</cbc:ID>
-<cbc:ID schemeID="ZZZ">EmployeeXXX</cbc:ID>
-<cbc:ID schemeID="ZZZ">Supp123</cbc:ID>
-<cbc:ID schemeID="locode">DK003102</cbc:ID>
-<cbc:ID schemeID="urn:oioubl:id:taxschemeid-1.1">63</cbc:ID>
-```
-
-**`@schemeName`**
-
-```xml
-<cbc:ID schemeName="GINC">7365566156191234567</cbc:ID>
-<cbc:ID schemeName="GLN">123465</cbc:ID>
-<cbc:ID schemeName="GLN">1236541</cbc:ID>
-<cbc:ID schemeName="GLN">4058673821325</cbc:ID>
-<cbc:ID schemeName="GLN">4058673827000</cbc:ID>
-<cbc:ID schemeName="GLN">4058673827100</cbc:ID>
-<cbc:ID schemeName="GLN">4058673827112</cbc:ID>
-<cbc:ID schemeName="GLN">4058673827123</cbc:ID>
-<cbc:ID schemeName="GLN">4058673827641</cbc:ID>
-<cbc:ID schemeName="GLN">4058675698641</cbc:ID>
-<cbc:ID schemeName="GLN">43125678</cbc:ID>
-<cbc:ID schemeName="GLN">4568763527610</cbc:ID>
-<cbc:ID schemeName="GLN">89767764</cbc:ID>
-<cbc:ID schemeName="GLN">987456123</cbc:ID>
-<cbc:ID schemeName="GLN">987654321</cbc:ID>
-<cbc:ID schemeName="GRAI">12345698</cbc:ID>
-<cbc:ID schemeName="INCOTERMS">EXW</cbc:ID>
-<cbc:ID schemeName="LOCODE">ITGOA</cbc:ID>
-<cbc:ID schemeName="LOCODE">MAPTM</cbc:ID>
-<cbc:ID schemeName="MovementReferenceNumber">TPS_1</cbc:ID>
-<cbc:ID schemeName="SMDG master liner code list">XXX</cbc:ID>
-<cbc:ID schemeName="UN/LOCODE">CNSHA</cbc:ID>
-<cbc:ID schemeName="UN/LOCODE">DEBREV</cbc:ID>
-<cbc:ID schemeName="UN/LOCODE">DEHAM</cbc:ID>
-<cbc:ID schemeName="UN/LOCODE">NOOSL</cbc:ID>
-<cbc:ID schemeName="UNLOCODE">ITGOA</cbc:ID>
-<cbc:ID schemeName="Unique Consignment Reference">2005US12345678998765432112345678</cbc:ID>
-<cbc:ID schemeName="bic">BFCU4040001</cbc:ID>
-<cbc:ID schemeName="bic">BFCU4040002</cbc:ID>
-```
-
-**Values (no attributes)**
-
 ```xml
 <cbc:ID>000010</cbc:ID>
 <cbc:ID>0004424005</cbc:ID>
@@ -2024,6 +2035,9 @@ _54 elements_
 <cbc:ID>0245442-8</cbc:ID>
 <cbc:ID>06110123456784</cbc:ID>
 <cbc:ID>0665/2003</cbc:ID>
+<cbc:ID>098740918237</cbc:ID>
+<cbc:ID>0987654321123</cbc:ID>
+<cbc:ID>0987678321123</cbc:ID>
 <cbc:ID>1</cbc:ID>
 <cbc:ID>10</cbc:ID>
 <cbc:ID>10-26-58</cbc:ID>
@@ -2036,11 +2050,24 @@ _54 elements_
 <cbc:ID>11</cbc:ID>
 <cbc:ID>12</cbc:ID>
 <cbc:ID>123</cbc:ID>
+<cbc:ID>1231412341324</cbc:ID>
 <cbc:ID>1234</cbc:ID>
+<cbc:ID>123452340123</cbc:ID>
 <cbc:ID>123456</cbc:ID>
 <cbc:ID>1234567-8</cbc:ID>
 <cbc:ID>12345678</cbc:ID>
+<cbc:ID>123456789</cbc:ID>
 <cbc:ID>1234567890</cbc:ID>
+<cbc:ID>1234567890123</cbc:ID>
+<cbc:ID>1234567890124</cbc:ID>
+<cbc:ID>1234567890125</cbc:ID>
+<cbc:ID>1234567890126</cbc:ID>
+<cbc:ID>1234567890127</cbc:ID>
+<cbc:ID>1234567890128</cbc:ID>
+<cbc:ID>12345698</cbc:ID>
+<cbc:ID>123465</cbc:ID>
+<cbc:ID>1236541</cbc:ID>
+<cbc:ID>1238764941386</cbc:ID>
 <cbc:ID>13</cbc:ID>
 <cbc:ID>13234212</cbc:ID>
 <cbc:ID>133</cbc:ID>
@@ -2058,6 +2085,7 @@ _54 elements_
 <cbc:ID>2</cbc:ID>
 <cbc:ID>20</cbc:ID>
 <cbc:ID>2005-9A</cbc:ID>
+<cbc:ID>2005US12345678998765432112345678</cbc:ID>
 <cbc:ID>2076084807</cbc:ID>
 <cbc:ID>2203148000007</cbc:ID>
 <cbc:ID>224087496582335</cbc:ID>
@@ -2073,21 +2101,36 @@ _54 elements_
 <cbc:ID>3</cbc:ID>
 <cbc:ID>321987</cbc:ID>
 <cbc:ID>32453</cbc:ID>
+<cbc:ID>325334535</cbc:ID>
 <cbc:ID>34</cbc:ID>
 <cbc:ID>34322</cbc:ID>
 <cbc:ID>34563456</cbc:ID>
 <cbc:ID>34564645</cbc:ID>
+<cbc:ID>345KS5324</cbc:ID>
 <cbc:ID>37</cbc:ID>
 <cbc:ID>381944545</cbc:ID>
 <cbc:ID>4</cbc:ID>
+<cbc:ID>4058673821325</cbc:ID>
+<cbc:ID>4058673827000</cbc:ID>
+<cbc:ID>4058673827100</cbc:ID>
+<cbc:ID>4058673827112</cbc:ID>
+<cbc:ID>4058673827123</cbc:ID>
+<cbc:ID>4058673827641</cbc:ID>
+<cbc:ID>4058675698641</cbc:ID>
+<cbc:ID>43125678</cbc:ID>
+<cbc:ID>4568763527610</cbc:ID>
 <cbc:ID>5</cbc:ID>
 <cbc:ID>510</cbc:ID>
 <cbc:ID>51022</cbc:ID>
 <cbc:ID>5234533222</cbc:ID>
 <cbc:ID>52345423423</cbc:ID>
+<cbc:ID>5398000392577</cbc:ID>
 <cbc:ID>565899</cbc:ID>
 <cbc:ID>567-3456</cbc:ID>
+<cbc:ID>5790000127777</cbc:ID>
+<cbc:ID>5798000416604</cbc:ID>
 <cbc:ID>6</cbc:ID>
+<cbc:ID>63</cbc:ID>
 <cbc:ID>634563324</cbc:ID>
 <cbc:ID>636257218904553192</cbc:ID>
 <cbc:ID>645634567</cbc:ID>
@@ -2096,21 +2139,29 @@ _54 elements_
 <cbc:ID>6578489</cbc:ID>
 <cbc:ID>658398</cbc:ID>
 <cbc:ID>66890-9-09</cbc:ID>
+<cbc:ID>6754238987648</cbc:ID>
+<cbc:ID>67654328394567</cbc:ID>
 <cbc:ID>6903148000007</cbc:ID>
 <cbc:ID>6916</cbc:ID>
 <cbc:ID>7</cbc:ID>
+<cbc:ID>7300070011115</cbc:ID>
+<cbc:ID>7365566156191234567</cbc:ID>
 <cbc:ID>7654321</cbc:ID>
 <cbc:ID>7778</cbc:ID>
 <cbc:ID>8</cbc:ID>
 <cbc:ID>8447</cbc:ID>
 <cbc:ID>8596</cbc:ID>
 <cbc:ID>8601.12.11189</cbc:ID>
+<cbc:ID>89767764</cbc:ID>
 <cbc:ID>9</cbc:ID>
+<cbc:ID>987456123</cbc:ID>
+<cbc:ID>987654321</cbc:ID>
 <cbc:ID>A</cbc:ID>
 <cbc:ID>A00095678</cbc:ID>
 <cbc:ID>A12345-2016</cbc:ID>
 <cbc:ID>A2344</cbc:ID>
 <cbc:ID>A54321-2016</cbc:ID>
+<cbc:ID>AA</cbc:ID>
 <cbc:ID>AA109</cbc:ID>
 <cbc:ID>AA128</cbc:ID>
 <cbc:ID>AB011</cbc:ID>
@@ -2120,6 +2171,8 @@ _54 elements_
 <cbc:ID>Aarhus</cbc:ID>
 <cbc:ID>BA058</cbc:ID>
 <cbc:ID>BC1-2016</cbc:ID>
+<cbc:ID>BFCU4040001</cbc:ID>
+<cbc:ID>BFCU4040002</cbc:ID>
 <cbc:ID>Balboa Port</cbc:ID>
 <cbc:ID>C1</cbc:ID>
 <cbc:ID>C12345-2016</cbc:ID>
@@ -2128,6 +2181,7 @@ _54 elements_
 <cbc:ID>CH002621</cbc:ID>
 <cbc:ID>CIP</cbc:ID>
 <cbc:ID>CN758494</cbc:ID>
+<cbc:ID>CNSHA</cbc:ID>
 <cbc:ID>CONS-0001</cbc:ID>
 <cbc:ID>CONS-001</cbc:ID>
 <cbc:ID>CON_1</cbc:ID>
@@ -2143,17 +2197,24 @@ _54 elements_
 <cbc:ID>DA008</cbc:ID>
 <cbc:ID>DD88</cbc:ID>
 <cbc:ID>DE000396</cbc:ID>
+<cbc:ID>DEBREV</cbc:ID>
+<cbc:ID>DEHAM</cbc:ID>
 <cbc:ID>DELL1052665</cbc:ID>
 <cbc:ID>DELL2363463</cbc:ID>
 <cbc:ID>DELL2367452</cbc:ID>
 <cbc:ID>DELL8436783</cbc:ID>
 <cbc:ID>DH019</cbc:ID>
+<cbc:ID>DK003102</cbc:ID>
+<cbc:ID>DK10035643</cbc:ID>
 <cbc:ID>DK1212341234123412</cbc:ID>
+<cbc:ID>DK12345678</cbc:ID>
+<cbc:ID>DK18296799</cbc:ID>
 <cbc:ID>DKDKABCD</cbc:ID>
 <cbc:ID>DN0001</cbc:ID>
 <cbc:ID>DP</cbc:ID>
 <cbc:ID>Doc1</cbc:ID>
 <cbc:ID>Doc2</cbc:ID>
+<cbc:ID>E</cbc:ID>
 <cbc:ID>EC758494</cbc:ID>
 <cbc:ID>EN758494</cbc:ID>
 <cbc:ID>EXT_1</cbc:ID>
@@ -2161,6 +2222,8 @@ _54 elements_
 <cbc:ID>EXT_TE_2</cbc:ID>
 <cbc:ID>EXT_THU_1</cbc:ID>
 <cbc:ID>EXT_THU_2</cbc:ID>
+<cbc:ID>EXW</cbc:ID>
+<cbc:ID>EmployeeXXX</cbc:ID>
 <cbc:ID>ExampleID</cbc:ID>
 <cbc:ID>FCA</cbc:ID>
 <cbc:ID>FI001800</cbc:ID>
@@ -2174,10 +2237,14 @@ _54 elements_
 <cbc:ID>FLGS339241</cbc:ID>
 <cbc:ID>FOB</cbc:ID>
 <cbc:ID>FOB Destination</cbc:ID>
+<cbc:ID>FOT</cbc:ID>
 <cbc:ID>FRL1</cbc:ID>
 <cbc:ID>Freight Bookings</cbc:ID>
 <cbc:ID>G867B</cbc:ID>
+<cbc:ID>GB999999973</cbc:ID>
+<cbc:ID>GBBRS</cbc:ID>
 <cbc:ID>GBFXT</cbc:ID>
+<cbc:ID>GBLHR</cbc:ID>
 <cbc:ID>GHJ76849</cbc:ID>
 <cbc:ID>GID_1</cbc:ID>
 <cbc:ID>GID_2</cbc:ID>
@@ -2194,6 +2261,8 @@ _54 elements_
 <cbc:ID>ID0113</cbc:ID>
 <cbc:ID>ID168</cbc:ID>
 <cbc:ID>INV000123</cbc:ID>
+<cbc:ID>IT01234567890</cbc:ID>
+<cbc:ID>ITGOA</cbc:ID>
 <cbc:ID>Invoice</cbc:ID>
 <cbc:ID>JB007</cbc:ID>
 <cbc:ID>JB008</cbc:ID>
@@ -2207,17 +2276,21 @@ _54 elements_
 <cbc:ID>KHN23-44048</cbc:ID>
 <cbc:ID>L1</cbc:ID>
 <cbc:ID>Lot2</cbc:ID>
+<cbc:ID>M165</cbc:ID>
 <cbc:ID>MAFO</cbc:ID>
+<cbc:ID>MAPTM</cbc:ID>
 <cbc:ID>MC002</cbc:ID>
 <cbc:ID>ML</cbc:ID>
 <cbc:ID>MyParty</cbc:ID>
 <cbc:ID>NEC_TE_1</cbc:ID>
 <cbc:ID>NEC_TE_2</cbc:ID>
+<cbc:ID>NOOSL</cbc:ID>
 <cbc:ID>NTT_1</cbc:ID>
 <cbc:ID>NTT_TE_1</cbc:ID>
 <cbc:ID>NTT_TE_2</cbc:ID>
 <cbc:ID>NTT_THU_1</cbc:ID>
 <cbc:ID>NTT_THU_2</cbc:ID>
+<cbc:ID>O</cbc:ID>
 <cbc:ID>OF758494</cbc:ID>
 <cbc:ID>OFR_758494</cbc:ID>
 <cbc:ID>Other</cbc:ID>
@@ -2233,6 +2306,7 @@ _54 elements_
 <cbc:ID>QuoteID123</cbc:ID>
 <cbc:ID>RE758494</cbc:ID>
 <cbc:ID>RjectedOrderID123</cbc:ID>
+<cbc:ID>S</cbc:ID>
 <cbc:ID>S1</cbc:ID>
 <cbc:ID>SA2009</cbc:ID>
 <cbc:ID>SCADL_SHIPMENT001</cbc:ID>
@@ -2243,6 +2317,7 @@ _54 elements_
 <cbc:ID>STD14037</cbc:ID>
 <cbc:ID>STO</cbc:ID>
 <cbc:ID>SellerPartyID123</cbc:ID>
+<cbc:ID>Supp123</cbc:ID>
 <cbc:ID>TC101</cbc:ID>
 <cbc:ID>TEPID_1</cbc:ID>
 <cbc:ID>TEPR_1</cbc:ID>
@@ -2262,6 +2337,8 @@ _54 elements_
 <cbc:ID>TOS_1</cbc:ID>
 <cbc:ID>TPSID_1</cbc:ID>
 <cbc:ID>TPSR_1</cbc:ID>
+<cbc:ID>TPS_1</cbc:ID>
+<cbc:ID>TRHU1652173</cbc:ID>
 <cbc:ID>TS893</cbc:ID>
 <cbc:ID>TSD1</cbc:ID>
 <cbc:ID>TSD_REQ_1</cbc:ID>
@@ -2270,9 +2347,12 @@ _54 elements_
 <cbc:ID>TS_1</cbc:ID>
 <cbc:ID>TT319</cbc:ID>
 <cbc:ID>UK VAT</cbc:ID>
+<cbc:ID>USBOS</cbc:ID>
 <cbc:ID>USRM3656679</cbc:ID>
+<cbc:ID>VAT</cbc:ID>
 <cbc:ID>W123</cbc:ID>
 <cbc:ID>XD534533</cbc:ID>
+<cbc:ID>XXX</cbc:ID>
 <cbc:ID>XYZ987</cbc:ID>
 <cbc:ID>YX233</cbc:ID>
 <cbc:ID>YX401</cbc:ID>
@@ -2290,6 +2370,65 @@ _54 elements_
 <cbc:ID>urn:oasis:names:specification:ubl:signatures</cbc:ID>
 <cbc:ID>urn:oasis:names:specification:ubl:signatures:1</cbc:ID>
 <cbc:ID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ID>
+```
+
+**`@schemeAgencyID`**
+
+```xml
+<cbc:ID schemeAgencyID="306">XXX</cbc:ID>
+<cbc:ID schemeAgencyID="320">63</cbc:ID>
+<cbc:ID schemeAgencyID="5">TRHU1652173</cbc:ID>
+<cbc:ID schemeAgencyID="6">123452340123</cbc:ID>
+<cbc:ID schemeAgencyID="9">098740918237</cbc:ID>
+<cbc:ID schemeAgencyID="ZZZ">EmployeeXXX</cbc:ID>
+```
+
+**`@schemeAgencyName`**
+
+```xml
+<cbc:ID schemeAgencyName="GS1">12345698</cbc:ID>
+<cbc:ID schemeAgencyName="INCOTERMS">EXW</cbc:ID>
+<cbc:ID schemeAgencyName="SMDG">XXX</cbc:ID>
+<cbc:ID schemeAgencyName="UN">CNSHA</cbc:ID>
+<cbc:ID schemeAgencyName="WCO">2005US12345678998765432112345678</cbc:ID>
+```
+
+**`@schemeID`**
+
+```xml
+<cbc:ID schemeID="AuthorisationNumber">M165</cbc:ID>
+<cbc:ID schemeID="DK:CVR">DK12345678</cbc:ID>
+<cbc:ID schemeID="GB:VAT">GB999999973</cbc:ID>
+<cbc:ID schemeID="GLN">098740918237</cbc:ID>
+<cbc:ID schemeID="GTIN">123452340123</cbc:ID>
+<cbc:ID schemeID="IMCOTERM">FOT</cbc:ID>
+<cbc:ID schemeID="ISO 6346">TRHU1652173</cbc:ID>
+<cbc:ID schemeID="IT:VAT">IT01234567890</cbc:ID>
+<cbc:ID schemeID="LINES">XXX</cbc:ID>
+<cbc:ID schemeID="Passport">325334535</cbc:ID>
+<cbc:ID schemeID="Skat.dk">DK10035643</cbc:ID>
+<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+<cbc:ID schemeID="UN/ECE 5305">AA</cbc:ID>
+<cbc:ID schemeID="UN/LOCODE">GBBRS</cbc:ID>
+<cbc:ID schemeID="ZZZ">123456789</cbc:ID>
+<cbc:ID schemeID="locode">DK003102</cbc:ID>
+<cbc:ID schemeID="urn:oioubl:id:taxschemeid-1.1">63</cbc:ID>
+```
+
+**`@schemeName`**
+
+```xml
+<cbc:ID schemeName="GINC">7365566156191234567</cbc:ID>
+<cbc:ID schemeName="GLN">123465</cbc:ID>
+<cbc:ID schemeName="GRAI">12345698</cbc:ID>
+<cbc:ID schemeName="INCOTERMS">EXW</cbc:ID>
+<cbc:ID schemeName="LOCODE">ITGOA</cbc:ID>
+<cbc:ID schemeName="MovementReferenceNumber">TPS_1</cbc:ID>
+<cbc:ID schemeName="SMDG master liner code list">XXX</cbc:ID>
+<cbc:ID schemeName="UN/LOCODE">CNSHA</cbc:ID>
+<cbc:ID schemeName="UNLOCODE">ITGOA</cbc:ID>
+<cbc:ID schemeName="Unique Consignment Reference">2005US12345678998765432112345678</cbc:ID>
+<cbc:ID schemeName="bic">BFCU4040001</cbc:ID>
 ```
 
 #### `cbc:InformationURI`
@@ -2356,6 +2495,10 @@ _54 elements_
 
 #### `cbc:ParticipantID`
 
+```xml
+<cbc:ParticipantID>1234567987654</cbc:ParticipantID>
+```
+
 **`@schemeAgencyID`**
 
 ```xml
@@ -2395,29 +2538,12 @@ _54 elements_
 
 #### `cbc:ProfileID`
 
-**`@schemeAgencyID`**
-
-```xml
-<cbc:ProfileID schemeAgencyID="320">Procurement-QuoSim-1.0</cbc:ProfileID>
-<cbc:ProfileID schemeAgencyID="BII">urn:www.cenbii.eu:profile:BII01:ver1.0</cbc:ProfileID>
-<cbc:ProfileID schemeAgencyID="BII">urn:www.cenbii.eu:profile:BIIXYZ:ver1.0</cbc:ProfileID>
-```
-
-**`@schemeID`**
-
-```xml
-<cbc:ProfileID schemeID="Profile">urn:www.cenbii.eu:profile:BII01:ver1.0</cbc:ProfileID>
-<cbc:ProfileID schemeID="Profile">urn:www.cenbii.eu:profile:BIIXYZ:ver1.0</cbc:ProfileID>
-<cbc:ProfileID schemeID="urn:oioubl:id:profileid-1.2">Procurement-QuoSim-1.0</cbc:ProfileID>
-```
-
-**Values (no attributes)**
-
 ```xml
 <cbc:ProfileID>BII</cbc:ProfileID>
 <cbc:ProfileID>ENS</cbc:ProfileID>
 <cbc:ProfileID>ExampleProfile</cbc:ProfileID>
 <cbc:ProfileID>FWF</cbc:ProfileID>
+<cbc:ProfileID>Procurement-QuoSim-1.0</cbc:ProfileID>
 <cbc:ProfileID>ShopReceipt-0.9</cbc:ProfileID>
 <cbc:ProfileID>TOS_SUBSET</cbc:ProfileID>
 <cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-exception-notification-draft</cbc:ProfileID>
@@ -2439,8 +2565,24 @@ _54 elements_
 <cbc:ProfileID>eFreight Profile</cbc:ProfileID>
 <cbc:ProfileID>eFreightProfile</cbc:ProfileID>
 <cbc:ProfileID>urn:X-demo:CoreElement</cbc:ProfileID>
+<cbc:ProfileID>urn:www.cenbii.eu:profile:BII01:ver1.0</cbc:ProfileID>
+<cbc:ProfileID>urn:www.cenbii.eu:profile:BIIXYZ:ver1.0</cbc:ProfileID>
 <cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
 <cbc:ProfileID>urn:www.cenbii.eu:profile:bii46:ver2.0</cbc:ProfileID>
+```
+
+**`@schemeAgencyID`**
+
+```xml
+<cbc:ProfileID schemeAgencyID="320">Procurement-QuoSim-1.0</cbc:ProfileID>
+<cbc:ProfileID schemeAgencyID="BII">urn:www.cenbii.eu:profile:BII01:ver1.0</cbc:ProfileID>
+```
+
+**`@schemeID`**
+
+```xml
+<cbc:ProfileID schemeID="Profile">urn:www.cenbii.eu:profile:BII01:ver1.0</cbc:ProfileID>
+<cbc:ProfileID schemeID="urn:oioubl:id:profileid-1.2">Procurement-QuoSim-1.0</cbc:ProfileID>
 ```
 
 #### `cbc:ProtocolID`
@@ -2848,6 +2990,10 @@ _23 elements_
 
 #### `cbc:ComparedValueMeasure`
 
+```xml
+<cbc:ComparedValueMeasure>2</cbc:ComparedValueMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -2855,6 +3001,11 @@ _23 elements_
 ```
 
 #### `cbc:DurationMeasure`
+
+```xml
+<cbc:DurationMeasure>30</cbc:DurationMeasure>
+<cbc:DurationMeasure>90</cbc:DurationMeasure>
+```
 
 **`@unitCode`**
 
@@ -2865,6 +3016,10 @@ _23 elements_
 
 #### `cbc:GrossMassMeasure`
 
+```xml
+<cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -2873,60 +3028,76 @@ _23 elements_
 
 #### `cbc:GrossVolumeMeasure`
 
+```xml
+<cbc:GrossVolumeMeasure>0.336</cbc:GrossVolumeMeasure>
+<cbc:GrossVolumeMeasure>1.536</cbc:GrossVolumeMeasure>
+<cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+<cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+<cbc:GrossVolumeMeasure>78</cbc:GrossVolumeMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:GrossVolumeMeasure unitCode="MTQ">0.336</cbc:GrossVolumeMeasure>
-<cbc:GrossVolumeMeasure unitCode="MTQ">1.536</cbc:GrossVolumeMeasure>
-<cbc:GrossVolumeMeasure unitCode="MTQ">2</cbc:GrossVolumeMeasure>
-<cbc:GrossVolumeMeasure unitCode="MTQ">39</cbc:GrossVolumeMeasure>
-<cbc:GrossVolumeMeasure unitCode="MTQ">78</cbc:GrossVolumeMeasure>
 ```
 
 #### `cbc:GrossWeightMeasure`
+
+```xml
+<cbc:GrossWeightMeasure>1.5</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>1000.0</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>12</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>230.80</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>400</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>50000</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>600</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>774.14400</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>88.00</cbc:GrossWeightMeasure>
+```
 
 **`@unitCode`**
 
 ```xml
 <cbc:GrossWeightMeasure unitCode="KG">774.14400</cbc:GrossWeightMeasure>
 <cbc:GrossWeightMeasure unitCode="KGM">1.5</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">1000.0</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">12</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">130</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">230.80</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">25000</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">30</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">400</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">50000</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">600</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure unitCode="KGM">88.00</cbc:GrossWeightMeasure>
 ```
 
 #### `cbc:LatitudeDegreesMeasure`
+
+```xml
+<cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
+<cbc:LatitudeDegreesMeasure>53.4</cbc:LatitudeDegreesMeasure>
+<cbc:LatitudeDegreesMeasure>58</cbc:LatitudeDegreesMeasure>
+```
 
 **`@unitCode`**
 
 ```xml
 <cbc:LatitudeDegreesMeasure unitCode="DD">53.33</cbc:LatitudeDegreesMeasure>
-<cbc:LatitudeDegreesMeasure unitCode="DD">53.4</cbc:LatitudeDegreesMeasure>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:LatitudeDegreesMeasure>58</cbc:LatitudeDegreesMeasure>
 ```
 
 #### `cbc:LatitudeMinutesMeasure`
+
+```xml
+<cbc:LatitudeMinutesMeasure>33</cbc:LatitudeMinutesMeasure>
+<cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
+```
 
 **`@unitCode`**
 
 ```xml
 <cbc:LatitudeMinutesMeasure unitCode="DD">33</cbc:LatitudeMinutesMeasure>
-<cbc:LatitudeMinutesMeasure unitCode="DD">49</cbc:LatitudeMinutesMeasure>
 ```
 
 #### `cbc:LeadTimeMeasure`
+
+```xml
+<cbc:LeadTimeMeasure>3</cbc:LeadTimeMeasure>
+```
 
 **`@unitCode`**
 
@@ -2936,38 +3107,49 @@ _23 elements_
 
 #### `cbc:LoadingLengthMeasure`
 
+```xml
+<cbc:LoadingLengthMeasure>0</cbc:LoadingLengthMeasure>
+<cbc:LoadingLengthMeasure>12</cbc:LoadingLengthMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:LoadingLengthMeasure unitCode="MTR">0</cbc:LoadingLengthMeasure>
-<cbc:LoadingLengthMeasure unitCode="MTR">12</cbc:LoadingLengthMeasure>
 ```
 
 #### `cbc:LongitudeDegreesMeasure`
+
+```xml
+<cbc:LongitudeDegreesMeasure>10</cbc:LongitudeDegreesMeasure>
+<cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
+<cbc:LongitudeDegreesMeasure>8.48</cbc:LongitudeDegreesMeasure>
+```
 
 **`@unitCode`**
 
 ```xml
 <cbc:LongitudeDegreesMeasure unitCode="DD">8.33</cbc:LongitudeDegreesMeasure>
-<cbc:LongitudeDegreesMeasure unitCode="DD">8.48</cbc:LongitudeDegreesMeasure>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:LongitudeDegreesMeasure>10</cbc:LongitudeDegreesMeasure>
 ```
 
 #### `cbc:LongitudeMinutesMeasure`
+
+```xml
+<cbc:LongitudeMinutesMeasure>27</cbc:LongitudeMinutesMeasure>
+<cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
+```
 
 **`@unitCode`**
 
 ```xml
 <cbc:LongitudeMinutesMeasure unitCode="DD">27</cbc:LongitudeMinutesMeasure>
-<cbc:LongitudeMinutesMeasure unitCode="DD">49</cbc:LongitudeMinutesMeasure>
 ```
 
 #### `cbc:MaximumDataLossDurationMeasure`
+
+```xml
+<cbc:MaximumDataLossDurationMeasure>24</cbc:MaximumDataLossDurationMeasure>
+```
 
 **`@unitCode`**
 
@@ -2977,6 +3159,10 @@ _23 elements_
 
 #### `cbc:MaximumIncidentNotificationDurationMeasure`
 
+```xml
+<cbc:MaximumIncidentNotificationDurationMeasure>4</cbc:MaximumIncidentNotificationDurationMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -2984,6 +3170,10 @@ _23 elements_
 ```
 
 #### `cbc:MeanTimeToRecoverDurationMeasure`
+
+```xml
+<cbc:MeanTimeToRecoverDurationMeasure>3</cbc:MeanTimeToRecoverDurationMeasure>
+```
 
 **`@unitCode`**
 
@@ -2993,29 +3183,42 @@ _23 elements_
 
 #### `cbc:Measure`
 
+```xml
+<cbc:Measure>0.336</cbc:Measure>
+<cbc:Measure>12.288</cbc:Measure>
+<cbc:Measure>120</cbc:Measure>
+<cbc:Measure>160</cbc:Measure>
+<cbc:Measure>2.44</cbc:Measure>
+<cbc:Measure>2.6</cbc:Measure>
+<cbc:Measure>3.00</cbc:Measure>
+<cbc:Measure>6.1</cbc:Measure>
+<cbc:Measure>60</cbc:Measure>
+<cbc:Measure>604.8</cbc:Measure>
+<cbc:Measure>604.80000</cbc:Measure>
+<cbc:Measure>70</cbc:Measure>
+<cbc:Measure>774.144</cbc:Measure>
+<cbc:Measure>774.14400</cbc:Measure>
+<cbc:Measure>80</cbc:Measure>
+<cbc:Measure>88</cbc:Measure>
+<cbc:Measure>9.6</cbc:Measure>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:Measure unitCode="CEL">3.00</cbc:Measure>
 <cbc:Measure unitCode="CMT">120</cbc:Measure>
-<cbc:Measure unitCode="CMT">160</cbc:Measure>
-<cbc:Measure unitCode="CMT">60</cbc:Measure>
-<cbc:Measure unitCode="CMT">70</cbc:Measure>
-<cbc:Measure unitCode="CMT">80</cbc:Measure>
 <cbc:Measure unitCode="KG">12.288</cbc:Measure>
-<cbc:Measure unitCode="KG">604.8</cbc:Measure>
-<cbc:Measure unitCode="KG">604.80000</cbc:Measure>
-<cbc:Measure unitCode="KG">774.144</cbc:Measure>
-<cbc:Measure unitCode="KG">774.14400</cbc:Measure>
-<cbc:Measure unitCode="KG">9.6</cbc:Measure>
 <cbc:Measure unitCode="KGM">88</cbc:Measure>
 <cbc:Measure unitCode="MTQ">0.336</cbc:Measure>
 <cbc:Measure unitCode="MTR">2.44</cbc:Measure>
-<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
-<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
 ```
 
 #### `cbc:MinimumDownTimeScheduleDurationMeasure`
+
+```xml
+<cbc:MinimumDownTimeScheduleDurationMeasure>3</cbc:MinimumDownTimeScheduleDurationMeasure>
+```
 
 **`@unitCode`**
 
@@ -3025,6 +3228,10 @@ _23 elements_
 
 #### `cbc:MinimumResponseTimeDurationMeasure`
 
+```xml
+<cbc:MinimumResponseTimeDurationMeasure>300</cbc:MinimumResponseTimeDurationMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -3032,6 +3239,10 @@ _23 elements_
 ```
 
 #### `cbc:NetNetWeightMeasure`
+
+```xml
+<cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+```
 
 **`@unitCode`**
 
@@ -3041,26 +3252,39 @@ _23 elements_
 
 #### `cbc:NetVolumeMeasure`
 
+```xml
+<cbc:NetVolumeMeasure>0.336000</cbc:NetVolumeMeasure>
+<cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:NetVolumeMeasure unitCode="MTQ">0.336000</cbc:NetVolumeMeasure>
-<cbc:NetVolumeMeasure unitCode="MTQ">2.235</cbc:NetVolumeMeasure>
 ```
 
 #### `cbc:NetWeightMeasure`
+
+```xml
+<cbc:NetWeightMeasure>1</cbc:NetWeightMeasure>
+<cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+<cbc:NetWeightMeasure>3000</cbc:NetWeightMeasure>
+<cbc:NetWeightMeasure>604.80000</cbc:NetWeightMeasure>
+<cbc:NetWeightMeasure>76.00</cbc:NetWeightMeasure>
+```
 
 **`@unitCode`**
 
 ```xml
 <cbc:NetWeightMeasure unitCode="KG">604.80000</cbc:NetWeightMeasure>
 <cbc:NetWeightMeasure unitCode="KGM">1</cbc:NetWeightMeasure>
-<cbc:NetWeightMeasure unitCode="KGM">110</cbc:NetWeightMeasure>
-<cbc:NetWeightMeasure unitCode="KGM">3000</cbc:NetWeightMeasure>
-<cbc:NetWeightMeasure unitCode="KGM">76.00</cbc:NetWeightMeasure>
 ```
 
 #### `cbc:PostEventNotificationDurationMeasure`
+
+```xml
+<cbc:PostEventNotificationDurationMeasure>10</cbc:PostEventNotificationDurationMeasure>
+```
 
 **`@unitCode`**
 
@@ -3070,6 +3294,10 @@ _23 elements_
 
 #### `cbc:SourceValueMeasure`
 
+```xml
+<cbc:SourceValueMeasure>2.1</cbc:SourceValueMeasure>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -3077,6 +3305,10 @@ _23 elements_
 ```
 
 #### `cbc:ValueMeasure`
+
+```xml
+<cbc:ValueMeasure>0.2</cbc:ValueMeasure>
+```
 
 **`@unitCode`**
 
@@ -3594,6 +3826,10 @@ _24 elements_
 
 #### `cbc:BackorderQuantity`
 
+```xml
+<cbc:BackorderQuantity>10</cbc:BackorderQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -3602,6 +3838,10 @@ _24 elements_
 ```
 
 #### `cbc:BaseQuantity`
+
+```xml
+<cbc:BaseQuantity>1</cbc:BaseQuantity>
+```
 
 **`@unitCode`**
 
@@ -3615,13 +3855,18 @@ _24 elements_
 
 #### `cbc:CreditedQuantity`
 
+```xml
+<cbc:CreditedQuantity>-1</cbc:CreditedQuantity>
+<cbc:CreditedQuantity>1</cbc:CreditedQuantity>
+<cbc:CreditedQuantity>100</cbc:CreditedQuantity>
+<cbc:CreditedQuantity>2</cbc:CreditedQuantity>
+<cbc:CreditedQuantity>250</cbc:CreditedQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:CreditedQuantity unitCode="C62">-1</cbc:CreditedQuantity>
-<cbc:CreditedQuantity unitCode="C62">1</cbc:CreditedQuantity>
-<cbc:CreditedQuantity unitCode="C62">2</cbc:CreditedQuantity>
-<cbc:CreditedQuantity unitCode="C62">250</cbc:CreditedQuantity>
 <cbc:CreditedQuantity unitCode="KG">100</cbc:CreditedQuantity>
 <cbc:CreditedQuantity unitCode="KGM">100</cbc:CreditedQuantity>
 ```
@@ -3635,18 +3880,25 @@ _24 elements_
 
 #### `cbc:DebitedQuantity`
 
+```xml
+<cbc:DebitedQuantity>-1</cbc:DebitedQuantity>
+<cbc:DebitedQuantity>1</cbc:DebitedQuantity>
+<cbc:DebitedQuantity>2</cbc:DebitedQuantity>
+<cbc:DebitedQuantity>250</cbc:DebitedQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:DebitedQuantity unitCode="C62">-1</cbc:DebitedQuantity>
-<cbc:DebitedQuantity unitCode="C62">1</cbc:DebitedQuantity>
-<cbc:DebitedQuantity unitCode="C62">2</cbc:DebitedQuantity>
-<cbc:DebitedQuantity unitCode="C62">250</cbc:DebitedQuantity>
 <cbc:DebitedQuantity unitCode="EA">1</cbc:DebitedQuantity>
-<cbc:DebitedQuantity unitCode="EA">2</cbc:DebitedQuantity>
 ```
 
 #### `cbc:DeliveredQuantity`
+
+```xml
+<cbc:DeliveredQuantity>90</cbc:DeliveredQuantity>
+```
 
 **`@unitCode`**
 
@@ -3657,13 +3909,18 @@ _24 elements_
 
 #### `cbc:InvoicedQuantity`
 
+```xml
+<cbc:InvoicedQuantity>-1</cbc:InvoicedQuantity>
+<cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+<cbc:InvoicedQuantity>100</cbc:InvoicedQuantity>
+<cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+<cbc:InvoicedQuantity>250</cbc:InvoicedQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:InvoicedQuantity unitCode="C62">-1</cbc:InvoicedQuantity>
-<cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
-<cbc:InvoicedQuantity unitCode="C62">2</cbc:InvoicedQuantity>
-<cbc:InvoicedQuantity unitCode="C62">250</cbc:InvoicedQuantity>
 <cbc:InvoicedQuantity unitCode="KG">100</cbc:InvoicedQuantity>
 <cbc:InvoicedQuantity unitCode="KGM">100</cbc:InvoicedQuantity>
 ```
@@ -3688,23 +3945,54 @@ _24 elements_
 
 #### `cbc:PackQuantity`
 
+```xml
+<cbc:PackQuantity>1</cbc:PackQuantity>
+<cbc:PackQuantity>63</cbc:PackQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
-<cbc:PackQuantity unitCode="EA">63</cbc:PackQuantity>
 ```
 
 #### `cbc:PerformanceValueQuantity`
+
+```xml
+<cbc:PerformanceValueQuantity>120</cbc:PerformanceValueQuantity>
+<cbc:PerformanceValueQuantity>160</cbc:PerformanceValueQuantity>
+```
 
 **`@unitCode`**
 
 ```xml
 <cbc:PerformanceValueQuantity unitCode="EA">120</cbc:PerformanceValueQuantity>
-<cbc:PerformanceValueQuantity unitCode="EA">160</cbc:PerformanceValueQuantity>
 ```
 
 #### `cbc:Quantity`
+
+```xml
+<cbc:Quantity>0</cbc:Quantity>
+<cbc:Quantity>1</cbc:Quantity>
+<cbc:Quantity>10</cbc:Quantity>
+<cbc:Quantity>100</cbc:Quantity>
+<cbc:Quantity>120</cbc:Quantity>
+<cbc:Quantity>15</cbc:Quantity>
+<cbc:Quantity>150</cbc:Quantity>
+<cbc:Quantity>150.00</cbc:Quantity>
+<cbc:Quantity>2</cbc:Quantity>
+<cbc:Quantity>20</cbc:Quantity>
+<cbc:Quantity>200</cbc:Quantity>
+<cbc:Quantity>240</cbc:Quantity>
+<cbc:Quantity>3</cbc:Quantity>
+<cbc:Quantity>35</cbc:Quantity>
+<cbc:Quantity>5</cbc:Quantity>
+<cbc:Quantity>50</cbc:Quantity>
+<cbc:Quantity>63.000</cbc:Quantity>
+<cbc:Quantity>8</cbc:Quantity>
+<cbc:Quantity>80</cbc:Quantity>
+<cbc:Quantity>90</cbc:Quantity>
+```
 
 **`@unitCode`**
 
@@ -3712,32 +4000,19 @@ _24 elements_
 <cbc:Quantity unitCode="C62">15</cbc:Quantity>
 <cbc:Quantity unitCode="CT">63.000</cbc:Quantity>
 <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-<cbc:Quantity unitCode="EA">35</cbc:Quantity>
 <cbc:Quantity unitCode="H87">1</cbc:Quantity>
-<cbc:Quantity unitCode="H87">2</cbc:Quantity>
 <cbc:Quantity unitCode="KG">100</cbc:Quantity>
-<cbc:Quantity unitCode="KG">90</cbc:Quantity>
 <cbc:Quantity unitCode="KGM">100</cbc:Quantity>
-<cbc:Quantity unitCode="KGM">150.00</cbc:Quantity>
-<cbc:Quantity unitCode="KGM">20</cbc:Quantity>
-<cbc:Quantity unitCode="KGM">90</cbc:Quantity>
 <cbc:Quantity unitCode="LTR">120</cbc:Quantity>
-<cbc:Quantity unitCode="LTR">240</cbc:Quantity>
 <cbc:Quantity unitCode="NAR">0</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">10</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">15</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">150</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">20</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">200</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">3</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">5</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">50</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">8</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">80</cbc:Quantity>
 <cbc:Quantity unitCode="NIU">35</cbc:Quantity>
 ```
 
 #### `cbc:ReceivedQuantity`
+
+```xml
+<cbc:ReceivedQuantity>90</cbc:ReceivedQuantity>
+```
 
 **`@unitCode`**
 
@@ -3748,6 +4023,10 @@ _24 elements_
 
 #### `cbc:ShortQuantity`
 
+```xml
+<cbc:ShortQuantity>10</cbc:ShortQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -3757,6 +4036,10 @@ _24 elements_
 
 #### `cbc:TargetInventoryQuantity`
 
+```xml
+<cbc:TargetInventoryQuantity>20</cbc:TargetInventoryQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
@@ -3764,6 +4047,10 @@ _24 elements_
 ```
 
 #### `cbc:ThresholdQuantity`
+
+```xml
+<cbc:ThresholdQuantity>120000</cbc:ThresholdQuantity>
+```
 
 **`@unitCode`**
 
@@ -3779,35 +4066,33 @@ _24 elements_
 
 #### `cbc:TotalGoodsItemQuantity`
 
+```xml
+<cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
+<cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
+<cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
+<cbc:TotalGoodsItemQuantity>2</cbc:TotalGoodsItemQuantity>
+<cbc:TotalGoodsItemQuantity>23</cbc:TotalGoodsItemQuantity>
+<cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
 ```
 
-**Values (no attributes)**
+#### `cbc:TotalPackageQuantity`
 
 ```xml
-<cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
-<cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
-<cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
-<cbc:TotalGoodsItemQuantity>23</cbc:TotalGoodsItemQuantity>
-<cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
+<cbc:TotalPackageQuantity>1</cbc:TotalPackageQuantity>
+<cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
+<cbc:TotalPackageQuantity>2</cbc:TotalPackageQuantity>
 ```
-
-#### `cbc:TotalPackageQuantity`
 
 **`@unitCode`**
 
 ```xml
 <cbc:TotalPackageQuantity unitCode="EA">1</cbc:TotalPackageQuantity>
-```
-
-**Values (no attributes)**
-
-```xml
-<cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-<cbc:TotalPackageQuantity>2</cbc:TotalPackageQuantity>
 ```
 
 #### `cbc:TotalPackagesQuantity`
@@ -3819,30 +4104,38 @@ _24 elements_
 
 #### `cbc:TotalTransportHandlingUnitQuantity`
 
+```xml
+<cbc:TotalTransportHandlingUnitQuantity>1</cbc:TotalTransportHandlingUnitQuantity>
+<cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
+<cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+```
+
 **`@unitCode`**
 
 ```xml
 <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>
 ```
 
-**Values (no attributes)**
+#### `cbc:ValueQuantity`
 
 ```xml
-<cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
-<cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+<cbc:ValueQuantity>604.8</cbc:ValueQuantity>
+<cbc:ValueQuantity>63.000</cbc:ValueQuantity>
+<cbc:ValueQuantity>774.144</cbc:ValueQuantity>
 ```
-
-#### `cbc:ValueQuantity`
 
 **`@unitCode`**
 
 ```xml
 <cbc:ValueQuantity unitCode="CT">63.000</cbc:ValueQuantity>
 <cbc:ValueQuantity unitCode="KG">604.8</cbc:ValueQuantity>
-<cbc:ValueQuantity unitCode="KG">774.144</cbc:ValueQuantity>
 ```
 
 #### `cbc:VarianceQuantity`
+
+```xml
+<cbc:VarianceQuantity>20</cbc:VarianceQuantity>
+```
 
 **`@unitCode`**
 
@@ -4037,25 +4330,6 @@ _75 elements_
 
 #### `cbc:Description`
 
-**`@languageID`**
-
-```xml
-<cbc:Description languageID="CN">本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物</cbc:Description>
-<cbc:Description languageID="CN">经中国国家质量监督检验检疫总局批准的，丹麦以外其他国家的企业生产的鱼粉或鱼
-						油。该鱼粉或鱼油____________________________</cbc:Description>
-<cbc:Description languageID="CN">经丹麦主管机构批准的供人类消费水产品加工厂的副产品</cbc:Description>
-<cbc:Description languageID="DK">fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller reg</cbc:Description>
-<cbc:Description languageID="DK">fiskemel eller fiskeolie fra andre lande, fra virksomheder, der er godkendt af A</cbc:Description>
-<cbc:Description languageID="DK">fra afskær fra virksomheder, som er godkendt af den kompetente myndighed i Danma</cbc:Description>
-<cbc:Description languageID="EN">Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM:
-				3MB. Screen 1440x900</cbc:Description>
-<cbc:Description languageID="EN">fish meal or fish oil from countries other than Denmark from establishments appr</cbc:Description>
-<cbc:Description languageID="EN">fish or aquatic invertebrates caught in the country or region’s domestic sea or </cbc:Description>
-<cbc:Description languageID="EN">from offal from plants, which are approved by the competent authority in Denmark</cbc:Description>
-```
-
-**Values (no attributes)**
-
 ```xml
 <cbc:Description>200 grams of Carbon Dioxide per km</cbc:Description>
 <cbc:Description>ACME NEW BRANCH will be opened in Brusells on May 12, 2010</cbc:Description>
@@ -4116,6 +4390,8 @@ _75 elements_
 <cbc:Description>Please advise when transport is booked.</cbc:Description>
 <cbc:Description>Port of Bremerhaven</cbc:Description>
 <cbc:Description>Port of Oslo</cbc:Description>
+<cbc:Description>Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM:
+				3MB. Screen 1440x900</cbc:Description>
 <cbc:Description>Received mail from Frau Gerlung</cbc:Description>
 <cbc:Description>Red paint</cbc:Description>
 <cbc:Description>SCANTOOL 20AT, Søjleboremaskine</cbc:Description>
@@ -4131,6 +4407,25 @@ _75 elements_
 <cbc:Description>Trading Partner Agreement Terms</cbc:Description>
 <cbc:Description>Very good pencils for red paint.</cbc:Description>
 <cbc:Description>VÆRKTØJSKASSE m/div. håndværktøj</cbc:Description>
+<cbc:Description>fish meal or fish oil from countries other than Denmark from establishments approved the AQSIQ. The fish meal or fish oil
+						in question ____________________________________________(indicate name of product) is approved for export from said
+						country to China and were only produced at ____________________________________________(indicate name and address
+						of the producer as identified in the approval of AQSIQ) and were only exported to Denmark from 
+						____________________________________________ (indicate name and address of the producer/exporter as identified in the
+						import permit)</cbc:Description>
+<cbc:Description>fish or aquatic invertebrates caught in the country or region’s domestic sea or in the open sea or farming aquatic animals</cbc:Description>
+<cbc:Description>fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller regionens egne have eller i det åbne hav eller som stammer
+						fra opdræt på åbent hav</cbc:Description>
+<cbc:Description>fiskemel eller fiskeolie fra andre lande, fra virksomheder, der er godkendt af AQSIQ. Det pågældende produkt
+						(fiskemel eller fiskeolie)____________________________________________ (angiv produktets navn) er godkendt til eksport fra
+						det pågældende land til Kina og er udelukkende forarbejdet på ____________________________________________(angiv navn
+						og adresse på producenten/eksportøren, således som denne er angivet i godkendelsen fra AQSIQ) og er udelukkende eksporteret til
+						Danmark fra ____________________________________________ (angiv navn og adresse på eksportøren, således som denne er
+						angivet i godkendelsen fra AQSIQ )</cbc:Description>
+<cbc:Description>fra afskær fra virksomheder, som er godkendt af den kompetente myndighed i Danmark til produktion
+						af fiskeprodukter til human konsum</cbc:Description>
+<cbc:Description>from offal from plants, which are approved by the competent authority in Denmark for manufacture of aquatic products
+						for human consumption.</cbc:Description>
 <cbc:Description>invoice cancelation</cbc:Description>
 <cbc:Description>jersey</cbc:Description>
 <cbc:Description>kattovalaisimia lasia</cbc:Description>
@@ -4139,6 +4434,21 @@ _75 elements_
 <cbc:Description>skirt</cbc:Description>
 <cbc:Description>trousers</cbc:Description>
 <cbc:Description>woman's dress</cbc:Description>
+<cbc:Description>本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物</cbc:Description>
+<cbc:Description>经中国国家质量监督检验检疫总局批准的，丹麦以外其他国家的企业生产的鱼粉或鱼
+						油。该鱼粉或鱼油____________________________________________（标明产品名称）已被准予从上述国家向中国出口
+						且仅在____________________________________________（标明AQSIQ注册批准的生产商名称与地址）生产并仅从
+						____________________________________________（标明进口许可中认定的生产商/出口商名称与地址）向丹麦出口。</cbc:Description>
+<cbc:Description>经丹麦主管机构批准的供人类消费水产品加工厂的副产品</cbc:Description>
+```
+
+**`@languageID`**
+
+```xml
+<cbc:Description languageID="CN">本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物</cbc:Description>
+<cbc:Description languageID="DK">fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller reg</cbc:Description>
+<cbc:Description languageID="EN">Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM:
+				3MB. Screen 1440x900</cbc:Description>
 ```
 
 #### `cbc:DocumentDescription`
@@ -4319,18 +4629,9 @@ _75 elements_
 
 #### `cbc:Note`
 
-**`@languageID`**
-
-```xml
-<cbc:Note languageID="da-dk">Bestilling af computere</cbc:Note>
-<cbc:Note languageID="en">Ordered in our booth at the convention.</cbc:Note>
-<cbc:Note languageID="en">This is an example shop purchase receipt</cbc:Note>
-```
-
-**Values (no attributes)**
-
 ```xml
 <cbc:Note>A call-off from the annual contract</cbc:Note>
+<cbc:Note>Bestilling af computere</cbc:Note>
 <cbc:Note>Computer</cbc:Note>
 <cbc:Note>Cover is slightly damaged.</cbc:Note>
 <cbc:Note>DELAYED</cbc:Note>
@@ -4343,6 +4644,7 @@ _75 elements_
 <cbc:Note>Instruction to return goods that are badly sent to you.</cbc:Note>
 <cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
 <cbc:Note>Mus</cbc:Note>
+<cbc:Note>Ordered in our booth at the convention.</cbc:Note>
 <cbc:Note>PER THIRTY DAYS</cbc:Note>
 <cbc:Note>Payable within 1 calendar month from the invoice date</cbc:Note>
 <cbc:Note>Payment due immediately</cbc:Note>
@@ -4359,6 +4661,7 @@ _75 elements_
 <cbc:Note>Skærm</cbc:Note>
 <cbc:Note>String</cbc:Note>
 <cbc:Note>Tastatur</cbc:Note>
+<cbc:Note>This is an example shop purchase receipt</cbc:Note>
 <cbc:Note>We are very interested please send us all information possible</cbc:Note>
 <cbc:Note>as agreed on phone, the invoice should have been cancelled earlier, apologies</cbc:Note>
 <cbc:Note>dummy as sample</cbc:Note>
@@ -4367,6 +4670,13 @@ _75 elements_
 <cbc:Note>sample</cbc:Note>
 <cbc:Note>sample Document</cbc:Note>
 <cbc:Note>this is an illustrative order line</cbc:Note>
+```
+
+**`@languageID`**
+
+```xml
+<cbc:Note languageID="da-dk">Bestilling af computere</cbc:Note>
+<cbc:Note languageID="en">Ordered in our booth at the convention.</cbc:Note>
 ```
 
 #### `cbc:OperationStatusCode`
