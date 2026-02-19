@@ -2,6 +2,168 @@
 
 Values, attributes, and composite instances observed across all official UBL example documents (2.0 – 2.5), grouped using the UBL 2.5 CSD02 XSD as the authoritative type reference.
 
+## Contents
+
+- [Summary](#summary)
+- [cbc Elements](#cbc-elements)
+  - [Amount](#udtAmountType)
+  - [Binary Object](#udtBinaryObjectType)
+  - [Code](#udtCodeType)
+  - [Date](#udtDateType)
+  - [Identifier](#udtIdentifierType)
+  - [Indicator](#udtIndicatorType)
+  - [Measure](#udtMeasureType)
+  - [Name](#udtNameType)
+  - [Numeric](#udtNumericType)
+  - [Percent](#udtPercentType)
+  - [Quantity](#udtQuantityType)
+  - [Rate](#udtRateType)
+  - [Text](#udtTextType)
+  - [Time](#udtTimeType)
+- [cac Elements](#cac-elements)
+  - [ActivityDataLineType](#ActivityDataLineType)
+  - [AddressLineType](#AddressLineType)
+  - [AddressType](#AddressType)
+  - [AirTransportType](#AirTransportType)
+  - [AllowanceChargeType](#AllowanceChargeType)
+  - [AttachmentType](#AttachmentType)
+  - [AttestationLineType](#AttestationLineType)
+  - [AttestationType](#AttestationType)
+  - [BillingReferenceType](#BillingReferenceType)
+  - [BranchType](#BranchType)
+  - [CapabilityType](#CapabilityType)
+  - [CashRegisterType](#CashRegisterType)
+  - [CommodityClassificationType](#CommodityClassificationType)
+  - [ConsignmentType](#ConsignmentType)
+  - [ContactType](#ContactType)
+  - [ContractType](#ContractType)
+  - [ContractingPartyType](#ContractingPartyType)
+  - [CountryType](#CountryType)
+  - [CreditNoteLineType](#CreditNoteLineType)
+  - [CustomerPartyType](#CustomerPartyType)
+  - [CustomsDeclarationType](#CustomsDeclarationType)
+  - [DebitNoteLineType](#DebitNoteLineType)
+  - [DeliveryChannelType](#DeliveryChannelType)
+  - [DeliveryTermsType](#DeliveryTermsType)
+  - [DeliveryType](#DeliveryType)
+  - [DespatchLineType](#DespatchLineType)
+  - [DespatchType](#DespatchType)
+  - [DigitalAgreementTermsType](#DigitalAgreementTermsType)
+  - [DigitalCollaborationType](#DigitalCollaborationType)
+  - [DigitalProcessType](#DigitalProcessType)
+  - [DigitalServiceType](#DigitalServiceType)
+  - [DimensionType](#DimensionType)
+  - [DocumentDistributionType](#DocumentDistributionType)
+  - [DocumentMetadataType](#DocumentMetadataType)
+  - [DocumentReferenceType](#DocumentReferenceType)
+  - [EconomicOperatorPartyType](#EconomicOperatorPartyType)
+  - [EncryptionCertificatePathChainType](#EncryptionCertificatePathChainType)
+  - [EncryptionDataType](#EncryptionDataType)
+  - [EncryptionSymmetricAlgorithmType](#EncryptionSymmetricAlgorithmType)
+  - [EndorsementType](#EndorsementType)
+  - [EndorserPartyType](#EndorserPartyType)
+  - [EnvironmentalEmissionType](#EnvironmentalEmissionType)
+  - [EventLineItemType](#EventLineItemType)
+  - [EventTacticEnumerationType](#EventTacticEnumerationType)
+  - [EventTacticType](#EventTacticType)
+  - [EvidenceType](#EvidenceType)
+  - [ExceptionCriteriaLineType](#ExceptionCriteriaLineType)
+  - [ExceptionNotificationLineType](#ExceptionNotificationLineType)
+  - [ExchangeRateType](#ExchangeRateType)
+  - [ExternalReferenceType](#ExternalReferenceType)
+  - [FinancialAccountType](#FinancialAccountType)
+  - [FinancialInstitutionType](#FinancialInstitutionType)
+  - [ForecastExceptionCriterionLineType](#ForecastExceptionCriterionLineType)
+  - [ForecastExceptionType](#ForecastExceptionType)
+  - [ForecastLineType](#ForecastLineType)
+  - [ForecastRevisionLineType](#ForecastRevisionLineType)
+  - [GoodsItemPassportCounterfoilType](#GoodsItemPassportCounterfoilType)
+  - [GoodsItemType](#GoodsItemType)
+  - [InstructionForReturnsLineType](#InstructionForReturnsLineType)
+  - [InventoryReportLineType](#InventoryReportLineType)
+  - [InvoiceLineType](#InvoiceLineType)
+  - [ItemIdentificationType](#ItemIdentificationType)
+  - [ItemInstanceType](#ItemInstanceType)
+  - [ItemLocationQuantityType](#ItemLocationQuantityType)
+  - [ItemManagementProfileType](#ItemManagementProfileType)
+  - [ItemPropertyType](#ItemPropertyType)
+  - [ItemType](#ItemType)
+  - [LanguageType](#LanguageType)
+  - [LineItemType](#LineItemType)
+  - [LocationCoordinateType](#LocationCoordinateType)
+  - [LocationType](#LocationType)
+  - [LotIdentificationType](#LotIdentificationType)
+  - [MaritimeTransportType](#MaritimeTransportType)
+  - [MessageDeliveryType](#MessageDeliveryType)
+  - [MonetaryTotalType](#MonetaryTotalType)
+  - [NotificationRequirementType](#NotificationRequirementType)
+  - [OrderLineReferenceType](#OrderLineReferenceType)
+  - [OrderLineType](#OrderLineType)
+  - [OrderReferenceType](#OrderReferenceType)
+  - [PackageType](#PackageType)
+  - [ParticipantPartyType](#ParticipantPartyType)
+  - [PartyIdentificationType](#PartyIdentificationType)
+  - [PartyLegalEntityType](#PartyLegalEntityType)
+  - [PartyNameType](#PartyNameType)
+  - [PartyTaxSchemeType](#PartyTaxSchemeType)
+  - [PartyType](#PartyType)
+  - [PaymentMeansType](#PaymentMeansType)
+  - [PaymentTermsType](#PaymentTermsType)
+  - [PaymentType](#PaymentType)
+  - [PerformanceDataLineType](#PerformanceDataLineType)
+  - [PeriodType](#PeriodType)
+  - [PersonType](#PersonType)
+  - [PickupType](#PickupType)
+  - [PriceType](#PriceType)
+  - [ProcurementProjectLotReferenceType](#ProcurementProjectLotReferenceType)
+  - [ProcurementProjectType](#ProcurementProjectType)
+  - [PromotionalEventLineItemType](#PromotionalEventLineItemType)
+  - [PromotionalEventType](#PromotionalEventType)
+  - [PromotionalSpecificationType](#PromotionalSpecificationType)
+  - [PurchaseReceiptLineType](#PurchaseReceiptLineType)
+  - [PurchaseReferenceType](#PurchaseReferenceType)
+  - [QuotationLineType](#QuotationLineType)
+  - [RailTransportType](#RailTransportType)
+  - [ReceiptLineType](#ReceiptLineType)
+  - [ReminderLineType](#ReminderLineType)
+  - [RemittanceAdviceLineType](#RemittanceAdviceLineType)
+  - [RequestForQuotationLineType](#RequestForQuotationLineType)
+  - [ResponseType](#ResponseType)
+  - [RetailPlannedImpactType](#RetailPlannedImpactType)
+  - [RoadTransportType](#RoadTransportType)
+  - [SalesItemType](#SalesItemType)
+  - [ServiceLevelAgreementType](#ServiceLevelAgreementType)
+  - [ShipmentStageType](#ShipmentStageType)
+  - [ShipmentType](#ShipmentType)
+  - [SignatureType](#SignatureType)
+  - [SocialMediaProfileType](#SocialMediaProfileType)
+  - [StatementLineType](#StatementLineType)
+  - [StatusType](#StatusType)
+  - [StockAvailabilityReportLineType](#StockAvailabilityReportLineType)
+  - [SupplierPartyType](#SupplierPartyType)
+  - [TaxCategoryType](#TaxCategoryType)
+  - [TaxSchemeType](#TaxSchemeType)
+  - [TaxSubtotalType](#TaxSubtotalType)
+  - [TaxTotalType](#TaxTotalType)
+  - [TemperatureType](#TemperatureType)
+  - [TenderPreparationType](#TenderPreparationType)
+  - [TenderingTermsType](#TenderingTermsType)
+  - [TransactionConditionsType](#TransactionConditionsType)
+  - [TransportEquipmentSealType](#TransportEquipmentSealType)
+  - [TransportEquipmentType](#TransportEquipmentType)
+  - [TransportEventType](#TransportEventType)
+  - [TransportExecutionTermsType](#TransportExecutionTermsType)
+  - [TransportHandlingUnitType](#TransportHandlingUnitType)
+  - [TransportMeansType](#TransportMeansType)
+  - [TransportScheduleType](#TransportScheduleType)
+  - [TransportationSegmentType](#TransportationSegmentType)
+  - [TransportationServiceType](#TransportationServiceType)
+  - [Unknown](#Unknown)
+  - [VerifiedGrossMassType](#VerifiedGrossMassType)
+  - [WebSiteType](#WebSiteType)
+
+---
+
 ## Summary
 
 | | Count |
@@ -13,9 +175,11 @@ Values, attributes, and composite instances observed across all official UBL exa
 | `cac` unique ABIE types used | **140** |
 | `cac` unique instances | **1619** |
 
+[↑ Back to contents](#contents)
+
 ---
 
-## `cbc` Elements
+## cbc Elements
 
 _Grouped by UN/CEFACT base data type from `UBL-CommonBasicComponents-2.5.xsd`._
 
@@ -541,6 +705,8 @@ _1 more value in examples_
 <cbc:ValueAmount currencyID="USD">1000.00</cbc:ValueAmount>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Binary Object (`udt:BinaryObjectType`)
 
 _1 elements_
@@ -557,6 +723,8 @@ _1 elements_
 <cbc:EmbeddedDocumentBinaryObject mimeCode="application/CSTAdata+xml">UjBsR09EbGhjZ0dTQUxN...RU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
 <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf">UjBsR09EbGhjZ0dTQUxN...RU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
 ```
+
+[↑ Back to contents](#contents)
 
 ### Code (`udt:CodeType`)
 
@@ -1457,6 +1625,8 @@ _84 elements_
 <cbc:WeightStatementTypeCode listVersionID="d16a">749</cbc:WeightStatementTypeCode>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Date (`udt:DateType`)
 
 _25 elements_
@@ -1633,6 +1803,8 @@ _36 more values in examples_
 ```xml
 <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
 ```
+
+[↑ Back to contents](#contents)
 
 ### Identifier (`udt:IdentifierType`)
 
@@ -2177,6 +2349,8 @@ _11 more values in examples_
 <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Indicator (`udt:IndicatorType`)
 
 _27 elements_
@@ -2349,6 +2523,8 @@ _27 elements_
 ```xml
 <cbc:WednesdayAvailabilityIndicator>true</cbc:WednesdayAvailabilityIndicator>
 ```
+
+[↑ Back to contents](#contents)
 
 ### Measure (`udt:MeasureType`)
 
@@ -2665,6 +2841,8 @@ _12 more values in examples_
 <cbc:ValueMeasure unitCode="KGM">0.2</cbc:ValueMeasure>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Name (`udt:NameType`)
 
 _14 elements_
@@ -2798,6 +2976,8 @@ _54 more values in examples_
 <cbc:VesselName>Vessel Name</cbc:VesselName>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Numeric (`udt:NumericType`)
 
 _6 elements_
@@ -2844,6 +3024,8 @@ _6 elements_
 <cbc:SequenceNumeric>3</cbc:SequenceNumeric>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Percent (`udt:PercentType`)
 
 _4 elements_
@@ -2878,6 +3060,8 @@ _1 more value in examples_
 ```xml
 <cbc:TargetServicePercent>1</cbc:TargetServicePercent>
 ```
+
+[↑ Back to contents](#contents)
 
 ### Quantity (`udt:QuantityType`)
 
@@ -3188,6 +3372,8 @@ _1 more value in examples_
 <cbc:VarianceQuantity unitCode="KGM">20</cbc:VarianceQuantity>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Rate (`udt:RateType`)
 
 _3 elements_
@@ -3209,6 +3395,8 @@ _3 elements_
 ```xml
 <cbc:TargetCurrencyBaseRate>1.00</cbc:TargetCurrencyBaseRate>
 ```
+
+[↑ Back to contents](#contents)
 
 ### Text (`udt:TextType`)
 
@@ -3787,6 +3975,8 @@ _4 more values in examples_
 <cbc:XPath>String</cbc:XPath>
 ```
 
+[↑ Back to contents](#contents)
+
 ### Time (`udt:TimeType`)
 
 _14 elements_
@@ -3895,9 +4085,11 @@ _24 more values in examples_
 <cbc:WeighingTime>00:30:00Z</cbc:WeighingTime>
 ```
 
+[↑ Back to contents](#contents)
+
 ---
 
-## `cac` Elements
+## cac Elements
 
 _Grouped by ABIE type from `UBL-CommonAggregateComponents-2.5.xsd`. Elements sharing a type share the same structure; their instances are pooled._
 
@@ -4115,6 +4307,8 @@ _5 unique instances across 1 element_
 </cac:SupplyChainActivityDataLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `AddressLineType`
 
 **Used as:** `cac:AddressLine`
@@ -4186,6 +4380,8 @@ _11 unique instances across 1 element_
   <cbc:Line>West Wing</cbc:Line>
 </cac:AddressLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `AddressType`
 
@@ -5565,6 +5761,8 @@ _112 unique instances across 6 elements_
 </cac:RegistrationAddress>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `AirTransportType`
 
 **Used as:** `cac:AirTransport`
@@ -5582,6 +5780,8 @@ _2 unique instances across 1 element_
   <cbc:AircraftID>AY-428 20130623</cbc:AircraftID>
 </cac:AirTransport>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `AllowanceChargeType`
 
@@ -5757,6 +5957,8 @@ _17 unique instances across 2 elements_
 </cac:FreightAllowanceCharge>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `AttachmentType`
 
 **Used as:** `cac:Attachment` · `cac:DigitalSignatureAttachment` · `cac:EncryptionCertificateAttachment`
@@ -5811,6 +6013,8 @@ _6 unique instances across 3 elements_
 </cac:EncryptionCertificateAttachment>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `AttestationLineType`
 
 **Used as:** `cac:AttestationLine`
@@ -5856,6 +6060,8 @@ _3 unique instances across 1 element_
   <cbc:Description>经丹麦主管机构批准的供人类消费水产品加工厂的副产品</cbc:Description>
 </cac:AttestationLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `AttestationType`
 
@@ -5930,6 +6136,8 @@ _3 unique instances across 1 element_
 </cac:Attestation>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `BillingReferenceType`
 
 **Used as:** `cac:BillingReference`
@@ -5972,6 +6180,8 @@ _4 unique instances across 1 element_
   </cac:InvoiceDocumentReference>
 </cac:BillingReference>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `BranchType`
 
@@ -6026,6 +6236,8 @@ _2 unique instances across 1 element_
 </cac:FinancialInstitutionBranch>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `CapabilityType`
 
 **Used as:** `cac:BusinessCapability`
@@ -6039,6 +6251,8 @@ _1 unique instance across 1 element_
 </cac:BusinessCapability>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `CashRegisterType`
 
 **Used as:** `cac:CashRegister`
@@ -6051,6 +6265,8 @@ _1 unique instance across 1 element_
   <cbc:SerialNumberID>7f49b2b8-9e75-11ed-a8fc-0242ac120002</cbc:SerialNumberID>
 </cac:CashRegister>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `CommodityClassificationType`
 
@@ -6148,6 +6364,8 @@ _15 unique instances across 1 element_
   <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
 </cac:CommodityClassification>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ConsignmentType`
 
@@ -7922,6 +8140,8 @@ _21 unique instances across 2 elements_
 </cac:ReferencedConsignment>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ContactType`
 
 **Used as:** `cac:CashierContact` · `cac:CommercialContact` · `cac:Contact` · `cac:DeliveryContact` · `cac:LegalContact` · `cac:PointOfSaleContact` · `cac:SignatoryContact` · `cac:SupportContact` · `cac:TechnicalContact`
@@ -8424,6 +8644,8 @@ _64 unique instances across 9 elements_
 </cac:TechnicalContact>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ContractType`
 
 **Used as:** `cac:Contract` · `cac:TransportContract`
@@ -8593,6 +8815,8 @@ _7 unique instances across 2 elements_
 </cac:TransportContract>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ContractingPartyType`
 
 **Used as:** `cac:ContractingParty`
@@ -8625,6 +8849,8 @@ _2 unique instances across 1 element_
   </cac:Party>
 </cac:ContractingParty>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `CountryType`
 
@@ -8912,6 +9138,8 @@ _45 unique instances across 8 elements_
   <cbc:IdentificationCode>IT</cbc:IdentificationCode>
 </cac:TransitCountry>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `CreditNoteLineType`
 
@@ -9222,6 +9450,8 @@ _7 unique instances across 1 element_
   </cac:Price>
 </cac:CreditNoteLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `CustomerPartyType`
 
@@ -9801,6 +10031,8 @@ _17 unique instances across 5 elements_
 </cac:RetailerCustomerParty>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `CustomsDeclarationType`
 
 **Used as:** `cac:CustomsDeclaration` · `cac:PreviousCustomsDeclaration`
@@ -10261,6 +10493,8 @@ _5 unique instances across 2 elements_
 </cac:PreviousCustomsDeclaration>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `DebitNoteLineType`
 
 **Used as:** `cac:DebitNoteLine`
@@ -10508,6 +10742,8 @@ _7 unique instances across 1 element_
 </cac:DebitNoteLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `DeliveryChannelType`
 
 **Used as:** `cac:DigitalDeliveryChannel`
@@ -10571,6 +10807,8 @@ _5 unique instances across 1 element_
   </cac:DigitalMessageDelivery>
 </cac:DigitalDeliveryChannel>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DeliveryTermsType`
 
@@ -10668,6 +10906,8 @@ _10 unique instances across 1 element_
   <cbc:SpecialTerms>1% reduktion i kontraktsummen pr. dags forsinkelse jf. SKI kontrakt</cbc:SpecialTerms>
 </cac:DeliveryTerms>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DeliveryType`
 
@@ -11055,6 +11295,8 @@ _15 unique instances across 1 element_
 </cac:Delivery>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `DespatchLineType`
 
 **Used as:** `cac:DespatchLine`
@@ -11132,6 +11374,8 @@ _2 unique instances across 1 element_
   </cac:Item>
 </cac:DespatchLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DespatchType`
 
@@ -11225,6 +11469,8 @@ _7 unique instances across 1 element_
   <cbc:ID>FLGS339241</cbc:ID>
 </cac:Despatch>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DigitalAgreementTermsType`
 
@@ -11325,6 +11571,8 @@ _2 unique instances across 1 element_
   </cac:ServiceLevelAgreement>
 </cac:DigitalAgreementTerms>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DigitalCollaborationType`
 
@@ -11460,6 +11708,8 @@ _3 unique instances across 1 element_
   </cac:ReceivingDigitalService>
 </cac:DigitalCollaboration>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DigitalProcessType`
 
@@ -11608,6 +11858,8 @@ _3 unique instances across 1 element_
 </cac:DigitalProcess>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `DigitalServiceType`
 
 **Used as:** `cac:ReceivingDigitalService` · `cac:SendingDigitalService`
@@ -11721,6 +11973,8 @@ _5 unique instances across 2 elements_
   </cac:DigitalDeliveryChannel>
 </cac:SendingDigitalService>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DimensionType`
 
@@ -11847,6 +12101,8 @@ _17 unique instances across 2 elements_
 </cac:MeasurementDimension>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `DocumentDistributionType`
 
 **Used as:** `cac:DocumentDistribution`
@@ -11915,6 +12171,8 @@ _2 unique instances across 1 element_
 </cac:DocumentDistribution>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `DocumentMetadataType`
 
 **Used as:** `cac:DigitalDocumentMetadata`
@@ -11938,6 +12196,8 @@ _2 unique instances across 1 element_
   <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
 </cac:DigitalDocumentMetadata>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `DocumentReferenceType`
 
@@ -12341,6 +12601,8 @@ _47 unique instances across 21 elements_
 </cac:VoucherDocumentReference>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `EconomicOperatorPartyType`
 
 **Used as:** `cac:EconomicOperatorParty`
@@ -12418,6 +12680,8 @@ _2 unique instances across 1 element_
 </cac:EconomicOperatorParty>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `EncryptionCertificatePathChainType`
 
 **Used as:** `cac:EncryptionCertificatePathChain`
@@ -12435,6 +12699,8 @@ _2 unique instances across 1 element_
   <cbc:Value>TRUST2408 OCES Primary CA – TRUST2408 OCES CA II</cbc:Value>
 </cac:EncryptionCertificatePathChain>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `EncryptionDataType`
 
@@ -12480,6 +12746,8 @@ _2 unique instances across 1 element_
 </cac:TenderEncryptionData>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `EncryptionSymmetricAlgorithmType`
 
 **Used as:** `cac:EncryptionSymmetricAlgorithm`
@@ -12497,6 +12765,8 @@ _2 unique instances across 1 element_
   <cbc:OID>2.16.840.1.101.3.4.1.42</cbc:OID>
 </cac:EncryptionSymmetricAlgorithm>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `EndorsementType`
 
@@ -12537,6 +12807,8 @@ _1 unique instance across 1 element_
 </cac:IssuerEndorsement>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `EndorserPartyType`
 
 **Used as:** `cac:EndorserParty`
@@ -12572,6 +12844,8 @@ _1 unique instance across 1 element_
 </cac:EndorserParty>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `EnvironmentalEmissionType`
 
 **Used as:** `cac:EnvironmentalEmission`
@@ -12585,6 +12859,8 @@ _1 unique instance across 1 element_
   <cbc:Description>200 grams of Carbon Dioxide per km</cbc:Description>
 </cac:EnvironmentalEmission>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `EventLineItemType`
 
@@ -12623,6 +12899,8 @@ _1 unique instance across 1 element_
 </cac:EventLineItem>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `EventTacticEnumerationType`
 
 **Used as:** `cac:EventTacticEnumeration`
@@ -12634,6 +12912,8 @@ _1 unique instance across 1 element_
   <cbc:DisplayTacticTypeCode>DISPLAY_GENERAL</cbc:DisplayTacticTypeCode>
 </cac:EventTacticEnumeration>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `EventTacticType`
 
@@ -12653,6 +12933,8 @@ _1 unique instance across 1 element_
 </cac:EventTactic>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `EvidenceType`
 
 **Used as:** `cac:ReexportationEvidence`
@@ -12669,6 +12951,8 @@ _1 unique instance across 1 element_
   </cac:DocumentReference>
 </cac:ReexportationEvidence>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ExceptionCriteriaLineType`
 
@@ -12826,6 +13110,8 @@ _6 unique instances across 1 element_
 </cac:ExceptionCriteriaLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ExceptionNotificationLineType`
 
 **Used as:** `cac:ExceptionNotificationLine`
@@ -12940,6 +13226,8 @@ _3 unique instances across 1 element_
 </cac:ExceptionNotificationLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ExchangeRateType`
 
 **Used as:** `cac:ExchangeRate`
@@ -12957,6 +13245,8 @@ _1 unique instance across 1 element_
   <cbc:Date>1967-08-13</cbc:Date>
 </cac:ExchangeRate>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ExternalReferenceType`
 
@@ -12990,6 +13280,8 @@ _4 unique instances across 1 element_
   <cbc:URI>www.digst.dk/udbud/NemID.cer</cbc:URI>
 </cac:ExternalReference>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `FinancialAccountType`
 
@@ -13111,6 +13403,8 @@ _4 unique instances across 2 elements_
 </cac:PayeeFinancialAccount>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `FinancialInstitutionType`
 
 **Used as:** `cac:FinancialInstitution`
@@ -13144,6 +13438,8 @@ _2 unique instances across 1 element_
 </cac:FinancialInstitution>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ForecastExceptionCriterionLineType`
 
 **Used as:** `cac:ForecastExceptionCriterionLine`
@@ -13168,6 +13464,8 @@ _2 unique instances across 1 element_
   <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
 </cac:ForecastExceptionCriterionLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ForecastExceptionType`
 
@@ -13205,6 +13503,8 @@ _3 unique instances across 1 element_
 </cac:ForecastException>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ForecastLineType`
 
 **Used as:** `cac:ForecastLine`
@@ -13237,6 +13537,8 @@ _1 unique instance across 1 element_
   </cac:SalesItem>
 </cac:ForecastLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ForecastRevisionLineType`
 
@@ -13325,6 +13627,8 @@ _3 unique instances across 1 element_
 </cac:ForecastRevisionLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `GoodsItemPassportCounterfoilType`
 
 **Used as:** `cac:GoodsItemPassportCounterfoil`
@@ -13379,6 +13683,8 @@ _4 unique instances across 1 element_
   </cac:VoucherDocumentReference>
 </cac:GoodsItemPassportCounterfoil>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `GoodsItemType`
 
@@ -14006,6 +14312,8 @@ _32 unique instances across 1 element_
 </cac:GoodsItem>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `InstructionForReturnsLineType`
 
 **Used as:** `cac:InstructionForReturnsLine`
@@ -14045,6 +14353,8 @@ _2 unique instances across 1 element_
   </cac:Item>
 </cac:InstructionForReturnsLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `InventoryReportLineType`
 
@@ -14102,6 +14412,8 @@ _3 unique instances across 1 element_
   </cac:Item>
 </cac:InventoryReportLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `InvoiceLineType`
 
@@ -14465,6 +14777,8 @@ _8 unique instances across 1 element_
 </cac:InvoiceLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ItemIdentificationType`
 
 **Used as:** `cac:BuyersItemIdentification` · `cac:SellersItemIdentification` · `cac:StandardItemIdentification`
@@ -14735,6 +15049,8 @@ _44 unique instances across 3 elements_
 </cac:StandardItemIdentification>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ItemInstanceType`
 
 **Used as:** `cac:ItemInstance`
@@ -14772,6 +15088,8 @@ _2 unique instances across 1 element_
 </cac:ItemInstance>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ItemLocationQuantityType`
 
 **Used as:** `cac:ItemLocationQuantity`
@@ -14784,6 +15102,8 @@ _1 unique instance across 1 element_
   <cbc:MinimumQuantity>2</cbc:MinimumQuantity>
 </cac:ItemLocationQuantity>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ItemManagementProfileType`
 
@@ -14823,6 +15143,8 @@ _1 unique instance across 1 element_
   </cac:ItemLocationQuantity>
 </cac:ItemManagementProfile>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ItemPropertyType`
 
@@ -14913,6 +15235,8 @@ _12 unique instances across 1 element_
   <cbc:Value>20mm</cbc:Value>
 </cac:AdditionalItemProperty>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ItemType`
 
@@ -15811,6 +16135,8 @@ _70 unique instances across 2 elements_
 </cac:SupplyItem>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `LanguageType`
 
 **Used as:** `cac:Language`
@@ -15822,6 +16148,8 @@ _1 unique instance across 1 element_
   <cbc:ID>fi</cbc:ID>
 </cac:Language>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `LineItemType`
 
@@ -16208,6 +16536,8 @@ _19 unique instances across 1 element_
 </cac:LineItem>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `LocationCoordinateType`
 
 **Used as:** `cac:LocationCoordinate`
@@ -16249,6 +16579,8 @@ _4 unique instances across 1 element_
 ```xml
 <cac:LocationCoordinate></cac:LocationCoordinate>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `LocationType`
 
@@ -17164,6 +17496,8 @@ _78 unique instances across 22 elements_
 </cac:UnloadingPortLocation>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `LotIdentificationType`
 
 **Used as:** `cac:LotIdentification`
@@ -17182,6 +17516,8 @@ _2 unique instances across 1 element_
   <cbc:LotNumberID>9390000757</cbc:LotNumberID>
 </cac:LotIdentification>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `MaritimeTransportType`
 
@@ -17216,6 +17552,8 @@ _4 unique instances across 1 element_
 </cac:MaritimeTransport>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `MessageDeliveryType`
 
 **Used as:** `cac:DigitalMessageDelivery`
@@ -17249,6 +17587,8 @@ _4 unique instances across 1 element_
   <cbc:EndpointURI>http://as2.vendor.biz</cbc:EndpointURI>
 </cac:DigitalMessageDelivery>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `MonetaryTotalType`
 
@@ -17367,6 +17707,8 @@ _12 unique instances across 4 elements_
 </cac:RequestedMonetaryTotal>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `NotificationRequirementType`
 
 **Used as:** `cac:NotificationRequirement`
@@ -17438,6 +17780,8 @@ _3 unique instances across 1 element_
 </cac:NotificationRequirement>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `OrderLineReferenceType`
 
 **Used as:** `cac:OrderLineReference`
@@ -17500,6 +17844,8 @@ _7 unique instances across 1 element_
   <cbc:LineID>5</cbc:LineID>
 </cac:OrderLineReference>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `OrderLineType`
 
@@ -17757,6 +18103,8 @@ _9 unique instances across 1 element_
 </cac:OrderLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `OrderReferenceType`
 
 **Used as:** `cac:OrderReference`
@@ -17783,6 +18131,8 @@ _3 unique instances across 1 element_
   <cbc:IssueDate>2005-06-20</cbc:IssueDate>
 </cac:OrderReference>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PackageType`
 
@@ -18038,6 +18388,8 @@ _10 unique instances across 3 elements_
 </cac:Package>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ParticipantPartyType`
 
 **Used as:** `cac:ParticipantParty`
@@ -18146,6 +18498,8 @@ _3 unique instances across 1 element_
   </cac:CommercialContact>
 </cac:ParticipantParty>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PartyIdentificationType`
 
@@ -18460,6 +18814,8 @@ _50 unique instances across 1 element_
 </cac:PartyIdentification>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PartyLegalEntityType`
 
 **Used as:** `cac:PartyLegalEntity`
@@ -18623,6 +18979,8 @@ _20 unique instances across 1 element_
   </cac:RegistrationAddress>
 </cac:PartyLegalEntity>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PartyNameType`
 
@@ -19116,6 +19474,8 @@ _81 unique instances across 1 element_
 </cac:PartyName>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PartyTaxSchemeType`
 
 **Used as:** `cac:PartyTaxScheme`
@@ -19229,6 +19589,8 @@ _10 unique instances across 1 element_
   </cac:TaxScheme>
 </cac:PartyTaxScheme>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PartyType`
 
@@ -22443,6 +22805,8 @@ _146 unique instances across 37 elements_
 </cac:WeighingParty>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PaymentMeansType`
 
 **Used as:** `cac:PaymentMeans`
@@ -22680,6 +23044,8 @@ _6 unique instances across 1 element_
 </cac:PaymentMeans>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PaymentTermsType`
 
 **Used as:** `cac:PaymentTerms` · `cac:ServiceChargePaymentTerms`
@@ -22743,6 +23109,8 @@ _8 unique instances across 2 elements_
 </cac:ServiceChargePaymentTerms>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PaymentType`
 
 **Used as:** `cac:Payment`
@@ -22757,6 +23125,8 @@ _1 unique instance across 1 element_
   <cbc:CashChangeAmount>5.00</cbc:CashChangeAmount>
 </cac:Payment>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PerformanceDataLineType`
 
@@ -22813,6 +23183,8 @@ _2 unique instances across 1 element_
   </cac:Item>
 </cac:PerformanceDataLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PeriodType`
 
@@ -23407,6 +23779,8 @@ _77 unique instances across 20 elements_
 </cac:ValidityPeriod>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PersonType`
 
 **Used as:** `cac:Person`
@@ -23516,6 +23890,8 @@ _12 unique instances across 1 element_
 </cac:Person>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PickupType`
 
 **Used as:** `cac:Pickup`
@@ -23545,6 +23921,8 @@ _3 unique instances across 1 element_
   <cbc:LatestPickupDate>2016-08-02</cbc:LatestPickupDate>
 </cac:Pickup>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PriceType`
 
@@ -23685,6 +24063,8 @@ _17 unique instances across 1 element_
 </cac:Price>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ProcurementProjectLotReferenceType`
 
 **Used as:** `cac:ProcurementProjectLotReference`
@@ -23696,6 +24076,8 @@ _1 unique instance across 1 element_
   <cbc:ID>Lot2</cbc:ID>
 </cac:ProcurementProjectLotReference>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ProcurementProjectType`
 
@@ -23710,6 +24092,8 @@ _1 unique instance across 1 element_
   <cbc:Description>Only Lot2</cbc:Description>
 </cac:ProcurementProject>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PromotionalEventLineItemType`
 
@@ -23750,6 +24134,8 @@ _1 unique instance across 1 element_
   </cac:EventLineItem>
 </cac:PromotionalEventLineItem>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PromotionalEventType`
 
@@ -23808,6 +24194,8 @@ _1 unique instance across 1 element_
 </cac:PromotionalEvent>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PromotionalSpecificationType`
 
 **Used as:** `cac:PromotionalSpecification`
@@ -23859,6 +24247,8 @@ _1 unique instance across 1 element_
   </cac:EventTactic>
 </cac:PromotionalSpecification>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `PurchaseReceiptLineType`
 
@@ -23942,6 +24332,8 @@ _2 unique instances across 1 element_
 </cac:PurchaseReceiptLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `PurchaseReferenceType`
 
 **Used as:** `cac:PurchaseReference`
@@ -23954,6 +24346,8 @@ _1 unique instance across 1 element_
   <cbc:Description>Customer Loyalty Number</cbc:Description>
 </cac:PurchaseReference>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `QuotationLineType`
 
@@ -24072,6 +24466,8 @@ _5 unique instances across 1 element_
 </cac:QuotationLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `RailTransportType`
 
 **Used as:** `cac:RailTransport`
@@ -24096,6 +24492,8 @@ _3 unique instances across 1 element_
   <cbc:TrainID>VF80145</cbc:TrainID>
 </cac:RailTransport>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ReceiptLineType`
 
@@ -24151,6 +24549,8 @@ _2 unique instances across 1 element_
 </cac:ReceiptLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ReminderLineType`
 
 **Used as:** `cac:ReminderLine`
@@ -24167,6 +24567,8 @@ _1 unique instance across 1 element_
   </cac:BillingReference>
 </cac:ReminderLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `RemittanceAdviceLineType`
 
@@ -24226,6 +24628,8 @@ _1 unique instance across 1 element_
   </cac:BillingReference>
 </cac:RemittanceAdviceLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `RequestForQuotationLineType`
 
@@ -24314,6 +24718,8 @@ _5 unique instances across 1 element_
 </cac:RequestForQuotationLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ResponseType`
 
 **Used as:** `cac:DiscrepancyResponse`
@@ -24326,6 +24732,8 @@ _1 unique instance across 1 element_
   <cbc:Description>invoice cancelation</cbc:Description>
 </cac:DiscrepancyResponse>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `RetailPlannedImpactType`
 
@@ -24344,6 +24752,8 @@ _1 unique instance across 1 element_
   </cac:Period>
 </cac:RetailPlannedImpact>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `RoadTransportType`
 
@@ -24380,6 +24790,8 @@ _5 unique instances across 1 element_
   <cbc:LicensePlateID>WFN667</cbc:LicensePlateID>
 </cac:RoadTransport>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `SalesItemType`
 
@@ -24508,6 +24920,8 @@ _8 unique instances across 1 element_
 </cac:SalesItem>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `ServiceLevelAgreementType`
 
 **Used as:** `cac:ServiceLevelAgreement`
@@ -24601,6 +25015,8 @@ _4 unique instances across 1 element_
   </cac:ServiceMaintenancePeriod>
 </cac:ServiceLevelAgreement>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ShipmentStageType`
 
@@ -25083,6 +25499,8 @@ _17 unique instances across 3 elements_
   </cac:TransportMeans>
 </cac:ShipmentStage>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `ShipmentType`
 
@@ -27449,6 +27867,8 @@ _20 unique instances across 2 elements_
 </cac:Shipment>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `SignatureType`
 
 **Used as:** `cac:Signature`
@@ -27522,6 +27942,8 @@ _4 unique instances across 1 element_
 </cac:Signature>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `SocialMediaProfileType`
 
 **Used as:** `cac:SocialMediaProfile`
@@ -27568,6 +27990,8 @@ _5 unique instances across 1 element_
   <cbc:URI>https://plus.google.com/+Oasis-openOrg</cbc:URI>
 </cac:SocialMediaProfile>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `StatementLineType`
 
@@ -27629,6 +28053,8 @@ _1 unique instance across 1 element_
 </cac:StatementLine>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `StatusType`
 
 **Used as:** `cac:CurrentStatus` · `cac:Status`
@@ -27649,6 +28075,8 @@ _2 unique instances across 2 elements_
   <cbc:StatusReason>Reefer container lost power - cargo of fish destroyed</cbc:StatusReason>
 </cac:Status>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `StockAvailabilityReportLineType`
 
@@ -27708,6 +28136,8 @@ _3 unique instances across 1 element_
   </cac:Item>
 </cac:StockAvailabilityReportLine>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `SupplierPartyType`
 
@@ -28335,6 +28765,8 @@ _19 unique instances across 3 elements_
 </cac:SellerSupplierParty>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TaxCategoryType`
 
 **Used as:** `cac:ClassifiedTaxCategory` · `cac:TaxCategory`
@@ -28462,6 +28894,8 @@ _12 unique instances across 2 elements_
 </cac:TaxCategory>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TaxSchemeType`
 
 **Used as:** `cac:TaxScheme`
@@ -28494,6 +28928,8 @@ _4 unique instances across 1 element_
   <cbc:ID>VAT</cbc:ID>
 </cac:TaxScheme>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TaxSubtotalType`
 
@@ -28645,6 +29081,8 @@ _10 unique instances across 1 element_
   </cac:TaxCategory>
 </cac:TaxSubtotal>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TaxTotalType`
 
@@ -28920,6 +29358,8 @@ _17 unique instances across 1 element_
 </cac:TaxTotal>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TemperatureType`
 
 **Used as:** `cac:MaximumTemperature`
@@ -28933,6 +29373,8 @@ _1 unique instance across 1 element_
   <cbc:Description>Chilled</cbc:Description>
 </cac:MaximumTemperature>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TenderPreparationType`
 
@@ -28983,6 +29425,8 @@ _2 unique instances across 1 element_
   </cac:TenderEncryptionData>
 </cac:TenderPreparation>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TenderingTermsType`
 
@@ -29038,6 +29482,8 @@ _2 unique instances across 1 element_
 </cac:TenderingTerms>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TransactionConditionsType`
 
 **Used as:** `cac:TransactionConditions`
@@ -29055,6 +29501,8 @@ _2 unique instances across 1 element_
   <cbc:Description>order response required; payment is by BACS or by cheque</cbc:Description>
 </cac:TransactionConditions>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TransportEquipmentSealType`
 
@@ -29081,6 +29529,8 @@ _3 unique instances across 1 element_
   <cbc:ID>7654321</cbc:ID>
 </cac:TransportEquipmentSeal>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TransportEquipmentType`
 
@@ -29628,6 +30078,8 @@ _30 unique instances across 4 elements_
 </cac:TransportEquipment>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TransportEventType`
 
 **Used as:** `cac:EstimatedArrivalTransportEvent` · `cac:PlannedArrivalTransportEvent` · `cac:PlannedDeliveryTransportEvent` · `cac:PlannedDepartureTransportEvent` · `cac:PlannedPickupTransportEvent` · `cac:RequestedArrivalTransportEvent` · `cac:RequestedDeliveryTransportEvent` · `cac:RequestedDepartureTransportEvent` · `cac:RequestedPickupTransportEvent` · `cac:TransportEvent`
@@ -30131,6 +30583,8 @@ _26 unique instances across 10 elements_
 </cac:TransportEvent>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TransportExecutionTermsType`
 
 **Used as:** `cac:TransportExecutionTerms`
@@ -30240,6 +30694,8 @@ _3 unique instances across 1 element_
   </cac:NotificationRequirement>
 </cac:TransportExecutionTerms>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TransportHandlingUnitType`
 
@@ -30952,6 +31408,8 @@ _21 unique instances across 1 element_
 </cac:TransportHandlingUnit>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TransportMeansType`
 
 **Used as:** `cac:TransportMeans`
@@ -31076,6 +31534,8 @@ _13 unique instances across 1 element_
 </cac:TransportMeans>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TransportScheduleType`
 
 **Used as:** `cac:TransportSchedule`
@@ -31147,6 +31607,8 @@ _2 unique instances across 1 element_
   </cac:EstimatedArrivalTransportEvent>
 </cac:TransportSchedule>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `TransportationSegmentType`
 
@@ -31727,6 +32189,8 @@ _7 unique instances across 1 element_
 </cac:TransportationSegment>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `TransportationServiceType`
 
 **Used as:** `cac:AdditionalTransportationService` · `cac:FinalDeliveryTransportationService` · `cac:MainTransportationService` · `cac:OriginalDespatchTransportationService` · `cac:TransportationService`
@@ -32041,6 +32505,8 @@ _14 unique instances across 5 elements_
   <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
 </cac:TransportationService>
 ```
+
+[↑ Back to contents](#contents)
 
 ### `Unknown`
 
@@ -32608,6 +33074,8 @@ _39 unique instances across 17 elements_
 </cac:UpdatedDelivery>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `VerifiedGrossMassType`
 
 **Used as:** `cac:VerifiedGrossMass`
@@ -32669,6 +33137,8 @@ _3 unique instances across 1 element_
 </cac:VerifiedGrossMass>
 ```
 
+[↑ Back to contents](#contents)
+
 ### `WebSiteType`
 
 **Used as:** `cac:AdditionalWebSite`
@@ -32682,3 +33152,5 @@ _1 unique instance across 1 element_
   <cbc:URI>https://www.oasis-open.org/feed</cbc:URI>
 </cac:AdditionalWebSite>
 ```
+
+[↑ Back to contents](#contents)
