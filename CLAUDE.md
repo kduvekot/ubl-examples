@@ -65,14 +65,12 @@ The `ubl-examples` repository contains validated sample XML documents for variou
 Sample documents must meet three validation criteria:
 
 1. **XML Valid**: Proper XML structure and syntax
-2. **XSD Valid**: Conformance to XML Schema Definition (UBL 2.3 spec)
+2. **XSD Valid**: Conformance to XML Schema Definition (UBL 2.5 spec)
 3. **Semantically Correct**: Sample data and contents are realistic and meaningful
-
-Note: Maintain backwards compatibility with UBL 2.3 samples as the standard evolves toward UBL 2.5.
 
 ### Reference Resources
 
-- [OASIS UBL 2.3 Standard](https://docs.oasis-open.org/ubl/UBL-2.3.html)
+- [OASIS UBL 2.5 CSD02](https://docs.oasis-open.org/ubl/csd02-UBL-2.5/)
 - [Peppol UBL Invoice Documentation](https://docs.peppol.eu/poacc/billing/3.0/syntax/ubl-invoice/)
 
 ---
