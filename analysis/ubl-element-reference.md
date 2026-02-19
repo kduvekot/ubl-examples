@@ -47,17 +47,8 @@ _34 elements_
 <cbc:Amount>0.275</cbc:Amount>
 <cbc:Amount>1.00</cbc:Amount>
 <cbc:Amount>10</cbc:Amount>
-<cbc:Amount>10.00</cbc:Amount>
-<cbc:Amount>100</cbc:Amount>
-<cbc:Amount>100.0</cbc:Amount>
-<cbc:Amount>12</cbc:Amount>
-<cbc:Amount>12.70</cbc:Amount>
-<cbc:Amount>225</cbc:Amount>
-<cbc:Amount>2500</cbc:Amount>
-<cbc:Amount>254.00</cbc:Amount>
-<cbc:Amount>4.80</cbc:Amount>
-<cbc:Amount>5.00</cbc:Amount>
 ```
+_10 more values in examples_
 
 **`@currencyID`**
 
@@ -170,13 +161,8 @@ _34 elements_
 <cbc:DeclaredCustomsValueAmount>10000.00</cbc:DeclaredCustomsValueAmount>
 <cbc:DeclaredCustomsValueAmount>1500.00</cbc:DeclaredCustomsValueAmount>
 <cbc:DeclaredCustomsValueAmount>2000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>2500.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>3000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>500.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>5000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>750.00</cbc:DeclaredCustomsValueAmount>
 ```
+_6 more values in examples_
 
 **`@currencyID`**
 
@@ -194,16 +180,8 @@ _34 elements_
 <cbc:DeclaredStatisticsValueAmount>10050.00</cbc:DeclaredStatisticsValueAmount>
 <cbc:DeclaredStatisticsValueAmount>1500.00</cbc:DeclaredStatisticsValueAmount>
 <cbc:DeclaredStatisticsValueAmount>182.62</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>2000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>250.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>2500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>3000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>34800.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>4500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>5000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>750.00</cbc:DeclaredStatisticsValueAmount>
 ```
+_9 more values in examples_
 
 **`@currencyID`**
 
@@ -261,24 +239,8 @@ _34 elements_
 <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount>1000.00</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount>120.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>12000</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>1273</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>1436.5</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>150500.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>16.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>1750.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>187.5</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>197750.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>200.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>225</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>23.20</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>4.96</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>43750.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>6000</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>6225</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>7.20</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>80.00</cbc:LineExtensionAmount>
 ```
+_17 more values in examples_
 
 **`@currencyID`**
 
@@ -323,12 +285,8 @@ _34 elements_
 <cbc:PayableAmount>107.50</cbc:PayableAmount>
 <cbc:PayableAmount>2000</cbc:PayableAmount>
 <cbc:PayableAmount>247.55</cbc:PayableAmount>
-<cbc:PayableAmount>247187.50</cbc:PayableAmount>
-<cbc:PayableAmount>25.00</cbc:PayableAmount>
-<cbc:PayableAmount>300</cbc:PayableAmount>
-<cbc:PayableAmount>6225</cbc:PayableAmount>
-<cbc:PayableAmount>729</cbc:PayableAmount>
 ```
+_5 more values in examples_
 
 **`@currencyID`**
 
@@ -373,19 +331,8 @@ _34 elements_
 <cbc:PriceAmount>10.00</cbc:PriceAmount>
 <cbc:PriceAmount>100.00</cbc:PriceAmount>
 <cbc:PriceAmount>12.00</cbc:PriceAmount>
-<cbc:PriceAmount>120.00</cbc:PriceAmount>
-<cbc:PriceAmount>1250.00</cbc:PriceAmount>
-<cbc:PriceAmount>1273</cbc:PriceAmount>
-<cbc:PriceAmount>15</cbc:PriceAmount>
-<cbc:PriceAmount>16.00</cbc:PriceAmount>
-<cbc:PriceAmount>2.48</cbc:PriceAmount>
-<cbc:PriceAmount>25</cbc:PriceAmount>
-<cbc:PriceAmount>3.96</cbc:PriceAmount>
-<cbc:PriceAmount>40.00</cbc:PriceAmount>
-<cbc:PriceAmount>4300.00</cbc:PriceAmount>
-<cbc:PriceAmount>50</cbc:PriceAmount>
-<cbc:PriceAmount>50.00</cbc:PriceAmount>
 ```
+_12 more values in examples_
 
 **`@currencyID`**
 
@@ -405,17 +352,8 @@ _34 elements_
 <cbc:TaxAmount>0.00</cbc:TaxAmount>
 <cbc:TaxAmount>0.1</cbc:TaxAmount>
 <cbc:TaxAmount>0.496</cbc:TaxAmount>
-<cbc:TaxAmount>1.80</cbc:TaxAmount>
-<cbc:TaxAmount>100</cbc:TaxAmount>
-<cbc:TaxAmount>17.50</cbc:TaxAmount>
-<cbc:TaxAmount>254.6</cbc:TaxAmount>
-<cbc:TaxAmount>292.1</cbc:TaxAmount>
-<cbc:TaxAmount>292.20</cbc:TaxAmount>
-<cbc:TaxAmount>37.5</cbc:TaxAmount>
-<cbc:TaxAmount>4.00</cbc:TaxAmount>
-<cbc:TaxAmount>42.55</cbc:TaxAmount>
-<cbc:TaxAmount>5.80</cbc:TaxAmount>
 ```
+_10 more values in examples_
 
 **`@currencyID`**
 
@@ -451,11 +389,8 @@ _34 elements_
 <cbc:TaxInclusiveAmount>20.00</cbc:TaxInclusiveAmount>
 <cbc:TaxInclusiveAmount>247.55</cbc:TaxInclusiveAmount>
 <cbc:TaxInclusiveAmount>247187.50</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount>5.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount>6.00</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount>9.00</cbc:TaxInclusiveAmount>
 ```
+_4 more values in examples_
 
 **`@currencyID`**
 
@@ -498,11 +433,8 @@ _34 elements_
 <cbc:TaxableAmount>1.00</cbc:TaxableAmount>
 <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
 <cbc:TaxableAmount>1460.5</cbc:TaxableAmount>
-<cbc:TaxableAmount>16.00</cbc:TaxableAmount>
-<cbc:TaxableAmount>202.50</cbc:TaxableAmount>
-<cbc:TaxableAmount>23.20</cbc:TaxableAmount>
-<cbc:TaxableAmount>7.20</cbc:TaxableAmount>
 ```
+_4 more values in examples_
 
 **`@currencyID`**
 
@@ -583,8 +515,8 @@ _34 elements_
 <cbc:TotalTaxAmount>17.50</cbc:TotalTaxAmount>
 <cbc:TotalTaxAmount>20</cbc:TotalTaxAmount>
 <cbc:TotalTaxAmount>37625.00</cbc:TotalTaxAmount>
-<cbc:TotalTaxAmount>437.50</cbc:TotalTaxAmount>
 ```
+_1 more value in examples_
 
 **`@currencyID`**
 
@@ -1570,48 +1502,8 @@ _25 elements_
 <cbc:EndDate>2005-06-25</cbc:EndDate>
 <cbc:EndDate>2005-06-29</cbc:EndDate>
 <cbc:EndDate>2005-06-30</cbc:EndDate>
-<cbc:EndDate>2005-07-01</cbc:EndDate>
-<cbc:EndDate>2005-07-20</cbc:EndDate>
-<cbc:EndDate>2005-07-31</cbc:EndDate>
-<cbc:EndDate>2005-12-26</cbc:EndDate>
-<cbc:EndDate>2008-05-06</cbc:EndDate>
-<cbc:EndDate>2008-05-10</cbc:EndDate>
-<cbc:EndDate>2009-07-31</cbc:EndDate>
-<cbc:EndDate>2009-11-30</cbc:EndDate>
-<cbc:EndDate>2009-12-31</cbc:EndDate>
-<cbc:EndDate>2010-01-31</cbc:EndDate>
-<cbc:EndDate>2010-02-25</cbc:EndDate>
-<cbc:EndDate>2010-04-10</cbc:EndDate>
-<cbc:EndDate>2010-04-11</cbc:EndDate>
-<cbc:EndDate>2010-04-26</cbc:EndDate>
-<cbc:EndDate>2010-04-30</cbc:EndDate>
-<cbc:EndDate>2010-05-01</cbc:EndDate>
-<cbc:EndDate>2010-05-26</cbc:EndDate>
-<cbc:EndDate>2010-05-29</cbc:EndDate>
-<cbc:EndDate>2010-06-12</cbc:EndDate>
-<cbc:EndDate>2010-06-29</cbc:EndDate>
-<cbc:EndDate>2010-08-29</cbc:EndDate>
-<cbc:EndDate>2011-01-01</cbc:EndDate>
-<cbc:EndDate>2011-03-13</cbc:EndDate>
-<cbc:EndDate>2011-03-14</cbc:EndDate>
-<cbc:EndDate>2011-03-17</cbc:EndDate>
-<cbc:EndDate>2011-04-11</cbc:EndDate>
-<cbc:EndDate>2011-04-12</cbc:EndDate>
-<cbc:EndDate>2011-08-31</cbc:EndDate>
-<cbc:EndDate>2011-09-13</cbc:EndDate>
-<cbc:EndDate>2011-09-20</cbc:EndDate>
-<cbc:EndDate>2011-09-30</cbc:EndDate>
-<cbc:EndDate>2011-10-01</cbc:EndDate>
-<cbc:EndDate>2011-10-03</cbc:EndDate>
-<cbc:EndDate>2011-10-04</cbc:EndDate>
-<cbc:EndDate>2011-10-06</cbc:EndDate>
-<cbc:EndDate>2012-01-01</cbc:EndDate>
-<cbc:EndDate>2016-08-02</cbc:EndDate>
-<cbc:EndDate>2019-03-18</cbc:EndDate>
-<cbc:EndDate>2020-02-20</cbc:EndDate>
-<cbc:EndDate>2020-06-02</cbc:EndDate>
-<cbc:EndDate>2020-07-01</cbc:EndDate>
 ```
+_41 more values in examples_
 
 #### `cbc:ExpiryDate`
 
@@ -1628,60 +1520,8 @@ _25 elements_
 <cbc:IssueDate>2002-08-13</cbc:IssueDate>
 <cbc:IssueDate>2005-01-10</cbc:IssueDate>
 <cbc:IssueDate>2005-06-19</cbc:IssueDate>
-<cbc:IssueDate>2005-06-20</cbc:IssueDate>
-<cbc:IssueDate>2005-06-21</cbc:IssueDate>
-<cbc:IssueDate>2005-06-22</cbc:IssueDate>
-<cbc:IssueDate>2005-06-24</cbc:IssueDate>
-<cbc:IssueDate>2005-06-25</cbc:IssueDate>
-<cbc:IssueDate>2005-08-02</cbc:IssueDate>
-<cbc:IssueDate>2005-11-03</cbc:IssueDate>
-<cbc:IssueDate>2006-01-01</cbc:IssueDate>
-<cbc:IssueDate>2008-04-19</cbc:IssueDate>
-<cbc:IssueDate>2008-05-01</cbc:IssueDate>
-<cbc:IssueDate>2009-12-01</cbc:IssueDate>
-<cbc:IssueDate>2009-12-15</cbc:IssueDate>
-<cbc:IssueDate>2009-12-25</cbc:IssueDate>
-<cbc:IssueDate>2009-12-30</cbc:IssueDate>
-<cbc:IssueDate>2010-01-01</cbc:IssueDate>
-<cbc:IssueDate>2010-01-10</cbc:IssueDate>
-<cbc:IssueDate>2010-01-20</cbc:IssueDate>
-<cbc:IssueDate>2010-01-21</cbc:IssueDate>
-<cbc:IssueDate>2010-04-08</cbc:IssueDate>
-<cbc:IssueDate>2010-04-10</cbc:IssueDate>
-<cbc:IssueDate>2010-04-11</cbc:IssueDate>
-<cbc:IssueDate>2010-04-12</cbc:IssueDate>
-<cbc:IssueDate>2010-04-14</cbc:IssueDate>
-<cbc:IssueDate>2010-04-17</cbc:IssueDate>
-<cbc:IssueDate>2010-04-26</cbc:IssueDate>
-<cbc:IssueDate>2010-04-30</cbc:IssueDate>
-<cbc:IssueDate>2010-08-12</cbc:IssueDate>
-<cbc:IssueDate>2010-08-13</cbc:IssueDate>
-<cbc:IssueDate>2011-02-13</cbc:IssueDate>
-<cbc:IssueDate>2011-03-12</cbc:IssueDate>
-<cbc:IssueDate>2011-03-13</cbc:IssueDate>
-<cbc:IssueDate>2011-09-12</cbc:IssueDate>
-<cbc:IssueDate>2011-09-13</cbc:IssueDate>
-<cbc:IssueDate>2011-09-22</cbc:IssueDate>
-<cbc:IssueDate>2011-10-03</cbc:IssueDate>
-<cbc:IssueDate>2011-10-06</cbc:IssueDate>
-<cbc:IssueDate>2013-05-08</cbc:IssueDate>
-<cbc:IssueDate>2013-06-23</cbc:IssueDate>
-<cbc:IssueDate>2013-08-29</cbc:IssueDate>
-<cbc:IssueDate>2013-09-15</cbc:IssueDate>
-<cbc:IssueDate>2016-05-29</cbc:IssueDate>
-<cbc:IssueDate>2016-11-02</cbc:IssueDate>
-<cbc:IssueDate>2016-11-03</cbc:IssueDate>
-<cbc:IssueDate>2016-11-07</cbc:IssueDate>
-<cbc:IssueDate>2017-10-16</cbc:IssueDate>
-<cbc:IssueDate>2019-02-21</cbc:IssueDate>
-<cbc:IssueDate>2019-03-18</cbc:IssueDate>
-<cbc:IssueDate>2019-05-08</cbc:IssueDate>
-<cbc:IssueDate>2019-06-21</cbc:IssueDate>
-<cbc:IssueDate>2020-06-23</cbc:IssueDate>
-<cbc:IssueDate>2023-01-27</cbc:IssueDate>
-<cbc:IssueDate>2025-07-01</cbc:IssueDate>
-<cbc:IssueDate>2025-07-24</cbc:IssueDate>
 ```
+_53 more values in examples_
 
 #### `cbc:LatestDeliveryDate`
 
@@ -1760,43 +1600,8 @@ _25 elements_
 <cbc:StartDate>2005-06-20</cbc:StartDate>
 <cbc:StartDate>2005-06-25</cbc:StartDate>
 <cbc:StartDate>2005-06-29</cbc:StartDate>
-<cbc:StartDate>2005-06-30</cbc:StartDate>
-<cbc:StartDate>2005-07-01</cbc:StartDate>
-<cbc:StartDate>2008-05-01</cbc:StartDate>
-<cbc:StartDate>2008-05-06</cbc:StartDate>
-<cbc:StartDate>2009-01-01</cbc:StartDate>
-<cbc:StartDate>2009-08-01</cbc:StartDate>
-<cbc:StartDate>2009-11-01</cbc:StartDate>
-<cbc:StartDate>2010-01-01</cbc:StartDate>
-<cbc:StartDate>2010-02-01</cbc:StartDate>
-<cbc:StartDate>2010-02-10</cbc:StartDate>
-<cbc:StartDate>2010-03-26</cbc:StartDate>
-<cbc:StartDate>2010-03-28</cbc:StartDate>
-<cbc:StartDate>2010-04-01</cbc:StartDate>
-<cbc:StartDate>2010-04-07</cbc:StartDate>
-<cbc:StartDate>2010-04-09</cbc:StartDate>
-<cbc:StartDate>2010-04-11</cbc:StartDate>
-<cbc:StartDate>2010-04-28</cbc:StartDate>
-<cbc:StartDate>2010-04-30</cbc:StartDate>
-<cbc:StartDate>2010-05-01</cbc:StartDate>
-<cbc:StartDate>2010-05-12</cbc:StartDate>
-<cbc:StartDate>2011-03-13</cbc:StartDate>
-<cbc:StartDate>2011-03-14</cbc:StartDate>
-<cbc:StartDate>2011-03-17</cbc:StartDate>
-<cbc:StartDate>2011-08-01</cbc:StartDate>
-<cbc:StartDate>2011-09-12</cbc:StartDate>
-<cbc:StartDate>2011-09-20</cbc:StartDate>
-<cbc:StartDate>2011-10-01</cbc:StartDate>
-<cbc:StartDate>2011-10-03</cbc:StartDate>
-<cbc:StartDate>2011-10-04</cbc:StartDate>
-<cbc:StartDate>2011-10-06</cbc:StartDate>
-<cbc:StartDate>2016-08-02</cbc:StartDate>
-<cbc:StartDate>2017-03-30</cbc:StartDate>
-<cbc:StartDate>2019-02-21</cbc:StartDate>
-<cbc:StartDate>2019-03-18</cbc:StartDate>
-<cbc:StartDate>2020-06-02</cbc:StartDate>
-<cbc:StartDate>2020-07-01</cbc:StartDate>
 ```
+_36 more values in examples_
 
 #### `cbc:SubmissionDate`
 
@@ -1848,14 +1653,8 @@ _54 elements_
 <cbc:AttributeID>Height</cbc:AttributeID>
 <cbc:AttributeID>Length</cbc:AttributeID>
 <cbc:AttributeID>LineGrossWeight</cbc:AttributeID>
-<cbc:AttributeID>LineNetWeight</cbc:AttributeID>
-<cbc:AttributeID>NetWeight</cbc:AttributeID>
-<cbc:AttributeID>OuterDepth</cbc:AttributeID>
-<cbc:AttributeID>OuterHeight</cbc:AttributeID>
-<cbc:AttributeID>OuterWidth</cbc:AttributeID>
-<cbc:AttributeID>TC</cbc:AttributeID>
-<cbc:AttributeID>Width</cbc:AttributeID>
 ```
+_7 more values in examples_
 
 #### `cbc:CarrierAssignedID`
 
@@ -1871,27 +1670,8 @@ _54 elements_
 <cbc:CompanyID>16077593</cbc:CompanyID>
 <cbc:CompanyID>175 269 2355</cbc:CompanyID>
 <cbc:CompanyID>18296799</cbc:CompanyID>
-<cbc:CompanyID>43232010</cbc:CompanyID>
-<cbc:CompanyID>45789034</cbc:CompanyID>
-<cbc:CompanyID>5402697509</cbc:CompanyID>
-<cbc:CompanyID>5532331183</cbc:CompanyID>
-<cbc:CompanyID>5532332283</cbc:CompanyID>
-<cbc:CompanyID>5645342123</cbc:CompanyID>
-<cbc:CompanyID>6411982340</cbc:CompanyID>
-<cbc:CompanyID>945030345</cbc:CompanyID>
-<cbc:CompanyID>989987876</cbc:CompanyID>
-<cbc:CompanyID>BE54321</cbc:CompanyID>
-<cbc:CompanyID>BE987654321</cbc:CompanyID>
-<cbc:CompanyID>DE122125278</cbc:CompanyID>
-<cbc:CompanyID>DK12345</cbc:CompanyID>
-<cbc:CompanyID>DK12345678</cbc:CompanyID>
-<cbc:CompanyID>DK123456789</cbc:CompanyID>
-<cbc:CompanyID>DK18296799</cbc:CompanyID>
-<cbc:CompanyID>DK43232010</cbc:CompanyID>
-<cbc:CompanyID>DK59873677</cbc:CompanyID>
-<cbc:CompanyID>DK89343487</cbc:CompanyID>
-<cbc:CompanyID>SE1234567801</cbc:CompanyID>
 ```
+_20 more values in examples_
 
 **`@schemeAgencyID`**
 
@@ -1934,29 +1714,8 @@ _54 elements_
 <cbc:CustomizationID>OIOUBL-2.1</cbc:CustomizationID>
 <cbc:CustomizationID>Sample-0.9</cbc:CustomizationID>
 <cbc:CustomizationID>UBL-2.3</cbc:CustomizationID>
-<cbc:CustomizationID>UBL-TR</cbc:CustomizationID>
-<cbc:CustomizationID>urn:X-demo:TransportShipments</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:default</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:schema:xsd:Quotation-2-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:CreditNote-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:DespatchAdvice-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:ExceptionCriteria-2.1:1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:ForwardingInstructions-2.0:samples-2.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:Order-2.0:samples-2.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:Order-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:OrderResponseSimple-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:ReceiptAdvice-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:RemittanceAdvice-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:RequestForQuotation-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:Statement-2.0:sbs-1.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:Waybill-2.0:samples-2.0-draft</cbc:CustomizationID>
-<cbc:CustomizationID>urn:www.cenbii.eu:transaction:BiiTrns081:ver2.0</cbc:CustomizationID>
-<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm001:ver1.0</cbc:CustomizationID>
-<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdmXYZ:ver1.0</cbc:CustomizationID>
-<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
-<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
 ```
+_22 more values in examples_
 
 #### `cbc:DocumentID`
 
@@ -1972,14 +1731,8 @@ _54 elements_
 <cbc:EndpointID>1234567890123</cbc:EndpointID>
 <cbc:EndpointID>1234567987654</cbc:EndpointID>
 <cbc:EndpointID>5798000416604</cbc:EndpointID>
-<cbc:EndpointID>7300072311115</cbc:EndpointID>
-<cbc:EndpointID>7302347231111</cbc:EndpointID>
-<cbc:EndpointID>9994567987654</cbc:EndpointID>
-<cbc:EndpointID>DK18296799</cbc:EndpointID>
-<cbc:EndpointID>www.consignee.com/statusnotifications/</cbc:EndpointID>
-<cbc:EndpointID>www.consignee.de/statusnotifications/</cbc:EndpointID>
-<cbc:EndpointID>www.consignor.cn/statusnotifications/</cbc:EndpointID>
 ```
+_7 more values in examples_
 
 **`@schemeAgencyID`**
 
@@ -2025,352 +1778,8 @@ _54 elements_
 <cbc:ID>001-00010123</cbc:ID>
 <cbc:ID>0012345000058</cbc:ID>
 <cbc:ID>00123450000580</cbc:ID>
-<cbc:ID>00123450000581</cbc:ID>
-<cbc:ID>00123450000582</cbc:ID>
-<cbc:ID>00123450000583</cbc:ID>
-<cbc:ID>00123450000584</cbc:ID>
-<cbc:ID>0012345000359</cbc:ID>
-<cbc:ID>00384</cbc:ID>
-<cbc:ID>01530</cbc:ID>
-<cbc:ID>0245442-8</cbc:ID>
-<cbc:ID>06110123456784</cbc:ID>
-<cbc:ID>0665/2003</cbc:ID>
-<cbc:ID>098740918237</cbc:ID>
-<cbc:ID>0987654321123</cbc:ID>
-<cbc:ID>0987678321123</cbc:ID>
-<cbc:ID>1</cbc:ID>
-<cbc:ID>10</cbc:ID>
-<cbc:ID>10-26-58</cbc:ID>
-<cbc:ID>100700011021</cbc:ID>
-<cbc:ID>101</cbc:ID>
-<cbc:ID>10158209175014500</cbc:ID>
-<cbc:ID>101_3</cbc:ID>
-<cbc:ID>108-3692468</cbc:ID>
-<cbc:ID>1080</cbc:ID>
-<cbc:ID>11</cbc:ID>
-<cbc:ID>12</cbc:ID>
-<cbc:ID>123</cbc:ID>
-<cbc:ID>1231412341324</cbc:ID>
-<cbc:ID>1234</cbc:ID>
-<cbc:ID>123452340123</cbc:ID>
-<cbc:ID>123456</cbc:ID>
-<cbc:ID>1234567-8</cbc:ID>
-<cbc:ID>12345678</cbc:ID>
-<cbc:ID>123456789</cbc:ID>
-<cbc:ID>1234567890</cbc:ID>
-<cbc:ID>1234567890123</cbc:ID>
-<cbc:ID>1234567890124</cbc:ID>
-<cbc:ID>1234567890125</cbc:ID>
-<cbc:ID>1234567890126</cbc:ID>
-<cbc:ID>1234567890127</cbc:ID>
-<cbc:ID>1234567890128</cbc:ID>
-<cbc:ID>12345698</cbc:ID>
-<cbc:ID>123465</cbc:ID>
-<cbc:ID>1236541</cbc:ID>
-<cbc:ID>1238764941386</cbc:ID>
-<cbc:ID>13</cbc:ID>
-<cbc:ID>13234212</cbc:ID>
-<cbc:ID>133</cbc:ID>
-<cbc:ID>14</cbc:ID>
-<cbc:ID>144</cbc:ID>
-<cbc:ID>15</cbc:ID>
-<cbc:ID>16</cbc:ID>
-<cbc:ID>17</cbc:ID>
-<cbc:ID>17589683</cbc:ID>
-<cbc:ID>17589684</cbc:ID>
-<cbc:ID>18</cbc:ID>
-<cbc:ID>19</cbc:ID>
-<cbc:ID>1928</cbc:ID>
-<cbc:ID>1_1</cbc:ID>
-<cbc:ID>2</cbc:ID>
-<cbc:ID>20</cbc:ID>
-<cbc:ID>2005-9A</cbc:ID>
-<cbc:ID>2005US12345678998765432112345678</cbc:ID>
-<cbc:ID>2076084807</cbc:ID>
-<cbc:ID>2203148000007</cbc:ID>
-<cbc:ID>224087496582335</cbc:ID>
-<cbc:ID>23424244</cbc:ID>
-<cbc:ID>2343456533</cbc:ID>
-<cbc:ID>23445567</cbc:ID>
-<cbc:ID>234486-2017</cbc:ID>
-<cbc:ID>234534533</cbc:ID>
-<cbc:ID>2345678-910</cbc:ID>
-<cbc:ID>234664</cbc:ID>
-<cbc:ID>28833-2661-144</cbc:ID>
-<cbc:ID>2_1</cbc:ID>
-<cbc:ID>3</cbc:ID>
-<cbc:ID>321987</cbc:ID>
-<cbc:ID>32453</cbc:ID>
-<cbc:ID>325334535</cbc:ID>
-<cbc:ID>34</cbc:ID>
-<cbc:ID>34322</cbc:ID>
-<cbc:ID>34563456</cbc:ID>
-<cbc:ID>34564645</cbc:ID>
-<cbc:ID>345KS5324</cbc:ID>
-<cbc:ID>37</cbc:ID>
-<cbc:ID>381944545</cbc:ID>
-<cbc:ID>4</cbc:ID>
-<cbc:ID>4058673821325</cbc:ID>
-<cbc:ID>4058673827000</cbc:ID>
-<cbc:ID>4058673827100</cbc:ID>
-<cbc:ID>4058673827112</cbc:ID>
-<cbc:ID>4058673827123</cbc:ID>
-<cbc:ID>4058673827641</cbc:ID>
-<cbc:ID>4058675698641</cbc:ID>
-<cbc:ID>43125678</cbc:ID>
-<cbc:ID>4568763527610</cbc:ID>
-<cbc:ID>5</cbc:ID>
-<cbc:ID>510</cbc:ID>
-<cbc:ID>51022</cbc:ID>
-<cbc:ID>5234533222</cbc:ID>
-<cbc:ID>52345423423</cbc:ID>
-<cbc:ID>5398000392577</cbc:ID>
-<cbc:ID>565899</cbc:ID>
-<cbc:ID>567-3456</cbc:ID>
-<cbc:ID>5790000127777</cbc:ID>
-<cbc:ID>5798000416604</cbc:ID>
-<cbc:ID>6</cbc:ID>
-<cbc:ID>63</cbc:ID>
-<cbc:ID>634563324</cbc:ID>
-<cbc:ID>636257218904553192</cbc:ID>
-<cbc:ID>645634567</cbc:ID>
-<cbc:ID>6577884</cbc:ID>
-<cbc:ID>6578481</cbc:ID>
-<cbc:ID>6578489</cbc:ID>
-<cbc:ID>658398</cbc:ID>
-<cbc:ID>66890-9-09</cbc:ID>
-<cbc:ID>6754238987648</cbc:ID>
-<cbc:ID>67654328394567</cbc:ID>
-<cbc:ID>6903148000007</cbc:ID>
-<cbc:ID>6916</cbc:ID>
-<cbc:ID>7</cbc:ID>
-<cbc:ID>7300070011115</cbc:ID>
-<cbc:ID>7365566156191234567</cbc:ID>
-<cbc:ID>7654321</cbc:ID>
-<cbc:ID>7778</cbc:ID>
-<cbc:ID>8</cbc:ID>
-<cbc:ID>8447</cbc:ID>
-<cbc:ID>8596</cbc:ID>
-<cbc:ID>8601.12.11189</cbc:ID>
-<cbc:ID>89767764</cbc:ID>
-<cbc:ID>9</cbc:ID>
-<cbc:ID>987456123</cbc:ID>
-<cbc:ID>987654321</cbc:ID>
-<cbc:ID>A</cbc:ID>
-<cbc:ID>A00095678</cbc:ID>
-<cbc:ID>A12345-2016</cbc:ID>
-<cbc:ID>A2344</cbc:ID>
-<cbc:ID>A54321-2016</cbc:ID>
-<cbc:ID>AA</cbc:ID>
-<cbc:ID>AA109</cbc:ID>
-<cbc:ID>AA128</cbc:ID>
-<cbc:ID>AB011</cbc:ID>
-<cbc:ID>ABCD123456-7</cbc:ID>
-<cbc:ID>ACME_BR_BE_0023</cbc:ID>
-<cbc:ID>AEG012345</cbc:ID>
-<cbc:ID>Aarhus</cbc:ID>
-<cbc:ID>BA058</cbc:ID>
-<cbc:ID>BC1-2016</cbc:ID>
-<cbc:ID>BFCU4040001</cbc:ID>
-<cbc:ID>BFCU4040002</cbc:ID>
-<cbc:ID>Balboa Port</cbc:ID>
-<cbc:ID>C1</cbc:ID>
-<cbc:ID>C12345-2016</cbc:ID>
-<cbc:ID>CA_1</cbc:ID>
-<cbc:ID>CC2679</cbc:ID>
-<cbc:ID>CH002621</cbc:ID>
-<cbc:ID>CIP</cbc:ID>
-<cbc:ID>CN758494</cbc:ID>
-<cbc:ID>CNSHA</cbc:ID>
-<cbc:ID>CONS-0001</cbc:ID>
-<cbc:ID>CONS-001</cbc:ID>
-<cbc:ID>CON_1</cbc:ID>
-<cbc:ID>CON_2</cbc:ID>
-<cbc:ID>CON_P_1</cbc:ID>
-<cbc:ID>CON_P_2</cbc:ID>
-<cbc:ID>CON_TE_1</cbc:ID>
-<cbc:ID>CON_TE_2</cbc:ID>
-<cbc:ID>CON_THU_1</cbc:ID>
-<cbc:ID>CON_THU_2</cbc:ID>
-<cbc:ID>Contract321</cbc:ID>
-<cbc:ID>CreditNote</cbc:ID>
-<cbc:ID>DA008</cbc:ID>
-<cbc:ID>DD88</cbc:ID>
-<cbc:ID>DE000396</cbc:ID>
-<cbc:ID>DEBREV</cbc:ID>
-<cbc:ID>DEHAM</cbc:ID>
-<cbc:ID>DELL1052665</cbc:ID>
-<cbc:ID>DELL2363463</cbc:ID>
-<cbc:ID>DELL2367452</cbc:ID>
-<cbc:ID>DELL8436783</cbc:ID>
-<cbc:ID>DH019</cbc:ID>
-<cbc:ID>DK003102</cbc:ID>
-<cbc:ID>DK10035643</cbc:ID>
-<cbc:ID>DK1212341234123412</cbc:ID>
-<cbc:ID>DK12345678</cbc:ID>
-<cbc:ID>DK18296799</cbc:ID>
-<cbc:ID>DKDKABCD</cbc:ID>
-<cbc:ID>DN0001</cbc:ID>
-<cbc:ID>DP</cbc:ID>
-<cbc:ID>Doc1</cbc:ID>
-<cbc:ID>Doc2</cbc:ID>
-<cbc:ID>E</cbc:ID>
-<cbc:ID>EC758494</cbc:ID>
-<cbc:ID>EN758494</cbc:ID>
-<cbc:ID>EXT_1</cbc:ID>
-<cbc:ID>EXT_TE_1</cbc:ID>
-<cbc:ID>EXT_TE_2</cbc:ID>
-<cbc:ID>EXT_THU_1</cbc:ID>
-<cbc:ID>EXT_THU_2</cbc:ID>
-<cbc:ID>EXW</cbc:ID>
-<cbc:ID>EmployeeXXX</cbc:ID>
-<cbc:ID>ExampleID</cbc:ID>
-<cbc:ID>FCA</cbc:ID>
-<cbc:ID>FI001800</cbc:ID>
-<cbc:ID>FI015300</cbc:ID>
-<cbc:ID>FI0245442-8</cbc:ID>
-<cbc:ID>FI1234567-1</cbc:ID>
-<cbc:ID>FI1234567-8</cbc:ID>
-<cbc:ID>FI1234567-8R0001</cbc:ID>
-<cbc:ID>FI1234569-8</cbc:ID>
-<cbc:ID>FIRMA000000010</cbc:ID>
-<cbc:ID>FLGS339241</cbc:ID>
-<cbc:ID>FOB</cbc:ID>
-<cbc:ID>FOB Destination</cbc:ID>
-<cbc:ID>FOT</cbc:ID>
-<cbc:ID>FRL1</cbc:ID>
-<cbc:ID>Freight Bookings</cbc:ID>
-<cbc:ID>G867B</cbc:ID>
-<cbc:ID>GB999999973</cbc:ID>
-<cbc:ID>GBBRS</cbc:ID>
-<cbc:ID>GBFXT</cbc:ID>
-<cbc:ID>GBLHR</cbc:ID>
-<cbc:ID>GHJ76849</cbc:ID>
-<cbc:ID>GID_1</cbc:ID>
-<cbc:ID>GID_2</cbc:ID>
-<cbc:ID>GIIID_1</cbc:ID>
-<cbc:ID>GOA294107</cbc:ID>
-<cbc:ID>GRAI 12345698-1</cbc:ID>
-<cbc:ID>GRAI 12345698-2</cbc:ID>
-<cbc:ID>GSIN_1</cbc:ID>
-<cbc:ID>GSIN_2</cbc:ID>
-<cbc:ID>GoodsItemID1</cbc:ID>
-<cbc:ID>GoodsItemID2</cbc:ID>
-<cbc:ID>HUISI000000002</cbc:ID>
-<cbc:ID>ID0009</cbc:ID>
-<cbc:ID>ID0113</cbc:ID>
-<cbc:ID>ID168</cbc:ID>
-<cbc:ID>INV000123</cbc:ID>
-<cbc:ID>IT01234567890</cbc:ID>
-<cbc:ID>ITGOA</cbc:ID>
-<cbc:ID>Invoice</cbc:ID>
-<cbc:ID>JB007</cbc:ID>
-<cbc:ID>JB008</cbc:ID>
-<cbc:ID>JB009</cbc:ID>
-<cbc:ID>JB010</cbc:ID>
-<cbc:ID>JB011</cbc:ID>
-<cbc:ID>JUL2005-07758990</cbc:ID>
-<cbc:ID>K0058</cbc:ID>
-<cbc:ID>KHN23-44044</cbc:ID>
-<cbc:ID>KHN23-44044-1</cbc:ID>
-<cbc:ID>KHN23-44048</cbc:ID>
-<cbc:ID>L1</cbc:ID>
-<cbc:ID>Lot2</cbc:ID>
-<cbc:ID>M165</cbc:ID>
-<cbc:ID>MAFO</cbc:ID>
-<cbc:ID>MAPTM</cbc:ID>
-<cbc:ID>MC002</cbc:ID>
-<cbc:ID>ML</cbc:ID>
-<cbc:ID>MyParty</cbc:ID>
-<cbc:ID>NEC_TE_1</cbc:ID>
-<cbc:ID>NEC_TE_2</cbc:ID>
-<cbc:ID>NOOSL</cbc:ID>
-<cbc:ID>NTT_1</cbc:ID>
-<cbc:ID>NTT_TE_1</cbc:ID>
-<cbc:ID>NTT_TE_2</cbc:ID>
-<cbc:ID>NTT_THU_1</cbc:ID>
-<cbc:ID>NTT_THU_2</cbc:ID>
-<cbc:ID>O</cbc:ID>
-<cbc:ID>OF758494</cbc:ID>
-<cbc:ID>OFR_758494</cbc:ID>
-<cbc:ID>Other</cbc:ID>
-<cbc:ID>PA_758494</cbc:ID>
-<cbc:ID>PDL_2009_01</cbc:ID>
-<cbc:ID>PDL_2009_02</cbc:ID>
-<cbc:ID>PH758494</cbc:ID>
-<cbc:ID>PK009</cbc:ID>
-<cbc:ID>PL001</cbc:ID>
-<cbc:ID>PROFORMA001</cbc:ID>
-<cbc:ID>PartyID123</cbc:ID>
-<cbc:ID>QIY7655</cbc:ID>
-<cbc:ID>QuoteID123</cbc:ID>
-<cbc:ID>RE758494</cbc:ID>
-<cbc:ID>RjectedOrderID123</cbc:ID>
-<cbc:ID>S</cbc:ID>
-<cbc:ID>S1</cbc:ID>
-<cbc:ID>SA2009</cbc:ID>
-<cbc:ID>SCADL_SHIPMENT001</cbc:ID>
-<cbc:ID>SH009</cbc:ID>
-<cbc:ID>SItemNo001</cbc:ID>
-<cbc:ID>SItemNo011</cbc:ID>
-<cbc:ID>SKI123456</cbc:ID>
-<cbc:ID>STD14037</cbc:ID>
-<cbc:ID>STO</cbc:ID>
-<cbc:ID>SellerPartyID123</cbc:ID>
-<cbc:ID>Supp123</cbc:ID>
-<cbc:ID>TC101</cbc:ID>
-<cbc:ID>TEPID_1</cbc:ID>
-<cbc:ID>TEPR_1</cbc:ID>
-<cbc:ID>TEP_1</cbc:ID>
-<cbc:ID>TESID_1</cbc:ID>
-<cbc:ID>TE_1</cbc:ID>
-<cbc:ID>TH009</cbc:ID>
-<cbc:ID>THU#1</cbc:ID>
-<cbc:ID>THU#2</cbc:ID>
-<cbc:ID>THU#3</cbc:ID>
-<cbc:ID>THU1</cbc:ID>
-<cbc:ID>THU_1</cbc:ID>
-<cbc:ID>TILP758494</cbc:ID>
-<cbc:ID>TI_101</cbc:ID>
-<cbc:ID>TJ043</cbc:ID>
-<cbc:ID>TOSL108</cbc:ID>
-<cbc:ID>TOS_1</cbc:ID>
-<cbc:ID>TPSID_1</cbc:ID>
-<cbc:ID>TPSR_1</cbc:ID>
-<cbc:ID>TPS_1</cbc:ID>
-<cbc:ID>TRHU1652173</cbc:ID>
-<cbc:ID>TS893</cbc:ID>
-<cbc:ID>TSD1</cbc:ID>
-<cbc:ID>TSD_REQ_1</cbc:ID>
-<cbc:ID>TSD_RESP_1</cbc:ID>
-<cbc:ID>TSR_1</cbc:ID>
-<cbc:ID>TS_1</cbc:ID>
-<cbc:ID>TT319</cbc:ID>
-<cbc:ID>UK VAT</cbc:ID>
-<cbc:ID>USBOS</cbc:ID>
-<cbc:ID>USRM3656679</cbc:ID>
-<cbc:ID>VAT</cbc:ID>
-<cbc:ID>W123</cbc:ID>
-<cbc:ID>XD534533</cbc:ID>
-<cbc:ID>XXX</cbc:ID>
-<cbc:ID>XYZ987</cbc:ID>
-<cbc:ID>YX233</cbc:ID>
-<cbc:ID>YX401</cbc:ID>
-<cbc:ID>YangMei</cbc:ID>
-<cbc:ID>ZZ738</cbc:ID>
-<cbc:ID>ata01661</cbc:ID>
-<cbc:ID>exceptionCriteriaLineID</cbc:ID>
-<cbc:ID>exceptionNotificationLineID</cbc:ID>
-<cbc:ID>exi000073</cbc:ID>
-<cbc:ID>ffi000861</cbc:ID>
-<cbc:ID>fi</cbc:ID>
-<cbc:ID>forecastLineID</cbc:ID>
-<cbc:ID>normalizedString</cbc:ID>
-<cbc:ID>urn:oasis:names:specification:ubl:signature:Invoice</cbc:ID>
-<cbc:ID>urn:oasis:names:specification:ubl:signatures</cbc:ID>
-<cbc:ID>urn:oasis:names:specification:ubl:signatures:1</cbc:ID>
-<cbc:ID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ID>
 ```
+_345 more values in examples_
 
 **`@schemeAgencyID`**
 
@@ -2544,32 +1953,8 @@ _54 elements_
 <cbc:ProfileID>ExampleProfile</cbc:ProfileID>
 <cbc:ProfileID>FWF</cbc:ProfileID>
 <cbc:ProfileID>Procurement-QuoSim-1.0</cbc:ProfileID>
-<cbc:ProfileID>ShopReceipt-0.9</cbc:ProfileID>
-<cbc:ProfileID>TOS_SUBSET</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-exception-notification-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-forecast-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-performance-history</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-product-activity-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-retail-event</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-trade-item-location-profile</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-cpfr-exception-criteria-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sample-international-scenario</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-credit-notification-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-despatch-advice-notification-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-invoice-notification-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-order-with-simple-response-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-receipt-advice-notification-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-remittance-advice-notification-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-request-for-quotation-draft</cbc:ProfileID>
-<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-statement-notification-draft</cbc:ProfileID>
-<cbc:ProfileID>eFreight Profile</cbc:ProfileID>
-<cbc:ProfileID>eFreightProfile</cbc:ProfileID>
-<cbc:ProfileID>urn:X-demo:CoreElement</cbc:ProfileID>
-<cbc:ProfileID>urn:www.cenbii.eu:profile:BII01:ver1.0</cbc:ProfileID>
-<cbc:ProfileID>urn:www.cenbii.eu:profile:BIIXYZ:ver1.0</cbc:ProfileID>
-<cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
-<cbc:ProfileID>urn:www.cenbii.eu:profile:bii46:ver2.0</cbc:ProfileID>
 ```
+_25 more values in examples_
 
 **`@schemeAgencyID`**
 
@@ -2699,9 +2084,8 @@ _54 elements_
 <cbc:TraceID>12345678914542</cbc:TraceID>
 <cbc:TraceID>12345678914543</cbc:TraceID>
 <cbc:TraceID>12345678914564</cbc:TraceID>
-<cbc:TraceID>12345678914565</cbc:TraceID>
-<cbc:TraceID>STD14037</cbc:TraceID>
 ```
+_2 more values in examples_
 
 #### `cbc:TrackingID`
 
@@ -2725,10 +2109,8 @@ _54 elements_
 <cbc:TransportExecutionPlanReferenceID>TEPID_1_2</cbc:TransportExecutionPlanReferenceID>
 <cbc:TransportExecutionPlanReferenceID>TEPID_1_3</cbc:TransportExecutionPlanReferenceID>
 <cbc:TransportExecutionPlanReferenceID>TEPID_1_4</cbc:TransportExecutionPlanReferenceID>
-<cbc:TransportExecutionPlanReferenceID>TEP_1</cbc:TransportExecutionPlanReferenceID>
-<cbc:TransportExecutionPlanReferenceID>TEP_2</cbc:TransportExecutionPlanReferenceID>
-<cbc:TransportExecutionPlanReferenceID>TEP_3</cbc:TransportExecutionPlanReferenceID>
 ```
+_3 more values in examples_
 
 #### `cbc:UBLVersionID`
 
@@ -2738,9 +2120,8 @@ _54 elements_
 <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
 <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
 <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
-<cbc:UBLVersionID>2.4</cbc:UBLVersionID>
-<cbc:UBLVersionID>2.5</cbc:UBLVersionID>
 ```
+_2 more values in examples_
 
 #### `cbc:URI`
 
@@ -2750,13 +2131,8 @@ _54 elements_
 <cbc:URI>http://twitter.com/OASISopen</cbc:URI>
 <cbc:URI>http://www.suppliersite.eu/sheet001.html</cbc:URI>
 <cbc:URI>http://www.youtube.com/oasisopen</cbc:URI>
-<cbc:URI>https://plus.google.com/+Oasis-openOrg</cbc:URI>
-<cbc:URI>https://www.linkedin.com/company/oasis</cbc:URI>
-<cbc:URI>https://www.oasis-open.org/feed</cbc:URI>
-<cbc:URI>https://www.trust2408/certPaths/Trust2408_issuingCA12_chain.p7c</cbc:URI>
-<cbc:URI>normalizedString</cbc:URI>
-<cbc:URI>www.digst.dk/udbud/NemID.cer</cbc:URI>
 ```
+_6 more values in examples_
 
 #### `cbc:UUID`
 
@@ -2766,18 +2142,8 @@ _54 elements_
 <cbc:UUID>569ED478-0EBE-4817-A234-DFB9ACA81218</cbc:UUID>
 <cbc:UUID>6E09886B-DC6E-439F-82D1-7C83709652B1</cbc:UUID>
 <cbc:UUID>6E09886B-DC6E-439F-82D1-7C83746352B1</cbc:UUID>
-<cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
-<cbc:UUID>74638995-D67E-002F-436-8G17366352B1</cbc:UUID>
-<cbc:UUID>849FBBCE-E081-40B4-906C-94C5FF9D1AC3</cbc:UUID>
-<cbc:UUID>84E081CE-F9D1-94C5-40F9-94C5FF9D1AC3</cbc:UUID>
-<cbc:UUID>88C7280E-8F10-419F-9949-8EFFFA2842B8</cbc:UUID>
-<cbc:UUID>89F82FA6-5331-491D-83BC-7B6CA7FD047C</cbc:UUID>
-<cbc:UUID>8D076867-AE6D-439F-8281-5AAFC7F4E3B1</cbc:UUID>
-<cbc:UUID>93T5G3G5-HYA3-7267-BVG3-GS46SW44WG53</cbc:UUID>
-<cbc:UUID>ExampleUUID</cbc:UUID>
-<cbc:UUID>normalizedString</cbc:UUID>
-<cbc:UUID>x2344vghjjrhhfhrrrgd4567</cbc:UUID>
 ```
+_11 more values in examples_
 
 #### `cbc:VersionID`
 
@@ -3050,14 +2416,8 @@ _23 elements_
 <cbc:GrossWeightMeasure>12</cbc:GrossWeightMeasure>
 <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
 <cbc:GrossWeightMeasure>230.80</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>400</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>50000</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>600</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>774.14400</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>88.00</cbc:GrossWeightMeasure>
 ```
+_7 more values in examples_
 
 **`@unitCode`**
 
@@ -3189,19 +2549,8 @@ _23 elements_
 <cbc:Measure>120</cbc:Measure>
 <cbc:Measure>160</cbc:Measure>
 <cbc:Measure>2.44</cbc:Measure>
-<cbc:Measure>2.6</cbc:Measure>
-<cbc:Measure>3.00</cbc:Measure>
-<cbc:Measure>6.1</cbc:Measure>
-<cbc:Measure>60</cbc:Measure>
-<cbc:Measure>604.8</cbc:Measure>
-<cbc:Measure>604.80000</cbc:Measure>
-<cbc:Measure>70</cbc:Measure>
-<cbc:Measure>774.144</cbc:Measure>
-<cbc:Measure>774.14400</cbc:Measure>
-<cbc:Measure>80</cbc:Measure>
-<cbc:Measure>88</cbc:Measure>
-<cbc:Measure>9.6</cbc:Measure>
 ```
+_12 more values in examples_
 
 **`@unitCode`**
 
@@ -3328,8 +2677,8 @@ _14 elements_
 <cbc:AdditionalStreetName>Back door</cbc:AdditionalStreetName>
 <cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
 <cbc:AdditionalStreetName>Suite 123</cbc:AdditionalStreetName>
-<cbc:AdditionalStreetName>suite12</cbc:AdditionalStreetName>
 ```
+_1 more value in examples_
 
 #### `cbc:BrandName`
 
@@ -3354,55 +2703,8 @@ _14 elements_
 <cbc:CityName>Bergen</cbc:CityName>
 <cbc:CityName>Berlin</cbc:CityName>
 <cbc:CityName>Bern</cbc:CityName>
-<cbc:CityName>Big city</cbc:CityName>
-<cbc:CityName>Billerica</cbc:CityName>
-<cbc:CityName>Bologna</cbc:CityName>
-<cbc:CityName>Boston</cbc:CityName>
-<cbc:CityName>Bremen</cbc:CityName>
-<cbc:CityName>Bridgtow</cbc:CityName>
-<cbc:CityName>Brussels</cbc:CityName>
-<cbc:CityName>Burlington</cbc:CityName>
-<cbc:CityName>Charlottenlund</cbc:CityName>
-<cbc:CityName>City</cbc:CityName>
-<cbc:CityName>Copenhagen</cbc:CityName>
-<cbc:CityName>Declarant City</cbc:CityName>
-<cbc:CityName>DeliveryCity</cbc:CityName>
-<cbc:CityName>El Dorado</cbc:CityName>
-<cbc:CityName>Espoo</cbc:CityName>
-<cbc:CityName>Example City</cbc:CityName>
-<cbc:CityName>Farthing</cbc:CityName>
-<cbc:CityName>Gedser</cbc:CityName>
-<cbc:CityName>Grenå</cbc:CityName>
-<cbc:CityName>Hamar</cbc:CityName>
-<cbc:CityName>Hamburg</cbc:CityName>
-<cbc:CityName>Heiligenhafen</cbc:CityName>
-<cbc:CityName>Helsinki</cbc:CityName>
-<cbc:CityName>Hirtshals</cbc:CityName>
-<cbc:CityName>København K</cbc:CityName>
-<cbc:CityName>København S</cbc:CityName>
-<cbc:CityName>København V.</cbc:CityName>
-<cbc:CityName>La Spezia</cbc:CityName>
-<cbc:CityName>London</cbc:CityName>
-<cbc:CityName>Mainplace</cbc:CityName>
-<cbc:CityName>Modena</cbc:CityName>
-<cbc:CityName>Moskva</cbc:CityName>
-<cbc:CityName>Munchen</cbc:CityName>
-<cbc:CityName>Munich</cbc:CityName>
-<cbc:CityName>New York</cbc:CityName>
-<cbc:CityName>Nurnberg</cbc:CityName>
-<cbc:CityName>Nørre Alslev</cbc:CityName>
-<cbc:CityName>OSLO</cbc:CityName>
-<cbc:CityName>Oslo</cbc:CityName>
-<cbc:CityName>STORLIEN</cbc:CityName>
-<cbc:CityName>Stockholm</cbc:CityName>
-<cbc:CityName>Tanger</cbc:CityName>
-<cbc:CityName>VALENCIA</cbc:CityName>
-<cbc:CityName>Viby J</cbc:CityName>
-<cbc:CityName>Videbæk</cbc:CityName>
-<cbc:CityName>Yang Mei</cbc:CityName>
-<cbc:CityName>Zürich</cbc:CityName>
-<cbc:CityName>Ørum Djurs</cbc:CityName>
 ```
+_48 more values in examples_
 
 #### `cbc:FamilyName`
 
@@ -3412,14 +2714,8 @@ _14 elements_
 <cbc:FamilyName>Jensen</cbc:FamilyName>
 <cbc:FamilyName>M</cbc:FamilyName>
 <cbc:FamilyName>Pereson</cbc:FamilyName>
-<cbc:FamilyName>Petersen</cbc:FamilyName>
-<cbc:FamilyName>ROSSI</cbc:FamilyName>
-<cbc:FamilyName>Salemacher</cbc:FamilyName>
-<cbc:FamilyName>Svensson</cbc:FamilyName>
-<cbc:FamilyName>VERDI</cbc:FamilyName>
-<cbc:FamilyName>VILLA</cbc:FamilyName>
-<cbc:FamilyName>X</cbc:FamilyName>
 ```
+_7 more values in examples_
 
 #### `cbc:FirstName`
 
@@ -3429,12 +2725,8 @@ _14 elements_
 <cbc:FirstName>GIORGIO</cbc:FirstName>
 <cbc:FirstName>John</cbc:FirstName>
 <cbc:FirstName>Kirsten</cbc:FirstName>
-<cbc:FirstName>Lars</cbc:FirstName>
-<cbc:FirstName>Pelle</cbc:FirstName>
-<cbc:FirstName>RAUL</cbc:FirstName>
-<cbc:FirstName>STEFANO</cbc:FirstName>
-<cbc:FirstName>Sven</cbc:FirstName>
 ```
+_5 more values in examples_
 
 #### `cbc:MiddleName`
 
@@ -3461,182 +2753,8 @@ _14 elements_
 <cbc:Name>9000</cbc:Name>
 <cbc:Name>ACME Corporation</cbc:Name>
 <cbc:Name>ACME Ltd.</cbc:Name>
-<cbc:Name>AOO Tehnika</cbc:Name>
-<cbc:Name>ARRIVA</cbc:Name>
-<cbc:Name>AZ Outsourcing srl</cbc:Name>
-<cbc:Name>Acme Beeswax</cbc:Name>
-<cbc:Name>Air Waybill</cbc:Name>
-<cbc:Name>AlcoholPercentage</cbc:Name>
-<cbc:Name>Anders Stock</cbc:Name>
-<cbc:Name>Andreas Andersen</cbc:Name>
-<cbc:Name>AnimalSpecies</cbc:Name>
-<cbc:Name>Arancio Forniture spa</cbc:Name>
-<cbc:Name>Automat AG</cbc:Name>
-<cbc:Name>Auxiliary Tool</cbc:Name>
-<cbc:Name>BANGKOK</cbc:Name>
-<cbc:Name>Balboa Port</cbc:Name>
-<cbc:Name>Beta Shop</cbc:Name>
-<cbc:Name>Bietingen</cbc:Name>
-<cbc:Name>Boston Road</cbc:Name>
-<cbc:Name>Buyer GmbH</cbc:Name>
-<cbc:Name>Buyercompany ltd</cbc:Name>
-<cbc:Name>CARRIER SERVICE LTD</cbc:Name>
-<cbc:Name>CONSIGNEE</cbc:Name>
-<cbc:Name>CUSTOMER SERVICE LTD</cbc:Name>
-<cbc:Name>Color</cbc:Name>
-<cbc:Name>Con Solidador</cbc:Name>
-<cbc:Name>Consignee</cbc:Name>
-<cbc:Name>Consignee W</cbc:Name>
-<cbc:Name>ConsigneeExample</cbc:Name>
-<cbc:Name>Consignor</cbc:Name>
-<cbc:Name>ConsignorExample</cbc:Name>
-<cbc:Name>Consortial</cbc:Name>
-<cbc:Name>Coop Extra Bergen</cbc:Name>
-<cbc:Name>Custom Cotter Pins</cbc:Name>
-<cbc:Name>D2D GmbH</cbc:Name>
-<cbc:Name>DB</cbc:Name>
-<cbc:Name>Dairy Products</cbc:Name>
-<cbc:Name>Dansk Erhverv</cbc:Name>
-<cbc:Name>Dansk Industri</cbc:Name>
-<cbc:Name>Declarant Inc</cbc:Name>
-<cbc:Name>DegreeOfPlato</cbc:Name>
-<cbc:Name>Delcomputer A/S</cbc:Name>
-<cbc:Name>Dell PrecisionTM  T3400</cbc:Name>
-<cbc:Name>Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)</cbc:Name>
-<cbc:Name>Denmark</cbc:Name>
-<cbc:Name>Deutscher Industrie- und Handelskammertag e.V.</cbc:Name>
-<cbc:Name>DigitalPost</cbc:Name>
-<cbc:Name>Disfruta</cbc:Name>
-<cbc:Name>Document Robot</cbc:Name>
-<cbc:Name>EXT-HAL</cbc:Name>
-<cbc:Name>Ebeneser Scrooge Inc.</cbc:Name>
-<cbc:Name>Elektroniikka Oy</cbc:Name>
-<cbc:Name>Eva Johnsson</cbc:Name>
-<cbc:Name>Example Shipping</cbc:Name>
-<cbc:Name>Example Supplies Ltd.</cbc:Name>
-<cbc:Name>ExampleName</cbc:Name>
-<cbc:Name>FORWARDER</cbc:Name>
-<cbc:Name>FP/BL 1908WFP</cbc:Name>
-<cbc:Name>Facebook</cbc:Name>
-<cbc:Name>Falu Rödfärg</cbc:Name>
-<cbc:Name>Farthing Purchasing Consortia</cbc:Name>
-<cbc:Name>Farthing Purchasing Consortium</cbc:Name>
-<cbc:Name>FirstAgency</cbc:Name>
-<cbc:Name>Gadgets R Us, Inc.</cbc:Name>
-<cbc:Name>Gedesby Øko-ost</cbc:Name>
-<cbc:Name>Gedevang Mejeri</cbc:Name>
-<cbc:Name>Gentofte Kommune</cbc:Name>
-<cbc:Name>Germany</cbc:Name>
-<cbc:Name>Google+</cbc:Name>
-<cbc:Name>Great Britain</cbc:Name>
-<cbc:Name>Grenå Tools</cbc:Name>
-<cbc:Name>HONDA</cbc:Name>
-<cbc:Name>Hair color</cbc:Name>
-<cbc:Name>Hans Weisser</cbc:Name>
-<cbc:Name>Heiligenhafen</cbc:Name>
-<cbc:Name>High-grade Widget</cbc:Name>
-<cbc:Name>Horst Tappert</cbc:Name>
-<cbc:Name>Huisin Huolinta Oy</cbc:Name>
-<cbc:Name>Huolitsija Oy</cbc:Name>
-<cbc:Name>IYT Corporation</cbc:Name>
-<cbc:Name>Italy</cbc:Name>
-<cbc:Name>Jan Peter Clausen</cbc:Name>
-<cbc:Name>Jane D.</cbc:Name>
-<cbc:Name>Jane Doe</cbc:Name>
-<cbc:Name>Jeans Jacket man</cbc:Name>
-<cbc:Name>Jennifer de Niro</cbc:Name>
-<cbc:Name>John D. Salesman</cbc:Name>
-<cbc:Name>John Smith</cbc:Name>
-<cbc:Name>Johnssons byggvaror</cbc:Name>
-<cbc:Name>Jon Persen</cbc:Name>
-<cbc:Name>Josef K.</cbc:Name>
-<cbc:Name>Keep On Trucking</cbc:Name>
-<cbc:Name>LEONARDO</cbc:Name>
-<cbc:Name>La Spezia Container Terminal</cbc:Name>
-<cbc:Name>Labtop computer</cbc:Name>
-<cbc:Name>Leather Jacket man</cbc:Name>
-<cbc:Name>LineGrossWeight</cbc:Name>
-<cbc:Name>LineNetWeight</cbc:Name>
-<cbc:Name>LinkedIN</cbc:Name>
-<cbc:Name>Lisboa Harbour</cbc:Name>
-<cbc:Name>MAERSK</cbc:Name>
-<cbc:Name>Maersk</cbc:Name>
-<cbc:Name>Magic cloak</cbc:Name>
-<cbc:Name>Mette Lind</cbc:Name>
-<cbc:Name>Mexico</cbc:Name>
-<cbc:Name>Moderna Produkter AB</cbc:Name>
-<cbc:Name>Moms</cbc:Name>
-<cbc:Name>Mr Bianchi</cbc:Name>
-<cbc:Name>Mr Delta</cbc:Name>
-<cbc:Name>Mr Fred Churchill</cbc:Name>
-<cbc:Name>Mr Gamma</cbc:Name>
-<cbc:Name>Mr Rossi</cbc:Name>
-<cbc:Name>Mr Verdi</cbc:Name>
-<cbc:Name>Mrs Bouquet</cbc:Name>
-<cbc:Name>NECOSS</cbc:Name>
-<cbc:Name>NORWAY</cbc:Name>
-<cbc:Name>NTT</cbc:Name>
-<cbc:Name>Network cable</cbc:Name>
-<cbc:Name>North American Veeblefetzer</cbc:Name>
-<cbc:Name>OASIS</cbc:Name>
-<cbc:Name>Office Printer 1</cbc:Name>
-<cbc:Name>Office Printer 2</cbc:Name>
-<cbc:Name>Ole Ellerbæk Madsen</cbc:Name>
-<cbc:Name>Ole Hansen</cbc:Name>
-<cbc:Name>One-Stop Forwarders</cbc:Name>
-<cbc:Name>Open Bank Ltd</cbc:Name>
-<cbc:Name>Open Bank Ltd, Bridgstow Branch</cbc:Name>
-<cbc:Name>OpenPEPPOL AISBL</cbc:Name>
-<cbc:Name>Organization for the Advancement of Structured Information Standards</cbc:Name>
-<cbc:Name>Padborg</cbc:Name>
-<cbc:Name>Paint type</cbc:Name>
-<cbc:Name>Panama</cbc:Name>
-<cbc:Name>Papirøen Food ApS</cbc:Name>
-<cbc:Name>Paul McQueen</cbc:Name>
-<cbc:Name>Pensel 20 mm</cbc:Name>
-<cbc:Name>Per</cbc:Name>
-<cbc:Name>Peter Gruen</cbc:Name>
-<cbc:Name>Peter Janssen</cbc:Name>
-<cbc:Name>Philosophical lamp</cbc:Name>
-<cbc:Name>Quantity</cbc:Name>
-<cbc:Name>RAIL CARRIER</cbc:Name>
-<cbc:Name>ROAD CARRIER</cbc:Name>
-<cbc:Name>ROAD CARRIER 2</cbc:Name>
-<cbc:Name>RSS</cbc:Name>
-<cbc:Name>Returned "Advanced computing" book</cbc:Name>
-<cbc:Name>Returned IBM 5150 desktop</cbc:Name>
-<cbc:Name>S Massiah</cbc:Name>
-<cbc:Name>SEA CARRIER</cbc:Name>
-<cbc:Name>STEFCO A/S</cbc:Name>
-<cbc:Name>SWEDEN</cbc:Name>
-<cbc:Name>Salescompany ltd.</cbc:Name>
-<cbc:Name>Shop 37</cbc:Name>
-<cbc:Name>Sille Schyberg</cbc:Name>
-<cbc:Name>Slow Food Srl</cbc:Name>
-<cbc:Name>Solvant</cbc:Name>
-<cbc:Name>SomeName</cbc:Name>
-<cbc:Name>SuperCompany</cbc:Name>
-<cbc:Name>Swedish trucking</cbc:Name>
-<cbc:Name>Swiss</cbc:Name>
-<cbc:Name>The Terminus</cbc:Name>
-<cbc:Name>Told Service A/S</cbc:Name>
-<cbc:Name>Toldstyrelsen</cbc:Name>
-<cbc:Name>Tuula Tullaaja 02 13 4567</cbc:Name>
-<cbc:Name>Twitter</cbc:Name>
-<cbc:Name>Type</cbc:Name>
-<cbc:Name>United Airfreight</cbc:Name>
-<cbc:Name>Vendor Inc.</cbc:Name>
-<cbc:Name>Width</cbc:Name>
-<cbc:Name>World Events Ltd.</cbc:Name>
-<cbc:Name>YAMAHA</cbc:Name>
-<cbc:Name>Yang Mei Electronic Ltd</cbc:Name>
-<cbc:Name>Ylermi Huisi 09-55555555</cbc:Name>
-<cbc:Name>YouTube</cbc:Name>
-<cbc:Name>Zollamt</cbc:Name>
-<cbc:Name>beeswax</cbc:Name>
-<cbc:Name>gloves</cbc:Name>
-<cbc:Name>scarf</cbc:Name>
 ```
+_175 more values in examples_
 
 #### `cbc:RegistrationName`
 
@@ -3646,14 +2764,8 @@ _14 elements_
 <cbc:RegistrationName>Farthing Purchasing Consortia</cbc:RegistrationName>
 <cbc:RegistrationName>Farthing Purchasing Consortium</cbc:RegistrationName>
 <cbc:RegistrationName>Gentofte Kommune</cbc:RegistrationName>
-<cbc:RegistrationName>Herra Johnssons byggvaror AS</cbc:RegistrationName>
-<cbc:RegistrationName>Johnssons Byggvaror AB</cbc:RegistrationName>
-<cbc:RegistrationName>Moderna Produkter AB</cbc:RegistrationName>
-<cbc:RegistrationName>ROAD CARRIER GmbH</cbc:RegistrationName>
-<cbc:RegistrationName>SuperCompany</cbc:RegistrationName>
-<cbc:RegistrationName>The Sellercompany Incorporated</cbc:RegistrationName>
-<cbc:RegistrationName>The buyercompany inc.</cbc:RegistrationName>
 ```
+_7 more values in examples_
 
 #### `cbc:RetailEventName`
 
@@ -3675,61 +2787,8 @@ _14 elements_
 <cbc:StreetName>Anystreet</cbc:StreetName>
 <cbc:StreetName>Arne Jacobsens Allé</cbc:StreetName>
 <cbc:StreetName>Avon Way</cbc:StreetName>
-<cbc:StreetName>Bernstorffsvej</cbc:StreetName>
-<cbc:StreetName>Blumestrasse 3</cbc:StreetName>
-<cbc:StreetName>Boston Road</cbc:StreetName>
-<cbc:StreetName>Breite Straße</cbc:StreetName>
-<cbc:StreetName>Busy Street</cbc:StreetName>
-<cbc:StreetName>CALLE SERPIS</cbc:StreetName>
-<cbc:StreetName>City Road</cbc:StreetName>
-<cbc:StreetName>Consignee W Street</cbc:StreetName>
-<cbc:StreetName>Corporate Drive Suite 150</cbc:StreetName>
-<cbc:StreetName>Dalsagervej</cbc:StreetName>
-<cbc:StreetName>Declarant Street</cbc:StreetName>
-<cbc:StreetName>Deliverystreet</cbc:StreetName>
-<cbc:StreetName>ExampleStreet</cbc:StreetName>
-<cbc:StreetName>ExampleStreet 1</cbc:StreetName>
-<cbc:StreetName>Export Str. 143</cbc:StreetName>
-<cbc:StreetName>Giessereistrasse</cbc:StreetName>
-<cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-<cbc:StreetName>Hans Christian Andersens Boulevard</cbc:StreetName>
-<cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
-<cbc:StreetName>Heissestrasse 45</cbc:StreetName>
-<cbc:StreetName>High Street</cbc:StreetName>
-<cbc:StreetName>Højdevej 18</cbc:StreetName>
-<cbc:StreetName>Industrivej 3</cbc:StreetName>
-<cbc:StreetName>Jordbærstien 2</cbc:StreetName>
-<cbc:StreetName>Komsomolskaja pl., 158</cbc:StreetName>
-<cbc:StreetName>Korsbygade 34</cbc:StreetName>
-<cbc:StreetName>Kungsgatan</cbc:StreetName>
-<cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-<cbc:StreetName>Main street</cbc:StreetName>
-<cbc:StreetName>Marken</cbc:StreetName>
-<cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-<cbc:StreetName>One Hundred Road</cbc:StreetName>
-<cbc:StreetName>Rådhusgatan</cbc:StreetName>
-<cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
-<cbc:StreetName>Schonestrasse 1</cbc:StreetName>
-<cbc:StreetName>Slet Parkvej</cbc:StreetName>
-<cbc:StreetName>Slotsholmsgade</cbc:StreetName>
-<cbc:StreetName>Stahlstrass 5</cbc:StreetName>
-<cbc:StreetName>Street</cbc:StreetName>
-<cbc:StreetName>StreetName Example</cbc:StreetName>
-<cbc:StreetName>Stribevangen</cbc:StreetName>
-<cbc:StreetName>Tiilitie 5</cbc:StreetName>
-<cbc:StreetName>Tollbrettkoppel</cbc:StreetName>
-<cbc:StreetName>Trangravsvej</cbc:StreetName>
-<cbc:StreetName>VIPPETANGEN</cbc:StreetName>
-<cbc:StreetName>Vastuskatu 12</cbc:StreetName>
-<cbc:StreetName>Vesterbrogade</cbc:StreetName>
-<cbc:StreetName>Vesterbrogade 1L, 1.sal</cbc:StreetName>
-<cbc:StreetName>Via Bolognese</cbc:StreetName>
-<cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-<cbc:StreetName>Via Delle Fonti</cbc:StreetName>
-<cbc:StreetName>Via Emilia</cbc:StreetName>
-<cbc:StreetName>Via Rizzoli</cbc:StreetName>
-<cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
 ```
+_54 more values in examples_
 
 #### `cbc:VesselName`
 
@@ -3804,8 +2863,8 @@ _4 elements_
 <cbc:Percent>17.5</cbc:Percent>
 <cbc:Percent>20</cbc:Percent>
 <cbc:Percent>21.00</cbc:Percent>
-<cbc:Percent>25</cbc:Percent>
 ```
+_1 more value in examples_
 
 #### `cbc:ReliabilityPercent`
 
@@ -3977,22 +3036,8 @@ _24 elements_
 <cbc:Quantity>10</cbc:Quantity>
 <cbc:Quantity>100</cbc:Quantity>
 <cbc:Quantity>120</cbc:Quantity>
-<cbc:Quantity>15</cbc:Quantity>
-<cbc:Quantity>150</cbc:Quantity>
-<cbc:Quantity>150.00</cbc:Quantity>
-<cbc:Quantity>2</cbc:Quantity>
-<cbc:Quantity>20</cbc:Quantity>
-<cbc:Quantity>200</cbc:Quantity>
-<cbc:Quantity>240</cbc:Quantity>
-<cbc:Quantity>3</cbc:Quantity>
-<cbc:Quantity>35</cbc:Quantity>
-<cbc:Quantity>5</cbc:Quantity>
-<cbc:Quantity>50</cbc:Quantity>
-<cbc:Quantity>63.000</cbc:Quantity>
-<cbc:Quantity>8</cbc:Quantity>
-<cbc:Quantity>80</cbc:Quantity>
-<cbc:Quantity>90</cbc:Quantity>
 ```
+_15 more values in examples_
 
 **`@unitCode`**
 
@@ -4072,8 +3117,8 @@ _24 elements_
 <cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
 <cbc:TotalGoodsItemQuantity>2</cbc:TotalGoodsItemQuantity>
 <cbc:TotalGoodsItemQuantity>23</cbc:TotalGoodsItemQuantity>
-<cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
 ```
+_1 more value in examples_
 
 **`@unitCode`**
 
@@ -4209,16 +3254,8 @@ _75 elements_
 <cbc:AllowanceChargeReason>Discount</cbc:AllowanceChargeReason>
 <cbc:AllowanceChargeReason>Donation to the Red Cross</cbc:AllowanceChargeReason>
 <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Handling fee</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Packing cost</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Paid 10,000 loyalty points = €5</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Promotion discount</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Remove previously granted discount</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Testing</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Total order value discount</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Transport documents</cbc:AllowanceChargeReason>
 ```
+_9 more values in examples_
 
 #### `cbc:ApprovalStatus`
 
@@ -4246,26 +3283,8 @@ _75 elements_
 <cbc:BuildingNumber>12</cbc:BuildingNumber>
 <cbc:BuildingNumber>13</cbc:BuildingNumber>
 <cbc:BuildingNumber>15</cbc:BuildingNumber>
-<cbc:BuildingNumber>152</cbc:BuildingNumber>
-<cbc:BuildingNumber>161</cbc:BuildingNumber>
-<cbc:BuildingNumber>18</cbc:BuildingNumber>
-<cbc:BuildingNumber>199</cbc:BuildingNumber>
-<cbc:BuildingNumber>208</cbc:BuildingNumber>
-<cbc:BuildingNumber>209</cbc:BuildingNumber>
-<cbc:BuildingNumber>22</cbc:BuildingNumber>
-<cbc:BuildingNumber>29</cbc:BuildingNumber>
-<cbc:BuildingNumber>35</cbc:BuildingNumber>
-<cbc:BuildingNumber>403</cbc:BuildingNumber>
-<cbc:BuildingNumber>405</cbc:BuildingNumber>
-<cbc:BuildingNumber>5</cbc:BuildingNumber>
-<cbc:BuildingNumber>56A</cbc:BuildingNumber>
-<cbc:BuildingNumber>630</cbc:BuildingNumber>
-<cbc:BuildingNumber>7</cbc:BuildingNumber>
-<cbc:BuildingNumber>777</cbc:BuildingNumber>
-<cbc:BuildingNumber>78</cbc:BuildingNumber>
-<cbc:BuildingNumber>8</cbc:BuildingNumber>
-<cbc:BuildingNumber>89</cbc:BuildingNumber>
 ```
+_19 more values in examples_
 
 #### `cbc:CancellationNote`
 
@@ -4303,10 +3322,8 @@ _75 elements_
 <cbc:CountrySubentity>London</cbc:CountrySubentity>
 <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
 <cbc:CountrySubentity>RegionA</cbc:CountrySubentity>
-<cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
-<cbc:CountrySubentity>RegionC</cbc:CountrySubentity>
-<cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
 ```
+_3 more values in examples_
 
 #### `cbc:DeliveryInstructions`
 
@@ -4324,9 +3341,8 @@ _75 elements_
 <cbc:Department>Marketing Office</cbc:Department>
 <cbc:Department>Purchasing department</cbc:Department>
 <cbc:Department>Revenue department</cbc:Department>
-<cbc:Department>Sales and Planning Department</cbc:Department>
-<cbc:Department>Sales department</cbc:Department>
 ```
+_2 more values in examples_
 
 #### `cbc:Description`
 
@@ -4336,111 +3352,8 @@ _75 elements_
 <cbc:Description>ART INTERNATIONAL ZURICH 2019</cbc:Description>
 <cbc:Description>AWAITING CUSTOMS. MISSING DOCUMENTATION. ONE HOUR DELAYED</cbc:Description>
 <cbc:Description>Acme beeswax</cbc:Description>
-<cbc:Description>Acme knitwear gloves</cbc:Description>
-<cbc:Description>Acme knitwear scarf</cbc:Description>
-<cbc:Description>Advancing open standards for the information society.</cbc:Description>
-<cbc:Description>BACHO S910, Topnøglesæt</cbc:Description>
-<cbc:Description>BODY TRAILER</cbc:Description>
-<cbc:Description>BOSCH GLL 3-80P Lasernivilering</cbc:Description>
-<cbc:Description>BY45A, Donkraft</cbc:Description>
-<cbc:Description>Bavaria area</cbc:Description>
-<cbc:Description>Beeswax</cbc:Description>
-<cbc:Description>Boston</cbc:Description>
-<cbc:Description>Boston Airport</cbc:Description>
-<cbc:Description>Bristol</cbc:Description>
-<cbc:Description>Bristol Airport</cbc:Description>
-<cbc:Description>Chilled</cbc:Description>
-<cbc:Description>Cotter pin, MIL-SPEC</cbc:Description>
-<cbc:Description>Customer Loyalty Number</cbc:Description>
-<cbc:Description>DEWALT DC542, Fugepistol</cbc:Description>
-<cbc:Description>DEWALT DC822, Boltspænder</cbc:Description>
-<cbc:Description>DURA PRO 2000kg, Dunkraft</cbc:Description>
-<cbc:Description>Delayed arrival at Bremerhaven Port Terminal</cbc:Description>
-<cbc:Description>Denim Jeans Jacket</cbc:Description>
-<cbc:Description>Deviations shall be notified to the CONSIGNEE within max 30 minutes</cbc:Description>
-<cbc:Description>ESMOLADARA KH3105, Bænksliber</cbc:Description>
-<cbc:Description>En route</cbc:Description>
-<cbc:Description>FORWARDER distribution centre in Munich</cbc:Description>
-<cbc:Description>Felixstowe</cbc:Description>
-<cbc:Description>Fladskærm</cbc:Description>
-<cbc:Description>HADEF 250kg, Talje</cbc:Description>
-<cbc:Description>HADEF 750kg, Talje</cbc:Description>
-<cbc:Description>HILTI TE2 + TE35 Boremaskiner</cbc:Description>
-<cbc:Description>Heathrow Apt/London</cbc:Description>
-<cbc:Description>ItemExample</cbc:Description>
-<cbc:Description>July</cbc:Description>
-<cbc:Description>KAMA AD 105S, Båndsav</cbc:Description>
-<cbc:Description>KEMPPI MASTER 2200, Tigsvejser</cbc:Description>
-<cbc:Description>KING TONY 6316, Topnøglesæt</cbc:Description>
-<cbc:Description>Kløver Økologis gedeost 15%</cbc:Description>
-<cbc:Description>Kløver Økologisk gedeost 15%</cbc:Description>
-<cbc:Description>Kuulokkeita</cbc:Description>
-<cbc:Description>LIFTKET 021/51, Talje</cbc:Description>
-<cbc:Description>Leather Jacket</cbc:Description>
-<cbc:Description>Level 1</cbc:Description>
-<cbc:Description>METABO GE700, Pinolsliber</cbc:Description>
-<cbc:Description>METABO SBE 1010, Boremaskine</cbc:Description>
-<cbc:Description>MILWAUKEE HD18PD, Akkuboremaskine</cbc:Description>
-<cbc:Description>MOTOR CYCLE</cbc:Description>
-<cbc:Description>Mus</cbc:Description>
-<cbc:Description>OSLO CENTRAL RAILWAY STATION</cbc:Description>
-<cbc:Description>Office Printer 1</cbc:Description>
-<cbc:Description>Office Printer 2</cbc:Description>
-<cbc:Description>Only Lot2</cbc:Description>
-<cbc:Description>Please advise when transport is booked.</cbc:Description>
-<cbc:Description>Port of Bremerhaven</cbc:Description>
-<cbc:Description>Port of Oslo</cbc:Description>
-<cbc:Description>Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM:
-				3MB. Screen 1440x900</cbc:Description>
-<cbc:Description>Received mail from Frau Gerlung</cbc:Description>
-<cbc:Description>Red paint</cbc:Description>
-<cbc:Description>SCANTOOL 20AT, Søjleboremaskine</cbc:Description>
-<cbc:Description>STAHL WILLE 730/02, Momentnøgle</cbc:Description>
-<cbc:Description>Shop in the city center</cbc:Description>
-<cbc:Description>Shop number #37 at H.C. Andersens Boulevard, Copenhagen</cbc:Description>
-<cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
-<cbc:Description>SomeDescription</cbc:Description>
-<cbc:Description>Stationær computer</cbc:Description>
-<cbc:Description>Store</cbc:Description>
-<cbc:Description>T-shirt</cbc:Description>
-<cbc:Description>Tastatur</cbc:Description>
-<cbc:Description>Trading Partner Agreement Terms</cbc:Description>
-<cbc:Description>Very good pencils for red paint.</cbc:Description>
-<cbc:Description>VÆRKTØJSKASSE m/div. håndværktøj</cbc:Description>
-<cbc:Description>fish meal or fish oil from countries other than Denmark from establishments approved the AQSIQ. The fish meal or fish oil
-						in question ____________________________________________(indicate name of product) is approved for export from said
-						country to China and were only produced at ____________________________________________(indicate name and address
-						of the producer as identified in the approval of AQSIQ) and were only exported to Denmark from 
-						____________________________________________ (indicate name and address of the producer/exporter as identified in the
-						import permit)</cbc:Description>
-<cbc:Description>fish or aquatic invertebrates caught in the country or region’s domestic sea or in the open sea or farming aquatic animals</cbc:Description>
-<cbc:Description>fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller regionens egne have eller i det åbne hav eller som stammer
-						fra opdræt på åbent hav</cbc:Description>
-<cbc:Description>fiskemel eller fiskeolie fra andre lande, fra virksomheder, der er godkendt af AQSIQ. Det pågældende produkt
-						(fiskemel eller fiskeolie)____________________________________________ (angiv produktets navn) er godkendt til eksport fra
-						det pågældende land til Kina og er udelukkende forarbejdet på ____________________________________________(angiv navn
-						og adresse på producenten/eksportøren, således som denne er angivet i godkendelsen fra AQSIQ) og er udelukkende eksporteret til
-						Danmark fra ____________________________________________ (angiv navn og adresse på eksportøren, således som denne er
-						angivet i godkendelsen fra AQSIQ )</cbc:Description>
-<cbc:Description>fra afskær fra virksomheder, som er godkendt af den kompetente myndighed i Danmark til produktion
-						af fiskeprodukter til human konsum</cbc:Description>
-<cbc:Description>from offal from plants, which are approved by the competent authority in Denmark for manufacture of aquatic products
-						for human consumption.</cbc:Description>
-<cbc:Description>invoice cancelation</cbc:Description>
-<cbc:Description>jersey</cbc:Description>
-<cbc:Description>kattovalaisimia lasia</cbc:Description>
-<cbc:Description>order response required; payment is by BACS or by cheque</cbc:Description>
-<cbc:Description>shirt</cbc:Description>
-<cbc:Description>skirt</cbc:Description>
-<cbc:Description>trousers</cbc:Description>
-<cbc:Description>woman's dress</cbc:Description>
-<cbc:Description>本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物</cbc:Description>
-<cbc:Description>经中国国家质量监督检验检疫总局批准的，丹麦以外其他国家的企业生产的鱼粉或鱼
-						油。该鱼粉或鱼油____________________________________________（标明产品名称）已被准予从上述国家向中国出口
-						且仅在____________________________________________（标明AQSIQ注册批准的生产商名称与地址）生产并仅从
-						____________________________________________（标明进口许可中认定的生产商/出口商名称与地址）向丹麦出口。</cbc:Description>
-<cbc:Description>经丹麦主管机构批准的供人类消费水产品加工厂的副产品</cbc:Description>
 ```
+_87 more values in examples_
 
 **`@languageID`**
 
@@ -4472,16 +3385,8 @@ _75 elements_
 <cbc:DocumentType>BOL</cbc:DocumentType>
 <cbc:DocumentType>CMR</cbc:DocumentType>
 <cbc:DocumentType>Contract</cbc:DocumentType>
-<cbc:DocumentType>Drawing</cbc:DocumentType>
-<cbc:DocumentType>FRAMEWORK AGREEMENT</cbc:DocumentType>
-<cbc:DocumentType>Forwarding Instructions</cbc:DocumentType>
-<cbc:DocumentType>Framework agreement</cbc:DocumentType>
-<cbc:DocumentType>Order</cbc:DocumentType>
-<cbc:DocumentType>Preliminary sales receipt</cbc:DocumentType>
-<cbc:DocumentType>Shipment reference</cbc:DocumentType>
-<cbc:DocumentType>String</cbc:DocumentType>
-<cbc:DocumentType>Timesheet</cbc:DocumentType>
 ```
+_9 more values in examples_
 
 #### `cbc:ElectronicMail`
 
@@ -4491,45 +3396,8 @@ _75 elements_
 <cbc:ElectronicMail>SomeName@consignee.de</cbc:ElectronicMail>
 <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
 <cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@ext-hal.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@maersk.dk</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@ntt.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>anders@RAILCARRIER.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>antonio@salescompany.dk</cbc:ElectronicMail>
-<cbc:ElectronicMail>bianchi@arancioforniture.it</cbc:ElectronicMail>
-<cbc:ElectronicMail>bill@svetruck.se</cbc:ElectronicMail>
-<cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
-<cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
-<cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-<cbc:ElectronicMail>ctanner@onestopfreight.com</cbc:ElectronicMail>
-<cbc:ElectronicMail>delta@betashop.it</cbc:ElectronicMail>
-<cbc:ElectronicMail>eva@johnsson.se</cbc:ElectronicMail>
-<cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-<cbc:ElectronicMail>gamma@betashop.it</cbc:ElectronicMail>
-<cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>horst@SEACARRIER.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>info@oasis-open.org</cbc:ElectronicMail>
-<cbc:ElectronicMail>janpc@ROADCARRIER2.no</cbc:ElectronicMail>
-<cbc:ElectronicMail>jennifer.deniro@vendor.net</cbc:ElectronicMail>
-<cbc:ElectronicMail>john.smith@vendor.net</cbc:ElectronicMail>
-<cbc:ElectronicMail>john@buyercompany.eu</cbc:ElectronicMail>
-<cbc:ElectronicMail>jonp@CONSIGNEE.no</cbc:ElectronicMail>
-<cbc:ElectronicMail>jsmith@example.com</cbc:ElectronicMail>
-<cbc:ElectronicMail>lars@moderna.se</cbc:ElectronicMail>
-<cbc:ElectronicMail>paul.mcqueen@vendor.net</cbc:ElectronicMail>
-<cbc:ElectronicMail>pelle@johnsson.se</cbc:ElectronicMail>
-<cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>peter@ROADCARRIER.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
-<cbc:ElectronicMail>shop37@GadgetsR.us</cbc:ElectronicMail>
-<cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-<cbc:ElectronicMail>someName@consignee.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>someName@consignor.cn</cbc:ElectronicMail>
-<cbc:ElectronicMail>sven@moderna.se</cbc:ElectronicMail>
-<cbc:ElectronicMail>verdi@azoutsourcing.it</cbc:ElectronicMail>
 ```
+_38 more values in examples_
 
 #### `cbc:EmbeddedDocument`
 
@@ -4607,13 +3475,8 @@ _75 elements_
 <cbc:Line>5th Floor</cbc:Line>
 <cbc:Line>AVD BLASCO IBANEZ 36</cbc:Line>
 <cbc:Line>Calle Serpis 64</cbc:Line>
-<cbc:Line>Customer entrance from the street</cbc:Line>
-<cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
-<cbc:Line>IT-afdelingen</cbc:Line>
-<cbc:Line>The Roundabout</cbc:Line>
-<cbc:Line>Ueberseetor 2</cbc:Line>
-<cbc:Line>West Wing</cbc:Line>
 ```
+_6 more values in examples_
 
 #### `cbc:MarkAttention`
 
@@ -4635,42 +3498,8 @@ _75 elements_
 <cbc:Note>Computer</cbc:Note>
 <cbc:Note>Cover is slightly damaged.</cbc:Note>
 <cbc:Note>DELAYED</cbc:Note>
-<cbc:Note>Framework Agreement</cbc:Note>
-<cbc:Note>Freetext note on line 1</cbc:Note>
-<cbc:Note>Freetext note on line 2</cbc:Note>
-<cbc:Note>Information text for the whole order</cbc:Note>
-<cbc:Note>Information text for the whole order change</cbc:Note>
-<cbc:Note>Information text for the whole order response</cbc:Note>
-<cbc:Note>Instruction to return goods that are badly sent to you.</cbc:Note>
-<cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
-<cbc:Note>Mus</cbc:Note>
-<cbc:Note>Ordered in our booth at the convention.</cbc:Note>
-<cbc:Note>PER THIRTY DAYS</cbc:Note>
-<cbc:Note>Payable within 1 calendar month from the invoice date</cbc:Note>
-<cbc:Note>Payment due immediately</cbc:Note>
-<cbc:Note>Penalty percentage 10% from due date</cbc:Note>
-<cbc:Note>Per thirty days</cbc:Note>
-<cbc:Note>Report about movements of goods between Beta Shop's locations located in
-        Emilia-Romagna.</cbc:Note>
-<cbc:Note>Report about quantities of each item which are (or will be) available</cbc:Note>
-<cbc:Note>Report about sales of goods in Beta Shop's shops located in Bologna.</cbc:Note>
-<cbc:Note>Report about the quantities on stock.</cbc:Note>
-<cbc:Note>SAMPLE</cbc:Note>
-<cbc:Note>Scratch on box</cbc:Note>
-<cbc:Note>See web site for price scheme</cbc:Note>
-<cbc:Note>Skærm</cbc:Note>
-<cbc:Note>String</cbc:Note>
-<cbc:Note>Tastatur</cbc:Note>
-<cbc:Note>This is an example shop purchase receipt</cbc:Note>
-<cbc:Note>We are very interested please send us all information possible</cbc:Note>
-<cbc:Note>as agreed on phone, the invoice should have been cancelled earlier, apologies</cbc:Note>
-<cbc:Note>dummy as sample</cbc:Note>
-<cbc:Note>please note that local offices will close for recess for the next three weeks - please send their invoices to central offices for that time</cbc:Note>
-<cbc:Note>please present invoice if this credit amount cannot be taken against a forthcoming payment</cbc:Note>
-<cbc:Note>sample</cbc:Note>
-<cbc:Note>sample Document</cbc:Note>
-<cbc:Note>this is an illustrative order line</cbc:Note>
 ```
+_34 more values in examples_
 
 **`@languageID`**
 
@@ -4712,49 +3541,8 @@ _75 elements_
 <cbc:PostalZone>01821</cbc:PostalZone>
 <cbc:PostalZone>02210</cbc:PostalZone>
 <cbc:PostalZone>02340</cbc:PostalZone>
-<cbc:PostalZone>1001</cbc:PostalZone>
-<cbc:PostalZone>101</cbc:PostalZone>
-<cbc:PostalZone>10178</cbc:PostalZone>
-<cbc:PostalZone>107842</cbc:PostalZone>
-<cbc:PostalZone>11000</cbc:PostalZone>
-<cbc:PostalZone>1216</cbc:PostalZone>
-<cbc:PostalZone>1234</cbc:PostalZone>
-<cbc:PostalZone>1258</cbc:PostalZone>
-<cbc:PostalZone>1620</cbc:PostalZone>
-<cbc:PostalZone>2300</cbc:PostalZone>
-<cbc:PostalZone>231</cbc:PostalZone>
-<cbc:PostalZone>2321</cbc:PostalZone>
-<cbc:PostalZone>23774</cbc:PostalZone>
-<cbc:PostalZone>28001</cbc:PostalZone>
-<cbc:PostalZone>28400</cbc:PostalZone>
-<cbc:PostalZone>2920</cbc:PostalZone>
-<cbc:PostalZone>29400</cbc:PostalZone>
-<cbc:PostalZone>40121</cbc:PostalZone>
-<cbc:PostalZone>40128</cbc:PostalZone>
-<cbc:PostalZone>40129</cbc:PostalZone>
-<cbc:PostalZone>41121</cbc:PostalZone>
-<cbc:PostalZone>460019</cbc:PostalZone>
-<cbc:PostalZone>4840</cbc:PostalZone>
-<cbc:PostalZone>4874</cbc:PostalZone>
-<cbc:PostalZone>5017</cbc:PostalZone>
-<cbc:PostalZone>523427</cbc:PostalZone>
-<cbc:PostalZone>54321</cbc:PostalZone>
-<cbc:PostalZone>6920</cbc:PostalZone>
-<cbc:PostalZone>80331</cbc:PostalZone>
-<cbc:PostalZone>80334</cbc:PostalZone>
-<cbc:PostalZone>8260</cbc:PostalZone>
-<cbc:PostalZone>8500</cbc:PostalZone>
-<cbc:PostalZone>8586</cbc:PostalZone>
-<cbc:PostalZone>9000</cbc:PostalZone>
-<cbc:PostalZone>9850</cbc:PostalZone>
-<cbc:PostalZone>AA99 1BB</cbc:PostalZone>
-<cbc:PostalZone>AQ1 6TH</cbc:PostalZone>
-<cbc:PostalZone>CH-3007</cbc:PostalZone>
-<cbc:PostalZone>CH-8005</cbc:PostalZone>
-<cbc:PostalZone>Declarant Post Code</cbc:PostalZone>
-<cbc:PostalZone>Post</cbc:PostalZone>
-<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 ```
+_42 more values in examples_
 
 #### `cbc:Postbox`
 
@@ -4764,9 +3552,8 @@ _75 elements_
 <cbc:Postbox>321</cbc:Postbox>
 <cbc:Postbox>456</cbc:Postbox>
 <cbc:Postbox>5467</cbc:Postbox>
-<cbc:Postbox>99043</cbc:Postbox>
-<cbc:Postbox>PoBox123</cbc:Postbox>
 ```
+_2 more values in examples_
 
 #### `cbc:PrintQualifier`
 
@@ -4856,12 +3643,8 @@ _75 elements_
 <cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:DespatchAdvice-2.0:sbs-1.0-draft</cbc:SubsetID>
 <cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft</cbc:SubsetID>
 <cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:Order-2.0:sbs-1.0-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:OrderResponseSimple-2.0:sbs-1.0-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:ReceiptAdvice-2.0:sbs-1.0-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:RemittanceAdvice-2.0:sbs-1.0-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:RequestForQuotation-2.0:sbs-1.0-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:Statement-2.0:sbs-1.0-draft</cbc:SubsetID>
 ```
+_5 more values in examples_
 
 #### `cbc:SummaryDescription`
 
@@ -4890,24 +3673,8 @@ _75 elements_
 <cbc:Telefax>+1 343 1453655</cbc:Telefax>
 <cbc:Telefax>+1 781 425 5072</cbc:Telefax>
 <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-<cbc:Telefax>+4987675431</cbc:Telefax>
-<cbc:Telefax>0039 051 23000023</cbc:Telefax>
-<cbc:Telefax>0039 051 23000025</cbc:Telefax>
-<cbc:Telefax>0039 051 25400023</cbc:Telefax>
-<cbc:Telefax>0039 059 33000055</cbc:Telefax>
-<cbc:Telefax>0039 059 33000057</cbc:Telefax>
-<cbc:Telefax>0127 2653215</cbc:Telefax>
-<cbc:Telefax>0127 98876546</cbc:Telefax>
-<cbc:Telefax>0158 1233856</cbc:Telefax>
-<cbc:Telefax>123455</cbc:Telefax>
-<cbc:Telefax>123456</cbc:Telefax>
-<cbc:Telefax>3456767</cbc:Telefax>
-<cbc:Telefax>34673435</cbc:Telefax>
-<cbc:Telefax>4526532146</cbc:Telefax>
-<cbc:Telefax>4621231</cbc:Telefax>
-<cbc:Telefax>5121231</cbc:Telefax>
-<cbc:Telefax>8567443</cbc:Telefax>
 ```
+_17 more values in examples_
 
 #### `cbc:Telephone`
 
@@ -4917,42 +3684,8 @@ _75 elements_
 <cbc:Telephone>+1 3362 4788</cbc:Telephone>
 <cbc:Telephone>+1 343 1453654</cbc:Telephone>
 <cbc:Telephone>+1 36222 33847</cbc:Telephone>
-<cbc:Telephone>+1 781 425 5073</cbc:Telephone>
-<cbc:Telephone>+212687878763</cbc:Telephone>
-<cbc:Telephone>+324005588588</cbc:Telephone>
-<cbc:Telephone>+324488588578</cbc:Telephone>
-<cbc:Telephone>+44 127 2653214</cbc:Telephone>
-<cbc:Telephone>+4598786765</cbc:Telephone>
-<cbc:Telephone>+4793656656</cbc:Telephone>
-<cbc:Telephone>+4793774465</cbc:Telephone>
-<cbc:Telephone>+49450557000</cbc:Telephone>
-<cbc:Telephone>+49450557234</cbc:Telephone>
-<cbc:Telephone>+49450557777</cbc:Telephone>
-<cbc:Telephone>+49450557888</cbc:Telephone>
-<cbc:Telephone>+4987675432</cbc:Telephone>
-<cbc:Telephone>+4987675652</cbc:Telephone>
-<cbc:Telephone>+4987676234</cbc:Telephone>
-<cbc:Telephone>+4987878763</cbc:Telephone>
-<cbc:Telephone>+4992894481</cbc:Telephone>
-<cbc:Telephone>+8676576456</cbc:Telephone>
-<cbc:Telephone>+8687878763</cbc:Telephone>
-<cbc:Telephone>0039 051 23000000</cbc:Telephone>
-<cbc:Telephone>0039 051 23000008</cbc:Telephone>
-<cbc:Telephone>0039 051 25400000</cbc:Telephone>
-<cbc:Telephone>0039 059 33000000</cbc:Telephone>
-<cbc:Telephone>0039 059 33000022</cbc:Telephone>
-<cbc:Telephone>0127 2653214</cbc:Telephone>
-<cbc:Telephone>0127 98876545</cbc:Telephone>
-<cbc:Telephone>0158 1233714</cbc:Telephone>
-<cbc:Telephone>1234356</cbc:Telephone>
-<cbc:Telephone>123456</cbc:Telephone>
-<cbc:Telephone>34557</cbc:Telephone>
-<cbc:Telephone>346788</cbc:Telephone>
-<cbc:Telephone>4526532147</cbc:Telephone>
-<cbc:Telephone>4621230</cbc:Telephone>
-<cbc:Telephone>5121230</cbc:Telephone>
-<cbc:Telephone>987098709</cbc:Telephone>
 ```
+_35 more values in examples_
 
 #### `cbc:TimeDeviationIndicator`
 
@@ -5028,11 +3761,8 @@ _75 elements_
 <cbc:TransportationServiceDescription>En route status notifications</cbc:TransportationServiceDescription>
 <cbc:TransportationServiceDescription>Insurance of goods during transportation</cbc:TransportationServiceDescription>
 <cbc:TransportationServiceDescription>Package and pallet transport within the Bavaria area</cbc:TransportationServiceDescription>
-<cbc:TransportationServiceDescription>Rail transport service from Bremen to Nurnberg</cbc:TransportationServiceDescription>
-<cbc:TransportationServiceDescription>Rail transport service from Hamburg to Bremen</cbc:TransportationServiceDescription>
-<cbc:TransportationServiceDescription>Road transport service from Hamburg to Bremen</cbc:TransportationServiceDescription>
-<cbc:TransportationServiceDescription>Transport from Hamburg to Nurnberg</cbc:TransportationServiceDescription>
 ```
+_4 more values in examples_
 
 #### `cbc:Value`
 
@@ -5042,11 +3772,8 @@ _75 elements_
 <cbc:Value>Acrylic</cbc:Value>
 <cbc:Value>Black</cbc:Value>
 <cbc:Value>Bovine</cbc:Value>
-<cbc:Value>Cat5</cbc:Value>
-<cbc:Value>TRUST2408 OCES Primary CA – TRUST2408 OCES CA II</cbc:Value>
-<cbc:Value>Water</cbc:Value>
-<cbc:Value>black</cbc:Value>
 ```
+_4 more values in examples_
 
 #### `cbc:WeighingDeviceType`
 
@@ -5086,29 +3813,8 @@ _14 elements_
 <cbc:EndTime>09:30:10+01:00</cbc:EndTime>
 <cbc:EndTime>09:30:47.0Z</cbc:EndTime>
 <cbc:EndTime>10:30:47.0Z</cbc:EndTime>
-<cbc:EndTime>11:00:00.0Z</cbc:EndTime>
-<cbc:EndTime>11:00:10+01:00</cbc:EndTime>
-<cbc:EndTime>12:00:10+01:00</cbc:EndTime>
-<cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-<cbc:EndTime>14:00:00.0Z</cbc:EndTime>
-<cbc:EndTime>15:30:00</cbc:EndTime>
-<cbc:EndTime>15:30:00Z</cbc:EndTime>
-<cbc:EndTime>15:30:10+01:00</cbc:EndTime>
-<cbc:EndTime>16:00:00</cbc:EndTime>
-<cbc:EndTime>16:00:00+01:00</cbc:EndTime>
-<cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-<cbc:EndTime>16:00:00Z</cbc:EndTime>
-<cbc:EndTime>16:00:10+01:00</cbc:EndTime>
-<cbc:EndTime>17:00:00.0Z</cbc:EndTime>
-<cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-<cbc:EndTime>18:30:10+01:00</cbc:EndTime>
-<cbc:EndTime>18:35:10+01:00</cbc:EndTime>
-<cbc:EndTime>20:30:00.0Z</cbc:EndTime>
-<cbc:EndTime>21:00:00.0Z</cbc:EndTime>
-<cbc:EndTime>21:10:00.0Z</cbc:EndTime>
-<cbc:EndTime>21:30:10+01:00</cbc:EndTime>
-<cbc:EndTime>22:30:00.0Z</cbc:EndTime>
 ```
+_22 more values in examples_
 
 #### `cbc:ExpiryTime`
 
@@ -5124,36 +3830,8 @@ _14 elements_
 <cbc:IssueTime>09:00:00.0Z</cbc:IssueTime>
 <cbc:IssueTime>09:29:10+01:00</cbc:IssueTime>
 <cbc:IssueTime>09:29:30+01:00</cbc:IssueTime>
-<cbc:IssueTime>09:30:00</cbc:IssueTime>
-<cbc:IssueTime>09:30:00Z</cbc:IssueTime>
-<cbc:IssueTime>10:00:00.000</cbc:IssueTime>
-<cbc:IssueTime>10:00:00.000Z</cbc:IssueTime>
-<cbc:IssueTime>10:00:10+01:00</cbc:IssueTime>
-<cbc:IssueTime>10:00:30+01:00</cbc:IssueTime>
-<cbc:IssueTime>10:05:20+01:00</cbc:IssueTime>
-<cbc:IssueTime>10:15:00+02:00</cbc:IssueTime>
-<cbc:IssueTime>11:01:10+01:00</cbc:IssueTime>
-<cbc:IssueTime>11:10:00Z</cbc:IssueTime>
-<cbc:IssueTime>11:32:00</cbc:IssueTime>
-<cbc:IssueTime>11:32:00Z</cbc:IssueTime>
-<cbc:IssueTime>11:32:26.0Z</cbc:IssueTime>
-<cbc:IssueTime>12:00:01.000</cbc:IssueTime>
-<cbc:IssueTime>12:00:01.000Z</cbc:IssueTime>
-<cbc:IssueTime>12:30:00</cbc:IssueTime>
-<cbc:IssueTime>12:30:00Z</cbc:IssueTime>
-<cbc:IssueTime>14:00:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>14:01:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>14:20:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>14:22:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>14:30:10+01:00</cbc:IssueTime>
-<cbc:IssueTime>15:30:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>15:31:00</cbc:IssueTime>
-<cbc:IssueTime>15:31:00Z</cbc:IssueTime>
-<cbc:IssueTime>17:30:00+01:00</cbc:IssueTime>
-<cbc:IssueTime>19:00:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>19:20:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>20:22:00.0Z</cbc:IssueTime>
 ```
+_29 more values in examples_
 
 #### `cbc:LatestDeliveryTime`
 
@@ -5201,31 +3879,8 @@ _14 elements_
 <cbc:StartTime>07:00:00Z</cbc:StartTime>
 <cbc:StartTime>08:00:00</cbc:StartTime>
 <cbc:StartTime>08:00:00Z</cbc:StartTime>
-<cbc:StartTime>09:00:00</cbc:StartTime>
-<cbc:StartTime>09:00:00Z</cbc:StartTime>
-<cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-<cbc:StartTime>09:30:47.0Z</cbc:StartTime>
-<cbc:StartTime>10:00:00.0Z</cbc:StartTime>
-<cbc:StartTime>10:30:00.0Z</cbc:StartTime>
-<cbc:StartTime>10:30:47.0Z</cbc:StartTime>
-<cbc:StartTime>11:35:00.0Z</cbc:StartTime>
-<cbc:StartTime>12:30:10+01:00</cbc:StartTime>
-<cbc:StartTime>13:30:00.0Z</cbc:StartTime>
-<cbc:StartTime>14:00:00</cbc:StartTime>
-<cbc:StartTime>14:00:00.0Z</cbc:StartTime>
-<cbc:StartTime>14:00:00Z</cbc:StartTime>
-<cbc:StartTime>15:00:00.0Z</cbc:StartTime>
-<cbc:StartTime>15:30:00.0Z</cbc:StartTime>
-<cbc:StartTime>15:30:10+01:00</cbc:StartTime>
-<cbc:StartTime>16:30:00.0Z</cbc:StartTime>
-<cbc:StartTime>18:30:10+01:00</cbc:StartTime>
-<cbc:StartTime>20:00:00.0Z</cbc:StartTime>
-<cbc:StartTime>21:00:00.0Z</cbc:StartTime>
-<cbc:StartTime>22:00:00</cbc:StartTime>
-<cbc:StartTime>22:00:00.0Z</cbc:StartTime>
-<cbc:StartTime>22:00:00Z</cbc:StartTime>
-<cbc:StartTime>23:20:00.0Z</cbc:StartTime>
 ```
+_24 more values in examples_
 
 #### `cbc:TransactionTime`
 
