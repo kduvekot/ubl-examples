@@ -1,0 +1,3050 @@
+{
+  "AcceptanceIndicator": [
+    "false",
+    "true"
+  ],
+  "AcceptedIndicator": [
+    "true"
+  ],
+  "AccountTypeCode": [
+    "Current"
+  ],
+  "AccountingCost": [
+    "BookingCode001",
+    "BookingCode002",
+    "Project cost code 123"
+  ],
+  "AccountingCostCode": [
+    "Project123",
+    "ProjectID123"
+  ],
+  "ActualArrivalDate": [
+    "2010-04-30"
+  ],
+  "ActualArrivalTime": [
+    "13:20:00.0Z"
+  ],
+  "ActualDeliveryDate": [
+    "2005-06-20",
+    "2009-12-15"
+  ],
+  "ActualDeliveryTime": [
+    "11:30:00.0Z"
+  ],
+  "ActualDepartureDate": [
+    "2010-04-30"
+  ],
+  "ActualDepartureTime": [
+    "14:20:00.0Z"
+  ],
+  "ActualDespatchDate": [
+    "2005-06-25",
+    "2013-09-15"
+  ],
+  "ActualDespatchTime": [
+    "11:35:00.0Z",
+    "16:00:00",
+    "16:00:00Z"
+  ],
+  "AdValoremIndicator": [
+    "false"
+  ],
+  "AdditionalStreetName": [
+    "2nd floor",
+    "AdditionalStreet Example",
+    "Back door",
+    "Side door",
+    "Suite 123",
+    "suite12"
+  ],
+  "AddressFormatCode": [
+    "Structured",
+    "StructuredDK"
+  ],
+  "AdjustmentReasonCode": [
+    "REVISED_PROMOTION"
+  ],
+  "AgreementTypeCode": [
+    "Bilateral",
+    "Multilateral"
+  ],
+  "AircraftID": [
+    "A-127763-747",
+    "AY-428 20130623"
+  ],
+  "AllowanceChargeReason": [
+    "Contract",
+    "Damage",
+    "Discount",
+    "Donation to the Red Cross",
+    "Freight charges",
+    "Handling fee",
+    "Packing cost",
+    "Paid 10,000 loyalty points = €5",
+    "Promotion discount",
+    "Remove previously granted discount",
+    "Sundry discount",
+    "Testing",
+    "Total order value discount",
+    "Transport documents"
+  ],
+  "AllowanceChargeReasonCode": [
+    "17",
+    "79"
+  ],
+  "AllowanceTotalAmount": [
+    "10.00",
+    "100",
+    "5.00"
+  ],
+  "Amount": [
+    "0.0",
+    "0.00",
+    "0.275",
+    "1.00",
+    "10",
+    "10.00",
+    "100",
+    "100.0",
+    "12",
+    "12.70",
+    "225",
+    "2500",
+    "254.00",
+    "4.80",
+    "5.00"
+  ],
+  "ApprovalStatus": [
+    "Issued"
+  ],
+  "AttributeID": [
+    "GrossVolumen",
+    "GrossWeight",
+    "Height",
+    "Length",
+    "LineGrossWeight",
+    "LineNetWeight",
+    "NetWeight",
+    "OuterDepth",
+    "OuterHeight",
+    "OuterWidth",
+    "TC",
+    "Width"
+  ],
+  "AvailabilityDate": [
+    "2010-04-11",
+    "2010-04-20"
+  ],
+  "AvailabilityStatusCode": [
+    "1",
+    "2",
+    "8"
+  ],
+  "AvailabilityTimePercent": [
+    "94.0",
+    "98.5"
+  ],
+  "BackorderQuantity": [
+    "10"
+  ],
+  "BackorderReason": [
+    "lack of stock as explained on telephone today"
+  ],
+  "BalanceAmount": [
+    "-107.50",
+    "107.50"
+  ],
+  "BalanceBroughtForwardIndicator": [
+    "false"
+  ],
+  "BaseAmount": [
+    "1500",
+    "2.75",
+    "254.00"
+  ],
+  "BaseQuantity": [
+    "1"
+  ],
+  "BasedOnConsensusIndicator": [
+    "true"
+  ],
+  "BestBeforeDate": [
+    "2022-12-08"
+  ],
+  "BrandName": [
+    "Canon"
+  ],
+  "BriefDescription": [
+    "OASIS is a nonprofit consortium that drives the development, convergence and adoption of open standards for the global information society.  OASIS promotes industry consensus and produces worldwide standards for security, Internet of Things, cloud computing, energy, content technologies, emergency management, and other areas. OASIS open standards offer the potential to lower cost, stimulate innovation, grow global markets, and protect the right of free choice of technology.  OASIS members broadly represent the marketplace of public and private sector technology leaders, users and influencers. The consortium has more than 5,000 participants representing over 600 organizations and individual members in more than 65 countries.  OASIS is distinguished by its transparent governance and operating procedures. Members themselves set the OASIS technical agenda, using a lightweight process expressly designed to promote industry consensus and unite disparate efforts. Completed work is ratified by open ballot. Governance is accountable and unrestricted. Officers of both the OASIS Board of Directors and Technical Advisory Board are chosen by democratic election to serve two-year terms. Consortium leadership is based on individual merit and is not tied to financial contribution, corporate standing, or special appointment.  OASIS Member Sections include AMQP, Emergency, IDtrust, LegalXML, Open CSA, OSLC, and WS-I."
+  ],
+  "BuildingName": [
+    "Banking House",
+    "Suite M-102",
+    "The Mall",
+    "Thereabouts"
+  ],
+  "BuildingNumber": [
+    "1",
+    "100",
+    "12",
+    "13",
+    "15",
+    "152",
+    "161",
+    "18",
+    "199",
+    "208",
+    "209",
+    "22",
+    "29",
+    "35",
+    "403",
+    "405",
+    "5",
+    "56A",
+    "630",
+    "7",
+    "777",
+    "78",
+    "8",
+    "89"
+  ],
+  "CalculationRate": [
+    "1.8947"
+  ],
+  "CancellationNote": [
+    "The quality check has detected that the beeswax doesn't become liquid at the\n        expected temperature.",
+    "With reference to phone call"
+  ],
+  "CapabilityTypeCode": [
+    "General"
+  ],
+  "CargoTypeCode": [
+    "12",
+    "14"
+  ],
+  "CarrierAssignedID": [
+    "123456789987654321"
+  ],
+  "CashChangeAmount": [
+    "5.00"
+  ],
+  "ChargeIndicator": [
+    "false",
+    "true"
+  ],
+  "ChargeTotalAmount": [
+    "1.00",
+    "10.00",
+    "100"
+  ],
+  "CityName": [
+    "Aalborg",
+    "Anytown",
+    "Bergen",
+    "Berlin",
+    "Bern",
+    "Big city",
+    "Billerica",
+    "Bologna",
+    "Boston",
+    "Bremen",
+    "Bridgtow",
+    "Brussels",
+    "Burlington",
+    "Charlottenlund",
+    "City",
+    "Copenhagen",
+    "Declarant City",
+    "DeliveryCity",
+    "El Dorado",
+    "Espoo",
+    "Example City",
+    "Farthing",
+    "Gedser",
+    "Grenå",
+    "Hamar",
+    "Hamburg",
+    "Heiligenhafen",
+    "Helsinki",
+    "Hirtshals",
+    "København K",
+    "København S",
+    "København V.",
+    "La Spezia",
+    "London",
+    "Mainplace",
+    "Modena",
+    "Moskva",
+    "Munchen",
+    "Munich",
+    "New York",
+    "Nurnberg",
+    "Nørre Alslev",
+    "OSLO",
+    "Oslo",
+    "STORLIEN",
+    "Stockholm",
+    "Tanger",
+    "VALENCIA",
+    "Viby J",
+    "Videbæk",
+    "Yang Mei",
+    "Zürich",
+    "Ørum Djurs"
+  ],
+  "CollaborationPriorityCode": [
+    "HIGH"
+  ],
+  "CommodityCode": [
+    "19011000",
+    "8",
+    "84195000"
+  ],
+  "CompanyID": [
+    "12356478",
+    "1323421212",
+    "16077593",
+    "175 269 2355",
+    "18296799",
+    "43232010",
+    "45789034",
+    "5402697509",
+    "5532331183",
+    "5532332283",
+    "5645342123",
+    "6411982340",
+    "945030345",
+    "989987876",
+    "BE54321",
+    "BE987654321",
+    "DE122125278",
+    "DK12345",
+    "DK12345678",
+    "DK123456789",
+    "DK18296799",
+    "DK43232010",
+    "DK59873677",
+    "DK89343487",
+    "SE1234567801"
+  ],
+  "ComparedValueMeasure": [
+    "2"
+  ],
+  "ComparisonDataSourceCode": [
+    "SELLER"
+  ],
+  "Condition": [
+    "IN_RIGHT_CONDITION"
+  ],
+  "ConditionCode": [
+    "31",
+    "4"
+  ],
+  "ConditionDeviationIndicator": [
+    "false"
+  ],
+  "ContainerizedIndicator": [
+    "0",
+    "true"
+  ],
+  "ContractFolderID": [
+    "2017/S 214-3792289"
+  ],
+  "ContractType": [
+    "Continuing Transport Contract",
+    "Forwarding Instructions",
+    "FrameworkAgreementID123"
+  ],
+  "CoordinateSystemCode": [
+    "WGS84"
+  ],
+  "CopyIndicator": [
+    "false"
+  ],
+  "CountrySubentity": [
+    "Avon",
+    "Heremouthshire",
+    "London",
+    "Massachusetts",
+    "RegionA",
+    "RegionB",
+    "RegionC",
+    "RegionX"
+  ],
+  "CountrySubentityCode": [
+    "MA",
+    "RegionA"
+  ],
+  "CreditLineAmount": [
+    "0.00",
+    "107.50"
+  ],
+  "CreditedQuantity": [
+    "-1",
+    "1",
+    "100",
+    "2",
+    "250"
+  ],
+  "CurrencyCode": [
+    "GBP"
+  ],
+  "CustomerAssignedAccountID": [
+    "CO001",
+    "LEV00123",
+    "XFB01"
+  ],
+  "CustomizationID": [
+    "AV",
+    "Common Framework",
+    "OIOUBL-2.1",
+    "Sample-0.9",
+    "UBL-2.3",
+    "UBL-TR",
+    "urn:X-demo:TransportShipments",
+    "urn:oasis:names:specification:ubl:default",
+    "urn:oasis:names:specification:ubl:schema:xsd:Quotation-2-draft",
+    "urn:oasis:names:specification:ubl:xpath:CreditNote-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:DespatchAdvice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:ExceptionCriteria-2.1:1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:ForwardingInstructions-2.0:samples-2.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Order-2.0:samples-2.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Order-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:OrderResponseSimple-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:ReceiptAdvice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:RemittanceAdvice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:RequestForQuotation-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Statement-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Waybill-2.0:samples-2.0-draft",
+    "urn:www.cenbii.eu:transaction:BiiTrns081:ver2.0",
+    "urn:www.cenbii.eu:transaction:biicoretrdm001:ver1.0",
+    "urn:www.cenbii.eu:transaction:biicoretrdmXYZ:ver1.0",
+    "urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0",
+    "urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0"
+  ],
+  "CustomsProcedureCode": [
+    "1011"
+  ],
+  "CustomsStatusCode": [
+    "Cleared"
+  ],
+  "CustomsTariffQuantity": [
+    "100",
+    "1000"
+  ],
+  "DataSourceCode": [
+    "BUYER"
+  ],
+  "Date": [
+    "1967-08-13"
+  ],
+  "DebitLineAmount": [
+    "0.00",
+    "107.50"
+  ],
+  "DebitedQuantity": [
+    "-1",
+    "1",
+    "2",
+    "250"
+  ],
+  "DeclaredCarriageValueAmount": [
+    "1500.00"
+  ],
+  "DeclaredCustomsValueAmount": [
+    "0.00",
+    "1000.00",
+    "10000.00",
+    "1500.00",
+    "2000.00",
+    "2500.00",
+    "3000.00",
+    "500.00",
+    "5000.00",
+    "524.80",
+    "750.00"
+  ],
+  "DeclaredStatisticsValueAmount": [
+    "1000.00",
+    "10000.00",
+    "10050.00",
+    "1500.00",
+    "182.62",
+    "2000.00",
+    "250.00",
+    "2500.00",
+    "3000.00",
+    "34800.00",
+    "4500.00",
+    "500.00",
+    "5000.00",
+    "750.00"
+  ],
+  "DeliveredQuantity": [
+    "90"
+  ],
+  "DeliveryInstructions": [
+    "El Dorado",
+    "Test",
+    "abcd"
+  ],
+  "Department": [
+    "Accounting department",
+    "Gadgets",
+    "Marketing Office",
+    "Purchasing department",
+    "Revenue department",
+    "Sales and Planning Department",
+    "Sales department"
+  ],
+  "Description": [
+    "200 grams of Carbon Dioxide per km",
+    "ACME NEW BRANCH will be opened in Brusells on May 12, 2010",
+    "ART INTERNATIONAL ZURICH 2019",
+    "AWAITING CUSTOMS. MISSING DOCUMENTATION. ONE HOUR DELAYED",
+    "Acme beeswax",
+    "Acme knitwear gloves",
+    "Acme knitwear scarf",
+    "Advancing open standards for the information society.",
+    "BACHO S910, Topnøglesæt",
+    "BODY TRAILER",
+    "BOSCH GLL 3-80P Lasernivilering",
+    "BY45A, Donkraft",
+    "Bavaria area",
+    "Beeswax",
+    "Boston",
+    "Boston Airport",
+    "Bristol",
+    "Bristol Airport",
+    "Chilled",
+    "Cotter pin, MIL-SPEC",
+    "Customer Loyalty Number",
+    "DEWALT DC542, Fugepistol",
+    "DEWALT DC822, Boltspænder",
+    "DURA PRO 2000kg, Dunkraft",
+    "Delayed arrival at Bremerhaven Port Terminal",
+    "Denim Jeans Jacket",
+    "Deviations shall be notified to the CONSIGNEE within max 30 minutes",
+    "ESMOLADARA KH3105, Bænksliber",
+    "En route",
+    "FORWARDER distribution centre in Munich",
+    "Felixstowe",
+    "Fladskærm",
+    "HADEF 250kg, Talje",
+    "HADEF 750kg, Talje",
+    "HILTI TE2 + TE35 Boremaskiner",
+    "Heathrow Apt/London",
+    "ItemExample",
+    "July",
+    "KAMA AD 105S, Båndsav",
+    "KEMPPI MASTER 2200, Tigsvejser",
+    "KING TONY 6316, Topnøglesæt",
+    "Kløver Økologis gedeost 15%",
+    "Kløver Økologisk gedeost 15%",
+    "Kuulokkeita",
+    "LIFTKET 021/51, Talje",
+    "Leather Jacket",
+    "Level 1",
+    "METABO GE700, Pinolsliber",
+    "METABO SBE 1010, Boremaskine",
+    "MILWAUKEE HD18PD, Akkuboremaskine",
+    "MOTOR CYCLE",
+    "Mus",
+    "OSLO CENTRAL RAILWAY STATION",
+    "Office Printer 1",
+    "Office Printer 2",
+    "Only Lot2",
+    "Please advise when transport is booked.",
+    "Port of Bremerhaven",
+    "Port of Oslo",
+    "Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM:\n\t\t\t\t3MB. Screen 1440x900",
+    "Received mail from Frau Gerlung",
+    "Red paint",
+    "SCANTOOL 20AT, Søjleboremaskine",
+    "STAHL WILLE 730/02, Momentnøgle",
+    "Shop in the city center",
+    "Shop number #37 at H.C. Andersens Boulevard, Copenhagen",
+    "Should have a temperature between 2-4 degrees celcius",
+    "SomeDescription",
+    "Stationær computer",
+    "Store",
+    "T-shirt",
+    "Tastatur",
+    "Trading Partner Agreement Terms",
+    "Very good pencils for red paint.",
+    "VÆRKTØJSKASSE m/div. håndværktøj",
+    "fish meal or fish oil from countries other than Denmark from establishments approved the AQSIQ. The fish meal or fish oil\n\t\t\t\t\t\tin question ____________________________________________(indicate name of product) is approved for export from said\n\t\t\t\t\t\tcountry to China and were only produced at ____________________________________________(indicate name and address\n\t\t\t\t\t\tof the producer as identified in the approval of AQSIQ) and were only exported to Denmark from \n\t\t\t\t\t\t____________________________________________ (indicate name and address of the producer/exporter as identified in the\n\t\t\t\t\t\timport permit)",
+    "fish or aquatic invertebrates caught in the country or region’s domestic sea or in the open sea or farming aquatic animals",
+    "fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller regionens egne have eller i det åbne hav eller som stammer\n\t\t\t\t\t\tfra opdræt på åbent hav",
+    "fiskemel eller fiskeolie fra andre lande, fra virksomheder, der er godkendt af AQSIQ. Det pågældende produkt\n\t\t\t\t\t\t(fiskemel eller fiskeolie)____________________________________________ (angiv produktets navn) er godkendt til eksport fra\n\t\t\t\t\t\tdet pågældende land til Kina og er udelukkende forarbejdet på ____________________________________________(angiv navn\n\t\t\t\t\t\tog adresse på producenten/eksportøren, således som denne er angivet i godkendelsen fra AQSIQ) og er udelukkende eksporteret til\n\t\t\t\t\t\tDanmark fra ____________________________________________ (angiv navn og adresse på eksportøren, således som denne er\n\t\t\t\t\t\tangivet i godkendelsen fra AQSIQ )",
+    "fra afskær fra virksomheder, som er godkendt af den kompetente myndighed i Danmark til produktion\n\t\t\t\t\t\taf fiskeprodukter til human konsum",
+    "from offal from plants, which are approved by the competent authority in Denmark for manufacture of aquatic products\n\t\t\t\t\t\tfor human consumption.",
+    "invoice cancelation",
+    "jersey",
+    "kattovalaisimia lasia",
+    "order response required; payment is by BACS or by cheque",
+    "shirt",
+    "skirt",
+    "trousers",
+    "woman's dress",
+    "本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物",
+    "经中国国家质量监督检验检疫总局批准的，丹麦以外其他国家的企业生产的鱼粉或鱼\n\t\t\t\t\t\t油。该鱼粉或鱼油____________________________________________（标明产品名称）已被准予从上述国家向中国出口\n\t\t\t\t\t\t且仅在____________________________________________（标明AQSIQ注册批准的生产商名称与地址）生产并仅从\n\t\t\t\t\t\t____________________________________________（标明进口许可中认定的生产商/出口商名称与地址）向丹麦出口。",
+    "经丹麦主管机构批准的供人类消费水产品加工厂的副产品"
+  ],
+  "DespatchAdviceTypeCode": [
+    "delivery"
+  ],
+  "DisplayTacticTypeCode": [
+    "DISPLAY_GENERAL"
+  ],
+  "DocumentCurrencyCode": [
+    "EUR",
+    "GBP",
+    "SEK"
+  ],
+  "DocumentDescription": [
+    "Certificate for determination of VGM according to method 1",
+    "Framework Agreement between Consignor and NECOSS"
+  ],
+  "DocumentHash": [
+    "String"
+  ],
+  "DocumentID": [
+    "33006"
+  ],
+  "DocumentStatusCode": [
+    "Confirmed",
+    "NoStatus",
+    "NotConfirmed"
+  ],
+  "DocumentType": [
+    "ATA carnet, paper",
+    "Annual Contract",
+    "BOL",
+    "CMR",
+    "Contract",
+    "Drawing",
+    "FRAMEWORK AGREEMENT",
+    "Forwarding Instructions",
+    "Framework agreement",
+    "Order",
+    "Preliminary sales receipt",
+    "Shipment reference",
+    "String",
+    "Timesheet"
+  ],
+  "DocumentTypeCode": [
+    "315",
+    "380",
+    "381",
+    "704",
+    "741",
+    "BN",
+    "CONTRACT",
+    "Certificate of shipment",
+    "N380",
+    "SM1",
+    "normalizedString"
+  ],
+  "DurationMeasure": [
+    "30",
+    "90"
+  ],
+  "ElectronicMail": [
+    "Ole@super.company.dk",
+    "SomeName@arriva.de",
+    "SomeName@consignee.de",
+    "SomeName@consignor.cn",
+    "SomeName@d2d.de",
+    "SomeName@disfruta.ma",
+    "SomeName@ext-hal.de",
+    "SomeName@maersk.dk",
+    "SomeName@necoss.de",
+    "SomeName@ntt.de",
+    "anders@RAILCARRIER.de",
+    "antonio@salescompany.dk",
+    "bianchi@arancioforniture.it",
+    "bill@svetruck.se",
+    "bookings@unitedfreight.com",
+    "bouquet@fpconsortial.co.uk",
+    "bouquet@fpconsortial.com",
+    "ctanner@onestopfreight.com",
+    "delta@betashop.it",
+    "eva@johnsson.se",
+    "fred@iytcorporation.gov.uk",
+    "gamma@betashop.it",
+    "hans.weisser@FORWARDER.de",
+    "horst@SEACARRIER.de",
+    "info@oasis-open.org",
+    "janpc@ROADCARRIER2.no",
+    "jennifer.deniro@vendor.net",
+    "john.smith@vendor.net",
+    "john@buyercompany.eu",
+    "jonp@CONSIGNEE.no",
+    "jsmith@example.com",
+    "lars@moderna.se",
+    "paul.mcqueen@vendor.net",
+    "pelle@johnsson.se",
+    "peter.gruen@buyer.de",
+    "peter@ROADCARRIER.de",
+    "rossi@arancioforniture.it",
+    "shop37@GadgetsR.us",
+    "smassiah@the-email.co.uk",
+    "someName@consignee.de",
+    "someName@consignor.cn",
+    "sven@moderna.se",
+    "verdi@azoutsourcing.it"
+  ],
+  "EmbeddedDocument": [
+    ";lkajdf;lkasd;ljkasdf;lkja;sdlfkja;sldfkja;sdlfjkas;dlkfjas;dlfjas;dlkfjas;dlkfja;slkdjf"
+  ],
+  "EmbeddedDocumentBinaryObject": [
+    "UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi"
+  ],
+  "EndDate": [
+    "1967-08-13",
+    "2005-06-21",
+    "2005-06-25",
+    "2005-06-29",
+    "2005-06-30",
+    "2005-07-01",
+    "2005-07-20",
+    "2005-07-31",
+    "2005-12-26",
+    "2008-05-06",
+    "2008-05-10",
+    "2009-07-31",
+    "2009-11-30",
+    "2009-12-31",
+    "2010-01-31",
+    "2010-02-25",
+    "2010-04-10",
+    "2010-04-11",
+    "2010-04-26",
+    "2010-04-30",
+    "2010-05-01",
+    "2010-05-26",
+    "2010-05-29",
+    "2010-06-12",
+    "2010-06-29",
+    "2010-08-29",
+    "2011-01-01",
+    "2011-03-13",
+    "2011-03-14",
+    "2011-03-17",
+    "2011-04-11",
+    "2011-04-12",
+    "2011-08-31",
+    "2011-09-13",
+    "2011-09-20",
+    "2011-09-30",
+    "2011-10-01",
+    "2011-10-03",
+    "2011-10-04",
+    "2011-10-06",
+    "2012-01-01",
+    "2016-08-02",
+    "2019-03-18",
+    "2020-02-20",
+    "2020-06-02",
+    "2020-07-01"
+  ],
+  "EndTime": [
+    "06:00:00",
+    "06:00:00Z",
+    "09:30:10+01:00",
+    "09:30:47.0Z",
+    "10:30:47.0Z",
+    "11:00:00.0Z",
+    "11:00:10+01:00",
+    "12:00:10+01:00",
+    "12:30:10+01:00",
+    "14:00:00.0Z",
+    "15:30:00",
+    "15:30:00Z",
+    "15:30:10+01:00",
+    "16:00:00",
+    "16:00:00+01:00",
+    "16:00:00.0Z",
+    "16:00:00Z",
+    "16:00:10+01:00",
+    "17:00:00.0Z",
+    "18:00:00.0Z",
+    "18:30:10+01:00",
+    "18:35:10+01:00",
+    "20:30:00.0Z",
+    "21:00:00.0Z",
+    "21:10:00.0Z",
+    "21:30:10+01:00",
+    "22:30:00.0Z"
+  ],
+  "EndpointID": [
+    "01841111111111",
+    "01842222222222",
+    "1234567890123",
+    "1234567987654",
+    "5798000416604",
+    "7300072311115",
+    "7302347231111",
+    "9994567987654",
+    "DK18296799",
+    "www.consignee.com/statusnotifications/",
+    "www.consignee.de/statusnotifications/",
+    "www.consignor.cn/statusnotifications/"
+  ],
+  "EndpointURI": [
+    "http://as2.buyer.biz",
+    "http://as2.buyer.de",
+    "http://as2.papifood.dk",
+    "http://as2.vendor.biz"
+  ],
+  "EnvironmentalEmissionTypeCode": [
+    "CO2"
+  ],
+  "EstimatedArrivalDate": [
+    "2010-04-30"
+  ],
+  "EstimatedArrivalTime": [
+    "12:20:00.0Z"
+  ],
+  "EstimatedDepartureDate": [
+    "2010-04-30"
+  ],
+  "EstimatedDepartureTime": [
+    "13:20:00.0Z"
+  ],
+  "EvidenceTypeCode": [
+    "mail"
+  ],
+  "ExceptionStatusCode": [
+    "NEW"
+  ],
+  "ExemptionReason": [
+    "Local Authority",
+    "N/A"
+  ],
+  "ExpiryDate": [
+    "1967-08-13",
+    "2010-01-01"
+  ],
+  "ExpiryTime": [
+    "14:20:00.0Z"
+  ],
+  "ExportReasonCode": [
+    "EXA"
+  ],
+  "ExportTypeCode": [
+    "20"
+  ],
+  "FamilyName": [
+    "Doe",
+    "GONZALES",
+    "Jensen",
+    "M",
+    "Pereson",
+    "Petersen",
+    "ROSSI",
+    "Salemacher",
+    "Svensson",
+    "VERDI",
+    "VILLA",
+    "X"
+  ],
+  "FirstName": [
+    "Antonio",
+    "DAVID",
+    "GIORGIO",
+    "John",
+    "Kirsten",
+    "Lars",
+    "Pelle",
+    "RAUL",
+    "STEFANO",
+    "Sven"
+  ],
+  "Floor": [
+    "1",
+    "2",
+    "4",
+    "5"
+  ],
+  "ForecastPurposeCode": [
+    "ORDER_FORECAST",
+    "SALES_FORECAST"
+  ],
+  "ForecastTypeCode": [
+    "BASE",
+    "PROMOTIONAL",
+    "TOTAL"
+  ],
+  "FormatID": [
+    "UBL"
+  ],
+  "FreeOnBoardValueAmount": [
+    "1200.00",
+    "1241.30"
+  ],
+  "FridayAvailabilityIndicator": [
+    "true"
+  ],
+  "FrozenPeriodDaysNumeric": [
+    "3"
+  ],
+  "FullnessIndicationCode": [
+    "1",
+    "5",
+    "FTL"
+  ],
+  "GoodsItemPassportID": [
+    "234222",
+    "ata01661"
+  ],
+  "GrossMassMeasure": [
+    "25730"
+  ],
+  "GrossVolumeMeasure": [
+    "0.336",
+    "1.536",
+    "2",
+    "39",
+    "78"
+  ],
+  "GrossWeightMeasure": [
+    "1.5",
+    "1000.0",
+    "12",
+    "130",
+    "230.80",
+    "25000",
+    "30",
+    "400",
+    "50000",
+    "600",
+    "774.14400",
+    "88.00"
+  ],
+  "HandlingCode": [
+    "23"
+  ],
+  "HandlingInstructions": [
+    "HANDLE WITH CARE"
+  ],
+  "HazardousRiskIndicator": [
+    "false"
+  ],
+  "ID": [
+    "000010",
+    "0004424005",
+    "001-00010123",
+    "0012345000058",
+    "00123450000580",
+    "00123450000581",
+    "00123450000582",
+    "00123450000583",
+    "00123450000584",
+    "0012345000359",
+    "00384",
+    "01530",
+    "0245442-8",
+    "06110123456784",
+    "0665/2003",
+    "098740918237",
+    "0987654321123",
+    "0987678321123",
+    "1",
+    "10",
+    "10-26-58",
+    "100700011021",
+    "101",
+    "10158209175014500",
+    "101_3",
+    "108-3692468",
+    "1080",
+    "11",
+    "12",
+    "123",
+    "1231412341324",
+    "1234",
+    "123452340123",
+    "123456",
+    "1234567-8",
+    "12345678",
+    "123456789",
+    "1234567890",
+    "1234567890123",
+    "1234567890124",
+    "1234567890125",
+    "1234567890126",
+    "1234567890127",
+    "1234567890128",
+    "12345698",
+    "123465",
+    "1236541",
+    "1238764941386",
+    "13",
+    "13234212",
+    "133",
+    "14",
+    "144",
+    "15",
+    "16",
+    "17",
+    "17589683",
+    "17589684",
+    "18",
+    "19",
+    "1928",
+    "1_1",
+    "2",
+    "20",
+    "2005-9A",
+    "2005US12345678998765432112345678",
+    "2076084807",
+    "2203148000007",
+    "224087496582335",
+    "23424244",
+    "2343456533",
+    "23445567",
+    "234486-2017",
+    "234534533",
+    "2345678-910",
+    "234664",
+    "28833-2661-144",
+    "2_1",
+    "3",
+    "321987",
+    "32453",
+    "325334535",
+    "34",
+    "34322",
+    "34563456",
+    "34564645",
+    "345KS5324",
+    "37",
+    "381944545",
+    "4",
+    "4058673821325",
+    "4058673827000",
+    "4058673827100",
+    "4058673827112",
+    "4058673827123",
+    "4058673827641",
+    "4058675698641",
+    "43125678",
+    "4568763527610",
+    "5",
+    "510",
+    "51022",
+    "5234533222",
+    "52345423423",
+    "5398000392577",
+    "565899",
+    "567-3456",
+    "5790000127777",
+    "5798000416604",
+    "6",
+    "63",
+    "634563324",
+    "636257218904553192",
+    "645634567",
+    "6577884",
+    "6578481",
+    "6578489",
+    "658398",
+    "66890-9-09",
+    "6754238987648",
+    "67654328394567",
+    "6903148000007",
+    "6916",
+    "7",
+    "7300070011115",
+    "7365566156191234567",
+    "7654321",
+    "7778",
+    "8",
+    "8447",
+    "8596",
+    "8601.12.11189",
+    "89767764",
+    "9",
+    "987456123",
+    "987654321",
+    "A",
+    "A00095678",
+    "A12345-2016",
+    "A2344",
+    "A54321-2016",
+    "AA",
+    "AA109",
+    "AA128",
+    "AB011",
+    "ABCD123456-7",
+    "ACME_BR_BE_0023",
+    "AEG012345",
+    "Aarhus",
+    "BA058",
+    "BC1-2016",
+    "BFCU4040001",
+    "BFCU4040002",
+    "Balboa Port",
+    "C1",
+    "C12345-2016",
+    "CA_1",
+    "CC2679",
+    "CH002621",
+    "CIP",
+    "CN758494",
+    "CNSHA",
+    "CONS-0001",
+    "CONS-001",
+    "CON_1",
+    "CON_2",
+    "CON_P_1",
+    "CON_P_2",
+    "CON_TE_1",
+    "CON_TE_2",
+    "CON_THU_1",
+    "CON_THU_2",
+    "Contract321",
+    "CreditNote",
+    "DA008",
+    "DD88",
+    "DE000396",
+    "DEBREV",
+    "DEHAM",
+    "DELL1052665",
+    "DELL2363463",
+    "DELL2367452",
+    "DELL8436783",
+    "DH019",
+    "DK003102",
+    "DK10035643",
+    "DK1212341234123412",
+    "DK12345678",
+    "DK18296799",
+    "DKDKABCD",
+    "DN0001",
+    "DP",
+    "Doc1",
+    "Doc2",
+    "E",
+    "EC758494",
+    "EN758494",
+    "EXT_1",
+    "EXT_TE_1",
+    "EXT_TE_2",
+    "EXT_THU_1",
+    "EXT_THU_2",
+    "EXW",
+    "EmployeeXXX",
+    "ExampleID",
+    "FCA",
+    "FI001800",
+    "FI015300",
+    "FI0245442-8",
+    "FI1234567-1",
+    "FI1234567-8",
+    "FI1234567-8R0001",
+    "FI1234569-8",
+    "FIRMA000000010",
+    "FLGS339241",
+    "FOB",
+    "FOB Destination",
+    "FOT",
+    "FRL1",
+    "Freight Bookings",
+    "G867B",
+    "GB999999973",
+    "GBBRS",
+    "GBFXT",
+    "GBLHR",
+    "GHJ76849",
+    "GID_1",
+    "GID_2",
+    "GIIID_1",
+    "GOA294107",
+    "GRAI 12345698-1",
+    "GRAI 12345698-2",
+    "GSIN_1",
+    "GSIN_2",
+    "GoodsItemID1",
+    "GoodsItemID2",
+    "HUISI000000002",
+    "ID0009",
+    "ID0113",
+    "ID168",
+    "INV000123",
+    "IT01234567890",
+    "ITGOA",
+    "Invoice",
+    "JB007",
+    "JB008",
+    "JB009",
+    "JB010",
+    "JB011",
+    "JUL2005-07758990",
+    "K0058",
+    "KHN23-44044",
+    "KHN23-44044-1",
+    "KHN23-44048",
+    "L1",
+    "Lot2",
+    "M165",
+    "MAFO",
+    "MAPTM",
+    "MC002",
+    "ML",
+    "MyParty",
+    "NEC_TE_1",
+    "NEC_TE_2",
+    "NOOSL",
+    "NTT_1",
+    "NTT_TE_1",
+    "NTT_TE_2",
+    "NTT_THU_1",
+    "NTT_THU_2",
+    "O",
+    "OF758494",
+    "OFR_758494",
+    "Other",
+    "PA_758494",
+    "PDL_2009_01",
+    "PDL_2009_02",
+    "PH758494",
+    "PK009",
+    "PL001",
+    "PROFORMA001",
+    "PartyID123",
+    "QIY7655",
+    "QuoteID123",
+    "RE758494",
+    "RjectedOrderID123",
+    "S",
+    "S1",
+    "SA2009",
+    "SCADL_SHIPMENT001",
+    "SH009",
+    "SItemNo001",
+    "SItemNo011",
+    "SKI123456",
+    "STD14037",
+    "STO",
+    "SellerPartyID123",
+    "Supp123",
+    "TC101",
+    "TEPID_1",
+    "TEPR_1",
+    "TEP_1",
+    "TESID_1",
+    "TE_1",
+    "TH009",
+    "THU#1",
+    "THU#2",
+    "THU#3",
+    "THU1",
+    "THU_1",
+    "TILP758494",
+    "TI_101",
+    "TJ043",
+    "TOSL108",
+    "TOS_1",
+    "TPSID_1",
+    "TPSR_1",
+    "TPS_1",
+    "TRHU1652173",
+    "TS893",
+    "TSD1",
+    "TSD_REQ_1",
+    "TSD_RESP_1",
+    "TSR_1",
+    "TS_1",
+    "TT319",
+    "UK VAT",
+    "USBOS",
+    "USRM3656679",
+    "VAT",
+    "W123",
+    "XD534533",
+    "XXX",
+    "XYZ987",
+    "YX233",
+    "YX401",
+    "YangMei",
+    "ZZ738",
+    "ata01661",
+    "exceptionCriteriaLineID",
+    "exceptionNotificationLineID",
+    "exi000073",
+    "ffi000861",
+    "fi",
+    "forecastLineID",
+    "normalizedString",
+    "urn:oasis:names:specification:ubl:signature:Invoice",
+    "urn:oasis:names:specification:ubl:signatures",
+    "urn:oasis:names:specification:ubl:signatures:1",
+    "urn:www.cenbii.eu:profile:bii05:ver2.0"
+  ],
+  "IdentificationCode": [
+    "AT",
+    "BE",
+    "CH",
+    "CN",
+    "DE",
+    "DK",
+    "FI",
+    "GB",
+    "IT",
+    "MA",
+    "MX",
+    "NO",
+    "PA",
+    "RU",
+    "SE",
+    "TH",
+    "US"
+  ],
+  "IndustryClassificationCode": [
+    "CA",
+    "Dairy",
+    "Public Rail Authorities",
+    "SPC",
+    "TR",
+    "WPA"
+  ],
+  "Information": [
+    "Professional equipment"
+  ],
+  "InformationURI": [
+    "https://goo.gl/maps/2k242"
+  ],
+  "InitiatingPartyIndicator": [
+    "true"
+  ],
+  "InsuranceValueAmount": [
+    "1000.00",
+    "1241.30"
+  ],
+  "InventoryValueAmount": [
+    "200",
+    "300",
+    "750"
+  ],
+  "InvoiceTypeCode": [
+    "380",
+    "SalesInvoice"
+  ],
+  "InvoicedQuantity": [
+    "-1",
+    "1",
+    "100",
+    "2",
+    "250"
+  ],
+  "IssueDate": [
+    "1967-08-13",
+    "2002-02-10",
+    "2002-08-13",
+    "2005-01-10",
+    "2005-06-19",
+    "2005-06-20",
+    "2005-06-21",
+    "2005-06-22",
+    "2005-06-24",
+    "2005-06-25",
+    "2005-08-02",
+    "2005-11-03",
+    "2006-01-01",
+    "2008-04-19",
+    "2008-05-01",
+    "2009-12-01",
+    "2009-12-15",
+    "2009-12-25",
+    "2009-12-30",
+    "2010-01-01",
+    "2010-01-10",
+    "2010-01-20",
+    "2010-01-21",
+    "2010-04-08",
+    "2010-04-10",
+    "2010-04-11",
+    "2010-04-12",
+    "2010-04-14",
+    "2010-04-17",
+    "2010-04-26",
+    "2010-04-30",
+    "2010-08-12",
+    "2010-08-13",
+    "2011-02-13",
+    "2011-03-12",
+    "2011-03-13",
+    "2011-09-12",
+    "2011-09-13",
+    "2011-09-22",
+    "2011-10-03",
+    "2011-10-06",
+    "2013-05-08",
+    "2013-06-23",
+    "2013-08-29",
+    "2013-09-15",
+    "2016-05-29",
+    "2016-11-02",
+    "2016-11-03",
+    "2016-11-07",
+    "2017-10-16",
+    "2019-02-21",
+    "2019-03-18",
+    "2019-05-08",
+    "2019-06-21",
+    "2020-06-23",
+    "2023-01-27",
+    "2025-07-01",
+    "2025-07-24"
+  ],
+  "IssueTime": [
+    "01:01:01.001",
+    "08:20:00.0Z",
+    "09:00:00.0Z",
+    "09:29:10+01:00",
+    "09:29:30+01:00",
+    "09:30:00",
+    "09:30:00Z",
+    "10:00:00.000",
+    "10:00:00.000Z",
+    "10:00:10+01:00",
+    "10:00:30+01:00",
+    "10:05:20+01:00",
+    "10:15:00+02:00",
+    "11:01:10+01:00",
+    "11:10:00Z",
+    "11:32:00",
+    "11:32:00Z",
+    "11:32:26.0Z",
+    "12:00:01.000",
+    "12:00:01.000Z",
+    "12:30:00",
+    "12:30:00Z",
+    "14:00:00.0Z",
+    "14:01:00.0Z",
+    "14:20:00.0Z",
+    "14:22:00.0Z",
+    "14:30:10+01:00",
+    "15:30:00.0Z",
+    "15:31:00",
+    "15:31:00Z",
+    "17:30:00+01:00",
+    "19:00:00.0Z",
+    "19:20:00.0Z",
+    "20:22:00.0Z"
+  ],
+  "ItemClassificationCode": [
+    "12344321",
+    "12344322",
+    "12344325",
+    "32344324",
+    "65434564",
+    "65434565",
+    "65434566",
+    "65434567",
+    "65434568",
+    "8518309590"
+  ],
+  "JobTitle": [
+    "Boss",
+    "Purchasing manager",
+    "Sales manager",
+    "Store manager",
+    "Stuffuser"
+  ],
+  "JourneyID": [
+    "00344",
+    "M22",
+    "RHamBrem",
+    "TM1",
+    "UA 1234"
+  ],
+  "LatestDeliveryDate": [
+    "2005-06-30"
+  ],
+  "LatestDeliveryTime": [
+    "18:00:00.0Z"
+  ],
+  "LatestPickupDate": [
+    "2016-08-02"
+  ],
+  "LatestProposalAcceptanceDate": [
+    "2010-01-06"
+  ],
+  "LatitudeDegreesMeasure": [
+    "53.33",
+    "53.4",
+    "58"
+  ],
+  "LatitudeDirectionCode": [
+    "North"
+  ],
+  "LatitudeMinutesMeasure": [
+    "33",
+    "49"
+  ],
+  "LeadTimeMeasure": [
+    "3"
+  ],
+  "LicensePlateID": [
+    "2652 WE",
+    "KA04401",
+    "PBB-123",
+    "VE80044",
+    "WFN667"
+  ],
+  "Line": [
+    "1. sal",
+    "3rd Floor, Room 5",
+    "5th Floor",
+    "AVD BLASCO IBANEZ 36",
+    "Calle Serpis 64",
+    "Customer entrance from the street",
+    "ExampleStreet 1, DK-6920 Videbæk",
+    "IT-afdelingen",
+    "The Roundabout",
+    "Ueberseetor 2",
+    "West Wing"
+  ],
+  "LineExtensionAmount": [
+    "-25",
+    "-3.96",
+    "100.00",
+    "1000.00",
+    "120.00",
+    "12000",
+    "1273",
+    "1436.5",
+    "150500.00",
+    "16.00",
+    "1750.00",
+    "187.5",
+    "197750.00",
+    "200.00",
+    "225",
+    "23.20",
+    "4.96",
+    "43750.00",
+    "6000",
+    "6225",
+    "7.20",
+    "80.00"
+  ],
+  "LineID": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "LineNumberNumeric": [
+    "1"
+  ],
+  "LineStatusCode": [
+    "Disputed",
+    "NoStatus",
+    "Revised"
+  ],
+  "LoadingLengthMeasure": [
+    "0",
+    "12"
+  ],
+  "LocationTypeCode": [
+    "13",
+    "24",
+    "34",
+    "41",
+    "7",
+    "Baseport of discharge",
+    "Baseport of loading",
+    "CUSTOMS OFFICE",
+    "L",
+    "P",
+    "Place of delivery",
+    "Place of despatch",
+    "Place of transhipment",
+    "RAILWAY STATION"
+  ],
+  "LogoReferenceID": [
+    "https://www.oasis-open.org/sites/www.oasis-open.org/files/logo.png"
+  ],
+  "LongitudeDegreesMeasure": [
+    "10",
+    "8.33",
+    "8.48"
+  ],
+  "LongitudeDirectionCode": [
+    "East"
+  ],
+  "LongitudeMinutesMeasure": [
+    "27",
+    "49"
+  ],
+  "LotNumberID": [
+    "546378239",
+    "9390000757"
+  ],
+  "ManufactureDate": [
+    "2019-12-08"
+  ],
+  "MarkAttention": [
+    "Peter Janssen"
+  ],
+  "MathematicOperatorCode": [
+    "Multiply"
+  ],
+  "MaximumCopiesNumeric": [
+    "4",
+    "5"
+  ],
+  "MaximumDataLossDurationMeasure": [
+    "24"
+  ],
+  "MaximumIncidentNotificationDurationMeasure": [
+    "4"
+  ],
+  "MeanTimeToRecoverDurationMeasure": [
+    "3"
+  ],
+  "Measure": [
+    "0.336",
+    "12.288",
+    "120",
+    "160",
+    "2.44",
+    "2.6",
+    "3.00",
+    "6.1",
+    "60",
+    "604.8",
+    "604.80000",
+    "70",
+    "774.144",
+    "774.14400",
+    "80",
+    "88",
+    "9.6"
+  ],
+  "MessageFormat": [
+    "1.2.840.113549.1.9.16.0.1"
+  ],
+  "MiddleName": [
+    "Doe",
+    "M",
+    "N",
+    "Salemacher",
+    "X"
+  ],
+  "MinimumDownTimeScheduleDurationMeasure": [
+    "3"
+  ],
+  "MinimumInventoryQuantity": [
+    "8"
+  ],
+  "MinimumQuantity": [
+    "2"
+  ],
+  "MinimumResponseTimeDurationMeasure": [
+    "300"
+  ],
+  "ModelName": [
+    "MPX2000",
+    "ModelName28"
+  ],
+  "MondayAvailabilityIndicator": [
+    "true"
+  ],
+  "MultipleOrderQuantity": [
+    "1"
+  ],
+  "MultiplierFactorNumeric": [
+    "0.05",
+    "0.1",
+    "0.10",
+    "0.15"
+  ],
+  "Name": [
+    "\"Computing for dummies\" book",
+    "*ULLA GJERSTRUP",
+    "9000",
+    "ACME Corporation",
+    "ACME Ltd.",
+    "AOO Tehnika",
+    "ARRIVA",
+    "AZ Outsourcing srl",
+    "Acme Beeswax",
+    "Air Waybill",
+    "AlcoholPercentage",
+    "Anders Stock",
+    "Andreas Andersen",
+    "AnimalSpecies",
+    "Arancio Forniture spa",
+    "Automat AG",
+    "Auxiliary Tool",
+    "BANGKOK",
+    "Balboa Port",
+    "Beta Shop",
+    "Bietingen",
+    "Boston Road",
+    "Buyer GmbH",
+    "Buyercompany ltd",
+    "CARRIER SERVICE LTD",
+    "CONSIGNEE",
+    "CUSTOMER SERVICE LTD",
+    "Color",
+    "Con Solidador",
+    "Consignee",
+    "Consignee W",
+    "ConsigneeExample",
+    "Consignor",
+    "ConsignorExample",
+    "Consortial",
+    "Coop Extra Bergen",
+    "Custom Cotter Pins",
+    "D2D GmbH",
+    "DB",
+    "Dairy Products",
+    "Dansk Erhverv",
+    "Dansk Industri",
+    "Declarant Inc",
+    "DegreeOfPlato",
+    "Delcomputer A/S",
+    "Dell PrecisionTM  T3400",
+    "Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)",
+    "Denmark",
+    "Deutscher Industrie- und Handelskammertag e.V.",
+    "DigitalPost",
+    "Disfruta",
+    "Document Robot",
+    "EXT-HAL",
+    "Ebeneser Scrooge Inc.",
+    "Elektroniikka Oy",
+    "Eva Johnsson",
+    "Example Shipping",
+    "Example Supplies Ltd.",
+    "ExampleName",
+    "FORWARDER",
+    "FP/BL 1908WFP",
+    "Facebook",
+    "Falu Rödfärg",
+    "Farthing Purchasing Consortia",
+    "Farthing Purchasing Consortium",
+    "FirstAgency",
+    "Gadgets R Us, Inc.",
+    "Gedesby Øko-ost",
+    "Gedevang Mejeri",
+    "Gentofte Kommune",
+    "Germany",
+    "Google+",
+    "Great Britain",
+    "Grenå Tools",
+    "HONDA",
+    "Hair color",
+    "Hans Weisser",
+    "Heiligenhafen",
+    "High-grade Widget",
+    "Horst Tappert",
+    "Huisin Huolinta Oy",
+    "Huolitsija Oy",
+    "IYT Corporation",
+    "Italy",
+    "Jan Peter Clausen",
+    "Jane D.",
+    "Jane Doe",
+    "Jeans Jacket man",
+    "Jennifer de Niro",
+    "John D. Salesman",
+    "John Smith",
+    "Johnssons byggvaror",
+    "Jon Persen",
+    "Josef K.",
+    "Keep On Trucking",
+    "LEONARDO",
+    "La Spezia Container Terminal",
+    "Labtop computer",
+    "Leather Jacket man",
+    "LineGrossWeight",
+    "LineNetWeight",
+    "LinkedIN",
+    "Lisboa Harbour",
+    "MAERSK",
+    "Maersk",
+    "Magic cloak",
+    "Mette Lind",
+    "Mexico",
+    "Moderna Produkter AB",
+    "Moms",
+    "Mr Bianchi",
+    "Mr Delta",
+    "Mr Fred Churchill",
+    "Mr Gamma",
+    "Mr Rossi",
+    "Mr Verdi",
+    "Mrs Bouquet",
+    "NECOSS",
+    "NORWAY",
+    "NTT",
+    "Network cable",
+    "North American Veeblefetzer",
+    "OASIS",
+    "Office Printer 1",
+    "Office Printer 2",
+    "Ole Ellerbæk Madsen",
+    "Ole Hansen",
+    "One-Stop Forwarders",
+    "Open Bank Ltd",
+    "Open Bank Ltd, Bridgstow Branch",
+    "OpenPEPPOL AISBL",
+    "Organization for the Advancement of Structured Information Standards",
+    "Padborg",
+    "Paint type",
+    "Panama",
+    "Papirøen Food ApS",
+    "Paul McQueen",
+    "Pensel 20 mm",
+    "Per",
+    "Peter Gruen",
+    "Peter Janssen",
+    "Philosophical lamp",
+    "Quantity",
+    "RAIL CARRIER",
+    "ROAD CARRIER",
+    "ROAD CARRIER 2",
+    "RSS",
+    "Returned \"Advanced computing\" book",
+    "Returned IBM 5150 desktop",
+    "S Massiah",
+    "SEA CARRIER",
+    "STEFCO A/S",
+    "SWEDEN",
+    "Salescompany ltd.",
+    "Shop 37",
+    "Sille Schyberg",
+    "Slow Food Srl",
+    "Solvant",
+    "SomeName",
+    "SuperCompany",
+    "Swedish trucking",
+    "Swiss",
+    "The Terminus",
+    "Told Service A/S",
+    "Toldstyrelsen",
+    "Tuula Tullaaja 02 13 4567",
+    "Twitter",
+    "Type",
+    "United Airfreight",
+    "Vendor Inc.",
+    "Width",
+    "World Events Ltd.",
+    "YAMAHA",
+    "Yang Mei Electronic Ltd",
+    "Ylermi Huisi 09-55555555",
+    "YouTube",
+    "Zollamt",
+    "beeswax",
+    "gloves",
+    "scarf"
+  ],
+  "NatureCode": [
+    "Machinery / Electrical"
+  ],
+  "NatureOfTransactionCode": [
+    "11",
+    "T1"
+  ],
+  "NetNetWeightMeasure": [
+    "100"
+  ],
+  "NetVolumeMeasure": [
+    "0.336000",
+    "2.235"
+  ],
+  "NetWeightMeasure": [
+    "1",
+    "110",
+    "3000",
+    "604.80000",
+    "76.00"
+  ],
+  "NetworkID": [
+    "OpenPEPPOL"
+  ],
+  "NominationDate": [
+    "2011-03-13"
+  ],
+  "NominationTime": [
+    "09:30:00.0Z"
+  ],
+  "Note": [
+    "A call-off from the annual contract",
+    "Bestilling af computere",
+    "Computer",
+    "Cover is slightly damaged.",
+    "DELAYED",
+    "Framework Agreement",
+    "Freetext note on line 1",
+    "Freetext note on line 2",
+    "Information text for the whole order",
+    "Information text for the whole order change",
+    "Information text for the whole order response",
+    "Instruction to return goods that are badly sent to you.",
+    "Mrs Green agreed to waive charge",
+    "Mus",
+    "Ordered in our booth at the convention.",
+    "PER THIRTY DAYS",
+    "Payable within 1 calendar month from the invoice date",
+    "Payment due immediately",
+    "Penalty percentage 10% from due date",
+    "Per thirty days",
+    "Report about movements of goods between Beta Shop's locations located in\n        Emilia-Romagna.",
+    "Report about quantities of each item which are (or will be) available",
+    "Report about sales of goods in Beta Shop's shops located in Bologna.",
+    "Report about the quantities on stock.",
+    "SAMPLE",
+    "Scratch on box",
+    "See web site for price scheme",
+    "Skærm",
+    "String",
+    "Tastatur",
+    "This is an example shop purchase receipt",
+    "We are very interested please send us all information possible",
+    "as agreed on phone, the invoice should have been cancelled earlier, apologies",
+    "dummy as sample",
+    "please note that local offices will close for recess for the next three weeks - please send their invoices to central offices for that time",
+    "please present invoice if this credit amount cannot be taken against a forthcoming payment",
+    "sample",
+    "sample Document",
+    "this is an illustrative order line"
+  ],
+  "NotificationTypeCode": [
+    "ITEM_CONDITION_DEVIATIONS",
+    "Status Notifications, schedule deviations",
+    "TIME_SCHEDULE_DEVIATIONS"
+  ],
+  "OID": [
+    "2.16.840.1.101.3.4.1.2",
+    "2.16.840.1.101.3.4.1.42"
+  ],
+  "OccurrenceDate": [
+    "2013-05-25"
+  ],
+  "OccurrenceTime": [
+    "18:00:00+01:00"
+  ],
+  "OnCarriageIndicator": [
+    "false"
+  ],
+  "OperationStatusCode": [
+    "AWAITING CUSTOMS",
+    "Delayed, in the course of transportation"
+  ],
+  "OrderIntervalDaysNumeric": [
+    "3"
+  ],
+  "PackQuantity": [
+    "1",
+    "63"
+  ],
+  "PackageLevelCode": [
+    "NoStacking"
+  ],
+  "PackagingTypeCode": [
+    "CS",
+    "CT",
+    "PL",
+    "PX",
+    "TB"
+  ],
+  "PackingMaterial": [
+    "other"
+  ],
+  "PaidAmount": [
+    "25.00"
+  ],
+  "PaidCashAmount": [
+    "30.00"
+  ],
+  "PartialDeliveryIndicator": [
+    "false"
+  ],
+  "ParticipantID": [
+    "1234567987654"
+  ],
+  "PayableAmount": [
+    "100.00",
+    "1000.00",
+    "107.50",
+    "2000",
+    "247.55",
+    "247187.50",
+    "25.00",
+    "300",
+    "6225",
+    "729"
+  ],
+  "PayableRoundingAmount": [
+    "0.30"
+  ],
+  "PaymentChannelCode": [
+    "IBAN"
+  ],
+  "PaymentDueDate": [
+    "2005-07-21",
+    "2009-12-31",
+    "2011-11-06"
+  ],
+  "PaymentID": [
+    "1",
+    "Payref1"
+  ],
+  "PaymentMeansCode": [
+    "10",
+    "20",
+    "31"
+  ],
+  "PaymentMeansDescription": [
+    "Cash"
+  ],
+  "PaymentMeansID": [
+    "Bankers Cheque"
+  ],
+  "PaymentNote": [
+    "Deutsche Bank"
+  ],
+  "PaymentTermsDetailsURI": [
+    "www.ROADCARRIER.de/prices.html"
+  ],
+  "Percent": [
+    "0",
+    "10",
+    "17.5",
+    "20",
+    "21.00",
+    "25"
+  ],
+  "PerformanceMetricTypeCode": [
+    "GROSS_MARGIN",
+    "SUPPLY"
+  ],
+  "PerformanceValueQuantity": [
+    "120",
+    "160"
+  ],
+  "PostEventNotificationDurationMeasure": [
+    "10"
+  ],
+  "PostalZone": [
+    "00140",
+    "01803-4238",
+    "01821",
+    "02210",
+    "02340",
+    "1001",
+    "101",
+    "10178",
+    "107842",
+    "11000",
+    "1216",
+    "1234",
+    "1258",
+    "1620",
+    "2300",
+    "231",
+    "2321",
+    "23774",
+    "28001",
+    "28400",
+    "2920",
+    "29400",
+    "40121",
+    "40128",
+    "40129",
+    "41121",
+    "460019",
+    "4840",
+    "4874",
+    "5017",
+    "523427",
+    "54321",
+    "6920",
+    "80331",
+    "80334",
+    "8260",
+    "8500",
+    "8586",
+    "9000",
+    "9850",
+    "AA99 1BB",
+    "AQ1 6TH",
+    "CH-3007",
+    "CH-8005",
+    "Declarant Post Code",
+    "Post",
+    "ZZ99 1ZZ"
+  ],
+  "Postbox": [
+    "123",
+    "148",
+    "321",
+    "456",
+    "5467",
+    "99043",
+    "PoBox123"
+  ],
+  "PowerIndicator": [
+    "false",
+    "true"
+  ],
+  "PreCarriageIndicator": [
+    "false",
+    "true"
+  ],
+  "PreferenceCriterionCode": [
+    "100"
+  ],
+  "PrepaidAmount": [
+    "1000"
+  ],
+  "PreviousVersionID": [
+    "1.0"
+  ],
+  "PriceAmount": [
+    "0.75",
+    "1.00",
+    "10.00",
+    "100.00",
+    "12.00",
+    "120.00",
+    "1250.00",
+    "1273",
+    "15",
+    "16.00",
+    "2.48",
+    "25",
+    "3.96",
+    "40.00",
+    "4300.00",
+    "50",
+    "50.00"
+  ],
+  "PricingCurrencyCode": [
+    "DKK"
+  ],
+  "PrintQualifier": [
+    "Copies allowed"
+  ],
+  "PrivatePartyIndicator": [
+    "true"
+  ],
+  "ProcedureCode": [
+    "A-letter"
+  ],
+  "ProfileID": [
+    "BII",
+    "ENS",
+    "ExampleProfile",
+    "FWF",
+    "Procurement-QuoSim-1.0",
+    "ShopReceipt-0.9",
+    "TOS_SUBSET",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-exception-notification-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-forecast-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-performance-history",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-product-activity-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-retail-event",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-trade-item-location-profile",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-cpfr-exception-criteria-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sample-international-scenario",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-credit-notification-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-despatch-advice-notification-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-invoice-notification-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-order-with-simple-response-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-receipt-advice-notification-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-remittance-advice-notification-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-request-for-quotation-draft",
+    "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-statement-notification-draft",
+    "eFreight Profile",
+    "eFreightProfile",
+    "urn:X-demo:CoreElement",
+    "urn:www.cenbii.eu:profile:BII01:ver1.0",
+    "urn:www.cenbii.eu:profile:BIIXYZ:ver1.0",
+    "urn:www.cenbii.eu:profile:bii05:ver2.0",
+    "urn:www.cenbii.eu:profile:bii46:ver2.0"
+  ],
+  "ProfileStatusCode": [
+    "NEW"
+  ],
+  "PromotionalEventTypeCode": [
+    "STORE_OPENING"
+  ],
+  "ProtocolID": [
+    "AS2"
+  ],
+  "PurchaseDate": [
+    "2023-01-27"
+  ],
+  "PurchaseTime": [
+    "11:10:00Z"
+  ],
+  "PurposeCode": [
+    "ORDER_FORECAST"
+  ],
+  "Quantity": [
+    "0",
+    "1",
+    "10",
+    "100",
+    "120",
+    "15",
+    "150",
+    "150.00",
+    "2",
+    "20",
+    "200",
+    "240",
+    "3",
+    "35",
+    "5",
+    "50",
+    "63.000",
+    "8",
+    "80",
+    "90"
+  ],
+  "RailCarID": [
+    "101-21"
+  ],
+  "ReceivedQuantity": [
+    "90"
+  ],
+  "ReferenceDate": [
+    "2010-04-30",
+    "2011-03-13"
+  ],
+  "ReferenceID": [
+    "A00095678"
+  ],
+  "ReferenceTime": [
+    "14:20:00.0Z",
+    "18:55:00.0Z"
+  ],
+  "RefrigeratedIndicator": [
+    "false",
+    "true"
+  ],
+  "Region": [
+    "Bavaria"
+  ],
+  "RegistrationDate": [
+    "1957-08-13"
+  ],
+  "RegistrationName": [
+    "Bridgtow District Council",
+    "Delcomputer A/S",
+    "Farthing Purchasing Consortia",
+    "Farthing Purchasing Consortium",
+    "Gentofte Kommune",
+    "Herra Johnssons byggvaror AS",
+    "Johnssons Byggvaror AB",
+    "Moderna Produkter AB",
+    "ROAD CARRIER GmbH",
+    "SuperCompany",
+    "The Sellercompany Incorporated",
+    "The buyercompany inc."
+  ],
+  "RegistrationNationality": [
+    "Denmark"
+  ],
+  "RegistrationNationalityID": [
+    "DE",
+    "DK",
+    "EE",
+    "FI",
+    "IT"
+  ],
+  "ReliabilityPercent": [
+    "100.0",
+    "80"
+  ],
+  "Remarks": [
+    "DELAYED BY ONE HOUR"
+  ],
+  "ReplenishmentOwnerDescription": [
+    "Ownere-321"
+  ],
+  "RequiredCustomsID": [
+    "ECN12344566"
+  ],
+  "ResolutionCode": [
+    "LOCAL_INTERPOLATED_VALUE"
+  ],
+  "RetailEventName": [
+    "ACME NEW BRANCH OPENNING"
+  ],
+  "RetailEventStatusCode": [
+    "PLANNED"
+  ],
+  "ReturnabilityIndicator": [
+    "true"
+  ],
+  "RevisedForecastLineID": [
+    "RFL1"
+  ],
+  "RevisionStatusCode": [
+    "NEW"
+  ],
+  "RoleCode": [
+    "BN",
+    "Champer",
+    "RP"
+  ],
+  "Room": [
+    "29",
+    "309"
+  ],
+  "SalesOrderID": [
+    "A",
+    "CON0095678"
+  ],
+  "SalesOrderLineID": [
+    "A"
+  ],
+  "SaturdayAvailabilityIndicator": [
+    "true"
+  ],
+  "SchemaURI": [
+    "urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2",
+    "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+  ],
+  "SequenceID": [
+    "203",
+    "204"
+  ],
+  "SequenceNumber": [
+    "1"
+  ],
+  "SequenceNumberID": [
+    "1",
+    "2",
+    "3",
+    "4"
+  ],
+  "SequenceNumeric": [
+    "1",
+    "2",
+    "3"
+  ],
+  "SerialNumberID": [
+    "7f49b2b8-9e75-11ed-a8fc-0242ac120002"
+  ],
+  "ServiceName": [
+    "Road transport service in Bavaria area"
+  ],
+  "ServiceTypeCode": [
+    "AP"
+  ],
+  "ShipmentStageTypeCode": [
+    "1"
+  ],
+  "ShippingMarks": [
+    "Agricultural products",
+    "General Cargo"
+  ],
+  "ShippingOrderID": [
+    "KHN23-44044"
+  ],
+  "ShortQuantity": [
+    "10"
+  ],
+  "SignatureMethod": [
+    "urn:oasis:names:specification:ubl:dsig:detached",
+    "urn:oasis:names:specification:ubl:dsig:enveloped",
+    "urn:oasis:names:specification:ubl:profile:dsig:signature"
+  ],
+  "SizeTypeCode": [
+    "22G1"
+  ],
+  "SocialMediaTypeCode": [
+    "Business"
+  ],
+  "SourceCurrencyBaseRate": [
+    "1.00"
+  ],
+  "SourceCurrencyCode": [
+    "USD"
+  ],
+  "SourceForecastIssueDate": [
+    "2005-02-17"
+  ],
+  "SourceForecastIssueTime": [
+    "10:00:00.000",
+    "10:00:00.000Z"
+  ],
+  "SourceValueMeasure": [
+    "2.1"
+  ],
+  "SpecialInstructions": [
+    "1234",
+    "Beeswax becomes liquid at 50'C",
+    "Test"
+  ],
+  "SpecialTerms": [
+    "1% deduction for late delivery as per contract",
+    "1% reduktion i kontraktsummen pr. dags forsinkelse jf. SKI kontrakt",
+    "CAD"
+  ],
+  "SpecificationID": [
+    "ACME_STROP_0023823"
+  ],
+  "StartDate": [
+    "2005-02-26",
+    "2005-06-01",
+    "2005-06-20",
+    "2005-06-25",
+    "2005-06-29",
+    "2005-06-30",
+    "2005-07-01",
+    "2008-05-01",
+    "2008-05-06",
+    "2009-01-01",
+    "2009-08-01",
+    "2009-11-01",
+    "2010-01-01",
+    "2010-02-01",
+    "2010-02-10",
+    "2010-03-26",
+    "2010-03-28",
+    "2010-04-01",
+    "2010-04-07",
+    "2010-04-09",
+    "2010-04-11",
+    "2010-04-28",
+    "2010-04-30",
+    "2010-05-01",
+    "2010-05-12",
+    "2011-03-13",
+    "2011-03-14",
+    "2011-03-17",
+    "2011-08-01",
+    "2011-09-12",
+    "2011-09-20",
+    "2011-10-01",
+    "2011-10-03",
+    "2011-10-04",
+    "2011-10-06",
+    "2016-08-02",
+    "2017-03-30",
+    "2019-02-21",
+    "2019-03-18",
+    "2020-06-02",
+    "2020-07-01"
+  ],
+  "StartTime": [
+    "01:00:00.0Z",
+    "07:00:00",
+    "07:00:00Z",
+    "08:00:00",
+    "08:00:00Z",
+    "09:00:00",
+    "09:00:00Z",
+    "09:30:10+01:00",
+    "09:30:47.0Z",
+    "10:00:00.0Z",
+    "10:30:00.0Z",
+    "10:30:47.0Z",
+    "11:35:00.0Z",
+    "12:30:10+01:00",
+    "13:30:00.0Z",
+    "14:00:00",
+    "14:00:00.0Z",
+    "14:00:00Z",
+    "15:00:00.0Z",
+    "15:30:00.0Z",
+    "15:30:10+01:00",
+    "16:30:00.0Z",
+    "18:30:10+01:00",
+    "20:00:00.0Z",
+    "21:00:00.0Z",
+    "22:00:00",
+    "22:00:00.0Z",
+    "22:00:00Z",
+    "23:20:00.0Z"
+  ],
+  "StatusAvailableIndicator": [
+    "true"
+  ],
+  "StatusCode": [
+    "ISSUED"
+  ],
+  "StatusReason": [
+    "Reefer container lost power - cargo of fish destroyed"
+  ],
+  "StatusReasonCode": [
+    "23"
+  ],
+  "StreetName": [
+    "AVD BLASCO IBANEZ",
+    "Akershusstranda 19",
+    "Anystreet",
+    "Arne Jacobsens Allé",
+    "Avon Way",
+    "Bernstorffsvej",
+    "Blumestrasse 3",
+    "Boston Road",
+    "Breite Straße",
+    "Busy Street",
+    "CALLE SERPIS",
+    "City Road",
+    "Consignee W Street",
+    "Corporate Drive Suite 150",
+    "Dalsagervej",
+    "Declarant Street",
+    "Deliverystreet",
+    "ExampleStreet",
+    "ExampleStreet 1",
+    "Export Str. 143",
+    "Giessereistrasse",
+    "Grosse strasse 34",
+    "Hans Christian Andersens Boulevard",
+    "Hansestadt Bremisches",
+    "Heissestrasse 45",
+    "High Street",
+    "Højdevej 18",
+    "Industrivej 3",
+    "Jordbærstien 2",
+    "Komsomolskaja pl., 158",
+    "Korsbygade 34",
+    "Kungsgatan",
+    "Ludwig-Erhard-Str. 15",
+    "Main street",
+    "Marken",
+    "Neuer Wandrahm 4",
+    "One Hundred Road",
+    "Rådhusgatan",
+    "Sandstr. 38-40",
+    "Schonestrasse 1",
+    "Slet Parkvej",
+    "Slotsholmsgade",
+    "Stahlstrass 5",
+    "Street",
+    "StreetName Example",
+    "Stribevangen",
+    "Tiilitie 5",
+    "Tollbrettkoppel",
+    "Trangravsvej",
+    "VIPPETANGEN",
+    "Vastuskatu 12",
+    "Vesterbrogade",
+    "Vesterbrogade 1L, 1.sal",
+    "Via Bolognese",
+    "Via Dell'Arcoveggio",
+    "Via Delle Fonti",
+    "Via Emilia",
+    "Via Rizzoli",
+    "Volkerstrasse 6"
+  ],
+  "SubTypeCode": [
+    "IM"
+  ],
+  "SubmissionDate": [
+    "2009-12-01"
+  ],
+  "SubmissionDueDate": [
+    "2008-04-24"
+  ],
+  "SubsetID": [
+    "urn:oasis:names:specification:ubl:schema:xsd:Quotation-2-draft",
+    "urn:oasis:names:specification:ubl:xpath:CreditNote-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:DespatchAdvice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Order-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:OrderResponseSimple-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:ReceiptAdvice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:RemittanceAdvice-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:RequestForQuotation-2.0:sbs-1.0-draft",
+    "urn:oasis:names:specification:ubl:xpath:Statement-2.0:sbs-1.0-draft"
+  ],
+  "SummaryDescription": [
+    "1 other",
+    "Electronic components"
+  ],
+  "SundayAvailabilityIndicator": [
+    "true"
+  ],
+  "SupplierAssignedAccountID": [
+    "GT00978567"
+  ],
+  "SupplyChainActivityTypeCode": [
+    "SALES",
+    "SHIPMENTS"
+  ],
+  "TargetCurrencyBaseRate": [
+    "1.00"
+  ],
+  "TargetCurrencyCode": [
+    "GBP"
+  ],
+  "TargetInventoryQuantity": [
+    "20"
+  ],
+  "TargetServicePercent": [
+    "1"
+  ],
+  "TariffCode": [
+    "15219000"
+  ],
+  "TariffDescription": [
+    "Beeswax, other insect waxes and spermacetti"
+  ],
+  "TaxAmount": [
+    "-0.396",
+    "0",
+    "0.00",
+    "0.1",
+    "0.496",
+    "1.80",
+    "100",
+    "17.50",
+    "254.6",
+    "292.1",
+    "292.20",
+    "37.5",
+    "4.00",
+    "42.55",
+    "5.80"
+  ],
+  "TaxEvidenceIndicator": [
+    "false",
+    "true"
+  ],
+  "TaxExclusiveAmount": [
+    "1436.5",
+    "205.00",
+    "23.20",
+    "49437.50",
+    "90.00"
+  ],
+  "TaxExemptionReason": [
+    "Exempt New Means of Transport"
+  ],
+  "TaxExemptionReasonCode": [
+    "AAM"
+  ],
+  "TaxInclusiveAmount": [
+    "1.00",
+    "1729",
+    "20.00",
+    "247.55",
+    "247187.50",
+    "29.00",
+    "5.00",
+    "6.00",
+    "9.00"
+  ],
+  "TaxInclusiveLineExtensionAmount": [
+    "20.00",
+    "9.00"
+  ],
+  "TaxInclusivePriceAmount": [
+    "15.00",
+    "20.00"
+  ],
+  "TaxPointDate": [
+    "2005-06-21",
+    "2009-11-30"
+  ],
+  "TaxTypeCode": [
+    "VAT"
+  ],
+  "TaxableAmount": [
+    "-25",
+    "1",
+    "1.00",
+    "100.00",
+    "1460.5",
+    "16.00",
+    "202.50",
+    "23.20",
+    "7.20"
+  ],
+  "Telefax": [
+    "+ 1 158 1233856",
+    "+ 44 127 98876546",
+    "+1 343 1453655",
+    "+1 781 425 5072",
+    "+44 127 2653215",
+    "+4987675431",
+    "0039 051 23000023",
+    "0039 051 23000025",
+    "0039 051 25400023",
+    "0039 059 33000055",
+    "0039 059 33000057",
+    "0127 2653215",
+    "0127 98876546",
+    "0158 1233856",
+    "123455",
+    "123456",
+    "3456767",
+    "34673435",
+    "4526532146",
+    "4621231",
+    "5121231",
+    "8567443"
+  ],
+  "Telephone": [
+    "+ 44 127 98876545",
+    "+1 158 1233714",
+    "+1 3362 4788",
+    "+1 343 1453654",
+    "+1 36222 33847",
+    "+1 781 425 5073",
+    "+212687878763",
+    "+324005588588",
+    "+324488588578",
+    "+44 127 2653214",
+    "+4598786765",
+    "+4793656656",
+    "+4793774465",
+    "+49450557000",
+    "+49450557234",
+    "+49450557777",
+    "+49450557888",
+    "+4987675432",
+    "+4987675652",
+    "+4987676234",
+    "+4987878763",
+    "+4992894481",
+    "+8676576456",
+    "+8687878763",
+    "0039 051 23000000",
+    "0039 051 23000008",
+    "0039 051 25400000",
+    "0039 059 33000000",
+    "0039 059 33000022",
+    "0127 2653214",
+    "0127 98876545",
+    "0158 1233714",
+    "1234356",
+    "123456",
+    "34557",
+    "346788",
+    "4526532147",
+    "4621230",
+    "5121230",
+    "987098709"
+  ],
+  "TenderEnvelopeID": [
+    "abc"
+  ],
+  "TestIndicator": [
+    "true"
+  ],
+  "ThresholdQuantity": [
+    "120000"
+  ],
+  "ThresholdValueComparisonCode": [
+    "EXCEEDS_EXCEPTION_VALUE"
+  ],
+  "ThursdayAvailabilityIndicator": [
+    "true"
+  ],
+  "TimeDeltaDaysQuantity": [
+    "20"
+  ],
+  "TimeDeviationIndicator": [
+    "true"
+  ],
+  "TimezoneOffset": [
+    "GMT+1"
+  ],
+  "TotalBalanceAmount": [
+    "-107.50"
+  ],
+  "TotalCreditAmount": [
+    "0.00",
+    "107.50"
+  ],
+  "TotalDebitAmount": [
+    "0.00",
+    "107.50"
+  ],
+  "TotalGoodsItemQuantity": [
+    "1",
+    "10",
+    "1500",
+    "2",
+    "23",
+    "500"
+  ],
+  "TotalInvoiceAmount": [
+    "10500.00",
+    "44250.00"
+  ],
+  "TotalPackageQuantity": [
+    "1",
+    "10",
+    "2"
+  ],
+  "TotalPackagesQuantity": [
+    "1",
+    "5"
+  ],
+  "TotalPaymentAmount": [
+    "107.50"
+  ],
+  "TotalTaxAmount": [
+    "10",
+    "10937.50",
+    "17.50",
+    "20",
+    "37625.00",
+    "437.50"
+  ],
+  "TotalTransportHandlingUnitQuantity": [
+    "1",
+    "10",
+    "2"
+  ],
+  "TraceID": [
+    "12345678914111",
+    "12345678914112",
+    "12345678914542",
+    "12345678914543",
+    "12345678914564",
+    "12345678914565",
+    "STD14037"
+  ],
+  "TrackingID": [
+    "NKH7712289-03339-000128"
+  ],
+  "TrainID": [
+    "101",
+    "RID01235",
+    "VF80145"
+  ],
+  "TransactionDate": [
+    "2023-01-27"
+  ],
+  "TransactionTime": [
+    "11:10:00Z"
+  ],
+  "TransportEquipmentTypeCode": [
+    "AD",
+    "AE",
+    "CN",
+    "EFP",
+    "RR",
+    "TE"
+  ],
+  "TransportExecutionPlanReferenceID": [
+    "TEPID_1",
+    "TEPID_1_1",
+    "TEPID_1_2",
+    "TEPID_1_3",
+    "TEPID_1_4",
+    "TEP_1",
+    "TEP_2",
+    "TEP_3"
+  ],
+  "TransportExecutionStatusCode": [
+    "35"
+  ],
+  "TransportHandlingUnitTypeCode": [
+    "122",
+    "4",
+    "PA",
+    "Palletized cargo"
+  ],
+  "TransportItemConditionDeviationIndicator": [
+    "false"
+  ],
+  "TransportItemTimeDeviationIndicator": [
+    "true"
+  ],
+  "TransportMeansTypeCode": [
+    "230",
+    "2305",
+    "31",
+    "83",
+    "Container vessel",
+    "Plane",
+    "Train, with more than 20 wagons",
+    "Truck"
+  ],
+  "TransportModeCode": [
+    "1",
+    "2",
+    "3",
+    "4"
+  ],
+  "TransportServiceCode": [
+    "12",
+    "3",
+    "Door to Pier",
+    "Insurance",
+    "Pier to Pier",
+    "Status notification",
+    "Transport"
+  ],
+  "TransportServiceProviderCancellationIndicator": [
+    "false"
+  ],
+  "TransportServiceProviderCompletionIndicator": [
+    "false"
+  ],
+  "TransportServiceProviderReadyForExecutionIndicator": [
+    "true"
+  ],
+  "TransportUserCancellationIndicator": [
+    "false"
+  ],
+  "TransportUserCompletionIndicator": [
+    "false"
+  ],
+  "TransportUserReadyForExecutionIndicator": [
+    "true"
+  ],
+  "TransportUserRemarks": [
+    "DROP OFF AT RECEPTION"
+  ],
+  "TransportationServiceDescription": [
+    "CARRIER SERVICE",
+    "Complete D2D service from Munich, Germany to Hamar, Norway",
+    "En route status notifications",
+    "Insurance of goods during transportation",
+    "Package and pallet transport within the Bavaria area",
+    "Rail transport service from Bremen to Nurnberg",
+    "Rail transport service from Hamburg to Bremen",
+    "Road transport service from Hamburg to Bremen",
+    "Transport from Hamburg to Nurnberg"
+  ],
+  "TransportationStatusTypeCode": [
+    "All deviations"
+  ],
+  "TuesdayAvailabilityIndicator": [
+    "true"
+  ],
+  "TypeCode": [
+    "ChinaFish",
+    "X"
+  ],
+  "UBLVersionID": [
+    "2.0",
+    "2.0-prd3",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+  ],
+  "URI": [
+    "UBL-Invoice-2.0-Detached-Signature.xml",
+    "http://facebook.com/oasis.open",
+    "http://twitter.com/OASISopen",
+    "http://www.suppliersite.eu/sheet001.html",
+    "http://www.youtube.com/oasisopen",
+    "https://plus.google.com/+Oasis-openOrg",
+    "https://www.linkedin.com/company/oasis",
+    "https://www.oasis-open.org/feed",
+    "https://www.trust2408/certPaths/Trust2408_issuingCA12_chain.p7c",
+    "normalizedString",
+    "www.digst.dk/udbud/NemID.cer"
+  ],
+  "UUID": [
+    "349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4",
+    "4D07786B-DA6D-439F-82D1-6FFFC7F4E3B1",
+    "569ED478-0EBE-4817-A234-DFB9ACA81218",
+    "6E09886B-DC6E-439F-82D1-7C83709652B1",
+    "6E09886B-DC6E-439F-82D1-7C83746352B1",
+    "6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1",
+    "74638995-D67E-002F-436-8G17366352B1",
+    "849FBBCE-E081-40B4-906C-94C5FF9D1AC3",
+    "84E081CE-F9D1-94C5-40F9-94C5FF9D1AC3",
+    "88C7280E-8F10-419F-9949-8EFFFA2842B8",
+    "89F82FA6-5331-491D-83BC-7B6CA7FD047C",
+    "8D076867-AE6D-439F-8281-5AAFC7F4E3B1",
+    "93T5G3G5-HYA3-7267-BVG3-GS46SW44WG53",
+    "ExampleUUID",
+    "normalizedString",
+    "x2344vghjjrhhfhrrrgd4567"
+  ],
+  "Value": [
+    "0",
+    "20mm",
+    "Acrylic",
+    "Black",
+    "Bovine",
+    "Cat5",
+    "TRUST2408 OCES Primary CA – TRUST2408 OCES CA II",
+    "Water",
+    "black"
+  ],
+  "ValueAmount": [
+    "1000.00",
+    "10500.00",
+    "250"
+  ],
+  "ValueMeasure": [
+    "0.2"
+  ],
+  "ValueQuantity": [
+    "604.8",
+    "63.000",
+    "774.144"
+  ],
+  "VarianceQuantity": [
+    "20"
+  ],
+  "VersionID": [
+    "1",
+    "1.1",
+    "2.2"
+  ],
+  "VesselID": [
+    "3852664",
+    "Eestiship",
+    "IMO1234567",
+    "SomeIMONr"
+  ],
+  "VesselName": [
+    "MS Enova",
+    "SomeVesselName",
+    "Vessel Name"
+  ],
+  "WebsiteURI": [
+    "http://super.company.dk",
+    "http://www.CONSIGNEE.no/statusreceptioninterface#2",
+    "https://www.oasis-open.org",
+    "www.ROADCARRIER.de"
+  ],
+  "WednesdayAvailabilityIndicator": [
+    "true"
+  ],
+  "WeighingDate": [
+    "2016-11-01"
+  ],
+  "WeighingDeviceID": [
+    "TS12345"
+  ],
+  "WeighingDeviceType": [
+    "Truck Scale"
+  ],
+  "WeighingMethodCode": [
+    "SM1"
+  ],
+  "WeighingTime": [
+    "00:30:00",
+    "00:30:00Z"
+  ],
+  "WeightStatementTypeCode": [
+    "749"
+  ],
+  "XPath": [
+    "String"
+  ]
+}
