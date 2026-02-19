@@ -21,12 +21,12 @@ Where a type is genuinely cross-cutting (e.g., `PeriodType` appears everywhere),
 
 ## Contents
 
-- [Group 01: Party & Organization](#party) — 21 types, 1 document types, 15 with examples
+- [Group 01: Party & Organization](#party) — 22 types, 2 document types, 15 with examples
 - [Group 02: Address, Location & Communication](#address) — 11 types, 0 document types, 8 with examples
 - [Group 03: Items, Products & Classification](#items) — 25 types, 5 document types, 11 with examples
 - [Group 04: Shipment, Goods & Delivery](#shipment) — 26 types, 13 document types, 15 with examples
 - [Group 05: Transport Means & Operations](#transport) — 14 types, 11 document types, 13 with examples
-- [Group 06: Maritime & Port Operations](#maritime) — 21 types, 1 document types, 0 with examples
+- [Group 06: Maritime & Port Operations](#maritime) — 20 types, 0 document types, 0 with examples
 - [Group 07: Procurement & Tendering](#procurement) — 57 types, 24 document types, 6 with examples
 - [Group 08: Contract & Legal](#contract) — 16 types, 8 document types, 5 with examples
 - [Group 09: Financial, Payment & Tax](#financial) — 24 types, 0 document types, 16 with examples
@@ -41,7 +41,7 @@ Where a type is genuinely cross-cutting (e.g., `PeriodType` appears everywhere),
 
 ## Group 01: Party & Organization {#party}
 
-**21 ABIE types** · **1 document types** · **15 types observed in examples** · **6 XSD-only types**
+**22 ABIE types** · **2 document types** · **15 types observed in examples** · **7 XSD-only types**
 
 Types representing trading partners, roles, and organisational units. All derive from the CCTS ObjectClass 'Party'. Role wrappers (CustomerPartyType, SupplierPartyType, etc.) add context-specific references around the core PartyType. PersonType and ContactType are included because they describe the human agents within or acting on behalf of a party.
 
@@ -50,6 +50,7 @@ Types representing trading partners, roles, and organisational units. All derive
 | Document type | Description |
 |---|---|
 | `BusinessCard` | Business Card |
+| `BusinessInformation` | Business Information |
 
 **ABIE types:**
 
@@ -76,6 +77,7 @@ Types representing trading partners, roles, and organisational units. All derive
 | `ShareholderPartyType` |  | A party holding shares in a company (beneficial ownership disclosure) |
 | `SupplierPartyType` | ✓ | Seller/supplier role wrapper around PartyType |
 | `WinningPartyType` |  | A party that won a tender result |
+| `OperationTypeType` |  | A business operation type classifier (e.g. the type of activity a business performs) — used only in BusinessInformation |
 
 ---
 
@@ -257,15 +259,13 @@ Types describing how goods move — the vehicle, vessel, aircraft, or train; the
 
 ## Group 06: Maritime & Port Operations {#maritime}
 
-**21 ABIE types** · **1 document types** · **0 types observed in examples** · **21 XSD-only types**
+**20 ABIE types** · **0 document types** · **0 types observed in examples** · **20 XSD-only types**
 
 Types specific to the maritime domain and the IMO FAL Convention port-clearance process. These are absent from earlier UBL versions and were added in UBL 2.4–2.5 to support the IMO Maritime Single Window and related port community systems. MaritimeTransportType is kept in group 05 because it identifies the vessel as a transport means; the types here concern port-call administration, safety, environmental compliance, and vessel operations.
 
 **Document types in this group:**
 
-| Document type | Description |
-|---|---|
-| `BusinessInformation` | Business Information |
+*No top-level document type — types used within other groups' documents.*
 
 **ABIE types:**
 
@@ -291,7 +291,6 @@ Types specific to the maritime domain and the IMO FAL Convention port-clearance 
 | `CrewPersonEffectType` |  | Personal effects declared by a crew member on arrival or departure |
 | `ShipStoreArticleType` |  | An article in the ship's stores — provisions, spare parts, equipment |
 | `WHOAffectedAreaVisitType` |  | A visit to a WHO-designated affected or endemic area by the vessel |
-| `OperationTypeType` |  | An operation type code for a vessel or port operation (BusinessInformation context) |
 
 ---
 
