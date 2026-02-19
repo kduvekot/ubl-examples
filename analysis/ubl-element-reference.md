@@ -206,11 +206,11 @@ _34 elements_
 #### `cbc:Amount`
 
 ```xml
-<cbc:Amount>0.0</cbc:Amount>
-<cbc:Amount>0.00</cbc:Amount>
 <cbc:Amount>0.275</cbc:Amount>
 <cbc:Amount>1.00</cbc:Amount>
-<cbc:Amount>10</cbc:Amount>
+<cbc:Amount>100</cbc:Amount>
+<cbc:Amount>100.0</cbc:Amount>
+<cbc:Amount>12</cbc:Amount>
 ```
 _10 more values in examples_
 
@@ -219,8 +219,6 @@ _10 more values in examples_
 ```xml
 <cbc:Amount currencyID="DKK">0.00</cbc:Amount>
 <cbc:Amount currencyID="EUR">0.275</cbc:Amount>
-<cbc:Amount currencyID="GBP">0.0</cbc:Amount>
-<cbc:Amount currencyID="SEK">100</cbc:Amount>
 <cbc:Amount currencyID="USD">12.70</cbc:Amount>
 ```
 
@@ -321,10 +319,10 @@ _10 more values in examples_
 
 ```xml
 <cbc:DeclaredCustomsValueAmount>0.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>1000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>10000.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>1500.00</cbc:DeclaredCustomsValueAmount>
-<cbc:DeclaredCustomsValueAmount>2000.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>2500.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>3000.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>500.00</cbc:DeclaredCustomsValueAmount>
+<cbc:DeclaredCustomsValueAmount>5000.00</cbc:DeclaredCustomsValueAmount>
 ```
 _6 more values in examples_
 
@@ -340,10 +338,10 @@ _6 more values in examples_
 
 ```xml
 <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>10000.00</cbc:DeclaredStatisticsValueAmount>
 <cbc:DeclaredStatisticsValueAmount>10050.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>1500.00</cbc:DeclaredStatisticsValueAmount>
-<cbc:DeclaredStatisticsValueAmount>182.62</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>2500.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>3000.00</cbc:DeclaredStatisticsValueAmount>
+<cbc:DeclaredStatisticsValueAmount>34800.00</cbc:DeclaredStatisticsValueAmount>
 ```
 _9 more values in examples_
 
@@ -398,20 +396,17 @@ _9 more values in examples_
 #### `cbc:LineExtensionAmount`
 
 ```xml
-<cbc:LineExtensionAmount>-25</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>-3.96</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>1000.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount>120.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>1750.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>197750.00</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>6225</cbc:LineExtensionAmount>
+<cbc:LineExtensionAmount>7.20</cbc:LineExtensionAmount>
 ```
 _17 more values in examples_
 
 **`@currencyID`**
 
 ```xml
-<cbc:LineExtensionAmount currencyID="CAD">100.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="DKK">150500.00</cbc:LineExtensionAmount>
-<cbc:LineExtensionAmount currencyID="EUR">-25</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="GBP">100.00</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="SEK">12000</cbc:LineExtensionAmount>
 <cbc:LineExtensionAmount currencyID="USD">1000.00</cbc:LineExtensionAmount>
@@ -446,20 +441,17 @@ _17 more values in examples_
 ```xml
 <cbc:PayableAmount>100.00</cbc:PayableAmount>
 <cbc:PayableAmount>1000.00</cbc:PayableAmount>
-<cbc:PayableAmount>107.50</cbc:PayableAmount>
-<cbc:PayableAmount>2000</cbc:PayableAmount>
-<cbc:PayableAmount>247.55</cbc:PayableAmount>
+<cbc:PayableAmount>247187.50</cbc:PayableAmount>
+<cbc:PayableAmount>300</cbc:PayableAmount>
+<cbc:PayableAmount>6225</cbc:PayableAmount>
 ```
 _5 more values in examples_
 
 **`@currencyID`**
 
 ```xml
-<cbc:PayableAmount currencyID="CAD">100.00</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="DKK">247187.50</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="EUR">2000</cbc:PayableAmount>
-<cbc:PayableAmount currencyID="GBP">100.00</cbc:PayableAmount>
-<cbc:PayableAmount currencyID="SEK">6225</cbc:PayableAmount>
 <cbc:PayableAmount currencyID="USD">1000.00</cbc:PayableAmount>
 ```
 
@@ -490,11 +482,11 @@ _5 more values in examples_
 #### `cbc:PriceAmount`
 
 ```xml
-<cbc:PriceAmount>0.75</cbc:PriceAmount>
-<cbc:PriceAmount>1.00</cbc:PriceAmount>
 <cbc:PriceAmount>10.00</cbc:PriceAmount>
 <cbc:PriceAmount>100.00</cbc:PriceAmount>
-<cbc:PriceAmount>12.00</cbc:PriceAmount>
+<cbc:PriceAmount>1273</cbc:PriceAmount>
+<cbc:PriceAmount>25</cbc:PriceAmount>
+<cbc:PriceAmount>50.00</cbc:PriceAmount>
 ```
 _12 more values in examples_
 
@@ -502,20 +494,18 @@ _12 more values in examples_
 
 ```xml
 <cbc:PriceAmount currencyID="DKK">1250.00</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="EUR">0.75</cbc:PriceAmount>
 <cbc:PriceAmount currencyID="GBP">1.00</cbc:PriceAmount>
 <cbc:PriceAmount currencyID="SEK">15</cbc:PriceAmount>
-<cbc:PriceAmount currencyID="USD">10.00</cbc:PriceAmount>
 ```
 
 #### `cbc:TaxAmount`
 
 ```xml
 <cbc:TaxAmount>-0.396</cbc:TaxAmount>
-<cbc:TaxAmount>0</cbc:TaxAmount>
-<cbc:TaxAmount>0.00</cbc:TaxAmount>
-<cbc:TaxAmount>0.1</cbc:TaxAmount>
 <cbc:TaxAmount>0.496</cbc:TaxAmount>
+<cbc:TaxAmount>1.80</cbc:TaxAmount>
+<cbc:TaxAmount>4.00</cbc:TaxAmount>
+<cbc:TaxAmount>5.80</cbc:TaxAmount>
 ```
 _10 more values in examples_
 
@@ -548,11 +538,11 @@ _10 more values in examples_
 #### `cbc:TaxInclusiveAmount`
 
 ```xml
-<cbc:TaxInclusiveAmount>1.00</cbc:TaxInclusiveAmount>
 <cbc:TaxInclusiveAmount>1729</cbc:TaxInclusiveAmount>
-<cbc:TaxInclusiveAmount>20.00</cbc:TaxInclusiveAmount>
 <cbc:TaxInclusiveAmount>247.55</cbc:TaxInclusiveAmount>
 <cbc:TaxInclusiveAmount>247187.50</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
+<cbc:TaxInclusiveAmount>6.00</cbc:TaxInclusiveAmount>
 ```
 _4 more values in examples_
 
@@ -592,11 +582,11 @@ _4 more values in examples_
 #### `cbc:TaxableAmount`
 
 ```xml
-<cbc:TaxableAmount>-25</cbc:TaxableAmount>
 <cbc:TaxableAmount>1</cbc:TaxableAmount>
 <cbc:TaxableAmount>1.00</cbc:TaxableAmount>
-<cbc:TaxableAmount>100.00</cbc:TaxableAmount>
 <cbc:TaxableAmount>1460.5</cbc:TaxableAmount>
+<cbc:TaxableAmount>202.50</cbc:TaxableAmount>
+<cbc:TaxableAmount>23.20</cbc:TaxableAmount>
 ```
 _4 more values in examples_
 
@@ -675,10 +665,10 @@ _4 more values in examples_
 
 ```xml
 <cbc:TotalTaxAmount>10</cbc:TotalTaxAmount>
-<cbc:TotalTaxAmount>10937.50</cbc:TotalTaxAmount>
 <cbc:TotalTaxAmount>17.50</cbc:TotalTaxAmount>
 <cbc:TotalTaxAmount>20</cbc:TotalTaxAmount>
 <cbc:TotalTaxAmount>37625.00</cbc:TotalTaxAmount>
+<cbc:TotalTaxAmount>437.50</cbc:TotalTaxAmount>
 ```
 _1 more value in examples_
 
@@ -1667,11 +1657,11 @@ _25 elements_
 #### `cbc:EndDate`
 
 ```xml
-<cbc:EndDate>1967-08-13</cbc:EndDate>
-<cbc:EndDate>2005-06-21</cbc:EndDate>
-<cbc:EndDate>2005-06-25</cbc:EndDate>
-<cbc:EndDate>2005-06-29</cbc:EndDate>
-<cbc:EndDate>2005-06-30</cbc:EndDate>
+<cbc:EndDate>2005-07-20</cbc:EndDate>
+<cbc:EndDate>2010-01-31</cbc:EndDate>
+<cbc:EndDate>2010-06-12</cbc:EndDate>
+<cbc:EndDate>2012-01-01</cbc:EndDate>
+<cbc:EndDate>2020-02-20</cbc:EndDate>
 ```
 _41 more values in examples_
 
@@ -1685,11 +1675,11 @@ _41 more values in examples_
 #### `cbc:IssueDate`
 
 ```xml
-<cbc:IssueDate>1967-08-13</cbc:IssueDate>
-<cbc:IssueDate>2002-02-10</cbc:IssueDate>
-<cbc:IssueDate>2002-08-13</cbc:IssueDate>
-<cbc:IssueDate>2005-01-10</cbc:IssueDate>
-<cbc:IssueDate>2005-06-19</cbc:IssueDate>
+<cbc:IssueDate>2008-05-01</cbc:IssueDate>
+<cbc:IssueDate>2010-01-10</cbc:IssueDate>
+<cbc:IssueDate>2011-03-13</cbc:IssueDate>
+<cbc:IssueDate>2011-10-03</cbc:IssueDate>
+<cbc:IssueDate>2025-07-01</cbc:IssueDate>
 ```
 _53 more values in examples_
 
@@ -1765,11 +1755,11 @@ _53 more values in examples_
 #### `cbc:StartDate`
 
 ```xml
-<cbc:StartDate>2005-02-26</cbc:StartDate>
-<cbc:StartDate>2005-06-01</cbc:StartDate>
-<cbc:StartDate>2005-06-20</cbc:StartDate>
-<cbc:StartDate>2005-06-25</cbc:StartDate>
-<cbc:StartDate>2005-06-29</cbc:StartDate>
+<cbc:StartDate>2010-05-01</cbc:StartDate>
+<cbc:StartDate>2010-05-12</cbc:StartDate>
+<cbc:StartDate>2011-03-14</cbc:StartDate>
+<cbc:StartDate>2011-09-12</cbc:StartDate>
+<cbc:StartDate>2011-10-06</cbc:StartDate>
 ```
 _36 more values in examples_
 
@@ -1820,11 +1810,11 @@ _54 elements_
 #### `cbc:AttributeID`
 
 ```xml
-<cbc:AttributeID>GrossVolumen</cbc:AttributeID>
-<cbc:AttributeID>GrossWeight</cbc:AttributeID>
-<cbc:AttributeID>Height</cbc:AttributeID>
 <cbc:AttributeID>Length</cbc:AttributeID>
-<cbc:AttributeID>LineGrossWeight</cbc:AttributeID>
+<cbc:AttributeID>LineNetWeight</cbc:AttributeID>
+<cbc:AttributeID>OuterDepth</cbc:AttributeID>
+<cbc:AttributeID>TC</cbc:AttributeID>
+<cbc:AttributeID>Width</cbc:AttributeID>
 ```
 _7 more values in examples_
 
@@ -1837,11 +1827,11 @@ _7 more values in examples_
 #### `cbc:CompanyID`
 
 ```xml
-<cbc:CompanyID>12356478</cbc:CompanyID>
 <cbc:CompanyID>1323421212</cbc:CompanyID>
-<cbc:CompanyID>16077593</cbc:CompanyID>
-<cbc:CompanyID>175 269 2355</cbc:CompanyID>
-<cbc:CompanyID>18296799</cbc:CompanyID>
+<cbc:CompanyID>6411982340</cbc:CompanyID>
+<cbc:CompanyID>DK12345</cbc:CompanyID>
+<cbc:CompanyID>DK18296799</cbc:CompanyID>
+<cbc:CompanyID>DK43232010</cbc:CompanyID>
 ```
 _20 more values in examples_
 
@@ -1856,12 +1846,7 @@ _20 more values in examples_
 ```xml
 <cbc:CompanyID schemeID="BEVAT">BE54321</cbc:CompanyID>
 <cbc:CompanyID schemeID="CVR">5402697509</cbc:CompanyID>
-<cbc:CompanyID schemeID="DK:CVR">18296799</cbc:CompanyID>
-<cbc:CompanyID schemeID="DK:SE">DK12345678</cbc:CompanyID>
 <cbc:CompanyID schemeID="DKVAT">DK12345</cbc:CompanyID>
-<cbc:CompanyID schemeID="SE:ORGNR">5532331183</cbc:CompanyID>
-<cbc:CompanyID schemeID="UK:CH">6411982340</cbc:CompanyID>
-<cbc:CompanyID schemeID="ZZZ">5645342123</cbc:CompanyID>
 ```
 
 #### `cbc:ContractFolderID`
@@ -1881,11 +1866,11 @@ _20 more values in examples_
 #### `cbc:CustomizationID`
 
 ```xml
-<cbc:CustomizationID>AV</cbc:CustomizationID>
 <cbc:CustomizationID>Common Framework</cbc:CustomizationID>
-<cbc:CustomizationID>OIOUBL-2.1</cbc:CustomizationID>
-<cbc:CustomizationID>Sample-0.9</cbc:CustomizationID>
 <cbc:CustomizationID>UBL-2.3</cbc:CustomizationID>
+<cbc:CustomizationID>urn:oasis:names:specification:ubl:default</cbc:CustomizationID>
+<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:DespatchAdvice-2.0:sbs-1.0-draft</cbc:CustomizationID>
+<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
 ```
 _22 more values in examples_
 
@@ -1898,11 +1883,11 @@ _22 more values in examples_
 #### `cbc:EndpointID`
 
 ```xml
-<cbc:EndpointID>01841111111111</cbc:EndpointID>
 <cbc:EndpointID>01842222222222</cbc:EndpointID>
-<cbc:EndpointID>1234567890123</cbc:EndpointID>
 <cbc:EndpointID>1234567987654</cbc:EndpointID>
-<cbc:EndpointID>5798000416604</cbc:EndpointID>
+<cbc:EndpointID>DK18296799</cbc:EndpointID>
+<cbc:EndpointID>www.consignee.com/statusnotifications/</cbc:EndpointID>
+<cbc:EndpointID>www.consignee.de/statusnotifications/</cbc:EndpointID>
 ```
 _7 more values in examples_
 
@@ -1945,11 +1930,11 @@ _7 more values in examples_
 #### `cbc:ID`
 
 ```xml
-<cbc:ID>000010</cbc:ID>
-<cbc:ID>0004424005</cbc:ID>
-<cbc:ID>001-00010123</cbc:ID>
-<cbc:ID>0012345000058</cbc:ID>
-<cbc:ID>00123450000580</cbc:ID>
+<cbc:ID>00123450000583</cbc:ID>
+<cbc:ID>6903148000007</cbc:ID>
+<cbc:ID>CON_2</cbc:ID>
+<cbc:ID>DH019</cbc:ID>
+<cbc:ID>TEP_1</cbc:ID>
 ```
 _345 more values in examples_
 
@@ -1959,9 +1944,6 @@ _345 more values in examples_
 <cbc:ID schemeAgencyID="306">XXX</cbc:ID>
 <cbc:ID schemeAgencyID="320">63</cbc:ID>
 <cbc:ID schemeAgencyID="5">TRHU1652173</cbc:ID>
-<cbc:ID schemeAgencyID="6">123452340123</cbc:ID>
-<cbc:ID schemeAgencyID="9">098740918237</cbc:ID>
-<cbc:ID schemeAgencyID="ZZZ">EmployeeXXX</cbc:ID>
 ```
 
 **`@schemeAgencyName`**
@@ -1970,46 +1952,22 @@ _345 more values in examples_
 <cbc:ID schemeAgencyName="GS1">12345698</cbc:ID>
 <cbc:ID schemeAgencyName="INCOTERMS">EXW</cbc:ID>
 <cbc:ID schemeAgencyName="SMDG">XXX</cbc:ID>
-<cbc:ID schemeAgencyName="UN">CNSHA</cbc:ID>
-<cbc:ID schemeAgencyName="WCO">2005US12345678998765432112345678</cbc:ID>
 ```
 
 **`@schemeID`**
 
 ```xml
-<cbc:ID schemeID="AuthorisationNumber">M165</cbc:ID>
-<cbc:ID schemeID="DK:CVR">DK12345678</cbc:ID>
-<cbc:ID schemeID="GB:VAT">GB999999973</cbc:ID>
 <cbc:ID schemeID="GLN">098740918237</cbc:ID>
-<cbc:ID schemeID="GTIN">123452340123</cbc:ID>
-<cbc:ID schemeID="IMCOTERM">FOT</cbc:ID>
-<cbc:ID schemeID="ISO 6346">TRHU1652173</cbc:ID>
-<cbc:ID schemeID="IT:VAT">IT01234567890</cbc:ID>
-<cbc:ID schemeID="LINES">XXX</cbc:ID>
-<cbc:ID schemeID="Passport">325334535</cbc:ID>
-<cbc:ID schemeID="Skat.dk">DK10035643</cbc:ID>
 <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
-<cbc:ID schemeID="UN/ECE 5305">AA</cbc:ID>
 <cbc:ID schemeID="UN/LOCODE">GBBRS</cbc:ID>
-<cbc:ID schemeID="ZZZ">123456789</cbc:ID>
-<cbc:ID schemeID="locode">DK003102</cbc:ID>
-<cbc:ID schemeID="urn:oioubl:id:taxschemeid-1.1">63</cbc:ID>
 ```
 
 **`@schemeName`**
 
 ```xml
-<cbc:ID schemeName="GINC">7365566156191234567</cbc:ID>
 <cbc:ID schemeName="GLN">123465</cbc:ID>
-<cbc:ID schemeName="GRAI">12345698</cbc:ID>
-<cbc:ID schemeName="INCOTERMS">EXW</cbc:ID>
-<cbc:ID schemeName="LOCODE">ITGOA</cbc:ID>
-<cbc:ID schemeName="MovementReferenceNumber">TPS_1</cbc:ID>
-<cbc:ID schemeName="SMDG master liner code list">XXX</cbc:ID>
 <cbc:ID schemeName="UN/LOCODE">CNSHA</cbc:ID>
-<cbc:ID schemeName="UNLOCODE">ITGOA</cbc:ID>
 <cbc:ID schemeName="Unique Consignment Reference">2005US12345678998765432112345678</cbc:ID>
-<cbc:ID schemeName="bic">BFCU4040001</cbc:ID>
 ```
 
 #### `cbc:InformationURI`
@@ -2120,11 +2078,11 @@ _345 more values in examples_
 #### `cbc:ProfileID`
 
 ```xml
-<cbc:ProfileID>BII</cbc:ProfileID>
-<cbc:ProfileID>ENS</cbc:ProfileID>
-<cbc:ProfileID>ExampleProfile</cbc:ProfileID>
 <cbc:ProfileID>FWF</cbc:ProfileID>
-<cbc:ProfileID>Procurement-QuoSim-1.0</cbc:ProfileID>
+<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-cpfr-exception-criteria-draft</cbc:ProfileID>
+<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-despatch-advice-notification-draft</cbc:ProfileID>
+<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-receipt-advice-notification-draft</cbc:ProfileID>
+<cbc:ProfileID>urn:X-demo:CoreElement</cbc:ProfileID>
 ```
 _25 more values in examples_
 
@@ -2255,7 +2213,7 @@ _25 more values in examples_
 <cbc:TraceID>12345678914112</cbc:TraceID>
 <cbc:TraceID>12345678914542</cbc:TraceID>
 <cbc:TraceID>12345678914543</cbc:TraceID>
-<cbc:TraceID>12345678914564</cbc:TraceID>
+<cbc:TraceID>12345678914565</cbc:TraceID>
 ```
 _2 more values in examples_
 
@@ -2280,7 +2238,7 @@ _2 more values in examples_
 <cbc:TransportExecutionPlanReferenceID>TEPID_1_1</cbc:TransportExecutionPlanReferenceID>
 <cbc:TransportExecutionPlanReferenceID>TEPID_1_2</cbc:TransportExecutionPlanReferenceID>
 <cbc:TransportExecutionPlanReferenceID>TEPID_1_3</cbc:TransportExecutionPlanReferenceID>
-<cbc:TransportExecutionPlanReferenceID>TEPID_1_4</cbc:TransportExecutionPlanReferenceID>
+<cbc:TransportExecutionPlanReferenceID>TEP_1</cbc:TransportExecutionPlanReferenceID>
 ```
 _3 more values in examples_
 
@@ -2290,8 +2248,8 @@ _3 more values in examples_
 <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
 <cbc:UBLVersionID>2.0-prd3</cbc:UBLVersionID>
 <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
 <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+<cbc:UBLVersionID>2.5</cbc:UBLVersionID>
 ```
 _2 more values in examples_
 
@@ -2299,10 +2257,10 @@ _2 more values in examples_
 
 ```xml
 <cbc:URI>UBL-Invoice-2.0-Detached-Signature.xml</cbc:URI>
-<cbc:URI>http://facebook.com/oasis.open</cbc:URI>
-<cbc:URI>http://twitter.com/OASISopen</cbc:URI>
 <cbc:URI>http://www.suppliersite.eu/sheet001.html</cbc:URI>
 <cbc:URI>http://www.youtube.com/oasisopen</cbc:URI>
+<cbc:URI>https://www.linkedin.com/company/oasis</cbc:URI>
+<cbc:URI>normalizedString</cbc:URI>
 ```
 _6 more values in examples_
 
@@ -2310,10 +2268,10 @@ _6 more values in examples_
 
 ```xml
 <cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
-<cbc:UUID>4D07786B-DA6D-439F-82D1-6FFFC7F4E3B1</cbc:UUID>
 <cbc:UUID>569ED478-0EBE-4817-A234-DFB9ACA81218</cbc:UUID>
-<cbc:UUID>6E09886B-DC6E-439F-82D1-7C83709652B1</cbc:UUID>
 <cbc:UUID>6E09886B-DC6E-439F-82D1-7C83746352B1</cbc:UUID>
+<cbc:UUID>84E081CE-F9D1-94C5-40F9-94C5FF9D1AC3</cbc:UUID>
+<cbc:UUID>8D076867-AE6D-439F-8281-5AAFC7F4E3B1</cbc:UUID>
 ```
 _11 more values in examples_
 
@@ -2590,8 +2548,8 @@ _23 elements_
 <cbc:GrossWeightMeasure>1.5</cbc:GrossWeightMeasure>
 <cbc:GrossWeightMeasure>1000.0</cbc:GrossWeightMeasure>
 <cbc:GrossWeightMeasure>12</cbc:GrossWeightMeasure>
-<cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
 <cbc:GrossWeightMeasure>230.80</cbc:GrossWeightMeasure>
+<cbc:GrossWeightMeasure>600</cbc:GrossWeightMeasure>
 ```
 _7 more values in examples_
 
@@ -2720,11 +2678,11 @@ _7 more values in examples_
 #### `cbc:Measure`
 
 ```xml
-<cbc:Measure>0.336</cbc:Measure>
 <cbc:Measure>12.288</cbc:Measure>
-<cbc:Measure>120</cbc:Measure>
-<cbc:Measure>160</cbc:Measure>
 <cbc:Measure>2.44</cbc:Measure>
+<cbc:Measure>2.6</cbc:Measure>
+<cbc:Measure>60</cbc:Measure>
+<cbc:Measure>9.6</cbc:Measure>
 ```
 _12 more values in examples_
 
@@ -2732,11 +2690,8 @@ _12 more values in examples_
 
 ```xml
 <cbc:Measure unitCode="CEL">3.00</cbc:Measure>
-<cbc:Measure unitCode="CMT">120</cbc:Measure>
-<cbc:Measure unitCode="KG">12.288</cbc:Measure>
 <cbc:Measure unitCode="KGM">88</cbc:Measure>
 <cbc:Measure unitCode="MTQ">0.336</cbc:Measure>
-<cbc:Measure unitCode="MTR">2.44</cbc:Measure>
 ```
 
 #### `cbc:MinimumDownTimeScheduleDurationMeasure`
@@ -2876,22 +2831,22 @@ _1 more value in examples_
 #### `cbc:CityName`
 
 ```xml
-<cbc:CityName>Aalborg</cbc:CityName>
-<cbc:CityName>Anytown</cbc:CityName>
-<cbc:CityName>Bergen</cbc:CityName>
-<cbc:CityName>Berlin</cbc:CityName>
-<cbc:CityName>Bern</cbc:CityName>
+<cbc:CityName>Billerica</cbc:CityName>
+<cbc:CityName>Copenhagen</cbc:CityName>
+<cbc:CityName>Hamburg</cbc:CityName>
+<cbc:CityName>Helsinki</cbc:CityName>
+<cbc:CityName>Munchen</cbc:CityName>
 ```
 _48 more values in examples_
 
 #### `cbc:FamilyName`
 
 ```xml
-<cbc:FamilyName>Doe</cbc:FamilyName>
 <cbc:FamilyName>GONZALES</cbc:FamilyName>
-<cbc:FamilyName>Jensen</cbc:FamilyName>
-<cbc:FamilyName>M</cbc:FamilyName>
 <cbc:FamilyName>Pereson</cbc:FamilyName>
+<cbc:FamilyName>Petersen</cbc:FamilyName>
+<cbc:FamilyName>ROSSI</cbc:FamilyName>
+<cbc:FamilyName>Svensson</cbc:FamilyName>
 ```
 _7 more values in examples_
 
@@ -2899,10 +2854,10 @@ _7 more values in examples_
 
 ```xml
 <cbc:FirstName>Antonio</cbc:FirstName>
-<cbc:FirstName>DAVID</cbc:FirstName>
 <cbc:FirstName>GIORGIO</cbc:FirstName>
 <cbc:FirstName>John</cbc:FirstName>
 <cbc:FirstName>Kirsten</cbc:FirstName>
+<cbc:FirstName>Lars</cbc:FirstName>
 ```
 _5 more values in examples_
 
@@ -2926,22 +2881,22 @@ _5 more values in examples_
 #### `cbc:Name`
 
 ```xml
-<cbc:Name>"Computing for dummies" book</cbc:Name>
-<cbc:Name>*ULLA GJERSTRUP</cbc:Name>
-<cbc:Name>9000</cbc:Name>
-<cbc:Name>ACME Corporation</cbc:Name>
-<cbc:Name>ACME Ltd.</cbc:Name>
+<cbc:Name>D2D GmbH</cbc:Name>
+<cbc:Name>Delcomputer A/S</cbc:Name>
+<cbc:Name>Disfruta</cbc:Name>
+<cbc:Name>FirstAgency</cbc:Name>
+<cbc:Name>Shop 37</cbc:Name>
 ```
 _175 more values in examples_
 
 #### `cbc:RegistrationName`
 
 ```xml
-<cbc:RegistrationName>Bridgtow District Council</cbc:RegistrationName>
 <cbc:RegistrationName>Delcomputer A/S</cbc:RegistrationName>
 <cbc:RegistrationName>Farthing Purchasing Consortia</cbc:RegistrationName>
-<cbc:RegistrationName>Farthing Purchasing Consortium</cbc:RegistrationName>
-<cbc:RegistrationName>Gentofte Kommune</cbc:RegistrationName>
+<cbc:RegistrationName>Moderna Produkter AB</cbc:RegistrationName>
+<cbc:RegistrationName>The Sellercompany Incorporated</cbc:RegistrationName>
+<cbc:RegistrationName>The buyercompany inc.</cbc:RegistrationName>
 ```
 _7 more values in examples_
 
@@ -2960,11 +2915,11 @@ _7 more values in examples_
 #### `cbc:StreetName`
 
 ```xml
-<cbc:StreetName>AVD BLASCO IBANEZ</cbc:StreetName>
-<cbc:StreetName>Akershusstranda 19</cbc:StreetName>
-<cbc:StreetName>Anystreet</cbc:StreetName>
-<cbc:StreetName>Arne Jacobsens Allé</cbc:StreetName>
-<cbc:StreetName>Avon Way</cbc:StreetName>
+<cbc:StreetName>One Hundred Road</cbc:StreetName>
+<cbc:StreetName>Slet Parkvej</cbc:StreetName>
+<cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+<cbc:StreetName>Street</cbc:StreetName>
+<cbc:StreetName>Via Emilia</cbc:StreetName>
 ```
 _54 more values in examples_
 
@@ -3043,8 +2998,8 @@ _4 elements_
 <cbc:Percent>0</cbc:Percent>
 <cbc:Percent>10</cbc:Percent>
 <cbc:Percent>17.5</cbc:Percent>
-<cbc:Percent>20</cbc:Percent>
 <cbc:Percent>21.00</cbc:Percent>
+<cbc:Percent>25</cbc:Percent>
 ```
 _1 more value in examples_
 
@@ -3089,8 +3044,6 @@ _24 elements_
 **`@unitCode`**
 
 ```xml
-<cbc:BaseQuantity unitCode="C62">1</cbc:BaseQuantity>
-<cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
 <cbc:BaseQuantity unitCode="KG">1</cbc:BaseQuantity>
 <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
 <cbc:BaseQuantity unitCode="LTR">1</cbc:BaseQuantity>
@@ -3215,26 +3168,20 @@ _24 elements_
 #### `cbc:Quantity`
 
 ```xml
-<cbc:Quantity>0</cbc:Quantity>
-<cbc:Quantity>1</cbc:Quantity>
 <cbc:Quantity>10</cbc:Quantity>
-<cbc:Quantity>100</cbc:Quantity>
 <cbc:Quantity>120</cbc:Quantity>
+<cbc:Quantity>20</cbc:Quantity>
+<cbc:Quantity>200</cbc:Quantity>
+<cbc:Quantity>3</cbc:Quantity>
 ```
 _15 more values in examples_
 
 **`@unitCode`**
 
 ```xml
-<cbc:Quantity unitCode="C62">15</cbc:Quantity>
 <cbc:Quantity unitCode="CT">63.000</cbc:Quantity>
 <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-<cbc:Quantity unitCode="H87">1</cbc:Quantity>
-<cbc:Quantity unitCode="KG">100</cbc:Quantity>
 <cbc:Quantity unitCode="KGM">100</cbc:Quantity>
-<cbc:Quantity unitCode="LTR">120</cbc:Quantity>
-<cbc:Quantity unitCode="NAR">0</cbc:Quantity>
-<cbc:Quantity unitCode="NIU">35</cbc:Quantity>
 ```
 
 #### `cbc:ReceivedQuantity`
@@ -3299,8 +3246,8 @@ _15 more values in examples_
 <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
 <cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
 <cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
-<cbc:TotalGoodsItemQuantity>2</cbc:TotalGoodsItemQuantity>
 <cbc:TotalGoodsItemQuantity>23</cbc:TotalGoodsItemQuantity>
+<cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
 ```
 _1 more value in examples_
 
@@ -3437,11 +3384,11 @@ _75 elements_
 #### `cbc:AllowanceChargeReason`
 
 ```xml
-<cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Damage</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Discount</cbc:AllowanceChargeReason>
 <cbc:AllowanceChargeReason>Donation to the Red Cross</cbc:AllowanceChargeReason>
-<cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+<cbc:AllowanceChargeReason>Handling fee</cbc:AllowanceChargeReason>
+<cbc:AllowanceChargeReason>Remove previously granted discount</cbc:AllowanceChargeReason>
+<cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+<cbc:AllowanceChargeReason>Transport documents</cbc:AllowanceChargeReason>
 ```
 _9 more values in examples_
 
@@ -3466,11 +3413,11 @@ _9 more values in examples_
 #### `cbc:BuildingNumber`
 
 ```xml
-<cbc:BuildingNumber>1</cbc:BuildingNumber>
-<cbc:BuildingNumber>100</cbc:BuildingNumber>
-<cbc:BuildingNumber>12</cbc:BuildingNumber>
-<cbc:BuildingNumber>13</cbc:BuildingNumber>
-<cbc:BuildingNumber>15</cbc:BuildingNumber>
+<cbc:BuildingNumber>152</cbc:BuildingNumber>
+<cbc:BuildingNumber>161</cbc:BuildingNumber>
+<cbc:BuildingNumber>29</cbc:BuildingNumber>
+<cbc:BuildingNumber>35</cbc:BuildingNumber>
+<cbc:BuildingNumber>5</cbc:BuildingNumber>
 ```
 _19 more values in examples_
 
@@ -3528,18 +3475,18 @@ _3 more values in examples_
 <cbc:Department>Gadgets</cbc:Department>
 <cbc:Department>Marketing Office</cbc:Department>
 <cbc:Department>Purchasing department</cbc:Department>
-<cbc:Department>Revenue department</cbc:Department>
+<cbc:Department>Sales department</cbc:Department>
 ```
 _2 more values in examples_
 
 #### `cbc:Description`
 
 ```xml
-<cbc:Description>200 grams of Carbon Dioxide per km</cbc:Description>
-<cbc:Description>ACME NEW BRANCH will be opened in Brusells on May 12, 2010</cbc:Description>
-<cbc:Description>ART INTERNATIONAL ZURICH 2019</cbc:Description>
-<cbc:Description>AWAITING CUSTOMS. MISSING DOCUMENTATION. ONE HOUR DELAYED</cbc:Description>
-<cbc:Description>Acme beeswax</cbc:Description>
+<cbc:Description>Acme knitwear scarf</cbc:Description>
+<cbc:Description>METABO GE700, Pinolsliber</cbc:Description>
+<cbc:Description>MOTOR CYCLE</cbc:Description>
+<cbc:Description>Office Printer 1</cbc:Description>
+<cbc:Description>Shop in the city center</cbc:Description>
 ```
 _87 more values in examples_
 
@@ -3568,22 +3515,22 @@ _87 more values in examples_
 #### `cbc:DocumentType`
 
 ```xml
-<cbc:DocumentType>ATA carnet, paper</cbc:DocumentType>
 <cbc:DocumentType>Annual Contract</cbc:DocumentType>
-<cbc:DocumentType>BOL</cbc:DocumentType>
-<cbc:DocumentType>CMR</cbc:DocumentType>
-<cbc:DocumentType>Contract</cbc:DocumentType>
+<cbc:DocumentType>Drawing</cbc:DocumentType>
+<cbc:DocumentType>Preliminary sales receipt</cbc:DocumentType>
+<cbc:DocumentType>Shipment reference</cbc:DocumentType>
+<cbc:DocumentType>Timesheet</cbc:DocumentType>
 ```
 _9 more values in examples_
 
 #### `cbc:ElectronicMail`
 
 ```xml
-<cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@arriva.de</cbc:ElectronicMail>
 <cbc:ElectronicMail>SomeName@consignee.de</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
-<cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
+<cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
+<cbc:ElectronicMail>SomeName@ntt.de</cbc:ElectronicMail>
+<cbc:ElectronicMail>delta@betashop.it</cbc:ElectronicMail>
+<cbc:ElectronicMail>jsmith@example.com</cbc:ElectronicMail>
 ```
 _38 more values in examples_
 
@@ -3660,9 +3607,9 @@ _38 more values in examples_
 ```xml
 <cbc:Line>1. sal</cbc:Line>
 <cbc:Line>3rd Floor, Room 5</cbc:Line>
-<cbc:Line>5th Floor</cbc:Line>
-<cbc:Line>AVD BLASCO IBANEZ 36</cbc:Line>
-<cbc:Line>Calle Serpis 64</cbc:Line>
+<cbc:Line>IT-afdelingen</cbc:Line>
+<cbc:Line>Ueberseetor 2</cbc:Line>
+<cbc:Line>West Wing</cbc:Line>
 ```
 _6 more values in examples_
 
@@ -3681,11 +3628,11 @@ _6 more values in examples_
 #### `cbc:Note`
 
 ```xml
-<cbc:Note>A call-off from the annual contract</cbc:Note>
-<cbc:Note>Bestilling af computere</cbc:Note>
-<cbc:Note>Computer</cbc:Note>
-<cbc:Note>Cover is slightly damaged.</cbc:Note>
-<cbc:Note>DELAYED</cbc:Note>
+<cbc:Note>Information text for the whole order change</cbc:Note>
+<cbc:Note>PER THIRTY DAYS</cbc:Note>
+<cbc:Note>Penalty percentage 10% from due date</cbc:Note>
+<cbc:Note>as agreed on phone, the invoice should have been cancelled earlier, apologies</cbc:Note>
+<cbc:Note>sample</cbc:Note>
 ```
 _34 more values in examples_
 
@@ -3724,11 +3671,11 @@ _34 more values in examples_
 #### `cbc:PostalZone`
 
 ```xml
-<cbc:PostalZone>00140</cbc:PostalZone>
-<cbc:PostalZone>01803-4238</cbc:PostalZone>
-<cbc:PostalZone>01821</cbc:PostalZone>
-<cbc:PostalZone>02210</cbc:PostalZone>
 <cbc:PostalZone>02340</cbc:PostalZone>
+<cbc:PostalZone>40128</cbc:PostalZone>
+<cbc:PostalZone>6920</cbc:PostalZone>
+<cbc:PostalZone>80331</cbc:PostalZone>
+<cbc:PostalZone>80334</cbc:PostalZone>
 ```
 _42 more values in examples_
 
@@ -3737,9 +3684,9 @@ _42 more values in examples_
 ```xml
 <cbc:Postbox>123</cbc:Postbox>
 <cbc:Postbox>148</cbc:Postbox>
-<cbc:Postbox>321</cbc:Postbox>
-<cbc:Postbox>456</cbc:Postbox>
 <cbc:Postbox>5467</cbc:Postbox>
+<cbc:Postbox>99043</cbc:Postbox>
+<cbc:Postbox>PoBox123</cbc:Postbox>
 ```
 _2 more values in examples_
 
@@ -3827,10 +3774,10 @@ _2 more values in examples_
 
 ```xml
 <cbc:SubsetID>urn:oasis:names:specification:ubl:schema:xsd:Quotation-2-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:CreditNote-2.0:sbs-1.0-draft</cbc:SubsetID>
 <cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:DespatchAdvice-2.0:sbs-1.0-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft</cbc:SubsetID>
-<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:Order-2.0:sbs-1.0-draft</cbc:SubsetID>
+<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:OrderResponseSimple-2.0:sbs-1.0-draft</cbc:SubsetID>
+<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:RemittanceAdvice-2.0:sbs-1.0-draft</cbc:SubsetID>
+<cbc:SubsetID>urn:oasis:names:specification:ubl:xpath:RequestForQuotation-2.0:sbs-1.0-draft</cbc:SubsetID>
 ```
 _5 more values in examples_
 
@@ -3856,22 +3803,22 @@ _5 more values in examples_
 #### `cbc:Telefax`
 
 ```xml
-<cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
 <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-<cbc:Telefax>+1 343 1453655</cbc:Telefax>
-<cbc:Telefax>+1 781 425 5072</cbc:Telefax>
-<cbc:Telefax>+44 127 2653215</cbc:Telefax>
+<cbc:Telefax>0039 051 23000023</cbc:Telefax>
+<cbc:Telefax>0039 059 33000055</cbc:Telefax>
+<cbc:Telefax>0039 059 33000057</cbc:Telefax>
+<cbc:Telefax>3456767</cbc:Telefax>
 ```
 _17 more values in examples_
 
 #### `cbc:Telephone`
 
 ```xml
-<cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-<cbc:Telephone>+1 158 1233714</cbc:Telephone>
 <cbc:Telephone>+1 3362 4788</cbc:Telephone>
-<cbc:Telephone>+1 343 1453654</cbc:Telephone>
-<cbc:Telephone>+1 36222 33847</cbc:Telephone>
+<cbc:Telephone>+49450557888</cbc:Telephone>
+<cbc:Telephone>0039 051 23000008</cbc:Telephone>
+<cbc:Telephone>0127 98876545</cbc:Telephone>
+<cbc:Telephone>34557</cbc:Telephone>
 ```
 _35 more values in examples_
 
@@ -3944,11 +3891,11 @@ _35 more values in examples_
 #### `cbc:TransportationServiceDescription`
 
 ```xml
-<cbc:TransportationServiceDescription>CARRIER SERVICE</cbc:TransportationServiceDescription>
 <cbc:TransportationServiceDescription>Complete D2D service from Munich, Germany to Hamar, Norway</cbc:TransportationServiceDescription>
-<cbc:TransportationServiceDescription>En route status notifications</cbc:TransportationServiceDescription>
 <cbc:TransportationServiceDescription>Insurance of goods during transportation</cbc:TransportationServiceDescription>
-<cbc:TransportationServiceDescription>Package and pallet transport within the Bavaria area</cbc:TransportationServiceDescription>
+<cbc:TransportationServiceDescription>Rail transport service from Bremen to Nurnberg</cbc:TransportationServiceDescription>
+<cbc:TransportationServiceDescription>Rail transport service from Hamburg to Bremen</cbc:TransportationServiceDescription>
+<cbc:TransportationServiceDescription>Road transport service from Hamburg to Bremen</cbc:TransportationServiceDescription>
 ```
 _4 more values in examples_
 
@@ -3956,10 +3903,10 @@ _4 more values in examples_
 
 ```xml
 <cbc:Value>0</cbc:Value>
-<cbc:Value>20mm</cbc:Value>
-<cbc:Value>Acrylic</cbc:Value>
 <cbc:Value>Black</cbc:Value>
 <cbc:Value>Bovine</cbc:Value>
+<cbc:Value>Cat5</cbc:Value>
+<cbc:Value>TRUST2408 OCES Primary CA – TRUST2408 OCES CA II</cbc:Value>
 ```
 _4 more values in examples_
 
@@ -3998,11 +3945,11 @@ _14 elements_
 #### `cbc:EndTime`
 
 ```xml
-<cbc:EndTime>06:00:00</cbc:EndTime>
-<cbc:EndTime>06:00:00Z</cbc:EndTime>
 <cbc:EndTime>09:30:10+01:00</cbc:EndTime>
 <cbc:EndTime>09:30:47.0Z</cbc:EndTime>
-<cbc:EndTime>10:30:47.0Z</cbc:EndTime>
+<cbc:EndTime>14:00:00.0Z</cbc:EndTime>
+<cbc:EndTime>15:30:00</cbc:EndTime>
+<cbc:EndTime>18:35:10+01:00</cbc:EndTime>
 ```
 _22 more values in examples_
 
@@ -4015,11 +3962,11 @@ _22 more values in examples_
 #### `cbc:IssueTime`
 
 ```xml
-<cbc:IssueTime>01:01:01.001</cbc:IssueTime>
-<cbc:IssueTime>08:20:00.0Z</cbc:IssueTime>
 <cbc:IssueTime>09:00:00.0Z</cbc:IssueTime>
-<cbc:IssueTime>09:29:10+01:00</cbc:IssueTime>
-<cbc:IssueTime>09:29:30+01:00</cbc:IssueTime>
+<cbc:IssueTime>10:00:30+01:00</cbc:IssueTime>
+<cbc:IssueTime>14:00:00.0Z</cbc:IssueTime>
+<cbc:IssueTime>15:30:00.0Z</cbc:IssueTime>
+<cbc:IssueTime>15:31:00</cbc:IssueTime>
 ```
 _29 more values in examples_
 
@@ -4065,10 +4012,10 @@ _29 more values in examples_
 
 ```xml
 <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-<cbc:StartTime>07:00:00</cbc:StartTime>
-<cbc:StartTime>07:00:00Z</cbc:StartTime>
-<cbc:StartTime>08:00:00</cbc:StartTime>
 <cbc:StartTime>08:00:00Z</cbc:StartTime>
+<cbc:StartTime>15:30:00.0Z</cbc:StartTime>
+<cbc:StartTime>16:30:00.0Z</cbc:StartTime>
+<cbc:StartTime>22:00:00Z</cbc:StartTime>
 ```
 _24 more values in examples_
 
@@ -4100,6 +4047,132 @@ _Grouped by ABIE type from `UBL-CommonAggregateComponents-2.5.xsd`. Elements sha
 _7 instances across 1 element, with 4 unique structures_
 
 **Structure 1** — 1 instance
+
+```xml
+<cac:SupplyChainActivityDataLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:SupplyChainActivityTypeCode>SALES</cbc:SupplyChainActivityTypeCode>
+  <cac:ActivityOriginLocation>
+    <cbc:Description>Shop in the city center</cbc:Description>
+    <cac:Address>
+      <cbc:StreetName>Via Rizzoli</cbc:StreetName>
+      <cbc:BuildingNumber>208</cbc:BuildingNumber>
+      <cbc:CityName>Bologna</cbc:CityName>
+      <cbc:PostalZone>40121</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        <cbc:Name>Italy</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ActivityOriginLocation>
+  <cac:SalesItem>
+    <cbc:Quantity>8</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>shirt</cbc:Description>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>SH009</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>DD88</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+  </cac:SalesItem>
+  <cac:SalesItem>
+    <cbc:Quantity>3</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>trousers</cbc:Description>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>TH009</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>DA008</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+  </cac:SalesItem>
+</cac:SupplyChainActivityDataLine>
+```
+
+**Structure 2** — 1 instance
+
+```xml
+<cac:SupplyChainActivityDataLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:SupplyChainActivityTypeCode>SHIPMENTS</cbc:SupplyChainActivityTypeCode>
+  <cac:ActivityOriginLocation>
+    <cac:Address>
+      <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+      <cbc:BuildingNumber>403</cbc:BuildingNumber>
+      <cbc:CityName>Bologna</cbc:CityName>
+      <cbc:PostalZone>40129</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        <cbc:Name>Italy</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ActivityOriginLocation>
+  <cac:ActivityFinalLocation>
+    <cbc:Description>Shop in the city center</cbc:Description>
+    <cac:Address>
+      <cbc:StreetName>Via Rizzoli</cbc:StreetName>
+      <cbc:BuildingNumber>208</cbc:BuildingNumber>
+      <cbc:CityName>Bologna</cbc:CityName>
+      <cbc:PostalZone>40121</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        <cbc:Name>Italy</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ActivityFinalLocation>
+  <cac:SalesItem>
+    <cbc:Quantity>20</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>shirt</cbc:Description>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>SH009</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>DD88</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+  </cac:SalesItem>
+</cac:SupplyChainActivityDataLine>
+```
+
+**Structure 3** — 4 instances
+
+```xml
+<cac:SupplyChainActivityDataLine>
+  <cbc:ID>SCADL_SHIPMENT001</cbc:ID>
+  <cbc:SupplyChainActivityTypeCode>SHIPMENTS</cbc:SupplyChainActivityTypeCode>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID>2203148000007</cbc:ID>
+      </cac:PartyIdentification>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID>6903148000007</cbc:ID>
+      </cac:PartyIdentification>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:ActivityOriginLocation>
+    <cbc:ID></cbc:ID>
+  </cac:ActivityOriginLocation>
+  <cac:SalesItem>
+    <cbc:Quantity>20</cbc:Quantity>
+    <cac:Item>
+      <cac:StandardItemIdentification>
+        <cbc:ID>06110123456784</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:SalesItem>
+</cac:SupplyChainActivityDataLine>
+```
+
+**Structure 4** — 1 instance
 
 ```xml
 <cac:SupplyChainActivityDataLine>
@@ -4157,132 +4230,6 @@ _7 instances across 1 element, with 4 unique structures_
 </cac:SupplyChainActivityDataLine>
 ```
 
-**Structure 2** — 1 instance
-
-```xml
-<cac:SupplyChainActivityDataLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:SupplyChainActivityTypeCode>SHIPMENTS</cbc:SupplyChainActivityTypeCode>
-  <cac:ActivityOriginLocation>
-    <cac:Address>
-      <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-      <cbc:BuildingNumber>403</cbc:BuildingNumber>
-      <cbc:CityName>Bologna</cbc:CityName>
-      <cbc:PostalZone>40129</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        <cbc:Name>Italy</cbc:Name>
-      </cac:Country>
-    </cac:Address>
-  </cac:ActivityOriginLocation>
-  <cac:ActivityFinalLocation>
-    <cbc:Description>Shop in the city center</cbc:Description>
-    <cac:Address>
-      <cbc:StreetName>Via Rizzoli</cbc:StreetName>
-      <cbc:BuildingNumber>208</cbc:BuildingNumber>
-      <cbc:CityName>Bologna</cbc:CityName>
-      <cbc:PostalZone>40121</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        <cbc:Name>Italy</cbc:Name>
-      </cac:Country>
-    </cac:Address>
-  </cac:ActivityFinalLocation>
-  <cac:SalesItem>
-    <cbc:Quantity>20</cbc:Quantity>
-    <cac:Item>
-      <cbc:Description>shirt</cbc:Description>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>SH009</cbc:ID>
-      </cac:BuyersItemIdentification>
-      <cac:SellersItemIdentification>
-        <cbc:ID>DD88</cbc:ID>
-      </cac:SellersItemIdentification>
-    </cac:Item>
-  </cac:SalesItem>
-</cac:SupplyChainActivityDataLine>
-```
-
-**Structure 3** — 1 instance
-
-```xml
-<cac:SupplyChainActivityDataLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:SupplyChainActivityTypeCode>SALES</cbc:SupplyChainActivityTypeCode>
-  <cac:ActivityOriginLocation>
-    <cbc:Description>Shop in the city center</cbc:Description>
-    <cac:Address>
-      <cbc:StreetName>Via Rizzoli</cbc:StreetName>
-      <cbc:BuildingNumber>208</cbc:BuildingNumber>
-      <cbc:CityName>Bologna</cbc:CityName>
-      <cbc:PostalZone>40121</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        <cbc:Name>Italy</cbc:Name>
-      </cac:Country>
-    </cac:Address>
-  </cac:ActivityOriginLocation>
-  <cac:SalesItem>
-    <cbc:Quantity>8</cbc:Quantity>
-    <cac:Item>
-      <cbc:Description>shirt</cbc:Description>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>SH009</cbc:ID>
-      </cac:BuyersItemIdentification>
-      <cac:SellersItemIdentification>
-        <cbc:ID>DD88</cbc:ID>
-      </cac:SellersItemIdentification>
-    </cac:Item>
-  </cac:SalesItem>
-  <cac:SalesItem>
-    <cbc:Quantity>3</cbc:Quantity>
-    <cac:Item>
-      <cbc:Description>trousers</cbc:Description>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>TH009</cbc:ID>
-      </cac:BuyersItemIdentification>
-      <cac:SellersItemIdentification>
-        <cbc:ID>DA008</cbc:ID>
-      </cac:SellersItemIdentification>
-    </cac:Item>
-  </cac:SalesItem>
-</cac:SupplyChainActivityDataLine>
-```
-
-**Structure 4** — 4 instances
-
-```xml
-<cac:SupplyChainActivityDataLine>
-  <cbc:ID>SCADL_SHIPMENT001</cbc:ID>
-  <cbc:SupplyChainActivityTypeCode>SHIPMENTS</cbc:SupplyChainActivityTypeCode>
-  <cac:BuyerCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID>2203148000007</cbc:ID>
-      </cac:PartyIdentification>
-    </cac:Party>
-  </cac:BuyerCustomerParty>
-  <cac:SellerSupplierParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID>6903148000007</cbc:ID>
-      </cac:PartyIdentification>
-    </cac:Party>
-  </cac:SellerSupplierParty>
-  <cac:ActivityOriginLocation>
-    <cbc:ID></cbc:ID>
-  </cac:ActivityOriginLocation>
-  <cac:SalesItem>
-    <cbc:Quantity>20</cbc:Quantity>
-    <cac:Item>
-      <cac:StandardItemIdentification>
-        <cbc:ID>06110123456784</cbc:ID>
-      </cac:StandardItemIdentification>
-    </cac:Item>
-  </cac:SalesItem>
-</cac:SupplyChainActivityDataLine>
-```
-
 [↑ Back to contents](#contents)
 
 ### `AddressLineType`
@@ -4295,7 +4242,7 @@ _364 instances across 1 element, with 1 unique structure_
 
 ```xml
 <cac:AddressLine>
-  <cbc:Line>The Roundabout</cbc:Line>
+  <cbc:Line>3rd Floor, Room 5</cbc:Line>
 </cac:AddressLine>
 ```
 
@@ -4310,6 +4257,21 @@ _621 instances across 6 elements, with 60 unique structures_
 **Structure 1** — 1 instance
 
 ```xml
+<cac:PostalAddress>
+  <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
+  <cbc:StreetName>Korsbygade 34</cbc:StreetName>
+  <cbc:CityName>Aalborg</cbc:CityName>
+  <cbc:PostalZone>9000</cbc:PostalZone>
+  <cbc:CountrySubentity></cbc:CountrySubentity>
+  <cac:Country>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 2** — 1 instance
+
+```xml
 <cac:Address>
   <cbc:CityName>STORLIEN</cbc:CityName>
   <cac:Country>
@@ -4319,307 +4281,21 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:Address>
 ```
 
-**Structure 2** — 1 instance
+**Structure 3** — 9 instances
 
 ```xml
-<cac:Address>
-  <cbc:CityName>Tanger</cbc:CityName>
+<cac:PostalAddress>
+  <cbc:Postbox>99043</cbc:Postbox>
+  <cbc:CityName>Boston</cbc:CityName>
+  <cbc:PostalZone>02210</cbc:PostalZone>
+  <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
   <cac:Country>
-    <cbc:IdentificationCode>MA</cbc:IdentificationCode>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
   </cac:Country>
-</cac:Address>
+</cac:PostalAddress>
 ```
 
-**Structure 3** — 5 instances
-
-```xml
-<cac:Address>
-  <cbc:CityName>Munich</cbc:CityName>
-</cac:Address>
-```
-
-**Structure 4** — 1 instance
-
-```xml
-<cac:Address>
-  <cac:Country>
-    <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-    <cbc:Name>Swiss</cbc:Name>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 5** — 4 instances
-
-```xml
-<cac:Address>
-  <cac:Country>
-    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 6** — 2 instances
-
-```xml
-<cac:Address>
-  <cbc:Floor>4</cbc:Floor>
-  <cbc:StreetName>CALLE SERPIS</cbc:StreetName>
-  <cbc:CityName>VALENCIA</cbc:CityName>
-  <cbc:PostalZone>460019</cbc:PostalZone>
-  <cac:AddressLine>
-    <cbc:Line>Calle Serpis 64</cbc:Line>
-  </cac:AddressLine>
-</cac:Address>
-```
-
-**Structure 7** — 2 instances
-
-```xml
-<cac:Address>
-  <cbc:ID>1234567890123</cbc:ID>
-  <cbc:Postbox>123</cbc:Postbox>
-  <cbc:StreetName>Rådhusgatan</cbc:StreetName>
-  <cbc:AdditionalStreetName>2nd floor</cbc:AdditionalStreetName>
-  <cbc:BuildingNumber>5</cbc:BuildingNumber>
-  <cbc:Department>Purchasing department</cbc:Department>
-  <cbc:CityName>Stockholm</cbc:CityName>
-  <cbc:PostalZone>11000</cbc:PostalZone>
-  <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
-  <cac:Country>
-    <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 8** — 9 instances
-
-```xml
-<cac:Address>
-  <cbc:ID>DEHAM</cbc:ID>
-  <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-  <cbc:CityName>Hamburg</cbc:CityName>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 9** — 5 instances
-
-```xml
-<cac:Address>
-  <cbc:ID>DEHAM</cbc:ID>
-  <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-  <cbc:CityName>Hamburg</cbc:CityName>
-  <cbc:PostalZone>29400</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 10** — 1 instance
-
-```xml
-<cac:Address>
-  <cbc:ID>133</cbc:ID>
-  <cbc:StreetName>VIPPETANGEN</cbc:StreetName>
-  <cbc:CityName>OSLO</cbc:CityName>
-  <cbc:TimezoneOffset>GMT+1</cbc:TimezoneOffset>
-  <cac:Country>
-    <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-    <cbc:Name>NORWAY</cbc:Name>
-  </cac:Country>
-  <cac:LocationCoordinate>
-    <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-    <cbc:LatitudeDegreesMeasure>58</cbc:LatitudeDegreesMeasure>
-    <cbc:LongitudeDegreesMeasure>10</cbc:LongitudeDegreesMeasure>
-  </cac:LocationCoordinate>
-</cac:Address>
-```
-
-**Structure 11** — 1 instance
-
-```xml
-<cac:Address>
-  <cbc:Region>Bavaria</cbc:Region>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    <cbc:Name>Germany</cbc:Name>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 12** — 2 instances
-
-```xml
-<cac:Address>
-  <cbc:StreetName>Deliverystreet</cbc:StreetName>
-  <cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
-  <cbc:BuildingNumber>12</cbc:BuildingNumber>
-  <cbc:CityName>DeliveryCity</cbc:CityName>
-  <cbc:PostalZone>523427</cbc:PostalZone>
-  <cbc:CountrySubentity>RegionC</cbc:CountrySubentity>
-  <cac:Country>
-    <cbc:IdentificationCode>BE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 13** — 66 instances
-
-```xml
-<cac:Address>
-  <cbc:StreetName>City Road</cbc:StreetName>
-  <cbc:BuildingName>Banking House</cbc:BuildingName>
-  <cbc:BuildingNumber>12</cbc:BuildingNumber>
-  <cbc:CityName>London</cbc:CityName>
-  <cbc:PostalZone>AQ1 6TH</cbc:PostalZone>
-  <cbc:CountrySubentity>London</cbc:CountrySubentity>
-  <cac:AddressLine>
-    <cbc:Line>5th Floor</cbc:Line>
-  </cac:AddressLine>
-  <cac:Country>
-    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 14** — 5 instances
-
-```xml
-<cac:Address>
-  <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-  <cbc:BuildingNumber>403</cbc:BuildingNumber>
-  <cbc:CityName>Bologna</cbc:CityName>
-  <cbc:PostalZone>40129</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    <cbc:Name>Italy</cbc:Name>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 15** — 8 instances
-
-```xml
-<cac:Address>
-  <cbc:StreetName>Stribevangen</cbc:StreetName>
-  <cbc:BuildingNumber>89</cbc:BuildingNumber>
-  <cbc:CityName>Gedser</cbc:CityName>
-  <cbc:PostalZone>4874</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 16** — 2 instances
-
-```xml
-<cac:Address>
-  <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
-  <cbc:CityName>Bremen</cbc:CityName>
-  <cac:AddressLine>
-    <cbc:Line>Ueberseetor 2</cbc:Line>
-  </cac:AddressLine>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    <cbc:Name>Germany</cbc:Name>
-  </cac:Country>
-  <cac:LocationCoordinate>
-    <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-    <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
-    <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
-    <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
-    <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
-    <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
-    <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
-  </cac:LocationCoordinate>
-</cac:Address>
-```
-
-**Structure 17** — 1 instance
-
-```xml
-<cac:Address>
-  <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
-  <cbc:CityName>Bremen</cbc:CityName>
-  <cac:AddressLine>
-    <cbc:Line>Ueberseetor 2</cbc:Line>
-  </cac:AddressLine>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:Country>
-  <cac:LocationCoordinate>
-    <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-    <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
-    <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
-    <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
-    <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
-    <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
-    <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
-  </cac:LocationCoordinate>
-</cac:Address>
-```
-
-**Structure 18** — 1 instance
-
-```xml
-<cac:Address>
-  <cbc:StreetName>StreetName Example</cbc:StreetName>
-  <cbc:CityName>El Dorado</cbc:CityName>
-  <cac:Country>
-    <cbc:IdentificationCode>PA</cbc:IdentificationCode>
-    <cbc:Name>Panama</cbc:Name>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 19** — 14 instances
-
-```xml
-<cac:Address>
-  <cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
-  <cbc:CityName>Munich</cbc:CityName>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 20** — 1 instance
-
-```xml
-<cac:Address>
-  <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
-  <cbc:CityName>Videbæk</cbc:CityName>
-  <cbc:PostalZone>6920</cbc:PostalZone>
-  <cac:AddressLine>
-    <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
-  </cac:AddressLine>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    <cbc:Name>Denmark</cbc:Name>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 21** — 9 instances
-
-```xml
-<cac:Address>
-  <cbc:StreetName>Heissestrasse 45</cbc:StreetName>
-  <cbc:CityName>Munich</cbc:CityName>
-  <cbc:PostalZone>80334</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:Address>
-```
-
-**Structure 22** — 2 instances
+**Structure 4** — 2 instances
 
 ```xml
 <cac:DeliveryAddress>
@@ -4640,64 +4316,10 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:DeliveryAddress>
 ```
 
-**Structure 23** — 2 instances
+**Structure 5** — 4 instances
 
 ```xml
-<cac:DeliveryAddress>
-  <cac:Country>
-    <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-  </cac:Country>
-</cac:DeliveryAddress>
-```
-
-**Structure 24** — 45 instances
-
-```xml
-<cac:DeliveryAddress>
-  <cbc:StreetName>Avon Way</cbc:StreetName>
-  <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-  <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-  <cbc:CityName>Bridgtow</cbc:CityName>
-  <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-  <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-  <cac:AddressLine>
-    <cbc:Line>3rd Floor, Room 5</cbc:Line>
-  </cac:AddressLine>
-  <cac:Country>
-    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-  </cac:Country>
-</cac:DeliveryAddress>
-```
-
-**Structure 25** — 1 instance
-
-```xml
-<cac:DeliveryAddress>
-  <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-  <cbc:BuildingNumber>403</cbc:BuildingNumber>
-  <cbc:CityName>Bologna</cbc:CityName>
-  <cbc:PostalZone>40129</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    <cbc:Name>Italy</cbc:Name>
-  </cac:Country>
-</cac:DeliveryAddress>
-```
-
-**Structure 26** — 2 instances
-
-```xml
-<cac:DespatchAddress>
-  <cac:Country>
-    <cbc:IdentificationCode>RU</cbc:IdentificationCode>
-  </cac:Country>
-</cac:DespatchAddress>
-```
-
-**Structure 27** — 4 instances
-
-```xml
-<cac:DespatchAddress>
+<cac:OriginAddress>
   <cbc:StreetName>Boston Road</cbc:StreetName>
   <cbc:BuildingName>Suite M-102</cbc:BuildingName>
   <cbc:BuildingNumber>630</cbc:BuildingNumber>
@@ -4708,36 +4330,10 @@ _621 instances across 6 elements, with 60 unique structures_
   <cac:Country>
     <cbc:IdentificationCode>US</cbc:IdentificationCode>
   </cac:Country>
-</cac:DespatchAddress>
-```
-
-**Structure 28** — 1 instance
-
-```xml
-<cac:DespatchAddress>
-  <cbc:StreetName>Via Emilia</cbc:StreetName>
-  <cbc:BuildingNumber>1</cbc:BuildingNumber>
-  <cbc:CityName>Modena</cbc:CityName>
-  <cbc:PostalZone>41121</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    <cbc:Name>Italy</cbc:Name>
-  </cac:Country>
-</cac:DespatchAddress>
-```
-
-**Structure 29** — 1 instance
-
-```xml
-<cac:OriginAddress>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    <cbc:Name>Denmark</cbc:Name>
-  </cac:Country>
 </cac:OriginAddress>
 ```
 
-**Structure 30** — 2 instances
+**Structure 6** — 2 instances
 
 ```xml
 <cac:OriginAddress>
@@ -4747,10 +4343,52 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:OriginAddress>
 ```
 
-**Structure 31** — 4 instances
+**Structure 7** — 14 instances
 
 ```xml
-<cac:OriginAddress>
+<cac:Address>
+  <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
+  <cbc:CityName>Nurnberg</cbc:CityName>
+  <cac:Country>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 8** — 3 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:Postbox>456</cbc:Postbox>
+  <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
+  <cbc:CityName>Hamar</cbc:CityName>
+  <cbc:PostalZone>2321</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 9** — 2 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+  <cbc:BuildingNumber>405</cbc:BuildingNumber>
+  <cbc:Department>Sales and Planning Department</cbc:Department>
+  <cbc:CityName>Bologna</cbc:CityName>
+  <cbc:PostalZone>40129</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    <cbc:Name>Italy</cbc:Name>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 10** — 16 instances
+
+```xml
+<cac:PostalAddress>
   <cbc:StreetName>Boston Road</cbc:StreetName>
   <cbc:BuildingName>Suite M-102</cbc:BuildingName>
   <cbc:BuildingNumber>630</cbc:BuildingNumber>
@@ -4761,65 +4399,25 @@ _621 instances across 6 elements, with 60 unique structures_
   <cac:Country>
     <cbc:IdentificationCode>US</cbc:IdentificationCode>
   </cac:Country>
-</cac:OriginAddress>
-```
-
-**Structure 32** — 4 instances
-
-```xml
-<cac:PostalAddress>
-  <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
-  <cbc:StreetName>Arne Jacobsens Allé</cbc:StreetName>
-  <cbc:BuildingNumber>15</cbc:BuildingNumber>
-  <cbc:CityName>København S</cbc:CityName>
-  <cbc:PostalZone>2300</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-  </cac:Country>
 </cac:PostalAddress>
 ```
 
-**Structure 33** — 1 instance
+**Structure 11** — 5 instances
 
 ```xml
-<cac:PostalAddress>
-  <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
-  <cbc:StreetName>Korsbygade 34</cbc:StreetName>
-  <cbc:CityName>Aalborg</cbc:CityName>
-  <cbc:PostalZone>9000</cbc:PostalZone>
-  <cbc:CountrySubentity></cbc:CountrySubentity>
+<cac:Address>
+  <cbc:StreetName>Via Rizzoli</cbc:StreetName>
+  <cbc:BuildingNumber>208</cbc:BuildingNumber>
+  <cbc:CityName>Bologna</cbc:CityName>
+  <cbc:PostalZone>40121</cbc:PostalZone>
   <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    <cbc:Name>Italy</cbc:Name>
   </cac:Country>
-</cac:PostalAddress>
+</cac:Address>
 ```
 
-**Structure 34** — 1 instance
-
-```xml
-<cac:PostalAddress>
-  <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
-  <cbc:StreetName>Korsbygade 34</cbc:StreetName>
-  <cbc:CityName>Aalborg</cbc:CityName>
-  <cbc:PostalZone>9000</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-  </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 35** — 23 instances
-
-```xml
-<cac:PostalAddress>
-  <cbc:CityName>London</cbc:CityName>
-  <cac:Country>
-    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-  </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 36** — 2 instances
+**Structure 12** — 2 instances
 
 ```xml
 <cac:PostalAddress>
@@ -4836,25 +4434,38 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 37** — 1 instance
+**Structure 13** — 1 instance
 
 ```xml
-<cac:PostalAddress>
-  <cbc:Floor>5</cbc:Floor>
-  <cbc:Room>29</cbc:Room>
-  <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-  <cbc:BuildingNumber>403</cbc:BuildingNumber>
-  <cbc:Department>Marketing Office</cbc:Department>
-  <cbc:CityName>Bologna</cbc:CityName>
-  <cbc:PostalZone>40129</cbc:PostalZone>
+<cac:Address>
+  <cbc:Region>Bavaria</cbc:Region>
   <cac:Country>
-    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    <cbc:Name>Italy</cbc:Name>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    <cbc:Name>Germany</cbc:Name>
   </cac:Country>
-</cac:PostalAddress>
+</cac:Address>
 ```
 
-**Structure 38** — 11 instances
+**Structure 14** — 66 instances
+
+```xml
+<cac:Address>
+  <cbc:StreetName>Busy Street</cbc:StreetName>
+  <cbc:BuildingName>The Mall</cbc:BuildingName>
+  <cbc:BuildingNumber>152</cbc:BuildingNumber>
+  <cbc:CityName>Farthing</cbc:CityName>
+  <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+  <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+  <cac:AddressLine>
+    <cbc:Line>West Wing</cbc:Line>
+  </cac:AddressLine>
+  <cac:Country>
+    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 15** — 11 instances
 
 ```xml
 <cac:PostalAddress>
@@ -4873,26 +4484,99 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 39** — 7 instances
+**Structure 16** — 2 instances
 
 ```xml
 <cac:PostalAddress>
-  <cbc:ID>1231412341324</cbc:ID>
-  <cbc:Postbox>5467</cbc:Postbox>
-  <cbc:StreetName>Main street</cbc:StreetName>
-  <cbc:AdditionalStreetName>Suite 123</cbc:AdditionalStreetName>
+  <cbc:ID>4058673827000</cbc:ID>
+</cac:PostalAddress>
+```
+
+**Structure 17** — 2 instances
+
+```xml
+<cac:Address>
+  <cbc:Floor>4</cbc:Floor>
+  <cbc:StreetName>CALLE SERPIS</cbc:StreetName>
+  <cbc:CityName>VALENCIA</cbc:CityName>
+  <cbc:PostalZone>460019</cbc:PostalZone>
+  <cac:AddressLine>
+    <cbc:Line>Calle Serpis 64</cbc:Line>
+  </cac:AddressLine>
+</cac:Address>
+```
+
+**Structure 18** — 1 instance
+
+```xml
+<cac:DespatchAddress>
+  <cbc:StreetName>Via Emilia</cbc:StreetName>
   <cbc:BuildingNumber>1</cbc:BuildingNumber>
-  <cbc:Department>Revenue department</cbc:Department>
-  <cbc:CityName>Big city</cbc:CityName>
-  <cbc:PostalZone>54321</cbc:PostalZone>
-  <cbc:CountrySubentityCode>RegionA</cbc:CountrySubentityCode>
+  <cbc:CityName>Modena</cbc:CityName>
+  <cbc:PostalZone>41121</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    <cbc:Name>Italy</cbc:Name>
+  </cac:Country>
+</cac:DespatchAddress>
+```
+
+**Structure 19** — 5 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:StreetName>Højdevej 18</cbc:StreetName>
+  <cbc:CityName>Grenå</cbc:CityName>
+  <cbc:PostalZone>8500</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    <cbc:Name>Denmark</cbc:Name>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 20** — 5 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:StreetName>Trangravsvej</cbc:StreetName>
+  <cbc:BuildingNumber>12</cbc:BuildingNumber>
+  <cbc:CityName>Copenhagen</cbc:CityName>
   <cac:Country>
     <cbc:IdentificationCode>DK</cbc:IdentificationCode>
   </cac:Country>
 </cac:PostalAddress>
 ```
 
-**Structure 40** — 2 instances
+**Structure 21** — 1 instance
+
+```xml
+<cac:Address>
+  <cac:Country>
+    <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+    <cbc:Name>Swiss</cbc:Name>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 22** — 4 instances
+
+```xml
+<cac:DespatchAddress>
+  <cbc:StreetName>Boston Road</cbc:StreetName>
+  <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+  <cbc:BuildingNumber>630</cbc:BuildingNumber>
+  <cbc:CityName>Billerica</cbc:CityName>
+  <cbc:PostalZone>01821</cbc:PostalZone>
+  <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+  <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+  <cac:Country>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+  </cac:Country>
+</cac:DespatchAddress>
+```
+
+**Structure 23** — 2 instances
 
 ```xml
 <cac:PostalAddress>
@@ -4907,21 +4591,14 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 41** — 2 instances
+**Structure 24** — 1 instance
 
 ```xml
 <cac:PostalAddress>
-  <cbc:ID>4058673827000</cbc:ID>
-</cac:PostalAddress>
-```
-
-**Structure 42** — 9 instances
-
-```xml
-<cac:PostalAddress>
-  <cbc:Postbox>99043</cbc:Postbox>
-  <cbc:CityName>Boston</cbc:CityName>
-  <cbc:PostalZone>02210</cbc:PostalZone>
+  <cbc:StreetName>Corporate Drive Suite 150</cbc:StreetName>
+  <cbc:BuildingNumber>35</cbc:BuildingNumber>
+  <cbc:CityName>Burlington</cbc:CityName>
+  <cbc:PostalZone>01803-4238</cbc:PostalZone>
   <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
   <cac:Country>
     <cbc:IdentificationCode>US</cbc:IdentificationCode>
@@ -4929,51 +4606,79 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 43** — 3 instances
+**Structure 25** — 2 instances
 
 ```xml
 <cac:PostalAddress>
-  <cbc:Postbox>456</cbc:Postbox>
-  <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
-  <cbc:CityName>Hamar</cbc:CityName>
-  <cbc:PostalZone>2321</cbc:PostalZone>
+  <cbc:StreetName>Export Str. 143</cbc:StreetName>
+  <cbc:CityName>Yang Mei</cbc:CityName>
   <cac:Country>
-    <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+    <cbc:IdentificationCode>TH</cbc:IdentificationCode>
   </cac:Country>
 </cac:PostalAddress>
 ```
 
-**Structure 44** — 1 instance
+**Structure 26** — 1 instance
 
 ```xml
-<cac:PostalAddress>
-  <cbc:Postbox>148</cbc:Postbox>
-  <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
-  <cbc:MarkAttention>Peter Janssen</cbc:MarkAttention>
-  <cbc:CityName>Munich</cbc:CityName>
-  <cbc:PostalZone>28001</cbc:PostalZone>
+<cac:Address>
+  <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
+  <cbc:CityName>Videbæk</cbc:CityName>
+  <cbc:PostalZone>6920</cbc:PostalZone>
+  <cac:AddressLine>
+    <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+  </cac:AddressLine>
   <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    <cbc:Name>Germany</cbc:Name>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    <cbc:Name>Denmark</cbc:Name>
   </cac:Country>
-</cac:PostalAddress>
+</cac:Address>
 ```
 
-**Structure 45** — 1 instance
+**Structure 27** — 2 instances
 
 ```xml
-<cac:PostalAddress>
-  <cbc:StreetName>StreetName Example</cbc:StreetName>
-  <cbc:AdditionalStreetName>AdditionalStreet Example</cbc:AdditionalStreetName>
-  <cbc:CityName>El Dorado</cbc:CityName>
+<cac:Address>
+  <cbc:ID>1234567890123</cbc:ID>
+  <cbc:Postbox>123</cbc:Postbox>
+  <cbc:StreetName>Rådhusgatan</cbc:StreetName>
+  <cbc:AdditionalStreetName>2nd floor</cbc:AdditionalStreetName>
+  <cbc:BuildingNumber>5</cbc:BuildingNumber>
+  <cbc:Department>Purchasing department</cbc:Department>
+  <cbc:CityName>Stockholm</cbc:CityName>
+  <cbc:PostalZone>11000</cbc:PostalZone>
+  <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
   <cac:Country>
-    <cbc:IdentificationCode>PA</cbc:IdentificationCode>
-    <cbc:Name>Panama</cbc:Name>
+    <cbc:IdentificationCode>SE</cbc:IdentificationCode>
   </cac:Country>
-</cac:PostalAddress>
+</cac:Address>
 ```
 
-**Structure 46** — 242 instances
+**Structure 28** — 8 instances
+
+```xml
+<cac:Address>
+  <cbc:StreetName>Giessereistrasse</cbc:StreetName>
+  <cbc:BuildingNumber>18</cbc:BuildingNumber>
+  <cbc:CityName>Zürich</cbc:CityName>
+  <cbc:PostalZone>CH-8005</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 29** — 2 instances
+
+```xml
+<cac:DeliveryAddress>
+  <cac:Country>
+    <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+  </cac:Country>
+</cac:DeliveryAddress>
+```
+
+**Structure 30** — 242 instances
 
 ```xml
 <cac:PostalAddress>
@@ -4992,34 +4697,264 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 47** — 16 instances
+**Structure 31** — 23 instances
 
 ```xml
 <cac:PostalAddress>
-  <cbc:StreetName>Boston Road</cbc:StreetName>
-  <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-  <cbc:BuildingNumber>630</cbc:BuildingNumber>
-  <cbc:CityName>Billerica</cbc:CityName>
-  <cbc:PostalZone>01821</cbc:PostalZone>
-  <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-  <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+  <cbc:CityName>London</cbc:CityName>
   <cac:Country>
-    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
   </cac:Country>
 </cac:PostalAddress>
 ```
 
-**Structure 48** — 5 instances
+**Structure 32** — 1 instance
+
+```xml
+<cac:Address>
+  <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
+  <cbc:CityName>Bremen</cbc:CityName>
+  <cac:AddressLine>
+    <cbc:Line>Ueberseetor 2</cbc:Line>
+  </cac:AddressLine>
+  <cac:Country>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:Country>
+  <cac:LocationCoordinate>
+    <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+    <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
+    <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
+    <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
+    <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
+    <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
+    <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
+  </cac:LocationCoordinate>
+</cac:Address>
+```
+
+**Structure 33** — 1 instance
 
 ```xml
 <cac:PostalAddress>
-  <cbc:StreetName>Trangravsvej</cbc:StreetName>
-  <cbc:BuildingNumber>12</cbc:BuildingNumber>
-  <cbc:CityName>Copenhagen</cbc:CityName>
+  <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
+  <cbc:CityName>Videbæk</cbc:CityName>
+  <cbc:PostalZone>6920</cbc:PostalZone>
+  <cac:AddressLine>
+    <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+  </cac:AddressLine>
+  <cac:Country>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    <cbc:Name>Denmark</cbc:Name>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 34** — 18 instances
+
+```xml
+<cac:RegistrationAddress>
+  <cbc:CityName>Stockholm</cbc:CityName>
+  <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
+  <cac:Country>
+    <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+  </cac:Country>
+</cac:RegistrationAddress>
+```
+
+**Structure 35** — 1 instance
+
+```xml
+<cac:PostalAddress>
+  <cbc:StreetName>StreetName Example</cbc:StreetName>
+  <cbc:AdditionalStreetName>AdditionalStreet Example</cbc:AdditionalStreetName>
+  <cbc:CityName>El Dorado</cbc:CityName>
+  <cac:Country>
+    <cbc:IdentificationCode>PA</cbc:IdentificationCode>
+    <cbc:Name>Panama</cbc:Name>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 36** — 4 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
+  <cbc:StreetName>Bernstorffsvej</cbc:StreetName>
+  <cbc:BuildingNumber>161</cbc:BuildingNumber>
+  <cbc:CityName>Charlottenlund</cbc:CityName>
+  <cbc:PostalZone>2920</cbc:PostalZone>
   <cac:Country>
     <cbc:IdentificationCode>DK</cbc:IdentificationCode>
   </cac:Country>
 </cac:PostalAddress>
+```
+
+**Structure 37** — 2 instances
+
+```xml
+<cac:Address>
+  <cbc:StreetName>Deliverystreet</cbc:StreetName>
+  <cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
+  <cbc:BuildingNumber>12</cbc:BuildingNumber>
+  <cbc:CityName>DeliveryCity</cbc:CityName>
+  <cbc:PostalZone>523427</cbc:PostalZone>
+  <cbc:CountrySubentity>RegionC</cbc:CountrySubentity>
+  <cac:Country>
+    <cbc:IdentificationCode>BE</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 38** — 1 instance
+
+```xml
+<cac:Address>
+  <cbc:CityName>Tanger</cbc:CityName>
+  <cac:Country>
+    <cbc:IdentificationCode>MA</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 39** — 9 instances
+
+```xml
+<cac:Address>
+  <cbc:ID>4568763527610</cbc:ID>
+  <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+  <cbc:CityName>Bremen</cbc:CityName>
+  <cac:Country>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 40** — 2 instances
+
+```xml
+<cac:Address>
+  <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
+  <cbc:CityName>Bremen</cbc:CityName>
+  <cac:AddressLine>
+    <cbc:Line>Ueberseetor 2</cbc:Line>
+  </cac:AddressLine>
+  <cac:Country>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    <cbc:Name>Germany</cbc:Name>
+  </cac:Country>
+  <cac:LocationCoordinate>
+    <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+    <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
+    <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
+    <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
+    <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
+    <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
+    <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
+  </cac:LocationCoordinate>
+</cac:Address>
+```
+
+**Structure 41** — 1 instance
+
+```xml
+<cac:Address>
+  <cbc:StreetName>StreetName Example</cbc:StreetName>
+  <cbc:CityName>El Dorado</cbc:CityName>
+  <cac:Country>
+    <cbc:IdentificationCode>PA</cbc:IdentificationCode>
+    <cbc:Name>Panama</cbc:Name>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 42** — 9 instances
+
+```xml
+<cac:Address>
+  <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+  <cbc:CityName>Nurnberg</cbc:CityName>
+  <cbc:PostalZone>28400</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 43** — 2 instances
+
+```xml
+<cac:DespatchAddress>
+  <cac:Country>
+    <cbc:IdentificationCode>RU</cbc:IdentificationCode>
+  </cac:Country>
+</cac:DespatchAddress>
+```
+
+**Structure 44** — 14 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+  <cbc:BuildingNumber>403</cbc:BuildingNumber>
+  <cbc:CityName>Bologna</cbc:CityName>
+  <cbc:PostalZone>40129</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    <cbc:Name>Italy</cbc:Name>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 45** — 1 instance
+
+```xml
+<cac:PostalAddress>
+  <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
+  <cbc:StreetName>Korsbygade 34</cbc:StreetName>
+  <cbc:CityName>Aalborg</cbc:CityName>
+  <cbc:PostalZone>9000</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 46** — 5 instances
+
+```xml
+<cac:Address>
+  <cbc:ID>DEHAM</cbc:ID>
+  <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+  <cbc:CityName>Hamburg</cbc:CityName>
+  <cbc:PostalZone>29400</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
+```
+
+**Structure 47** — 17 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:StreetName>Tiilitie 5</cbc:StreetName>
+  <cbc:CityName>Espoo</cbc:CityName>
+  <cbc:PostalZone>02340</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>FI</cbc:IdentificationCode>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 48** — 4 instances
+
+```xml
+<cac:Address>
+  <cac:Country>
+    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+  </cac:Country>
+</cac:Address>
 ```
 
 **Structure 49** — 1 instance
@@ -5038,51 +4973,7 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 50** — 1 instance
-
-```xml
-<cac:PostalAddress>
-  <cbc:StreetName>Corporate Drive Suite 150</cbc:StreetName>
-  <cbc:BuildingNumber>35</cbc:BuildingNumber>
-  <cbc:CityName>Burlington</cbc:CityName>
-  <cbc:PostalZone>01803-4238</cbc:PostalZone>
-  <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-  <cac:Country>
-    <cbc:IdentificationCode>US</cbc:IdentificationCode>
-  </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 51** — 14 instances
-
-```xml
-<cac:PostalAddress>
-  <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-  <cbc:BuildingNumber>403</cbc:BuildingNumber>
-  <cbc:CityName>Bologna</cbc:CityName>
-  <cbc:PostalZone>40129</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    <cbc:Name>Italy</cbc:Name>
-  </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 52** — 20 instances
-
-```xml
-<cac:PostalAddress>
-  <cbc:StreetName>Stribevangen</cbc:StreetName>
-  <cbc:BuildingNumber>89</cbc:BuildingNumber>
-  <cbc:CityName>Gedser</cbc:CityName>
-  <cbc:PostalZone>4874</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-  </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 53** — 2 instances
+**Structure 50** — 2 instances
 
 ```xml
 <cac:PostalAddress>
@@ -5093,13 +4984,114 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 54** — 2 instances
+**Structure 51** — 20 instances
 
 ```xml
 <cac:PostalAddress>
+  <cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+  <cbc:BuildingNumber>1</cbc:BuildingNumber>
+  <cbc:CityName>København K</cbc:CityName>
+  <cbc:PostalZone>1216</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 52** — 2 instances
+
+```xml
+<cac:RegistrationAddress>
+  <cbc:CityName>Stockholm</cbc:CityName>
+  <cac:Country>
+    <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+  </cac:Country>
+</cac:RegistrationAddress>
+```
+
+**Structure 53** — 1 instance
+
+```xml
+<cac:OriginAddress>
+  <cac:Country>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    <cbc:Name>Denmark</cbc:Name>
+  </cac:Country>
+</cac:OriginAddress>
+```
+
+**Structure 54** — 1 instance
+
+```xml
+<cac:PostalAddress>
+  <cbc:Postbox>148</cbc:Postbox>
+  <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
+  <cbc:MarkAttention>Peter Janssen</cbc:MarkAttention>
+  <cbc:CityName>Munich</cbc:CityName>
+  <cbc:PostalZone>28001</cbc:PostalZone>
+  <cac:Country>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    <cbc:Name>Germany</cbc:Name>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 55** — 1 instance
+
+```xml
+<cac:Address>
+  <cbc:ID>133</cbc:ID>
+  <cbc:StreetName>VIPPETANGEN</cbc:StreetName>
+  <cbc:CityName>OSLO</cbc:CityName>
+  <cbc:TimezoneOffset>GMT+1</cbc:TimezoneOffset>
+  <cac:Country>
+    <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+    <cbc:Name>NORWAY</cbc:Name>
+  </cac:Country>
+  <cac:LocationCoordinate>
+    <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+    <cbc:LatitudeDegreesMeasure>58</cbc:LatitudeDegreesMeasure>
+    <cbc:LongitudeDegreesMeasure>10</cbc:LongitudeDegreesMeasure>
+  </cac:LocationCoordinate>
+</cac:Address>
+```
+
+**Structure 56** — 7 instances
+
+```xml
+<cac:PostalAddress>
+  <cbc:ID>1231412341324</cbc:ID>
+  <cbc:Postbox>5467</cbc:Postbox>
+  <cbc:StreetName>Main street</cbc:StreetName>
+  <cbc:AdditionalStreetName>Suite 123</cbc:AdditionalStreetName>
+  <cbc:BuildingNumber>1</cbc:BuildingNumber>
+  <cbc:Department>Revenue department</cbc:Department>
+  <cbc:CityName>Big city</cbc:CityName>
+  <cbc:PostalZone>54321</cbc:PostalZone>
+  <cbc:CountrySubentityCode>RegionA</cbc:CountrySubentityCode>
+  <cac:Country>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+  </cac:Country>
+</cac:PostalAddress>
+```
+
+**Structure 57** — 5 instances
+
+```xml
+<cac:Address>
+  <cbc:CityName>Espoo</cbc:CityName>
+</cac:Address>
+```
+
+**Structure 58** — 1 instance
+
+```xml
+<cac:PostalAddress>
+  <cbc:Floor>5</cbc:Floor>
+  <cbc:Room>29</cbc:Room>
   <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-  <cbc:BuildingNumber>405</cbc:BuildingNumber>
-  <cbc:Department>Sales and Planning Department</cbc:Department>
+  <cbc:BuildingNumber>403</cbc:BuildingNumber>
+  <cbc:Department>Marketing Office</cbc:Department>
   <cbc:CityName>Bologna</cbc:CityName>
   <cbc:PostalZone>40129</cbc:PostalZone>
   <cac:Country>
@@ -5109,83 +5101,38 @@ _621 instances across 6 elements, with 60 unique structures_
 </cac:PostalAddress>
 ```
 
-**Structure 55** — 2 instances
+**Structure 59** — 1 instance
 
 ```xml
-<cac:PostalAddress>
-  <cbc:StreetName>Export Str. 143</cbc:StreetName>
-  <cbc:CityName>Yang Mei</cbc:CityName>
+<cac:DeliveryAddress>
+  <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+  <cbc:BuildingNumber>403</cbc:BuildingNumber>
+  <cbc:CityName>Bologna</cbc:CityName>
+  <cbc:PostalZone>40129</cbc:PostalZone>
   <cac:Country>
-    <cbc:IdentificationCode>TH</cbc:IdentificationCode>
+    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    <cbc:Name>Italy</cbc:Name>
   </cac:Country>
-</cac:PostalAddress>
+</cac:DeliveryAddress>
 ```
 
-**Structure 56** — 1 instance
+**Structure 60** — 45 instances
 
 ```xml
-<cac:PostalAddress>
-  <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
-  <cbc:CityName>Videbæk</cbc:CityName>
-  <cbc:PostalZone>6920</cbc:PostalZone>
+<cac:DeliveryAddress>
+  <cbc:StreetName>Avon Way</cbc:StreetName>
+  <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+  <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+  <cbc:CityName>Bridgtow</cbc:CityName>
+  <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+  <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
   <cac:AddressLine>
-    <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+    <cbc:Line>3rd Floor, Room 5</cbc:Line>
   </cac:AddressLine>
   <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    <cbc:Name>Denmark</cbc:Name>
+    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
   </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 57** — 5 instances
-
-```xml
-<cac:PostalAddress>
-  <cbc:StreetName>ExampleStreet</cbc:StreetName>
-  <cbc:CityName>Example City</cbc:CityName>
-  <cbc:PostalZone>1234</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    <cbc:Name>Denmark</cbc:Name>
-  </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 58** — 17 instances
-
-```xml
-<cac:PostalAddress>
-  <cbc:StreetName>Schonestrasse 1</cbc:StreetName>
-  <cbc:CityName>Munich</cbc:CityName>
-  <cbc:PostalZone>80331</cbc:PostalZone>
-  <cac:Country>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:PostalAddress>
-```
-
-**Structure 59** — 18 instances
-
-```xml
-<cac:RegistrationAddress>
-  <cbc:CityName>Big city</cbc:CityName>
-  <cbc:CountrySubentity>RegionA</cbc:CountrySubentity>
-  <cac:Country>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-  </cac:Country>
-</cac:RegistrationAddress>
-```
-
-**Structure 60** — 2 instances
-
-```xml
-<cac:RegistrationAddress>
-  <cbc:CityName>Stockholm</cbc:CityName>
-  <cac:Country>
-    <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-  </cac:Country>
-</cac:RegistrationAddress>
+</cac:DeliveryAddress>
 ```
 
 [↑ Back to contents](#contents)
@@ -5217,6 +5164,29 @@ _85 instances across 2 elements, with 9 unique structures_
 ```xml
 <cac:AllowanceCharge>
   <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+  <cbc:AllowanceChargeReason>Paid 10,000 loyalty points = €5</cbc:AllowanceChargeReason>
+  <cbc:Amount>5.00</cbc:Amount>
+  <cbc:TaxInclusiveAmount>5.00</cbc:TaxInclusiveAmount>
+</cac:AllowanceCharge>
+```
+
+**Structure 2** — 12 instances
+
+```xml
+<cac:AllowanceCharge>
+  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+  <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
+  <cbc:MultiplierFactorNumeric>0.15</cbc:MultiplierFactorNumeric>
+  <cbc:Amount>225</cbc:Amount>
+  <cbc:BaseAmount>1500</cbc:BaseAmount>
+</cac:AllowanceCharge>
+```
+
+**Structure 3** — 2 instances
+
+```xml
+<cac:AllowanceCharge>
+  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
   <cbc:AllowanceChargeReason>Remove previously granted discount</cbc:AllowanceChargeReason>
   <cbc:Amount>5.00</cbc:Amount>
   <cac:TaxCategory>
@@ -5229,7 +5199,62 @@ _85 instances across 2 elements, with 9 unique structures_
 </cac:AllowanceCharge>
 ```
 
-**Structure 2** — 1 instance
+**Structure 4** — 12 instances
+
+```xml
+<cac:FreightAllowanceCharge>
+  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+  <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+  <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+  <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+  <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+  <cbc:Amount>12.70</cbc:Amount>
+  <cbc:BaseAmount>254.00</cbc:BaseAmount>
+</cac:FreightAllowanceCharge>
+```
+
+**Structure 5** — 23 instances
+
+```xml
+<cac:AllowanceCharge>
+  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+  <cbc:AllowanceChargeReasonCode>17</cbc:AllowanceChargeReasonCode>
+  <cbc:MultiplierFactorNumeric>0.10</cbc:MultiplierFactorNumeric>
+  <cbc:Amount>10.00</cbc:Amount>
+</cac:AllowanceCharge>
+```
+
+**Structure 6** — 1 instance
+
+```xml
+<cac:FreightAllowanceCharge>
+  <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+  <cbc:Amount>0.00</cbc:Amount>
+</cac:FreightAllowanceCharge>
+```
+
+**Structure 7** — 12 instances
+
+```xml
+<cac:FreightAllowanceCharge>
+  <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+  <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+  <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+  <cbc:Amount>254.00</cbc:Amount>
+</cac:FreightAllowanceCharge>
+```
+
+**Structure 8** — 20 instances
+
+```xml
+<cac:AllowanceCharge>
+  <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+  <cbc:AllowanceChargeReason>Packing cost</cbc:AllowanceChargeReason>
+  <cbc:Amount>100</cbc:Amount>
+</cac:AllowanceCharge>
+```
+
+**Structure 9** — 1 instance
 
 ```xml
 <cac:AllowanceCharge>
@@ -5246,84 +5271,6 @@ _85 instances across 2 elements, with 9 unique structures_
 </cac:AllowanceCharge>
 ```
 
-**Structure 3** — 2 instances
-
-```xml
-<cac:AllowanceCharge>
-  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-  <cbc:AllowanceChargeReason>Paid 10,000 loyalty points = €5</cbc:AllowanceChargeReason>
-  <cbc:Amount>5.00</cbc:Amount>
-  <cbc:TaxInclusiveAmount>5.00</cbc:TaxInclusiveAmount>
-</cac:AllowanceCharge>
-```
-
-**Structure 4** — 20 instances
-
-```xml
-<cac:AllowanceCharge>
-  <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-  <cbc:AllowanceChargeReason>Packing cost</cbc:AllowanceChargeReason>
-  <cbc:Amount>100</cbc:Amount>
-</cac:AllowanceCharge>
-```
-
-**Structure 5** — 12 instances
-
-```xml
-<cac:AllowanceCharge>
-  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-  <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-  <cbc:MultiplierFactorNumeric>0.15</cbc:MultiplierFactorNumeric>
-  <cbc:Amount>225</cbc:Amount>
-  <cbc:BaseAmount>1500</cbc:BaseAmount>
-</cac:AllowanceCharge>
-```
-
-**Structure 6** — 23 instances
-
-```xml
-<cac:AllowanceCharge>
-  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-  <cbc:AllowanceChargeReasonCode>17</cbc:AllowanceChargeReasonCode>
-  <cbc:MultiplierFactorNumeric>0.10</cbc:MultiplierFactorNumeric>
-  <cbc:Amount>10.00</cbc:Amount>
-</cac:AllowanceCharge>
-```
-
-**Structure 7** — 12 instances
-
-```xml
-<cac:FreightAllowanceCharge>
-  <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-  <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-  <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-  <cbc:Amount>254.00</cbc:Amount>
-</cac:FreightAllowanceCharge>
-```
-
-**Structure 8** — 12 instances
-
-```xml
-<cac:FreightAllowanceCharge>
-  <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-  <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-  <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-  <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-  <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-  <cbc:Amount>12.70</cbc:Amount>
-  <cbc:BaseAmount>254.00</cbc:BaseAmount>
-</cac:FreightAllowanceCharge>
-```
-
-**Structure 9** — 1 instance
-
-```xml
-<cac:FreightAllowanceCharge>
-  <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-  <cbc:Amount>0.00</cbc:Amount>
-</cac:FreightAllowanceCharge>
-```
-
 [↑ Back to contents](#contents)
 
 ### `AttachmentType`
@@ -5332,7 +5279,17 @@ _85 instances across 2 elements, with 9 unique structures_
 
 _27 instances across 3 elements, with 6 unique structures_
 
-**Structure 1** — 8 instances
+**Structure 1** — 2 instances
+
+```xml
+<cac:DigitalSignatureAttachment>
+  <cac:ExternalReference>
+    <cbc:URI>UBL-Invoice-2.0-Detached-Signature.xml</cbc:URI>
+  </cac:ExternalReference>
+</cac:DigitalSignatureAttachment>
+```
+
+**Structure 2** — 8 instances
 
 ```xml
 <cac:Attachment>
@@ -5346,7 +5303,7 @@ _27 instances across 3 elements, with 6 unique structures_
 </cac:Attachment>
 ```
 
-**Structure 2** — 8 instances
+**Structure 3** — 8 instances
 
 ```xml
 <cac:Attachment>
@@ -5354,7 +5311,7 @@ _27 instances across 3 elements, with 6 unique structures_
 </cac:Attachment>
 ```
 
-**Structure 3** — 7 instances
+**Structure 4** — 7 instances
 
 ```xml
 <cac:Attachment>
@@ -5364,21 +5321,13 @@ _27 instances across 3 elements, with 6 unique structures_
 </cac:Attachment>
 ```
 
-**Structure 4** — 2 instances
-
-```xml
-<cac:DigitalSignatureAttachment>
-  <cac:ExternalReference>
-    <cbc:URI>UBL-Invoice-2.0-Detached-Signature.xml</cbc:URI>
-  </cac:ExternalReference>
-</cac:DigitalSignatureAttachment>
-```
-
 **Structure 5** — 1 instance
 
 ```xml
 <cac:EncryptionCertificateAttachment>
-  <cbc:EmbeddedDocument>;lkajdf;lkasd;ljkasdf;lkja;sdlfkja;sldfkja;sdlfjkas;dlkfjas;dlfjas;dlkfjas;dlkfja;slkdjf</cbc:EmbeddedDocument>
+  <cac:ExternalReference>
+    <cbc:URI>www.digst.dk/udbud/NemID.cer</cbc:URI>
+  </cac:ExternalReference>
 </cac:EncryptionCertificateAttachment>
 ```
 
@@ -5386,9 +5335,7 @@ _27 instances across 3 elements, with 6 unique structures_
 
 ```xml
 <cac:EncryptionCertificateAttachment>
-  <cac:ExternalReference>
-    <cbc:URI>www.digst.dk/udbud/NemID.cer</cbc:URI>
-  </cac:ExternalReference>
+  <cbc:EmbeddedDocument>;lkajdf;lkasd;ljkasdf;lkja;sdlfkja;sldfkja;sdlfjkas;dlkfjas;dlfjas;dlkfjas;dlkfja;slkdjf</cbc:EmbeddedDocument>
 </cac:EncryptionCertificateAttachment>
 ```
 
@@ -5404,10 +5351,22 @@ _3 instances across 1 element, with 1 unique structure_
 
 ```xml
 <cac:AttestationLine>
-  <cbc:Description>fish or aquatic invertebrates caught in the country or region’s domestic sea or in the open sea or farming aquatic animals</cbc:Description>
-  <cbc:Description>fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller regionens egne have eller i det åbne hav eller som stammer
-						fra opdræt på åbent hav</cbc:Description>
-  <cbc:Description>本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物</cbc:Description>
+  <cbc:Description>fish meal or fish oil from countries other than Denmark from establishments approved the AQSIQ. The fish meal or fish oil
+						in question ____________________________________________(indicate name of product) is approved for export from said
+						country to China and were only produced at ____________________________________________(indicate name and address
+						of the producer as identified in the approval of AQSIQ) and were only exported to Denmark from 
+						____________________________________________ (indicate name and address of the producer/exporter as identified in the
+						import permit)</cbc:Description>
+  <cbc:Description>fiskemel eller fiskeolie fra andre lande, fra virksomheder, der er godkendt af AQSIQ. Det pågældende produkt
+						(fiskemel eller fiskeolie)____________________________________________ (angiv produktets navn) er godkendt til eksport fra
+						det pågældende land til Kina og er udelukkende forarbejdet på ____________________________________________(angiv navn
+						og adresse på producenten/eksportøren, således som denne er angivet i godkendelsen fra AQSIQ) og er udelukkende eksporteret til
+						Danmark fra ____________________________________________ (angiv navn og adresse på eksportøren, således som denne er
+						angivet i godkendelsen fra AQSIQ )</cbc:Description>
+  <cbc:Description>经中国国家质量监督检验检疫总局批准的，丹麦以外其他国家的企业生产的鱼粉或鱼
+						油。该鱼粉或鱼油____________________________________________（标明产品名称）已被准予从上述国家向中国出口
+						且仅在____________________________________________（标明AQSIQ注册批准的生产商名称与地址）生产并仅从
+						____________________________________________（标明进口许可中认定的生产商/出口商名称与地址）向丹麦出口。</cbc:Description>
 </cac:AttestationLine>
 ```
 
@@ -5423,18 +5382,30 @@ _3 instances across 1 element, with 1 unique structure_
 
 ```xml
 <cac:Attestation>
-  <cbc:ID>1</cbc:ID>
-  <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
+  <cbc:ID>3</cbc:ID>
+  <cbc:AcceptanceIndicator>false</cbc:AcceptanceIndicator>
   <cac:IssuerParty>
     <cac:PartyIdentification>
       <cbc:ID>1</cbc:ID>
     </cac:PartyIdentification>
   </cac:IssuerParty>
   <cac:AttestationLine>
-    <cbc:Description>fish or aquatic invertebrates caught in the country or region’s domestic sea or in the open sea or farming aquatic animals</cbc:Description>
-    <cbc:Description>fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller regionens egne have eller i det åbne hav eller som stammer
-						fra opdræt på åbent hav</cbc:Description>
-    <cbc:Description>本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物</cbc:Description>
+    <cbc:Description>fish meal or fish oil from countries other than Denmark from establishments approved the AQSIQ. The fish meal or fish oil
+						in question ____________________________________________(indicate name of product) is approved for export from said
+						country to China and were only produced at ____________________________________________(indicate name and address
+						of the producer as identified in the approval of AQSIQ) and were only exported to Denmark from 
+						____________________________________________ (indicate name and address of the producer/exporter as identified in the
+						import permit)</cbc:Description>
+    <cbc:Description>fiskemel eller fiskeolie fra andre lande, fra virksomheder, der er godkendt af AQSIQ. Det pågældende produkt
+						(fiskemel eller fiskeolie)____________________________________________ (angiv produktets navn) er godkendt til eksport fra
+						det pågældende land til Kina og er udelukkende forarbejdet på ____________________________________________(angiv navn
+						og adresse på producenten/eksportøren, således som denne er angivet i godkendelsen fra AQSIQ) og er udelukkende eksporteret til
+						Danmark fra ____________________________________________ (angiv navn og adresse på eksportøren, således som denne er
+						angivet i godkendelsen fra AQSIQ )</cbc:Description>
+    <cbc:Description>经中国国家质量监督检验检疫总局批准的，丹麦以外其他国家的企业生产的鱼粉或鱼
+						油。该鱼粉或鱼油____________________________________________（标明产品名称）已被准予从上述国家向中国出口
+						且仅在____________________________________________（标明AQSIQ注册批准的生产商名称与地址）生产并仅从
+						____________________________________________（标明进口许可中认定的生产商/出口商名称与地址）向丹麦出口。</cbc:Description>
   </cac:AttestationLine>
 </cac:Attestation>
 ```
@@ -5447,15 +5418,15 @@ _3 instances across 1 element, with 1 unique structure_
 
 _17 instances across 1 element, with 4 unique structures_
 
-**Structure 1** — 5 instances
+**Structure 1** — 10 instances
 
 ```xml
 <cac:BillingReference>
-  <cac:CreditNoteDocumentReference>
-    <cbc:ID>CN758494</cbc:ID>
-    <cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
-    <cbc:IssueDate>2005-06-25</cbc:IssueDate>
-  </cac:CreditNoteDocumentReference>
+  <cac:InvoiceDocumentReference>
+    <cbc:ID>A00095678</cbc:ID>
+    <cbc:UUID>849FBBCE-E081-40B4-906C-94C5FF9D1AC3</cbc:UUID>
+    <cbc:IssueDate>2005-06-21</cbc:IssueDate>
+  </cac:InvoiceDocumentReference>
 </cac:BillingReference>
 ```
 
@@ -5470,25 +5441,25 @@ _17 instances across 1 element, with 4 unique structures_
 </cac:BillingReference>
 ```
 
-**Structure 3** — 10 instances
-
-```xml
-<cac:BillingReference>
-  <cac:InvoiceDocumentReference>
-    <cbc:ID>A00095678</cbc:ID>
-    <cbc:UUID>849FBBCE-E081-40B4-906C-94C5FF9D1AC3</cbc:UUID>
-    <cbc:IssueDate>2005-06-21</cbc:IssueDate>
-  </cac:InvoiceDocumentReference>
-</cac:BillingReference>
-```
-
-**Structure 4** — 1 instance
+**Structure 3** — 1 instance
 
 ```xml
 <cac:BillingReference>
   <cac:InvoiceDocumentReference>
     <cbc:ID>TOSL108</cbc:ID>
   </cac:InvoiceDocumentReference>
+</cac:BillingReference>
+```
+
+**Structure 4** — 5 instances
+
+```xml
+<cac:BillingReference>
+  <cac:CreditNoteDocumentReference>
+    <cbc:ID>CN758494</cbc:ID>
+    <cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
+    <cbc:IssueDate>2005-06-25</cbc:IssueDate>
+  </cac:CreditNoteDocumentReference>
 </cac:BillingReference>
 ```
 
@@ -5593,7 +5564,15 @@ _1 instances across 1 element, with 1 unique structure_
 
 _75 instances across 1 element, with 5 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 3 instances
+
+```xml
+<cac:CommodityClassification>
+  <cbc:CommodityCode>19011000</cbc:CommodityCode>
+</cac:CommodityClassification>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:CommodityClassification>
@@ -5602,7 +5581,7 @@ _75 instances across 1 element, with 5 unique structures_
 </cac:CommodityClassification>
 ```
 
-**Structure 2** — 6 instances
+**Structure 3** — 6 instances
 
 ```xml
 <cac:CommodityClassification>
@@ -5610,27 +5589,19 @@ _75 instances across 1 element, with 5 unique structures_
 </cac:CommodityClassification>
 ```
 
-**Structure 3** — 3 instances
-
-```xml
-<cac:CommodityClassification>
-  <cbc:CommodityCode>84195000</cbc:CommodityCode>
-</cac:CommodityClassification>
-```
-
-**Structure 4** — 62 instances
-
-```xml
-<cac:CommodityClassification>
-  <cbc:ItemClassificationCode>12344321</cbc:ItemClassificationCode>
-</cac:CommodityClassification>
-```
-
-**Structure 5** — 2 instances
+**Structure 4** — 2 instances
 
 ```xml
 <cac:CommodityClassification>
   <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
+</cac:CommodityClassification>
+```
+
+**Structure 5** — 62 instances
+
+```xml
+<cac:CommodityClassification>
+  <cbc:ItemClassificationCode>12344325</cbc:ItemClassificationCode>
 </cac:CommodityClassification>
 ```
 
@@ -5642,7 +5613,193 @@ _75 instances across 1 element, with 5 unique structures_
 
 _38 instances across 2 elements, with 16 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 13 instances
+
+```xml
+<cac:Consignment>
+  <cbc:ID>1</cbc:ID>
+</cac:Consignment>
+```
+
+**Structure 2** — 1 instance
+
+```xml
+<cac:Consignment>
+  <cbc:ID>CON_1</cbc:ID>
+  <cbc:GrossWeightMeasure>50000</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure>3000</cbc:NetWeightMeasure>
+  <cbc:GrossVolumeMeasure>78</cbc:GrossVolumeMeasure>
+  <cbc:LoadingLengthMeasure>12</cbc:LoadingLengthMeasure>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+  <cac:ConsolidatedShipment>
+    <cbc:ID>GSIN_1</cbc:ID>
+  </cac:ConsolidatedShipment>
+  <cac:ConsolidatedShipment>
+    <cbc:ID>GSIN_2</cbc:ID>
+  </cac:ConsolidatedShipment>
+  <cac:RequestedPickupTransportEvent>
+    <cac:Location>
+      <cac:Address>
+        <cbc:ID>DEHAM</cbc:ID>
+        <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+        <cbc:CityName>Hamburg</cbc:CityName>
+        <cbc:PostalZone>29400</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-03</cbc:StartDate>
+      <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-03</cbc:EndDate>
+      <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+    </cac:Period>
+  </cac:RequestedPickupTransportEvent>
+  <cac:RequestedDeliveryTransportEvent>
+    <cac:Location>
+      <cac:Address>
+        <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+        <cbc:CityName>Nurnberg</cbc:CityName>
+        <cbc:PostalZone>28400</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-06</cbc:StartDate>
+      <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-06</cbc:EndDate>
+      <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
+    </cac:Period>
+  </cac:RequestedDeliveryTransportEvent>
+  <cac:ConsigneeParty>
+    <cac:PartyIdentification>
+      <cbc:ID>4058673827123</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Consignee</cbc:Name>
+    </cac:PartyName>
+    <cac:Contact>
+      <cbc:Name>SomeName</cbc:Name>
+      <cbc:Telephone>+4987878763</cbc:Telephone>
+      <cbc:ElectronicMail>SomeName@consignee.de</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:ConsigneeParty>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID>4058673827000</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Consignor</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID>4058673827000</cbc:ID>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>SomeName</cbc:Name>
+      <cbc:Telephone>+8676576456</cbc:Telephone>
+      <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:ConsignorParty>
+  <cac:OriginalDepartureCountry>
+    <cbc:IdentificationCode>CN</cbc:IdentificationCode>
+  </cac:OriginalDepartureCountry>
+  <cac:FinalDestinationCountry>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:FinalDestinationCountry>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>CON_THU_1</cbc:ID>
+    <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
+    <cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
+    <cac:TransportEquipment>
+      <cbc:ID>CON_TE_1</cbc:ID>
+      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+      <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+      <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+      <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+      <cbc:Description>SomeDescription</cbc:Description>
+      <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+      <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+      <cbc:PowerIndicator>false</cbc:PowerIndicator>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Length</cbc:AttributeID>
+        <cbc:Measure>6.1</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:Measure>2.6</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Width</cbc:AttributeID>
+        <cbc:Measure>2.44</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:ID>CON_P_1</cbc:ID>
+        <cbc:Quantity>10</cbc:Quantity>
+        <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+        <cac:GoodsItem>
+          <cac:Item>
+            <cac:CommodityClassification>
+              <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+            </cac:CommodityClassification>
+          </cac:Item>
+        </cac:GoodsItem>
+      </cac:Package>
+    </cac:TransportEquipment>
+  </cac:TransportHandlingUnit>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>CON_THU_2</cbc:ID>
+    <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
+    <cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
+    <cac:TransportEquipment>
+      <cbc:ID>CON_TE_2</cbc:ID>
+      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+      <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+      <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+      <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+      <cbc:Description>SomeDescription</cbc:Description>
+      <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+      <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+      <cbc:PowerIndicator>false</cbc:PowerIndicator>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Length</cbc:AttributeID>
+        <cbc:Measure>6.1</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:Measure>2.6</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Width</cbc:AttributeID>
+        <cbc:Measure>2.44</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:ID>CON_P_2</cbc:ID>
+        <cbc:Quantity>10</cbc:Quantity>
+        <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+        <cac:GoodsItem>
+          <cac:Item>
+            <cac:CommodityClassification>
+              <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+            </cac:CommodityClassification>
+          </cac:Item>
+        </cac:GoodsItem>
+      </cac:Package>
+    </cac:TransportEquipment>
+  </cac:TransportHandlingUnit>
+</cac:Consignment>
+```
+
+**Structure 3** — 2 instances
 
 ```xml
 <cac:Consignment>
@@ -5656,21 +5813,366 @@ _38 instances across 2 elements, with 16 unique structures_
 </cac:Consignment>
 ```
 
-**Structure 2** — 2 instances
+**Structure 4** — 1 instance
 
 ```xml
 <cac:Consignment>
-  <cbc:ID>C1</cbc:ID>
-  <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
-  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalPackagesQuantity>5</cbc:TotalPackagesQuantity>
+  <cbc:ID>CON_1</cbc:ID>
   <cac:TransportHandlingUnit>
-    <cbc:ID>ABCD123456-7</cbc:ID>
+    <cbc:ID>CON_THU_1</cbc:ID>
+    <cac:TransportEquipment>
+      <cbc:ID>CON_TE_1</cbc:ID>
+    </cac:TransportEquipment>
+    <cac:Status>
+      <cbc:ConditionCode>4</cbc:ConditionCode>
+      <cbc:StatusReasonCode>23</cbc:StatusReasonCode>
+      <cbc:StatusReason>Reefer container lost power - cargo of fish destroyed</cbc:StatusReason>
+    </cac:Status>
   </cac:TransportHandlingUnit>
 </cac:Consignment>
 ```
 
-**Structure 3** — 1 instance
+**Structure 5** — 1 instance
+
+```xml
+<cac:Consignment>
+  <cbc:ID>2005US12345678998765432112345678</cbc:ID>
+  <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
+  <cbc:TariffCode>15219000</cbc:TariffCode>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cac:ConsigneeParty>
+    <cac:PartyName>
+      <cbc:Name>IYT Corporation</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:ConsigneeParty>
+  <cac:NotifyParty>
+    <cac:PartyName>
+      <cbc:Name>IYT Corporation</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:NotifyParty>
+  <cac:FinalDeliveryParty>
+    <cac:PartyName>
+      <cbc:Name>The Terminus</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>S Massiah</cbc:Name>
+      <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+      <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+      <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:FinalDeliveryParty>
+  <cac:OriginalDepartureCountry>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+  </cac:OriginalDepartureCountry>
+  <cac:FinalDestinationCountry>
+    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+  </cac:FinalDestinationCountry>
+  <cac:TransportContract>
+    <cbc:ID>CONS-001</cbc:ID>
+    <cbc:IssueDate>2005-06-24</cbc:IssueDate>
+    <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2005-06-25</cbc:StartDate>
+      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2005-06-30</cbc:EndDate>
+      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
+    </cac:ValidityPeriod>
+    <cac:ContractDocumentReference>
+      <cbc:ID>normalizedString</cbc:ID>
+      <cbc:CopyIndicator>false</cbc:CopyIndicator>
+      <cbc:UUID>normalizedString</cbc:UUID>
+      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+      <cbc:DocumentType>String</cbc:DocumentType>
+      <cbc:XPath>String</cbc:XPath>
+      <cac:Attachment>
+        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+        <cac:ExternalReference>
+          <cbc:URI>normalizedString</cbc:URI>
+          <cbc:DocumentHash>String</cbc:DocumentHash>
+          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+        </cac:ExternalReference>
+      </cac:Attachment>
+    </cac:ContractDocumentReference>
+    <cac:ContractDocumentReference>
+      <cbc:ID>normalizedString</cbc:ID>
+      <cbc:CopyIndicator>false</cbc:CopyIndicator>
+      <cbc:UUID>normalizedString</cbc:UUID>
+      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+      <cbc:DocumentType>String</cbc:DocumentType>
+      <cbc:XPath>String</cbc:XPath>
+      <cac:Attachment>
+        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+        <cac:ExternalReference>
+          <cbc:URI>normalizedString</cbc:URI>
+          <cbc:DocumentHash>String</cbc:DocumentHash>
+          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+        </cac:ExternalReference>
+      </cac:Attachment>
+    </cac:ContractDocumentReference>
+  </cac:TransportContract>
+  <cac:OriginalDespatchTransportationService>
+    <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
+  </cac:OriginalDespatchTransportationService>
+  <cac:FinalDeliveryTransportationService>
+    <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
+  </cac:FinalDeliveryTransportationService>
+  <cac:DeliveryTerms>
+    <cbc:ID>FOB Destination</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID>GBBRS</cbc:ID>
+      <cbc:Description>Bristol</cbc:Description>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
+  <cac:PaymentTerms>
+    <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
+  </cac:PaymentTerms>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:Amount>254.00</cbc:Amount>
+  </cac:FreightAllowanceCharge>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+    <cbc:Amount>12.70</cbc:Amount>
+    <cbc:BaseAmount>254.00</cbc:BaseAmount>
+  </cac:FreightAllowanceCharge>
+</cac:Consignment>
+```
+
+**Structure 6** — 2 instances
+
+```xml
+<cac:ReferencedConsignment>
+  <cbc:ID>CON_1</cbc:ID>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>CON_THU_1</cbc:ID>
+    <cac:TransportEquipment>
+      <cbc:ID>CON_1</cbc:ID>
+      <cac:ContainedInTransportEquipment>
+        <cbc:ID>NEC_TE_1</cbc:ID>
+        <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+        <cbc:TraceID>12345678914542</cbc:TraceID>
+      </cac:ContainedInTransportEquipment>
+      <cac:Package>
+        <cbc:ID>CON_1</cbc:ID>
+        <cbc:Quantity>10</cbc:Quantity>
+      </cac:Package>
+    </cac:TransportEquipment>
+  </cac:TransportHandlingUnit>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>CON_THU_2</cbc:ID>
+    <cac:TransportEquipment>
+      <cbc:ID>CON_2</cbc:ID>
+      <cac:ContainedInTransportEquipment>
+        <cbc:ID>NEC_TE_2</cbc:ID>
+        <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+        <cbc:TraceID>12345678914543</cbc:TraceID>
+      </cac:ContainedInTransportEquipment>
+      <cac:Package>
+        <cbc:ID>CON_2</cbc:ID>
+        <cbc:Quantity>10</cbc:Quantity>
+      </cac:Package>
+    </cac:TransportEquipment>
+  </cac:TransportHandlingUnit>
+</cac:ReferencedConsignment>
+```
+
+**Structure 7** — 2 instances
+
+```xml
+<cac:Consignment>
+  <cbc:ID>1</cbc:ID>
+  <cbc:SummaryDescription>1 other</cbc:SummaryDescription>
+  <cbc:TotalInvoiceAmount>10500.00</cbc:TotalInvoiceAmount>
+  <cbc:GrossWeightMeasure>88.00</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure>76.00</cbc:NetWeightMeasure>
+  <cbc:GrossVolumeMeasure>0.336</cbc:GrossVolumeMeasure>
+  <cbc:NetVolumeMeasure>0.336000</cbc:NetVolumeMeasure>
+  <cbc:LoadingLengthMeasure>0</cbc:LoadingLengthMeasure>
+  <cbc:SequenceID>204</cbc:SequenceID>
+  <cbc:TotalGoodsItemQuantity>2</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalTransportHandlingUnitQuantity>1</cbc:TotalTransportHandlingUnitQuantity>
+  <cbc:DeliveryInstructions>Test</cbc:DeliveryInstructions>
+  <cac:RequestedPickupTransportEvent>
+    <cac:Location>
+      <cac:Address>
+        <cbc:StreetName>Stribevangen</cbc:StreetName>
+        <cbc:BuildingNumber>89</cbc:BuildingNumber>
+        <cbc:CityName>Gedser</cbc:CityName>
+        <cbc:PostalZone>4874</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2016-08-02</cbc:StartDate>
+      <cbc:StartTime>07:00:00</cbc:StartTime>
+      <cbc:EndDate>2016-08-02</cbc:EndDate>
+      <cbc:EndTime>15:30:00</cbc:EndTime>
+    </cac:Period>
+  </cac:RequestedPickupTransportEvent>
+  <cac:RequestedDeliveryTransportEvent>
+    <cac:Location>
+      <cac:Address>
+        <cbc:StreetName>Marken</cbc:StreetName>
+        <cbc:BuildingNumber>13</cbc:BuildingNumber>
+        <cbc:CityName>Bergen</cbc:CityName>
+        <cbc:PostalZone>5017</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2017-03-30</cbc:StartDate>
+    </cac:Period>
+  </cac:RequestedDeliveryTransportEvent>
+  <cac:OriginalDepartureCountry>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+  </cac:OriginalDepartureCountry>
+  <cac:DeliveryTerms>
+    <cbc:ID>FCA</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:Name>9000</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
+  <cac:MainCarriageShipmentStage>
+    <cbc:TransportModeCode>3</cbc:TransportModeCode>
+  </cac:MainCarriageShipmentStage>
+  <cac:TransportHandlingUnit>
+    <cbc:TotalPackageQuantity>1</cbc:TotalPackageQuantity>
+    <cac:TransportEquipment>
+      <cbc:TransportEquipmentTypeCode>AD</cbc:TransportEquipmentTypeCode>
+      <cbc:FullnessIndicationCode>FTL</cbc:FullnessIndicationCode>
+    </cac:TransportEquipment>
+    <cac:Package>
+      <cbc:ID>FLGS339241</cbc:ID>
+      <cbc:Quantity>1</cbc:Quantity>
+      <cbc:PackageLevelCode>NoStacking</cbc:PackageLevelCode>
+      <cbc:PackingMaterial>other</cbc:PackingMaterial>
+      <cbc:TraceID>STD14037</cbc:TraceID>
+      <cac:GoodsItem>
+        <cbc:ID>636257218904553192</cbc:ID>
+        <cbc:Description>Kløver Økologis gedeost 15%</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount>0.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredStatisticsValueAmount>10050.00</cbc:DeclaredStatisticsValueAmount>
+        <cbc:ValueAmount>10500.00</cbc:ValueAmount>
+        <cbc:Quantity>150.00</cbc:Quantity>
+        <cbc:TraceID>STD14037</cbc:TraceID>
+        <cac:Item>
+          <cbc:Description>Kløver Økologisk gedeost 15%</cbc:Description>
+          <cbc:PackQuantity>1</cbc:PackQuantity>
+          <cbc:Name>Gedesby Øko-ost</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>100700011021</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:OriginCountry>
+            <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+          </cac:OriginCountry>
+          <cac:CommodityClassification>
+            <cbc:CommodityCode>84195000</cbc:CommodityCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+        <cac:Despatch>
+          <cbc:ID>FLGS339241</cbc:ID>
+        </cac:Despatch>
+      </cac:GoodsItem>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>OuterHeight</cbc:AttributeID>
+        <cbc:Measure>70</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>OuterWidth</cbc:AttributeID>
+        <cbc:Measure>60</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>OuterDepth</cbc:AttributeID>
+        <cbc:Measure>80</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>GrossVolumen</cbc:AttributeID>
+        <cbc:Measure>0.336</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>GrossWeight</cbc:AttributeID>
+        <cbc:Measure>88</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Pickup>
+        <cbc:LatestPickupDate>2016-08-02</cbc:LatestPickupDate>
+      </cac:Pickup>
+      <cac:Despatch>
+        <cbc:ID>28833-2661-144</cbc:ID>
+      </cac:Despatch>
+    </cac:Package>
+  </cac:TransportHandlingUnit>
+</cac:Consignment>
+```
+
+**Structure 8** — 1 instance
 
 ```xml
 <cac:Consignment>
@@ -5933,112 +6435,494 @@ _38 instances across 2 elements, with 16 unique structures_
 </cac:Consignment>
 ```
 
-**Structure 4** — 1 instance
+**Structure 9** — 1 instance
+
+```xml
+<cac:ReferencedConsignment>
+  <cbc:ID>EXT_1</cbc:ID>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>EXT_THU_1</cbc:ID>
+    <cac:TransportEquipment>
+      <cbc:ID>CON_1</cbc:ID>
+      <cac:ContainedInTransportEquipment>
+        <cbc:ID>EXT_TE_1</cbc:ID>
+        <cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
+        <cbc:TraceID>12345678914111</cbc:TraceID>
+      </cac:ContainedInTransportEquipment>
+      <cac:Package>
+        <cbc:ID>CON_1</cbc:ID>
+        <cbc:Quantity>10</cbc:Quantity>
+      </cac:Package>
+    </cac:TransportEquipment>
+    <cac:TransportMeans>
+      <cac:RoadTransport>
+        <cbc:LicensePlateID>WFN667</cbc:LicensePlateID>
+      </cac:RoadTransport>
+    </cac:TransportMeans>
+  </cac:TransportHandlingUnit>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>EXT_THU_2</cbc:ID>
+    <cac:TransportEquipment>
+      <cbc:ID>CON_2</cbc:ID>
+      <cac:ContainedInTransportEquipment>
+        <cbc:ID>EXT_TE_2</cbc:ID>
+        <cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
+        <cbc:TraceID>12345678914112</cbc:TraceID>
+      </cac:ContainedInTransportEquipment>
+      <cac:Package>
+        <cbc:ID>CON_2</cbc:ID>
+        <cbc:Quantity>10</cbc:Quantity>
+      </cac:Package>
+    </cac:TransportEquipment>
+    <cac:TransportMeans>
+      <cac:RoadTransport>
+        <cbc:LicensePlateID>WFN667</cbc:LicensePlateID>
+      </cac:RoadTransport>
+    </cac:TransportMeans>
+  </cac:TransportHandlingUnit>
+</cac:ReferencedConsignment>
+```
+
+**Structure 10** — 4 instances
 
 ```xml
 <cac:Consignment>
-  <cbc:ID>CON_1</cbc:ID>
-  <cbc:GrossWeightMeasure>50000</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure>3000</cbc:NetWeightMeasure>
-  <cbc:GrossVolumeMeasure>78</cbc:GrossVolumeMeasure>
-  <cbc:LoadingLengthMeasure>12</cbc:LoadingLengthMeasure>
+  <cbc:ID>CONS-0001</cbc:ID>
+  <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
+  <cbc:TariffCode>15219000</cbc:TariffCode>
   <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
-  <cac:ConsolidatedShipment>
-    <cbc:ID>GSIN_1</cbc:ID>
-  </cac:ConsolidatedShipment>
-  <cac:ConsolidatedShipment>
-    <cbc:ID>GSIN_2</cbc:ID>
-  </cac:ConsolidatedShipment>
-  <cac:RequestedPickupTransportEvent>
-    <cac:Location>
-      <cac:Address>
-        <cbc:ID>DEHAM</cbc:ID>
-        <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-        <cbc:CityName>Hamburg</cbc:CityName>
-        <cbc:PostalZone>29400</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-03</cbc:StartDate>
-      <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-03</cbc:EndDate>
-      <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-    </cac:Period>
-  </cac:RequestedPickupTransportEvent>
-  <cac:RequestedDeliveryTransportEvent>
-    <cac:Location>
-      <cac:Address>
-        <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-        <cbc:CityName>Nurnberg</cbc:CityName>
-        <cbc:PostalZone>28400</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-06</cbc:StartDate>
-      <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-06</cbc:EndDate>
-      <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
-    </cac:Period>
-  </cac:RequestedDeliveryTransportEvent>
   <cac:ConsigneeParty>
-    <cac:PartyIdentification>
-      <cbc:ID>4058673827123</cbc:ID>
-    </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Consignee</cbc:Name>
+      <cbc:Name>IYT Corporation</cbc:Name>
     </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>SomeName</cbc:Name>
-      <cbc:Telephone>+4987878763</cbc:Telephone>
-      <cbc:ElectronicMail>SomeName@consignee.de</cbc:ElectronicMail>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
     </cac:Contact>
+  </cac:ConsigneeParty>
+  <cac:NotifyParty>
+    <cac:PartyName>
+      <cbc:Name>IYT Corporation</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:NotifyParty>
+  <cac:FinalDeliveryParty>
+    <cac:PartyName>
+      <cbc:Name>The Terminus</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>S Massiah</cbc:Name>
+      <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+      <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+      <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:FinalDeliveryParty>
+  <cac:OriginalDepartureCountry>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+  </cac:OriginalDepartureCountry>
+  <cac:FinalDestinationCountry>
+    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+  </cac:FinalDestinationCountry>
+  <cac:DeliveryTerms>
+    <cbc:ID>FOB Destination</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID>GBBRS</cbc:ID>
+      <cbc:Description>Bristol</cbc:Description>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:Amount>254.00</cbc:Amount>
+  </cac:FreightAllowanceCharge>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+    <cbc:Amount>12.70</cbc:Amount>
+    <cbc:BaseAmount>254.00</cbc:BaseAmount>
+  </cac:FreightAllowanceCharge>
+</cac:Consignment>
+```
+
+**Structure 11** — 1 instance
+
+```xml
+<cac:Consignment>
+  <cbc:ID>1</cbc:ID>
+  <cbc:TotalInvoiceAmount>44250.00</cbc:TotalInvoiceAmount>
+  <cbc:GrossWeightMeasure>230.80</cbc:GrossWeightMeasure>
+  <cbc:Information>Professional equipment</cbc:Information>
+  <cbc:TotalGoodsItemQuantity>23</cbc:TotalGoodsItemQuantity>
+  <cac:FinalDestinationCountry>
+    <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+  </cac:FinalDestinationCountry>
+  <cac:TransitCountry>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:TransitCountry>
+  <cac:FirstArrivalPortLocation>
+    <cbc:Name>Padborg</cbc:Name>
+  </cac:FirstArrivalPortLocation>
+  <cac:LastExitPortLocation>
+    <cbc:Name>Bietingen</cbc:Name>
+  </cac:LastExitPortLocation>
+</cac:Consignment>
+```
+
+**Structure 12** — 2 instances
+
+```xml
+<cac:Consignment>
+  <cbc:ID>XYZ987</cbc:ID>
+  <cbc:SummaryDescription>Electronic components</cbc:SummaryDescription>
+</cac:Consignment>
+```
+
+**Structure 13** — 2 instances
+
+```xml
+<cac:Consignment>
+  <cbc:ID>C1</cbc:ID>
+  <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
+  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalPackagesQuantity>5</cbc:TotalPackagesQuantity>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>ABCD123456-7</cbc:ID>
+  </cac:TransportHandlingUnit>
+</cac:Consignment>
+```
+
+**Structure 14** — 3 instances
+
+```xml
+<cac:Consignment>
+  <cbc:ID>2005US12345678998765432112345678</cbc:ID>
+  <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
+  <cbc:TariffCode>15219000</cbc:TariffCode>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cac:ConsigneeParty>
+    <cac:PartyName>
+      <cbc:Name>IYT Corporation</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:ConsigneeParty>
+  <cac:NotifyParty>
+    <cac:PartyName>
+      <cbc:Name>IYT Corporation</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:NotifyParty>
+  <cac:FinalDeliveryParty>
+    <cac:PartyName>
+      <cbc:Name>The Terminus</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>S Massiah</cbc:Name>
+      <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+      <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+      <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:FinalDeliveryParty>
+  <cac:OriginalDepartureCountry>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+  </cac:OriginalDepartureCountry>
+  <cac:FinalDestinationCountry>
+    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+  </cac:FinalDestinationCountry>
+  <cac:TransportContract>
+    <cbc:ID>CONS-001</cbc:ID>
+    <cbc:IssueDate>2005-06-24</cbc:IssueDate>
+    <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2005-06-25</cbc:StartDate>
+      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2005-06-30</cbc:EndDate>
+      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
+    </cac:ValidityPeriod>
+    <cac:ContractDocumentReference>
+      <cbc:ID>normalizedString</cbc:ID>
+      <cbc:CopyIndicator>false</cbc:CopyIndicator>
+      <cbc:UUID>normalizedString</cbc:UUID>
+      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+      <cbc:DocumentType>String</cbc:DocumentType>
+      <cbc:XPath>String</cbc:XPath>
+      <cbc:XPath>String</cbc:XPath>
+      <cac:Attachment>
+        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+        <cac:ExternalReference>
+          <cbc:URI>normalizedString</cbc:URI>
+          <cbc:DocumentHash>String</cbc:DocumentHash>
+          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+        </cac:ExternalReference>
+      </cac:Attachment>
+    </cac:ContractDocumentReference>
+    <cac:ContractDocumentReference>
+      <cbc:ID>normalizedString</cbc:ID>
+      <cbc:CopyIndicator>false</cbc:CopyIndicator>
+      <cbc:UUID>normalizedString</cbc:UUID>
+      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+      <cbc:DocumentType>String</cbc:DocumentType>
+      <cbc:XPath>String</cbc:XPath>
+      <cbc:XPath>String</cbc:XPath>
+      <cac:Attachment>
+        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+        <cac:ExternalReference>
+          <cbc:URI>normalizedString</cbc:URI>
+          <cbc:DocumentHash>String</cbc:DocumentHash>
+          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+        </cac:ExternalReference>
+      </cac:Attachment>
+    </cac:ContractDocumentReference>
+  </cac:TransportContract>
+  <cac:OriginalDespatchTransportationService>
+    <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
+  </cac:OriginalDespatchTransportationService>
+  <cac:FinalDeliveryTransportationService>
+    <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
+  </cac:FinalDeliveryTransportationService>
+  <cac:DeliveryTerms>
+    <cbc:ID>FOB Destination</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID>GBBRS</cbc:ID>
+      <cbc:Description>Bristol</cbc:Description>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
+  <cac:PaymentTerms>
+    <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
+  </cac:PaymentTerms>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:Amount>254.00</cbc:Amount>
+  </cac:FreightAllowanceCharge>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+    <cbc:Amount>12.70</cbc:Amount>
+    <cbc:BaseAmount>254.00</cbc:BaseAmount>
+  </cac:FreightAllowanceCharge>
+</cac:Consignment>
+```
+
+**Structure 15** — 1 instance
+
+```xml
+<cac:Consignment>
+  <cbc:ID>7365566156191234567</cbc:ID>
+  <cbc:GrossWeightMeasure>600</cbc:GrossWeightMeasure>
+  <cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+  <cac:PlannedPickupTransportEvent>
+    <cac:Location>
+      <cbc:ID>MAPTM</cbc:ID>
+      <cac:Address>
+        <cbc:CityName>Tanger</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>MA</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:PlannedPickupTransportEvent>
+  <cac:PlannedDeliveryTransportEvent>
+    <cac:Location>
+      <cbc:ID>ITGOA</cbc:ID>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:PlannedDeliveryTransportEvent>
+  <cac:ConsigneeParty>
+    <cac:PartyName>
+      <cbc:Name>Consignee W</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Consignee W Street</cbc:StreetName>
+      <cbc:CityName>Munich</cbc:CityName>
+      <cbc:PostalZone>231</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
   </cac:ConsigneeParty>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
       <cbc:ID>4058673827000</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Consignor</cbc:Name>
+      <cbc:Name>Disfruta</cbc:Name>
     </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:ID>4058673827000</cbc:ID>
-    </cac:PostalAddress>
     <cac:Contact>
       <cbc:Name>SomeName</cbc:Name>
-      <cbc:Telephone>+8676576456</cbc:Telephone>
-      <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
+      <cbc:Telephone>+212687878763</cbc:Telephone>
+      <cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
     </cac:Contact>
   </cac:ConsignorParty>
   <cac:OriginalDepartureCountry>
-    <cbc:IdentificationCode>CN</cbc:IdentificationCode>
+    <cbc:IdentificationCode>MA</cbc:IdentificationCode>
   </cac:OriginalDepartureCountry>
   <cac:FinalDestinationCountry>
     <cbc:IdentificationCode>DE</cbc:IdentificationCode>
   </cac:FinalDestinationCountry>
+  <cac:TransitCountry>
+    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+  </cac:TransitCountry>
+  <cac:TransitCountry>
+    <cbc:IdentificationCode>AT</cbc:IdentificationCode>
+  </cac:TransitCountry>
+  <cac:MainCarriageShipmentStage>
+    <cbc:ShipmentStageTypeCode>1</cbc:ShipmentStageTypeCode>
+    <cbc:TransportModeCode>1</cbc:TransportModeCode>
+    <cac:TransportMeans>
+      <cbc:JourneyID>00344</cbc:JourneyID>
+      <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
+      <cac:MaritimeTransport>
+        <cbc:VesselID>3852664</cbc:VesselID>
+        <cbc:VesselName>Vessel Name</cbc:VesselName>
+      </cac:MaritimeTransport>
+    </cac:TransportMeans>
+    <cac:EstimatedArrivalTransportEvent>
+      <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID>ITGOA</cbc:ID>
+        <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+    </cac:EstimatedArrivalTransportEvent>
+  </cac:MainCarriageShipmentStage>
   <cac:TransportHandlingUnit>
     <cbc:ID>CON_THU_1</cbc:ID>
     <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
     <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
-    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-    <cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
+    <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
     <cac:TransportEquipment>
-      <cbc:ID>CON_TE_1</cbc:ID>
+      <cbc:ID>BFCU4040001</cbc:ID>
       <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
       <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
       <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-      <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-      <cbc:Description>SomeDescription</cbc:Description>
+      <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+      <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
       <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
       <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-      <cbc:PowerIndicator>false</cbc:PowerIndicator>
+      <cbc:PowerIndicator>true</cbc:PowerIndicator>
       <cac:MeasurementDimension>
         <cbc:AttributeID>Length</cbc:AttributeID>
         <cbc:Measure>6.1</cbc:Measure>
@@ -6051,37 +6935,31 @@ _38 instances across 2 elements, with 16 unique structures_
         <cbc:AttributeID>Width</cbc:AttributeID>
         <cbc:Measure>2.44</cbc:Measure>
       </cac:MeasurementDimension>
-      <cac:Package>
-        <cbc:ID>CON_P_1</cbc:ID>
-        <cbc:Quantity>10</cbc:Quantity>
-        <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-        <cac:GoodsItem>
-          <cac:Item>
-            <cac:CommodityClassification>
-              <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-            </cac:CommodityClassification>
-          </cac:Item>
-        </cac:GoodsItem>
-      </cac:Package>
+      <cac:GoodsItem>
+        <cac:Item>
+          <cac:CommodityClassification>
+            <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+            <cbc:CommodityCode>8</cbc:CommodityCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:GoodsItem>
     </cac:TransportEquipment>
   </cac:TransportHandlingUnit>
   <cac:TransportHandlingUnit>
     <cbc:ID>CON_THU_2</cbc:ID>
     <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
     <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
-    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-    <cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
+    <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
     <cac:TransportEquipment>
-      <cbc:ID>CON_TE_2</cbc:ID>
+      <cbc:ID>BFCU4040002</cbc:ID>
       <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
       <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
       <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-      <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-      <cbc:Description>SomeDescription</cbc:Description>
+      <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+      <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
       <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
       <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-      <cbc:PowerIndicator>false</cbc:PowerIndicator>
+      <cbc:PowerIndicator>true</cbc:PowerIndicator>
       <cac:MeasurementDimension>
         <cbc:AttributeID>Length</cbc:AttributeID>
         <cbc:Measure>6.1</cbc:Measure>
@@ -6094,24 +6972,38 @@ _38 instances across 2 elements, with 16 unique structures_
         <cbc:AttributeID>Width</cbc:AttributeID>
         <cbc:Measure>2.44</cbc:Measure>
       </cac:MeasurementDimension>
-      <cac:Package>
-        <cbc:ID>CON_P_2</cbc:ID>
-        <cbc:Quantity>10</cbc:Quantity>
-        <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-        <cac:GoodsItem>
-          <cac:Item>
-            <cac:CommodityClassification>
-              <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-            </cac:CommodityClassification>
-          </cac:Item>
-        </cac:GoodsItem>
-      </cac:Package>
+      <cac:GoodsItem>
+        <cac:Item>
+          <cac:CommodityClassification>
+            <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+            <cbc:CommodityCode>8</cbc:CommodityCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:GoodsItem>
     </cac:TransportEquipment>
   </cac:TransportHandlingUnit>
+  <cac:FirstArrivalPortLocation>
+    <cbc:ID>ITGOA</cbc:ID>
+    <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:FirstArrivalPortLocation>
+  <cac:OfficeOfEntryLocation>
+    <cbc:ID>DE000396</cbc:ID>
+    <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:OfficeOfEntryLocation>
 </cac:Consignment>
 ```
 
-**Structure 5** — 1 instance
+**Structure 16** — 1 instance
 
 ```xml
 <cac:Consignment>
@@ -6336,927 +7228,6 @@ _38 instances across 2 elements, with 16 unique structures_
 </cac:Consignment>
 ```
 
-**Structure 6** — 1 instance
-
-```xml
-<cac:Consignment>
-  <cbc:ID>7365566156191234567</cbc:ID>
-  <cbc:GrossWeightMeasure>600</cbc:GrossWeightMeasure>
-  <cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
-  <cac:PlannedPickupTransportEvent>
-    <cac:Location>
-      <cbc:ID>MAPTM</cbc:ID>
-      <cac:Address>
-        <cbc:CityName>Tanger</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>MA</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:PlannedPickupTransportEvent>
-  <cac:PlannedDeliveryTransportEvent>
-    <cac:Location>
-      <cbc:ID>ITGOA</cbc:ID>
-      <cac:Address>
-        <cac:Country>
-          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:PlannedDeliveryTransportEvent>
-  <cac:ConsigneeParty>
-    <cac:PartyName>
-      <cbc:Name>Consignee W</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Consignee W Street</cbc:StreetName>
-      <cbc:CityName>Munich</cbc:CityName>
-      <cbc:PostalZone>231</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-  </cac:ConsigneeParty>
-  <cac:ConsignorParty>
-    <cac:PartyIdentification>
-      <cbc:ID>4058673827000</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Disfruta</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:Name>SomeName</cbc:Name>
-      <cbc:Telephone>+212687878763</cbc:Telephone>
-      <cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:ConsignorParty>
-  <cac:OriginalDepartureCountry>
-    <cbc:IdentificationCode>MA</cbc:IdentificationCode>
-  </cac:OriginalDepartureCountry>
-  <cac:FinalDestinationCountry>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:FinalDestinationCountry>
-  <cac:TransitCountry>
-    <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-  </cac:TransitCountry>
-  <cac:TransitCountry>
-    <cbc:IdentificationCode>AT</cbc:IdentificationCode>
-  </cac:TransitCountry>
-  <cac:MainCarriageShipmentStage>
-    <cbc:ShipmentStageTypeCode>1</cbc:ShipmentStageTypeCode>
-    <cbc:TransportModeCode>1</cbc:TransportModeCode>
-    <cac:TransportMeans>
-      <cbc:JourneyID>00344</cbc:JourneyID>
-      <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
-      <cac:MaritimeTransport>
-        <cbc:VesselID>3852664</cbc:VesselID>
-        <cbc:VesselName>Vessel Name</cbc:VesselName>
-      </cac:MaritimeTransport>
-    </cac:TransportMeans>
-    <cac:EstimatedArrivalTransportEvent>
-      <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
-      <cac:Location>
-        <cbc:ID>ITGOA</cbc:ID>
-        <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
-        <cac:Address>
-          <cac:Country>
-            <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-    </cac:EstimatedArrivalTransportEvent>
-  </cac:MainCarriageShipmentStage>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>CON_THU_1</cbc:ID>
-    <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
-    <cac:TransportEquipment>
-      <cbc:ID>BFCU4040001</cbc:ID>
-      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-      <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-      <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-      <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
-      <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
-      <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-      <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-      <cbc:PowerIndicator>true</cbc:PowerIndicator>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>Length</cbc:AttributeID>
-        <cbc:Measure>6.1</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>Height</cbc:AttributeID>
-        <cbc:Measure>2.6</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>Width</cbc:AttributeID>
-        <cbc:Measure>2.44</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:GoodsItem>
-        <cac:Item>
-          <cac:CommodityClassification>
-            <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
-            <cbc:CommodityCode>8</cbc:CommodityCode>
-          </cac:CommodityClassification>
-        </cac:Item>
-      </cac:GoodsItem>
-    </cac:TransportEquipment>
-  </cac:TransportHandlingUnit>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>CON_THU_2</cbc:ID>
-    <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
-    <cac:TransportEquipment>
-      <cbc:ID>BFCU4040002</cbc:ID>
-      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-      <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-      <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-      <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
-      <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
-      <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-      <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-      <cbc:PowerIndicator>true</cbc:PowerIndicator>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>Length</cbc:AttributeID>
-        <cbc:Measure>6.1</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>Height</cbc:AttributeID>
-        <cbc:Measure>2.6</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>Width</cbc:AttributeID>
-        <cbc:Measure>2.44</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:GoodsItem>
-        <cac:Item>
-          <cac:CommodityClassification>
-            <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
-            <cbc:CommodityCode>8</cbc:CommodityCode>
-          </cac:CommodityClassification>
-        </cac:Item>
-      </cac:GoodsItem>
-    </cac:TransportEquipment>
-  </cac:TransportHandlingUnit>
-  <cac:FirstArrivalPortLocation>
-    <cbc:ID>ITGOA</cbc:ID>
-    <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
-    <cac:Address>
-      <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:FirstArrivalPortLocation>
-  <cac:OfficeOfEntryLocation>
-    <cbc:ID>DE000396</cbc:ID>
-    <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
-    <cac:Address>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:OfficeOfEntryLocation>
-</cac:Consignment>
-```
-
-**Structure 7** — 2 instances
-
-```xml
-<cac:Consignment>
-  <cbc:ID>1</cbc:ID>
-  <cbc:SummaryDescription>1 other</cbc:SummaryDescription>
-  <cbc:TotalInvoiceAmount>10500.00</cbc:TotalInvoiceAmount>
-  <cbc:GrossWeightMeasure>88.00</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure>76.00</cbc:NetWeightMeasure>
-  <cbc:GrossVolumeMeasure>0.336</cbc:GrossVolumeMeasure>
-  <cbc:NetVolumeMeasure>0.336000</cbc:NetVolumeMeasure>
-  <cbc:LoadingLengthMeasure>0</cbc:LoadingLengthMeasure>
-  <cbc:SequenceID>204</cbc:SequenceID>
-  <cbc:TotalGoodsItemQuantity>2</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalTransportHandlingUnitQuantity>1</cbc:TotalTransportHandlingUnitQuantity>
-  <cbc:DeliveryInstructions>Test</cbc:DeliveryInstructions>
-  <cac:RequestedPickupTransportEvent>
-    <cac:Location>
-      <cac:Address>
-        <cbc:StreetName>Stribevangen</cbc:StreetName>
-        <cbc:BuildingNumber>89</cbc:BuildingNumber>
-        <cbc:CityName>Gedser</cbc:CityName>
-        <cbc:PostalZone>4874</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2016-08-02</cbc:StartDate>
-      <cbc:StartTime>07:00:00</cbc:StartTime>
-      <cbc:EndDate>2016-08-02</cbc:EndDate>
-      <cbc:EndTime>15:30:00</cbc:EndTime>
-    </cac:Period>
-  </cac:RequestedPickupTransportEvent>
-  <cac:RequestedDeliveryTransportEvent>
-    <cac:Location>
-      <cac:Address>
-        <cbc:StreetName>Marken</cbc:StreetName>
-        <cbc:BuildingNumber>13</cbc:BuildingNumber>
-        <cbc:CityName>Bergen</cbc:CityName>
-        <cbc:PostalZone>5017</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2017-03-30</cbc:StartDate>
-    </cac:Period>
-  </cac:RequestedDeliveryTransportEvent>
-  <cac:OriginalDepartureCountry>
-    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-  </cac:OriginalDepartureCountry>
-  <cac:DeliveryTerms>
-    <cbc:ID>FCA</cbc:ID>
-    <cac:DeliveryLocation>
-      <cbc:Name>9000</cbc:Name>
-    </cac:DeliveryLocation>
-  </cac:DeliveryTerms>
-  <cac:MainCarriageShipmentStage>
-    <cbc:TransportModeCode>3</cbc:TransportModeCode>
-  </cac:MainCarriageShipmentStage>
-  <cac:TransportHandlingUnit>
-    <cbc:TotalPackageQuantity>1</cbc:TotalPackageQuantity>
-    <cac:TransportEquipment>
-      <cbc:TransportEquipmentTypeCode>AD</cbc:TransportEquipmentTypeCode>
-      <cbc:FullnessIndicationCode>FTL</cbc:FullnessIndicationCode>
-    </cac:TransportEquipment>
-    <cac:Package>
-      <cbc:ID>FLGS339241</cbc:ID>
-      <cbc:Quantity>1</cbc:Quantity>
-      <cbc:PackageLevelCode>NoStacking</cbc:PackageLevelCode>
-      <cbc:PackingMaterial>other</cbc:PackingMaterial>
-      <cbc:TraceID>STD14037</cbc:TraceID>
-      <cac:GoodsItem>
-        <cbc:ID>636257218904553192</cbc:ID>
-        <cbc:Description>Kløver Økologis gedeost 15%</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount>0.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:DeclaredStatisticsValueAmount>10050.00</cbc:DeclaredStatisticsValueAmount>
-        <cbc:ValueAmount>10500.00</cbc:ValueAmount>
-        <cbc:Quantity>150.00</cbc:Quantity>
-        <cbc:TraceID>STD14037</cbc:TraceID>
-        <cac:Item>
-          <cbc:Description>Kløver Økologisk gedeost 15%</cbc:Description>
-          <cbc:PackQuantity>1</cbc:PackQuantity>
-          <cbc:Name>Gedesby Øko-ost</cbc:Name>
-          <cac:SellersItemIdentification>
-            <cbc:ID>100700011021</cbc:ID>
-          </cac:SellersItemIdentification>
-          <cac:OriginCountry>
-            <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-          </cac:OriginCountry>
-          <cac:CommodityClassification>
-            <cbc:CommodityCode>84195000</cbc:CommodityCode>
-          </cac:CommodityClassification>
-        </cac:Item>
-        <cac:Despatch>
-          <cbc:ID>FLGS339241</cbc:ID>
-        </cac:Despatch>
-      </cac:GoodsItem>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>OuterHeight</cbc:AttributeID>
-        <cbc:Measure>70</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>OuterWidth</cbc:AttributeID>
-        <cbc:Measure>60</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>OuterDepth</cbc:AttributeID>
-        <cbc:Measure>80</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>GrossVolumen</cbc:AttributeID>
-        <cbc:Measure>0.336</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID>GrossWeight</cbc:AttributeID>
-        <cbc:Measure>88</cbc:Measure>
-      </cac:MeasurementDimension>
-      <cac:Pickup>
-        <cbc:LatestPickupDate>2016-08-02</cbc:LatestPickupDate>
-      </cac:Pickup>
-      <cac:Despatch>
-        <cbc:ID>28833-2661-144</cbc:ID>
-      </cac:Despatch>
-    </cac:Package>
-  </cac:TransportHandlingUnit>
-</cac:Consignment>
-```
-
-**Structure 8** — 2 instances
-
-```xml
-<cac:Consignment>
-  <cbc:ID>XYZ987</cbc:ID>
-  <cbc:SummaryDescription>Electronic components</cbc:SummaryDescription>
-</cac:Consignment>
-```
-
-**Structure 9** — 4 instances
-
-```xml
-<cac:Consignment>
-  <cbc:ID>CONS-0001</cbc:ID>
-  <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
-  <cbc:TariffCode>15219000</cbc:TariffCode>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cac:ConsigneeParty>
-    <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:ConsigneeParty>
-  <cac:NotifyParty>
-    <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:NotifyParty>
-  <cac:FinalDeliveryParty>
-    <cac:PartyName>
-      <cbc:Name>The Terminus</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>S Massiah</cbc:Name>
-      <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-      <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-      <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:FinalDeliveryParty>
-  <cac:OriginalDepartureCountry>
-    <cbc:IdentificationCode>US</cbc:IdentificationCode>
-  </cac:OriginalDepartureCountry>
-  <cac:FinalDestinationCountry>
-    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-  </cac:FinalDestinationCountry>
-  <cac:DeliveryTerms>
-    <cbc:ID>FOB Destination</cbc:ID>
-    <cac:DeliveryLocation>
-      <cbc:ID>GBBRS</cbc:ID>
-      <cbc:Description>Bristol</cbc:Description>
-    </cac:DeliveryLocation>
-  </cac:DeliveryTerms>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-    <cbc:Amount>254.00</cbc:Amount>
-  </cac:FreightAllowanceCharge>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-    <cbc:Amount>12.70</cbc:Amount>
-    <cbc:BaseAmount>254.00</cbc:BaseAmount>
-  </cac:FreightAllowanceCharge>
-</cac:Consignment>
-```
-
-**Structure 10** — 1 instance
-
-```xml
-<cac:Consignment>
-  <cbc:ID>2005US12345678998765432112345678</cbc:ID>
-  <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
-  <cbc:TariffCode>15219000</cbc:TariffCode>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cac:ConsigneeParty>
-    <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:ConsigneeParty>
-  <cac:NotifyParty>
-    <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:NotifyParty>
-  <cac:FinalDeliveryParty>
-    <cac:PartyName>
-      <cbc:Name>The Terminus</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>S Massiah</cbc:Name>
-      <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-      <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-      <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:FinalDeliveryParty>
-  <cac:OriginalDepartureCountry>
-    <cbc:IdentificationCode>US</cbc:IdentificationCode>
-  </cac:OriginalDepartureCountry>
-  <cac:FinalDestinationCountry>
-    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-  </cac:FinalDestinationCountry>
-  <cac:TransportContract>
-    <cbc:ID>CONS-001</cbc:ID>
-    <cbc:IssueDate>2005-06-24</cbc:IssueDate>
-    <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
-    <cac:ValidityPeriod>
-      <cbc:StartDate>2005-06-25</cbc:StartDate>
-      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2005-06-30</cbc:EndDate>
-      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-    </cac:ValidityPeriod>
-    <cac:ContractDocumentReference>
-      <cbc:ID>normalizedString</cbc:ID>
-      <cbc:CopyIndicator>false</cbc:CopyIndicator>
-      <cbc:UUID>normalizedString</cbc:UUID>
-      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-      <cbc:DocumentType>String</cbc:DocumentType>
-      <cbc:XPath>String</cbc:XPath>
-      <cac:Attachment>
-        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-        <cac:ExternalReference>
-          <cbc:URI>normalizedString</cbc:URI>
-          <cbc:DocumentHash>String</cbc:DocumentHash>
-          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-        </cac:ExternalReference>
-      </cac:Attachment>
-    </cac:ContractDocumentReference>
-    <cac:ContractDocumentReference>
-      <cbc:ID>normalizedString</cbc:ID>
-      <cbc:CopyIndicator>false</cbc:CopyIndicator>
-      <cbc:UUID>normalizedString</cbc:UUID>
-      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-      <cbc:DocumentType>String</cbc:DocumentType>
-      <cbc:XPath>String</cbc:XPath>
-      <cac:Attachment>
-        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-        <cac:ExternalReference>
-          <cbc:URI>normalizedString</cbc:URI>
-          <cbc:DocumentHash>String</cbc:DocumentHash>
-          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-        </cac:ExternalReference>
-      </cac:Attachment>
-    </cac:ContractDocumentReference>
-  </cac:TransportContract>
-  <cac:OriginalDespatchTransportationService>
-    <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
-  </cac:OriginalDespatchTransportationService>
-  <cac:FinalDeliveryTransportationService>
-    <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
-  </cac:FinalDeliveryTransportationService>
-  <cac:DeliveryTerms>
-    <cbc:ID>FOB Destination</cbc:ID>
-    <cac:DeliveryLocation>
-      <cbc:ID>GBBRS</cbc:ID>
-      <cbc:Description>Bristol</cbc:Description>
-    </cac:DeliveryLocation>
-  </cac:DeliveryTerms>
-  <cac:PaymentTerms>
-    <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
-  </cac:PaymentTerms>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-    <cbc:Amount>254.00</cbc:Amount>
-  </cac:FreightAllowanceCharge>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-    <cbc:Amount>12.70</cbc:Amount>
-    <cbc:BaseAmount>254.00</cbc:BaseAmount>
-  </cac:FreightAllowanceCharge>
-</cac:Consignment>
-```
-
-**Structure 11** — 3 instances
-
-```xml
-<cac:Consignment>
-  <cbc:ID>2005US12345678998765432112345678</cbc:ID>
-  <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
-  <cbc:TariffCode>15219000</cbc:TariffCode>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cac:ConsigneeParty>
-    <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:ConsigneeParty>
-  <cac:NotifyParty>
-    <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:NotifyParty>
-  <cac:FinalDeliveryParty>
-    <cac:PartyName>
-      <cbc:Name>The Terminus</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>S Massiah</cbc:Name>
-      <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-      <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-      <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:FinalDeliveryParty>
-  <cac:OriginalDepartureCountry>
-    <cbc:IdentificationCode>US</cbc:IdentificationCode>
-  </cac:OriginalDepartureCountry>
-  <cac:FinalDestinationCountry>
-    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-  </cac:FinalDestinationCountry>
-  <cac:TransportContract>
-    <cbc:ID>CONS-001</cbc:ID>
-    <cbc:IssueDate>2005-06-24</cbc:IssueDate>
-    <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
-    <cac:ValidityPeriod>
-      <cbc:StartDate>2005-06-25</cbc:StartDate>
-      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2005-06-30</cbc:EndDate>
-      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-    </cac:ValidityPeriod>
-    <cac:ContractDocumentReference>
-      <cbc:ID>normalizedString</cbc:ID>
-      <cbc:CopyIndicator>false</cbc:CopyIndicator>
-      <cbc:UUID>normalizedString</cbc:UUID>
-      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-      <cbc:DocumentType>String</cbc:DocumentType>
-      <cbc:XPath>String</cbc:XPath>
-      <cbc:XPath>String</cbc:XPath>
-      <cac:Attachment>
-        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-        <cac:ExternalReference>
-          <cbc:URI>normalizedString</cbc:URI>
-          <cbc:DocumentHash>String</cbc:DocumentHash>
-          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-        </cac:ExternalReference>
-      </cac:Attachment>
-    </cac:ContractDocumentReference>
-    <cac:ContractDocumentReference>
-      <cbc:ID>normalizedString</cbc:ID>
-      <cbc:CopyIndicator>false</cbc:CopyIndicator>
-      <cbc:UUID>normalizedString</cbc:UUID>
-      <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-      <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-      <cbc:DocumentType>String</cbc:DocumentType>
-      <cbc:XPath>String</cbc:XPath>
-      <cbc:XPath>String</cbc:XPath>
-      <cac:Attachment>
-        <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-        <cac:ExternalReference>
-          <cbc:URI>normalizedString</cbc:URI>
-          <cbc:DocumentHash>String</cbc:DocumentHash>
-          <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-          <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-        </cac:ExternalReference>
-      </cac:Attachment>
-    </cac:ContractDocumentReference>
-  </cac:TransportContract>
-  <cac:OriginalDespatchTransportationService>
-    <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
-  </cac:OriginalDespatchTransportationService>
-  <cac:FinalDeliveryTransportationService>
-    <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
-  </cac:FinalDeliveryTransportationService>
-  <cac:DeliveryTerms>
-    <cbc:ID>FOB Destination</cbc:ID>
-    <cac:DeliveryLocation>
-      <cbc:ID>GBBRS</cbc:ID>
-      <cbc:Description>Bristol</cbc:Description>
-    </cac:DeliveryLocation>
-  </cac:DeliveryTerms>
-  <cac:PaymentTerms>
-    <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
-  </cac:PaymentTerms>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-    <cbc:Amount>254.00</cbc:Amount>
-  </cac:FreightAllowanceCharge>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-    <cbc:Amount>12.70</cbc:Amount>
-    <cbc:BaseAmount>254.00</cbc:BaseAmount>
-  </cac:FreightAllowanceCharge>
-</cac:Consignment>
-```
-
-**Structure 12** — 1 instance
-
-```xml
-<cac:Consignment>
-  <cbc:ID>1</cbc:ID>
-  <cbc:TotalInvoiceAmount>44250.00</cbc:TotalInvoiceAmount>
-  <cbc:GrossWeightMeasure>230.80</cbc:GrossWeightMeasure>
-  <cbc:Information>Professional equipment</cbc:Information>
-  <cbc:TotalGoodsItemQuantity>23</cbc:TotalGoodsItemQuantity>
-  <cac:FinalDestinationCountry>
-    <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-  </cac:FinalDestinationCountry>
-  <cac:TransitCountry>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-  </cac:TransitCountry>
-  <cac:FirstArrivalPortLocation>
-    <cbc:Name>Padborg</cbc:Name>
-  </cac:FirstArrivalPortLocation>
-  <cac:LastExitPortLocation>
-    <cbc:Name>Bietingen</cbc:Name>
-  </cac:LastExitPortLocation>
-</cac:Consignment>
-```
-
-**Structure 13** — 1 instance
-
-```xml
-<cac:Consignment>
-  <cbc:ID>CON_1</cbc:ID>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>CON_THU_1</cbc:ID>
-    <cac:TransportEquipment>
-      <cbc:ID>CON_TE_1</cbc:ID>
-    </cac:TransportEquipment>
-    <cac:Status>
-      <cbc:ConditionCode>4</cbc:ConditionCode>
-      <cbc:StatusReasonCode>23</cbc:StatusReasonCode>
-      <cbc:StatusReason>Reefer container lost power - cargo of fish destroyed</cbc:StatusReason>
-    </cac:Status>
-  </cac:TransportHandlingUnit>
-</cac:Consignment>
-```
-
-**Structure 14** — 13 instances
-
-```xml
-<cac:Consignment>
-  <cbc:ID>1</cbc:ID>
-</cac:Consignment>
-```
-
-**Structure 15** — 1 instance
-
-```xml
-<cac:ReferencedConsignment>
-  <cbc:ID>EXT_1</cbc:ID>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>EXT_THU_1</cbc:ID>
-    <cac:TransportEquipment>
-      <cbc:ID>CON_1</cbc:ID>
-      <cac:ContainedInTransportEquipment>
-        <cbc:ID>EXT_TE_1</cbc:ID>
-        <cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
-        <cbc:TraceID>12345678914111</cbc:TraceID>
-      </cac:ContainedInTransportEquipment>
-      <cac:Package>
-        <cbc:ID>CON_1</cbc:ID>
-        <cbc:Quantity>10</cbc:Quantity>
-      </cac:Package>
-    </cac:TransportEquipment>
-    <cac:TransportMeans>
-      <cac:RoadTransport>
-        <cbc:LicensePlateID>WFN667</cbc:LicensePlateID>
-      </cac:RoadTransport>
-    </cac:TransportMeans>
-  </cac:TransportHandlingUnit>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>EXT_THU_2</cbc:ID>
-    <cac:TransportEquipment>
-      <cbc:ID>CON_2</cbc:ID>
-      <cac:ContainedInTransportEquipment>
-        <cbc:ID>EXT_TE_2</cbc:ID>
-        <cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
-        <cbc:TraceID>12345678914112</cbc:TraceID>
-      </cac:ContainedInTransportEquipment>
-      <cac:Package>
-        <cbc:ID>CON_2</cbc:ID>
-        <cbc:Quantity>10</cbc:Quantity>
-      </cac:Package>
-    </cac:TransportEquipment>
-    <cac:TransportMeans>
-      <cac:RoadTransport>
-        <cbc:LicensePlateID>WFN667</cbc:LicensePlateID>
-      </cac:RoadTransport>
-    </cac:TransportMeans>
-  </cac:TransportHandlingUnit>
-</cac:ReferencedConsignment>
-```
-
-**Structure 16** — 2 instances
-
-```xml
-<cac:ReferencedConsignment>
-  <cbc:ID>NTT_1</cbc:ID>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>NTT_THU_1</cbc:ID>
-    <cac:TransportEquipment>
-      <cbc:ID>NTT_THU_1</cbc:ID>
-      <cac:ContainedInTransportEquipment>
-        <cbc:ID>NTT_TE_1</cbc:ID>
-        <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-        <cbc:TraceID>12345678914564</cbc:TraceID>
-      </cac:ContainedInTransportEquipment>
-      <cac:Package>
-        <cbc:ID>CON_1</cbc:ID>
-        <cbc:Quantity>10</cbc:Quantity>
-      </cac:Package>
-    </cac:TransportEquipment>
-  </cac:TransportHandlingUnit>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>NTT_THU_2</cbc:ID>
-    <cac:TransportEquipment>
-      <cbc:ID>CON_2</cbc:ID>
-      <cac:ContainedInTransportEquipment>
-        <cbc:ID>NTT_TE_2</cbc:ID>
-        <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-        <cbc:TraceID>12345678914565</cbc:TraceID>
-      </cac:ContainedInTransportEquipment>
-      <cac:Package>
-        <cbc:ID>CON_2</cbc:ID>
-        <cbc:Quantity>10</cbc:Quantity>
-      </cac:Package>
-    </cac:TransportEquipment>
-  </cac:TransportHandlingUnit>
-</cac:ReferencedConsignment>
-```
-
 [↑ Back to contents](#contents)
 
 ### `ContactType`
@@ -7265,61 +7236,61 @@ _38 instances across 2 elements, with 16 unique structures_
 
 _437 instances across 9 elements, with 20 unique structures_
 
-**Structure 1** — 1 instance
+**Structure 1** — 42 instances
+
+```xml
+<cac:Contact>
+  <cbc:Name>SomeName</cbc:Name>
+  <cbc:Telephone>+8687878763</cbc:Telephone>
+  <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
+</cac:Contact>
+```
+
+**Structure 2** — 297 instances
+
+```xml
+<cac:Contact>
+  <cbc:Name>Mrs Bouquet</cbc:Name>
+  <cbc:Telephone>0158 1233714</cbc:Telephone>
+  <cbc:Telefax>0158 1233856</cbc:Telefax>
+  <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
+</cac:Contact>
+```
+
+**Structure 3** — 1 instance
+
+```xml
+<cac:Contact>
+  <cbc:ID>11</cbc:ID>
+</cac:Contact>
+```
+
+**Structure 4** — 8 instances
+
+```xml
+<cac:SupportContact>
+  <cbc:Name>Peter Gruen</cbc:Name>
+  <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
+</cac:SupportContact>
+```
+
+**Structure 5** — 20 instances
+
+```xml
+<cac:Contact>
+  <cbc:Telephone>5121230</cbc:Telephone>
+  <cbc:Telefax>5121231</cbc:Telefax>
+  <cbc:ElectronicMail>john@buyercompany.eu</cbc:ElectronicMail>
+</cac:Contact>
+```
+
+**Structure 6** — 1 instance
 
 ```xml
 <cac:CashierContact>
   <cbc:Name>John D. Salesman</cbc:Name>
   <cbc:Department>Gadgets</cbc:Department>
 </cac:CashierContact>
-```
-
-**Structure 2** — 8 instances
-
-```xml
-<cac:CommercialContact>
-  <cbc:Name>Jennifer de Niro</cbc:Name>
-  <cbc:ElectronicMail>jennifer.deniro@vendor.net</cbc:ElectronicMail>
-</cac:CommercialContact>
-```
-
-**Structure 3** — 8 instances
-
-```xml
-<cac:Contact>
-  <cbc:ElectronicMail>someName@consignee.de</cbc:ElectronicMail>
-</cac:Contact>
-```
-
-**Structure 4** — 2 instances
-
-```xml
-<cac:Contact>
-  <cbc:ID>7778</cbc:ID>
-  <cbc:Name>Ole Hansen</cbc:Name>
-  <cbc:Telephone>4526532147</cbc:Telephone>
-  <cbc:Telefax>4526532146</cbc:Telefax>
-  <cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
-</cac:Contact>
-```
-
-**Structure 5** — 6 instances
-
-```xml
-<cac:Contact>
-  <cbc:ID>12345678</cbc:ID>
-  <cbc:Name>Sille Schyberg</cbc:Name>
-</cac:Contact>
-```
-
-**Structure 6** — 8 instances
-
-```xml
-<cac:Contact>
-  <cbc:ID>Freight Bookings</cbc:ID>
-  <cbc:Telephone>+1 3362 4788</cbc:Telephone>
-  <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
-</cac:Contact>
 ```
 
 **Structure 7** — 2 instances
@@ -7333,12 +7304,15 @@ _437 instances across 9 elements, with 20 unique structures_
 </cac:Contact>
 ```
 
-**Structure 8** — 1 instance
+**Structure 8** — 2 instances
 
 ```xml
-<cac:Contact>
-  <cbc:ID>11</cbc:ID>
-</cac:Contact>
+<cac:DeliveryContact>
+  <cbc:Name>Eva Johnsson</cbc:Name>
+  <cbc:Telephone>1234356</cbc:Telephone>
+  <cbc:Telefax>123455</cbc:Telefax>
+  <cbc:ElectronicMail>eva@johnsson.se</cbc:ElectronicMail>
+</cac:DeliveryContact>
 ```
 
 **Structure 9** — 2 instances
@@ -7350,84 +7324,15 @@ _437 instances across 9 elements, with 20 unique structures_
 </cac:Contact>
 ```
 
-**Structure 10** — 42 instances
+**Structure 10** — 6 instances
 
 ```xml
 <cac:Contact>
-  <cbc:Name>Hans Weisser</cbc:Name>
-  <cbc:Telephone>+4992894481</cbc:Telephone>
-  <cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
+  <cbc:Name>Andreas Andersen</cbc:Name>
 </cac:Contact>
 ```
 
-**Structure 11** — 297 instances
-
-```xml
-<cac:Contact>
-  <cbc:Name>Mrs Bouquet</cbc:Name>
-  <cbc:Telephone>0158 1233714</cbc:Telephone>
-  <cbc:Telefax>0158 1233856</cbc:Telefax>
-  <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
-</cac:Contact>
-```
-
-**Structure 12** — 6 instances
-
-```xml
-<cac:Contact>
-  <cbc:Name>Ole Ellerbæk Madsen</cbc:Name>
-</cac:Contact>
-```
-
-**Structure 13** — 20 instances
-
-```xml
-<cac:Contact>
-  <cbc:Telephone>4621230</cbc:Telephone>
-  <cbc:Telefax>4621231</cbc:Telefax>
-  <cbc:ElectronicMail>antonio@salescompany.dk</cbc:ElectronicMail>
-</cac:Contact>
-```
-
-**Structure 14** — 6 instances
-
-```xml
-<cac:Contact>
-  <cbc:Telephone>+1 36222 33847</cbc:Telephone>
-</cac:Contact>
-```
-
-**Structure 15** — 2 instances
-
-```xml
-<cac:DeliveryContact>
-  <cbc:Name>Eva Johnsson</cbc:Name>
-  <cbc:Telephone>1234356</cbc:Telephone>
-  <cbc:Telefax>123455</cbc:Telefax>
-  <cbc:ElectronicMail>eva@johnsson.se</cbc:ElectronicMail>
-</cac:DeliveryContact>
-```
-
-**Structure 16** — 8 instances
-
-```xml
-<cac:LegalContact>
-  <cbc:Name>John Smith</cbc:Name>
-  <cbc:ElectronicMail>john.smith@vendor.net</cbc:ElectronicMail>
-</cac:LegalContact>
-```
-
-**Structure 17** — 1 instance
-
-```xml
-<cac:PointOfSaleContact>
-  <cbc:Name>Jane D.</cbc:Name>
-  <cbc:JobTitle>Store manager</cbc:JobTitle>
-  <cbc:ElectronicMail>shop37@GadgetsR.us</cbc:ElectronicMail>
-</cac:PointOfSaleContact>
-```
-
-**Structure 18** — 1 instance
+**Structure 11** — 1 instance
 
 ```xml
 <cac:SignatoryContact>
@@ -7436,22 +7341,88 @@ _437 instances across 9 elements, with 20 unique structures_
 </cac:SignatoryContact>
 ```
 
-**Structure 19** — 8 instances
+**Structure 12** — 8 instances
 
 ```xml
-<cac:SupportContact>
-  <cbc:Name>Paul McQueen</cbc:Name>
-  <cbc:ElectronicMail>paul.mcqueen@vendor.net</cbc:ElectronicMail>
-</cac:SupportContact>
+<cac:Contact>
+  <cbc:ID>Freight Bookings</cbc:ID>
+  <cbc:Telephone>+1 3362 4788</cbc:Telephone>
+  <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
+</cac:Contact>
 ```
 
-**Structure 20** — 8 instances
+**Structure 13** — 6 instances
+
+```xml
+<cac:Contact>
+  <cbc:Telephone>+1 36222 33847</cbc:Telephone>
+</cac:Contact>
+```
+
+**Structure 14** — 8 instances
+
+```xml
+<cac:Contact>
+  <cbc:ElectronicMail>someName@consignor.cn</cbc:ElectronicMail>
+</cac:Contact>
+```
+
+**Structure 15** — 8 instances
+
+```xml
+<cac:LegalContact>
+  <cbc:Name>Peter Gruen</cbc:Name>
+  <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
+</cac:LegalContact>
+```
+
+**Structure 16** — 6 instances
+
+```xml
+<cac:Contact>
+  <cbc:ID>12345678</cbc:ID>
+  <cbc:Name>Sille Schyberg</cbc:Name>
+</cac:Contact>
+```
+
+**Structure 17** — 8 instances
 
 ```xml
 <cac:TechnicalContact>
-  <cbc:Name>Paul McQueen</cbc:Name>
-  <cbc:ElectronicMail>paul.mcqueen@vendor.net</cbc:ElectronicMail>
+  <cbc:Name>Peter Gruen</cbc:Name>
+  <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
 </cac:TechnicalContact>
+```
+
+**Structure 18** — 2 instances
+
+```xml
+<cac:Contact>
+  <cbc:ID>7778</cbc:ID>
+  <cbc:Name>Ole Hansen</cbc:Name>
+  <cbc:Telephone>4526532147</cbc:Telephone>
+  <cbc:Telefax>4526532146</cbc:Telefax>
+  <cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
+</cac:Contact>
+```
+
+**Structure 19** — 8 instances
+
+```xml
+<cac:CommercialContact>
+  <cbc:Name>Peter Gruen</cbc:Name>
+  <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
+</cac:CommercialContact>
+```
+
+**Structure 20** — 1 instance
+
+```xml
+<cac:PointOfSaleContact>
+  <cbc:Name>Jane D.</cbc:Name>
+  <cbc:JobTitle>Store manager</cbc:JobTitle>
+  <cbc:ElectronicMail>shop37@GadgetsR.us</cbc:ElectronicMail>
+</cac:PointOfSaleContact>
 ```
 
 [↑ Back to contents](#contents)
@@ -7462,133 +7433,76 @@ _437 instances across 9 elements, with 20 unique structures_
 
 _15 instances across 2 elements, with 6 unique structures_
 
-**Structure 1** — 6 instances
+**Structure 1** — 2 instances
 
 ```xml
-<cac:Contract>
+<cac:TransportContract>
+  <cbc:Note>Framework Agreement</cbc:Note>
   <cac:ContractDocumentReference>
-    <cbc:ID>GHJ76849</cbc:ID>
-    <cbc:IssueDate>2002-08-13</cbc:IssueDate>
+    <cbc:ID>TC101</cbc:ID>
+    <cbc:IssueDate>2010-01-01</cbc:IssueDate>
+    <cbc:DocumentTypeCode>315</cbc:DocumentTypeCode>
+    <cbc:DocumentType>Contract</cbc:DocumentType>
+    <cbc:DocumentDescription>Framework Agreement between Consignor and NECOSS</cbc:DocumentDescription>
   </cac:ContractDocumentReference>
-</cac:Contract>
+</cac:TransportContract>
 ```
 
-**Structure 2** — 2 instances
+**Structure 2** — 3 instances
 
 ```xml
-<cac:Contract>
-  <cbc:ID>34322</cbc:ID>
-  <cbc:ContractType>FrameworkAgreementID123</cbc:ContractType>
-</cac:Contract>
+<cac:TransportContract>
+  <cbc:ID>CONS-001</cbc:ID>
+  <cbc:IssueDate>2005-06-24</cbc:IssueDate>
+  <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2005-06-25</cbc:StartDate>
+    <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+    <cbc:EndDate>2005-06-30</cbc:EndDate>
+    <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
+  </cac:ValidityPeriod>
+  <cac:ContractDocumentReference>
+    <cbc:ID>normalizedString</cbc:ID>
+    <cbc:CopyIndicator>false</cbc:CopyIndicator>
+    <cbc:UUID>normalizedString</cbc:UUID>
+    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+    <cbc:DocumentType>String</cbc:DocumentType>
+    <cbc:XPath>String</cbc:XPath>
+    <cbc:XPath>String</cbc:XPath>
+    <cac:Attachment>
+      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+      <cac:ExternalReference>
+        <cbc:URI>normalizedString</cbc:URI>
+        <cbc:DocumentHash>String</cbc:DocumentHash>
+        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+      </cac:ExternalReference>
+    </cac:Attachment>
+  </cac:ContractDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>normalizedString</cbc:ID>
+    <cbc:CopyIndicator>false</cbc:CopyIndicator>
+    <cbc:UUID>normalizedString</cbc:UUID>
+    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+    <cbc:DocumentType>String</cbc:DocumentType>
+    <cbc:XPath>String</cbc:XPath>
+    <cbc:XPath>String</cbc:XPath>
+    <cac:Attachment>
+      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+      <cac:ExternalReference>
+        <cbc:URI>normalizedString</cbc:URI>
+        <cbc:DocumentHash>String</cbc:DocumentHash>
+        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+      </cac:ExternalReference>
+    </cac:Attachment>
+  </cac:ContractDocumentReference>
+</cac:TransportContract>
 ```
 
 **Structure 3** — 1 instance
-
-```xml
-<cac:TransportContract>
-  <cbc:ID>CONS-001</cbc:ID>
-  <cbc:IssueDate>2005-06-24</cbc:IssueDate>
-  <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2005-06-25</cbc:StartDate>
-    <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-    <cbc:EndDate>2005-06-30</cbc:EndDate>
-    <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-  </cac:ValidityPeriod>
-  <cac:ContractDocumentReference>
-    <cbc:ID>normalizedString</cbc:ID>
-    <cbc:CopyIndicator>false</cbc:CopyIndicator>
-    <cbc:UUID>normalizedString</cbc:UUID>
-    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-    <cbc:DocumentType>String</cbc:DocumentType>
-    <cbc:XPath>String</cbc:XPath>
-    <cac:Attachment>
-      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-      <cac:ExternalReference>
-        <cbc:URI>normalizedString</cbc:URI>
-        <cbc:DocumentHash>String</cbc:DocumentHash>
-        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-      </cac:ExternalReference>
-    </cac:Attachment>
-  </cac:ContractDocumentReference>
-  <cac:ContractDocumentReference>
-    <cbc:ID>normalizedString</cbc:ID>
-    <cbc:CopyIndicator>false</cbc:CopyIndicator>
-    <cbc:UUID>normalizedString</cbc:UUID>
-    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-    <cbc:DocumentType>String</cbc:DocumentType>
-    <cbc:XPath>String</cbc:XPath>
-    <cac:Attachment>
-      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-      <cac:ExternalReference>
-        <cbc:URI>normalizedString</cbc:URI>
-        <cbc:DocumentHash>String</cbc:DocumentHash>
-        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-      </cac:ExternalReference>
-    </cac:Attachment>
-  </cac:ContractDocumentReference>
-</cac:TransportContract>
-```
-
-**Structure 4** — 3 instances
-
-```xml
-<cac:TransportContract>
-  <cbc:ID>CONS-001</cbc:ID>
-  <cbc:IssueDate>2005-06-24</cbc:IssueDate>
-  <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2005-06-25</cbc:StartDate>
-    <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-    <cbc:EndDate>2005-06-30</cbc:EndDate>
-    <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-  </cac:ValidityPeriod>
-  <cac:ContractDocumentReference>
-    <cbc:ID>normalizedString</cbc:ID>
-    <cbc:CopyIndicator>false</cbc:CopyIndicator>
-    <cbc:UUID>normalizedString</cbc:UUID>
-    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-    <cbc:DocumentType>String</cbc:DocumentType>
-    <cbc:XPath>String</cbc:XPath>
-    <cbc:XPath>String</cbc:XPath>
-    <cac:Attachment>
-      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-      <cac:ExternalReference>
-        <cbc:URI>normalizedString</cbc:URI>
-        <cbc:DocumentHash>String</cbc:DocumentHash>
-        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-      </cac:ExternalReference>
-    </cac:Attachment>
-  </cac:ContractDocumentReference>
-  <cac:ContractDocumentReference>
-    <cbc:ID>normalizedString</cbc:ID>
-    <cbc:CopyIndicator>false</cbc:CopyIndicator>
-    <cbc:UUID>normalizedString</cbc:UUID>
-    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-    <cbc:DocumentType>String</cbc:DocumentType>
-    <cbc:XPath>String</cbc:XPath>
-    <cbc:XPath>String</cbc:XPath>
-    <cac:Attachment>
-      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-      <cac:ExternalReference>
-        <cbc:URI>normalizedString</cbc:URI>
-        <cbc:DocumentHash>String</cbc:DocumentHash>
-        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-      </cac:ExternalReference>
-    </cac:Attachment>
-  </cac:ContractDocumentReference>
-</cac:TransportContract>
-```
-
-**Structure 5** — 1 instance
 
 ```xml
 <cac:TransportContract>
@@ -7613,19 +7527,76 @@ _15 instances across 2 elements, with 6 unique structures_
 </cac:TransportContract>
 ```
 
-**Structure 6** — 2 instances
+**Structure 4** — 6 instances
+
+```xml
+<cac:Contract>
+  <cac:ContractDocumentReference>
+    <cbc:ID>GHJ76849</cbc:ID>
+    <cbc:IssueDate>2002-08-13</cbc:IssueDate>
+  </cac:ContractDocumentReference>
+</cac:Contract>
+```
+
+**Structure 5** — 1 instance
 
 ```xml
 <cac:TransportContract>
-  <cbc:Note>Framework Agreement</cbc:Note>
+  <cbc:ID>CONS-001</cbc:ID>
+  <cbc:IssueDate>2005-06-24</cbc:IssueDate>
+  <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2005-06-25</cbc:StartDate>
+    <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+    <cbc:EndDate>2005-06-30</cbc:EndDate>
+    <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
+  </cac:ValidityPeriod>
   <cac:ContractDocumentReference>
-    <cbc:ID>TC101</cbc:ID>
-    <cbc:IssueDate>2010-01-01</cbc:IssueDate>
-    <cbc:DocumentTypeCode>315</cbc:DocumentTypeCode>
-    <cbc:DocumentType>Contract</cbc:DocumentType>
-    <cbc:DocumentDescription>Framework Agreement between Consignor and NECOSS</cbc:DocumentDescription>
+    <cbc:ID>normalizedString</cbc:ID>
+    <cbc:CopyIndicator>false</cbc:CopyIndicator>
+    <cbc:UUID>normalizedString</cbc:UUID>
+    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+    <cbc:DocumentType>String</cbc:DocumentType>
+    <cbc:XPath>String</cbc:XPath>
+    <cac:Attachment>
+      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+      <cac:ExternalReference>
+        <cbc:URI>normalizedString</cbc:URI>
+        <cbc:DocumentHash>String</cbc:DocumentHash>
+        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+      </cac:ExternalReference>
+    </cac:Attachment>
+  </cac:ContractDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>normalizedString</cbc:ID>
+    <cbc:CopyIndicator>false</cbc:CopyIndicator>
+    <cbc:UUID>normalizedString</cbc:UUID>
+    <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+    <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+    <cbc:DocumentType>String</cbc:DocumentType>
+    <cbc:XPath>String</cbc:XPath>
+    <cac:Attachment>
+      <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+      <cac:ExternalReference>
+        <cbc:URI>normalizedString</cbc:URI>
+        <cbc:DocumentHash>String</cbc:DocumentHash>
+        <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+        <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+      </cac:ExternalReference>
+    </cac:Attachment>
   </cac:ContractDocumentReference>
 </cac:TransportContract>
+```
+
+**Structure 6** — 2 instances
+
+```xml
+<cac:Contract>
+  <cbc:ID>34322</cbc:ID>
+  <cbc:ContractType>FrameworkAgreementID123</cbc:ContractType>
+</cac:Contract>
 ```
 
 [↑ Back to contents](#contents)
@@ -7637,6 +7608,18 @@ _15 instances across 2 elements, with 6 unique structures_
 _4 instances across 1 element, with 2 unique structures_
 
 **Structure 1** — 2 instances
+
+```xml
+<cac:ContractingParty>
+  <cac:Party>
+    <cac:PartyIdentification>
+      <cbc:ID>Other</cbc:ID>
+    </cac:PartyIdentification>
+  </cac:Party>
+</cac:ContractingParty>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:ContractingParty>
@@ -7655,18 +7638,6 @@ _4 instances across 1 element, with 2 unique structures_
 </cac:ContractingParty>
 ```
 
-**Structure 2** — 2 instances
-
-```xml
-<cac:ContractingParty>
-  <cac:Party>
-    <cac:PartyIdentification>
-      <cbc:ID>Other</cbc:ID>
-    </cac:PartyIdentification>
-  </cac:Party>
-</cac:ContractingParty>
-```
-
 [↑ Back to contents](#contents)
 
 ### `CountryType`
@@ -7675,12 +7646,13 @@ _4 instances across 1 element, with 2 unique structures_
 
 _731 instances across 8 elements, with 11 unique structures_
 
-**Structure 1** — 16 instances
+**Structure 1** — 10 instances
 
 ```xml
-<cac:AgreementCountry>
-  <cbc:IdentificationCode>US</cbc:IdentificationCode>
-</cac:AgreementCountry>
+<cac:DestinationCountry>
+  <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+  <cbc:Name>Great Britain</cbc:Name>
+</cac:DestinationCountry>
 ```
 
 **Structure 2** — 45 instances
@@ -7692,24 +7664,15 @@ _731 instances across 8 elements, with 11 unique structures_
 </cac:Country>
 ```
 
-**Structure 3** — 598 instances
+**Structure 3** — 3 instances
 
 ```xml
-<cac:Country>
-  <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-</cac:Country>
+<cac:TransitCountry>
+  <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+</cac:TransitCountry>
 ```
 
-**Structure 4** — 10 instances
-
-```xml
-<cac:DestinationCountry>
-  <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-  <cbc:Name>Great Britain</cbc:Name>
-</cac:DestinationCountry>
-```
-
-**Structure 5** — 6 instances
+**Structure 4** — 6 instances
 
 ```xml
 <cac:ExportCountry>
@@ -7717,38 +7680,46 @@ _731 instances across 8 elements, with 11 unique structures_
 </cac:ExportCountry>
 ```
 
-**Structure 6** — 12 instances
-
-```xml
-<cac:FinalDestinationCountry>
-  <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-</cac:FinalDestinationCountry>
-```
-
-**Structure 7** — 5 instances
-
-```xml
-<cac:OriginCountry>
-  <cbc:IdentificationCode>MX</cbc:IdentificationCode>
-  <cbc:Name>Mexico</cbc:Name>
-</cac:OriginCountry>
-```
-
-**Structure 8** — 22 instances
-
-```xml
-<cac:OriginCountry>
-  <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-</cac:OriginCountry>
-```
-
-**Structure 9** — 1 instance
+**Structure 5** — 1 instance
 
 ```xml
 <cac:OriginalDepartureCountry>
   <cbc:IdentificationCode>DK</cbc:IdentificationCode>
   <cbc:Name>Denmark</cbc:Name>
 </cac:OriginalDepartureCountry>
+```
+
+**Structure 6** — 22 instances
+
+```xml
+<cac:OriginCountry>
+  <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+</cac:OriginCountry>
+```
+
+**Structure 7** — 5 instances
+
+```xml
+<cac:OriginCountry>
+  <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+  <cbc:Name>Denmark</cbc:Name>
+</cac:OriginCountry>
+```
+
+**Structure 8** — 16 instances
+
+```xml
+<cac:AgreementCountry>
+  <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+</cac:AgreementCountry>
+```
+
+**Structure 9** — 12 instances
+
+```xml
+<cac:FinalDestinationCountry>
+  <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+</cac:FinalDestinationCountry>
 ```
 
 **Structure 10** — 13 instances
@@ -7759,12 +7730,12 @@ _731 instances across 8 elements, with 11 unique structures_
 </cac:OriginalDepartureCountry>
 ```
 
-**Structure 11** — 3 instances
+**Structure 11** — 598 instances
 
 ```xml
-<cac:TransitCountry>
-  <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-</cac:TransitCountry>
+<cac:Country>
+  <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+</cac:Country>
 ```
 
 [↑ Back to contents](#contents)
@@ -7775,7 +7746,44 @@ _731 instances across 8 elements, with 11 unique structures_
 
 _15 instances across 1 element, with 7 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 1 instance
+
+```xml
+<cac:CreditNoteLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:Note>as agreed on phone, the invoice should have been cancelled earlier, apologies</cbc:Note>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:TaxPointDate>2005-06-21</cbc:TaxPointDate>
+  <cac:DiscrepancyResponse>
+    <cbc:ReferenceID>A00095678</cbc:ReferenceID>
+    <cbc:Description>invoice cancelation</cbc:Description>
+  </cac:DiscrepancyResponse>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>A00095678</cbc:ID>
+      <cbc:UUID>849FBBCE-E081-40B4-906C-94C5FF9D1AC3</cbc:UUID>
+      <cbc:IssueDate>2005-06-21</cbc:IssueDate>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+  <cac:TaxTotal>
+    <cbc:TaxAmount>17.50</cbc:TaxAmount>
+    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cac:TaxSubTotal>
+      <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
+      <cbc:TaxAmount>17.50</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>A</cbc:ID>
+        <cac:TaxScheme>
+          <cbc:ID>UK VAT</cbc:ID>
+          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubTotal>
+  </cac:TaxTotal>
+</cac:CreditNoteLine>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:CreditNoteLine>
@@ -7815,52 +7823,6 @@ _15 instances across 1 element, with 7 unique structures_
   <cac:Price>
     <cbc:PriceAmount>0.75</cbc:PriceAmount>
     <cbc:BaseQuantity>1</cbc:BaseQuantity>
-  </cac:Price>
-</cac:CreditNoteLine>
-```
-
-**Structure 2** — 2 instances
-
-```xml
-<cac:CreditNoteLine>
-  <cbc:ID>3</cbc:ID>
-  <cbc:CreditedQuantity>2</cbc:CreditedQuantity>
-  <cbc:LineExtensionAmount>4.96</cbc:LineExtensionAmount>
-  <cac:TaxTotal>
-    <cbc:TaxAmount>0.496</cbc:TaxAmount>
-  </cac:TaxTotal>
-  <cac:Item>
-    <cbc:Name>"Computing for dummies" book</cbc:Name>
-    <cac:SellersItemIdentification>
-      <cbc:ID>JB009</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:StandardItemIdentification>
-      <cbc:ID>1234567890126</cbc:ID>
-    </cac:StandardItemIdentification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>65434566</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:ClassifiedTaxCategory>
-      <cbc:ID>AA</cbc:ID>
-      <cbc:Percent>10</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:ClassifiedTaxCategory>
-  </cac:Item>
-  <cac:Price>
-    <cbc:PriceAmount>2.48</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
-      <cbc:Amount>0.275</cbc:Amount>
-      <cbc:BaseAmount>2.75</cbc:BaseAmount>
-    </cac:AllowanceCharge>
   </cac:Price>
 </cac:CreditNoteLine>
 ```
@@ -8020,6 +7982,52 @@ _15 instances across 1 element, with 7 unique structures_
 
 ```xml
 <cac:CreditNoteLine>
+  <cbc:ID>3</cbc:ID>
+  <cbc:CreditedQuantity>2</cbc:CreditedQuantity>
+  <cbc:LineExtensionAmount>4.96</cbc:LineExtensionAmount>
+  <cac:TaxTotal>
+    <cbc:TaxAmount>0.496</cbc:TaxAmount>
+  </cac:TaxTotal>
+  <cac:Item>
+    <cbc:Name>"Computing for dummies" book</cbc:Name>
+    <cac:SellersItemIdentification>
+      <cbc:ID>JB009</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:StandardItemIdentification>
+      <cbc:ID>1234567890126</cbc:ID>
+    </cac:StandardItemIdentification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>65434566</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:ClassifiedTaxCategory>
+      <cbc:ID>AA</cbc:ID>
+      <cbc:Percent>10</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:ClassifiedTaxCategory>
+  </cac:Item>
+  <cac:Price>
+    <cbc:PriceAmount>2.48</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
+      <cbc:Amount>0.275</cbc:Amount>
+      <cbc:BaseAmount>2.75</cbc:BaseAmount>
+    </cac:AllowanceCharge>
+  </cac:Price>
+</cac:CreditNoteLine>
+```
+
+**Structure 7** — 2 instances
+
+```xml
+<cac:CreditNoteLine>
   <cbc:ID>2</cbc:ID>
   <cbc:Note>Cover is slightly damaged.</cbc:Note>
   <cbc:CreditedQuantity>-1</cbc:CreditedQuantity>
@@ -8056,43 +8064,6 @@ _15 instances across 1 element, with 7 unique structures_
 </cac:CreditNoteLine>
 ```
 
-**Structure 7** — 1 instance
-
-```xml
-<cac:CreditNoteLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Note>as agreed on phone, the invoice should have been cancelled earlier, apologies</cbc:Note>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:TaxPointDate>2005-06-21</cbc:TaxPointDate>
-  <cac:DiscrepancyResponse>
-    <cbc:ReferenceID>A00095678</cbc:ReferenceID>
-    <cbc:Description>invoice cancelation</cbc:Description>
-  </cac:DiscrepancyResponse>
-  <cac:BillingReference>
-    <cac:InvoiceDocumentReference>
-      <cbc:ID>A00095678</cbc:ID>
-      <cbc:UUID>849FBBCE-E081-40B4-906C-94C5FF9D1AC3</cbc:UUID>
-      <cbc:IssueDate>2005-06-21</cbc:IssueDate>
-    </cac:InvoiceDocumentReference>
-  </cac:BillingReference>
-  <cac:TaxTotal>
-    <cbc:TaxAmount>17.50</cbc:TaxAmount>
-    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
-    <cac:TaxSubTotal>
-      <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
-      <cbc:TaxAmount>17.50</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID>A</cbc:ID>
-        <cac:TaxScheme>
-          <cbc:ID>UK VAT</cbc:ID>
-          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubTotal>
-  </cac:TaxTotal>
-</cac:CreditNoteLine>
-```
-
 [↑ Back to contents](#contents)
 
 ### `CustomerPartyType`
@@ -8101,7 +8072,50 @@ _15 instances across 1 element, with 7 unique structures_
 
 _142 instances across 5 elements, with 14 unique structures_
 
-**Structure 1** — 33 instances
+**Structure 1** — 10 instances
+
+```xml
+<cac:DeliveryCustomerParty>
+  <cbc:CustomerAssignedAccountID>XFB01</cbc:CustomerAssignedAccountID>
+  <cbc:SupplierAssignedAccountID>GT00978567</cbc:SupplierAssignedAccountID>
+  <cac:Party>
+    <cac:PartyName>
+      <cbc:Name>IYT Corporation</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Bridgtow District Council</cbc:RegistrationName>
+      <cbc:CompanyID>12356478</cbc:CompanyID>
+      <cbc:ExemptionReason>Local Authority</cbc:ExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>UK VAT</cbc:ID>
+        <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:Contact>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>0127 2653214</cbc:Telephone>
+      <cbc:Telefax>0127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:Party>
+</cac:DeliveryCustomerParty>
+```
+
+**Structure 2** — 33 instances
 
 ```xml
 <cac:AccountingCustomerParty>
@@ -8144,7 +8158,7 @@ _142 instances across 5 elements, with 14 unique structures_
 </cac:AccountingCustomerParty>
 ```
 
-**Structure 2** — 7 instances
+**Structure 3** — 7 instances
 
 ```xml
 <cac:AccountingCustomerParty>
@@ -8194,15 +8208,15 @@ _142 instances across 5 elements, with 14 unique structures_
     </cac:Contact>
     <cac:Person>
       <cbc:FirstName>John</cbc:FirstName>
-      <cbc:FamilyName>X</cbc:FamilyName>
-      <cbc:MiddleName>Doe</cbc:MiddleName>
+      <cbc:FamilyName>Doe</cbc:FamilyName>
+      <cbc:MiddleName>X</cbc:MiddleName>
       <cbc:JobTitle>Purchasing manager</cbc:JobTitle>
     </cac:Person>
   </cac:Party>
 </cac:AccountingCustomerParty>
 ```
 
-**Structure 3** — 1 instance
+**Structure 4** — 1 instance
 
 ```xml
 <cac:AccountingCustomerParty>
@@ -8223,50 +8237,30 @@ _142 instances across 5 elements, with 14 unique structures_
 </cac:AccountingCustomerParty>
 ```
 
-**Structure 4** — 1 instance
+**Structure 5** — 2 instances
 
 ```xml
-<cac:AccountingCustomerParty>
+<cac:OriginatorCustomerParty>
   <cac:Party>
+    <cac:PartyIdentification>
+      <cbc:ID>0987678321123</cbc:ID>
+    </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>North American Veeblefetzer</cbc:Name>
+      <cbc:Name>Moderna Produkter AB</cbc:Name>
     </cac:PartyName>
-  </cac:Party>
-</cac:AccountingCustomerParty>
-```
-
-**Structure 5** — 3 instances
-
-```xml
-<cac:BuyerCustomerParty>
-  <cbc:CustomerAssignedAccountID>XFB01</cbc:CustomerAssignedAccountID>
-  <cbc:SupplierAssignedAccountID>GT00978567</cbc:SupplierAssignedAccountID>
-  <cac:Party>
-    <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      <cbc:Telephone>346788</cbc:Telephone>
+      <cbc:Telefax>8567443</cbc:Telefax>
+      <cbc:ElectronicMail>sven@moderna.se</cbc:ElectronicMail>
     </cac:Contact>
+    <cac:Person>
+      <cbc:FirstName>Sven</cbc:FirstName>
+      <cbc:FamilyName>Pereson</cbc:FamilyName>
+      <cbc:MiddleName>N</cbc:MiddleName>
+      <cbc:JobTitle>Stuffuser</cbc:JobTitle>
+    </cac:Person>
   </cac:Party>
-</cac:BuyerCustomerParty>
+</cac:OriginatorCustomerParty>
 ```
 
 **Structure 6** — 11 instances
@@ -8386,148 +8380,47 @@ _142 instances across 5 elements, with 14 unique structures_
 </cac:BuyerCustomerParty>
 ```
 
-**Structure 8** — 9 instances
+**Structure 8** — 1 instance
 
 ```xml
-<cac:BuyerCustomerParty>
+<cac:AccountingCustomerParty>
   <cac:Party>
-    <cbc:EndpointID>7300072311115</cbc:EndpointID>
-    <cac:PartyIdentification>
-      <cbc:ID>7300070011115</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyIdentification>
-      <cbc:ID>PartyID123</cbc:ID>
-    </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Johnssons byggvaror</cbc:Name>
+      <cbc:Name>North American Veeblefetzer</cbc:Name>
     </cac:PartyName>
   </cac:Party>
-</cac:BuyerCustomerParty>
+</cac:AccountingCustomerParty>
 ```
 
-**Structure 9** — 23 instances
+**Structure 9** — 5 instances
 
 ```xml
-<cac:BuyerCustomerParty>
-  <cac:Party>
-    <cac:PartyIdentification>
-      <cbc:ID>2203148000007</cbc:ID>
-    </cac:PartyIdentification>
-  </cac:Party>
-</cac:BuyerCustomerParty>
-```
-
-**Structure 10** — 10 instances
-
-```xml
-<cac:DeliveryCustomerParty>
-  <cbc:CustomerAssignedAccountID>XFB01</cbc:CustomerAssignedAccountID>
-  <cbc:SupplierAssignedAccountID>GT00978567</cbc:SupplierAssignedAccountID>
+<cac:RetailerCustomerParty>
   <cac:Party>
     <cac:PartyName>
-      <cbc:Name>IYT Corporation</cbc:Name>
+      <cbc:Name>Beta Shop</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
+      <cbc:StreetName>Via Emilia</cbc:StreetName>
+      <cbc:BuildingNumber>1</cbc:BuildingNumber>
+      <cbc:CityName>Modena</cbc:CityName>
+      <cbc:PostalZone>41121</cbc:PostalZone>
       <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        <cbc:Name>Italy</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Bridgtow District Council</cbc:RegistrationName>
-      <cbc:CompanyID>12356478</cbc:CompanyID>
-      <cbc:ExemptionReason>Local Authority</cbc:ExemptionReason>
-      <cac:TaxScheme>
-        <cbc:ID>UK VAT</cbc:ID>
-        <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
     <cac:Contact>
-      <cbc:Name>Mr Fred Churchill</cbc:Name>
-      <cbc:Telephone>0127 2653214</cbc:Telephone>
-      <cbc:Telefax>0127 2653215</cbc:Telefax>
-      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      <cbc:Name>Mr Delta</cbc:Name>
+      <cbc:Telephone>0039 059 33000000</cbc:Telephone>
+      <cbc:Telefax>0039 059 33000055</cbc:Telefax>
+      <cbc:ElectronicMail>delta@betashop.it</cbc:ElectronicMail>
     </cac:Contact>
   </cac:Party>
-</cac:DeliveryCustomerParty>
+</cac:RetailerCustomerParty>
 ```
 
-**Structure 11** — 2 instances
-
-```xml
-<cac:OriginatorCustomerParty>
-  <cac:Party>
-    <cbc:EndpointID>5798000416604</cbc:EndpointID>
-    <cac:PartyIdentification>
-      <cbc:ID>5798000416604</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Gentofte Kommune</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
-      <cbc:StreetName>Bernstorffsvej</cbc:StreetName>
-      <cbc:BuildingNumber>161</cbc:BuildingNumber>
-      <cbc:CityName>Charlottenlund</cbc:CityName>
-      <cbc:PostalZone>2920</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:CompanyID>DK12345678</cbc:CompanyID>
-      <cac:TaxScheme>
-        <cbc:ID>63</cbc:ID>
-        <cbc:Name>Moms</cbc:Name>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Gentofte Kommune</cbc:RegistrationName>
-      <cbc:CompanyID>DK12345678</cbc:CompanyID>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:ID>12345678</cbc:ID>
-      <cbc:Name>Sille Schyberg</cbc:Name>
-    </cac:Contact>
-  </cac:Party>
-</cac:OriginatorCustomerParty>
-```
-
-**Structure 12** — 2 instances
-
-```xml
-<cac:OriginatorCustomerParty>
-  <cac:Party>
-    <cac:PartyIdentification>
-      <cbc:ID>0987678321123</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Moderna Produkter AB</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:Telephone>346788</cbc:Telephone>
-      <cbc:Telefax>8567443</cbc:Telefax>
-      <cbc:ElectronicMail>sven@moderna.se</cbc:ElectronicMail>
-    </cac:Contact>
-    <cac:Person>
-      <cbc:FirstName>Sven</cbc:FirstName>
-      <cbc:FamilyName>Pereson</cbc:FamilyName>
-      <cbc:MiddleName>N</cbc:MiddleName>
-      <cbc:JobTitle>Stuffuser</cbc:JobTitle>
-    </cac:Person>
-  </cac:Party>
-</cac:OriginatorCustomerParty>
-```
-
-**Structure 13** — 33 instances
+**Structure 10** — 33 instances
 
 ```xml
 <cac:OriginatorCustomerParty>
@@ -8568,32 +8461,110 @@ _142 instances across 5 elements, with 14 unique structures_
 </cac:OriginatorCustomerParty>
 ```
 
-**Structure 14** — 5 instances
+**Structure 11** — 3 instances
 
 ```xml
-<cac:RetailerCustomerParty>
+<cac:BuyerCustomerParty>
+  <cbc:CustomerAssignedAccountID>XFB01</cbc:CustomerAssignedAccountID>
+  <cbc:SupplierAssignedAccountID>GT00978567</cbc:SupplierAssignedAccountID>
   <cac:Party>
     <cac:PartyName>
-      <cbc:Name>Beta Shop</cbc:Name>
+      <cbc:Name>IYT Corporation</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:StreetName>Via Emilia</cbc:StreetName>
-      <cbc:BuildingNumber>1</cbc:BuildingNumber>
-      <cbc:CityName>Modena</cbc:CityName>
-      <cbc:PostalZone>41121</cbc:PostalZone>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
       <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        <cbc:Name>Italy</cbc:Name>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Mr Delta</cbc:Name>
-      <cbc:Telephone>0039 059 33000000</cbc:Telephone>
-      <cbc:Telefax>0039 059 33000055</cbc:Telefax>
-      <cbc:ElectronicMail>delta@betashop.it</cbc:ElectronicMail>
+      <cbc:Name>Mr Fred Churchill</cbc:Name>
+      <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+      <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+      <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
     </cac:Contact>
   </cac:Party>
-</cac:RetailerCustomerParty>
+</cac:BuyerCustomerParty>
+```
+
+**Structure 12** — 23 instances
+
+```xml
+<cac:BuyerCustomerParty>
+  <cac:Party>
+    <cac:PartyIdentification>
+      <cbc:ID>0012345000359</cbc:ID>
+    </cac:PartyIdentification>
+  </cac:Party>
+</cac:BuyerCustomerParty>
+```
+
+**Structure 13** — 2 instances
+
+```xml
+<cac:OriginatorCustomerParty>
+  <cac:Party>
+    <cbc:EndpointID>5798000416604</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID>5798000416604</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Gentofte Kommune</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
+      <cbc:StreetName>Bernstorffsvej</cbc:StreetName>
+      <cbc:BuildingNumber>161</cbc:BuildingNumber>
+      <cbc:CityName>Charlottenlund</cbc:CityName>
+      <cbc:PostalZone>2920</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>DK12345678</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>63</cbc:ID>
+        <cbc:Name>Moms</cbc:Name>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Gentofte Kommune</cbc:RegistrationName>
+      <cbc:CompanyID>DK12345678</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:ID>12345678</cbc:ID>
+      <cbc:Name>Sille Schyberg</cbc:Name>
+    </cac:Contact>
+  </cac:Party>
+</cac:OriginatorCustomerParty>
+```
+
+**Structure 14** — 9 instances
+
+```xml
+<cac:BuyerCustomerParty>
+  <cac:Party>
+    <cbc:EndpointID>7300072311115</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID>7300070011115</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyIdentification>
+      <cbc:ID>PartyID123</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Johnssons byggvaror</cbc:Name>
+    </cac:PartyName>
+  </cac:Party>
+</cac:BuyerCustomerParty>
 ```
 
 [↑ Back to contents](#contents)
@@ -8605,6 +8576,14 @@ _142 instances across 5 elements, with 14 unique structures_
 _8 instances across 2 elements, with 3 unique structures_
 
 **Structure 1** — 2 instances
+
+```xml
+<cac:CustomsDeclaration>
+  <cbc:ID>10158209175014500</cbc:ID>
+</cac:CustomsDeclaration>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:CustomsDeclaration>
@@ -8824,19 +8803,11 @@ _8 instances across 2 elements, with 3 unique structures_
 </cac:CustomsDeclaration>
 ```
 
-**Structure 2** — 2 instances
-
-```xml
-<cac:CustomsDeclaration>
-  <cbc:ID>10158209175014500</cbc:ID>
-</cac:CustomsDeclaration>
-```
-
 **Structure 3** — 4 instances
 
 ```xml
 <cac:PreviousCustomsDeclaration>
-  <cbc:ID>FIRMA000000010</cbc:ID>
+  <cbc:ID>HUISI000000002</cbc:ID>
 </cac:PreviousCustomsDeclaration>
 ```
 
@@ -8892,23 +8863,7 @@ _7 instances across 1 element, with 6 unique structures_
 </cac:DebitNoteLine>
 ```
 
-**Structure 2** — 2 instances
-
-```xml
-<cac:DebitNoteLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:DebitedQuantity>1</cbc:DebitedQuantity>
-  <cbc:LineExtensionAmount>120.00</cbc:LineExtensionAmount>
-  <cac:Item>
-    <cbc:Name>High-grade Widget</cbc:Name>
-  </cac:Item>
-  <cac:Price>
-    <cbc:PriceAmount>120.00</cbc:PriceAmount>
-  </cac:Price>
-</cac:DebitNoteLine>
-```
-
-**Structure 3** — 1 instance
+**Structure 2** — 1 instance
 
 ```xml
 <cac:DebitNoteLine>
@@ -8954,46 +8909,47 @@ _7 instances across 1 element, with 6 unique structures_
 </cac:DebitNoteLine>
 ```
 
-**Structure 4** — 1 instance
+**Structure 3** — 1 instance
 
 ```xml
 <cac:DebitNoteLine>
-  <cbc:ID>4</cbc:ID>
+  <cbc:ID>2</cbc:ID>
+  <cbc:Note>Cover is slightly damaged.</cbc:Note>
   <cbc:DebitedQuantity>-1</cbc:DebitedQuantity>
-  <cbc:LineExtensionAmount>-25</cbc:LineExtensionAmount>
+  <cbc:LineExtensionAmount>-3.96</cbc:LineExtensionAmount>
   <cac:TaxTotal>
-    <cbc:TaxAmount>0</cbc:TaxAmount>
+    <cbc:TaxAmount>-0.396</cbc:TaxAmount>
   </cac:TaxTotal>
   <cac:Item>
-    <cbc:Name>Returned IBM 5150 desktop</cbc:Name>
+    <cbc:Name>Returned "Advanced computing" book</cbc:Name>
     <cac:SellersItemIdentification>
-      <cbc:ID>JB010</cbc:ID>
+      <cbc:ID>JB008</cbc:ID>
     </cac:SellersItemIdentification>
     <cac:StandardItemIdentification>
-      <cbc:ID>1234567890127</cbc:ID>
+      <cbc:ID>1234567890125</cbc:ID>
     </cac:StandardItemIdentification>
     <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>12344322</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
     <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>65434565</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode>65434567</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
     <cac:ClassifiedTaxCategory>
-      <cbc:ID>E</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
+      <cbc:ID>AA</cbc:ID>
+      <cbc:Percent>10</cbc:Percent>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
       </cac:TaxScheme>
     </cac:ClassifiedTaxCategory>
   </cac:Item>
   <cac:Price>
-    <cbc:PriceAmount>25</cbc:PriceAmount>
+    <cbc:PriceAmount>3.96</cbc:PriceAmount>
     <cbc:BaseQuantity>1</cbc:BaseQuantity>
   </cac:Price>
 </cac:DebitNoteLine>
 ```
 
-**Structure 5** — 1 instance
+**Structure 4** — 1 instance
 
 ```xml
 <cac:DebitNoteLine>
@@ -9047,42 +9003,57 @@ _7 instances across 1 element, with 6 unique structures_
 </cac:DebitNoteLine>
 ```
 
-**Structure 6** — 1 instance
+**Structure 5** — 1 instance
 
 ```xml
 <cac:DebitNoteLine>
-  <cbc:ID>2</cbc:ID>
-  <cbc:Note>Cover is slightly damaged.</cbc:Note>
+  <cbc:ID>4</cbc:ID>
   <cbc:DebitedQuantity>-1</cbc:DebitedQuantity>
-  <cbc:LineExtensionAmount>-3.96</cbc:LineExtensionAmount>
+  <cbc:LineExtensionAmount>-25</cbc:LineExtensionAmount>
   <cac:TaxTotal>
-    <cbc:TaxAmount>-0.396</cbc:TaxAmount>
+    <cbc:TaxAmount>0</cbc:TaxAmount>
   </cac:TaxTotal>
   <cac:Item>
-    <cbc:Name>Returned "Advanced computing" book</cbc:Name>
+    <cbc:Name>Returned IBM 5150 desktop</cbc:Name>
     <cac:SellersItemIdentification>
-      <cbc:ID>JB008</cbc:ID>
+      <cbc:ID>JB010</cbc:ID>
     </cac:SellersItemIdentification>
     <cac:StandardItemIdentification>
-      <cbc:ID>1234567890125</cbc:ID>
+      <cbc:ID>1234567890127</cbc:ID>
     </cac:StandardItemIdentification>
     <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode>12344322</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
     <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>65434567</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode>65434565</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
     <cac:ClassifiedTaxCategory>
-      <cbc:ID>AA</cbc:ID>
-      <cbc:Percent>10</cbc:Percent>
+      <cbc:ID>E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
       </cac:TaxScheme>
     </cac:ClassifiedTaxCategory>
   </cac:Item>
   <cac:Price>
-    <cbc:PriceAmount>3.96</cbc:PriceAmount>
+    <cbc:PriceAmount>25</cbc:PriceAmount>
     <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  </cac:Price>
+</cac:DebitNoteLine>
+```
+
+**Structure 6** — 2 instances
+
+```xml
+<cac:DebitNoteLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:DebitedQuantity>1</cbc:DebitedQuantity>
+  <cbc:LineExtensionAmount>120.00</cbc:LineExtensionAmount>
+  <cac:Item>
+    <cbc:Name>High-grade Widget</cbc:Name>
+  </cac:Item>
+  <cac:Price>
+    <cbc:PriceAmount>120.00</cbc:PriceAmount>
   </cac:Price>
 </cac:DebitNoteLine>
 ```
@@ -9101,9 +9072,10 @@ _12 instances across 1 element, with 2 unique structures_
 <cac:DigitalDeliveryChannel>
   <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
   <cbc:ParticipantID>1234567987654</cbc:ParticipantID>
+  <cbc:TestIndicator>true</cbc:TestIndicator>
   <cac:DigitalMessageDelivery>
     <cbc:ProtocolID>AS2</cbc:ProtocolID>
-    <cbc:EndpointURI>http://as2.vendor.biz</cbc:EndpointURI>
+    <cbc:EndpointURI>http://as2.buyer.biz</cbc:EndpointURI>
   </cac:DigitalMessageDelivery>
 </cac:DigitalDeliveryChannel>
 ```
@@ -9114,10 +9086,9 @@ _12 instances across 1 element, with 2 unique structures_
 <cac:DigitalDeliveryChannel>
   <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
   <cbc:ParticipantID>1234567987654</cbc:ParticipantID>
-  <cbc:TestIndicator>true</cbc:TestIndicator>
   <cac:DigitalMessageDelivery>
     <cbc:ProtocolID>AS2</cbc:ProtocolID>
-    <cbc:EndpointURI>http://as2.buyer.biz</cbc:EndpointURI>
+    <cbc:EndpointURI>http://as2.vendor.biz</cbc:EndpointURI>
   </cac:DigitalMessageDelivery>
 </cac:DigitalDeliveryChannel>
 ```
@@ -9143,30 +9114,15 @@ _38 instances across 1 element, with 5 unique structures_
 </cac:DeliveryTerms>
 ```
 
-**Structure 2** — 11 instances
+**Structure 2** — 17 instances
 
 ```xml
 <cac:DeliveryTerms>
-  <cbc:ID>FOB Destination</cbc:ID>
-  <cac:DeliveryLocation>
-    <cbc:ID>GBBRS</cbc:ID>
-    <cbc:Description>Bristol</cbc:Description>
-  </cac:DeliveryLocation>
+  <cbc:SpecialTerms>1% deduction for late delivery as per contract</cbc:SpecialTerms>
 </cac:DeliveryTerms>
 ```
 
-**Structure 3** — 5 instances
-
-```xml
-<cac:DeliveryTerms>
-  <cbc:ID>FCA</cbc:ID>
-  <cac:DeliveryLocation>
-    <cbc:Name>9000</cbc:Name>
-  </cac:DeliveryLocation>
-</cac:DeliveryTerms>
-```
-
-**Structure 4** — 2 instances
+**Structure 3** — 2 instances
 
 ```xml
 <cac:DeliveryTerms>
@@ -9178,11 +9134,26 @@ _38 instances across 1 element, with 5 unique structures_
 </cac:DeliveryTerms>
 ```
 
-**Structure 5** — 17 instances
+**Structure 4** — 11 instances
 
 ```xml
 <cac:DeliveryTerms>
-  <cbc:SpecialTerms>1% deduction for late delivery as per contract</cbc:SpecialTerms>
+  <cbc:ID>FOB Destination</cbc:ID>
+  <cac:DeliveryLocation>
+    <cbc:ID>GBFXT</cbc:ID>
+    <cbc:Description>Felixstowe</cbc:Description>
+  </cac:DeliveryLocation>
+</cac:DeliveryTerms>
+```
+
+**Structure 5** — 5 instances
+
+```xml
+<cac:DeliveryTerms>
+  <cbc:ID>CIP</cbc:ID>
+  <cac:DeliveryLocation>
+    <cbc:Name>Balboa Port</cbc:Name>
+  </cac:DeliveryLocation>
 </cac:DeliveryTerms>
 ```
 
@@ -9194,26 +9165,24 @@ _38 instances across 1 element, with 5 unique structures_
 
 _67 instances across 1 element, with 11 unique structures_
 
-**Structure 1** — 18 instances
+**Structure 1** — 2 instances
 
 ```xml
 <cac:Delivery>
-  <cbc:ActualDeliveryDate>2005-06-20</cbc:ActualDeliveryDate>
-  <cbc:ActualDeliveryTime>11:30:00.0Z</cbc:ActualDeliveryTime>
   <cac:DeliveryAddress>
-    <cbc:StreetName>Avon Way</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Bridgtow</cbc:CityName>
-    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>3rd Floor, Room 5</cbc:Line>
-    </cac:AddressLine>
     <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      <cbc:IdentificationCode>CH</cbc:IdentificationCode>
     </cac:Country>
   </cac:DeliveryAddress>
+  <cac:Despatch>
+    <cbc:ActualDespatchDate>2013-09-15</cbc:ActualDespatchDate>
+    <cbc:ActualDespatchTime>16:00:00Z</cbc:ActualDespatchTime>
+    <cac:DespatchAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>RU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:DespatchAddress>
+  </cac:Despatch>
 </cac:Delivery>
 ```
 
@@ -9243,153 +9212,6 @@ _67 instances across 1 element, with 11 unique structures_
 
 ```xml
 <cac:Delivery>
-  <cac:DeliveryAddress>
-    <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
-    <cbc:StreetName>Bernstorffsvej</cbc:StreetName>
-    <cbc:BuildingNumber>161</cbc:BuildingNumber>
-    <cbc:CityName>Charlottenlund</cbc:CityName>
-    <cbc:PostalZone>2920</cbc:PostalZone>
-    <cac:AddressLine>
-      <cbc:Line>IT-afdelingen</cbc:Line>
-    </cac:AddressLine>
-    <cac:AddressLine>
-      <cbc:Line>1. sal</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:DeliveryAddress>
-  <cac:RequestedDeliveryPeriod>
-    <cbc:StartDate>2008-05-06</cbc:StartDate>
-    <cbc:StartTime>09:30:47.0Z</cbc:StartTime>
-    <cbc:EndDate>2008-05-10</cbc:EndDate>
-    <cbc:EndTime>09:30:47.0Z</cbc:EndTime>
-  </cac:RequestedDeliveryPeriod>
-</cac:Delivery>
-```
-
-**Structure 4** — 2 instances
-
-```xml
-<cac:Delivery>
-  <cac:DeliveryAddress>
-    <cac:Country>
-      <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:DeliveryAddress>
-  <cac:Despatch>
-    <cbc:ActualDespatchDate>2013-09-15</cbc:ActualDespatchDate>
-    <cbc:ActualDespatchTime>16:00:00</cbc:ActualDespatchTime>
-    <cac:DespatchAddress>
-      <cac:Country>
-        <cbc:IdentificationCode>RU</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:DespatchAddress>
-  </cac:Despatch>
-</cac:Delivery>
-```
-
-**Structure 5** — 23 instances
-
-```xml
-<cac:Delivery>
-  <cac:DeliveryAddress>
-    <cbc:StreetName>Avon Way</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Bridgtow</cbc:CityName>
-    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>3rd Floor, Room 5</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:DeliveryAddress>
-  <cac:RequestedDeliveryPeriod>
-    <cbc:StartDate>2005-06-20</cbc:StartDate>
-    <cbc:StartTime>10:30:47.0Z</cbc:StartTime>
-    <cbc:EndDate>2005-06-21</cbc:EndDate>
-    <cbc:EndTime>10:30:47.0Z</cbc:EndTime>
-  </cac:RequestedDeliveryPeriod>
-</cac:Delivery>
-```
-
-**Structure 6** — 1 instance
-
-```xml
-<cac:Delivery>
-  <cac:DeliveryAddress>
-    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-    <cbc:BuildingNumber>403</cbc:BuildingNumber>
-    <cbc:CityName>Bologna</cbc:CityName>
-    <cbc:PostalZone>40129</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      <cbc:Name>Italy</cbc:Name>
-    </cac:Country>
-  </cac:DeliveryAddress>
-  <cac:Despatch>
-    <cac:DespatchAddress>
-      <cbc:StreetName>Via Emilia</cbc:StreetName>
-      <cbc:BuildingNumber>1</cbc:BuildingNumber>
-      <cbc:CityName>Modena</cbc:CityName>
-      <cbc:PostalZone>41121</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        <cbc:Name>Italy</cbc:Name>
-      </cac:Country>
-    </cac:DespatchAddress>
-  </cac:Despatch>
-</cac:Delivery>
-```
-
-**Structure 7** — 2 instances
-
-```xml
-<cac:Delivery>
-  <cac:DeliveryLocation>
-    <cac:Address>
-      <cbc:ID>1234567890123</cbc:ID>
-      <cbc:Postbox>123</cbc:Postbox>
-      <cbc:StreetName>Rådhusgatan</cbc:StreetName>
-      <cbc:AdditionalStreetName>2nd floor</cbc:AdditionalStreetName>
-      <cbc:BuildingNumber>5</cbc:BuildingNumber>
-      <cbc:Department>Purchasing department</cbc:Department>
-      <cbc:CityName>Stockholm</cbc:CityName>
-      <cbc:PostalZone>11000</cbc:PostalZone>
-      <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
-      <cac:Country>
-        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:DeliveryLocation>
-  <cac:RequestedDeliveryPeriod>
-    <cbc:StartDate>2010-02-10</cbc:StartDate>
-    <cbc:EndDate>2010-02-25</cbc:EndDate>
-  </cac:RequestedDeliveryPeriod>
-  <cac:DeliveryParty>
-    <cac:PartyIdentification>
-      <cbc:ID>67654328394567</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Swedish trucking</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:Name>Per</cbc:Name>
-      <cbc:Telephone>987098709</cbc:Telephone>
-      <cbc:Telefax>34673435</cbc:Telefax>
-      <cbc:ElectronicMail>bill@svetruck.se</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:DeliveryParty>
-</cac:Delivery>
-```
-
-**Structure 8** — 2 instances
-
-```xml
-<cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID>FOB</cbc:ID>
     <cac:DeliveryLocation>
@@ -9399,7 +9221,7 @@ _67 instances across 1 element, with 11 unique structures_
 </cac:Delivery>
 ```
 
-**Structure 9** — 5 instances
+**Structure 4** — 5 instances
 
 ```xml
 <cac:Delivery>
@@ -9416,7 +9238,30 @@ _67 instances across 1 element, with 11 unique structures_
 </cac:Delivery>
 ```
 
-**Structure 10** — 4 instances
+**Structure 5** — 18 instances
+
+```xml
+<cac:Delivery>
+  <cbc:ActualDeliveryDate>2005-06-20</cbc:ActualDeliveryDate>
+  <cbc:ActualDeliveryTime>11:30:00.0Z</cbc:ActualDeliveryTime>
+  <cac:DeliveryAddress>
+    <cbc:StreetName>Avon Way</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Bridgtow</cbc:CityName>
+    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>3rd Floor, Room 5</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:DeliveryAddress>
+</cac:Delivery>
+```
+
+**Structure 6** — 4 instances
 
 ```xml
 <cac:Delivery>
@@ -9489,7 +9334,34 @@ _67 instances across 1 element, with 11 unique structures_
 </cac:Delivery>
 ```
 
-**Structure 11** — 6 instances
+**Structure 7** — 23 instances
+
+```xml
+<cac:Delivery>
+  <cac:DeliveryAddress>
+    <cbc:StreetName>Avon Way</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Bridgtow</cbc:CityName>
+    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>3rd Floor, Room 5</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:DeliveryAddress>
+  <cac:RequestedDeliveryPeriod>
+    <cbc:StartDate>2005-06-20</cbc:StartDate>
+    <cbc:StartTime>10:30:47.0Z</cbc:StartTime>
+    <cbc:EndDate>2005-06-21</cbc:EndDate>
+    <cbc:EndTime>10:30:47.0Z</cbc:EndTime>
+  </cac:RequestedDeliveryPeriod>
+</cac:Delivery>
+```
+
+**Structure 8** — 6 instances
 
 ```xml
 <cac:Delivery>
@@ -9497,6 +9369,105 @@ _67 instances across 1 element, with 11 unique structures_
     <cbc:StartDate>2010-02-10</cbc:StartDate>
     <cbc:EndDate>2010-02-25</cbc:EndDate>
   </cac:RequestedDeliveryPeriod>
+</cac:Delivery>
+```
+
+**Structure 9** — 2 instances
+
+```xml
+<cac:Delivery>
+  <cac:DeliveryAddress>
+    <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
+    <cbc:StreetName>Bernstorffsvej</cbc:StreetName>
+    <cbc:BuildingNumber>161</cbc:BuildingNumber>
+    <cbc:CityName>Charlottenlund</cbc:CityName>
+    <cbc:PostalZone>2920</cbc:PostalZone>
+    <cac:AddressLine>
+      <cbc:Line>1. sal</cbc:Line>
+    </cac:AddressLine>
+    <cac:AddressLine>
+      <cbc:Line>IT-afdelingen</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:DeliveryAddress>
+  <cac:RequestedDeliveryPeriod>
+    <cbc:StartDate>2008-05-06</cbc:StartDate>
+    <cbc:StartTime>09:30:47.0Z</cbc:StartTime>
+    <cbc:EndDate>2008-05-10</cbc:EndDate>
+    <cbc:EndTime>09:30:47.0Z</cbc:EndTime>
+  </cac:RequestedDeliveryPeriod>
+</cac:Delivery>
+```
+
+**Structure 10** — 2 instances
+
+```xml
+<cac:Delivery>
+  <cac:DeliveryLocation>
+    <cac:Address>
+      <cbc:ID>1234567890123</cbc:ID>
+      <cbc:Postbox>123</cbc:Postbox>
+      <cbc:StreetName>Rådhusgatan</cbc:StreetName>
+      <cbc:AdditionalStreetName>2nd floor</cbc:AdditionalStreetName>
+      <cbc:BuildingNumber>5</cbc:BuildingNumber>
+      <cbc:Department>Purchasing department</cbc:Department>
+      <cbc:CityName>Stockholm</cbc:CityName>
+      <cbc:PostalZone>11000</cbc:PostalZone>
+      <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:DeliveryLocation>
+  <cac:RequestedDeliveryPeriod>
+    <cbc:StartDate>2010-02-10</cbc:StartDate>
+    <cbc:EndDate>2010-02-25</cbc:EndDate>
+  </cac:RequestedDeliveryPeriod>
+  <cac:DeliveryParty>
+    <cac:PartyIdentification>
+      <cbc:ID>67654328394567</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Swedish trucking</cbc:Name>
+    </cac:PartyName>
+    <cac:Contact>
+      <cbc:Name>Per</cbc:Name>
+      <cbc:Telephone>987098709</cbc:Telephone>
+      <cbc:Telefax>34673435</cbc:Telefax>
+      <cbc:ElectronicMail>bill@svetruck.se</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:DeliveryParty>
+</cac:Delivery>
+```
+
+**Structure 11** — 1 instance
+
+```xml
+<cac:Delivery>
+  <cac:DeliveryAddress>
+    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+    <cbc:BuildingNumber>403</cbc:BuildingNumber>
+    <cbc:CityName>Bologna</cbc:CityName>
+    <cbc:PostalZone>40129</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      <cbc:Name>Italy</cbc:Name>
+    </cac:Country>
+  </cac:DeliveryAddress>
+  <cac:Despatch>
+    <cac:DespatchAddress>
+      <cbc:StreetName>Via Emilia</cbc:StreetName>
+      <cbc:BuildingNumber>1</cbc:BuildingNumber>
+      <cbc:CityName>Modena</cbc:CityName>
+      <cbc:PostalZone>41121</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        <cbc:Name>Italy</cbc:Name>
+      </cac:Country>
+    </cac:DespatchAddress>
+  </cac:Despatch>
 </cac:Delivery>
 ```
 
@@ -9508,7 +9479,44 @@ _67 instances across 1 element, with 11 unique structures_
 
 _5 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 4 instances
+**Structure 1** — 1 instance
+
+```xml
+<cac:DespatchLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
+  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+  <cbc:DeliveredQuantity>90</cbc:DeliveredQuantity>
+  <cbc:BackorderQuantity>10</cbc:BackorderQuantity>
+  <cbc:BackorderReason>lack of stock as explained on telephone today</cbc:BackorderReason>
+  <cac:OrderLineReference>
+    <cbc:LineID>1</cbc:LineID>
+    <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
+    <cac:OrderReference>
+      <cbc:ID>AEG012345</cbc:ID>
+      <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
+      <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
+      <cbc:IssueDate>2005-06-20</cbc:IssueDate>
+    </cac:OrderReference>
+  </cac:OrderLineReference>
+  <cac:Item>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:Name>beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:LotIdentification>
+      <cbc:LotNumberID>546378239</cbc:LotNumberID>
+      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
+    </cac:LotIdentification>
+  </cac:Item>
+</cac:DespatchLine>
+```
+
+**Structure 2** — 4 instances
 
 ```xml
 <cac:DespatchLine>
@@ -9547,43 +9555,6 @@ _5 instances across 1 element, with 2 unique structures_
 </cac:DespatchLine>
 ```
 
-**Structure 2** — 1 instance
-
-```xml
-<cac:DespatchLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
-  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-  <cbc:DeliveredQuantity>90</cbc:DeliveredQuantity>
-  <cbc:BackorderQuantity>10</cbc:BackorderQuantity>
-  <cbc:BackorderReason>lack of stock as explained on telephone today</cbc:BackorderReason>
-  <cac:OrderLineReference>
-    <cbc:LineID>1</cbc:LineID>
-    <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
-    <cac:OrderReference>
-      <cbc:ID>AEG012345</cbc:ID>
-      <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
-      <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
-      <cbc:IssueDate>2005-06-20</cbc:IssueDate>
-    </cac:OrderReference>
-  </cac:OrderLineReference>
-  <cac:Item>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:Name>beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:LotIdentification>
-      <cbc:LotNumberID>546378239</cbc:LotNumberID>
-      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
-    </cac:LotIdentification>
-  </cac:Item>
-</cac:DespatchLine>
-```
-
 [↑ Back to contents](#contents)
 
 ### `DespatchType`
@@ -9592,12 +9563,20 @@ _5 instances across 1 element, with 2 unique structures_
 
 _12 instances across 1 element, with 4 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 5 instances
+
+```xml
+<cac:Despatch>
+  <cbc:ID>28833-2661-144</cbc:ID>
+</cac:Despatch>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:Despatch>
   <cbc:ActualDespatchDate>2013-09-15</cbc:ActualDespatchDate>
-  <cbc:ActualDespatchTime>16:00:00</cbc:ActualDespatchTime>
+  <cbc:ActualDespatchTime>16:00:00Z</cbc:ActualDespatchTime>
   <cac:DespatchAddress>
     <cac:Country>
       <cbc:IdentificationCode>RU</cbc:IdentificationCode>
@@ -9606,7 +9585,7 @@ _12 instances across 1 element, with 4 unique structures_
 </cac:Despatch>
 ```
 
-**Structure 2** — 4 instances
+**Structure 3** — 4 instances
 
 ```xml
 <cac:Despatch>
@@ -9638,7 +9617,7 @@ _12 instances across 1 element, with 4 unique structures_
 </cac:Despatch>
 ```
 
-**Structure 3** — 1 instance
+**Structure 4** — 1 instance
 
 ```xml
 <cac:Despatch>
@@ -9652,14 +9631,6 @@ _12 instances across 1 element, with 4 unique structures_
       <cbc:Name>Italy</cbc:Name>
     </cac:Country>
   </cac:DespatchAddress>
-</cac:Despatch>
-```
-
-**Structure 4** — 5 instances
-
-```xml
-<cac:Despatch>
-  <cbc:ID>FLGS339241</cbc:ID>
 </cac:Despatch>
 ```
 
@@ -9748,7 +9719,7 @@ _6 instances across 1 element, with 1 unique structure_
       <cbc:TestIndicator>true</cbc:TestIndicator>
       <cac:DigitalMessageDelivery>
         <cbc:ProtocolID>AS2</cbc:ProtocolID>
-        <cbc:EndpointURI>http://as2.buyer.biz</cbc:EndpointURI>
+        <cbc:EndpointURI>http://as2.papifood.dk</cbc:EndpointURI>
       </cac:DigitalMessageDelivery>
     </cac:DigitalDeliveryChannel>
   </cac:SendingDigitalService>
@@ -9766,7 +9737,7 @@ _6 instances across 1 element, with 1 unique structure_
       <cbc:ParticipantID>1234567987654</cbc:ParticipantID>
       <cac:DigitalMessageDelivery>
         <cbc:ProtocolID>AS2</cbc:ProtocolID>
-        <cbc:EndpointURI>http://as2.vendor.biz</cbc:EndpointURI>
+        <cbc:EndpointURI>http://as2.papifood.dk</cbc:EndpointURI>
       </cac:DigitalMessageDelivery>
     </cac:DigitalDeliveryChannel>
   </cac:ReceivingDigitalService>
@@ -9785,8 +9756,8 @@ _6 instances across 1 element, with 1 unique structure_
 
 ```xml
 <cac:DigitalProcess>
-  <cbc:ID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ID>
-  <cbc:ProfileID>BII</cbc:ProfileID>
+  <cbc:ID>1</cbc:ID>
+  <cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
   <cac:DigitalCollaboration>
     <cbc:ID>1</cbc:ID>
     <cac:SendingDigitalService>
@@ -9804,7 +9775,7 @@ _6 instances across 1 element, with 1 unique structure_
         <cbc:TestIndicator>true</cbc:TestIndicator>
         <cac:DigitalMessageDelivery>
           <cbc:ProtocolID>AS2</cbc:ProtocolID>
-          <cbc:EndpointURI>http://as2.buyer.biz</cbc:EndpointURI>
+          <cbc:EndpointURI>http://as2.buyer.de</cbc:EndpointURI>
         </cac:DigitalMessageDelivery>
       </cac:DigitalDeliveryChannel>
     </cac:SendingDigitalService>
@@ -9841,6 +9812,30 @@ _12 instances across 2 elements, with 2 unique structures_
 **Structure 1** — 6 instances
 
 ```xml
+<cac:SendingDigitalService>
+  <cbc:ID>Invoice</cbc:ID>
+  <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
+  <cac:DigitalDocumentMetadata>
+    <cbc:FormatID>UBL</cbc:FormatID>
+    <cbc:VersionID>2.2</cbc:VersionID>
+    <cbc:SchemaURI>urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</cbc:SchemaURI>
+    <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+  </cac:DigitalDocumentMetadata>
+  <cac:DigitalDeliveryChannel>
+    <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
+    <cbc:ParticipantID>1234567987654</cbc:ParticipantID>
+    <cbc:TestIndicator>true</cbc:TestIndicator>
+    <cac:DigitalMessageDelivery>
+      <cbc:ProtocolID>AS2</cbc:ProtocolID>
+      <cbc:EndpointURI>http://as2.papifood.dk</cbc:EndpointURI>
+    </cac:DigitalMessageDelivery>
+  </cac:DigitalDeliveryChannel>
+</cac:SendingDigitalService>
+```
+
+**Structure 2** — 6 instances
+
+```xml
 <cac:ReceivingDigitalService>
   <cbc:ID>CreditNote</cbc:ID>
   <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
@@ -9861,30 +9856,6 @@ _12 instances across 2 elements, with 2 unique structures_
 </cac:ReceivingDigitalService>
 ```
 
-**Structure 2** — 6 instances
-
-```xml
-<cac:SendingDigitalService>
-  <cbc:ID>Invoice</cbc:ID>
-  <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
-  <cac:DigitalDocumentMetadata>
-    <cbc:FormatID>UBL</cbc:FormatID>
-    <cbc:VersionID>2.2</cbc:VersionID>
-    <cbc:SchemaURI>urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</cbc:SchemaURI>
-    <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
-  </cac:DigitalDocumentMetadata>
-  <cac:DigitalDeliveryChannel>
-    <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
-    <cbc:ParticipantID>1234567987654</cbc:ParticipantID>
-    <cbc:TestIndicator>true</cbc:TestIndicator>
-    <cac:DigitalMessageDelivery>
-      <cbc:ProtocolID>AS2</cbc:ProtocolID>
-      <cbc:EndpointURI>http://as2.buyer.biz</cbc:EndpointURI>
-    </cac:DigitalMessageDelivery>
-  </cac:DigitalDeliveryChannel>
-</cac:SendingDigitalService>
-```
-
 [↑ Back to contents](#contents)
 
 ### `DimensionType`
@@ -9893,22 +9864,22 @@ _12 instances across 2 elements, with 2 unique structures_
 
 _52 instances across 2 elements, with 2 unique structures_
 
-**Structure 1** — 4 instances
+**Structure 1** — 48 instances
+
+```xml
+<cac:MeasurementDimension>
+  <cbc:AttributeID>OuterHeight</cbc:AttributeID>
+  <cbc:Measure>70</cbc:Measure>
+</cac:MeasurementDimension>
+```
+
+**Structure 2** — 4 instances
 
 ```xml
 <cac:Dimension>
   <cbc:AttributeID>NetWeight</cbc:AttributeID>
   <cbc:Measure>9.6</cbc:Measure>
 </cac:Dimension>
-```
-
-**Structure 2** — 48 instances
-
-```xml
-<cac:MeasurementDimension>
-  <cbc:AttributeID>Width</cbc:AttributeID>
-  <cbc:Measure>80</cbc:Measure>
-</cac:MeasurementDimension>
 ```
 
 [↑ Back to contents](#contents)
@@ -9920,6 +9891,38 @@ _52 instances across 2 elements, with 2 unique structures_
 _8 instances across 1 element, with 2 unique structures_
 
 **Structure 1** — 4 instances
+
+```xml
+<cac:DocumentDistribution>
+  <cbc:PrintQualifier>Copies allowed</cbc:PrintQualifier>
+  <cbc:MaximumCopiesNumeric>5</cbc:MaximumCopiesNumeric>
+  <cac:Party>
+    <cac:PartyName>
+      <cbc:Name>Consortial</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Boston Road</cbc:StreetName>
+      <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+      <cbc:BuildingNumber>630</cbc:BuildingNumber>
+      <cbc:CityName>Billerica</cbc:CityName>
+      <cbc:PostalZone>01821</cbc:PostalZone>
+      <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+      <cac:Country>
+        <cbc:IdentificationCode>US</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mrs Bouquet</cbc:Name>
+      <cbc:Telephone>+1 158 1233714</cbc:Telephone>
+      <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
+      <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:Party>
+</cac:DocumentDistribution>
+```
+
+**Structure 2** — 4 instances
 
 ```xml
 <cac:DocumentDistribution>
@@ -9953,38 +9956,6 @@ _8 instances across 1 element, with 2 unique structures_
 </cac:DocumentDistribution>
 ```
 
-**Structure 2** — 4 instances
-
-```xml
-<cac:DocumentDistribution>
-  <cbc:PrintQualifier>Copies allowed</cbc:PrintQualifier>
-  <cbc:MaximumCopiesNumeric>5</cbc:MaximumCopiesNumeric>
-  <cac:Party>
-    <cac:PartyName>
-      <cbc:Name>Consortial</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Boston Road</cbc:StreetName>
-      <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-      <cbc:BuildingNumber>630</cbc:BuildingNumber>
-      <cbc:CityName>Billerica</cbc:CityName>
-      <cbc:PostalZone>01821</cbc:PostalZone>
-      <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-      <cac:Country>
-        <cbc:IdentificationCode>US</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mrs Bouquet</cbc:Name>
-      <cbc:Telephone>+1 158 1233714</cbc:Telephone>
-      <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-      <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:Party>
-</cac:DocumentDistribution>
-```
-
 [↑ Back to contents](#contents)
 
 ### `DocumentMetadataType`
@@ -10012,16 +9983,14 @@ _12 instances across 1 element, with 1 unique structure_
 
 _122 instances across 21 elements, with 38 unique structures_
 
-**Structure 1** — 7 instances
+**Structure 1** — 1 instance
 
 ```xml
-<cac:AdditionalDocumentReference>
-  <cbc:ID>Doc2</cbc:ID>
-  <cbc:DocumentType>Drawing</cbc:DocumentType>
-  <cac:Attachment>
-    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-  </cac:Attachment>
-</cac:AdditionalDocumentReference>
+<cac:ShipmentDocumentReference>
+  <cbc:ID>ID168</cbc:ID>
+  <cbc:DocumentTypeCode>Certificate of shipment</cbc:DocumentTypeCode>
+  <cbc:DocumentType>Shipment reference</cbc:DocumentType>
+</cac:ShipmentDocumentReference>
 ```
 
 **Structure 2** — 7 instances
@@ -10038,7 +10007,190 @@ _122 instances across 21 elements, with 38 unique structures_
 </cac:AdditionalDocumentReference>
 ```
 
-**Structure 3** — 1 instance
+**Structure 3** — 10 instances
+
+```xml
+<cac:InvoiceDocumentReference>
+  <cbc:ID>A00095678</cbc:ID>
+  <cbc:UUID>849FBBCE-E081-40B4-906C-94C5FF9D1AC3</cbc:UUID>
+  <cbc:IssueDate>2005-06-21</cbc:IssueDate>
+</cac:InvoiceDocumentReference>
+```
+
+**Structure 4** — 4 instances
+
+```xml
+<cac:AdditionalDocumentReference>
+  <cbc:ID>0665/2003</cbc:ID>
+  <cbc:IssueDate>2013-06-23</cbc:IssueDate>
+  <cbc:DocumentTypeCode>N380</cbc:DocumentTypeCode>
+</cac:AdditionalDocumentReference>
+```
+
+**Structure 5** — 6 instances
+
+```xml
+<cac:DespatchDocumentReference>
+  <cbc:ID>565899</cbc:ID>
+  <cbc:UUID>88C7280E-8F10-419F-9949-8EFFFA2842B8</cbc:UUID>
+  <cbc:IssueDate>2005-06-20</cbc:IssueDate>
+</cac:DespatchDocumentReference>
+```
+
+**Structure 6** — 6 instances
+
+```xml
+<cac:ContractDocumentReference>
+  <cbc:ID>GHJ76849</cbc:ID>
+  <cbc:IssueDate>2002-08-13</cbc:IssueDate>
+</cac:ContractDocumentReference>
+```
+
+**Structure 7** — 1 instance
+
+```xml
+<cac:ContractDocumentReference>
+  <cbc:ID>101</cbc:ID>
+  <cbc:DocumentType>Annual Contract</cbc:DocumentType>
+  <cac:Attachment>
+    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+  </cac:Attachment>
+</cac:ContractDocumentReference>
+```
+
+**Structure 8** — 3 instances
+
+```xml
+<cac:TransportExecutionPlanDocumentReference>
+  <cbc:ID>TEPID_1</cbc:ID>
+</cac:TransportExecutionPlanDocumentReference>
+```
+
+**Structure 9** — 2 instances
+
+```xml
+<cac:DocumentReference>
+  <cbc:ID>W123</cbc:ID>
+  <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+  <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+  <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+</cac:DocumentReference>
+```
+
+**Structure 10** — 5 instances
+
+```xml
+<cac:VoucherDocumentReference>
+  <cbc:ID>52345423423</cbc:ID>
+</cac:VoucherDocumentReference>
+```
+
+**Structure 11** — 2 instances
+
+```xml
+<cac:AdditionalDocumentReference>
+  <cbc:ID>34564645</cbc:ID>
+</cac:AdditionalDocumentReference>
+```
+
+**Structure 12** — 8 instances
+
+```xml
+<cac:DocumentReference>
+  <cbc:ID>AEG012345</cbc:ID>
+  <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
+  <cbc:IssueDate>2005-06-20</cbc:IssueDate>
+  <cbc:DocumentType>Order</cbc:DocumentType>
+</cac:DocumentReference>
+```
+
+**Structure 13** — 1 instance
+
+```xml
+<cac:InvoiceDocumentReference>
+  <cbc:ID>INV000123</cbc:ID>
+  <cbc:IssueDate>2025-07-01</cbc:IssueDate>
+</cac:InvoiceDocumentReference>
+```
+
+**Structure 14** — 1 instance
+
+```xml
+<cac:ReceiptDocumentReference>
+  <cbc:ID>658398</cbc:ID>
+  <cbc:UUID>89F82FA6-5331-491D-83BC-7B6CA7FD047C</cbc:UUID>
+  <cbc:IssueDate>2005-06-21</cbc:IssueDate>
+</cac:ReceiptDocumentReference>
+```
+
+**Structure 15** — 1 instance
+
+```xml
+<cac:InvoiceDocumentReference>
+  <cbc:ID>TOSL108</cbc:ID>
+</cac:InvoiceDocumentReference>
+```
+
+**Structure 16** — 1 instance
+
+```xml
+<cac:SalesDocumentReference>
+  <cbc:ID>PROFORMA001</cbc:ID>
+  <cbc:DocumentType>Preliminary sales receipt</cbc:DocumentType>
+</cac:SalesDocumentReference>
+```
+
+**Structure 17** — 6 instances
+
+```xml
+<cac:ContractDocumentReference>
+  <cbc:ID>normalizedString</cbc:ID>
+  <cbc:CopyIndicator>false</cbc:CopyIndicator>
+  <cbc:UUID>normalizedString</cbc:UUID>
+  <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+  <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+  <cbc:DocumentType>String</cbc:DocumentType>
+  <cbc:XPath>String</cbc:XPath>
+  <cbc:XPath>String</cbc:XPath>
+  <cac:Attachment>
+    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+    <cac:ExternalReference>
+      <cbc:URI>normalizedString</cbc:URI>
+      <cbc:DocumentHash>String</cbc:DocumentHash>
+      <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+      <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+    </cac:ExternalReference>
+  </cac:Attachment>
+</cac:ContractDocumentReference>
+```
+
+**Structure 18** — 2 instances
+
+```xml
+<cac:OriginatorDocumentReference>
+  <cbc:ID>MAFO</cbc:ID>
+</cac:OriginatorDocumentReference>
+```
+
+**Structure 19** — 2 instances
+
+```xml
+<cac:TransportServiceDescriptionDocumentReference>
+  <cbc:ID>2</cbc:ID>
+</cac:TransportServiceDescriptionDocumentReference>
+```
+
+**Structure 20** — 5 instances
+
+```xml
+<cac:CreditNoteDocumentReference>
+  <cbc:ID>CN758494</cbc:ID>
+  <cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
+  <cbc:IssueDate>2005-06-25</cbc:IssueDate>
+</cac:CreditNoteDocumentReference>
+```
+
+**Structure 21** — 1 instance
 
 ```xml
 <cac:AdditionalDocumentReference>
@@ -10053,93 +10205,29 @@ _122 instances across 21 elements, with 38 unique structures_
 </cac:AdditionalDocumentReference>
 ```
 
-**Structure 4** — 4 instances
+**Structure 22** — 7 instances
 
 ```xml
 <cac:AdditionalDocumentReference>
-  <cbc:ID>108-3692468</cbc:ID>
-  <cbc:IssueDate>2013-06-23</cbc:IssueDate>
-  <cbc:DocumentTypeCode>741</cbc:DocumentTypeCode>
+  <cbc:ID>Doc2</cbc:ID>
+  <cbc:DocumentType>Drawing</cbc:DocumentType>
+  <cac:Attachment>
+    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+  </cac:Attachment>
 </cac:AdditionalDocumentReference>
 ```
 
-**Structure 5** — 2 instances
+**Structure 23** — 6 instances
 
 ```xml
-<cac:AdditionalDocumentReference>
-  <cbc:ID>34564645</cbc:ID>
-</cac:AdditionalDocumentReference>
+<cac:RequestForQuotationDocumentReference>
+  <cbc:ID>G867B</cbc:ID>
+  <cbc:UUID>8D076867-AE6D-439F-8281-5AAFC7F4E3B1</cbc:UUID>
+  <cbc:IssueDate>2005-06-19</cbc:IssueDate>
+</cac:RequestForQuotationDocumentReference>
 ```
 
-**Structure 6** — 5 instances
-
-```xml
-<cac:CatalogueDocumentReference>
-  <cbc:ID>2005-9A</cbc:ID>
-  <cbc:IssueDate>2005-11-03</cbc:IssueDate>
-</cac:CatalogueDocumentReference>
-```
-
-**Structure 7** — 2 instances
-
-```xml
-<cac:ContractDocumentReference>
-  <cbc:ID>normalizedString</cbc:ID>
-  <cbc:CopyIndicator>false</cbc:CopyIndicator>
-  <cbc:UUID>normalizedString</cbc:UUID>
-  <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-  <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-  <cbc:DocumentType>String</cbc:DocumentType>
-  <cbc:XPath>String</cbc:XPath>
-  <cac:Attachment>
-    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-    <cac:ExternalReference>
-      <cbc:URI>normalizedString</cbc:URI>
-      <cbc:DocumentHash>String</cbc:DocumentHash>
-      <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-      <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-    </cac:ExternalReference>
-  </cac:Attachment>
-</cac:ContractDocumentReference>
-```
-
-**Structure 8** — 6 instances
-
-```xml
-<cac:ContractDocumentReference>
-  <cbc:ID>normalizedString</cbc:ID>
-  <cbc:CopyIndicator>false</cbc:CopyIndicator>
-  <cbc:UUID>normalizedString</cbc:UUID>
-  <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-  <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-  <cbc:DocumentType>String</cbc:DocumentType>
-  <cbc:XPath>String</cbc:XPath>
-  <cbc:XPath>String</cbc:XPath>
-  <cac:Attachment>
-    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-    <cac:ExternalReference>
-      <cbc:URI>normalizedString</cbc:URI>
-      <cbc:DocumentHash>String</cbc:DocumentHash>
-      <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-      <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-    </cac:ExternalReference>
-  </cac:Attachment>
-</cac:ContractDocumentReference>
-```
-
-**Structure 9** — 1 instance
-
-```xml
-<cac:ContractDocumentReference>
-  <cbc:ID>101</cbc:ID>
-  <cbc:DocumentType>Annual Contract</cbc:DocumentType>
-  <cac:Attachment>
-    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-  </cac:Attachment>
-</cac:ContractDocumentReference>
-```
-
-**Structure 10** — 5 instances
+**Structure 24** — 5 instances
 
 ```xml
 <cac:ContractDocumentReference>
@@ -10148,7 +10236,103 @@ _122 instances across 21 elements, with 38 unique structures_
 </cac:ContractDocumentReference>
 ```
 
-**Structure 11** — 2 instances
+**Structure 25** — 2 instances
+
+```xml
+<cac:QuotationDocumentReference>
+  <cbc:ID>QuoteID123</cbc:ID>
+</cac:QuotationDocumentReference>
+```
+
+**Structure 26** — 6 instances
+
+```xml
+<cac:DocumentReference>
+  <cbc:ID>XD534533</cbc:ID>
+  <cbc:DocumentType>BOL</cbc:DocumentType>
+  <cac:IssuerParty>
+    <cac:PartyName>
+      <cbc:Name>Maersk</cbc:Name>
+    </cac:PartyName>
+  </cac:IssuerParty>
+</cac:DocumentReference>
+```
+
+**Structure 27** — 1 instance
+
+```xml
+<cac:DocumentReference>
+  <cbc:ID>34563456</cbc:ID>
+  <cbc:DocumentType>ATA carnet, paper</cbc:DocumentType>
+</cac:DocumentReference>
+```
+
+**Structure 28** — 1 instance
+
+```xml
+<cac:TransportProgressStatusRequestDocumentReference>
+  <cbc:ID>TPS_1</cbc:ID>
+</cac:TransportProgressStatusRequestDocumentReference>
+```
+
+**Structure 29** — 5 instances
+
+```xml
+<cac:CatalogueDocumentReference>
+  <cbc:ID>2005-9A</cbc:ID>
+  <cbc:IssueDate>2005-11-03</cbc:IssueDate>
+</cac:CatalogueDocumentReference>
+```
+
+**Structure 30** — 1 instance
+
+```xml
+<cac:TransportServiceDescriptionRequestDocumentReference>
+  <cbc:ID>TSD_REQ_1</cbc:ID>
+</cac:TransportServiceDescriptionRequestDocumentReference>
+```
+
+**Structure 31** — 2 instances
+
+```xml
+<cac:ContractDocumentReference>
+  <cbc:ID>normalizedString</cbc:ID>
+  <cbc:CopyIndicator>false</cbc:CopyIndicator>
+  <cbc:UUID>normalizedString</cbc:UUID>
+  <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+  <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+  <cbc:DocumentType>String</cbc:DocumentType>
+  <cbc:XPath>String</cbc:XPath>
+  <cac:Attachment>
+    <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+    <cac:ExternalReference>
+      <cbc:URI>normalizedString</cbc:URI>
+      <cbc:DocumentHash>String</cbc:DocumentHash>
+      <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+      <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+    </cac:ExternalReference>
+  </cac:Attachment>
+</cac:ContractDocumentReference>
+```
+
+**Structure 32** — 3 instances
+
+```xml
+<cac:ShipmentDocumentReference>
+  <cbc:ID>GOA294107</cbc:ID>
+  <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
+</cac:ShipmentDocumentReference>
+```
+
+**Structure 33** — 1 instance
+
+```xml
+<cac:IdentityDocumentReference>
+  <cbc:ID>325334535</cbc:ID>
+</cac:IdentityDocumentReference>
+```
+
+**Structure 34** — 2 instances
 
 ```xml
 <cac:ContractDocumentReference>
@@ -10160,50 +10344,7 @@ _122 instances across 21 elements, with 38 unique structures_
 </cac:ContractDocumentReference>
 ```
 
-**Structure 12** — 6 instances
-
-```xml
-<cac:ContractDocumentReference>
-  <cbc:ID>GHJ76849</cbc:ID>
-  <cbc:IssueDate>2002-08-13</cbc:IssueDate>
-</cac:ContractDocumentReference>
-```
-
-**Structure 13** — 5 instances
-
-```xml
-<cac:CreditNoteDocumentReference>
-  <cbc:ID>CN758494</cbc:ID>
-  <cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
-  <cbc:IssueDate>2005-06-25</cbc:IssueDate>
-</cac:CreditNoteDocumentReference>
-```
-
-**Structure 14** — 6 instances
-
-```xml
-<cac:DespatchDocumentReference>
-  <cbc:ID>565899</cbc:ID>
-  <cbc:UUID>88C7280E-8F10-419F-9949-8EFFFA2842B8</cbc:UUID>
-  <cbc:IssueDate>2005-06-20</cbc:IssueDate>
-</cac:DespatchDocumentReference>
-```
-
-**Structure 15** — 6 instances
-
-```xml
-<cac:DocumentReference>
-  <cbc:ID>234534533</cbc:ID>
-  <cbc:DocumentType>CMR</cbc:DocumentType>
-  <cac:IssuerParty>
-    <cac:PartyName>
-      <cbc:Name>Boston Road</cbc:Name>
-    </cac:PartyName>
-  </cac:IssuerParty>
-</cac:DocumentReference>
-```
-
-**Structure 16** — 1 instance
+**Structure 35** — 1 instance
 
 ```xml
 <cac:DocumentReference>
@@ -10212,27 +10353,23 @@ _122 instances across 21 elements, with 38 unique structures_
 </cac:DocumentReference>
 ```
 
-**Structure 17** — 1 instance
+**Structure 36** — 1 instance
 
 ```xml
-<cac:DocumentReference>
-  <cbc:ID>34563456</cbc:ID>
-  <cbc:DocumentType>ATA carnet, paper</cbc:DocumentType>
-</cac:DocumentReference>
+<cac:ProofOfReexportationRequestDocumentReference>
+  <cbc:ID>A2344</cbc:ID>
+</cac:ProofOfReexportationRequestDocumentReference>
 ```
 
-**Structure 18** — 2 instances
+**Structure 37** — 2 instances
 
 ```xml
-<cac:DocumentReference>
-  <cbc:ID>W123</cbc:ID>
-  <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-  <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-  <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-</cac:DocumentReference>
+<cac:OrderDocumentReference>
+  <cbc:ID>RjectedOrderID123</cbc:ID>
+</cac:OrderDocumentReference>
 ```
 
-**Structure 19** — 1 instance
+**Structure 38** — 1 instance
 
 ```xml
 <cac:DocumentReference>
@@ -10242,172 +10379,6 @@ _122 instances across 21 elements, with 38 unique structures_
   <cbc:DocumentType></cbc:DocumentType>
   <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
 </cac:DocumentReference>
-```
-
-**Structure 20** — 8 instances
-
-```xml
-<cac:DocumentReference>
-  <cbc:ID>AEG012345</cbc:ID>
-  <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
-  <cbc:IssueDate>2005-06-20</cbc:IssueDate>
-  <cbc:DocumentType>Order</cbc:DocumentType>
-</cac:DocumentReference>
-```
-
-**Structure 21** — 1 instance
-
-```xml
-<cac:IdentityDocumentReference>
-  <cbc:ID>325334535</cbc:ID>
-</cac:IdentityDocumentReference>
-```
-
-**Structure 22** — 1 instance
-
-```xml
-<cac:InvoiceDocumentReference>
-  <cbc:ID>INV000123</cbc:ID>
-  <cbc:IssueDate>2025-07-01</cbc:IssueDate>
-</cac:InvoiceDocumentReference>
-```
-
-**Structure 23** — 10 instances
-
-```xml
-<cac:InvoiceDocumentReference>
-  <cbc:ID>A00095678</cbc:ID>
-  <cbc:UUID>849FBBCE-E081-40B4-906C-94C5FF9D1AC3</cbc:UUID>
-  <cbc:IssueDate>2005-06-21</cbc:IssueDate>
-</cac:InvoiceDocumentReference>
-```
-
-**Structure 24** — 1 instance
-
-```xml
-<cac:InvoiceDocumentReference>
-  <cbc:ID>TOSL108</cbc:ID>
-</cac:InvoiceDocumentReference>
-```
-
-**Structure 25** — 2 instances
-
-```xml
-<cac:OrderDocumentReference>
-  <cbc:ID>RjectedOrderID123</cbc:ID>
-</cac:OrderDocumentReference>
-```
-
-**Structure 26** — 2 instances
-
-```xml
-<cac:OriginatorDocumentReference>
-  <cbc:ID>MAFO</cbc:ID>
-</cac:OriginatorDocumentReference>
-```
-
-**Structure 27** — 1 instance
-
-```xml
-<cac:ProofOfReexportationRequestDocumentReference>
-  <cbc:ID>A2344</cbc:ID>
-</cac:ProofOfReexportationRequestDocumentReference>
-```
-
-**Structure 28** — 2 instances
-
-```xml
-<cac:QuotationDocumentReference>
-  <cbc:ID>QuoteID123</cbc:ID>
-</cac:QuotationDocumentReference>
-```
-
-**Structure 29** — 1 instance
-
-```xml
-<cac:ReceiptDocumentReference>
-  <cbc:ID>658398</cbc:ID>
-  <cbc:UUID>89F82FA6-5331-491D-83BC-7B6CA7FD047C</cbc:UUID>
-  <cbc:IssueDate>2005-06-21</cbc:IssueDate>
-</cac:ReceiptDocumentReference>
-```
-
-**Structure 30** — 6 instances
-
-```xml
-<cac:RequestForQuotationDocumentReference>
-  <cbc:ID>G867B</cbc:ID>
-  <cbc:UUID>8D076867-AE6D-439F-8281-5AAFC7F4E3B1</cbc:UUID>
-  <cbc:IssueDate>2005-06-19</cbc:IssueDate>
-</cac:RequestForQuotationDocumentReference>
-```
-
-**Structure 31** — 1 instance
-
-```xml
-<cac:SalesDocumentReference>
-  <cbc:ID>PROFORMA001</cbc:ID>
-  <cbc:DocumentType>Preliminary sales receipt</cbc:DocumentType>
-</cac:SalesDocumentReference>
-```
-
-**Structure 32** — 1 instance
-
-```xml
-<cac:ShipmentDocumentReference>
-  <cbc:ID>ID168</cbc:ID>
-  <cbc:DocumentTypeCode>Certificate of shipment</cbc:DocumentTypeCode>
-  <cbc:DocumentType>Shipment reference</cbc:DocumentType>
-</cac:ShipmentDocumentReference>
-```
-
-**Structure 33** — 3 instances
-
-```xml
-<cac:ShipmentDocumentReference>
-  <cbc:ID>GOA294107</cbc:ID>
-  <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
-</cac:ShipmentDocumentReference>
-```
-
-**Structure 34** — 3 instances
-
-```xml
-<cac:TransportExecutionPlanDocumentReference>
-  <cbc:ID>TEPID_1</cbc:ID>
-</cac:TransportExecutionPlanDocumentReference>
-```
-
-**Structure 35** — 1 instance
-
-```xml
-<cac:TransportProgressStatusRequestDocumentReference>
-  <cbc:ID>TPS_1</cbc:ID>
-</cac:TransportProgressStatusRequestDocumentReference>
-```
-
-**Structure 36** — 2 instances
-
-```xml
-<cac:TransportServiceDescriptionDocumentReference>
-  <cbc:ID>2</cbc:ID>
-</cac:TransportServiceDescriptionDocumentReference>
-```
-
-**Structure 37** — 1 instance
-
-```xml
-<cac:TransportServiceDescriptionRequestDocumentReference>
-  <cbc:ID>TSD_REQ_1</cbc:ID>
-</cac:TransportServiceDescriptionRequestDocumentReference>
-```
-
-**Structure 38** — 5 instances
-
-```xml
-<cac:VoucherDocumentReference>
-  <cbc:ID>5234533222</cbc:ID>
-</cac:VoucherDocumentReference>
 ```
 
 [↑ Back to contents](#contents)
@@ -10806,34 +10777,6 @@ _8 instances across 1 element, with 6 unique structures_
   </cac:EffectivePeriod>
   <cac:SupplyItem>
     <cac:StandardItemIdentification>
-      <cbc:ID>00123450000582</cbc:ID>
-    </cac:StandardItemIdentification>
-  </cac:SupplyItem>
-  <cac:ForecastExceptionCriteriaLine>
-    <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
-    <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
-    <cbc:ComparisonDataSourceCode>SELLER</cbc:ComparisonDataSourceCode>
-    <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
-    <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
-  </cac:ForecastExceptionCriteriaLine>
-</cac:ExceptionCriteriaLine>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:ExceptionCriteriaLine>
-  <cbc:ID>exceptionCriteriaLineID</cbc:ID>
-  <cbc:ThresholdValueComparisonCode>EXCEEDS_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
-  <cbc:ThresholdQuantity>120000</cbc:ThresholdQuantity>
-  <cbc:ExceptionStatusCode>NEW</cbc:ExceptionStatusCode>
-  <cbc:CollaborationPriorityCode>HIGH</cbc:CollaborationPriorityCode>
-  <cac:EffectivePeriod>
-    <cbc:StartDate>2010-04-28</cbc:StartDate>
-    <cbc:EndDate>2010-06-29</cbc:EndDate>
-  </cac:EffectivePeriod>
-  <cac:SupplyItem>
-    <cac:StandardItemIdentification>
       <cbc:ID>00123450000580</cbc:ID>
     </cac:StandardItemIdentification>
   </cac:SupplyItem>
@@ -10843,6 +10786,28 @@ _8 instances across 1 element, with 6 unique structures_
     <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
     <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
   </cac:ForecastExceptionCriteriaLine>
+</cac:ExceptionCriteriaLine>
+```
+
+**Structure 2** — 2 instances
+
+```xml
+<cac:ExceptionCriteriaLine>
+  <cbc:ID>exceptionCriteriaLineID</cbc:ID>
+  <cbc:ThresholdValueComparisonCode>EXCEEDS_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
+  <cbc:ThresholdQuantity>120000</cbc:ThresholdQuantity>
+  <cbc:ExceptionStatusCode>NEW</cbc:ExceptionStatusCode>
+  <cbc:CollaborationPriorityCode>HIGH</cbc:CollaborationPriorityCode>
+  <cbc:PerformanceMetricTypeCode>SUPPLY</cbc:PerformanceMetricTypeCode>
+  <cac:EffectivePeriod>
+    <cbc:StartDate>2010-03-28</cbc:StartDate>
+    <cbc:EndDate>2010-05-29</cbc:EndDate>
+  </cac:EffectivePeriod>
+  <cac:SupplyItem>
+    <cac:StandardItemIdentification>
+      <cbc:ID>00123450000581</cbc:ID>
+    </cac:StandardItemIdentification>
+  </cac:SupplyItem>
 </cac:ExceptionCriteriaLine>
 ```
 
@@ -10874,56 +10839,7 @@ _8 instances across 1 element, with 6 unique structures_
 </cac:ExceptionCriteriaLine>
 ```
 
-**Structure 4** — 1 instance
-
-```xml
-<cac:ExceptionCriteriaLine>
-  <cbc:ID>exceptionCriteriaLineID</cbc:ID>
-  <cbc:ThresholdValueComparisonCode>EXCEEDS_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
-  <cbc:ThresholdQuantity>120000</cbc:ThresholdQuantity>
-  <cbc:ExceptionStatusCode>NEW</cbc:ExceptionStatusCode>
-  <cbc:CollaborationPriorityCode>HIGH</cbc:CollaborationPriorityCode>
-  <cac:EffectivePeriod>
-    <cbc:StartDate>2010-04-28</cbc:StartDate>
-    <cbc:EndDate>2010-06-29</cbc:EndDate>
-  </cac:EffectivePeriod>
-  <cac:SupplyItem>
-    <cac:StandardItemIdentification>
-      <cbc:ID>00123450000580</cbc:ID>
-    </cac:StandardItemIdentification>
-  </cac:SupplyItem>
-  <cac:ForecastExceptionCriterionLine>
-    <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
-    <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
-    <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
-    <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
-  </cac:ForecastExceptionCriterionLine>
-</cac:ExceptionCriteriaLine>
-```
-
-**Structure 5** — 2 instances
-
-```xml
-<cac:ExceptionCriteriaLine>
-  <cbc:ID>exceptionCriteriaLineID</cbc:ID>
-  <cbc:ThresholdValueComparisonCode>EXCEEDS_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
-  <cbc:ThresholdQuantity>120000</cbc:ThresholdQuantity>
-  <cbc:ExceptionStatusCode>NEW</cbc:ExceptionStatusCode>
-  <cbc:CollaborationPriorityCode>HIGH</cbc:CollaborationPriorityCode>
-  <cbc:PerformanceMetricTypeCode>SUPPLY</cbc:PerformanceMetricTypeCode>
-  <cac:EffectivePeriod>
-    <cbc:StartDate>2010-03-28</cbc:StartDate>
-    <cbc:EndDate>2010-05-29</cbc:EndDate>
-  </cac:EffectivePeriod>
-  <cac:SupplyItem>
-    <cac:StandardItemIdentification>
-      <cbc:ID>00123450000581</cbc:ID>
-    </cac:StandardItemIdentification>
-  </cac:SupplyItem>
-</cac:ExceptionCriteriaLine>
-```
-
-**Structure 6** — 2 instances
+**Structure 4** — 2 instances
 
 ```xml
 <cac:ExceptionCriteriaLine>
@@ -10950,6 +10866,61 @@ _8 instances across 1 element, with 6 unique structures_
       <cbc:ID>00123450000584</cbc:ID>
     </cac:StandardItemIdentification>
   </cac:SupplyItem>
+</cac:ExceptionCriteriaLine>
+```
+
+**Structure 5** — 1 instance
+
+```xml
+<cac:ExceptionCriteriaLine>
+  <cbc:ID>exceptionCriteriaLineID</cbc:ID>
+  <cbc:ThresholdValueComparisonCode>EXCEEDS_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
+  <cbc:ThresholdQuantity>120000</cbc:ThresholdQuantity>
+  <cbc:ExceptionStatusCode>NEW</cbc:ExceptionStatusCode>
+  <cbc:CollaborationPriorityCode>HIGH</cbc:CollaborationPriorityCode>
+  <cac:EffectivePeriod>
+    <cbc:StartDate>2010-04-28</cbc:StartDate>
+    <cbc:EndDate>2010-06-29</cbc:EndDate>
+  </cac:EffectivePeriod>
+  <cac:SupplyItem>
+    <cac:StandardItemIdentification>
+      <cbc:ID>00123450000580</cbc:ID>
+    </cac:StandardItemIdentification>
+  </cac:SupplyItem>
+  <cac:ForecastExceptionCriterionLine>
+    <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
+    <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
+    <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
+    <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
+  </cac:ForecastExceptionCriterionLine>
+</cac:ExceptionCriteriaLine>
+```
+
+**Structure 6** — 1 instance
+
+```xml
+<cac:ExceptionCriteriaLine>
+  <cbc:ID>exceptionCriteriaLineID</cbc:ID>
+  <cbc:ThresholdValueComparisonCode>EXCEEDS_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
+  <cbc:ThresholdQuantity>120000</cbc:ThresholdQuantity>
+  <cbc:ExceptionStatusCode>NEW</cbc:ExceptionStatusCode>
+  <cbc:CollaborationPriorityCode>HIGH</cbc:CollaborationPriorityCode>
+  <cac:EffectivePeriod>
+    <cbc:StartDate>2010-04-28</cbc:StartDate>
+    <cbc:EndDate>2010-06-29</cbc:EndDate>
+  </cac:EffectivePeriod>
+  <cac:SupplyItem>
+    <cac:StandardItemIdentification>
+      <cbc:ID>00123450000582</cbc:ID>
+    </cac:StandardItemIdentification>
+  </cac:SupplyItem>
+  <cac:ForecastExceptionCriteriaLine>
+    <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
+    <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
+    <cbc:ComparisonDataSourceCode>SELLER</cbc:ComparisonDataSourceCode>
+    <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
+    <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
+  </cac:ForecastExceptionCriteriaLine>
 </cac:ExceptionCriteriaLine>
 ```
 
@@ -10980,7 +10951,7 @@ _4 instances across 1 element, with 2 unique structures_
     <cbc:ForecastPurposeCode>ORDER_FORECAST</cbc:ForecastPurposeCode>
     <cbc:ForecastTypeCode>TOTAL</cbc:ForecastTypeCode>
     <cbc:IssueDate>2010-04-17</cbc:IssueDate>
-    <cbc:IssueTime>10:00:00.000</cbc:IssueTime>
+    <cbc:IssueTime>10:00:00.000Z</cbc:IssueTime>
     <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
   </cac:ForecastException>
   <cac:SupplyItem>
@@ -11082,7 +11053,7 @@ _18 instances across 1 element, with 2 unique structures_
 
 ```xml
 <cac:ExternalReference>
-  <cbc:URI>http://www.suppliersite.eu/sheet001.html</cbc:URI>
+  <cbc:URI>UBL-Invoice-2.0-Detached-Signature.xml</cbc:URI>
 </cac:ExternalReference>
 ```
 
@@ -11094,34 +11065,12 @@ _18 instances across 1 element, with 2 unique structures_
 
 _37 instances across 2 elements, with 3 unique structures_
 
-**Structure 1** — 1 instance
-
-```xml
-<cac:FinancialAccount>
-  <cbc:ID>8601.12.11189</cbc:ID>
-  <cbc:PaymentNote>Deutsche Bank</cbc:PaymentNote>
-</cac:FinancialAccount>
-```
-
-**Structure 2** — 3 instances
-
-```xml
-<cac:PayeeFinancialAccount>
-  <cbc:ID>DK1212341234123412</cbc:ID>
-  <cac:FinancialInstitutionBranch>
-    <cac:FinancialInstitution>
-      <cbc:ID>DKDKABCD</cbc:ID>
-    </cac:FinancialInstitution>
-  </cac:FinancialInstitutionBranch>
-</cac:PayeeFinancialAccount>
-```
-
-**Structure 3** — 33 instances
+**Structure 1** — 33 instances
 
 ```xml
 <cac:PayeeFinancialAccount>
   <cbc:ID>12345678</cbc:ID>
-  <cbc:Name>Farthing Purchasing Consortia</cbc:Name>
+  <cbc:Name>Farthing Purchasing Consortium</cbc:Name>
   <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
   <cbc:CurrencyCode>GBP</cbc:CurrencyCode>
   <cac:FinancialInstitutionBranch>
@@ -11164,6 +11113,28 @@ _37 instances across 2 elements, with 3 unique structures_
     <cbc:IdentificationCode>GB</cbc:IdentificationCode>
   </cac:Country>
 </cac:PayeeFinancialAccount>
+```
+
+**Structure 2** — 3 instances
+
+```xml
+<cac:PayeeFinancialAccount>
+  <cbc:ID>DK1212341234123412</cbc:ID>
+  <cac:FinancialInstitutionBranch>
+    <cac:FinancialInstitution>
+      <cbc:ID>DKDKABCD</cbc:ID>
+    </cac:FinancialInstitution>
+  </cac:FinancialInstitutionBranch>
+</cac:PayeeFinancialAccount>
+```
+
+**Structure 3** — 1 instance
+
+```xml
+<cac:FinancialAccount>
+  <cbc:ID>8601.12.11189</cbc:ID>
+  <cbc:PaymentNote>Deutsche Bank</cbc:PaymentNote>
+</cac:FinancialAccount>
 ```
 
 [↑ Back to contents](#contents)
@@ -11244,11 +11215,11 @@ _2 instances across 1 element, with 2 unique structures_
 
 _4 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 3 instances
+**Structure 1** — 1 instance
 
 ```xml
 <cac:ForecastException>
-  <cbc:ForecastPurposeCode>ORDER_FORECAST</cbc:ForecastPurposeCode>
+  <cbc:PurposeCode>ORDER_FORECAST</cbc:PurposeCode>
   <cbc:ForecastTypeCode>TOTAL</cbc:ForecastTypeCode>
   <cbc:IssueDate>2010-04-17</cbc:IssueDate>
   <cbc:IssueTime>10:00:00.000</cbc:IssueTime>
@@ -11256,11 +11227,11 @@ _4 instances across 1 element, with 2 unique structures_
 </cac:ForecastException>
 ```
 
-**Structure 2** — 1 instance
+**Structure 2** — 3 instances
 
 ```xml
 <cac:ForecastException>
-  <cbc:PurposeCode>ORDER_FORECAST</cbc:PurposeCode>
+  <cbc:ForecastPurposeCode>ORDER_FORECAST</cbc:ForecastPurposeCode>
   <cbc:ForecastTypeCode>TOTAL</cbc:ForecastTypeCode>
   <cbc:IssueDate>2010-04-17</cbc:IssueDate>
   <cbc:IssueTime>10:00:00.000</cbc:IssueTime>
@@ -11350,22 +11321,7 @@ _4 instances across 1 element, with 1 unique structure_
 
 _5 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 4 instances
-
-```xml
-<cac:GoodsItemPassportCounterfoil>
-  <cbc:ID>645634567</cbc:ID>
-  <cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
-  <cac:CustomsOfficeLocation>
-    <cbc:Name>Padborg</cbc:Name>
-  </cac:CustomsOfficeLocation>
-  <cac:VoucherDocumentReference>
-    <cbc:ID>5234533222</cbc:ID>
-  </cac:VoucherDocumentReference>
-</cac:GoodsItemPassportCounterfoil>
-```
-
-**Structure 2** — 1 instance
+**Structure 1** — 1 instance
 
 ```xml
 <cac:GoodsItemPassportCounterfoil>
@@ -11373,6 +11329,21 @@ _5 instances across 1 element, with 2 unique structures_
   <cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
   <cac:VoucherDocumentReference>
     <cbc:ID>23445567</cbc:ID>
+  </cac:VoucherDocumentReference>
+</cac:GoodsItemPassportCounterfoil>
+```
+
+**Structure 2** — 4 instances
+
+```xml
+<cac:GoodsItemPassportCounterfoil>
+  <cbc:ID>634563324</cbc:ID>
+  <cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
+  <cac:CustomsOfficeLocation>
+    <cbc:Name>Bietingen</cbc:Name>
+  </cac:CustomsOfficeLocation>
+  <cac:VoucherDocumentReference>
+    <cbc:ID>52345423423</cbc:ID>
   </cac:VoucherDocumentReference>
 </cac:GoodsItemPassportCounterfoil>
 ```
@@ -11385,7 +11356,26 @@ _5 instances across 1 element, with 2 unique structures_
 
 _47 instances across 1 element, with 13 unique structures_
 
-**Structure 1** — 1 instance
+**Structure 1** — 2 instances
+
+```xml
+<cac:GoodsItem>
+  <cbc:ID>GoodsItemID1</cbc:ID>
+  <cbc:Description>Office Printer 1</cbc:Description>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cbc:Quantity>1</cbc:Quantity>
+  <cac:Item>
+    <cbc:Name>Office Printer 1</cbc:Name>
+    <cbc:BrandName>Canon</cbc:BrandName>
+    <cbc:ModelName>ModelName28</cbc:ModelName>
+    <cac:CommodityClassification>
+      <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
+    </cac:CommodityClassification>
+  </cac:Item>
+</cac:GoodsItem>
+```
+
+**Structure 2** — 1 instance
 
 ```xml
 <cac:GoodsItem>
@@ -11406,23 +11396,6 @@ _47 instances across 1 element, with 13 unique structures_
       <cbc:Name>DegreeOfPlato</cbc:Name>
       <cbc:Value>0</cbc:Value>
     </cac:AdditionalItemProperty>
-  </cac:Item>
-</cac:GoodsItem>
-```
-
-**Structure 2** — 18 instances
-
-```xml
-<cac:GoodsItem>
-  <cbc:ID>2</cbc:ID>
-  <cbc:DeclaredCustomsValueAmount>0.00</cbc:DeclaredCustomsValueAmount>
-  <cbc:DeclaredStatisticsValueAmount>500.00</cbc:DeclaredStatisticsValueAmount>
-  <cbc:Quantity>1</cbc:Quantity>
-  <cac:Item>
-    <cbc:Description>BACHO S910, Topnøglesæt</cbc:Description>
-    <cac:OriginCountry>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:OriginCountry>
   </cac:Item>
 </cac:GoodsItem>
 ```
@@ -11474,26 +11447,157 @@ _47 instances across 1 element, with 13 unique structures_
 </cac:GoodsItem>
 ```
 
-**Structure 5** — 2 instances
+**Structure 5** — 4 instances
 
 ```xml
 <cac:GoodsItem>
-  <cbc:ID>GoodsItemID1</cbc:ID>
-  <cbc:Description>Office Printer 1</cbc:Description>
+  <cbc:ID>1</cbc:ID>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:Description>Acme beeswax</cbc:Description>
   <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cbc:Quantity>1</cbc:Quantity>
+  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+  <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
+  <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
+  <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
+  <cbc:ValueAmount>1000.00</cbc:ValueAmount>
+  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+  <cbc:Quantity>10</cbc:Quantity>
+  <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
+  <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
+  <cbc:CustomsTariffQuantity>1000</cbc:CustomsTariffQuantity>
   <cac:Item>
-    <cbc:Name>Office Printer 1</cbc:Name>
-    <cbc:BrandName>Canon</cbc:BrandName>
-    <cbc:ModelName>ModelName28</cbc:ModelName>
+    <cbc:Description>Beeswax</cbc:Description>
+    <cbc:Name>Acme Beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:OriginCountry>
+      <cbc:IdentificationCode>MX</cbc:IdentificationCode>
+      <cbc:Name>Mexico</cbc:Name>
+    </cac:OriginCountry>
+  </cac:Item>
+</cac:GoodsItem>
+```
+
+**Structure 6** — 2 instances
+
+```xml
+<cac:GoodsItem>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:Description>kattovalaisimia lasia</cbc:Description>
+  <cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
+  <cac:Pickup>
+    <cac:PickupLocation>
+      <cbc:ID>FI1234567-8R0001</cbc:ID>
+      <cbc:LocationTypeCode>L</cbc:LocationTypeCode>
+    </cac:PickupLocation>
+  </cac:Pickup>
+  <cac:ContainingPackage>
+    <cbc:ID>567-3456</cbc:ID>
+    <cbc:Quantity>5</cbc:Quantity>
+    <cbc:PackagingTypeCode>CS</cbc:PackagingTypeCode>
+  </cac:ContainingPackage>
+</cac:GoodsItem>
+```
+
+**Structure 7** — 2 instances
+
+```xml
+<cac:GoodsItem>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:DeclaredStatisticsValueAmount>182.62</cbc:DeclaredStatisticsValueAmount>
+  <cbc:ValueAmount>250</cbc:ValueAmount>
+  <cbc:NetWeightMeasure>1</cbc:NetWeightMeasure>
+  <cbc:PreferenceCriterionCode>100</cbc:PreferenceCriterionCode>
+  <cbc:CustomsProcedureCode>1011</cbc:CustomsProcedureCode>
+  <cac:Item>
+    <cbc:Description>Kuulokkeita</cbc:Description>
     <cac:CommodityClassification>
-      <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
+      <cbc:ItemClassificationCode>8518309590</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+  </cac:Item>
+  <cac:Pickup>
+    <cac:PickupLocation>
+      <cbc:ID>01530</cbc:ID>
+      <cbc:LocationTypeCode>P</cbc:LocationTypeCode>
+    </cac:PickupLocation>
+  </cac:Pickup>
+  <cac:ContainingPackage>
+    <cbc:ID>YangMei</cbc:ID>
+    <cbc:Quantity>1</cbc:Quantity>
+    <cbc:PackagingTypeCode>CT</cbc:PackagingTypeCode>
+  </cac:ContainingPackage>
+</cac:GoodsItem>
+```
+
+**Structure 8** — 2 instances
+
+```xml
+<cac:GoodsItem>
+  <cac:Item>
+    <cac:CommodityClassification>
+      <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+      <cbc:CommodityCode>8</cbc:CommodityCode>
     </cac:CommodityClassification>
   </cac:Item>
 </cac:GoodsItem>
 ```
 
-**Structure 6** — 1 instance
+**Structure 9** — 4 instances
+
+```xml
+<cac:GoodsItem>
+  <cbc:ID>1</cbc:ID>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:Description>Acme beeswax</cbc:Description>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+  <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
+  <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
+  <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
+  <cbc:ValueAmount>1000.00</cbc:ValueAmount>
+  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+  <cbc:Quantity>10</cbc:Quantity>
+  <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
+  <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
+  <cbc:CustomsTariffQuantity>100</cbc:CustomsTariffQuantity>
+  <cac:Item>
+    <cbc:Description>Beeswax</cbc:Description>
+    <cbc:Name>Acme Beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
+  </cac:Item>
+</cac:GoodsItem>
+```
+
+**Structure 10** — 6 instances
+
+```xml
+<cac:GoodsItem>
+  <cac:Item>
+    <cac:CommodityClassification>
+      <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+    </cac:CommodityClassification>
+  </cac:Item>
+</cac:GoodsItem>
+```
+
+**Structure 11** — 1 instance
 
 ```xml
 <cac:GoodsItem>
@@ -11587,7 +11691,7 @@ _47 instances across 1 element, with 13 unique structures_
 </cac:GoodsItem>
 ```
 
-**Structure 7** — 2 instances
+**Structure 12** — 2 instances
 
 ```xml
 <cac:GoodsItem>
@@ -11599,153 +11703,20 @@ _47 instances across 1 element, with 13 unique structures_
 </cac:GoodsItem>
 ```
 
-**Structure 8** — 4 instances
+**Structure 13** — 18 instances
 
 ```xml
 <cac:GoodsItem>
-  <cbc:ID>1</cbc:ID>
-  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Description>Acme beeswax</cbc:Description>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-  <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
-  <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
-  <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
-  <cbc:ValueAmount>1000.00</cbc:ValueAmount>
-  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-  <cbc:Quantity>10</cbc:Quantity>
-  <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
-  <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
-  <cbc:CustomsTariffQuantity>1000</cbc:CustomsTariffQuantity>
+  <cbc:ID>15</cbc:ID>
+  <cbc:DeclaredCustomsValueAmount>1500.00</cbc:DeclaredCustomsValueAmount>
+  <cbc:DeclaredStatisticsValueAmount>1500.00</cbc:DeclaredStatisticsValueAmount>
+  <cbc:Quantity>1</cbc:Quantity>
   <cac:Item>
-    <cbc:Description>Beeswax</cbc:Description>
-    <cbc:Name>Acme Beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
+    <cbc:Description>MILWAUKEE HD18PD, Akkuboremaskine</cbc:Description>
     <cac:OriginCountry>
-      <cbc:IdentificationCode>MX</cbc:IdentificationCode>
-      <cbc:Name>Mexico</cbc:Name>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
     </cac:OriginCountry>
   </cac:Item>
-</cac:GoodsItem>
-```
-
-**Structure 9** — 4 instances
-
-```xml
-<cac:GoodsItem>
-  <cbc:ID>1</cbc:ID>
-  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Description>Acme beeswax</cbc:Description>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-  <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
-  <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
-  <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
-  <cbc:ValueAmount>1000.00</cbc:ValueAmount>
-  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-  <cbc:Quantity>10</cbc:Quantity>
-  <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
-  <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
-  <cbc:CustomsTariffQuantity>100</cbc:CustomsTariffQuantity>
-  <cac:Item>
-    <cbc:Description>Beeswax</cbc:Description>
-    <cbc:Name>Acme Beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
-  </cac:Item>
-</cac:GoodsItem>
-```
-
-**Structure 10** — 2 instances
-
-```xml
-<cac:GoodsItem>
-  <cac:Item>
-    <cac:CommodityClassification>
-      <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
-      <cbc:CommodityCode>8</cbc:CommodityCode>
-    </cac:CommodityClassification>
-  </cac:Item>
-</cac:GoodsItem>
-```
-
-**Structure 11** — 6 instances
-
-```xml
-<cac:GoodsItem>
-  <cac:Item>
-    <cac:CommodityClassification>
-      <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-    </cac:CommodityClassification>
-  </cac:Item>
-</cac:GoodsItem>
-```
-
-**Structure 12** — 2 instances
-
-```xml
-<cac:GoodsItem>
-  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:DeclaredStatisticsValueAmount>182.62</cbc:DeclaredStatisticsValueAmount>
-  <cbc:ValueAmount>250</cbc:ValueAmount>
-  <cbc:NetWeightMeasure>1</cbc:NetWeightMeasure>
-  <cbc:PreferenceCriterionCode>100</cbc:PreferenceCriterionCode>
-  <cbc:CustomsProcedureCode>1011</cbc:CustomsProcedureCode>
-  <cac:Item>
-    <cbc:Description>Kuulokkeita</cbc:Description>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>8518309590</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-  </cac:Item>
-  <cac:Pickup>
-    <cac:PickupLocation>
-      <cbc:ID>01530</cbc:ID>
-      <cbc:LocationTypeCode>P</cbc:LocationTypeCode>
-    </cac:PickupLocation>
-  </cac:Pickup>
-  <cac:ContainingPackage>
-    <cbc:ID>YangMei</cbc:ID>
-    <cbc:Quantity>1</cbc:Quantity>
-    <cbc:PackagingTypeCode>CT</cbc:PackagingTypeCode>
-  </cac:ContainingPackage>
-</cac:GoodsItem>
-```
-
-**Structure 13** — 2 instances
-
-```xml
-<cac:GoodsItem>
-  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Description>kattovalaisimia lasia</cbc:Description>
-  <cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
-  <cac:Pickup>
-    <cac:PickupLocation>
-      <cbc:ID>FI1234567-8R0001</cbc:ID>
-      <cbc:LocationTypeCode>L</cbc:LocationTypeCode>
-    </cac:PickupLocation>
-  </cac:Pickup>
-  <cac:ContainingPackage>
-    <cbc:ID>567-3456</cbc:ID>
-    <cbc:Quantity>5</cbc:Quantity>
-    <cbc:PackagingTypeCode>CS</cbc:PackagingTypeCode>
-  </cac:ContainingPackage>
 </cac:GoodsItem>
 ```
 
@@ -11761,16 +11732,16 @@ _2 instances across 1 element, with 1 unique structure_
 
 ```xml
 <cac:InstructionForReturnsLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Quantity>20</cbc:Quantity>
+  <cbc:ID>2</cbc:ID>
+  <cbc:Quantity>5</cbc:Quantity>
   <cac:Item>
-    <cbc:Description>Denim Jeans Jacket</cbc:Description>
-    <cbc:Name>Jeans Jacket man</cbc:Name>
+    <cbc:Description>Leather Jacket</cbc:Description>
+    <cbc:Name>Leather Jacket man</cbc:Name>
     <cac:BuyersItemIdentification>
-      <cbc:ID>AA109</cbc:ID>
+      <cbc:ID>AA128</cbc:ID>
     </cac:BuyersItemIdentification>
     <cac:SellersItemIdentification>
-      <cbc:ID>YX401</cbc:ID>
+      <cbc:ID>YX233</cbc:ID>
     </cac:SellersItemIdentification>
   </cac:Item>
 </cac:InstructionForReturnsLine>
@@ -11788,16 +11759,16 @@ _6 instances across 1 element, with 1 unique structure_
 
 ```xml
 <cac:InventoryReportLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Quantity>10</cbc:Quantity>
-  <cbc:InventoryValueAmount>200</cbc:InventoryValueAmount>
+  <cbc:ID>3</cbc:ID>
+  <cbc:Quantity>5</cbc:Quantity>
+  <cbc:InventoryValueAmount>300</cbc:InventoryValueAmount>
   <cac:Item>
-    <cbc:Description>shirt</cbc:Description>
+    <cbc:Description>woman's dress</cbc:Description>
     <cac:BuyersItemIdentification>
-      <cbc:ID>SH009</cbc:ID>
+      <cbc:ID>DH019</cbc:ID>
     </cac:BuyersItemIdentification>
     <cac:SellersItemIdentification>
-      <cbc:ID>DD88</cbc:ID>
+      <cbc:ID>BA058</cbc:ID>
     </cac:SellersItemIdentification>
   </cac:Item>
 </cac:InventoryReportLine>
@@ -11812,268 +11783,6 @@ _6 instances across 1 element, with 1 unique structure_
 _34 instances across 1 element, with 8 unique structures_
 
 **Structure 1** — 3 instances
-
-```xml
-<cac:InvoiceLine>
-  <cbc:ID>5</cbc:ID>
-  <cbc:InvoicedQuantity>250</cbc:InvoicedQuantity>
-  <cbc:LineExtensionAmount>187.5</cbc:LineExtensionAmount>
-  <cbc:AccountingCost>BookingCode002</cbc:AccountingCost>
-  <cac:OrderLineReference>
-    <cbc:LineID>4</cbc:LineID>
-  </cac:OrderLineReference>
-  <cac:TaxTotal>
-    <cbc:TaxAmount>37.5</cbc:TaxAmount>
-  </cac:TaxTotal>
-  <cac:Item>
-    <cbc:Name>Network cable</cbc:Name>
-    <cac:SellersItemIdentification>
-      <cbc:ID>JB011</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:StandardItemIdentification>
-      <cbc:ID>1234567890128</cbc:ID>
-    </cac:StandardItemIdentification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>12344325</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>65434564</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:ClassifiedTaxCategory>
-      <cbc:ID>S</cbc:ID>
-      <cbc:Percent>20</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:ClassifiedTaxCategory>
-    <cac:AdditionalItemProperty>
-      <cbc:Name>Type</cbc:Name>
-      <cbc:Value>Cat5</cbc:Value>
-    </cac:AdditionalItemProperty>
-  </cac:Item>
-  <cac:Price>
-    <cbc:PriceAmount>0.75</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-  </cac:Price>
-</cac:InvoiceLine>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:InvoiceLine>
-  <cbc:ID>A</cbc:ID>
-  <cbc:InvoicedQuantity>100</cbc:InvoicedQuantity>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cac:OrderLineReference>
-    <cbc:LineID>1</cbc:LineID>
-    <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
-    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cac:OrderReference>
-      <cbc:ID>AEG012345</cbc:ID>
-      <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
-      <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
-      <cbc:IssueDate>2005-06-20</cbc:IssueDate>
-    </cac:OrderReference>
-  </cac:OrderLineReference>
-  <cac:TaxTotal>
-    <cbc:TaxAmount>17.50</cbc:TaxAmount>
-    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
-    <cac:TaxSubTotal>
-      <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
-      <cbc:TaxAmount>17.50</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID>A</cbc:ID>
-        <cbc:Percent>17.5</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>UK VAT</cbc:ID>
-          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubTotal>
-  </cac:TaxTotal>
-  <cac:Item>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:Name>beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:LotIdentification>
-      <cbc:LotNumberID>546378239</cbc:LotNumberID>
-      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
-    </cac:LotIdentification>
-  </cac:Item>
-  <cac:Price>
-    <cbc:PriceAmount>1.00</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-  </cac:Price>
-</cac:InvoiceLine>
-```
-
-**Structure 3** — 17 instances
-
-```xml
-<cac:InvoiceLine>
-  <cbc:ID>A</cbc:ID>
-  <cbc:InvoicedQuantity>100</cbc:InvoicedQuantity>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cac:OrderLineReference>
-    <cbc:LineID>1</cbc:LineID>
-    <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
-    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cac:OrderReference>
-      <cbc:ID>AEG012345</cbc:ID>
-      <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
-      <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
-      <cbc:IssueDate>2005-06-20</cbc:IssueDate>
-    </cac:OrderReference>
-  </cac:OrderLineReference>
-  <cac:TaxTotal>
-    <cbc:TaxAmount>17.50</cbc:TaxAmount>
-    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
-      <cbc:TaxAmount>17.50</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID>A</cbc:ID>
-        <cbc:Percent>17.5</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>UK VAT</cbc:ID>
-          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
-  <cac:Item>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:Name>beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:ItemInstance>
-      <cac:LotIdentification>
-        <cbc:LotNumberID>546378239</cbc:LotNumberID>
-        <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
-      </cac:LotIdentification>
-    </cac:ItemInstance>
-  </cac:Item>
-  <cac:Price>
-    <cbc:PriceAmount>1.00</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-  </cac:Price>
-</cac:InvoiceLine>
-```
-
-**Structure 4** — 3 instances
-
-```xml
-<cac:InvoiceLine>
-  <cbc:ID>3</cbc:ID>
-  <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
-  <cbc:LineExtensionAmount>4.96</cbc:LineExtensionAmount>
-  <cac:OrderLineReference>
-    <cbc:LineID>3</cbc:LineID>
-  </cac:OrderLineReference>
-  <cac:TaxTotal>
-    <cbc:TaxAmount>0.496</cbc:TaxAmount>
-  </cac:TaxTotal>
-  <cac:Item>
-    <cbc:Name>"Computing for dummies" book</cbc:Name>
-    <cac:SellersItemIdentification>
-      <cbc:ID>JB009</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:StandardItemIdentification>
-      <cbc:ID>1234567890126</cbc:ID>
-    </cac:StandardItemIdentification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>65434566</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:ClassifiedTaxCategory>
-      <cbc:ID>AA</cbc:ID>
-      <cbc:Percent>10</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:ClassifiedTaxCategory>
-  </cac:Item>
-  <cac:Price>
-    <cbc:PriceAmount>2.48</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
-      <cbc:Amount>0.275</cbc:Amount>
-      <cbc:BaseAmount>2.75</cbc:BaseAmount>
-    </cac:AllowanceCharge>
-  </cac:Price>
-</cac:InvoiceLine>
-```
-
-**Structure 5** — 3 instances
-
-```xml
-<cac:InvoiceLine>
-  <cbc:ID>4</cbc:ID>
-  <cbc:InvoicedQuantity>-1</cbc:InvoicedQuantity>
-  <cbc:LineExtensionAmount>-25</cbc:LineExtensionAmount>
-  <cac:OrderLineReference>
-    <cbc:LineID>2</cbc:LineID>
-  </cac:OrderLineReference>
-  <cac:TaxTotal>
-    <cbc:TaxAmount>0</cbc:TaxAmount>
-  </cac:TaxTotal>
-  <cac:Item>
-    <cbc:Name>Returned IBM 5150 desktop</cbc:Name>
-    <cac:SellersItemIdentification>
-      <cbc:ID>JB010</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:StandardItemIdentification>
-      <cbc:ID>1234567890127</cbc:ID>
-    </cac:StandardItemIdentification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>12344322</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode>65434565</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
-    <cac:ClassifiedTaxCategory>
-      <cbc:ID>E</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:ClassifiedTaxCategory>
-  </cac:Item>
-  <cac:Price>
-    <cbc:PriceAmount>25</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-  </cac:Price>
-</cac:InvoiceLine>
-```
-
-**Structure 6** — 1 instance
-
-```xml
-<cac:InvoiceLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cac:Item>
-    <cbc:Description>Cotter pin, MIL-SPEC</cbc:Description>
-  </cac:Item>
-</cac:InvoiceLine>
-```
-
-**Structure 7** — 3 instances
 
 ```xml
 <cac:InvoiceLine>
@@ -12140,7 +11849,222 @@ _34 instances across 1 element, with 8 unique structures_
 </cac:InvoiceLine>
 ```
 
-**Structure 8** — 3 instances
+**Structure 2** — 1 instance
+
+```xml
+<cac:InvoiceLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cac:Item>
+    <cbc:Description>Cotter pin, MIL-SPEC</cbc:Description>
+  </cac:Item>
+</cac:InvoiceLine>
+```
+
+**Structure 3** — 3 instances
+
+```xml
+<cac:InvoiceLine>
+  <cbc:ID>4</cbc:ID>
+  <cbc:InvoicedQuantity>-1</cbc:InvoicedQuantity>
+  <cbc:LineExtensionAmount>-25</cbc:LineExtensionAmount>
+  <cac:OrderLineReference>
+    <cbc:LineID>2</cbc:LineID>
+  </cac:OrderLineReference>
+  <cac:TaxTotal>
+    <cbc:TaxAmount>0</cbc:TaxAmount>
+  </cac:TaxTotal>
+  <cac:Item>
+    <cbc:Name>Returned IBM 5150 desktop</cbc:Name>
+    <cac:SellersItemIdentification>
+      <cbc:ID>JB010</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:StandardItemIdentification>
+      <cbc:ID>1234567890127</cbc:ID>
+    </cac:StandardItemIdentification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>12344322</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>65434565</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:ClassifiedTaxCategory>
+      <cbc:ID>E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:ClassifiedTaxCategory>
+  </cac:Item>
+  <cac:Price>
+    <cbc:PriceAmount>25</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  </cac:Price>
+</cac:InvoiceLine>
+```
+
+**Structure 4** — 3 instances
+
+```xml
+<cac:InvoiceLine>
+  <cbc:ID>3</cbc:ID>
+  <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+  <cbc:LineExtensionAmount>4.96</cbc:LineExtensionAmount>
+  <cac:OrderLineReference>
+    <cbc:LineID>3</cbc:LineID>
+  </cac:OrderLineReference>
+  <cac:TaxTotal>
+    <cbc:TaxAmount>0.496</cbc:TaxAmount>
+  </cac:TaxTotal>
+  <cac:Item>
+    <cbc:Name>"Computing for dummies" book</cbc:Name>
+    <cac:SellersItemIdentification>
+      <cbc:ID>JB009</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:StandardItemIdentification>
+      <cbc:ID>1234567890126</cbc:ID>
+    </cac:StandardItemIdentification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>65434566</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:ClassifiedTaxCategory>
+      <cbc:ID>AA</cbc:ID>
+      <cbc:Percent>10</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:ClassifiedTaxCategory>
+  </cac:Item>
+  <cac:Price>
+    <cbc:PriceAmount>2.48</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
+      <cbc:Amount>0.275</cbc:Amount>
+      <cbc:BaseAmount>2.75</cbc:BaseAmount>
+    </cac:AllowanceCharge>
+  </cac:Price>
+</cac:InvoiceLine>
+```
+
+**Structure 5** — 17 instances
+
+```xml
+<cac:InvoiceLine>
+  <cbc:ID>A</cbc:ID>
+  <cbc:InvoicedQuantity>100</cbc:InvoicedQuantity>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cac:OrderLineReference>
+    <cbc:LineID>1</cbc:LineID>
+    <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+    <cac:OrderReference>
+      <cbc:ID>AEG012345</cbc:ID>
+      <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
+      <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
+      <cbc:IssueDate>2005-06-20</cbc:IssueDate>
+    </cac:OrderReference>
+  </cac:OrderLineReference>
+  <cac:TaxTotal>
+    <cbc:TaxAmount>17.50</cbc:TaxAmount>
+    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
+      <cbc:TaxAmount>17.50</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>A</cbc:ID>
+        <cbc:Percent>17.5</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>UK VAT</cbc:ID>
+          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:Item>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:Name>beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:ItemInstance>
+      <cac:LotIdentification>
+        <cbc:LotNumberID>546378239</cbc:LotNumberID>
+        <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
+      </cac:LotIdentification>
+    </cac:ItemInstance>
+  </cac:Item>
+  <cac:Price>
+    <cbc:PriceAmount>1.00</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  </cac:Price>
+</cac:InvoiceLine>
+```
+
+**Structure 6** — 1 instance
+
+```xml
+<cac:InvoiceLine>
+  <cbc:ID>A</cbc:ID>
+  <cbc:InvoicedQuantity>100</cbc:InvoicedQuantity>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cac:OrderLineReference>
+    <cbc:LineID>1</cbc:LineID>
+    <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+    <cac:OrderReference>
+      <cbc:ID>AEG012345</cbc:ID>
+      <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
+      <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
+      <cbc:IssueDate>2005-06-20</cbc:IssueDate>
+    </cac:OrderReference>
+  </cac:OrderLineReference>
+  <cac:TaxTotal>
+    <cbc:TaxAmount>17.50</cbc:TaxAmount>
+    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cac:TaxSubTotal>
+      <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
+      <cbc:TaxAmount>17.50</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>A</cbc:ID>
+        <cbc:Percent>17.5</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>UK VAT</cbc:ID>
+          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubTotal>
+  </cac:TaxTotal>
+  <cac:Item>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:Name>beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:LotIdentification>
+      <cbc:LotNumberID>546378239</cbc:LotNumberID>
+      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
+    </cac:LotIdentification>
+  </cac:Item>
+  <cac:Price>
+    <cbc:PriceAmount>1.00</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  </cac:Price>
+</cac:InvoiceLine>
+```
+
+**Structure 7** — 3 instances
 
 ```xml
 <cac:InvoiceLine>
@@ -12183,6 +12107,53 @@ _34 instances across 1 element, with 8 unique structures_
 </cac:InvoiceLine>
 ```
 
+**Structure 8** — 3 instances
+
+```xml
+<cac:InvoiceLine>
+  <cbc:ID>5</cbc:ID>
+  <cbc:InvoicedQuantity>250</cbc:InvoicedQuantity>
+  <cbc:LineExtensionAmount>187.5</cbc:LineExtensionAmount>
+  <cbc:AccountingCost>BookingCode002</cbc:AccountingCost>
+  <cac:OrderLineReference>
+    <cbc:LineID>4</cbc:LineID>
+  </cac:OrderLineReference>
+  <cac:TaxTotal>
+    <cbc:TaxAmount>37.5</cbc:TaxAmount>
+  </cac:TaxTotal>
+  <cac:Item>
+    <cbc:Name>Network cable</cbc:Name>
+    <cac:SellersItemIdentification>
+      <cbc:ID>JB011</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:StandardItemIdentification>
+      <cbc:ID>1234567890128</cbc:ID>
+    </cac:StandardItemIdentification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>12344325</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode>65434564</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:ClassifiedTaxCategory>
+      <cbc:ID>S</cbc:ID>
+      <cbc:Percent>20</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:ClassifiedTaxCategory>
+    <cac:AdditionalItemProperty>
+      <cbc:Name>Type</cbc:Name>
+      <cbc:Value>Cat5</cbc:Value>
+    </cac:AdditionalItemProperty>
+  </cac:Item>
+  <cac:Price>
+    <cbc:PriceAmount>0.75</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  </cac:Price>
+</cac:InvoiceLine>
+```
+
 [↑ Back to contents](#contents)
 
 ### `ItemIdentificationType`
@@ -12191,15 +12162,7 @@ _34 instances across 1 element, with 8 unique structures_
 
 _300 instances across 3 elements, with 3 unique structures_
 
-**Structure 1** — 98 instances
-
-```xml
-<cac:BuyersItemIdentification>
-  <cbc:ID>6578489</cbc:ID>
-</cac:BuyersItemIdentification>
-```
-
-**Structure 2** — 139 instances
+**Structure 1** — 139 instances
 
 ```xml
 <cac:SellersItemIdentification>
@@ -12207,12 +12170,20 @@ _300 instances across 3 elements, with 3 unique structures_
 </cac:SellersItemIdentification>
 ```
 
-**Structure 3** — 63 instances
+**Structure 2** — 63 instances
 
 ```xml
 <cac:StandardItemIdentification>
-  <cbc:ID>1234567890124</cbc:ID>
+  <cbc:ID>00123450000584</cbc:ID>
 </cac:StandardItemIdentification>
+```
+
+**Structure 3** — 98 instances
+
+```xml
+<cac:BuyersItemIdentification>
+  <cbc:ID>6578489</cbc:ID>
+</cac:BuyersItemIdentification>
 ```
 
 [↑ Back to contents](#contents)
@@ -12339,8 +12310,8 @@ _30 instances across 1 element, with 2 unique structures_
 
 ```xml
 <cac:AdditionalItemProperty>
-  <cbc:Name>Color</cbc:Name>
-  <cbc:Value>black</cbc:Value>
+  <cbc:Name>Type</cbc:Name>
+  <cbc:Value>Cat5</cbc:Value>
 </cac:AdditionalItemProperty>
 ```
 
@@ -12352,24 +12323,7 @@ _30 instances across 1 element, with 2 unique structures_
 
 _200 instances across 2 elements, with 26 unique structures_
 
-**Structure 1** — 2 instances
-
-```xml
-<cac:Item></cac:Item>
-```
-
-**Structure 2** — 2 instances
-
-```xml
-<cac:Item>
-  <cac:CommodityClassification>
-    <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
-    <cbc:CommodityCode>8</cbc:CommodityCode>
-  </cac:CommodityClassification>
-</cac:Item>
-```
-
-**Structure 3** — 6 instances
+**Structure 1** — 6 instances
 
 ```xml
 <cac:Item>
@@ -12379,32 +12333,88 @@ _200 instances across 2 elements, with 26 unique structures_
 </cac:Item>
 ```
 
-**Structure 4** — 17 instances
+**Structure 2** — 19 instances
 
 ```xml
 <cac:Item>
-  <cbc:Description>shirt</cbc:Description>
-  <cac:BuyersItemIdentification>
-    <cbc:ID>SH009</cbc:ID>
-  </cac:BuyersItemIdentification>
+  <cbc:Description>BOSCH GLL 3-80P Lasernivilering</cbc:Description>
+  <cac:OriginCountry>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:OriginCountry>
+</cac:Item>
+```
+
+**Structure 3** — 2 instances
+
+```xml
+<cac:Item>
+  <cbc:Name>Magic cloak</cbc:Name>
   <cac:SellersItemIdentification>
-    <cbc:ID>DD88</cbc:ID>
+    <cbc:ID>MC002</cbc:ID>
   </cac:SellersItemIdentification>
 </cac:Item>
 ```
 
-**Structure 5** — 2 instances
+**Structure 4** — 17 instances
 
 ```xml
 <cac:Item>
-  <cbc:Description>Kuulokkeita</cbc:Description>
-  <cac:CommodityClassification>
-    <cbc:ItemClassificationCode>8518309590</cbc:ItemClassificationCode>
-  </cac:CommodityClassification>
+  <cbc:Description>skirt</cbc:Description>
+  <cac:BuyersItemIdentification>
+    <cbc:ID>TS893</cbc:ID>
+  </cac:BuyersItemIdentification>
+  <cac:SellersItemIdentification>
+    <cbc:ID>PK009</cbc:ID>
+  </cac:SellersItemIdentification>
 </cac:Item>
 ```
 
-**Structure 6** — 29 instances
+**Structure 5** — 9 instances
+
+```xml
+<cac:SupplyItem>
+  <cbc:Description>Acme beeswax</cbc:Description>
+  <cbc:Name>beeswax</cbc:Name>
+  <cac:BuyersItemIdentification>
+    <cbc:ID>6578489</cbc:ID>
+  </cac:BuyersItemIdentification>
+  <cac:SellersItemIdentification>
+    <cbc:ID>17589683</cbc:ID>
+  </cac:SellersItemIdentification>
+  <cac:StandardItemIdentification>
+    <cbc:ID>00123450000584</cbc:ID>
+  </cac:StandardItemIdentification>
+</cac:SupplyItem>
+```
+
+**Structure 6** — 18 instances
+
+```xml
+<cac:Item>
+  <cbc:Name>Returned "Advanced computing" book</cbc:Name>
+  <cac:SellersItemIdentification>
+    <cbc:ID>JB008</cbc:ID>
+  </cac:SellersItemIdentification>
+  <cac:StandardItemIdentification>
+    <cbc:ID>1234567890125</cbc:ID>
+  </cac:StandardItemIdentification>
+  <cac:CommodityClassification>
+    <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
+  </cac:CommodityClassification>
+  <cac:CommodityClassification>
+    <cbc:ItemClassificationCode>65434567</cbc:ItemClassificationCode>
+  </cac:CommodityClassification>
+  <cac:ClassifiedTaxCategory>
+    <cbc:ID>AA</cbc:ID>
+    <cbc:Percent>10</cbc:Percent>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:ClassifiedTaxCategory>
+</cac:Item>
+```
+
+**Structure 7** — 8 instances
 
 ```xml
 <cac:Item>
@@ -12416,16 +12426,24 @@ _200 instances across 2 elements, with 26 unique structures_
   <cac:SellersItemIdentification>
     <cbc:ID>17589683</cbc:ID>
   </cac:SellersItemIdentification>
-  <cac:ItemInstance>
-    <cac:LotIdentification>
-      <cbc:LotNumberID>546378239</cbc:LotNumberID>
-      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
-    </cac:LotIdentification>
-  </cac:ItemInstance>
+  <cac:StandardItemIdentification>
+    <cbc:ID>00123450000584</cbc:ID>
+  </cac:StandardItemIdentification>
 </cac:Item>
 ```
 
-**Structure 7** — 3 instances
+**Structure 8** — 2 instances
+
+```xml
+<cac:Item>
+  <cbc:Description>Kuulokkeita</cbc:Description>
+  <cac:CommodityClassification>
+    <cbc:ItemClassificationCode>8518309590</cbc:ItemClassificationCode>
+  </cac:CommodityClassification>
+</cac:Item>
+```
+
+**Structure 9** — 3 instances
 
 ```xml
 <cac:Item>
@@ -12444,82 +12462,18 @@ _200 instances across 2 elements, with 26 unique structures_
 </cac:Item>
 ```
 
-**Structure 8** — 4 instances
+**Structure 10** — 2 instances
 
 ```xml
 <cac:Item>
-  <cbc:Description>Beeswax</cbc:Description>
-  <cbc:Name>Acme Beeswax</cbc:Name>
-  <cac:BuyersItemIdentification>
-    <cbc:ID>6578489</cbc:ID>
-  </cac:BuyersItemIdentification>
-  <cac:SellersItemIdentification>
-    <cbc:ID>17589683</cbc:ID>
-  </cac:SellersItemIdentification>
-  <cac:OriginCountry>
-    <cbc:IdentificationCode>MX</cbc:IdentificationCode>
-    <cbc:Name>Mexico</cbc:Name>
-  </cac:OriginCountry>
-</cac:Item>
-```
-
-**Structure 9** — 8 instances
-
-```xml
-<cac:Item>
-  <cbc:Description>Acme beeswax</cbc:Description>
-  <cbc:Name>beeswax</cbc:Name>
-  <cac:BuyersItemIdentification>
-    <cbc:ID>6578489</cbc:ID>
-  </cac:BuyersItemIdentification>
-  <cac:SellersItemIdentification>
-    <cbc:ID>17589683</cbc:ID>
-  </cac:SellersItemIdentification>
-  <cac:StandardItemIdentification>
-    <cbc:ID>00123450000584</cbc:ID>
-  </cac:StandardItemIdentification>
-</cac:Item>
-```
-
-**Structure 10** — 28 instances
-
-```xml
-<cac:Item>
-  <cbc:Description>Acme beeswax</cbc:Description>
-  <cbc:Name>beeswax</cbc:Name>
-  <cac:BuyersItemIdentification>
-    <cbc:ID>6578489</cbc:ID>
-  </cac:BuyersItemIdentification>
-  <cac:SellersItemIdentification>
-    <cbc:ID>17589683</cbc:ID>
-  </cac:SellersItemIdentification>
+  <cac:CommodityClassification>
+    <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+    <cbc:CommodityCode>8</cbc:CommodityCode>
+  </cac:CommodityClassification>
 </cac:Item>
 ```
 
 **Structure 11** — 6 instances
-
-```xml
-<cac:Item>
-  <cbc:Description>Red paint</cbc:Description>
-  <cbc:Name>Falu Rödfärg</cbc:Name>
-  <cac:SellersItemIdentification>
-    <cbc:ID>SItemNo001</cbc:ID>
-  </cac:SellersItemIdentification>
-  <cac:StandardItemIdentification>
-    <cbc:ID>1234567890123</cbc:ID>
-  </cac:StandardItemIdentification>
-  <cac:AdditionalItemProperty>
-    <cbc:Name>Paint type</cbc:Name>
-    <cbc:Value>Acrylic</cbc:Value>
-  </cac:AdditionalItemProperty>
-  <cac:AdditionalItemProperty>
-    <cbc:Name>Solvant</cbc:Name>
-    <cbc:Value>Water</cbc:Value>
-  </cac:AdditionalItemProperty>
-</cac:Item>
-```
-
-**Structure 12** — 6 instances
 
 ```xml
 <cac:Item>
@@ -12552,13 +12506,20 @@ _200 instances across 2 elements, with 26 unique structures_
 </cac:Item>
 ```
 
-**Structure 13** — 10 instances
+**Structure 12** — 6 instances
 
 ```xml
-<cac:Item>
-  <cbc:Description>Stationær computer</cbc:Description>
-  <cbc:Name>Dell PrecisionTM  T3400</cbc:Name>
-</cac:Item>
+<cac:SupplyItem>
+  <cac:StandardItemIdentification>
+    <cbc:ID>00123450000580</cbc:ID>
+  </cac:StandardItemIdentification>
+</cac:SupplyItem>
+```
+
+**Structure 13** — 2 instances
+
+```xml
+<cac:Item></cac:Item>
 ```
 
 **Structure 14** — 1 instance
@@ -12580,18 +12541,34 @@ _200 instances across 2 elements, with 26 unique structures_
 </cac:Item>
 ```
 
-**Structure 15** — 19 instances
+**Structure 15** — 4 instances
 
 ```xml
 <cac:Item>
-  <cbc:Description>BACHO S910, Topnøglesæt</cbc:Description>
+  <cbc:Description>Beeswax</cbc:Description>
+  <cbc:Name>Acme Beeswax</cbc:Name>
+  <cac:BuyersItemIdentification>
+    <cbc:ID>6578489</cbc:ID>
+  </cac:BuyersItemIdentification>
+  <cac:SellersItemIdentification>
+    <cbc:ID>17589683</cbc:ID>
+  </cac:SellersItemIdentification>
   <cac:OriginCountry>
-    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    <cbc:IdentificationCode>MX</cbc:IdentificationCode>
+    <cbc:Name>Mexico</cbc:Name>
   </cac:OriginCountry>
 </cac:Item>
 ```
 
-**Structure 16** — 1 instance
+**Structure 16** — 2 instances
+
+```xml
+<cac:Item>
+  <cbc:Name>High-grade Widget</cbc:Name>
+</cac:Item>
+```
+
+**Structure 17** — 1 instance
 
 ```xml
 <cac:Item>
@@ -12671,7 +12648,25 @@ _200 instances across 2 elements, with 26 unique structures_
 </cac:Item>
 ```
 
-**Structure 17** — 2 instances
+**Structure 18** — 5 instances
+
+```xml
+<cac:Item>
+  <cbc:Description>Red paint</cbc:Description>
+</cac:Item>
+```
+
+**Structure 19** — 4 instances
+
+```xml
+<cac:Item>
+  <cac:StandardItemIdentification>
+    <cbc:ID>06110123456784</cbc:ID>
+  </cac:StandardItemIdentification>
+</cac:Item>
+```
+
+**Structure 20** — 2 instances
 
 ```xml
 <cac:Item>
@@ -12690,28 +12685,58 @@ _200 instances across 2 elements, with 26 unique structures_
 </cac:Item>
 ```
 
-**Structure 18** — 5 instances
+**Structure 21** — 6 instances
 
 ```xml
 <cac:Item>
-  <cbc:Description>Cotter pin, MIL-SPEC</cbc:Description>
+  <cbc:Description>Red paint</cbc:Description>
+  <cbc:Name>Falu Rödfärg</cbc:Name>
+  <cac:SellersItemIdentification>
+    <cbc:ID>SItemNo001</cbc:ID>
+  </cac:SellersItemIdentification>
+  <cac:StandardItemIdentification>
+    <cbc:ID>1234567890123</cbc:ID>
+  </cac:StandardItemIdentification>
+  <cac:AdditionalItemProperty>
+    <cbc:Name>Paint type</cbc:Name>
+    <cbc:Value>Acrylic</cbc:Value>
+  </cac:AdditionalItemProperty>
+  <cac:AdditionalItemProperty>
+    <cbc:Name>Solvant</cbc:Name>
+    <cbc:Value>Water</cbc:Value>
+  </cac:AdditionalItemProperty>
 </cac:Item>
 ```
 
-**Structure 19** — 2 instances
+**Structure 22** — 2 instances
 
 ```xml
 <cac:Item>
-  <cbc:Name>Office Printer 1</cbc:Name>
+  <cbc:Name>Office Printer 2</cbc:Name>
   <cbc:BrandName>Canon</cbc:BrandName>
-  <cbc:ModelName>ModelName28</cbc:ModelName>
+  <cbc:ModelName>MPX2000</cbc:ModelName>
   <cac:CommodityClassification>
     <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
   </cac:CommodityClassification>
 </cac:Item>
 ```
 
-**Structure 20** — 6 instances
+**Structure 23** — 28 instances
+
+```xml
+<cac:Item>
+  <cbc:Description>Acme beeswax</cbc:Description>
+  <cbc:Name>beeswax</cbc:Name>
+  <cac:BuyersItemIdentification>
+    <cbc:ID>6578489</cbc:ID>
+  </cac:BuyersItemIdentification>
+  <cac:SellersItemIdentification>
+    <cbc:ID>17589683</cbc:ID>
+  </cac:SellersItemIdentification>
+</cac:Item>
+```
+
+**Structure 24** — 6 instances
 
 ```xml
 <cac:Item>
@@ -12742,66 +12767,19 @@ _200 instances across 2 elements, with 26 unique structures_
 </cac:Item>
 ```
 
-**Structure 21** — 18 instances
+**Structure 25** — 10 instances
 
 ```xml
 <cac:Item>
-  <cbc:Name>Returned "Advanced computing" book</cbc:Name>
-  <cac:SellersItemIdentification>
-    <cbc:ID>JB008</cbc:ID>
-  </cac:SellersItemIdentification>
-  <cac:StandardItemIdentification>
-    <cbc:ID>1234567890125</cbc:ID>
-  </cac:StandardItemIdentification>
-  <cac:CommodityClassification>
-    <cbc:ItemClassificationCode>32344324</cbc:ItemClassificationCode>
-  </cac:CommodityClassification>
-  <cac:CommodityClassification>
-    <cbc:ItemClassificationCode>65434567</cbc:ItemClassificationCode>
-  </cac:CommodityClassification>
-  <cac:ClassifiedTaxCategory>
-    <cbc:ID>AA</cbc:ID>
-    <cbc:Percent>10</cbc:Percent>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:ClassifiedTaxCategory>
+  <cbc:Description>Mus</cbc:Description>
+  <cbc:Name>Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)</cbc:Name>
 </cac:Item>
 ```
 
-**Structure 22** — 2 instances
+**Structure 26** — 29 instances
 
 ```xml
 <cac:Item>
-  <cbc:Name>Philosophical lamp</cbc:Name>
-  <cac:SellersItemIdentification>
-    <cbc:ID>PL001</cbc:ID>
-  </cac:SellersItemIdentification>
-</cac:Item>
-```
-
-**Structure 23** — 2 instances
-
-```xml
-<cac:Item>
-  <cbc:Name>High-grade Widget</cbc:Name>
-</cac:Item>
-```
-
-**Structure 24** — 4 instances
-
-```xml
-<cac:Item>
-  <cac:StandardItemIdentification>
-    <cbc:ID>06110123456784</cbc:ID>
-  </cac:StandardItemIdentification>
-</cac:Item>
-```
-
-**Structure 25** — 9 instances
-
-```xml
-<cac:SupplyItem>
   <cbc:Description>Acme beeswax</cbc:Description>
   <cbc:Name>beeswax</cbc:Name>
   <cac:BuyersItemIdentification>
@@ -12810,20 +12788,13 @@ _200 instances across 2 elements, with 26 unique structures_
   <cac:SellersItemIdentification>
     <cbc:ID>17589683</cbc:ID>
   </cac:SellersItemIdentification>
-  <cac:StandardItemIdentification>
-    <cbc:ID>00123450000584</cbc:ID>
-  </cac:StandardItemIdentification>
-</cac:SupplyItem>
-```
-
-**Structure 26** — 6 instances
-
-```xml
-<cac:SupplyItem>
-  <cac:StandardItemIdentification>
-    <cbc:ID>00123450000581</cbc:ID>
-  </cac:StandardItemIdentification>
-</cac:SupplyItem>
+  <cac:ItemInstance>
+    <cac:LotIdentification>
+      <cbc:LotNumberID>546378239</cbc:LotNumberID>
+      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
+    </cac:LotIdentification>
+  </cac:ItemInstance>
+</cac:Item>
 ```
 
 [↑ Back to contents](#contents)
@@ -12850,74 +12821,65 @@ _2 instances across 1 element, with 1 unique structure_
 
 _38 instances across 1 element, with 10 unique structures_
 
-**Structure 1** — 4 instances
+**Structure 1** — 2 instances
 
 ```xml
 <cac:LineItem>
-  <cbc:ID>1</cbc:ID>
-  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-  <cac:Item>
-    <cbc:Description>Red paint</cbc:Description>
-  </cac:Item>
-</cac:LineItem>
-```
-
-**Structure 2** — 2 instances
-
-```xml
-<cac:LineItem>
-  <cbc:ID>1</cbc:ID>
-  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+  <cbc:ID>2</cbc:ID>
+  <cbc:LineStatusCode>Disputed</cbc:LineStatusCode>
   <cac:Item></cac:Item>
 </cac:LineItem>
 ```
 
-**Structure 3** — 2 instances
+**Structure 2** — 3 instances
 
 ```xml
 <cac:LineItem>
   <cbc:ID>1</cbc:ID>
-  <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
-  <cbc:Quantity>240</cbc:Quantity>
-  <cbc:LineExtensionAmount>12000</cbc:LineExtensionAmount>
-  <cbc:TotalTaxAmount>20</cbc:TotalTaxAmount>
-  <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
-  <cbc:AccountingCostCode>ProjectID123</cbc:AccountingCostCode>
-  <cac:Delivery>
-    <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2010-02-10</cbc:StartDate>
-      <cbc:EndDate>2010-02-25</cbc:EndDate>
-    </cac:RequestedDeliveryPeriod>
-  </cac:Delivery>
-  <cac:OriginatorParty>
-    <cac:PartyIdentification>
-      <cbc:ID>EmployeeXXX</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Josef K.</cbc:Name>
-    </cac:PartyName>
-  </cac:OriginatorParty>
+  <cbc:SalesOrderID>A</cbc:SalesOrderID>
+  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+  <cbc:Quantity>100</cbc:Quantity>
+  <cbc:LineExtensionAmount>1000.00</cbc:LineExtensionAmount>
   <cac:Price>
-    <cbc:PriceAmount>50</cbc:PriceAmount>
+    <cbc:PriceAmount>10.00</cbc:PriceAmount>
     <cbc:BaseQuantity>1</cbc:BaseQuantity>
   </cac:Price>
   <cac:Item>
-    <cbc:Description>Red paint</cbc:Description>
-    <cbc:Name>Falu Rödfärg</cbc:Name>
+    <cbc:Description>Beeswax</cbc:Description>
+    <cbc:Name>Acme Beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
     <cac:SellersItemIdentification>
-      <cbc:ID>SItemNo001</cbc:ID>
+      <cbc:ID>17589683</cbc:ID>
     </cac:SellersItemIdentification>
-    <cac:StandardItemIdentification>
-      <cbc:ID>1234567890123</cbc:ID>
-    </cac:StandardItemIdentification>
-    <cac:AdditionalItemProperty>
-      <cbc:Name>Paint type</cbc:Name>
-      <cbc:Value>Acrylic</cbc:Value>
-    </cac:AdditionalItemProperty>
-    <cac:AdditionalItemProperty>
-      <cbc:Name>Solvant</cbc:Name>
-      <cbc:Value>Water</cbc:Value>
-    </cac:AdditionalItemProperty>
+  </cac:Item>
+</cac:LineItem>
+```
+
+**Structure 3** — 5 instances
+
+```xml
+<cac:LineItem>
+  <cbc:ID>1</cbc:ID>
+  <cbc:SalesOrderID>A</cbc:SalesOrderID>
+  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+  <cbc:Quantity>100</cbc:Quantity>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:TotalTaxAmount>17.50</cbc:TotalTaxAmount>
+  <cac:Price>
+    <cbc:PriceAmount>100.00</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  </cac:Price>
+  <cac:Item>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:Name>beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
   </cac:Item>
 </cac:LineItem>
 ```
@@ -12941,15 +12903,27 @@ _38 instances across 1 element, with 10 unique structures_
 </cac:LineItem>
 ```
 
-**Structure 5** — 4 instances
+**Structure 5** — 5 instances
 
 ```xml
 <cac:LineItem>
-  <cbc:ID>DELL1052665</cbc:ID>
-  <cbc:Quantity>35</cbc:Quantity>
+  <cbc:ID>1</cbc:ID>
+  <cbc:Quantity>100</cbc:Quantity>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:TotalTaxAmount>17.50</cbc:TotalTaxAmount>
+  <cac:Price>
+    <cbc:PriceAmount>100.00</cbc:PriceAmount>
+    <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  </cac:Price>
   <cac:Item>
-    <cbc:Description>Stationær computer</cbc:Description>
-    <cbc:Name>Dell PrecisionTM  T3400</cbc:Name>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:Name>beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
   </cac:Item>
 </cac:LineItem>
 ```
@@ -13003,99 +12977,96 @@ _38 instances across 1 element, with 10 unique structures_
 </cac:LineItem>
 ```
 
-**Structure 7** — 5 instances
+**Structure 7** — 4 instances
 
 ```xml
 <cac:LineItem>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Quantity>100</cbc:Quantity>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:TotalTaxAmount>17.50</cbc:TotalTaxAmount>
-  <cac:Price>
-    <cbc:PriceAmount>100.00</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-  </cac:Price>
-  <cac:Item>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:Name>beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
-  </cac:Item>
-</cac:LineItem>
-```
-
-**Structure 8** — 4 instances
-
-```xml
-<cac:LineItem>
-  <cbc:ID>DELL1052665</cbc:ID>
+  <cbc:ID>DELL2363463</cbc:ID>
   <cbc:Quantity>35</cbc:Quantity>
-  <cbc:LineExtensionAmount>150500.00</cbc:LineExtensionAmount>
-  <cbc:TotalTaxAmount>37625.00</cbc:TotalTaxAmount>
-  <cac:Price>
-    <cbc:PriceAmount>4300.00</cbc:PriceAmount>
-    <cbc:BaseQuantity>1</cbc:BaseQuantity>
-  </cac:Price>
   <cac:Item>
-    <cbc:Description>Stationær computer</cbc:Description>
-    <cbc:Name>Dell PrecisionTM  T3400</cbc:Name>
+    <cbc:Description>Fladskærm</cbc:Description>
+    <cbc:Name>FP/BL 1908WFP</cbc:Name>
   </cac:Item>
 </cac:LineItem>
 ```
 
-**Structure 9** — 3 instances
+**Structure 8** — 2 instances
 
 ```xml
 <cac:LineItem>
   <cbc:ID>1</cbc:ID>
-  <cbc:SalesOrderID>A</cbc:SalesOrderID>
-  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-  <cbc:Quantity>100</cbc:Quantity>
-  <cbc:LineExtensionAmount>1000.00</cbc:LineExtensionAmount>
+  <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
+  <cbc:Quantity>240</cbc:Quantity>
+  <cbc:LineExtensionAmount>12000</cbc:LineExtensionAmount>
+  <cbc:TotalTaxAmount>20</cbc:TotalTaxAmount>
+  <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+  <cbc:AccountingCostCode>ProjectID123</cbc:AccountingCostCode>
+  <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2010-02-10</cbc:StartDate>
+      <cbc:EndDate>2010-02-25</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
+  </cac:Delivery>
+  <cac:OriginatorParty>
+    <cac:PartyIdentification>
+      <cbc:ID>EmployeeXXX</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Josef K.</cbc:Name>
+    </cac:PartyName>
+  </cac:OriginatorParty>
   <cac:Price>
-    <cbc:PriceAmount>10.00</cbc:PriceAmount>
+    <cbc:PriceAmount>50</cbc:PriceAmount>
     <cbc:BaseQuantity>1</cbc:BaseQuantity>
   </cac:Price>
   <cac:Item>
-    <cbc:Description>Beeswax</cbc:Description>
-    <cbc:Name>Acme Beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
+    <cbc:Description>Red paint</cbc:Description>
+    <cbc:Name>Falu Rödfärg</cbc:Name>
     <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
+      <cbc:ID>SItemNo001</cbc:ID>
     </cac:SellersItemIdentification>
+    <cac:StandardItemIdentification>
+      <cbc:ID>1234567890123</cbc:ID>
+    </cac:StandardItemIdentification>
+    <cac:AdditionalItemProperty>
+      <cbc:Name>Paint type</cbc:Name>
+      <cbc:Value>Acrylic</cbc:Value>
+    </cac:AdditionalItemProperty>
+    <cac:AdditionalItemProperty>
+      <cbc:Name>Solvant</cbc:Name>
+      <cbc:Value>Water</cbc:Value>
+    </cac:AdditionalItemProperty>
   </cac:Item>
 </cac:LineItem>
 ```
 
-**Structure 10** — 5 instances
+**Structure 9** — 4 instances
 
 ```xml
 <cac:LineItem>
-  <cbc:ID>1</cbc:ID>
-  <cbc:SalesOrderID>A</cbc:SalesOrderID>
-  <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-  <cbc:Quantity>100</cbc:Quantity>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:TotalTaxAmount>17.50</cbc:TotalTaxAmount>
+  <cbc:ID>DELL8436783</cbc:ID>
+  <cbc:Quantity>35</cbc:Quantity>
+  <cbc:LineExtensionAmount>1750.00</cbc:LineExtensionAmount>
+  <cbc:TotalTaxAmount>437.50</cbc:TotalTaxAmount>
   <cac:Price>
-    <cbc:PriceAmount>100.00</cbc:PriceAmount>
+    <cbc:PriceAmount>50.00</cbc:PriceAmount>
     <cbc:BaseQuantity>1</cbc:BaseQuantity>
   </cac:Price>
   <cac:Item>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:Name>beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
+    <cbc:Description>Tastatur</cbc:Description>
+    <cbc:Name>Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)</cbc:Name>
+  </cac:Item>
+</cac:LineItem>
+```
+
+**Structure 10** — 4 instances
+
+```xml
+<cac:LineItem>
+  <cbc:ID>2</cbc:ID>
+  <cbc:LineStatusCode>Disputed</cbc:LineStatusCode>
+  <cac:Item>
+    <cbc:Description>Very good pencils for red paint.</cbc:Description>
   </cac:Item>
 </cac:LineItem>
 ```
@@ -13108,27 +13079,21 @@ _38 instances across 1 element, with 10 unique structures_
 
 _5 instances across 1 element, with 3 unique structures_
 
-**Structure 1** — 1 instance
-
-```xml
-<cac:LocationCoordinate></cac:LocationCoordinate>
-```
-
-**Structure 2** — 3 instances
+**Structure 1** — 3 instances
 
 ```xml
 <cac:LocationCoordinate>
   <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-  <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
-  <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
+  <cbc:LatitudeDegreesMeasure>53.4</cbc:LatitudeDegreesMeasure>
+  <cbc:LatitudeMinutesMeasure>33</cbc:LatitudeMinutesMeasure>
   <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
-  <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
-  <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
+  <cbc:LongitudeDegreesMeasure>8.48</cbc:LongitudeDegreesMeasure>
+  <cbc:LongitudeMinutesMeasure>27</cbc:LongitudeMinutesMeasure>
   <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
 </cac:LocationCoordinate>
 ```
 
-**Structure 3** — 1 instance
+**Structure 2** — 1 instance
 
 ```xml
 <cac:LocationCoordinate>
@@ -13136,6 +13101,12 @@ _5 instances across 1 element, with 3 unique structures_
   <cbc:LatitudeDegreesMeasure>58</cbc:LatitudeDegreesMeasure>
   <cbc:LongitudeDegreesMeasure>10</cbc:LongitudeDegreesMeasure>
 </cac:LocationCoordinate>
+```
+
+**Structure 3** — 1 instance
+
+```xml
+<cac:LocationCoordinate></cac:LocationCoordinate>
 ```
 
 [↑ Back to contents](#contents)
@@ -13147,6 +13118,31 @@ _5 instances across 1 element, with 3 unique structures_
 _142 instances across 22 elements, with 62 unique structures_
 
 **Structure 1** — 2 instances
+
+```xml
+<cac:FirstArrivalPortLocation>
+  <cbc:ID>FI015300</cbc:ID>
+</cac:FirstArrivalPortLocation>
+```
+
+**Structure 2** — 2 instances
+
+```xml
+<cac:PhysicalLocation>
+  <cbc:InformationURI>https://goo.gl/maps/2k242</cbc:InformationURI>
+</cac:PhysicalLocation>
+```
+
+**Structure 3** — 4 instances
+
+```xml
+<cac:LoadingPortLocation>
+  <cbc:ID>USBOS</cbc:ID>
+  <cbc:Description>Boston Airport</cbc:Description>
+</cac:LoadingPortLocation>
+```
+
+**Structure 4** — 2 instances
 
 ```xml
 <cac:ActivityFinalLocation>
@@ -13164,24 +13160,7 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:ActivityFinalLocation>
 ```
 
-**Structure 2** — 2 instances
-
-```xml
-<cac:ActivityOriginLocation>
-  <cac:Address>
-    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-    <cbc:BuildingNumber>403</cbc:BuildingNumber>
-    <cbc:CityName>Bologna</cbc:CityName>
-    <cbc:PostalZone>40129</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      <cbc:Name>Italy</cbc:Name>
-    </cac:Country>
-  </cac:Address>
-</cac:ActivityOriginLocation>
-```
-
-**Structure 3** — 1 instance
+**Structure 5** — 1 instance
 
 ```xml
 <cac:ActivityOriginLocation>
@@ -13199,15 +13178,110 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:ActivityOriginLocation>
 ```
 
-**Structure 4** — 4 instances
+**Structure 6** — 3 instances
 
 ```xml
-<cac:ActivityOriginLocation>
-  <cbc:ID></cbc:ID>
-</cac:ActivityOriginLocation>
+<cac:ParticipatingLocationsLocation>
+  <cbc:ID>ACME_BR_BE_0023</cbc:ID>
+</cac:ParticipatingLocationsLocation>
 ```
 
-**Structure 5** — 2 instances
+**Structure 7** — 1 instance
+
+```xml
+<cac:Location>
+  <cbc:ID>MAPTM</cbc:ID>
+  <cac:Address>
+    <cbc:CityName>Tanger</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>MA</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 8** — 4 instances
+
+```xml
+<cac:CustomsOfficeLocation>
+  <cbc:Name>Bietingen</cbc:Name>
+</cac:CustomsOfficeLocation>
+```
+
+**Structure 9** — 1 instance
+
+```xml
+<cac:UnloadingPortLocation>
+  <cbc:ID>Balboa Port</cbc:ID>
+</cac:UnloadingPortLocation>
+```
+
+**Structure 10** — 2 instances
+
+```xml
+<cac:Location>
+  <cbc:ID>43125678</cbc:ID>
+  <cbc:LocationTypeCode>Place of delivery</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
+    <cbc:CityName>Hamar</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 11** — 3 instances
+
+```xml
+<cac:Location>
+  <cac:Address>
+    <cbc:ID>DEHAM</cbc:ID>
+    <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+    <cbc:CityName>Hamburg</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 12** — 2 instances
+
+```xml
+<cac:FromLocation>
+  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:ID>DEHAM</cbc:ID>
+    <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+    <cbc:CityName>Hamburg</cbc:CityName>
+    <cbc:PostalZone>29400</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:FromLocation>
+```
+
+**Structure 13** — 2 instances
+
+```xml
+<cac:Location>
+  <cbc:ID>CNSHA</cbc:ID>
+</cac:Location>
+```
+
+**Structure 14** — 4 instances
+
+```xml
+<cac:UnloadingPortLocation>
+  <cbc:ID>GBBRS</cbc:ID>
+  <cbc:Description>Bristol Airport</cbc:Description>
+</cac:UnloadingPortLocation>
+```
+
+**Structure 15** — 2 instances
 
 ```xml
 <cac:CustomsExitOfficeLocation>
@@ -13224,25 +13298,214 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:CustomsExitOfficeLocation>
 ```
 
-**Structure 6** — 4 instances
+**Structure 16** — 1 instance
 
 ```xml
-<cac:CustomsOfficeLocation>
-  <cbc:Name>Padborg</cbc:Name>
-</cac:CustomsOfficeLocation>
+<cac:StatusLocation>
+  <cbc:LocationTypeCode>CUSTOMS OFFICE</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:CityName>STORLIEN</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+      <cbc:Name>SWEDEN</cbc:Name>
+    </cac:Country>
+  </cac:Address>
+</cac:StatusLocation>
 ```
 
-**Structure 7** — 3 instances
+**Structure 17** — 1 instance
+
+```xml
+<cac:OfficeOfEntryLocation>
+  <cbc:ID>DE000396</cbc:ID>
+  <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
+  <cac:Address>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:OfficeOfEntryLocation>
+```
+
+**Structure 18** — 1 instance
+
+```xml
+<cac:StatusLocation>
+  <cbc:ID>DEBREV</cbc:ID>
+  <cbc:Description>Port of Bremerhaven</cbc:Description>
+  <cbc:LocationTypeCode>Baseport of loading</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
+    <cbc:CityName>Bremen</cbc:CityName>
+    <cac:AddressLine>
+      <cbc:Line>Ueberseetor 2</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:Name>Germany</cbc:Name>
+    </cac:Country>
+    <cac:LocationCoordinate>
+      <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+      <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
+      <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
+      <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
+      <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
+      <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
+      <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
+    </cac:LocationCoordinate>
+  </cac:Address>
+</cac:StatusLocation>
+```
+
+**Structure 19** — 2 instances
 
 ```xml
 <cac:DeliveryLocation>
-  <cac:Address>
-    <cbc:CityName>Munich</cbc:CityName>
-  </cac:Address>
+  <cbc:ID>STO</cbc:ID>
 </cac:DeliveryLocation>
 ```
 
-**Structure 8** — 2 instances
+**Structure 20** — 3 instances
+
+```xml
+<cac:Location>
+  <cbc:ID>DEBREV</cbc:ID>
+  <cbc:Description>Port of Bremerhaven</cbc:Description>
+  <cbc:LocationTypeCode>34</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
+    <cbc:CityName>Bremen</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 21** — 1 instance
+
+```xml
+<cac:UnloadingPortLocation>
+  <cac:Address>
+    <cac:Country>
+      <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+      <cbc:Name>Swiss</cbc:Name>
+    </cac:Country>
+  </cac:Address>
+</cac:UnloadingPortLocation>
+```
+
+**Structure 22** — 1 instance
+
+```xml
+<cac:StatusLocation>
+  <cbc:ID>DEBREV</cbc:ID>
+  <cbc:Description>Port of Bremerhaven</cbc:Description>
+  <cbc:LocationTypeCode>Baseport of loading</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
+    <cbc:CityName>Bremen</cbc:CityName>
+    <cac:AddressLine>
+      <cbc:Line>Ueberseetor 2</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+    <cac:LocationCoordinate>
+      <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+      <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
+      <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
+      <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
+      <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
+      <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
+      <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
+    </cac:LocationCoordinate>
+  </cac:Address>
+</cac:StatusLocation>
+```
+
+**Structure 23** — 3 instances
+
+```xml
+<cac:Location>
+  <cbc:ID>987456123</cbc:ID>
+  <cbc:LocationTypeCode>Place of transhipment</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
+    <cbc:CityName>Munich</cbc:CityName>
+    <cbc:PostalZone>80334</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 24** — 4 instances
+
+```xml
+<cac:Location>
+  <cac:Address>
+    <cbc:StreetName>Stribevangen</cbc:StreetName>
+    <cbc:BuildingNumber>89</cbc:BuildingNumber>
+    <cbc:CityName>Gedser</cbc:CityName>
+    <cbc:PostalZone>4874</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 25** — 2 instances
+
+```xml
+<cac:ToLocation>
+  <cbc:LocationTypeCode>7</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+    <cbc:CityName>Nurnberg</cbc:CityName>
+    <cbc:PostalZone>28400</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:ToLocation>
+```
+
+**Structure 26** — 1 instance
+
+```xml
+<cac:FromLocation>
+  <cbc:ID>123465</cbc:ID>
+  <cbc:LocationTypeCode>Place of despatch</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
+    <cbc:CityName>Hamar</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:FromLocation>
+```
+
+**Structure 27** — 1 instance
+
+```xml
+<cac:ToLocation>
+  <cac:Address>
+    <cbc:Floor>4</cbc:Floor>
+    <cbc:StreetName>CALLE SERPIS</cbc:StreetName>
+    <cbc:CityName>VALENCIA</cbc:CityName>
+    <cbc:PostalZone>460019</cbc:PostalZone>
+    <cac:AddressLine>
+      <cbc:Line>Calle Serpis 64</cbc:Line>
+    </cac:AddressLine>
+  </cac:Address>
+</cac:ToLocation>
+```
+
+**Structure 28** — 2 instances
 
 ```xml
 <cac:DeliveryLocation>
@@ -13263,82 +13526,17 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:DeliveryLocation>
 ```
 
-**Structure 9** — 2 instances
+**Structure 29** — 3 instances
 
 ```xml
 <cac:DeliveryLocation>
-  <cbc:ID>6754238987648</cbc:ID>
   <cac:Address>
-    <cbc:StreetName>Deliverystreet</cbc:StreetName>
-    <cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
-    <cbc:BuildingNumber>12</cbc:BuildingNumber>
-    <cbc:CityName>DeliveryCity</cbc:CityName>
-    <cbc:PostalZone>523427</cbc:PostalZone>
-    <cbc:CountrySubentity>RegionC</cbc:CountrySubentity>
-    <cac:Country>
-      <cbc:IdentificationCode>BE</cbc:IdentificationCode>
-    </cac:Country>
+    <cbc:CityName>Munich</cbc:CityName>
   </cac:Address>
 </cac:DeliveryLocation>
 ```
 
-**Structure 10** — 11 instances
-
-```xml
-<cac:DeliveryLocation>
-  <cbc:ID>GBBRS</cbc:ID>
-  <cbc:Description>Bristol</cbc:Description>
-</cac:DeliveryLocation>
-```
-
-**Structure 11** — 2 instances
-
-```xml
-<cac:DeliveryLocation>
-  <cbc:ID>STO</cbc:ID>
-</cac:DeliveryLocation>
-```
-
-**Structure 12** — 5 instances
-
-```xml
-<cac:DeliveryLocation>
-  <cbc:Name>9000</cbc:Name>
-</cac:DeliveryLocation>
-```
-
-**Structure 13** — 4 instances
-
-```xml
-<cac:FirstArrivalPortLocation>
-  <cbc:ID>GBBRS</cbc:ID>
-  <cbc:Description>Bristol</cbc:Description>
-</cac:FirstArrivalPortLocation>
-```
-
-**Structure 14** — 1 instance
-
-```xml
-<cac:FirstArrivalPortLocation>
-  <cbc:ID>ITGOA</cbc:ID>
-  <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
-  <cac:Address>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:FirstArrivalPortLocation>
-```
-
-**Structure 15** — 2 instances
-
-```xml
-<cac:FirstArrivalPortLocation>
-  <cbc:ID>FI015300</cbc:ID>
-</cac:FirstArrivalPortLocation>
-```
-
-**Structure 16** — 2 instances
+**Structure 30** — 2 instances
 
 ```xml
 <cac:FirstArrivalPortLocation>
@@ -13346,7 +13544,15 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:FirstArrivalPortLocation>
 ```
 
-**Structure 17** — 1 instance
+**Structure 31** — 2 instances
+
+```xml
+<cac:ImportCustomsExitOfficeLocation>
+  <cbc:ID>CH002621</cbc:ID>
+</cac:ImportCustomsExitOfficeLocation>
+```
+
+**Structure 32** — 1 instance
 
 ```xml
 <cac:FromLocation>
@@ -13362,65 +13568,15 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:FromLocation>
 ```
 
-**Structure 18** — 1 instance
-
-```xml
-<cac:FromLocation>
-  <cbc:ID>123465</cbc:ID>
-  <cbc:LocationTypeCode>Place of despatch</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
-    <cbc:CityName>Hamar</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:FromLocation>
-```
-
-**Structure 19** — 2 instances
-
-```xml
-<cac:FromLocation>
-  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:ID>DEHAM</cbc:ID>
-    <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-    <cbc:CityName>Hamburg</cbc:CityName>
-    <cbc:PostalZone>29400</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:FromLocation>
-```
-
-**Structure 20** — 2 instances
-
-```xml
-<cac:ImportCustomsExitOfficeLocation>
-  <cbc:ID>CH002621</cbc:ID>
-</cac:ImportCustomsExitOfficeLocation>
-```
-
-**Structure 21** — 1 instance
+**Structure 33** — 1 instance
 
 ```xml
 <cac:LastExitPortLocation>
-  <cbc:Description>ART INTERNATIONAL ZURICH 2019</cbc:Description>
-  <cac:Address>
-    <cbc:StreetName>Giessereistrasse</cbc:StreetName>
-    <cbc:BuildingNumber>18</cbc:BuildingNumber>
-    <cbc:CityName>Zürich</cbc:CityName>
-    <cbc:PostalZone>CH-8005</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
+  <cbc:Name>Bietingen</cbc:Name>
 </cac:LastExitPortLocation>
 ```
 
-**Structure 22** — 4 instances
+**Structure 34** — 4 instances
 
 ```xml
 <cac:LastExitPortLocation>
@@ -13429,24 +13585,44 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:LastExitPortLocation>
 ```
 
-**Structure 23** — 1 instance
+**Structure 35** — 3 instances
 
 ```xml
-<cac:LastExitPortLocation>
-  <cbc:Name>Bietingen</cbc:Name>
-</cac:LastExitPortLocation>
+<cac:Location>
+  <cac:Address>
+    <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+    <cbc:CityName>Nurnberg</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
 ```
 
-**Structure 24** — 4 instances
+**Structure 36** — 5 instances
 
 ```xml
-<cac:LoadingPortLocation>
-  <cbc:ID>USBOS</cbc:ID>
-  <cbc:Description>Boston Airport</cbc:Description>
-</cac:LoadingPortLocation>
+<cac:DeliveryLocation>
+  <cbc:Name>BANGKOK</cbc:Name>
+</cac:DeliveryLocation>
 ```
 
-**Structure 25** — 1 instance
+**Structure 37** — 4 instances
+
+```xml
+<cac:Location>
+  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
+    <cbc:CityName>Nurnberg</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 38** — 1 instance
 
 ```xml
 <cac:LoadingPortLocation>
@@ -13454,116 +13630,46 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:LoadingPortLocation>
 ```
 
-**Structure 26** — 3 instances
+**Structure 39** — 2 instances
 
 ```xml
-<cac:Location>
+<cac:PhysicalLocation>
   <cac:Address>
-    <cbc:ID>DEHAM</cbc:ID>
-    <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-    <cbc:CityName>Hamburg</cbc:CityName>
+    <cbc:CityName>Espoo</cbc:CityName>
+  </cac:Address>
+</cac:PhysicalLocation>
+```
+
+**Structure 40** — 1 instance
+
+```xml
+<cac:ReportingLocation>
+  <cac:Address>
+    <cbc:StreetName>Declarant Street</cbc:StreetName>
+    <cbc:CityName>Declarant City</cbc:CityName>
+    <cbc:PostalZone>Declarant Post Code</cbc:PostalZone>
     <cac:Country>
       <cbc:IdentificationCode>DE</cbc:IdentificationCode>
     </cac:Country>
   </cac:Address>
-</cac:Location>
+</cac:ReportingLocation>
 ```
 
-**Structure 27** — 3 instances
+**Structure 41** — 4 instances
 
 ```xml
-<cac:Location>
-  <cac:Address>
-    <cbc:ID>DEHAM</cbc:ID>
-    <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-    <cbc:CityName>Hamburg</cbc:CityName>
-    <cbc:PostalZone>29400</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
+<cac:TransshipPortLocation>
+  <cbc:ID>GBLHR</cbc:ID>
+  <cbc:Description>Heathrow Apt/London</cbc:Description>
+</cac:TransshipPortLocation>
 ```
 
-**Structure 28** — 4 instances
-
-```xml
-<cac:Location>
-  <cac:Address>
-    <cbc:StreetName>Stribevangen</cbc:StreetName>
-    <cbc:BuildingNumber>89</cbc:BuildingNumber>
-    <cbc:CityName>Gedser</cbc:CityName>
-    <cbc:PostalZone>4874</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 29** — 1 instance
-
-```xml
-<cac:Location>
-  <cac:Address>
-    <cbc:StreetName>StreetName Example</cbc:StreetName>
-    <cbc:CityName>El Dorado</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>PA</cbc:IdentificationCode>
-      <cbc:Name>Panama</cbc:Name>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 30** — 3 instances
-
-```xml
-<cac:Location>
-  <cac:Address>
-    <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-    <cbc:CityName>Nurnberg</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 31** — 3 instances
-
-```xml
-<cac:Location>
-  <cac:Address>
-    <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-    <cbc:CityName>Nurnberg</cbc:CityName>
-    <cbc:PostalZone>28400</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 32** — 1 instance
-
-```xml
-<cac:Location>
-  <cbc:ID>MAPTM</cbc:ID>
-  <cac:Address>
-    <cbc:CityName>Tanger</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>MA</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 33** — 1 instance
+**Structure 42** — 1 instance
 
 ```xml
 <cac:Location>
   <cbc:ID>ITGOA</cbc:ID>
+  <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
   <cac:Address>
     <cac:Country>
       <cbc:IdentificationCode>IT</cbc:IdentificationCode>
@@ -13572,7 +13678,23 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:Location>
 ```
 
-**Structure 34** — 1 instance
+**Structure 43** — 2 instances
+
+```xml
+<cac:StatusLocation>
+  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:ID>4568763527610</cbc:ID>
+    <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+    <cbc:CityName>Bremen</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:StatusLocation>
+```
+
+**Structure 44** — 1 instance
 
 ```xml
 <cac:Location>
@@ -13592,175 +13714,31 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:Location>
 ```
 
-**Structure 35** — 3 instances
+**Structure 45** — 2 instances
 
 ```xml
-<cac:Location>
-  <cbc:ID>987456123</cbc:ID>
-  <cbc:Description>FORWARDER distribution centre in Munich</cbc:Description>
-  <cbc:LocationTypeCode>Place of transhipment</cbc:LocationTypeCode>
+<cac:DeliveryLocation>
+  <cbc:ID>6754238987648</cbc:ID>
   <cac:Address>
-    <cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
-    <cbc:CityName>Munich</cbc:CityName>
+    <cbc:StreetName>Deliverystreet</cbc:StreetName>
+    <cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
+    <cbc:BuildingNumber>12</cbc:BuildingNumber>
+    <cbc:CityName>DeliveryCity</cbc:CityName>
+    <cbc:PostalZone>523427</cbc:PostalZone>
+    <cbc:CountrySubentity>RegionC</cbc:CountrySubentity>
     <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:IdentificationCode>BE</cbc:IdentificationCode>
     </cac:Country>
   </cac:Address>
-</cac:Location>
+</cac:DeliveryLocation>
 ```
 
-**Structure 36** — 1 instance
+**Structure 46** — 4 instances
 
 ```xml
-<cac:Location>
-  <cbc:ID>ITGOA</cbc:ID>
-  <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
-  <cac:Address>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 37** — 2 instances
-
-```xml
-<cac:Location>
-  <cbc:ID>NOOSL</cbc:ID>
-  <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:StreetName>Akershusstranda 19</cbc:StreetName>
-    <cbc:CityName>Oslo</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 38** — 3 instances
-
-```xml
-<cac:Location>
-  <cbc:ID>123465</cbc:ID>
-  <cbc:LocationTypeCode>Place of despatch</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:StreetName>Heissestrasse 45</cbc:StreetName>
-    <cbc:CityName>Munich</cbc:CityName>
-    <cbc:PostalZone>80334</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 39** — 2 instances
-
-```xml
-<cac:Location>
-  <cbc:ID>CNSHA</cbc:ID>
-</cac:Location>
-```
-
-**Structure 40** — 4 instances
-
-```xml
-<cac:Location>
-  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:ID>4568763527610</cbc:ID>
-    <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-    <cbc:CityName>Bremen</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 41** — 4 instances
-
-```xml
-<cac:Location>
-  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
-    <cbc:CityName>Nurnberg</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:Location>
-```
-
-**Structure 42** — 1 instance
-
-```xml
-<cac:OfficeOfEntryLocation>
-  <cbc:ID>DE000396</cbc:ID>
-  <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
-  <cac:Address>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:OfficeOfEntryLocation>
-```
-
-**Structure 43** — 3 instances
-
-```xml
-<cac:ParticipatingLocationsLocation>
-  <cbc:ID>ACME_BR_BE_0023</cbc:ID>
-</cac:ParticipatingLocationsLocation>
-```
-
-**Structure 44** — 2 instances
-
-```xml
-<cac:PhysicalLocation>
-  <cac:Address>
-    <cbc:CityName>Espoo</cbc:CityName>
-  </cac:Address>
-</cac:PhysicalLocation>
-```
-
-**Structure 45** — 1 instance
-
-```xml
-<cac:PhysicalLocation>
-  <cbc:ID>89767764</cbc:ID>
-  <cac:Address>
-    <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
-    <cbc:CityName>Munich</cbc:CityName>
-    <cac:AddressLine>
-      <cbc:Line>Customer entrance from the street</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      <cbc:Name>Germany</cbc:Name>
-    </cac:Country>
-    <cac:LocationCoordinate>
-      <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-      <cbc:LatitudeDegreesMeasure>53.4</cbc:LatitudeDegreesMeasure>
-      <cbc:LatitudeMinutesMeasure>33</cbc:LatitudeMinutesMeasure>
-      <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
-      <cbc:LongitudeDegreesMeasure>8.48</cbc:LongitudeDegreesMeasure>
-      <cbc:LongitudeMinutesMeasure>27</cbc:LongitudeMinutesMeasure>
-      <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
-    </cac:LocationCoordinate>
-  </cac:Address>
-</cac:PhysicalLocation>
-```
-
-**Structure 46** — 2 instances
-
-```xml
-<cac:PhysicalLocation>
-  <cbc:InformationURI>https://goo.gl/maps/2k242</cbc:InformationURI>
-</cac:PhysicalLocation>
+<cac:ActivityOriginLocation>
+  <cbc:ID></cbc:ID>
+</cac:ActivityOriginLocation>
 ```
 
 **Structure 47** — 4 instances
@@ -13791,22 +13769,38 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:PointOfSaleLocation>
 ```
 
-**Structure 49** — 1 instance
+**Structure 49** — 3 instances
 
 ```xml
-<cac:ReportingLocation>
+<cac:Location>
   <cac:Address>
-    <cbc:StreetName>Declarant Street</cbc:StreetName>
-    <cbc:CityName>Declarant City</cbc:CityName>
-    <cbc:PostalZone>Declarant Post Code</cbc:PostalZone>
+    <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+    <cbc:CityName>Nurnberg</cbc:CityName>
+    <cbc:PostalZone>28400</cbc:PostalZone>
     <cac:Country>
       <cbc:IdentificationCode>DE</cbc:IdentificationCode>
     </cac:Country>
   </cac:Address>
-</cac:ReportingLocation>
+</cac:Location>
 ```
 
-**Structure 50** — 1 instance
+**Structure 50** — 4 instances
+
+```xml
+<cac:Location>
+  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+  <cac:Address>
+    <cbc:ID>4568763527610</cbc:ID>
+    <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+    <cbc:CityName>Bremen</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 51** — 1 instance
 
 ```xml
 <cac:StatusLocation>
@@ -13831,113 +13825,20 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:StatusLocation>
 ```
 
-**Structure 51** — 1 instance
-
-```xml
-<cac:StatusLocation>
-  <cbc:ID>DEBREV</cbc:ID>
-  <cbc:Description>Port of Bremerhaven</cbc:Description>
-  <cbc:LocationTypeCode>Baseport of loading</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
-    <cbc:CityName>Bremen</cbc:CityName>
-    <cac:AddressLine>
-      <cbc:Line>Ueberseetor 2</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      <cbc:Name>Germany</cbc:Name>
-    </cac:Country>
-    <cac:LocationCoordinate>
-      <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-      <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
-      <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
-      <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
-      <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
-      <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
-      <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
-    </cac:LocationCoordinate>
-  </cac:Address>
-</cac:StatusLocation>
-```
-
 **Structure 52** — 1 instance
 
 ```xml
-<cac:StatusLocation>
-  <cbc:ID>DEBREV</cbc:ID>
-  <cbc:Description>Port of Bremerhaven</cbc:Description>
-  <cbc:LocationTypeCode>Baseport of loading</cbc:LocationTypeCode>
+<cac:Location>
+  <cbc:ID>ITGOA</cbc:ID>
   <cac:Address>
-    <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
-    <cbc:CityName>Bremen</cbc:CityName>
-    <cac:AddressLine>
-      <cbc:Line>Ueberseetor 2</cbc:Line>
-    </cac:AddressLine>
     <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
     </cac:Country>
-    <cac:LocationCoordinate>
-      <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-      <cbc:LatitudeDegreesMeasure>53.33</cbc:LatitudeDegreesMeasure>
-      <cbc:LatitudeMinutesMeasure>49</cbc:LatitudeMinutesMeasure>
-      <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
-      <cbc:LongitudeDegreesMeasure>8.33</cbc:LongitudeDegreesMeasure>
-      <cbc:LongitudeMinutesMeasure>49</cbc:LongitudeMinutesMeasure>
-      <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
-    </cac:LocationCoordinate>
   </cac:Address>
-</cac:StatusLocation>
+</cac:Location>
 ```
 
 **Structure 53** — 1 instance
-
-```xml
-<cac:StatusLocation>
-  <cbc:LocationTypeCode>CUSTOMS OFFICE</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:CityName>STORLIEN</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-      <cbc:Name>SWEDEN</cbc:Name>
-    </cac:Country>
-  </cac:Address>
-</cac:StatusLocation>
-```
-
-**Structure 54** — 2 instances
-
-```xml
-<cac:StatusLocation>
-  <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-  <cac:Address>
-    <cbc:ID>4568763527610</cbc:ID>
-    <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-    <cbc:CityName>Bremen</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:Address>
-</cac:StatusLocation>
-```
-
-**Structure 55** — 1 instance
-
-```xml
-<cac:ToLocation>
-  <cac:Address>
-    <cbc:Floor>4</cbc:Floor>
-    <cbc:StreetName>CALLE SERPIS</cbc:StreetName>
-    <cbc:CityName>VALENCIA</cbc:CityName>
-    <cbc:PostalZone>460019</cbc:PostalZone>
-    <cac:AddressLine>
-      <cbc:Line>Calle Serpis 64</cbc:Line>
-    </cac:AddressLine>
-  </cac:Address>
-</cac:ToLocation>
-```
-
-**Structure 56** — 1 instance
 
 ```xml
 <cac:ToLocation>
@@ -13953,23 +13854,49 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:ToLocation>
 ```
 
-**Structure 57** — 2 instances
+**Structure 54** — 1 instance
 
 ```xml
-<cac:ToLocation>
-  <cbc:LocationTypeCode>7</cbc:LocationTypeCode>
+<cac:FirstArrivalPortLocation>
+  <cbc:ID>ITGOA</cbc:ID>
+  <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
   <cac:Address>
-    <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-    <cbc:CityName>Nurnberg</cbc:CityName>
-    <cbc:PostalZone>28400</cbc:PostalZone>
     <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
     </cac:Country>
   </cac:Address>
-</cac:ToLocation>
+</cac:FirstArrivalPortLocation>
 ```
 
-**Structure 58** — 2 instances
+**Structure 55** — 1 instance
+
+```xml
+<cac:PhysicalLocation>
+  <cbc:ID>89767764</cbc:ID>
+  <cac:Address>
+    <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
+    <cbc:CityName>Munich</cbc:CityName>
+    <cac:AddressLine>
+      <cbc:Line>Customer entrance from the street</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:Name>Germany</cbc:Name>
+    </cac:Country>
+    <cac:LocationCoordinate>
+      <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+      <cbc:LatitudeDegreesMeasure>53.4</cbc:LatitudeDegreesMeasure>
+      <cbc:LatitudeMinutesMeasure>33</cbc:LatitudeMinutesMeasure>
+      <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
+      <cbc:LongitudeDegreesMeasure>8.48</cbc:LongitudeDegreesMeasure>
+      <cbc:LongitudeMinutesMeasure>27</cbc:LongitudeMinutesMeasure>
+      <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
+    </cac:LocationCoordinate>
+  </cac:Address>
+</cac:PhysicalLocation>
+```
+
+**Structure 56** — 2 instances
 
 ```xml
 <cac:TransitCustomsExitOfficeLocation>
@@ -13977,43 +13904,87 @@ _142 instances across 22 elements, with 62 unique structures_
 </cac:TransitCustomsExitOfficeLocation>
 ```
 
-**Structure 59** — 4 instances
+**Structure 57** — 11 instances
 
 ```xml
-<cac:TransshipPortLocation>
-  <cbc:ID>GBLHR</cbc:ID>
-  <cbc:Description>Heathrow Apt/London</cbc:Description>
-</cac:TransshipPortLocation>
+<cac:DeliveryLocation>
+  <cbc:ID>GBBRS</cbc:ID>
+  <cbc:Description>Bristol</cbc:Description>
+</cac:DeliveryLocation>
+```
+
+**Structure 58** — 3 instances
+
+```xml
+<cac:Location>
+  <cac:Address>
+    <cbc:ID>DEHAM</cbc:ID>
+    <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+    <cbc:CityName>Hamburg</cbc:CityName>
+    <cbc:PostalZone>29400</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:Location>
+```
+
+**Structure 59** — 1 instance
+
+```xml
+<cac:LastExitPortLocation>
+  <cbc:Description>ART INTERNATIONAL ZURICH 2019</cbc:Description>
+  <cac:Address>
+    <cbc:StreetName>Giessereistrasse</cbc:StreetName>
+    <cbc:BuildingNumber>18</cbc:BuildingNumber>
+    <cbc:CityName>Zürich</cbc:CityName>
+    <cbc:PostalZone>CH-8005</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:Address>
+</cac:LastExitPortLocation>
 ```
 
 **Structure 60** — 1 instance
 
 ```xml
-<cac:UnloadingPortLocation>
+<cac:Location>
   <cac:Address>
+    <cbc:StreetName>StreetName Example</cbc:StreetName>
+    <cbc:CityName>El Dorado</cbc:CityName>
     <cac:Country>
-      <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-      <cbc:Name>Swiss</cbc:Name>
+      <cbc:IdentificationCode>PA</cbc:IdentificationCode>
+      <cbc:Name>Panama</cbc:Name>
     </cac:Country>
   </cac:Address>
-</cac:UnloadingPortLocation>
+</cac:Location>
 ```
 
-**Structure 61** — 4 instances
+**Structure 61** — 2 instances
 
 ```xml
-<cac:UnloadingPortLocation>
+<cac:ActivityOriginLocation>
+  <cac:Address>
+    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+    <cbc:BuildingNumber>403</cbc:BuildingNumber>
+    <cbc:CityName>Bologna</cbc:CityName>
+    <cbc:PostalZone>40129</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      <cbc:Name>Italy</cbc:Name>
+    </cac:Country>
+  </cac:Address>
+</cac:ActivityOriginLocation>
+```
+
+**Structure 62** — 4 instances
+
+```xml
+<cac:FirstArrivalPortLocation>
   <cbc:ID>GBBRS</cbc:ID>
-  <cbc:Description>Bristol Airport</cbc:Description>
-</cac:UnloadingPortLocation>
-```
-
-**Structure 62** — 1 instance
-
-```xml
-<cac:UnloadingPortLocation>
-  <cbc:ID>Balboa Port</cbc:ID>
-</cac:UnloadingPortLocation>
+  <cbc:Description>Bristol</cbc:Description>
+</cac:FirstArrivalPortLocation>
 ```
 
 [↑ Back to contents](#contents)
@@ -14079,7 +14050,7 @@ _12 instances across 1 element, with 1 unique structure_
 ```xml
 <cac:DigitalMessageDelivery>
   <cbc:ProtocolID>AS2</cbc:ProtocolID>
-  <cbc:EndpointURI>http://as2.buyer.biz</cbc:EndpointURI>
+  <cbc:EndpointURI>http://as2.papifood.dk</cbc:EndpointURI>
 </cac:DigitalMessageDelivery>
 ```
 
@@ -14091,7 +14062,26 @@ _12 instances across 1 element, with 1 unique structure_
 
 _45 instances across 4 elements, with 10 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 1 instance
+
+```xml
+<cac:LegalMonetaryTotal>
+  <cbc:PayableAmount>100.00</cbc:PayableAmount>
+</cac:LegalMonetaryTotal>
+```
+
+**Structure 2** — 1 instance
+
+```xml
+<cac:QuotedMonetaryTotal>
+  <cbc:LineExtensionAmount>197750.00</cbc:LineExtensionAmount>
+  <cbc:TaxExclusiveAmount>49437.50</cbc:TaxExclusiveAmount>
+  <cbc:TaxInclusiveAmount>247187.50</cbc:TaxInclusiveAmount>
+  <cbc:PayableAmount>247187.50</cbc:PayableAmount>
+</cac:QuotedMonetaryTotal>
+```
+
+**Structure 3** — 2 instances
 
 ```xml
 <cac:AnticipatedMonetaryTotal>
@@ -14102,50 +14092,7 @@ _45 instances across 4 elements, with 10 unique structures_
 </cac:AnticipatedMonetaryTotal>
 ```
 
-**Structure 2** — 7 instances
-
-```xml
-<cac:AnticipatedMonetaryTotal>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:PayableAmount>100.00</cbc:PayableAmount>
-</cac:AnticipatedMonetaryTotal>
-```
-
-**Structure 3** — 17 instances
-
-```xml
-<cac:LegalMonetaryTotal>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
-  <cbc:AllowanceTotalAmount>10.00</cbc:AllowanceTotalAmount>
-  <cbc:PayableAmount>107.50</cbc:PayableAmount>
-</cac:LegalMonetaryTotal>
-```
-
-**Structure 4** — 4 instances
-
-```xml
-<cac:LegalMonetaryTotal>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
-  <cbc:PayableAmount>107.50</cbc:PayableAmount>
-</cac:LegalMonetaryTotal>
-```
-
-**Structure 5** — 2 instances
-
-```xml
-<cac:LegalMonetaryTotal>
-  <cbc:LineExtensionAmount>23.20</cbc:LineExtensionAmount>
-  <cbc:TaxExclusiveAmount>23.20</cbc:TaxExclusiveAmount>
-  <cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
-  <cbc:AllowanceTotalAmount>5.00</cbc:AllowanceTotalAmount>
-  <cbc:ChargeTotalAmount>1.00</cbc:ChargeTotalAmount>
-  <cbc:PayableAmount>25.00</cbc:PayableAmount>
-</cac:LegalMonetaryTotal>
-```
-
-**Structure 6** — 6 instances
+**Structure 4** — 6 instances
 
 ```xml
 <cac:LegalMonetaryTotal>
@@ -14160,36 +14107,18 @@ _45 instances across 4 elements, with 10 unique structures_
 </cac:LegalMonetaryTotal>
 ```
 
-**Structure 7** — 1 instance
+**Structure 5** — 17 instances
 
 ```xml
 <cac:LegalMonetaryTotal>
-  <cbc:PayableAmount>100.00</cbc:PayableAmount>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
+  <cbc:AllowanceTotalAmount>10.00</cbc:AllowanceTotalAmount>
+  <cbc:PayableAmount>107.50</cbc:PayableAmount>
 </cac:LegalMonetaryTotal>
 ```
 
-**Structure 8** — 4 instances
-
-```xml
-<cac:QuotedMonetaryTotal>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
-  <cbc:PayableAmount>107.50</cbc:PayableAmount>
-</cac:QuotedMonetaryTotal>
-```
-
-**Structure 9** — 1 instance
-
-```xml
-<cac:QuotedMonetaryTotal>
-  <cbc:LineExtensionAmount>197750.00</cbc:LineExtensionAmount>
-  <cbc:TaxExclusiveAmount>49437.50</cbc:TaxExclusiveAmount>
-  <cbc:TaxInclusiveAmount>247187.50</cbc:TaxInclusiveAmount>
-  <cbc:PayableAmount>247187.50</cbc:PayableAmount>
-</cac:QuotedMonetaryTotal>
-```
-
-**Structure 10** — 1 instance
+**Structure 6** — 1 instance
 
 ```xml
 <cac:RequestedMonetaryTotal>
@@ -14204,6 +14133,48 @@ _45 instances across 4 elements, with 10 unique structures_
 </cac:RequestedMonetaryTotal>
 ```
 
+**Structure 7** — 7 instances
+
+```xml
+<cac:AnticipatedMonetaryTotal>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:PayableAmount>100.00</cbc:PayableAmount>
+</cac:AnticipatedMonetaryTotal>
+```
+
+**Structure 8** — 4 instances
+
+```xml
+<cac:LegalMonetaryTotal>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
+  <cbc:PayableAmount>107.50</cbc:PayableAmount>
+</cac:LegalMonetaryTotal>
+```
+
+**Structure 9** — 4 instances
+
+```xml
+<cac:QuotedMonetaryTotal>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
+  <cbc:PayableAmount>107.50</cbc:PayableAmount>
+</cac:QuotedMonetaryTotal>
+```
+
+**Structure 10** — 2 instances
+
+```xml
+<cac:LegalMonetaryTotal>
+  <cbc:LineExtensionAmount>200.00</cbc:LineExtensionAmount>
+  <cbc:TaxExclusiveAmount>205.00</cbc:TaxExclusiveAmount>
+  <cbc:TaxInclusiveAmount>247.55</cbc:TaxInclusiveAmount>
+  <cbc:AllowanceTotalAmount>5.00</cbc:AllowanceTotalAmount>
+  <cbc:ChargeTotalAmount>10.00</cbc:ChargeTotalAmount>
+  <cbc:PayableAmount>247.55</cbc:PayableAmount>
+</cac:LegalMonetaryTotal>
+```
+
 [↑ Back to contents](#contents)
 
 ### `NotificationRequirementType`
@@ -14212,7 +14183,25 @@ _45 instances across 4 elements, with 10 unique structures_
 
 _5 instances across 1 element, with 3 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 1 instance
+
+```xml
+<cac:NotificationRequirement>
+  <cbc:NotificationTypeCode>Status Notifications, schedule deviations</cbc:NotificationTypeCode>
+  <cac:NotifyParty>
+    <cbc:WebsiteURI>http://www.CONSIGNEE.no/statusreceptioninterface#2</cbc:WebsiteURI>
+    <cac:PartyName>
+      <cbc:Name>CONSIGNEE</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifyParty>
+  <cac:PostEventPeriod>
+    <cbc:DurationMeasure>30</cbc:DurationMeasure>
+    <cbc:Description>Deviations shall be notified to the CONSIGNEE within max 30 minutes</cbc:Description>
+  </cac:PostEventPeriod>
+</cac:NotificationRequirement>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:NotificationRequirement>
@@ -14235,24 +14224,6 @@ _5 instances across 1 element, with 3 unique structures_
       <cbc:ElectronicMail>someName@consignor.cn</cbc:ElectronicMail>
     </cac:Contact>
   </cac:NotifyParty>
-</cac:NotificationRequirement>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:NotificationRequirement>
-  <cbc:NotificationTypeCode>Status Notifications, schedule deviations</cbc:NotificationTypeCode>
-  <cac:NotifyParty>
-    <cbc:WebsiteURI>http://www.CONSIGNEE.no/statusreceptioninterface#2</cbc:WebsiteURI>
-    <cac:PartyName>
-      <cbc:Name>CONSIGNEE</cbc:Name>
-    </cac:PartyName>
-  </cac:NotifyParty>
-  <cac:PostEventPeriod>
-    <cbc:DurationMeasure>30</cbc:DurationMeasure>
-    <cbc:Description>Deviations shall be notified to the CONSIGNEE within max 30 minutes</cbc:Description>
-  </cac:PostEventPeriod>
 </cac:NotificationRequirement>
 ```
 
@@ -14291,7 +14262,30 @@ _5 instances across 1 element, with 3 unique structures_
 
 _38 instances across 1 element, with 3 unique structures_
 
-**Structure 1** — 18 instances
+**Structure 1** — 5 instances
+
+```xml
+<cac:OrderLineReference>
+  <cbc:LineID>1</cbc:LineID>
+  <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
+  <cac:OrderReference>
+    <cbc:ID>AEG012345</cbc:ID>
+    <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
+    <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
+    <cbc:IssueDate>2005-06-20</cbc:IssueDate>
+  </cac:OrderReference>
+</cac:OrderLineReference>
+```
+
+**Structure 2** — 15 instances
+
+```xml
+<cac:OrderLineReference>
+  <cbc:LineID>5</cbc:LineID>
+</cac:OrderLineReference>
+```
+
+**Structure 3** — 18 instances
 
 ```xml
 <cac:OrderLineReference>
@@ -14307,29 +14301,6 @@ _38 instances across 1 element, with 3 unique structures_
 </cac:OrderLineReference>
 ```
 
-**Structure 2** — 5 instances
-
-```xml
-<cac:OrderLineReference>
-  <cbc:LineID>1</cbc:LineID>
-  <cbc:SalesOrderLineID>A</cbc:SalesOrderLineID>
-  <cac:OrderReference>
-    <cbc:ID>AEG012345</cbc:ID>
-    <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
-    <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
-    <cbc:IssueDate>2005-06-20</cbc:IssueDate>
-  </cac:OrderReference>
-</cac:OrderLineReference>
-```
-
-**Structure 3** — 15 instances
-
-```xml
-<cac:OrderLineReference>
-  <cbc:LineID>1</cbc:LineID>
-</cac:OrderLineReference>
-```
-
 [↑ Back to contents](#contents)
 
 ### `OrderLineType`
@@ -14342,24 +14313,64 @@ _20 instances across 1 element, with 6 unique structures_
 
 ```xml
 <cac:OrderLine>
+  <cbc:Note>Freetext note on line 1</cbc:Note>
   <cac:LineItem>
     <cbc:ID>1</cbc:ID>
-    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+    <cbc:Quantity>120</cbc:Quantity>
+    <cbc:LineExtensionAmount>6000</cbc:LineExtensionAmount>
+    <cbc:TotalTaxAmount>10</cbc:TotalTaxAmount>
+    <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+    <cbc:AccountingCostCode>ProjectID123</cbc:AccountingCostCode>
+    <cac:Delivery>
+      <cac:RequestedDeliveryPeriod>
+        <cbc:StartDate>2010-02-10</cbc:StartDate>
+        <cbc:EndDate>2010-02-25</cbc:EndDate>
+      </cac:RequestedDeliveryPeriod>
+    </cac:Delivery>
+    <cac:OriginatorParty>
+      <cac:PartyIdentification>
+        <cbc:ID>EmployeeXXX</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Josef K.</cbc:Name>
+      </cac:PartyName>
+    </cac:OriginatorParty>
+    <cac:Price>
+      <cbc:PriceAmount>50</cbc:PriceAmount>
+      <cbc:BaseQuantity>1</cbc:BaseQuantity>
+    </cac:Price>
     <cac:Item>
       <cbc:Description>Red paint</cbc:Description>
+      <cbc:Name>Falu Rödfärg</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>SItemNo001</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID>1234567890123</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Paint type</cbc:Name>
+        <cbc:Value>Acrylic</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Solvant</cbc:Name>
+        <cbc:Value>Water</cbc:Value>
+      </cac:AdditionalItemProperty>
     </cac:Item>
   </cac:LineItem>
 </cac:OrderLine>
 ```
 
-**Structure 2** — 2 instances
+**Structure 2** — 4 instances
 
 ```xml
 <cac:OrderLine>
   <cac:LineItem>
-    <cbc:ID>1</cbc:ID>
-    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cac:Item></cac:Item>
+    <cbc:ID>2</cbc:ID>
+    <cbc:LineStatusCode>Disputed</cbc:LineStatusCode>
+    <cac:Item>
+      <cbc:Description>Very good pencils for red paint.</cbc:Description>
+    </cac:Item>
   </cac:LineItem>
 </cac:OrderLine>
 ```
@@ -14417,54 +14428,14 @@ _20 instances across 1 element, with 6 unique structures_
 </cac:OrderLine>
 ```
 
-**Structure 4** — 4 instances
+**Structure 4** — 2 instances
 
 ```xml
 <cac:OrderLine>
-  <cbc:Note>Freetext note on line 1</cbc:Note>
   <cac:LineItem>
     <cbc:ID>1</cbc:ID>
-    <cbc:Quantity>120</cbc:Quantity>
-    <cbc:LineExtensionAmount>6000</cbc:LineExtensionAmount>
-    <cbc:TotalTaxAmount>10</cbc:TotalTaxAmount>
-    <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
-    <cbc:AccountingCostCode>ProjectID123</cbc:AccountingCostCode>
-    <cac:Delivery>
-      <cac:RequestedDeliveryPeriod>
-        <cbc:StartDate>2010-02-10</cbc:StartDate>
-        <cbc:EndDate>2010-02-25</cbc:EndDate>
-      </cac:RequestedDeliveryPeriod>
-    </cac:Delivery>
-    <cac:OriginatorParty>
-      <cac:PartyIdentification>
-        <cbc:ID>EmployeeXXX</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Josef K.</cbc:Name>
-      </cac:PartyName>
-    </cac:OriginatorParty>
-    <cac:Price>
-      <cbc:PriceAmount>50</cbc:PriceAmount>
-      <cbc:BaseQuantity>1</cbc:BaseQuantity>
-    </cac:Price>
-    <cac:Item>
-      <cbc:Description>Red paint</cbc:Description>
-      <cbc:Name>Falu Rödfärg</cbc:Name>
-      <cac:SellersItemIdentification>
-        <cbc:ID>SItemNo001</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:StandardItemIdentification>
-        <cbc:ID>1234567890123</cbc:ID>
-      </cac:StandardItemIdentification>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Paint type</cbc:Name>
-        <cbc:Value>Acrylic</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Solvant</cbc:Name>
-        <cbc:Value>Water</cbc:Value>
-      </cac:AdditionalItemProperty>
-    </cac:Item>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+    <cac:Item></cac:Item>
   </cac:LineItem>
 </cac:OrderLine>
 ```
@@ -14536,7 +14507,15 @@ _20 instances across 1 element, with 6 unique structures_
 
 _71 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 57 instances
+**Structure 1** — 14 instances
+
+```xml
+<cac:OrderReference>
+  <cbc:ID>123</cbc:ID>
+</cac:OrderReference>
+```
+
+**Structure 2** — 57 instances
 
 ```xml
 <cac:OrderReference>
@@ -14544,14 +14523,6 @@ _71 instances across 1 element, with 2 unique structures_
   <cbc:SalesOrderID>CON0095678</cbc:SalesOrderID>
   <cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
   <cbc:IssueDate>2005-06-20</cbc:IssueDate>
-</cac:OrderReference>
-```
-
-**Structure 2** — 14 instances
-
-```xml
-<cac:OrderReference>
-  <cbc:ID>123</cbc:ID>
 </cac:OrderReference>
 ```
 
@@ -14566,15 +14537,6 @@ _23 instances across 3 elements, with 7 unique structures_
 **Structure 1** — 4 instances
 
 ```xml
-<cac:ActualPackage>
-  <cbc:Quantity>10</cbc:Quantity>
-  <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
-</cac:ActualPackage>
-```
-
-**Structure 2** — 4 instances
-
-```xml
 <cac:ContainingPackage>
   <cbc:ID>YangMei</cbc:ID>
   <cbc:Quantity>1</cbc:Quantity>
@@ -14582,7 +14544,49 @@ _23 instances across 3 elements, with 7 unique structures_
 </cac:ContainingPackage>
 ```
 
+**Structure 2** — 4 instances
+
+```xml
+<cac:Package>
+  <cbc:ID>CON_P_1</cbc:ID>
+  <cbc:Quantity>10</cbc:Quantity>
+  <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+  <cac:GoodsItem>
+    <cac:Item>
+      <cac:CommodityClassification>
+        <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+      </cac:CommodityClassification>
+    </cac:Item>
+  </cac:GoodsItem>
+</cac:Package>
+```
+
 **Structure 3** — 2 instances
+
+```xml
+<cac:Package>
+  <cbc:Quantity>10</cbc:Quantity>
+  <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+  <cac:GoodsItem>
+    <cac:Item>
+      <cac:CommodityClassification>
+        <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+      </cac:CommodityClassification>
+    </cac:Item>
+  </cac:GoodsItem>
+</cac:Package>
+```
+
+**Structure 4** — 6 instances
+
+```xml
+<cac:Package>
+  <cbc:ID>CON_1</cbc:ID>
+  <cbc:Quantity>10</cbc:Quantity>
+</cac:Package>
+```
+
+**Structure 5** — 2 instances
 
 ```xml
 <cac:Package>
@@ -14646,7 +14650,7 @@ _23 instances across 3 elements, with 7 unique structures_
 </cac:Package>
 ```
 
-**Structure 4** — 1 instance
+**Structure 6** — 1 instance
 
 ```xml
 <cac:Package>
@@ -14753,46 +14757,13 @@ _23 instances across 3 elements, with 7 unique structures_
 </cac:Package>
 ```
 
-**Structure 5** — 4 instances
+**Structure 7** — 4 instances
 
 ```xml
-<cac:Package>
-  <cbc:ID>CON_P_1</cbc:ID>
+<cac:ActualPackage>
   <cbc:Quantity>10</cbc:Quantity>
-  <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-  <cac:GoodsItem>
-    <cac:Item>
-      <cac:CommodityClassification>
-        <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-      </cac:CommodityClassification>
-    </cac:Item>
-  </cac:GoodsItem>
-</cac:Package>
-```
-
-**Structure 6** — 6 instances
-
-```xml
-<cac:Package>
-  <cbc:ID>CON_1</cbc:ID>
-  <cbc:Quantity>10</cbc:Quantity>
-</cac:Package>
-```
-
-**Structure 7** — 2 instances
-
-```xml
-<cac:Package>
-  <cbc:Quantity>10</cbc:Quantity>
-  <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
-  <cac:GoodsItem>
-    <cac:Item>
-      <cac:CommodityClassification>
-        <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-      </cac:CommodityClassification>
-    </cac:Item>
-  </cac:GoodsItem>
-</cac:Package>
+  <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
+</cac:ActualPackage>
 ```
 
 [↑ Back to contents](#contents)
@@ -14803,47 +14774,47 @@ _23 instances across 3 elements, with 7 unique structures_
 
 _8 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 6 instances
 
 ```xml
 <cac:ParticipantParty>
-  <cbc:InitiatingPartyIndicator>true</cbc:InitiatingPartyIndicator>
   <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
   <cac:Party>
-    <cbc:EndpointID>1234567987654</cbc:EndpointID>
+    <cbc:EndpointID>9994567987654</cbc:EndpointID>
     <cac:PartyName>
-      <cbc:Name>Vendor Inc.</cbc:Name>
+      <cbc:Name>Buyer GmbH</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:CityName>New York</cbc:CityName>
+      <cbc:CityName>Munchen</cbc:CityName>
       <cac:Country>
-        <cbc:IdentificationCode>US</cbc:IdentificationCode>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
       </cac:Country>
     </cac:PostalAddress>
   </cac:Party>
   <cac:LegalContact>
-    <cbc:Name>John Smith</cbc:Name>
-    <cbc:ElectronicMail>john.smith@vendor.net</cbc:ElectronicMail>
+    <cbc:Name>Peter Gruen</cbc:Name>
+    <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
   </cac:LegalContact>
   <cac:TechnicalContact>
-    <cbc:Name>Paul McQueen</cbc:Name>
-    <cbc:ElectronicMail>paul.mcqueen@vendor.net</cbc:ElectronicMail>
+    <cbc:Name>Peter Gruen</cbc:Name>
+    <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
   </cac:TechnicalContact>
   <cac:SupportContact>
-    <cbc:Name>Paul McQueen</cbc:Name>
-    <cbc:ElectronicMail>paul.mcqueen@vendor.net</cbc:ElectronicMail>
+    <cbc:Name>Peter Gruen</cbc:Name>
+    <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
   </cac:SupportContact>
   <cac:CommercialContact>
-    <cbc:Name>Jennifer de Niro</cbc:Name>
-    <cbc:ElectronicMail>jennifer.deniro@vendor.net</cbc:ElectronicMail>
+    <cbc:Name>Peter Gruen</cbc:Name>
+    <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
   </cac:CommercialContact>
 </cac:ParticipantParty>
 ```
 
-**Structure 2** — 6 instances
+**Structure 2** — 2 instances
 
 ```xml
 <cac:ParticipantParty>
+  <cbc:InitiatingPartyIndicator>true</cbc:InitiatingPartyIndicator>
   <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
   <cac:Party>
     <cbc:EndpointID>1234567987654</cbc:EndpointID>
@@ -14884,15 +14855,7 @@ _8 instances across 1 element, with 2 unique structures_
 
 _257 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 255 instances
-
-```xml
-<cac:PartyIdentification>
-  <cbc:ID>Supp123</cbc:ID>
-</cac:PartyIdentification>
-```
-
-**Structure 2** — 2 instances
+**Structure 1** — 2 instances
 
 ```xml
 <cac:PartyIdentification>
@@ -14904,6 +14867,14 @@ _257 instances across 1 element, with 2 unique structures_
     </ext:UBLExtension>
   </ext:UBLExtensions>
   <cbc:ID>FI1234567-8</cbc:ID>
+</cac:PartyIdentification>
+```
+
+**Structure 2** — 255 instances
+
+```xml
+<cac:PartyIdentification>
+  <cbc:ID>345KS5324</cbc:ID>
 </cac:PartyIdentification>
 ```
 
@@ -14928,7 +14899,7 @@ _51 instances across 1 element, with 4 unique structures_
 
 ```xml
 <cac:PartyLegalEntity>
-  <cbc:CompanyID>6411982340</cbc:CompanyID>
+  <cbc:CompanyID>DK43232010</cbc:CompanyID>
 </cac:PartyLegalEntity>
 ```
 
@@ -14936,13 +14907,13 @@ _51 instances across 1 element, with 4 unique structures_
 
 ```xml
 <cac:PartyLegalEntity>
-  <cbc:RegistrationName>The Sellercompany Incorporated</cbc:RegistrationName>
-  <cbc:CompanyID>5402697509</cbc:CompanyID>
+  <cbc:RegistrationName>Moderna Produkter AB</cbc:RegistrationName>
+  <cbc:CompanyID>5532332283</cbc:CompanyID>
   <cac:RegistrationAddress>
-    <cbc:CityName>Big city</cbc:CityName>
-    <cbc:CountrySubentity>RegionA</cbc:CountrySubentity>
+    <cbc:CityName>Stockholm</cbc:CityName>
+    <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
     <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:IdentificationCode>SE</cbc:IdentificationCode>
     </cac:Country>
   </cac:RegistrationAddress>
 </cac:PartyLegalEntity>
@@ -14953,7 +14924,7 @@ _51 instances across 1 element, with 4 unique structures_
 ```xml
 <cac:PartyLegalEntity>
   <cbc:RegistrationName>Delcomputer A/S</cbc:RegistrationName>
-  <cbc:CompanyID>18296799</cbc:CompanyID>
+  <cbc:CompanyID>DK18296799</cbc:CompanyID>
 </cac:PartyLegalEntity>
 ```
 
@@ -14969,7 +14940,7 @@ _514 instances across 1 element, with 1 unique structure_
 
 ```xml
 <cac:PartyName>
-  <cbc:Name>Consortial</cbc:Name>
+  <cbc:Name>Gedevang Mejeri</cbc:Name>
 </cac:PartyName>
 ```
 
@@ -14981,7 +14952,18 @@ _514 instances across 1 element, with 1 unique structure_
 
 _232 instances across 1 element, with 4 unique structures_
 
-**Structure 1** — 4 instances
+**Structure 1** — 17 instances
+
+```xml
+<cac:PartyTaxScheme>
+  <cbc:CompanyID>BE54321</cbc:CompanyID>
+  <cac:TaxScheme>
+    <cbc:ID>VAT</cbc:ID>
+  </cac:TaxScheme>
+</cac:PartyTaxScheme>
+```
+
+**Structure 2** — 4 instances
 
 ```xml
 <cac:PartyTaxScheme>
@@ -14993,22 +14975,11 @@ _232 instances across 1 element, with 4 unique structures_
 </cac:PartyTaxScheme>
 ```
 
-**Structure 2** — 17 instances
-
-```xml
-<cac:PartyTaxScheme>
-  <cbc:CompanyID>DK12345</cbc:CompanyID>
-  <cac:TaxScheme>
-    <cbc:ID>VAT</cbc:ID>
-  </cac:TaxScheme>
-</cac:PartyTaxScheme>
-```
-
 **Structure 3** — 209 instances
 
 ```xml
 <cac:PartyTaxScheme>
-  <cbc:RegistrationName>Farthing Purchasing Consortia</cbc:RegistrationName>
+  <cbc:RegistrationName>Farthing Purchasing Consortium</cbc:RegistrationName>
   <cbc:CompanyID>175 269 2355</cbc:CompanyID>
   <cbc:ExemptionReason>N/A</cbc:ExemptionReason>
   <cac:TaxScheme>
@@ -15044,184 +15015,202 @@ _232 instances across 1 element, with 4 unique structures_
 
 _576 instances across 37 elements, with 111 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 7 instances
 
 ```xml
-<cac:AgentParty>
-  <cac:PartyIdentification>
-    <cbc:ID>FI1234569-8</cbc:ID>
-  </cac:PartyIdentification>
+<cac:FreightForwarderParty>
   <cac:PartyName>
-    <cbc:Name>Huolitsija Oy</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>Tuula Tullaaja 02 13 4567</cbc:Name>
-  </cac:Contact>
-</cac:AgentParty>
-```
-
-**Structure 2** — 2 instances
-
-```xml
-<cac:AgentParty>
-  <cac:PartyIdentification>
-    <cbc:ID>DK10035643</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Told Service A/S</cbc:Name>
+    <cbc:Name>One-Stop Forwarders</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Vesterbrogade</cbc:StreetName>
-    <cbc:BuildingNumber>78</cbc:BuildingNumber>
-    <cbc:CityName>København K</cbc:CityName>
-    <cbc:PostalZone>1258</cbc:PostalZone>
+    <cbc:Postbox>99043</cbc:Postbox>
+    <cbc:CityName>Boston</cbc:CityName>
+    <cbc:PostalZone>02210</cbc:PostalZone>
+    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cac:Country>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:Country>
   </cac:PostalAddress>
-</cac:AgentParty>
+  <cac:Contact>
+    <cbc:Name>Con Solidador</cbc:Name>
+    <cbc:Telephone>+1 343 1453654</cbc:Telephone>
+    <cbc:Telefax>+1 343 1453655</cbc:Telefax>
+    <cbc:ElectronicMail>ctanner@onestopfreight.com</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:FreightForwarderParty>
+```
+
+**Structure 2** — 8 instances
+
+```xml
+<cac:NotifyParty>
+  <cac:PartyName>
+    <cbc:Name>IYT Corporation</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Avon Way</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Bridgtow</cbc:CityName>
+    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>3rd Floor, Room 5</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mr Fred Churchill</cbc:Name>
+    <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+    <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+    <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:NotifyParty>
 ```
 
 **Structure 3** — 2 instances
 
 ```xml
-<cac:AgentParty>
-  <cac:PartyName>
-    <cbc:Name>Ylermi Huisi 09-55555555</cbc:Name>
-  </cac:PartyName>
-</cac:AgentParty>
+<cac:NotifierParty>
+  <cac:PartyIdentification>
+    <cbc:ID>FI1234567-8</cbc:ID>
+  </cac:PartyIdentification>
+</cac:NotifierParty>
 ```
 
 **Structure 4** — 2 instances
 
 ```xml
-<cac:BusinessParty>
-  <cbc:EndpointID>9994567987654</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>GB999999973</cbc:ID>
-  </cac:PartyIdentification>
+<cac:ImportingCustomsParty>
   <cac:PartyName>
-    <cbc:Name>World Events Ltd.</cbc:Name>
+    <cbc:Name>Zollamt</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:CityName>London</cbc:CityName>
+    <cbc:StreetName>Tollbrettkoppel</cbc:StreetName>
+    <cbc:BuildingNumber>8</cbc:BuildingNumber>
+    <cbc:CityName>Heiligenhafen</cbc:CityName>
+    <cbc:PostalZone>23774</cbc:PostalZone>
     <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
     </cac:Country>
   </cac:PostalAddress>
-</cac:BusinessParty>
+</cac:ImportingCustomsParty>
 ```
 
 **Structure 5** — 8 instances
 
 ```xml
-<cac:CarrierParty>
+<cac:NotifyParty>
+  <cbc:EndpointID>www.consignor.cn/statusnotifications/</cbc:EndpointID>
   <cac:PartyName>
-    <cbc:Name>United Airfreight</cbc:Name>
+    <cbc:Name>Consignor</cbc:Name>
   </cac:PartyName>
   <cac:Contact>
-    <cbc:ID>Freight Bookings</cbc:ID>
-    <cbc:Telephone>+1 3362 4788</cbc:Telephone>
-    <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
+    <cbc:ElectronicMail>someName@consignor.cn</cbc:ElectronicMail>
   </cac:Contact>
-</cac:CarrierParty>
+</cac:NotifyParty>
 ```
 
-**Structure 6** — 1 instance
+**Structure 6** — 2 instances
 
 ```xml
-<cac:CarrierParty>
-  <cac:PartyName>
-    <cbc:Name>MAERSK</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+4598786765</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@maersk.dk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:CarrierParty>
-```
-
-**Structure 7** — 4 instances
-
-```xml
-<cac:CarrierParty>
-  <cac:PartyName>
-    <cbc:Name>Keep On Trucking</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Telephone>+1 36222 33847</cbc:Telephone>
-  </cac:Contact>
-</cac:CarrierParty>
-```
-
-**Structure 8** — 2 instances
-
-```xml
-<cac:ConsigneeParty>
+<cac:SenderParty>
+  <cbc:EndpointID>1234567987654</cbc:EndpointID>
   <cac:PartyIdentification>
-    <cbc:ID>4058673827123</cbc:ID>
+    <cbc:ID>DK12345678</cbc:ID>
   </cac:PartyIdentification>
   <cac:PartyName>
-    <cbc:Name>Consignee</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+4987878763</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@consignee.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ConsigneeParty>
-```
-
-**Structure 9** — 1 instance
-
-```xml
-<cac:ConsigneeParty>
-  <cac:PartyIdentification>
-    <cbc:ID>0004424005</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>ConsigneeExample</cbc:Name>
+    <cbc:Name>Papirøen Food ApS</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>StreetName Example</cbc:StreetName>
-    <cbc:AdditionalStreetName>AdditionalStreet Example</cbc:AdditionalStreetName>
-    <cbc:CityName>El Dorado</cbc:CityName>
+    <cbc:StreetName>Trangravsvej</cbc:StreetName>
+    <cbc:BuildingNumber>12</cbc:BuildingNumber>
+    <cbc:CityName>Copenhagen</cbc:CityName>
     <cac:Country>
-      <cbc:IdentificationCode>PA</cbc:IdentificationCode>
-      <cbc:Name>Panama</cbc:Name>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
     </cac:Country>
   </cac:PostalAddress>
-</cac:ConsigneeParty>
+</cac:SenderParty>
 ```
 
-**Structure 10** — 2 instances
+**Structure 7** — 9 instances
 
 ```xml
-<cac:ConsigneeParty>
+<cac:Party>
+  <cbc:EndpointID>7300072311115</cbc:EndpointID>
   <cac:PartyIdentification>
-    <cbc:ID>STD14037</cbc:ID>
+    <cbc:ID>7300070011115</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyIdentification>
+    <cbc:ID>PartyID123</cbc:ID>
   </cac:PartyIdentification>
   <cac:PartyName>
-    <cbc:Name>Coop Extra Bergen</cbc:Name>
+    <cbc:Name>Johnssons byggvaror</cbc:Name>
+  </cac:PartyName>
+</cac:Party>
+```
+
+**Structure 8** — 1 instance
+
+```xml
+<cac:TransportServiceProviderParty>
+  <cbc:WebsiteURI>www.ROADCARRIER.de</cbc:WebsiteURI>
+  <cac:PartyIdentification>
+    <cbc:ID>1236541</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>ROAD CARRIER</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Marken</cbc:StreetName>
-    <cbc:BuildingNumber>13</cbc:BuildingNumber>
-    <cbc:CityName>Bergen</cbc:CityName>
-    <cbc:PostalZone>5017</cbc:PostalZone>
+    <cbc:Postbox>148</cbc:Postbox>
+    <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
+    <cbc:MarkAttention>Peter Janssen</cbc:MarkAttention>
+    <cbc:CityName>Munich</cbc:CityName>
+    <cbc:PostalZone>28001</cbc:PostalZone>
     <cac:Country>
-      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:Name>Germany</cbc:Name>
     </cac:Country>
   </cac:PostalAddress>
+  <cac:PhysicalLocation>
+    <cbc:ID>89767764</cbc:ID>
+    <cac:Address>
+      <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
+      <cbc:CityName>Munich</cbc:CityName>
+      <cac:AddressLine>
+        <cbc:Line>Customer entrance from the street</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        <cbc:Name>Germany</cbc:Name>
+      </cac:Country>
+      <cac:LocationCoordinate>
+        <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+        <cbc:LatitudeDegreesMeasure>53.4</cbc:LatitudeDegreesMeasure>
+        <cbc:LatitudeMinutesMeasure>33</cbc:LatitudeMinutesMeasure>
+        <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
+        <cbc:LongitudeDegreesMeasure>8.48</cbc:LongitudeDegreesMeasure>
+        <cbc:LongitudeMinutesMeasure>27</cbc:LongitudeMinutesMeasure>
+        <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
+      </cac:LocationCoordinate>
+    </cac:Address>
+  </cac:PhysicalLocation>
   <cac:PartyLegalEntity>
-    <cbc:CompanyID>945030345</cbc:CompanyID>
+    <cbc:RegistrationName>ROAD CARRIER GmbH</cbc:RegistrationName>
+    <cbc:CompanyID>989987876</cbc:CompanyID>
   </cac:PartyLegalEntity>
   <cac:Contact>
-    <cbc:ID>1928</cbc:ID>
-    <cbc:Name>*ULLA GJERSTRUP</cbc:Name>
+    <cbc:Name>Peter Janssen</cbc:Name>
+    <cbc:Telephone>+4987675432</cbc:Telephone>
+    <cbc:Telefax>+4987675431</cbc:Telefax>
+    <cbc:ElectronicMail>peter@ROADCARRIER.de</cbc:ElectronicMail>
   </cac:Contact>
-</cac:ConsigneeParty>
+</cac:TransportServiceProviderParty>
 ```
 
-**Structure 11** — 10 instances
+**Structure 9** — 10 instances
 
 ```xml
 <cac:ConsigneeParty>
@@ -15251,307 +15240,7 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:ConsigneeParty>
 ```
 
-**Structure 12** — 2 instances
-
-```xml
-<cac:ConsigneeParty>
-  <cac:PartyName>
-    <cbc:Name>Yang Mei Electronic Ltd</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Export Str. 143</cbc:StreetName>
-    <cbc:CityName>Yang Mei</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>TH</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:ConsigneeParty>
-```
-
-**Structure 13** — 3 instances
-
-```xml
-<cac:ConsigneeParty>
-  <cac:PartyName>
-    <cbc:Name>Consignee W</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Consignee W Street</cbc:StreetName>
-    <cbc:CityName>Munich</cbc:CityName>
-    <cbc:PostalZone>231</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:ConsigneeParty>
-```
-
-**Structure 14** — 1 instance
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673827000</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Disfruta</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+212687878763</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ConsignorParty>
-```
-
-**Structure 15** — 2 instances
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673827000</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Consignor</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:ID>4058673827000</cbc:ID>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+8676576456</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ConsignorParty>
-```
-
-**Structure 16** — 2 instances
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyIdentification>
-    <cbc:ID>8596</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Gedevang Mejeri</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Stribevangen</cbc:StreetName>
-    <cbc:BuildingNumber>89</cbc:BuildingNumber>
-    <cbc:CityName>Gedser</cbc:CityName>
-    <cbc:PostalZone>4874</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>45789034</cbc:CompanyID>
-    <cbc:RegistrationDate>1957-08-13</cbc:RegistrationDate>
-  </cac:PartyLegalEntity>
-</cac:ConsignorParty>
-```
-
-**Structure 17** — 1 instance
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyIdentification>
-    <cbc:ID>1234</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>ConsignorExample</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>ExampleStreet</cbc:StreetName>
-    <cbc:CityName>Example City</cbc:CityName>
-    <cbc:PostalZone>1234</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>DK12345678</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:ID>8447</cbc:ID>
-    <cbc:Name>Document Robot</cbc:Name>
-  </cac:Contact>
-</cac:ConsignorParty>
-```
-
-**Structure 18** — 1 instance
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyIdentification>
-    <cbc:ID>1080</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>ExampleName</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>ExampleStreet</cbc:StreetName>
-    <cbc:CityName>Viby J</cbc:CityName>
-    <cbc:PostalZone>8260</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:ConsignorParty>
-```
-
-**Structure 19** — 2 instances
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyIdentification>
-    <cbc:ID>FI1234567-1</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Elektroniikka Oy</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Vastuskatu 12</cbc:StreetName>
-    <cbc:CityName>Helsinki</cbc:CityName>
-    <cbc:PostalZone>00140</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>FI</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:ConsignorParty>
-```
-
-**Structure 20** — 9 instances
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyName>
-    <cbc:Name>Consortial</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Boston Road</cbc:StreetName>
-    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-    <cbc:BuildingNumber>630</cbc:BuildingNumber>
-    <cbc:CityName>Billerica</cbc:CityName>
-    <cbc:PostalZone>01821</cbc:PostalZone>
-    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-    <cac:Country>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mrs Bouquet</cbc:Name>
-    <cbc:Telephone>+1 158 1233714</cbc:Telephone>
-    <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-    <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ConsignorParty>
-```
-
-**Structure 21** — 2 instances
-
-```xml
-<cac:ConsignorParty>
-  <cac:PartyName>
-    <cbc:Name>AOO Tehnika</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Komsomolskaja pl., 158</cbc:StreetName>
-    <cbc:CityName>Moskva</cbc:CityName>
-    <cbc:PostalZone>107842</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>RU</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:AgentParty>
-    <cac:PartyName>
-      <cbc:Name>Ylermi Huisi 09-55555555</cbc:Name>
-    </cac:PartyName>
-  </cac:AgentParty>
-</cac:ConsignorParty>
-```
-
-**Structure 22** — 2 instances
-
-```xml
-<cac:CustomsParty>
-  <cac:PartyIdentification>
-    <cbc:ID>DK003102</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Toldstyrelsen</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Slet Parkvej</cbc:StreetName>
-    <cbc:BuildingNumber>1</cbc:BuildingNumber>
-    <cbc:CityName>Nørre Alslev</cbc:CityName>
-    <cbc:PostalZone>4840</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:CustomsParty>
-```
-
-**Structure 23** — 4 instances
-
-```xml
-<cac:CustomsParty>
-  <cac:PartyIdentification>
-    <cbc:ID>FI0245442-8</cbc:ID>
-  </cac:PartyIdentification>
-</cac:CustomsParty>
-```
-
-**Structure 24** — 2 instances
-
-```xml
-<cac:DeliveryParty>
-  <cac:PartyIdentification>
-    <cbc:ID>67654328394567</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Swedish trucking</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>Per</cbc:Name>
-    <cbc:Telephone>987098709</cbc:Telephone>
-    <cbc:Telefax>34673435</cbc:Telefax>
-    <cbc:ElectronicMail>bill@svetruck.se</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:DeliveryParty>
-```
-
-**Structure 25** — 4 instances
-
-```xml
-<cac:DeliveryParty>
-  <cac:PartyName>
-    <cbc:Name>The Terminus</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>S Massiah</cbc:Name>
-    <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-    <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-    <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:DeliveryParty>
-```
-
-**Structure 26** — 4 instances
-
-```xml
-<cac:DespatchParty>
-  <cac:PartyName>
-    <cbc:Name>Consortial</cbc:Name>
-  </cac:PartyName>
-</cac:DespatchParty>
-```
-
-**Structure 27** — 2 instances
+**Structure 10** — 2 instances
 
 ```xml
 <cac:ExporterParty>
@@ -15590,29 +15279,625 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:ExporterParty>
 ```
 
-**Structure 28** — 4 instances
+**Structure 11** — 2 instances
 
 ```xml
-<cac:ExportingGuarantorParty>
+<cac:AgentParty>
   <cac:PartyName>
-    <cbc:Name>Dansk Erhverv</cbc:Name>
+    <cbc:Name>Ylermi Huisi 09-55555555</cbc:Name>
+  </cac:PartyName>
+</cac:AgentParty>
+```
+
+**Structure 12** — 1 instance
+
+```xml
+<cac:Party>
+  <cac:PartyIdentification>
+    <cbc:ID>123456789</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Gadgets R Us, Inc.</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+    <cbc:StreetName>High Street</cbc:StreetName>
     <cbc:BuildingNumber>1</cbc:BuildingNumber>
-    <cbc:CityName>København K</cbc:CityName>
-    <cbc:PostalZone>1216</cbc:PostalZone>
+    <cbc:CityName>Copenhagen</cbc:CityName>
+    <cbc:PostalZone>1001</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:CompanyID>DK12345</cbc:CompanyID>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+</cac:Party>
+```
+
+**Structure 13** — 2 instances
+
+```xml
+<cac:Party>
+  <cac:PartyIdentification>
+    <cbc:ID>Supp123</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Example Supplies Ltd.</cbc:Name>
+  </cac:PartyName>
+  <cac:PartyTaxScheme>
+    <cbc:CompanyID>DK123456789</cbc:CompanyID>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+</cac:Party>
+```
+
+**Structure 14** — 2 instances
+
+```xml
+<cac:Party>
+  <cac:PartyIdentification>
+    <cbc:ID>0987678321123</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Moderna Produkter AB</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Telephone>346788</cbc:Telephone>
+    <cbc:Telefax>8567443</cbc:Telefax>
+    <cbc:ElectronicMail>sven@moderna.se</cbc:ElectronicMail>
+  </cac:Contact>
+  <cac:Person>
+    <cbc:FirstName>Sven</cbc:FirstName>
+    <cbc:FamilyName>Pereson</cbc:FamilyName>
+    <cbc:MiddleName>N</cbc:MiddleName>
+    <cbc:JobTitle>Stuffuser</cbc:JobTitle>
+  </cac:Person>
+</cac:Party>
+```
+
+**Structure 15** — 1 instance
+
+```xml
+<cac:SourceIssuerParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673821325</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>ARRIVA</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+49450557888</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@arriva.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:SourceIssuerParty>
+```
+
+**Structure 16** — 1 instance
+
+```xml
+<cac:RepresentativeParty>
+  <cac:PartyName>
+    <cbc:Name>Grenå Tools</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Højdevej 18</cbc:StreetName>
+    <cbc:CityName>Grenå</cbc:CityName>
+    <cbc:PostalZone>8500</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Person>
+    <cbc:FirstName>Kirsten</cbc:FirstName>
+    <cbc:FamilyName>Jensen</cbc:FamilyName>
+    <cac:IdentityDocumentReference>
+      <cbc:ID>325334535</cbc:ID>
+    </cac:IdentityDocumentReference>
+  </cac:Person>
+</cac:RepresentativeParty>
+```
+
+**Structure 17** — 7 instances
+
+```xml
+<cac:Party>
+  <cac:PartyName>
+    <cbc:Name>IYT Corporation</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Avon Way</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Bridgtow</cbc:CityName>
+    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>3rd Floor, Room 5</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mr Fred Churchill</cbc:Name>
+    <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+    <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+    <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:Party>
+```
+
+**Structure 18** — 1 instance
+
+```xml
+<cac:SenderParty>
+  <cbc:IndustryClassificationCode>Public Rail Authorities</cbc:IndustryClassificationCode>
+  <cac:PartyName>
+    <cbc:Name>DB</cbc:Name>
+  </cac:PartyName>
+</cac:SenderParty>
+```
+
+**Structure 19** — 3 instances
+
+```xml
+<cac:ResponsibleParty>
+  <cbc:IndustryClassificationCode>SPC</cbc:IndustryClassificationCode>
+  <cac:PartyName>
+    <cbc:Name>LEONARDO</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:CityName>La Spezia</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Person>
+    <cbc:FirstName>STEFANO</cbc:FirstName>
+    <cbc:FamilyName>ROSSI</cbc:FamilyName>
+    <cbc:RoleCode>RP</cbc:RoleCode>
+  </cac:Person>
+</cac:ResponsibleParty>
+```
+
+**Structure 20** — 7 instances
+
+```xml
+<cac:Party>
+  <cbc:EndpointID>1234567890123</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>Supp123</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Salescompany ltd.</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:ID>1231412341324</cbc:ID>
+    <cbc:Postbox>5467</cbc:Postbox>
+    <cbc:StreetName>Main street</cbc:StreetName>
+    <cbc:AdditionalStreetName>Suite 123</cbc:AdditionalStreetName>
+    <cbc:BuildingNumber>1</cbc:BuildingNumber>
+    <cbc:Department>Revenue department</cbc:Department>
+    <cbc:CityName>Big city</cbc:CityName>
+    <cbc:PostalZone>54321</cbc:PostalZone>
+    <cbc:CountrySubentityCode>RegionA</cbc:CountrySubentityCode>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:CompanyID>DK12345</cbc:CompanyID>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+  <cac:PartyLegalEntity>
+    <cbc:RegistrationName>The Sellercompany Incorporated</cbc:RegistrationName>
+    <cbc:CompanyID>5402697509</cbc:CompanyID>
+    <cac:RegistrationAddress>
+      <cbc:CityName>Big city</cbc:CityName>
+      <cbc:CountrySubentity>RegionA</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:RegistrationAddress>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:Telephone>4621230</cbc:Telephone>
+    <cbc:Telefax>4621231</cbc:Telefax>
+    <cbc:ElectronicMail>antonio@salescompany.dk</cbc:ElectronicMail>
+  </cac:Contact>
+  <cac:Person>
+    <cbc:FirstName>Antonio</cbc:FirstName>
+    <cbc:FamilyName>M</cbc:FamilyName>
+    <cbc:MiddleName>Salemacher</cbc:MiddleName>
+    <cbc:JobTitle>Sales manager</cbc:JobTitle>
+  </cac:Person>
+</cac:Party>
+```
+
+**Structure 21** — 6 instances
+
+```xml
+<cac:TransportServiceProviderParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827641</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>NECOSS</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+49450557000</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:TransportServiceProviderParty>
+```
+
+**Structure 22** — 2 instances
+
+```xml
+<cac:ConsigneeParty>
+  <cac:PartyIdentification>
+    <cbc:ID>STD14037</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Coop Extra Bergen</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Marken</cbc:StreetName>
+    <cbc:BuildingNumber>13</cbc:BuildingNumber>
+    <cbc:CityName>Bergen</cbc:CityName>
+    <cbc:PostalZone>5017</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>945030345</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:ID>1928</cbc:ID>
+    <cbc:Name>*ULLA GJERSTRUP</cbc:Name>
+  </cac:Contact>
+</cac:ConsigneeParty>
+```
+
+**Structure 23** — 1 instance
+
+```xml
+<cac:Party>
+  <cbc:WebsiteURI>http://super.company.dk</cbc:WebsiteURI>
+  <cbc:EndpointID>01842222222222</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>5790000127777</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>SuperCompany</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
+    <cbc:StreetName>Korsbygade 34</cbc:StreetName>
+    <cbc:CityName>Aalborg</cbc:CityName>
+    <cbc:PostalZone>9000</cbc:PostalZone>
+    <cbc:CountrySubentity></cbc:CountrySubentity>
     <cac:Country>
       <cbc:IdentificationCode>DK</cbc:IdentificationCode>
     </cac:Country>
   </cac:PostalAddress>
   <cac:PartyLegalEntity>
-    <cbc:CompanyID>43232010</cbc:CompanyID>
+    <cbc:RegistrationName>SuperCompany</cbc:RegistrationName>
+    <cbc:CompanyID>DK59873677</cbc:CompanyID>
   </cac:PartyLegalEntity>
-</cac:ExportingGuarantorParty>
+  <cac:Contact>
+    <cbc:ID>7778</cbc:ID>
+    <cbc:Name>Ole Hansen</cbc:Name>
+    <cbc:Telephone>4526532147</cbc:Telephone>
+    <cbc:Telefax>4526532146</cbc:Telefax>
+    <cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:Party>
 ```
 
-**Structure 29** — 8 instances
+**Structure 24** — 2 instances
+
+```xml
+<cac:BusinessParty>
+  <cbc:EndpointID>9994567987654</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>GB999999973</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>World Events Ltd.</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:CityName>London</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:BusinessParty>
+```
+
+**Structure 25** — 1 instance
+
+```xml
+<cac:HolderParty>
+  <cac:PartyName>
+    <cbc:Name>STEFCO A/S</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Industrivej 3</cbc:StreetName>
+    <cbc:CityName>Ørum Djurs</cbc:CityName>
+    <cbc:PostalZone>8586</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>DK89343487</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:Name>Andreas Andersen</cbc:Name>
+  </cac:Contact>
+</cac:HolderParty>
+```
+
+**Structure 26** — 3 instances
+
+```xml
+<cac:ReceiverParty>
+  <cbc:EndpointID>9994567987654</cbc:EndpointID>
+  <cbc:IndustryClassificationCode>TR</cbc:IndustryClassificationCode>
+  <cac:PartyName>
+    <cbc:Name>La Spezia Container Terminal</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:CityName>La Spezia</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ReceiverParty>
+```
+
+**Structure 27** — 1 instance
+
+```xml
+<cac:TransportServiceProviderParty>
+  <cac:PartyName>
+    <cbc:Name>CARRIER SERVICE LTD</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Telephone>+324005588588</cbc:Telephone>
+  </cac:Contact>
+  <cac:Person>
+    <cbc:FirstName>RAUL</cbc:FirstName>
+    <cbc:FamilyName>GONZALES</cbc:FamilyName>
+  </cac:Person>
+</cac:TransportServiceProviderParty>
+```
+
+**Structure 28** — 1 instance
+
+```xml
+<cac:SenderParty>
+  <cac:PartyName>
+    <cbc:Name>Declarant Inc</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Declarant Street</cbc:StreetName>
+    <cbc:CityName>Declarant City</cbc:CityName>
+    <cbc:PostalZone>Declarant Post Code</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+49450557000</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:SenderParty>
+```
+
+**Structure 29** — 1 instance
+
+```xml
+<cac:ManufacturerParty>
+  <cac:PartyName>
+    <cbc:Name>AZ Outsourcing srl</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Via Bolognese</cbc:StreetName>
+    <cbc:BuildingNumber>199</cbc:BuildingNumber>
+    <cbc:CityName>Bologna</cbc:CityName>
+    <cbc:PostalZone>40129</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      <cbc:Name>Italy</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mr Verdi</cbc:Name>
+    <cbc:Telephone>0039 051 25400000</cbc:Telephone>
+    <cbc:Telefax>0039 051 25400023</cbc:Telefax>
+    <cbc:ElectronicMail>verdi@azoutsourcing.it</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ManufacturerParty>
+```
+
+**Structure 30** — 1 instance
+
+```xml
+<cac:TransportUserParty>
+  <cac:PartyIdentification>
+    <cbc:ID>123456789</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>CONSIGNEE</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:Postbox>456</cbc:Postbox>
+    <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
+    <cbc:CityName>Hamar</cbc:CityName>
+    <cbc:PostalZone>2321</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Jon Persen</cbc:Name>
+    <cbc:Telephone>+4793656656</cbc:Telephone>
+    <cbc:ElectronicMail>jonp@CONSIGNEE.no</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:TransportUserParty>
+```
+
+**Structure 31** — 2 instances
+
+```xml
+<cac:TransitExporterParty>
+  <cac:PartyIdentification>
+    <cbc:ID>1234567-8</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PhysicalLocation>
+    <cac:Address>
+      <cbc:CityName>Espoo</cbc:CityName>
+    </cac:Address>
+  </cac:PhysicalLocation>
+</cac:TransitExporterParty>
+```
+
+**Structure 32** — 2 instances
+
+```xml
+<cac:Party>
+  <cbc:EndpointID>7302347231111</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>SellerPartyID123</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Moderna Produkter AB</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:ID>0987654321123</cbc:ID>
+    <cbc:Postbox>321</cbc:Postbox>
+    <cbc:StreetName>Kungsgatan</cbc:StreetName>
+    <cbc:AdditionalStreetName>suite12</cbc:AdditionalStreetName>
+    <cbc:BuildingNumber>22</cbc:BuildingNumber>
+    <cbc:Department>Sales department</cbc:Department>
+    <cbc:CityName>Stockholm</cbc:CityName>
+    <cbc:PostalZone>11000</cbc:PostalZone>
+    <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
+    <cac:Country>
+      <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:RegistrationName>Moderna Produkter AB</cbc:RegistrationName>
+    <cbc:CompanyID>5532332283</cbc:CompanyID>
+    <cac:RegistrationAddress>
+      <cbc:CityName>Stockholm</cbc:CityName>
+      <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:RegistrationAddress>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:Telephone>34557</cbc:Telephone>
+    <cbc:Telefax>3456767</cbc:Telefax>
+    <cbc:ElectronicMail>lars@moderna.se</cbc:ElectronicMail>
+  </cac:Contact>
+  <cac:Person>
+    <cbc:FirstName>Lars</cbc:FirstName>
+    <cbc:FamilyName>Petersen</cbc:FamilyName>
+    <cbc:MiddleName>M</cbc:MiddleName>
+    <cbc:JobTitle>Sales manager</cbc:JobTitle>
+  </cac:Person>
+</cac:Party>
+```
+
+**Structure 33** — 9 instances
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyName>
+    <cbc:Name>Consortial</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Boston Road</cbc:StreetName>
+    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+    <cbc:BuildingNumber>630</cbc:BuildingNumber>
+    <cbc:CityName>Billerica</cbc:CityName>
+    <cbc:PostalZone>01821</cbc:PostalZone>
+    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cac:Country>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mrs Bouquet</cbc:Name>
+    <cbc:Telephone>+1 158 1233714</cbc:Telephone>
+    <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
+    <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ConsignorParty>
+```
+
+**Structure 34** — 2 instances
+
+```xml
+<cac:CustomsParty>
+  <cac:PartyIdentification>
+    <cbc:ID>DK003102</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Toldstyrelsen</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Slet Parkvej</cbc:StreetName>
+    <cbc:BuildingNumber>1</cbc:BuildingNumber>
+    <cbc:CityName>Nørre Alslev</cbc:CityName>
+    <cbc:PostalZone>4840</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:CustomsParty>
+```
+
+**Structure 35** — 2 instances
+
+```xml
+<cac:ReceiverParty>
+  <cbc:EndpointID>9994567987654</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>GB999999973</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>World Events Ltd.</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:CityName>London</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ReceiverParty>
+```
+
+**Structure 36** — 8 instances
 
 ```xml
 <cac:FinalDeliveryParty>
@@ -15642,34 +15927,141 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:FinalDeliveryParty>
 ```
 
-**Structure 30** — 1 instance
+**Structure 37** — 4 instances
 
 ```xml
-<cac:FreightForwarderParty>
+<cac:TransportServiceProviderParty>
+  <cac:PartyName>
+    <cbc:Name>RAIL CARRIER</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>Anders Stock</cbc:Name>
+    <cbc:Telephone>+4987676234</cbc:Telephone>
+    <cbc:ElectronicMail>anders@RAILCARRIER.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:TransportServiceProviderParty>
+```
+
+**Structure 38** — 1 instance
+
+```xml
+<cac:Party>
+  <cbc:WebsiteURI>http://super.company.dk</cbc:WebsiteURI>
+  <cbc:EndpointID>01842222222222</cbc:EndpointID>
   <cac:PartyIdentification>
-    <cbc:ID>13234212</cbc:ID>
+    <cbc:ID>5790000127777</cbc:ID>
   </cac:PartyIdentification>
   <cac:PartyName>
-    <cbc:Name>Example Shipping</cbc:Name>
+    <cbc:Name>SuperCompany</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Street</cbc:StreetName>
-    <cbc:CityName>City</cbc:CityName>
-    <cbc:PostalZone>Post</cbc:PostalZone>
+    <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
+    <cbc:StreetName>Korsbygade 34</cbc:StreetName>
+    <cbc:CityName>Aalborg</cbc:CityName>
+    <cbc:PostalZone>9000</cbc:PostalZone>
     <cac:Country>
       <cbc:IdentificationCode>DK</cbc:IdentificationCode>
     </cac:Country>
   </cac:PostalAddress>
   <cac:PartyLegalEntity>
-    <cbc:CompanyID>1323421212</cbc:CompanyID>
+    <cbc:RegistrationName>SuperCompany</cbc:RegistrationName>
+    <cbc:CompanyID>DK59873677</cbc:CompanyID>
   </cac:PartyLegalEntity>
   <cac:Contact>
-    <cbc:ID>11</cbc:ID>
+    <cbc:ID>7778</cbc:ID>
+    <cbc:Name>Ole Hansen</cbc:Name>
+    <cbc:Telephone>4526532147</cbc:Telephone>
+    <cbc:Telefax>4526532146</cbc:Telefax>
+    <cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
   </cac:Contact>
-</cac:FreightForwarderParty>
+</cac:Party>
 ```
 
-**Structure 31** — 2 instances
+**Structure 39** — 1 instance
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyIdentification>
+    <cbc:ID>1234</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>ConsignorExample</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>ExampleStreet</cbc:StreetName>
+    <cbc:CityName>Example City</cbc:CityName>
+    <cbc:PostalZone>1234</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>DK12345678</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:ID>8447</cbc:ID>
+    <cbc:Name>Document Robot</cbc:Name>
+  </cac:Contact>
+</cac:ConsignorParty>
+```
+
+**Structure 40** — 2 instances
+
+```xml
+<cac:AgentParty>
+  <cac:PartyIdentification>
+    <cbc:ID>FI1234569-8</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Huolitsija Oy</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>Tuula Tullaaja 02 13 4567</cbc:Name>
+  </cac:Contact>
+</cac:AgentParty>
+```
+
+**Structure 41** — 2 instances
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyIdentification>
+    <cbc:ID>8596</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Gedevang Mejeri</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Stribevangen</cbc:StreetName>
+    <cbc:BuildingNumber>89</cbc:BuildingNumber>
+    <cbc:CityName>Gedser</cbc:CityName>
+    <cbc:PostalZone>4874</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>45789034</cbc:CompanyID>
+    <cbc:RegistrationDate>1957-08-13</cbc:RegistrationDate>
+  </cac:PartyLegalEntity>
+</cac:ConsignorParty>
+```
+
+**Structure 42** — 6 instances
+
+```xml
+<cac:OriginatorParty>
+  <cac:PartyIdentification>
+    <cbc:ID>EmployeeXXX</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Josef K.</cbc:Name>
+  </cac:PartyName>
+</cac:OriginatorParty>
+```
+
+**Structure 43** — 2 instances
 
 ```xml
 <cac:FreightForwarderParty>
@@ -15697,32 +16089,526 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:FreightForwarderParty>
 ```
 
-**Structure 32** — 7 instances
+**Structure 44** — 1 instance
 
 ```xml
-<cac:FreightForwarderParty>
+<cac:ConsigneeParty>
+  <cac:PartyIdentification>
+    <cbc:ID>0004424005</cbc:ID>
+  </cac:PartyIdentification>
   <cac:PartyName>
-    <cbc:Name>One-Stop Forwarders</cbc:Name>
+    <cbc:Name>ConsigneeExample</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:Postbox>99043</cbc:Postbox>
-    <cbc:CityName>Boston</cbc:CityName>
-    <cbc:PostalZone>02210</cbc:PostalZone>
-    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cbc:StreetName>StreetName Example</cbc:StreetName>
+    <cbc:AdditionalStreetName>AdditionalStreet Example</cbc:AdditionalStreetName>
+    <cbc:CityName>El Dorado</cbc:CityName>
     <cac:Country>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+      <cbc:IdentificationCode>PA</cbc:IdentificationCode>
+      <cbc:Name>Panama</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ConsigneeParty>
+```
+
+**Structure 45** — 7 instances
+
+```xml
+<cac:Party>
+  <cbc:EndpointID>1234567987654</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>345KS5324</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Buyercompany ltd</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:ID>1238764941386</cbc:ID>
+    <cbc:Postbox>123</cbc:Postbox>
+    <cbc:StreetName>Anystreet</cbc:StreetName>
+    <cbc:AdditionalStreetName>Back door</cbc:AdditionalStreetName>
+    <cbc:BuildingNumber>8</cbc:BuildingNumber>
+    <cbc:Department>Accounting department</cbc:Department>
+    <cbc:CityName>Anytown</cbc:CityName>
+    <cbc:PostalZone>101</cbc:PostalZone>
+    <cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
+    <cac:Country>
+      <cbc:IdentificationCode>BE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:CompanyID>BE54321</cbc:CompanyID>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+  <cac:PartyLegalEntity>
+    <cbc:RegistrationName>The buyercompany inc.</cbc:RegistrationName>
+    <cbc:CompanyID>5645342123</cbc:CompanyID>
+    <cac:RegistrationAddress>
+      <cbc:CityName>Mainplace</cbc:CityName>
+      <cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>BE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:RegistrationAddress>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:Telephone>5121230</cbc:Telephone>
+    <cbc:Telefax>5121231</cbc:Telefax>
+    <cbc:ElectronicMail>john@buyercompany.eu</cbc:ElectronicMail>
+  </cac:Contact>
+  <cac:Person>
+    <cbc:FirstName>John</cbc:FirstName>
+    <cbc:FamilyName>X</cbc:FamilyName>
+    <cbc:MiddleName>Doe</cbc:MiddleName>
+    <cbc:JobTitle>Purchasing manager</cbc:JobTitle>
+  </cac:Person>
+</cac:Party>
+```
+
+**Structure 46** — 4 instances
+
+```xml
+<cac:CarrierParty>
+  <cac:PartyName>
+    <cbc:Name>Keep On Trucking</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Telephone>+1 36222 33847</cbc:Telephone>
+  </cac:Contact>
+</cac:CarrierParty>
+```
+
+**Structure 47** — 24 instances
+
+```xml
+<cac:ReceiverParty>
+  <cac:PartyIdentification>
+    <cbc:ID>2203148000007</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>IYT Corporation</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Avon Way</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Bridgtow</cbc:CityName>
+    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>3rd Floor, Room 5</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:RegistrationName>Bridgtow District Council</cbc:RegistrationName>
+    <cbc:CompanyID>12356478</cbc:CompanyID>
+    <cbc:ExemptionReason>Local Authority</cbc:ExemptionReason>
+    <cac:TaxScheme>
+      <cbc:ID>UK VAT</cbc:ID>
+      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+  <cac:Contact>
+    <cbc:Name>Mr Fred Churchill</cbc:Name>
+    <cbc:Telephone>0127 2653214</cbc:Telephone>
+    <cbc:Telefax>0127 2653215</cbc:Telefax>
+    <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ReceiverParty>
+```
+
+**Structure 48** — 2 instances
+
+```xml
+<cac:Party>
+  <cbc:EndpointID>01841111111111</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>5398000392577</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>FirstAgency</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>Ole Ellerbæk Madsen</cbc:Name>
+  </cac:Contact>
+</cac:Party>
+```
+
+**Structure 49** — 1 instance
+
+```xml
+<cac:CarrierParty>
+  <cac:PartyName>
+    <cbc:Name>MAERSK</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+4598786765</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@maersk.dk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:CarrierParty>
+```
+
+**Structure 50** — 1 instance
+
+```xml
+<cac:SourceIssuerParty>
+  <cbc:IndustryClassificationCode>Public Rail Authorities</cbc:IndustryClassificationCode>
+  <cac:PartyName>
+    <cbc:Name>DB</cbc:Name>
+  </cac:PartyName>
+</cac:SourceIssuerParty>
+```
+
+**Structure 51** — 151 instances
+
+```xml
+<cac:Party>
+  <cac:PartyName>
+    <cbc:Name>The Terminus</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Avon Way</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Bridgtow</cbc:CityName>
+    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>3rd Floor, Room 5</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:RegistrationName>Bridgtow District Council</cbc:RegistrationName>
+    <cbc:CompanyID>12356478</cbc:CompanyID>
+    <cbc:ExemptionReason>Local Authority</cbc:ExemptionReason>
+    <cac:TaxScheme>
+      <cbc:ID>UK VAT</cbc:ID>
+      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+  <cac:Contact>
+    <cbc:Name>S Massiah</cbc:Name>
+    <cbc:Telephone>0127 98876545</cbc:Telephone>
+    <cbc:Telefax>0127 98876546</cbc:Telefax>
+    <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:Party>
+```
+
+**Structure 52** — 4 instances
+
+```xml
+<cac:ExportingGuarantorParty>
+  <cac:PartyName>
+    <cbc:Name>Dansk Erhverv</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+    <cbc:BuildingNumber>1</cbc:BuildingNumber>
+    <cbc:CityName>København K</cbc:CityName>
+    <cbc:PostalZone>1216</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>43232010</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+</cac:ExportingGuarantorParty>
+```
+
+**Structure 53** — 4 instances
+
+```xml
+<cac:DespatchParty>
+  <cac:PartyName>
+    <cbc:Name>Consortial</cbc:Name>
+  </cac:PartyName>
+</cac:DespatchParty>
+```
+
+**Structure 54** — 1 instance
+
+```xml
+<cac:IssuerParty>
+  <cac:PartyName>
+    <cbc:Name>Dansk Industri</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:ID>6916</cbc:ID>
+    <cbc:StreetName>Vesterbrogade 1L, 1.sal</cbc:StreetName>
+    <cbc:CityName>København V.</cbc:CityName>
+    <cbc:PostalZone>1620</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>16077593</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+</cac:IssuerParty>
+```
+
+**Structure 55** — 2 instances
+
+```xml
+<cac:Party>
+  <cbc:EndpointID>DK18296799</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>DK18296799</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Delcomputer A/S</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
+    <cbc:StreetName>Arne Jacobsens Allé</cbc:StreetName>
+    <cbc:BuildingNumber>15</cbc:BuildingNumber>
+    <cbc:CityName>København S</cbc:CityName>
+    <cbc:PostalZone>2300</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:CompanyID>DK18296799</cbc:CompanyID>
+    <cac:TaxScheme>
+      <cbc:ID>63</cbc:ID>
+      <cbc:Name>Moms</cbc:Name>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+  <cac:PartyLegalEntity>
+    <cbc:RegistrationName>Delcomputer A/S</cbc:RegistrationName>
+    <cbc:CompanyID>18296799</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+</cac:Party>
+```
+
+**Structure 56** — 3 instances
+
+```xml
+<cac:IssuerParty>
+  <cac:PartyIdentification>
+    <cbc:ID>1</cbc:ID>
+  </cac:PartyIdentification>
+</cac:IssuerParty>
+```
+
+**Structure 57** — 1 instance
+
+```xml
+<cac:TransportServiceProviderParty>
+  <cac:PartyIdentification>
+    <cbc:ID>987654321</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>FORWARDER</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Schonestrasse 1</cbc:StreetName>
+    <cbc:CityName>Munich</cbc:CityName>
+    <cbc:PostalZone>80331</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
     </cac:Country>
   </cac:PostalAddress>
   <cac:Contact>
-    <cbc:Name>Con Solidador</cbc:Name>
-    <cbc:Telephone>+1 343 1453654</cbc:Telephone>
-    <cbc:Telefax>+1 343 1453655</cbc:Telefax>
-    <cbc:ElectronicMail>ctanner@onestopfreight.com</cbc:ElectronicMail>
+    <cbc:Name>Hans Weisser</cbc:Name>
+    <cbc:Telephone>+4992894481</cbc:Telephone>
+    <cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
   </cac:Contact>
-</cac:FreightForwarderParty>
+  <cac:FinancialAccount>
+    <cbc:ID>8601.12.11189</cbc:ID>
+    <cbc:PaymentNote>Deutsche Bank</cbc:PaymentNote>
+  </cac:FinancialAccount>
+</cac:TransportServiceProviderParty>
 ```
 
-**Structure 33** — 2 instances
+**Structure 58** — 3 instances
+
+```xml
+<cac:ConsigneeParty>
+  <cac:PartyName>
+    <cbc:Name>Automat AG</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Stahlstrass 5</cbc:StreetName>
+    <cbc:CityName>Bern</cbc:CityName>
+    <cbc:PostalZone>CH-3007</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ConsigneeParty>
+```
+
+**Structure 59** — 1 instance
+
+```xml
+<cac:NotifyParty>
+  <cbc:WebsiteURI>http://www.CONSIGNEE.no/statusreceptioninterface#2</cbc:WebsiteURI>
+  <cac:PartyName>
+    <cbc:Name>CONSIGNEE</cbc:Name>
+  </cac:PartyName>
+</cac:NotifyParty>
+```
+
+**Structure 60** — 7 instances
+
+```xml
+<cac:ReceiverParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827641</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>NECOSS</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+49450557000</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ReceiverParty>
+```
+
+**Structure 61** — 1 instance
+
+```xml
+<cac:ReceiverParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058675698641</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Lisboa Harbour</cbc:Name>
+  </cac:PartyName>
+</cac:ReceiverParty>
+```
+
+**Structure 62** — 2 instances
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyIdentification>
+    <cbc:ID>FI1234567-1</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Elektroniikka Oy</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Vastuskatu 12</cbc:StreetName>
+    <cbc:CityName>Helsinki</cbc:CityName>
+    <cbc:PostalZone>00140</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>FI</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ConsignorParty>
+```
+
+**Structure 63** — 2 instances
+
+```xml
+<cac:SenderParty>
+  <cac:PartyIdentification>
+    <cbc:ID>987654321</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>FORWARDER</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Schonestrasse 1</cbc:StreetName>
+    <cbc:CityName>Munich</cbc:CityName>
+    <cbc:PostalZone>80331</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Hans Weisser</cbc:Name>
+    <cbc:Telephone>+4992894481</cbc:Telephone>
+    <cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:SenderParty>
+```
+
+**Structure 64** — 1 instance
+
+```xml
+<cac:ManufacturerParty>
+  <cbc:IndustryClassificationCode>Dairy</cbc:IndustryClassificationCode>
+  <cac:PartyIdentification>
+    <cbc:ID>M165</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>ExampleName</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
+    <cbc:CityName>Videbæk</cbc:CityName>
+    <cbc:PostalZone>6920</cbc:PostalZone>
+    <cac:AddressLine>
+      <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ManufacturerParty>
+```
+
+**Structure 65** — 3 instances
+
+```xml
+<cac:SenderParty>
+  <cbc:EndpointID>1234567987654</cbc:EndpointID>
+  <cbc:IndustryClassificationCode>CA</cbc:IndustryClassificationCode>
+  <cac:PartyIdentification>
+    <cbc:ID>XXX</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>ACME Ltd.</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>One Hundred Road</cbc:StreetName>
+    <cbc:BuildingNumber>100</cbc:BuildingNumber>
+    <cbc:CityName>London</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:SenderParty>
+```
+
+**Structure 66** — 7 instances
+
+```xml
+<cac:SenderParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827641</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>NECOSS</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+49450557000</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:SenderParty>
+```
+
+**Structure 67** — 2 instances
 
 ```xml
 <cac:GovernorParty>
@@ -15738,32 +16624,122 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:GovernorParty>
 ```
 
-**Structure 34** — 1 instance
+**Structure 68** — 1 instance
 
 ```xml
-<cac:HolderParty>
+<cac:ReceiverParty>
+  <cac:PartyIdentification>
+    <cbc:ID>987654321</cbc:ID>
+  </cac:PartyIdentification>
   <cac:PartyName>
-    <cbc:Name>STEFCO A/S</cbc:Name>
+    <cbc:Name>FORWARDER</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Industrivej 3</cbc:StreetName>
-    <cbc:CityName>Ørum Djurs</cbc:CityName>
-    <cbc:PostalZone>8586</cbc:PostalZone>
+    <cbc:StreetName>Schonestrasse 1</cbc:StreetName>
+    <cbc:CityName>Munich</cbc:CityName>
+    <cbc:PostalZone>80331</cbc:PostalZone>
     <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
     </cac:Country>
   </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>DK89343487</cbc:CompanyID>
-  </cac:PartyLegalEntity>
   <cac:Contact>
-    <cbc:Name>Andreas Andersen</cbc:Name>
+    <cbc:Name>Hans Weisser</cbc:Name>
+    <cbc:Telephone>+4992894481</cbc:Telephone>
+    <cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
   </cac:Contact>
-</cac:HolderParty>
+</cac:ReceiverParty>
 ```
 
-**Structure 35** — 2 instances
+**Structure 69** — 2 instances
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyName>
+    <cbc:Name>AOO Tehnika</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Komsomolskaja pl., 158</cbc:StreetName>
+    <cbc:CityName>Moskva</cbc:CityName>
+    <cbc:PostalZone>107842</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>RU</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:AgentParty>
+    <cac:PartyName>
+      <cbc:Name>Ylermi Huisi 09-55555555</cbc:Name>
+    </cac:PartyName>
+  </cac:AgentParty>
+</cac:ConsignorParty>
+```
+
+**Structure 70** — 1 instance
+
+```xml
+<cac:ReceiverParty>
+  <cac:PartyName>
+    <cbc:Name>Arancio Forniture spa</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:Floor>5</cbc:Floor>
+    <cbc:Room>29</cbc:Room>
+    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+    <cbc:BuildingNumber>403</cbc:BuildingNumber>
+    <cbc:Department>Marketing Office</cbc:Department>
+    <cbc:CityName>Bologna</cbc:CityName>
+    <cbc:PostalZone>40129</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      <cbc:Name>Italy</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mr Rossi</cbc:Name>
+    <cbc:Telephone>0039 051 23000000</cbc:Telephone>
+    <cbc:Telefax>0039 051 23000023</cbc:Telefax>
+    <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ReceiverParty>
+```
+
+**Structure 71** — 2 instances
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827000</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Consignor</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:ID>4058673827000</cbc:ID>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+8676576456</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ConsignorParty>
+```
+
+**Structure 72** — 4 instances
+
+```xml
+<cac:DeliveryParty>
+  <cac:PartyName>
+    <cbc:Name>The Terminus</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>S Massiah</cbc:Name>
+    <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+    <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+    <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:DeliveryParty>
+```
+
+**Structure 73** — 2 instances
 
 ```xml
 <cac:ImporterParty>
@@ -15798,48 +16774,323 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:ImporterParty>
 ```
 
-**Structure 36** — 2 instances
+**Structure 74** — 8 instances
 
 ```xml
-<cac:ImportingCustomsParty>
+<cac:Party>
+  <cbc:EndpointID>9994567987654</cbc:EndpointID>
   <cac:PartyName>
-    <cbc:Name>Zollamt</cbc:Name>
+    <cbc:Name>Buyer GmbH</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Tollbrettkoppel</cbc:StreetName>
-    <cbc:BuildingNumber>8</cbc:BuildingNumber>
-    <cbc:CityName>Heiligenhafen</cbc:CityName>
-    <cbc:PostalZone>23774</cbc:PostalZone>
+    <cbc:CityName>Munchen</cbc:CityName>
     <cac:Country>
       <cbc:IdentificationCode>DE</cbc:IdentificationCode>
     </cac:Country>
   </cac:PostalAddress>
-</cac:ImportingCustomsParty>
+</cac:Party>
 ```
 
-**Structure 37** — 3 instances
+**Structure 75** — 1 instance
 
 ```xml
-<cac:ImportingGuarantorParty>
+<cac:Party>
   <cac:PartyName>
-    <cbc:Name>Deutscher Industrie- und Handelskammertag e.V.</cbc:Name>
+    <cbc:Name>Dansk Industri</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Breite Straße</cbc:StreetName>
-    <cbc:BuildingNumber>29</cbc:BuildingNumber>
-    <cbc:CityName>Berlin</cbc:CityName>
-    <cbc:PostalZone>10178</cbc:PostalZone>
+    <cbc:ID>6916</cbc:ID>
+    <cbc:StreetName>Vesterbrogade 1L, 1.sal</cbc:StreetName>
+    <cbc:CityName>København V.</cbc:CityName>
+    <cbc:PostalZone>1620</cbc:PostalZone>
     <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
     </cac:Country>
   </cac:PostalAddress>
   <cac:PartyLegalEntity>
-    <cbc:CompanyID>DE122125278</cbc:CompanyID>
+    <cbc:CompanyID>16077593</cbc:CompanyID>
   </cac:PartyLegalEntity>
-</cac:ImportingGuarantorParty>
+</cac:Party>
 ```
 
-**Structure 38** — 2 instances
+**Structure 76** — 1 instance
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyIdentification>
+    <cbc:ID>1080</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>ExampleName</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>ExampleStreet</cbc:StreetName>
+    <cbc:CityName>Viby J</cbc:CityName>
+    <cbc:PostalZone>8260</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ConsignorParty>
+```
+
+**Structure 77** — 24 instances
+
+```xml
+<cac:SenderParty>
+  <cac:PartyIdentification>
+    <cbc:ID>6903148000007</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Consortial</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Busy Street</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Farthing</cbc:CityName>
+    <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+    <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>The Roundabout</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:RegistrationName>Farthing Purchasing Consortium</cbc:RegistrationName>
+    <cbc:CompanyID>175 269 2355</cbc:CompanyID>
+    <cbc:ExemptionReason>N/A</cbc:ExemptionReason>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+  <cac:Contact>
+    <cbc:Name>Mrs Bouquet</cbc:Name>
+    <cbc:Telephone>0158 1233714</cbc:Telephone>
+    <cbc:Telefax>0158 1233856</cbc:Telefax>
+    <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:SenderParty>
+```
+
+**Structure 78** — 7 instances
+
+```xml
+<cac:Party>
+  <cac:PartyName>
+    <cbc:Name>Consortial</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Boston Road</cbc:StreetName>
+    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+    <cbc:BuildingNumber>630</cbc:BuildingNumber>
+    <cbc:CityName>Billerica</cbc:CityName>
+    <cbc:PostalZone>01821</cbc:PostalZone>
+    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cac:Country>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mrs Bouquet</cbc:Name>
+    <cbc:Telephone>+1 158 1233714</cbc:Telephone>
+    <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
+    <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:Party>
+```
+
+**Structure 79** — 3 instances
+
+```xml
+<cac:Party>
+  <cac:PartyName>
+    <cbc:Name>North American Veeblefetzer</cbc:Name>
+  </cac:PartyName>
+</cac:Party>
+```
+
+**Structure 80** — 9 instances
+
+```xml
+<cac:Party>
+  <cbc:EndpointID>7302347231111</cbc:EndpointID>
+  <cac:PartyIdentification>
+    <cbc:ID>SellerPartyID123</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Moderna Produkter AB</cbc:Name>
+  </cac:PartyName>
+</cac:Party>
+```
+
+**Structure 81** — 2 instances
+
+```xml
+<cac:TransportUserParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827000</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Consignor</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+8687878763</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:TransportUserParty>
+```
+
+**Structure 82** — 6 instances
+
+```xml
+<cac:IssuerParty>
+  <cac:PartyName>
+    <cbc:Name>Boston Road</cbc:Name>
+  </cac:PartyName>
+</cac:IssuerParty>
+```
+
+**Structure 83** — 1 instance
+
+```xml
+<cac:ConsignorParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827000</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Disfruta</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+212687878763</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ConsignorParty>
+```
+
+**Structure 84** — 2 instances
+
+```xml
+<cac:ReceiverParty>
+  <cac:PartyIdentification>
+    <cbc:ID>123456789</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>CONSIGNEE</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:Postbox>456</cbc:Postbox>
+    <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
+    <cbc:CityName>Hamar</cbc:CityName>
+    <cbc:PostalZone>2321</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Jon Persen</cbc:Name>
+    <cbc:Telephone>+4793656656</cbc:Telephone>
+    <cbc:ElectronicMail>jonp@CONSIGNEE.no</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ReceiverParty>
+```
+
+**Structure 85** — 5 instances
+
+```xml
+<cac:PayeeParty>
+  <cac:PartyIdentification>
+    <cbc:ID>098740918237</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Ebeneser Scrooge Inc.</cbc:Name>
+  </cac:PartyName>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>6411982340</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+</cac:PayeeParty>
+```
+
+**Structure 86** — 2 instances
+
+```xml
+<cac:InventoryReportingParty>
+  <cac:PartyName>
+    <cbc:Name>Arancio Forniture spa</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+    <cbc:BuildingNumber>405</cbc:BuildingNumber>
+    <cbc:Department>Sales and Planning Department</cbc:Department>
+    <cbc:CityName>Bologna</cbc:CityName>
+    <cbc:PostalZone>40129</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      <cbc:Name>Italy</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mr Bianchi</cbc:Name>
+    <cbc:Telephone>0039 051 23000008</cbc:Telephone>
+    <cbc:Telefax>0039 051 23000025</cbc:Telefax>
+    <cbc:ElectronicMail>bianchi@arancioforniture.it</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:InventoryReportingParty>
+```
+
+**Structure 87** — 2 instances
+
+```xml
+<cac:AgentParty>
+  <cac:PartyIdentification>
+    <cbc:ID>DK10035643</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Told Service A/S</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Vesterbrogade</cbc:StreetName>
+    <cbc:BuildingNumber>78</cbc:BuildingNumber>
+    <cbc:CityName>København K</cbc:CityName>
+    <cbc:PostalZone>1258</cbc:PostalZone>
+  </cac:PostalAddress>
+</cac:AgentParty>
+```
+
+**Structure 88** — 2 instances
+
+```xml
+<cac:SignatoryParty>
+  <cac:PartyIdentification>
+    <cbc:ID>8596</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Gedevang Mejeri</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Stribevangen</cbc:StreetName>
+    <cbc:BuildingNumber>89</cbc:BuildingNumber>
+    <cbc:CityName>Gedser</cbc:CityName>
+    <cbc:PostalZone>4874</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>45789034</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+</cac:SignatoryParty>
+```
+
+**Structure 89** — 2 instances
 
 ```xml
 <cac:InventoryReportingParty>
@@ -15867,233 +17118,36 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:InventoryReportingParty>
 ```
 
-**Structure 39** — 2 instances
+**Structure 90** — 2 instances
 
 ```xml
-<cac:InventoryReportingParty>
-  <cac:PartyName>
-    <cbc:Name>Arancio Forniture spa</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-    <cbc:BuildingNumber>405</cbc:BuildingNumber>
-    <cbc:Department>Sales and Planning Department</cbc:Department>
-    <cbc:CityName>Bologna</cbc:CityName>
-    <cbc:PostalZone>40129</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      <cbc:Name>Italy</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mr Bianchi</cbc:Name>
-    <cbc:Telephone>0039 051 23000008</cbc:Telephone>
-    <cbc:Telefax>0039 051 23000025</cbc:Telefax>
-    <cbc:ElectronicMail>bianchi@arancioforniture.it</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:InventoryReportingParty>
-```
-
-**Structure 40** — 3 instances
-
-```xml
-<cac:IssuerParty>
+<cac:DeliveryParty>
   <cac:PartyIdentification>
-    <cbc:ID>1</cbc:ID>
-  </cac:PartyIdentification>
-</cac:IssuerParty>
-```
-
-**Structure 41** — 1 instance
-
-```xml
-<cac:IssuerParty>
-  <cac:PartyName>
-    <cbc:Name>Dansk Industri</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:ID>6916</cbc:ID>
-    <cbc:StreetName>Vesterbrogade 1L, 1.sal</cbc:StreetName>
-    <cbc:CityName>København V.</cbc:CityName>
-    <cbc:PostalZone>1620</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>16077593</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-</cac:IssuerParty>
-```
-
-**Structure 42** — 1 instance
-
-```xml
-<cac:IssuerParty>
-  <cac:PartyName>
-    <cbc:Name>ConsignorExample</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>ExampleStreet</cbc:StreetName>
-    <cbc:CityName>Example City</cbc:CityName>
-    <cbc:PostalZone>1234</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>DK12345678</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:ID>8447</cbc:ID>
-    <cbc:Name>Document Robot</cbc:Name>
-  </cac:Contact>
-</cac:IssuerParty>
-```
-
-**Structure 43** — 6 instances
-
-```xml
-<cac:IssuerParty>
-  <cac:PartyName>
-    <cbc:Name>Boston Road</cbc:Name>
-  </cac:PartyName>
-</cac:IssuerParty>
-```
-
-**Structure 44** — 1 instance
-
-```xml
-<cac:ManufacturerParty>
-  <cbc:IndustryClassificationCode>Dairy</cbc:IndustryClassificationCode>
-  <cac:PartyIdentification>
-    <cbc:ID>M165</cbc:ID>
+    <cbc:ID>67654328394567</cbc:ID>
   </cac:PartyIdentification>
   <cac:PartyName>
-    <cbc:Name>ExampleName</cbc:Name>
+    <cbc:Name>Swedish trucking</cbc:Name>
   </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
-    <cbc:CityName>Videbæk</cbc:CityName>
-    <cbc:PostalZone>6920</cbc:PostalZone>
-    <cac:AddressLine>
-      <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:ManufacturerParty>
-```
-
-**Structure 45** — 1 instance
-
-```xml
-<cac:ManufacturerParty>
-  <cac:PartyName>
-    <cbc:Name>AZ Outsourcing srl</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Via Bolognese</cbc:StreetName>
-    <cbc:BuildingNumber>199</cbc:BuildingNumber>
-    <cbc:CityName>Bologna</cbc:CityName>
-    <cbc:PostalZone>40129</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      <cbc:Name>Italy</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
   <cac:Contact>
-    <cbc:Name>Mr Verdi</cbc:Name>
-    <cbc:Telephone>0039 051 25400000</cbc:Telephone>
-    <cbc:Telefax>0039 051 25400023</cbc:Telefax>
-    <cbc:ElectronicMail>verdi@azoutsourcing.it</cbc:ElectronicMail>
+    <cbc:Name>Per</cbc:Name>
+    <cbc:Telephone>987098709</cbc:Telephone>
+    <cbc:Telefax>34673435</cbc:Telefax>
+    <cbc:ElectronicMail>bill@svetruck.se</cbc:ElectronicMail>
   </cac:Contact>
-</cac:ManufacturerParty>
+</cac:DeliveryParty>
 ```
 
-**Structure 46** — 2 instances
+**Structure 91** — 48 instances
 
 ```xml
-<cac:NotifierParty>
+<cac:Party>
   <cac:PartyIdentification>
-    <cbc:ID>FI1234567-8</cbc:ID>
+    <cbc:ID>6903148000007</cbc:ID>
   </cac:PartyIdentification>
-</cac:NotifierParty>
+</cac:Party>
 ```
 
-**Structure 47** — 8 instances
-
-```xml
-<cac:NotifyParty>
-  <cbc:EndpointID>www.consignee.de/statusnotifications/</cbc:EndpointID>
-  <cac:PartyName>
-    <cbc:Name>Consignee</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:ElectronicMail>someName@consignee.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:NotifyParty>
-```
-
-**Structure 48** — 8 instances
-
-```xml
-<cac:NotifyParty>
-  <cac:PartyName>
-    <cbc:Name>IYT Corporation</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Avon Way</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Bridgtow</cbc:CityName>
-    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>3rd Floor, Room 5</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mr Fred Churchill</cbc:Name>
-    <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-    <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-    <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:NotifyParty>
-```
-
-**Structure 49** — 1 instance
-
-```xml
-<cac:NotifyParty>
-  <cbc:WebsiteURI>http://www.CONSIGNEE.no/statusreceptioninterface#2</cbc:WebsiteURI>
-  <cac:PartyName>
-    <cbc:Name>CONSIGNEE</cbc:Name>
-  </cac:PartyName>
-</cac:NotifyParty>
-```
-
-**Structure 50** — 6 instances
-
-```xml
-<cac:OriginatorParty>
-  <cac:PartyIdentification>
-    <cbc:ID>EmployeeXXX</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Josef K.</cbc:Name>
-  </cac:PartyName>
-</cac:OriginatorParty>
-```
-
-**Structure 51** — 2 instances
+**Structure 92** — 2 instances
 
 ```xml
 <cac:Party>
@@ -16159,41 +17213,94 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:Party>
 ```
 
-**Structure 52** — 9 instances
+**Structure 93** — 3 instances
 
 ```xml
-<cac:Party>
-  <cbc:EndpointID>7300072311115</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>7300070011115</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyIdentification>
-    <cbc:ID>PartyID123</cbc:ID>
-  </cac:PartyIdentification>
+<cac:WeighingParty>
+  <cbc:IndustryClassificationCode>WPA</cbc:IndustryClassificationCode>
   <cac:PartyName>
-    <cbc:Name>Johnssons byggvaror</cbc:Name>
+    <cbc:Name>LEONARDO</cbc:Name>
   </cac:PartyName>
-</cac:Party>
+  <cac:PostalAddress>
+    <cbc:CityName>La Spezia</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Person>
+    <cbc:FirstName>GIORGIO</cbc:FirstName>
+    <cbc:FamilyName>VERDI</cbc:FamilyName>
+    <cbc:RoleCode>BN</cbc:RoleCode>
+  </cac:Person>
+</cac:WeighingParty>
 ```
 
-**Structure 53** — 2 instances
+**Structure 94** — 1 instance
 
 ```xml
-<cac:Party>
-  <cbc:EndpointID>01841111111111</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>5398000392577</cbc:ID>
-  </cac:PartyIdentification>
+<cac:SenderParty>
+  <cbc:WebsiteURI>https://www.oasis-open.org</cbc:WebsiteURI>
+  <cbc:LogoReferenceID>https://www.oasis-open.org/sites/www.oasis-open.org/files/logo.png</cbc:LogoReferenceID>
   <cac:PartyName>
-    <cbc:Name>FirstAgency</cbc:Name>
+    <cbc:Name>OASIS</cbc:Name>
   </cac:PartyName>
+  <cac:PartyName>
+    <cbc:Name>Organization for the Advancement of Structured Information Standards</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Corporate Drive Suite 150</cbc:StreetName>
+    <cbc:BuildingNumber>35</cbc:BuildingNumber>
+    <cbc:CityName>Burlington</cbc:CityName>
+    <cbc:PostalZone>01803-4238</cbc:PostalZone>
+    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cac:Country>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PhysicalLocation>
+    <cbc:InformationURI>https://goo.gl/maps/2k242</cbc:InformationURI>
+  </cac:PhysicalLocation>
   <cac:Contact>
-    <cbc:Name>Ole Ellerbæk Madsen</cbc:Name>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Telephone>+1 781 425 5073</cbc:Telephone>
+    <cbc:Telefax>+1 781 425 5072</cbc:Telefax>
+    <cbc:ElectronicMail>info@oasis-open.org</cbc:ElectronicMail>
   </cac:Contact>
-</cac:Party>
+  <cac:AdditionalWebSite>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Name>RSS</cbc:Name>
+    <cbc:URI>https://www.oasis-open.org/feed</cbc:URI>
+  </cac:AdditionalWebSite>
+  <cac:SocialMediaProfile>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Name>LinkedIN</cbc:Name>
+    <cbc:SocialMediaTypeCode>Business</cbc:SocialMediaTypeCode>
+    <cbc:URI>https://www.linkedin.com/company/oasis</cbc:URI>
+  </cac:SocialMediaProfile>
+  <cac:SocialMediaProfile>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Name>Twitter</cbc:Name>
+    <cbc:URI>http://twitter.com/OASISopen</cbc:URI>
+  </cac:SocialMediaProfile>
+  <cac:SocialMediaProfile>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Name>Facebook</cbc:Name>
+    <cbc:URI>http://facebook.com/oasis.open</cbc:URI>
+  </cac:SocialMediaProfile>
+  <cac:SocialMediaProfile>
+    <cbc:ID>4</cbc:ID>
+    <cbc:Name>YouTube</cbc:Name>
+    <cbc:URI>http://www.youtube.com/oasisopen</cbc:URI>
+  </cac:SocialMediaProfile>
+  <cac:SocialMediaProfile>
+    <cbc:ID>5</cbc:ID>
+    <cbc:Name>Google+</cbc:Name>
+    <cbc:URI>https://plus.google.com/+Oasis-openOrg</cbc:URI>
+  </cac:SocialMediaProfile>
+</cac:SenderParty>
 ```
 
-**Structure 54** — 2 instances
+**Structure 95** — 2 instances
 
 ```xml
 <cac:Party>
@@ -16232,1025 +17339,32 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:Party>
 ```
 
-**Structure 55** — 2 instances
+**Structure 96** — 4 instances
 
 ```xml
-<cac:Party>
-  <cbc:EndpointID>DK18296799</cbc:EndpointID>
+<cac:CustomsParty>
   <cac:PartyIdentification>
-    <cbc:ID>DK18296799</cbc:ID>
+    <cbc:ID>0245442-8</cbc:ID>
   </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Delcomputer A/S</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
-    <cbc:StreetName>Arne Jacobsens Allé</cbc:StreetName>
-    <cbc:BuildingNumber>15</cbc:BuildingNumber>
-    <cbc:CityName>København S</cbc:CityName>
-    <cbc:PostalZone>2300</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:CompanyID>DK18296799</cbc:CompanyID>
-    <cac:TaxScheme>
-      <cbc:ID>63</cbc:ID>
-      <cbc:Name>Moms</cbc:Name>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-  <cac:PartyLegalEntity>
-    <cbc:RegistrationName>Delcomputer A/S</cbc:RegistrationName>
-    <cbc:CompanyID>18296799</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-</cac:Party>
+</cac:CustomsParty>
 ```
 
-**Structure 56** — 2 instances
+**Structure 97** — 8 instances
 
 ```xml
-<cac:Party>
-  <cbc:EndpointID>7302347231111</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>SellerPartyID123</cbc:ID>
-  </cac:PartyIdentification>
+<cac:CarrierParty>
   <cac:PartyName>
-    <cbc:Name>Moderna Produkter AB</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:ID>0987654321123</cbc:ID>
-    <cbc:Postbox>321</cbc:Postbox>
-    <cbc:StreetName>Kungsgatan</cbc:StreetName>
-    <cbc:AdditionalStreetName>suite12</cbc:AdditionalStreetName>
-    <cbc:BuildingNumber>22</cbc:BuildingNumber>
-    <cbc:Department>Sales department</cbc:Department>
-    <cbc:CityName>Stockholm</cbc:CityName>
-    <cbc:PostalZone>11000</cbc:PostalZone>
-    <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
-    <cac:Country>
-      <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:RegistrationName>Moderna Produkter AB</cbc:RegistrationName>
-    <cbc:CompanyID>5532332283</cbc:CompanyID>
-    <cac:RegistrationAddress>
-      <cbc:CityName>Stockholm</cbc:CityName>
-      <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
-      <cac:Country>
-        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:RegistrationAddress>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:Telephone>34557</cbc:Telephone>
-    <cbc:Telefax>3456767</cbc:Telefax>
-    <cbc:ElectronicMail>lars@moderna.se</cbc:ElectronicMail>
-  </cac:Contact>
-  <cac:Person>
-    <cbc:FirstName>Lars</cbc:FirstName>
-    <cbc:FamilyName>Petersen</cbc:FamilyName>
-    <cbc:MiddleName>M</cbc:MiddleName>
-    <cbc:JobTitle>Sales manager</cbc:JobTitle>
-  </cac:Person>
-</cac:Party>
-```
-
-**Structure 57** — 7 instances
-
-```xml
-<cac:Party>
-  <cbc:EndpointID>1234567987654</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>345KS5324</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Buyercompany ltd</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:ID>1238764941386</cbc:ID>
-    <cbc:Postbox>123</cbc:Postbox>
-    <cbc:StreetName>Anystreet</cbc:StreetName>
-    <cbc:AdditionalStreetName>Back door</cbc:AdditionalStreetName>
-    <cbc:BuildingNumber>8</cbc:BuildingNumber>
-    <cbc:Department>Accounting department</cbc:Department>
-    <cbc:CityName>Anytown</cbc:CityName>
-    <cbc:PostalZone>101</cbc:PostalZone>
-    <cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
-    <cac:Country>
-      <cbc:IdentificationCode>BE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:CompanyID>BE54321</cbc:CompanyID>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-  <cac:PartyLegalEntity>
-    <cbc:RegistrationName>The buyercompany inc.</cbc:RegistrationName>
-    <cbc:CompanyID>5645342123</cbc:CompanyID>
-    <cac:RegistrationAddress>
-      <cbc:CityName>Mainplace</cbc:CityName>
-      <cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
-      <cac:Country>
-        <cbc:IdentificationCode>BE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:RegistrationAddress>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:Telephone>5121230</cbc:Telephone>
-    <cbc:Telefax>5121231</cbc:Telefax>
-    <cbc:ElectronicMail>john@buyercompany.eu</cbc:ElectronicMail>
-  </cac:Contact>
-  <cac:Person>
-    <cbc:FirstName>John</cbc:FirstName>
-    <cbc:FamilyName>X</cbc:FamilyName>
-    <cbc:MiddleName>Doe</cbc:MiddleName>
-    <cbc:JobTitle>Purchasing manager</cbc:JobTitle>
-  </cac:Person>
-</cac:Party>
-```
-
-**Structure 58** — 7 instances
-
-```xml
-<cac:Party>
-  <cbc:EndpointID>1234567890123</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>Supp123</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Salescompany ltd.</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:ID>1231412341324</cbc:ID>
-    <cbc:Postbox>5467</cbc:Postbox>
-    <cbc:StreetName>Main street</cbc:StreetName>
-    <cbc:AdditionalStreetName>Suite 123</cbc:AdditionalStreetName>
-    <cbc:BuildingNumber>1</cbc:BuildingNumber>
-    <cbc:Department>Revenue department</cbc:Department>
-    <cbc:CityName>Big city</cbc:CityName>
-    <cbc:PostalZone>54321</cbc:PostalZone>
-    <cbc:CountrySubentityCode>RegionA</cbc:CountrySubentityCode>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:CompanyID>DK12345</cbc:CompanyID>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-  <cac:PartyLegalEntity>
-    <cbc:RegistrationName>The Sellercompany Incorporated</cbc:RegistrationName>
-    <cbc:CompanyID>5402697509</cbc:CompanyID>
-    <cac:RegistrationAddress>
-      <cbc:CityName>Big city</cbc:CityName>
-      <cbc:CountrySubentity>RegionA</cbc:CountrySubentity>
-      <cac:Country>
-        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:RegistrationAddress>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:Telephone>4621230</cbc:Telephone>
-    <cbc:Telefax>4621231</cbc:Telefax>
-    <cbc:ElectronicMail>antonio@salescompany.dk</cbc:ElectronicMail>
-  </cac:Contact>
-  <cac:Person>
-    <cbc:FirstName>Antonio</cbc:FirstName>
-    <cbc:FamilyName>M</cbc:FamilyName>
-    <cbc:MiddleName>Salemacher</cbc:MiddleName>
-    <cbc:JobTitle>Sales manager</cbc:JobTitle>
-  </cac:Person>
-</cac:Party>
-```
-
-**Structure 59** — 9 instances
-
-```xml
-<cac:Party>
-  <cbc:EndpointID>7302347231111</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>SellerPartyID123</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Moderna Produkter AB</cbc:Name>
-  </cac:PartyName>
-</cac:Party>
-```
-
-**Structure 60** — 8 instances
-
-```xml
-<cac:Party>
-  <cbc:EndpointID>1234567987654</cbc:EndpointID>
-  <cac:PartyName>
-    <cbc:Name>Vendor Inc.</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:CityName>New York</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:Party>
-```
-
-**Structure 61** — 2 instances
-
-```xml
-<cac:Party>
-  <cac:PartyIdentification>
-    <cbc:ID>0987678321123</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Moderna Produkter AB</cbc:Name>
+    <cbc:Name>United Airfreight</cbc:Name>
   </cac:PartyName>
   <cac:Contact>
-    <cbc:Telephone>346788</cbc:Telephone>
-    <cbc:Telefax>8567443</cbc:Telefax>
-    <cbc:ElectronicMail>sven@moderna.se</cbc:ElectronicMail>
+    <cbc:ID>Freight Bookings</cbc:ID>
+    <cbc:Telephone>+1 3362 4788</cbc:Telephone>
+    <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
   </cac:Contact>
-  <cac:Person>
-    <cbc:FirstName>Sven</cbc:FirstName>
-    <cbc:FamilyName>Pereson</cbc:FamilyName>
-    <cbc:MiddleName>N</cbc:MiddleName>
-    <cbc:JobTitle>Stuffuser</cbc:JobTitle>
-  </cac:Person>
-</cac:Party>
+</cac:CarrierParty>
 ```
 
-**Structure 62** — 2 instances
-
-```xml
-<cac:Party>
-  <cac:PartyIdentification>
-    <cbc:ID>Supp123</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Example Supplies Ltd.</cbc:Name>
-  </cac:PartyName>
-  <cac:PartyTaxScheme>
-    <cbc:CompanyID>DK123456789</cbc:CompanyID>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-</cac:Party>
-```
-
-**Structure 63** — 1 instance
-
-```xml
-<cac:Party>
-  <cac:PartyIdentification>
-    <cbc:ID>123456789</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Gadgets R Us, Inc.</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>High Street</cbc:StreetName>
-    <cbc:BuildingNumber>1</cbc:BuildingNumber>
-    <cbc:CityName>Copenhagen</cbc:CityName>
-    <cbc:PostalZone>1001</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:CompanyID>DK12345</cbc:CompanyID>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-</cac:Party>
-```
-
-**Structure 64** — 48 instances
-
-```xml
-<cac:Party>
-  <cac:PartyIdentification>
-    <cbc:ID>2203148000007</cbc:ID>
-  </cac:PartyIdentification>
-</cac:Party>
-```
-
-**Structure 65** — 1 instance
-
-```xml
-<cac:Party>
-  <cac:PartyName>
-    <cbc:Name>Dansk Industri</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:ID>6916</cbc:ID>
-    <cbc:StreetName>Vesterbrogade 1L, 1.sal</cbc:StreetName>
-    <cbc:CityName>København V.</cbc:CityName>
-    <cbc:PostalZone>1620</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>16077593</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-</cac:Party>
-```
-
-**Structure 66** — 7 instances
-
-```xml
-<cac:Party>
-  <cac:PartyName>
-    <cbc:Name>IYT Corporation</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Avon Way</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Bridgtow</cbc:CityName>
-    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>3rd Floor, Room 5</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mr Fred Churchill</cbc:Name>
-    <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-    <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-    <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:Party>
-```
-
-**Structure 67** — 151 instances
-
-```xml
-<cac:Party>
-  <cac:PartyName>
-    <cbc:Name>Consortial</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Busy Street</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Farthing</cbc:CityName>
-    <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
-    <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>The Roundabout</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:RegistrationName>Farthing Purchasing Consortia</cbc:RegistrationName>
-    <cbc:CompanyID>175 269 2355</cbc:CompanyID>
-    <cbc:ExemptionReason>N/A</cbc:ExemptionReason>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-  <cac:Contact>
-    <cbc:Name>Mrs Bouquet</cbc:Name>
-    <cbc:Telephone>0158 1233714</cbc:Telephone>
-    <cbc:Telefax>0158 1233856</cbc:Telefax>
-    <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:Party>
-```
-
-**Structure 68** — 7 instances
-
-```xml
-<cac:Party>
-  <cac:PartyName>
-    <cbc:Name>Consortial</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Boston Road</cbc:StreetName>
-    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-    <cbc:BuildingNumber>630</cbc:BuildingNumber>
-    <cbc:CityName>Billerica</cbc:CityName>
-    <cbc:PostalZone>01821</cbc:PostalZone>
-    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-    <cac:Country>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mrs Bouquet</cbc:Name>
-    <cbc:Telephone>+1 158 1233714</cbc:Telephone>
-    <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-    <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:Party>
-```
-
-**Structure 69** — 10 instances
-
-```xml
-<cac:Party>
-  <cac:PartyName>
-    <cbc:Name>Arancio Forniture spa</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-    <cbc:BuildingNumber>403</cbc:BuildingNumber>
-    <cbc:CityName>Bologna</cbc:CityName>
-    <cbc:PostalZone>40129</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      <cbc:Name>Italy</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mr Rossi</cbc:Name>
-    <cbc:Telephone>0039 051 23000000</cbc:Telephone>
-    <cbc:Telefax>0039 051 23000023</cbc:Telefax>
-    <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:Party>
-```
-
-**Structure 70** — 3 instances
-
-```xml
-<cac:Party>
-  <cac:PartyName>
-    <cbc:Name>Jane Doe</cbc:Name>
-  </cac:PartyName>
-</cac:Party>
-```
-
-**Structure 71** — 1 instance
-
-```xml
-<cac:Party>
-  <cbc:WebsiteURI>http://super.company.dk</cbc:WebsiteURI>
-  <cbc:EndpointID>01842222222222</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>5790000127777</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>SuperCompany</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
-    <cbc:StreetName>Korsbygade 34</cbc:StreetName>
-    <cbc:CityName>Aalborg</cbc:CityName>
-    <cbc:PostalZone>9000</cbc:PostalZone>
-    <cbc:CountrySubentity></cbc:CountrySubentity>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:RegistrationName>SuperCompany</cbc:RegistrationName>
-    <cbc:CompanyID>DK59873677</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:ID>7778</cbc:ID>
-    <cbc:Name>Ole Hansen</cbc:Name>
-    <cbc:Telephone>4526532147</cbc:Telephone>
-    <cbc:Telefax>4526532146</cbc:Telefax>
-    <cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:Party>
-```
-
-**Structure 72** — 1 instance
-
-```xml
-<cac:Party>
-  <cbc:WebsiteURI>http://super.company.dk</cbc:WebsiteURI>
-  <cbc:EndpointID>01842222222222</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>5790000127777</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>SuperCompany</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:AddressFormatCode>Structured</cbc:AddressFormatCode>
-    <cbc:StreetName>Korsbygade 34</cbc:StreetName>
-    <cbc:CityName>Aalborg</cbc:CityName>
-    <cbc:PostalZone>9000</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:RegistrationName>SuperCompany</cbc:RegistrationName>
-    <cbc:CompanyID>DK59873677</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:ID>7778</cbc:ID>
-    <cbc:Name>Ole Hansen</cbc:Name>
-    <cbc:Telephone>4526532147</cbc:Telephone>
-    <cbc:Telefax>4526532146</cbc:Telefax>
-    <cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:Party>
-```
-
-**Structure 73** — 5 instances
-
-```xml
-<cac:PayeeParty>
-  <cac:PartyIdentification>
-    <cbc:ID>098740918237</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Ebeneser Scrooge Inc.</cbc:Name>
-  </cac:PartyName>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>6411982340</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-</cac:PayeeParty>
-```
-
-**Structure 74** — 10 instances
-
-```xml
-<cac:PayeeParty>
-  <cac:PartyName>
-    <cbc:Name>Consortial</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Busy Street</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Farthing</cbc:CityName>
-    <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
-    <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>The Roundabout</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:RegistrationName>Farthing Purchasing Consortia</cbc:RegistrationName>
-    <cbc:CompanyID>175 269 2355</cbc:CompanyID>
-    <cbc:ExemptionReason>N/A</cbc:ExemptionReason>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-  <cac:Contact>
-    <cbc:Name>Mrs Bouquet</cbc:Name>
-    <cbc:Telephone>0158 1233714</cbc:Telephone>
-    <cbc:Telefax>0158 1233856</cbc:Telefax>
-    <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:PayeeParty>
-```
-
-**Structure 75** — 3 instances
-
-```xml
-<cac:ReceiverParty>
-  <cbc:EndpointID>9994567987654</cbc:EndpointID>
-  <cbc:IndustryClassificationCode>TR</cbc:IndustryClassificationCode>
-  <cac:PartyName>
-    <cbc:Name>La Spezia Container Terminal</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:CityName>La Spezia</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:ReceiverParty>
-```
-
-**Structure 76** — 2 instances
-
-```xml
-<cac:ReceiverParty>
-  <cbc:EndpointID>9994567987654</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>GB999999973</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>World Events Ltd.</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:CityName>London</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:ReceiverParty>
-```
-
-**Structure 77** — 7 instances
-
-```xml
-<cac:ReceiverParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673827000</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Consignor</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+8687878763</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ReceiverParty>
-```
-
-**Structure 78** — 2 instances
-
-```xml
-<cac:ReceiverParty>
-  <cac:PartyIdentification>
-    <cbc:ID>123456789</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>CONSIGNEE</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:Postbox>456</cbc:Postbox>
-    <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
-    <cbc:CityName>Hamar</cbc:CityName>
-    <cbc:PostalZone>2321</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Jon Persen</cbc:Name>
-    <cbc:Telephone>+4793656656</cbc:Telephone>
-    <cbc:ElectronicMail>jonp@CONSIGNEE.no</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ReceiverParty>
-```
-
-**Structure 79** — 24 instances
-
-```xml
-<cac:ReceiverParty>
-  <cac:PartyIdentification>
-    <cbc:ID>2203148000007</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>IYT Corporation</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Avon Way</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Bridgtow</cbc:CityName>
-    <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-    <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>3rd Floor, Room 5</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:RegistrationName>Bridgtow District Council</cbc:RegistrationName>
-    <cbc:CompanyID>12356478</cbc:CompanyID>
-    <cbc:ExemptionReason>Local Authority</cbc:ExemptionReason>
-    <cac:TaxScheme>
-      <cbc:ID>UK VAT</cbc:ID>
-      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-  <cac:Contact>
-    <cbc:Name>Mr Fred Churchill</cbc:Name>
-    <cbc:Telephone>0127 2653214</cbc:Telephone>
-    <cbc:Telefax>0127 2653215</cbc:Telefax>
-    <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ReceiverParty>
-```
-
-**Structure 80** — 1 instance
-
-```xml
-<cac:ReceiverParty>
-  <cac:PartyIdentification>
-    <cbc:ID>987654321</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>FORWARDER</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Schonestrasse 1</cbc:StreetName>
-    <cbc:CityName>Munich</cbc:CityName>
-    <cbc:PostalZone>80331</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Hans Weisser</cbc:Name>
-    <cbc:Telephone>+4992894481</cbc:Telephone>
-    <cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ReceiverParty>
-```
-
-**Structure 81** — 1 instance
-
-```xml
-<cac:ReceiverParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058675698641</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Lisboa Harbour</cbc:Name>
-  </cac:PartyName>
-</cac:ReceiverParty>
-```
-
-**Structure 82** — 1 instance
-
-```xml
-<cac:ReceiverParty>
-  <cac:PartyName>
-    <cbc:Name>Arancio Forniture spa</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:Floor>5</cbc:Floor>
-    <cbc:Room>29</cbc:Room>
-    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-    <cbc:BuildingNumber>403</cbc:BuildingNumber>
-    <cbc:Department>Marketing Office</cbc:Department>
-    <cbc:CityName>Bologna</cbc:CityName>
-    <cbc:PostalZone>40129</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      <cbc:Name>Italy</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mr Rossi</cbc:Name>
-    <cbc:Telephone>0039 051 23000000</cbc:Telephone>
-    <cbc:Telefax>0039 051 23000023</cbc:Telefax>
-    <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ReceiverParty>
-```
-
-**Structure 83** — 1 instance
-
-```xml
-<cac:ReceiverParty>
-  <cac:PartyName>
-    <cbc:Name>Arancio Forniture spa</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-    <cbc:BuildingNumber>403</cbc:BuildingNumber>
-    <cbc:CityName>Bologna</cbc:CityName>
-    <cbc:PostalZone>40129</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      <cbc:Name>Italy</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Mr Rossi</cbc:Name>
-    <cbc:Telephone>0039 051 23000000</cbc:Telephone>
-    <cbc:Telefax>0039 051 23000023</cbc:Telefax>
-    <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ReceiverParty>
-```
-
-**Structure 84** — 1 instance
-
-```xml
-<cac:ReporterParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673827641</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>D2D GmbH</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+49450557000</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:ReporterParty>
-```
-
-**Structure 85** — 1 instance
-
-```xml
-<cac:RepresentativeParty>
-  <cac:PartyName>
-    <cbc:Name>Grenå Tools</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Højdevej 18</cbc:StreetName>
-    <cbc:CityName>Grenå</cbc:CityName>
-    <cbc:PostalZone>8500</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Person>
-    <cbc:FirstName>Kirsten</cbc:FirstName>
-    <cbc:FamilyName>Jensen</cbc:FamilyName>
-    <cac:IdentityDocumentReference>
-      <cbc:ID>325334535</cbc:ID>
-    </cac:IdentityDocumentReference>
-  </cac:Person>
-</cac:RepresentativeParty>
-```
-
-**Structure 86** — 3 instances
-
-```xml
-<cac:ResponsibleParty>
-  <cbc:IndustryClassificationCode>SPC</cbc:IndustryClassificationCode>
-  <cac:PartyName>
-    <cbc:Name>LEONARDO</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:CityName>La Spezia</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Person>
-    <cbc:FirstName>STEFANO</cbc:FirstName>
-    <cbc:FamilyName>ROSSI</cbc:FamilyName>
-    <cbc:RoleCode>RP</cbc:RoleCode>
-  </cac:Person>
-</cac:ResponsibleParty>
-```
-
-**Structure 87** — 3 instances
-
-```xml
-<cac:SenderParty>
-  <cbc:EndpointID>1234567987654</cbc:EndpointID>
-  <cbc:IndustryClassificationCode>CA</cbc:IndustryClassificationCode>
-  <cac:PartyIdentification>
-    <cbc:ID>XXX</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>ACME Ltd.</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>One Hundred Road</cbc:StreetName>
-    <cbc:BuildingNumber>100</cbc:BuildingNumber>
-    <cbc:CityName>London</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:SenderParty>
-```
-
-**Structure 88** — 2 instances
-
-```xml
-<cac:SenderParty>
-  <cbc:EndpointID>1234567987654</cbc:EndpointID>
-  <cac:PartyIdentification>
-    <cbc:ID>DK12345678</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Papirøen Food ApS</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Trangravsvej</cbc:StreetName>
-    <cbc:BuildingNumber>12</cbc:BuildingNumber>
-    <cbc:CityName>Copenhagen</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-</cac:SenderParty>
-```
-
-**Structure 89** — 1 instance
-
-```xml
-<cac:SenderParty>
-  <cbc:IndustryClassificationCode>Public Rail Authorities</cbc:IndustryClassificationCode>
-  <cac:PartyName>
-    <cbc:Name>DB</cbc:Name>
-  </cac:PartyName>
-</cac:SenderParty>
-```
-
-**Structure 90** — 7 instances
-
-```xml
-<cac:SenderParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673827641</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>NECOSS</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+49450557000</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:SenderParty>
-```
-
-**Structure 91** — 24 instances
-
-```xml
-<cac:SenderParty>
-  <cac:PartyIdentification>
-    <cbc:ID>6903148000007</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Consortial</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Busy Street</cbc:StreetName>
-    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-    <cbc:CityName>Farthing</cbc:CityName>
-    <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
-    <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
-    <cac:AddressLine>
-      <cbc:Line>The Roundabout</cbc:Line>
-    </cac:AddressLine>
-    <cac:Country>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyTaxScheme>
-    <cbc:RegistrationName>Farthing Purchasing Consortia</cbc:RegistrationName>
-    <cbc:CompanyID>175 269 2355</cbc:CompanyID>
-    <cbc:ExemptionReason>N/A</cbc:ExemptionReason>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-    </cac:TaxScheme>
-  </cac:PartyTaxScheme>
-  <cac:Contact>
-    <cbc:Name>Mrs Bouquet</cbc:Name>
-    <cbc:Telephone>0158 1233714</cbc:Telephone>
-    <cbc:Telefax>0158 1233856</cbc:Telefax>
-    <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:SenderParty>
-```
-
-**Structure 92** — 2 instances
-
-```xml
-<cac:SenderParty>
-  <cac:PartyIdentification>
-    <cbc:ID>987654321</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>FORWARDER</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Schonestrasse 1</cbc:StreetName>
-    <cbc:CityName>Munich</cbc:CityName>
-    <cbc:PostalZone>80331</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Hans Weisser</cbc:Name>
-    <cbc:Telephone>+4992894481</cbc:Telephone>
-    <cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:SenderParty>
-```
-
-**Structure 93** — 2 instances
+**Structure 98** — 2 instances
 
 ```xml
 <cac:SenderParty>
@@ -17276,30 +17390,7 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:SenderParty>
 ```
 
-**Structure 94** — 1 instance
-
-```xml
-<cac:SenderParty>
-  <cac:PartyName>
-    <cbc:Name>Declarant Inc</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Declarant Street</cbc:StreetName>
-    <cbc:CityName>Declarant City</cbc:CityName>
-    <cbc:PostalZone>Declarant Post Code</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+49450557000</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:SenderParty>
-```
-
-**Structure 95** — 1 instance
+**Structure 99** — 1 instance
 
 ```xml
 <cac:SenderParty>
@@ -17365,72 +17456,253 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:SenderParty>
 ```
 
-**Structure 96** — 1 instance
+**Structure 100** — 10 instances
 
 ```xml
-<cac:SenderParty>
-  <cbc:WebsiteURI>https://www.oasis-open.org</cbc:WebsiteURI>
-  <cbc:LogoReferenceID>https://www.oasis-open.org/sites/www.oasis-open.org/files/logo.png</cbc:LogoReferenceID>
+<cac:Party>
   <cac:PartyName>
-    <cbc:Name>OASIS</cbc:Name>
-  </cac:PartyName>
-  <cac:PartyName>
-    <cbc:Name>Organization for the Advancement of Structured Information Standards</cbc:Name>
+    <cbc:Name>Arancio Forniture spa</cbc:Name>
   </cac:PartyName>
   <cac:PostalAddress>
-    <cbc:StreetName>Corporate Drive Suite 150</cbc:StreetName>
-    <cbc:BuildingNumber>35</cbc:BuildingNumber>
-    <cbc:CityName>Burlington</cbc:CityName>
-    <cbc:PostalZone>01803-4238</cbc:PostalZone>
-    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+    <cbc:BuildingNumber>403</cbc:BuildingNumber>
+    <cbc:CityName>Bologna</cbc:CityName>
+    <cbc:PostalZone>40129</cbc:PostalZone>
     <cac:Country>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      <cbc:Name>Italy</cbc:Name>
     </cac:Country>
   </cac:PostalAddress>
-  <cac:PhysicalLocation>
-    <cbc:InformationURI>https://goo.gl/maps/2k242</cbc:InformationURI>
-  </cac:PhysicalLocation>
   <cac:Contact>
-    <cbc:ID>1</cbc:ID>
-    <cbc:Telephone>+1 781 425 5073</cbc:Telephone>
-    <cbc:Telefax>+1 781 425 5072</cbc:Telefax>
-    <cbc:ElectronicMail>info@oasis-open.org</cbc:ElectronicMail>
+    <cbc:Name>Mr Rossi</cbc:Name>
+    <cbc:Telephone>0039 051 23000000</cbc:Telephone>
+    <cbc:Telefax>0039 051 23000023</cbc:Telefax>
+    <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
   </cac:Contact>
-  <cac:AdditionalWebSite>
-    <cbc:ID>1</cbc:ID>
-    <cbc:Name>RSS</cbc:Name>
-    <cbc:URI>https://www.oasis-open.org/feed</cbc:URI>
-  </cac:AdditionalWebSite>
-  <cac:SocialMediaProfile>
-    <cbc:ID>1</cbc:ID>
-    <cbc:Name>LinkedIN</cbc:Name>
-    <cbc:SocialMediaTypeCode>Business</cbc:SocialMediaTypeCode>
-    <cbc:URI>https://www.linkedin.com/company/oasis</cbc:URI>
-  </cac:SocialMediaProfile>
-  <cac:SocialMediaProfile>
-    <cbc:ID>2</cbc:ID>
-    <cbc:Name>Twitter</cbc:Name>
-    <cbc:URI>http://twitter.com/OASISopen</cbc:URI>
-  </cac:SocialMediaProfile>
-  <cac:SocialMediaProfile>
-    <cbc:ID>3</cbc:ID>
-    <cbc:Name>Facebook</cbc:Name>
-    <cbc:URI>http://facebook.com/oasis.open</cbc:URI>
-  </cac:SocialMediaProfile>
-  <cac:SocialMediaProfile>
-    <cbc:ID>4</cbc:ID>
-    <cbc:Name>YouTube</cbc:Name>
-    <cbc:URI>http://www.youtube.com/oasisopen</cbc:URI>
-  </cac:SocialMediaProfile>
-  <cac:SocialMediaProfile>
-    <cbc:ID>5</cbc:ID>
-    <cbc:Name>Google+</cbc:Name>
-    <cbc:URI>https://plus.google.com/+Oasis-openOrg</cbc:URI>
-  </cac:SocialMediaProfile>
-</cac:SenderParty>
+</cac:Party>
 ```
 
-**Structure 97** — 2 instances
+**Structure 101** — 1 instance
+
+```xml
+<cac:FreightForwarderParty>
+  <cac:PartyIdentification>
+    <cbc:ID>13234212</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Example Shipping</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Street</cbc:StreetName>
+    <cbc:CityName>City</cbc:CityName>
+    <cbc:PostalZone>Post</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>1323421212</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:ID>11</cbc:ID>
+  </cac:Contact>
+</cac:FreightForwarderParty>
+```
+
+**Structure 102** — 10 instances
+
+```xml
+<cac:PayeeParty>
+  <cac:PartyName>
+    <cbc:Name>Consortial</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Busy Street</cbc:StreetName>
+    <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+    <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+    <cbc:CityName>Farthing</cbc:CityName>
+    <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+    <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+    <cac:AddressLine>
+      <cbc:Line>The Roundabout</cbc:Line>
+    </cac:AddressLine>
+    <cac:Country>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyTaxScheme>
+    <cbc:RegistrationName>Farthing Purchasing Consortia</cbc:RegistrationName>
+    <cbc:CompanyID>175 269 2355</cbc:CompanyID>
+    <cbc:ExemptionReason>N/A</cbc:ExemptionReason>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+    </cac:TaxScheme>
+  </cac:PartyTaxScheme>
+  <cac:Contact>
+    <cbc:Name>Mrs Bouquet</cbc:Name>
+    <cbc:Telephone>0158 1233714</cbc:Telephone>
+    <cbc:Telefax>0158 1233856</cbc:Telefax>
+    <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:PayeeParty>
+```
+
+**Structure 103** — 1 instance
+
+```xml
+<cac:ReporterParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827641</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>D2D GmbH</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+49450557000</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ReporterParty>
+```
+
+**Structure 104** — 2 instances
+
+```xml
+<cac:ConsigneeParty>
+  <cac:PartyName>
+    <cbc:Name>Yang Mei Electronic Ltd</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Export Str. 143</cbc:StreetName>
+    <cbc:CityName>Yang Mei</cbc:CityName>
+    <cac:Country>
+      <cbc:IdentificationCode>TH</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+</cac:ConsigneeParty>
+```
+
+**Structure 105** — 5 instances
+
+```xml
+<cac:SignatoryParty>
+  <cac:PartyIdentification>
+    <cbc:ID>MyParty</cbc:ID>
+  </cac:PartyIdentification>
+</cac:SignatoryParty>
+```
+
+**Structure 106** — 2 instances
+
+```xml
+<cac:ConsigneeParty>
+  <cac:PartyIdentification>
+    <cbc:ID>4058673827123</cbc:ID>
+  </cac:PartyIdentification>
+  <cac:PartyName>
+    <cbc:Name>Consignee</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Name>SomeName</cbc:Name>
+    <cbc:Telephone>+4987878763</cbc:Telephone>
+    <cbc:ElectronicMail>SomeName@consignee.de</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ConsigneeParty>
+```
+
+**Structure 107** — 1 instance
+
+```xml
+<cac:ReceiverParty>
+  <cac:PartyName>
+    <cbc:Name>Arancio Forniture spa</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+    <cbc:BuildingNumber>403</cbc:BuildingNumber>
+    <cbc:CityName>Bologna</cbc:CityName>
+    <cbc:PostalZone>40129</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      <cbc:Name>Italy</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:Contact>
+    <cbc:Name>Mr Rossi</cbc:Name>
+    <cbc:Telephone>0039 051 23000000</cbc:Telephone>
+    <cbc:Telefax>0039 051 23000023</cbc:Telefax>
+    <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:ReceiverParty>
+```
+
+**Structure 108** — 1 instance
+
+```xml
+<cac:TransportUserParty>
+  <cac:PartyName>
+    <cbc:Name>CUSTOMER SERVICE LTD</cbc:Name>
+  </cac:PartyName>
+  <cac:Contact>
+    <cbc:Telephone>+324488588578</cbc:Telephone>
+  </cac:Contact>
+  <cac:Person>
+    <cbc:FirstName>DAVID</cbc:FirstName>
+    <cbc:FamilyName>VILLA</cbc:FamilyName>
+  </cac:Person>
+</cac:TransportUserParty>
+```
+
+**Structure 109** — 1 instance
+
+```xml
+<cac:IssuerParty>
+  <cac:PartyName>
+    <cbc:Name>ConsignorExample</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>ExampleStreet</cbc:StreetName>
+    <cbc:CityName>Example City</cbc:CityName>
+    <cbc:PostalZone>1234</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>DK12345678</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+  <cac:Contact>
+    <cbc:ID>8447</cbc:ID>
+    <cbc:Name>Document Robot</cbc:Name>
+  </cac:Contact>
+</cac:IssuerParty>
+```
+
+**Structure 110** — 3 instances
+
+```xml
+<cac:ImportingGuarantorParty>
+  <cac:PartyName>
+    <cbc:Name>Deutscher Industrie- und Handelskammertag e.V.</cbc:Name>
+  </cac:PartyName>
+  <cac:PostalAddress>
+    <cbc:StreetName>Breite Straße</cbc:StreetName>
+    <cbc:BuildingNumber>29</cbc:BuildingNumber>
+    <cbc:CityName>Berlin</cbc:CityName>
+    <cbc:PostalZone>10178</cbc:PostalZone>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:PostalAddress>
+  <cac:PartyLegalEntity>
+    <cbc:CompanyID>DE122125278</cbc:CompanyID>
+  </cac:PartyLegalEntity>
+</cac:ImportingGuarantorParty>
+```
+
+**Structure 111** — 2 instances
 
 ```xml
 <cac:SendingLogisticsOperatorParty>
@@ -17455,307 +17727,6 @@ _576 instances across 37 elements, with 111 unique structures_
 </cac:SendingLogisticsOperatorParty>
 ```
 
-**Structure 98** — 2 instances
-
-```xml
-<cac:SignatoryParty>
-  <cac:PartyIdentification>
-    <cbc:ID>8596</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Gedevang Mejeri</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Stribevangen</cbc:StreetName>
-    <cbc:BuildingNumber>89</cbc:BuildingNumber>
-    <cbc:CityName>Gedser</cbc:CityName>
-    <cbc:PostalZone>4874</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PartyLegalEntity>
-    <cbc:CompanyID>45789034</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-</cac:SignatoryParty>
-```
-
-**Structure 99** — 5 instances
-
-```xml
-<cac:SignatoryParty>
-  <cac:PartyIdentification>
-    <cbc:ID>MyParty</cbc:ID>
-  </cac:PartyIdentification>
-</cac:SignatoryParty>
-```
-
-**Structure 100** — 1 instance
-
-```xml
-<cac:SourceIssuerParty>
-  <cbc:IndustryClassificationCode>Public Rail Authorities</cbc:IndustryClassificationCode>
-  <cac:PartyName>
-    <cbc:Name>DB</cbc:Name>
-  </cac:PartyName>
-</cac:SourceIssuerParty>
-```
-
-**Structure 101** — 1 instance
-
-```xml
-<cac:SourceIssuerParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673821325</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>ARRIVA</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+49450557888</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@arriva.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:SourceIssuerParty>
-```
-
-**Structure 102** — 2 instances
-
-```xml
-<cac:TransitExporterParty>
-  <cac:PartyIdentification>
-    <cbc:ID>1234567-8</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PhysicalLocation>
-    <cac:Address>
-      <cbc:CityName>Espoo</cbc:CityName>
-    </cac:Address>
-  </cac:PhysicalLocation>
-</cac:TransitExporterParty>
-```
-
-**Structure 103** — 6 instances
-
-```xml
-<cac:TransportServiceProviderParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673827100</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>NTT</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+49450557777</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@ntt.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:TransportServiceProviderParty>
-```
-
-**Structure 104** — 1 instance
-
-```xml
-<cac:TransportServiceProviderParty>
-  <cac:PartyIdentification>
-    <cbc:ID>987654321</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>FORWARDER</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:StreetName>Schonestrasse 1</cbc:StreetName>
-    <cbc:CityName>Munich</cbc:CityName>
-    <cbc:PostalZone>80331</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Hans Weisser</cbc:Name>
-    <cbc:Telephone>+4992894481</cbc:Telephone>
-    <cbc:ElectronicMail>hans.weisser@FORWARDER.de</cbc:ElectronicMail>
-  </cac:Contact>
-  <cac:FinancialAccount>
-    <cbc:ID>8601.12.11189</cbc:ID>
-    <cbc:PaymentNote>Deutsche Bank</cbc:PaymentNote>
-  </cac:FinancialAccount>
-</cac:TransportServiceProviderParty>
-```
-
-**Structure 105** — 4 instances
-
-```xml
-<cac:TransportServiceProviderParty>
-  <cac:PartyName>
-    <cbc:Name>ROAD CARRIER</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>Peter Janssen</cbc:Name>
-    <cbc:Telephone>+4987675432</cbc:Telephone>
-    <cbc:ElectronicMail>peter@ROADCARRIER.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:TransportServiceProviderParty>
-```
-
-**Structure 106** — 1 instance
-
-```xml
-<cac:TransportServiceProviderParty>
-  <cac:PartyName>
-    <cbc:Name>CARRIER SERVICE LTD</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Telephone>+324005588588</cbc:Telephone>
-  </cac:Contact>
-  <cac:Person>
-    <cbc:FirstName>RAUL</cbc:FirstName>
-    <cbc:FamilyName>GONZALES</cbc:FamilyName>
-  </cac:Person>
-</cac:TransportServiceProviderParty>
-```
-
-**Structure 107** — 1 instance
-
-```xml
-<cac:TransportServiceProviderParty>
-  <cbc:WebsiteURI>www.ROADCARRIER.de</cbc:WebsiteURI>
-  <cac:PartyIdentification>
-    <cbc:ID>1236541</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>ROAD CARRIER</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:Postbox>148</cbc:Postbox>
-    <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
-    <cbc:MarkAttention>Peter Janssen</cbc:MarkAttention>
-    <cbc:CityName>Munich</cbc:CityName>
-    <cbc:PostalZone>28001</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      <cbc:Name>Germany</cbc:Name>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:PhysicalLocation>
-    <cbc:ID>89767764</cbc:ID>
-    <cac:Address>
-      <cbc:StreetName>Blumestrasse 3</cbc:StreetName>
-      <cbc:CityName>Munich</cbc:CityName>
-      <cac:AddressLine>
-        <cbc:Line>Customer entrance from the street</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        <cbc:Name>Germany</cbc:Name>
-      </cac:Country>
-      <cac:LocationCoordinate>
-        <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-        <cbc:LatitudeDegreesMeasure>53.4</cbc:LatitudeDegreesMeasure>
-        <cbc:LatitudeMinutesMeasure>33</cbc:LatitudeMinutesMeasure>
-        <cbc:LatitudeDirectionCode>North</cbc:LatitudeDirectionCode>
-        <cbc:LongitudeDegreesMeasure>8.48</cbc:LongitudeDegreesMeasure>
-        <cbc:LongitudeMinutesMeasure>27</cbc:LongitudeMinutesMeasure>
-        <cbc:LongitudeDirectionCode>East</cbc:LongitudeDirectionCode>
-      </cac:LocationCoordinate>
-    </cac:Address>
-  </cac:PhysicalLocation>
-  <cac:PartyLegalEntity>
-    <cbc:RegistrationName>ROAD CARRIER GmbH</cbc:RegistrationName>
-    <cbc:CompanyID>989987876</cbc:CompanyID>
-  </cac:PartyLegalEntity>
-  <cac:Contact>
-    <cbc:Name>Peter Janssen</cbc:Name>
-    <cbc:Telephone>+4987675432</cbc:Telephone>
-    <cbc:Telefax>+4987675431</cbc:Telefax>
-    <cbc:ElectronicMail>peter@ROADCARRIER.de</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:TransportServiceProviderParty>
-```
-
-**Structure 108** — 2 instances
-
-```xml
-<cac:TransportUserParty>
-  <cac:PartyIdentification>
-    <cbc:ID>4058673827000</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>Consignor</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Name>SomeName</cbc:Name>
-    <cbc:Telephone>+8687878763</cbc:Telephone>
-    <cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:TransportUserParty>
-```
-
-**Structure 109** — 1 instance
-
-```xml
-<cac:TransportUserParty>
-  <cac:PartyIdentification>
-    <cbc:ID>123456789</cbc:ID>
-  </cac:PartyIdentification>
-  <cac:PartyName>
-    <cbc:Name>CONSIGNEE</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:Postbox>456</cbc:Postbox>
-    <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
-    <cbc:CityName>Hamar</cbc:CityName>
-    <cbc:PostalZone>2321</cbc:PostalZone>
-    <cac:Country>
-      <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Contact>
-    <cbc:Name>Jon Persen</cbc:Name>
-    <cbc:Telephone>+4793656656</cbc:Telephone>
-    <cbc:ElectronicMail>jonp@CONSIGNEE.no</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:TransportUserParty>
-```
-
-**Structure 110** — 1 instance
-
-```xml
-<cac:TransportUserParty>
-  <cac:PartyName>
-    <cbc:Name>CUSTOMER SERVICE LTD</cbc:Name>
-  </cac:PartyName>
-  <cac:Contact>
-    <cbc:Telephone>+324488588578</cbc:Telephone>
-  </cac:Contact>
-  <cac:Person>
-    <cbc:FirstName>DAVID</cbc:FirstName>
-    <cbc:FamilyName>VILLA</cbc:FamilyName>
-  </cac:Person>
-</cac:TransportUserParty>
-```
-
-**Structure 111** — 3 instances
-
-```xml
-<cac:WeighingParty>
-  <cbc:IndustryClassificationCode>WPA</cbc:IndustryClassificationCode>
-  <cac:PartyName>
-    <cbc:Name>LEONARDO</cbc:Name>
-  </cac:PartyName>
-  <cac:PostalAddress>
-    <cbc:CityName>La Spezia</cbc:CityName>
-    <cac:Country>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:PostalAddress>
-  <cac:Person>
-    <cbc:FirstName>GIORGIO</cbc:FirstName>
-    <cbc:FamilyName>VERDI</cbc:FamilyName>
-    <cbc:RoleCode>BN</cbc:RoleCode>
-  </cac:Person>
-</cac:WeighingParty>
-```
-
 [↑ Back to contents](#contents)
 
 ### `PaymentMeansType`
@@ -17764,7 +17735,36 @@ _576 instances across 37 elements, with 111 unique structures_
 
 _37 instances across 1 element, with 4 unique structures_
 
-**Structure 1** — 5 instances
+**Structure 1** — 1 instance
+
+```xml
+<cac:PaymentMeans>
+  <cbc:PaymentMeansCode>10</cbc:PaymentMeansCode>
+  <cbc:PaymentMeansDescription>Cash</cbc:PaymentMeansDescription>
+  <cbc:PaymentID>1</cbc:PaymentID>
+</cac:PaymentMeans>
+```
+
+**Structure 2** — 3 instances
+
+```xml
+<cac:PaymentMeans>
+  <cbc:PaymentMeansCode>31</cbc:PaymentMeansCode>
+  <cbc:PaymentDueDate>2009-12-31</cbc:PaymentDueDate>
+  <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+  <cbc:PaymentID>Payref1</cbc:PaymentID>
+  <cac:PayeeFinancialAccount>
+    <cbc:ID>DK1212341234123412</cbc:ID>
+    <cac:FinancialInstitutionBranch>
+      <cac:FinancialInstitution>
+        <cbc:ID>DKDKABCD</cbc:ID>
+      </cac:FinancialInstitution>
+    </cac:FinancialInstitutionBranch>
+  </cac:PayeeFinancialAccount>
+</cac:PaymentMeans>
+```
+
+**Structure 3** — 5 instances
 
 ```xml
 <cac:PaymentMeans>
@@ -17817,7 +17817,7 @@ _37 instances across 1 element, with 4 unique structures_
 </cac:PaymentMeans>
 ```
 
-**Structure 2** — 28 instances
+**Structure 4** — 28 instances
 
 ```xml
 <cac:PaymentMeans>
@@ -17868,35 +17868,6 @@ _37 instances across 1 element, with 4 unique structures_
       <cbc:IdentificationCode>GB</cbc:IdentificationCode>
     </cac:Country>
   </cac:PayeeFinancialAccount>
-</cac:PaymentMeans>
-```
-
-**Structure 3** — 3 instances
-
-```xml
-<cac:PaymentMeans>
-  <cbc:PaymentMeansCode>31</cbc:PaymentMeansCode>
-  <cbc:PaymentDueDate>2009-12-31</cbc:PaymentDueDate>
-  <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
-  <cbc:PaymentID>Payref1</cbc:PaymentID>
-  <cac:PayeeFinancialAccount>
-    <cbc:ID>DK1212341234123412</cbc:ID>
-    <cac:FinancialInstitutionBranch>
-      <cac:FinancialInstitution>
-        <cbc:ID>DKDKABCD</cbc:ID>
-      </cac:FinancialInstitution>
-    </cac:FinancialInstitutionBranch>
-  </cac:PayeeFinancialAccount>
-</cac:PaymentMeans>
-```
-
-**Structure 4** — 1 instance
-
-```xml
-<cac:PaymentMeans>
-  <cbc:PaymentMeansCode>10</cbc:PaymentMeansCode>
-  <cbc:PaymentMeansDescription>Cash</cbc:PaymentMeansDescription>
-  <cbc:PaymentID>1</cbc:PaymentID>
 </cac:PaymentMeans>
 ```
 
@@ -18019,195 +17990,18 @@ _2 instances across 1 element, with 1 unique structure_
 
 _213 instances across 20 elements, with 30 unique structures_
 
-**Structure 1** — 4 instances
-
-```xml
-<cac:ActivityPeriod>
-  <cbc:StartDate>2005-02-26</cbc:StartDate>
-  <cbc:EndDate>2005-12-26</cbc:EndDate>
-</cac:ActivityPeriod>
-```
-
-**Structure 2** — 2 instances
-
-```xml
-<cac:ActivityPeriod>
-  <cbc:StartDate>2010-04-09</cbc:StartDate>
-</cac:ActivityPeriod>
-```
-
-**Structure 3** — 4 instances
-
-```xml
-<cac:AdoptionPeriod>
-  <cbc:DurationMeasure>90</cbc:DurationMeasure>
-</cac:AdoptionPeriod>
-```
-
-**Structure 4** — 11 instances
-
-```xml
-<cac:EffectivePeriod>
-  <cbc:StartDate>2010-03-28</cbc:StartDate>
-  <cbc:EndDate>2010-08-29</cbc:EndDate>
-</cac:EffectivePeriod>
-```
-
-**Structure 5** — 2 instances
-
-```xml
-<cac:EstimatedDeliveryPeriod>
-  <cbc:StartDate>2010-04-30</cbc:StartDate>
-  <cbc:StartTime>20:00:00.0Z</cbc:StartTime>
-  <cbc:EndDate>2010-04-30</cbc:EndDate>
-  <cbc:EndTime>20:30:00.0Z</cbc:EndTime>
-</cac:EstimatedDeliveryPeriod>
-```
-
-**Structure 6** — 4 instances
-
-```xml
-<cac:EstimatedDeliveryPeriod>
-  <cbc:StartDate>2005-06-30</cbc:StartDate>
-  <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-</cac:EstimatedDeliveryPeriod>
-```
-
-**Structure 7** — 8 instances
-
-```xml
-<cac:ExceptionObservationPeriod>
-  <cbc:StartDate>2010-03-26</cbc:StartDate>
-  <cbc:EndDate>2010-04-26</cbc:EndDate>
-</cac:ExceptionObservationPeriod>
-```
-
-**Structure 8** — 14 instances
-
-```xml
-<cac:ForecastPeriod>
-  <cbc:StartDate>2010-02-01</cbc:StartDate>
-  <cbc:EndDate>2010-05-26</cbc:EndDate>
-</cac:ForecastPeriod>
-```
-
-**Structure 9** — 4 instances
-
-```xml
-<cac:InventoryPeriod>
-  <cbc:StartDate>2010-04-11</cbc:StartDate>
-  <cbc:StartTime>14:00:00</cbc:StartTime>
-  <cbc:EndDate>2010-04-11</cbc:EndDate>
-</cac:InventoryPeriod>
-```
-
-**Structure 10** — 12 instances
-
-```xml
-<cac:InvoicePeriod>
-  <cbc:StartDate>2005-06-01</cbc:StartDate>
-  <cbc:EndDate>2005-07-01</cbc:EndDate>
-</cac:InvoicePeriod>
-```
-
-**Structure 11** — 19 instances
-
-```xml
-<cac:Period>
-  <cbc:StartDate>2009-01-01</cbc:StartDate>
-  <cbc:EndDate>2009-12-31</cbc:EndDate>
-</cac:Period>
-```
-
-**Structure 12** — 23 instances
-
-```xml
-<cac:Period>
-  <cbc:StartDate>2011-10-03</cbc:StartDate>
-  <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-  <cbc:EndDate>2011-10-03</cbc:EndDate>
-  <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-</cac:Period>
-```
-
-**Structure 13** — 2 instances
-
-```xml
-<cac:Period>
-  <cbc:StartDate>2017-03-30</cbc:StartDate>
-</cac:Period>
-```
-
-**Structure 14** — 8 instances
-
-```xml
-<cac:RequestedDeliveryPeriod>
-  <cbc:StartDate>2010-02-10</cbc:StartDate>
-  <cbc:EndDate>2010-02-25</cbc:EndDate>
-</cac:RequestedDeliveryPeriod>
-```
-
-**Structure 15** — 34 instances
-
-```xml
-<cac:RequestedDeliveryPeriod>
-  <cbc:StartDate>2005-06-20</cbc:StartDate>
-  <cbc:StartTime>10:30:47.0Z</cbc:StartTime>
-  <cbc:EndDate>2005-06-21</cbc:EndDate>
-  <cbc:EndTime>10:30:47.0Z</cbc:EndTime>
-</cac:RequestedDeliveryPeriod>
-```
-
-**Structure 16** — 8 instances
-
-```xml
-<cac:ServiceAvailabilityPeriod>
-  <cbc:StartTime>09:00:00</cbc:StartTime>
-  <cbc:EndTime>16:00:00</cbc:EndTime>
-</cac:ServiceAvailabilityPeriod>
-```
-
-**Structure 17** — 2 instances
-
-```xml
-<cac:ServiceEndTimePeriod>
-  <cbc:EndDate>2011-10-06</cbc:EndDate>
-  <cbc:EndTime>16:00:10+01:00</cbc:EndTime>
-</cac:ServiceEndTimePeriod>
-```
-
-**Structure 18** — 2 instances
-
-```xml
-<cac:ServiceEndTimePeriod>
-  <cbc:StartDate>2010-05-01</cbc:StartDate>
-  <cbc:StartTime>15:00:00.0Z</cbc:StartTime>
-  <cbc:EndDate>2010-05-01</cbc:EndDate>
-  <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-</cac:ServiceEndTimePeriod>
-```
-
-**Structure 19** — 8 instances
-
-```xml
-<cac:ServiceMaintenancePeriod>
-  <cbc:StartTime>22:00:00</cbc:StartTime>
-  <cbc:EndTime>06:00:00</cbc:EndTime>
-</cac:ServiceMaintenancePeriod>
-```
-
-**Structure 20** — 2 instances
+**Structure 1** — 2 instances
 
 ```xml
 <cac:ServiceStartTimePeriod>
-  <cbc:StartDate>2010-05-01</cbc:StartDate>
-  <cbc:StartTime>10:00:00.0Z</cbc:StartTime>
-  <cbc:EndDate>2010-05-01</cbc:EndDate>
-  <cbc:EndTime>11:00:00.0Z</cbc:EndTime>
+  <cbc:StartDate>2011-03-13</cbc:StartDate>
+  <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
+  <cbc:EndDate>2011-03-13</cbc:EndDate>
+  <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
 </cac:ServiceStartTimePeriod>
 ```
 
-**Structure 21** — 1 instance
+**Structure 2** — 1 instance
 
 ```xml
 <cac:SettlementPeriod>
@@ -18218,82 +18012,7 @@ _213 instances across 20 elements, with 30 unique structures_
 </cac:SettlementPeriod>
 ```
 
-**Structure 22** — 5 instances
-
-```xml
-<cac:StatementPeriod>
-  <cbc:StartDate>2005-07-01</cbc:StartDate>
-  <cbc:EndDate>2005-07-31</cbc:EndDate>
-  <cbc:Description>July</cbc:Description>
-</cac:StatementPeriod>
-```
-
-**Structure 23** — 4 instances
-
-```xml
-<cac:TransitPeriod>
-  <cbc:StartDate>2005-06-25</cbc:StartDate>
-  <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
-  <cbc:EndDate>2005-06-25</cbc:EndDate>
-  <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-</cac:TransitPeriod>
-```
-
-**Structure 24** — 4 instances
-
-```xml
-<cac:TransitPeriod>
-  <cbc:StartDate>2005-06-25</cbc:StartDate>
-  <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
-</cac:TransitPeriod>
-```
-
-**Structure 25** — 1 instance
-
-```xml
-<cac:TransportServiceProviderResponseDeadlinePeriod>
-  <cbc:EndDate>2011-09-13</cbc:EndDate>
-  <cbc:EndTime>11:00:10+01:00</cbc:EndTime>
-</cac:TransportServiceProviderResponseDeadlinePeriod>
-```
-
-**Structure 26** — 1 instance
-
-```xml
-<cac:TransportUserResponseRequiredPeriod>
-  <cbc:EndDate>2011-09-13</cbc:EndDate>
-  <cbc:EndTime>12:00:10+01:00</cbc:EndTime>
-</cac:TransportUserResponseRequiredPeriod>
-```
-
-**Structure 27** — 4 instances
-
-```xml
-<cac:ValidityPeriod>
-  <cbc:EndDate>2010-01-31</cbc:EndDate>
-</cac:ValidityPeriod>
-```
-
-**Structure 28** — 1 instance
-
-```xml
-<cac:ValidityPeriod>
-  <cbc:StartDate>2011-09-12</cbc:StartDate>
-  <cbc:EndDate>2011-09-30</cbc:EndDate>
-  <cbc:EndTime>16:00:00+01:00</cbc:EndTime>
-</cac:ValidityPeriod>
-```
-
-**Structure 29** — 15 instances
-
-```xml
-<cac:ValidityPeriod>
-  <cbc:StartDate>2005-06-20</cbc:StartDate>
-  <cbc:EndDate>2005-07-20</cbc:EndDate>
-</cac:ValidityPeriod>
-```
-
-**Structure 30** — 4 instances
+**Structure 3** — 4 instances
 
 ```xml
 <cac:ValidityPeriod>
@@ -18304,6 +18023,258 @@ _213 instances across 20 elements, with 30 unique structures_
 </cac:ValidityPeriod>
 ```
 
+**Structure 4** — 2 instances
+
+```xml
+<cac:Period>
+  <cbc:StartDate>2017-03-30</cbc:StartDate>
+</cac:Period>
+```
+
+**Structure 5** — 8 instances
+
+```xml
+<cac:RequestedDeliveryPeriod>
+  <cbc:StartDate>2010-02-10</cbc:StartDate>
+  <cbc:EndDate>2010-02-25</cbc:EndDate>
+</cac:RequestedDeliveryPeriod>
+```
+
+**Structure 6** — 4 instances
+
+```xml
+<cac:ActivityPeriod>
+  <cbc:StartDate>2005-02-26</cbc:StartDate>
+  <cbc:EndDate>2005-12-26</cbc:EndDate>
+</cac:ActivityPeriod>
+```
+
+**Structure 7** — 4 instances
+
+```xml
+<cac:TransitPeriod>
+  <cbc:StartDate>2005-06-25</cbc:StartDate>
+  <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
+</cac:TransitPeriod>
+```
+
+**Structure 8** — 5 instances
+
+```xml
+<cac:StatementPeriod>
+  <cbc:StartDate>2005-07-01</cbc:StartDate>
+  <cbc:EndDate>2005-07-31</cbc:EndDate>
+  <cbc:Description>July</cbc:Description>
+</cac:StatementPeriod>
+```
+
+**Structure 9** — 4 instances
+
+```xml
+<cac:InventoryPeriod>
+  <cbc:StartDate>2010-04-11</cbc:StartDate>
+  <cbc:StartTime>08:00:00</cbc:StartTime>
+  <cbc:EndDate>2011-04-11</cbc:EndDate>
+</cac:InventoryPeriod>
+```
+
+**Structure 10** — 4 instances
+
+```xml
+<cac:ValidityPeriod>
+  <cbc:EndDate>1967-08-13</cbc:EndDate>
+</cac:ValidityPeriod>
+```
+
+**Structure 11** — 14 instances
+
+```xml
+<cac:ForecastPeriod>
+  <cbc:StartDate>2010-02-01</cbc:StartDate>
+  <cbc:EndDate>2010-05-26</cbc:EndDate>
+</cac:ForecastPeriod>
+```
+
+**Structure 12** — 12 instances
+
+```xml
+<cac:InvoicePeriod>
+  <cbc:StartDate>2009-11-01</cbc:StartDate>
+  <cbc:EndDate>2009-11-30</cbc:EndDate>
+</cac:InvoicePeriod>
+```
+
+**Structure 13** — 23 instances
+
+```xml
+<cac:Period>
+  <cbc:StartDate>2011-10-03</cbc:StartDate>
+  <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+  <cbc:EndDate>2011-10-03</cbc:EndDate>
+  <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+</cac:Period>
+```
+
+**Structure 14** — 8 instances
+
+```xml
+<cac:ServiceAvailabilityPeriod>
+  <cbc:StartTime>09:00:00</cbc:StartTime>
+  <cbc:EndTime>16:00:00</cbc:EndTime>
+</cac:ServiceAvailabilityPeriod>
+```
+
+**Structure 15** — 4 instances
+
+```xml
+<cac:TransitPeriod>
+  <cbc:StartDate>2005-06-25</cbc:StartDate>
+  <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
+  <cbc:EndDate>2005-06-25</cbc:EndDate>
+  <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
+</cac:TransitPeriod>
+```
+
+**Structure 16** — 1 instance
+
+```xml
+<cac:ValidityPeriod>
+  <cbc:StartDate>2011-09-12</cbc:StartDate>
+  <cbc:EndDate>2011-09-30</cbc:EndDate>
+  <cbc:EndTime>16:00:00+01:00</cbc:EndTime>
+</cac:ValidityPeriod>
+```
+
+**Structure 17** — 34 instances
+
+```xml
+<cac:RequestedDeliveryPeriod>
+  <cbc:StartDate>2005-06-20</cbc:StartDate>
+  <cbc:StartTime>10:30:47.0Z</cbc:StartTime>
+  <cbc:EndDate>2005-06-21</cbc:EndDate>
+  <cbc:EndTime>10:30:47.0Z</cbc:EndTime>
+</cac:RequestedDeliveryPeriod>
+```
+
+**Structure 18** — 1 instance
+
+```xml
+<cac:TransportServiceProviderResponseDeadlinePeriod>
+  <cbc:EndDate>2011-09-13</cbc:EndDate>
+  <cbc:EndTime>11:00:10+01:00</cbc:EndTime>
+</cac:TransportServiceProviderResponseDeadlinePeriod>
+```
+
+**Structure 19** — 19 instances
+
+```xml
+<cac:Period>
+  <cbc:StartDate>2005-02-26</cbc:StartDate>
+  <cbc:EndDate>2005-12-26</cbc:EndDate>
+</cac:Period>
+```
+
+**Structure 20** — 4 instances
+
+```xml
+<cac:EstimatedDeliveryPeriod>
+  <cbc:StartDate>2005-06-30</cbc:StartDate>
+  <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+</cac:EstimatedDeliveryPeriod>
+```
+
+**Structure 21** — 2 instances
+
+```xml
+<cac:EstimatedDeliveryPeriod>
+  <cbc:StartDate>2011-03-13</cbc:StartDate>
+  <cbc:StartTime>21:00:00.0Z</cbc:StartTime>
+  <cbc:EndDate>2011-03-13</cbc:EndDate>
+  <cbc:EndTime>21:00:00.0Z</cbc:EndTime>
+</cac:EstimatedDeliveryPeriod>
+```
+
+**Structure 22** — 1 instance
+
+```xml
+<cac:TransportUserResponseRequiredPeriod>
+  <cbc:EndDate>2011-09-13</cbc:EndDate>
+  <cbc:EndTime>12:00:10+01:00</cbc:EndTime>
+</cac:TransportUserResponseRequiredPeriod>
+```
+
+**Structure 23** — 15 instances
+
+```xml
+<cac:ValidityPeriod>
+  <cbc:StartDate>2005-06-20</cbc:StartDate>
+  <cbc:EndDate>2005-07-20</cbc:EndDate>
+</cac:ValidityPeriod>
+```
+
+**Structure 24** — 8 instances
+
+```xml
+<cac:ExceptionObservationPeriod>
+  <cbc:StartDate>2010-03-26</cbc:StartDate>
+  <cbc:EndDate>2010-04-10</cbc:EndDate>
+</cac:ExceptionObservationPeriod>
+```
+
+**Structure 25** — 2 instances
+
+```xml
+<cac:ServiceEndTimePeriod>
+  <cbc:EndDate>2011-10-06</cbc:EndDate>
+  <cbc:EndTime>16:00:10+01:00</cbc:EndTime>
+</cac:ServiceEndTimePeriod>
+```
+
+**Structure 26** — 2 instances
+
+```xml
+<cac:ServiceEndTimePeriod>
+  <cbc:StartDate>2011-03-17</cbc:StartDate>
+  <cbc:StartTime>15:30:00.0Z</cbc:StartTime>
+  <cbc:EndDate>2011-03-17</cbc:EndDate>
+  <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
+</cac:ServiceEndTimePeriod>
+```
+
+**Structure 27** — 2 instances
+
+```xml
+<cac:ActivityPeriod>
+  <cbc:StartDate>2010-04-07</cbc:StartDate>
+</cac:ActivityPeriod>
+```
+
+**Structure 28** — 11 instances
+
+```xml
+<cac:EffectivePeriod>
+  <cbc:StartDate>2010-03-28</cbc:StartDate>
+  <cbc:EndDate>2010-08-29</cbc:EndDate>
+</cac:EffectivePeriod>
+```
+
+**Structure 29** — 8 instances
+
+```xml
+<cac:ServiceMaintenancePeriod>
+  <cbc:StartTime>22:00:00Z</cbc:StartTime>
+  <cbc:EndTime>06:00:00Z</cbc:EndTime>
+</cac:ServiceMaintenancePeriod>
+```
+
+**Structure 30** — 4 instances
+
+```xml
+<cac:AdoptionPeriod>
+  <cbc:DurationMeasure>90</cbc:DurationMeasure>
+</cac:AdoptionPeriod>
+```
+
 [↑ Back to contents](#contents)
 
 ### `PersonType`
@@ -18312,7 +18283,18 @@ _213 instances across 20 elements, with 30 unique structures_
 
 _29 instances across 1 element, with 4 unique structures_
 
-**Structure 1** — 1 instance
+**Structure 1** — 20 instances
+
+```xml
+<cac:Person>
+  <cbc:FirstName>Sven</cbc:FirstName>
+  <cbc:FamilyName>Pereson</cbc:FamilyName>
+  <cbc:MiddleName>N</cbc:MiddleName>
+  <cbc:JobTitle>Stuffuser</cbc:JobTitle>
+</cac:Person>
+```
+
+**Structure 2** — 1 instance
 
 ```xml
 <cac:Person>
@@ -18321,17 +18303,6 @@ _29 instances across 1 element, with 4 unique structures_
   <cac:IdentityDocumentReference>
     <cbc:ID>325334535</cbc:ID>
   </cac:IdentityDocumentReference>
-</cac:Person>
-```
-
-**Structure 2** — 20 instances
-
-```xml
-<cac:Person>
-  <cbc:FirstName>Antonio</cbc:FirstName>
-  <cbc:FamilyName>M</cbc:FamilyName>
-  <cbc:MiddleName>Salemacher</cbc:MiddleName>
-  <cbc:JobTitle>Sales manager</cbc:JobTitle>
 </cac:Person>
 ```
 
@@ -18389,7 +18360,16 @@ _6 instances across 1 element, with 2 unique structures_
 
 _79 instances across 1 element, with 4 unique structures_
 
-**Structure 1** — 12 instances
+**Structure 1** — 63 instances
+
+```xml
+<cac:Price>
+  <cbc:PriceAmount>50</cbc:PriceAmount>
+  <cbc:BaseQuantity>1</cbc:BaseQuantity>
+</cac:Price>
+```
+
+**Structure 2** — 12 instances
 
 ```xml
 <cac:Price>
@@ -18405,22 +18385,11 @@ _79 instances across 1 element, with 4 unique structures_
 </cac:Price>
 ```
 
-**Structure 2** — 63 instances
-
-```xml
-<cac:Price>
-  <cbc:PriceAmount>1.00</cbc:PriceAmount>
-  <cbc:BaseQuantity>1</cbc:BaseQuantity>
-</cac:Price>
-```
-
 **Structure 3** — 2 instances
 
 ```xml
 <cac:Price>
-  <cbc:PriceAmount>16.00</cbc:PriceAmount>
-  <cbc:TaxInclusivePriceAmount>20.00</cbc:TaxInclusivePriceAmount>
-  <cbc:BaseQuantity>1</cbc:BaseQuantity>
+  <cbc:PriceAmount>120.00</cbc:PriceAmount>
 </cac:Price>
 ```
 
@@ -18428,7 +18397,9 @@ _79 instances across 1 element, with 4 unique structures_
 
 ```xml
 <cac:Price>
-  <cbc:PriceAmount>120.00</cbc:PriceAmount>
+  <cbc:PriceAmount>16.00</cbc:PriceAmount>
+  <cbc:TaxInclusivePriceAmount>20.00</cbc:TaxInclusivePriceAmount>
+  <cbc:BaseQuantity>1</cbc:BaseQuantity>
 </cac:Price>
 ```
 
@@ -18773,20 +18744,20 @@ _9 instances across 1 element, with 2 unique structures_
 
 ```xml
 <cac:QuotationLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Note>Computer</cbc:Note>
+  <cbc:ID>3</cbc:ID>
+  <cbc:Note>Mus</cbc:Note>
   <cac:LineItem>
-    <cbc:ID>DELL1052665</cbc:ID>
+    <cbc:ID>DELL2367452</cbc:ID>
     <cbc:Quantity>35</cbc:Quantity>
-    <cbc:LineExtensionAmount>150500.00</cbc:LineExtensionAmount>
-    <cbc:TotalTaxAmount>37625.00</cbc:TotalTaxAmount>
+    <cbc:LineExtensionAmount>1750.00</cbc:LineExtensionAmount>
+    <cbc:TotalTaxAmount>437.50</cbc:TotalTaxAmount>
     <cac:Price>
-      <cbc:PriceAmount>4300.00</cbc:PriceAmount>
+      <cbc:PriceAmount>50.00</cbc:PriceAmount>
       <cbc:BaseQuantity>1</cbc:BaseQuantity>
     </cac:Price>
     <cac:Item>
-      <cbc:Description>Stationær computer</cbc:Description>
-      <cbc:Name>Dell PrecisionTM  T3400</cbc:Name>
+      <cbc:Description>Mus</cbc:Description>
+      <cbc:Name>Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)</cbc:Name>
     </cac:Item>
   </cac:LineItem>
 </cac:QuotationLine>
@@ -18800,20 +18771,20 @@ _9 instances across 1 element, with 2 unique structures_
 
 _5 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 3 instances
+
+```xml
+<cac:RailTransport>
+  <cbc:TrainID>RID01235</cbc:TrainID>
+</cac:RailTransport>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:RailTransport>
   <cbc:TrainID>101</cbc:TrainID>
   <cbc:RailCarID>101-21</cbc:RailCarID>
-</cac:RailTransport>
-```
-
-**Structure 2** — 3 instances
-
-```xml
-<cac:RailTransport>
-  <cbc:TrainID>VF80145</cbc:TrainID>
 </cac:RailTransport>
 ```
 
@@ -18825,7 +18796,32 @@ _5 instances across 1 element, with 2 unique structures_
 
 _5 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 4 instances
+**Structure 1** — 1 instance
+
+```xml
+<cac:ReceiptLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:Note>SAMPLE</cbc:Note>
+  <cbc:ReceivedQuantity>90</cbc:ReceivedQuantity>
+  <cbc:ShortQuantity>10</cbc:ShortQuantity>
+  <cac:Item>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:Name>beeswax</cbc:Name>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>6578489</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>17589683</cbc:ID>
+    </cac:SellersItemIdentification>
+    <cac:LotIdentification>
+      <cbc:LotNumberID>546378239</cbc:LotNumberID>
+      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
+    </cac:LotIdentification>
+  </cac:Item>
+</cac:ReceiptLine>
+```
+
+**Structure 2** — 4 instances
 
 ```xml
 <cac:ReceiptLine>
@@ -18848,31 +18844,6 @@ _5 instances across 1 element, with 2 unique structures_
         <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
       </cac:LotIdentification>
     </cac:ItemInstance>
-  </cac:Item>
-</cac:ReceiptLine>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:ReceiptLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Note>SAMPLE</cbc:Note>
-  <cbc:ReceivedQuantity>90</cbc:ReceivedQuantity>
-  <cbc:ShortQuantity>10</cbc:ShortQuantity>
-  <cac:Item>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:Name>beeswax</cbc:Name>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
-    </cac:SellersItemIdentification>
-    <cac:LotIdentification>
-      <cbc:LotNumberID>546378239</cbc:LotNumberID>
-      <cbc:ExpiryDate>2010-01-01</cbc:ExpiryDate>
-    </cac:LotIdentification>
   </cac:Item>
 </cac:ReceiptLine>
 ```
@@ -18969,7 +18940,24 @@ _5 instances across 1 element, with 1 unique structure_
 
 _9 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 5 instances
+**Structure 1** — 4 instances
+
+```xml
+<cac:RequestForQuotationLine>
+  <cbc:ID>3</cbc:ID>
+  <cbc:Note>Mus</cbc:Note>
+  <cac:LineItem>
+    <cbc:ID>DELL2367452</cbc:ID>
+    <cbc:Quantity>35</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>Mus</cbc:Description>
+      <cbc:Name>Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)</cbc:Name>
+    </cac:Item>
+  </cac:LineItem>
+</cac:RequestForQuotationLine>
+```
+
+**Structure 2** — 5 instances
 
 ```xml
 <cac:RequestForQuotationLine>
@@ -18987,23 +18975,6 @@ _9 instances across 1 element, with 2 unique structures_
       <cac:SellersItemIdentification>
         <cbc:ID>17589683</cbc:ID>
       </cac:SellersItemIdentification>
-    </cac:Item>
-  </cac:LineItem>
-</cac:RequestForQuotationLine>
-```
-
-**Structure 2** — 4 instances
-
-```xml
-<cac:RequestForQuotationLine>
-  <cbc:ID>1</cbc:ID>
-  <cbc:Note>Computer</cbc:Note>
-  <cac:LineItem>
-    <cbc:ID>DELL1052665</cbc:ID>
-    <cbc:Quantity>35</cbc:Quantity>
-    <cac:Item>
-      <cbc:Description>Stationær computer</cbc:Description>
-      <cbc:Name>Dell PrecisionTM  T3400</cbc:Name>
     </cac:Item>
   </cac:LineItem>
 </cac:RequestForQuotationLine>
@@ -19072,24 +19043,38 @@ _10 instances across 1 element, with 1 unique structure_
 
 _16 instances across 1 element, with 4 unique structures_
 
-**Structure 1** — 5 instances
+**Structure 1** — 4 instances
 
 ```xml
 <cac:SalesItem>
   <cbc:Quantity>20</cbc:Quantity>
   <cac:Item>
-    <cbc:Description>shirt</cbc:Description>
+    <cac:StandardItemIdentification>
+      <cbc:ID>06110123456784</cbc:ID>
+    </cac:StandardItemIdentification>
+  </cac:Item>
+</cac:SalesItem>
+```
+
+**Structure 2** — 4 instances
+
+```xml
+<cac:SalesItem>
+  <cbc:Quantity>20</cbc:Quantity>
+  <cac:Item>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:Name>beeswax</cbc:Name>
     <cac:BuyersItemIdentification>
-      <cbc:ID>SH009</cbc:ID>
+      <cbc:ID>6578489</cbc:ID>
     </cac:BuyersItemIdentification>
     <cac:SellersItemIdentification>
-      <cbc:ID>DD88</cbc:ID>
+      <cbc:ID>17589683</cbc:ID>
     </cac:SellersItemIdentification>
   </cac:Item>
 </cac:SalesItem>
 ```
 
-**Structure 2** — 3 instances
+**Structure 3** — 3 instances
 
 ```xml
 <cac:SalesItem>
@@ -19110,33 +19095,19 @@ _16 instances across 1 element, with 4 unique structures_
 </cac:SalesItem>
 ```
 
-**Structure 3** — 4 instances
+**Structure 4** — 5 instances
 
 ```xml
 <cac:SalesItem>
-  <cbc:Quantity>20</cbc:Quantity>
+  <cbc:Quantity>200</cbc:Quantity>
   <cac:Item>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:Name>beeswax</cbc:Name>
+    <cbc:Description>shirt</cbc:Description>
     <cac:BuyersItemIdentification>
-      <cbc:ID>6578489</cbc:ID>
+      <cbc:ID>SH009</cbc:ID>
     </cac:BuyersItemIdentification>
     <cac:SellersItemIdentification>
-      <cbc:ID>17589683</cbc:ID>
+      <cbc:ID>DD88</cbc:ID>
     </cac:SellersItemIdentification>
-  </cac:Item>
-</cac:SalesItem>
-```
-
-**Structure 4** — 4 instances
-
-```xml
-<cac:SalesItem>
-  <cbc:Quantity>20</cbc:Quantity>
-  <cac:Item>
-    <cac:StandardItemIdentification>
-      <cbc:ID>06110123456784</cbc:ID>
-    </cac:StandardItemIdentification>
   </cac:Item>
 </cac:SalesItem>
 ```
@@ -19150,6 +19121,26 @@ _16 instances across 1 element, with 4 unique structures_
 _8 instances across 1 element, with 2 unique structures_
 
 **Structure 1** — 4 instances
+
+```xml
+<cac:ServiceLevelAgreement>
+  <cbc:ID>2</cbc:ID>
+  <cbc:ServiceTypeCode>AP</cbc:ServiceTypeCode>
+  <cbc:AvailabilityTimePercent>94.0</cbc:AvailabilityTimePercent>
+  <cbc:SaturdayAvailabilityIndicator>true</cbc:SaturdayAvailabilityIndicator>
+  <cbc:SundayAvailabilityIndicator>true</cbc:SundayAvailabilityIndicator>
+  <cac:ServiceAvailabilityPeriod>
+    <cbc:StartTime>09:00:00Z</cbc:StartTime>
+    <cbc:EndTime>16:00:00Z</cbc:EndTime>
+  </cac:ServiceAvailabilityPeriod>
+  <cac:ServiceMaintenancePeriod>
+    <cbc:StartTime>22:00:00Z</cbc:StartTime>
+    <cbc:EndTime>06:00:00Z</cbc:EndTime>
+  </cac:ServiceMaintenancePeriod>
+</cac:ServiceLevelAgreement>
+```
+
+**Structure 2** — 4 instances
 
 ```xml
 <cac:ServiceLevelAgreement>
@@ -19167,32 +19158,12 @@ _8 instances across 1 element, with 2 unique structures_
   <cbc:MaximumDataLossDurationMeasure>24</cbc:MaximumDataLossDurationMeasure>
   <cbc:MeanTimeToRecoverDurationMeasure>3</cbc:MeanTimeToRecoverDurationMeasure>
   <cac:ServiceAvailabilityPeriod>
-    <cbc:StartTime>09:00:00</cbc:StartTime>
-    <cbc:EndTime>16:00:00</cbc:EndTime>
+    <cbc:StartTime>09:00:00Z</cbc:StartTime>
+    <cbc:EndTime>16:00:00Z</cbc:EndTime>
   </cac:ServiceAvailabilityPeriod>
   <cac:ServiceMaintenancePeriod>
-    <cbc:StartTime>22:00:00</cbc:StartTime>
-    <cbc:EndTime>06:00:00</cbc:EndTime>
-  </cac:ServiceMaintenancePeriod>
-</cac:ServiceLevelAgreement>
-```
-
-**Structure 2** — 4 instances
-
-```xml
-<cac:ServiceLevelAgreement>
-  <cbc:ID>2</cbc:ID>
-  <cbc:ServiceTypeCode>AP</cbc:ServiceTypeCode>
-  <cbc:AvailabilityTimePercent>94.0</cbc:AvailabilityTimePercent>
-  <cbc:SaturdayAvailabilityIndicator>true</cbc:SaturdayAvailabilityIndicator>
-  <cbc:SundayAvailabilityIndicator>true</cbc:SundayAvailabilityIndicator>
-  <cac:ServiceAvailabilityPeriod>
-    <cbc:StartTime>09:00:00</cbc:StartTime>
-    <cbc:EndTime>16:00:00</cbc:EndTime>
-  </cac:ServiceAvailabilityPeriod>
-  <cac:ServiceMaintenancePeriod>
-    <cbc:StartTime>22:00:00</cbc:StartTime>
-    <cbc:EndTime>06:00:00</cbc:EndTime>
+    <cbc:StartTime>22:00:00Z</cbc:StartTime>
+    <cbc:EndTime>06:00:00Z</cbc:EndTime>
   </cac:ServiceMaintenancePeriod>
 </cac:ServiceLevelAgreement>
 ```
@@ -19205,17 +19176,105 @@ _8 instances across 1 element, with 2 unique structures_
 
 _30 instances across 3 elements, with 17 unique structures_
 
-**Structure 1** — 1 instance
+**Structure 1** — 2 instances
 
 ```xml
-<cac:MainCarriageShipmentStage>
+<cac:ShipmentStage>
+  <cbc:TransportModeCode>4</cbc:TransportModeCode>
+  <cac:TransportMeans>
+    <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
+    <cac:AirTransport>
+      <cbc:AircraftID>AY-428 20130623</cbc:AircraftID>
+    </cac:AirTransport>
+  </cac:TransportMeans>
+</cac:ShipmentStage>
+```
+
+**Structure 2** — 2 instances
+
+```xml
+<cac:ShipmentStage>
+  <cbc:TransportModeCode>1</cbc:TransportModeCode>
+  <cac:TransportMeans>
+    <cbc:JourneyID>TM1</cbc:JourneyID>
+    <cbc:RegistrationNationalityID>EE</cbc:RegistrationNationalityID>
+    <cac:MaritimeTransport>
+      <cbc:VesselID>Eestiship</cbc:VesselID>
+    </cac:MaritimeTransport>
+  </cac:TransportMeans>
+</cac:ShipmentStage>
+```
+
+**Structure 3** — 1 instance
+
+```xml
+<cac:ShipmentStage>
+  <cac:UnloadingPortLocation>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode>CH</cbc:IdentificationCode>
+        <cbc:Name>Swiss</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:UnloadingPortLocation>
+</cac:ShipmentStage>
+```
+
+**Structure 4** — 4 instances
+
+```xml
+<cac:ShipmentStage>
+  <cbc:ID>2</cbc:ID>
+  <cbc:TransportModeCode>4</cbc:TransportModeCode>
+  <cbc:TransportMeansTypeCode>Plane</cbc:TransportMeansTypeCode>
+  <cbc:PreCarriageIndicator>false</cbc:PreCarriageIndicator>
+  <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
+  <cac:TransitPeriod>
+    <cbc:StartDate>2005-06-25</cbc:StartDate>
+    <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
+  </cac:TransitPeriod>
+  <cac:CarrierParty>
+    <cac:PartyName>
+      <cbc:Name>United Airfreight</cbc:Name>
+    </cac:PartyName>
+    <cac:Contact>
+      <cbc:ID>Freight Bookings</cbc:ID>
+      <cbc:Telephone>+1 3362 4788</cbc:Telephone>
+      <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:CarrierParty>
+  <cac:TransportMeans>
+    <cbc:JourneyID>UA 1234</cbc:JourneyID>
+    <cac:AirTransport>
+      <cbc:AircraftID>A-127763-747</cbc:AircraftID>
+    </cac:AirTransport>
+  </cac:TransportMeans>
+  <cac:LoadingPortLocation>
+    <cbc:ID>USBOS</cbc:ID>
+    <cbc:Description>Boston Airport</cbc:Description>
+  </cac:LoadingPortLocation>
+  <cac:UnloadingPortLocation>
+    <cbc:ID>GBBRS</cbc:ID>
+    <cbc:Description>Bristol Airport</cbc:Description>
+  </cac:UnloadingPortLocation>
+  <cac:TransshipPortLocation>
+    <cbc:ID>GBLHR</cbc:ID>
+    <cbc:Description>Heathrow Apt/London</cbc:Description>
+  </cac:TransshipPortLocation>
+</cac:ShipmentStage>
+```
+
+**Structure 5** — 1 instance
+
+```xml
+<cac:ShipmentStage>
+  <cbc:ID>1</cbc:ID>
   <cac:PlannedDepartureTransportEvent>
     <cac:Location>
       <cac:Address>
         <cbc:ID>DEHAM</cbc:ID>
         <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
         <cbc:CityName>Hamburg</cbc:CityName>
-        <cbc:PostalZone>29400</cbc:PostalZone>
         <cac:Country>
           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
         </cac:Country>
@@ -19230,70 +19289,27 @@ _30 instances across 3 elements, with 17 unique structures_
   </cac:PlannedDepartureTransportEvent>
   <cac:PlannedArrivalTransportEvent>
     <cac:Location>
+      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
       <cac:Address>
-        <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-        <cbc:CityName>Nurnberg</cbc:CityName>
-        <cbc:PostalZone>28400</cbc:PostalZone>
+        <cbc:ID>4568763527610</cbc:ID>
+        <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+        <cbc:CityName>Bremen</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
         </cac:Country>
       </cac:Address>
     </cac:Location>
     <cac:Period>
-      <cbc:StartDate>2011-10-06</cbc:StartDate>
-      <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-06</cbc:EndDate>
-      <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
+      <cbc:StartDate>2011-10-03</cbc:StartDate>
+      <cbc:StartTime>18:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-03</cbc:EndDate>
+      <cbc:EndTime>21:30:10+01:00</cbc:EndTime>
     </cac:Period>
   </cac:PlannedArrivalTransportEvent>
-</cac:MainCarriageShipmentStage>
+</cac:ShipmentStage>
 ```
 
-**Structure 2** — 1 instance
-
-```xml
-<cac:MainCarriageShipmentStage>
-  <cbc:ShipmentStageTypeCode>1</cbc:ShipmentStageTypeCode>
-  <cbc:TransportModeCode>1</cbc:TransportModeCode>
-  <cac:TransportMeans>
-    <cbc:JourneyID>00344</cbc:JourneyID>
-    <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
-    <cac:MaritimeTransport>
-      <cbc:VesselID>3852664</cbc:VesselID>
-      <cbc:VesselName>Vessel Name</cbc:VesselName>
-    </cac:MaritimeTransport>
-  </cac:TransportMeans>
-  <cac:EstimatedArrivalTransportEvent>
-    <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
-    <cac:Location>
-      <cbc:ID>ITGOA</cbc:ID>
-      <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
-      <cac:Address>
-        <cac:Country>
-          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:EstimatedArrivalTransportEvent>
-</cac:MainCarriageShipmentStage>
-```
-
-**Structure 3** — 1 instance
-
-```xml
-<cac:MainCarriageShipmentStage>
-  <cbc:TransportModeCode>1</cbc:TransportModeCode>
-  <cac:LoadingPortLocation>
-    <cbc:ID>Aarhus</cbc:ID>
-  </cac:LoadingPortLocation>
-  <cac:UnloadingPortLocation>
-    <cbc:ID>Balboa Port</cbc:ID>
-  </cac:UnloadingPortLocation>
-</cac:MainCarriageShipmentStage>
-```
-
-**Structure 4** — 2 instances
+**Structure 6** — 2 instances
 
 ```xml
 <cac:MainCarriageShipmentStage>
@@ -19301,7 +19317,180 @@ _30 instances across 3 elements, with 17 unique structures_
 </cac:MainCarriageShipmentStage>
 ```
 
-**Structure 5** — 1 instance
+**Structure 7** — 1 instance
+
+```xml
+<cac:ShipmentStage>
+  <cbc:ID>1</cbc:ID>
+  <cac:RequestedDepartureTransportEvent>
+    <cac:Location>
+      <cac:Address>
+        <cbc:ID>DEHAM</cbc:ID>
+        <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+        <cbc:CityName>Hamburg</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-03</cbc:StartDate>
+      <cbc:EndDate>2011-10-03</cbc:EndDate>
+    </cac:Period>
+  </cac:RequestedDepartureTransportEvent>
+  <cac:RequestedArrivalTransportEvent>
+    <cac:Location>
+      <cac:Address>
+        <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+        <cbc:CityName>Nurnberg</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-06</cbc:StartDate>
+      <cbc:EndDate>2011-10-06</cbc:EndDate>
+    </cac:Period>
+  </cac:RequestedArrivalTransportEvent>
+</cac:ShipmentStage>
+```
+
+**Structure 8** — 4 instances
+
+```xml
+<cac:ShipmentStage>
+  <cbc:ID>1</cbc:ID>
+  <cbc:TransportModeCode>3</cbc:TransportModeCode>
+  <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
+  <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
+  <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
+  <cac:TransitPeriod>
+    <cbc:StartDate>2005-06-25</cbc:StartDate>
+    <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
+    <cbc:EndDate>2005-06-25</cbc:EndDate>
+    <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
+  </cac:TransitPeriod>
+  <cac:CarrierParty>
+    <cac:PartyName>
+      <cbc:Name>Keep On Trucking</cbc:Name>
+    </cac:PartyName>
+    <cac:Contact>
+      <cbc:Telephone>+1 36222 33847</cbc:Telephone>
+    </cac:Contact>
+  </cac:CarrierParty>
+  <cac:TransportMeans>
+    <cac:RoadTransport>
+      <cbc:LicensePlateID>2652 WE</cbc:LicensePlateID>
+    </cac:RoadTransport>
+  </cac:TransportMeans>
+</cac:ShipmentStage>
+```
+
+**Structure 9** — 1 instance
+
+```xml
+<cac:ShipmentStage>
+  <cbc:ID>1</cbc:ID>
+  <cbc:TransportModeCode>2</cbc:TransportModeCode>
+  <cbc:TransportMeansTypeCode>230</cbc:TransportMeansTypeCode>
+  <cac:PlannedDepartureTransportEvent>
+    <cac:Location>
+      <cac:Address>
+        <cbc:ID>DEHAM</cbc:ID>
+        <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+        <cbc:CityName>Hamburg</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-03</cbc:StartDate>
+      <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-03</cbc:EndDate>
+      <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+    </cac:Period>
+  </cac:PlannedDepartureTransportEvent>
+  <cac:PlannedArrivalTransportEvent>
+    <cac:Location>
+      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:ID>4568763527610</cbc:ID>
+        <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+        <cbc:CityName>Bremen</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-03</cbc:StartDate>
+      <cbc:StartTime>18:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-03</cbc:EndDate>
+      <cbc:EndTime>21:30:10+01:00</cbc:EndTime>
+    </cac:Period>
+  </cac:PlannedArrivalTransportEvent>
+</cac:ShipmentStage>
+```
+
+**Structure 10** — 2 instances
+
+```xml
+<cac:ShipmentStage>
+  <cbc:TransportModeCode>4</cbc:TransportModeCode>
+  <cac:TransportMeans>
+    <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
+  </cac:TransportMeans>
+</cac:ShipmentStage>
+```
+
+**Structure 11** — 2 instances
+
+```xml
+<cac:ShipmentStage>
+  <cbc:ID>2</cbc:ID>
+  <cac:PlannedDepartureTransportEvent>
+    <cac:Location>
+      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:ID>4568763527610</cbc:ID>
+        <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+        <cbc:CityName>Bremen</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-04</cbc:StartDate>
+      <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-04</cbc:EndDate>
+      <cbc:EndTime>09:30:10+01:00</cbc:EndTime>
+    </cac:Period>
+  </cac:PlannedDepartureTransportEvent>
+  <cac:PlannedArrivalTransportEvent>
+    <cac:Location>
+      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
+        <cbc:CityName>Nurnberg</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+    <cac:Period>
+      <cbc:StartDate>2011-10-04</cbc:StartDate>
+      <cbc:StartTime>15:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-04</cbc:EndDate>
+      <cbc:EndTime>18:30:10+01:00</cbc:EndTime>
+    </cac:Period>
+  </cac:PlannedArrivalTransportEvent>
+</cac:ShipmentStage>
+```
+
+**Structure 12** — 1 instance
 
 ```xml
 <cac:PreCarriageShipmentStage>
@@ -19352,17 +19541,17 @@ _30 instances across 3 elements, with 17 unique structures_
 </cac:PreCarriageShipmentStage>
 ```
 
-**Structure 6** — 1 instance
+**Structure 13** — 1 instance
 
 ```xml
-<cac:ShipmentStage>
-  <cbc:ID>1</cbc:ID>
+<cac:MainCarriageShipmentStage>
   <cac:PlannedDepartureTransportEvent>
     <cac:Location>
       <cac:Address>
         <cbc:ID>DEHAM</cbc:ID>
         <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
         <cbc:CityName>Hamburg</cbc:CityName>
+        <cbc:PostalZone>29400</cbc:PostalZone>
         <cac:Country>
           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
         </cac:Country>
@@ -19377,72 +19566,26 @@ _30 instances across 3 elements, with 17 unique structures_
   </cac:PlannedDepartureTransportEvent>
   <cac:PlannedArrivalTransportEvent>
     <cac:Location>
-      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
       <cac:Address>
-        <cbc:ID>4568763527610</cbc:ID>
-        <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-        <cbc:CityName>Bremen</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-03</cbc:StartDate>
-      <cbc:StartTime>18:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-03</cbc:EndDate>
-      <cbc:EndTime>21:30:10+01:00</cbc:EndTime>
-    </cac:Period>
-  </cac:PlannedArrivalTransportEvent>
-</cac:ShipmentStage>
-```
-
-**Structure 7** — 2 instances
-
-```xml
-<cac:ShipmentStage>
-  <cbc:ID>2</cbc:ID>
-  <cac:PlannedDepartureTransportEvent>
-    <cac:Location>
-      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:ID>4568763527610</cbc:ID>
-        <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-        <cbc:CityName>Bremen</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-04</cbc:StartDate>
-      <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-04</cbc:EndDate>
-      <cbc:EndTime>09:30:10+01:00</cbc:EndTime>
-    </cac:Period>
-  </cac:PlannedDepartureTransportEvent>
-  <cac:PlannedArrivalTransportEvent>
-    <cac:Location>
-      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
+        <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
         <cbc:CityName>Nurnberg</cbc:CityName>
+        <cbc:PostalZone>28400</cbc:PostalZone>
         <cac:Country>
           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
         </cac:Country>
       </cac:Address>
     </cac:Location>
     <cac:Period>
-      <cbc:StartDate>2011-10-04</cbc:StartDate>
-      <cbc:StartTime>15:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-04</cbc:EndDate>
-      <cbc:EndTime>18:30:10+01:00</cbc:EndTime>
+      <cbc:StartDate>2011-10-06</cbc:StartDate>
+      <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
+      <cbc:EndDate>2011-10-06</cbc:EndDate>
+      <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
     </cac:Period>
   </cac:PlannedArrivalTransportEvent>
-</cac:ShipmentStage>
+</cac:MainCarriageShipmentStage>
 ```
 
-**Structure 8** — 2 instances
+**Structure 14** — 2 instances
 
 ```xml
 <cac:ShipmentStage>
@@ -19485,196 +19628,6 @@ _30 instances across 3 elements, with 17 unique structures_
 </cac:ShipmentStage>
 ```
 
-**Structure 9** — 1 instance
-
-```xml
-<cac:ShipmentStage>
-  <cbc:ID>1</cbc:ID>
-  <cac:RequestedDepartureTransportEvent>
-    <cac:Location>
-      <cac:Address>
-        <cbc:ID>DEHAM</cbc:ID>
-        <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-        <cbc:CityName>Hamburg</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-03</cbc:StartDate>
-      <cbc:EndDate>2011-10-03</cbc:EndDate>
-    </cac:Period>
-  </cac:RequestedDepartureTransportEvent>
-  <cac:RequestedArrivalTransportEvent>
-    <cac:Location>
-      <cac:Address>
-        <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-        <cbc:CityName>Nurnberg</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-06</cbc:StartDate>
-      <cbc:EndDate>2011-10-06</cbc:EndDate>
-    </cac:Period>
-  </cac:RequestedArrivalTransportEvent>
-</cac:ShipmentStage>
-```
-
-**Structure 10** — 1 instance
-
-```xml
-<cac:ShipmentStage>
-  <cbc:ID>1</cbc:ID>
-  <cbc:TransportModeCode>2</cbc:TransportModeCode>
-  <cbc:TransportMeansTypeCode>230</cbc:TransportMeansTypeCode>
-  <cac:PlannedDepartureTransportEvent>
-    <cac:Location>
-      <cac:Address>
-        <cbc:ID>DEHAM</cbc:ID>
-        <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-        <cbc:CityName>Hamburg</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-03</cbc:StartDate>
-      <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-03</cbc:EndDate>
-      <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-    </cac:Period>
-  </cac:PlannedDepartureTransportEvent>
-  <cac:PlannedArrivalTransportEvent>
-    <cac:Location>
-      <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:ID>4568763527610</cbc:ID>
-        <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-        <cbc:CityName>Bremen</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-    <cac:Period>
-      <cbc:StartDate>2011-10-03</cbc:StartDate>
-      <cbc:StartTime>18:30:10+01:00</cbc:StartTime>
-      <cbc:EndDate>2011-10-03</cbc:EndDate>
-      <cbc:EndTime>21:30:10+01:00</cbc:EndTime>
-    </cac:Period>
-  </cac:PlannedArrivalTransportEvent>
-</cac:ShipmentStage>
-```
-
-**Structure 11** — 4 instances
-
-```xml
-<cac:ShipmentStage>
-  <cbc:ID>1</cbc:ID>
-  <cbc:TransportModeCode>3</cbc:TransportModeCode>
-  <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
-  <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
-  <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-  <cac:TransitPeriod>
-    <cbc:StartDate>2005-06-25</cbc:StartDate>
-    <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
-    <cbc:EndDate>2005-06-25</cbc:EndDate>
-    <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-  </cac:TransitPeriod>
-  <cac:CarrierParty>
-    <cac:PartyName>
-      <cbc:Name>Keep On Trucking</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:Telephone>+1 36222 33847</cbc:Telephone>
-    </cac:Contact>
-  </cac:CarrierParty>
-  <cac:TransportMeans>
-    <cac:RoadTransport>
-      <cbc:LicensePlateID>2652 WE</cbc:LicensePlateID>
-    </cac:RoadTransport>
-  </cac:TransportMeans>
-</cac:ShipmentStage>
-```
-
-**Structure 12** — 4 instances
-
-```xml
-<cac:ShipmentStage>
-  <cbc:ID>2</cbc:ID>
-  <cbc:TransportModeCode>4</cbc:TransportModeCode>
-  <cbc:TransportMeansTypeCode>Plane</cbc:TransportMeansTypeCode>
-  <cbc:PreCarriageIndicator>false</cbc:PreCarriageIndicator>
-  <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-  <cac:TransitPeriod>
-    <cbc:StartDate>2005-06-25</cbc:StartDate>
-    <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
-  </cac:TransitPeriod>
-  <cac:CarrierParty>
-    <cac:PartyName>
-      <cbc:Name>United Airfreight</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:ID>Freight Bookings</cbc:ID>
-      <cbc:Telephone>+1 3362 4788</cbc:Telephone>
-      <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:CarrierParty>
-  <cac:TransportMeans>
-    <cbc:JourneyID>UA 1234</cbc:JourneyID>
-    <cac:AirTransport>
-      <cbc:AircraftID>A-127763-747</cbc:AircraftID>
-    </cac:AirTransport>
-  </cac:TransportMeans>
-  <cac:LoadingPortLocation>
-    <cbc:ID>USBOS</cbc:ID>
-    <cbc:Description>Boston Airport</cbc:Description>
-  </cac:LoadingPortLocation>
-  <cac:UnloadingPortLocation>
-    <cbc:ID>GBBRS</cbc:ID>
-    <cbc:Description>Bristol Airport</cbc:Description>
-  </cac:UnloadingPortLocation>
-  <cac:TransshipPortLocation>
-    <cbc:ID>GBLHR</cbc:ID>
-    <cbc:Description>Heathrow Apt/London</cbc:Description>
-  </cac:TransshipPortLocation>
-</cac:ShipmentStage>
-```
-
-**Structure 13** — 2 instances
-
-```xml
-<cac:ShipmentStage>
-  <cbc:TransportModeCode>1</cbc:TransportModeCode>
-  <cac:TransportMeans>
-    <cbc:JourneyID>TM1</cbc:JourneyID>
-    <cbc:RegistrationNationalityID>EE</cbc:RegistrationNationalityID>
-    <cac:MaritimeTransport>
-      <cbc:VesselID>Eestiship</cbc:VesselID>
-    </cac:MaritimeTransport>
-  </cac:TransportMeans>
-</cac:ShipmentStage>
-```
-
-**Structure 14** — 2 instances
-
-```xml
-<cac:ShipmentStage>
-  <cbc:TransportModeCode>4</cbc:TransportModeCode>
-  <cac:TransportMeans>
-    <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
-    <cac:AirTransport>
-      <cbc:AircraftID>AY-428 20130623</cbc:AircraftID>
-    </cac:AirTransport>
-  </cac:TransportMeans>
-</cac:ShipmentStage>
-```
-
 **Structure 15** — 2 instances
 
 ```xml
@@ -19689,30 +19642,48 @@ _30 instances across 3 elements, with 17 unique structures_
 </cac:ShipmentStage>
 ```
 
-**Structure 16** — 2 instances
+**Structure 16** — 1 instance
 
 ```xml
-<cac:ShipmentStage>
-  <cbc:TransportModeCode>4</cbc:TransportModeCode>
-  <cac:TransportMeans>
-    <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
-  </cac:TransportMeans>
-</cac:ShipmentStage>
+<cac:MainCarriageShipmentStage>
+  <cbc:TransportModeCode>1</cbc:TransportModeCode>
+  <cac:LoadingPortLocation>
+    <cbc:ID>Aarhus</cbc:ID>
+  </cac:LoadingPortLocation>
+  <cac:UnloadingPortLocation>
+    <cbc:ID>Balboa Port</cbc:ID>
+  </cac:UnloadingPortLocation>
+</cac:MainCarriageShipmentStage>
 ```
 
 **Structure 17** — 1 instance
 
 ```xml
-<cac:ShipmentStage>
-  <cac:UnloadingPortLocation>
-    <cac:Address>
-      <cac:Country>
-        <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-        <cbc:Name>Swiss</cbc:Name>
-      </cac:Country>
-    </cac:Address>
-  </cac:UnloadingPortLocation>
-</cac:ShipmentStage>
+<cac:MainCarriageShipmentStage>
+  <cbc:ShipmentStageTypeCode>1</cbc:ShipmentStageTypeCode>
+  <cbc:TransportModeCode>1</cbc:TransportModeCode>
+  <cac:TransportMeans>
+    <cbc:JourneyID>00344</cbc:JourneyID>
+    <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
+    <cac:MaritimeTransport>
+      <cbc:VesselID>3852664</cbc:VesselID>
+      <cbc:VesselName>Vessel Name</cbc:VesselName>
+    </cac:MaritimeTransport>
+  </cac:TransportMeans>
+  <cac:EstimatedArrivalTransportEvent>
+    <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
+    <cac:Location>
+      <cbc:ID>ITGOA</cbc:ID>
+      <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:EstimatedArrivalTransportEvent>
+</cac:MainCarriageShipmentStage>
 ```
 
 [↑ Back to contents](#contents)
@@ -19723,432 +19694,7 @@ _30 instances across 3 elements, with 17 unique structures_
 
 _36 instances across 2 elements, with 16 unique structures_
 
-**Structure 1** — 4 instances
-
-```xml
-<cac:ConsolidatedShipment>
-  <cbc:ID>GSIN_1</cbc:ID>
-</cac:ConsolidatedShipment>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:Shipment>
-  <cac:Consignment>
-    <cbc:ID>7365566156191234567</cbc:ID>
-    <cbc:GrossWeightMeasure>600</cbc:GrossWeightMeasure>
-    <cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
-    <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
-    <cac:PlannedPickupTransportEvent>
-      <cac:Location>
-        <cbc:ID>MAPTM</cbc:ID>
-        <cac:Address>
-          <cbc:CityName>Tanger</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>MA</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-    </cac:PlannedPickupTransportEvent>
-    <cac:PlannedDeliveryTransportEvent>
-      <cac:Location>
-        <cbc:ID>ITGOA</cbc:ID>
-        <cac:Address>
-          <cac:Country>
-            <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-    </cac:PlannedDeliveryTransportEvent>
-    <cac:ConsigneeParty>
-      <cac:PartyName>
-        <cbc:Name>Consignee W</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>Consignee W Street</cbc:StreetName>
-        <cbc:CityName>Munich</cbc:CityName>
-        <cbc:PostalZone>231</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:PostalAddress>
-    </cac:ConsigneeParty>
-    <cac:ConsignorParty>
-      <cac:PartyIdentification>
-        <cbc:ID>4058673827000</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Disfruta</cbc:Name>
-      </cac:PartyName>
-      <cac:Contact>
-        <cbc:Name>SomeName</cbc:Name>
-        <cbc:Telephone>+212687878763</cbc:Telephone>
-        <cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:ConsignorParty>
-    <cac:OriginalDepartureCountry>
-      <cbc:IdentificationCode>MA</cbc:IdentificationCode>
-    </cac:OriginalDepartureCountry>
-    <cac:FinalDestinationCountry>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-    </cac:FinalDestinationCountry>
-    <cac:TransitCountry>
-      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-    </cac:TransitCountry>
-    <cac:TransitCountry>
-      <cbc:IdentificationCode>AT</cbc:IdentificationCode>
-    </cac:TransitCountry>
-    <cac:MainCarriageShipmentStage>
-      <cbc:ShipmentStageTypeCode>1</cbc:ShipmentStageTypeCode>
-      <cbc:TransportModeCode>1</cbc:TransportModeCode>
-      <cac:TransportMeans>
-        <cbc:JourneyID>00344</cbc:JourneyID>
-        <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
-        <cac:MaritimeTransport>
-          <cbc:VesselID>3852664</cbc:VesselID>
-          <cbc:VesselName>Vessel Name</cbc:VesselName>
-        </cac:MaritimeTransport>
-      </cac:TransportMeans>
-      <cac:EstimatedArrivalTransportEvent>
-        <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
-        <cac:Location>
-          <cbc:ID>ITGOA</cbc:ID>
-          <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
-          <cac:Address>
-            <cac:Country>
-              <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:Location>
-      </cac:EstimatedArrivalTransportEvent>
-    </cac:MainCarriageShipmentStage>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>CON_THU_1</cbc:ID>
-      <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-      <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
-      <cac:TransportEquipment>
-        <cbc:ID>BFCU4040001</cbc:ID>
-        <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-        <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-        <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
-        <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
-        <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-        <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-        <cbc:PowerIndicator>true</cbc:PowerIndicator>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
-          <cbc:Measure>6.1</cbc:Measure>
-        </cac:MeasurementDimension>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
-          <cbc:Measure>2.6</cbc:Measure>
-        </cac:MeasurementDimension>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
-          <cbc:Measure>2.44</cbc:Measure>
-        </cac:MeasurementDimension>
-        <cac:GoodsItem>
-          <cac:Item>
-            <cac:CommodityClassification>
-              <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
-              <cbc:CommodityCode>8</cbc:CommodityCode>
-            </cac:CommodityClassification>
-          </cac:Item>
-        </cac:GoodsItem>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>CON_THU_2</cbc:ID>
-      <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-      <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
-      <cac:TransportEquipment>
-        <cbc:ID>BFCU4040002</cbc:ID>
-        <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-        <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-        <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
-        <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
-        <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-        <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-        <cbc:PowerIndicator>true</cbc:PowerIndicator>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
-          <cbc:Measure>6.1</cbc:Measure>
-        </cac:MeasurementDimension>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
-          <cbc:Measure>2.6</cbc:Measure>
-        </cac:MeasurementDimension>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
-          <cbc:Measure>2.44</cbc:Measure>
-        </cac:MeasurementDimension>
-        <cac:GoodsItem>
-          <cac:Item>
-            <cac:CommodityClassification>
-              <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
-              <cbc:CommodityCode>8</cbc:CommodityCode>
-            </cac:CommodityClassification>
-          </cac:Item>
-        </cac:GoodsItem>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
-    <cac:FirstArrivalPortLocation>
-      <cbc:ID>ITGOA</cbc:ID>
-      <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
-      <cac:Address>
-        <cac:Country>
-          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:FirstArrivalPortLocation>
-    <cac:OfficeOfEntryLocation>
-      <cbc:ID>DE000396</cbc:ID>
-      <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
-      <cac:Address>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:OfficeOfEntryLocation>
-  </cac:Consignment>
-</cac:Shipment>
-```
-
-**Structure 3** — 1 instance
-
-```xml
-<cac:Shipment>
-  <cbc:ID>381944545</cbc:ID>
-  <cac:Consignment>
-    <cbc:ID>2076084807</cbc:ID>
-    <cbc:GrossWeightMeasure>774.14400</cbc:GrossWeightMeasure>
-    <cbc:NetWeightMeasure>604.80000</cbc:NetWeightMeasure>
-    <cbc:SequenceID>203</cbc:SequenceID>
-    <cbc:DeliveryInstructions>El Dorado</cbc:DeliveryInstructions>
-    <cac:RequestedPickupTransportEvent>
-      <cac:Contact>
-        <cbc:Name>ExampleName</cbc:Name>
-      </cac:Contact>
-      <cac:Location>
-        <cbc:ID>M165</cbc:ID>
-        <cac:Address>
-          <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
-          <cbc:CityName>Videbæk</cbc:CityName>
-          <cbc:PostalZone>6920</cbc:PostalZone>
-          <cac:AddressLine>
-            <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
-          </cac:AddressLine>
-          <cac:Country>
-            <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-            <cbc:Name>Denmark</cbc:Name>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-      <cac:Period>
-        <cbc:StartDate>2020-06-02</cbc:StartDate>
-        <cbc:EndDate>2020-06-02</cbc:EndDate>
-      </cac:Period>
-    </cac:RequestedPickupTransportEvent>
-    <cac:RequestedDeliveryTransportEvent>
-      <cac:Location>
-        <cac:Address>
-          <cbc:StreetName>StreetName Example</cbc:StreetName>
-          <cbc:CityName>El Dorado</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>PA</cbc:IdentificationCode>
-            <cbc:Name>Panama</cbc:Name>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-      <cac:Period>
-        <cbc:StartDate>2020-07-01</cbc:StartDate>
-        <cbc:EndDate>2020-07-01</cbc:EndDate>
-      </cac:Period>
-    </cac:RequestedDeliveryTransportEvent>
-    <cac:ConsigneeParty>
-      <cac:PartyIdentification>
-        <cbc:ID>0004424005</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>ConsigneeExample</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>StreetName Example</cbc:StreetName>
-        <cbc:AdditionalStreetName>AdditionalStreet Example</cbc:AdditionalStreetName>
-        <cbc:CityName>El Dorado</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>PA</cbc:IdentificationCode>
-          <cbc:Name>Panama</cbc:Name>
-        </cac:Country>
-      </cac:PostalAddress>
-    </cac:ConsigneeParty>
-    <cac:ConsignorParty>
-      <cac:PartyIdentification>
-        <cbc:ID>1080</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>ExampleName</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>ExampleStreet</cbc:StreetName>
-        <cbc:CityName>Viby J</cbc:CityName>
-        <cbc:PostalZone>8260</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-          <cbc:Name>Denmark</cbc:Name>
-        </cac:Country>
-      </cac:PostalAddress>
-    </cac:ConsignorParty>
-    <cac:OriginalDepartureCountry>
-      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      <cbc:Name>Denmark</cbc:Name>
-    </cac:OriginalDepartureCountry>
-    <cac:DeliveryTerms>
-      <cbc:ID>CIP</cbc:ID>
-      <cac:DeliveryLocation>
-        <cbc:Name>Balboa Port</cbc:Name>
-      </cac:DeliveryLocation>
-    </cac:DeliveryTerms>
-    <cac:FreightAllowanceCharge>
-      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-      <cbc:Amount>0.00</cbc:Amount>
-    </cac:FreightAllowanceCharge>
-    <cac:MainCarriageShipmentStage>
-      <cbc:TransportModeCode>1</cbc:TransportModeCode>
-      <cac:LoadingPortLocation>
-        <cbc:ID>Aarhus</cbc:ID>
-      </cac:LoadingPortLocation>
-      <cac:UnloadingPortLocation>
-        <cbc:ID>Balboa Port</cbc:ID>
-      </cac:UnloadingPortLocation>
-    </cac:MainCarriageShipmentStage>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>USRM3656679</cbc:ID>
-      <cbc:TotalPackageQuantity>1</cbc:TotalPackageQuantity>
-      <cac:TransportEquipment>
-        <cac:TransportEquipmentSeal>
-          <cbc:ID>7654321</cbc:ID>
-        </cac:TransportEquipmentSeal>
-      </cac:TransportEquipment>
-      <cac:MaximumTemperature>
-        <cbc:AttributeID>TC</cbc:AttributeID>
-        <cbc:Measure>3.00</cbc:Measure>
-        <cbc:Description>Chilled</cbc:Description>
-      </cac:MaximumTemperature>
-      <cac:Package>
-        <cbc:ID>2076084807</cbc:ID>
-        <cbc:Quantity>1</cbc:Quantity>
-        <cbc:PackagingTypeCode>CT</cbc:PackagingTypeCode>
-        <cac:GoodsItem>
-          <cbc:ID>000010</cbc:ID>
-          <cbc:GrossWeightMeasure>774.14400</cbc:GrossWeightMeasure>
-          <cbc:NetWeightMeasure>604.80000</cbc:NetWeightMeasure>
-          <cbc:Quantity>63.000</cbc:Quantity>
-          <cac:Item>
-            <cbc:Description>ItemExample</cbc:Description>
-            <cbc:PackQuantity>63</cbc:PackQuantity>
-            <cbc:Name>Dairy Products</cbc:Name>
-            <cac:SellersItemIdentification>
-              <cbc:ID>123456</cbc:ID>
-            </cac:SellersItemIdentification>
-            <cac:OriginCountry>
-              <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-              <cbc:Name>Denmark</cbc:Name>
-            </cac:OriginCountry>
-            <cac:CommodityClassification>
-              <cbc:CommodityCode>19011000</cbc:CommodityCode>
-            </cac:CommodityClassification>
-            <cac:AdditionalItemProperty>
-              <cbc:Name>AnimalSpecies</cbc:Name>
-              <cbc:Value>Bovine</cbc:Value>
-            </cac:AdditionalItemProperty>
-            <cac:ManufacturerParty>
-              <cbc:IndustryClassificationCode>Dairy</cbc:IndustryClassificationCode>
-              <cac:PartyIdentification>
-                <cbc:ID>M165</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>ExampleName</cbc:Name>
-              </cac:PartyName>
-              <cac:PostalAddress>
-                <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
-                <cbc:CityName>Videbæk</cbc:CityName>
-                <cbc:PostalZone>6920</cbc:PostalZone>
-                <cac:AddressLine>
-                  <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
-                </cac:AddressLine>
-                <cac:Country>
-                  <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-                  <cbc:Name>Denmark</cbc:Name>
-                </cac:Country>
-              </cac:PostalAddress>
-            </cac:ManufacturerParty>
-            <cac:ItemInstance>
-              <cbc:ManufactureDate>2019-12-08</cbc:ManufactureDate>
-              <cbc:BestBeforeDate>2022-12-08</cbc:BestBeforeDate>
-              <cac:AdditionalItemProperty>
-                <cbc:Name>LineNetWeight</cbc:Name>
-                <cbc:ValueQuantity>604.8</cbc:ValueQuantity>
-              </cac:AdditionalItemProperty>
-              <cac:AdditionalItemProperty>
-                <cbc:Name>LineGrossWeight</cbc:Name>
-                <cbc:ValueQuantity>774.144</cbc:ValueQuantity>
-              </cac:AdditionalItemProperty>
-              <cac:AdditionalItemProperty>
-                <cbc:Name>Quantity</cbc:Name>
-                <cbc:ValueQuantity>63.000</cbc:ValueQuantity>
-              </cac:AdditionalItemProperty>
-              <cac:LotIdentification>
-                <cbc:LotNumberID>9390000757</cbc:LotNumberID>
-              </cac:LotIdentification>
-            </cac:ItemInstance>
-            <cac:Dimension>
-              <cbc:AttributeID>NetWeight</cbc:AttributeID>
-              <cbc:Measure>9.6</cbc:Measure>
-            </cac:Dimension>
-            <cac:Dimension>
-              <cbc:AttributeID>LineNetWeight</cbc:AttributeID>
-              <cbc:Measure>604.8</cbc:Measure>
-            </cac:Dimension>
-            <cac:Dimension>
-              <cbc:AttributeID>GrossWeight</cbc:AttributeID>
-              <cbc:Measure>12.288</cbc:Measure>
-            </cac:Dimension>
-            <cac:Dimension>
-              <cbc:AttributeID>LineGrossWeight</cbc:AttributeID>
-              <cbc:Measure>774.144</cbc:Measure>
-            </cac:Dimension>
-          </cac:Item>
-          <cac:Despatch>
-            <cbc:ID>000010</cbc:ID>
-          </cac:Despatch>
-          <cac:MaximumTemperature>
-            <cbc:AttributeID>TC</cbc:AttributeID>
-            <cbc:Measure>3.00</cbc:Measure>
-            <cbc:Description>Chilled</cbc:Description>
-          </cac:MaximumTemperature>
-        </cac:GoodsItem>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>GrossWeight</cbc:AttributeID>
-          <cbc:Measure>774.14400</cbc:Measure>
-        </cac:MeasurementDimension>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID>NetWeight</cbc:AttributeID>
-          <cbc:Measure>604.80000</cbc:Measure>
-        </cac:MeasurementDimension>
-      </cac:Package>
-    </cac:TransportHandlingUnit>
-  </cac:Consignment>
-</cac:Shipment>
-```
-
-**Structure 4** — 5 instances
+**Structure 1** — 5 instances
 
 ```xml
 <cac:Shipment>
@@ -20181,34 +19727,68 @@ _36 instances across 2 elements, with 16 unique structures_
 </cac:Shipment>
 ```
 
-**Structure 5** — 1 instance
+**Structure 2** — 2 instances
 
 ```xml
 <cac:Shipment>
-  <cbc:ID>51022</cbc:ID>
+  <cbc:ID>S1</cbc:ID>
+  <cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
   <cac:Consignment>
-    <cbc:ID>510</cbc:ID>
+    <cbc:ID>C1</cbc:ID>
+    <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
+    <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalPackagesQuantity>5</cbc:TotalPackagesQuantity>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>ABCD123456-7</cbc:ID>
+    </cac:TransportHandlingUnit>
   </cac:Consignment>
+  <cac:GoodsItem>
+    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+    <cbc:Description>kattovalaisimia lasia</cbc:Description>
+    <cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
+    <cac:Pickup>
+      <cac:PickupLocation>
+        <cbc:ID>FI1234567-8R0001</cbc:ID>
+        <cbc:LocationTypeCode>L</cbc:LocationTypeCode>
+      </cac:PickupLocation>
+    </cac:Pickup>
+    <cac:ContainingPackage>
+      <cbc:ID>567-3456</cbc:ID>
+      <cbc:Quantity>5</cbc:Quantity>
+      <cbc:PackagingTypeCode>CS</cbc:PackagingTypeCode>
+    </cac:ContainingPackage>
+  </cac:GoodsItem>
+  <cac:ShipmentStage>
+    <cbc:TransportModeCode>3</cbc:TransportModeCode>
+    <cac:TransportMeans>
+      <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
+      <cac:RoadTransport>
+        <cbc:LicensePlateID>PBB-123</cbc:LicensePlateID>
+      </cac:RoadTransport>
+    </cac:TransportMeans>
+  </cac:ShipmentStage>
+  <cac:ShipmentStage>
+    <cbc:TransportModeCode>1</cbc:TransportModeCode>
+    <cac:TransportMeans>
+      <cbc:JourneyID>TM1</cbc:JourneyID>
+      <cbc:RegistrationNationalityID>EE</cbc:RegistrationNationalityID>
+      <cac:MaritimeTransport>
+        <cbc:VesselID>Eestiship</cbc:VesselID>
+      </cac:MaritimeTransport>
+    </cac:TransportMeans>
+  </cac:ShipmentStage>
   <cac:Delivery>
     <cac:DeliveryAddress>
-      <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-      <cbc:BuildingNumber>403</cbc:BuildingNumber>
-      <cbc:CityName>Bologna</cbc:CityName>
-      <cbc:PostalZone>40129</cbc:PostalZone>
       <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        <cbc:Name>Italy</cbc:Name>
+        <cbc:IdentificationCode>CH</cbc:IdentificationCode>
       </cac:Country>
     </cac:DeliveryAddress>
     <cac:Despatch>
+      <cbc:ActualDespatchDate>2013-09-15</cbc:ActualDespatchDate>
+      <cbc:ActualDespatchTime>16:00:00Z</cbc:ActualDespatchTime>
       <cac:DespatchAddress>
-        <cbc:StreetName>Via Emilia</cbc:StreetName>
-        <cbc:BuildingNumber>1</cbc:BuildingNumber>
-        <cbc:CityName>Modena</cbc:CityName>
-        <cbc:PostalZone>41121</cbc:PostalZone>
         <cac:Country>
-          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-          <cbc:Name>Italy</cbc:Name>
+          <cbc:IdentificationCode>RU</cbc:IdentificationCode>
         </cac:Country>
       </cac:DespatchAddress>
     </cac:Despatch>
@@ -20216,30 +19796,661 @@ _36 instances across 2 elements, with 16 unique structures_
 </cac:Shipment>
 ```
 
-**Structure 6** — 5 instances
+**Structure 3** — 4 instances
 
 ```xml
 <cac:Shipment>
-  <cbc:ID>1</cbc:ID>
+  <cbc:ID>CONS-0001</cbc:ID>
+  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
+  <cbc:InsuranceValueAmount>1000.00</cbc:InsuranceValueAmount>
+  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+  <cbc:FreeOnBoardValueAmount>1200.00</cbc:FreeOnBoardValueAmount>
+  <cbc:SpecialInstructions>Beeswax becomes liquid at 50'C</cbc:SpecialInstructions>
   <cac:Consignment>
-    <cbc:ID>1</cbc:ID>
+    <cbc:ID>CONS-0001</cbc:ID>
+    <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
+    <cbc:TariffCode>15219000</cbc:TariffCode>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cac:ConsigneeParty>
+      <cac:PartyName>
+        <cbc:Name>IYT Corporation</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Mr Fred Churchill</cbc:Name>
+        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:ConsigneeParty>
+    <cac:NotifyParty>
+      <cac:PartyName>
+        <cbc:Name>IYT Corporation</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Mr Fred Churchill</cbc:Name>
+        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:NotifyParty>
+    <cac:FinalDeliveryParty>
+      <cac:PartyName>
+        <cbc:Name>The Terminus</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>S Massiah</cbc:Name>
+        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:FinalDeliveryParty>
+    <cac:OriginalDepartureCountry>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:OriginalDepartureCountry>
+    <cac:FinalDestinationCountry>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:FinalDestinationCountry>
+    <cac:DeliveryTerms>
+      <cbc:ID>FOB Destination</cbc:ID>
+      <cac:DeliveryLocation>
+        <cbc:ID>GBBRS</cbc:ID>
+        <cbc:Description>Bristol</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:DeliveryTerms>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cbc:Amount>254.00</cbc:Amount>
+    </cac:FreightAllowanceCharge>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+      <cbc:Amount>12.70</cbc:Amount>
+      <cbc:BaseAmount>254.00</cbc:BaseAmount>
+    </cac:FreightAllowanceCharge>
   </cac:Consignment>
-  <cac:Delivery>
+  <cac:GoodsItem>
     <cbc:ID>1</cbc:ID>
-    <cbc:Quantity>90</cbc:Quantity>
-    <cbc:ActualDeliveryDate>2005-06-20</cbc:ActualDeliveryDate>
-    <cbc:ActualDeliveryTime>11:30:00.0Z</cbc:ActualDeliveryTime>
+    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+    <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
+    <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
+    <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
+    <cbc:ValueAmount>1000.00</cbc:ValueAmount>
+    <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+    <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+    <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+    <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+    <cbc:Quantity>10</cbc:Quantity>
+    <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
+    <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
+    <cbc:CustomsTariffQuantity>100</cbc:CustomsTariffQuantity>
+    <cac:Item>
+      <cbc:Description>Beeswax</cbc:Description>
+      <cbc:Name>Acme Beeswax</cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>6578489</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>17589683</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+  </cac:GoodsItem>
+</cac:Shipment>
+```
+
+**Structure 4** — 1 instance
+
+```xml
+<cac:Shipment>
+  <cbc:ID>123456</cbc:ID>
+  <cac:TransportHandlingUnit>
+    <cac:TransportEquipment>
+      <cbc:ID>TRHU1652173</cbc:ID>
+      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+      <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+      <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
+      <cac:VerifiedGrossMass>
+        <cbc:ID>123</cbc:ID>
+        <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+        <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
+        <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+        <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+        <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+        <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+        <cac:DocumentReference>
+          <cbc:ID>W123</cbc:ID>
+          <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+          <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+          <cbc:DocumentType></cbc:DocumentType>
+          <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+        </cac:DocumentReference>
+      </cac:VerifiedGrossMass>
+    </cac:TransportEquipment>
+    <cac:ShipmentDocumentReference>
+      <cbc:ID>GOA294107</cbc:ID>
+      <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
+    </cac:ShipmentDocumentReference>
+  </cac:TransportHandlingUnit>
+</cac:Shipment>
+```
+
+**Structure 5** — 4 instances
+
+```xml
+<cac:ConsolidatedShipment>
+  <cbc:ID>GSIN_1</cbc:ID>
+</cac:ConsolidatedShipment>
+```
+
+**Structure 6** — 3 instances
+
+```xml
+<cac:Shipment>
+  <cbc:ID>CONS-0001</cbc:ID>
+  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
+  <cbc:InsuranceValueAmount>1000.00</cbc:InsuranceValueAmount>
+  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+  <cbc:FreeOnBoardValueAmount>1200.00</cbc:FreeOnBoardValueAmount>
+  <cbc:SpecialInstructions>Beeswax becomes liquid at 50'C</cbc:SpecialInstructions>
+  <cac:Consignment>
+    <cbc:ID>2005US12345678998765432112345678</cbc:ID>
+    <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
+    <cbc:TariffCode>15219000</cbc:TariffCode>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cac:ConsigneeParty>
+      <cac:PartyName>
+        <cbc:Name>IYT Corporation</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Mr Fred Churchill</cbc:Name>
+        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:ConsigneeParty>
+    <cac:NotifyParty>
+      <cac:PartyName>
+        <cbc:Name>IYT Corporation</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Mr Fred Churchill</cbc:Name>
+        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:NotifyParty>
+    <cac:FinalDeliveryParty>
+      <cac:PartyName>
+        <cbc:Name>The Terminus</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>S Massiah</cbc:Name>
+        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:FinalDeliveryParty>
+    <cac:OriginalDepartureCountry>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:OriginalDepartureCountry>
+    <cac:FinalDestinationCountry>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:FinalDestinationCountry>
+    <cac:TransportContract>
+      <cbc:ID>CONS-001</cbc:ID>
+      <cbc:IssueDate>2005-06-24</cbc:IssueDate>
+      <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
+      <cac:ValidityPeriod>
+        <cbc:StartDate>2005-06-25</cbc:StartDate>
+        <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+        <cbc:EndDate>2005-06-30</cbc:EndDate>
+        <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
+      </cac:ValidityPeriod>
+      <cac:ContractDocumentReference>
+        <cbc:ID>normalizedString</cbc:ID>
+        <cbc:CopyIndicator>false</cbc:CopyIndicator>
+        <cbc:UUID>normalizedString</cbc:UUID>
+        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+        <cbc:DocumentType>String</cbc:DocumentType>
+        <cbc:XPath>String</cbc:XPath>
+        <cbc:XPath>String</cbc:XPath>
+        <cac:Attachment>
+          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+          <cac:ExternalReference>
+            <cbc:URI>normalizedString</cbc:URI>
+            <cbc:DocumentHash>String</cbc:DocumentHash>
+            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:ContractDocumentReference>
+      <cac:ContractDocumentReference>
+        <cbc:ID>normalizedString</cbc:ID>
+        <cbc:CopyIndicator>false</cbc:CopyIndicator>
+        <cbc:UUID>normalizedString</cbc:UUID>
+        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+        <cbc:DocumentType>String</cbc:DocumentType>
+        <cbc:XPath>String</cbc:XPath>
+        <cbc:XPath>String</cbc:XPath>
+        <cac:Attachment>
+          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+          <cac:ExternalReference>
+            <cbc:URI>normalizedString</cbc:URI>
+            <cbc:DocumentHash>String</cbc:DocumentHash>
+            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:ContractDocumentReference>
+    </cac:TransportContract>
+    <cac:OriginalDespatchTransportationService>
+      <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
+    </cac:OriginalDespatchTransportationService>
+    <cac:FinalDeliveryTransportationService>
+      <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
+    </cac:FinalDeliveryTransportationService>
+    <cac:DeliveryTerms>
+      <cbc:ID>FOB Destination</cbc:ID>
+      <cac:DeliveryLocation>
+        <cbc:ID>GBBRS</cbc:ID>
+        <cbc:Description>Bristol</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:DeliveryTerms>
+    <cac:PaymentTerms>
+      <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
+    </cac:PaymentTerms>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cbc:Amount>254.00</cbc:Amount>
+    </cac:FreightAllowanceCharge>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+      <cbc:Amount>12.70</cbc:Amount>
+      <cbc:BaseAmount>254.00</cbc:BaseAmount>
+    </cac:FreightAllowanceCharge>
+  </cac:Consignment>
+  <cac:GoodsItem>
+    <cbc:ID>1</cbc:ID>
+    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+    <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
+    <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
+    <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
+    <cbc:ValueAmount>1000.00</cbc:ValueAmount>
+    <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+    <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+    <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+    <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+    <cbc:Quantity>10</cbc:Quantity>
+    <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
+    <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
+    <cbc:CustomsTariffQuantity>1000</cbc:CustomsTariffQuantity>
+    <cac:Item>
+      <cbc:Description>Beeswax</cbc:Description>
+      <cbc:Name>Acme Beeswax</cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>6578489</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>17589683</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode>MX</cbc:IdentificationCode>
+        <cbc:Name>Mexico</cbc:Name>
+      </cac:OriginCountry>
+    </cac:Item>
+  </cac:GoodsItem>
+  <cac:ShipmentStage>
+    <cbc:ID>1</cbc:ID>
+    <cbc:TransportModeCode>3</cbc:TransportModeCode>
+    <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
+    <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
+    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
+    <cac:TransitPeriod>
+      <cbc:StartDate>2005-06-25</cbc:StartDate>
+      <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2005-06-25</cbc:EndDate>
+      <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
+    </cac:TransitPeriod>
+    <cac:CarrierParty>
+      <cac:PartyName>
+        <cbc:Name>Keep On Trucking</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+        <cbc:Telephone>+1 36222 33847</cbc:Telephone>
+      </cac:Contact>
+    </cac:CarrierParty>
+    <cac:TransportMeans>
+      <cac:RoadTransport>
+        <cbc:LicensePlateID>2652 WE</cbc:LicensePlateID>
+      </cac:RoadTransport>
+    </cac:TransportMeans>
+  </cac:ShipmentStage>
+  <cac:ShipmentStage>
+    <cbc:ID>2</cbc:ID>
+    <cbc:TransportModeCode>4</cbc:TransportModeCode>
+    <cbc:TransportMeansTypeCode>Plane</cbc:TransportMeansTypeCode>
+    <cbc:PreCarriageIndicator>false</cbc:PreCarriageIndicator>
+    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
+    <cac:TransitPeriod>
+      <cbc:StartDate>2005-06-25</cbc:StartDate>
+      <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
+    </cac:TransitPeriod>
+    <cac:CarrierParty>
+      <cac:PartyName>
+        <cbc:Name>United Airfreight</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+        <cbc:ID>Freight Bookings</cbc:ID>
+        <cbc:Telephone>+1 3362 4788</cbc:Telephone>
+        <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:CarrierParty>
+    <cac:TransportMeans>
+      <cbc:JourneyID>UA 1234</cbc:JourneyID>
+      <cac:AirTransport>
+        <cbc:AircraftID>A-127763-747</cbc:AircraftID>
+      </cac:AirTransport>
+    </cac:TransportMeans>
+    <cac:LoadingPortLocation>
+      <cbc:ID>USBOS</cbc:ID>
+      <cbc:Description>Boston Airport</cbc:Description>
+    </cac:LoadingPortLocation>
+    <cac:UnloadingPortLocation>
+      <cbc:ID>GBBRS</cbc:ID>
+      <cbc:Description>Bristol Airport</cbc:Description>
+    </cac:UnloadingPortLocation>
+    <cac:TransshipPortLocation>
+      <cbc:ID>GBLHR</cbc:ID>
+      <cbc:Description>Heathrow Apt/London</cbc:Description>
+    </cac:TransshipPortLocation>
+  </cac:ShipmentStage>
+  <cac:Delivery>
+    <cbc:Quantity>1</cbc:Quantity>
+    <cbc:LatestDeliveryDate>2005-06-30</cbc:LatestDeliveryDate>
+    <cbc:LatestDeliveryTime>18:00:00.0Z</cbc:LatestDeliveryTime>
+    <cbc:TrackingID>NKH7712289-03339-000128</cbc:TrackingID>
+    <cac:DeliveryAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:DeliveryAddress>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2005-06-20</cbc:StartDate>
-      <cbc:StartTime>10:30:47.0Z</cbc:StartTime>
-      <cbc:EndDate>2005-06-21</cbc:EndDate>
-      <cbc:EndTime>10:30:47.0Z</cbc:EndTime>
+      <cbc:StartDate>2005-06-29</cbc:StartDate>
+      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2005-06-30</cbc:EndDate>
+      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
     </cac:RequestedDeliveryPeriod>
+    <cac:EstimatedDeliveryPeriod>
+      <cbc:StartDate>2005-06-30</cbc:StartDate>
+      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+    </cac:EstimatedDeliveryPeriod>
+    <cac:DeliveryParty>
+      <cac:PartyName>
+        <cbc:Name>The Terminus</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+        <cbc:Name>S Massiah</cbc:Name>
+        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:DeliveryParty>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2005-06-25</cbc:ActualDespatchDate>
+      <cbc:ActualDespatchTime>11:35:00.0Z</cbc:ActualDespatchTime>
+      <cac:DespatchAddress>
+        <cbc:StreetName>Boston Road</cbc:StreetName>
+        <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+        <cbc:BuildingNumber>630</cbc:BuildingNumber>
+        <cbc:CityName>Billerica</cbc:CityName>
+        <cbc:PostalZone>01821</cbc:PostalZone>
+        <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:DespatchAddress>
+      <cac:DespatchParty>
+        <cac:PartyName>
+          <cbc:Name>Consortial</cbc:Name>
+        </cac:PartyName>
+      </cac:DespatchParty>
+      <cac:Contact>
+        <cbc:Name>Mrs Bouquet</cbc:Name>
+        <cbc:Telephone>+1 158 1233714</cbc:Telephone>
+        <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
+        <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Despatch>
   </cac:Delivery>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>1</cbc:ID>
+    <cbc:TransportHandlingUnitTypeCode>PA</cbc:TransportHandlingUnitTypeCode>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
+    <cac:ActualPackage>
+      <cbc:Quantity>10</cbc:Quantity>
+      <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
+    </cac:ActualPackage>
+  </cac:TransportHandlingUnit>
+  <cac:OriginAddress>
+    <cbc:StreetName>Boston Road</cbc:StreetName>
+    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+    <cbc:BuildingNumber>630</cbc:BuildingNumber>
+    <cbc:CityName>Billerica</cbc:CityName>
+    <cbc:PostalZone>01821</cbc:PostalZone>
+    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cac:Country>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:OriginAddress>
+  <cac:FirstArrivalPortLocation>
+    <cbc:ID>GBBRS</cbc:ID>
+    <cbc:Description>Bristol</cbc:Description>
+  </cac:FirstArrivalPortLocation>
+  <cac:LastExitPortLocation>
+    <cbc:ID>USBOS</cbc:ID>
+    <cbc:Description>Boston</cbc:Description>
+  </cac:LastExitPortLocation>
+  <cac:ExportCountry>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+  </cac:ExportCountry>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:Amount>254.00</cbc:Amount>
+  </cac:FreightAllowanceCharge>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+    <cbc:Amount>12.70</cbc:Amount>
+    <cbc:BaseAmount>254.00</cbc:BaseAmount>
+  </cac:FreightAllowanceCharge>
 </cac:Shipment>
 ```
 
 **Structure 7** — 1 instance
+
+```xml
+<cac:Shipment>
+  <cbc:ID>123</cbc:ID>
+  <cbc:GrossWeightMeasure>12</cbc:GrossWeightMeasure>
+  <cbc:TotalTransportHandlingUnitQuantity>1</cbc:TotalTransportHandlingUnitQuantity>
+  <cbc:SpecialInstructions>1234</cbc:SpecialInstructions>
+  <cbc:DeliveryInstructions>abcd</cbc:DeliveryInstructions>
+  <cac:Consignment>
+    <cbc:ID>123</cbc:ID>
+  </cac:Consignment>
+</cac:Shipment>
+```
+
+**Structure 8** — 2 instances
+
+```xml
+<cac:Shipment>
+  <cbc:ID>123456</cbc:ID>
+  <cac:TransportHandlingUnit>
+    <cac:TransportEquipment>
+      <cbc:ID>TRHU1652173</cbc:ID>
+      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+      <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+      <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
+      <cac:VerifiedGrossMass>
+        <cbc:ID>123</cbc:ID>
+        <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+        <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
+        <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+        <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+        <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+        <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+        <cac:DocumentReference>
+          <cbc:ID>W123</cbc:ID>
+          <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+          <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+          <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+        </cac:DocumentReference>
+      </cac:VerifiedGrossMass>
+    </cac:TransportEquipment>
+    <cac:ShipmentDocumentReference>
+      <cbc:ID>GOA294107</cbc:ID>
+      <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
+    </cac:ShipmentDocumentReference>
+  </cac:TransportHandlingUnit>
+</cac:Shipment>
+```
+
+**Structure 9** — 1 instance
 
 ```xml
 <cac:Shipment>
@@ -20545,76 +20756,7 @@ _36 instances across 2 elements, with 16 unique structures_
 </cac:Shipment>
 ```
 
-**Structure 8** — 2 instances
-
-```xml
-<cac:Shipment>
-  <cbc:ID>S1</cbc:ID>
-  <cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
-  <cac:Consignment>
-    <cbc:ID>C1</cbc:ID>
-    <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
-    <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
-    <cbc:TotalPackagesQuantity>5</cbc:TotalPackagesQuantity>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>ABCD123456-7</cbc:ID>
-    </cac:TransportHandlingUnit>
-  </cac:Consignment>
-  <cac:GoodsItem>
-    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-    <cbc:Description>kattovalaisimia lasia</cbc:Description>
-    <cbc:GrossWeightMeasure>30</cbc:GrossWeightMeasure>
-    <cac:Pickup>
-      <cac:PickupLocation>
-        <cbc:ID>FI1234567-8R0001</cbc:ID>
-        <cbc:LocationTypeCode>L</cbc:LocationTypeCode>
-      </cac:PickupLocation>
-    </cac:Pickup>
-    <cac:ContainingPackage>
-      <cbc:ID>567-3456</cbc:ID>
-      <cbc:Quantity>5</cbc:Quantity>
-      <cbc:PackagingTypeCode>CS</cbc:PackagingTypeCode>
-    </cac:ContainingPackage>
-  </cac:GoodsItem>
-  <cac:ShipmentStage>
-    <cbc:TransportModeCode>3</cbc:TransportModeCode>
-    <cac:TransportMeans>
-      <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
-      <cac:RoadTransport>
-        <cbc:LicensePlateID>PBB-123</cbc:LicensePlateID>
-      </cac:RoadTransport>
-    </cac:TransportMeans>
-  </cac:ShipmentStage>
-  <cac:ShipmentStage>
-    <cbc:TransportModeCode>1</cbc:TransportModeCode>
-    <cac:TransportMeans>
-      <cbc:JourneyID>TM1</cbc:JourneyID>
-      <cbc:RegistrationNationalityID>EE</cbc:RegistrationNationalityID>
-      <cac:MaritimeTransport>
-        <cbc:VesselID>Eestiship</cbc:VesselID>
-      </cac:MaritimeTransport>
-    </cac:TransportMeans>
-  </cac:ShipmentStage>
-  <cac:Delivery>
-    <cac:DeliveryAddress>
-      <cac:Country>
-        <cbc:IdentificationCode>CH</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:DeliveryAddress>
-    <cac:Despatch>
-      <cbc:ActualDespatchDate>2013-09-15</cbc:ActualDespatchDate>
-      <cbc:ActualDespatchTime>16:00:00</cbc:ActualDespatchTime>
-      <cac:DespatchAddress>
-        <cac:Country>
-          <cbc:IdentificationCode>RU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:DespatchAddress>
-    </cac:Despatch>
-  </cac:Delivery>
-</cac:Shipment>
-```
-
-**Structure 9** — 2 instances
+**Structure 10** — 2 instances
 
 ```xml
 <cac:Shipment>
@@ -20692,978 +20834,443 @@ _36 instances across 2 elements, with 16 unique structures_
 </cac:Shipment>
 ```
 
-**Structure 10** — 4 instances
-
-```xml
-<cac:Shipment>
-  <cbc:ID>CONS-0001</cbc:ID>
-  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
-  <cbc:InsuranceValueAmount>1000.00</cbc:InsuranceValueAmount>
-  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-  <cbc:FreeOnBoardValueAmount>1200.00</cbc:FreeOnBoardValueAmount>
-  <cbc:SpecialInstructions>Beeswax becomes liquid at 50'C</cbc:SpecialInstructions>
-  <cac:Consignment>
-    <cbc:ID>CONS-0001</cbc:ID>
-    <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
-    <cbc:TariffCode>15219000</cbc:TariffCode>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cac:ConsigneeParty>
-      <cac:PartyName>
-        <cbc:Name>IYT Corporation</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
-        <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>Mr Fred Churchill</cbc:Name>
-        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:ConsigneeParty>
-    <cac:NotifyParty>
-      <cac:PartyName>
-        <cbc:Name>IYT Corporation</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
-        <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>Mr Fred Churchill</cbc:Name>
-        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:NotifyParty>
-    <cac:FinalDeliveryParty>
-      <cac:PartyName>
-        <cbc:Name>The Terminus</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
-        <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>S Massiah</cbc:Name>
-        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:FinalDeliveryParty>
-    <cac:OriginalDepartureCountry>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
-    </cac:OriginalDepartureCountry>
-    <cac:FinalDestinationCountry>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:FinalDestinationCountry>
-    <cac:DeliveryTerms>
-      <cbc:ID>FOB Destination</cbc:ID>
-      <cac:DeliveryLocation>
-        <cbc:ID>GBBRS</cbc:ID>
-        <cbc:Description>Bristol</cbc:Description>
-      </cac:DeliveryLocation>
-    </cac:DeliveryTerms>
-    <cac:FreightAllowanceCharge>
-      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-      <cbc:Amount>254.00</cbc:Amount>
-    </cac:FreightAllowanceCharge>
-    <cac:FreightAllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-      <cbc:Amount>12.70</cbc:Amount>
-      <cbc:BaseAmount>254.00</cbc:BaseAmount>
-    </cac:FreightAllowanceCharge>
-  </cac:Consignment>
-  <cac:GoodsItem>
-    <cbc:ID>1</cbc:ID>
-    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-    <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
-    <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
-    <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
-    <cbc:ValueAmount>1000.00</cbc:ValueAmount>
-    <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-    <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-    <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-    <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-    <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-    <cbc:Quantity>10</cbc:Quantity>
-    <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
-    <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
-    <cbc:CustomsTariffQuantity>100</cbc:CustomsTariffQuantity>
-    <cac:Item>
-      <cbc:Description>Beeswax</cbc:Description>
-      <cbc:Name>Acme Beeswax</cbc:Name>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>6578489</cbc:ID>
-      </cac:BuyersItemIdentification>
-      <cac:SellersItemIdentification>
-        <cbc:ID>17589683</cbc:ID>
-      </cac:SellersItemIdentification>
-    </cac:Item>
-  </cac:GoodsItem>
-</cac:Shipment>
-```
-
 **Structure 11** — 1 instance
 
 ```xml
 <cac:Shipment>
-  <cbc:ID>CONS-0001</cbc:ID>
-  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
-  <cbc:InsuranceValueAmount>1000.00</cbc:InsuranceValueAmount>
-  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-  <cbc:FreeOnBoardValueAmount>1200.00</cbc:FreeOnBoardValueAmount>
-  <cbc:SpecialInstructions>Beeswax becomes liquid at 50'C</cbc:SpecialInstructions>
+  <cbc:ID>381944545</cbc:ID>
   <cac:Consignment>
-    <cbc:ID>2005US12345678998765432112345678</cbc:ID>
-    <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
-    <cbc:TariffCode>15219000</cbc:TariffCode>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:ID>2076084807</cbc:ID>
+    <cbc:GrossWeightMeasure>774.14400</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure>604.80000</cbc:NetWeightMeasure>
+    <cbc:SequenceID>203</cbc:SequenceID>
+    <cbc:DeliveryInstructions>El Dorado</cbc:DeliveryInstructions>
+    <cac:RequestedPickupTransportEvent>
+      <cac:Contact>
+        <cbc:Name>ExampleName</cbc:Name>
+      </cac:Contact>
+      <cac:Location>
+        <cbc:ID>M165</cbc:ID>
+        <cac:Address>
+          <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
+          <cbc:CityName>Videbæk</cbc:CityName>
+          <cbc:PostalZone>6920</cbc:PostalZone>
+          <cac:AddressLine>
+            <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+          </cac:AddressLine>
+          <cac:Country>
+            <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+            <cbc:Name>Denmark</cbc:Name>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+      <cac:Period>
+        <cbc:StartDate>2020-06-02</cbc:StartDate>
+        <cbc:EndDate>2020-06-02</cbc:EndDate>
+      </cac:Period>
+    </cac:RequestedPickupTransportEvent>
+    <cac:RequestedDeliveryTransportEvent>
+      <cac:Location>
+        <cac:Address>
+          <cbc:StreetName>StreetName Example</cbc:StreetName>
+          <cbc:CityName>El Dorado</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>PA</cbc:IdentificationCode>
+            <cbc:Name>Panama</cbc:Name>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+      <cac:Period>
+        <cbc:StartDate>2020-07-01</cbc:StartDate>
+        <cbc:EndDate>2020-07-01</cbc:EndDate>
+      </cac:Period>
+    </cac:RequestedDeliveryTransportEvent>
     <cac:ConsigneeParty>
+      <cac:PartyIdentification>
+        <cbc:ID>0004424005</cbc:ID>
+      </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>IYT Corporation</cbc:Name>
+        <cbc:Name>ConsigneeExample</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
+        <cbc:StreetName>StreetName Example</cbc:StreetName>
+        <cbc:AdditionalStreetName>AdditionalStreet Example</cbc:AdditionalStreetName>
+        <cbc:CityName>El Dorado</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+          <cbc:IdentificationCode>PA</cbc:IdentificationCode>
+          <cbc:Name>Panama</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>Mr Fred Churchill</cbc:Name>
-        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-      </cac:Contact>
     </cac:ConsigneeParty>
-    <cac:NotifyParty>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID>1080</cbc:ID>
+      </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>IYT Corporation</cbc:Name>
+        <cbc:Name>ExampleName</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
+        <cbc:StreetName>ExampleStreet</cbc:StreetName>
+        <cbc:CityName>Viby J</cbc:CityName>
+        <cbc:PostalZone>8260</cbc:PostalZone>
         <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+          <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+          <cbc:Name>Denmark</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>Mr Fred Churchill</cbc:Name>
-        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:NotifyParty>
-    <cac:FinalDeliveryParty>
-      <cac:PartyName>
-        <cbc:Name>The Terminus</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
-        <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>S Massiah</cbc:Name>
-        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:FinalDeliveryParty>
+    </cac:ConsignorParty>
     <cac:OriginalDepartureCountry>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+      <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      <cbc:Name>Denmark</cbc:Name>
     </cac:OriginalDepartureCountry>
-    <cac:FinalDestinationCountry>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-    </cac:FinalDestinationCountry>
-    <cac:TransportContract>
-      <cbc:ID>CONS-001</cbc:ID>
-      <cbc:IssueDate>2005-06-24</cbc:IssueDate>
-      <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
-      <cac:ValidityPeriod>
-        <cbc:StartDate>2005-06-25</cbc:StartDate>
-        <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-        <cbc:EndDate>2005-06-30</cbc:EndDate>
-        <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-      </cac:ValidityPeriod>
-      <cac:ContractDocumentReference>
-        <cbc:ID>normalizedString</cbc:ID>
-        <cbc:CopyIndicator>false</cbc:CopyIndicator>
-        <cbc:UUID>normalizedString</cbc:UUID>
-        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-        <cbc:DocumentType>String</cbc:DocumentType>
-        <cbc:XPath>String</cbc:XPath>
-        <cac:Attachment>
-          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-          <cac:ExternalReference>
-            <cbc:URI>normalizedString</cbc:URI>
-            <cbc:DocumentHash>String</cbc:DocumentHash>
-            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-          </cac:ExternalReference>
-        </cac:Attachment>
-      </cac:ContractDocumentReference>
-      <cac:ContractDocumentReference>
-        <cbc:ID>normalizedString</cbc:ID>
-        <cbc:CopyIndicator>false</cbc:CopyIndicator>
-        <cbc:UUID>normalizedString</cbc:UUID>
-        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-        <cbc:DocumentType>String</cbc:DocumentType>
-        <cbc:XPath>String</cbc:XPath>
-        <cac:Attachment>
-          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-          <cac:ExternalReference>
-            <cbc:URI>normalizedString</cbc:URI>
-            <cbc:DocumentHash>String</cbc:DocumentHash>
-            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-          </cac:ExternalReference>
-        </cac:Attachment>
-      </cac:ContractDocumentReference>
-    </cac:TransportContract>
-    <cac:OriginalDespatchTransportationService>
-      <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
-    </cac:OriginalDespatchTransportationService>
-    <cac:FinalDeliveryTransportationService>
-      <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
-    </cac:FinalDeliveryTransportationService>
     <cac:DeliveryTerms>
-      <cbc:ID>FOB Destination</cbc:ID>
+      <cbc:ID>CIP</cbc:ID>
       <cac:DeliveryLocation>
-        <cbc:ID>GBBRS</cbc:ID>
-        <cbc:Description>Bristol</cbc:Description>
+        <cbc:Name>Balboa Port</cbc:Name>
       </cac:DeliveryLocation>
     </cac:DeliveryTerms>
-    <cac:PaymentTerms>
-      <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
-    </cac:PaymentTerms>
     <cac:FreightAllowanceCharge>
       <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-      <cbc:Amount>254.00</cbc:Amount>
+      <cbc:Amount>0.00</cbc:Amount>
     </cac:FreightAllowanceCharge>
-    <cac:FreightAllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-      <cbc:Amount>12.70</cbc:Amount>
-      <cbc:BaseAmount>254.00</cbc:BaseAmount>
-    </cac:FreightAllowanceCharge>
+    <cac:MainCarriageShipmentStage>
+      <cbc:TransportModeCode>1</cbc:TransportModeCode>
+      <cac:LoadingPortLocation>
+        <cbc:ID>Aarhus</cbc:ID>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID>Balboa Port</cbc:ID>
+      </cac:UnloadingPortLocation>
+    </cac:MainCarriageShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>USRM3656679</cbc:ID>
+      <cbc:TotalPackageQuantity>1</cbc:TotalPackageQuantity>
+      <cac:TransportEquipment>
+        <cac:TransportEquipmentSeal>
+          <cbc:ID>7654321</cbc:ID>
+        </cac:TransportEquipmentSeal>
+      </cac:TransportEquipment>
+      <cac:MaximumTemperature>
+        <cbc:AttributeID>TC</cbc:AttributeID>
+        <cbc:Measure>3.00</cbc:Measure>
+        <cbc:Description>Chilled</cbc:Description>
+      </cac:MaximumTemperature>
+      <cac:Package>
+        <cbc:ID>2076084807</cbc:ID>
+        <cbc:Quantity>1</cbc:Quantity>
+        <cbc:PackagingTypeCode>CT</cbc:PackagingTypeCode>
+        <cac:GoodsItem>
+          <cbc:ID>000010</cbc:ID>
+          <cbc:GrossWeightMeasure>774.14400</cbc:GrossWeightMeasure>
+          <cbc:NetWeightMeasure>604.80000</cbc:NetWeightMeasure>
+          <cbc:Quantity>63.000</cbc:Quantity>
+          <cac:Item>
+            <cbc:Description>ItemExample</cbc:Description>
+            <cbc:PackQuantity>63</cbc:PackQuantity>
+            <cbc:Name>Dairy Products</cbc:Name>
+            <cac:SellersItemIdentification>
+              <cbc:ID>123456</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:OriginCountry>
+              <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+              <cbc:Name>Denmark</cbc:Name>
+            </cac:OriginCountry>
+            <cac:CommodityClassification>
+              <cbc:CommodityCode>19011000</cbc:CommodityCode>
+            </cac:CommodityClassification>
+            <cac:AdditionalItemProperty>
+              <cbc:Name>AnimalSpecies</cbc:Name>
+              <cbc:Value>Bovine</cbc:Value>
+            </cac:AdditionalItemProperty>
+            <cac:ManufacturerParty>
+              <cbc:IndustryClassificationCode>Dairy</cbc:IndustryClassificationCode>
+              <cac:PartyIdentification>
+                <cbc:ID>M165</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>ExampleName</cbc:Name>
+              </cac:PartyName>
+              <cac:PostalAddress>
+                <cbc:StreetName>ExampleStreet 1</cbc:StreetName>
+                <cbc:CityName>Videbæk</cbc:CityName>
+                <cbc:PostalZone>6920</cbc:PostalZone>
+                <cac:AddressLine>
+                  <cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+                </cac:AddressLine>
+                <cac:Country>
+                  <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+                  <cbc:Name>Denmark</cbc:Name>
+                </cac:Country>
+              </cac:PostalAddress>
+            </cac:ManufacturerParty>
+            <cac:ItemInstance>
+              <cbc:ManufactureDate>2019-12-08</cbc:ManufactureDate>
+              <cbc:BestBeforeDate>2022-12-08</cbc:BestBeforeDate>
+              <cac:AdditionalItemProperty>
+                <cbc:Name>LineNetWeight</cbc:Name>
+                <cbc:ValueQuantity>604.8</cbc:ValueQuantity>
+              </cac:AdditionalItemProperty>
+              <cac:AdditionalItemProperty>
+                <cbc:Name>LineGrossWeight</cbc:Name>
+                <cbc:ValueQuantity>774.144</cbc:ValueQuantity>
+              </cac:AdditionalItemProperty>
+              <cac:AdditionalItemProperty>
+                <cbc:Name>Quantity</cbc:Name>
+                <cbc:ValueQuantity>63.000</cbc:ValueQuantity>
+              </cac:AdditionalItemProperty>
+              <cac:LotIdentification>
+                <cbc:LotNumberID>9390000757</cbc:LotNumberID>
+              </cac:LotIdentification>
+            </cac:ItemInstance>
+            <cac:Dimension>
+              <cbc:AttributeID>NetWeight</cbc:AttributeID>
+              <cbc:Measure>9.6</cbc:Measure>
+            </cac:Dimension>
+            <cac:Dimension>
+              <cbc:AttributeID>LineNetWeight</cbc:AttributeID>
+              <cbc:Measure>604.8</cbc:Measure>
+            </cac:Dimension>
+            <cac:Dimension>
+              <cbc:AttributeID>GrossWeight</cbc:AttributeID>
+              <cbc:Measure>12.288</cbc:Measure>
+            </cac:Dimension>
+            <cac:Dimension>
+              <cbc:AttributeID>LineGrossWeight</cbc:AttributeID>
+              <cbc:Measure>774.144</cbc:Measure>
+            </cac:Dimension>
+          </cac:Item>
+          <cac:Despatch>
+            <cbc:ID>000010</cbc:ID>
+          </cac:Despatch>
+          <cac:MaximumTemperature>
+            <cbc:AttributeID>TC</cbc:AttributeID>
+            <cbc:Measure>3.00</cbc:Measure>
+            <cbc:Description>Chilled</cbc:Description>
+          </cac:MaximumTemperature>
+        </cac:GoodsItem>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>GrossWeight</cbc:AttributeID>
+          <cbc:Measure>774.14400</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>NetWeight</cbc:AttributeID>
+          <cbc:Measure>604.80000</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
   </cac:Consignment>
-  <cac:GoodsItem>
-    <cbc:ID>1</cbc:ID>
-    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-    <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
-    <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
-    <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
-    <cbc:ValueAmount>1000.00</cbc:ValueAmount>
-    <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-    <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-    <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-    <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-    <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-    <cbc:Quantity>10</cbc:Quantity>
-    <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
-    <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
-    <cbc:CustomsTariffQuantity>1000</cbc:CustomsTariffQuantity>
-    <cac:Item>
-      <cbc:Description>Beeswax</cbc:Description>
-      <cbc:Name>Acme Beeswax</cbc:Name>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>6578489</cbc:ID>
-      </cac:BuyersItemIdentification>
-      <cac:SellersItemIdentification>
-        <cbc:ID>17589683</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode>MX</cbc:IdentificationCode>
-        <cbc:Name>Mexico</cbc:Name>
-      </cac:OriginCountry>
-    </cac:Item>
-  </cac:GoodsItem>
-  <cac:ShipmentStage>
-    <cbc:ID>1</cbc:ID>
-    <cbc:TransportModeCode>3</cbc:TransportModeCode>
-    <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
-    <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
-    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-    <cac:TransitPeriod>
-      <cbc:StartDate>2005-06-25</cbc:StartDate>
-      <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2005-06-25</cbc:EndDate>
-      <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-    </cac:TransitPeriod>
-    <cac:CarrierParty>
-      <cac:PartyName>
-        <cbc:Name>Keep On Trucking</cbc:Name>
-      </cac:PartyName>
-      <cac:Contact>
-        <cbc:Telephone>+1 36222 33847</cbc:Telephone>
-      </cac:Contact>
-    </cac:CarrierParty>
-    <cac:TransportMeans>
-      <cac:RoadTransport>
-        <cbc:LicensePlateID>2652 WE</cbc:LicensePlateID>
-      </cac:RoadTransport>
-    </cac:TransportMeans>
-  </cac:ShipmentStage>
-  <cac:ShipmentStage>
-    <cbc:ID>2</cbc:ID>
-    <cbc:TransportModeCode>4</cbc:TransportModeCode>
-    <cbc:TransportMeansTypeCode>Plane</cbc:TransportMeansTypeCode>
-    <cbc:PreCarriageIndicator>false</cbc:PreCarriageIndicator>
-    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-    <cac:TransitPeriod>
-      <cbc:StartDate>2005-06-25</cbc:StartDate>
-      <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
-    </cac:TransitPeriod>
-    <cac:CarrierParty>
-      <cac:PartyName>
-        <cbc:Name>United Airfreight</cbc:Name>
-      </cac:PartyName>
-      <cac:Contact>
-        <cbc:ID>Freight Bookings</cbc:ID>
-        <cbc:Telephone>+1 3362 4788</cbc:Telephone>
-        <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:CarrierParty>
-    <cac:TransportMeans>
-      <cbc:JourneyID>UA 1234</cbc:JourneyID>
-      <cac:AirTransport>
-        <cbc:AircraftID>A-127763-747</cbc:AircraftID>
-      </cac:AirTransport>
-    </cac:TransportMeans>
-    <cac:LoadingPortLocation>
-      <cbc:ID>USBOS</cbc:ID>
-      <cbc:Description>Boston Airport</cbc:Description>
-    </cac:LoadingPortLocation>
-    <cac:UnloadingPortLocation>
-      <cbc:ID>GBBRS</cbc:ID>
-      <cbc:Description>Bristol Airport</cbc:Description>
-    </cac:UnloadingPortLocation>
-    <cac:TransshipPortLocation>
-      <cbc:ID>GBLHR</cbc:ID>
-      <cbc:Description>Heathrow Apt/London</cbc:Description>
-    </cac:TransshipPortLocation>
-  </cac:ShipmentStage>
-  <cac:Delivery>
-    <cbc:Quantity>1</cbc:Quantity>
-    <cbc:LatestDeliveryDate>2005-06-30</cbc:LatestDeliveryDate>
-    <cbc:LatestDeliveryTime>18:00:00.0Z</cbc:LatestDeliveryTime>
-    <cbc:TrackingID>NKH7712289-03339-000128</cbc:TrackingID>
-    <cac:DeliveryAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:DeliveryAddress>
-    <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2005-06-29</cbc:StartDate>
-      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2005-06-30</cbc:EndDate>
-      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-    </cac:RequestedDeliveryPeriod>
-    <cac:EstimatedDeliveryPeriod>
-      <cbc:StartDate>2005-06-30</cbc:StartDate>
-      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-    </cac:EstimatedDeliveryPeriod>
-    <cac:DeliveryParty>
-      <cac:PartyName>
-        <cbc:Name>The Terminus</cbc:Name>
-      </cac:PartyName>
-      <cac:Contact>
-        <cbc:Name>S Massiah</cbc:Name>
-        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:DeliveryParty>
-    <cac:Despatch>
-      <cbc:ActualDespatchDate>2005-06-25</cbc:ActualDespatchDate>
-      <cbc:ActualDespatchTime>11:35:00.0Z</cbc:ActualDespatchTime>
-      <cac:DespatchAddress>
-        <cbc:StreetName>Boston Road</cbc:StreetName>
-        <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-        <cbc:BuildingNumber>630</cbc:BuildingNumber>
-        <cbc:CityName>Billerica</cbc:CityName>
-        <cbc:PostalZone>01821</cbc:PostalZone>
-        <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-        <cac:Country>
-          <cbc:IdentificationCode>US</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:DespatchAddress>
-      <cac:DespatchParty>
-        <cac:PartyName>
-          <cbc:Name>Consortial</cbc:Name>
-        </cac:PartyName>
-      </cac:DespatchParty>
-      <cac:Contact>
-        <cbc:Name>Mrs Bouquet</cbc:Name>
-        <cbc:Telephone>+1 158 1233714</cbc:Telephone>
-        <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-        <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:Despatch>
-  </cac:Delivery>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>1</cbc:ID>
-    <cbc:TransportHandlingUnitTypeCode>PA</cbc:TransportHandlingUnitTypeCode>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
-    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-    <cac:ActualPackage>
-      <cbc:Quantity>10</cbc:Quantity>
-      <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
-    </cac:ActualPackage>
-  </cac:TransportHandlingUnit>
-  <cac:OriginAddress>
-    <cbc:StreetName>Boston Road</cbc:StreetName>
-    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-    <cbc:BuildingNumber>630</cbc:BuildingNumber>
-    <cbc:CityName>Billerica</cbc:CityName>
-    <cbc:PostalZone>01821</cbc:PostalZone>
-    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-    <cac:Country>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:OriginAddress>
-  <cac:FirstArrivalPortLocation>
-    <cbc:ID>GBBRS</cbc:ID>
-    <cbc:Description>Bristol</cbc:Description>
-  </cac:FirstArrivalPortLocation>
-  <cac:LastExitPortLocation>
-    <cbc:ID>USBOS</cbc:ID>
-    <cbc:Description>Boston</cbc:Description>
-  </cac:LastExitPortLocation>
-  <cac:ExportCountry>
-    <cbc:IdentificationCode>US</cbc:IdentificationCode>
-  </cac:ExportCountry>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-    <cbc:Amount>254.00</cbc:Amount>
-  </cac:FreightAllowanceCharge>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-    <cbc:Amount>12.70</cbc:Amount>
-    <cbc:BaseAmount>254.00</cbc:BaseAmount>
-  </cac:FreightAllowanceCharge>
 </cac:Shipment>
 ```
 
-**Structure 12** — 3 instances
+**Structure 12** — 1 instance
 
 ```xml
 <cac:Shipment>
-  <cbc:ID>CONS-0001</cbc:ID>
-  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
-  <cbc:InsuranceValueAmount>1000.00</cbc:InsuranceValueAmount>
-  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-  <cbc:FreeOnBoardValueAmount>1200.00</cbc:FreeOnBoardValueAmount>
-  <cbc:SpecialInstructions>Beeswax becomes liquid at 50'C</cbc:SpecialInstructions>
   <cac:Consignment>
-    <cbc:ID>2005US12345678998765432112345678</cbc:ID>
-    <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
-    <cbc:TariffCode>15219000</cbc:TariffCode>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:ID>7365566156191234567</cbc:ID>
+    <cbc:GrossWeightMeasure>600</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+    <cac:PlannedPickupTransportEvent>
+      <cac:Location>
+        <cbc:ID>MAPTM</cbc:ID>
+        <cac:Address>
+          <cbc:CityName>Tanger</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>MA</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+    </cac:PlannedPickupTransportEvent>
+    <cac:PlannedDeliveryTransportEvent>
+      <cac:Location>
+        <cbc:ID>ITGOA</cbc:ID>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+    </cac:PlannedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cac:PartyName>
-        <cbc:Name>IYT Corporation</cbc:Name>
+        <cbc:Name>Consignee W</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
+        <cbc:StreetName>Consignee W Street</cbc:StreetName>
+        <cbc:CityName>Munich</cbc:CityName>
+        <cbc:PostalZone>231</cbc:PostalZone>
         <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>Mr Fred Churchill</cbc:Name>
-        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-      </cac:Contact>
     </cac:ConsigneeParty>
-    <cac:NotifyParty>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID>4058673827000</cbc:ID>
+      </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>IYT Corporation</cbc:Name>
+        <cbc:Name>Disfruta</cbc:Name>
       </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
-        <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Mr Fred Churchill</cbc:Name>
-        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
-        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
-        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+        <cbc:Name>SomeName</cbc:Name>
+        <cbc:Telephone>+212687878763</cbc:Telephone>
+        <cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
       </cac:Contact>
-    </cac:NotifyParty>
-    <cac:FinalDeliveryParty>
-      <cac:PartyName>
-        <cbc:Name>The Terminus</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:StreetName>Avon Way</cbc:StreetName>
-        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-        <cbc:CityName>Bridgtow</cbc:CityName>
-        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-        <cac:AddressLine>
-          <cbc:Line>3rd Floor, Room 5</cbc:Line>
-        </cac:AddressLine>
-        <cac:Country>
-          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:PostalAddress>
-      <cac:Contact>
-        <cbc:Name>S Massiah</cbc:Name>
-        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:FinalDeliveryParty>
+    </cac:ConsignorParty>
     <cac:OriginalDepartureCountry>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+      <cbc:IdentificationCode>MA</cbc:IdentificationCode>
     </cac:OriginalDepartureCountry>
     <cac:FinalDestinationCountry>
-      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
     </cac:FinalDestinationCountry>
-    <cac:TransportContract>
-      <cbc:ID>CONS-001</cbc:ID>
-      <cbc:IssueDate>2005-06-24</cbc:IssueDate>
-      <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
-      <cac:ValidityPeriod>
-        <cbc:StartDate>2005-06-25</cbc:StartDate>
-        <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-        <cbc:EndDate>2005-06-30</cbc:EndDate>
-        <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-      </cac:ValidityPeriod>
-      <cac:ContractDocumentReference>
-        <cbc:ID>normalizedString</cbc:ID>
-        <cbc:CopyIndicator>false</cbc:CopyIndicator>
-        <cbc:UUID>normalizedString</cbc:UUID>
-        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-        <cbc:DocumentType>String</cbc:DocumentType>
-        <cbc:XPath>String</cbc:XPath>
-        <cbc:XPath>String</cbc:XPath>
-        <cac:Attachment>
-          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-          <cac:ExternalReference>
-            <cbc:URI>normalizedString</cbc:URI>
-            <cbc:DocumentHash>String</cbc:DocumentHash>
-            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-          </cac:ExternalReference>
-        </cac:Attachment>
-      </cac:ContractDocumentReference>
-      <cac:ContractDocumentReference>
-        <cbc:ID>normalizedString</cbc:ID>
-        <cbc:CopyIndicator>false</cbc:CopyIndicator>
-        <cbc:UUID>normalizedString</cbc:UUID>
-        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
-        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-        <cbc:DocumentType>String</cbc:DocumentType>
-        <cbc:XPath>String</cbc:XPath>
-        <cbc:XPath>String</cbc:XPath>
-        <cac:Attachment>
-          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-          <cac:ExternalReference>
-            <cbc:URI>normalizedString</cbc:URI>
-            <cbc:DocumentHash>String</cbc:DocumentHash>
-            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-          </cac:ExternalReference>
-        </cac:Attachment>
-      </cac:ContractDocumentReference>
-    </cac:TransportContract>
-    <cac:OriginalDespatchTransportationService>
-      <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
-    </cac:OriginalDespatchTransportationService>
-    <cac:FinalDeliveryTransportationService>
-      <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
-    </cac:FinalDeliveryTransportationService>
-    <cac:DeliveryTerms>
-      <cbc:ID>FOB Destination</cbc:ID>
-      <cac:DeliveryLocation>
-        <cbc:ID>GBBRS</cbc:ID>
-        <cbc:Description>Bristol</cbc:Description>
-      </cac:DeliveryLocation>
-    </cac:DeliveryTerms>
-    <cac:PaymentTerms>
-      <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
-    </cac:PaymentTerms>
-    <cac:FreightAllowanceCharge>
-      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-      <cbc:Amount>254.00</cbc:Amount>
-    </cac:FreightAllowanceCharge>
-    <cac:FreightAllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-      <cbc:Amount>12.70</cbc:Amount>
-      <cbc:BaseAmount>254.00</cbc:BaseAmount>
-    </cac:FreightAllowanceCharge>
-  </cac:Consignment>
-  <cac:GoodsItem>
-    <cbc:ID>1</cbc:ID>
-    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-    <cbc:Description>Acme beeswax</cbc:Description>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
-    <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
-    <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
-    <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
-    <cbc:ValueAmount>1000.00</cbc:ValueAmount>
-    <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
-    <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
-    <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
-    <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
-    <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
-    <cbc:Quantity>10</cbc:Quantity>
-    <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
-    <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
-    <cbc:CustomsTariffQuantity>1000</cbc:CustomsTariffQuantity>
-    <cac:Item>
-      <cbc:Description>Beeswax</cbc:Description>
-      <cbc:Name>Acme Beeswax</cbc:Name>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>6578489</cbc:ID>
-      </cac:BuyersItemIdentification>
-      <cac:SellersItemIdentification>
-        <cbc:ID>17589683</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode>MX</cbc:IdentificationCode>
-        <cbc:Name>Mexico</cbc:Name>
-      </cac:OriginCountry>
-    </cac:Item>
-  </cac:GoodsItem>
-  <cac:ShipmentStage>
-    <cbc:ID>1</cbc:ID>
-    <cbc:TransportModeCode>3</cbc:TransportModeCode>
-    <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
-    <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
-    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-    <cac:TransitPeriod>
-      <cbc:StartDate>2005-06-25</cbc:StartDate>
-      <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2005-06-25</cbc:EndDate>
-      <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-    </cac:TransitPeriod>
-    <cac:CarrierParty>
-      <cac:PartyName>
-        <cbc:Name>Keep On Trucking</cbc:Name>
-      </cac:PartyName>
-      <cac:Contact>
-        <cbc:Telephone>+1 36222 33847</cbc:Telephone>
-      </cac:Contact>
-    </cac:CarrierParty>
-    <cac:TransportMeans>
-      <cac:RoadTransport>
-        <cbc:LicensePlateID>2652 WE</cbc:LicensePlateID>
-      </cac:RoadTransport>
-    </cac:TransportMeans>
-  </cac:ShipmentStage>
-  <cac:ShipmentStage>
-    <cbc:ID>2</cbc:ID>
-    <cbc:TransportModeCode>4</cbc:TransportModeCode>
-    <cbc:TransportMeansTypeCode>Plane</cbc:TransportMeansTypeCode>
-    <cbc:PreCarriageIndicator>false</cbc:PreCarriageIndicator>
-    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-    <cac:TransitPeriod>
-      <cbc:StartDate>2005-06-25</cbc:StartDate>
-      <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
-    </cac:TransitPeriod>
-    <cac:CarrierParty>
-      <cac:PartyName>
-        <cbc:Name>United Airfreight</cbc:Name>
-      </cac:PartyName>
-      <cac:Contact>
-        <cbc:ID>Freight Bookings</cbc:ID>
-        <cbc:Telephone>+1 3362 4788</cbc:Telephone>
-        <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:CarrierParty>
-    <cac:TransportMeans>
-      <cbc:JourneyID>UA 1234</cbc:JourneyID>
-      <cac:AirTransport>
-        <cbc:AircraftID>A-127763-747</cbc:AircraftID>
-      </cac:AirTransport>
-    </cac:TransportMeans>
-    <cac:LoadingPortLocation>
-      <cbc:ID>USBOS</cbc:ID>
-      <cbc:Description>Boston Airport</cbc:Description>
-    </cac:LoadingPortLocation>
-    <cac:UnloadingPortLocation>
-      <cbc:ID>GBBRS</cbc:ID>
-      <cbc:Description>Bristol Airport</cbc:Description>
-    </cac:UnloadingPortLocation>
-    <cac:TransshipPortLocation>
-      <cbc:ID>GBLHR</cbc:ID>
-      <cbc:Description>Heathrow Apt/London</cbc:Description>
-    </cac:TransshipPortLocation>
-  </cac:ShipmentStage>
-  <cac:Delivery>
-    <cbc:Quantity>1</cbc:Quantity>
-    <cbc:LatestDeliveryDate>2005-06-30</cbc:LatestDeliveryDate>
-    <cbc:LatestDeliveryTime>18:00:00.0Z</cbc:LatestDeliveryTime>
-    <cbc:TrackingID>NKH7712289-03339-000128</cbc:TrackingID>
-    <cac:DeliveryAddress>
-      <cbc:StreetName>Avon Way</cbc:StreetName>
-      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
-      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
-      <cbc:CityName>Bridgtow</cbc:CityName>
-      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-      <cac:AddressLine>
-        <cbc:Line>3rd Floor, Room 5</cbc:Line>
-      </cac:AddressLine>
-      <cac:Country>
-        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:DeliveryAddress>
-    <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2005-06-29</cbc:StartDate>
-      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2005-06-30</cbc:EndDate>
-      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-    </cac:RequestedDeliveryPeriod>
-    <cac:EstimatedDeliveryPeriod>
-      <cbc:StartDate>2005-06-30</cbc:StartDate>
-      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-    </cac:EstimatedDeliveryPeriod>
-    <cac:DeliveryParty>
-      <cac:PartyName>
-        <cbc:Name>The Terminus</cbc:Name>
-      </cac:PartyName>
-      <cac:Contact>
-        <cbc:Name>S Massiah</cbc:Name>
-        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:DeliveryParty>
-    <cac:Despatch>
-      <cbc:ActualDespatchDate>2005-06-25</cbc:ActualDespatchDate>
-      <cbc:ActualDespatchTime>11:35:00.0Z</cbc:ActualDespatchTime>
-      <cac:DespatchAddress>
-        <cbc:StreetName>Boston Road</cbc:StreetName>
-        <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-        <cbc:BuildingNumber>630</cbc:BuildingNumber>
-        <cbc:CityName>Billerica</cbc:CityName>
-        <cbc:PostalZone>01821</cbc:PostalZone>
-        <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cac:TransitCountry>
+      <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+    </cac:TransitCountry>
+    <cac:TransitCountry>
+      <cbc:IdentificationCode>AT</cbc:IdentificationCode>
+    </cac:TransitCountry>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ShipmentStageTypeCode>1</cbc:ShipmentStageTypeCode>
+      <cbc:TransportModeCode>1</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:JourneyID>00344</cbc:JourneyID>
+        <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
+        <cac:MaritimeTransport>
+          <cbc:VesselID>3852664</cbc:VesselID>
+          <cbc:VesselName>Vessel Name</cbc:VesselName>
+        </cac:MaritimeTransport>
+      </cac:TransportMeans>
+      <cac:EstimatedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID>ITGOA</cbc:ID>
+          <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:EstimatedArrivalTransportEvent>
+    </cac:MainCarriageShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>CON_THU_1</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+      <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
+      <cac:TransportEquipment>
+        <cbc:ID>BFCU4040001</cbc:ID>
+        <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+        <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+        <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
+        <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+        <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+        <cbc:PowerIndicator>true</cbc:PowerIndicator>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure>6.1</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure>2.6</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure>2.44</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:GoodsItem>
+          <cac:Item>
+            <cac:CommodityClassification>
+              <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+              <cbc:CommodityCode>8</cbc:CommodityCode>
+            </cac:CommodityClassification>
+          </cac:Item>
+        </cac:GoodsItem>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>CON_THU_2</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+      <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
+      <cac:TransportEquipment>
+        <cbc:ID>BFCU4040002</cbc:ID>
+        <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+        <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+        <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
+        <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+        <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+        <cbc:PowerIndicator>true</cbc:PowerIndicator>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure>6.1</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure>2.6</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure>2.44</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:GoodsItem>
+          <cac:Item>
+            <cac:CommodityClassification>
+              <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+              <cbc:CommodityCode>8</cbc:CommodityCode>
+            </cac:CommodityClassification>
+          </cac:Item>
+        </cac:GoodsItem>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:FirstArrivalPortLocation>
+      <cbc:ID>ITGOA</cbc:ID>
+      <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
+      <cac:Address>
         <cac:Country>
-          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
         </cac:Country>
-      </cac:DespatchAddress>
-      <cac:DespatchParty>
-        <cac:PartyName>
-          <cbc:Name>Consortial</cbc:Name>
-        </cac:PartyName>
-      </cac:DespatchParty>
-      <cac:Contact>
-        <cbc:Name>Mrs Bouquet</cbc:Name>
-        <cbc:Telephone>+1 158 1233714</cbc:Telephone>
-        <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-        <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-      </cac:Contact>
-    </cac:Despatch>
-  </cac:Delivery>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>1</cbc:ID>
-    <cbc:TransportHandlingUnitTypeCode>PA</cbc:TransportHandlingUnitTypeCode>
-    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-    <cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
-    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-    <cac:ActualPackage>
-      <cbc:Quantity>10</cbc:Quantity>
-      <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
-    </cac:ActualPackage>
-  </cac:TransportHandlingUnit>
-  <cac:OriginAddress>
-    <cbc:StreetName>Boston Road</cbc:StreetName>
-    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-    <cbc:BuildingNumber>630</cbc:BuildingNumber>
-    <cbc:CityName>Billerica</cbc:CityName>
-    <cbc:PostalZone>01821</cbc:PostalZone>
-    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-    <cac:Country>
-      <cbc:IdentificationCode>US</cbc:IdentificationCode>
-    </cac:Country>
-  </cac:OriginAddress>
-  <cac:FirstArrivalPortLocation>
-    <cbc:ID>GBBRS</cbc:ID>
-    <cbc:Description>Bristol</cbc:Description>
-  </cac:FirstArrivalPortLocation>
-  <cac:LastExitPortLocation>
-    <cbc:ID>USBOS</cbc:ID>
-    <cbc:Description>Boston</cbc:Description>
-  </cac:LastExitPortLocation>
-  <cac:ExportCountry>
-    <cbc:IdentificationCode>US</cbc:IdentificationCode>
-  </cac:ExportCountry>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-    <cbc:Amount>254.00</cbc:Amount>
-  </cac:FreightAllowanceCharge>
-  <cac:FreightAllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-    <cbc:Amount>12.70</cbc:Amount>
-    <cbc:BaseAmount>254.00</cbc:BaseAmount>
-  </cac:FreightAllowanceCharge>
+      </cac:Address>
+    </cac:FirstArrivalPortLocation>
+    <cac:OfficeOfEntryLocation>
+      <cbc:ID>DE000396</cbc:ID>
+      <cbc:LocationTypeCode>41</cbc:LocationTypeCode>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:OfficeOfEntryLocation>
+  </cac:Consignment>
 </cac:Shipment>
 ```
 
-**Structure 13** — 1 instance
+**Structure 13** — 5 instances
 
 ```xml
 <cac:Shipment>
-  <cbc:ID>123</cbc:ID>
-  <cbc:GrossWeightMeasure>12</cbc:GrossWeightMeasure>
-  <cbc:TotalTransportHandlingUnitQuantity>1</cbc:TotalTransportHandlingUnitQuantity>
-  <cbc:SpecialInstructions>1234</cbc:SpecialInstructions>
-  <cbc:DeliveryInstructions>abcd</cbc:DeliveryInstructions>
+  <cbc:ID>1</cbc:ID>
   <cac:Consignment>
-    <cbc:ID>123</cbc:ID>
+    <cbc:ID>1</cbc:ID>
   </cac:Consignment>
+  <cac:Delivery>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Quantity>90</cbc:Quantity>
+    <cbc:ActualDeliveryDate>2005-06-20</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryTime>11:30:00.0Z</cbc:ActualDeliveryTime>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2005-06-20</cbc:StartDate>
+      <cbc:StartTime>10:30:47.0Z</cbc:StartTime>
+      <cbc:EndDate>2005-06-21</cbc:EndDate>
+      <cbc:EndTime>10:30:47.0Z</cbc:EndTime>
+    </cac:RequestedDeliveryPeriod>
+  </cac:Delivery>
 </cac:Shipment>
 ```
 
@@ -21803,38 +21410,403 @@ _36 instances across 2 elements, with 16 unique structures_
 </cac:Shipment>
 ```
 
-**Structure 15** — 2 instances
+**Structure 15** — 1 instance
 
 ```xml
 <cac:Shipment>
-  <cbc:ID>123456</cbc:ID>
+  <cbc:ID>CONS-0001</cbc:ID>
+  <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+  <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+  <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+  <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+  <cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
+  <cbc:InsuranceValueAmount>1000.00</cbc:InsuranceValueAmount>
+  <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+  <cbc:FreeOnBoardValueAmount>1200.00</cbc:FreeOnBoardValueAmount>
+  <cbc:SpecialInstructions>Beeswax becomes liquid at 50'C</cbc:SpecialInstructions>
+  <cac:Consignment>
+    <cbc:ID>2005US12345678998765432112345678</cbc:ID>
+    <cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
+    <cbc:TariffCode>15219000</cbc:TariffCode>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cac:ConsigneeParty>
+      <cac:PartyName>
+        <cbc:Name>IYT Corporation</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Mr Fred Churchill</cbc:Name>
+        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:ConsigneeParty>
+    <cac:NotifyParty>
+      <cac:PartyName>
+        <cbc:Name>IYT Corporation</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Mr Fred Churchill</cbc:Name>
+        <cbc:Telephone>+44 127 2653214</cbc:Telephone>
+        <cbc:Telefax>+44 127 2653215</cbc:Telefax>
+        <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:NotifyParty>
+    <cac:FinalDeliveryParty>
+      <cac:PartyName>
+        <cbc:Name>The Terminus</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Avon Way</cbc:StreetName>
+        <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+        <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+        <cbc:CityName>Bridgtow</cbc:CityName>
+        <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+        <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+        <cac:AddressLine>
+          <cbc:Line>3rd Floor, Room 5</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>S Massiah</cbc:Name>
+        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:FinalDeliveryParty>
+    <cac:OriginalDepartureCountry>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:OriginalDepartureCountry>
+    <cac:FinalDestinationCountry>
+      <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+    </cac:FinalDestinationCountry>
+    <cac:TransportContract>
+      <cbc:ID>CONS-001</cbc:ID>
+      <cbc:IssueDate>2005-06-24</cbc:IssueDate>
+      <cbc:ContractType>Forwarding Instructions</cbc:ContractType>
+      <cac:ValidityPeriod>
+        <cbc:StartDate>2005-06-25</cbc:StartDate>
+        <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+        <cbc:EndDate>2005-06-30</cbc:EndDate>
+        <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
+      </cac:ValidityPeriod>
+      <cac:ContractDocumentReference>
+        <cbc:ID>normalizedString</cbc:ID>
+        <cbc:CopyIndicator>false</cbc:CopyIndicator>
+        <cbc:UUID>normalizedString</cbc:UUID>
+        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+        <cbc:DocumentType>String</cbc:DocumentType>
+        <cbc:XPath>String</cbc:XPath>
+        <cac:Attachment>
+          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+          <cac:ExternalReference>
+            <cbc:URI>normalizedString</cbc:URI>
+            <cbc:DocumentHash>String</cbc:DocumentHash>
+            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:ContractDocumentReference>
+      <cac:ContractDocumentReference>
+        <cbc:ID>normalizedString</cbc:ID>
+        <cbc:CopyIndicator>false</cbc:CopyIndicator>
+        <cbc:UUID>normalizedString</cbc:UUID>
+        <cbc:IssueDate>1967-08-13</cbc:IssueDate>
+        <cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
+        <cbc:DocumentType>String</cbc:DocumentType>
+        <cbc:XPath>String</cbc:XPath>
+        <cac:Attachment>
+          <cbc:EmbeddedDocumentBinaryObject>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+          <cac:ExternalReference>
+            <cbc:URI>normalizedString</cbc:URI>
+            <cbc:DocumentHash>String</cbc:DocumentHash>
+            <cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
+            <cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:ContractDocumentReference>
+    </cac:TransportContract>
+    <cac:OriginalDespatchTransportationService>
+      <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
+    </cac:OriginalDespatchTransportationService>
+    <cac:FinalDeliveryTransportationService>
+      <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
+    </cac:FinalDeliveryTransportationService>
+    <cac:DeliveryTerms>
+      <cbc:ID>FOB Destination</cbc:ID>
+      <cac:DeliveryLocation>
+        <cbc:ID>GBBRS</cbc:ID>
+        <cbc:Description>Bristol</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:DeliveryTerms>
+    <cac:PaymentTerms>
+      <cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
+    </cac:PaymentTerms>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cbc:Amount>254.00</cbc:Amount>
+    </cac:FreightAllowanceCharge>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+      <cbc:Amount>12.70</cbc:Amount>
+      <cbc:BaseAmount>254.00</cbc:BaseAmount>
+    </cac:FreightAllowanceCharge>
+  </cac:Consignment>
+  <cac:GoodsItem>
+    <cbc:ID>1</cbc:ID>
+    <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+    <cbc:Description>Acme beeswax</cbc:Description>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:DeclaredCustomsValueAmount>524.80</cbc:DeclaredCustomsValueAmount>
+    <cbc:DeclaredStatisticsValueAmount>1000.00</cbc:DeclaredStatisticsValueAmount>
+    <cbc:FreeOnBoardValueAmount>1241.30</cbc:FreeOnBoardValueAmount>
+    <cbc:InsuranceValueAmount>1241.30</cbc:InsuranceValueAmount>
+    <cbc:ValueAmount>1000.00</cbc:ValueAmount>
+    <cbc:GrossWeightMeasure>130</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure>110</cbc:NetWeightMeasure>
+    <cbc:NetNetWeightMeasure>100</cbc:NetNetWeightMeasure>
+    <cbc:GrossVolumeMeasure>2</cbc:GrossVolumeMeasure>
+    <cbc:NetVolumeMeasure>2.235</cbc:NetVolumeMeasure>
+    <cbc:Quantity>10</cbc:Quantity>
+    <cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
+    <cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
+    <cbc:CustomsTariffQuantity>1000</cbc:CustomsTariffQuantity>
+    <cac:Item>
+      <cbc:Description>Beeswax</cbc:Description>
+      <cbc:Name>Acme Beeswax</cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>6578489</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>17589683</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode>MX</cbc:IdentificationCode>
+        <cbc:Name>Mexico</cbc:Name>
+      </cac:OriginCountry>
+    </cac:Item>
+  </cac:GoodsItem>
+  <cac:ShipmentStage>
+    <cbc:ID>1</cbc:ID>
+    <cbc:TransportModeCode>3</cbc:TransportModeCode>
+    <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
+    <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
+    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
+    <cac:TransitPeriod>
+      <cbc:StartDate>2005-06-25</cbc:StartDate>
+      <cbc:StartTime>11:35:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2005-06-25</cbc:EndDate>
+      <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
+    </cac:TransitPeriod>
+    <cac:CarrierParty>
+      <cac:PartyName>
+        <cbc:Name>Keep On Trucking</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+        <cbc:Telephone>+1 36222 33847</cbc:Telephone>
+      </cac:Contact>
+    </cac:CarrierParty>
+    <cac:TransportMeans>
+      <cac:RoadTransport>
+        <cbc:LicensePlateID>2652 WE</cbc:LicensePlateID>
+      </cac:RoadTransport>
+    </cac:TransportMeans>
+  </cac:ShipmentStage>
+  <cac:ShipmentStage>
+    <cbc:ID>2</cbc:ID>
+    <cbc:TransportModeCode>4</cbc:TransportModeCode>
+    <cbc:TransportMeansTypeCode>Plane</cbc:TransportMeansTypeCode>
+    <cbc:PreCarriageIndicator>false</cbc:PreCarriageIndicator>
+    <cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
+    <cac:TransitPeriod>
+      <cbc:StartDate>2005-06-25</cbc:StartDate>
+      <cbc:StartTime>23:20:00.0Z</cbc:StartTime>
+    </cac:TransitPeriod>
+    <cac:CarrierParty>
+      <cac:PartyName>
+        <cbc:Name>United Airfreight</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+        <cbc:ID>Freight Bookings</cbc:ID>
+        <cbc:Telephone>+1 3362 4788</cbc:Telephone>
+        <cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:CarrierParty>
+    <cac:TransportMeans>
+      <cbc:JourneyID>UA 1234</cbc:JourneyID>
+      <cac:AirTransport>
+        <cbc:AircraftID>A-127763-747</cbc:AircraftID>
+      </cac:AirTransport>
+    </cac:TransportMeans>
+    <cac:LoadingPortLocation>
+      <cbc:ID>USBOS</cbc:ID>
+      <cbc:Description>Boston Airport</cbc:Description>
+    </cac:LoadingPortLocation>
+    <cac:UnloadingPortLocation>
+      <cbc:ID>GBBRS</cbc:ID>
+      <cbc:Description>Bristol Airport</cbc:Description>
+    </cac:UnloadingPortLocation>
+    <cac:TransshipPortLocation>
+      <cbc:ID>GBLHR</cbc:ID>
+      <cbc:Description>Heathrow Apt/London</cbc:Description>
+    </cac:TransshipPortLocation>
+  </cac:ShipmentStage>
+  <cac:Delivery>
+    <cbc:Quantity>1</cbc:Quantity>
+    <cbc:LatestDeliveryDate>2005-06-30</cbc:LatestDeliveryDate>
+    <cbc:LatestDeliveryTime>18:00:00.0Z</cbc:LatestDeliveryTime>
+    <cbc:TrackingID>NKH7712289-03339-000128</cbc:TrackingID>
+    <cac:DeliveryAddress>
+      <cbc:StreetName>Avon Way</cbc:StreetName>
+      <cbc:BuildingName>Thereabouts</cbc:BuildingName>
+      <cbc:BuildingNumber>56A</cbc:BuildingNumber>
+      <cbc:CityName>Bridgtow</cbc:CityName>
+      <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+      <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+      <cac:AddressLine>
+        <cbc:Line>3rd Floor, Room 5</cbc:Line>
+      </cac:AddressLine>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:DeliveryAddress>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2005-06-29</cbc:StartDate>
+      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2005-06-30</cbc:EndDate>
+      <cbc:EndTime>18:00:00.0Z</cbc:EndTime>
+    </cac:RequestedDeliveryPeriod>
+    <cac:EstimatedDeliveryPeriod>
+      <cbc:StartDate>2005-06-30</cbc:StartDate>
+      <cbc:StartTime>01:00:00.0Z</cbc:StartTime>
+    </cac:EstimatedDeliveryPeriod>
+    <cac:DeliveryParty>
+      <cac:PartyName>
+        <cbc:Name>The Terminus</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+        <cbc:Name>S Massiah</cbc:Name>
+        <cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
+        <cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
+        <cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:DeliveryParty>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2005-06-25</cbc:ActualDespatchDate>
+      <cbc:ActualDespatchTime>11:35:00.0Z</cbc:ActualDespatchTime>
+      <cac:DespatchAddress>
+        <cbc:StreetName>Boston Road</cbc:StreetName>
+        <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+        <cbc:BuildingNumber>630</cbc:BuildingNumber>
+        <cbc:CityName>Billerica</cbc:CityName>
+        <cbc:PostalZone>01821</cbc:PostalZone>
+        <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:DespatchAddress>
+      <cac:DespatchParty>
+        <cac:PartyName>
+          <cbc:Name>Consortial</cbc:Name>
+        </cac:PartyName>
+      </cac:DespatchParty>
+      <cac:Contact>
+        <cbc:Name>Mrs Bouquet</cbc:Name>
+        <cbc:Telephone>+1 158 1233714</cbc:Telephone>
+        <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
+        <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Despatch>
+  </cac:Delivery>
   <cac:TransportHandlingUnit>
-    <cac:TransportEquipment>
-      <cbc:ID>TRHU1652173</cbc:ID>
-      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-      <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
-      <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
-      <cac:VerifiedGrossMass>
-        <cbc:ID>123</cbc:ID>
-        <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-        <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
-        <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
-        <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
-        <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
-        <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
-        <cac:DocumentReference>
-          <cbc:ID>W123</cbc:ID>
-          <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-          <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-          <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-        </cac:DocumentReference>
-      </cac:VerifiedGrossMass>
-    </cac:TransportEquipment>
-    <cac:ShipmentDocumentReference>
-      <cbc:ID>GOA294107</cbc:ID>
-      <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
-    </cac:ShipmentDocumentReference>
+    <cbc:ID>1</cbc:ID>
+    <cbc:TransportHandlingUnitTypeCode>PA</cbc:TransportHandlingUnitTypeCode>
+    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+    <cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
+    <cac:ActualPackage>
+      <cbc:Quantity>10</cbc:Quantity>
+      <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
+    </cac:ActualPackage>
   </cac:TransportHandlingUnit>
+  <cac:OriginAddress>
+    <cbc:StreetName>Boston Road</cbc:StreetName>
+    <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+    <cbc:BuildingNumber>630</cbc:BuildingNumber>
+    <cbc:CityName>Billerica</cbc:CityName>
+    <cbc:PostalZone>01821</cbc:PostalZone>
+    <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+    <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+    <cac:Country>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:OriginAddress>
+  <cac:FirstArrivalPortLocation>
+    <cbc:ID>GBBRS</cbc:ID>
+    <cbc:Description>Bristol</cbc:Description>
+  </cac:FirstArrivalPortLocation>
+  <cac:LastExitPortLocation>
+    <cbc:ID>USBOS</cbc:ID>
+    <cbc:Description>Boston</cbc:Description>
+  </cac:LastExitPortLocation>
+  <cac:ExportCountry>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+  </cac:ExportCountry>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:Amount>254.00</cbc:Amount>
+  </cac:FreightAllowanceCharge>
+  <cac:FreightAllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+    <cbc:Amount>12.70</cbc:Amount>
+    <cbc:BaseAmount>254.00</cbc:BaseAmount>
+  </cac:FreightAllowanceCharge>
 </cac:Shipment>
 ```
 
@@ -21842,35 +21814,34 @@ _36 instances across 2 elements, with 16 unique structures_
 
 ```xml
 <cac:Shipment>
-  <cbc:ID>123456</cbc:ID>
-  <cac:TransportHandlingUnit>
-    <cac:TransportEquipment>
-      <cbc:ID>TRHU1652173</cbc:ID>
-      <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-      <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
-      <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
-      <cac:VerifiedGrossMass>
-        <cbc:ID>123</cbc:ID>
-        <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-        <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
-        <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
-        <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
-        <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
-        <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
-        <cac:DocumentReference>
-          <cbc:ID>W123</cbc:ID>
-          <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-          <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-          <cbc:DocumentType></cbc:DocumentType>
-          <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-        </cac:DocumentReference>
-      </cac:VerifiedGrossMass>
-    </cac:TransportEquipment>
-    <cac:ShipmentDocumentReference>
-      <cbc:ID>GOA294107</cbc:ID>
-      <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
-    </cac:ShipmentDocumentReference>
-  </cac:TransportHandlingUnit>
+  <cbc:ID>51022</cbc:ID>
+  <cac:Consignment>
+    <cbc:ID>510</cbc:ID>
+  </cac:Consignment>
+  <cac:Delivery>
+    <cac:DeliveryAddress>
+      <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+      <cbc:BuildingNumber>403</cbc:BuildingNumber>
+      <cbc:CityName>Bologna</cbc:CityName>
+      <cbc:PostalZone>40129</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        <cbc:Name>Italy</cbc:Name>
+      </cac:Country>
+    </cac:DeliveryAddress>
+    <cac:Despatch>
+      <cac:DespatchAddress>
+        <cbc:StreetName>Via Emilia</cbc:StreetName>
+        <cbc:BuildingNumber>1</cbc:BuildingNumber>
+        <cbc:CityName>Modena</cbc:CityName>
+        <cbc:PostalZone>41121</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+          <cbc:Name>Italy</cbc:Name>
+        </cac:Country>
+      </cac:DespatchAddress>
+    </cac:Despatch>
+  </cac:Delivery>
 </cac:Shipment>
 ```
 
@@ -21966,9 +21937,9 @@ _10 instances across 1 element, with 2 unique structures_
 
 ```xml
 <cac:SocialMediaProfile>
-  <cbc:ID>2</cbc:ID>
-  <cbc:Name>Twitter</cbc:Name>
-  <cbc:URI>http://twitter.com/OASISopen</cbc:URI>
+  <cbc:ID>4</cbc:ID>
+  <cbc:Name>YouTube</cbc:Name>
+  <cbc:URI>http://www.youtube.com/oasisopen</cbc:URI>
 </cac:SocialMediaProfile>
 ```
 
@@ -22044,16 +22015,7 @@ _5 instances across 1 element, with 1 unique structure_
 
 _3 instances across 2 elements, with 2 unique structures_
 
-**Structure 1** — 2 instances
-
-```xml
-<cac:CurrentStatus>
-  <cbc:ConditionCode>31</cbc:ConditionCode>
-  <cbc:Description>En route</cbc:Description>
-</cac:CurrentStatus>
-```
-
-**Structure 2** — 1 instance
+**Structure 1** — 1 instance
 
 ```xml
 <cac:Status>
@@ -22061,6 +22023,15 @@ _3 instances across 2 elements, with 2 unique structures_
   <cbc:StatusReasonCode>23</cbc:StatusReasonCode>
   <cbc:StatusReason>Reefer container lost power - cargo of fish destroyed</cbc:StatusReason>
 </cac:Status>
+```
+
+**Structure 2** — 2 instances
+
+```xml
+<cac:CurrentStatus>
+  <cbc:ConditionCode>31</cbc:ConditionCode>
+  <cbc:Description>En route</cbc:Description>
+</cac:CurrentStatus>
 ```
 
 [↑ Back to contents](#contents)
@@ -22071,7 +22042,26 @@ _3 instances across 2 elements, with 2 unique structures_
 
 _6 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 4 instances
+**Structure 1** — 2 instances
+
+```xml
+<cac:StockAvailabilityReportLine>
+  <cbc:ID>3</cbc:ID>
+  <cbc:Quantity>0</cbc:Quantity>
+  <cbc:AvailabilityStatusCode>8</cbc:AvailabilityStatusCode>
+  <cac:Item>
+    <cbc:Description>skirt</cbc:Description>
+    <cac:BuyersItemIdentification>
+      <cbc:ID>TS893</cbc:ID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+      <cbc:ID>PK009</cbc:ID>
+    </cac:SellersItemIdentification>
+  </cac:Item>
+</cac:StockAvailabilityReportLine>
+```
+
+**Structure 2** — 4 instances
 
 ```xml
 <cac:StockAvailabilityReportLine>
@@ -22091,25 +22081,6 @@ _6 instances across 1 element, with 2 unique structures_
 </cac:StockAvailabilityReportLine>
 ```
 
-**Structure 2** — 2 instances
-
-```xml
-<cac:StockAvailabilityReportLine>
-  <cbc:ID>3</cbc:ID>
-  <cbc:Quantity>0</cbc:Quantity>
-  <cbc:AvailabilityStatusCode>8</cbc:AvailabilityStatusCode>
-  <cac:Item>
-    <cbc:Description>skirt</cbc:Description>
-    <cac:BuyersItemIdentification>
-      <cbc:ID>TS893</cbc:ID>
-    </cac:BuyersItemIdentification>
-    <cac:SellersItemIdentification>
-      <cbc:ID>PK009</cbc:ID>
-    </cac:SellersItemIdentification>
-  </cac:Item>
-</cac:StockAvailabilityReportLine>
-```
-
 [↑ Back to contents](#contents)
 
 ### `SupplierPartyType`
@@ -22118,7 +22089,184 @@ _6 instances across 1 element, with 2 unique structures_
 
 _118 instances across 3 elements, with 13 unique structures_
 
-**Structure 1** — 33 instances
+**Structure 1** — 5 instances
+
+```xml
+<cac:SellerSupplierParty>
+  <cac:Party>
+    <cac:PartyName>
+      <cbc:Name>Arancio Forniture spa</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
+      <cbc:BuildingNumber>403</cbc:BuildingNumber>
+      <cbc:CityName>Bologna</cbc:CityName>
+      <cbc:PostalZone>40129</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+        <cbc:Name>Italy</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mr Rossi</cbc:Name>
+      <cbc:Telephone>0039 051 23000000</cbc:Telephone>
+      <cbc:Telefax>0039 051 23000023</cbc:Telefax>
+      <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:Party>
+</cac:SellerSupplierParty>
+```
+
+**Structure 2** — 9 instances
+
+```xml
+<cac:SellerSupplierParty>
+  <cac:Party>
+    <cbc:EndpointID>7302347231111</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID>SellerPartyID123</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Moderna Produkter AB</cbc:Name>
+    </cac:PartyName>
+  </cac:Party>
+</cac:SellerSupplierParty>
+```
+
+**Structure 3** — 2 instances
+
+```xml
+<cac:SellerSupplierParty>
+  <cac:Party>
+    <cbc:EndpointID>7302347231111</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID>SellerPartyID123</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Moderna Produkter AB</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID>0987654321123</cbc:ID>
+      <cbc:Postbox>321</cbc:Postbox>
+      <cbc:StreetName>Kungsgatan</cbc:StreetName>
+      <cbc:AdditionalStreetName>suite12</cbc:AdditionalStreetName>
+      <cbc:BuildingNumber>22</cbc:BuildingNumber>
+      <cbc:Department>Sales department</cbc:Department>
+      <cbc:CityName>Stockholm</cbc:CityName>
+      <cbc:PostalZone>11000</cbc:PostalZone>
+      <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Moderna Produkter AB</cbc:RegistrationName>
+      <cbc:CompanyID>5532332283</cbc:CompanyID>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Stockholm</cbc:CityName>
+        <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Telephone>34557</cbc:Telephone>
+      <cbc:Telefax>3456767</cbc:Telefax>
+      <cbc:ElectronicMail>lars@moderna.se</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:Person>
+      <cbc:FirstName>Lars</cbc:FirstName>
+      <cbc:FamilyName>Petersen</cbc:FamilyName>
+      <cbc:MiddleName>M</cbc:MiddleName>
+      <cbc:JobTitle>Sales manager</cbc:JobTitle>
+    </cac:Person>
+  </cac:Party>
+</cac:SellerSupplierParty>
+```
+
+**Structure 4** — 2 instances
+
+```xml
+<cac:SellerSupplierParty>
+  <cbc:CustomerAssignedAccountID>LEV00123</cbc:CustomerAssignedAccountID>
+  <cac:Party>
+    <cbc:EndpointID>DK18296799</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID>DK18296799</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Delcomputer A/S</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
+      <cbc:StreetName>Arne Jacobsens Allé</cbc:StreetName>
+      <cbc:BuildingNumber>15</cbc:BuildingNumber>
+      <cbc:CityName>København S</cbc:CityName>
+      <cbc:PostalZone>2300</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>DK18296799</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>63</cbc:ID>
+        <cbc:Name>Moms</cbc:Name>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Delcomputer A/S</cbc:RegistrationName>
+      <cbc:CompanyID>18296799</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+  </cac:Party>
+</cac:SellerSupplierParty>
+```
+
+**Structure 5** — 3 instances
+
+```xml
+<cac:SellerSupplierParty>
+  <cbc:CustomerAssignedAccountID>CO001</cbc:CustomerAssignedAccountID>
+  <cac:Party>
+    <cac:PartyName>
+      <cbc:Name>Consortial</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Boston Road</cbc:StreetName>
+      <cbc:BuildingName>Suite M-102</cbc:BuildingName>
+      <cbc:BuildingNumber>630</cbc:BuildingNumber>
+      <cbc:CityName>Billerica</cbc:CityName>
+      <cbc:PostalZone>01821</cbc:PostalZone>
+      <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+      <cac:Country>
+        <cbc:IdentificationCode>US</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Mrs Bouquet</cbc:Name>
+      <cbc:Telephone>+1 158 1233714</cbc:Telephone>
+      <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
+      <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:Party>
+</cac:SellerSupplierParty>
+```
+
+**Structure 6** — 23 instances
+
+```xml
+<cac:SellerSupplierParty>
+  <cac:Party>
+    <cac:PartyIdentification>
+      <cbc:ID>0012345000058</cbc:ID>
+    </cac:PartyIdentification>
+  </cac:Party>
+</cac:SellerSupplierParty>
+```
+
+**Structure 7** — 33 instances
 
 ```xml
 <cac:AccountingSupplierParty>
@@ -22160,7 +22308,7 @@ _118 instances across 3 elements, with 13 unique structures_
 </cac:AccountingSupplierParty>
 ```
 
-**Structure 2** — 7 instances
+**Structure 8** — 7 instances
 
 ```xml
 <cac:AccountingSupplierParty>
@@ -22218,28 +22366,7 @@ _118 instances across 3 elements, with 13 unique structures_
 </cac:AccountingSupplierParty>
 ```
 
-**Structure 3** — 1 instance
-
-```xml
-<cac:AccountingSupplierParty>
-  <cac:Party>
-    <cac:PartyIdentification>
-      <cbc:ID>Supp123</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Example Supplies Ltd.</cbc:Name>
-    </cac:PartyName>
-    <cac:PartyTaxScheme>
-      <cbc:CompanyID>DK123456789</cbc:CompanyID>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-  </cac:Party>
-</cac:AccountingSupplierParty>
-```
-
-**Structure 4** — 1 instance
+**Structure 9** — 1 instance
 
 ```xml
 <cac:AccountingSupplierParty>
@@ -22269,7 +22396,7 @@ _118 instances across 3 elements, with 13 unique structures_
 </cac:AccountingSupplierParty>
 ```
 
-**Structure 5** — 1 instance
+**Structure 10** — 1 instance
 
 ```xml
 <cac:AccountingSupplierParty>
@@ -22281,7 +22408,28 @@ _118 instances across 3 elements, with 13 unique structures_
 </cac:AccountingSupplierParty>
 ```
 
-**Structure 6** — 10 instances
+**Structure 11** — 1 instance
+
+```xml
+<cac:AccountingSupplierParty>
+  <cac:Party>
+    <cac:PartyIdentification>
+      <cbc:ID>Supp123</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Example Supplies Ltd.</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>DK123456789</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:Party>
+</cac:AccountingSupplierParty>
+```
+
+**Structure 12** — 10 instances
 
 ```xml
 <cac:DespatchSupplierParty>
@@ -22323,45 +22471,7 @@ _118 instances across 3 elements, with 13 unique structures_
 </cac:DespatchSupplierParty>
 ```
 
-**Structure 7** — 2 instances
-
-```xml
-<cac:SellerSupplierParty>
-  <cbc:CustomerAssignedAccountID>LEV00123</cbc:CustomerAssignedAccountID>
-  <cac:Party>
-    <cbc:EndpointID>DK18296799</cbc:EndpointID>
-    <cac:PartyIdentification>
-      <cbc:ID>DK18296799</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Delcomputer A/S</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:AddressFormatCode>StructuredDK</cbc:AddressFormatCode>
-      <cbc:StreetName>Arne Jacobsens Allé</cbc:StreetName>
-      <cbc:BuildingNumber>15</cbc:BuildingNumber>
-      <cbc:CityName>København S</cbc:CityName>
-      <cbc:PostalZone>2300</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:CompanyID>DK18296799</cbc:CompanyID>
-      <cac:TaxScheme>
-        <cbc:ID>63</cbc:ID>
-        <cbc:Name>Moms</cbc:Name>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Delcomputer A/S</cbc:RegistrationName>
-      <cbc:CompanyID>18296799</cbc:CompanyID>
-    </cac:PartyLegalEntity>
-  </cac:Party>
-</cac:SellerSupplierParty>
-```
-
-**Structure 8** — 21 instances
+**Structure 13** — 21 instances
 
 ```xml
 <cac:SellerSupplierParty>
@@ -22403,145 +22513,6 @@ _118 instances across 3 elements, with 13 unique structures_
 </cac:SellerSupplierParty>
 ```
 
-**Structure 9** — 3 instances
-
-```xml
-<cac:SellerSupplierParty>
-  <cbc:CustomerAssignedAccountID>CO001</cbc:CustomerAssignedAccountID>
-  <cac:Party>
-    <cac:PartyName>
-      <cbc:Name>Consortial</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Boston Road</cbc:StreetName>
-      <cbc:BuildingName>Suite M-102</cbc:BuildingName>
-      <cbc:BuildingNumber>630</cbc:BuildingNumber>
-      <cbc:CityName>Billerica</cbc:CityName>
-      <cbc:PostalZone>01821</cbc:PostalZone>
-      <cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-      <cac:Country>
-        <cbc:IdentificationCode>US</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mrs Bouquet</cbc:Name>
-      <cbc:Telephone>+1 158 1233714</cbc:Telephone>
-      <cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-      <cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:Party>
-</cac:SellerSupplierParty>
-```
-
-**Structure 10** — 2 instances
-
-```xml
-<cac:SellerSupplierParty>
-  <cac:Party>
-    <cbc:EndpointID>7302347231111</cbc:EndpointID>
-    <cac:PartyIdentification>
-      <cbc:ID>SellerPartyID123</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Moderna Produkter AB</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:ID>0987654321123</cbc:ID>
-      <cbc:Postbox>321</cbc:Postbox>
-      <cbc:StreetName>Kungsgatan</cbc:StreetName>
-      <cbc:AdditionalStreetName>suite12</cbc:AdditionalStreetName>
-      <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:Department>Sales department</cbc:Department>
-      <cbc:CityName>Stockholm</cbc:CityName>
-      <cbc:PostalZone>11000</cbc:PostalZone>
-      <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
-      <cac:Country>
-        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Moderna Produkter AB</cbc:RegistrationName>
-      <cbc:CompanyID>5532332283</cbc:CompanyID>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Stockholm</cbc:CityName>
-        <cbc:CountrySubentity>RegionX</cbc:CountrySubentity>
-        <cac:Country>
-          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Telephone>34557</cbc:Telephone>
-      <cbc:Telefax>3456767</cbc:Telefax>
-      <cbc:ElectronicMail>lars@moderna.se</cbc:ElectronicMail>
-    </cac:Contact>
-    <cac:Person>
-      <cbc:FirstName>Lars</cbc:FirstName>
-      <cbc:FamilyName>Petersen</cbc:FamilyName>
-      <cbc:MiddleName>M</cbc:MiddleName>
-      <cbc:JobTitle>Sales manager</cbc:JobTitle>
-    </cac:Person>
-  </cac:Party>
-</cac:SellerSupplierParty>
-```
-
-**Structure 11** — 9 instances
-
-```xml
-<cac:SellerSupplierParty>
-  <cac:Party>
-    <cbc:EndpointID>7302347231111</cbc:EndpointID>
-    <cac:PartyIdentification>
-      <cbc:ID>SellerPartyID123</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Moderna Produkter AB</cbc:Name>
-    </cac:PartyName>
-  </cac:Party>
-</cac:SellerSupplierParty>
-```
-
-**Structure 12** — 23 instances
-
-```xml
-<cac:SellerSupplierParty>
-  <cac:Party>
-    <cac:PartyIdentification>
-      <cbc:ID>6903148000007</cbc:ID>
-    </cac:PartyIdentification>
-  </cac:Party>
-</cac:SellerSupplierParty>
-```
-
-**Structure 13** — 5 instances
-
-```xml
-<cac:SellerSupplierParty>
-  <cac:Party>
-    <cac:PartyName>
-      <cbc:Name>Arancio Forniture spa</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Via Dell'Arcoveggio</cbc:StreetName>
-      <cbc:BuildingNumber>403</cbc:BuildingNumber>
-      <cbc:CityName>Bologna</cbc:CityName>
-      <cbc:PostalZone>40129</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-        <cbc:Name>Italy</cbc:Name>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Mr Rossi</cbc:Name>
-      <cbc:Telephone>0039 051 23000000</cbc:Telephone>
-      <cbc:Telefax>0039 051 23000023</cbc:Telefax>
-      <cbc:ElectronicMail>rossi@arancioforniture.it</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:Party>
-</cac:SellerSupplierParty>
-```
-
 [↑ Back to contents](#contents)
 
 ### `TaxCategoryType`
@@ -22550,19 +22521,32 @@ _118 instances across 3 elements, with 13 unique structures_
 
 _107 instances across 2 elements, with 7 unique structures_
 
-**Structure 1** — 30 instances
+**Structure 1** — 18 instances
 
 ```xml
-<cac:ClassifiedTaxCategory>
+<cac:TaxCategory>
+  <cbc:ID>A</cbc:ID>
+  <cbc:Percent>17.5</cbc:Percent>
+  <cac:TaxScheme>
+    <cbc:ID>UK VAT</cbc:ID>
+    <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+  </cac:TaxScheme>
+</cac:TaxCategory>
+```
+
+**Structure 2** — 17 instances
+
+```xml
+<cac:TaxCategory>
   <cbc:ID>S</cbc:ID>
   <cbc:Percent>20</cbc:Percent>
   <cac:TaxScheme>
     <cbc:ID>VAT</cbc:ID>
   </cac:TaxScheme>
-</cac:ClassifiedTaxCategory>
+</cac:TaxCategory>
 ```
 
-**Structure 2** — 6 instances
+**Structure 3** — 6 instances
 
 ```xml
 <cac:TaxCategory>
@@ -22576,25 +22560,11 @@ _107 instances across 2 elements, with 7 unique structures_
 </cac:TaxCategory>
 ```
 
-**Structure 3** — 18 instances
+**Structure 4** — 2 instances
 
 ```xml
 <cac:TaxCategory>
-  <cbc:ID>A</cbc:ID>
-  <cbc:Percent>17.5</cbc:Percent>
-  <cac:TaxScheme>
-    <cbc:ID>UK VAT</cbc:ID>
-    <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-  </cac:TaxScheme>
-</cac:TaxCategory>
-```
-
-**Structure 4** — 17 instances
-
-```xml
-<cac:TaxCategory>
-  <cbc:ID>S</cbc:ID>
-  <cbc:Percent>20</cbc:Percent>
+  <cbc:ID>O</cbc:ID>
   <cac:TaxScheme>
     <cbc:ID>VAT</cbc:ID>
   </cac:TaxScheme>
@@ -22613,18 +22583,7 @@ _107 instances across 2 elements, with 7 unique structures_
 </cac:TaxCategory>
 ```
 
-**Structure 6** — 2 instances
-
-```xml
-<cac:TaxCategory>
-  <cbc:ID>O</cbc:ID>
-  <cac:TaxScheme>
-    <cbc:ID>VAT</cbc:ID>
-  </cac:TaxScheme>
-</cac:TaxCategory>
-```
-
-**Structure 7** — 1 instance
+**Structure 6** — 1 instance
 
 ```xml
 <cac:TaxCategory>
@@ -22635,6 +22594,18 @@ _107 instances across 2 elements, with 7 unique structures_
 </cac:TaxCategory>
 ```
 
+**Structure 7** — 30 instances
+
+```xml
+<cac:ClassifiedTaxCategory>
+  <cbc:ID>S</cbc:ID>
+  <cbc:Percent>20</cbc:Percent>
+  <cac:TaxScheme>
+    <cbc:ID>VAT</cbc:ID>
+  </cac:TaxScheme>
+</cac:ClassifiedTaxCategory>
+```
+
 [↑ Back to contents](#contents)
 
 ### `TaxSchemeType`
@@ -22643,29 +22614,29 @@ _107 instances across 2 elements, with 7 unique structures_
 
 _339 instances across 1 element, with 3 unique structures_
 
-**Structure 1** — 4 instances
+**Structure 1** — 260 instances
+
+```xml
+<cac:TaxScheme>
+  <cbc:ID>UK VAT</cbc:ID>
+  <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+</cac:TaxScheme>
+```
+
+**Structure 2** — 75 instances
+
+```xml
+<cac:TaxScheme>
+  <cbc:ID>VAT</cbc:ID>
+</cac:TaxScheme>
+```
+
+**Structure 3** — 4 instances
 
 ```xml
 <cac:TaxScheme>
   <cbc:ID>63</cbc:ID>
   <cbc:Name>Moms</cbc:Name>
-</cac:TaxScheme>
-```
-
-**Structure 2** — 260 instances
-
-```xml
-<cac:TaxScheme>
-  <cbc:ID>VAT</cbc:ID>
-  <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-</cac:TaxScheme>
-```
-
-**Structure 3** — 75 instances
-
-```xml
-<cac:TaxScheme>
-  <cbc:ID>VAT</cbc:ID>
 </cac:TaxScheme>
 ```
 
@@ -22677,7 +22648,40 @@ _339 instances across 1 element, with 3 unique structures_
 
 _69 instances across 1 element, with 7 unique structures_
 
-**Structure 1** — 6 instances
+**Structure 1** — 3 instances
+
+```xml
+<cac:TaxSubtotal>
+  <cbc:TaxableAmount>23.20</cbc:TaxableAmount>
+  <cbc:TaxAmount>5.80</cbc:TaxAmount>
+  <cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
+  <cac:TaxCategory>
+    <cbc:ID>S</cbc:ID>
+    <cbc:Percent>25</cbc:Percent>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:TaxCategory>
+</cac:TaxSubtotal>
+```
+
+**Structure 2** — 12 instances
+
+```xml
+<cac:TaxSubtotal>
+  <cbc:TaxableAmount>1460.5</cbc:TaxableAmount>
+  <cbc:TaxAmount>292.1</cbc:TaxAmount>
+  <cac:TaxCategory>
+    <cbc:ID>S</cbc:ID>
+    <cbc:Percent>20</cbc:Percent>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:TaxCategory>
+</cac:TaxSubtotal>
+```
+
+**Structure 3** — 6 instances
 
 ```xml
 <cac:TaxSubtotal>
@@ -22695,7 +22699,22 @@ _69 instances across 1 element, with 7 unique structures_
 </cac:TaxSubtotal>
 ```
 
-**Structure 2** — 17 instances
+**Structure 4** — 1 instance
+
+```xml
+<cac:TaxSubtotal>
+  <cbc:TaxableAmount>202.50</cbc:TaxableAmount>
+  <cbc:TaxAmount>42.55</cbc:TaxAmount>
+  <cac:TaxCategory>
+    <cbc:Percent>21.00</cbc:Percent>
+    <cac:TaxScheme>
+      <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:TaxCategory>
+</cac:TaxSubtotal>
+```
+
+**Structure 5** — 17 instances
 
 ```xml
 <cac:TaxSubtotal>
@@ -22712,71 +22731,7 @@ _69 instances across 1 element, with 7 unique structures_
 </cac:TaxSubtotal>
 ```
 
-**Structure 3** — 12 instances
-
-```xml
-<cac:TaxSubtotal>
-  <cbc:TaxableAmount>1460.5</cbc:TaxableAmount>
-  <cbc:TaxAmount>292.1</cbc:TaxAmount>
-  <cac:TaxCategory>
-    <cbc:ID>S</cbc:ID>
-    <cbc:Percent>20</cbc:Percent>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:TaxCategory>
-</cac:TaxSubtotal>
-```
-
-**Structure 4** — 29 instances
-
-```xml
-<cac:TaxSubtotal>
-  <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
-  <cbc:TaxAmount>17.50</cbc:TaxAmount>
-  <cac:TaxCategory>
-    <cbc:ID>A</cbc:ID>
-    <cac:TaxScheme>
-      <cbc:ID>UK VAT</cbc:ID>
-      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-    </cac:TaxScheme>
-  </cac:TaxCategory>
-</cac:TaxSubtotal>
-```
-
-**Structure 5** — 1 instance
-
-```xml
-<cac:TaxSubtotal>
-  <cbc:TaxableAmount>202.50</cbc:TaxableAmount>
-  <cbc:TaxAmount>42.55</cbc:TaxAmount>
-  <cac:TaxCategory>
-    <cbc:Percent>21.00</cbc:Percent>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:TaxCategory>
-</cac:TaxSubtotal>
-```
-
-**Structure 6** — 3 instances
-
-```xml
-<cac:TaxSubtotal>
-  <cbc:TaxableAmount>23.20</cbc:TaxableAmount>
-  <cbc:TaxAmount>5.80</cbc:TaxAmount>
-  <cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
-  <cac:TaxCategory>
-    <cbc:ID>S</cbc:ID>
-    <cbc:Percent>25</cbc:Percent>
-    <cac:TaxScheme>
-      <cbc:ID>VAT</cbc:ID>
-    </cac:TaxScheme>
-  </cac:TaxCategory>
-</cac:TaxSubtotal>
-```
-
-**Structure 7** — 1 instance
+**Structure 6** — 1 instance
 
 ```xml
 <cac:TaxSubtotal>
@@ -22787,6 +22742,22 @@ _69 instances across 1 element, with 7 unique structures_
     <cbc:ID>O</cbc:ID>
     <cac:TaxScheme>
       <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+  </cac:TaxCategory>
+</cac:TaxSubtotal>
+```
+
+**Structure 7** — 29 instances
+
+```xml
+<cac:TaxSubtotal>
+  <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
+  <cbc:TaxAmount>17.50</cbc:TaxAmount>
+  <cac:TaxCategory>
+    <cbc:ID>A</cbc:ID>
+    <cac:TaxScheme>
+      <cbc:ID>UK VAT</cbc:ID>
+      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
     </cac:TaxScheme>
   </cac:TaxCategory>
 </cac:TaxSubtotal>
@@ -22821,13 +22792,44 @@ _93 instances across 1 element, with 9 unique structures_
 </cac:TaxTotal>
 ```
 
-**Structure 2** — 4 instances
+**Structure 2** — 1 instance
+
+```xml
+<cac:TaxTotal>
+  <cbc:TaxAmount>5.80</cbc:TaxAmount>
+  <cac:TaxSubtotal>
+    <cbc:TaxableAmount>23.20</cbc:TaxableAmount>
+    <cbc:TaxAmount>5.80</cbc:TaxAmount>
+    <cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
+    <cac:TaxCategory>
+      <cbc:ID>S</cbc:ID>
+      <cbc:Percent>25</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:TaxSubtotal>
+  <cac:TaxSubtotal>
+    <cbc:TaxableAmount>1.00</cbc:TaxableAmount>
+    <cbc:TaxAmount>0.00</cbc:TaxAmount>
+    <cbc:TaxInclusiveAmount>1.00</cbc:TaxInclusiveAmount>
+    <cac:TaxCategory>
+      <cbc:ID>O</cbc:ID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:TaxSubtotal>
+</cac:TaxTotal>
+```
+
+**Structure 3** — 29 instances
 
 ```xml
 <cac:TaxTotal>
   <cbc:TaxAmount>17.50</cbc:TaxAmount>
   <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
-  <cac:TaxSubTotal>
+  <cac:TaxSubtotal>
     <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
     <cbc:TaxAmount>17.50</cbc:TaxAmount>
     <cac:TaxCategory>
@@ -22837,11 +22839,11 @@ _93 instances across 1 element, with 9 unique structures_
         <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
       </cac:TaxScheme>
     </cac:TaxCategory>
-  </cac:TaxSubTotal>
+  </cac:TaxSubtotal>
 </cac:TaxTotal>
 ```
 
-**Structure 3** — 17 instances
+**Structure 4** — 17 instances
 
 ```xml
 <cac:TaxTotal>
@@ -22862,13 +22864,51 @@ _93 instances across 1 element, with 9 unique structures_
 </cac:TaxTotal>
 ```
 
-**Structure 4** — 29 instances
+**Structure 5** — 2 instances
+
+```xml
+<cac:TaxTotal>
+  <cbc:TaxAmount>4.00</cbc:TaxAmount>
+  <cac:TaxSubtotal>
+    <cbc:TaxableAmount>16.00</cbc:TaxableAmount>
+    <cbc:TaxAmount>4.00</cbc:TaxAmount>
+    <cbc:TaxInclusiveAmount>20.00</cbc:TaxInclusiveAmount>
+    <cac:TaxCategory>
+      <cbc:ID>S</cbc:ID>
+      <cbc:Percent>25</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:TaxSubtotal>
+</cac:TaxTotal>
+```
+
+**Structure 6** — 1 instance
+
+```xml
+<cac:TaxTotal>
+  <cbc:TaxAmount>42.55</cbc:TaxAmount>
+  <cac:TaxSubtotal>
+    <cbc:TaxableAmount>202.50</cbc:TaxableAmount>
+    <cbc:TaxAmount>42.55</cbc:TaxAmount>
+    <cac:TaxCategory>
+      <cbc:Percent>21.00</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:TaxSubtotal>
+</cac:TaxTotal>
+```
+
+**Structure 7** — 4 instances
 
 ```xml
 <cac:TaxTotal>
   <cbc:TaxAmount>17.50</cbc:TaxAmount>
   <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
-  <cac:TaxSubtotal>
+  <cac:TaxSubTotal>
     <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
     <cbc:TaxAmount>17.50</cbc:TaxAmount>
     <cac:TaxCategory>
@@ -22878,11 +22918,11 @@ _93 instances across 1 element, with 9 unique structures_
         <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
       </cac:TaxScheme>
     </cac:TaxCategory>
-  </cac:TaxSubtotal>
+  </cac:TaxSubTotal>
 </cac:TaxTotal>
 ```
 
-**Structure 5** — 6 instances
+**Structure 8** — 6 instances
 
 ```xml
 <cac:TaxTotal>
@@ -22925,80 +22965,11 @@ _93 instances across 1 element, with 9 unique structures_
 </cac:TaxTotal>
 ```
 
-**Structure 6** — 1 instance
-
-```xml
-<cac:TaxTotal>
-  <cbc:TaxAmount>42.55</cbc:TaxAmount>
-  <cac:TaxSubtotal>
-    <cbc:TaxableAmount>202.50</cbc:TaxableAmount>
-    <cbc:TaxAmount>42.55</cbc:TaxAmount>
-    <cac:TaxCategory>
-      <cbc:Percent>21.00</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:TaxSubtotal>
-</cac:TaxTotal>
-```
-
-**Structure 7** — 1 instance
-
-```xml
-<cac:TaxTotal>
-  <cbc:TaxAmount>5.80</cbc:TaxAmount>
-  <cac:TaxSubtotal>
-    <cbc:TaxableAmount>23.20</cbc:TaxableAmount>
-    <cbc:TaxAmount>5.80</cbc:TaxAmount>
-    <cbc:TaxInclusiveAmount>29.00</cbc:TaxInclusiveAmount>
-    <cac:TaxCategory>
-      <cbc:ID>S</cbc:ID>
-      <cbc:Percent>25</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:TaxSubtotal>
-  <cac:TaxSubtotal>
-    <cbc:TaxableAmount>1.00</cbc:TaxableAmount>
-    <cbc:TaxAmount>0.00</cbc:TaxAmount>
-    <cbc:TaxInclusiveAmount>1.00</cbc:TaxInclusiveAmount>
-    <cac:TaxCategory>
-      <cbc:ID>O</cbc:ID>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:TaxSubtotal>
-</cac:TaxTotal>
-```
-
-**Structure 8** — 2 instances
-
-```xml
-<cac:TaxTotal>
-  <cbc:TaxAmount>4.00</cbc:TaxAmount>
-  <cac:TaxSubtotal>
-    <cbc:TaxableAmount>16.00</cbc:TaxableAmount>
-    <cbc:TaxAmount>4.00</cbc:TaxAmount>
-    <cbc:TaxInclusiveAmount>20.00</cbc:TaxInclusiveAmount>
-    <cac:TaxCategory>
-      <cbc:ID>S</cbc:ID>
-      <cbc:Percent>25</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:TaxSubtotal>
-</cac:TaxTotal>
-```
-
 **Structure 9** — 32 instances
 
 ```xml
 <cac:TaxTotal>
-  <cbc:TaxAmount>254.6</cbc:TaxAmount>
+  <cbc:TaxAmount>100</cbc:TaxAmount>
 </cac:TaxTotal>
 ```
 
@@ -23036,10 +23007,12 @@ _2 instances across 1 element, with 2 unique structures_
   <cac:TenderEncryptionData>
     <cbc:MessageFormat>1.2.840.113549.1.9.16.0.1</cbc:MessageFormat>
     <cac:EncryptionCertificateAttachment>
-      <cbc:EmbeddedDocument>;lkajdf;lkasd;ljkasdf;lkja;sdlfkja;sldfkja;sdlfjkas;dlkfjas;dlfjas;dlkfjas;dlkfja;slkdjf</cbc:EmbeddedDocument>
+      <cac:ExternalReference>
+        <cbc:URI>www.digst.dk/udbud/NemID.cer</cbc:URI>
+      </cac:ExternalReference>
     </cac:EncryptionCertificateAttachment>
     <cac:EncryptionCertificatePathChain>
-      <cbc:Value>TRUST2408 OCES Primary CA – TRUST2408 OCES CA II</cbc:Value>
+      <cbc:URI>https://www.trust2408/certPaths/Trust2408_issuingCA12_chain.p7c</cbc:URI>
     </cac:EncryptionCertificatePathChain>
     <cac:EncryptionSymmetricAlgorithm>
       <cbc:OID>2.16.840.1.101.3.4.1.2</cbc:OID>
@@ -23059,12 +23032,10 @@ _2 instances across 1 element, with 2 unique structures_
   <cac:TenderEncryptionData>
     <cbc:MessageFormat>1.2.840.113549.1.9.16.0.1</cbc:MessageFormat>
     <cac:EncryptionCertificateAttachment>
-      <cac:ExternalReference>
-        <cbc:URI>www.digst.dk/udbud/NemID.cer</cbc:URI>
-      </cac:ExternalReference>
+      <cbc:EmbeddedDocument>;lkajdf;lkasd;ljkasdf;lkja;sdlfkja;sldfkja;sdlfjkas;dlkfjas;dlfjas;dlkfjas;dlkfja;slkdjf</cbc:EmbeddedDocument>
     </cac:EncryptionCertificateAttachment>
     <cac:EncryptionCertificatePathChain>
-      <cbc:URI>https://www.trust2408/certPaths/Trust2408_issuingCA12_chain.p7c</cbc:URI>
+      <cbc:Value>TRUST2408 OCES Primary CA – TRUST2408 OCES CA II</cbc:Value>
     </cac:EncryptionCertificatePathChain>
     <cac:EncryptionSymmetricAlgorithm>
       <cbc:OID>2.16.840.1.101.3.4.1.2</cbc:OID>
@@ -23160,20 +23131,20 @@ _13 instances across 1 element, with 1 unique structure_
 
 _3 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 2 instances
-
-```xml
-<cac:TransportEquipmentSeal>
-  <cbc:ID>1_1</cbc:ID>
-  <cbc:Condition>IN_RIGHT_CONDITION</cbc:Condition>
-</cac:TransportEquipmentSeal>
-```
-
-**Structure 2** — 1 instance
+**Structure 1** — 1 instance
 
 ```xml
 <cac:TransportEquipmentSeal>
   <cbc:ID>7654321</cbc:ID>
+</cac:TransportEquipmentSeal>
+```
+
+**Structure 2** — 2 instances
+
+```xml
+<cac:TransportEquipmentSeal>
+  <cbc:ID>2_1</cbc:ID>
+  <cbc:Condition>IN_RIGHT_CONDITION</cbc:Condition>
 </cac:TransportEquipmentSeal>
 ```
 
@@ -23185,14 +23156,44 @@ _3 instances across 1 element, with 2 unique structures_
 
 _36 instances across 4 elements, with 15 unique structures_
 
-**Structure 1** — 6 instances
+**Structure 1** — 4 instances
 
 ```xml
-<cac:ContainedInTransportEquipment>
-  <cbc:ID>NTT_TE_1</cbc:ID>
-  <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-  <cbc:TraceID>12345678914564</cbc:TraceID>
-</cac:ContainedInTransportEquipment>
+<cac:TransportEquipment>
+  <cbc:ID>CON_TE_2</cbc:ID>
+  <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+  <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+  <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+  <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+  <cbc:Description>SomeDescription</cbc:Description>
+  <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+  <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+  <cbc:PowerIndicator>false</cbc:PowerIndicator>
+  <cac:MeasurementDimension>
+    <cbc:AttributeID>Length</cbc:AttributeID>
+    <cbc:Measure>6.1</cbc:Measure>
+  </cac:MeasurementDimension>
+  <cac:MeasurementDimension>
+    <cbc:AttributeID>Height</cbc:AttributeID>
+    <cbc:Measure>2.6</cbc:Measure>
+  </cac:MeasurementDimension>
+  <cac:MeasurementDimension>
+    <cbc:AttributeID>Width</cbc:AttributeID>
+    <cbc:Measure>2.44</cbc:Measure>
+  </cac:MeasurementDimension>
+  <cac:Package>
+    <cbc:ID>CON_P_2</cbc:ID>
+    <cbc:Quantity>10</cbc:Quantity>
+    <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cac:CommodityClassification>
+          <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:Package>
+</cac:TransportEquipment>
 ```
 
 **Structure 2** — 2 instances
@@ -23218,18 +23219,20 @@ _36 instances across 4 elements, with 15 unique structures_
 </cac:ReferencedTransportEquipment>
 ```
 
-**Structure 3** — 3 instances
+**Structure 3** — 1 instance
 
 ```xml
-<cac:ReferencedTransportEquipment>
-  <cbc:ID>GRAI 12345698-1</cbc:ID>
-</cac:ReferencedTransportEquipment>
+<cac:TransportEquipment>
+  <cac:TransportEquipmentSeal>
+    <cbc:ID>7654321</cbc:ID>
+  </cac:TransportEquipmentSeal>
+</cac:TransportEquipment>
 ```
 
 **Structure 4** — 2 instances
 
 ```xml
-<cac:SupportedTransportEquipment>
+<cac:TransportEquipment>
   <cbc:ID>1</cbc:ID>
   <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
   <cac:MeasurementDimension>
@@ -23244,27 +23247,45 @@ _36 instances across 4 elements, with 15 unique structures_
     <cbc:AttributeID>Width</cbc:AttributeID>
     <cbc:Measure>2.44</cbc:Measure>
   </cac:MeasurementDimension>
-</cac:SupportedTransportEquipment>
+</cac:TransportEquipment>
 ```
 
-**Structure 5** — 6 instances
+**Structure 5** — 1 instance
 
 ```xml
 <cac:TransportEquipment>
-  <cbc:ID>NTT_THU_1</cbc:ID>
-  <cac:ContainedInTransportEquipment>
-    <cbc:ID>NTT_TE_1</cbc:ID>
-    <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-    <cbc:TraceID>12345678914564</cbc:TraceID>
-  </cac:ContainedInTransportEquipment>
-  <cac:Package>
-    <cbc:ID>CON_1</cbc:ID>
-    <cbc:Quantity>10</cbc:Quantity>
-  </cac:Package>
+  <cbc:ID>CON_TE_1</cbc:ID>
 </cac:TransportEquipment>
 ```
 
 **Structure 6** — 1 instance
+
+```xml
+<cac:TransportEquipment>
+  <cbc:ID>TRHU1652173</cbc:ID>
+  <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+  <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+  <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
+  <cac:VerifiedGrossMass>
+    <cbc:ID>123</cbc:ID>
+    <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+    <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
+    <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+    <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+    <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+    <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+    <cac:DocumentReference>
+      <cbc:ID>W123</cbc:ID>
+      <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+      <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+      <cbc:DocumentType></cbc:DocumentType>
+      <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+    </cac:DocumentReference>
+  </cac:VerifiedGrossMass>
+</cac:TransportEquipment>
+```
+
+**Structure 7** — 1 instance
 
 ```xml
 <cac:TransportEquipment>
@@ -23289,7 +23310,51 @@ _36 instances across 4 elements, with 15 unique structures_
 </cac:TransportEquipment>
 ```
 
-**Structure 7** — 2 instances
+**Structure 8** — 3 instances
+
+```xml
+<cac:ReferencedTransportEquipment>
+  <cbc:ID>GRAI 12345698-1</cbc:ID>
+</cac:ReferencedTransportEquipment>
+```
+
+**Structure 9** — 6 instances
+
+```xml
+<cac:ContainedInTransportEquipment>
+  <cbc:ID>NEC_TE_1</cbc:ID>
+  <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+  <cbc:TraceID>12345678914542</cbc:TraceID>
+</cac:ContainedInTransportEquipment>
+```
+
+**Structure 10** — 2 instances
+
+```xml
+<cac:TransportEquipment>
+  <cbc:TransportEquipmentTypeCode>AD</cbc:TransportEquipmentTypeCode>
+  <cbc:FullnessIndicationCode>FTL</cbc:FullnessIndicationCode>
+</cac:TransportEquipment>
+```
+
+**Structure 11** — 6 instances
+
+```xml
+<cac:TransportEquipment>
+  <cbc:ID>CON_2</cbc:ID>
+  <cac:ContainedInTransportEquipment>
+    <cbc:ID>EXT_TE_2</cbc:ID>
+    <cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
+    <cbc:TraceID>12345678914112</cbc:TraceID>
+  </cac:ContainedInTransportEquipment>
+  <cac:Package>
+    <cbc:ID>CON_2</cbc:ID>
+    <cbc:Quantity>10</cbc:Quantity>
+  </cac:Package>
+</cac:TransportEquipment>
+```
+
+**Structure 12** — 2 instances
 
 ```xml
 <cac:TransportEquipment>
@@ -23325,19 +23390,12 @@ _36 instances across 4 elements, with 15 unique structures_
 </cac:TransportEquipment>
 ```
 
-**Structure 8** — 4 instances
+**Structure 13** — 2 instances
 
 ```xml
-<cac:TransportEquipment>
-  <cbc:ID>CON_TE_1</cbc:ID>
+<cac:SupportedTransportEquipment>
+  <cbc:ID>1</cbc:ID>
   <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-  <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-  <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-  <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-  <cbc:Description>SomeDescription</cbc:Description>
-  <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-  <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-  <cbc:PowerIndicator>false</cbc:PowerIndicator>
   <cac:MeasurementDimension>
     <cbc:AttributeID>Length</cbc:AttributeID>
     <cbc:Measure>6.1</cbc:Measure>
@@ -23350,22 +23408,10 @@ _36 instances across 4 elements, with 15 unique structures_
     <cbc:AttributeID>Width</cbc:AttributeID>
     <cbc:Measure>2.44</cbc:Measure>
   </cac:MeasurementDimension>
-  <cac:Package>
-    <cbc:ID>CON_P_1</cbc:ID>
-    <cbc:Quantity>10</cbc:Quantity>
-    <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-    <cac:GoodsItem>
-      <cac:Item>
-        <cac:CommodityClassification>
-          <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-        </cac:CommodityClassification>
-      </cac:Item>
-    </cac:GoodsItem>
-  </cac:Package>
-</cac:TransportEquipment>
+</cac:SupportedTransportEquipment>
 ```
 
-**Structure 9** — 1 instance
+**Structure 14** — 1 instance
 
 ```xml
 <cac:TransportEquipment>
@@ -23416,104 +23462,29 @@ _36 instances across 4 elements, with 15 unique structures_
 </cac:TransportEquipment>
 ```
 
-**Structure 10** — 2 instances
-
-```xml
-<cac:TransportEquipment>
-  <cbc:ID>1</cbc:ID>
-  <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-  <cac:MeasurementDimension>
-    <cbc:AttributeID>Length</cbc:AttributeID>
-    <cbc:Measure>6.1</cbc:Measure>
-  </cac:MeasurementDimension>
-  <cac:MeasurementDimension>
-    <cbc:AttributeID>Height</cbc:AttributeID>
-    <cbc:Measure>2.6</cbc:Measure>
-  </cac:MeasurementDimension>
-  <cac:MeasurementDimension>
-    <cbc:AttributeID>Width</cbc:AttributeID>
-    <cbc:Measure>2.44</cbc:Measure>
-  </cac:MeasurementDimension>
-</cac:TransportEquipment>
-```
-
-**Structure 11** — 2 instances
-
-```xml
-<cac:TransportEquipment>
-  <cbc:ID>TRHU1652173</cbc:ID>
-  <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-  <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
-  <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
-  <cac:VerifiedGrossMass>
-    <cbc:ID>123</cbc:ID>
-    <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-    <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
-    <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
-    <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
-    <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
-    <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
-    <cac:DocumentReference>
-      <cbc:ID>W123</cbc:ID>
-      <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-      <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-      <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-    </cac:DocumentReference>
-  </cac:VerifiedGrossMass>
-</cac:TransportEquipment>
-```
-
-**Structure 12** — 1 instance
-
-```xml
-<cac:TransportEquipment>
-  <cbc:ID>TRHU1652173</cbc:ID>
-  <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-  <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
-  <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
-  <cac:VerifiedGrossMass>
-    <cbc:ID>123</cbc:ID>
-    <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-    <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
-    <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
-    <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
-    <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
-    <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
-    <cac:DocumentReference>
-      <cbc:ID>W123</cbc:ID>
-      <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-      <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-      <cbc:DocumentType></cbc:DocumentType>
-      <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-    </cac:DocumentReference>
-  </cac:VerifiedGrossMass>
-</cac:TransportEquipment>
-```
-
-**Structure 13** — 1 instance
-
-```xml
-<cac:TransportEquipment>
-  <cbc:ID>CON_TE_1</cbc:ID>
-</cac:TransportEquipment>
-```
-
-**Structure 14** — 1 instance
-
-```xml
-<cac:TransportEquipment>
-  <cac:TransportEquipmentSeal>
-    <cbc:ID>7654321</cbc:ID>
-  </cac:TransportEquipmentSeal>
-</cac:TransportEquipment>
-```
-
 **Structure 15** — 2 instances
 
 ```xml
 <cac:TransportEquipment>
-  <cbc:TransportEquipmentTypeCode>AD</cbc:TransportEquipmentTypeCode>
-  <cbc:FullnessIndicationCode>FTL</cbc:FullnessIndicationCode>
+  <cbc:ID>TRHU1652173</cbc:ID>
+  <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+  <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+  <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
+  <cac:VerifiedGrossMass>
+    <cbc:ID>123</cbc:ID>
+    <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+    <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
+    <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+    <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+    <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+    <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+    <cac:DocumentReference>
+      <cbc:ID>W123</cbc:ID>
+      <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+      <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+      <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+    </cac:DocumentReference>
+  </cac:VerifiedGrossMass>
 </cac:TransportEquipment>
 ```
 
@@ -23528,22 +23499,41 @@ _34 instances across 10 elements, with 25 unique structures_
 **Structure 1** — 1 instance
 
 ```xml
-<cac:EstimatedArrivalTransportEvent>
-  <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
-  <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
+<cac:PlannedDepartureTransportEvent>
   <cac:Location>
-    <cbc:ID>ITGOA</cbc:ID>
-    <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
-    <cac:Address>
-      <cac:Country>
-        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
+    <cbc:ID>CNSHA</cbc:ID>
   </cac:Location>
-</cac:EstimatedArrivalTransportEvent>
+  <cac:Period>
+    <cbc:StartDate>2011-09-20</cbc:StartDate>
+    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-09-20</cbc:EndDate>
+    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:PlannedDepartureTransportEvent>
 ```
 
 **Structure 2** — 1 instance
+
+```xml
+<cac:RequestedDeliveryTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:StreetName>StreetName Example</cbc:StreetName>
+      <cbc:CityName>El Dorado</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>PA</cbc:IdentificationCode>
+        <cbc:Name>Panama</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2020-07-01</cbc:StartDate>
+    <cbc:EndDate>2020-07-01</cbc:EndDate>
+  </cac:Period>
+</cac:RequestedDeliveryTransportEvent>
+```
+
+**Structure 3** — 1 instance
 
 ```xml
 <cac:EstimatedArrivalTransportEvent>
@@ -23556,68 +23546,7 @@ _34 instances across 10 elements, with 25 unique structures_
 </cac:EstimatedArrivalTransportEvent>
 ```
 
-**Structure 3** — 2 instances
-
-```xml
-<cac:PlannedArrivalTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-      <cbc:CityName>Nurnberg</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-06</cbc:StartDate>
-    <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
-    <cbc:EndDate>2011-10-06</cbc:EndDate>
-    <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
-  </cac:Period>
-</cac:PlannedArrivalTransportEvent>
-```
-
-**Structure 4** — 1 instance
-
-```xml
-<cac:PlannedArrivalTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-      <cbc:CityName>Nurnberg</cbc:CityName>
-      <cbc:PostalZone>28400</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-06</cbc:StartDate>
-    <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
-    <cbc:EndDate>2011-10-06</cbc:EndDate>
-    <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
-  </cac:Period>
-</cac:PlannedArrivalTransportEvent>
-```
-
-**Structure 5** — 1 instance
-
-```xml
-<cac:PlannedArrivalTransportEvent>
-  <cac:Location>
-    <cbc:ID>DEHAM</cbc:ID>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-01</cbc:StartDate>
-    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-    <cbc:EndDate>2011-10-01</cbc:EndDate>
-    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-  </cac:Period>
-</cac:PlannedArrivalTransportEvent>
-```
-
-**Structure 6** — 2 instances
+**Structure 4** — 2 instances
 
 ```xml
 <cac:PlannedArrivalTransportEvent>
@@ -23639,6 +23568,48 @@ _34 instances across 10 elements, with 25 unique structures_
     <cbc:EndTime>21:30:10+01:00</cbc:EndTime>
   </cac:Period>
 </cac:PlannedArrivalTransportEvent>
+```
+
+**Structure 5** — 1 instance
+
+```xml
+<cac:EstimatedArrivalTransportEvent>
+  <cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
+  <cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
+  <cac:Location>
+    <cbc:ID>ITGOA</cbc:ID>
+    <cbc:LocationTypeCode>24</cbc:LocationTypeCode>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+</cac:EstimatedArrivalTransportEvent>
+```
+
+**Structure 6** — 2 instances
+
+```xml
+<cac:RequestedPickupTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:StreetName>Stribevangen</cbc:StreetName>
+      <cbc:BuildingNumber>89</cbc:BuildingNumber>
+      <cbc:CityName>Gedser</cbc:CityName>
+      <cbc:PostalZone>4874</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2016-08-02</cbc:StartDate>
+    <cbc:StartTime>07:00:00Z</cbc:StartTime>
+    <cbc:EndDate>2016-08-02</cbc:EndDate>
+    <cbc:EndTime>15:30:00Z</cbc:EndTime>
+  </cac:Period>
+</cac:RequestedPickupTransportEvent>
 ```
 
 **Structure 7** — 2 instances
@@ -23667,6 +23638,89 @@ _34 instances across 10 elements, with 25 unique structures_
 **Structure 8** — 1 instance
 
 ```xml
+<cac:PlannedPickupTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:ID>DEHAM</cbc:ID>
+      <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+      <cbc:CityName>Hamburg</cbc:CityName>
+      <cbc:PostalZone>29400</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2011-10-03</cbc:StartDate>
+    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-10-03</cbc:EndDate>
+    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:PlannedPickupTransportEvent>
+```
+
+**Structure 9** — 2 instances
+
+```xml
+<cac:RequestedDeliveryTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:StreetName>Marken</cbc:StreetName>
+      <cbc:BuildingNumber>13</cbc:BuildingNumber>
+      <cbc:CityName>Bergen</cbc:CityName>
+      <cbc:PostalZone>5017</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2017-03-30</cbc:StartDate>
+  </cac:Period>
+</cac:RequestedDeliveryTransportEvent>
+```
+
+**Structure 10** — 2 instances
+
+```xml
+<cac:TransportEvent>
+  <cac:CurrentStatus>
+    <cbc:ConditionCode>31</cbc:ConditionCode>
+    <cbc:Description>En route</cbc:Description>
+  </cac:CurrentStatus>
+  <cac:Contact>
+    <cbc:Name>John Smith</cbc:Name>
+    <cbc:ElectronicMail>jsmith@example.com</cbc:ElectronicMail>
+  </cac:Contact>
+</cac:TransportEvent>
+```
+
+**Structure 11** — 1 instance
+
+```xml
+<cac:PlannedArrivalTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+      <cbc:CityName>Nurnberg</cbc:CityName>
+      <cbc:PostalZone>28400</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2011-10-06</cbc:StartDate>
+    <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-10-06</cbc:EndDate>
+    <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:PlannedArrivalTransportEvent>
+```
+
+**Structure 12** — 1 instance
+
+```xml
 <cac:PlannedDeliveryTransportEvent>
   <cac:Location>
     <cac:Address>
@@ -23687,7 +23741,7 @@ _34 instances across 10 elements, with 25 unique structures_
 </cac:PlannedDeliveryTransportEvent>
 ```
 
-**Structure 9** — 1 instance
+**Structure 13** — 1 instance
 
 ```xml
 <cac:PlannedDeliveryTransportEvent>
@@ -23702,7 +23756,69 @@ _34 instances across 10 elements, with 25 unique structures_
 </cac:PlannedDeliveryTransportEvent>
 ```
 
-**Structure 10** — 2 instances
+**Structure 14** — 1 instance
+
+```xml
+<cac:PlannedPickupTransportEvent>
+  <cac:Location>
+    <cbc:ID>MAPTM</cbc:ID>
+    <cac:Address>
+      <cbc:CityName>Tanger</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>MA</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+</cac:PlannedPickupTransportEvent>
+```
+
+**Structure 15** — 2 instances
+
+```xml
+<cac:PlannedArrivalTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+      <cbc:CityName>Nurnberg</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2011-10-06</cbc:StartDate>
+    <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-10-06</cbc:EndDate>
+    <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:PlannedArrivalTransportEvent>
+```
+
+**Structure 16** — 1 instance
+
+```xml
+<cac:RequestedPickupTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:ID>DEHAM</cbc:ID>
+      <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+      <cbc:CityName>Hamburg</cbc:CityName>
+      <cbc:PostalZone>29400</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2011-10-03</cbc:StartDate>
+    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-10-03</cbc:EndDate>
+    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:RequestedPickupTransportEvent>
+```
+
+**Structure 17** — 2 instances
 
 ```xml
 <cac:PlannedDepartureTransportEvent>
@@ -23725,7 +23841,69 @@ _34 instances across 10 elements, with 25 unique structures_
 </cac:PlannedDepartureTransportEvent>
 ```
 
-**Structure 11** — 1 instance
+**Structure 18** — 1 instance
+
+```xml
+<cac:PlannedArrivalTransportEvent>
+  <cac:Location>
+    <cbc:ID>DEHAM</cbc:ID>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2011-10-01</cbc:StartDate>
+    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-10-01</cbc:EndDate>
+    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:PlannedArrivalTransportEvent>
+```
+
+**Structure 19** — 1 instance
+
+```xml
+<cac:RequestedDeliveryTransportEvent>
+  <cac:Location>
+    <cac:Address>
+      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+      <cbc:CityName>Nurnberg</cbc:CityName>
+      <cbc:PostalZone>28400</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2011-10-06</cbc:StartDate>
+    <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-10-06</cbc:EndDate>
+    <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:RequestedDeliveryTransportEvent>
+```
+
+**Structure 20** — 2 instances
+
+```xml
+<cac:PlannedDepartureTransportEvent>
+  <cac:Location>
+    <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+    <cac:Address>
+      <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
+      <cbc:CityName>Nurnberg</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+  <cac:Period>
+    <cbc:StartDate>2011-10-06</cbc:StartDate>
+    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+    <cbc:EndDate>2011-10-06</cbc:EndDate>
+    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+  </cac:Period>
+</cac:PlannedDepartureTransportEvent>
+```
+
+**Structure 21** — 1 instance
 
 ```xml
 <cac:PlannedDepartureTransportEvent>
@@ -23749,23 +23927,27 @@ _34 instances across 10 elements, with 25 unique structures_
 </cac:PlannedDepartureTransportEvent>
 ```
 
-**Structure 12** — 1 instance
+**Structure 22** — 1 instance
 
 ```xml
-<cac:PlannedDepartureTransportEvent>
+<cac:RequestedArrivalTransportEvent>
   <cac:Location>
-    <cbc:ID>CNSHA</cbc:ID>
+    <cac:Address>
+      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+      <cbc:CityName>Nurnberg</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:Location>
   <cac:Period>
-    <cbc:StartDate>2011-09-20</cbc:StartDate>
-    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-    <cbc:EndDate>2011-09-20</cbc:EndDate>
-    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+    <cbc:StartDate>2011-10-06</cbc:StartDate>
+    <cbc:EndDate>2011-10-06</cbc:EndDate>
   </cac:Period>
-</cac:PlannedDepartureTransportEvent>
+</cac:RequestedArrivalTransportEvent>
 ```
 
-**Structure 13** — 2 instances
+**Structure 23** — 2 instances
 
 ```xml
 <cac:PlannedDepartureTransportEvent>
@@ -23789,176 +23971,7 @@ _34 instances across 10 elements, with 25 unique structures_
 </cac:PlannedDepartureTransportEvent>
 ```
 
-**Structure 14** — 2 instances
-
-```xml
-<cac:PlannedDepartureTransportEvent>
-  <cac:Location>
-    <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-    <cac:Address>
-      <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
-      <cbc:CityName>Nurnberg</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-06</cbc:StartDate>
-    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-    <cbc:EndDate>2011-10-06</cbc:EndDate>
-    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-  </cac:Period>
-</cac:PlannedDepartureTransportEvent>
-```
-
-**Structure 15** — 1 instance
-
-```xml
-<cac:PlannedPickupTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:ID>DEHAM</cbc:ID>
-      <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-      <cbc:CityName>Hamburg</cbc:CityName>
-      <cbc:PostalZone>29400</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-03</cbc:StartDate>
-    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-    <cbc:EndDate>2011-10-03</cbc:EndDate>
-    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-  </cac:Period>
-</cac:PlannedPickupTransportEvent>
-```
-
-**Structure 16** — 1 instance
-
-```xml
-<cac:PlannedPickupTransportEvent>
-  <cac:Location>
-    <cbc:ID>MAPTM</cbc:ID>
-    <cac:Address>
-      <cbc:CityName>Tanger</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>MA</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-</cac:PlannedPickupTransportEvent>
-```
-
-**Structure 17** — 1 instance
-
-```xml
-<cac:RequestedArrivalTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-      <cbc:CityName>Nurnberg</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-06</cbc:StartDate>
-    <cbc:EndDate>2011-10-06</cbc:EndDate>
-  </cac:Period>
-</cac:RequestedArrivalTransportEvent>
-```
-
-**Structure 18** — 2 instances
-
-```xml
-<cac:RequestedDeliveryTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:StreetName>Marken</cbc:StreetName>
-      <cbc:BuildingNumber>13</cbc:BuildingNumber>
-      <cbc:CityName>Bergen</cbc:CityName>
-      <cbc:PostalZone>5017</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2017-03-30</cbc:StartDate>
-  </cac:Period>
-</cac:RequestedDeliveryTransportEvent>
-```
-
-**Structure 19** — 1 instance
-
-```xml
-<cac:RequestedDeliveryTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:StreetName>StreetName Example</cbc:StreetName>
-      <cbc:CityName>El Dorado</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>PA</cbc:IdentificationCode>
-        <cbc:Name>Panama</cbc:Name>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2020-07-01</cbc:StartDate>
-    <cbc:EndDate>2020-07-01</cbc:EndDate>
-  </cac:Period>
-</cac:RequestedDeliveryTransportEvent>
-```
-
-**Structure 20** — 1 instance
-
-```xml
-<cac:RequestedDeliveryTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:StreetName>Grosse strasse 34</cbc:StreetName>
-      <cbc:CityName>Nurnberg</cbc:CityName>
-      <cbc:PostalZone>28400</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-06</cbc:StartDate>
-    <cbc:StartTime>12:30:10+01:00</cbc:StartTime>
-    <cbc:EndDate>2011-10-06</cbc:EndDate>
-    <cbc:EndTime>15:30:10+01:00</cbc:EndTime>
-  </cac:Period>
-</cac:RequestedDeliveryTransportEvent>
-```
-
-**Structure 21** — 1 instance
-
-```xml
-<cac:RequestedDepartureTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:ID>DEHAM</cbc:ID>
-      <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-      <cbc:CityName>Hamburg</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2011-10-03</cbc:StartDate>
-    <cbc:EndDate>2011-10-03</cbc:EndDate>
-  </cac:Period>
-</cac:RequestedDepartureTransportEvent>
-```
-
-**Structure 22** — 1 instance
+**Structure 24** — 1 instance
 
 ```xml
 <cac:RequestedPickupTransportEvent>
@@ -23987,16 +24000,15 @@ _34 instances across 10 elements, with 25 unique structures_
 </cac:RequestedPickupTransportEvent>
 ```
 
-**Structure 23** — 1 instance
+**Structure 25** — 1 instance
 
 ```xml
-<cac:RequestedPickupTransportEvent>
+<cac:RequestedDepartureTransportEvent>
   <cac:Location>
     <cac:Address>
       <cbc:ID>DEHAM</cbc:ID>
       <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
       <cbc:CityName>Hamburg</cbc:CityName>
-      <cbc:PostalZone>29400</cbc:PostalZone>
       <cac:Country>
         <cbc:IdentificationCode>DE</cbc:IdentificationCode>
       </cac:Country>
@@ -24004,50 +24016,9 @@ _34 instances across 10 elements, with 25 unique structures_
   </cac:Location>
   <cac:Period>
     <cbc:StartDate>2011-10-03</cbc:StartDate>
-    <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
     <cbc:EndDate>2011-10-03</cbc:EndDate>
-    <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
   </cac:Period>
-</cac:RequestedPickupTransportEvent>
-```
-
-**Structure 24** — 2 instances
-
-```xml
-<cac:RequestedPickupTransportEvent>
-  <cac:Location>
-    <cac:Address>
-      <cbc:StreetName>Stribevangen</cbc:StreetName>
-      <cbc:BuildingNumber>89</cbc:BuildingNumber>
-      <cbc:CityName>Gedser</cbc:CityName>
-      <cbc:PostalZone>4874</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-  <cac:Period>
-    <cbc:StartDate>2016-08-02</cbc:StartDate>
-    <cbc:StartTime>07:00:00</cbc:StartTime>
-    <cbc:EndDate>2016-08-02</cbc:EndDate>
-    <cbc:EndTime>15:30:00</cbc:EndTime>
-  </cac:Period>
-</cac:RequestedPickupTransportEvent>
-```
-
-**Structure 25** — 2 instances
-
-```xml
-<cac:TransportEvent>
-  <cac:CurrentStatus>
-    <cbc:ConditionCode>31</cbc:ConditionCode>
-    <cbc:Description>En route</cbc:Description>
-  </cac:CurrentStatus>
-  <cac:Contact>
-    <cbc:Name>John Smith</cbc:Name>
-    <cbc:ElectronicMail>jsmith@example.com</cbc:ElectronicMail>
-  </cac:Contact>
-</cac:TransportEvent>
+</cac:RequestedDepartureTransportEvent>
 ```
 
 [↑ Back to contents](#contents)
@@ -24058,7 +24029,17 @@ _34 instances across 10 elements, with 25 unique structures_
 
 _4 instances across 1 element, with 3 unique structures_
 
-**Structure 1** — 2 instances
+**Structure 1** — 1 instance
+
+```xml
+<cac:TransportExecutionTerms>
+  <cac:PaymentTerms>
+    <cbc:Note>PER THIRTY DAYS</cbc:Note>
+  </cac:PaymentTerms>
+</cac:TransportExecutionTerms>
+```
+
+**Structure 2** — 2 instances
 
 ```xml
 <cac:TransportExecutionTerms>
@@ -24116,7 +24097,7 @@ _4 instances across 1 element, with 3 unique structures_
 </cac:TransportExecutionTerms>
 ```
 
-**Structure 2** — 1 instance
+**Structure 3** — 1 instance
 
 ```xml
 <cac:TransportExecutionTerms>
@@ -24158,16 +24139,6 @@ _4 instances across 1 element, with 3 unique structures_
 </cac:TransportExecutionTerms>
 ```
 
-**Structure 3** — 1 instance
-
-```xml
-<cac:TransportExecutionTerms>
-  <cac:PaymentTerms>
-    <cbc:Note>PER THIRTY DAYS</cbc:Note>
-  </cac:PaymentTerms>
-</cac:TransportExecutionTerms>
-```
-
 [↑ Back to contents](#contents)
 
 ### `TransportHandlingUnitType`
@@ -24176,7 +24147,185 @@ _4 instances across 1 element, with 3 unique structures_
 
 _28 instances across 1 element, with 13 unique structures_
 
-**Structure 1** — 1 instance
+**Structure 1** — 2 instances
+
+```xml
+<cac:TransportHandlingUnit>
+  <cac:TransportEquipment>
+    <cbc:ID>TRHU1652173</cbc:ID>
+    <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+    <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+    <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
+    <cac:VerifiedGrossMass>
+      <cbc:ID>123</cbc:ID>
+      <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+      <cbc:WeighingTime>00:30:00Z</cbc:WeighingTime>
+      <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+      <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+      <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+      <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+      <cac:DocumentReference>
+        <cbc:ID>W123</cbc:ID>
+        <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+        <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+        <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+      </cac:DocumentReference>
+    </cac:VerifiedGrossMass>
+  </cac:TransportEquipment>
+  <cac:ShipmentDocumentReference>
+    <cbc:ID>GOA294107</cbc:ID>
+    <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
+  </cac:ShipmentDocumentReference>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 2** — 4 instances
+
+```xml
+<cac:TransportHandlingUnit>
+  <cbc:ID>CON_THU_2</cbc:ID>
+  <cac:TransportEquipment>
+    <cbc:ID>CON_2</cbc:ID>
+    <cac:ContainedInTransportEquipment>
+      <cbc:ID>NEC_TE_2</cbc:ID>
+      <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+      <cbc:TraceID>12345678914543</cbc:TraceID>
+    </cac:ContainedInTransportEquipment>
+    <cac:Package>
+      <cbc:ID>CON_2</cbc:ID>
+      <cbc:Quantity>10</cbc:Quantity>
+    </cac:Package>
+  </cac:TransportEquipment>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 3** — 1 instance
+
+```xml
+<cac:TransportHandlingUnit>
+  <cbc:ID>THU1</cbc:ID>
+  <cbc:TransportHandlingUnitTypeCode>Palletized cargo</cbc:TransportHandlingUnitTypeCode>
+  <cbc:TotalGoodsItemQuantity>2</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalPackageQuantity>2</cbc:TotalPackageQuantity>
+  <cac:TransportEquipment>
+    <cbc:ID>12345698</cbc:ID>
+    <cbc:TransportEquipmentTypeCode>EFP</cbc:TransportEquipmentTypeCode>
+    <cbc:GrossWeightMeasure>400</cbc:GrossWeightMeasure>
+    <cbc:GrossVolumeMeasure>1.536</cbc:GrossVolumeMeasure>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Width</cbc:AttributeID>
+      <cbc:Measure>80</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Length</cbc:AttributeID>
+      <cbc:Measure>120</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Height</cbc:AttributeID>
+      <cbc:Measure>160</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:GoodsItem>
+      <cbc:ID>GoodsItemID1</cbc:ID>
+      <cbc:Description>Office Printer 1</cbc:Description>
+      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+      <cbc:Quantity>1</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Office Printer 1</cbc:Name>
+        <cbc:BrandName>Canon</cbc:BrandName>
+        <cbc:ModelName>ModelName28</cbc:ModelName>
+        <cac:CommodityClassification>
+          <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>GoodsItemID2</cbc:ID>
+      <cbc:Description>Office Printer 2</cbc:Description>
+      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+      <cbc:Quantity>1</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Office Printer 2</cbc:Name>
+        <cbc:BrandName>Canon</cbc:BrandName>
+        <cbc:ModelName>MPX2000</cbc:ModelName>
+        <cac:CommodityClassification>
+          <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:TransportEquipment>
+  <cac:MeasurementDimension>
+    <cbc:AttributeID>Width</cbc:AttributeID>
+    <cbc:Measure>80</cbc:Measure>
+  </cac:MeasurementDimension>
+  <cac:MeasurementDimension>
+    <cbc:AttributeID>Length</cbc:AttributeID>
+    <cbc:Measure>120</cbc:Measure>
+  </cac:MeasurementDimension>
+  <cac:MeasurementDimension>
+    <cbc:AttributeID>Height</cbc:AttributeID>
+    <cbc:Measure>160</cbc:Measure>
+  </cac:MeasurementDimension>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 4** — 4 instances
+
+```xml
+<cac:TransportHandlingUnit>
+  <cbc:ID>1</cbc:ID>
+  <cbc:TransportHandlingUnitTypeCode>PA</cbc:TransportHandlingUnitTypeCode>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
+  <cac:ActualPackage>
+    <cbc:Quantity>10</cbc:Quantity>
+    <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
+  </cac:ActualPackage>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 5** — 3 instances
+
+```xml
+<cac:TransportHandlingUnit>
+  <cbc:ID>ABCD123456-7</cbc:ID>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 6** — 1 instance
+
+```xml
+<cac:TransportHandlingUnit>
+  <cac:TransportEquipment>
+    <cbc:ID>TRHU1652173</cbc:ID>
+    <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+    <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+    <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
+    <cac:VerifiedGrossMass>
+      <cbc:ID>123</cbc:ID>
+      <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+      <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
+      <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+      <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+      <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+      <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+      <cac:DocumentReference>
+        <cbc:ID>W123</cbc:ID>
+        <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+        <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
+        <cbc:DocumentType></cbc:DocumentType>
+        <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+      </cac:DocumentReference>
+    </cac:VerifiedGrossMass>
+  </cac:TransportEquipment>
+  <cac:ShipmentDocumentReference>
+    <cbc:ID>GOA294107</cbc:ID>
+    <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
+  </cac:ShipmentDocumentReference>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 7** — 1 instance
 
 ```xml
 <cac:TransportHandlingUnit>
@@ -24297,282 +24446,7 @@ _28 instances across 1 element, with 13 unique structures_
 </cac:TransportHandlingUnit>
 ```
 
-**Structure 2** — 2 instances
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>EXT_THU_1</cbc:ID>
-  <cac:TransportEquipment>
-    <cbc:ID>CON_1</cbc:ID>
-    <cac:ContainedInTransportEquipment>
-      <cbc:ID>EXT_TE_1</cbc:ID>
-      <cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
-      <cbc:TraceID>12345678914111</cbc:TraceID>
-    </cac:ContainedInTransportEquipment>
-    <cac:Package>
-      <cbc:ID>CON_1</cbc:ID>
-      <cbc:Quantity>10</cbc:Quantity>
-    </cac:Package>
-  </cac:TransportEquipment>
-  <cac:TransportMeans>
-    <cac:RoadTransport>
-      <cbc:LicensePlateID>WFN667</cbc:LicensePlateID>
-    </cac:RoadTransport>
-  </cac:TransportMeans>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 3** — 4 instances
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>NTT_THU_1</cbc:ID>
-  <cac:TransportEquipment>
-    <cbc:ID>NTT_THU_1</cbc:ID>
-    <cac:ContainedInTransportEquipment>
-      <cbc:ID>NTT_TE_1</cbc:ID>
-      <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-      <cbc:TraceID>12345678914564</cbc:TraceID>
-    </cac:ContainedInTransportEquipment>
-    <cac:Package>
-      <cbc:ID>CON_1</cbc:ID>
-      <cbc:Quantity>10</cbc:Quantity>
-    </cac:Package>
-  </cac:TransportEquipment>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 4** — 1 instance
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>CON_THU_1</cbc:ID>
-  <cac:TransportEquipment>
-    <cbc:ID>CON_TE_1</cbc:ID>
-  </cac:TransportEquipment>
-  <cac:Status>
-    <cbc:ConditionCode>4</cbc:ConditionCode>
-    <cbc:StatusReasonCode>23</cbc:StatusReasonCode>
-    <cbc:StatusReason>Reefer container lost power - cargo of fish destroyed</cbc:StatusReason>
-  </cac:Status>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 5** — 1 instance
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>THU_1</cbc:ID>
-  <cbc:TransportHandlingUnitTypeCode>122</cbc:TransportHandlingUnitTypeCode>
-  <cbc:HandlingCode>23</cbc:HandlingCode>
-  <cbc:HandlingInstructions>HANDLE WITH CARE</cbc:HandlingInstructions>
-  <cac:TransportEquipment>
-    <cbc:ID>TE_1</cbc:ID>
-    <cbc:TransportEquipmentTypeCode>AE</cbc:TransportEquipmentTypeCode>
-    <cbc:Description>BODY TRAILER</cbc:Description>
-    <cbc:GrossWeightMeasure>1000.0</cbc:GrossWeightMeasure>
-    <cac:GoodsItem>
-      <cbc:ID>GID_1</cbc:ID>
-      <cac:Item>
-        <cbc:Description>MOTOR CYCLE</cbc:Description>
-        <cbc:Name>YAMAHA</cbc:Name>
-      </cac:Item>
-    </cac:GoodsItem>
-    <cac:GoodsItem>
-      <cbc:ID>GID_2</cbc:ID>
-      <cac:Item>
-        <cbc:Description>MOTOR CYCLE</cbc:Description>
-        <cbc:Name>HONDA</cbc:Name>
-      </cac:Item>
-    </cac:GoodsItem>
-  </cac:TransportEquipment>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 6** — 2 instances
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>CON_THU_1</cbc:ID>
-  <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
-  <cac:TransportEquipment>
-    <cbc:ID>BFCU4040001</cbc:ID>
-    <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-    <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-    <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-    <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
-    <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
-    <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-    <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-    <cbc:PowerIndicator>true</cbc:PowerIndicator>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Length</cbc:AttributeID>
-      <cbc:Measure>6.1</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Height</cbc:AttributeID>
-      <cbc:Measure>2.6</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Width</cbc:AttributeID>
-      <cbc:Measure>2.44</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:GoodsItem>
-      <cac:Item>
-        <cac:CommodityClassification>
-          <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
-          <cbc:CommodityCode>8</cbc:CommodityCode>
-        </cac:CommodityClassification>
-      </cac:Item>
-    </cac:GoodsItem>
-  </cac:TransportEquipment>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 7** — 4 instances
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>1</cbc:ID>
-  <cbc:TransportHandlingUnitTypeCode>PA</cbc:TransportHandlingUnitTypeCode>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-  <cac:ActualPackage>
-    <cbc:Quantity>10</cbc:Quantity>
-    <cbc:PackagingTypeCode>TB</cbc:PackagingTypeCode>
-  </cac:ActualPackage>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 8** — 4 instances
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>CON_THU_1</cbc:ID>
-  <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-  <cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-  <cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
-  <cac:TransportEquipment>
-    <cbc:ID>CON_TE_1</cbc:ID>
-    <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-    <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-    <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-    <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-    <cbc:Description>SomeDescription</cbc:Description>
-    <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
-    <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
-    <cbc:PowerIndicator>false</cbc:PowerIndicator>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Length</cbc:AttributeID>
-      <cbc:Measure>6.1</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Height</cbc:AttributeID>
-      <cbc:Measure>2.6</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Width</cbc:AttributeID>
-      <cbc:Measure>2.44</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:Package>
-      <cbc:ID>CON_P_1</cbc:ID>
-      <cbc:Quantity>10</cbc:Quantity>
-      <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-      <cac:GoodsItem>
-        <cac:Item>
-          <cac:CommodityClassification>
-            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-          </cac:CommodityClassification>
-        </cac:Item>
-      </cac:GoodsItem>
-    </cac:Package>
-  </cac:TransportEquipment>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 9** — 1 instance
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>THU1</cbc:ID>
-  <cbc:TransportHandlingUnitTypeCode>Palletized cargo</cbc:TransportHandlingUnitTypeCode>
-  <cbc:TotalGoodsItemQuantity>2</cbc:TotalGoodsItemQuantity>
-  <cbc:TotalPackageQuantity>2</cbc:TotalPackageQuantity>
-  <cac:TransportEquipment>
-    <cbc:ID>12345698</cbc:ID>
-    <cbc:TransportEquipmentTypeCode>EFP</cbc:TransportEquipmentTypeCode>
-    <cbc:GrossWeightMeasure>400</cbc:GrossWeightMeasure>
-    <cbc:GrossVolumeMeasure>1.536</cbc:GrossVolumeMeasure>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Width</cbc:AttributeID>
-      <cbc:Measure>80</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Length</cbc:AttributeID>
-      <cbc:Measure>120</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:MeasurementDimension>
-      <cbc:AttributeID>Height</cbc:AttributeID>
-      <cbc:Measure>160</cbc:Measure>
-    </cac:MeasurementDimension>
-    <cac:GoodsItem>
-      <cbc:ID>GoodsItemID1</cbc:ID>
-      <cbc:Description>Office Printer 1</cbc:Description>
-      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-      <cbc:Quantity>1</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Office Printer 1</cbc:Name>
-        <cbc:BrandName>Canon</cbc:BrandName>
-        <cbc:ModelName>ModelName28</cbc:ModelName>
-        <cac:CommodityClassification>
-          <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
-        </cac:CommodityClassification>
-      </cac:Item>
-    </cac:GoodsItem>
-    <cac:GoodsItem>
-      <cbc:ID>GoodsItemID2</cbc:ID>
-      <cbc:Description>Office Printer 2</cbc:Description>
-      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-      <cbc:Quantity>1</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Office Printer 2</cbc:Name>
-        <cbc:BrandName>Canon</cbc:BrandName>
-        <cbc:ModelName>MPX2000</cbc:ModelName>
-        <cac:CommodityClassification>
-          <cbc:NatureCode>Machinery / Electrical</cbc:NatureCode>
-        </cac:CommodityClassification>
-      </cac:Item>
-    </cac:GoodsItem>
-  </cac:TransportEquipment>
-  <cac:MeasurementDimension>
-    <cbc:AttributeID>Width</cbc:AttributeID>
-    <cbc:Measure>80</cbc:Measure>
-  </cac:MeasurementDimension>
-  <cac:MeasurementDimension>
-    <cbc:AttributeID>Length</cbc:AttributeID>
-    <cbc:Measure>120</cbc:Measure>
-  </cac:MeasurementDimension>
-  <cac:MeasurementDimension>
-    <cbc:AttributeID>Height</cbc:AttributeID>
-    <cbc:Measure>160</cbc:Measure>
-  </cac:MeasurementDimension>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 10** — 3 instances
-
-```xml
-<cac:TransportHandlingUnit>
-  <cbc:ID>TI_101</cbc:ID>
-</cac:TransportHandlingUnit>
-```
-
-**Structure 11** — 2 instances
+**Structure 8** — 2 instances
 
 ```xml
 <cac:TransportHandlingUnit>
@@ -24643,35 +24517,134 @@ _28 instances across 1 element, with 13 unique structures_
 </cac:TransportHandlingUnit>
 ```
 
-**Structure 12** — 2 instances
+**Structure 9** — 4 instances
 
 ```xml
 <cac:TransportHandlingUnit>
+  <cbc:ID>CON_THU_1</cbc:ID>
+  <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
+  <cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
+  <cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
   <cac:TransportEquipment>
-    <cbc:ID>TRHU1652173</cbc:ID>
+    <cbc:ID>CON_TE_1</cbc:ID>
     <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-    <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
-    <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
-    <cac:VerifiedGrossMass>
-      <cbc:ID>123</cbc:ID>
-      <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-      <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
-      <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
-      <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
-      <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
-      <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
-      <cac:DocumentReference>
-        <cbc:ID>W123</cbc:ID>
-        <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-        <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-        <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-      </cac:DocumentReference>
-    </cac:VerifiedGrossMass>
+    <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+    <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+    <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+    <cbc:Description>SomeDescription</cbc:Description>
+    <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+    <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+    <cbc:PowerIndicator>false</cbc:PowerIndicator>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Length</cbc:AttributeID>
+      <cbc:Measure>6.1</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Height</cbc:AttributeID>
+      <cbc:Measure>2.6</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Width</cbc:AttributeID>
+      <cbc:Measure>2.44</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:Package>
+      <cbc:ID>CON_P_1</cbc:ID>
+      <cbc:Quantity>10</cbc:Quantity>
+      <cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+      <cac:GoodsItem>
+        <cac:Item>
+          <cac:CommodityClassification>
+            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:GoodsItem>
+    </cac:Package>
   </cac:TransportEquipment>
-  <cac:ShipmentDocumentReference>
-    <cbc:ID>GOA294107</cbc:ID>
-    <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
-  </cac:ShipmentDocumentReference>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 10** — 2 instances
+
+```xml
+<cac:TransportHandlingUnit>
+  <cbc:ID>EXT_THU_2</cbc:ID>
+  <cac:TransportEquipment>
+    <cbc:ID>CON_2</cbc:ID>
+    <cac:ContainedInTransportEquipment>
+      <cbc:ID>EXT_TE_2</cbc:ID>
+      <cbc:TransportEquipmentTypeCode>TE</cbc:TransportEquipmentTypeCode>
+      <cbc:TraceID>12345678914112</cbc:TraceID>
+    </cac:ContainedInTransportEquipment>
+    <cac:Package>
+      <cbc:ID>CON_2</cbc:ID>
+      <cbc:Quantity>10</cbc:Quantity>
+    </cac:Package>
+  </cac:TransportEquipment>
+  <cac:TransportMeans>
+    <cac:RoadTransport>
+      <cbc:LicensePlateID>WFN667</cbc:LicensePlateID>
+    </cac:RoadTransport>
+  </cac:TransportMeans>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 11** — 2 instances
+
+```xml
+<cac:TransportHandlingUnit>
+  <cbc:ID>CON_THU_1</cbc:ID>
+  <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+  <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+  <cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
+  <cac:TransportEquipment>
+    <cbc:ID>BFCU4040001</cbc:ID>
+    <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+    <cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+    <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+    <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+    <cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
+    <cbc:GrossWeightMeasure>25000</cbc:GrossWeightMeasure>
+    <cbc:GrossVolumeMeasure>39</cbc:GrossVolumeMeasure>
+    <cbc:PowerIndicator>true</cbc:PowerIndicator>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Length</cbc:AttributeID>
+      <cbc:Measure>6.1</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Height</cbc:AttributeID>
+      <cbc:Measure>2.6</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:MeasurementDimension>
+      <cbc:AttributeID>Width</cbc:AttributeID>
+      <cbc:Measure>2.44</cbc:Measure>
+    </cac:MeasurementDimension>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cac:CommodityClassification>
+          <cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+          <cbc:CommodityCode>8</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:TransportEquipment>
+</cac:TransportHandlingUnit>
+```
+
+**Structure 12** — 1 instance
+
+```xml
+<cac:TransportHandlingUnit>
+  <cbc:ID>CON_THU_1</cbc:ID>
+  <cac:TransportEquipment>
+    <cbc:ID>CON_TE_1</cbc:ID>
+  </cac:TransportEquipment>
+  <cac:Status>
+    <cbc:ConditionCode>4</cbc:ConditionCode>
+    <cbc:StatusReasonCode>23</cbc:StatusReasonCode>
+    <cbc:StatusReason>Reefer container lost power - cargo of fish destroyed</cbc:StatusReason>
+  </cac:Status>
 </cac:TransportHandlingUnit>
 ```
 
@@ -24679,32 +24652,30 @@ _28 instances across 1 element, with 13 unique structures_
 
 ```xml
 <cac:TransportHandlingUnit>
+  <cbc:ID>THU_1</cbc:ID>
+  <cbc:TransportHandlingUnitTypeCode>122</cbc:TransportHandlingUnitTypeCode>
+  <cbc:HandlingCode>23</cbc:HandlingCode>
+  <cbc:HandlingInstructions>HANDLE WITH CARE</cbc:HandlingInstructions>
   <cac:TransportEquipment>
-    <cbc:ID>TRHU1652173</cbc:ID>
-    <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-    <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
-    <cbc:FullnessIndicationCode>5</cbc:FullnessIndicationCode>
-    <cac:VerifiedGrossMass>
-      <cbc:ID>123</cbc:ID>
-      <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-      <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
-      <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
-      <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
-      <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
-      <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
-      <cac:DocumentReference>
-        <cbc:ID>W123</cbc:ID>
-        <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-        <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-        <cbc:DocumentType></cbc:DocumentType>
-        <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-      </cac:DocumentReference>
-    </cac:VerifiedGrossMass>
+    <cbc:ID>TE_1</cbc:ID>
+    <cbc:TransportEquipmentTypeCode>AE</cbc:TransportEquipmentTypeCode>
+    <cbc:Description>BODY TRAILER</cbc:Description>
+    <cbc:GrossWeightMeasure>1000.0</cbc:GrossWeightMeasure>
+    <cac:GoodsItem>
+      <cbc:ID>GID_1</cbc:ID>
+      <cac:Item>
+        <cbc:Description>MOTOR CYCLE</cbc:Description>
+        <cbc:Name>YAMAHA</cbc:Name>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>GID_2</cbc:ID>
+      <cac:Item>
+        <cbc:Description>MOTOR CYCLE</cbc:Description>
+        <cbc:Name>HONDA</cbc:Name>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:TransportEquipment>
-  <cac:ShipmentDocumentReference>
-    <cbc:ID>GOA294107</cbc:ID>
-    <cbc:DocumentTypeCode>BN</cbc:DocumentTypeCode>
-  </cac:ShipmentDocumentReference>
 </cac:TransportHandlingUnit>
 ```
 
@@ -24716,31 +24687,7 @@ _28 instances across 1 element, with 13 unique structures_
 
 _25 instances across 1 element, with 12 unique structures_
 
-**Structure 1** — 4 instances
-
-```xml
-<cac:TransportMeans>
-  <cbc:JourneyID>UA 1234</cbc:JourneyID>
-  <cac:AirTransport>
-    <cbc:AircraftID>A-127763-747</cbc:AircraftID>
-  </cac:AirTransport>
-</cac:TransportMeans>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:TransportMeans>
-  <cbc:JourneyID>00344</cbc:JourneyID>
-  <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
-  <cac:MaritimeTransport>
-    <cbc:VesselID>3852664</cbc:VesselID>
-    <cbc:VesselName>Vessel Name</cbc:VesselName>
-  </cac:MaritimeTransport>
-</cac:TransportMeans>
-```
-
-**Structure 3** — 2 instances
+**Structure 1** — 2 instances
 
 ```xml
 <cac:TransportMeans>
@@ -24752,7 +24699,15 @@ _25 instances across 1 element, with 12 unique structures_
 </cac:TransportMeans>
 ```
 
-**Structure 4** — 1 instance
+**Structure 2** — 2 instances
+
+```xml
+<cac:TransportMeans>
+  <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
+</cac:TransportMeans>
+```
+
+**Structure 3** — 1 instance
 
 ```xml
 <cac:TransportMeans>
@@ -24767,7 +24722,28 @@ _25 instances across 1 element, with 12 unique structures_
 </cac:TransportMeans>
 ```
 
-**Structure 5** — 2 instances
+**Structure 4** — 2 instances
+
+```xml
+<cac:TransportMeans>
+  <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
+  <cac:AirTransport>
+    <cbc:AircraftID>AY-428 20130623</cbc:AircraftID>
+  </cac:AirTransport>
+</cac:TransportMeans>
+```
+
+**Structure 5** — 1 instance
+
+```xml
+<cac:TransportMeans>
+  <cac:RailTransport>
+    <cbc:TrainID>VF80145</cbc:TrainID>
+  </cac:RailTransport>
+</cac:TransportMeans>
+```
+
+**Structure 6** — 2 instances
 
 ```xml
 <cac:TransportMeans>
@@ -24780,28 +24756,7 @@ _25 instances across 1 element, with 12 unique structures_
 </cac:TransportMeans>
 ```
 
-**Structure 6** — 1 instance
-
-```xml
-<cac:TransportMeans>
-  <cac:RailTransport>
-    <cbc:TrainID>VF80145</cbc:TrainID>
-  </cac:RailTransport>
-</cac:TransportMeans>
-```
-
 **Structure 7** — 2 instances
-
-```xml
-<cac:TransportMeans>
-  <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
-  <cac:AirTransport>
-    <cbc:AircraftID>AY-428 20130623</cbc:AircraftID>
-  </cac:AirTransport>
-</cac:TransportMeans>
-```
-
-**Structure 8** — 2 instances
 
 ```xml
 <cac:TransportMeans>
@@ -24812,15 +24767,39 @@ _25 instances across 1 element, with 12 unique structures_
 </cac:TransportMeans>
 ```
 
-**Structure 9** — 2 instances
+**Structure 8** — 1 instance
 
 ```xml
 <cac:TransportMeans>
-  <cbc:RegistrationNationalityID>FI</cbc:RegistrationNationalityID>
+  <cbc:JourneyID>00344</cbc:JourneyID>
+  <cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
+  <cac:MaritimeTransport>
+    <cbc:VesselID>3852664</cbc:VesselID>
+    <cbc:VesselName>Vessel Name</cbc:VesselName>
+  </cac:MaritimeTransport>
 </cac:TransportMeans>
 ```
 
-**Structure 10** — 6 instances
+**Structure 9** — 4 instances
+
+```xml
+<cac:TransportMeans>
+  <cbc:JourneyID>UA 1234</cbc:JourneyID>
+  <cac:AirTransport>
+    <cbc:AircraftID>A-127763-747</cbc:AircraftID>
+  </cac:AirTransport>
+</cac:TransportMeans>
+```
+
+**Structure 10** — 1 instance
+
+```xml
+<cac:TransportMeans>
+  <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
+</cac:TransportMeans>
+```
+
+**Structure 11** — 6 instances
 
 ```xml
 <cac:TransportMeans>
@@ -24830,7 +24809,7 @@ _25 instances across 1 element, with 12 unique structures_
 </cac:TransportMeans>
 ```
 
-**Structure 11** — 1 instance
+**Structure 12** — 1 instance
 
 ```xml
 <cac:TransportMeans>
@@ -24839,14 +24818,6 @@ _25 instances across 1 element, with 12 unique structures_
     <cbc:TrainID>101</cbc:TrainID>
     <cbc:RailCarID>101-21</cbc:RailCarID>
   </cac:RailTransport>
-</cac:TransportMeans>
-```
-
-**Structure 12** — 1 instance
-
-```xml
-<cac:TransportMeans>
-  <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
 </cac:TransportMeans>
 ```
 
@@ -24940,216 +24911,6 @@ _7 instances across 1 element, with 7 unique structures_
 
 ```xml
 <cac:TransportationSegment>
-  <cbc:SequenceNumberID>3</cbc:SequenceNumberID>
-  <cbc:TransportExecutionPlanReferenceID>TEPID_1_3</cbc:TransportExecutionPlanReferenceID>
-  <cbc:TransportModeCode>1</cbc:TransportModeCode>
-  <cbc:TransportMeansTypeCode>Container vessel</cbc:TransportMeansTypeCode>
-  <cac:TransportationService>
-    <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
-  </cac:TransportationService>
-  <cac:TransportServiceProviderParty>
-    <cac:PartyName>
-      <cbc:Name>SEA CARRIER</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:Name>Horst Tappert</cbc:Name>
-      <cbc:Telephone>+4987675652</cbc:Telephone>
-      <cbc:ElectronicMail>horst@SEACARRIER.de</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:TransportServiceProviderParty>
-  <cac:CarryingTransportMeans>
-    <cbc:TransportMeansTypeCode>83</cbc:TransportMeansTypeCode>
-    <cac:MaritimeTransport>
-      <cbc:VesselID>IMO1234567</cbc:VesselID>
-      <cbc:VesselName>MS Enova</cbc:VesselName>
-    </cac:MaritimeTransport>
-  </cac:CarryingTransportMeans>
-  <cac:DepartureTransportLocation>
-    <cac:PlannedDeparturePeriod>
-      <cbc:StartDate>2011-03-13</cbc:StartDate>
-      <cbc:StartTime>22:00:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2011-03-13</cbc:EndDate>
-      <cbc:EndTime>22:30:00.0Z</cbc:EndTime>
-    </cac:PlannedDeparturePeriod>
-    <cac:Location>
-      <cbc:ID>DEBREV</cbc:ID>
-      <cbc:LocationTypeCode>Baseport of loading</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:StreetName>Heissestrasse 45</cbc:StreetName>
-        <cbc:CityName>Munich</cbc:CityName>
-        <cbc:PostalZone>80334</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:DepartureTransportLocation>
-  <cac:ArrivalTransportLocation>
-    <cac:PlannedArrivalPeriod>
-      <cbc:StartDate>2011-03-14</cbc:StartDate>
-      <cbc:StartTime>10:30:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2011-03-14</cbc:EndDate>
-      <cbc:EndTime>11:00:00.0Z</cbc:EndTime>
-    </cac:PlannedArrivalPeriod>
-    <cac:Location>
-      <cbc:ID>NOOSL</cbc:ID>
-      <cbc:Description>Port of Oslo</cbc:Description>
-      <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:StreetName>Akershusstranda 19</cbc:StreetName>
-        <cbc:CityName>Oslo</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:ArrivalTransportLocation>
-</cac:TransportationSegment>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:TransportationSegment>
-  <cbc:SequenceNumberID>2</cbc:SequenceNumberID>
-  <cbc:TransportExecutionPlanReferenceID>TEPID_1_2</cbc:TransportExecutionPlanReferenceID>
-  <cbc:TransportModeCode>2</cbc:TransportModeCode>
-  <cbc:TransportMeansTypeCode>Train, with more than 20 wagons</cbc:TransportMeansTypeCode>
-  <cac:TransportationService>
-    <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
-  </cac:TransportationService>
-  <cac:TransportServiceProviderParty>
-    <cac:PartyName>
-      <cbc:Name>RAIL CARRIER</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:Name>Anders Stock</cbc:Name>
-      <cbc:Telephone>+4987676234</cbc:Telephone>
-      <cbc:ElectronicMail>anders@RAILCARRIER.de</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:TransportServiceProviderParty>
-  <cac:CarryingTransportMeans>
-    <cbc:TransportMeansTypeCode>2305</cbc:TransportMeansTypeCode>
-    <cac:RailTransport>
-      <cbc:TrainID>101</cbc:TrainID>
-      <cbc:RailCarID>101-21</cbc:RailCarID>
-    </cac:RailTransport>
-  </cac:CarryingTransportMeans>
-  <cac:DepartureTransportLocation>
-    <cac:PlannedDeparturePeriod>
-      <cbc:StartDate>2011-03-13</cbc:StartDate>
-      <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2011-03-13</cbc:EndDate>
-      <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
-    </cac:PlannedDeparturePeriod>
-    <cac:Location>
-      <cbc:ID>987456123</cbc:ID>
-      <cbc:LocationTypeCode>Place of transhipment</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
-        <cbc:CityName>Munich</cbc:CityName>
-        <cbc:PostalZone>80334</cbc:PostalZone>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:DepartureTransportLocation>
-  <cac:ArrivalTransportLocation>
-    <cac:PlannedArrivalPeriod>
-      <cbc:StartDate>2011-03-13</cbc:StartDate>
-      <cbc:StartTime>20:00:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2011-03-13</cbc:EndDate>
-      <cbc:EndTime>20:30:00.0Z</cbc:EndTime>
-    </cac:PlannedArrivalPeriod>
-    <cac:Location>
-      <cbc:ID>DEBREV</cbc:ID>
-      <cbc:Description>Port of Bremerhaven</cbc:Description>
-      <cbc:LocationTypeCode>34</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
-        <cbc:CityName>Bremen</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:ArrivalTransportLocation>
-</cac:TransportationSegment>
-```
-
-**Structure 3** — 1 instance
-
-```xml
-<cac:TransportationSegment>
-  <cbc:SequenceNumberID>4</cbc:SequenceNumberID>
-  <cbc:TransportExecutionPlanReferenceID>TEPID_1_4</cbc:TransportExecutionPlanReferenceID>
-  <cbc:TransportModeCode>3</cbc:TransportModeCode>
-  <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
-  <cac:TransportationService>
-    <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
-  </cac:TransportationService>
-  <cac:TransportServiceProviderParty>
-    <cac:PartyName>
-      <cbc:Name>ROAD CARRIER 2</cbc:Name>
-    </cac:PartyName>
-    <cac:Contact>
-      <cbc:Name>Jan Peter Clausen</cbc:Name>
-      <cbc:Telephone>+4793774465</cbc:Telephone>
-      <cbc:ElectronicMail>janpc@ROADCARRIER2.no</cbc:ElectronicMail>
-    </cac:Contact>
-  </cac:TransportServiceProviderParty>
-  <cac:CarryingTransportMeans>
-    <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>
-    <cac:RoadTransport>
-      <cbc:LicensePlateID>VE80044</cbc:LicensePlateID>
-    </cac:RoadTransport>
-  </cac:CarryingTransportMeans>
-  <cac:DepartureTransportLocation>
-    <cac:PlannedDeparturePeriod>
-      <cbc:StartDate>2011-03-14</cbc:StartDate>
-      <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2011-03-14</cbc:EndDate>
-      <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
-    </cac:PlannedDeparturePeriod>
-    <cac:Location>
-      <cbc:ID>NOOSL</cbc:ID>
-      <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:StreetName>Akershusstranda 19</cbc:StreetName>
-        <cbc:CityName>Oslo</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:DepartureTransportLocation>
-  <cac:ArrivalTransportLocation>
-    <cac:PlannedArrivalPeriod>
-      <cbc:StartDate>2011-03-14</cbc:StartDate>
-      <cbc:StartTime>15:30:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2011-03-14</cbc:EndDate>
-      <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-    </cac:PlannedArrivalPeriod>
-    <cac:Location>
-      <cbc:ID>43125678</cbc:ID>
-      <cbc:LocationTypeCode>Place of delivery</cbc:LocationTypeCode>
-      <cac:Address>
-        <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
-        <cbc:CityName>Hamar</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:Location>
-  </cac:ArrivalTransportLocation>
-</cac:TransportationSegment>
-```
-
-**Structure 4** — 1 instance
-
-```xml
-<cac:TransportationSegment>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:TransportExecutionPlanReferenceID>TEPID_1_1</cbc:TransportExecutionPlanReferenceID>
   <cbc:TransportModeCode>3</cbc:TransportModeCode>
@@ -25216,7 +24977,207 @@ _7 instances across 1 element, with 7 unique structures_
 </cac:TransportationSegment>
 ```
 
-**Structure 5** — 1 instance
+**Structure 2** — 1 instance
+
+```xml
+<cac:TransportationSegment>
+  <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+  <cbc:TransportExecutionPlanReferenceID>TEP_1</cbc:TransportExecutionPlanReferenceID>
+  <cac:TransportationService>
+    <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
+    <cbc:TransportationServiceDescription>Rail transport service from Bremen to Nurnberg</cbc:TransportationServiceDescription>
+  </cac:TransportationService>
+  <cac:TransportServiceProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID>4058673827641</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>NECOSS</cbc:Name>
+    </cac:PartyName>
+    <cac:Contact>
+      <cbc:Name>SomeName</cbc:Name>
+      <cbc:Telephone>+49450557000</cbc:Telephone>
+      <cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:TransportServiceProviderParty>
+  <cac:ReferencedConsignment>
+    <cbc:ID>CON_1</cbc:ID>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>CON_THU_1</cbc:ID>
+      <cac:TransportEquipment>
+        <cbc:ID>CON_1</cbc:ID>
+        <cac:ContainedInTransportEquipment>
+          <cbc:ID>NEC_TE_1</cbc:ID>
+          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+          <cbc:TraceID>12345678914542</cbc:TraceID>
+        </cac:ContainedInTransportEquipment>
+        <cac:Package>
+          <cbc:ID>CON_1</cbc:ID>
+          <cbc:Quantity>10</cbc:Quantity>
+        </cac:Package>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>CON_THU_2</cbc:ID>
+      <cac:TransportEquipment>
+        <cbc:ID>CON_2</cbc:ID>
+        <cac:ContainedInTransportEquipment>
+          <cbc:ID>NEC_TE_2</cbc:ID>
+          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+          <cbc:TraceID>12345678914543</cbc:TraceID>
+        </cac:ContainedInTransportEquipment>
+        <cac:Package>
+          <cbc:ID>CON_2</cbc:ID>
+          <cbc:Quantity>10</cbc:Quantity>
+        </cac:Package>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+  </cac:ReferencedConsignment>
+  <cac:ShipmentStage>
+    <cbc:ID>2</cbc:ID>
+    <cac:PlannedDepartureTransportEvent>
+      <cac:Location>
+        <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+        <cac:Address>
+          <cbc:ID>4568763527610</cbc:ID>
+          <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+          <cbc:CityName>Bremen</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+      <cac:Period>
+        <cbc:StartDate>2011-10-04</cbc:StartDate>
+        <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+        <cbc:EndDate>2011-10-04</cbc:EndDate>
+        <cbc:EndTime>09:30:10+01:00</cbc:EndTime>
+      </cac:Period>
+    </cac:PlannedDepartureTransportEvent>
+    <cac:PlannedArrivalTransportEvent>
+      <cac:Location>
+        <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+        <cac:Address>
+          <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
+          <cbc:CityName>Nurnberg</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+      <cac:Period>
+        <cbc:StartDate>2011-10-04</cbc:StartDate>
+        <cbc:StartTime>15:30:10+01:00</cbc:StartTime>
+        <cbc:EndDate>2011-10-04</cbc:EndDate>
+        <cbc:EndTime>18:30:10+01:00</cbc:EndTime>
+      </cac:Period>
+    </cac:PlannedArrivalTransportEvent>
+  </cac:ShipmentStage>
+</cac:TransportationSegment>
+```
+
+**Structure 3** — 1 instance
+
+```xml
+<cac:TransportationSegment>
+  <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+  <cbc:TransportExecutionPlanReferenceID>TEP_2</cbc:TransportExecutionPlanReferenceID>
+  <cac:TransportationService>
+    <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
+    <cbc:TransportationServiceDescription>Rail transport service from Hamburg to Bremen</cbc:TransportationServiceDescription>
+  </cac:TransportationService>
+  <cac:TransportServiceProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID>4058673827100</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>NTT</cbc:Name>
+    </cac:PartyName>
+    <cac:Contact>
+      <cbc:Name>SomeName</cbc:Name>
+      <cbc:Telephone>+49450557777</cbc:Telephone>
+      <cbc:ElectronicMail>SomeName@ntt.de</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:TransportServiceProviderParty>
+  <cac:ReferencedConsignment>
+    <cbc:ID>NTT_1</cbc:ID>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>NTT_THU_1</cbc:ID>
+      <cac:TransportEquipment>
+        <cbc:ID>NTT_THU_1</cbc:ID>
+        <cac:ContainedInTransportEquipment>
+          <cbc:ID>NTT_TE_1</cbc:ID>
+          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+          <cbc:TraceID>12345678914564</cbc:TraceID>
+        </cac:ContainedInTransportEquipment>
+        <cac:Package>
+          <cbc:ID>CON_1</cbc:ID>
+          <cbc:Quantity>10</cbc:Quantity>
+        </cac:Package>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>NTT_THU_2</cbc:ID>
+      <cac:TransportEquipment>
+        <cbc:ID>CON_2</cbc:ID>
+        <cac:ContainedInTransportEquipment>
+          <cbc:ID>NTT_TE_2</cbc:ID>
+          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
+          <cbc:TraceID>12345678914565</cbc:TraceID>
+        </cac:ContainedInTransportEquipment>
+        <cac:Package>
+          <cbc:ID>CON_2</cbc:ID>
+          <cbc:Quantity>10</cbc:Quantity>
+        </cac:Package>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+  </cac:ReferencedConsignment>
+  <cac:ShipmentStage>
+    <cbc:ID>1</cbc:ID>
+    <cbc:TransportModeCode>2</cbc:TransportModeCode>
+    <cbc:TransportMeansTypeCode>230</cbc:TransportMeansTypeCode>
+    <cac:PlannedDepartureTransportEvent>
+      <cac:Location>
+        <cac:Address>
+          <cbc:ID>DEHAM</cbc:ID>
+          <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+          <cbc:CityName>Hamburg</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+      <cac:Period>
+        <cbc:StartDate>2011-10-03</cbc:StartDate>
+        <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
+        <cbc:EndDate>2011-10-03</cbc:EndDate>
+        <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
+      </cac:Period>
+    </cac:PlannedDepartureTransportEvent>
+    <cac:PlannedArrivalTransportEvent>
+      <cac:Location>
+        <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+        <cac:Address>
+          <cbc:ID>4568763527610</cbc:ID>
+          <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
+          <cbc:CityName>Bremen</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+      <cac:Period>
+        <cbc:StartDate>2011-10-03</cbc:StartDate>
+        <cbc:StartTime>18:30:10+01:00</cbc:StartTime>
+        <cbc:EndDate>2011-10-03</cbc:EndDate>
+        <cbc:EndTime>21:30:10+01:00</cbc:EndTime>
+      </cac:Period>
+    </cac:PlannedArrivalTransportEvent>
+  </cac:ShipmentStage>
+</cac:TransportationSegment>
+```
+
+**Structure 4** — 1 instance
 
 ```xml
 <cac:TransportationSegment>
@@ -25323,102 +25284,145 @@ _7 instances across 1 element, with 7 unique structures_
 </cac:TransportationSegment>
 ```
 
+**Structure 5** — 1 instance
+
+```xml
+<cac:TransportationSegment>
+  <cbc:SequenceNumberID>2</cbc:SequenceNumberID>
+  <cbc:TransportExecutionPlanReferenceID>TEPID_1_2</cbc:TransportExecutionPlanReferenceID>
+  <cbc:TransportModeCode>2</cbc:TransportModeCode>
+  <cbc:TransportMeansTypeCode>Train, with more than 20 wagons</cbc:TransportMeansTypeCode>
+  <cac:TransportationService>
+    <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
+  </cac:TransportationService>
+  <cac:TransportServiceProviderParty>
+    <cac:PartyName>
+      <cbc:Name>RAIL CARRIER</cbc:Name>
+    </cac:PartyName>
+    <cac:Contact>
+      <cbc:Name>Anders Stock</cbc:Name>
+      <cbc:Telephone>+4987676234</cbc:Telephone>
+      <cbc:ElectronicMail>anders@RAILCARRIER.de</cbc:ElectronicMail>
+    </cac:Contact>
+  </cac:TransportServiceProviderParty>
+  <cac:CarryingTransportMeans>
+    <cbc:TransportMeansTypeCode>2305</cbc:TransportMeansTypeCode>
+    <cac:RailTransport>
+      <cbc:TrainID>101</cbc:TrainID>
+      <cbc:RailCarID>101-21</cbc:RailCarID>
+    </cac:RailTransport>
+  </cac:CarryingTransportMeans>
+  <cac:DepartureTransportLocation>
+    <cac:PlannedDeparturePeriod>
+      <cbc:StartDate>2011-03-13</cbc:StartDate>
+      <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2011-03-13</cbc:EndDate>
+      <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
+    </cac:PlannedDeparturePeriod>
+    <cac:Location>
+      <cbc:ID>987456123</cbc:ID>
+      <cbc:LocationTypeCode>Place of transhipment</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
+        <cbc:CityName>Munich</cbc:CityName>
+        <cbc:PostalZone>80334</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:DepartureTransportLocation>
+  <cac:ArrivalTransportLocation>
+    <cac:PlannedArrivalPeriod>
+      <cbc:StartDate>2011-03-13</cbc:StartDate>
+      <cbc:StartTime>20:00:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2011-03-13</cbc:EndDate>
+      <cbc:EndTime>20:30:00.0Z</cbc:EndTime>
+    </cac:PlannedArrivalPeriod>
+    <cac:Location>
+      <cbc:ID>DEBREV</cbc:ID>
+      <cbc:Description>Port of Bremerhaven</cbc:Description>
+      <cbc:LocationTypeCode>34</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:StreetName>Hansestadt Bremisches</cbc:StreetName>
+        <cbc:CityName>Bremen</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:ArrivalTransportLocation>
+</cac:TransportationSegment>
+```
+
 **Structure 6** — 1 instance
 
 ```xml
 <cac:TransportationSegment>
-  <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-  <cbc:TransportExecutionPlanReferenceID>TEP_1</cbc:TransportExecutionPlanReferenceID>
+  <cbc:SequenceNumberID>3</cbc:SequenceNumberID>
+  <cbc:TransportExecutionPlanReferenceID>TEPID_1_3</cbc:TransportExecutionPlanReferenceID>
+  <cbc:TransportModeCode>1</cbc:TransportModeCode>
+  <cbc:TransportMeansTypeCode>Container vessel</cbc:TransportMeansTypeCode>
   <cac:TransportationService>
     <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
-    <cbc:TransportationServiceDescription>Rail transport service from Bremen to Nurnberg</cbc:TransportationServiceDescription>
   </cac:TransportationService>
   <cac:TransportServiceProviderParty>
-    <cac:PartyIdentification>
-      <cbc:ID>4058673827641</cbc:ID>
-    </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>NECOSS</cbc:Name>
+      <cbc:Name>SEA CARRIER</cbc:Name>
     </cac:PartyName>
     <cac:Contact>
-      <cbc:Name>SomeName</cbc:Name>
-      <cbc:Telephone>+49450557000</cbc:Telephone>
-      <cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
+      <cbc:Name>Horst Tappert</cbc:Name>
+      <cbc:Telephone>+4987675652</cbc:Telephone>
+      <cbc:ElectronicMail>horst@SEACARRIER.de</cbc:ElectronicMail>
     </cac:Contact>
   </cac:TransportServiceProviderParty>
-  <cac:ReferencedConsignment>
-    <cbc:ID>CON_1</cbc:ID>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>CON_THU_1</cbc:ID>
-      <cac:TransportEquipment>
-        <cbc:ID>CON_1</cbc:ID>
-        <cac:ContainedInTransportEquipment>
-          <cbc:ID>NEC_TE_1</cbc:ID>
-          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-          <cbc:TraceID>12345678914542</cbc:TraceID>
-        </cac:ContainedInTransportEquipment>
-        <cac:Package>
-          <cbc:ID>CON_1</cbc:ID>
-          <cbc:Quantity>10</cbc:Quantity>
-        </cac:Package>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>CON_THU_2</cbc:ID>
-      <cac:TransportEquipment>
-        <cbc:ID>CON_2</cbc:ID>
-        <cac:ContainedInTransportEquipment>
-          <cbc:ID>NEC_TE_2</cbc:ID>
-          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-          <cbc:TraceID>12345678914543</cbc:TraceID>
-        </cac:ContainedInTransportEquipment>
-        <cac:Package>
-          <cbc:ID>CON_2</cbc:ID>
-          <cbc:Quantity>10</cbc:Quantity>
-        </cac:Package>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
-  </cac:ReferencedConsignment>
-  <cac:ShipmentStage>
-    <cbc:ID>2</cbc:ID>
-    <cac:PlannedDepartureTransportEvent>
-      <cac:Location>
-        <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-        <cac:Address>
-          <cbc:ID>4568763527610</cbc:ID>
-          <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-          <cbc:CityName>Bremen</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-      <cac:Period>
-        <cbc:StartDate>2011-10-04</cbc:StartDate>
-        <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-        <cbc:EndDate>2011-10-04</cbc:EndDate>
-        <cbc:EndTime>09:30:10+01:00</cbc:EndTime>
-      </cac:Period>
-    </cac:PlannedDepartureTransportEvent>
-    <cac:PlannedArrivalTransportEvent>
-      <cac:Location>
-        <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-        <cac:Address>
-          <cbc:StreetName>Sandstr. 38-40</cbc:StreetName>
-          <cbc:CityName>Nurnberg</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-      <cac:Period>
-        <cbc:StartDate>2011-10-04</cbc:StartDate>
-        <cbc:StartTime>15:30:10+01:00</cbc:StartTime>
-        <cbc:EndDate>2011-10-04</cbc:EndDate>
-        <cbc:EndTime>18:30:10+01:00</cbc:EndTime>
-      </cac:Period>
-    </cac:PlannedArrivalTransportEvent>
-  </cac:ShipmentStage>
+  <cac:CarryingTransportMeans>
+    <cbc:TransportMeansTypeCode>83</cbc:TransportMeansTypeCode>
+    <cac:MaritimeTransport>
+      <cbc:VesselID>IMO1234567</cbc:VesselID>
+      <cbc:VesselName>MS Enova</cbc:VesselName>
+    </cac:MaritimeTransport>
+  </cac:CarryingTransportMeans>
+  <cac:DepartureTransportLocation>
+    <cac:PlannedDeparturePeriod>
+      <cbc:StartDate>2011-03-13</cbc:StartDate>
+      <cbc:StartTime>22:00:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2011-03-13</cbc:EndDate>
+      <cbc:EndTime>22:30:00.0Z</cbc:EndTime>
+    </cac:PlannedDeparturePeriod>
+    <cac:Location>
+      <cbc:ID>DEBREV</cbc:ID>
+      <cbc:LocationTypeCode>Baseport of loading</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:StreetName>Heissestrasse 45</cbc:StreetName>
+        <cbc:CityName>Munich</cbc:CityName>
+        <cbc:PostalZone>80334</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:DepartureTransportLocation>
+  <cac:ArrivalTransportLocation>
+    <cac:PlannedArrivalPeriod>
+      <cbc:StartDate>2011-03-14</cbc:StartDate>
+      <cbc:StartTime>10:30:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2011-03-14</cbc:EndDate>
+      <cbc:EndTime>11:00:00.0Z</cbc:EndTime>
+    </cac:PlannedArrivalPeriod>
+    <cac:Location>
+      <cbc:ID>NOOSL</cbc:ID>
+      <cbc:Description>Port of Oslo</cbc:Description>
+      <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:StreetName>Akershusstranda 19</cbc:StreetName>
+        <cbc:CityName>Oslo</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:ArrivalTransportLocation>
 </cac:TransportationSegment>
 ```
 
@@ -25426,100 +25430,67 @@ _7 instances across 1 element, with 7 unique structures_
 
 ```xml
 <cac:TransportationSegment>
-  <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-  <cbc:TransportExecutionPlanReferenceID>TEP_2</cbc:TransportExecutionPlanReferenceID>
+  <cbc:SequenceNumberID>4</cbc:SequenceNumberID>
+  <cbc:TransportExecutionPlanReferenceID>TEPID_1_4</cbc:TransportExecutionPlanReferenceID>
+  <cbc:TransportModeCode>3</cbc:TransportModeCode>
+  <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
   <cac:TransportationService>
     <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
-    <cbc:TransportationServiceDescription>Rail transport service from Hamburg to Bremen</cbc:TransportationServiceDescription>
   </cac:TransportationService>
   <cac:TransportServiceProviderParty>
-    <cac:PartyIdentification>
-      <cbc:ID>4058673827100</cbc:ID>
-    </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>NTT</cbc:Name>
+      <cbc:Name>ROAD CARRIER 2</cbc:Name>
     </cac:PartyName>
     <cac:Contact>
-      <cbc:Name>SomeName</cbc:Name>
-      <cbc:Telephone>+49450557777</cbc:Telephone>
-      <cbc:ElectronicMail>SomeName@ntt.de</cbc:ElectronicMail>
+      <cbc:Name>Jan Peter Clausen</cbc:Name>
+      <cbc:Telephone>+4793774465</cbc:Telephone>
+      <cbc:ElectronicMail>janpc@ROADCARRIER2.no</cbc:ElectronicMail>
     </cac:Contact>
   </cac:TransportServiceProviderParty>
-  <cac:ReferencedConsignment>
-    <cbc:ID>NTT_1</cbc:ID>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>NTT_THU_1</cbc:ID>
-      <cac:TransportEquipment>
-        <cbc:ID>NTT_THU_1</cbc:ID>
-        <cac:ContainedInTransportEquipment>
-          <cbc:ID>NTT_TE_1</cbc:ID>
-          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-          <cbc:TraceID>12345678914564</cbc:TraceID>
-        </cac:ContainedInTransportEquipment>
-        <cac:Package>
-          <cbc:ID>CON_1</cbc:ID>
-          <cbc:Quantity>10</cbc:Quantity>
-        </cac:Package>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>NTT_THU_2</cbc:ID>
-      <cac:TransportEquipment>
-        <cbc:ID>CON_2</cbc:ID>
-        <cac:ContainedInTransportEquipment>
-          <cbc:ID>NTT_TE_2</cbc:ID>
-          <cbc:TransportEquipmentTypeCode>RR</cbc:TransportEquipmentTypeCode>
-          <cbc:TraceID>12345678914565</cbc:TraceID>
-        </cac:ContainedInTransportEquipment>
-        <cac:Package>
-          <cbc:ID>CON_2</cbc:ID>
-          <cbc:Quantity>10</cbc:Quantity>
-        </cac:Package>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
-  </cac:ReferencedConsignment>
-  <cac:ShipmentStage>
-    <cbc:ID>1</cbc:ID>
-    <cbc:TransportModeCode>2</cbc:TransportModeCode>
-    <cbc:TransportMeansTypeCode>230</cbc:TransportMeansTypeCode>
-    <cac:PlannedDepartureTransportEvent>
-      <cac:Location>
-        <cac:Address>
-          <cbc:ID>DEHAM</cbc:ID>
-          <cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
-          <cbc:CityName>Hamburg</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-      <cac:Period>
-        <cbc:StartDate>2011-10-03</cbc:StartDate>
-        <cbc:StartTime>09:30:10+01:00</cbc:StartTime>
-        <cbc:EndDate>2011-10-03</cbc:EndDate>
-        <cbc:EndTime>12:30:10+01:00</cbc:EndTime>
-      </cac:Period>
-    </cac:PlannedDepartureTransportEvent>
-    <cac:PlannedArrivalTransportEvent>
-      <cac:Location>
-        <cbc:LocationTypeCode>13</cbc:LocationTypeCode>
-        <cac:Address>
-          <cbc:ID>4568763527610</cbc:ID>
-          <cbc:StreetName>Ludwig-Erhard-Str. 15</cbc:StreetName>
-          <cbc:CityName>Bremen</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:Location>
-      <cac:Period>
-        <cbc:StartDate>2011-10-03</cbc:StartDate>
-        <cbc:StartTime>18:30:10+01:00</cbc:StartTime>
-        <cbc:EndDate>2011-10-03</cbc:EndDate>
-        <cbc:EndTime>21:30:10+01:00</cbc:EndTime>
-      </cac:Period>
-    </cac:PlannedArrivalTransportEvent>
-  </cac:ShipmentStage>
+  <cac:CarryingTransportMeans>
+    <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>
+    <cac:RoadTransport>
+      <cbc:LicensePlateID>VE80044</cbc:LicensePlateID>
+    </cac:RoadTransport>
+  </cac:CarryingTransportMeans>
+  <cac:DepartureTransportLocation>
+    <cac:PlannedDeparturePeriod>
+      <cbc:StartDate>2011-03-14</cbc:StartDate>
+      <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2011-03-14</cbc:EndDate>
+      <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
+    </cac:PlannedDeparturePeriod>
+    <cac:Location>
+      <cbc:ID>NOOSL</cbc:ID>
+      <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:StreetName>Akershusstranda 19</cbc:StreetName>
+        <cbc:CityName>Oslo</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:DepartureTransportLocation>
+  <cac:ArrivalTransportLocation>
+    <cac:PlannedArrivalPeriod>
+      <cbc:StartDate>2011-03-14</cbc:StartDate>
+      <cbc:StartTime>15:30:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2011-03-14</cbc:EndDate>
+      <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
+    </cac:PlannedArrivalPeriod>
+    <cac:Location>
+      <cbc:ID>43125678</cbc:ID>
+      <cbc:LocationTypeCode>Place of delivery</cbc:LocationTypeCode>
+      <cac:Address>
+        <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
+        <cbc:CityName>Hamar</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
+  </cac:ArrivalTransportLocation>
 </cac:TransportationSegment>
 ```
 
@@ -25531,24 +25502,7 @@ _7 instances across 1 element, with 7 unique structures_
 
 _24 instances across 5 elements, with 8 unique structures_
 
-**Structure 1** — 2 instances
-
-```xml
-<cac:AdditionalTransportationService>
-  <cbc:TransportServiceCode>Status notification</cbc:TransportServiceCode>
-  <cbc:TransportationServiceDescription>En route status notifications</cbc:TransportationServiceDescription>
-</cac:AdditionalTransportationService>
-```
-
-**Structure 2** — 4 instances
-
-```xml
-<cac:FinalDeliveryTransportationService>
-  <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
-</cac:FinalDeliveryTransportationService>
-```
-
-**Structure 3** — 5 instances
+**Structure 1** — 5 instances
 
 ```xml
 <cac:MainTransportationService>
@@ -25557,12 +25511,30 @@ _24 instances across 5 elements, with 8 unique structures_
 </cac:MainTransportationService>
 ```
 
-**Structure 4** — 4 instances
+**Structure 2** — 2 instances
+
+```xml
+<cac:AdditionalTransportationService>
+  <cbc:TransportServiceCode>Insurance</cbc:TransportServiceCode>
+  <cbc:TransportationServiceDescription>Insurance of goods during transportation</cbc:TransportationServiceDescription>
+</cac:AdditionalTransportationService>
+```
+
+**Structure 3** — 4 instances
 
 ```xml
 <cac:OriginalDespatchTransportationService>
   <cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
 </cac:OriginalDespatchTransportationService>
+```
+
+**Structure 4** — 3 instances
+
+```xml
+<cac:TransportationService>
+  <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
+  <cbc:TransportationServiceDescription>Rail transport service from Bremen to Nurnberg</cbc:TransportationServiceDescription>
+</cac:TransportationService>
 ```
 
 **Structure 5** — 1 instance
@@ -25797,13 +25769,12 @@ _24 instances across 5 elements, with 8 unique structures_
 </cac:TransportationService>
 ```
 
-**Structure 7** — 3 instances
+**Structure 7** — 4 instances
 
 ```xml
-<cac:TransportationService>
-  <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
-  <cbc:TransportationServiceDescription>Rail transport service from Hamburg to Bremen</cbc:TransportationServiceDescription>
-</cac:TransportationService>
+<cac:FinalDeliveryTransportationService>
+  <cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
+</cac:FinalDeliveryTransportationService>
 ```
 
 **Structure 8** — 4 instances
@@ -25822,379 +25793,7 @@ _24 instances across 5 elements, with 8 unique structures_
 
 _45 instances across 17 elements, with 25 unique structures_
 
-**Structure 1** — 3 instances
-
-```xml
-<cac:ArrivalTransportLocation>
-  <cac:PlannedArrivalPeriod>
-    <cbc:StartDate>2011-03-13</cbc:StartDate>
-    <cbc:StartTime>16:30:00.0Z</cbc:StartTime>
-    <cbc:EndDate>2011-03-13</cbc:EndDate>
-    <cbc:EndTime>17:00:00.0Z</cbc:EndTime>
-  </cac:PlannedArrivalPeriod>
-  <cac:Location>
-    <cbc:ID>987456123</cbc:ID>
-    <cbc:Description>FORWARDER distribution centre in Munich</cbc:Description>
-    <cbc:LocationTypeCode>Place of transhipment</cbc:LocationTypeCode>
-    <cac:Address>
-      <cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
-      <cbc:CityName>Munich</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-</cac:ArrivalTransportLocation>
-```
-
-**Structure 2** — 1 instance
-
-```xml
-<cac:ArrivalTransportLocation>
-  <cac:PlannedArrivalPeriod>
-    <cbc:StartDate>2011-03-14</cbc:StartDate>
-    <cbc:StartTime>15:30:00.0Z</cbc:StartTime>
-    <cbc:EndDate>2011-03-14</cbc:EndDate>
-    <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-  </cac:PlannedArrivalPeriod>
-  <cac:Location>
-    <cbc:ID>43125678</cbc:ID>
-    <cbc:LocationTypeCode>Place of delivery</cbc:LocationTypeCode>
-    <cac:Address>
-      <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
-      <cbc:CityName>Hamar</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-</cac:ArrivalTransportLocation>
-```
-
-**Structure 3** — 1 instance
-
-```xml
-<cac:CarryingTransportMeans>
-  <cbc:TransportMeansTypeCode>83</cbc:TransportMeansTypeCode>
-  <cac:MaritimeTransport>
-    <cbc:VesselID>IMO1234567</cbc:VesselID>
-    <cbc:VesselName>MS Enova</cbc:VesselName>
-  </cac:MaritimeTransport>
-</cac:CarryingTransportMeans>
-```
-
-**Structure 4** — 1 instance
-
-```xml
-<cac:CarryingTransportMeans>
-  <cbc:TransportMeansTypeCode>2305</cbc:TransportMeansTypeCode>
-  <cac:RailTransport>
-    <cbc:TrainID>101</cbc:TrainID>
-    <cbc:RailCarID>101-21</cbc:RailCarID>
-  </cac:RailTransport>
-</cac:CarryingTransportMeans>
-```
-
-**Structure 5** — 2 instances
-
-```xml
-<cac:CarryingTransportMeans>
-  <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>
-  <cac:RoadTransport>
-    <cbc:LicensePlateID>KA04401</cbc:LicensePlateID>
-  </cac:RoadTransport>
-</cac:CarryingTransportMeans>
-```
-
-**Structure 6** — 1 instance
-
-```xml
-<cac:DepartureTransportLocation>
-  <cac:PlannedDeparturePeriod>
-    <cbc:StartDate>2011-03-14</cbc:StartDate>
-    <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
-    <cbc:EndDate>2011-03-14</cbc:EndDate>
-    <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
-  </cac:PlannedDeparturePeriod>
-  <cac:Location>
-    <cbc:ID>NOOSL</cbc:ID>
-    <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
-    <cac:Address>
-      <cbc:StreetName>Akershusstranda 19</cbc:StreetName>
-      <cbc:CityName>Oslo</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-</cac:DepartureTransportLocation>
-```
-
-**Structure 7** — 3 instances
-
-```xml
-<cac:DepartureTransportLocation>
-  <cac:PlannedDeparturePeriod>
-    <cbc:StartDate>2011-03-13</cbc:StartDate>
-    <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
-    <cbc:EndDate>2011-03-13</cbc:EndDate>
-    <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
-  </cac:PlannedDeparturePeriod>
-  <cac:Location>
-    <cbc:ID>123465</cbc:ID>
-    <cbc:LocationTypeCode>Place of despatch</cbc:LocationTypeCode>
-    <cac:Address>
-      <cbc:StreetName>Heissestrasse 45</cbc:StreetName>
-      <cbc:CityName>Munich</cbc:CityName>
-      <cbc:PostalZone>80334</cbc:PostalZone>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
-  </cac:Location>
-</cac:DepartureTransportLocation>
-```
-
-**Structure 8** — 1 instance
-
-```xml
-<cac:EstimatedArrivalPeriod>
-  <cbc:StartDate>2011-03-13</cbc:StartDate>
-  <cbc:StartTime>21:00:00.0Z</cbc:StartTime>
-  <cbc:EndDate>2011-03-13</cbc:EndDate>
-  <cbc:EndTime>21:10:00.0Z</cbc:EndTime>
-</cac:EstimatedArrivalPeriod>
-```
-
-**Structure 9** — 1 instance
-
-```xml
-<cac:ForecastExceptionCriteriaLine>
-  <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
-  <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
-  <cbc:ComparisonDataSourceCode>SELLER</cbc:ComparisonDataSourceCode>
-  <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
-  <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
-</cac:ForecastExceptionCriteriaLine>
-```
-
-**Structure 10** — 1 instance
-
-```xml
-<cac:ForecastExceptionCriteriaLine>
-  <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
-  <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
-  <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
-  <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
-</cac:ForecastExceptionCriteriaLine>
-```
-
-**Structure 11** — 1 instance
-
-```xml
-<cac:LegalTotal>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:PayableAmount>100.00</cbc:PayableAmount>
-</cac:LegalTotal>
-```
-
-**Structure 12** — 3 instances
-
-```xml
-<cac:LegalTotal>
-  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
-  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
-  <cbc:PayableAmount>107.50</cbc:PayableAmount>
-</cac:LegalTotal>
-```
-
-**Structure 13** — 4 instances
-
-```xml
-<cac:PlannedArrivalPeriod>
-  <cbc:StartDate>2011-03-13</cbc:StartDate>
-  <cbc:StartTime>16:30:00.0Z</cbc:StartTime>
-  <cbc:EndDate>2011-03-13</cbc:EndDate>
-  <cbc:EndTime>17:00:00.0Z</cbc:EndTime>
-</cac:PlannedArrivalPeriod>
-```
-
-**Structure 14** — 4 instances
-
-```xml
-<cac:PlannedDeparturePeriod>
-  <cbc:StartDate>2011-03-13</cbc:StartDate>
-  <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
-  <cbc:EndDate>2011-03-13</cbc:EndDate>
-  <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
-</cac:PlannedDeparturePeriod>
-```
-
-**Structure 15** — 1 instance
-
-```xml
-<cac:PostEventPeriod>
-  <cbc:DurationMeasure>30</cbc:DurationMeasure>
-  <cbc:Description>Deviations shall be notified to the CONSIGNEE within max 30 minutes</cbc:Description>
-</cac:PostEventPeriod>
-```
-
-**Structure 16** — 2 instances
-
-```xml
-<cac:PriceMonetaryTotal>
-  <cbc:PayableAmount>300</cbc:PayableAmount>
-</cac:PriceMonetaryTotal>
-```
-
-**Structure 17** — 3 instances
-
-```xml
-<cac:ReferencedTransportHandlingUnit>
-  <cbc:ID>THU#1</cbc:ID>
-</cac:ReferencedTransportHandlingUnit>
-```
-
-**Structure 18** — 1 instance
-
-```xml
-<cac:ServicePointLocation>
-  <cbc:Description>Bavaria area</cbc:Description>
-  <cac:Address>
-    <cbc:Region>Bavaria</cbc:Region>
-    <cac:Country>
-      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-      <cbc:Name>Germany</cbc:Name>
-    </cac:Country>
-  </cac:Address>
-</cac:ServicePointLocation>
-```
-
-**Structure 19** — 1 instance
-
-```xml
-<cac:ServicePoint>
-  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:TransportModeCode>3</cbc:TransportModeCode>
-  <cac:ServicePointLocation>
-    <cbc:Description>Bavaria area</cbc:Description>
-    <cac:Address>
-      <cbc:Region>Bavaria</cbc:Region>
-      <cac:Country>
-        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
-        <cbc:Name>Germany</cbc:Name>
-      </cac:Country>
-    </cac:Address>
-  </cac:ServicePointLocation>
-  <cac:TransportMeans>
-    <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
-  </cac:TransportMeans>
-</cac:ServicePoint>
-```
-
-**Structure 20** — 1 instance
-
-```xml
-<cac:TaxSubTotal>
-  <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
-  <cbc:TaxAmount>17.50</cbc:TaxAmount>
-  <cac:TaxCategory>
-    <cbc:ID>A</cbc:ID>
-    <cbc:Percent>17.5</cbc:Percent>
-    <cac:TaxScheme>
-      <cbc:ID>UK VAT</cbc:ID>
-      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-    </cac:TaxScheme>
-  </cac:TaxCategory>
-</cac:TaxSubTotal>
-```
-
-**Structure 21** — 4 instances
-
-```xml
-<cac:TaxSubTotal>
-  <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
-  <cbc:TaxAmount>17.50</cbc:TaxAmount>
-  <cac:TaxCategory>
-    <cbc:ID>A</cbc:ID>
-    <cac:TaxScheme>
-      <cbc:ID>UK VAT</cbc:ID>
-      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-    </cac:TaxScheme>
-  </cac:TaxCategory>
-</cac:TaxSubTotal>
-```
-
-**Structure 22** — 1 instance
-
-```xml
-<cac:TransportItemStatus>
-  <cbc:TransportItemTimeDeviationIndicator>true</cbc:TransportItemTimeDeviationIndicator>
-  <cbc:TransportItemConditionDeviationIndicator>false</cbc:TransportItemConditionDeviationIndicator>
-  <cac:UpdatedDelivery>
-    <cac:EstimatedDeliveryPeriod>
-      <cbc:StartDate>2010-04-30</cbc:StartDate>
-      <cbc:StartTime>20:00:00.0Z</cbc:StartTime>
-      <cbc:EndDate>2010-04-30</cbc:EndDate>
-      <cbc:EndTime>20:30:00.0Z</cbc:EndTime>
-    </cac:EstimatedDeliveryPeriod>
-  </cac:UpdatedDelivery>
-  <cac:StatusLocation>
-    <cbc:LocationTypeCode>CUSTOMS OFFICE</cbc:LocationTypeCode>
-    <cac:Address>
-      <cbc:CityName>STORLIEN</cbc:CityName>
-      <cac:Country>
-        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
-        <cbc:Name>SWEDEN</cbc:Name>
-      </cac:Country>
-    </cac:Address>
-  </cac:StatusLocation>
-  <cac:TransportHandlingUnit>
-    <cbc:ID>TI_101</cbc:ID>
-  </cac:TransportHandlingUnit>
-</cac:TransportItemStatus>
-```
-
-**Structure 23** — 1 instance
-
-```xml
-<cac:TransportStatus>
-  <cbc:EstimatedArrivalDate>2010-04-30</cbc:EstimatedArrivalDate>
-  <cbc:EstimatedArrivalTime>12:20:00.0Z</cbc:EstimatedArrivalTime>
-  <cbc:EstimatedDepartureDate>2010-04-30</cbc:EstimatedDepartureDate>
-  <cbc:EstimatedDepartureTime>13:20:00.0Z</cbc:EstimatedDepartureTime>
-  <cbc:ActualArrivalDate>2010-04-30</cbc:ActualArrivalDate>
-  <cbc:ActualArrivalTime>13:20:00.0Z</cbc:ActualArrivalTime>
-  <cbc:ActualDepartureDate>2010-04-30</cbc:ActualDepartureDate>
-  <cbc:ActualDepartureTime>14:20:00.0Z</cbc:ActualDepartureTime>
-  <cbc:Remarks>DELAYED BY ONE HOUR</cbc:Remarks>
-  <cbc:ReferenceDate>2010-04-30</cbc:ReferenceDate>
-  <cbc:ReferenceTime>14:20:00.0Z</cbc:ReferenceTime>
-  <cbc:ReliabilityPercent>100.0</cbc:ReliabilityPercent>
-  <cac:StatusLocation>
-    <cbc:ID>144</cbc:ID>
-    <cbc:Description>OSLO CENTRAL RAILWAY STATION</cbc:Description>
-    <cbc:LocationTypeCode>RAILWAY STATION</cbc:LocationTypeCode>
-    <cac:Address>
-      <cbc:ID>133</cbc:ID>
-      <cbc:StreetName>VIPPETANGEN</cbc:StreetName>
-      <cbc:CityName>OSLO</cbc:CityName>
-      <cbc:TimezoneOffset>GMT+1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-        <cbc:Name>NORWAY</cbc:Name>
-      </cac:Country>
-      <cac:LocationCoordinate>
-        <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
-        <cbc:LatitudeDegreesMeasure>58</cbc:LatitudeDegreesMeasure>
-        <cbc:LongitudeDegreesMeasure>10</cbc:LongitudeDegreesMeasure>
-      </cac:LocationCoordinate>
-    </cac:Address>
-  </cac:StatusLocation>
-</cac:TransportStatus>
-```
-
-**Structure 24** — 1 instance
+**Structure 1** — 1 instance
 
 ```xml
 <cac:TransportStatus>
@@ -26244,7 +25843,324 @@ _45 instances across 17 elements, with 25 unique structures_
 </cac:TransportStatus>
 ```
 
-**Structure 25** — 2 instances
+**Structure 2** — 2 instances
+
+```xml
+<cac:CarryingTransportMeans>
+  <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>
+  <cac:RoadTransport>
+    <cbc:LicensePlateID>KA04401</cbc:LicensePlateID>
+  </cac:RoadTransport>
+</cac:CarryingTransportMeans>
+```
+
+**Structure 3** — 3 instances
+
+```xml
+<cac:DepartureTransportLocation>
+  <cac:PlannedDeparturePeriod>
+    <cbc:StartDate>2011-03-13</cbc:StartDate>
+    <cbc:StartTime>22:00:00.0Z</cbc:StartTime>
+    <cbc:EndDate>2011-03-13</cbc:EndDate>
+    <cbc:EndTime>22:30:00.0Z</cbc:EndTime>
+  </cac:PlannedDeparturePeriod>
+  <cac:Location>
+    <cbc:ID>DEBREV</cbc:ID>
+    <cbc:LocationTypeCode>Baseport of loading</cbc:LocationTypeCode>
+    <cac:Address>
+      <cbc:StreetName>Heissestrasse 45</cbc:StreetName>
+      <cbc:CityName>Munich</cbc:CityName>
+      <cbc:PostalZone>80334</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+</cac:DepartureTransportLocation>
+```
+
+**Structure 4** — 2 instances
+
+```xml
+<cac:PriceMonetaryTotal>
+  <cbc:PayableAmount>300</cbc:PayableAmount>
+</cac:PriceMonetaryTotal>
+```
+
+**Structure 5** — 3 instances
+
+```xml
+<cac:ArrivalTransportLocation>
+  <cac:PlannedArrivalPeriod>
+    <cbc:StartDate>2011-03-13</cbc:StartDate>
+    <cbc:StartTime>16:30:00.0Z</cbc:StartTime>
+    <cbc:EndDate>2011-03-13</cbc:EndDate>
+    <cbc:EndTime>17:00:00.0Z</cbc:EndTime>
+  </cac:PlannedArrivalPeriod>
+  <cac:Location>
+    <cbc:ID>987456123</cbc:ID>
+    <cbc:Description>FORWARDER distribution centre in Munich</cbc:Description>
+    <cbc:LocationTypeCode>Place of transhipment</cbc:LocationTypeCode>
+    <cac:Address>
+      <cbc:StreetName>Volkerstrasse 6</cbc:StreetName>
+      <cbc:CityName>Munich</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+</cac:ArrivalTransportLocation>
+```
+
+**Structure 6** — 4 instances
+
+```xml
+<cac:TaxSubTotal>
+  <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
+  <cbc:TaxAmount>17.50</cbc:TaxAmount>
+  <cac:TaxCategory>
+    <cbc:ID>A</cbc:ID>
+    <cac:TaxScheme>
+      <cbc:ID>UK VAT</cbc:ID>
+      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+    </cac:TaxScheme>
+  </cac:TaxCategory>
+</cac:TaxSubTotal>
+```
+
+**Structure 7** — 1 instance
+
+```xml
+<cac:CarryingTransportMeans>
+  <cbc:TransportMeansTypeCode>83</cbc:TransportMeansTypeCode>
+  <cac:MaritimeTransport>
+    <cbc:VesselID>IMO1234567</cbc:VesselID>
+    <cbc:VesselName>MS Enova</cbc:VesselName>
+  </cac:MaritimeTransport>
+</cac:CarryingTransportMeans>
+```
+
+**Structure 8** — 1 instance
+
+```xml
+<cac:TaxSubTotal>
+  <cbc:TaxableAmount>100.00</cbc:TaxableAmount>
+  <cbc:TaxAmount>17.50</cbc:TaxAmount>
+  <cac:TaxCategory>
+    <cbc:ID>A</cbc:ID>
+    <cbc:Percent>17.5</cbc:Percent>
+    <cac:TaxScheme>
+      <cbc:ID>UK VAT</cbc:ID>
+      <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+    </cac:TaxScheme>
+  </cac:TaxCategory>
+</cac:TaxSubTotal>
+```
+
+**Structure 9** — 1 instance
+
+```xml
+<cac:CarryingTransportMeans>
+  <cbc:TransportMeansTypeCode>2305</cbc:TransportMeansTypeCode>
+  <cac:RailTransport>
+    <cbc:TrainID>101</cbc:TrainID>
+    <cbc:RailCarID>101-21</cbc:RailCarID>
+  </cac:RailTransport>
+</cac:CarryingTransportMeans>
+```
+
+**Structure 10** — 1 instance
+
+```xml
+<cac:DepartureTransportLocation>
+  <cac:PlannedDeparturePeriod>
+    <cbc:StartDate>2011-03-14</cbc:StartDate>
+    <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
+    <cbc:EndDate>2011-03-14</cbc:EndDate>
+    <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
+  </cac:PlannedDeparturePeriod>
+  <cac:Location>
+    <cbc:ID>NOOSL</cbc:ID>
+    <cbc:LocationTypeCode>Baseport of discharge</cbc:LocationTypeCode>
+    <cac:Address>
+      <cbc:StreetName>Akershusstranda 19</cbc:StreetName>
+      <cbc:CityName>Oslo</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+</cac:DepartureTransportLocation>
+```
+
+**Structure 11** — 1 instance
+
+```xml
+<cac:TransportItemStatus>
+  <cbc:TransportItemTimeDeviationIndicator>true</cbc:TransportItemTimeDeviationIndicator>
+  <cbc:TransportItemConditionDeviationIndicator>false</cbc:TransportItemConditionDeviationIndicator>
+  <cac:UpdatedDelivery>
+    <cac:EstimatedDeliveryPeriod>
+      <cbc:StartDate>2010-04-30</cbc:StartDate>
+      <cbc:StartTime>20:00:00.0Z</cbc:StartTime>
+      <cbc:EndDate>2010-04-30</cbc:EndDate>
+      <cbc:EndTime>20:30:00.0Z</cbc:EndTime>
+    </cac:EstimatedDeliveryPeriod>
+  </cac:UpdatedDelivery>
+  <cac:StatusLocation>
+    <cbc:LocationTypeCode>CUSTOMS OFFICE</cbc:LocationTypeCode>
+    <cac:Address>
+      <cbc:CityName>STORLIEN</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        <cbc:Name>SWEDEN</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:StatusLocation>
+  <cac:TransportHandlingUnit>
+    <cbc:ID>TI_101</cbc:ID>
+  </cac:TransportHandlingUnit>
+</cac:TransportItemStatus>
+```
+
+**Structure 12** — 1 instance
+
+```xml
+<cac:ArrivalTransportLocation>
+  <cac:PlannedArrivalPeriod>
+    <cbc:StartDate>2011-03-14</cbc:StartDate>
+    <cbc:StartTime>15:30:00.0Z</cbc:StartTime>
+    <cbc:EndDate>2011-03-14</cbc:EndDate>
+    <cbc:EndTime>16:00:00.0Z</cbc:EndTime>
+  </cac:PlannedArrivalPeriod>
+  <cac:Location>
+    <cbc:ID>43125678</cbc:ID>
+    <cbc:LocationTypeCode>Place of delivery</cbc:LocationTypeCode>
+    <cac:Address>
+      <cbc:StreetName>Jordbærstien 2</cbc:StreetName>
+      <cbc:CityName>Hamar</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:Location>
+</cac:ArrivalTransportLocation>
+```
+
+**Structure 13** — 4 instances
+
+```xml
+<cac:PlannedDeparturePeriod>
+  <cbc:StartDate>2011-03-14</cbc:StartDate>
+  <cbc:StartTime>13:30:00.0Z</cbc:StartTime>
+  <cbc:EndDate>2011-03-14</cbc:EndDate>
+  <cbc:EndTime>14:00:00.0Z</cbc:EndTime>
+</cac:PlannedDeparturePeriod>
+```
+
+**Structure 14** — 1 instance
+
+```xml
+<cac:EstimatedArrivalPeriod>
+  <cbc:StartDate>2011-03-13</cbc:StartDate>
+  <cbc:StartTime>21:00:00.0Z</cbc:StartTime>
+  <cbc:EndDate>2011-03-13</cbc:EndDate>
+  <cbc:EndTime>21:10:00.0Z</cbc:EndTime>
+</cac:EstimatedArrivalPeriod>
+```
+
+**Structure 15** — 3 instances
+
+```xml
+<cac:ReferencedTransportHandlingUnit>
+  <cbc:ID>THU#2</cbc:ID>
+</cac:ReferencedTransportHandlingUnit>
+```
+
+**Structure 16** — 1 instance
+
+```xml
+<cac:ServicePoint>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:TransportModeCode>3</cbc:TransportModeCode>
+  <cac:ServicePointLocation>
+    <cbc:Description>Bavaria area</cbc:Description>
+    <cac:Address>
+      <cbc:Region>Bavaria</cbc:Region>
+      <cac:Country>
+        <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        <cbc:Name>Germany</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ServicePointLocation>
+  <cac:TransportMeans>
+    <cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
+  </cac:TransportMeans>
+</cac:ServicePoint>
+```
+
+**Structure 17** — 1 instance
+
+```xml
+<cac:ForecastExceptionCriteriaLine>
+  <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
+  <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
+  <cbc:ComparisonDataSourceCode>SELLER</cbc:ComparisonDataSourceCode>
+  <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
+  <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
+</cac:ForecastExceptionCriteriaLine>
+```
+
+**Structure 18** — 1 instance
+
+```xml
+<cac:TransportStatus>
+  <cbc:EstimatedArrivalDate>2010-04-30</cbc:EstimatedArrivalDate>
+  <cbc:EstimatedArrivalTime>12:20:00.0Z</cbc:EstimatedArrivalTime>
+  <cbc:EstimatedDepartureDate>2010-04-30</cbc:EstimatedDepartureDate>
+  <cbc:EstimatedDepartureTime>13:20:00.0Z</cbc:EstimatedDepartureTime>
+  <cbc:ActualArrivalDate>2010-04-30</cbc:ActualArrivalDate>
+  <cbc:ActualArrivalTime>13:20:00.0Z</cbc:ActualArrivalTime>
+  <cbc:ActualDepartureDate>2010-04-30</cbc:ActualDepartureDate>
+  <cbc:ActualDepartureTime>14:20:00.0Z</cbc:ActualDepartureTime>
+  <cbc:Remarks>DELAYED BY ONE HOUR</cbc:Remarks>
+  <cbc:ReferenceDate>2010-04-30</cbc:ReferenceDate>
+  <cbc:ReferenceTime>14:20:00.0Z</cbc:ReferenceTime>
+  <cbc:ReliabilityPercent>100.0</cbc:ReliabilityPercent>
+  <cac:StatusLocation>
+    <cbc:ID>144</cbc:ID>
+    <cbc:Description>OSLO CENTRAL RAILWAY STATION</cbc:Description>
+    <cbc:LocationTypeCode>RAILWAY STATION</cbc:LocationTypeCode>
+    <cac:Address>
+      <cbc:ID>133</cbc:ID>
+      <cbc:StreetName>VIPPETANGEN</cbc:StreetName>
+      <cbc:CityName>OSLO</cbc:CityName>
+      <cbc:TimezoneOffset>GMT+1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+        <cbc:Name>NORWAY</cbc:Name>
+      </cac:Country>
+      <cac:LocationCoordinate>
+        <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+        <cbc:LatitudeDegreesMeasure>58</cbc:LatitudeDegreesMeasure>
+        <cbc:LongitudeDegreesMeasure>10</cbc:LongitudeDegreesMeasure>
+      </cac:LocationCoordinate>
+    </cac:Address>
+  </cac:StatusLocation>
+</cac:TransportStatus>
+```
+
+**Structure 19** — 3 instances
+
+```xml
+<cac:LegalTotal>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:TaxExclusiveAmount>90.00</cbc:TaxExclusiveAmount>
+  <cbc:PayableAmount>107.50</cbc:PayableAmount>
+</cac:LegalTotal>
+```
+
+**Structure 20** — 2 instances
 
 ```xml
 <cac:UpdatedDelivery>
@@ -26257,6 +26173,61 @@ _45 instances across 17 elements, with 25 unique structures_
 </cac:UpdatedDelivery>
 ```
 
+**Structure 21** — 1 instance
+
+```xml
+<cac:PostEventPeriod>
+  <cbc:DurationMeasure>30</cbc:DurationMeasure>
+  <cbc:Description>Deviations shall be notified to the CONSIGNEE within max 30 minutes</cbc:Description>
+</cac:PostEventPeriod>
+```
+
+**Structure 22** — 4 instances
+
+```xml
+<cac:PlannedArrivalPeriod>
+  <cbc:StartDate>2011-03-13</cbc:StartDate>
+  <cbc:StartTime>16:30:00.0Z</cbc:StartTime>
+  <cbc:EndDate>2011-03-13</cbc:EndDate>
+  <cbc:EndTime>17:00:00.0Z</cbc:EndTime>
+</cac:PlannedArrivalPeriod>
+```
+
+**Structure 23** — 1 instance
+
+```xml
+<cac:ForecastExceptionCriteriaLine>
+  <cbc:ForecastPurposeCode>SALES_FORECAST</cbc:ForecastPurposeCode>
+  <cbc:ForecastTypeCode>BASE</cbc:ForecastTypeCode>
+  <cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
+  <cbc:TimeDeltaDaysQuantity>20</cbc:TimeDeltaDaysQuantity>
+</cac:ForecastExceptionCriteriaLine>
+```
+
+**Structure 24** — 1 instance
+
+```xml
+<cac:LegalTotal>
+  <cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>
+  <cbc:PayableAmount>100.00</cbc:PayableAmount>
+</cac:LegalTotal>
+```
+
+**Structure 25** — 1 instance
+
+```xml
+<cac:ServicePointLocation>
+  <cbc:Description>Bavaria area</cbc:Description>
+  <cac:Address>
+    <cbc:Region>Bavaria</cbc:Region>
+    <cac:Country>
+      <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+      <cbc:Name>Germany</cbc:Name>
+    </cac:Country>
+  </cac:Address>
+</cac:ServicePointLocation>
+```
+
 [↑ Back to contents](#contents)
 
 ### `VerifiedGrossMassType`
@@ -26265,27 +26236,7 @@ _45 instances across 17 elements, with 25 unique structures_
 
 _3 instances across 1 element, with 2 unique structures_
 
-**Structure 1** — 2 instances
-
-```xml
-<cac:VerifiedGrossMass>
-  <cbc:ID>123</cbc:ID>
-  <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-  <cbc:WeighingTime>00:30:00</cbc:WeighingTime>
-  <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
-  <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
-  <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
-  <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
-  <cac:DocumentReference>
-    <cbc:ID>W123</cbc:ID>
-    <cbc:IssueDate>2016-11-02</cbc:IssueDate>
-    <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
-    <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
-  </cac:DocumentReference>
-</cac:VerifiedGrossMass>
-```
-
-**Structure 2** — 1 instance
+**Structure 1** — 1 instance
 
 ```xml
 <cac:VerifiedGrossMass>
@@ -26301,6 +26252,26 @@ _3 instances across 1 element, with 2 unique structures_
     <cbc:IssueDate>2016-11-02</cbc:IssueDate>
     <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
     <cbc:DocumentType></cbc:DocumentType>
+    <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+  </cac:DocumentReference>
+</cac:VerifiedGrossMass>
+```
+
+**Structure 2** — 2 instances
+
+```xml
+<cac:VerifiedGrossMass>
+  <cbc:ID>123</cbc:ID>
+  <cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+  <cbc:WeighingTime>00:30:00Z</cbc:WeighingTime>
+  <cbc:WeighingMethodCode>SM1</cbc:WeighingMethodCode>
+  <cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+  <cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+  <cbc:GrossMassMeasure>25730</cbc:GrossMassMeasure>
+  <cac:DocumentReference>
+    <cbc:ID>W123</cbc:ID>
+    <cbc:IssueDate>2016-11-02</cbc:IssueDate>
+    <cbc:DocumentTypeCode>SM1</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
   </cac:DocumentReference>
 </cac:VerifiedGrossMass>
