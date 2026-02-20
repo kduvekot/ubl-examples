@@ -118,7 +118,7 @@ This document was derived from the official UBL 2.5 process diagrams (PNG files 
 minimum number of companies — each really good at one thing — how many distinct parties
 would there be?"*
 
-**First answer: 9 parties**
+**First answer: 9 parties — later expanded to 26 + Consumer**
 
 The logic: which roles genuinely require a different *type* of organisation, such that
 merging them would either break the process or create a conflict of interest?
@@ -135,74 +135,100 @@ merging them would either break the process or create a conflict of interest?
 | 8 | Government Information Service | Publishes procurement notices + business registry | Never buys/sells; purely public record |
 | 9 | Financial Institution | Holds accounts, routes payments, issues guarantees | Payee/guarantor role must be independent of commercial party |
 
-### 5.2 Refinements agreed during session
+### 5.2 Consolidation considered but reversed
 
-**Split 1: Commercial Buyer vs. Contracting Authority**
+During the session a consolidation from the original 26+C list down to 13 parties was
+explored. The rationale included merging carrier modal types, supply chain tiers, and
+financial institution roles. After review, the decision was reversed: the full 26+C
+set is more faithful to UBL's actual process diagrams and avoids forcing unrelated roles
+onto a single fictional entity.
 
-The Buyer was doing too much. These two use entirely different document groups and
-operate under different legal frameworks:
+Key consolidations that were tried and then undone:
 
-| | Commercial Buyer | Contracting Authority |
+| Consolidation tried | Why reversed |
+|---|---|
+| 5 carrier types → 1 carrier | Ocean/Air/Road/Rail/Inland each have distinct document types (`BillOfLading` vs `Waybill` vs `AirWaybill`) and interact with different infrastructure parties |
+| 3 supply tiers → 1 seller | S1/S2/S3 have different positions in the chain — raw material supplier, manufacturer, and distributor each appear as `AccountingSupplierParty` in different flows |
+| 3 infrastructure parties → 1 port authority | Seaport, airport, and intermodal hub each interact with their respective carrier type |
+| 4 financial roles → 1 bank | Buyer's bank, seller's bank, factor, and guarantor have legally distinct roles; a single bank playing all four creates conflicts of interest |
+| Customs declarant merged with exporter | The declarant/broker is a licensed agent distinct from the goods owner |
+
+### 5.3 Final agreed party set (26 + Consumer)
+
+The numbering below matches the original provisional matrix from the session start.
+Parties 16–18 (infrastructure) and 20–21 (trust/publication) were implied in that
+matrix and are named here for the first time.
+
+#### Demand Side
+
+| # | Party name (fictional) | UBL roles covered |
 |---|---|---|
-| Legal basis | Contract law | Public procurement law |
-| Initiating doc | `Order` | `CallForTenders` |
-| Process group | B (Order-to-Cash) | G (Procure-to-Award) |
-| Publication required | No | Yes — PriorInformationNotice, ContractNotice, ContractAwardNotice |
+| **1** | **Apex Electronics BV** *(Commercial Buyer)* | AccountingCustomerParty, Transport User, Importer, Digital Participant A |
+| **2** | **City of Nordhaven** *(Contracting Authority)* | ContractingParty, Waste Sender |
+| **3** | **Nordic Customs Brokers Ltd** *(Customs Declarant/Broker)* | ExporterParty / ImporterParty (declarant role on behalf of goods owner) |
 
-**Split 2: Retailer vs. Commercial Buyer**
+#### Supply Side
 
-The CPFR group (H) explicitly models these as distinct tiers in a supply chain. A retailer
-has long-term collaborative planning relationships with suppliers; an end buyer places
-individual orders.
-
-| | Retailer | Commercial Buyer |
+| # | Party name (fictional) | UBL roles covered |
 |---|---|---|
-| Special flows | `ForecastRevision`, `RetailEvent`, `ProductActivity`, CPFR collaboration | `Order`, `Catalogue` browsing |
-| Planning horizon | Weeks to months (joint forecasting) | Order-by-order |
+| **4** | **Baltic Raw Materials AS** *(Raw Material Supplier — S3)* | AccountingSupplierParty (upstream), Consignor |
+| **5** | **NovaTech Components GmbH** *(Manufacturer — S1)* | AccountingSupplierParty, Economic Operator/Tenderer, Exporter, Utility Provider, Digital Participant B |
+| **6** | **Euro Distribution BV** *(Distributor — S2)* | AccountingSupplierParty (distribution tier), Catalogue publisher |
+| **7** | **Nordic Recycling Solutions AS** *(Waste Processor — S4)* | SellerParty (scrap/waste services), Waste receiver |
 
-**Split 3: Billing Party vs. Delivery Party (bill-to / ship-to)**
+#### Warehousing
 
-UBL's `AccountingCustomerParty` and `DeliveryParty` are explicitly separate elements in
-most documents. In corporate structures the invoiced entity (head office with VAT number)
-is routinely different from the receiving entity (regional warehouse with a loading dock).
-
-**Split 4: Importer vs. Customs Declarant/Broker**
-
-In customs group (E), the entity that owns the goods (`GoodsItemPassport` Holder) and
-the entity that files the paperwork (`ExportCustomsDeclaration` Declarant) are frequently
-different licensed agents.
-
-**Addition: Two warehouse parties (W1, W2)**
-
-Warehouse operators were identified as a genuinely distinct role — outsourced 3PLs that
-know nothing about commercial terms and only handle physical goods.
-
-| Party | Role in UBL | Why distinct from Buyer/Seller |
+| # | Party name (fictional) | UBL roles covered |
 |---|---|---|
-| **W1 — Seller's Warehouse Operator** (Outbound 3PL) | `DespatchParty` on `DespatchAdvice`; origin on `Waybill`; sends `InventoryReport` to Seller | Contracted by Seller; optimised for outbound |
-| **W2 — Buyer's Warehouse Operator** (Inbound 3PL) | `DeliveryParty` on `DespatchAdvice`; issues `ReceiptAdvice` on Buyer's behalf; sends `InventoryReport` to Buyer | Contracted by Buyer; optimised for inbound; merging W1+W2 would create conflict of interest in `ReceiptAdvice` |
+| **8** | **Fjord Fulfillment Center** *(Seller's Warehouse — W1)* | DespatchParty, ConsignorParty on transport docs, sends InventoryReport to Seller |
+| **9** | **Baltic Receiving Hub** *(Buyer's Warehouse — W2)* | DeliveryParty, issues ReceiptAdvice on behalf of Buyer, sends InventoryReport to Buyer |
 
-### 5.3 Final agreed party set (11 parties)
+#### Logistics — Carriers
 
-| ID | Party name (fictional) | UBL roles covered |
+| # | Party name (fictional) | UBL roles covered |
 |---|---|---|
-| **P01** | **Apex Electronics BV** *(Commercial Buyer)* | AccountingCustomerParty, Transport User, Importer, Digital Participant A |
-| **P02** | **NovaTech Components GmbH** *(Seller / Supplier)* | AccountingSupplierParty, Consignor, Economic Operator/Tenderer, Exporter, Utility Provider, Digital Participant B |
-| **P03** | **City of Nordhaven** *(Contracting Authority)* | ContractingParty, Waste Sender |
-| **P04** | **NordicMart AS** *(Retailer)* | RetailerParty, CPFR Buyer Party |
-| **P05** | **SwiftRoute Logistics** *(Freight Forwarder)* | Forwarder, Intermediary Consignee/Consignor, Preparation Party |
-| **P06** | **BlueSea Carriers** *(Carrier / TSP)* | Transport Service Provider, Reporter Party, issuer of BillOfLading/Waybill |
-| **P07** | **Nordhaven Port Authority** *(Port / Network Authority)* | TransportationNetworkManager, TransportRegulator, AuthorityParty |
-| **P08** | **EU Customs Agency** *(Customs Authority)* | CustomsParty, Exporting/Importing Customs Party |
-| **P09** | **Nordic Chamber of Commerce** *(Chamber of Commerce)* | IssuerParty, ImportingGuarantor, ExportingGuarantor, CertificationParty |
-| **P10** | **Nordic Official Journal** *(Government Information Service)* | PublicationBody, RegistrationAuthority, PublisherSystem |
-| **P11** | **Nordic Trade Finance Bank** *(Financial Institution)* | PayeeParty, GuaranteeCertificate issuer |
-| **W1** | **Fjord Fulfillment Center** *(Seller's Warehouse)* | DespatchParty, ConsignorParty on transport docs |
-| **W2** | **Baltic Receiving Hub** *(Buyer's Warehouse)* | DeliveryParty, issues ReceiptAdvice on behalf of P01 |
+| **10** | **SwiftRoute Logistics** *(Freight Forwarder)* | Forwarder, Intermediary Consignee/Consignor, Preparation Party |
+| **11** | **BlueSea Carriers** *(Ocean Carrier)* | TSP (sea), issues BillOfLading, Reporter Party |
+| **12** | **Nordic Air Cargo GmbH** *(Air Carrier)* | TSP (air), issues AirWaybill |
+| **13** | **ScanRoad Transport BV** *(Road Carrier)* | TSP (road), issues Waybill |
+| **14** | **NordRail Cargo AS** *(Rail Carrier)* | TSP (rail), issues rail consignment note |
+| **15** | **Baltic Inland Shipping** *(Inland Waterway Carrier)* | TSP (inland), issues inland waterway bill |
 
-> Note: W1 and W2 are warehouse operators (3PLs), not independent commercial parties in
-> the sense of P01–P11. They appear as party roles in logistics documents but do not
-> initiate commercial processes.
+#### Logistics — Infrastructure
+
+| # | Party name (fictional) | UBL roles covered |
+|---|---|---|
+| **16** | **Nordhaven Port Authority** *(Seaport / Terminal Operator)* | TransportationNetworkManager (sea), TransportRegulator, AuthorityParty |
+| **17** | **Nordhaven Airport Authority** *(Airport / Air Terminal)* | TransportationNetworkManager (air), AuthorityParty |
+| **18** | **Nordic Intermodal Hub AS** *(Rail Hub / Intermodal Terminal)* | TransportationNetworkManager (rail/intermodal), AuthorityParty |
+
+#### Compliance & Publication
+
+| # | Party name (fictional) | UBL roles covered |
+|---|---|---|
+| **19** | **EU Customs Agency** *(Customs Authority)* | CustomsParty, Exporting/Importing Customs Party |
+| **20** | **Nordic Chamber of Commerce** *(Chamber of Commerce)* | IssuerParty, ImportingGuarantor, ExportingGuarantor, CertificationParty |
+| **21** | **Nordic Official Journal** *(Government Information Service)* | PublicationBody, RegistrationAuthority, PublisherSystem |
+
+#### Financial
+
+| # | Party name (fictional) | UBL roles covered |
+|---|---|---|
+| **22** | **Apex Commerce Bank NV** *(Buyer's Bank)* | PayerFinancialAccount holder, routes buyer's payments |
+| **23** | **Nordic Trade Finance Bank** *(Seller's Bank)* | PayeeParty, receives payments on behalf of sellers |
+| **24** | **Baltic Invoice Finance** *(Factor)* | Invoice discounting / factoring counterparty |
+| **25** | **Nordic Guarantee AG** *(Guarantor)* | GuaranteeCertificate issuer for tender deposits and trade guarantees |
+
+#### Retail & End Consumer
+
+| # | Party name (fictional) | UBL roles covered |
+|---|---|---|
+| **26** | **NordicMart AS** *(Retailer)* | RetailerParty, CPFR Buyer Party |
+| **(C)** | *(private individual)* *(Consumer)* | Receives `PurchaseReceipt` from Retailer (26); otherwise outside UBL's core B2B scope |
+
+> Note: Parties 8 and 9 (warehouses) are 3PL operators. They appear as party roles in
+> logistics documents but do not initiate commercial processes independently.
+> Party (C) is outside UBL's B2B scope entirely.
 
 ---
 
@@ -211,6 +237,12 @@ know nothing about commercial terms and only handle physical goods.
 This section records which UBL documents flow between each party pair. It is derived from
 `analysis/ubl-party-interactions.md` — consult that file for the full sub-process flows and
 sequence details.
+
+> **Note:** The party identifiers below (P01–P11, W1, W2) reflect the old 13-party
+> consolidation. They need to be re-mapped to the agreed 26+C numbering in section 5.3:
+> P01→1, P02→5, P03→2, P04→26, P05→10, P06→11, P07→16, P08→19, P09→20, P10→21,
+> P11→23/25, W1→8, W2→9. New parties (3,4,6,7,12–15,17,18,22,24) need their own flow
+> sections added.
 
 ### 6.1 P01 (Buyer) ↔ P02 (Seller)
 
@@ -463,10 +495,11 @@ above party pairs in this session. They may be variants, sub-flows, or context-s
 
 ## 9. Open questions / next steps
 
-1. **Assign fictional identifiers** to the 11+2 parties (GLN, VAT numbers, addresses,
+1. **Assign fictional identifiers** to all 26+C parties (GLN, VAT numbers, addresses,
    bank accounts) so all example files reference the same master data.
-2. **Pick a priority scenario** to implement first — the core Order-to-Cash loop
-   (P01 → P02, groups B + C + D) covers the highest-value document types.
-3. **Validate samples** against the UBL 2.5 XSDs in `schemas/ubl-2.5/csd02/xsdrt/`.
-4. **Consider UBL 2.3 compatibility** — the project CLAUDE.md notes that backwards
-   compatibility with 2.3 samples should be maintained where the standard converges.
+2. **Re-map section 6** — update all party IDs from the old P01–P11/W1–W2 scheme to
+   the agreed 1–26+C numbering, and add exchange flow sections for new parties
+   (3, 4, 6, 7, 12–15, 17, 18, 22, 24).
+3. **Pick a priority scenario** to implement first — the core Order-to-Cash loop
+   (Party 1 → Party 5, groups B + C + D) covers the highest-value document types.
+4. **Validate samples** against the UBL 2.5 XSDs in `schemas/ubl-2.5/csd02/xsdrt/`.
