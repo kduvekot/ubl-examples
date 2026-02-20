@@ -162,70 +162,70 @@ that will be done in a separate session.
 
 #### Demand Side
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **1** | — | Commercial Buyer | AccountingCustomerParty, Transport User, Importer, Digital Participant A |
-| **2** | — | Contracting Authority | ContractingParty, Waste Sender |
-| **3** | — | Customs Declarant / Broker | ExporterParty / ImporterParty (declarant role on behalf of goods owner) |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **1** | — | Commercial Buyer | Needs things; initiates `Order` under contract law; can't be own counterparty | AccountingCustomerParty, Transport User, Importer, Digital Participant A |
+| **2** | — | Contracting Authority | Public procurement law, not contract law; initiates `CallForTenders` not `Order`; must publish notices (PriorInformationNotice, ContractAwardNotice) | ContractingParty, Waste Sender |
+| **3** | — | Customs Declarant / Broker | Licensed agent distinct from goods owner; files `ExportCustomsDeclaration` on behalf of exporter/importer; outsourced compliance | ExporterParty / ImporterParty (declarant role on behalf of goods owner) |
 
 #### Supply Side
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **4** | S3 | Raw Material Supplier | AccountingSupplierParty (upstream), Consignor |
-| **5** | S1 | Manufacturer | AccountingSupplierParty, Economic Operator/Tenderer, Exporter, Utility Provider, Digital Participant B |
-| **6** | S2 | Distributor | AccountingSupplierParty (distribution tier), Catalogue publisher |
-| **7** | S4 | Waste Processor | SellerParty (scrap/waste services), Waste receiver |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **4** | S3 | Raw Material Supplier | Furthest upstream — mines/harvests/extracts; sells raw inputs to S1; different position in chain from manufacturer or distributor | AccountingSupplierParty (upstream), Consignor |
+| **5** | S1 | Manufacturer | Creates/transforms goods; buys components from S3, sells finished goods to S2 or direct; also plays Economic Operator in procurement | AccountingSupplierParty, Economic Operator/Tenderer, Exporter, Utility Provider, Digital Participant B |
+| **6** | S2 | Distributor | Buys finished goods from S1, stores in DC, sells to Retailer (26) or Buyer (1); Catalogue publisher; different commercial relationship from manufacturer | AccountingSupplierParty (distribution tier), Catalogue publisher |
+| **7** | S4 | Waste Processor | Handles scrap/waste; invoices for removal services; reverse flow from normal supply chain; receives `WasteMovement` | SellerParty (scrap/waste services), Waste receiver |
 
 #### Warehousing
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **8** | W1 | Seller's Warehouse (outbound 3PL) | DespatchParty, ConsignorParty on transport docs, sends InventoryReport to Seller |
-| **9** | W2 | Buyer's Warehouse (inbound 3PL) | DeliveryParty, issues ReceiptAdvice on behalf of Buyer, sends InventoryReport to Buyer |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **8** | W1 | Seller's Warehouse (outbound 3PL) | Outsourced by Seller; knows nothing about commercial terms; only picks, packs, hands to carrier; distinct from commercial DespatchParty | DespatchParty, ConsignorParty on transport docs, sends InventoryReport to Seller |
+| **9** | W2 | Buyer's Warehouse (inbound 3PL) | Outsourced by Buyer; issues `ReceiptAdvice` triggering invoice matching; merging W1+W2 creates conflict of interest on receipt verification | DeliveryParty, issues ReceiptAdvice on behalf of Buyer, sends InventoryReport to Buyer |
 
 #### Logistics — Carriers
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **10** | — | Freight Forwarder | Forwarder, Intermediary Consignee/Consignor, Preparation Party |
-| **11** | L1 | Ocean Carrier | TSP (sea), issues BillOfLading, Reporter Party |
-| **12** | L2 | Air Carrier | TSP (air), issues AirWaybill |
-| **13** | L3 | Road Carrier | TSP (road), issues Waybill |
-| **14** | L4 | Rail Carrier | TSP (rail), issues rail consignment note |
-| **15** | L5 | Inland Waterway Carrier | TSP (inland), issues inland waterway bill |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **10** | — | Freight Forwarder | Moves things on paper — consolidates/splits shipments, prepares export doc bundles; IMFM diagrams show distinct swim lane from Carrier | Forwarder, Intermediary Consignee/Consignor, Preparation Party |
+| **11** | L1 | Ocean Carrier | Only carrier that issues `BillOfLading` (negotiable title document); maritime liability rules | TSP (sea), issues BillOfLading, Reporter Party |
+| **12** | L2 | Air Carrier | IATA regulated; airline liability rules; speed-sensitive; issues Air Waybill (AWB) | TSP (air), issues AirWaybill |
+| **13** | L3 | Road Carrier | Most granular, last-mile delivery; issues CMR waybill; per-truck documentation | TSP (road), issues Waybill |
+| **14** | L4 | Rail Carrier | Fixed timetable; network-dependent; EU ToC/IM split; issues CIM waybill | TSP (rail), issues rail consignment note |
+| **15** | L5 | Inland Waterway Carrier | Distinct from deep-sea: different liability rules, river ports vs seaports; major European UBL use case (Rhine/Danube) | TSP (inland), issues inland waterway bill |
 
 #### Logistics — Infrastructure
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **16** | — | Seaport / Terminal Operator | TransportationNetworkManager (sea), TransportRegulator, AuthorityParty |
-| **17** | — | Airport / Air Terminal | TransportationNetworkManager (air), AuthorityParty |
-| **18** | — | Rail Hub / Intermodal Terminal | TransportationNetworkManager (rail/intermodal), AuthorityParty |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **16** | — | Seaport / Terminal Operator | Manages berths, vessel movements, container yard, VTS; interacts with L1 (Ocean) | TransportationNetworkManager (sea), TransportRegulator, AuthorityParty |
+| **17** | — | Airport / Air Terminal | Manages cargo terminal, airside coordination; interacts with L2 (Air) | TransportationNetworkManager (air), AuthorityParty |
+| **18** | — | Rail Hub / Intermodal Terminal | Legally separate from Rail Carrier since EU Directive 91/440; manages tracks, signals, timetables; interacts with L4 (Rail) | TransportationNetworkManager (rail/intermodal), AuthorityParty |
 
 #### Compliance & Publication
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **19** | — | Customs Authority | CustomsParty, Exporting/Importing Customs Party |
-| **20** | — | Chamber of Commerce | IssuerParty, ImportingGuarantor, ExportingGuarantor, CertificationParty |
-| **21** | — | Government Information Service | PublicationBody, RegistrationAuthority, PublisherSystem |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **19** | — | Customs Authority | Only body with legal authority to clear goods; stamps declarations; verifies `GoodsItemPassport` at borders | CustomsParty, Exporting/Importing Customs Party |
+| **20** | — | Chamber of Commerce | Semi-private trust anchor; issues ATA carnets, certifies goods origin/quality; different from public gazette (21) | IssuerParty, ImportingGuarantor, ExportingGuarantor, CertificationParty |
+| **21** | — | Government Information Service | Purely public record; publishes procurement notices + business registry; never buys or sells | PublicationBody, RegistrationAuthority, PublisherSystem |
 
 #### Financial
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **22** | — | Buyer's Bank | PayerFinancialAccount holder, routes buyer's payments |
-| **23** | — | Seller's Bank | PayeeParty, receives payments on behalf of sellers |
-| **24** | — | Factor | Invoice discounting / factoring counterparty |
-| **25** | — | Guarantor | GuaranteeCertificate issuer for tender deposits and trade guarantees |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **22** | — | Buyer's Bank | Holds Buyer's payment accounts; processes outgoing transfers (SEPA/SWIFT); counterparty to Seller's Bank (23) | PayerFinancialAccount holder, routes buyer's payments |
+| **23** | — | Seller's Bank | Holds Seller's receiving accounts; counterparty to Buyer's Bank (22); two banks negotiate settlement between themselves | PayeeParty, receives payments on behalf of sellers |
+| **24** | — | Factor | Purchases Seller's receivables; becomes `PayeeParty` on invoice (explicitly modelled in UBL as separate from `AccountingSupplierParty`); different business model from banking | Invoice discounting / factoring counterparty |
+| **25** | — | Guarantor | Issues `GuaranteeCertificate` for tender deposits/trade guarantees; contingent liability, not deposit-taking; can be bank or insurance company | GuaranteeCertificate issuer for tender deposits and trade guarantees |
 
 #### Retail & End Consumer
 
-| # | Alias | Role | UBL roles covered |
-|---|---|---|---|
-| **26** | — | Retailer | RetailerParty, CPFR Buyer Party |
-| **(C)** | — | Consumer (private individual) | Receives `PurchaseReceipt` from Retailer (26); otherwise outside UBL's core B2B scope |
+| # | Alias | Role | Why distinct | UBL roles covered |
+|---|---|---|---|---|
+| **26** | — | Retailer | B2B buyer + B2C seller; CPFR workflows with Supplier (Forecast, RetailEvent, ProductActivity); distinct supply chain tier from Commercial Buyer (1) | RetailerParty, CPFR Buyer Party |
+| **(C)** | — | Consumer (private individual) | End customer; receives `PurchaseReceipt` from Retailer (26); otherwise outside UBL's core B2B scope | Receives `PurchaseReceipt` from Retailer (26) |
 
 > Note: Parties 8/W1 and 9/W2 are 3PL operators — they appear as party roles in
 > logistics documents but do not initiate commercial processes independently.
