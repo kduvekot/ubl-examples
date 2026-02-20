@@ -157,78 +157,80 @@ Key consolidations that were tried and then undone:
 
 The numbering below matches the original provisional matrix from the session start.
 Parties 16–18 (infrastructure) and 20–21 (trust/publication) were implied in that
-matrix and are named here for the first time.
+matrix and are filled in here. Fictional company names are **not yet assigned** —
+that will be done in a separate session.
 
 #### Demand Side
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **1** | **Apex Electronics BV** *(Commercial Buyer)* | AccountingCustomerParty, Transport User, Importer, Digital Participant A |
-| **2** | **City of Nordhaven** *(Contracting Authority)* | ContractingParty, Waste Sender |
-| **3** | **Nordic Customs Brokers Ltd** *(Customs Declarant/Broker)* | ExporterParty / ImporterParty (declarant role on behalf of goods owner) |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **1** | — | Commercial Buyer | AccountingCustomerParty, Transport User, Importer, Digital Participant A |
+| **2** | — | Contracting Authority | ContractingParty, Waste Sender |
+| **3** | — | Customs Declarant / Broker | ExporterParty / ImporterParty (declarant role on behalf of goods owner) |
 
 #### Supply Side
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **4** | **Baltic Raw Materials AS** *(Raw Material Supplier — S3)* | AccountingSupplierParty (upstream), Consignor |
-| **5** | **NovaTech Components GmbH** *(Manufacturer — S1)* | AccountingSupplierParty, Economic Operator/Tenderer, Exporter, Utility Provider, Digital Participant B |
-| **6** | **Euro Distribution BV** *(Distributor — S2)* | AccountingSupplierParty (distribution tier), Catalogue publisher |
-| **7** | **Nordic Recycling Solutions AS** *(Waste Processor — S4)* | SellerParty (scrap/waste services), Waste receiver |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **4** | S3 | Raw Material Supplier | AccountingSupplierParty (upstream), Consignor |
+| **5** | S1 | Manufacturer | AccountingSupplierParty, Economic Operator/Tenderer, Exporter, Utility Provider, Digital Participant B |
+| **6** | S2 | Distributor | AccountingSupplierParty (distribution tier), Catalogue publisher |
+| **7** | S4 | Waste Processor | SellerParty (scrap/waste services), Waste receiver |
 
 #### Warehousing
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **8** | **Fjord Fulfillment Center** *(Seller's Warehouse — W1)* | DespatchParty, ConsignorParty on transport docs, sends InventoryReport to Seller |
-| **9** | **Baltic Receiving Hub** *(Buyer's Warehouse — W2)* | DeliveryParty, issues ReceiptAdvice on behalf of Buyer, sends InventoryReport to Buyer |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **8** | W1 | Seller's Warehouse (outbound 3PL) | DespatchParty, ConsignorParty on transport docs, sends InventoryReport to Seller |
+| **9** | W2 | Buyer's Warehouse (inbound 3PL) | DeliveryParty, issues ReceiptAdvice on behalf of Buyer, sends InventoryReport to Buyer |
 
 #### Logistics — Carriers
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **10** | **SwiftRoute Logistics** *(Freight Forwarder)* | Forwarder, Intermediary Consignee/Consignor, Preparation Party |
-| **11** | **BlueSea Carriers** *(Ocean Carrier)* | TSP (sea), issues BillOfLading, Reporter Party |
-| **12** | **Nordic Air Cargo GmbH** *(Air Carrier)* | TSP (air), issues AirWaybill |
-| **13** | **ScanRoad Transport BV** *(Road Carrier)* | TSP (road), issues Waybill |
-| **14** | **NordRail Cargo AS** *(Rail Carrier)* | TSP (rail), issues rail consignment note |
-| **15** | **Baltic Inland Shipping** *(Inland Waterway Carrier)* | TSP (inland), issues inland waterway bill |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **10** | — | Freight Forwarder | Forwarder, Intermediary Consignee/Consignor, Preparation Party |
+| **11** | L1 | Ocean Carrier | TSP (sea), issues BillOfLading, Reporter Party |
+| **12** | L2 | Air Carrier | TSP (air), issues AirWaybill |
+| **13** | L3 | Road Carrier | TSP (road), issues Waybill |
+| **14** | L4 | Rail Carrier | TSP (rail), issues rail consignment note |
+| **15** | L5 | Inland Waterway Carrier | TSP (inland), issues inland waterway bill |
 
 #### Logistics — Infrastructure
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **16** | **Nordhaven Port Authority** *(Seaport / Terminal Operator)* | TransportationNetworkManager (sea), TransportRegulator, AuthorityParty |
-| **17** | **Nordhaven Airport Authority** *(Airport / Air Terminal)* | TransportationNetworkManager (air), AuthorityParty |
-| **18** | **Nordic Intermodal Hub AS** *(Rail Hub / Intermodal Terminal)* | TransportationNetworkManager (rail/intermodal), AuthorityParty |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **16** | — | Seaport / Terminal Operator | TransportationNetworkManager (sea), TransportRegulator, AuthorityParty |
+| **17** | — | Airport / Air Terminal | TransportationNetworkManager (air), AuthorityParty |
+| **18** | — | Rail Hub / Intermodal Terminal | TransportationNetworkManager (rail/intermodal), AuthorityParty |
 
 #### Compliance & Publication
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **19** | **EU Customs Agency** *(Customs Authority)* | CustomsParty, Exporting/Importing Customs Party |
-| **20** | **Nordic Chamber of Commerce** *(Chamber of Commerce)* | IssuerParty, ImportingGuarantor, ExportingGuarantor, CertificationParty |
-| **21** | **Nordic Official Journal** *(Government Information Service)* | PublicationBody, RegistrationAuthority, PublisherSystem |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **19** | — | Customs Authority | CustomsParty, Exporting/Importing Customs Party |
+| **20** | — | Chamber of Commerce | IssuerParty, ImportingGuarantor, ExportingGuarantor, CertificationParty |
+| **21** | — | Government Information Service | PublicationBody, RegistrationAuthority, PublisherSystem |
 
 #### Financial
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **22** | **Apex Commerce Bank NV** *(Buyer's Bank)* | PayerFinancialAccount holder, routes buyer's payments |
-| **23** | **Nordic Trade Finance Bank** *(Seller's Bank)* | PayeeParty, receives payments on behalf of sellers |
-| **24** | **Baltic Invoice Finance** *(Factor)* | Invoice discounting / factoring counterparty |
-| **25** | **Nordic Guarantee AG** *(Guarantor)* | GuaranteeCertificate issuer for tender deposits and trade guarantees |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **22** | — | Buyer's Bank | PayerFinancialAccount holder, routes buyer's payments |
+| **23** | — | Seller's Bank | PayeeParty, receives payments on behalf of sellers |
+| **24** | — | Factor | Invoice discounting / factoring counterparty |
+| **25** | — | Guarantor | GuaranteeCertificate issuer for tender deposits and trade guarantees |
 
 #### Retail & End Consumer
 
-| # | Party name (fictional) | UBL roles covered |
-|---|---|---|
-| **26** | **NordicMart AS** *(Retailer)* | RetailerParty, CPFR Buyer Party |
-| **(C)** | *(private individual)* *(Consumer)* | Receives `PurchaseReceipt` from Retailer (26); otherwise outside UBL's core B2B scope |
+| # | Alias | Role | UBL roles covered |
+|---|---|---|---|
+| **26** | — | Retailer | RetailerParty, CPFR Buyer Party |
+| **(C)** | — | Consumer (private individual) | Receives `PurchaseReceipt` from Retailer (26); otherwise outside UBL's core B2B scope |
 
-> Note: Parties 8 and 9 (warehouses) are 3PL operators. They appear as party roles in
+> Note: Parties 8/W1 and 9/W2 are 3PL operators — they appear as party roles in
 > logistics documents but do not initiate commercial processes independently.
 > Party (C) is outside UBL's B2B scope entirely.
+> Fictional company names to be assigned in a separate session.
 
 ---
 
