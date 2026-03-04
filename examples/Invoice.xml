@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2.0">
-    <UBLVersionID>2.1</UBLVersionID>
+    <UBLVersionID>2.2</UBLVersionID>
     <CustomizationID>urn:cen.eu:en16931:2015#compliant#urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</CustomizationID>
     <ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</ProfileID>
     <ID>INV-001</ID>
@@ -14,6 +14,12 @@
             <ID>BILLING-REF-001</ID>
         </InvoiceDocumentReference>
     </BillingReference>
+    <OrderReference>
+        <ID>PO-2024-00123</ID>
+    </OrderReference>
+    <ContractDocumentReference>
+        <ID>CONTRACT-2024-456</ID>
+    </ContractDocumentReference>
     <AccountingSupplierParty>
         <Party>
             <PartyIdentification>
