@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2.0">
+    <UBLVersionID>2.0</UBLVersionID>
+    <CustomizationID>urn:cen.eu:en16931:2015#compliant#urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</CustomizationID>
+    <ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</ProfileID>
+    <ID>INV-001</ID>
+    <IssueDate>2024-01-15</IssueDate>
+    <DueDate>2024-02-15</DueDate>
+    <InvoiceTypeCode>380</InvoiceTypeCode>
+    <DocumentCurrencyCode>EUR</DocumentCurrencyCode>
+    <BuyerReference>ORD-2024-001</BuyerReference>
+    <AccountingSupplierParty>
+        <Party>
+            <PartyIdentification>
+                <ID schemeID="0088">5412345000176</ID>
+            </PartyIdentification>
+            <PartyName>
+                <Name>ACME Corporation</Name>
+            </PartyName>
+            <PostalAddress>
+                <StreetName>Main Street</StreetName>
+                <BuildingNumber>123</BuildingNumber>
+                <CityName>New York</CityName>
+                <PostalZone>10001</PostalZone>
+                <CountrySubentity>NY</CountrySubentity>
+                <Country>
+                    <IdentificationCode>US</IdentificationCode>
+                </Country>
+            </PostalAddress>
+            <PartyTaxScheme>
+                <CompanyID>12-3456789</CompanyID>
+                <TaxScheme>
+                    <ID>VAT</ID>
+                </TaxScheme>
+            </PartyTaxScheme>
+        </Party>
+    </AccountingSupplierParty>
+    <AccountingCustomerParty>
+        <Party>
+            <PartyIdentification>
+                <ID schemeID="0088">5412345000184</ID>
+            </PartyIdentification>
+            <PartyName>
+                <Name>Global Enterprises Inc</Name>
+            </PartyName>
+            <PostalAddress>
+                <StreetName>Commerce Ave</StreetName>
+                <BuildingNumber>456</BuildingNumber>
+                <CityName>Los Angeles</CityName>
+                <PostalZone>90001</PostalZone>
+                <CountrySubentity>CA</CountrySubentity>
+                <Country>
+                    <IdentificationCode>US</IdentificationCode>
+                </Country>
+            </PostalAddress>
+            <PartyTaxScheme>
+                <CompanyID>98-7654321</CompanyID>
+                <TaxScheme>
+                    <ID>VAT</ID>
+                </TaxScheme>
+            </PartyTaxScheme>
+        </Party>
+    </AccountingCustomerParty>
+    <Delivery>
+        <DeliveryLocation>
+            <Address>
+                <StreetName>Warehouse Blvd</StreetName>
+                <BuildingNumber>789</BuildingNumber>
+                <CityName>Chicago</CityName>
+                <PostalZone>60601</PostalZone>
+                <CountrySubentity>IL</CountrySubentity>
+                <Country>
+                    <IdentificationCode>US</IdentificationCode>
+                </Country>
+            </Address>
+        </DeliveryLocation>
+        <DeliveryDate>2024-01-20</DeliveryDate>
+    </Delivery>
+    <PaymentMeans>
+        <PaymentMeansCode>30</PaymentMeansCode>
+        <PaymentID>INV-001</PaymentID>
+    </PaymentMeans>
+    <TaxTotal>
+        <TaxAmount currencyID="EUR">47.50</TaxAmount>
+        <TaxSubtotal>
+            <TaxableAmount currencyID="EUR">250.00</TaxableAmount>
+            <TaxAmount currencyID="EUR">47.50</TaxAmount>
+            <TaxCategory>
+                <ID>S</ID>
+                <Percent>19.00</Percent>
+                <TaxScheme>
+                    <ID>VAT</ID>
+                </TaxScheme>
+            </TaxCategory>
+        </TaxSubtotal>
+    </TaxTotal>
+    <LegalMonetaryTotal>
+        <LineExtensionAmount currencyID="EUR">250.00</LineExtensionAmount>
+        <TaxExclusiveAmount currencyID="EUR">250.00</TaxExclusiveAmount>
+        <TaxInclusiveAmount currencyID="EUR">297.50</TaxInclusiveAmount>
+        <AllowanceTotalAmount currencyID="EUR">0.00</AllowanceTotalAmount>
+        <PayableAmount currencyID="EUR">297.50</PayableAmount>
+    </LegalMonetaryTotal>
+    <InvoiceLine>
+        <ID>1</ID>
+        <InvoicedQuantity unitCode="EA">10</InvoicedQuantity>
+        <LineExtensionAmount currencyID="EUR">250.00</LineExtensionAmount>
+        <Item>
+            <Name>Office Supplies Kit</Name>
+            <Description>Complete office supplies including paper, pens, and folders</Description>
+        </Item>
+        <Price>
+            <PriceAmount currencyID="EUR">25.00</PriceAmount>
+            <BaseQuantity unitCode="EA">1</BaseQuantity>
+        </Price>
+    </InvoiceLine>
+</Invoice>
