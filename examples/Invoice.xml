@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2.0">
-    <UBLVersionID>2.2</UBLVersionID>
+    <UBLVersionID>2.3</UBLVersionID>
     <CustomizationID>urn:cen.eu:en16931:2015#compliant#urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</CustomizationID>
     <ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</ProfileID>
     <ID>INV-001</ID>
@@ -20,6 +20,9 @@
     <ContractDocumentReference>
         <ID>CONTRACT-2024-456</ID>
     </ContractDocumentReference>
+    <ProjectReference>
+        <ID>PROJECT-2024-789</ID>
+    </ProjectReference>
     <AccountingSupplierParty>
         <Party>
             <PartyIdentification>
@@ -91,6 +94,9 @@
         <PaymentMeansCode>30</PaymentMeansCode>
         <PaymentID>INV-001</PaymentID>
     </PaymentMeans>
+    <PaymentTerms>
+        <Note>Net 30 days from invoice date</Note>
+    </PaymentTerms>
     <TaxTotal>
         <TaxAmount currencyID="EUR">47.50</TaxAmount>
         <TaxSubtotal>
