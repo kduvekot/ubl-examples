@@ -1,5 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Invoice xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+<Invoice xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+   <ext:UBLExtension>
+     <ext:ExtensionURI>dummy1</ext:ExtensionURI>
+     <ext:ExtensionContent>
+       <dummy1:AnExtension xmlns:dummy1="urn:X-dummy1">
+       </dummy1:AnExtension>
+     </ext:ExtensionContent>
+   </ext:UBLExtension> 
+   <ext:UBLExtension>
+     <ext:ExtensionURI>urn:oasis:names:specification:ubl:profile:dsig:signature</ext:ExtensionURI>
+     <ext:ExtensionContent>
+       <sig:UBLDocumentSignatures xmlns:sig=
+    "urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+    xmlns:sac=
+ "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+    xmlns:sbc=
+     "urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2">
+         <sac:SignatureInformation>
+           <cbc:ID>urn:oasis:names:specification:ubl:signatures:1</cbc:ID>
+           <sbc:ReferencedSignatureID>MyParty</sbc:ReferencedSignatureID>
+           <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+             <SignedInfo>
+               <CanonicalizationMethod
+                  Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+               <SignatureMethod
+                   Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+               <Reference URI="">
+                 <Transforms>
+                   <Transform
+                      Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116">
+                       <XPath xmlns:sig=
+    "urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2">
+                        count(ancestor-or-self::sig:UBLDocumentSignatures |
+                               here()/ancestor::sig:UBLDocumentSignatures[1]) >
+                        count(ancestor-or-self::sig:UBLDocumentSignatures)
+                       </XPath>
+                     </Transform>
+                   </Transforms>
+                   <DigestMethod
+                       Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                   <DigestValue>XXXXXXXXXXXXXXXX</DigestValue>
+                 </Reference>
+               </SignedInfo>
+               <SignatureValue>
+                 XXXXXXXXXXXXXXXX
+               </SignatureValue>
+               <KeyInfo>
+                 <X509Data>
+                   <X509SubjectName>
+                     CN=My Name,O=Certification Issuing Company,C=US
+                   </X509SubjectName>
+                   <X509Certificate>
+                     XXXXXXXXXXXXXXXX
+                   </X509Certificate>
+                 </X509Data>
+               </KeyInfo>
+             </Signature>
+         </sac:SignatureInformation>
+       </sig:UBLDocumentSignatures>
+     </ext:ExtensionContent>
+   </ext:UBLExtension> 
+   <ext:UBLExtension>
+     <ext:ExtensionURI>dummy2</ext:ExtensionURI>
+     <ext:ExtensionContent>
+       <dummy2:AnotherExtension xmlns:dummy2="urn:X-dummy2">
+       </dummy2:AnotherExtension>
+     </ext:ExtensionContent>
+   </ext:UBLExtension> 
+  </ext:UBLExtensions>
 	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
 	<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft</cbc:CustomizationID>
 	<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-invoice-notification-draft</cbc:ProfileID>
@@ -16,6 +85,15 @@
 		<cbc:UUID>6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</cbc:UUID>
 		<cbc:IssueDate>2005-06-20</cbc:IssueDate>
 	</cac:OrderReference>
+        <cac:Signature>
+          <cbc:ID>urn:oasis:names:specification:ubl:signatures</cbc:ID>
+          <cbc:SignatureMethod>urn:oasis:names:specification:ubl:profile:dsig:signature</cbc:SignatureMethod>
+          <cac:SignatoryParty>
+            <cac:PartyIdentification>
+              <cbc:ID>MyParty</cbc:ID>
+            </cac:PartyIdentification>
+          </cac:SignatoryParty>
+        </cac:Signature>
 	<cac:AccountingSupplierParty>
 		<cbc:CustomerAssignedAccountID>CO001</cbc:CustomerAssignedAccountID>
 		<cac:Party>
