@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2.0">
-    <UBLVersionID>2.3</UBLVersionID>
+    <UBLVersionID>2.5</UBLVersionID>
     <CustomizationID>urn:cen.eu:en16931:2015#compliant#urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</CustomizationID>
     <ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</ProfileID>
     <ID>INV-001</ID>
@@ -23,6 +23,12 @@
     <ProjectReference>
         <ID>PROJECT-2024-789</ID>
     </ProjectReference>
+    <RequestDocumentReference>
+        <ID>RFQ-2024-321</ID>
+    </RequestDocumentReference>
+    <DespatchDocumentReference>
+        <ID>SHIP-2024-654</ID>
+    </DespatchDocumentReference>
     <AccountingSupplierParty>
         <Party>
             <PartyIdentification>
@@ -97,11 +103,19 @@
     <PaymentTerms>
         <Note>Net 30 days from invoice date</Note>
     </PaymentTerms>
+    <AllowanceCharge>
+        <ChargeIndicator>false</ChargeIndicator>
+        <AllowanceChargeReasonCode>100</AllowanceChargeReasonCode>
+        <AllowanceChargeReason>Volume discount</AllowanceChargeReason>
+        <MultiplierFactorNumeric>0.05</MultiplierFactorNumeric>
+        <Amount currencyID="EUR">12.50</Amount>
+        <BaseAmount currencyID="EUR">250.00</BaseAmount>
+    </AllowanceCharge>
     <TaxTotal>
-        <TaxAmount currencyID="EUR">47.50</TaxAmount>
+        <TaxAmount currencyID="EUR">45.13</TaxAmount>
         <TaxSubtotal>
-            <TaxableAmount currencyID="EUR">250.00</TaxableAmount>
-            <TaxAmount currencyID="EUR">47.50</TaxAmount>
+            <TaxableAmount currencyID="EUR">237.50</TaxableAmount>
+            <TaxAmount currencyID="EUR">45.13</TaxAmount>
             <TaxCategory>
                 <ID>S</ID>
                 <Percent>19.00</Percent>
@@ -113,10 +127,10 @@
     </TaxTotal>
     <LegalMonetaryTotal>
         <LineExtensionAmount currencyID="EUR">250.00</LineExtensionAmount>
-        <TaxExclusiveAmount currencyID="EUR">250.00</TaxExclusiveAmount>
-        <TaxInclusiveAmount currencyID="EUR">297.50</TaxInclusiveAmount>
-        <AllowanceTotalAmount currencyID="EUR">0.00</AllowanceTotalAmount>
-        <PayableAmount currencyID="EUR">297.50</PayableAmount>
+        <TaxExclusiveAmount currencyID="EUR">237.50</TaxExclusiveAmount>
+        <TaxInclusiveAmount currencyID="EUR">282.88</TaxInclusiveAmount>
+        <AllowanceTotalAmount currencyID="EUR">12.50</AllowanceTotalAmount>
+        <PayableAmount currencyID="EUR">282.88</PayableAmount>
     </LegalMonetaryTotal>
     <InvoiceLine>
         <ID>1</ID>
