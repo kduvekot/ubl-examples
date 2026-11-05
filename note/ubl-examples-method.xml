@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DocBook source of the note "UBL Example Documents: Method and Rationale".
+  Structure follows the OASIS Committee Note DocBook template (spec-0.9).
+
+  The sections are written in Markdown (note/src/*.md) and converted to the
+  DocBook fragments in note/sections/ by tools/md2docbook.sh. Edit the
+  Markdown, regenerate, and commit both.
+-->
+<!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "../.oasis/db/spec-0.9/docbook/docbookx.dtd"
+[
+<!--the document properties-->
+<!ENTITY name "ubl-examples-method">
+<!ENTITY version "1.0">
+<!ENTITY stage "wd01">
+<!ENTITY note "Working Draft 01 (proposal)">
+<!ENTITY this-loc "https://kduvekot.github.io/ubl-examples/note">
+<!ENTITY pubdate "5 November 2026">
+
+<!--the sections, generated from note/src/*.md-->
+<!ENTITY s-introduction SYSTEM "sections/01-introduction.xml">
+<!ENTITY s-principles   SYSTEM "sections/02-principles.xml">
+<!ENTITY s-world        SYSTEM "sections/03-world.xml">
+<!ENTITY s-rationale    SYSTEM "sections/04-rationale.xml">
+<!ENTITY s-validation   SYSTEM "sections/05-validation.xml">
+<!ENTITY s-references   SYSTEM "sections/06-references.xml">
+]>
+<article status="&note;">
+  <articleinfo>
+    <title>UBL Example Documents: Method and Rationale Version &version;</title>
+    <releaseinfo role="cvs">&name;-&version;-&stage;.xml</releaseinfo>
+    <productname>&name;</productname>
+    <productnumber>&version;-&stage;</productnumber>
+    <releaseinfo role="track">Non-Standards Track</releaseinfo>
+    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/&name;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">&this-loc;/&name;.xml</releaseinfo>
+    <authorgroup>
+      <editor>
+        <firstname>Kees</firstname>
+        <surname>Duvekot</surname>
+      </editor>
+    </authorgroup>
+    <pubdate>&pubdate;</pubdate>
+    <abstract>
+      <para>This note describes how a coherent set of UBL example documents is
+        created and maintained: a fictional world of organisations that exchange
+        UBL documents with each other, and for every value in every example the
+        reason why it fits the semantic meaning of its element in that
+        context.</para>
+    </abstract>
+    <legalnotice role="notices">
+      <title>Notices</title>
+      <para>This is a proposal draft, prepared outside the OASIS UBL Technical
+        Committee. It has not been contributed to, reviewed by or approved by
+        the TC, and it is not an OASIS work product. It may be proposed to the
+        TC as a contribution for a Committee Note.</para>
+      <para>Source and history: <ulink
+          url="https://github.com/kduvekot/ubl-examples"
+          >https://github.com/kduvekot/ubl-examples</ulink>.</para>
+      <para>The layout uses the OASIS DocBook publishing stylesheets
+        (spec-0.9), as used by the OASIS UBL TC. UBL is an OASIS Standard and
+        ISO/IEC 19845.</para>
+    </legalnotice>
+  </articleinfo>
+  &s-introduction;
+  &s-principles;
+  &s-world;
+  &s-rationale;
+  &s-validation;
+  &s-references;
+  <appendix role="non-normative" id="A-REVISION-HISTORY">
+    <title>Revision history</title>
+    <informaltable>
+      <tgroup cols="3">
+        <colspec colwidth="20*"/>
+        <colspec colwidth="20*"/>
+        <colspec colwidth="60*"/>
+        <thead>
+          <row>
+            <entry>Revision</entry>
+            <entry>Date</entry>
+            <entry>Changes</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>wd01</entry>
+            <entry>&pubdate;</entry>
+            <entry>Skeleton: introduction and principles.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </appendix>
+</article>

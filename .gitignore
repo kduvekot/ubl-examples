@@ -1,0 +1,4 @@
+# Build output and fetched OASIS stylesheets
+/_site/
+/.oasis/
+__pycache__/

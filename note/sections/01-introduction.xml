@@ -1,0 +1,63 @@
+<!-- Generated from note/src/01-introduction.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-01-introduction-introduction">
+  <title>Introduction</title>
+  <section id="S-01-introduction-purpose">
+    <title>Purpose</title>
+    <para>
+      UBL defines hundreds of document types and thousands of elements.
+      Its definitions say what an element means, but readers also need
+      to see how an element is used: with which value, in which context,
+      and in relation to the other documents in a business process.
+    </para>
+    <para>
+      This note describes a method for creating UBL example documents
+      that show exactly that. The examples form one coherent set: they
+      share the same organisations, products and timeline, and documents
+      that belong together refer to each other the way they would in
+      real exchanges.
+    </para>
+  </section>
+  <section id="S-01-introduction-scope">
+    <title>Scope</title>
+    <para>
+      The method covers:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          the fictional world in which the examples take place;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          how a value is chosen for an element, and how the reason for
+          that choice is recorded;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          how examples are checked, within a document and across
+          documents;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          how examples are reviewed and maintained over UBL versions.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      The examples illustrate UBL. They do not define a profile, a
+      customization or a national implementation, and a value used in an
+      example is never the only valid value.
+    </para>
+  </section>
+  <section id="S-01-introduction-starting-point">
+    <title>Starting point</title>
+    <para>
+      The example set starts from the sample documents that OASIS
+      published with each UBL 2.x release. Their history, from UBL 2.0
+      to UBL 2.5, is kept in the repository, one document per commit.
+    </para>
+  </section>
+</section>

@@ -1,0 +1,26 @@
+<!-- Generated from note/src/06-references.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-06-references-references">
+  <title>References</title>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <emphasis role="strong">UBL 2.5:</emphasis> <emphasis>Universal
+        Business Language Version 2.5</emphasis>, OASIS Standard,
+        <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.5/">https://docs.oasis-open.org/ubl/os-UBL-2.5/</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">OASIS TC Process:</emphasis>
+        <ulink url="https://www.oasis-open.org/policies-guidelines/tc-process/">https://www.oasis-open.org/policies-guidelines/tc-process/</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">Global Test Data:</emphasis> safe
+        example identifiers per country,
+        <ulink url="https://sipico.github.io/global-test-data/">https://sipico.github.io/global-test-data/</ulink>.
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

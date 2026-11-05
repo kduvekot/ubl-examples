@@ -1,0 +1,10 @@
+<!-- Generated from note/src/05-validation.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-05-validation-checking-the-examples">
+  <title>Checking the examples</title>
+  <para>
+    <emphasis>To be written.</emphasis> This section will describe the
+    checks every example has to pass: schema and code list validation,
+    consistency within a document, and consistency across the documents
+    of a business story.
+  </para>
+</section>

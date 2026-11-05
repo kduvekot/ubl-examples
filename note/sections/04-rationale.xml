@@ -1,0 +1,11 @@
+<!-- Generated from note/src/04-rationale.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-04-rationale-choosing-and-documenting-values">
+  <title>Choosing and documenting values</title>
+  <para>
+    <emphasis>To be written.</emphasis> This section will describe what
+    the recorded reason for a value contains, where values come from
+    (the world data, UBL code lists, safe example identifiers, derived
+    values) and how the reasons are kept general rather than tied to one
+    country or process.
+  </para>
+</section>

@@ -1,0 +1,68 @@
+<!-- Generated from note/src/02-principles.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-02-principles-principles">
+  <title>Principles</title>
+  <section id="S-02-principles-one-fictional-ubl-world">
+    <title>One fictional UBL world</title>
+    <para>
+      All examples take place in the same fictional world: a set of
+      organisations that do all their business with UBL. Documents that
+      belong together, such as a catalogue, an order, a despatch advice
+      and an invoice, or the transport and customs documents for the
+      same goods, tell one consistent story.
+    </para>
+  </section>
+  <section id="S-02-principles-universal-not-tied-to-one-region">
+    <title>Universal, not tied to one region</title>
+    <para>
+      The world includes business within one country, within a region
+      and between continents. No country, legal system or process is the
+      default. Where an example uses a country-specific identifier or
+      rule, it is one illustration among others, not the way UBL has to
+      be used.
+    </para>
+  </section>
+  <section id="S-02-principles-every-value-has-a-reason">
+    <title>Every value has a reason</title>
+    <para>
+      For each element in each example, the reason for its value is
+      recorded: why the value fits the semantic meaning of the element,
+      as defined by UBL, in the context of that document and that
+      business situation. The reason refers to the UBL definition first.
+      Country rules or a specific process only appear as illustrations.
+    </para>
+  </section>
+  <section id="S-02-principles-proven-not-only-plausible">
+    <title>Proven, not only plausible</title>
+    <para>
+      Values are checked automatically:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          the document is valid against the UBL schemas and code lists;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          the document is consistent in itself, for example totals,
+          dates and internal references;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          the documents are consistent with each other, for example
+          parties, references between documents and quantities along a
+          process.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  <section id="S-02-principles-open-and-reproducible">
+    <title>Open and reproducible</title>
+    <para>
+      The world, the reasons, the checks and the history are kept in a
+      public repository. Anyone can follow how an example was made,
+      reproduce it, reuse it or challenge it.
+    </para>
+  </section>
+</section>
