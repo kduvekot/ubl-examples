@@ -22,8 +22,9 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -139,7 +140,7 @@ model.</p></li>
 <h2 id="results">Results</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th style="text-align: right;">Elements</th>
 <th style="text-align: right;">Used</th>
@@ -148,21 +149,21 @@ model.</p></li>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Document level</td>
 <td style="text-align: right;">2,570</td>
 <td style="text-align: right;">730</td>
 <td style="text-align: right;">1,840</td>
 <td style="text-align: right;">28%</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Library (in context)</td>
 <td style="text-align: right;">2,873</td>
 <td style="text-align: right;">730</td>
 <td style="text-align: right;">2,143</td>
 <td style="text-align: right;">25%</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>All</strong></td>
 <td style="text-align: right;"><strong>5,443</strong></td>
 <td style="text-align: right;"><strong>1,460</strong></td>
@@ -181,29 +182,29 @@ anywhere (2.4: 103 of 146 missing).</li>
 <p>Where the 3,983 missing elements fit:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Placement</th>
 <th style="text-align: right;">Elements</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>extend</td>
 <td style="text-align: right;">1,755</td>
 <td>Add to an existing example; the parent is already there</td>
 </tr>
-<tr class="even">
+<tr>
 <td>add structure</td>
 <td style="text-align: right;">701</td>
 <td>Add to an existing example, with the parent structure</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>new example</td>
 <td style="text-align: right;">1,521</td>
 <td>Needs an example of a document type that has none</td>
 </tr>
-<tr class="even">
+<tr>
 <td>not reachable</td>
 <td style="text-align: right;">6</td>
 <td><code>PerformanceDataLine</code>: left over in the library since
@@ -218,39 +219,39 @@ have</strong>. The remaining 40% needs new example documents.</p>
 number of missing elements that only fit there:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Priority</th>
 <th>Process</th>
 <th>Document types (elements)</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>Catalogue</td>
 <td>Catalogue (65), CatalogueRequest (52),
 CatalogueItemSpecificationUpdate (30), CataloguePricingUpdate (30),
 CatalogueDeletion (22)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>Billing</td>
 <td>SelfBilledInvoice (62), FreightInvoice (48), InvoiceStatusRequest
 (13, new in 2.5), InvoiceStatusResponse (15, new in 2.5)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>Fulfilment and trade</td>
 <td>DeliveryNote (25, new in 2.5), BillOfLading (26), PackingList (20),
 CertificateOfOrigin (35)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>Generic</td>
 <td>ApplicationResponse (23), AttachedDocument (19), DocumentStatus
 (15), DocumentStatusRequest (15)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td>eTendering</td>
 <td>QualificationApplicationRequest (80), Tender (68),
@@ -264,7 +265,7 @@ Enquiry (17), EnquiryResponse (16), UnsubscribeFromProcedureRequest
 (16), UnsubscribeFromProcedureResponse (17), ProcurementStatus (27, new
 in 2.5), ProcurementStatusRequest (17, new in 2.5)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3</td>
 <td>Other domains</td>
 <td>UtilityStatement (204, the largest single gap), WorkReport (43, new
@@ -283,54 +284,54 @@ ApplicationResponse).</p>
 (document-level coverage):</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Document type</th>
 <th style="text-align: right;">Coverage</th>
 <th>Note</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>PriorInformationNotice</td>
 <td style="text-align: right;">10%</td>
 <td>The two examples are minimal</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Reminder</td>
 <td style="text-align: right;">18%</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>DebitNote</td>
 <td style="text-align: right;">21%</td>
 <td>The only 2.5 example, yet 12 new 2.5 elements are missing</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OrderResponse</td>
 <td style="text-align: right;">23%</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>OrderChange</td>
 <td style="text-align: right;">26%</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>SelfBilledCreditNote</td>
 <td style="text-align: right;">28%</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>GoodsCertificate</td>
 <td style="text-align: right;">30%</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>CreditNote</td>
 <td style="text-align: right;">37%</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Invoice</td>
 <td style="text-align: right;">44%</td>
 <td>9 examples, mostly variants of the same content (signatures,
@@ -350,7 +351,7 @@ technically possible but not where the element belongs in meaning. My
 corrections:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Elements</th>
 <th>Automatic placement</th>
 <th>Better fit</th>
@@ -358,7 +359,7 @@ corrections:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Circularity, new in 2.5 (<code>CircularityProfile</code>,
 <code>EndOfLifeTreatment</code>, <code>ResourceConsumption</code>,
 <code>WasteGenerated</code>, repairability <code>Score</code>)</td>
@@ -367,7 +368,7 @@ corrections:</p>
 <td>Product master data that the supplier publishes, not billing
 data</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Maritime port reporting (<code>MaritimeHealthDeclaration</code>,
 <code>BallastWaterSummary</code>, <code>ISPSRequirements</code>,
 <code>MaritimeWaste</code>, <code>DestinationPortCall</code>,
@@ -377,7 +378,7 @@ data</td>
 <td>That is the ship-to-port reporting document these were added for
 (2.3); a waybill is a transport contract</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Tendering terms and process (<code>TenderingProcess</code>,
 <code>AwardingTerms</code>, <code>AwardingCriterion</code>,
 <code>TendererQualificationRequest</code>, …)</td>
@@ -386,7 +387,7 @@ data</td>
 <td>A PIN announces a procurement; the full terms belong in the contract
 notice and call for tenders</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>ElectronicAddress</code>, <code>SecurityListing</code> (party,
 new in 2.5)</td>
 <td>Waybill consignor; Invoice payee</td>
@@ -394,7 +395,7 @@ new in 2.5)</td>
 <td>Party profile data; BusinessCard is the document that exchanges
 it</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>FuelConsumption</code>, <code>FuelMetering</code>,
 <code>FuelProperty</code> (2.4)</td>
 <td>Invoice-2.1 delivery</td>
@@ -402,13 +403,13 @@ it</td>
 <td>Fits the Invoice, but as its own scenario rather than in the generic
 example</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>InsurancePolicy</code> (shipment, new in 2.5)</td>
 <td>Waybill-2.0</td>
 <td>Waybill or <strong>BillOfLading</strong> (new)</td>
 <td>Either works; BillOfLading if we add one</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>PenaltyInterestRate</code> (new in 2.5)</td>
 <td>Invoice payment terms</td>
 <td>Invoice, and also <strong>Reminder</strong></td>
