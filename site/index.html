@@ -4,31 +4,59 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UBL Example Documents</title>
-<link rel="stylesheet" href="site.css">
+<meta name="description" content="A coherent set of UBL sample documents, and why each value fits the meaning of its element.">
+<link rel="stylesheet" href="site.css?v={{cssv}}">
 </head>
 <body>
 <!--NAV-->
-<main>
-<h1>UBL Example Documents</h1>
-<p>A coherent set of sample documents for UBL (Universal Business Language,
-OASIS Standard and ISO/IEC 19845), and the method behind them: why each value
-fits the semantic meaning of its element and its context.</p>
-<p class="note">Work in progress. This site is not an OASIS publication.</p>
+<main class="home">
+  <section class="hero">
+    <p class="eyebrow">Universal Business Language · OASIS Standard · ISO/IEC 19845</p>
+    <h1>UBL example documents that <span class="accent">explain themselves</span></h1>
+    <p class="lead">One coherent set of sample documents for UBL, set in a single
+      fictional world of organisations, with the reason why every value fits
+      the semantic meaning of its element and its context.</p>
+    <p class="actions">
+      <a class="button primary" href="note/ubl-examples-method.html">Read the method</a>
+      <a class="button" href="releases.html">Browse the releases</a>
+    </p>
+    <p class="wip">Work in progress · not an OASIS publication</p>
+  </section>
 
-<ul class="cards">
-  <li><h2><a href="note/ubl-examples-method.html">Method and rationale</a></h2>
-    <p>The draft note: principles, the example world, how values are chosen
-    and checked. Written in DocBook, styled with the OASIS stylesheets.</p></li>
-  <li><h2><a href="releases.html">Releases</a></h2>
-    <p>The OASIS sample documents per UBL release, from 2.0 to 2.5, and what
-    changed in each.</p></li>
-  <li><h2><a href="history.html">How the history was built</a></h2>
-    <p>Sources, rules and how to reproduce the history of the examples.</p></li>
-  <li><h2><a href="coverage.html">Element coverage</a></h2>
-    <p>Which UBL 2.5 elements the examples use, which are missing, and where
-    they fit.</p></li>
-</ul>
+  <section class="stats" aria-label="Key figures">
+    <div><strong>{{releases}}</strong><span>UBL releases, 2.0 to 2.5</span></div>
+    <div><strong>{{examples}}</strong><span>OASIS example files</span></div>
+    <div><strong>{{doctypes}}<small> / 101</small></strong><span>document types with an example</span></div>
+    <div><strong>{{coverage}}</strong><span>of UBL 2.5 elements used</span></div>
+  </section>
 
+  <section class="cards" aria-label="Sections">
+    <a class="card" href="note/ubl-examples-method.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z M15 3v3h3 M9 11h6 M9 15h6"/></svg>
+      <h2>Method and rationale</h2>
+      <p>The principles, the example world, and how values are chosen and checked.
+        A draft note in DocBook, with the OASIS layout.</p>
+    </a>
+    <a class="card" href="releases.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16 M4 12h16 M4 17h10"/></svg>
+      <h2>Releases</h2>
+      <p>The OASIS sample documents in every UBL release, and what was added,
+        changed or removed in each.</p>
+    </a>
+    <a class="card" href="history.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+      <h2>How the history was built</h2>
+      <p>The sources, the rules, and how to reproduce the history of the
+        examples, one document per commit.</p>
+    </a>
+    <a class="card" href="coverage.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10 M10 20V4 M16 20v-7 M22 20H2"/></svg>
+      <h2>Element coverage</h2>
+      <p>Which UBL 2.5 elements the examples use, which are missing, and where
+        each one fits.</p>
+    </a>
+  </section>
 </main>
+<!--FOOTER-->
 </body>
 </html>
