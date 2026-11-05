@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>History of the OASIS UBL sample documents</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">History of the OASIS UBL sample documents</h1>
+</header>
+<h1 id="history-of-the-oasis-ubl-sample-documents">History of the OASIS
+UBL sample documents</h1>
+<p>The <code>xml/</code> folder of this repository holds the sample
+documents that OASIS published with UBL 2.0 up to UBL 2.5. Its git
+history is <strong>rebuilt</strong> from the published sources: you can
+see when each example was added, changed or removed, as if the examples
+had been maintained here from the start. UBL 1.0 is out of scope.</p>
+<h2 id="sources">Sources</h2>
+<ol type="1">
+<li><strong>docs.oasis-open.org.</strong> Every UBL 2.x stage directory
+with an <code>xml/</code> folder: <a
+href="https://docs.oasis-open.org/ubl/">https://docs.oasis-open.org/ubl/</a>.
+<code>tools/crawl_oasis.py</code> downloads every file and records it in
+<a href="manifest.json"><code>manifest.json</code></a> (path, size,
+server timestamp, SHA-256).</li>
+<li><strong>github.com/oasis-tcs/ubl.</strong> The TC's working
+repository. It starts in May 2021 (a copy of 2.3 CSD05). Only 12 of its
+commits touch the examples (<code>raw/xml/</code>). They give finer
+detail for two stages: intermediate versions of Invoice-2.1,
+PurchaseReceipt-2.4 and DebitNote-2.5, plus who removed DebitNote-2.1
+and FreightInvoice-2.1, and when.</li>
+</ol>
+<h2 id="how-the-history-is-built">How the history is built</h2>
+<ul>
+<li><strong>Starting commit.</strong> The history starts on 17 October
+2001, when OASIS announced the formation of the UBL Technical Committee
+(<a
+href="https://www.oasis-open.org/news/pr/oasis-members-form-technical-committee-to-develop-universal-business-language/">press
+release</a>). The proposal was submitted on 28 August 2001; the first
+meeting was held the week of 29 October 2001, hosted by Sun Microsystems
+(<a
+href="http://xml.coverpages.org/UBL-Subcommittees20011112.html">Cover
+Pages</a>). This commit only adds <code>README.md</code>.</li>
+<li><strong>One document per commit.</strong> Each commit adds, updates
+or removes exactly one file in <code>xml/</code>.</li>
+<li><strong>Published changes</strong> are dated on the stage's
+publication date (12:00 UTC) and authored by "OASIS UBL TC". The commit
+message names the stage, the source URL and the SHA-256 of the published
+file.</li>
+<li><strong>Changes from the OASIS GitHub repository</strong> keep the
+original author, date and message, with a link to the source commit.
+Versions that never appeared on docs.oasis-open.org are marked
+<em>intermediate</em>.</li>
+<li><strong>Every stage ends with a release commit</strong>, also when
+it changed nothing. That commit adds the stage's release notes (added,
+updated and removed files) to <code>README.md</code>. It gets an
+annotated tag with the stage's directory name (e.g.
+<code>os-UBL-2.1</code>), and its <code>xml/</code> folder equals what
+the stage published, byte for byte; the build stops if it doesn't.</li>
+<li><strong>Stage order and date</strong> come from the server
+timestamps of the published files. Exception:
+<code>os-UBL-2.0-update</code> republished the 2006 files unchanged and
+is dated on its publication date, 2008-05-29.</li>
+<li><strong>Deterministic.</strong> The same manifest, cache and GitHub
+clone always give the same commit hashes. The published branch was built
+with
+<code>--committer "Claude &lt;noreply@anthropic.com&gt;" --sign</code>,
+so its commits are signed and their hashes depend on the signing key.
+Authors, dates, messages and file contents are the same as in an
+unsigned build, so you can compare with <code>git diff</code> or by tree
+hash (<code>git log --format=%T</code>).</li>
+</ul>
+<h2 id="reproduce">Reproduce</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/crawl_oasis.py <span class="at">--cache</span> /path/to/cache <span class="at">--out</span> history/manifest.json</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--filter</span><span class="op">=</span>blob:none <span class="at">--no-checkout</span> https://github.com/oasis-tcs/ubl.git /path/to/oasis-ubl</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/build_history.py <span class="at">--cache</span> /path/to/cache <span class="at">--oasis-repo</span> /path/to/oasis-ubl <span class="at">--repo</span> . <span class="at">--branch</span> examples-history</span></code></pre></div>
+<p>Re-running the crawl and comparing <code>manifest.json</code>
+(<code>git diff</code>) shows whether anything was published or changed
+on docs.oasis-open.org since the last crawl.</p>
+<h2 id="stages">Stages</h2>
+<p>Crawled 2026-11-05. 36 stages have an <code>xml/</code> folder;
+<code>prd-UBL-2.0</code> and <code>errata-UBL-2.0</code> have none. 15
+stages changed the examples, 21 republished them unchanged.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Stage (tag)</th>
+<th>Date</th>
+<th style="text-align: right;">Files</th>
+<th style="text-align: right;">Changed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>prd2-UBL-2.0</td>
+<td>2006-07-20</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td>prd3-UBL-2.0</td>
+<td>2006-09-21</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td>prd3r1-UBL-2.0</td>
+<td>2006-10-05</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td>cs-UBL-2.0</td>
+<td>2006-10-12</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>os-UBL-2.0</td>
+<td>2006-12-12</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>os-UBL-2.0-update</td>
+<td>2008-05-29</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>prd1-UBL-2.1</td>
+<td>2010-09-25</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td>prd2-UBL-2.1</td>
+<td>2011-05-30</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td>prd3-UBL-2.1</td>
+<td>2013-02-23</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
+<td>csd4-UBL-2.1</td>
+<td>2013-05-14</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>prd4-UBL-2.1</td>
+<td>2013-05-14</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>cs1-UBL-2.1</td>
+<td>2013-06-29</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>cos1-UBL-2.1</td>
+<td>2013-07-15</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>os-UBL-2.1</td>
+<td>2013-11-04</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>csprd01-UBL-2.2</td>
+<td>2016-12-21</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td>csprd02-UBL-2.2</td>
+<td>2017-11-01</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>csprd03-UBL-2.2</td>
+<td>2018-02-21</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>cs01-UBL-2.2</td>
+<td>2018-03-22</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>cos01-UBL-2.2</td>
+<td>2018-04-22</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>os-UBL-2.2</td>
+<td>2018-07-09</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>csprd01-UBL-2.3</td>
+<td>2019-08-07</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>csprd02-UBL-2.3</td>
+<td>2020-01-29</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>csd03-UBL-2.3</td>
+<td>2020-07-29</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td>csd04-UBL-2.3</td>
+<td>2020-11-25</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>cs01-UBL-2.3</td>
+<td>2021-01-19</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>cs02-UBL-2.3</td>
+<td>2021-05-25</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>os-UBL-2.3</td>
+<td>2021-06-15</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>csd01-UBL-2.4</td>
+<td>2023-02-08</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="odd">
+<td>csd02-UBL-2.4</td>
+<td>2023-07-26</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>cs01-UBL-2.4</td>
+<td>2023-10-17</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>os-UBL-2.4</td>
+<td>2024-06-20</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>csd01-UBL-2.5</td>
+<td>2025-08-28</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>csd02-UBL-2.5</td>
+<td>2025-12-03</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>csd03-UBL-2.5</td>
+<td>2026-02-09</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="odd">
+<td>cs01-UBL-2.5</td>
+<td>2026-04-22</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td>os-UBL-2.5</td>
+<td>2026-08-12</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">–</td>
+</tr>
+</tbody>
+</table>
+<p>In total there are 189 published document changes (82 added, 101
+updated, 6 removed) and 6 intermediate versions from GitHub: 195
+document commits. With the starting commit and the 36 release commits,
+the rebuilt history has 232 commits. The commits adding this tooling
+come on top.</p>
+<h2 id="relation-to-earlier-attempts">Relation to earlier attempts</h2>
+<p>The branches <code>claude/ubl-samples-hist-3IuwR</code> and
+<code>sample-research</code> (<code>official/</code>) held partial
+copies: only changed files, and no CS/COS/OS stages. Every file version
+on those branches is part of this history.</p>
+</body>
+</html>

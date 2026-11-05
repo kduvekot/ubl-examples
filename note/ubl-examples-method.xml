@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DocBook source of the note "UBL Example Documents: Method and Rationale".
+  Structure follows the OASIS Committee Note DocBook template (spec-0.9).
+
+  The sections are written in Markdown (note/src/*.md) and converted to the
+  DocBook fragments in note/sections/ by tools/md2docbook.sh. Edit the
+  Markdown, regenerate, and commit both.
+-->
+<article status="Working Draft 01 (proposal)">
+  <articleinfo>
+    <title>UBL Example Documents: Method and Rationale Version 1.0</title>
+    <releaseinfo role="cvs">ubl-examples-method-1.0-wd01.xml</releaseinfo>
+    <productname>ubl-examples-method</productname>
+    <productnumber>1.0-wd01</productnumber>
+    <releaseinfo role="track">Non-Standards Track</releaseinfo>
+    <releaseinfo role="OASIS-specification-this-authoritative">https://kduvekot.github.io/ubl-examples/note/ubl-examples-method.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">https://kduvekot.github.io/ubl-examples/note/ubl-examples-method.xml</releaseinfo>
+    <authorgroup>
+      <editor>
+        <firstname>Kees</firstname>
+        <surname>Duvekot</surname>
+      </editor>
+    </authorgroup>
+    <pubdate>5 November 2026</pubdate>
+    <abstract>
+      <para>This note describes how a coherent set of UBL example documents is
+        created and maintained: a fictional world of organisations that exchange
+        UBL documents with each other, and for every value in every example the
+        reason why it fits the semantic meaning of its element in that
+        context.</para>
+    </abstract>
+    <legalnotice role="notices">
+      <title>Notices</title>
+      <para>This is a proposal draft, prepared outside the OASIS UBL Technical
+        Committee. It has not been contributed to, reviewed by or approved by
+        the TC, and it is not an OASIS work product. It may be proposed to the
+        TC as a contribution for a Committee Note.</para>
+      <para>Source and history: <ulink url="https://github.com/kduvekot/ubl-examples">https://github.com/kduvekot/ubl-examples</ulink>.</para>
+      <para>The layout uses the OASIS DocBook publishing stylesheets
+        (spec-0.9), as used by the OASIS UBL TC. UBL is an OASIS Standard and
+        ISO/IEC 19845.</para>
+    </legalnotice>
+  </articleinfo>
+  <!-- Generated from note/src/01-introduction.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-01-introduction-introduction">
+  <title>Introduction</title>
+  <section id="S-01-introduction-purpose">
+    <title>Purpose</title>
+    <para>
+      UBL defines hundreds of document types and thousands of elements.
+      Its definitions say what an element means, but readers also need
+      to see how an element is used: with which value, in which context,
+      and in relation to the other documents in a business process.
+    </para>
+    <para>
+      This note describes a method for creating UBL example documents
+      that show exactly that. The examples form one coherent set: they
+      share the same organisations, products and timeline, and documents
+      that belong together refer to each other the way they would in
+      real exchanges.
+    </para>
+  </section>
+  <section id="S-01-introduction-scope">
+    <title>Scope</title>
+    <para>
+      The method covers:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          the fictional world in which the examples take place;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          how a value is chosen for an element, and how the reason for
+          that choice is recorded;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          how examples are checked, within a document and across
+          documents;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          how examples are reviewed and maintained over UBL versions.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      The examples illustrate UBL. They do not define a profile, a
+      customization or a national implementation, and a value used in an
+      example is never the only valid value.
+    </para>
+  </section>
+  <section id="S-01-introduction-starting-point">
+    <title>Starting point</title>
+    <para>
+      The example set starts from the sample documents that OASIS
+      published with each UBL 2.x release. Their history, from UBL 2.0
+      to UBL 2.5, is kept in the repository, one document per commit.
+    </para>
+  </section>
+</section>
+
+  <!-- Generated from note/src/02-principles.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-02-principles-principles">
+  <title>Principles</title>
+  <section id="S-02-principles-one-fictional-ubl-world">
+    <title>One fictional UBL world</title>
+    <para>
+      All examples take place in the same fictional world: a set of
+      organisations that do all their business with UBL. Documents that
+      belong together, such as a catalogue, an order, a despatch advice
+      and an invoice, or the transport and customs documents for the
+      same goods, tell one consistent story.
+    </para>
+  </section>
+  <section id="S-02-principles-universal-not-tied-to-one-region">
+    <title>Universal, not tied to one region</title>
+    <para>
+      The world includes business within one country, within a region
+      and between continents. No country, legal system or process is the
+      default. Where an example uses a country-specific identifier or
+      rule, it is one illustration among others, not the way UBL has to
+      be used.
+    </para>
+  </section>
+  <section id="S-02-principles-every-value-has-a-reason">
+    <title>Every value has a reason</title>
+    <para>
+      For each element in each example, the reason for its value is
+      recorded: why the value fits the semantic meaning of the element,
+      as defined by UBL, in the context of that document and that
+      business situation. The reason refers to the UBL definition first.
+      Country rules or a specific process only appear as illustrations.
+    </para>
+  </section>
+  <section id="S-02-principles-proven-not-only-plausible">
+    <title>Proven, not only plausible</title>
+    <para>
+      Values are checked automatically:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          the document is valid against the UBL schemas and code lists;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          the document is consistent in itself, for example totals,
+          dates and internal references;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          the documents are consistent with each other, for example
+          parties, references between documents and quantities along a
+          process.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  <section id="S-02-principles-open-and-reproducible">
+    <title>Open and reproducible</title>
+    <para>
+      The world, the reasons, the checks and the history are kept in a
+      public repository. Anyone can follow how an example was made,
+      reproduce it, reuse it or challenge it.
+    </para>
+  </section>
+</section>
+
+  <!-- Generated from note/src/03-world.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-03-world-the-ubl-example-world">
+  <title>The UBL example world</title>
+  <para>
+    <emphasis>To be written.</emphasis> This section will describe the
+    fictional organisations (by role), where they operate, and the
+    business stories that connect them, using the process diagrams of
+    the UBL specification.
+  </para>
+</section>
+
+  <!-- Generated from note/src/04-rationale.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-04-rationale-choosing-and-documenting-values">
+  <title>Choosing and documenting values</title>
+  <para>
+    <emphasis>To be written.</emphasis> This section will describe what
+    the recorded reason for a value contains, where values come from
+    (the world data, UBL code lists, safe example identifiers, derived
+    values) and how the reasons are kept general rather than tied to one
+    country or process.
+  </para>
+</section>
+
+  <!-- Generated from note/src/05-validation.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-05-validation-checking-the-examples">
+  <title>Checking the examples</title>
+  <para>
+    <emphasis>To be written.</emphasis> This section will describe the
+    checks every example has to pass: schema and code list validation,
+    consistency within a document, and consistency across the documents
+    of a business story.
+  </para>
+</section>
+
+  <!-- Generated from note/src/06-references.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
+<section id="S-06-references-references">
+  <title>References</title>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <emphasis role="strong">UBL 2.5:</emphasis> <emphasis>Universal
+        Business Language Version 2.5</emphasis>, OASIS Standard,
+        <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.5/">https://docs.oasis-open.org/ubl/os-UBL-2.5/</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">OASIS TC Process:</emphasis>
+        <ulink url="https://www.oasis-open.org/policies-guidelines/tc-process/">https://www.oasis-open.org/policies-guidelines/tc-process/</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">Global Test Data:</emphasis> safe
+        example identifiers per country,
+        <ulink url="https://sipico.github.io/global-test-data/">https://sipico.github.io/global-test-data/</ulink>.
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+
+  <appendix role="non-normative" id="A-REVISION-HISTORY">
+    <title>Revision history</title>
+    <informaltable>
+      <tgroup cols="3">
+        <colspec colwidth="20*"/>
+        <colspec colwidth="20*"/>
+        <colspec colwidth="60*"/>
+        <thead>
+          <row>
+            <entry>Revision</entry>
+            <entry>Date</entry>
+            <entry>Changes</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>wd01</entry>
+            <entry>5 November 2026</entry>
+            <entry>Skeleton: introduction and principles.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </appendix>
+</article>
