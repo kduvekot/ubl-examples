@@ -1,19 +1,67 @@
-/* Shared style for the Markdown pages and the landing page */
-:root { --fg:#1f2328; --muted:#59636e; --bg:#ffffff; --line:#d1d9e0; --accent:#3f61a6; --code:#f6f8fa; }
+/* Site style: top bar, one content column, "On this page" on long pages.
+   Plain CSS, no JavaScript. */
+:root { --fg:#1f2328; --muted:#59636e; --bg:#ffffff; --bar:#f6f8fa; --line:#d1d9e0;
+  --accent:#3f61a6; --code:#f6f8fa; --current:#e8eefb; --bar-h:3.2rem; }
 @media (prefers-color-scheme: dark) {
-  :root { --fg:#e6edf3; --muted:#9198a1; --bg:#0d1117; --line:#3d444d; --accent:#7ea7ff; --code:#161b22; }
+  :root { --fg:#e6edf3; --muted:#9198a1; --bg:#0d1117; --bar:#151b23; --line:#3d444d;
+    --accent:#7ea7ff; --code:#161b22; --current:#1f2a44; }
 }
-html { color-scheme: light dark; }
-/* One centred column for the whole page; everything inside follows it.
-   body is a flex-free block so pandoc's own margins (div.sourceCode, table)
-   stay inside the column. */
-body { box-sizing:border-box; max-width:60rem; margin:0 auto; padding:2rem 1rem;
-  background:var(--bg); color:var(--fg);
+html { color-scheme: light dark; background:var(--bg); scroll-padding-top:calc(var(--bar-h) + 0.5rem); }
+body { margin:0; background:var(--bg); color:var(--fg);
   font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-html { background:var(--bg); }
 a { color:var(--accent); }
+
+/* ---- Top bar ---- */
+.topbar { position:sticky; top:0; z-index:10; background:var(--bar); border-bottom:1px solid var(--line);
+  padding-top:env(safe-area-inset-top, 0px); }
+.topbar nav { box-sizing:border-box; max-width:80rem; margin:0 auto; padding:0 1rem;
+  min-height:var(--bar-h); display:flex; align-items:center; gap:1rem; }
+.topbar .brand { font-weight:600; color:var(--fg); text-decoration:none; white-space:nowrap; }
+.topbar ul { display:flex; gap:0.25rem; list-style:none; margin:0; padding:0; flex:1;
+  overflow-x:auto; scrollbar-width:none; }
+.topbar ul::-webkit-scrollbar { display:none; }
+.topbar li a { display:block; padding:0.35rem 0.65rem; border-radius:6px; color:var(--fg);
+  text-decoration:none; white-space:nowrap; }
+.topbar li a:hover { background:var(--current); }
+.topbar li a[aria-current="page"] { background:var(--current); color:var(--accent); font-weight:600; }
+.topbar .source { color:var(--muted); white-space:nowrap; font-size:0.9rem; }
+/* Narrow screens: brand on its own row, links scroll sideways */
+@media (max-width: 44rem) {
+  .topbar nav { flex-wrap:wrap; gap:0 0.5rem; padding-top:0.4rem; }
+  .topbar .brand { flex:1; }
+  .topbar ul { order:3; flex-basis:100%; margin:0 -0.65rem; padding-bottom:0.3rem; }
+}
+
+/* ---- Content column ---- */
+.layout, body > main { box-sizing:border-box; max-width:60rem; margin:0 auto; padding:2rem 1rem; }
+main { min-width:0; }
 h1,h2,h3 { line-height:1.25; }
 h1 { font-size:2rem; margin-top:0; }
+
+/* ---- On this page ---- */
+.toc-title { font-weight:600; margin:0 0 0.5rem; }
+.toc-side, .toc-compact { font-size:0.9rem; }
+.toc-side ul, .toc-compact ul { list-style:none; margin:0; padding-left:0.9rem; }
+.toc-side > ul, .toc-compact > ul { padding-left:0; }
+.toc-side li, .toc-compact li { margin:0.15rem 0; }
+.toc-side a, .toc-compact a { color:var(--muted); text-decoration:none; }
+.toc-side a:hover, .toc-compact a:hover { color:var(--accent); text-decoration:underline; }
+.toc-compact { border:1px solid var(--line); border-radius:8px; padding:0.5rem 0.9rem; margin-bottom:1.5rem; }
+.toc-compact summary { cursor:pointer; font-weight:600; }
+.toc-compact[open] summary { margin-bottom:0.4rem; }
+.toc-side { display:none; }
+/* Wide screens: the list moves to a sticky column on the right */
+@media (min-width: 72rem) {
+  .layout.has-toc { max-width:80rem; display:grid; grid-template-columns:minmax(0,1fr) 16rem;
+    gap:3rem; align-items:start; }
+  .layout.has-toc > main { grid-column:1; grid-row:1; }
+  .layout.has-toc > .toc-side { display:block; grid-column:2; grid-row:1; position:sticky;
+    top:calc(var(--bar-h) + 1.5rem); max-height:calc(100vh - var(--bar-h) - 3rem); overflow-y:auto;
+    border-left:1px solid var(--line); padding-left:1rem; }
+  .layout.has-toc > .toc-compact { display:none; }
+}
+
+/* ---- Content ---- */
 code, pre { background:var(--code); border-radius:4px; font-size:0.9em; }
 code { padding:0.1em 0.3em; }
 pre { padding:0.8em; overflow-x:auto; }
@@ -23,14 +71,21 @@ pre code span { color:inherit !important; font-weight:inherit !important; font-s
 table { border-collapse:collapse; display:block; overflow-x:auto; margin:1rem 0; }
 th, td { border:1px solid var(--line); padding:0.3em 0.6em; vertical-align:top; text-align:left; }
 details { margin:0.4rem 0; }
-header#title-block-header { display:none; }
+/* Long element paths and file names have no spaces: let them wrap */
+summary { overflow-wrap:anywhere; }
+td, th { overflow-wrap:normal; }
+td:nth-child(n+2):not(:last-child) { white-space:nowrap; }
 .muted { color:var(--muted); }
+
+/* ---- Landing page ---- */
 .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(16rem,1fr)); gap:1rem; padding:0; list-style:none; }
 .cards li { border:1px solid var(--line); border-radius:8px; padding:1rem; }
 .cards h2 { font-size:1.1rem; margin:0 0 0.4rem; }
 .cards p { margin:0; color:var(--muted); }
 .note { border-left:4px solid #b45309; padding:0.4rem 0.8rem; }
-/* Long element paths and file names have no spaces: let them wrap */
-summary { overflow-wrap:anywhere; }
-td, th { overflow-wrap:normal; }
-td:nth-child(n+2):not(:last-child) { white-space:nowrap; }
+
+/* The page title is already the h1: list only the sections below it */
+.toc-side > ul > li > a, .toc-compact > ul > li > a { display:none; }
+.toc-side > ul > li > ul, .toc-compact > ul > li > ul { padding-left:0; }
+/* The brand is the link home */
+.topbar .brand[aria-current="page"] { color:var(--accent); }

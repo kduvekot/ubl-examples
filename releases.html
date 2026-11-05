@@ -1,33 +1,267 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Releases</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <link rel="stylesheet" href="site.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Releases · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">Releases</h1>
-</header>
+<header class="topbar"><nav aria-label="Site"><a class="brand" href="index.html">UBL Example Documents</a><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="releases.html" aria-current="page">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul><a class="source" href="https://github.com/kduvekot/ubl-examples">Source</a></nav></header>
+<div class="layout has-toc">
+<details class="toc-compact">
+<summary>On this page</summary>
+<ul>
+<li><a href="#ubl-examples" id="toc-ubl-examples">ubl-examples</a>
+<ul>
+<li><a href="#how-this-history-was-built"
+id="toc-how-this-history-was-built">How this history was built</a></li>
+<li><a href="#releases" id="toc-releases">Releases</a>
+<ul>
+<li><a href="#ubl-25-oasis-standard-2026-08-12"
+id="toc-ubl-25-oasis-standard-2026-08-12">UBL 2.5 OASIS Standard
+(2026-08-12)</a></li>
+<li><a href="#ubl-25-committee-specification-01-2026-04-22"
+id="toc-ubl-25-committee-specification-01-2026-04-22">UBL 2.5 Committee
+Specification 01 (2026-04-22)</a></li>
+<li><a href="#ubl-25-committee-specification-draft-03-2026-02-09"
+id="toc-ubl-25-committee-specification-draft-03-2026-02-09">UBL 2.5
+Committee Specification Draft 03 (2026-02-09)</a></li>
+<li><a href="#ubl-25-committee-specification-draft-02-2025-12-03"
+id="toc-ubl-25-committee-specification-draft-02-2025-12-03">UBL 2.5
+Committee Specification Draft 02 (2025-12-03)</a></li>
+<li><a href="#ubl-25-committee-specification-draft-01-2025-08-28"
+id="toc-ubl-25-committee-specification-draft-01-2025-08-28">UBL 2.5
+Committee Specification Draft 01 (2025-08-28)</a></li>
+<li><a href="#ubl-24-oasis-standard-2024-06-20"
+id="toc-ubl-24-oasis-standard-2024-06-20">UBL 2.4 OASIS Standard
+(2024-06-20)</a></li>
+<li><a href="#ubl-24-committee-specification-01-2023-10-17"
+id="toc-ubl-24-committee-specification-01-2023-10-17">UBL 2.4 Committee
+Specification 01 (2023-10-17)</a></li>
+<li><a href="#ubl-24-committee-specification-draft-02-2023-07-26"
+id="toc-ubl-24-committee-specification-draft-02-2023-07-26">UBL 2.4
+Committee Specification Draft 02 (2023-07-26)</a></li>
+<li><a href="#ubl-24-committee-specification-draft-01-2023-02-08"
+id="toc-ubl-24-committee-specification-draft-01-2023-02-08">UBL 2.4
+Committee Specification Draft 01 (2023-02-08)</a></li>
+<li><a href="#ubl-23-oasis-standard-2021-06-15"
+id="toc-ubl-23-oasis-standard-2021-06-15">UBL 2.3 OASIS Standard
+(2021-06-15)</a></li>
+<li><a href="#ubl-23-committee-specification-02-2021-05-25"
+id="toc-ubl-23-committee-specification-02-2021-05-25">UBL 2.3 Committee
+Specification 02 (2021-05-25)</a></li>
+<li><a href="#ubl-23-committee-specification-01-2021-01-19"
+id="toc-ubl-23-committee-specification-01-2021-01-19">UBL 2.3 Committee
+Specification 01 (2021-01-19)</a></li>
+<li><a href="#ubl-23-committee-specification-draft-04-2020-11-25"
+id="toc-ubl-23-committee-specification-draft-04-2020-11-25">UBL 2.3
+Committee Specification Draft 04 (2020-11-25)</a></li>
+<li><a href="#ubl-23-committee-specification-draft-03-2020-07-29"
+id="toc-ubl-23-committee-specification-draft-03-2020-07-29">UBL 2.3
+Committee Specification Draft 03 (2020-07-29)</a></li>
+<li><a
+href="#ubl-23-committee-specification-public-review-draft-02-2020-01-29"
+id="toc-ubl-23-committee-specification-public-review-draft-02-2020-01-29">UBL
+2.3 Committee Specification Public Review Draft 02 (2020-01-29)</a></li>
+<li><a
+href="#ubl-23-committee-specification-public-review-draft-01-2019-08-07"
+id="toc-ubl-23-committee-specification-public-review-draft-01-2019-08-07">UBL
+2.3 Committee Specification Public Review Draft 01 (2019-08-07)</a></li>
+<li><a href="#ubl-22-oasis-standard-2018-07-09"
+id="toc-ubl-22-oasis-standard-2018-07-09">UBL 2.2 OASIS Standard
+(2018-07-09)</a></li>
+<li><a href="#ubl-22-candidate-oasis-standard-01-2018-04-22"
+id="toc-ubl-22-candidate-oasis-standard-01-2018-04-22">UBL 2.2 Candidate
+OASIS Standard 01 (2018-04-22)</a></li>
+<li><a href="#ubl-22-committee-specification-01-2018-03-22"
+id="toc-ubl-22-committee-specification-01-2018-03-22">UBL 2.2 Committee
+Specification 01 (2018-03-22)</a></li>
+<li><a
+href="#ubl-22-committee-specification-public-review-draft-03-2018-02-21"
+id="toc-ubl-22-committee-specification-public-review-draft-03-2018-02-21">UBL
+2.2 Committee Specification Public Review Draft 03 (2018-02-21)</a></li>
+<li><a
+href="#ubl-22-committee-specification-public-review-draft-02-2017-11-01"
+id="toc-ubl-22-committee-specification-public-review-draft-02-2017-11-01">UBL
+2.2 Committee Specification Public Review Draft 02 (2017-11-01)</a></li>
+<li><a
+href="#ubl-22-committee-specification-public-review-draft-01-2016-12-21"
+id="toc-ubl-22-committee-specification-public-review-draft-01-2016-12-21">UBL
+2.2 Committee Specification Public Review Draft 01 (2016-12-21)</a></li>
+<li><a href="#ubl-21-oasis-standard-2013-11-04"
+id="toc-ubl-21-oasis-standard-2013-11-04">UBL 2.1 OASIS Standard
+(2013-11-04)</a></li>
+<li><a href="#ubl-21-candidate-oasis-standard-1-2013-07-15"
+id="toc-ubl-21-candidate-oasis-standard-1-2013-07-15">UBL 2.1 Candidate
+OASIS Standard 1 (2013-07-15)</a></li>
+<li><a href="#ubl-21-committee-specification-1-2013-06-29"
+id="toc-ubl-21-committee-specification-1-2013-06-29">UBL 2.1 Committee
+Specification 1 (2013-06-29)</a></li>
+<li><a href="#ubl-21-public-review-draft-4-2013-05-14"
+id="toc-ubl-21-public-review-draft-4-2013-05-14">UBL 2.1 Public Review
+Draft 4 (2013-05-14)</a></li>
+<li><a href="#ubl-21-committee-specification-draft-4-2013-05-14"
+id="toc-ubl-21-committee-specification-draft-4-2013-05-14">UBL 2.1
+Committee Specification Draft 4 (2013-05-14)</a></li>
+<li><a href="#ubl-21-public-review-draft-3-2013-02-23"
+id="toc-ubl-21-public-review-draft-3-2013-02-23">UBL 2.1 Public Review
+Draft 3 (2013-02-23)</a></li>
+<li><a href="#ubl-21-public-review-draft-2-2011-05-30"
+id="toc-ubl-21-public-review-draft-2-2011-05-30">UBL 2.1 Public Review
+Draft 2 (2011-05-30)</a></li>
+<li><a href="#ubl-21-public-review-draft-1-2010-09-25"
+id="toc-ubl-21-public-review-draft-1-2010-09-25">UBL 2.1 Public Review
+Draft 1 (2010-09-25)</a></li>
+<li><a href="#ubl-20-oasis-standard-update-2008-05-29"
+id="toc-ubl-20-oasis-standard-update-2008-05-29">UBL 2.0 OASIS Standard
+Update (2008-05-29)</a></li>
+<li><a href="#ubl-20-oasis-standard-2006-12-12"
+id="toc-ubl-20-oasis-standard-2006-12-12">UBL 2.0 OASIS Standard
+(2006-12-12)</a></li>
+<li><a href="#ubl-20-committee-specification-2006-10-12"
+id="toc-ubl-20-committee-specification-2006-10-12">UBL 2.0 Committee
+Specification (2006-10-12)</a></li>
+<li><a href="#ubl-20-public-review-draft-3-revision-1-2006-10-05"
+id="toc-ubl-20-public-review-draft-3-revision-1-2006-10-05">UBL 2.0
+Public Review Draft 3, revision 1 (2006-10-05)</a></li>
+<li><a href="#ubl-20-public-review-draft-3-2006-09-21"
+id="toc-ubl-20-public-review-draft-3-2006-09-21">UBL 2.0 Public Review
+Draft 3 (2006-09-21)</a></li>
+<li><a href="#ubl-20-public-review-draft-2-2006-07-20"
+id="toc-ubl-20-public-review-draft-2-2006-07-20">UBL 2.0 Public Review
+Draft 2 (2006-07-20)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</details>
+<nav class="toc-side" aria-label="On this page">
+<p class="toc-title">On this page</p>
+<ul>
+<li><a href="#ubl-examples" id="toc-ubl-examples">ubl-examples</a>
+<ul>
+<li><a href="#how-this-history-was-built"
+id="toc-how-this-history-was-built">How this history was built</a></li>
+<li><a href="#releases" id="toc-releases">Releases</a>
+<ul>
+<li><a href="#ubl-25-oasis-standard-2026-08-12"
+id="toc-ubl-25-oasis-standard-2026-08-12">UBL 2.5 OASIS Standard
+(2026-08-12)</a></li>
+<li><a href="#ubl-25-committee-specification-01-2026-04-22"
+id="toc-ubl-25-committee-specification-01-2026-04-22">UBL 2.5 Committee
+Specification 01 (2026-04-22)</a></li>
+<li><a href="#ubl-25-committee-specification-draft-03-2026-02-09"
+id="toc-ubl-25-committee-specification-draft-03-2026-02-09">UBL 2.5
+Committee Specification Draft 03 (2026-02-09)</a></li>
+<li><a href="#ubl-25-committee-specification-draft-02-2025-12-03"
+id="toc-ubl-25-committee-specification-draft-02-2025-12-03">UBL 2.5
+Committee Specification Draft 02 (2025-12-03)</a></li>
+<li><a href="#ubl-25-committee-specification-draft-01-2025-08-28"
+id="toc-ubl-25-committee-specification-draft-01-2025-08-28">UBL 2.5
+Committee Specification Draft 01 (2025-08-28)</a></li>
+<li><a href="#ubl-24-oasis-standard-2024-06-20"
+id="toc-ubl-24-oasis-standard-2024-06-20">UBL 2.4 OASIS Standard
+(2024-06-20)</a></li>
+<li><a href="#ubl-24-committee-specification-01-2023-10-17"
+id="toc-ubl-24-committee-specification-01-2023-10-17">UBL 2.4 Committee
+Specification 01 (2023-10-17)</a></li>
+<li><a href="#ubl-24-committee-specification-draft-02-2023-07-26"
+id="toc-ubl-24-committee-specification-draft-02-2023-07-26">UBL 2.4
+Committee Specification Draft 02 (2023-07-26)</a></li>
+<li><a href="#ubl-24-committee-specification-draft-01-2023-02-08"
+id="toc-ubl-24-committee-specification-draft-01-2023-02-08">UBL 2.4
+Committee Specification Draft 01 (2023-02-08)</a></li>
+<li><a href="#ubl-23-oasis-standard-2021-06-15"
+id="toc-ubl-23-oasis-standard-2021-06-15">UBL 2.3 OASIS Standard
+(2021-06-15)</a></li>
+<li><a href="#ubl-23-committee-specification-02-2021-05-25"
+id="toc-ubl-23-committee-specification-02-2021-05-25">UBL 2.3 Committee
+Specification 02 (2021-05-25)</a></li>
+<li><a href="#ubl-23-committee-specification-01-2021-01-19"
+id="toc-ubl-23-committee-specification-01-2021-01-19">UBL 2.3 Committee
+Specification 01 (2021-01-19)</a></li>
+<li><a href="#ubl-23-committee-specification-draft-04-2020-11-25"
+id="toc-ubl-23-committee-specification-draft-04-2020-11-25">UBL 2.3
+Committee Specification Draft 04 (2020-11-25)</a></li>
+<li><a href="#ubl-23-committee-specification-draft-03-2020-07-29"
+id="toc-ubl-23-committee-specification-draft-03-2020-07-29">UBL 2.3
+Committee Specification Draft 03 (2020-07-29)</a></li>
+<li><a
+href="#ubl-23-committee-specification-public-review-draft-02-2020-01-29"
+id="toc-ubl-23-committee-specification-public-review-draft-02-2020-01-29">UBL
+2.3 Committee Specification Public Review Draft 02 (2020-01-29)</a></li>
+<li><a
+href="#ubl-23-committee-specification-public-review-draft-01-2019-08-07"
+id="toc-ubl-23-committee-specification-public-review-draft-01-2019-08-07">UBL
+2.3 Committee Specification Public Review Draft 01 (2019-08-07)</a></li>
+<li><a href="#ubl-22-oasis-standard-2018-07-09"
+id="toc-ubl-22-oasis-standard-2018-07-09">UBL 2.2 OASIS Standard
+(2018-07-09)</a></li>
+<li><a href="#ubl-22-candidate-oasis-standard-01-2018-04-22"
+id="toc-ubl-22-candidate-oasis-standard-01-2018-04-22">UBL 2.2 Candidate
+OASIS Standard 01 (2018-04-22)</a></li>
+<li><a href="#ubl-22-committee-specification-01-2018-03-22"
+id="toc-ubl-22-committee-specification-01-2018-03-22">UBL 2.2 Committee
+Specification 01 (2018-03-22)</a></li>
+<li><a
+href="#ubl-22-committee-specification-public-review-draft-03-2018-02-21"
+id="toc-ubl-22-committee-specification-public-review-draft-03-2018-02-21">UBL
+2.2 Committee Specification Public Review Draft 03 (2018-02-21)</a></li>
+<li><a
+href="#ubl-22-committee-specification-public-review-draft-02-2017-11-01"
+id="toc-ubl-22-committee-specification-public-review-draft-02-2017-11-01">UBL
+2.2 Committee Specification Public Review Draft 02 (2017-11-01)</a></li>
+<li><a
+href="#ubl-22-committee-specification-public-review-draft-01-2016-12-21"
+id="toc-ubl-22-committee-specification-public-review-draft-01-2016-12-21">UBL
+2.2 Committee Specification Public Review Draft 01 (2016-12-21)</a></li>
+<li><a href="#ubl-21-oasis-standard-2013-11-04"
+id="toc-ubl-21-oasis-standard-2013-11-04">UBL 2.1 OASIS Standard
+(2013-11-04)</a></li>
+<li><a href="#ubl-21-candidate-oasis-standard-1-2013-07-15"
+id="toc-ubl-21-candidate-oasis-standard-1-2013-07-15">UBL 2.1 Candidate
+OASIS Standard 1 (2013-07-15)</a></li>
+<li><a href="#ubl-21-committee-specification-1-2013-06-29"
+id="toc-ubl-21-committee-specification-1-2013-06-29">UBL 2.1 Committee
+Specification 1 (2013-06-29)</a></li>
+<li><a href="#ubl-21-public-review-draft-4-2013-05-14"
+id="toc-ubl-21-public-review-draft-4-2013-05-14">UBL 2.1 Public Review
+Draft 4 (2013-05-14)</a></li>
+<li><a href="#ubl-21-committee-specification-draft-4-2013-05-14"
+id="toc-ubl-21-committee-specification-draft-4-2013-05-14">UBL 2.1
+Committee Specification Draft 4 (2013-05-14)</a></li>
+<li><a href="#ubl-21-public-review-draft-3-2013-02-23"
+id="toc-ubl-21-public-review-draft-3-2013-02-23">UBL 2.1 Public Review
+Draft 3 (2013-02-23)</a></li>
+<li><a href="#ubl-21-public-review-draft-2-2011-05-30"
+id="toc-ubl-21-public-review-draft-2-2011-05-30">UBL 2.1 Public Review
+Draft 2 (2011-05-30)</a></li>
+<li><a href="#ubl-21-public-review-draft-1-2010-09-25"
+id="toc-ubl-21-public-review-draft-1-2010-09-25">UBL 2.1 Public Review
+Draft 1 (2010-09-25)</a></li>
+<li><a href="#ubl-20-oasis-standard-update-2008-05-29"
+id="toc-ubl-20-oasis-standard-update-2008-05-29">UBL 2.0 OASIS Standard
+Update (2008-05-29)</a></li>
+<li><a href="#ubl-20-oasis-standard-2006-12-12"
+id="toc-ubl-20-oasis-standard-2006-12-12">UBL 2.0 OASIS Standard
+(2006-12-12)</a></li>
+<li><a href="#ubl-20-committee-specification-2006-10-12"
+id="toc-ubl-20-committee-specification-2006-10-12">UBL 2.0 Committee
+Specification (2006-10-12)</a></li>
+<li><a href="#ubl-20-public-review-draft-3-revision-1-2006-10-05"
+id="toc-ubl-20-public-review-draft-3-revision-1-2006-10-05">UBL 2.0
+Public Review Draft 3, revision 1 (2006-10-05)</a></li>
+<li><a href="#ubl-20-public-review-draft-3-2006-09-21"
+id="toc-ubl-20-public-review-draft-3-2006-09-21">UBL 2.0 Public Review
+Draft 3 (2006-09-21)</a></li>
+<li><a href="#ubl-20-public-review-draft-2-2006-07-20"
+id="toc-ubl-20-public-review-draft-2-2006-07-20">UBL 2.0 Public Review
+Draft 2 (2006-07-20)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<main>
 <h1 id="ubl-examples">ubl-examples</h1>
 <p>A set of validated sample documents for UBL (Universal Business
 Language, OASIS Standard and ISO/IEC 19845).</p>
@@ -528,5 +762,7 @@ href="https://docs.oasis-open.org/ubl/prd2-UBL-2.0/xml/">https://docs.oasis-open
 <li><code>UBL-RequestForQuotation-2.0-Example.xml</code></li>
 <li><code>UBL-Statement-2.0-Example.xml</code></li>
 </ul>
+</main>
+</div>
 </body>
 </html>
