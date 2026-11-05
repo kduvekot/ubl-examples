@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$pagetitle$ · UBL Example Documents</title>
+<link rel="stylesheet" href="$root$site.css">
+</head>
+<body>
+$nav$
+<div class="layout$if(toc)$ has-toc$endif$">
+$if(toc)$
+<details class="toc-compact">
+<summary>On this page</summary>
+$table-of-contents$
+</details>
+<nav class="toc-side" aria-label="On this page">
+<p class="toc-title">On this page</p>
+$table-of-contents$
+</nav>
+$endif$
+<main>
+$body$
+</main>
+</div>
+</body>
+</html>

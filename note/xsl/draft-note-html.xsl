@@ -21,6 +21,15 @@
     </style>
   </xsl:template>
 
+  <!-- A thin bar back to the site, above the cover page; the OASIS layout
+       below it stays as it is (the note has its own table of contents). -->
+  <xsl:template name="user.header.content">
+    <div class="site-bar"
+         style="font:14px/1.4 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; border-bottom:1px solid #d1d9e0; padding:0.4em 0; margin-bottom:1em;">
+      <a href="../index.html" style="text-decoration:none;">&#8592; UBL Example Documents</a>
+    </div>
+  </xsl:template>
+
   <!-- The OASIS footer states "Copyright OASIS Open"; that does not apply
        to a draft that is not an OASIS work product. Same layout, no claim. -->
   <xsl:template name="user.footer.content">
