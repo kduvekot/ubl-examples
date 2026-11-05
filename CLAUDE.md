@@ -68,11 +68,33 @@ Sample documents must meet three validation criteria:
 2. **XSD Valid**: Conformance to XML Schema Definition (UBL 2.5 spec)
 3. **Semantically Correct**: Sample data and contents are realistic and meaningful
 
+### Example Party Data (identifiers, addresses, contacts)
+
+Identifiers and contact data in sample documents must never belong to a real
+organisation or person. Take them from the **Global Test Data** set:
+
+- Site: https://sipico.github.io/global-test-data/
+- Machine-readable: https://sipico.github.io/global-test-data/data/all.json
+- Source and rules: https://github.com/sipico/global-test-data
+
+Rules:
+
+1. **Use a Global Test Data value whenever one is usable** for the element:
+   status `reserved`, `published-example` (and it passes the checks the document
+   needs) or `derived`. Never use a value with status `avoid`.
+2. **If no usable value fits**, a different value may be used, but record **why**
+   (which element, what was missing or unsuitable, and how the replacement was
+   chosen and checked) in the document's notes or in `analysis/`. Where the
+   replacement is generally useful, propose it to Global Test Data with its source.
+3. Keep the `ubl:` hints in the data (element and `schemeID`) consistent with how
+   the value is used in the document.
+
 ### Reference Resources
 
 - [OASIS UBL 2.5 CSD02](https://docs.oasis-open.org/ubl/csd02-UBL-2.5/)
 - [Peppol UBL Invoice Documentation](https://docs.peppol.eu/poacc/billing/3.0/syntax/ubl-invoice/)
+- [Global Test Data](https://sipico.github.io/global-test-data/): safe example identifiers per country
 
 ---
 
-*Last updated: 2026-02-19*
+*Last updated: 2026-11-05*
