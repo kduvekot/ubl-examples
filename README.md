@@ -8,6 +8,13 @@ Committee with each release of UBL 2.x, starting with UBL 2.0. Each release
 below is tagged with the name of its directory on
 <https://docs.oasis-open.org/ubl/>.
 
+## How this history was built
+
+The history of `xml/` is rebuilt from the releases on docs.oasis-open.org
+and the OASIS GitHub repository, one commit per document. See
+[`history/README.md`](history/README.md) for the sources, the rules and how
+to reproduce it with the scripts in `tools/`.
+
 ## Releases
 
 ### UBL 2.5 OASIS Standard (2026-08-12)
