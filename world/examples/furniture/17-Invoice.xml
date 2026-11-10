@@ -16,6 +16,12 @@
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0581</cbc:ID>
   </cac:OrderReference>
+  <cac:WorkReportDocumentReference>
+    <cbc:ID>BF-DOC-26-0582</cbc:ID>
+  </cac:WorkReportDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
+  </cac:ProjectReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -322,8 +328,19 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Two installers, seven hours.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="HUR">14</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-04-08</cbc:StartDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
+    </cac:InvoicePeriod>
+    <cac:WorkReportLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>BF-DOC-26-0582</cbc:ID>
+      </cac:DocumentReference>
+    </cac:WorkReportLineReference>
     <cac:Item>
       <cbc:Description>Installation of furniture on site, per hour per installer.</cbc:Description>
       <cbc:Name>Installation work</cbc:Name>

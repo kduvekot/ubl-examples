@@ -933,13 +933,33 @@ def retail(n, doc):
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
                            [{"item": "bench-serra-b", "qty": 24, "invoice_why": "The benches despatched."}])
     if doc["doc"] == "CreditNote":
-        return kit.credit_note(f, n, doc, 12, "Issued after the receipt advice reported the refused bench.",
+        out = kit.credit_note(f, n, doc, 12, "Issued after the receipt advice reported the refused bench.",
                                [{"item": "bench-serra-b", "qty": 1, "why": "The bench refused at delivery."}],
                                {"BillingReference": {"InvoiceDocumentReference": {
                                    "ID": V(f.numbers["invoice"], "The invoice this credit note corrects."),
                                    "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
                                 "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice that "
-                                                                                           "reported the damage.")}})
+                                                                                           "reported the damage.")},
+                                "DiscrepancyResponse": {"ReferenceID": V("1", "The invoice line that was wrong."),
+                                                        "ResponseCode": V("CN", "The distributor's answer: a "
+                                                                                "credit for the refused bench."),
+                                                        "Description": V("One bench refused at goods-in, damaged in "
+                                                                         "transit.", "In words.")},
+                                "OrderReference": {"ID": V(f.numbers["order"], "The store's order.")},
+                                "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of "
+                                                                                             "the goods.")}})
+        line = out["CreditNoteLine"][0]
+        line.update({"Note": V("Bench refused: armrest bent, carton torn.", "Why the line is credited."),
+                     "DiscrepancyResponse": {"ReferenceID": V("1", "The invoice line."),
+                                             "ResponseCode": V("Damaged", "Credited because damaged.")},
+                     "OrderLineReference": {"LineID": V("1", "The order line.")},
+                     "ReceiptLineReference": {"LineID": V("1", "The receipt line that reported it."),
+                                              "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt "
+                                                                                                  "advice.")}},
+                     "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
+                                                                               "invoice.")},
+                                          "BillingReferenceLine": {"ID": V("1", "The invoice line credited.")}}})
+        return out
     if doc["doc"] == "PurchaseReceipt":
         return kit.purchase_receipt(f, n, doc, 25, "A consumer buys a bench during the promotion week.",
                                     [{"item": "bench-serra-r", "qty": 1, "why": "One bench."}], cash=True,
@@ -2204,11 +2224,21 @@ def furniture(n, doc):
                                                                         "space."),
                                               "Item": sets}}
     if doc["doc"] == "CreditNote":
-        return kit.credit_note(f, n, doc, 62, "Issued when the returned sets arrived back.",
-                               [{"item": "garden-set", "qty": 6, "why": "The sets returned."}],
-                               {"BillingReference": {"InvoiceDocumentReference": {
-                                   "ID": V(f.numbers["invoice"], "The invoice of the returned sets."),
-                                   "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}}})
+        out = kit.credit_note(f, n, doc, 62, "Issued when the returned sets arrived back.",
+                              [{"item": "garden-set", "qty": 6, "why": "The sets returned."}],
+                              {"BillingReference": {"InvoiceDocumentReference": {
+                                  "ID": V(f.numbers["invoice"], "The invoice of the returned sets."),
+                                  "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
+                               "OrderReference": {"ID": V(f.numbers["order"], "The order of the sets.")},
+                               "AdditionalDocumentReference": {"ID": V(f.numbers["returns"], "The instruction for "
+                                                                                             "returns.")},
+                               "DueDate": V(f.date(72), "The furniture maker pays the credit back within ten "
+                                                        "days."),
+                               "Note": V("The store paid the invoice; the credit is refunded.", "Why money "
+                                                                                                "goes back.")})
+        out["PaymentMeans"] = kit.payment_means(f, "26-xb", "37-xb", "26-xb", 62, 10, out["ID"].value,
+                                                "The store's account, where the refund goes.")
+        return out
     if doc["doc"] == "Order":
         return kit.order(f, n, doc, 30, "The public works department furnishes its new planning office.",
                          "Delivered at place, the office: the furniture maker delivers and installs.",
@@ -2222,8 +2252,20 @@ def furniture(n, doc):
         return kit.invoice(f, n, doc, 38, 30, "Issued once the work report was approved.",
                            {"OrderReference": ref(f, "order-desks", "The department's order.")},
                            [{"item": "office-desk", "qty": 6, "invoice_why": "The desks delivered."},
-                            {"item": "installation", "qty": 14, "invoice_why": "The hours of the approved work report."}],
-                           key="invoice-desks")
+                            {"item": "installation", "qty": 14, "invoice_why": "The hours of the approved work report.",
+                             "line_extra": {
+                                 "Note": V("Two installers, seven hours.", "The work billed."),
+                                 "InvoicePeriod": {"StartDate": V(f.date(37), "The installation started."),
+                                                   "EndDate": V(f.date(38), "And was finished.")},
+                                 "WorkReportLineReference": {"LineID": V("1", "The line of the approved work "
+                                                                              "report."),
+                                                             "DocumentReference": {"ID": V(f.numbers["work-report"],
+                                                                                           "The work report.")}}}}],
+                           key="invoice-desks",
+                           extra={"WorkReportDocumentReference": {"ID": V(f.numbers["work-report"], "The approved "
+                                                                          "work report the hours come from.")},
+                                  "ProjectReference": {"ID": V("PWD-PLAN-OFFICE-26", "The department's project: the "
+                                                                                     "new planning office.")}})
     raise SystemExit(f"furniture scenario: no document {n} {doc['doc']}")
 
 
@@ -2534,8 +2576,14 @@ def furniture(n, doc):
         rows = kit.spec_rows([{"item": "return-transport", "qty": 1}], "26-xb", "37-xb", "XBL")
         tax, total = kit.tax_total(rows, "XBL")
         amt = rows[0][2]
-        return {**head(f, "debit-note", doc, 63, "After the returned sets were collected."),
+        out = {**head(f, "debit-note", doc, 63, "After the returned sets were collected."),
+                "DebitNoteTypeCode": V("383", "UN/EDIFACT 1001 code 383: debit note."),
+                "DueDate": V(f.date(93), "Thirty days, the store's terms."),
+                "Note": V("The furniture maker asked for the sets back; the store charges the transport.", "Why."),
                 "DocumentCurrencyCode": kit.currency_line("XBL", "the currency of the trade"),
+                **kit.cost_centre("26-xb", "The store books the income on its garden department."),
+                "AdditionalDocumentReference": {"ID": V(f.numbers["returns"], "The instruction for returns that "
+                                                                              "asked for the sets.")},
                 "BillingReference": {"CreditNoteDocumentReference": {"ID": V(next(v for k, v in f.numbers.items()
                                                                           if k.startswith("credit-")), "The credit note "
                                                                                                      "of the returned "
@@ -2547,8 +2595,14 @@ def furniture(n, doc):
                 "DebitNoteLine": {"ID": V("1", "The return transport."),
                                   "DebitedQuantity": qty(1, "E48", "One return delivery."),
                                   "LineExtensionAmount": amount(amt, "XBL", "The store's charge for one return delivery."),
+                                  "Note": V("Collected with the store's van.", "How the sets went back."),
+                                  "Delivery": {"ActualDeliveryDate": V(f.date(61), "The day the sets were delivered "
+                                                                                   "back to the furniture maker.")},
                                   "Item": item("return-transport", kit.tax_category(rows[0][3])),
                                   "Price": kit.price_block("return-transport")}}
+        out["PaymentMeans"] = kit.payment_means(f, "26-xb", "37-xb", "26-xb", 63, 30, out["ID"].value,
+                                                "The store's account.")
+        return out
     return _furniture(n, doc)
 
 

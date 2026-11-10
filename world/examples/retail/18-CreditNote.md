@@ -35,6 +35,24 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
 - `LineCountNumeric` = **1**  
   The number of lines.
 
+### Discrepancy Response
+
+Inside `DiscrepancyResponse`:
+
+- `ReferenceID` = **1**  
+  The invoice line that was wrong.
+- `ResponseCode` = **CN**  
+  The distributor's answer: a credit for the refused bench.
+- `Description` = **One bench refused at goods-in, damaged in transit.**  
+  In words.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **BS-PO-26-0224**  
+  The store's order.
+
 ### Billing Reference
 
 Inside `BillingReference`:
@@ -43,6 +61,13 @@ Inside `BillingReference`:
   The invoice this credit note corrects.
 - `InvoiceDocumentReference/IssueDate` = **2026-04-30**  
   Its issue date.
+
+### Despatch Document Reference
+
+Inside `DespatchDocumentReference`:
+
+- `ID` = **LD-DA-26-0229**  
+  The despatch advice of the goods.
 
 ### Receipt Document Reference
 
@@ -420,10 +445,26 @@ Inside `CreditNoteLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **Bench refused: armrest bent, carton torn.**  
+  Why the line is credited.
 - `CreditedQuantity` = **1** (unitCode `H87`)  
   The bench refused at delivery.
 - `LineExtensionAmount` = **520.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `OrderLineReference/LineID` = **1**  
+  The order line.
+- `DiscrepancyResponse/ReferenceID` = **1**  
+  The invoice line.
+- `DiscrepancyResponse/ResponseCode` = **Damaged**  
+  Credited because damaged.
+- `ReceiptLineReference/LineID` = **1**  
+  The receipt line that reported it.
+- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0234**  
+  The receipt advice.
+- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0235**  
+  The invoice.
+- `BillingReference/BillingReferenceLine/ID` = **1**  
+  The invoice line credited.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -652,12 +693,23 @@ Inside `CreditNoteLine`:
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:DiscrepancyResponse>
+    <cbc:ReferenceID>1</cbc:ReferenceID>
+    <cbc:ResponseCode>CN</cbc:ResponseCode>
+    <cbc:Description>One bench refused at goods-in, damaged in transit.</cbc:Description>
+  </cac:DiscrepancyResponse>
+  <cac:OrderReference>
+    <cbc:ID>BS-PO-26-0224</cbc:ID>
+  </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>LD-INV-26-0235</cbc:ID>
       <cbc:IssueDate>2026-04-30</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>LD-DA-26-0229</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:ReceiptDocumentReference>
     <cbc:ID>BS-RA-26-0234</cbc:ID>
   </cac:ReceiptDocumentReference>
@@ -973,8 +1025,30 @@ Inside `CreditNoteLine`:
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DiscrepancyResponse>
+      <cbc:ReferenceID>1</cbc:ReferenceID>
+      <cbc:ResponseCode>Damaged</cbc:ResponseCode>
+    </cac:DiscrepancyResponse>
+    <cac:ReceiptLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>BS-RA-26-0234</cbc:ID>
+      </cac:DocumentReference>
+    </cac:ReceiptLineReference>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0235</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

@@ -44,6 +44,20 @@ Inside `OrderReference`:
 - `ID` = **LPWD-PO-26-0581**  
   The department's order.
 
+### Work Report Document Reference
+
+Inside `WorkReportDocumentReference`:
+
+- `ID` = **BF-DOC-26-0582**  
+  The approved work report the hours come from.
+
+### Project Reference
+
+Inside `ProjectReference`:
+
+- `ID` = **PWD-PLAN-OFFICE-26**  
+  The department's project: the new planning office.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -406,10 +420,20 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **2**  
   The line number.
+- `Note` = **Two installers, seven hours.**  
+  The work billed.
 - `InvoicedQuantity` = **14** (unitCode `HUR`)  
   The hours of the approved work report.
 - `LineExtensionAmount` = **672.00** (currencyID `XBL`)  
   14 × 48.0, rounded to the minor unit of the currency.
+- `InvoicePeriod/StartDate` = **2026-04-08**  
+  The installation started.
+- `InvoicePeriod/EndDate` = **2026-04-09**  
+  And was finished.
+- `WorkReportLineReference/LineID` = **1**  
+  The line of the approved work report.
+- `WorkReportLineReference/DocumentReference/ID` = **BF-DOC-26-0582**  
+  The work report.
 - `Item/Description` = **Installation of furniture on site, per hour per installer.**  
   The seller's description; item installation of Brackenmere Furniture (world/items.json).
 - `Item/Name` = **Installation work**  
@@ -450,6 +474,12 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0581</cbc:ID>
   </cac:OrderReference>
+  <cac:WorkReportDocumentReference>
+    <cbc:ID>BF-DOC-26-0582</cbc:ID>
+  </cac:WorkReportDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
+  </cac:ProjectReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -756,8 +786,19 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Two installers, seven hours.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="HUR">14</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-04-08</cbc:StartDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
+    </cac:InvoicePeriod>
+    <cac:WorkReportLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>BF-DOC-26-0582</cbc:ID>
+      </cac:DocumentReference>
+    </cac:WorkReportLineReference>
     <cac:Item>
       <cbc:Description>Installation of furniture on site, per hour per installer.</cbc:Description>
       <cbc:Name>Installation work</cbc:Name>

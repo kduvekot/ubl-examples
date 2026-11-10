@@ -7,17 +7,25 @@
   <cbc:ID>BF-CN-26-0579</cbc:ID>
   <cbc:UUID>3eb03476-6b48-5174-b997-aaed7a5b8b5b</cbc:UUID>
   <cbc:IssueDate>2026-05-03</cbc:IssueDate>
+  <cbc:DueDate>2026-05-13</cbc:DueDate>
   <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
+  <cbc:Note>The store paid the invoice; the credit is refunded.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OrderReference>
+    <cbc:ID>BS-PO-26-0574</cbc:ID>
+  </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>BF-INV-26-0575</cbc:ID>
       <cbc:IssueDate>2026-03-22</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-DOC-26-0578</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -218,6 +226,43 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-13</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF63BFCN260579</cbc:InstructionNote>
+    <cbc:PaymentID>RF63BFCN260579</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB79BLUM0001570935</cbc:ID>
+      <cbc:Name>Brightmarket Stores Corp</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice BF-CN-26-0579</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

@@ -24,8 +24,18 @@ The store charges the furniture maker for transporting the returned sets back.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-04**  
   After the returned sets were collected.
+- `DueDate` = **2026-06-03**  
+  Thirty days, the store's terms.
+- `Note` = **The furniture maker asked for the sets back; the store charges the transport.**  
+  Why.
+- `DebitNoteTypeCode` = **383**  
+  UN/EDIFACT 1001 code 383: debit note.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the trade; it has two decimals.
+- `AccountingCostCode` = **6120**  
+  The store books the income on its garden department.
+- `AccountingCost` = **Garden department**  
+  The cost centre in words.
 
 ### Billing Reference
 
@@ -33,6 +43,13 @@ Inside `BillingReference`:
 
 - `CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
   The credit note of the returned sets.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BF-DOC-26-0578**  
+  The instruction for returns that asked for the sets.
 
 ### Accounting Supplier Party
 
@@ -240,6 +257,57 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The first, and only, way to pay.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-06-03**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **LUMEPAY**  
+  The payment system the transfer runs over: the domestic clearing.
+- `InstructionNote` = **Quote RF86BSDOC260580**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF86BSDOC260580**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `PayeeFinancialAccount/ID` = **XB79BLUM0001570935** (schemeID `urn:ubl-examples:world:account`)  
+  The store's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PayeeFinancialAccount/Name` = **Brightmarket Stores Corp**  
+  The account holder, as the bank knows it.
+- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/PaymentNote` = **Invoice BS-DOC-26-0580**  
+  What the payer is asked to quote with the transfer, so the payment is matched.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -274,10 +342,14 @@ Inside `DebitNoteLine`:
 
 - `ID` = **1**  
   The return transport.
+- `Note` = **Collected with the store's van.**  
+  How the sets went back.
 - `DebitedQuantity` = **1** (unitCode `E48`)  
   One return delivery.
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
   The store's charge for one return delivery.
+- `Delivery/ActualDeliveryDate` = **2026-05-02**  
+  The day the sets were delivered back to the furniture maker.
 - `Item/Description` = **Transport of returned goods back to the supplier, per delivery.**  
   The seller's description; item return-transport of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Return transport**  
@@ -309,12 +381,20 @@ Inside `DebitNoteLine`:
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
   <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:DueDate>2026-06-03</cbc:DueDate>
+  <cbc:Note>The furniture maker asked for the sets back; the store charges the transport.</cbc:Note>
+  <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cac:BillingReference>
     <cac:CreditNoteDocumentReference>
       <cbc:ID>BF-CN-26-0579</cbc:ID>
     </cac:CreditNoteDocumentReference>
   </cac:BillingReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-DOC-26-0578</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -495,6 +575,43 @@ Inside `DebitNoteLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
+    <cbc:PaymentID>RF86BSDOC260580</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB79BLUM0001570935</cbc:ID>
+      <cbc:Name>Brightmarket Stores Corp</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice BS-DOC-26-0580</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -516,8 +633,12 @@ Inside `DebitNoteLine`:
   </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Collected with the store's van.</cbc:Note>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description>Transport of returned goods back to the supplier, per delivery.</cbc:Description>
       <cbc:Name>Return transport</cbc:Name>
