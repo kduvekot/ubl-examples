@@ -252,9 +252,21 @@ Inside `ServiceStartTimePeriod`:
 Inside `Consignment`:
 
 - `ID` = **VI-CS-26-0327**  
-  The consignment of the request.
+  The manufacturer's consignment number.
+- `SummaryDescription` = **192 park benches in two 40-foot containers.**  
+  The goods in a few words.
 - `GrossWeightMeasure` = **7968** (unitCode `KGM`)  
   The weight the plan is made for.
+- `ContainerizedIndicator` = **true**  
+  Two full containers.
+- `PlannedPickupTransportEvent/OccurrenceDate` = **2026-04-13**  
+  The carrier collects the packed boxes.
+- `PlannedPickupTransportEvent/OccurrenceTime` = **15:00:00**  
+  The local time.
+- `PlannedDeliveryTransportEvent/OccurrenceDate` = **2026-04-15**  
+  And places them at the siding.
+- `PlannedDeliveryTransportEvent/OccurrenceTime` = **11:00:00**  
+  The local time.
 - `ConsigneeParty/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -355,6 +367,58 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `TransportContract/ID` = **FRC-CON-2026-005**  
+  The framework contract for container slots.
+- `TransportContract/IssueDate` = **2026-01-05**  
+  Signed at the start of the year.
+- `TransportContract/ContractType` = **Framework contract for container slots**  
+  What it is.
+- `PrepaidPaymentTerms/Note` = **Freight prepaid by the consignor under DAP.**  
+  The seller pays the carriage.
+- `MainCarriageShipmentStage/ID` = **1**  
+  The main carriage, by rail.
+- `MainCarriageShipmentStage/TransportModeCode` = **2** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 2: rail transport.
+- `MainCarriageShipmentStage/LoadingSequenceID` = **7**  
+  The order the boxes go on the train: these two are the seventh lift.
+- `MainCarriageShipmentStage/SuccessiveSequenceID` = **1**  
+  The first and only rail stage.
+- `MainCarriageShipmentStage/Instructions` = **Shunt to the Lumeway siding on arrival in Marrowdale.**  
+  What the railway must do.
+- `MainCarriageShipmentStage/DemurrageInstructions` = **Free time five days at the siding, then demurrage per container day.**  
+  What waiting costs.
+- `MainCarriageShipmentStage/CrewQuantity` = **2** (unitCode `C62`)  
+  A driver and a train manager.
+- `MainCarriageShipmentStage/PassengerQuantity` = **0** (unitCode `C62`)  
+  A freight train carries no passengers.
+- `MainCarriageShipmentStage/TransportMeans/JourneyID` = **CT 4471**  
+  The number of the container train in the hub's timetable.
+- `MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
+  The country the means of transport is registered in.
+- `MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `MainCarriageShipmentStage/TransportMeans/DirectionCode` = **Westbound**  
+  The direction of the journey, as the carrier codes its services.
+- `MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **RAIL**  
+  The carrier's code for the kind of means: container train ferrano–marrowdale; the fleet of Ferrano Rail Cargo (world/parties.json).
+- `MainCarriageShipmentStage/TransportMeans/RailTransport/TrainID` = **FRC 4417**  
+  The train number; the fleet of Ferrano Rail Cargo (world/parties.json).
+- `MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The timetable departure from the hub.
+- `MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00**  
+  The local time.
+- `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
+  The timetable arrival in Marrowdale.
+- `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00**  
+  The local time.
+- `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The departure as expected that morning.
+- `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00**  
+  The local time.
+- `MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
+  The arrival as expected.
+- `MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **10:40:00**  
+  The local time.
 
 ## The document
 
@@ -566,7 +630,17 @@ Inside `Consignment`:
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
+    <cac:PlannedPickupTransportEvent>
+      <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+    </cac:PlannedPickupTransportEvent>
+    <cac:PlannedDeliveryTransportEvent>
+      <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+    </cac:PlannedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -655,6 +729,50 @@ Inside `Consignment`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:ConsigneeParty>
+    <cac:TransportContract>
+      <cbc:ID>FRC-CON-2026-005</cbc:ID>
+      <cbc:IssueDate>2026-01-05</cbc:IssueDate>
+      <cbc:ContractType>Framework contract for container slots</cbc:ContractType>
+    </cac:TransportContract>
+    <cac:PrepaidPaymentTerms>
+      <cbc:Note>Freight prepaid by the consignor under DAP.</cbc:Note>
+    </cac:PrepaidPaymentTerms>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+      <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
+      <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
+      <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
+      <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
+      <cbc:CrewQuantity unitCode="C62">2</cbc:CrewQuantity>
+      <cbc:PassengerQuantity unitCode="C62">0</cbc:PassengerQuantity>
+      <cac:TransportMeans>
+        <cbc:JourneyID>CT 4471</cbc:JourneyID>
+        <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:DirectionCode>Westbound</cbc:DirectionCode>
+        <cbc:TransportMeansTypeCode>RAIL</cbc:TransportMeansTypeCode>
+        <cac:RailTransport>
+          <cbc:TrainID>FRC 4417</cbc:TrainID>
+        </cac:RailTransport>
+      </cac:TransportMeans>
+      <cac:PlannedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+      </cac:PlannedDepartureTransportEvent>
+      <cac:PlannedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+      </cac:PlannedArrivalTransportEvent>
+      <cac:EstimatedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+      </cac:EstimatedDepartureTransportEvent>
+      <cac:EstimatedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+      </cac:EstimatedArrivalTransportEvent>
+    </cac:MainCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlan>
 ```

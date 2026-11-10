@@ -202,7 +202,37 @@
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0152</cbc:ID>
+    <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
+    <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
+    <cbc:CarrierServiceInstructions>Curtain-side trailer; the goods are loaded from the side by forklift.</cbc:CarrierServiceInstructions>
+    <cac:RequestedPickupTransportEvent>
+      <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+    </cac:RequestedPickupTransportEvent>
+    <cac:RequestedDeliveryTransportEvent>
+      <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
+        <cbc:Name>Marrowdale</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+    </cac:RequestedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -309,5 +339,11 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:ConsignorParty>
+    <cac:OriginalDepartureCountry>
+      <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+    </cac:OriginalDepartureCountry>
+    <cac:FinalDestinationCountry>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:FinalDestinationCountry>
   </cac:Consignment>
 </TransportExecutionPlanRequest>

@@ -415,6 +415,62 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRCU1044171** (schemeID `ISO6346`)  
+  The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
+  The consignment the container carries.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container.
+- `Consignment/TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **45G1**  
+  ISO 6346 size and type: 40 feet long, 9 ft 6 in high, general purpose.
+- `Consignment/TransportHandlingUnit/TransportEquipment/FullnessIndicationCode` = **FCL**  
+  A full container load for one consignee.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7884** (unitCode `KGM`)  
+  Half the benches and the container's own 3,900 kg.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID` = **XU-VI-30411**  
+  The number of the bolt seal on the doors.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode` = **Shipper**  
+  The seal was issued by the shipper.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/Condition` = **Intact**  
+  As found at the hub.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealStatusCode` = **Applied**  
+  The seal is in place.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
+  And put on by the shipper when it packed the container.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRCU1044187** (schemeID `ISO6346`)  
+  The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
+  The consignment the container carries.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container.
+- `Consignment/TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **45G1**  
+  ISO 6346 size and type: 40 feet long, 9 ft 6 in high, general purpose.
+- `Consignment/TransportHandlingUnit/TransportEquipment/FullnessIndicationCode` = **FCL**  
+  A full container load for one consignee.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7884** (unitCode `KGM`)  
+  Half the benches and the container's own 3,900 kg.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID` = **XU-VI-30412**  
+  The number of the bolt seal on the doors.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode` = **Shipper**  
+  The seal was issued by the shipper.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/Condition` = **Intact**  
+  As found at the hub.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealStatusCode` = **Applied**  
+  The seal is in place.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
+  And put on by the shipper when it packed the container.
+- `Consignment/OfficeOfEntryLocation/Name` = **Customs post at the rail border station, Bayvarran side**  
+  Where the goods enter Bayvarra.
+- `Consignment/OfficeOfExitLocation/Name` = **Customs post at the rail border station, Urvanian side**  
+  Where the goods leave Urvania.
+- `Consignment/OfficeOfDepartureLocation/Name` = **Customs office Ferrano Intermodal Hub**  
+  Where the transit starts.
+- `Consignment/OfficeOfDestinationLocation/Name` = **Customs office Marrowdale**  
+  Where the transit ends and the goods are declared for import.
+- `Consignment/OfficeOfImportLocation/Name` = **Customs office Marrowdale**  
+  Where the import is declared.
+- `Consignment/OfficeOfTransitLocation/Name` = **Customs post at the rail border station, Bayvarran side**  
+  Where the transit is checked on entering Bayvarra.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -975,6 +1031,58 @@ Inside `Shipment`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:CarrierParty>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRCU1044171</cbc:ID>
+          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode>45G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30411</cbc:ID>
+            <cbc:SealIssuerTypeCode>Shipper</cbc:SealIssuerTypeCode>
+            <cbc:Condition>Intact</cbc:Condition>
+            <cbc:SealStatusCode>Applied</cbc:SealStatusCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRCU1044187</cbc:ID>
+          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode>45G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30412</cbc:ID>
+            <cbc:SealIssuerTypeCode>Shipper</cbc:SealIssuerTypeCode>
+            <cbc:Condition>Intact</cbc:Condition>
+            <cbc:SealStatusCode>Applied</cbc:SealStatusCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:OfficeOfEntryLocation>
+        <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
+      </cac:OfficeOfEntryLocation>
+      <cac:OfficeOfExitLocation>
+        <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
+      </cac:OfficeOfExitLocation>
+      <cac:OfficeOfDepartureLocation>
+        <cbc:Name>Customs office Ferrano Intermodal Hub</cbc:Name>
+      </cac:OfficeOfDepartureLocation>
+      <cac:OfficeOfDestinationLocation>
+        <cbc:Name>Customs office Marrowdale</cbc:Name>
+      </cac:OfficeOfDestinationLocation>
+      <cac:OfficeOfImportLocation>
+        <cbc:Name>Customs office Marrowdale</cbc:Name>
+      </cac:OfficeOfImportLocation>
+      <cac:OfficeOfTransitLocation>
+        <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
+      </cac:OfficeOfTransitLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

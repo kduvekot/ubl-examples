@@ -243,9 +243,19 @@ Inside `ServiceStartTimePeriod`:
 Inside `Consignment`:
 
 - `ID` = **VI-CS-26-0327**  
-  The transport user's number for this consignment, quoted along the chain.
+  The manufacturer's consignment number.
+- `SummaryDescription` = **192 park benches in two 40-foot containers.**  
+  The goods in a few words.
 - `GrossWeightMeasure` = **7968** (unitCode `KGM`)  
   Two containers of benches.
+- `ContainerizedIndicator` = **true**  
+  Two full containers.
+- `RequestedPickupTransportEvent/OccurrenceDate` = **2026-04-13**  
+  The boxes are packed by then.
+- `RequestedPickupTransportEvent/OccurrenceTime` = **15:00:00**  
+  The local time.
+- `RequestedDeliveryTransportEvent/OccurrenceDate` = **2026-04-16**  
+  The distributor expects them on day 10.
 - `ConsigneeParty/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -557,7 +567,16 @@ Inside `Consignment`:
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
+    <cac:RequestedPickupTransportEvent>
+      <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+    </cac:RequestedPickupTransportEvent>
+    <cac:RequestedDeliveryTransportEvent>
+      <cbc:OccurrenceDate>2026-04-16</cbc:OccurrenceDate>
+    </cac:RequestedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

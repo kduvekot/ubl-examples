@@ -444,6 +444,14 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Delivery/Despatch/ID` = **CL-OUT-26-0871**  
+  The 3PL's outbound number.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-03-23**  
+  Loaded and gone.
+- `Delivery/Despatch/ActualDespatchTime` = **16:20:00**  
+  The truck left the gate.
+- `Delivery/Despatch/ReleaseID` = **XU-EX-REL-55120**  
+  The export release customs gave before the truck left.
 
 ### Despatch Line
 
@@ -1242,6 +1250,14 @@ Inside `DespatchLine`:
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:Despatch>
+        <cbc:ID>CL-OUT-26-0871</cbc:ID>
+        <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchTime>16:20:00</cbc:ActualDespatchTime>
+        <cbc:ReleaseID>XU-EX-REL-55120</cbc:ReleaseID>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

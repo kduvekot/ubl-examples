@@ -235,10 +235,72 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `ID` = **LD-DL-26-0412**  
+  The distributor's number for this delivery.
+- `Quantity` = **108** (unitCode `H87`)  
+  All 108 pieces in one delivery.
+- `MinimumQuantity` = **108** (unitCode `H87`)  
+  No part deliveries: the truck is booked for all.
+- `MaximumQuantity` = **108** (unitCode `H87`)  
+  And no more than ordered.
+- `DeliveryAddress/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `DeliveryAddress/StreetName` = **Distribution Drive**  
+  Street of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/AdditionalStreetName` = **Gate 3**  
+  The gate of the business park to use. identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/BlockName` = **Marrowdale Business Park**  
+  The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/BuildingNumber` = **43**  
+  Building number of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/PlotIdentification` = **Plot 14**  
+  The plot of the distribution centre in the business park. identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/CityName` = **Marrowdale**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/PostalZone` = **71214**  
+  Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/CountrySubentity` = **Upland State**  
+  The state, part of an address in federal Bayvarra. identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/CountrySubentityCode` = **UL**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json).
+- `DeliveryAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `DeliveryAddress/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `DeliveryAddress/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+- `AlternativeDeliveryLocation/Description` = **Gate B of the business park, if dock 4 is blocked.**  
+  Where to go instead.
 - `DeliveryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeway Distribution**  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Despatch/RequestedDespatchDate` = **2026-03-23**  
+  The day the buyer's truck will collect.
+- `Despatch/RequestedDespatchTime` = **14:00:00**  
+  In the afternoon.
+- `Despatch/Instructions` = **Have the export declaration ready when the truck arrives.**  
+  What the seller must do for the collection.
+- `Despatch/DespatchAddress/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Despatch/DespatchAddress/StreetName` = **Via del Magazzino**  
+  Street of the postal address. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchAddress/BuildingNumber` = **24**  
+  Building number of the postal address. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchAddress/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchAddress/PostalZone` = **4130**  
+  Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchAddress/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Despatch/DespatchAddress/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Despatch/DespatchAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `Despatch/DespatchLocation/Description` = **Loading bays 1–3 of the warehouse.**  
+  Where the truck is loaded.
 - `Despatch/DespatchParty/WebsiteURI` = **https://www.castrano.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Castrano Logistics (world/parties.json).
 - `Despatch/DespatchParty/IndustryClassificationCode` = **5210** (listID `ISIC Rev.4`)  
@@ -423,6 +485,22 @@ Inside `Delivery`:
   The network in which the address is registered: the world's own exchange network.
 - `Despatch/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Despatch/Contact/Name` = **Warehouse office**  
+  Whom the driver reports to.
+- `Despatch/Contact/Telephone` = **+999 1 4130 4411**  
+  The office's number.
+- `Despatch/RequestedDespatchPeriod/StartDate` = **2026-03-23**  
+  The collection day.
+- `Despatch/RequestedDespatchPeriod/StartTime` = **13:00:00**  
+  From one.
+- `Despatch/RequestedDespatchPeriod/EndTime` = **17:00:00**  
+  Until five.
+- `MinimumDeliveryUnit/BatchQuantity` = **4** (unitCode `H87`)  
+  Benches come in pallets of four.
+- `MinimumDeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `H87`)  
+  One bench.
+- `MaximumDeliveryUnit/BatchQuantity` = **100** (unitCode `H87`)  
+  A truck takes at most 25 pallets of four.
 
 ### Delivery Terms
 
@@ -893,6 +971,30 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cbc:ID>LD-DL-26-0412</cbc:ID>
+    <cbc:Quantity unitCode="H87">108</cbc:Quantity>
+    <cbc:MinimumQuantity unitCode="H87">108</cbc:MinimumQuantity>
+    <cbc:MaximumQuantity unitCode="H87">108</cbc:MaximumQuantity>
+    <cac:DeliveryAddress>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
+      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:DeliveryAddress>
+    <cac:AlternativeDeliveryLocation>
+      <cbc:Description>Gate B of the business park, if dock 4 is blocked.</cbc:Description>
+    </cac:AlternativeDeliveryLocation>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -902,6 +1004,25 @@ Inside `OrderLine`:
       </cac:PartyName>
     </cac:DeliveryParty>
     <cac:Despatch>
+      <cbc:RequestedDespatchDate>2026-03-23</cbc:RequestedDespatchDate>
+      <cbc:RequestedDespatchTime>14:00:00</cbc:RequestedDespatchTime>
+      <cbc:Instructions>Have the export declaration ready when the truck arrives.</cbc:Instructions>
+      <cac:DespatchAddress>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+        <cbc:BuildingNumber>24</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:DespatchAddress>
+      <cac:DespatchLocation>
+        <cbc:Description>Loading bays 1–3 of the warehouse.</cbc:Description>
+      </cac:DespatchLocation>
       <cac:DespatchParty>
         <cbc:WebsiteURI>https://www.castrano.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>
@@ -1080,7 +1201,23 @@ Inside `OrderLine`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:CarrierParty>
+      <cac:Contact>
+        <cbc:Name>Warehouse office</cbc:Name>
+        <cbc:Telephone>+999 1 4130 4411</cbc:Telephone>
+      </cac:Contact>
+      <cac:RequestedDespatchPeriod>
+        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:StartTime>13:00:00</cbc:StartTime>
+        <cbc:EndTime>17:00:00</cbc:EndTime>
+      </cac:RequestedDespatchPeriod>
     </cac:Despatch>
+    <cac:MinimumDeliveryUnit>
+      <cbc:BatchQuantity unitCode="H87">4</cbc:BatchQuantity>
+      <cbc:ConsumerUnitQuantity unitCode="H87">1</cbc:ConsumerUnitQuantity>
+    </cac:MinimumDeliveryUnit>
+    <cac:MaximumDeliveryUnit>
+      <cbc:BatchQuantity unitCode="H87">100</cbc:BatchQuantity>
+    </cac:MaximumDeliveryUnit>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>

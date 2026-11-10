@@ -201,6 +201,11 @@
     <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
+      <cbc:PerformingCarrierAssignedID>FRC-J-26-3318</cbc:PerformingCarrierAssignedID>
+      <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
+      <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="C62">2</cbc:TotalTransportHandlingUnitQuantity>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -289,6 +294,243 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:PerformingCarrierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+        </cac:PartyName>
+      </cac:PerformingCarrierParty>
+      <cac:TransportContract>
+        <cbc:ID>FRC-CON-2026-005</cbc:ID>
+        <cbc:IssueDate>2026-01-05</cbc:IssueDate>
+        <cbc:ContractType>Framework contract for container slots</cbc:ContractType>
+      </cac:TransportContract>
+      <cac:PrepaidPaymentTerms>
+        <cbc:Note>Freight prepaid by the consignor under DAP.</cbc:Note>
+      </cac:PrepaidPaymentTerms>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+        <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
+        <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
+        <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
+        <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
+        <cbc:CrewQuantity unitCode="C62">2</cbc:CrewQuantity>
+        <cbc:PassengerQuantity unitCode="C62">0</cbc:PassengerQuantity>
+        <cac:TransportMeans>
+          <cbc:JourneyID>CT 4471</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:DirectionCode>Westbound</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode>RAIL</cbc:TransportMeansTypeCode>
+          <cac:RailTransport>
+            <cbc:TrainID>FRC 4417</cbc:TrainID>
+          </cac:RailTransport>
+        </cac:TransportMeans>
+        <cac:PlannedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+        </cac:PlannedDepartureTransportEvent>
+        <cac:PlannedArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+        </cac:PlannedArrivalTransportEvent>
+        <cac:PlannedWaypointTransportEvent>
+          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        </cac:PlannedWaypointTransportEvent>
+        <cac:ActualDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          </cac:Location>
+        </cac:ActualDepartureTransportEvent>
+        <cac:ActualWaypointTransportEvent>
+          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>13:20:00</cbc:OccurrenceTime>
+        </cac:ActualWaypointTransportEvent>
+        <cac:EstimatedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+        </cac:EstimatedDepartureTransportEvent>
+        <cac:EstimatedArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+        </cac:EstimatedArrivalTransportEvent>
+      </cac:MainCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRCU1044171</cbc:ID>
+          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:ProviderTypeCode>Carrier</cbc:ProviderTypeCode>
+          <cbc:OwnerTypeCode>Carrier</cbc:OwnerTypeCode>
+          <cbc:SizeTypeCode>45G1</cbc:SizeTypeCode>
+          <cbc:DispositionCode>Loaded</cbc:DispositionCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:Information>Return empty to the Ferrano hub within five days.</cbc:Information>
+          <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+          <cbc:LegalStatusIndicator>false</cbc:LegalStatusIndicator>
+          <cbc:Characteristics>Steel, high cube, wooden floor.</cbc:Characteristics>
+          <cbc:DamageRemarks>Small dent in the left side panel, noted at pick-up; no effect on the cargo.</cbc:DamageRemarks>
+          <cbc:Description>40-foot high cube container</cbc:Description>
+          <cbc:SpecialTransportRequirements>Load with the doors to the rear of the wagon.</cbc:SpecialTransportRequirements>
+          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cbc:GrossVolumeMeasure unitCode="MTQ">76.3</cbc:GrossVolumeMeasure>
+          <cbc:TrackingDeviceCode>GPS</cbc:TrackingDeviceCode>
+          <cbc:PowerIndicator>false</cbc:PowerIndicator>
+          <cbc:TraceID>TRK-FRCU1044171</cbc:TraceID>
+          <cbc:StowagePositionID>XU-FRC 4521 0042 / A</cbc:StowagePositionID>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Length</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">12192</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30411</cbc:ID>
+            <cbc:SealIssuerTypeCode>Shipper</cbc:SealIssuerTypeCode>
+            <cbc:Condition>Intact</cbc:Condition>
+            <cbc:SealStatusCode>Applied</cbc:SealStatusCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+          <cac:ProviderParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+            </cac:PartyName>
+          </cac:ProviderParty>
+          <cac:LoadingProofParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Castrano Logistics</cbc:Name>
+            </cac:PartyName>
+          </cac:LoadingProofParty>
+          <cac:OwnerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+            </cac:PartyName>
+          </cac:OwnerParty>
+          <cac:OperatingParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+            </cac:PartyName>
+          </cac:OperatingParty>
+          <cac:LoadingLocation>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:LoadingLocation>
+          <cac:UnloadingLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
+            <cbc:Name>Marrowdale</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:UnloadingLocation>
+          <cac:StorageLocation>
+            <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
+          </cac:StorageLocation>
+          <cac:PositioningTransportEvent>
+            <cbc:OccurrenceDate>2026-04-12</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+          </cac:PositioningTransportEvent>
+          <cac:DeliveryTransportEvent>
+            <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+            <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          </cac:DeliveryTransportEvent>
+          <cac:PickupTransportEvent>
+            <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+          </cac:PickupTransportEvent>
+          <cac:HandlingTransportEvent>
+            <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>18:30:00</cbc:OccurrenceTime>
+          </cac:HandlingTransportEvent>
+          <cac:LoadingTransportEvent>
+            <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>05:40:00</cbc:OccurrenceTime>
+          </cac:LoadingTransportEvent>
+          <cac:ApplicableTransportMeans>
+            <cac:RailTransport>
+              <cbc:TrainID>FRC 4417</cbc:TrainID>
+              <cbc:RailCarID>XU-FRC 4521 0042</cbc:RailCarID>
+            </cac:RailTransport>
+          </cac:ApplicableTransportMeans>
+          <cac:HaulageTradingTerms>
+            <cbc:Information>Carrier haulage: the rail carrier brings the box to the warehouse and back.</cbc:Information>
+            <cbc:Reference>FRC-HT-2026</cbc:Reference>
+          </cac:HaulageTradingTerms>
+          <cac:Delivery>
+            <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
+            <cac:DeliveryLocation>
+              <cbc:Name>Rail siding of Lumeway Distribution, Marrowdale</cbc:Name>
+            </cac:DeliveryLocation>
+          </cac:Delivery>
+          <cac:Pickup>
+            <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
+            <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
+            <cac:PickupLocation>
+              <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+            </cac:PickupLocation>
+          </cac:Pickup>
+          <cac:Despatch>
+            <cbc:ActualDespatchDate>2026-04-14</cbc:ActualDespatchDate>
+            <cbc:ActualDespatchTime>06:50:00</cbc:ActualDespatchTime>
+          </cac:Despatch>
+          <cac:ShipmentDocumentReference>
+            <cbc:ID>FRC-WB-26-0334</cbc:ID>
+          </cac:ShipmentDocumentReference>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRCU1044187</cbc:ID>
+          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode>45G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30412</cbc:ID>
+            <cbc:SealIssuerTypeCode>Shipper</cbc:SealIssuerTypeCode>
+            <cbc:Condition>Intact</cbc:Condition>
+            <cbc:SealStatusCode>Applied</cbc:SealStatusCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:EnvironmentalEmission>
+        <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+        <cbc:ValueMeasure unitCode="KGM">410</cbc:ValueMeasure>
+        <cac:EmissionCalculationMethod>
+          <cbc:CalculationMethodCode>Calculated</cbc:CalculationMethodCode>
+          <cac:MeasurementFromLocation>
+            <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          </cac:MeasurementFromLocation>
+          <cac:MeasurementToLocation>
+            <cbc:Name>Marrowdale</cbc:Name>
+          </cac:MeasurementToLocation>
+        </cac:EmissionCalculationMethod>
+      </cac:EnvironmentalEmission>
     </cac:Consignment>
   </cac:Shipment>
   <cac:DocumentReference>

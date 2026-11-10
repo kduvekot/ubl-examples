@@ -253,9 +253,37 @@ Inside `ServiceStartTimePeriod`:
 Inside `Consignment`:
 
 - `ID` = **LD-CS-26-0152**  
-  The transport user's number for this consignment, quoted along the chain.
+  The distributor's consignment number, from its booking.
+- `SummaryDescription` = **Park benches and spare side frames on 25 pallets.**  
+  The goods in a few words, as on the consignment note.
 - `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight of the order: benches and castings with their packaging.
+- `ContainerizedIndicator` = **false**  
+  The pallets are loaded on the truck, not in a container.
+- `GeneralCargoIndicator` = **true**  
+  Packed goods on pallets.
+- `CarrierServiceInstructions` = **Curtain-side trailer; the goods are loaded from the side by forklift.**  
+  What the carrier must bring.
+- `RequestedPickupTransportEvent/OccurrenceDate` = **2026-03-23**  
+  The day the goods are ready.
+- `RequestedPickupTransportEvent/OccurrenceTime` = **14:00:00**  
+  The local time.
+- `RequestedPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `RequestedPickupTransportEvent/Location/Name` = **Ferrano**  
+  The 3PL's warehouse.
+- `RequestedPickupTransportEvent/Location/Address/Country/IdentificationCode` = **XU**  
+  The country the place is in.
+- `RequestedDeliveryTransportEvent/OccurrenceDate` = **2026-03-25**  
+  The distributor's goods-in slot.
+- `RequestedDeliveryTransportEvent/OccurrenceTime` = **10:00:00**  
+  The local time.
+- `RequestedDeliveryTransportEvent/Location/ID` = **XBMRW** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `RequestedDeliveryTransportEvent/Location/Name` = **Marrowdale**  
+  The distribution centre.
+- `RequestedDeliveryTransportEvent/Location/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
 - `ConsigneeParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 - `ConsigneeParty/PartyName/Name` = **Lumeway Distribution**  
@@ -360,6 +388,10 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `ConsignorParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `OriginalDepartureCountry/IdentificationCode` = **XU**  
+  The goods start in Urvania.
+- `FinalDestinationCountry/IdentificationCode` = **XB**  
+  And end in Bayvarra.
 
 ## The document
 
@@ -568,7 +600,37 @@ Inside `Consignment`:
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0152</cbc:ID>
+    <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
+    <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
+    <cbc:CarrierServiceInstructions>Curtain-side trailer; the goods are loaded from the side by forklift.</cbc:CarrierServiceInstructions>
+    <cac:RequestedPickupTransportEvent>
+      <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+    </cac:RequestedPickupTransportEvent>
+    <cac:RequestedDeliveryTransportEvent>
+      <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
+        <cbc:Name>Marrowdale</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
+    </cac:RequestedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -675,6 +737,12 @@ Inside `Consignment`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:ConsignorParty>
+    <cac:OriginalDepartureCountry>
+      <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+    </cac:OriginalDepartureCountry>
+    <cac:FinalDestinationCountry>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:FinalDestinationCountry>
   </cac:Consignment>
 </TransportExecutionPlanRequest>
 ```

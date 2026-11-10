@@ -301,6 +301,16 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-03-25</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryTime>09:40:00</cbc:ActualDeliveryTime>
+      <cac:DeliveryNoteDocumentReference>
+        <cbc:ID>TH-WB-26-0159</cbc:ID>
+      </cac:DeliveryNoteDocumentReference>
+    </cac:Delivery>
+  </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>

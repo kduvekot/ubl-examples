@@ -18,6 +18,10 @@ The carrier reports that the truck has cleared the border and gives the expected
   The carrier's status report number.
 - `IssueDate` = **2026-03-24**  
   The morning after collection, when the truck has crossed the border.
+- `IssueTime` = **09:10:00**  
+  Sent as soon as the truck was through.
+- `TransportationStatusTypeCode` = **Progress**  
+  A report on the progress of the carriage.
 
 ### Consignment
 
@@ -25,6 +29,12 @@ Inside `Consignment`:
 
 - `ID` = **LD-CS-26-0152**  
   The consignment the report is about.
+- `CarrierAssignedID` = **TH-26-04471**  
+  The carrier's job number.
+- `Status/ConditionCode` = **InTransit**  
+  The consignment is on its way.
+- `Status/Description` = **All 25 pallets on board.**  
+  Nothing left behind.
 - `ConsigneeParty/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -224,12 +234,58 @@ Inside `Consignment`:
 
 Inside `TransportEvent`:
 
+- `IdentificationID` = **TH-26-04471-E03**  
+  The reporting party's number for this event.
 - `OccurrenceDate` = **2026-03-24**  
-  The day the truck crossed the land border.
+  The day and time the truck crossed the land border.
+- `OccurrenceTime` = **08:55:00**  
+  The local time.
+- `TransportEventTypeCode` = **BorderCrossing**  
+  The kind of event, as the carriers of the world code them.
 - `Description` = **Border crossing passed; customs cleared on both sides.**  
   What happened, in words.
+- `CompletionIndicator` = **true**  
+  Whether the event has taken place (true) or is still to come (false).
+- `CurrentStatus/ConditionCode` = **OnTime**  
+  The carriage runs to plan.
+- `CurrentStatus/ReferenceDate` = **2026-03-25**  
+  The delivery the status is measured against.
+- `CurrentStatus/ReferenceTime` = **10:00:00**  
+  The start of the goods-in slot.
+- `CurrentStatus/Description` = **In transit in Bayvarra, expected at the distribution centre on time.**  
+  The status in words.
+- `CurrentStatus/StatusReasonCode` = **Cleared**  
+  Why: the border is behind it.
+- `CurrentStatus/StatusReason` = **Customs released the goods at the border.**  
+  In words.
+- `CurrentStatus/SequenceID` = **3**  
+  The third report on this truck: collection, departure, border.
+- `CurrentStatus/Text` = **Driver resting in Marrowdale tonight under the driving-time rules.**  
+  A note for the consignee.
+- `CurrentStatus/IndicationIndicator` = **true**  
+  The status applies: the truck is on time.
+- `CurrentStatus/Percent` = **70**  
+  The share of the route driven.
+- `CurrentStatus/ReliabilityPercent` = **90**  
+  How sure the carrier is of the arrival time.
+- `CurrentStatus/Condition/AttributeID` = **Seal**  
+  The condition checked.
+- `CurrentStatus/Condition/Description` = **Intact, as checked by customs.**  
+  Its state.
+- `ResponsibleParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ResponsibleParty/PartyName/Name` = **Trasvia Haulage**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Contact/Name` = **Planning desk**  
+  Whom to call about the truck.
+- `Contact/Telephone` = **+999 1 4160 4822**  
+  The planners' number.
 - `Location/Name` = **Land border crossing Urvania–Bayvarra**  
   The road border crossing between the customs posts of both countries.
+- `Period/StartTime` = **07:30:00**  
+  The truck joined the queue at the border.
+- `Period/EndTime` = **08:55:00**  
+  And left the customs post.
 
 ### Sender Party
 
@@ -258,8 +314,15 @@ Inside `ReceiverParty`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ID>TH-TS-26-0160</cbc:ID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
+  <cbc:IssueTime>09:10:00</cbc:IssueTime>
+  <cbc:TransportationStatusTypeCode>Progress</cbc:TransportationStatusTypeCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0152</cbc:ID>
+    <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
+    <cac:Status>
+      <cbc:ConditionCode>InTransit</cbc:ConditionCode>
+      <cbc:Description>All 25 pallets on board.</cbc:Description>
+    </cac:Status>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -439,11 +502,48 @@ Inside `ReceiverParty`:
     </cac:CarrierParty>
   </cac:Consignment>
   <cac:TransportEvent>
+    <cbc:IdentificationID>TH-26-04471-E03</cbc:IdentificationID>
     <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>08:55:00</cbc:OccurrenceTime>
+    <cbc:TransportEventTypeCode>BorderCrossing</cbc:TransportEventTypeCode>
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
+    <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+    <cac:CurrentStatus>
+      <cbc:ConditionCode>OnTime</cbc:ConditionCode>
+      <cbc:ReferenceDate>2026-03-25</cbc:ReferenceDate>
+      <cbc:ReferenceTime>10:00:00</cbc:ReferenceTime>
+      <cbc:Description>In transit in Bayvarra, expected at the distribution centre on time.</cbc:Description>
+      <cbc:StatusReasonCode>Cleared</cbc:StatusReasonCode>
+      <cbc:StatusReason>Customs released the goods at the border.</cbc:StatusReason>
+      <cbc:SequenceID>3</cbc:SequenceID>
+      <cbc:Text>Driver resting in Marrowdale tonight under the driving-time rules.</cbc:Text>
+      <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
+      <cbc:Percent>70</cbc:Percent>
+      <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
+      <cac:Condition>
+        <cbc:AttributeID>Seal</cbc:AttributeID>
+        <cbc:Description>Intact, as checked by customs.</cbc:Description>
+      </cac:Condition>
+    </cac:CurrentStatus>
+    <cac:ResponsibleParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Trasvia Haulage</cbc:Name>
+      </cac:PartyName>
+    </cac:ResponsibleParty>
+    <cac:Contact>
+      <cbc:Name>Planning desk</cbc:Name>
+      <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
+    </cac:Contact>
     <cac:Location>
       <cbc:Name>Land border crossing Urvania–Bayvarra</cbc:Name>
     </cac:Location>
+    <cac:Period>
+      <cbc:StartTime>07:30:00</cbc:StartTime>
+      <cbc:EndTime>08:55:00</cbc:EndTime>
+    </cac:Period>
   </cac:TransportEvent>
   <cac:SenderParty>
     <cac:PartyIdentification>

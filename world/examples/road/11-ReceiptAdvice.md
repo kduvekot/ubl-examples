@@ -347,6 +347,19 @@ Inside `SellerSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Shipment
+
+Inside `Shipment`:
+
+- `ID` = **CL-SH-26-0154**  
+  The shipment received.
+- `Delivery/ActualDeliveryDate` = **2026-03-25**  
+  Unloaded at dock 4.
+- `Delivery/ActualDeliveryTime` = **09:40:00**  
+  Within the slot.
+- `Delivery/DeliveryNoteDocumentReference/ID` = **TH-WB-26-0159**  
+  The consignment note signed on delivery.
+
 ### Receipt Line
 
 Inside `ReceiptLine`:
@@ -872,6 +885,16 @@ Inside `ReceiptLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-03-25</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryTime>09:40:00</cbc:ActualDeliveryTime>
+      <cac:DeliveryNoteDocumentReference>
+        <cbc:ID>TH-WB-26-0159</cbc:ID>
+      </cac:DeliveryNoteDocumentReference>
+    </cac:Delivery>
+  </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>

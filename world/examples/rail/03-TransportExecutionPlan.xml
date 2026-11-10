@@ -205,7 +205,17 @@
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
+    <cac:PlannedPickupTransportEvent>
+      <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+    </cac:PlannedPickupTransportEvent>
+    <cac:PlannedDeliveryTransportEvent>
+      <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+    </cac:PlannedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -294,5 +304,49 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:ConsigneeParty>
+    <cac:TransportContract>
+      <cbc:ID>FRC-CON-2026-005</cbc:ID>
+      <cbc:IssueDate>2026-01-05</cbc:IssueDate>
+      <cbc:ContractType>Framework contract for container slots</cbc:ContractType>
+    </cac:TransportContract>
+    <cac:PrepaidPaymentTerms>
+      <cbc:Note>Freight prepaid by the consignor under DAP.</cbc:Note>
+    </cac:PrepaidPaymentTerms>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+      <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
+      <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
+      <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
+      <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
+      <cbc:CrewQuantity unitCode="C62">2</cbc:CrewQuantity>
+      <cbc:PassengerQuantity unitCode="C62">0</cbc:PassengerQuantity>
+      <cac:TransportMeans>
+        <cbc:JourneyID>CT 4471</cbc:JourneyID>
+        <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:DirectionCode>Westbound</cbc:DirectionCode>
+        <cbc:TransportMeansTypeCode>RAIL</cbc:TransportMeansTypeCode>
+        <cac:RailTransport>
+          <cbc:TrainID>FRC 4417</cbc:TrainID>
+        </cac:RailTransport>
+      </cac:TransportMeans>
+      <cac:PlannedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+      </cac:PlannedDepartureTransportEvent>
+      <cac:PlannedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+      </cac:PlannedArrivalTransportEvent>
+      <cac:EstimatedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+      </cac:EstimatedDepartureTransportEvent>
+      <cac:EstimatedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+      </cac:EstimatedArrivalTransportEvent>
+    </cac:MainCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlan>

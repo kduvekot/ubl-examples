@@ -238,6 +238,35 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `PromisedDeliveryPeriod/StartDate` = **2026-03-23**  
+  Under FCA delivery is the handover to the buyer's carrier: on day 7.
+- `PromisedDeliveryPeriod/EndDate` = **2026-03-23**  
+  The same day.
+- `Despatch/EstimatedDespatchDate` = **2026-03-23**  
+  The goods will be ready on the requested day.
+- `Despatch/EstimatedDespatchTime` = **14:00:00**  
+  At the requested time.
+- `Despatch/GuaranteedDespatchDate` = **2026-03-24**  
+  At the latest the next day.
+- `Despatch/GuaranteedDespatchTime` = **12:00:00**  
+  By noon.
+- `Despatch/NotifyParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Despatch/NotifyParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Despatch/ResponsibleParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Despatch/ResponsibleParty/PartyName/Name` = **Castrano Logistics**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Despatch/EstimatedDespatchPeriod/StartDate` = **2026-03-23**  
+  The afternoon of day 7.
+- `Despatch/EstimatedDespatchPeriod/EndDate` = **2026-03-24**  
+  Or the morning after.
+
 ## The document
 
 ```xml
@@ -441,5 +470,37 @@ Inside `BuyerCustomerParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:PromisedDeliveryPeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-03-23</cbc:EndDate>
+    </cac:PromisedDeliveryPeriod>
+    <cac:Despatch>
+      <cbc:EstimatedDespatchDate>2026-03-23</cbc:EstimatedDespatchDate>
+      <cbc:EstimatedDespatchTime>14:00:00</cbc:EstimatedDespatchTime>
+      <cbc:GuaranteedDespatchDate>2026-03-24</cbc:GuaranteedDespatchDate>
+      <cbc:GuaranteedDespatchTime>12:00:00</cbc:GuaranteedDespatchTime>
+      <cac:NotifyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:NotifyParty>
+      <cac:ResponsibleParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Castrano Logistics</cbc:Name>
+        </cac:PartyName>
+      </cac:ResponsibleParty>
+      <cac:EstimatedDespatchPeriod>
+        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:EndDate>2026-03-24</cbc:EndDate>
+      </cac:EstimatedDespatchPeriod>
+    </cac:Despatch>
+  </cac:Delivery>
 </OrderResponse>
 ```

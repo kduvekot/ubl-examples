@@ -187,17 +187,66 @@ def road(n, doc):
                          "Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the "
                          "order names the warehouse where the goods are collected and the carrier that collects them "
                          "(UBL rule IND6: the delivery terms are stated, not implied).",
-                         "Castrano Logistics warehouse, Ferrano")
+                         "Castrano Logistics warehouse, Ferrano",
+                         {"Delivery": {
+                             "ID": V("LD-DL-26-0412", "The distributor's number for this delivery."),
+                             "Quantity": qty(108, "H87", "All 108 pieces in one delivery."),
+                             "MinimumQuantity": qty(108, "H87", "No part deliveries: the truck is booked for all."),
+                             "MaximumQuantity": qty(108, "H87", "And no more than ordered."),
+                             "DeliveryAddress": address("6-xb"),
+                             "AlternativeDeliveryLocation": {"Description": V(
+                                 "Gate B of the business park, if dock 4 is blocked.", "Where to go instead.")},
+                             "MinimumDeliveryUnit": {"BatchQuantity": qty(4, "H87", "Benches come in pallets of "
+                                                                                    "four."),
+                                                     "ConsumerUnitQuantity": qty(1, "H87", "One bench.")},
+                             "MaximumDeliveryUnit": {"BatchQuantity": qty(100, "H87", "A truck takes at most 25 "
+                                                                                      "pallets of four.")},
+                             "Despatch": {
+                                 "RequestedDespatchDate": V(f.date(7), "The day the buyer's truck will collect."),
+                                 "RequestedDespatchTime": V("14:00:00", "In the afternoon."),
+                                 "RequestedDespatchPeriod": {"StartDate": V(f.date(7), "The collection day."),
+                                                             "StartTime": V("13:00:00", "From one."),
+                                                             "EndTime": V("17:00:00", "Until five.")},
+                                 "Instructions": V("Have the export declaration ready when the truck arrives.",
+                                                   "What the seller must do for the collection."),
+                                 "DespatchAddress": address("8-xu"),
+                                 "DespatchLocation": {"Description": V("Loading bays 1–3 of the warehouse.",
+                                                                       "Where the truck is loaded.")},
+                                 "Contact": {"Name": V("Warehouse office", "Whom the driver reports to."),
+                                             "Telephone": V(PARTY["8-xu"]["identity"]["contact"]["telephone"],
+                                                            "The office's number.")}}}})
     if doc["doc"] == "OrderResponse":
-        return kit.order_response(f, n, doc, 1, "The manufacturer answers the next day.")
+        out = kit.order_response(f, n, doc, 1, "The manufacturer answers the next day.")
+        out["Delivery"] = {"PromisedDeliveryPeriod": {"StartDate": V(f.date(7), "Under FCA delivery is the handover "
+                                                                                "to the buyer's carrier: on day 7."),
+                                                      "EndDate": V(f.date(7), "The same day.")},
+                           "Despatch": {
+                               "EstimatedDespatchDate": V(f.date(7), "The goods will be ready on the requested day."),
+                               "EstimatedDespatchTime": V("14:00:00", "At the requested time."),
+                               "GuaranteedDespatchDate": V(f.date(8), "At the latest the next day."),
+                               "GuaranteedDespatchTime": V("12:00:00", "By noon."),
+                               "EstimatedDespatchPeriod": {"StartDate": V(f.date(7), "The afternoon of day 7."),
+                                                           "EndDate": V(f.date(8), "Or the morning after.")},
+                               "ResponsibleParty": party("8-xu", short=True),
+                               "NotifyParty": party("6-xb", short=True)}}
+        return out
     if doc["doc"] == "TransportExecutionPlanRequest":
-        return kit.tep_request(f, n, doc, 1, "The distributor books the truck once the order is accepted.", 7, weight,
-                               "The gross weight of the order: benches and castings with their packaging.")
+        out = kit.tep_request(f, n, doc, 1, "The distributor books the truck once the order is accepted.", 7, weight,
+                              "The gross weight of the order: benches and castings with their packaging.")
+        kit.deep_merge(out["Consignment"], road_consignment(f, "request"))
+        return out
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 7, "The day the 3PL loaded the truck.",
                                    "The gross weight loaded, packaging included.",
                                    {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
-                                                                         "The distributor's consignment for the truck.")}}})
+                                                                         "The distributor's consignment for the "
+                                                                         "truck.")},
+                                                 "Delivery": {"Despatch": {
+                                                     "ID": V("CL-OUT-26-0871", "The 3PL's outbound number."),
+                                                     "ActualDespatchDate": V(f.date(7), "Loaded and gone."),
+                                                     "ActualDespatchTime": V("16:20:00", "The truck left the gate."),
+                                                     "ReleaseID": V("XU-EX-REL-55120", "The export release customs "
+                                                                                       "gave before the truck left.")}}}})
     if doc["doc"] == "ExportCustomsDeclaration":
         return {"ID": V(f.number("export", doc["from"], "ExportCustomsDeclaration"), "The exporter's reference."),
                 "IssueDate": V(f.date(7), "Declared the day the goods leave the warehouse for the border."),
@@ -270,15 +319,42 @@ def road(n, doc):
                          "LatestDeliveryTime": V("12:00:00", "Dock 4 closes for the lunch change.")}})
         return out
     if doc["doc"] == "TransportationStatus":
+        border = {"Name": V("Land border crossing Urvania–Bayvarra",
+                            "The road border crossing between the customs posts of both countries.")}
         return {"ID": V(f.number("status", doc["from"], "TransportationStatus"), "The carrier's status report number."),
                 "IssueDate": V(f.date(8), "The morning after collection, when the truck has crossed the border."),
-                "TransportEvent": {
-                    "OccurrenceDate": V(f.date(8), "The day the truck crossed the land border."),
-                    "Description": V("Border crossing passed; customs cleared on both sides.",
-                                     "What happened, in words."),
-                    "Location": {"Name": V("Land border crossing Urvania–Bayvarra",
-                                           "The road border crossing between the customs posts of both countries.")}},
-                "Consignment": {"ID": V(f.numbers["consignment"], "The consignment the report is about.")}}
+                "IssueTime": V("09:10:00", "Sent as soon as the truck was through."),
+                "TransportationStatusTypeCode": V("Progress", "A report on the progress of the carriage."),
+                "TransportEvent": kit.event(
+                    f, 8, "08:55:00", "The day and time the truck crossed the land border.", border,
+                    type_code="BorderCrossing", ident=f"{ROAD_JOB}-E03",
+                    description="Border crossing passed; customs cleared on both sides.", done=True,
+                    Period={"StartTime": V("07:30:00", "The truck joined the queue at the border."),
+                            "EndTime": V("08:55:00", "And left the customs post.")},
+                    ResponsibleParty=party("13-xu", short=True),
+                    Contact={"Name": V("Planning desk", "Whom to call about the truck."),
+                             "Telephone": V(PARTY["13-xu"]["identity"]["contact"]["telephone"], "The planners' "
+                                                                                                   "number.")},
+                    CurrentStatus={
+                        "ConditionCode": V("OnTime", "The carriage runs to plan."),
+                        "ReferenceDate": V(f.date(9), "The delivery the status is measured against."),
+                        "ReferenceTime": V("10:00:00", "The start of the goods-in slot."),
+                        "Description": V("In transit in Bayvarra, expected at the distribution centre on time.",
+                                         "The status in words."),
+                        "StatusReasonCode": V("Cleared", "Why: the border is behind it."),
+                        "StatusReason": V("Customs released the goods at the border.", "In words."),
+                        "SequenceID": V("3", "The third report on this truck: collection, departure, border."),
+                        "Text": V("Driver resting in Marrowdale tonight under the driving-time rules.",
+                                  "A note for the consignee."),
+                        "IndicationIndicator": V("true", "The status applies: the truck is on time."),
+                        "Percent": V("70", "The share of the route driven."),
+                        "ReliabilityPercent": V("90", "How sure the carrier is of the arrival time."),
+                        "Condition": {"AttributeID": V("Seal", "The condition checked."),
+                                      "Description": V("Intact, as checked by customs.", "Its state.")}}),
+                "Consignment": {"ID": V(f.numbers["consignment"], "The consignment the report is about."),
+                                "CarrierAssignedID": V(ROAD_JOB, "The carrier's job number."),
+                                "Status": {"ConditionCode": V("InTransit", "The consignment is on its way."),
+                                           "Description": V("All 25 pallets on board.", "Nothing left behind.")}}}
     if doc["doc"] == "ImportCustomsDeclaration":
         return {"ID": V(f.number("import", doc["from"], "ImportCustomsDeclaration"), "The importer's declaration "
                                                                                     "number."),
@@ -291,7 +367,14 @@ def road(n, doc):
                 "AdditionalDocumentReference": {"ID": V(f.numbers["certificate"], "The certificate of origin, to claim "
                                                                                   "the preferential duty rate.")}}
     if doc["doc"] == "ReceiptAdvice":
-        return kit.receipt_advice(f, n, doc, 9, "The day the truck was unloaded at the distribution centre.")
+        out = kit.receipt_advice(f, n, doc, 9, "The day the truck was unloaded at the distribution centre.")
+        out["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment received."),
+                           "Delivery": {"ActualDeliveryDate": V(f.date(9), "Unloaded at dock 4."),
+                                        "ActualDeliveryTime": V("09:40:00", "Within the slot."),
+                                        "DeliveryNoteDocumentReference": {"ID": V(f.numbers["waybill"], "The "
+                                                                                  "consignment note signed on "
+                                                                                  "delivery.")}}}
+        return out
     if doc["doc"] == "Invoice" and doc["from"] == "13-xu":
         return kit.invoice(f, n, doc, 9, 30, "Issued after delivery.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note of the "
@@ -320,6 +403,153 @@ RAIL = kit.Flow("rail", "2026-04-06", [
     {"item": "bench-serra", "ordered": 192, "why": "Two containers of 24 pallets, 4 benches on each pallet."}])
 
 
+RAIL_BOXES = [kit.container_number("FRC", 104417), kit.container_number("FRC", 104418)]
+RAIL_SEALS = ["XU-VI-30411", "XU-VI-30412"]
+
+
+def rail_container(f, k, full):
+    """One of the two 40-foot containers of the rail flow: Ferrano Rail Cargo's own boxes."""
+    box, seal = RAIL_BOXES[k], RAIL_SEALS[k]
+    wagon = kit.fleet("14-xu", "FRC-4417")["wagons"][k]
+    out = {"ID": V(box, "The container's number: owner code, U for a freight container, six digits and the ISO 6346 "
+                        "check digit.", schemeID="ISO6346"),
+           "ReferencedConsignmentID": V(f.numbers["consignment"], "The consignment the container carries."),
+           "TransportEquipmentTypeCode": V("CN", "UN/EDIFACT 8053 code CN: container.", listID="UN/EDIFACT EDED 8053"),
+           "SizeTypeCode": V("45G1", "ISO 6346 size and type: 40 feet long, 9 ft 6 in high, general purpose."),
+           "FullnessIndicationCode": V("FCL", "A full container load for one consignee."),
+           "GrossWeightMeasure": qty(kit.gross_weight(f, "ordered") / 2 + 3900, "KGM", "Half the benches and the "
+                                     "container's own 3,900 kg."),
+           "TransportEquipmentSeal": {"ID": V(seal, "The number of the bolt seal on the doors."),
+                                      "SealIssuerTypeCode": V("Shipper", "The seal was issued by the shipper."),
+                                      "SealingPartyType": V("Shipper", "And put on by the shipper when it packed "
+                                                                       "the container."),
+                                      "Condition": V("Intact", "As found at the hub."),
+                                      "SealStatusCode": V("Applied", "The seal is in place.")}}
+    if not full:
+        return out
+    out.update({
+        "ProviderTypeCode": V("Carrier", "The rail carrier provides the container."),
+        "OwnerTypeCode": V("Carrier", "And owns it."),
+        "DispositionCode": V("Loaded", "Loaded with cargo."),
+        "Information": V("Return empty to the Ferrano hub within five days.", "What happens to the box afterwards."),
+        "ReturnabilityIndicator": V("true", "The container goes back to its owner."),
+        "LegalStatusIndicator": V("false", "Not under a customs container convention; the goods travel under transit."),
+        "Characteristics": V("Steel, high cube, wooden floor.", "What kind of box it is."),
+        "Description": V("40-foot high cube container", "The container in words."),
+        "DamageRemarks": V("Small dent in the left side panel, noted at pick-up; no effect on the cargo.",
+                           "Damage noted at the hub, so it is not blamed on this carriage."),
+        "SpecialTransportRequirements": V("Load with the doors to the rear of the wagon.", "How it rides."),
+        "GrossVolumeMeasure": V("76.3", "The inside volume of a 40-foot high cube.", unitCode="MTQ"),
+        "TrackingDeviceCode": V("GPS", "The box carries a satellite tracker."),
+        "PowerIndicator": V("false", "It needs no power: not a reefer."),
+        "TraceID": V(f"TRK-{box}", "The tracker's number."),
+        "StowagePositionID": V(f"{wagon} / A", "The wagon and the slot on it the box rides in."),
+        "MeasurementDimension": {"AttributeID": V("Length", "The outside length."),
+                                 "Measure": V("12192", "Forty feet.", unitCode="MMT")},
+        "OwnerParty": party("14-xu", short=True),
+        "OperatingParty": party("18-xu", short=True),
+        "ProviderParty": party("14-xu", short=True),
+        "LoadingProofParty": party("8-xu", short=True),
+        "LoadingLocation": kit.place("XUFER", "Packed at the 3PL's warehouse in Ferrano."),
+        "UnloadingLocation": kit.place("XBMRW", "Unpacked at the distributor's siding."),
+        "StorageLocation": {"Name": V("Ferrano Intermodal Hub, stack C", "Where the box waited for the train.")},
+        "PositioningTransportEvent": kit.event(f, 6, "08:00:00", "The empty box was delivered to the warehouse "
+                                                                 "for packing."),
+        "PickupTransportEvent": kit.event(f, 7, "15:00:00", "Collected packed from the warehouse."),
+        "HandlingTransportEvent": kit.event(f, 7, "18:30:00", "Stacked at the hub overnight."),
+        "LoadingTransportEvent": kit.event(f, 8, "05:40:00", "Lifted onto the wagon."),
+        "DeliveryTransportEvent": kit.event(f, 9, "11:00:00", "Planned arrival at the siding.", done=False),
+        "ApplicableTransportMeans": {"RailTransport": {"TrainID": V("FRC 4417", "The train."),
+                                                       "RailCarID": V(wagon, "The container wagon it rides on.")}},
+        "HaulageTradingTerms": {"Information": V("Carrier haulage: the rail carrier brings the box to the warehouse "
+                                                 "and back.", "Who moves the empty box."),
+                                "Reference": V("FRC-HT-2026", "The carrier's haulage terms.")},
+        "Pickup": {"ActualPickupDate": V(f.date(7), "Collected."), "ActualPickupTime": V("15:00:00", "At three."),
+                   "PickupLocation": {"Name": V("Castrano Logistics warehouse, Ferrano", "Where.")}},
+        "Despatch": {"ActualDespatchDate": V(f.date(8), "The train left the hub."),
+                     "ActualDespatchTime": V("06:50:00", "Ten to seven.")},
+        "Delivery": {"LatestDeliveryDate": V(f.date(10), "At the latest."),
+                     "DeliveryLocation": {"Name": V("Rail siding of Lumeway Distribution, Marrowdale", "Where.")}},
+        "ShipmentDocumentReference": {"ID": V(f.numbers.get("waybill", "pending"), "The rail consignment note.")}
+        if f.numbers.get("waybill") else {"ID": V(f.numbers["tep"], "The transport plan.")}})
+    return out
+
+
+def rail_stage(f, actual):
+    out = {"ID": V("1", "The main carriage, by rail."),
+           "TransportModeCode": V("2", "UN/ECE Recommendation 19 code 2: rail transport.",
+                                  listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+           "TransportMeans": kit.means("14-xu", "FRC-4417", "CT 4471", "The number of the container train in the "
+                                                                       "hub's timetable.", "Westbound"),
+           "LoadingSequenceID": V("7", "The order the boxes go on the train: these two are the seventh lift."),
+           "SuccessiveSequenceID": V("1", "The first and only rail stage."),
+           "Instructions": V("Shunt to the Lumeway siding on arrival in Marrowdale.", "What the railway must do."),
+           "DemurrageInstructions": V("Free time five days at the siding, then demurrage per container day.",
+                                      "What waiting costs."),
+           "CrewQuantity": qty(2, "C62", "A driver and a train manager."),
+           "PassengerQuantity": qty(0, "C62", "A freight train carries no passengers."),
+           "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable departure from the hub."),
+           "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable arrival in Marrowdale."),
+           "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning."),
+           "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "The arrival as expected.")}
+    if actual:
+        out["ActualDepartureTransportEvent"] = kit.event(f, 8, "06:52:00", "The train left the hub.",
+                                                         {"Name": V("Ferrano Intermodal Hub", "Where.")})
+        out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned passage of the border station.")
+        out["ActualWaypointTransportEvent"] = kit.event(f, 8, "13:20:00", "The train passed the border station.")
+    return out
+
+
+def rail_offices():
+    def office(name, why):
+        return {"Name": V(name, why)}
+    return {"OfficeOfDepartureLocation": office("Customs office Ferrano Intermodal Hub", "Where the transit starts."),
+            "OfficeOfExitLocation": office("Customs post at the rail border station, Urvanian side",
+                                           "Where the goods leave Urvania."),
+            "OfficeOfTransitLocation": office("Customs post at the rail border station, Bayvarran side",
+                                              "Where the transit is checked on entering Bayvarra."),
+            "OfficeOfEntryLocation": office("Customs post at the rail border station, Bayvarran side",
+                                            "Where the goods enter Bayvarra."),
+            "OfficeOfDestinationLocation": office("Customs office Marrowdale", "Where the transit ends and the "
+                                                                               "goods are declared for import."),
+            "OfficeOfImportLocation": office("Customs office Marrowdale", "Where the import is declared.")}
+
+
+def rail_consignment(f, view):
+    out = {"ID": V(f.numbers["consignment"], "The manufacturer's consignment number."),
+           "ContainerizedIndicator": V("true", "Two full containers."),
+           "SummaryDescription": V("192 park benches in two 40-foot containers.", "The goods in a few words.")}
+    if view == "request":
+        out["RequestedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The boxes are packed by then.")
+        out["RequestedDeliveryTransportEvent"] = kit.event(f, 10, None, "The distributor expects them on day 10.")
+        return out
+    out["TransportContract"] = {"ID": V("FRC-CON-2026-005", "The framework contract for container slots."),
+                                "IssueDate": V("2026-01-05", "Signed at the start of the year."),
+                                "ContractType": V("Framework contract for container slots", "What it is.")}
+    out["PrepaidPaymentTerms"] = {"Note": V("Freight prepaid by the consignor under DAP.", "The seller pays the "
+                                                                                          "carriage.")}
+    if view == "plan":
+        out["PlannedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The carrier collects the packed boxes.")
+        out["PlannedDeliveryTransportEvent"] = kit.event(f, 9, "11:00:00", "And places them at the siding.")
+        out["MainCarriageShipmentStage"] = rail_stage(f, False)
+        return out
+    out.update({
+        "PerformingCarrierAssignedID": V("FRC-J-26-3318", "The rail carrier's job number."),
+        "ContractedCarrierAssignedID": V("FRC-CON-2026-005/88", "The call-off under the framework contract."),
+        "TotalTransportHandlingUnitQuantity": qty(2, "C62", "Two containers."),
+        "PerformingCarrierParty": party("14-xu", short=True),
+        "EnvironmentalEmission": {
+            "EnvironmentalEmissionTypeCode": V("CO2e", "Greenhouse gases of the carriage, as CO2 equivalent."),
+            "ValueMeasure": V("410", "For the two containers over the route.", unitCode="KGM"),
+            "EmissionCalculationMethod": {
+                "CalculationMethodCode": V("Calculated", "From the electric train's energy use."),
+                "MeasurementFromLocation": {"Name": V("Ferrano Intermodal Hub", "From.")},
+                "MeasurementToLocation": {"Name": V("Marrowdale", "To.")}}},
+        "MainCarriageShipmentStage": rail_stage(f, True),
+        "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, k == 0)} for k in range(2)]})
+    return out
+
+
 def rail(n, doc):
     f = RAIL
     w = kit.gross_weight(f, "ordered")
@@ -329,10 +559,14 @@ def rail(n, doc):
                          "so the order names no carrier (UBL rule IND6: the terms say who transports, not a missing "
                          "carrier).", "Rail siding of Lumeway Distribution, Marrowdale")
     if doc["doc"] == "TransportExecutionPlanRequest":
-        return kit.tep_request(f, n, doc, 1, "Under DAP the manufacturer is the transport user and books the train.",
-                               8, w, "Two containers of benches.")
+        out = kit.tep_request(f, n, doc, 1, "Under DAP the manufacturer is the transport user and books the train.",
+                              8, w, "Two containers of benches.")
+        kit.deep_merge(out["Consignment"], rail_consignment(f, "request"))
+        return out
     if doc["doc"] == "TransportExecutionPlan":
-        return kit.tep(f, n, doc, 2, "The rail carrier confirms the slots on the container train.", 8, w)
+        out = kit.tep(f, n, doc, 2, "The rail carrier confirms the slots on the container train.", 8, w)
+        kit.deep_merge(out["Consignment"], rail_consignment(f, "plan"))
+        return out
     if doc["doc"] == "TransitCustomsDeclaration":
         return {"ID": V(f.number("transit", doc["from"], "TransitCustomsDeclaration"), "The transit declaration "
                                                                                        "number."),
@@ -341,7 +575,10 @@ def rail(n, doc):
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight under transit."),
                              "GoodsItem": kit.goods_items(f, "XUF", "The value of the goods, in ferra, for the transit "
                                                                     "guarantee."),
-                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment on the train.")}}}
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment on the train."),
+                                             **rail_offices(),
+                                             "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, False)}
+                                                                       for k in range(2)]}}}
     if doc["doc"] == "TransportationStatus":
         return kit.transportation_status(f, n, doc, 8, "Reported when the containers are on the train.",
                                          "Two containers loaded on the container train.",
@@ -349,8 +586,10 @@ def rail(n, doc):
                                          {"Consignment": {"MainCarriageShipmentStage": {
                                              "ID": V("1", "The main carriage, by rail.")}}})
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 8, "Issued when the carrier takes over the containers.", w,
-                           "The gross weight of the two containers' cargo.")
+        out = kit.waybill(f, n, doc, 8, "Issued when the carrier takes over the containers.", w,
+                          "The gross weight of the two containers' cargo.")
+        kit.deep_merge(out["Shipment"]["Consignment"], rail_consignment(f, "note"))
+        return out
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
         return kit.invoice(f, n, doc, 11, 30, "Issued after delivery at the siding.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
