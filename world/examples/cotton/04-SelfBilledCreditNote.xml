@@ -9,13 +9,22 @@
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:IssueTime>15:50:00</cbc:IssueTime>
   <cbc:DueDate>2026-02-16</cbc:DueDate>
+  <cbc:TaxPointDate>2026-02-14</cbc:TaxPointDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
   <cbc:Note>Self-billed credit note under the season agreement.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode>XLC</cbc:TaxCurrencyCode>
+  <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
+  <cbc:PaymentCurrencyCode>XLC</cbc:PaymentCurrencyCode>
+  <cbc:PaymentAlternativeCurrencyCode>XBL</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-02-03</cbc:StartDate>
+    <cbc:EndDate>2026-02-05</cbc:EndDate>
+  </cac:InvoicePeriod>
   <cac:DiscrepancyResponse>
     <cbc:ReferenceID>1</cbc:ReferenceID>
     <cbc:ResponseCode>Grade</cbc:ResponseCode>
@@ -30,18 +39,54 @@
       <cbc:IssueDate>2026-02-07</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>LCF-DN-26-0192</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:DeliveryNoteDocumentReference>
     <cbc:ID>LCF-DN-26-0192</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
+  <cac:WorkReportDocumentReference>
+    <cbc:ID>SCC-CLS-26-0311</cbc:ID>
+  </cac:WorkReportDocumentReference>
   <cac:ReceiptDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
+  <cac:StatementDocumentReference>
+    <cbc:ID>SCG-ACC-LCF-26-02</cbc:ID>
+  </cac:StatementDocumentReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>LTM-SEASON-2026</cbc:ID>
+  </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>XL-CLS-2026-0042</cbc:ID>
   </cac:AdditionalDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
+  </cac:ProjectReference>
+  <cac:BuyerAssignedReference>
+    <cbc:BuyerReferenceCode>SCG-AP-FARMS</cbc:BuyerReferenceCode>
+    <cbc:BuyerReference>Farm payments</cbc:BuyerReference>
+  </cac:BuyerAssignedReference>
+  <cac:PurchaseReference>
+    <cbc:ID>LCF-FIELD-07</cbc:ID>
+  </cac:PurchaseReference>
+  <cac:Annotation>
+    <cbc:AnnotationContent>Written by the gin on the farm's behalf under the self-billing agreement.</cbc:AnnotationContent>
+  </cac:Annotation>
+  <cac:Signature>
+    <cbc:ID>SCG-SIG-SB-02</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -240,6 +285,14 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:TaxRepresentativeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+    </cac:PartyName>
+  </cac:TaxRepresentativeParty>
   <cac:Delivery>
     <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
   </cac:Delivery>
@@ -252,6 +305,39 @@
   <cac:PaymentTerms>
     <cbc:Note>Set off against the payment of the self-billed invoice.</cbc:Note>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Classing fee</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XLC">5.000</cbc:Amount>
+  </cac:AllowanceCharge>
+  <cac:TaxExchangeRate>
+    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>1</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-02-14</cbc:Date>
+  </cac:TaxExchangeRate>
+  <cac:PricingExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-02-14</cbc:Date>
+  </cac:PricingExchangeRate>
+  <cac:PaymentExchangeRate>
+    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>1</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-02-14</cbc:Date>
+  </cac:PaymentExchangeRate>
+  <cac:PaymentAlternativeExchangeRate>
+    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>2.5</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-02-14</cbc:Date>
+  </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -266,12 +352,34 @@
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
+  <cac:WithholdingTaxTotal>
+    <cbc:TaxAmount currencyID="XLC">1.500</cbc:TaxAmount>
+  </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">75.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">75.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">75.000</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">75.000</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">70.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">70.000</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XLC">5.000</cbc:AllowanceTotalAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XLC">1.500</cbc:WithholdingTaxTotalAmount>
+    <cbc:PayableAmount currencyID="XLC">69.250</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
+  <cac:CollectionCreditNoteLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.</cbc:Note>
+    <cbc:CreditedQuantity unitCode="C62">1</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">0.750</cbc:LineExtensionAmount>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
+    <cac:Item>
+      <cbc:Name>Cotton fund levy</cbc:Name>
+    </cac:Item>
+  </cac:CollectionCreditNoteLine>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="KGM">2500</cbc:CreditedQuantity>

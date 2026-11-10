@@ -222,7 +222,21 @@
       "rate": 10,
       "levied_on": "import, customs value plus duty"
      }
-    ]
+    ],
+    "withholding": {
+     "on": "the price of farm produce bought from farmers, by the buyer",
+     "tiers": [
+      {
+       "up_to": 2000,
+       "percent": "1"
+      },
+      {
+       "percent": "2"
+      }
+     ],
+     "paid_to": "19-xl",
+     "note": "A presumptive income tax: the buyer withholds 1 % of a delivery's value up to 2,000 coral and 2 % above, and pays it to the Island Customs Service, the island's only tax office."
+    }
    },
    "registry": {
     "name": "Island companies register",
@@ -260,6 +274,15 @@
      "name": "Coral net of the Bank of Selanu"
     },
     "note": "Island practice: longer terms, simple interest on late payment."
+   },
+   "cotton": {
+    "fund_levy_percent": "1",
+    "fund": "20-xl",
+    "reference_price": {
+     "by": "32-xb",
+     "currency": "XBL"
+    },
+    "note": "The cotton fund of the Selanu Chamber of Commerce is financed by a levy of 1 % of the value of seed cotton sold, which the farm collects from the gin on the fund's behalf. Seed cotton is priced from the trade accord's lint reference price, published in lume by the Lumeport Trade Accord Council."
    }
   }
  },

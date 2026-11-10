@@ -28,7 +28,7 @@ The ginnery pays the farm the net amount.
   The time the sender's system issued the document, in the sender's local time.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the island's currency; it has three decimals.
-- `TotalPaymentAmount` = **3173.000** (currencyID `XLC`)  
+- `TotalPaymentAmount` = **3158.070** (currencyID `XLC`)  
   The invoice minus the credit note.
 
 ### Accounting Customer Party
@@ -310,13 +310,13 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   The self-billed invoice.
-- `DebitLineAmount` = **3248.000** (currencyID `XLC`)  
+- `DebitLineAmount` = **3227.320** (currencyID `XLC`)  
   The amount still due on the self-billed invoice, after the season advance.
 - `BillingReference/SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0193**  
   The self-billed invoice paid.
 - `ID` = **2**  
   The self-billed credit note.
-- `CreditLineAmount` = **75.000** (currencyID `XLC`)  
+- `CreditLineAmount` = **69.250** (currencyID `XLC`)  
   The amount credited, deducted from the payment.
 - `BillingReference/SelfBilledCreditNoteDocumentReference/ID` = **SCG-SBC-26-0194**  
   The self-billed credit note set off.
@@ -335,7 +335,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>13:28:00</cbc:IssueTime>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XLC">3173.000</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">3158.070</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -575,7 +575,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XLC">3248.000</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XLC">3227.320</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledInvoiceDocumentReference>
         <cbc:ID>SCG-SBI-26-0193</cbc:ID>
@@ -584,7 +584,7 @@ Inside `RemittanceAdviceLine`:
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:CreditLineAmount currencyID="XLC">75.000</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XLC">69.250</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledCreditNoteDocumentReference>
         <cbc:ID>SCG-SBC-26-0194</cbc:ID>

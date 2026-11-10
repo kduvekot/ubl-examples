@@ -7822,3 +7822,155 @@ def _(f, n, doc, out):
             "TaxCurrencyCode": V("XUF", "The manufacturer accounts its value added tax in ferra."),
             "TaxExchangeRate": {**TO_FERRA(f.date(70)), "TargetCurrencyCode": V("XUF", "The tax currency.")},
             "PaymentExchangeRate": TO_FERRA(f.date(70))}
+
+
+# --- Coverage completion, batch F: self-billing on the island ---------------------------------------------------
+# The gin withholds the island's presumptive tax on farm produce (1 % up to 2,000 coral of a delivery, 2 % above)
+# and the farm collects the cotton fund's levy of 1 % from the gin (world/countries.json). Seed cotton is priced from
+# the trade accord's lint reference price in lume; the farm is paid in coral and may ask for lume instead. Its tax
+# affairs with the island's tax office are handled by its customs broker, as tax representative.
+XL_TAX = WORLD["countries"]["XL"]["tax"]["withholding"]
+XL_COTTON = WORLD["countries"]["XL"]["cotton"]
+
+
+def presumptive_tax(value):
+    """The withholding on a delivery's value, per tier: [(base, percent, range)]."""
+    t1 = min(value, Decimal(XL_TAX["tiers"][0]["up_to"]))
+    return [(t1, Decimal(XL_TAX["tiers"][0]["percent"]), "Up to 2,000 coral of the delivery's value"),
+            (value - t1, Decimal(XL_TAX["tiers"][1]["percent"]), "Above 2,000 coral")]
+
+
+def withholding_total(tiers, why, reversal=False):
+    tax = sum(money(b * p / 100, "XLC") for b, p, _ in tiers)
+    subs = []
+    for b, p, rng in tiers:
+        cat = {"ID": V("S", "The withholding applies."), "Percent": V(str(p), "The rate of the tier."),
+               "TierRange": V(rng, "The tier."), "TierRatePercent": V(str(p), "The rate within the tier."),
+               "TaxScheme": {"ID": V("OTH", "UN/EDIFACT 5153 code OTH: other taxes, the presumptive tax."),
+                             "Name": V("Presumptive tax on farm produce", "The tax in words.")}}
+        subs.append({"TaxableAmount": amount(b, "XLC", "The part of the value in this tier."),
+                     "TaxAmount": amount(money(b * p / 100, "XLC"), "XLC", f"{p} % of it."),
+                     "Percent": V(str(p), "The rate."), "TierRange": V(rng, "The tier."),
+                     "TierRatePercent": V(str(p), "The rate within the tier."), "TaxCategory": cat})
+    return tax, {"TaxAmount": amount(tax, "XLC", why), "TaxSubtotal": subs}
+
+
+def fund_levy_line(base, line_id, credit=False):
+    pct = Decimal(XL_COTTON["fund_levy_percent"])
+    amt = money(base * pct / 100, "XLC")
+    kind, qn = ("CreditedQuantity", "credited") if credit else ("InvoicedQuantity", "invoiced")
+    return amt, {"ID": V(line_id, "The collection line."),
+                 "Note": V("Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.", "Why the "
+                                                                                                          "line is "
+                                                                                                          "there."),
+                 kind: qty(1, "C62", f"The levy, {qn} once."),
+                 "LineExtensionAmount": amount(amt, "XLC", f"{pct} % of the value of the seed cotton."),
+                 "BeneficiaryParty": party(XL_COTTON["fund"], short=True),
+                 "Item": {"Name": V("Cotton fund levy", "What is collected.")}}
+
+
+def cotton_currencies(f, day):
+    to = lambda c, r, why: {"SourceCurrencyCode": V("XLC", "The document currency."),       # noqa: E731
+                            "TargetCurrencyCode": V(c, why),
+                            "CalculationRate": V(r, "The reference rate." if r != "1" else "The same currency: no "
+                                                                                             "conversion."),
+                            "MathematicOperatorCode": V("Multiply", "Coral times the rate."),
+                            "Date": V(f.date(day), "Of the document's date.")}
+    return {"PricingCurrencyCode": V("XBL", "Seed cotton is priced from the trade accord's lint reference price, "
+                                            "published in lume."),
+            "PricingExchangeRate": {"SourceCurrencyCode": V("XBL", "The reference price's currency."),
+                                    "TargetCurrencyCode": V("XLC", "The document's."),
+                                    "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The reference rate."),
+                                    "MathematicOperatorCode": V("Multiply", "Lume times the rate gives coral."),
+                                    "Date": V(f.date(day), "Of the document's date.")},
+            "TaxCurrencyCode": V("XLC", "The presumptive tax is paid to the island's tax office in coral."),
+            "TaxExchangeRate": to("XLC", "1", "The tax currency, coral."),
+            "PaymentCurrencyCode": V("XLC", "The farm is paid in coral."),
+            "PaymentExchangeRate": to("XLC", "1", "The payment currency, coral."),
+            "PaymentAlternativeCurrencyCode": V("XBL", "The farm may ask to be paid in lume, to its account in "
+                                                       "Bayvarra, where it buys its machinery."),
+            "PaymentAlternativeExchangeRate": to("XBL", str(kit.rate("XLC", "XBL")), "Lume, the alternative."),
+            "TaxPointDate": V(f.date(day), "The day the withholding becomes due.")}
+
+
+def cotton_refs(f):
+    return {"OriginatorDocumentReference": {"ID": V("LTM-SEASON-2026", "The mill's season contract with the gin, "
+                                                                       "for which the gin buys the seed cotton.")},
+            "ProjectReference": {"ID": V("SCC-COTTON-QUALITY-26", "The chamber's cotton quality programme.")},
+            "PurchaseReference": {"ID": V("LCF-FIELD-07", "The field the cotton was picked from, for traceability.")},
+            "StatementDocumentReference": {"ID": V("SCG-ACC-LCF-26-02", "The gin's season account of the farm "
+                                                                        "(not shown).")},
+            "BuyerAssignedReference": {"BuyerReferenceCode": V("SCG-AP-FARMS", "The gin's desk for farm "
+                                                                               "payments."),
+                                       "BuyerReference": V("Farm payments", "In words.")},
+            "Annotation": {"AnnotationContent": V("Written by the gin on the farm's behalf under the self-billing "
+                                                  "agreement.", "A remark.")},
+            "TaxRepresentativeParty": party("3-xl", short=True),
+            "Signature": seal("39-xl", f"SCG-SIG-SB-{f.date(0)[-2:]}")}
+
+
+@enrich("cotton", "SelfBilledInvoice")
+def _(f, n, doc, out):
+    lmt = out["LegalMonetaryTotal"]
+    value = Decimal(out["InvoiceLine"]["LineExtensionAmount"].value if isinstance(out["InvoiceLine"], dict)
+                    else out["InvoiceLine"][0]["LineExtensionAmount"].value)
+    tiers = presumptive_tax(value)
+    wh, wt = withholding_total(tiers, "The presumptive tax the gin withholds on the delivery.")
+    levy, cline = fund_levy_line(value, "2")
+    payable = Decimal(lmt["PayableAmount"].value) - wh + levy
+    lmt["WithholdingTaxTotalAmount"] = amount(wh, "XLC", "Withheld and paid to the island's tax office.")
+    lmt["PayableAmount"] = amount(payable, "XLC", "What the gin pays: the cotton and haulage, less the advance and "
+                                                  "the withholding, plus the levy the farm collects.")
+    f.numbers["self-billed-3-amount"] = payable
+    ac = out["AllowanceCharge"]
+    ac.update({"PrepaidIndicator": V("false", "Not prepaid: paid with the invoice."),
+               "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax on the haulage on the island.")},
+               "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer, with the invoice.",
+                                                      listID="UN/EDIFACT EDED 4461")}})
+    lmt["AllowanceTotalTaxInclusiveAmount"] = amount(0, "XLC", "No allowances.")
+    ln = out["InvoiceLine"] if isinstance(out["InvoiceLine"], dict) else out["InvoiceLine"][0]
+    ref = ln["Delivery"]["DeliveryNoteLineReference"]
+    ref["UUID"] = line_uuid(f, "delivery", 1)
+    ref["LineStatusCode"] = V("NoStatus", "The delivered line, unchanged.")
+    out["CollectionInvoiceLine"] = cline
+    out["LineCountNumeric"] = V("2", "The seed cotton and the collection line of the levy.")
+    return {**cotton_currencies(f, 5), **cotton_refs(f),
+            "WithholdingTaxTotal": wt,
+            "OriginatorCustomerParty": {"Party": party("40-xb", short=True)},
+            "BeneficiaryParty": party("40-xb", short=True),
+            "AdditionalDocumentReference": {"ID": V("XL-FARM-REG-0412", "The farm's registration, which the "
+                                                                        "withholding needs.")},
+            "BillingReference": {"AdditionalDocumentReference": {"ID": V("SCG-ADV-26-0012", "The season advance "
+                                                                                            "deducted.")}},
+            "WorkReportDocumentReference": {"ID": V("SCG-OUT-26-0311", "The gin's outturn report of the lot.")}}
+
+
+@enrich("cotton", "SelfBilledCreditNote")
+def _(f, n, doc, out):
+    lmt = out["LegalMonetaryTotal"]
+    value = Decimal(lmt["LineExtensionAmount"].value)
+    wh = money(value * Decimal(XL_TAX["tiers"][1]["percent"]) / 100, "XLC")
+    levy, cline = fund_levy_line(value, "2", credit=True)
+    fee = Decimal("5.000")
+    payable = value - fee - wh + levy
+    lmt.update({"AllowanceTotalAmount": amount(fee, "XLC", "The classing fee the farm bears."),
+                "TaxExclusiveAmount": amount(value - fee, "XLC", "The credit less the fee."),
+                "TaxInclusiveAmount": amount(value - fee, "XLC", "No tax on the island."),
+                "WithholdingTaxTotalAmount": amount(wh, "XLC", "The withholding on the credited value, reversed: "
+                                                               "the value falls in the 2 % tier."),
+                "PayableAmount": amount(payable, "XLC", "What the farm's account is credited: the price "
+                                                        "difference less the fee and the withholding, plus the "
+                                                        "levy on it.")})
+    f.numbers["self-billed-4-amount"] = payable
+    out["CollectionCreditNoteLine"] = cline
+    out["LineCountNumeric"] = V("2", "The price difference and the levy on it.")
+    return {**cotton_currencies(f, 12), **cotton_refs(f),
+            "InvoicePeriod": {"StartDate": V(f.date(1), "The deliveries classed, from the first"),
+                              "EndDate": V(f.date(3), "to the last trailer.")},
+            "DespatchDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery note.")},
+            "WorkReportDocumentReference": {"ID": V("SCC-CLS-26-0311", "The chamber's classing report.")},
+            "WithholdingTaxTotal": {"TaxAmount": amount(wh, "XLC", "The withholding reversed on the credit.")},
+            "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance: it lowers the credit."),
+                                "AllowanceChargeReason": V("Classing fee", "The farm bears the classing of its "
+                                                                           "cotton, as the agreement says."),
+                                "Amount": amount(fee, "XLC", "The chamber's fee for the lot.")}}
