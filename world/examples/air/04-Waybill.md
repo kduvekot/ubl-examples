@@ -320,6 +320,26 @@ Inside `Shipment`:
   The gross weight of the cargo.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The consignment of the transport booking.
+- `Consignment/ChargeableWeightMeasure` = **96** (unitCode `KGM`)  
+  The volume weight is higher than the 81.6 kg: 0.576 m³ at 167 kg per m³, rounded up.
+- `Consignment/GrossVolumeMeasure` = **0.576** (unitCode `MTQ`)  
+  Eight boxes of 0.072 m³.
+- `Consignment/SpecialSecurityIndicator` = **true**  
+  The cargo was screened by the forwarder, a known consignor; it may fly without further checks.
+- `Consignment/SpecialServiceInstructions` = **Priority handling at Selanu: the customer is waiting.**  
+  The service asked for.
+- `Consignment/SequenceID` = **1**  
+  The first house consignment under the master air waybill.
+- `Consignment/ShippingPriorityLevelCode` = **Priority**  
+  Flown on the first flight with room.
+- `Consignment/ChildConsignmentQuantity` = **1** (unitCode `C62`)  
+  One house consignment in the forwarder's consolidation.
+- `Consignment/ConsolidatedShipment/ID` = **BF-CONS-26-0207**  
+  The forwarder's consolidation for this flight, of which the boxes are part.
+- `Consignment/ChildConsignment/ID` = **BF-HAWB-26-0918**  
+  The forwarder's house air waybill for the distributor's boxes.
+- `Consignment/ChildConsignment/ConsignorAssignedID` = **LD-FI-26-0322**  
+  The distributor's instructions.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -484,6 +504,40 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/SubstituteCarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  The flight.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **4** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Air transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **KAC207**  
+  The flight number of the airline of the world; not an IATA code.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XL**  
+  The country the means of transport is registered in.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Lisavu**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **AIR**  
+  The carrier's code for the kind of means: freighter of kelaro air cargo; the fleet of Kelaro Air Cargo (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/AirTransport/AircraftID` = **XL-KAC**  
+  The aircraft's registration, with the world's country code as its nationality mark.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Lumeport airport**  
+  The airport of departure.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Selanu airport**  
+  The airport of destination.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL**  
+  The country the place is in.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The forwarder asked for the morning flight.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **07:00:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceDate` = **2026-05-14**  
+  Arriving before the 3PL's cut-off.
+- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceTime` = **10:00:00**  
+  The local time.
 
 ## The document
 
@@ -746,6 +800,20 @@ Inside `Shipment`:
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:ChargeableWeightMeasure unitCode="KGM">96</cbc:ChargeableWeightMeasure>
+      <cbc:GrossVolumeMeasure unitCode="MTQ">0.576</cbc:GrossVolumeMeasure>
+      <cbc:SpecialSecurityIndicator>true</cbc:SpecialSecurityIndicator>
+      <cbc:SpecialServiceInstructions>Priority handling at Selanu: the customer is waiting.</cbc:SpecialServiceInstructions>
+      <cbc:SequenceID>1</cbc:SequenceID>
+      <cbc:ShippingPriorityLevelCode>Priority</cbc:ShippingPriorityLevelCode>
+      <cbc:ChildConsignmentQuantity unitCode="C62">1</cbc:ChildConsignmentQuantity>
+      <cac:ConsolidatedShipment>
+        <cbc:ID>BF-CONS-26-0207</cbc:ID>
+      </cac:ConsolidatedShipment>
+      <cac:ChildConsignment>
+        <cbc:ID>BF-HAWB-26-0918</cbc:ID>
+        <cbc:ConsignorAssignedID>LD-FI-26-0322</cbc:ConsignorAssignedID>
+      </cac:ChildConsignment>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -900,6 +968,45 @@ Inside `Shipment`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:SubstituteCarrierParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>KAC207</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode>AIR</cbc:TransportMeansTypeCode>
+          <cac:AirTransport>
+            <cbc:AircraftID>XL-KAC</cbc:AircraftID>
+          </cac:AirTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+          <cbc:Name>Lumeport airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+          <cbc:Name>Selanu airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:RequestedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+        </cac:RequestedDepartureTransportEvent>
+        <cac:RequestedArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+        </cac:RequestedArrivalTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
   </cac:Shipment>
 </Waybill>

@@ -248,7 +248,7 @@ Inside `ServiceStartTimePeriod`:
 Inside `Consignment`:
 
 - `ID` = **RR-CS-26-0885**  
-  The consignment of the request.
+  The seller's consignment number.
 - `GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The weight the plan is made for.
 - `ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
@@ -343,6 +343,66 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412740** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Rivermouth Packaging (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `MainCarriageShipmentStage/ID` = **1**  
+  Down the river, from the recovery plant's quay to the river quay in Lumeport.
+- `MainCarriageShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 8: inland water transport.
+- `MainCarriageShipmentStage/TransportMeans/JourneyID` = **FB4-26-031**  
+  The barge operator's voyage number.
+- `MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
+  The country the means of transport is registered in.
+- `MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `MainCarriageShipmentStage/TransportMeans/DirectionCode` = **Downstream**  
+  The direction of the journey, as the carrier codes its services.
+- `MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **INLAND**  
+  The carrier's code for the kind of means: fiumella iv; the fleet of Fiumella Barges (world/parties.json).
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XU-IW-08042** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Fiumella IV**  
+  The vessel's name; the fleet of Fiumella Barges (world/parties.json).
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **XUBF4**  
+  The radio call sign, with the world's country code.
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **999801042**  
+  The Maritime Mobile Service Identity, nine digits; 999 is no real country's maritime identification digits.
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **1210** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **860** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **Dry cargo barge**  
+  The kind of vessel.
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Ferrano**  
+  The port the vessel is registered in.
+- `MainCarriageShipmentStage/LoadingPortLocation/Name` = **Quay of Rinova Recovery, Ferrano**  
+  Where the bags are loaded.
+- `MainCarriageShipmentStage/UnloadingPortLocation/Name` = **River quay, Lumeport**  
+  The place named in the CPT terms.
+- `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-04-19**  
+  Loading finished: 120 bags in the hold.
+- `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime` = **13:30:00**  
+  The local time.
+- `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-20**  
+  The barge leaves Urvania at the river border.
+- `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **16:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-22**  
+  Planned unloading at the Lumeport quay.
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-19**  
+  The barge operator takes over the bags at the quay.
+- `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **09:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/EstimatedTransitPeriod/DurationMeasure` = **3** (unitCode `DAY`)  
+  Three days downstream, with the locks.
+- `MainCarriageShipmentStage/MasterPerson/FirstName` = **Tomaso**  
+  The skipper of the barge.
+- `MainCarriageShipmentStage/MasterPerson/FamilyName` = **Riverra**  
+  The family name.
+- `MainCarriageShipmentStage/MasterPerson/JobTitle` = **Skipper**  
+  The person's position.
 
 ## The document
 
@@ -633,6 +693,60 @@ Inside `Consignment`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:ConsigneeParty>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:JourneyID>FB4-26-031</cbc:JourneyID>
+        <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:DirectionCode>Downstream</cbc:DirectionCode>
+        <cbc:TransportMeansTypeCode>INLAND</cbc:TransportMeansTypeCode>
+        <cac:MaritimeTransport>
+          <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XU-IW-08042</cbc:VesselID>
+          <cbc:VesselName>Fiumella IV</cbc:VesselName>
+          <cbc:RadioCallSignID>XUBF4</cbc:RadioCallSignID>
+          <cbc:MMSIRegistrationID>999801042</cbc:MMSIRegistrationID>
+          <cbc:GrossTonnageMeasure unitCode="C62">1210</cbc:GrossTonnageMeasure>
+          <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
+          <cbc:ShipConfigurationCode>Dry cargo barge</cbc:ShipConfigurationCode>
+          <cac:RegistryPortLocation>
+            <cbc:Name>Ferrano</cbc:Name>
+          </cac:RegistryPortLocation>
+        </cac:MaritimeTransport>
+      </cac:TransportMeans>
+      <cac:LoadingPortLocation>
+        <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:Name>River quay, Lumeport</cbc:Name>
+      </cac:UnloadingPortLocation>
+      <cac:LoadingTransportEvent>
+        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+      </cac:LoadingTransportEvent>
+      <cac:ExportationTransportEvent>
+        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+      </cac:ExportationTransportEvent>
+      <cac:DischargeTransportEvent>
+        <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:DischargeTransportEvent>
+      <cac:TakeoverTransportEvent>
+        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+      </cac:TakeoverTransportEvent>
+      <cac:EstimatedTransitPeriod>
+        <cbc:DurationMeasure unitCode="DAY">3</cbc:DurationMeasure>
+      </cac:EstimatedTransitPeriod>
+      <cac:MasterPerson>
+        <cbc:FirstName>Tomaso</cbc:FirstName>
+        <cbc:FamilyName>Riverra</cbc:FamilyName>
+        <cbc:JobTitle>Skipper</cbc:JobTitle>
+      </cac:MasterPerson>
+    </cac:MainCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlan>
 ```

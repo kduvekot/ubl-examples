@@ -228,7 +228,13 @@ Inside `Shipment`:
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of the goods.
 - `Consignment/ID` = **LD-CS-26-0133**  
-  The consignment to be shipped.
+  The distributor's consignment number.
+- `Consignment/ForwarderServiceInstructions` = **Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.**  
+  What the forwarder is to do.
+- `Consignment/SpecialInstructions` = **Load the castings last, behind the doors.**  
+  So they are unloaded first.
+- `Consignment/ConsolidatableIndicator` = **false**  
+  A full container: not to be grouped with other cargo.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -299,6 +305,26 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/ExporterParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/ExporterParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/ImporterParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/ImporterParty/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/InsuranceParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/InsuranceParty/PartyName/Name` = **Wavesure Cargo Insurance**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/OriginalDespatchTransportationService/TransportServiceCode` = **MerchantHaulage**  
+  The forwarder, not the shipping line, brings the container to the port.
+- `Consignment/OriginalDespatchTransportationService/Name` = **Truck from Marrowdale to the port of Lumeport**  
+  In words.
+- `Consignment/FinalDeliveryTransportationService/TransportServiceCode` = **MerchantHaulage**  
+  The buyer's 3PL collects at the port of Selanu.
+- `Consignment/FinalDeliveryTransportationService/Name` = **Truck from the port of Selanu to the 3PL**  
+  In words.
 - `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance, all risks**  
   The cover the forwarder is to arrange.
 - `InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
@@ -577,6 +603,9 @@ Inside `Shipment`:
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:ForwarderServiceInstructions>Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.</cbc:ForwarderServiceInstructions>
+      <cbc:SpecialInstructions>Load the castings last, behind the doors.</cbc:SpecialInstructions>
+      <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -642,6 +671,38 @@ Inside `Shipment`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:ExporterParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:ExporterParty>
+      <cac:ImporterParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:ImporterParty>
+      <cac:InsuranceParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+        </cac:PartyName>
+      </cac:InsuranceParty>
+      <cac:OriginalDespatchTransportationService>
+        <cbc:TransportServiceCode>MerchantHaulage</cbc:TransportServiceCode>
+        <cbc:Name>Truck from Marrowdale to the port of Lumeport</cbc:Name>
+      </cac:OriginalDespatchTransportationService>
+      <cac:FinalDeliveryTransportationService>
+        <cbc:TransportServiceCode>MerchantHaulage</cbc:TransportServiceCode>
+        <cbc:Name>Truck from the port of Selanu to the 3PL</cbc:Name>
+      </cac:FinalDeliveryTransportationService>
     </cac:Consignment>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>

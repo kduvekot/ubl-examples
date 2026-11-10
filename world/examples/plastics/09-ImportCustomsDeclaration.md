@@ -309,10 +309,28 @@ Inside `Shipment`:
   What the goods are, in words.
 - `GoodsItem/DeclaredCustomsValueAmount` = **99840.00** (currencyID `XBL`)  
   The customs value in lume: the invoice value in ferra at the world's reference rate (1 ferra = 0.01 lume).
+- `GoodsItem/DeclaredStatisticsValueAmount` = **99840.00** (currencyID `XBL`)  
+  The value for the trade statistics: the invoice value at the border.
+- `GoodsItem/FreeOnBoardValueAmount` = **98046.00** (currencyID `XBL`)  
+  The value at the loading quay: the CPT price less the river freight of 179,400 ferra, in lume.
+- `GoodsItem/InsuranceValueAmount` = **0.00** (currencyID `XBL`)  
+  The buyer did not insure the river carriage.
 - `GoodsItem/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **120** (unitCode `TNE`)  
   The quantity declared.
+- `GoodsItem/PreferenceCriterionCode` = **P**  
+  The goods are wholly obtained in Urvania: preference criterion P of the trade accord.
+- `GoodsItem/RequiredCustomsID` = **3901.10.00**  
+  The tariff code Bayvarra's customs requires on the declaration.
+- `GoodsItem/CustomsStatusCode` = **Foreign**  
+  Bayvarra's customs status: goods from abroad, not yet released for free circulation.
+- `GoodsItem/CustomsProcedureCode` = **4000**  
+  Release for free circulation, with no previous procedure.
+- `GoodsItem/CustomsTariffQuantity` = **120000** (unitCode `KGM`)  
+  The quantity in the tariff's unit: net kilograms.
+- `GoodsItem/CustomsImportClassifiedIndicator` = **true**  
+  Classified by the importer before arrival.
 - `GoodsItem/Item/Description` = **Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.**  
   The seller's description; item granulate-pe of Rinova Recovery (world/items.json).
 - `GoodsItem/Item/Name` = **Recycled PE granulate**  
@@ -345,6 +363,10 @@ Inside `Shipment`:
   The environmental claim certified.
 - `GoodsItem/Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
   What the certificate states.
+- `GoodsItem/BondedWarehouseLocation/Name` = **Bonded store at the river quay, Lumeport**  
+  Where the bags wait until released.
+- `GoodsItem/AdditionalDocumentReference/ID` = **FB-WB-26-0890**  
+  The barge's consignment note.
 
 ## The document
 
@@ -606,8 +628,17 @@ Inside `Shipment`:
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Recycled PE granulate</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">99840.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">99840.00</cbc:DeclaredStatisticsValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">98046.00</cbc:FreeOnBoardValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">0.00</cbc:InsuranceValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
+      <cbc:PreferenceCriterionCode>P</cbc:PreferenceCriterionCode>
+      <cbc:RequiredCustomsID>3901.10.00</cbc:RequiredCustomsID>
+      <cbc:CustomsStatusCode>Foreign</cbc:CustomsStatusCode>
+      <cbc:CustomsProcedureCode>4000</cbc:CustomsProcedureCode>
+      <cbc:CustomsTariffQuantity unitCode="KGM">120000</cbc:CustomsTariffQuantity>
+      <cbc:CustomsImportClassifiedIndicator>true</cbc:CustomsImportClassifiedIndicator>
       <cac:Item>
         <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
         <cbc:Name>Recycled PE granulate</cbc:Name>
@@ -640,6 +671,12 @@ Inside `Shipment`:
           <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
         </cac:EnvironmentalCertificate>
       </cac:Item>
+      <cac:BondedWarehouseLocation>
+        <cbc:Name>Bonded store at the river quay, Lumeport</cbc:Name>
+      </cac:BondedWarehouseLocation>
+      <cac:AdditionalDocumentReference>
+        <cbc:ID>FB-WB-26-0890</cbc:ID>
+      </cac:AdditionalDocumentReference>
     </cac:GoodsItem>
   </cac:Shipment>
 </ImportCustomsDeclaration>

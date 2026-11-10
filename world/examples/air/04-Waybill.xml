@@ -256,6 +256,20 @@
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:ChargeableWeightMeasure unitCode="KGM">96</cbc:ChargeableWeightMeasure>
+      <cbc:GrossVolumeMeasure unitCode="MTQ">0.576</cbc:GrossVolumeMeasure>
+      <cbc:SpecialSecurityIndicator>true</cbc:SpecialSecurityIndicator>
+      <cbc:SpecialServiceInstructions>Priority handling at Selanu: the customer is waiting.</cbc:SpecialServiceInstructions>
+      <cbc:SequenceID>1</cbc:SequenceID>
+      <cbc:ShippingPriorityLevelCode>Priority</cbc:ShippingPriorityLevelCode>
+      <cbc:ChildConsignmentQuantity unitCode="C62">1</cbc:ChildConsignmentQuantity>
+      <cac:ConsolidatedShipment>
+        <cbc:ID>BF-CONS-26-0207</cbc:ID>
+      </cac:ConsolidatedShipment>
+      <cac:ChildConsignment>
+        <cbc:ID>BF-HAWB-26-0918</cbc:ID>
+        <cbc:ConsignorAssignedID>LD-FI-26-0322</cbc:ConsignorAssignedID>
+      </cac:ChildConsignment>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -410,6 +424,45 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:SubstituteCarrierParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>KAC207</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode>AIR</cbc:TransportMeansTypeCode>
+          <cac:AirTransport>
+            <cbc:AircraftID>XL-KAC</cbc:AircraftID>
+          </cac:AirTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+          <cbc:Name>Lumeport airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+          <cbc:Name>Selanu airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:RequestedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+        </cac:RequestedDepartureTransportEvent>
+        <cac:RequestedArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+        </cac:RequestedArrivalTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
   </cac:Shipment>
 </Waybill>

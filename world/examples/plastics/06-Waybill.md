@@ -236,7 +236,9 @@ Inside `Shipment`:
 - `GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The gross weight on board.
 - `Consignment/ID` = **RR-CS-26-0885**  
-  The consignment of the transport booking.
+  The seller's consignment number.
+- `Consignment/CarrierAssignedID` = **FB4-26-031/2**  
+  The barge operator's number: the second lot of the voyage.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **2220** (listID `ISIC Rev.4`)  
@@ -329,6 +331,158 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412740** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Rivermouth Packaging (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/FreightAllowanceCharge/ChargeIndicator` = **true**  
+  The freight, a charge.
+- `Consignment/FreightAllowanceCharge/AllowanceChargeReason` = **River freight**  
+  What it is for.
+- `Consignment/FreightAllowanceCharge/Amount` = **179400** (currencyID `XUF`)  
+  120 tonnes at 1,495 ferra.
+- `Consignment/FreightAllowanceCharge/BaseAmount` = **1495** (currencyID `XUF`)  
+  The rate per tonne.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  Down the river, from the recovery plant's quay to the river quay in Lumeport.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 8: inland water transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **FB4-26-031**  
+  The barge operator's voyage number.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
+  The country the means of transport is registered in.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **Downstream**  
+  The direction of the journey, as the carrier codes its services.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **INLAND**  
+  The carrier's code for the kind of means: fiumella iv; the fleet of Fiumella Barges (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XU-IW-08042** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Fiumella IV**  
+  The vessel's name; the fleet of Fiumella Barges (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **XUBF4**  
+  The radio call sign, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **999801042**  
+  The Maritime Mobile Service Identity, nine digits; 999 is no real country's maritime identification digits.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **1210** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **860** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **Dry cargo barge**  
+  The kind of vessel.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Ferrano**  
+  The port the vessel is registered in.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Quay of Rinova Recovery, Ferrano**  
+  Where the bags are loaded.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **River quay, Lumeport**  
+  The place named in the CPT terms.
+- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-04-19**  
+  Loading finished: 120 bags in the hold.
+- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime` = **13:30:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-20**  
+  The barge leaves Urvania at the river border.
+- `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **16:00:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-22**  
+  Planned unloading at the Lumeport quay.
+- `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-19**  
+  The barge operator takes over the bags at the quay.
+- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **09:00:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/EstimatedTransitPeriod/DurationMeasure` = **3** (unitCode `DAY`)  
+  Three days downstream, with the locks.
+- `Consignment/MainCarriageShipmentStage/MasterPerson/FirstName` = **Tomaso**  
+  The skipper of the barge.
+- `Consignment/MainCarriageShipmentStage/MasterPerson/FamilyName` = **Riverra**  
+  The family name.
+- `Consignment/MainCarriageShipmentStage/MasterPerson/JobTitle` = **Skipper**  
+  The person's position.
+- `GoodsItem/ID` = **1**  
+  The only goods item.
+- `GoodsItem/SequenceNumberID` = **1**  
+  Its place in the cargo list.
+- `GoodsItem/Description` = **Recycled PE granulate**  
+  What the goods are.
+- `GoodsItem/DeclaredForCarriageValueAmount` = **9984000** (currencyID `XUF`)  
+  Declared to the barge operator, which raises its liability to this value.
+- `GoodsItem/ValueAmount` = **9984000** (currencyID `XUF`)  
+  The value of the goods, the sales price under CPT.
+- `GoodsItem/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
+  With the bags.
+- `GoodsItem/NetWeightMeasure` = **120000** (unitCode `KGM`)  
+  The granulate alone.
+- `GoodsItem/NetNetWeightMeasure` = **120000** (unitCode `KGM`)  
+  No inner packaging: the same as the net weight.
+- `GoodsItem/ChargeableWeightMeasure` = **120000** (unitCode `KGM`)  
+  The freight is charged per tonne of granulate.
+- `GoodsItem/GrossVolumeMeasure` = **204** (unitCode `MTQ`)  
+  The 120 bags take 1.7 m³ each.
+- `GoodsItem/NetVolumeMeasure` = **130** (unitCode `MTQ`)  
+  The granulate's own volume, at 0.92 tonne per m³.
+- `GoodsItem/Quantity` = **120** (unitCode `TNE`)  
+  120 tonnes.
+- `GoodsItem/ChargeableQuantity` = **120** (unitCode `TNE`)  
+  The tonnes charged.
+- `GoodsItem/ReturnableQuantity` = **120** (unitCode `H87`)  
+  The 120 jumbo bags go back to the recovery plant.
+- `GoodsItem/TraceID` = **RR-PE-LOT-26-0416**  
+  The lot on the bags' labels.
+- `GoodsItem/OrderLineReference/LineID` = **1**  
+  The order line.
+- `GoodsItem/OrderLineReference/OrderReference/ID` = **RP-PO-26-0882**  
+  The buyer's order.
+- `GoodsItem/OriginAddress/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `GoodsItem/OriginAddress/StreetName` = **Via del Riciclo**  
+  Street of the postal address. identity of Rinova Recovery (world/parties.json).
+- `GoodsItem/OriginAddress/BuildingNumber` = **31**  
+  Building number of the postal address. identity of Rinova Recovery (world/parties.json).
+- `GoodsItem/OriginAddress/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Rinova Recovery (world/parties.json).
+- `GoodsItem/OriginAddress/PostalZone` = **4140**  
+  Postal code in Urvania's format (4 digits). identity of Rinova Recovery (world/parties.json).
+- `GoodsItem/OriginAddress/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Rinova Recovery (world/parties.json).
+- `GoodsItem/OriginAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `GoodsItem/OriginAddress/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `GoodsItem/OriginAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `GoodsItem/Delivery/LatestDeliveryDate` = **2026-04-23**  
+  The packaging maker's production starts the day after.
+- `GoodsItem/Pickup/EarliestPickupDate` = **2026-04-19**  
+  The bags are ready on the quay.
+- `GoodsItem/Pickup/EarliestPickupTime` = **08:00:00**  
+  From eight.
+- `GoodsItem/Pickup/LatestPickupDate` = **2026-04-19**  
+  They must go the same day.
+- `GoodsItem/Pickup/LatestPickupTime` = **16:00:00**  
+  Before the quay closes.
+- `GoodsItem/Despatch/ActualDespatchDate` = **2026-04-19**  
+  The barge cast off.
+- `GoodsItem/Despatch/ActualDespatchTime` = **15:10:00**  
+  In the afternoon.
+- `GoodsItem/MeasurementDimension/AttributeID` = **Height**  
+  The height of one filled bag.
+- `GoodsItem/MeasurementDimension/Measure` = **1300** (unitCode `MMT`)  
+  In millimetres.
+- `GoodsItem/ContainingPackage/ID` = **JB-001..120**  
+  The bags, numbered 1 to 120.
+- `GoodsItem/ContainingPackage/Quantity` = **120** (unitCode `H87`)  
+  120 bags.
+- `GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
+  The bags go back for reuse.
+- `GoodsItem/ContainingPackage/PackagingTypeCode` = **JB**  
+  UN/ECE Recommendation 21 code JB: bag, jumbo.
+- `GoodsItem/ContainingPackage/PackagingType` = **Jumbo bag of one tonne with four lifting loops**  
+  In words.
+- `GoodsItem/ContainingPackage/PackingMaterial` = **Woven polypropylene**  
+  What the bags are made of.
+- `GoodsItem/ShipmentDocumentReference/ID` = **FB-TEP-26-0886**  
+  The transport plan of the sailing.
 
 ### Document Reference
 
@@ -537,6 +691,7 @@ Inside `DocumentReference`:
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>RR-CS-26-0885</cbc:ID>
+      <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
@@ -621,7 +776,131 @@ Inside `DocumentReference`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>River freight</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XUF">179400</cbc:Amount>
+        <cbc:BaseAmount currencyID="XUF">1495</cbc:BaseAmount>
+      </cac:FreightAllowanceCharge>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>FB4-26-031</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:DirectionCode>Downstream</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode>INLAND</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XU-IW-08042</cbc:VesselID>
+            <cbc:VesselName>Fiumella IV</cbc:VesselName>
+            <cbc:RadioCallSignID>XUBF4</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>999801042</cbc:MMSIRegistrationID>
+            <cbc:GrossTonnageMeasure unitCode="C62">1210</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
+            <cbc:ShipConfigurationCode>Dry cargo barge</cbc:ShipConfigurationCode>
+            <cac:RegistryPortLocation>
+              <cbc:Name>Ferrano</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:Name>River quay, Lumeport</cbc:Name>
+        </cac:UnloadingPortLocation>
+        <cac:LoadingTransportEvent>
+          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+        </cac:LoadingTransportEvent>
+        <cac:ExportationTransportEvent>
+          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+        </cac:ExportationTransportEvent>
+        <cac:DischargeTransportEvent>
+          <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:DischargeTransportEvent>
+        <cac:TakeoverTransportEvent>
+          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+        </cac:TakeoverTransportEvent>
+        <cac:EstimatedTransitPeriod>
+          <cbc:DurationMeasure unitCode="DAY">3</cbc:DurationMeasure>
+        </cac:EstimatedTransitPeriod>
+        <cac:MasterPerson>
+          <cbc:FirstName>Tomaso</cbc:FirstName>
+          <cbc:FamilyName>Riverra</cbc:FamilyName>
+          <cbc:JobTitle>Skipper</cbc:JobTitle>
+        </cac:MasterPerson>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+      <cbc:Description>Recycled PE granulate</cbc:Description>
+      <cbc:DeclaredForCarriageValueAmount currencyID="XUF">9984000</cbc:DeclaredForCarriageValueAmount>
+      <cbc:ValueAmount currencyID="XUF">9984000</cbc:ValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+      <cbc:NetWeightMeasure unitCode="KGM">120000</cbc:NetWeightMeasure>
+      <cbc:NetNetWeightMeasure unitCode="KGM">120000</cbc:NetNetWeightMeasure>
+      <cbc:ChargeableWeightMeasure unitCode="KGM">120000</cbc:ChargeableWeightMeasure>
+      <cbc:GrossVolumeMeasure unitCode="MTQ">204</cbc:GrossVolumeMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">130</cbc:NetVolumeMeasure>
+      <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
+      <cbc:ChargeableQuantity unitCode="TNE">120</cbc:ChargeableQuantity>
+      <cbc:ReturnableQuantity unitCode="H87">120</cbc:ReturnableQuantity>
+      <cbc:TraceID>RR-PE-LOT-26-0416</cbc:TraceID>
+      <cac:OrderLineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:OrderReference>
+          <cbc:ID>RP-PO-26-0882</cbc:ID>
+        </cac:OrderReference>
+      </cac:OrderLineReference>
+      <cac:OriginAddress>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+        <cbc:BuildingNumber>31</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4140</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:OriginAddress>
+      <cac:Delivery>
+        <cbc:LatestDeliveryDate>2026-04-23</cbc:LatestDeliveryDate>
+      </cac:Delivery>
+      <cac:Pickup>
+        <cbc:EarliestPickupDate>2026-04-19</cbc:EarliestPickupDate>
+        <cbc:EarliestPickupTime>08:00:00</cbc:EarliestPickupTime>
+        <cbc:LatestPickupDate>2026-04-19</cbc:LatestPickupDate>
+        <cbc:LatestPickupTime>16:00:00</cbc:LatestPickupTime>
+      </cac:Pickup>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchTime>15:10:00</cbc:ActualDespatchTime>
+      </cac:Despatch>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1300</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:ContainingPackage>
+        <cbc:ID>JB-001..120</cbc:ID>
+        <cbc:Quantity unitCode="H87">120</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode>JB</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Jumbo bag of one tonne with four lifting loops</cbc:PackagingType>
+        <cbc:PackingMaterial>Woven polypropylene</cbc:PackingMaterial>
+      </cac:ContainingPackage>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>FB-TEP-26-0886</cbc:ID>
+      </cac:ShipmentDocumentReference>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FB-TEP-26-0886</cbc:ID>

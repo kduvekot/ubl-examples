@@ -18,6 +18,10 @@ Before arrival the carrier lists the cargo on board for the island's customs.
   The carrier's cargo manifest number.
 - `IssueDate` = **2026-05-15**  
   Sent to the island's customs before arrival.
+- `ManifestTypeCode` = **Cargo**  
+  A cargo manifest, of what the ship carries for Selanu.
+- `AdValoremIndicator` = **false**  
+  No value declared for the carriage.
 
 ### Sending Logistics Operator Party
 
@@ -361,6 +365,23 @@ Inside `ConsigneeParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Crew Person
+
+Inside `CrewPerson`:
+
+- `FirstName` = **Corin**  
+  The master of the ship.
+- `FamilyName` = **Halvard**  
+  The family name.
+- `RoleCode` = **Master**  
+  The person's role on board.
+- `FirstName` = **Elsbeth**  
+  The chief officer.
+- `FamilyName` = **Marrin**  
+  The family name.
+- `RoleCode` = **ChiefOfficer**  
+  The person's role on board.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -369,6 +390,86 @@ Inside `Shipment`:
   The shipment on the manifest.
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of this shipment.
+- `ShipmentStage/ID` = **2**  
+  The sea leg.
+- `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport.
+- `ShipmentStage/CrewQuantity` = **14** (unitCode `C62`)  
+  The crew on board.
+- `ShipmentStage/TransportMeans/JourneyID` = **TH-26-19E**  
+  The voyage number.
+- `ShipmentStage/TransportMeans/RegistrationNationalityID` = **XB**  
+  The country the means of transport is registered in.
+- `ShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `ShipmentStage/TransportMeans/DirectionCode` = **Eastbound**  
+  The direction of the journey, as the carrier codes its services.
+- `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **SEA**  
+  The carrier's code for the kind of means: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `ShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+- `ShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
+  The vessel's name; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `ShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **XBTH7**  
+  The radio call sign, with the world's country code.
+- `ShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **999702117**  
+  The Maritime Mobile Service Identity, nine digits; 999 is no real country's maritime identification digits.
+- `ShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
+  What the ship needs in port.
+- `ShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `ShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **5120** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `ShipmentStage/TransportMeans/MaritimeTransport/SegregatedBallastMeasure` = **2480** (unitCode `TNE`)  
+  The capacity of the tanks for ballast water only.
+- `ShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **Feeder container ship, 1,000 TEU**  
+  The kind of vessel.
+- `ShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
+  The ship's certificate of registry.
+- `ShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
+  The port the vessel is registered in.
+- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-05-15**  
+  The planned departure from Lumeport.
+- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:00:00**  
+  The local time.
+- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-05-17**  
+  Expected off Selanu in the evening.
+- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **22:00:00**  
+  The local time.
+- `ShipmentStage/MasterPerson/FirstName` = **Corin**  
+  The master, who signs the manifest.
+- `ShipmentStage/MasterPerson/FamilyName` = **Halvard**  
+  The family name.
+- `ShipmentStage/MasterPerson/RoleCode` = **Master**  
+  The person's role on board.
+- `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
+  The container's number: the owner code of the ocean carrier, U for a freight container, six digits and the ISO 6346 check digit.
+- `TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container.
+- `TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1**  
+  ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose.
+- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **3750** (unitCode `KGM`)  
+  The verified gross mass: cargo and the container's own weight of 3,750 kg.
+- `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
+  The empty container's own weight, as marked on its door.
+- `TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID` = **TWL-S-0884213**  
+  The carrier's seal, put on when the container was packed.
+- `TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode` = **Carrier**  
+  Issued by the ocean carrier.
+- `TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
+  Put on by the shipper.
+- `FirstArrivalPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `FirstArrivalPortLocation/Name` = **Port of Selanu**  
+  The ship's first port on the island.
+- `FirstArrivalPortLocation/Address/Country/IdentificationCode` = **XL**  
+  The country the place is in.
+- `LastExitPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `LastExitPortLocation/Name` = **Port of Lumeport**  
+  Its last port in Bayvarra.
+- `LastExitPortLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
 
 ## The document
 
@@ -379,6 +480,8 @@ Inside `Shipment`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ID>TOL-MF-26-0140</cbc:ID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:ManifestTypeCode>Cargo</cbc:ManifestTypeCode>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -672,9 +775,93 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ConsigneeParty>
+  <cac:CrewPerson>
+    <cbc:FirstName>Corin</cbc:FirstName>
+    <cbc:FamilyName>Halvard</cbc:FamilyName>
+    <cbc:RoleCode>Master</cbc:RoleCode>
+  </cac:CrewPerson>
+  <cac:CrewPerson>
+    <cbc:FirstName>Elsbeth</cbc:FirstName>
+    <cbc:FamilyName>Marrin</cbc:FamilyName>
+    <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+  </cac:CrewPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cac:ShipmentStage>
+      <cbc:ID>2</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      <cbc:CrewQuantity unitCode="C62">14</cbc:CrewQuantity>
+      <cac:TransportMeans>
+        <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
+        <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+        <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
+        <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+        <cac:MaritimeTransport>
+          <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+          <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+          <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
+          <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+          <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+          <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+          <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+          <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
+          <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+          <cac:RegistryCertificateDocumentReference>
+            <cbc:ID>REG-XB-S-20117</cbc:ID>
+          </cac:RegistryCertificateDocumentReference>
+          <cac:RegistryPortLocation>
+            <cbc:Name>Lumeport</cbc:Name>
+          </cac:RegistryPortLocation>
+        </cac:MaritimeTransport>
+      </cac:TransportMeans>
+      <cac:EstimatedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-05-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+      </cac:EstimatedDepartureTransportEvent>
+      <cac:EstimatedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>22:00:00</cbc:OccurrenceTime>
+      </cac:EstimatedArrivalTransportEvent>
+      <cac:MasterPerson>
+        <cbc:FirstName>Corin</cbc:FirstName>
+        <cbc:FamilyName>Halvard</cbc:FamilyName>
+        <cbc:RoleCode>Master</cbc:RoleCode>
+      </cac:MasterPerson>
+    </cac:ShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+        <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+        <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+        <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+        <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+        <cac:TransportEquipmentSeal>
+          <cbc:ID>TWL-S-0884213</cbc:ID>
+          <cbc:SealIssuerTypeCode>Carrier</cbc:SealIssuerTypeCode>
+          <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+        </cac:TransportEquipmentSeal>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:FirstArrivalPortLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:FirstArrivalPortLocation>
+    <cac:LastExitPortLocation>
+      <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+      <cbc:Name>Port of Lumeport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:LastExitPortLocation>
   </cac:Shipment>
 </Manifest>
 ```

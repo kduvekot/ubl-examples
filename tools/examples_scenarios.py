@@ -608,6 +608,96 @@ PLASTICS = kit.Flow("plastics", "2026-04-13", [
     {"item": "granulate-pe", "ordered": 120, "why": "One barge load of recycled granulate in jumbo bags."}])
 
 
+BARGE_VOYAGE = "FB4-26-031"
+
+
+def barge_stage(f, actual):
+    out = {"ID": V("1", "Down the river, from the recovery plant's quay to the river quay in Lumeport."),
+           "TransportModeCode": V("8", "UN/ECE Recommendation 19 code 8: inland water transport.",
+                                  listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+           "TransportMeans": kit.means("15-xu", "FB-4", BARGE_VOYAGE, "The barge operator's voyage number.",
+                                       "Downstream"),
+           "MasterPerson": kit.person("Tomaso", "Riverra", "The skipper of the barge.", job="Skipper"),
+           "LoadingPortLocation": {"Name": V("Quay of Rinova Recovery, Ferrano", "Where the bags are loaded.")},
+           "UnloadingPortLocation": {"Name": V("River quay, Lumeport", "The place named in the CPT terms.")},
+           "EstimatedTransitPeriod": {"DurationMeasure": V("3", "Three days downstream, with the locks.",
+                                                           unitCode="DAY")},
+           "TakeoverTransportEvent": kit.event(f, 6, "09:00:00", "The barge operator takes over the bags at the "
+                                                                 "quay."),
+           "LoadingTransportEvent": kit.event(f, 6, "13:30:00", "Loading finished: 120 bags in the hold."),
+           "ExportationTransportEvent": kit.event(f, 7, "16:00:00", "The barge leaves Urvania at the river border."),
+           "DischargeTransportEvent": kit.event(f, 9, "08:00:00", "Planned unloading at the Lumeport quay.",
+                                                done=False)}
+    return out
+
+
+def barge_goods(f, w):
+    it = ITEM["granulate-pe"]
+    goods_xuf = Decimal("120") * Decimal(str(it["price"]["amount"]))
+    return {"ID": V("1", "The only goods item."),
+            "SequenceNumberID": V("1", "Its place in the cargo list."),
+            "Description": V(it["name"], "What the goods are."),
+            "ValueAmount": amount(goods_xuf, "XUF", "The value of the goods, the sales price under CPT."),
+            "DeclaredForCarriageValueAmount": amount(goods_xuf, "XUF", "Declared to the barge operator, which raises "
+                                                                       "its liability to this value."),
+            "GrossWeightMeasure": qty(w, "KGM", "With the bags."),
+            "NetWeightMeasure": qty(120000, "KGM", "The granulate alone."),
+            "NetNetWeightMeasure": qty(120000, "KGM", "No inner packaging: the same as the net weight."),
+            "ChargeableWeightMeasure": qty(120000, "KGM", "The freight is charged per tonne of granulate."),
+            "GrossVolumeMeasure": V("204", "The 120 bags take 1.7 m³ each.", unitCode="MTQ"),
+            "NetVolumeMeasure": V("130", "The granulate's own volume, at 0.92 tonne per m³.", unitCode="MTQ"),
+            "ChargeableQuantity": qty(120, "TNE", "The tonnes charged."),
+            "ReturnableQuantity": qty(120, "H87", "The 120 jumbo bags go back to the recovery plant."),
+            "TraceID": V("RR-PE-LOT-26-0416", "The lot on the bags' labels."),
+            "Quantity": qty(120, "TNE", "120 tonnes."),
+            "OriginAddress": address("7-xu"),
+            "ContainingPackage": {"ID": V("JB-001..120", "The bags, numbered 1 to 120."),
+                                  "Quantity": qty(120, "H87", "120 bags."),
+                                  "PackagingTypeCode": V("JB", "UN/ECE Recommendation 21 code JB: bag, jumbo."),
+                                  "PackagingType": V("Jumbo bag of one tonne with four lifting loops", "In words."),
+                                  "PackingMaterial": V("Woven polypropylene", "What the bags are made of."),
+                                  "ReturnableMaterialIndicator": V("true", "The bags go back for reuse.")},
+            "MeasurementDimension": {"AttributeID": V("Height", "The height of one filled bag."),
+                                     "Measure": V("1300", "In millimetres.", unitCode="MMT")},
+            "Pickup": {"EarliestPickupDate": V(f.date(6), "The bags are ready on the quay."),
+                       "EarliestPickupTime": V("08:00:00", "From eight."),
+                       "LatestPickupDate": V(f.date(6), "They must go the same day."),
+                       "LatestPickupTime": V("16:00:00", "Before the quay closes.")},
+            "Despatch": {"ActualDespatchDate": V(f.date(6), "The barge cast off."),
+                         "ActualDespatchTime": V("15:10:00", "In the afternoon.")},
+            "Delivery": {"LatestDeliveryDate": V(f.date(10), "The packaging maker's production starts the day "
+                                                             "after.")},
+            "OrderLineReference": {"LineID": V("1", "The order line."),
+                                   "OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
+            "DespatchLineReference": {"LineID": V("1", "The line of the despatch advice."),
+                                      "DocumentReference": {"ID": V(f.numbers.get("despatch", "-"),
+                                                                    "The despatch advice.")}}
+            if f.numbers.get("despatch") else None,
+            "ShipmentDocumentReference": {"ID": V(f.numbers["tep"], "The transport plan of the sailing.")}}
+
+
+def barge_consignment(f, view):
+    out = {"ID": V(f.numbers["consignment"], "The seller's consignment number.")}
+    if view == "request":
+        out["BulkCargoIndicator"] = V("false", "Not loose bulk: the granulate is in jumbo bags.")
+        out["HumanFoodIndicator"] = V("false", "Not food: the barge also carries grain, so the operator must know.")
+        out["AnimalFoodIndicator"] = V("false", "Not animal feed either.")
+        out["LivestockIndicator"] = V("false", "No animals.")
+        out["SpecialSecurityIndicator"] = V("false", "No special security measures needed.")
+        return out
+    if view == "plan":
+        out["MainCarriageShipmentStage"] = barge_stage(f, False)
+        return out
+    out.update({"CarrierAssignedID": V(BARGE_VOYAGE + "/2", "The barge operator's number: the second lot of "
+                                                             "the voyage."),
+                "MainCarriageShipmentStage": barge_stage(f, True),
+                "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight, a charge."),
+                                           "AllowanceChargeReason": V("River freight", "What it is for."),
+                                           "Amount": amount(Decimal("179400"), "XUF", "120 tonnes at 1,495 ferra."),
+                                           "BaseAmount": amount(Decimal("1495"), "XUF", "The rate per tonne.")}})
+    return out
+
+
 def plastics(n, doc):
     f = PLASTICS
     w = kit.gross_weight(f, "ordered")
@@ -618,15 +708,23 @@ def plastics(n, doc):
     if doc["doc"] == "OrderResponse":
         return kit.order_response(f, n, doc, 1, "The waste processor confirms the lot.")
     if doc["doc"] == "TransportExecutionPlanRequest":
-        return kit.tep_request(f, n, doc, 1, "Under CPT the seller is the transport user and books the barge.", 6, w,
-                               "120 jumbo bags of one tonne, with their bags.")
+        out = kit.tep_request(f, n, doc, 1, "Under CPT the seller is the transport user and books the barge.", 6, w,
+                              "120 jumbo bags of one tonne, with their bags.")
+        kit.deep_merge(out["Consignment"], barge_consignment(f, "request"))
+        return out
     if doc["doc"] == "TransportExecutionPlan":
-        return kit.tep(f, n, doc, 2, "The barge operator confirms the sailing.", 6, w)
+        out = kit.tep(f, n, doc, 2, "The barge operator confirms the sailing.", 6, w)
+        kit.deep_merge(out["Consignment"], barge_consignment(f, "plan"))
+        return out
     if doc["doc"] == "ExportCustomsDeclaration":
         return kit.export_declaration(f, n, doc, 6, "Declared the day the barge is loaded.",
                                       "The value of the granulate, in ferra.")
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 6, "Issued when the barge is loaded.", w, "The gross weight on board.")
+        out = kit.waybill(f, n, doc, 6, "Issued when the barge is loaded.", w, "The gross weight on board.")
+        kit.deep_merge(out["Shipment"]["Consignment"], barge_consignment(f, "note"))
+        g = barge_goods(f, w)
+        out["Shipment"]["GoodsItem"] = {k: v for k, v in g.items() if v is not None}
+        return out
     if doc["doc"] == "Invoice" and doc["from"] == "15-xu":
         return kit.invoice(f, n, doc, 9, 30, "Issued after the sailing.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
@@ -635,9 +733,27 @@ def plastics(n, doc):
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 6, "The day the barge was loaded.", "The gross weight loaded.")
     if doc["doc"] == "ImportCustomsDeclaration":
-        return kit.import_declaration(f, n, doc, 9, "Declared when the barge arrives at the coast.",
-                                      "The customs value in lume: the invoice value in ferra at the world's reference "
-                                      "rate (1 ferra = 0.01 lume).")
+        out = kit.import_declaration(f, n, doc, 9, "Declared when the barge arrives at the coast.",
+                                     "The customs value in lume: the invoice value in ferra at the world's reference "
+                                     "rate (1 ferra = 0.01 lume).")
+        kit.deep_merge(out["Shipment"]["GoodsItem"][0], {
+            "FreeOnBoardValueAmount": amount(Decimal("98046"), "XBL", "The value at the loading quay: the CPT price "
+                                             "less the river freight of 179,400 ferra, in lume."),
+            "DeclaredStatisticsValueAmount": amount(Decimal("99840"), "XBL", "The value for the trade statistics: "
+                                                    "the invoice value at the border."),
+            "InsuranceValueAmount": amount(Decimal("0"), "XBL", "The buyer did not insure the river carriage."),
+            "PreferenceCriterionCode": V("P", "The goods are wholly obtained in Urvania: preference criterion P of "
+                                              "the trade accord."),
+            "RequiredCustomsID": V("3901.10.00", "The tariff code Bayvarra's customs requires on the declaration."),
+            "CustomsStatusCode": V("Foreign", "Bayvarra's customs status: goods from abroad, not yet released for "
+                                              "free circulation."),
+            "CustomsProcedureCode": V("4000", "Release for free circulation, with no previous procedure."),
+            "CustomsTariffQuantity": qty(120000, "KGM", "The quantity in the tariff's unit: net kilograms."),
+            "CustomsImportClassifiedIndicator": V("true", "Classified by the importer before arrival."),
+            "BondedWarehouseLocation": {"Name": V("Bonded store at the river quay, Lumeport", "Where the bags wait "
+                                                                                             "until released.")},
+            "AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The barge's consignment note.")}})
+        return out
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 7, 30, "Issued once the granulate is on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
@@ -756,6 +872,155 @@ def container(f, gross_why):
         "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight, as marked on its door.")}}}
 
 
+SEA_BOOKING = "TWL-BK-26-55710"     # the ocean carrier's booking number
+SEA_SEAL = "TWL-S-0884213"
+
+
+def sea_equipment(f, detail):
+    out = {"ID": V(CONTAINER, "The container's number: the owner code of the ocean carrier, U for a freight container, "
+                              "six digits and the ISO 6346 check digit.", schemeID="ISO6346"),
+           "TransportEquipmentTypeCode": V("CN", "UN/EDIFACT 8053 code CN: container.", listID="UN/EDIFACT EDED 8053"),
+           "SizeTypeCode": V("42G1", "ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose."),
+           "GrossWeightMeasure": qty(kit.gross_weight(f, "ordered") + 3750, "KGM", "The verified gross mass: cargo and "
+                                     "the container's own weight of 3,750 kg."),
+           "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight, as marked on its door."),
+           "TransportEquipmentSeal": {"ID": V(SEA_SEAL, "The carrier's seal, put on when the container was packed."),
+                                      "SealIssuerTypeCode": V("Carrier", "Issued by the ocean carrier."),
+                                      "SealingPartyType": V("Shipper", "Put on by the shipper.")}}
+    if detail:
+        out.update({
+            "StowagePositionID": V("140282", "Bay 14, row 02, tier 82: on deck, as planned by the carrier."),
+            "FullnessIndicationCode": V("FCL", "A full container load."),
+            "RefrigeratedIndicator": V("false", "A dry container."),
+            "VerifiedGrossMass": {
+                "ID": V("VGM-26-0510", "The shipper's weight declaration."),
+                "WeighingDate": V(f.date(8), "Weighed when packed."),
+                "WeighingTime": V("15:30:00", "After closing the doors."),
+                "WeighingMethodCode": V("SM2", "SOLAS method 2: the cargo and packing weighed and added to the tare.",
+                                        listID="IMO SOLAS"),
+                "WeighingDeviceID": V("LD-SCALE-03", "The scale of the warehouse."),
+                "WeighingDeviceType": V("Platform scale", "Its kind."),
+                "GrossMassMeasure": qty(kit.gross_weight(f, "ordered") + 3750, "KGM", "The verified gross mass."),
+                "WeighingParty": party("6-xb", short=True),
+                "ShipperParty": party("6-xb", short=True),
+                "ResponsibleParty": party("6-xb", short=True),
+                "DocumentReference": {"ID": V("VGM-26-0510", "The signed weight declaration sent to the carrier.")}},
+            "PackagedTransportHandlingUnit": kit.handling_units(f, f.deal, "LD-26-", "VELUMI SELANU"),
+            "GoodsItem": {"ID": V("1", "The goods in the container, as one item for the carrier."),
+                          "Description": V("Park benches and spare side frames", "In words.")}})
+    return out
+
+
+def sea_consignment(f, view):
+    goods = sum(Decimal(str(d["ordered"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])) for d in f.deal)
+    out = {"ID": V(f.numbers["consignment"], "The distributor's consignment number.")}
+    if view == "instructions":
+        out.update({
+            "ForwarderServiceInstructions": V("Book a 40-foot container on the next sailing to Selanu, arrange the "
+                                              "truck to the port, declare the export and insure the cargo.",
+                                              "What the forwarder is to do."),
+            "ConsolidatableIndicator": V("false", "A full container: not to be grouped with other cargo."),
+            "SpecialInstructions": V("Load the castings last, behind the doors.", "So they are unloaded first."),
+            "ExporterParty": party("6-xb", short=True),
+            "ImporterParty": party("1-xl", short=True),
+            "InsuranceParty": party("29-xb", short=True),
+            "OriginalDespatchTransportationService": {
+                "TransportServiceCode": V("MerchantHaulage", "The forwarder, not the shipping line, brings the "
+                                                              "container to the port."),
+                "Name": V("Truck from Marrowdale to the port of Lumeport", "In words.")},
+            "FinalDeliveryTransportationService": {
+                "TransportServiceCode": V("MerchantHaulage", "The buyer's 3PL collects at the port of Selanu."),
+                "Name": V("Truck from the port of Selanu to the 3PL", "In words.")}})
+        return out
+    out.update({
+        "CarrierAssignedID": V(SEA_BOOKING, "The carrier's booking number."),
+        "FreightForwarderAssignedID": V(f.numbers["instructions"], "The forwarder's file: the instructions it "
+                                                                   "received."),
+        "BrokerAssignedID": V("TCB-26-0331", "The customs broker's file in Selanu."),
+        "ConsignorAssignedID": V(f.numbers["order"], "The order the goods were sold under."),
+        "TotalInvoiceAmount": amount(goods, "XBL", "The value of the goods on the sales invoice."),
+        "DeclaredCustomsValueAmount": amount(cif_value(f), "XBL", "The CIF value: goods, freight and insurance."),
+        "FreeOnBoardValueAmount": amount(goods, "XBL", "The value on board in Lumeport: the goods alone."),
+        "InsuranceValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "110 % of the CIF value."),
+        "InsurancePremiumAmount": amount(INSURANCE, "XBL", "The premium the seller paid under CIF."),
+        "TariffCode": V("9401.79", "The tariff of the carrier for this cargo: furniture."),
+        "TariffDescription": V("Furniture, packed, not hazardous", "The carrier's commodity tariff, in words."),
+        "ShippingPriorityLevelCode": V("Standard", "The normal sailing, no priority loading."),
+        "HandlingCode": V("Deck", "The carrier may stow the container on deck."),
+        "HandlingInstructions": V("Keep dry.", "The handling, in words."),
+        "Information": V("Shipped on board in apparent good order and condition.", "The carrier's clause."),
+        "OriginalDespatchParty": party("6-xb", short=True),
+        "FinalDeliveryParty": party("1-xl", short=True),
+        "LogisticsOperatorParty": party("9-xl", short=True),
+        "BillOfLadingHolderParty": party("1-xl", short=True),
+        "OriginalDepartureCountry": {"IdentificationCode": V("XB", "From Bayvarra.")},
+        "FinalDestinationCountry": {"IdentificationCode": V("XL", "To the island.")},
+        "FirstArrivalPortLocation": kit.place("XLSEL", "The first port of call after Lumeport."),
+        "LastExitPortLocation": kit.place("XBLMP", "The last port in Bayvarra."),
+        "DeliveryTerms": {"ID": V("CIF", "Incoterms 2020: cost, insurance and freight to the port of Selanu."),
+                          "LossRiskResponsibilityCode": V("Buyer", "The risk is the buyer's from on board in Lumeport."),
+                          "LossRisk": V("Risk passes when the goods are on board the vessel in Lumeport.", "In words."),
+                          "Amount": amount(cif_value(f), "XBL", "The CIF value the terms are based on."),
+                          "DeliveryLocation": kit.place("XLSEL", "The named port of destination."),
+                          "AllowanceCharge": {"ChargeIndicator": V("true", "A cost under the terms."),
+                                              "AllowanceChargeReason": V("Terminal handling at Selanu, for the buyer",
+                                                                         "Under CIF the buyer pays the unloading."),
+                                              "Amount": amount(Decimal("185.00"), "XBL", "The carrier's tariff.")}},
+        "PaymentTerms": {"Note": V("Ocean freight payable before release of the bill of lading.", "The carrier's "
+                                                                                                  "terms.")},
+        "PrepaidPaymentTerms": {"Note": V("Ocean freight and bunker surcharge prepaid by the shipper.", "CIF: the "
+                                                                                                       "seller pays.")},
+        "CollectPaymentTerms": {"Note": V("Terminal handling at Selanu collect from the consignee.", "The buyer "
+                                                                                                    "pays it there.")},
+        "DisbursementPaymentTerms": {"Note": V("Island customs fees advanced by the broker and recharged to the "
+                                               "consignee.", "Paid out for someone else.")},
+        "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The basic ocean freight."),
+                                   "AllowanceChargeReason": V("Ocean freight, 40-foot container", "In words."),
+                                   "Amount": amount(Decimal("2700.00"), "XBL", "The carrier's rate.")},
+        "ExtraAllowanceCharge": {"ChargeIndicator": V("true", "A surcharge."),
+                                 "AllowanceChargeReason": V("Bunker surcharge", "For the fuel price."),
+                                 "Amount": amount(Decimal("250.00"), "XBL", "Together with the freight: the 2,950 "
+                                                                            "lume the forwarder invoices.")},
+        "PreCarriageShipmentStage": {
+            "ID": V("1", "By truck from Marrowdale to the port."),
+            "TransportModeCode": V("3", "Road transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                 "Transport"),
+            "PreCarriageIndicator": V("true", "Before the main carriage."),
+            "CabotageIndicator": V("true", "An Urvanian truck carrying within Bayvarra: cabotage, allowed under the "
+                                           "trade accord for a return trip."),
+            "CarrierParty": party("13-xu", short=True),
+            "TransportMeans": kit.means("13-xu", "T-07"),
+            "DropoffTransportEvent": kit.event(f, 9, "10:15:00", "The container was dropped at the container quay.")},
+        "MainCarriageShipmentStage": {
+            "ID": V("2", "By sea from Lumeport to Selanu."),
+            "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                      "Transport"),
+            "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage number.", "Eastbound"),
+            "LoadingPortLocation": kit.place("XBLMP", "The port of loading."),
+            "UnloadingPortLocation": kit.place("XLSEL", "The port of discharge."),
+            "TransshipPortLocation": {"Name": V("None: a direct sailing", "No transhipment on the way.")},
+            "AcceptanceTransportEvent": kit.event(f, 9, "10:15:00", "The terminal accepted the container."),
+            "AvailabilityTransportEvent": kit.event(f, 14, "14:00:00", "The container is available at Selanu.",
+                                                    done=False),
+            "StorageTransportEvent": kit.event(f, 9, "10:30:00", "Stacked at the quay until loading."),
+            "FreightChargeLocation": kit.place("XBLMP", "The freight is payable in Lumeport.")},
+        "OnCarriageShipmentStage": {
+            "ID": V("3", "By truck from the port of Selanu to the 3PL."),
+            "TransportModeCode": V("3", "Road transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                 "Transport"),
+            "OnCarriageIndicator": V("true", "After the main carriage."),
+            "CarrierParty": party("9-xl", short=True),
+            "ReceiptTransportEvent": kit.event(f, 15, None, "Planned receipt at the 3PL.", done=False),
+            "WarehousingTransportEvent": kit.event(f, 15, None, "Stored at the 3PL until called off.", done=False)},
+        "TransportHandlingUnit": {"TransportEquipment": sea_equipment(f, True)}})
+    return out
+
+
+def sea_consignment_fi(f, doc):
+    f.number("consignment", doc["from"], "Consignment")
+    return sea_consignment(f, "instructions")
+
+
 def sea(n, doc):
     f = SEA
     w = kit.gross_weight(f, "ordered")
@@ -794,8 +1059,7 @@ def sea(n, doc):
                 "IssueDate": V(f.date(5), "The distributor instructs its forwarder once the order is accepted."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
-                             "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
-                                                     "The consignment to be shipped.")},
+                             "Consignment": sea_consignment_fi(f, doc),
                              "InsurancePolicy": {
                                  "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
                                                               "CIF requires insurance of at least 110 % of the value; "
@@ -828,18 +1092,47 @@ def sea(n, doc):
     if doc["doc"] == "BillOfLading":
         return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
                 "IssueDate": V(f.date(10), "Issued when the goods are shipped on board."),
+                "CarrierAssignedID": V(SEA_BOOKING, "The booking the bill of lading is issued under."),
+                "ToOrderIndicator": V("true", "Made out to order: the buyer can transfer it by endorsement."),
+                "AdValoremIndicator": V("false", "No value declared to the carrier: its liability stays limited."),
+                "ShippingOrderID": V(f.numbers["instructions-carrier"], "The forwarder's booking with the carrier."),
+                "OtherInstruction": V("Three originals issued.", "How many originals there are."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the cargo."),
-                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")},
+                             "TotalGoodsItemQuantity": qty(2, "H87", "Benches and side frames."),
+                             "ConsignmentQuantity": qty(1, "H87", "One consignment."),
+                             "Consignment": sea_consignment(f, "bl"),
                              "InsurancePolicy": {"InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
                                                                               "The insured value, 110 % of the CIF "
                                                                               "value.")},
-                             **container(f, "The container's gross mass as declared.")}}
+                             }}
     if doc["doc"] == "Manifest":
         return {"ID": V(f.number("manifest", doc["from"], "Manifest"), "The carrier's cargo manifest number."),
                 "IssueDate": V(f.date(11), "Sent to the island's customs before arrival."),
+                "ManifestTypeCode": V("Cargo", "A cargo manifest, of what the ship carries for Selanu."),
+                "AdValoremIndicator": V("false", "No value declared for the carriage."),
+                "CrewPerson": [kit.person("Corin", "Halvard", "The master of the ship.", role="Master"),
+                               kit.person("Elsbeth", "Marrin", "The chief officer.", role="ChiefOfficer")],
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment on the manifest."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of this shipment.")}}
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of this shipment."),
+                             "FirstArrivalPortLocation": kit.place("XLSEL", "The ship's first port on the island."),
+                             "LastExitPortLocation": kit.place("XBLMP", "Its last port in Bayvarra."),
+                             "ShipmentStage": {
+                                 "ID": V("2", "The sea leg."),
+                                 "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
+                                                                                           "Codes for Modes of "
+                                                                                           "Transport"),
+                                 "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage number.",
+                                                             "Eastbound"),
+                                 "CrewQuantity": qty(14, "C62", "The crew on board."),
+                                 "MasterPerson": kit.person("Corin", "Halvard", "The master, who signs the manifest.",
+                                                            role="Master"),
+                                 "EstimatedArrivalTransportEvent": kit.event(f, 13, "22:00:00", "Expected off Selanu "
+                                                                                                "in the evening."),
+                                 "EstimatedDepartureTransportEvent": kit.event(f, 11, "06:00:00", "The planned "
+                                                                                                  "departure from "
+                                                                                                  "Lumeport.")},
+                             "TransportHandlingUnit": {"TransportEquipment": sea_equipment(f, False)}}}
     if doc["doc"] == "CommonTransportationReport":
         return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
                 "IssueDate": V(f.date(12), "Sent before the ship enters the port of Selanu."),
@@ -946,8 +1239,37 @@ def air(n, doc):
                              "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
                                                      "The consignment.")}}}
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 2, "The air waybill, issued when the airline accepts the cargo.", w,
-                           "The gross weight of the cargo.")
+        out = kit.waybill(f, n, doc, 2, "The air waybill, issued when the airline accepts the cargo.", w,
+                          "The gross weight of the cargo.")
+        kit.deep_merge(out["Shipment"]["Consignment"], {
+            "ChargeableWeightMeasure": qty(Decimal("96"), "KGM", "The volume weight is higher than the 81.6 kg: "
+                                           "0.576 m³ at 167 kg per m³, rounded up."),
+            "GrossVolumeMeasure": V("0.576", "Eight boxes of 0.072 m³.", unitCode="MTQ"),
+            "SpecialSecurityIndicator": V("true", "The cargo was screened by the forwarder, a known consignor; it "
+                                                  "may fly without further checks."),
+            "SpecialServiceInstructions": V("Priority handling at Selanu: the customer is waiting.", "The service "
+                                                                                                     "asked for."),
+            "ShippingPriorityLevelCode": V("Priority", "Flown on the first flight with room."),
+            "SequenceID": V("1", "The first house consignment under the master air waybill."),
+            "ChildConsignmentQuantity": qty(1, "C62", "One house consignment in the forwarder's consolidation."),
+            "ChildConsignment": {"ID": V("BF-HAWB-26-0918", "The forwarder's house air waybill for the distributor's "
+                                                           "boxes."),
+                                 "ConsignorAssignedID": V(f.numbers["instructions"], "The distributor's "
+                                                                                     "instructions.")},
+            "ConsolidatedShipment": {"ID": V("BF-CONS-26-0207", "The forwarder's consolidation for this flight, "
+                                                                "of which the boxes are part.")},
+            "MainCarriageShipmentStage": {
+                "ID": V("1", "The flight."),
+                "TransportModeCode": V("4", "Air transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                    "Transport"),
+                "TransportMeans": kit.means("12-xl", "KAC", "KAC207", "The flight number of the airline of the world; "
+                                                                      "not an IATA code."),
+                "LoadingPortLocation": kit.place("XBLMA", "The airport of departure."),
+                "UnloadingPortLocation": kit.place("XLSLA", "The airport of destination."),
+                "RequestedDepartureTransportEvent": kit.event(f, 3, "07:00:00", "The forwarder asked for the morning "
+                                                                                "flight."),
+                "RequestedArrivalTransportEvent": kit.event(f, 3, "10:00:00", "Arriving before the 3PL's cut-off.")}})
+        return out
     if doc["doc"] == "TransportationStatus" and doc["from"] == "17-xb":
         return kit.transportation_status(f, n, doc, 2, "Reported when the cargo is built up for the flight.",
                                          "Cargo accepted and built up for the flight.", "Lumeport airport, cargo "

@@ -195,6 +195,7 @@
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>RR-CS-26-0885</cbc:ID>
+      <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
@@ -279,7 +280,131 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>River freight</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XUF">179400</cbc:Amount>
+        <cbc:BaseAmount currencyID="XUF">1495</cbc:BaseAmount>
+      </cac:FreightAllowanceCharge>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>FB4-26-031</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:DirectionCode>Downstream</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode>INLAND</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XU-IW-08042</cbc:VesselID>
+            <cbc:VesselName>Fiumella IV</cbc:VesselName>
+            <cbc:RadioCallSignID>XUBF4</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>999801042</cbc:MMSIRegistrationID>
+            <cbc:GrossTonnageMeasure unitCode="C62">1210</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
+            <cbc:ShipConfigurationCode>Dry cargo barge</cbc:ShipConfigurationCode>
+            <cac:RegistryPortLocation>
+              <cbc:Name>Ferrano</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:Name>River quay, Lumeport</cbc:Name>
+        </cac:UnloadingPortLocation>
+        <cac:LoadingTransportEvent>
+          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+        </cac:LoadingTransportEvent>
+        <cac:ExportationTransportEvent>
+          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+        </cac:ExportationTransportEvent>
+        <cac:DischargeTransportEvent>
+          <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:DischargeTransportEvent>
+        <cac:TakeoverTransportEvent>
+          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+        </cac:TakeoverTransportEvent>
+        <cac:EstimatedTransitPeriod>
+          <cbc:DurationMeasure unitCode="DAY">3</cbc:DurationMeasure>
+        </cac:EstimatedTransitPeriod>
+        <cac:MasterPerson>
+          <cbc:FirstName>Tomaso</cbc:FirstName>
+          <cbc:FamilyName>Riverra</cbc:FamilyName>
+          <cbc:JobTitle>Skipper</cbc:JobTitle>
+        </cac:MasterPerson>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+      <cbc:Description>Recycled PE granulate</cbc:Description>
+      <cbc:DeclaredForCarriageValueAmount currencyID="XUF">9984000</cbc:DeclaredForCarriageValueAmount>
+      <cbc:ValueAmount currencyID="XUF">9984000</cbc:ValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+      <cbc:NetWeightMeasure unitCode="KGM">120000</cbc:NetWeightMeasure>
+      <cbc:NetNetWeightMeasure unitCode="KGM">120000</cbc:NetNetWeightMeasure>
+      <cbc:ChargeableWeightMeasure unitCode="KGM">120000</cbc:ChargeableWeightMeasure>
+      <cbc:GrossVolumeMeasure unitCode="MTQ">204</cbc:GrossVolumeMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">130</cbc:NetVolumeMeasure>
+      <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
+      <cbc:ChargeableQuantity unitCode="TNE">120</cbc:ChargeableQuantity>
+      <cbc:ReturnableQuantity unitCode="H87">120</cbc:ReturnableQuantity>
+      <cbc:TraceID>RR-PE-LOT-26-0416</cbc:TraceID>
+      <cac:OrderLineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:OrderReference>
+          <cbc:ID>RP-PO-26-0882</cbc:ID>
+        </cac:OrderReference>
+      </cac:OrderLineReference>
+      <cac:OriginAddress>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+        <cbc:BuildingNumber>31</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4140</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:OriginAddress>
+      <cac:Delivery>
+        <cbc:LatestDeliveryDate>2026-04-23</cbc:LatestDeliveryDate>
+      </cac:Delivery>
+      <cac:Pickup>
+        <cbc:EarliestPickupDate>2026-04-19</cbc:EarliestPickupDate>
+        <cbc:EarliestPickupTime>08:00:00</cbc:EarliestPickupTime>
+        <cbc:LatestPickupDate>2026-04-19</cbc:LatestPickupDate>
+        <cbc:LatestPickupTime>16:00:00</cbc:LatestPickupTime>
+      </cac:Pickup>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchTime>15:10:00</cbc:ActualDespatchTime>
+      </cac:Despatch>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1300</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:ContainingPackage>
+        <cbc:ID>JB-001..120</cbc:ID>
+        <cbc:Quantity unitCode="H87">120</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode>JB</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Jumbo bag of one tonne with four lifting loops</cbc:PackagingType>
+        <cbc:PackingMaterial>Woven polypropylene</cbc:PackingMaterial>
+      </cac:ContainingPackage>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>FB-TEP-26-0886</cbc:ID>
+      </cac:ShipmentDocumentReference>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FB-TEP-26-0886</cbc:ID>

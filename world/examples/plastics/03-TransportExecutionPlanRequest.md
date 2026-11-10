@@ -239,9 +239,19 @@ Inside `ServiceStartTimePeriod`:
 Inside `Consignment`:
 
 - `ID` = **RR-CS-26-0885**  
-  The transport user's number for this consignment, quoted along the chain.
+  The seller's consignment number.
 - `GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   120 jumbo bags of one tonne, with their bags.
+- `AnimalFoodIndicator` = **false**  
+  Not animal feed either.
+- `HumanFoodIndicator` = **false**  
+  Not food: the barge also carries grain, so the operator must know.
+- `LivestockIndicator` = **false**  
+  No animals.
+- `BulkCargoIndicator` = **false**  
+  Not loose bulk: the granulate is in jumbo bags.
+- `SpecialSecurityIndicator` = **false**  
+  No special security measures needed.
 - `ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **2220** (listID `ISIC Rev.4`)  
@@ -540,6 +550,11 @@ Inside `Consignment`:
   <cac:Consignment>
     <cbc:ID>RR-CS-26-0885</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+    <cbc:AnimalFoodIndicator>false</cbc:AnimalFoodIndicator>
+    <cbc:HumanFoodIndicator>false</cbc:HumanFoodIndicator>
+    <cbc:LivestockIndicator>false</cbc:LivestockIndicator>
+    <cbc:BulkCargoIndicator>false</cbc:BulkCargoIndicator>
+    <cbc:SpecialSecurityIndicator>false</cbc:SpecialSecurityIndicator>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>

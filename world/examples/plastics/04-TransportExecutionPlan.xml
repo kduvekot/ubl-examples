@@ -284,5 +284,59 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:ConsigneeParty>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:JourneyID>FB4-26-031</cbc:JourneyID>
+        <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:DirectionCode>Downstream</cbc:DirectionCode>
+        <cbc:TransportMeansTypeCode>INLAND</cbc:TransportMeansTypeCode>
+        <cac:MaritimeTransport>
+          <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XU-IW-08042</cbc:VesselID>
+          <cbc:VesselName>Fiumella IV</cbc:VesselName>
+          <cbc:RadioCallSignID>XUBF4</cbc:RadioCallSignID>
+          <cbc:MMSIRegistrationID>999801042</cbc:MMSIRegistrationID>
+          <cbc:GrossTonnageMeasure unitCode="C62">1210</cbc:GrossTonnageMeasure>
+          <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
+          <cbc:ShipConfigurationCode>Dry cargo barge</cbc:ShipConfigurationCode>
+          <cac:RegistryPortLocation>
+            <cbc:Name>Ferrano</cbc:Name>
+          </cac:RegistryPortLocation>
+        </cac:MaritimeTransport>
+      </cac:TransportMeans>
+      <cac:LoadingPortLocation>
+        <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:Name>River quay, Lumeport</cbc:Name>
+      </cac:UnloadingPortLocation>
+      <cac:LoadingTransportEvent>
+        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+      </cac:LoadingTransportEvent>
+      <cac:ExportationTransportEvent>
+        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+      </cac:ExportationTransportEvent>
+      <cac:DischargeTransportEvent>
+        <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:DischargeTransportEvent>
+      <cac:TakeoverTransportEvent>
+        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+      </cac:TakeoverTransportEvent>
+      <cac:EstimatedTransitPeriod>
+        <cbc:DurationMeasure unitCode="DAY">3</cbc:DurationMeasure>
+      </cac:EstimatedTransitPeriod>
+      <cac:MasterPerson>
+        <cbc:FirstName>Tomaso</cbc:FirstName>
+        <cbc:FamilyName>Riverra</cbc:FamilyName>
+        <cbc:JobTitle>Skipper</cbc:JobTitle>
+      </cac:MasterPerson>
+    </cac:MainCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlan>

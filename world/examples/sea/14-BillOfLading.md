@@ -16,8 +16,18 @@ The negotiable bill of lading, issued to the forwarder that gave the instruction
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
 - `ID` = **TOL-BL-26-0139**  
   The bill of lading number.
+- `CarrierAssignedID` = **TWL-BK-26-55710**  
+  The booking the bill of lading is issued under.
 - `IssueDate` = **2026-05-14**  
   Issued when the goods are shipped on board.
+- `ShippingOrderID` = **BF-FI-26-0137**  
+  The forwarder's booking with the carrier.
+- `ToOrderIndicator` = **true**  
+  Made out to order: the buyer can transfer it by endorsement.
+- `AdValoremIndicator` = **false**  
+  No value declared to the carrier: its liability stays limited.
+- `OtherInstruction` = **Three originals issued.**  
+  How many originals there are.
 
 ### Consignor Party
 
@@ -326,8 +336,42 @@ Inside `Shipment`:
   The shipment carried.
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of the cargo.
+- `TotalGoodsItemQuantity` = **2** (unitCode `H87`)  
+  Benches and side frames.
+- `ConsignmentQuantity` = **1** (unitCode `H87`)  
+  One consignment.
 - `Consignment/ID` = **LD-CS-26-0133**  
-  The consignment.
+  The distributor's consignment number.
+- `Consignment/CarrierAssignedID` = **TWL-BK-26-55710**  
+  The carrier's booking number.
+- `Consignment/ConsignorAssignedID` = **VT-PO-26-0127**  
+  The order the goods were sold under.
+- `Consignment/FreightForwarderAssignedID` = **LD-FI-26-0131**  
+  The forwarder's file: the instructions it received.
+- `Consignment/BrokerAssignedID` = **TCB-26-0331**  
+  The customs broker's file in Selanu.
+- `Consignment/TotalInvoiceAmount` = **50688.00** (currencyID `XBL`)  
+  The value of the goods on the sales invoice.
+- `Consignment/DeclaredCustomsValueAmount` = **53778.00** (currencyID `XBL`)  
+  The CIF value: goods, freight and insurance.
+- `Consignment/TariffDescription` = **Furniture, packed, not hazardous**  
+  The carrier's commodity tariff, in words.
+- `Consignment/TariffCode` = **9401.79**  
+  The tariff of the carrier for this cargo: furniture.
+- `Consignment/InsurancePremiumAmount` = **140.00** (currencyID `XBL`)  
+  The premium the seller paid under CIF.
+- `Consignment/ShippingPriorityLevelCode` = **Standard**  
+  The normal sailing, no priority loading.
+- `Consignment/HandlingCode` = **Deck**  
+  The carrier may stow the container on deck.
+- `Consignment/HandlingInstructions` = **Keep dry.**  
+  The handling, in words.
+- `Consignment/Information` = **Shipped on board in apparent good order and condition.**  
+  The carrier's clause.
+- `Consignment/InsuranceValueAmount` = **59155.80** (currencyID `XBL`)  
+  110 % of the CIF value.
+- `Consignment/FreeOnBoardValueAmount` = **50688.00** (currencyID `XBL`)  
+  The value on board in Lumeport: the goods alone.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -466,12 +510,554 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/NotifyParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41722** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Nalevi Warehousing (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
+- `Consignment/OriginalDespatchParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/OriginalDespatchParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/FinalDeliveryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/FinalDeliveryParty/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/LogisticsOperatorParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/LogisticsOperatorParty/PartyName/Name` = **Nalevi Warehousing**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/BillOfLadingHolderParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/BillOfLadingHolderParty/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/OriginalDepartureCountry/IdentificationCode` = **XB**  
+  From Bayvarra.
+- `Consignment/FinalDestinationCountry/IdentificationCode` = **XL**  
+  To the island.
+- `Consignment/DeliveryTerms/ID` = **CIF**  
+  Incoterms 2020: cost, insurance and freight to the port of Selanu.
+- `Consignment/DeliveryTerms/LossRiskResponsibilityCode` = **Buyer**  
+  The risk is the buyer's from on board in Lumeport.
+- `Consignment/DeliveryTerms/LossRisk` = **Risk passes when the goods are on board the vessel in Lumeport.**  
+  In words.
+- `Consignment/DeliveryTerms/Amount` = **53778.00** (currencyID `XBL`)  
+  The CIF value the terms are based on.
+- `Consignment/DeliveryTerms/DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/DeliveryTerms/DeliveryLocation/Name` = **Port of Selanu**  
+  The named port of destination.
+- `Consignment/DeliveryTerms/DeliveryLocation/Address/Country/IdentificationCode` = **XL**  
+  The country the place is in.
+- `Consignment/DeliveryTerms/AllowanceCharge/ChargeIndicator` = **true**  
+  A cost under the terms.
+- `Consignment/DeliveryTerms/AllowanceCharge/AllowanceChargeReason` = **Terminal handling at Selanu, for the buyer**  
+  Under CIF the buyer pays the unloading.
+- `Consignment/DeliveryTerms/AllowanceCharge/Amount` = **185.00** (currencyID `XBL`)  
+  The carrier's tariff.
+- `Consignment/PaymentTerms/Note` = **Ocean freight payable before release of the bill of lading.**  
+  The carrier's terms.
+- `Consignment/CollectPaymentTerms/Note` = **Terminal handling at Selanu collect from the consignee.**  
+  The buyer pays it there.
+- `Consignment/DisbursementPaymentTerms/Note` = **Island customs fees advanced by the broker and recharged to the consignee.**  
+  Paid out for someone else.
+- `Consignment/PrepaidPaymentTerms/Note` = **Ocean freight and bunker surcharge prepaid by the shipper.**  
+  CIF: the seller pays.
+- `Consignment/FreightAllowanceCharge/ChargeIndicator` = **true**  
+  The basic ocean freight.
+- `Consignment/FreightAllowanceCharge/AllowanceChargeReason` = **Ocean freight, 40-foot container**  
+  In words.
+- `Consignment/FreightAllowanceCharge/Amount` = **2700.00** (currencyID `XBL`)  
+  The carrier's rate.
+- `Consignment/ExtraAllowanceCharge/ChargeIndicator` = **true**  
+  A surcharge.
+- `Consignment/ExtraAllowanceCharge/AllowanceChargeReason` = **Bunker surcharge**  
+  For the fuel price.
+- `Consignment/ExtraAllowanceCharge/Amount` = **250.00** (currencyID `XBL`)  
+  Together with the freight: the 2,950 lume the forwarder invoices.
+- `Consignment/MainCarriageShipmentStage/ID` = **2**  
+  By sea from Lumeport to Selanu.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **TH-26-19E**  
+  The voyage number.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB**  
+  The country the means of transport is registered in.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **Eastbound**  
+  The direction of the journey, as the carrier codes its services.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **SEA**  
+  The carrier's code for the kind of means: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
+  The vessel's name; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **XBTH7**  
+  The radio call sign, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **999702117**  
+  The Maritime Mobile Service Identity, nine digits; 999 is no real country's maritime identification digits.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
+  What the ship needs in port.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **5120** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/SegregatedBallastMeasure` = **2480** (unitCode `TNE`)  
+  The capacity of the tanks for ballast water only.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **Feeder container ship, 1,000 TEU**  
+  The kind of vessel.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
+  The ship's certificate of registry.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
+  The port the vessel is registered in.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Port of Lumeport**  
+  The port of loading.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Port of Selanu**  
+  The port of discharge.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL**  
+  The country the place is in.
+- `Consignment/MainCarriageShipmentStage/TransshipPortLocation/Name` = **None: a direct sailing**  
+  No transhipment on the way.
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceDate` = **2026-05-18**  
+  The container is available at Selanu.
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceTime` = **14:00:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `Consignment/MainCarriageShipmentStage/StorageTransportEvent/OccurrenceDate` = **2026-05-13**  
+  Stacked at the quay until loading.
+- `Consignment/MainCarriageShipmentStage/StorageTransportEvent/OccurrenceTime` = **10:30:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceDate` = **2026-05-13**  
+  The terminal accepted the container.
+- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceTime` = **10:15:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/FreightChargeLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/FreightChargeLocation/Name` = **Port of Lumeport**  
+  The freight is payable in Lumeport.
+- `Consignment/MainCarriageShipmentStage/FreightChargeLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `Consignment/PreCarriageShipmentStage/ID` = **1**  
+  By truck from Marrowdale to the port.
+- `Consignment/PreCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Road transport.
+- `Consignment/PreCarriageShipmentStage/PreCarriageIndicator` = **true**  
+  Before the main carriage.
+- `Consignment/PreCarriageShipmentStage/CabotageIndicator` = **true**  
+  An Urvanian truck carrying within Bayvarra: cabotage, allowed under the trade accord for a return trip.
+- `Consignment/PreCarriageShipmentStage/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/PreCarriageShipmentStage/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
+  The country the means of transport is registered in.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **TE**  
+  The carrier's code for the kind of means: tractor unit 07 with curtain-side trailer; the fleet of Trasvia Haulage (world/parties.json).
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 KT**  
+  The registration plate of the truck; the fleet of Trasvia Haulage (world/parties.json).
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **UR TR 3381**  
+  The trailer's own plate.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/OwnerParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/OwnerParty/PartyName/Name` = **Trasvia Haulage**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **Loading length**  
+  The length of the loading floor.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
+  Room for 33 pallets.
+- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceDate` = **2026-05-13**  
+  The container was dropped at the container quay.
+- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **10:15:00**  
+  The local time.
+- `Consignment/OnCarriageShipmentStage/ID` = **3**  
+  By truck from the port of Selanu to the 3PL.
+- `Consignment/OnCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Road transport.
+- `Consignment/OnCarriageShipmentStage/OnCarriageIndicator` = **true**  
+  After the main carriage.
+- `Consignment/OnCarriageShipmentStage/CarrierParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/OnCarriageShipmentStage/CarrierParty/PartyName/Name` = **Nalevi Warehousing**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/OccurrenceDate` = **2026-05-19**  
+  Stored at the 3PL until called off.
+- `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate` = **2026-05-19**  
+  Planned receipt at the 3PL.
+- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container's number: the owner code of the ocean carrier, U for a freight container, six digits and the ISO 6346 check digit.
-- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **3750** (unitCode `KGM`)  
-  The container's gross mass as declared.
-- `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container.
+- `Consignment/TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1**  
+  ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose.
+- `Consignment/TransportHandlingUnit/TransportEquipment/FullnessIndicationCode` = **FCL**  
+  A full container load.
+- `Consignment/TransportHandlingUnit/TransportEquipment/RefrigeratedIndicator` = **false**  
+  A dry container.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **3750** (unitCode `KGM`)  
+  The verified gross mass: cargo and the container's own weight of 3,750 kg.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
+- `Consignment/TransportHandlingUnit/TransportEquipment/StowagePositionID` = **140282**  
+  Bay 14, row 02, tier 82: on deck, as planned by the carrier.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID` = **TWL-S-0884213**  
+  The carrier's seal, put on when the container was packed.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode` = **Carrier**  
+  Issued by the ocean carrier.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
+  Put on by the shipper.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-001**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 001 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-001**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-002**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 002 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-002**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-003**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 003 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-003**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-004**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 004 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-004**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-005**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 005 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-005**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-006**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 006 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-006**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-007**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 007 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-007**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-008**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 008 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-008**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-009**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 009 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-009**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-010**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 010 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-010**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-011**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 011 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-011**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-012**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 012 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-012**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-013**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 013 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-013**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-014**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 014 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-014**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-015**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 015 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-015**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-016**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 016 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-016**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-017**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 017 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-017**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-018**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 018 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-018**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-019**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 019 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-019**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-020**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 020 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-020**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-021**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 021 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-021**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-022**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 022 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-022**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-023**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 023 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-023**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-024**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 024 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-024**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-025**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `H87`)  
+  12 boxed side frames on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 025 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-025**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ID` = **1**  
+  The goods in the container, as one item for the carrier.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/Description` = **Park benches and spare side frames**  
+  In words.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ID` = **VGM-26-0510**  
+  The shipper's weight declaration.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDate` = **2026-05-12**  
+  Weighed when packed.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **15:30:00**  
+  After closing the doors.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode` = **SM2** (listID `IMO SOLAS`)  
+  SOLAS method 2: the cargo and packing weighed and added to the tare.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID` = **LD-SCALE-03**  
+  The scale of the warehouse.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType` = **Platform scale**  
+  Its kind.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/GrossMassMeasure` = **3750** (unitCode `KGM`)  
+  The verified gross mass.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ShipperParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ShipperParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ResponsibleParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ResponsibleParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/ID` = **VGM-26-0510**  
+  The signed weight declaration sent to the carrier.
+- `Consignment/FirstArrivalPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/FirstArrivalPortLocation/Name` = **Port of Selanu**  
+  The first port of call after Lumeport.
+- `Consignment/FirstArrivalPortLocation/Address/Country/IdentificationCode` = **XL**  
+  The country the place is in.
+- `Consignment/LastExitPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/LastExitPortLocation/Name` = **Port of Lumeport**  
+  The last port in Bayvarra.
+- `Consignment/LastExitPortLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
 - `InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
   The insured value, 110 % of the CIF value.
 - `InsurancePolicy/InsurerParty/WebsiteURI` = **https://www.wavesure.example**  
@@ -573,7 +1159,12 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ID>TOL-BL-26-0139</cbc:ID>
+  <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
+  <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Three originals issued.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -829,8 +1420,25 @@ Inside `Shipment`:
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
+    <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
+      <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
+      <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
+      <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
+      <cbc:TotalInvoiceAmount currencyID="XBL">50688.00</cbc:TotalInvoiceAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">53778.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
+      <cbc:TariffCode>9401.79</cbc:TariffCode>
+      <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+      <cbc:ShippingPriorityLevelCode>Standard</cbc:ShippingPriorityLevelCode>
+      <cbc:HandlingCode>Deck</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
+      <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
+      <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">50688.00</cbc:FreeOnBoardValueAmount>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -958,14 +1566,493 @@ Inside `Shipment`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41722</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:NotifyParty>
+      <cac:OriginalDespatchParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginalDespatchParty>
+      <cac:FinalDeliveryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:FinalDeliveryParty>
+      <cac:LogisticsOperatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
+        </cac:PartyName>
+      </cac:LogisticsOperatorParty>
+      <cac:BillOfLadingHolderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:BillOfLadingHolderParty>
+      <cac:OriginalDepartureCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:OriginalDepartureCountry>
+      <cac:FinalDestinationCountry>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:FinalDestinationCountry>
+      <cac:DeliveryTerms>
+        <cbc:ID>CIF</cbc:ID>
+        <cbc:LossRiskResponsibilityCode>Buyer</cbc:LossRiskResponsibilityCode>
+        <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
+        <cbc:Amount currencyID="XBL">53778.00</cbc:Amount>
+        <cac:DeliveryLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:DeliveryLocation>
+        <cac:AllowanceCharge>
+          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReason>Terminal handling at Selanu, for the buyer</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">185.00</cbc:Amount>
+        </cac:AllowanceCharge>
+      </cac:DeliveryTerms>
+      <cac:PaymentTerms>
+        <cbc:Note>Ocean freight payable before release of the bill of lading.</cbc:Note>
+      </cac:PaymentTerms>
+      <cac:CollectPaymentTerms>
+        <cbc:Note>Terminal handling at Selanu collect from the consignee.</cbc:Note>
+      </cac:CollectPaymentTerms>
+      <cac:DisbursementPaymentTerms>
+        <cbc:Note>Island customs fees advanced by the broker and recharged to the consignee.</cbc:Note>
+      </cac:DisbursementPaymentTerms>
+      <cac:PrepaidPaymentTerms>
+        <cbc:Note>Ocean freight and bunker surcharge prepaid by the shipper.</cbc:Note>
+      </cac:PrepaidPaymentTerms>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Ocean freight, 40-foot container</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">2700.00</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:ExtraAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Bunker surcharge</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">250.00</cbc:Amount>
+      </cac:ExtraAllowanceCharge>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+            <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+            <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+            <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+            <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
+            <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20117</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:TransshipPortLocation>
+          <cbc:Name>None: a direct sailing</cbc:Name>
+        </cac:TransshipPortLocation>
+        <cac:AvailabilityTransportEvent>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:AvailabilityTransportEvent>
+        <cac:StorageTransportEvent>
+          <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+        </cac:StorageTransportEvent>
+        <cac:AcceptanceTransportEvent>
+          <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+        </cac:AcceptanceTransportEvent>
+        <cac:FreightChargeLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FreightChargeLocation>
+      </cac:MainCarriageShipmentStage>
+      <cac:PreCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
+        <cbc:CabotageIndicator>true</cbc:CabotageIndicator>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Trasvia Haulage</cbc:Name>
+          </cac:PartyName>
+        </cac:CarrierParty>
+        <cac:TransportMeans>
+          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+          </cac:RoadTransport>
+          <cac:OwnerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Trasvia Haulage</cbc:Name>
+            </cac:PartyName>
+          </cac:OwnerParty>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Loading length</cbc:AttributeID>
+            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+          </cac:MeasurementDimension>
+        </cac:TransportMeans>
+        <cac:DropoffTransportEvent>
+          <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+        </cac:DropoffTransportEvent>
+      </cac:PreCarriageShipmentStage>
+      <cac:OnCarriageShipmentStage>
+        <cbc:ID>3</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:OnCarriageIndicator>true</cbc:OnCarriageIndicator>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Nalevi Warehousing</cbc:Name>
+          </cac:PartyName>
+        </cac:CarrierParty>
+        <cac:WarehousingTransportEvent>
+          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:WarehousingTransportEvent>
+        <cac:ReceiptTransportEvent>
+          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:ReceiptTransportEvent>
+      </cac:OnCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+          <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+          <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+          <cbc:StowagePositionID>140282</cbc:StowagePositionID>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>TWL-S-0884213</cbc:ID>
+            <cbc:SealIssuerTypeCode>Carrier</cbc:SealIssuerTypeCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-001</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 001 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-001</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-002</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 002 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-002</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-003</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 003 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-003</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-004</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 004 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-004</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-005</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 005 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-005</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-006</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 006 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-006</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-007</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 007 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-007</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-008</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 008 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-008</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-009</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 009 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-009</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-010</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 010 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-010</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-011</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 011 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-011</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-012</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 012 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-012</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-013</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 013 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-013</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-014</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 014 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-014</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-015</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 015 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-015</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-016</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 016 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-016</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-017</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 017 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-017</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-018</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 018 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-018</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-019</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 019 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-019</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-020</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 020 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-020</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-021</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 021 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-021</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-022</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 022 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-022</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-023</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 023 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-023</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-024</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 024 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-024</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-025</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">12</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-025</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:GoodsItem>
+            <cbc:ID>1</cbc:ID>
+            <cbc:Description>Park benches and spare side frames</cbc:Description>
+          </cac:GoodsItem>
+          <cac:VerifiedGrossMass>
+            <cbc:ID>VGM-26-0510</cbc:ID>
+            <cbc:WeighingDate>2026-05-12</cbc:WeighingDate>
+            <cbc:WeighingTime>15:30:00</cbc:WeighingTime>
+            <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
+            <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
+            <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
+            <cbc:GrossMassMeasure unitCode="KGM">3750</cbc:GrossMassMeasure>
+            <cac:WeighingParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeway Distribution</cbc:Name>
+              </cac:PartyName>
+            </cac:WeighingParty>
+            <cac:ShipperParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeway Distribution</cbc:Name>
+              </cac:PartyName>
+            </cac:ShipperParty>
+            <cac:ResponsibleParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeway Distribution</cbc:Name>
+              </cac:PartyName>
+            </cac:ResponsibleParty>
+            <cac:DocumentReference>
+              <cbc:ID>VGM-26-0510</cbc:ID>
+            </cac:DocumentReference>
+          </cac:VerifiedGrossMass>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:FirstArrivalPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+        <cbc:Name>Port of Selanu</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FirstArrivalPortLocation>
+      <cac:LastExitPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LastExitPortLocation>
     </cac:Consignment>
-    <cac:TransportHandlingUnit>
-      <cac:TransportEquipment>
-        <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
-        <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
     <cac:InsurancePolicy>
       <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
       <cac:InsurerParty>
