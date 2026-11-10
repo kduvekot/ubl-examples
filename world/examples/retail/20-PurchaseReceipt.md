@@ -24,6 +24,18 @@ A consumer buys in the shop and gets a receipt.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-15**  
   A consumer buys a bench during the promotion week.
+- `IssueTime` = **11:42:00**  
+  Printed at the till.
+- `TransactionDate` = **2026-05-15**  
+  The day of the sale.
+- `TransactionTime` = **11:42:00**  
+  The time of the sale.
+- `PurchaseDate` = **2026-05-15**  
+  The day the customer bought.
+- `PurchaseTime` = **11:42:00**  
+  And when.
+- `Note` = **Home delivery booked for Saturday.**  
+  Printed on the receipt.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the shop; it has two decimals.
 
@@ -173,12 +185,124 @@ Inside `AccountingCustomerParty`:
 - `Party/Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
 
+### Cashier Contact
+
+Inside `CashierContact`:
+
+- `Name` = **Mira**  
+  The cashier, by first name, as printed.
+
+### Cash Register
+
+Inside `CashRegister`:
+
+- `ID` = **G2**  
+  The till.
+- `SerialNumberID` = **BM-POS-G2-2219**  
+  The till's serial number, as the tax rules require on a receipt.
+
+### Point of Sale Location
+
+Inside `PointOfSaleLocation`:
+
+- `Description` = **Garden department, ground floor**  
+  Where in the shop.
+- `Name` = **Brightmarket Stores, Lumeport**  
+  The shop.
+
+### Point of Sale Contact
+
+Inside `PointOfSaleContact`:
+
+- `Telephone` = **+999 2 3851 0411**  
+  The shop's number, for questions about the purchase.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `DeliveryAddress/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `DeliveryAddress/StreetName` = **Gull Lane**  
+  Street of the postal address. identity of Robin Ashdale (world/parties.json).
+- `DeliveryAddress/BuildingNumber` = **57**  
+  Building number of the postal address. identity of Robin Ashdale (world/parties.json).
+- `DeliveryAddress/CitySubdivisionName` = **Old town**  
+  The quarter of Lumeport the party is in. identity of Robin Ashdale (world/parties.json).
+- `DeliveryAddress/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
+- `DeliveryAddress/PostalZone` = **38516**  
+  Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
+- `DeliveryAddress/CountrySubentity` = **Coastal State**  
+  The state, part of an address in federal Bayvarra. identity of Robin Ashdale (world/parties.json).
+- `DeliveryAddress/CountrySubentityCode` = **CO**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json).
+- `DeliveryAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `DeliveryAddress/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `DeliveryAddress/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+- `RequestedDeliveryPeriod/StartDate` = **2026-05-17**  
+  Saturday.
+- `RequestedDeliveryPeriod/StartTime` = **09:00:00**  
+  Morning.
+- `RequestedDeliveryPeriod/EndTime` = **12:00:00**  
+  Until noon.
+- `CarrierParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `CarrierParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Payment
+
+Inside `Payment`:
+
+- `ID` = **BM-G2-26-0518-0047**  
+  The till's number for the payment.
+- `PaidAmount` = **717.92** (currencyID `XBL`)  
+  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `PaidDate` = **2026-05-15**  
+  Paid at the till.
+- `PaidTime` = **11:42:00**  
+  At the time of the sale.
+- `MerchantID` = **LUMECARD-M-0026118**  
+  The store's merchant number with the card scheme.
+- `AuthorizationID` = **A71520**  
+  The approval code of the card issuer.
+- `TransactionID` = **TX-26-0518-773104**  
+  The card transaction.
+- `PaymentTerminalID` = **PT-G2**  
+  The card terminal at the till.
+- `StatusCode` = **Approved**  
+  The payment was approved.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
 
-- `PaymentMeansCode` = **10** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 10: in cash.
+- `PaymentMeansCode` = **55** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 55: debit card.
+- `CardAccount/PrimaryAccountNumberID` = **************4417**  
+  The card number, masked: a receipt shows only the last four digits.
+- `CardAccount/NetworkID` = **LUMECARD**  
+  The card scheme of the world: Lumeport's interbank card.
+- `CardAccount/CardTypeCode` = **Debit**  
+  A debit card.
+- `CardAccount/ValidityStartDate` = **2025-06-01**  
+  The card is valid from.
+- `CardAccount/ExpiryDate` = **2029-05-31**  
+  And until.
+- `CardAccount/IssuerID` = **BLUM**  
+  Issued by the Bank of Lumeport.
+- `CardAccount/CardChipCode` = **Chip**  
+  Read from the chip.
+- `CardAccount/ChipApplicationID` = **A0000099990001**  
+  The chip application used; an identifier of the world, not a registered one.
+- `CardAccount/HolderName` = **R ASHDALE**  
+  The name on the card.
+- `CardAccount/RoleCode` = **Holder**  
+  Paid by the card holder.
 
 ### Tax Total
 
@@ -453,6 +577,12 @@ Inside `PurchaseReceiptLine`:
   <cbc:ID>BS-PR-26-0238</cbc:ID>
   <cbc:UUID>e73b5098-18b8-52b8-b457-5eb5411168d5</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:IssueTime>11:42:00</cbc:IssueTime>
+  <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
+  <cbc:TransactionTime>11:42:00</cbc:TransactionTime>
+  <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
+  <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
+  <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -578,8 +708,75 @@ Inside `PurchaseReceiptLine`:
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:CashierContact>
+    <cbc:Name>Mira</cbc:Name>
+  </cac:CashierContact>
+  <cac:CashRegister>
+    <cbc:ID>G2</cbc:ID>
+    <cbc:SerialNumberID>BM-POS-G2-2219</cbc:SerialNumberID>
+  </cac:CashRegister>
+  <cac:PointOfSaleLocation>
+    <cbc:Description>Garden department, ground floor</cbc:Description>
+    <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
+  </cac:PointOfSaleLocation>
+  <cac:PointOfSaleContact>
+    <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+  </cac:PointOfSaleContact>
+  <cac:Delivery>
+    <cac:DeliveryAddress>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Gull Lane</cbc:StreetName>
+      <cbc:BuildingNumber>57</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38516</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:DeliveryAddress>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-17</cbc:StartDate>
+      <cbc:StartTime>09:00:00</cbc:StartTime>
+      <cbc:EndTime>12:00:00</cbc:EndTime>
+    </cac:RequestedDeliveryPeriod>
+    <cac:CarrierParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:CarrierParty>
+  </cac:Delivery>
+  <cac:Payment>
+    <cbc:ID>BM-G2-26-0518-0047</cbc:ID>
+    <cbc:PaidAmount currencyID="XBL">717.92</cbc:PaidAmount>
+    <cbc:PaidDate>2026-05-15</cbc:PaidDate>
+    <cbc:PaidTime>11:42:00</cbc:PaidTime>
+    <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
+    <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
+    <cbc:TransactionID>TX-26-0518-773104</cbc:TransactionID>
+    <cbc:PaymentTerminalID>PT-G2</cbc:PaymentTerminalID>
+    <cbc:StatusCode>Approved</cbc:StatusCode>
+  </cac:Payment>
   <cac:PaymentMeans>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
+    <cac:CardAccount>
+      <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
+      <cbc:NetworkID>LUMECARD</cbc:NetworkID>
+      <cbc:CardTypeCode>Debit</cbc:CardTypeCode>
+      <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
+      <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
+      <cbc:IssuerID>BLUM</cbc:IssuerID>
+      <cbc:CardChipCode>Chip</cbc:CardChipCode>
+      <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
+      <cbc:HolderName>R ASHDALE</cbc:HolderName>
+      <cbc:RoleCode>Holder</cbc:RoleCode>
+    </cac:CardAccount>
   </cac:PaymentMeans>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>

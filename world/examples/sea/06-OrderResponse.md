@@ -20,12 +20,32 @@ The distributor accepts and confirms the sailing it plans to use.
   This run of the process: the same in every document of the flow.
 - `ID` = **LD-OR-26-0128**  
   The seller's number for its response.
+- `SalesOrderID` = **LD-SO-26-0123**  
+  The distributor's own sales order number.
 - `UUID` = **df6ccf81-d94b-523e-8f0a-e86231966bf9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-08**  
   The distributor accepts the order the next day.
+- `IssueTime` = **09:30:00**  
+  Sent in the morning.
 - `OrderResponseCode` = **AP**  
   UN/EDIFACT 4343 code AP: accepted, the order is accepted as it stands.
+- `Note` = **Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.**  
+  The response in words.
+- `DocumentCurrencyCode` = **XBL**  
+  The lume, the distributor's currency, as in the order; it has two decimals.
+- `TotalPackagesQuantity` = **108** (unitCode `H87`)  
+  96 benches and 12 boxed frames.
+- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+  The expected gross weight, for the booking.
+- `NetWeightMeasure` = **3762** (unitCode `KGM`)  
+  The goods alone.
+- `GrossVolumeMeasure` = **41.5** (unitCode `MTQ`)  
+  One 40-foot container's load.
+- `CustomerReference` = **Harbour parks Selanu**  
+  The buyer's project, as the buyer named it when ordering.
+- `LineCountNumeric` = **2**  
+  The number of lines.
 
 ### Order Reference
 
@@ -33,6 +53,15 @@ Inside `OrderReference`:
 
 - `ID` = **VT-PO-26-0127**  
   The order this response answers.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **LD-DAG-26-0125**  
+  The digital agreement the trade runs under.
+- `ContractType` = **Digital trade agreement**  
+  What it is.
 
 ### Seller Supplier Party
 
@@ -214,6 +243,236 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Accounting Supplier Party
+
+Inside `AccountingSupplierParty`:
+
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Accounting Customer Party
+
+Inside `AccountingCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **CIF** (schemeID `INCOTERMS`)  
+  Incoterms 2020, as ordered.
+- `DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Port of Selanu**  
+  The named port.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XL**  
+  The country the place is in.
+
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The first, and only, way to pay.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-05-09**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF41LDSO260123**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF41LDSO260123**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
+- `PayeeFinancialAccount/ID` = **XB18BLUM0001466206** (schemeID `urn:ubl-examples:world:account`)  
+  The distributor's account for the deposit. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PayeeFinancialAccount/Name` = **Lumeway Distribution Ltd**  
+  The account holder, as the bank knows it.
+- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/PaymentNote` = **Invoice LD-SO-26-0123**  
+  What the payer is asked to quote with the transfer, so the payment is matched.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **DEPOSIT**  
+  The deposit.
+- `Note` = **Deposit due on acceptance.**  
+  The first instalment.
+- `Amount` = **10000.00** (currencyID `XBL`)  
+  The deposit asked.
+- `PaymentDueDate` = **2026-05-09**  
+  Within a day.
+
+### Transaction Conditions
+
+Inside `TransactionConditions`:
+
+- `ID` = **LD-TC-01**  
+  The distributor's conditions of sale.
+- `Description` = **Sold to trade customers only.**  
+  The condition.
+
+### Destination Country
+
+Inside `DestinationCountry`:
+
+- `IdentificationCode` = **XL**  
+  The goods go to the island.
+
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  The sum of the tax of all categories.
+- `TaxSubtotal/TaxableAmount` = **50688.00** (currencyID `XBL`)  
+  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **G**  
+  An export from Bayvarra: the state sales tax is not charged (category G).
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+
+### Legal Monetary Total
+
+Inside `LegalMonetaryTotal`:
+
+- `LineExtensionAmount` = **50688.00** (currencyID `XBL`)  
+  The sum of the lines.
+- `PayableAmount` = **50688.00** (currencyID `XBL`)  
+  The goods; freight and insurance follow on the invoice under CIF.
+
+### Order Line
+
+Inside `OrderLine`:
+
+- `LineItem/ID` = **1**  
+  The line number, as in the order.
+- `LineItem/SalesOrderID` = **LD-SO-26-0123/1**  
+  The distributor's line in its sales order.
+- `LineItem/Note` = **Confirmed as ordered.**  
+  The line's status in words.
+- `LineItem/LineStatusCode` = **NoStatus**  
+  Unchanged against the order.
+- `LineItem/Quantity` = **96** (unitCode `H87`)  
+  The quantity confirmed.
+- `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
+  As ordered.
+- `LineItem/TaxInclusiveLineExtensionAmount` = **49920.00** (currencyID `XBL`)  
+  No tax on an export: the same amount.
+- `LineItem/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax on an export.
+- `LineItem/PartialDeliveryIndicator` = **false**  
+  All in one container.
+- `LineItem/BackOrderAllowedIndicator` = **false**  
+  Nothing is back-ordered: all is in stock.
+- `LineItem/WarrantyInformation` = **Five years on the frame against corrosion.**  
+  The maker's warranty passes to the buyer.
+- `LineItem/Delivery/PromisedDeliveryPeriod/StartDate` = **2026-05-14**  
+  Shipped on the sailing of day 10.
+- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-18**  
+  Arriving at Selanu.
+- `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+  The price is per one unit.
+- `LineItem/Item/Name` = **Park bench Serra 180**  
+  Named only: described in full in the order.
+- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's number.
+- `LineItem/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
+  Five years.
+- `LineItem/WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/WarrantyParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OrderLineReference/LineID` = **1**  
+  The order line answered.
+- `LineItem/ID` = **2**  
+  The line number, as in the order.
+- `LineItem/SalesOrderID` = **LD-SO-26-0123/2**  
+  The distributor's line in its sales order.
+- `LineItem/Note` = **Confirmed as ordered.**  
+  The line's status in words.
+- `LineItem/LineStatusCode` = **NoStatus**  
+  Unchanged against the order.
+- `LineItem/Quantity` = **12** (unitCode `H87`)  
+  The quantity confirmed.
+- `LineItem/LineExtensionAmount` = **768.00** (currencyID `XBL`)  
+  As ordered.
+- `LineItem/TaxInclusiveLineExtensionAmount` = **768.00** (currencyID `XBL`)  
+  No tax on an export: the same amount.
+- `LineItem/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax on an export.
+- `LineItem/PartialDeliveryIndicator` = **false**  
+  All in one container.
+- `LineItem/BackOrderAllowedIndicator` = **false**  
+  Nothing is back-ordered: all is in stock.
+- `LineItem/WarrantyInformation` = **Five years on the frame against corrosion.**  
+  The maker's warranty passes to the buyer.
+- `LineItem/Delivery/PromisedDeliveryPeriod/StartDate` = **2026-05-14**  
+  Shipped on the sailing of day 10.
+- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-18**  
+  Arriving at Selanu.
+- `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+  The price is per one unit.
+- `LineItem/Item/Name` = **Bench side frame casting**  
+  Named only: described in full in the order.
+- `LineItem/Item/SellersItemIdentification/ID` = **LD-10443**  
+  The seller's number.
+- `LineItem/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
+  Five years.
+- `LineItem/WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/WarrantyParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OrderLineReference/LineID` = **2**  
+  The order line answered.
+
 ## The document
 
 ```xml
@@ -224,12 +483,26 @@ Inside `BuyerCustomerParty`:
   <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-OR-26-0128</cbc:ID>
+  <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
   <cbc:UUID>df6ccf81-d94b-523e-8f0a-e86231966bf9</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
+  <cbc:IssueTime>09:30:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
+  <cbc:Note>Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.</cbc:Note>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:TotalPackagesQuantity unitCode="H87">108</cbc:TotalPackagesQuantity>
+  <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
+  <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
+  <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:Contract>
+    <cbc:ID>LD-DAG-26-0125</cbc:ID>
+    <cbc:ContractType>Digital trade agreement</cbc:ContractType>
+  </cac:Contract>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -387,5 +660,197 @@ Inside `BuyerCustomerParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF41LDSO260123</cbc:InstructionNote>
+    <cbc:PaymentID>RF41LDSO260123</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
+      <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice LD-SO-26-0123</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>DEPOSIT</cbc:ID>
+    <cbc:Note>Deposit due on acceptance.</cbc:Note>
+    <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
+    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
+  <cac:TransactionConditions>
+    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:Description>Sold to trade customers only.</cbc:Description>
+  </cac:TransactionConditions>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">50688.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">50688.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">50688.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
+      <cbc:Note>Confirmed as ordered.</cbc:Note>
+      <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+      <cbc:Quantity unitCode="H87">96</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+      <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
+      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-14</cbc:StartDate>
+          <cbc:EndDate>2026-05-18</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+    </cac:LineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:Note>Confirmed as ordered.</cbc:Note>
+      <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">768.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+      <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
+      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-14</cbc:StartDate>
+          <cbc:EndDate>2026-05-18</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10443</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+    </cac:LineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
 </OrderResponse>
 ```

@@ -75,6 +75,13 @@
      "to": "26-xb",
      "carrier": "10-xb",
      "why": "The forwarder's truck from the distribution centre to the store."
+    },
+    {
+     "mode": "road",
+     "from": "26-xb",
+     "to": "c-xb",
+     "carrier": "26-xb",
+     "why": "The store delivers the bench to the customer's home with its van."
     }
    ]
   },

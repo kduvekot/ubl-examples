@@ -28,6 +28,8 @@ Delivery terms CIF port of the island: the order names the buyer's 3PL as delive
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals.
+- `CustomerReference` = **Harbour parks Selanu**  
+  The buyer's project the benches are for.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Stock for municipal projects**  
@@ -601,6 +603,7 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>

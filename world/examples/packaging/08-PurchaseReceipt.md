@@ -24,6 +24,16 @@ The consumer buys a shirt; the receipt shows the state sales tax, the only point
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-22**  
   A consumer buys two shirts.
+- `IssueTime` = **16:05:00**  
+  Printed at the till.
+- `TransactionDate` = **2026-05-22**  
+  The day of the sale.
+- `TransactionTime` = **16:05:00**  
+  The time of the sale.
+- `PurchaseDate` = **2026-05-22**  
+  The day the customer bought.
+- `PurchaseTime` = **16:05:00**  
+  And when.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the shop; it has two decimals.
 
@@ -173,6 +183,53 @@ Inside `AccountingCustomerParty`:
 - `Party/Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
 
+### Cashier Contact
+
+Inside `CashierContact`:
+
+- `Name` = **Joss**  
+  The cashier, by first name, as printed.
+
+### Cash Register
+
+Inside `CashRegister`:
+
+- `ID` = **C1**  
+  The till.
+- `SerialNumberID` = **BM-POS-C1-2219**  
+  The till's serial number, as the tax rules require on a receipt.
+
+### Point of Sale Location
+
+Inside `PointOfSaleLocation`:
+
+- `Description` = **Clothing, first floor**  
+  Where in the shop.
+- `Name` = **Brightmarket Stores, Lumeport**  
+  The shop.
+
+### Point of Sale Contact
+
+Inside `PointOfSaleContact`:
+
+- `Telephone` = **+999 2 3851 0411**  
+  The shop's number, for questions about the purchase.
+
+### Payment
+
+Inside `Payment`:
+
+- `PaidAmount` = **63.80** (currencyID `XBL`)  
+  Paid.
+- `PaidCashAmount` = **70.00** (currencyID `XBL`)  
+  The notes the customer handed over.
+- `CashChangeAmount` = **6.20** (currencyID `XBL`)  
+  The change given back.
+- `PaidDate` = **2026-05-22**  
+  At the till.
+- `PaidTime` = **16:05:00**  
+  At the time of the sale.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -207,8 +264,10 @@ Inside `LegalMonetaryTotal`:
   The total without tax: the line amounts, no allowances or charges.
 - `TaxInclusiveAmount` = **63.79** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **63.79** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `PayableRoundingAmount` = **0.01** (currencyID `XBL`)  
+  The smallest coin of the lume is 5 cents: a cash payment is rounded to 0.05; a card payment is not.
+- `PayableAmount` = **63.80** (currencyID `XBL`)  
+  What the customer pays in cash, rounded to 5 cents.
 
 ### Purchase Receipt Line
 
@@ -273,6 +332,11 @@ Inside `PurchaseReceiptLine`:
   <cbc:ID>BS-PR-26-0530</cbc:ID>
   <cbc:UUID>cce7560b-887a-56e6-8fcd-571ce027241e</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
+  <cbc:IssueTime>16:05:00</cbc:IssueTime>
+  <cbc:TransactionDate>2026-05-22</cbc:TransactionDate>
+  <cbc:TransactionTime>16:05:00</cbc:TransactionTime>
+  <cbc:PurchaseDate>2026-05-22</cbc:PurchaseDate>
+  <cbc:PurchaseTime>16:05:00</cbc:PurchaseTime>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -398,6 +462,27 @@ Inside `PurchaseReceiptLine`:
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:CashierContact>
+    <cbc:Name>Joss</cbc:Name>
+  </cac:CashierContact>
+  <cac:CashRegister>
+    <cbc:ID>C1</cbc:ID>
+    <cbc:SerialNumberID>BM-POS-C1-2219</cbc:SerialNumberID>
+  </cac:CashRegister>
+  <cac:PointOfSaleLocation>
+    <cbc:Description>Clothing, first floor</cbc:Description>
+    <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
+  </cac:PointOfSaleLocation>
+  <cac:PointOfSaleContact>
+    <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+  </cac:PointOfSaleContact>
+  <cac:Payment>
+    <cbc:PaidAmount currencyID="XBL">63.80</cbc:PaidAmount>
+    <cbc:PaidCashAmount currencyID="XBL">70.00</cbc:PaidCashAmount>
+    <cbc:CashChangeAmount currencyID="XBL">6.20</cbc:CashChangeAmount>
+    <cbc:PaidDate>2026-05-22</cbc:PaidDate>
+    <cbc:PaidTime>16:05:00</cbc:PaidTime>
+  </cac:Payment>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>
   </cac:PaymentMeans>
@@ -419,7 +504,8 @@ Inside `PurchaseReceiptLine`:
     <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XBL">59.90</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="XBL">63.79</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">63.79</cbc:PayableAmount>
+    <cbc:PayableRoundingAmount currencyID="XBL">0.01</cbc:PayableRoundingAmount>
+    <cbc:PayableAmount currencyID="XBL">63.80</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>

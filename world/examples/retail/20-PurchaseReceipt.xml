@@ -7,6 +7,12 @@
   <cbc:ID>BS-PR-26-0238</cbc:ID>
   <cbc:UUID>e73b5098-18b8-52b8-b457-5eb5411168d5</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:IssueTime>11:42:00</cbc:IssueTime>
+  <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
+  <cbc:TransactionTime>11:42:00</cbc:TransactionTime>
+  <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
+  <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
+  <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -132,8 +138,75 @@
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:CashierContact>
+    <cbc:Name>Mira</cbc:Name>
+  </cac:CashierContact>
+  <cac:CashRegister>
+    <cbc:ID>G2</cbc:ID>
+    <cbc:SerialNumberID>BM-POS-G2-2219</cbc:SerialNumberID>
+  </cac:CashRegister>
+  <cac:PointOfSaleLocation>
+    <cbc:Description>Garden department, ground floor</cbc:Description>
+    <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
+  </cac:PointOfSaleLocation>
+  <cac:PointOfSaleContact>
+    <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+  </cac:PointOfSaleContact>
+  <cac:Delivery>
+    <cac:DeliveryAddress>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Gull Lane</cbc:StreetName>
+      <cbc:BuildingNumber>57</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38516</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:DeliveryAddress>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-17</cbc:StartDate>
+      <cbc:StartTime>09:00:00</cbc:StartTime>
+      <cbc:EndTime>12:00:00</cbc:EndTime>
+    </cac:RequestedDeliveryPeriod>
+    <cac:CarrierParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:CarrierParty>
+  </cac:Delivery>
+  <cac:Payment>
+    <cbc:ID>BM-G2-26-0518-0047</cbc:ID>
+    <cbc:PaidAmount currencyID="XBL">717.92</cbc:PaidAmount>
+    <cbc:PaidDate>2026-05-15</cbc:PaidDate>
+    <cbc:PaidTime>11:42:00</cbc:PaidTime>
+    <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
+    <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
+    <cbc:TransactionID>TX-26-0518-773104</cbc:TransactionID>
+    <cbc:PaymentTerminalID>PT-G2</cbc:PaymentTerminalID>
+    <cbc:StatusCode>Approved</cbc:StatusCode>
+  </cac:Payment>
   <cac:PaymentMeans>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
+    <cac:CardAccount>
+      <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
+      <cbc:NetworkID>LUMECARD</cbc:NetworkID>
+      <cbc:CardTypeCode>Debit</cbc:CardTypeCode>
+      <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
+      <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
+      <cbc:IssuerID>BLUM</cbc:IssuerID>
+      <cbc:CardChipCode>Chip</cbc:CardChipCode>
+      <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
+      <cbc:HolderName>R ASHDALE</cbc:HolderName>
+      <cbc:RoleCode>Holder</cbc:RoleCode>
+    </cac:CardAccount>
   </cac:PaymentMeans>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>

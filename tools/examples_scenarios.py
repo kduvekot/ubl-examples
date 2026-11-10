@@ -961,9 +961,18 @@ def retail(n, doc):
                                           "BillingReferenceLine": {"ID": V("1", "The invoice line credited.")}}})
         return out
     if doc["doc"] == "PurchaseReceipt":
-        return kit.purchase_receipt(f, n, doc, 25, "A consumer buys a bench during the promotion week.",
-                                    [{"item": "bench-serra-r", "qty": 1, "why": "One bench."}], cash=True,
+        out = kit.purchase_receipt(f, n, doc, 25, "A consumer buys a bench during the promotion week.",
+                                    [{"item": "bench-serra-r", "qty": 1, "why": "One bench."}], cash=False,
                                     promotion={"name": "Spring garden promotion", "percent": 10, "from": 22, "to": 28})
+        till(out, f, 25, "11:42:00", "G2", "Mira")
+        card_payment(out, f, 25, "11:42:00")
+        out["Note"] = V("Home delivery booked for Saturday.", "Printed on the receipt.")
+        out["Delivery"] = {"DeliveryAddress": address("c-xb"),
+                           "RequestedDeliveryPeriod": {"StartDate": V(f.date(27), "Saturday."),
+                                                       "StartTime": V("09:00:00", "Morning."),
+                                                       "EndTime": V("12:00:00", "Until noon.")},
+                           "CarrierParty": party("26-xb", short=True)}
+        return out
     raise SystemExit(f"retail scenario: no document {n} {doc['doc']}")
 
 
@@ -1225,6 +1234,133 @@ def sea_invoice_terms(f, out):
     return out
 
 
+def till(out, f, day, time, register, cashier):
+    """What every till receipt of the store records: when, where and at which till."""
+    out.update({"IssueTime": V(time, "Printed at the till."),
+                "TransactionDate": V(f.date(day), "The day of the sale."),
+                "TransactionTime": V(time, "The time of the sale."),
+                "PurchaseDate": V(f.date(day), "The day the customer bought."),
+                "PurchaseTime": V(time, "And when."),
+                "CashRegister": {"ID": V(register, "The till."),
+                                 "SerialNumberID": V(f"BM-POS-{register}-2219", "The till's serial number, as the "
+                                                                                "tax rules require on a receipt.")},
+                "CashierContact": {"Name": V(cashier, "The cashier, by first name, as printed.")},
+                "PointOfSaleLocation": {"Name": V("Brightmarket Stores, Lumeport", "The shop."),
+                                        "Description": V("Garden department, ground floor" if register == "G2" else
+                                                         "Clothing, first floor", "Where in the shop.")},
+                "PointOfSaleContact": {"Telephone": V(PARTY["26-xb"]["identity"]["contact"]["telephone"],
+                                                      "The shop's number, for questions about the purchase.")}})
+    return out
+
+
+def card_payment(out, f, day, time):
+    total = out["LegalMonetaryTotal"]["PayableAmount"]
+    out["PaymentMeans"] = {
+        "PaymentMeansCode": V("55", "UN/EDIFACT 4461 code 55: debit card.", listID="UN/EDIFACT EDED 4461"),
+        "CardAccount": {"PrimaryAccountNumberID": V("************4417", "The card number, masked: a receipt shows only "
+                                                                        "the last four digits."),
+                        "NetworkID": V("LUMECARD", "The card scheme of the world: Lumeport's interbank card."),
+                        "CardTypeCode": V("Debit", "A debit card."),
+                        "ValidityStartDate": V("2025-06-01", "The card is valid from."),
+                        "ExpiryDate": V("2029-05-31", "And until."),
+                        "IssuerID": V("BLUM", "Issued by the Bank of Lumeport."),
+                        "CardChipCode": V("Chip", "Read from the chip."),
+                        "ChipApplicationID": V("A0000099990001", "The chip application used; an identifier of the world, "
+                                                                 "not a registered one."),
+                        "HolderName": V("R ASHDALE", "The name on the card."),
+                        "RoleCode": V("Holder", "Paid by the card holder.")}}
+    out["Payment"] = {"ID": V("BM-G2-26-0518-0047", "The till's number for the payment."),
+                      "PaidAmount": total, "PaidDate": V(f.date(day), "Paid at the till."),
+                      "PaidTime": V(time, "At the time of the sale."),
+                      "MerchantID": V("LUMECARD-M-0026118", "The store's merchant number with the card scheme."),
+                      "AuthorizationID": V("A71520", "The approval code of the card issuer."),
+                      "TransactionID": V("TX-26-0518-773104", "The card transaction."),
+                      "PaymentTerminalID": V("PT-G2", "The card terminal at the till."),
+                      "StatusCode": V("Approved", "The payment was approved.")}
+    return out
+
+
+def cash_payment(out, f, day, time, tendered):
+    lmt = out["LegalMonetaryTotal"]
+    exact = Decimal(lmt["PayableAmount"].value)
+    step = Decimal(WORLD["countries"]["XB"]["payment"]["cash_rounding"]["step"])
+    rounded = (exact / step).quantize(Decimal(1), rounding="ROUND_HALF_UP") * step
+    lmt["PayableRoundingAmount"] = amount(rounded - exact, "XBL", WORLD["countries"]["XB"]["payment"]["cash_rounding"]
+                                          ["note"])
+    lmt["PayableAmount"] = amount(rounded, "XBL", "What the customer pays in cash, rounded to 5 cents.")
+    out["Payment"] = {"PaidAmount": amount(rounded, "XBL", "Paid."),
+                      "PaidCashAmount": amount(tendered, "XBL", "The notes the customer handed over."),
+                      "CashChangeAmount": amount(Decimal(tendered) - rounded, "XBL", "The change given back."),
+                      "PaidDate": V(f.date(day), "At the till."), "PaidTime": V(time, "At the time of the sale.")}
+    return out
+
+
+def sea_order_response(f, n, doc):
+    """The distributor confirms the island order in full: lines, totals, terms and the deposit it asks for."""
+    out = kit.order_response(f, n, doc, 4, "The distributor accepts the order the next day.")
+    seller, buyer = doc["from"], doc["to"]
+    rows = kit.lines(f, seller, buyer, "XBL")
+    base = sum(r[2] for r in rows)
+    tax, total = kit.tax_total(rows, "XBL")
+    so = f"LD-SO-26-{f.base:04d}"
+    w = kit.gross_weight(f, "ordered")
+    net = sum(Decimal(str(d["ordered"])) * Decimal(str(kit.maker(d["item"])["net_kg"])) for d in f.deal)
+    bench = kit.maker("bench-serra-b")
+    out.update({
+        "SalesOrderID": V(so, "The distributor's own sales order number."),
+        "IssueTime": V("09:30:00", "Sent in the morning."),
+        "Note": V("Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.",
+                  "The response in words."),
+        "DocumentCurrencyCode": kit.currency_line("XBL", "the distributor's currency, as in the order"),
+        "CustomerReference": V("Harbour parks Selanu", "The buyer's project, as the buyer named it when ordering."),
+        "LineCountNumeric": V(str(len(rows)), "The number of lines."),
+        "TotalPackagesQuantity": qty(108, "H87", "96 benches and 12 boxed frames."),
+        "GrossWeightMeasure": qty(w, "KGM", "The expected gross weight, for the booking."),
+        "NetWeightMeasure": qty(net, "KGM", "The goods alone."),
+        "GrossVolumeMeasure": V("41.5", "One 40-foot container's load.", unitCode="MTQ"),
+        "Contract": {"ID": V(f.numbers["agreement"], "The digital agreement the trade runs under."),
+                     "ContractType": V("Digital trade agreement", "What it is.")},
+        "AccountingSupplierParty": {"Party": party(seller, short=True)},
+        "AccountingCustomerParty": {"Party": party(buyer, short=True)},
+        "DeliveryTerms": {"ID": V("CIF", "Incoterms 2020, as ordered.", schemeID="INCOTERMS"),
+                          "DeliveryLocation": kit.place("XLSEL", "The named port.")},
+        "PaymentMeans": kit.payment_means(f, seller, buyer, seller, 4, 1, so, "The distributor's account for the "
+                                          "deposit."),
+        "PaymentTerms": {"ID": V("DEPOSIT", "The deposit."),
+                         "Note": V("Deposit due on acceptance.", "The first instalment."),
+                         "Amount": amount(DEPOSIT, "XBL", "The deposit asked."),
+                         "PaymentDueDate": V(f.date(5), "Within a day.")},
+        "TransactionConditions": {"ID": V("LD-TC-01", "The distributor's conditions of sale."),
+                                  "Description": V("Sold to trade customers only.", "The condition.")},
+        "DestinationCountry": {"IdentificationCode": V("XL", "The goods go to the island.")},
+        "TaxTotal": total,
+        "LegalMonetaryTotal": {"LineExtensionAmount": amount(base, "XBL", "The sum of the lines."),
+                               "PayableAmount": amount(base + tax, "XBL", "The goods; freight and insurance follow "
+                                                                          "on the invoice under CIF.")},
+        "OrderLine": [{"LineItem": {
+            "ID": V(str(i), "The line number, as in the order."),
+            "SalesOrderID": V(f"{so}/{i}", "The distributor's line in its sales order."),
+            "Note": V("Confirmed as ordered.", "The line's status in words."),
+            "LineStatusCode": V("NoStatus", "Unchanged against the order."),
+            "Quantity": qty(q, ITEM[d["item"]]["unit"], "The quantity confirmed."),
+            "LineExtensionAmount": amount(amt, "XBL", "As ordered."),
+            "TaxInclusiveLineExtensionAmount": amount(amt, "XBL", "No tax on an export: the same amount."),
+            "TotalTaxAmount": amount(0, "XBL", "No tax on an export."),
+            "PartialDeliveryIndicator": V("false", "All in one container."),
+            "BackOrderAllowedIndicator": V("false", "Nothing is back-ordered: all is in stock."),
+            "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(10), "Shipped on the sailing of day 10."),
+                                                    "EndDate": V(f.date(14), "Arriving at Selanu.")}},
+            "WarrantyInformation": V(bench["warranty"], "The maker's warranty passes to the buyer."),
+            "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
+            "WarrantyParty": party(bench["seller"], short=True),
+            "Price": kit.price_block(d["item"], "XBL"),
+            "Item": {"Name": V(ITEM[d["item"]]["name"], "Named only: described in full in the order."),
+                     "SellersItemIdentification": {"ID": V(ITEM[d["item"]]["sellers_id"], "The seller's number.")}}},
+            "OrderLineReference": {"LineID": V(str(i), "The order line answered.")}}
+            for i, (d, q, amt, rule) in enumerate(rows, 1)]})
+    return out
+
+
 def sea_consignment_fi(f, doc):
     f.number("consignment", doc["from"], "Consignment")
     return sea_consignment(f, "instructions")
@@ -1257,11 +1393,13 @@ def sea(n, doc):
         return kit.order(f, n, doc, 3, "The island buyer orders benches for its city's parks.",
                          "Cost, insurance and freight to the port of Selanu: the seller pays the sea freight and insures "
                          "the cargo; the risk passes when the goods are on board in Lumeport.", "Port of Selanu",
-                         {"Delivery": {"DeliveryLocation": {"Description": V("Lanoro warehouse, Selanu",
+                         {"CustomerReference": V("Harbour parks Selanu", "The buyer's project the benches are "
+                                                                         "for."),
+                          "Delivery": {"DeliveryLocation": {"Description": V("Lanoro warehouse, Selanu",
                                                                              "The buyer's 3PL, where the goods go after "
                                                                              "customs clearance.")}}})
     if doc["doc"] == "OrderResponse":
-        return kit.order_response(f, n, doc, 4, "The distributor accepts the order the next day.")
+        return sea_order_response(f, n, doc)
     if doc["doc"] == "ForwardingInstructions" and doc["from"] == "6-xb":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The distributor's "
                                                                                        "instruction number."),
@@ -2307,8 +2445,10 @@ def packaging(n, doc):
                            {"OrderReference": ref(f, "order-shirts", "The store's order.")},
                            [{"item": "shirt", "qty": 600, "invoice_why": "The shirts delivered."}], key="invoice-shirts")
     if doc["doc"] == "PurchaseReceipt":
-        return kit.purchase_receipt(f, n, doc, 25, "A consumer buys two shirts.",
-                                    [{"item": "shirt-r", "qty": 2, "why": "Two shirts."}], cash=True)
+        out = kit.purchase_receipt(f, n, doc, 25, "A consumer buys two shirts.",
+                                   [{"item": "shirt-r", "qty": 2, "why": "Two shirts."}], cash=True)
+        till(out, f, 25, "16:05:00", "C1", "Joss")
+        return cash_payment(out, f, 25, "16:05:00", "70.00")
     raise SystemExit(f"packaging scenario: no document {n} {doc['doc']}")
 
 

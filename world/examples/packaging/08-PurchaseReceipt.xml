@@ -7,6 +7,11 @@
   <cbc:ID>BS-PR-26-0530</cbc:ID>
   <cbc:UUID>cce7560b-887a-56e6-8fcd-571ce027241e</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
+  <cbc:IssueTime>16:05:00</cbc:IssueTime>
+  <cbc:TransactionDate>2026-05-22</cbc:TransactionDate>
+  <cbc:TransactionTime>16:05:00</cbc:TransactionTime>
+  <cbc:PurchaseDate>2026-05-22</cbc:PurchaseDate>
+  <cbc:PurchaseTime>16:05:00</cbc:PurchaseTime>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -132,6 +137,27 @@
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:CashierContact>
+    <cbc:Name>Joss</cbc:Name>
+  </cac:CashierContact>
+  <cac:CashRegister>
+    <cbc:ID>C1</cbc:ID>
+    <cbc:SerialNumberID>BM-POS-C1-2219</cbc:SerialNumberID>
+  </cac:CashRegister>
+  <cac:PointOfSaleLocation>
+    <cbc:Description>Clothing, first floor</cbc:Description>
+    <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
+  </cac:PointOfSaleLocation>
+  <cac:PointOfSaleContact>
+    <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+  </cac:PointOfSaleContact>
+  <cac:Payment>
+    <cbc:PaidAmount currencyID="XBL">63.80</cbc:PaidAmount>
+    <cbc:PaidCashAmount currencyID="XBL">70.00</cbc:PaidCashAmount>
+    <cbc:CashChangeAmount currencyID="XBL">6.20</cbc:CashChangeAmount>
+    <cbc:PaidDate>2026-05-22</cbc:PaidDate>
+    <cbc:PaidTime>16:05:00</cbc:PaidTime>
+  </cac:Payment>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>
   </cac:PaymentMeans>
@@ -153,7 +179,8 @@
     <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XBL">59.90</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="XBL">63.79</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">63.79</cbc:PayableAmount>
+    <cbc:PayableRoundingAmount currencyID="XBL">0.01</cbc:PayableRoundingAmount>
+    <cbc:PayableAmount currencyID="XBL">63.80</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
