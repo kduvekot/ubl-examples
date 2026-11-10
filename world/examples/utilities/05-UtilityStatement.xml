@@ -9,10 +9,18 @@
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>11:55:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Water</cbc:UtilityStatementTypeCode>
+  <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0317</cbc:ID>
   </cac:ParentDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>CSWC-TARIFF-2026</cbc:ID>
+    <cbc:DocumentTypeCode>Tariff</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
+  </cac:AdditionalDocumentReference>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3600</cbc:IndustryClassificationCode>
@@ -190,6 +198,16 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:CustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:CustomerParty>
   <cac:SubscriberParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -198,4 +216,202 @@
       <cbc:Name>Brightmarket Stores</cbc:Name>
     </cac:PartyName>
   </cac:SubscriberParty>
+  <cac:SubscriberConsumption>
+    <cbc:ConsumptionID>CSW-CP-38510-411-2603</cbc:ConsumptionID>
+    <cbc:SpecificationTypeCode>Detailed</cbc:SpecificationTypeCode>
+    <cbc:Note>Shop, Lumeport</cbc:Note>
+    <cbc:TotalMeteredQuantity unitCode="MTQ">86</cbc:TotalMeteredQuantity>
+    <cac:UtilityConsumptionPoint>
+      <cbc:ID>CSW-CP-38510-411</cbc:ID>
+      <cbc:Description>Shop, Lumeport</cbc:Description>
+      <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
+      <cbc:SubscriberType>Commercial</cbc:SubscriberType>
+      <cbc:SubscriberTypeCode>COM</cbc:SubscriberTypeCode>
+      <cbc:TotalDeliveredQuantity unitCode="MTQ">86</cbc:TotalDeliveredQuantity>
+      <cac:Address>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Market Street</cbc:StreetName>
+        <cbc:BuildingNumber>50</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38515</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:Address>
+      <cac:WebSiteAccess>
+        <cbc:URI>https://www.coastalwater.example/meter</cbc:URI>
+        <cbc:Password>********</cbc:Password>
+        <cbc:Login>CSW-CP-38510-411</cbc:Login>
+      </cac:WebSiteAccess>
+      <cac:UtilityMeter>
+        <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
+        <cbc:MeterName>Water meter, shop</cbc:MeterName>
+        <cbc:MeterConstant>1</cbc:MeterConstant>
+        <cbc:MeterConstantCode>Direct</cbc:MeterConstantCode>
+        <cbc:TotalDeliveredQuantity unitCode="MTQ">86</cbc:TotalDeliveredQuantity>
+        <cac:MeterReading>
+          <cbc:ID>CSW-W-55102-2603</cbc:ID>
+          <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
+          <cbc:MeterReadingTypeCode>M</cbc:MeterReadingTypeCode>
+          <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
+          <cbc:PreviousMeterQuantity unitCode="MTQ">4212</cbc:PreviousMeterQuantity>
+          <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
+          <cbc:LatestMeterQuantity unitCode="MTQ">4298</cbc:LatestMeterQuantity>
+          <cbc:PreviousMeterReadingMethod>Remote reading</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethodCode>REMOTE</cbc:PreviousMeterReadingMethodCode>
+          <cbc:LatestMeterReadingMethod>Remote reading</cbc:LatestMeterReadingMethod>
+          <cbc:LatestMeterReadingMethodCode>REMOTE</cbc:LatestMeterReadingMethodCode>
+          <cbc:DeliveredQuantity unitCode="MTQ">86</cbc:DeliveredQuantity>
+        </cac:MeterReading>
+        <cac:MeterProperty>
+          <cbc:Name>Accuracy class</cbc:Name>
+          <cbc:NameCode>ACC</cbc:NameCode>
+          <cbc:Value>1</cbc:Value>
+          <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
+        </cac:MeterProperty>
+      </cac:UtilityMeter>
+    </cac:UtilityConsumptionPoint>
+    <cac:Consumption>
+      <cbc:UtilityStatementTypeCode>Water</cbc:UtilityStatementTypeCode>
+      <cac:MainPeriod>
+        <cbc:StartDate>2026-03-01</cbc:StartDate>
+        <cbc:EndDate>2026-03-31</cbc:EndDate>
+      </cac:MainPeriod>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      </cac:TaxTotal>
+      <cac:EnergyWaterSupply>
+        <cac:ConsumptionReport>
+          <cbc:ID>CSW-CP-38510-411-2603</cbc:ID>
+          <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
+          <cbc:Description>March consumption of Shop, Lumeport.</cbc:Description>
+          <cbc:TotalConsumedQuantity unitCode="MTQ">86</cbc:TotalConsumedQuantity>
+          <cbc:BasicConsumedQuantity unitCode="MTQ">86</cbc:BasicConsumedQuantity>
+          <cac:Period>
+            <cbc:StartDate>2026-03-01</cbc:StartDate>
+            <cbc:EndDate>2026-03-31</cbc:EndDate>
+          </cac:Period>
+          <cac:ConsumptionReportReference>
+            <cbc:ConsumptionReportID>CSW-CP-38510-411-2602</cbc:ConsumptionReportID>
+            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:TotalConsumedQuantity unitCode="MTQ">79</cbc:TotalConsumedQuantity>
+            <cac:Period>
+              <cbc:StartDate>2026-02-01</cbc:StartDate>
+              <cbc:EndDate>2026-02-28</cbc:EndDate>
+            </cac:Period>
+          </cac:ConsumptionReportReference>
+          <cac:ConsumptionHistory>
+            <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
+            <cbc:Quantity unitCode="MTQ">81</cbc:Quantity>
+            <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
+            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+            <cbc:Description>Earlier month.</cbc:Description>
+            <cac:Period>
+              <cbc:StartDate>2026-01-01</cbc:StartDate>
+              <cbc:EndDate>2026-01-31</cbc:EndDate>
+            </cac:Period>
+          </cac:ConsumptionHistory>
+          <cac:ConsumptionHistory>
+            <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
+            <cbc:Quantity unitCode="MTQ">79</cbc:Quantity>
+            <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
+            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+            <cbc:Description>Earlier month.</cbc:Description>
+            <cac:Period>
+              <cbc:StartDate>2026-02-01</cbc:StartDate>
+              <cbc:EndDate>2026-02-28</cbc:EndDate>
+            </cac:Period>
+          </cac:ConsumptionHistory>
+        </cac:ConsumptionReport>
+        <cac:ConsumptionAverage>
+          <cbc:AverageAmount currencyID="XBL">202.10</cbc:AverageAmount>
+          <cbc:Description>The average over the last three months is 82 m³.</cbc:Description>
+        </cac:ConsumptionAverage>
+      </cac:EnergyWaterSupply>
+      <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
+        <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
+      </cac:LegalMonetaryTotal>
+    </cac:Consumption>
+    <cac:SupplierConsumption>
+      <cbc:Description>The supply under the customer's contract.</cbc:Description>
+      <cac:UtilitySupplierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Coastal State Water Company</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilitySupplierParty>
+      <cac:UtilityCustomerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brightmarket Stores</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilityCustomerParty>
+      <cac:Consumption>
+        <cbc:UtilityStatementTypeCode>Water</cbc:UtilityStatementTypeCode>
+        <cac:MainPeriod>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:MainPeriod>
+        <cac:LegalMonetaryTotal>
+          <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
+        </cac:LegalMonetaryTotal>
+      </cac:Consumption>
+      <cac:Contract>
+        <cbc:ID>CSW-C-260118</cbc:ID>
+        <cbc:ContractType>Water supply</cbc:ContractType>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2024-01-01</cbc:StartDate>
+        </cac:ValidityPeriod>
+      </cac:Contract>
+      <cac:ConsumptionLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
+        <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">202.10</cbc:TaxInclusiveLineExtensionAmount>
+        <cac:Period>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:Period>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:UtilityItem>
+          <cbc:ID>CW-M3</cbc:ID>
+          <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
+          <cbc:SubscriberType>Water</cbc:SubscriberType>
+          <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
+          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
+          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
+          <cbc:CurrentChargeTypeCode>M</cbc:CurrentChargeTypeCode>
+          <cac:TaxCategory>
+            <cbc:ID>E</cbc:ID>
+            <cbc:Percent>0</cbc:Percent>
+            <cbc:TaxExemptionReasonCode>XB-WATER</cbc:TaxExemptionReasonCode>
+            <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
+            <cac:TaxScheme>
+              <cbc:ID>STT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:UtilityItem>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:ConsumptionLine>
+    </cac:SupplierConsumption>
+  </cac:SubscriberConsumption>
 </UtilityStatement>

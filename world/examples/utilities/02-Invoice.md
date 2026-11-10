@@ -65,7 +65,7 @@ Inside `BillingReference`:
 - `InvoiceDocumentReference/IssueDate` = **2026-03-01**  
   Its issue date.
 - `BillingReferenceLine/ID` = **2**  
-  Its warehouse line, which this month's actual reading settles.
+  Its warehouse line, which the statement of this bill corrects; the difference follows on the April bill.
 
 ### Purchase Reference
 
