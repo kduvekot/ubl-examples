@@ -259,11 +259,234 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
+      <cac:PassengerPerson>
+        <cbc:FirstName>Ines</cbc:FirstName>
+        <cbc:FamilyName>Tavari</cbc:FamilyName>
+        <cbc:RoleCode>Passenger</cbc:RoleCode>
+      </cac:PassengerPerson>
+      <cac:ReportingPerson>
+        <cbc:FirstName>Corin</cbc:FirstName>
+        <cbc:FamilyName>Halvard</cbc:FamilyName>
+        <cbc:RoleCode>Master</cbc:RoleCode>
+      </cac:ReportingPerson>
+      <cac:CrewMemberPerson>
+        <cbc:FirstName>Corin</cbc:FirstName>
+        <cbc:FamilyName>Halvard</cbc:FamilyName>
+        <cbc:RoleCode>Master</cbc:RoleCode>
+      </cac:CrewMemberPerson>
+      <cac:CrewMemberPerson>
+        <cbc:FirstName>Elsbeth</cbc:FirstName>
+        <cbc:FamilyName>Marrin</cbc:FamilyName>
+        <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+      </cac:CrewMemberPerson>
+      <cac:CrewMemberPerson>
+        <cbc:FirstName>Rafe</cbc:FirstName>
+        <cbc:FamilyName>Dunmore</cbc:FamilyName>
+        <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+      </cac:CrewMemberPerson>
+      <cac:SecurityOfficerPerson>
+        <cbc:FirstName>Elsbeth</cbc:FirstName>
+        <cbc:FamilyName>Marrin</cbc:FamilyName>
+        <cbc:RoleCode>SSO</cbc:RoleCode>
+      </cac:SecurityOfficerPerson>
+      <cac:ShipsSurgeonPerson>
+        <cbc:FirstName>Elsbeth</cbc:FirstName>
+        <cbc:FamilyName>Marrin</cbc:FamilyName>
+        <cbc:RoleCode>MedicalOfficer</cbc:RoleCode>
+      </cac:ShipsSurgeonPerson>
+      <cac:DestinationPortCall>
+        <cbc:ID>XLSEL-26-0517</cbc:ID>
+        <cbc:PlannedOperationsDescription>Discharge one container, load six.</cbc:PlannedOperationsDescription>
+        <cbc:PlannedWorksDescription>None.</cbc:PlannedWorksDescription>
+        <cbc:PlannedInspectionsDescription>Port state control is due.</cbc:PlannedInspectionsDescription>
+        <cbc:ExpectedAnchorageIndicator>false</cbc:ExpectedAnchorageIndicator>
+        <cbc:PositionInPortID>BERTH-2</cbc:PositionInPortID>
+        <cbc:CargoAndBallastTankConditionDescription>Tanks clean; ballast exchanged at sea.</cbc:CargoAndBallastTankConditionDescription>
+        <cac:ShipRequirement>
+          <cbc:ID>SR-1</cbc:ID>
+          <cbc:Description>Fresh water, 40 tonnes.</cbc:Description>
+        </cac:ShipRequirement>
+        <cac:PrimaryPortCallPurpose>
+          <cbc:PurposeTypeCode>Cargo</cbc:PurposeTypeCode>
+          <cbc:PurposeType>Cargo operations</cbc:PurposeType>
+          <cbc:Description>Discharge and load containers.</cbc:Description>
+        </cac:PrimaryPortCallPurpose>
+        <cac:AdditionalPortCallPurpose>
+          <cbc:PurposeTypeCode>Water</cbc:PurposeTypeCode>
+          <cbc:PurposeType>Bunkering of fresh water</cbc:PurposeType>
+        </cac:AdditionalPortCallPurpose>
+        <cac:RequestedArrivalEvent>
+          <cbc:IdentificationID>ARR-XLSEL-0517</cbc:IdentificationID>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+          <cbc:TypeCode>Arrival</cbc:TypeCode>
+          <cbc:Description>Pilot on board at the fairway buoy.</cbc:Description>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:CurrentStatus>
+            <cbc:ConditionCode>OnTime</cbc:ConditionCode>
+          </cac:CurrentStatus>
+          <cac:Contact>
+            <cbc:Name>Bridge</cbc:Name>
+            <cbc:Telephone>+999 2 3900 2117</cbc:Telephone>
+          </cac:Contact>
+          <cac:OccurrenceLocation>
+            <cbc:Name>Selanu fairway buoy</cbc:Name>
+          </cac:OccurrenceLocation>
+        </cac:RequestedArrivalEvent>
+      </cac:DestinationPortCall>
+      <cac:ShipStoreArticle>
+        <cbc:ID>ST-1</cbc:ID>
+        <cbc:Name>Spirits</cbc:Name>
+        <cbc:Quantity unitCode="LTR">24</cbc:Quantity>
+        <cbc:OfficialUse>Sealed by customs at Lumeport.</cbc:OfficialUse>
+        <cac:Stowage>
+          <cbc:LocationID>BOND-1</cbc:LocationID>
+          <cbc:Location>Bonded locker, accommodation deck</cbc:Location>
+        </cac:Stowage>
+      </cac:ShipStoreArticle>
+      <cac:ShipStoreArticle>
+        <cbc:ID>ST-2</cbc:ID>
+        <cbc:Name>Cigarettes</cbc:Name>
+        <cbc:Quantity unitCode="H87">2000</cbc:Quantity>
+      </cac:ShipStoreArticle>
+      <cac:CrewPersonEffect>
+        <cbc:EffectDescription>One camera, one laptop.</cbc:EffectDescription>
+        <cac:CrewPerson>
+          <cbc:FirstName>Rafe</cbc:FirstName>
+          <cbc:FamilyName>Dunmore</cbc:FamilyName>
+          <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+        </cac:CrewPerson>
+      </cac:CrewPersonEffect>
+      <cac:MaritimeWaste>
+        <cbc:ID>W-1</cbc:ID>
+        <cbc:Description>Sludge from the fuel separators.</cbc:Description>
+        <cbc:WasteTypeCode>Oil</cbc:WasteTypeCode>
+        <cbc:ToBeDeliveredMeasure unitCode="MTQ">2.4</cbc:ToBeDeliveredMeasure>
+        <cbc:RetainedOnBoardMeasure unitCode="MTQ">0.6</cbc:RetainedOnBoardMeasure>
+        <cbc:MaxDedicatedStorageCapacityMeasure unitCode="MTQ">8</cbc:MaxDedicatedStorageCapacityMeasure>
+        <cbc:EstimatedGeneratedUntilNextPortMeasure unitCode="MTQ">0.8</cbc:EstimatedGeneratedUntilNextPortMeasure>
+        <cac:RemainingWasteDeliveryPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:RemainingWasteDeliveryPortLocation>
+      </cac:MaritimeWaste>
+      <cac:MaritimeWaste>
+        <cbc:ID>W-2</cbc:ID>
+        <cbc:Description>Food and packaging waste.</cbc:Description>
+        <cbc:WasteTypeCode>Garbage</cbc:WasteTypeCode>
+        <cbc:ToBeDeliveredMeasure unitCode="MTQ">1.5</cbc:ToBeDeliveredMeasure>
+      </cac:MaritimeWaste>
+      <cac:BallastWaterSummary>
+        <cbc:ID>BW-26-0517</cbc:ID>
+        <cbc:ManagementPlanOnBoardIndicator>true</cbc:ManagementPlanOnBoardIndicator>
+        <cbc:ManagementPlanImplementedIndicator>true</cbc:ManagementPlanImplementedIndicator>
+        <cbc:IMOGuidelinesOnBoardIndicator>true</cbc:IMOGuidelinesOnBoardIndicator>
+        <cbc:TotalBallastTanksOnBoardQuantity unitCode="C62">8</cbc:TotalBallastTanksOnBoardQuantity>
+        <cbc:TanksInBallastQuantity unitCode="C62">4</cbc:TanksInBallastQuantity>
+        <cbc:TanksExchangedQuantity unitCode="C62">4</cbc:TanksExchangedQuantity>
+        <cbc:TanksNotExchangedQuantity unitCode="C62">0</cbc:TanksNotExchangedQuantity>
+        <cbc:TotalBallastWaterOnBoardMeasure unitCode="TNE">1240</cbc:TotalBallastWaterOnBoardMeasure>
+        <cbc:TotalBallastWaterCapacityMeasure unitCode="TNE">2480</cbc:TotalBallastWaterCapacityMeasure>
+        <cbc:OtherControlActions>None.</cbc:OtherControlActions>
+        <cbc:NoControlActionsReason>Exchange done at more than 200 nautical miles from land.</cbc:NoControlActionsReason>
+        <cac:UptakeBallastWaterTransaction>
+          <cbc:TankID>BT-3</cbc:TankID>
+          <cbc:TankTypeCode>Wing</cbc:TankTypeCode>
+          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
+          <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
+          <cbc:TransactionDate>2026-05-14</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+          <cac:BallastWaterTemperature>
+            <cbc:AttributeID>Water</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">16</cbc:Measure>
+          </cac:BallastWaterTemperature>
+        </cac:UptakeBallastWaterTransaction>
+        <cac:ExchangeBallastWaterTransaction>
+          <cbc:TankID>BT-3</cbc:TankID>
+          <cbc:ExchangeMethodCode>Sequential</cbc:ExchangeMethodCode>
+          <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
+          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:TransactionDate>2026-05-16</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          </cac:Location>
+        </cac:ExchangeBallastWaterTransaction>
+        <cac:DischargeBallastWaterTransaction>
+          <cbc:TankID>BT-3</cbc:TankID>
+          <cbc:VolumeMeasure unitCode="TNE">120</cbc:VolumeMeasure>
+          <cbc:TransactionDate>2026-05-18</cbc:TransactionDate>
+        </cac:DischargeBallastWaterTransaction>
+        <cac:ResponsibleOfficerPerson>
+          <cbc:FirstName>Elsbeth</cbc:FirstName>
+          <cbc:FamilyName>Marrin</cbc:FamilyName>
+          <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+        </cac:ResponsibleOfficerPerson>
+      </cac:BallastWaterSummary>
       <cac:ISPSRequirements>
         <cbc:ID>ISSC-XL-2026-0117</cbc:ID>
         <cbc:ValidISSCIndicator>true</cbc:ValidISSCIndicator>
+        <cbc:ISSCAbsenceReason>Not applicable: the certificate is on board.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2028-09-30</cbc:ISSCExpiryDate>
+        <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
+        <cbc:SSPSecurityMeasuresAppliedIndicator>true</cbc:SSPSecurityMeasuresAppliedIndicator>
         <cbc:CurrentOperatingSecurityLevelCode>1</cbc:CurrentOperatingSecurityLevelCode>
+        <cbc:AdditionalMattersDescription>None.</cbc:AdditionalMattersDescription>
+        <cac:AdditionalSecurityMeasure>
+          <cbc:ID>SM-1</cbc:ID>
+          <cbc:Description>Gangway watch at Selanu.</cbc:Description>
+        </cac:AdditionalSecurityMeasure>
+        <cac:PortCallRecord>
+          <cbc:ID>PCR-1</cbc:ID>
+          <cbc:SecurityLevelCode>1</cbc:SecurityLevelCode>
+          <cac:SecurityMeasure>
+            <cbc:Description>Normal access control.</cbc:Description>
+          </cac:SecurityMeasure>
+          <cac:PortFacilityLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:PortFacilityLocation>
+          <cac:Period>
+            <cbc:StartDate>2026-05-13</cbc:StartDate>
+            <cbc:EndDate>2026-05-14</cbc:EndDate>
+          </cac:Period>
+        </cac:PortCallRecord>
+        <cac:ShipToShipActivityRecord>
+          <cbc:ID>STS-0</cbc:ID>
+          <cbc:Description>None during the last ten port calls.</cbc:Description>
+          <cac:AppliedSecurityMeasure>
+            <cbc:ID>SM-0</cbc:ID>
+            <cbc:Description>None: no ship-to-ship activity.</cbc:Description>
+          </cac:AppliedSecurityMeasure>
+          <cac:Period>
+            <cbc:StartDate>2026-01-01</cbc:StartDate>
+            <cbc:EndDate>2026-05-17</cbc:EndDate>
+          </cac:Period>
+          <cac:Location>
+            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          </cac:Location>
+        </cac:ShipToShipActivityRecord>
+        <cac:ReportLocation>
+          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+        </cac:ReportLocation>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:ID>
@@ -272,7 +495,104 @@
             <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
           </cac:PartyName>
         </cac:ISSCIssuerParty>
+        <cac:SecurityOfficerPerson>
+          <cbc:FirstName>Elsbeth</cbc:FirstName>
+          <cbc:FamilyName>Marrin</cbc:FamilyName>
+          <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+        </cac:SecurityOfficerPerson>
       </cac:ISPSRequirements>
+      <cac:MaritimeHealthDeclaration>
+        <cbc:ID>MDH-26-0517</cbc:ID>
+        <cbc:InfectiousDiseaseCaseOnBoardIndicator>false</cbc:InfectiousDiseaseCaseOnBoardIndicator>
+        <cbc:MoreIllThanExpectedIndicator>false</cbc:MoreIllThanExpectedIndicator>
+        <cbc:MedicalPractitionerConsultedIndicator>true</cbc:MedicalPractitionerConsultedIndicator>
+        <cbc:StowawaysFoundOnBoardIndicator>false</cbc:StowawaysFoundOnBoardIndicator>
+        <cbc:SickAnimalOnBoardIndicator>false</cbc:SickAnimalOnBoardIndicator>
+        <cbc:FumigatedCargoTransportIndicator>false</cbc:FumigatedCargoTransportIndicator>
+        <cbc:SanitaryMeasuresAppliedIndicator>true</cbc:SanitaryMeasuresAppliedIndicator>
+        <cbc:ValidSanitationCertificateOnBoardIndicator>true</cbc:ValidSanitationCertificateOnBoardIndicator>
+        <cbc:ReinspectionRequiredIndicator>false</cbc:ReinspectionRequiredIndicator>
+        <cbc:TotalDeadPersonQuantity unitCode="C62">0</cbc:TotalDeadPersonQuantity>
+        <cbc:TotalIllPersonQuantity unitCode="C62">1</cbc:TotalIllPersonQuantity>
+        <cbc:SickAnimalDescription>None on board.</cbc:SickAnimalDescription>
+        <cbc:StowawayDescription>None found in the search before departure.</cbc:StowawayDescription>
+        <cbc:LastDrinkingWaterAnalysisDate>2026-04-02</cbc:LastDrinkingWaterAnalysisDate>
+        <cac:WHOAffectedAreaVisit>
+          <cbc:VisitDate>2026-03-28</cbc:VisitDate>
+          <cac:WHOAffectedAreaPortLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:WHOAffectedAreaPortLocation>
+        </cac:WHOAffectedAreaVisit>
+        <cac:PersonnelHealthIncident>
+          <cbc:ID>HI-1</cbc:ID>
+          <cbc:JoinedShipDate>2025-11-01</cbc:JoinedShipDate>
+          <cbc:NatureOfIllnessDescription>Sprained wrist.</cbc:NatureOfIllnessDescription>
+          <cbc:OnsetDate>2026-05-16</cbc:OnsetDate>
+          <cbc:ReportedToMedicalOfficerIndicator>true</cbc:ReportedToMedicalOfficerIndicator>
+          <cbc:GivenTreatmentDescription>Bandage and rest.</cbc:GivenTreatmentDescription>
+          <cbc:StillIllIndicator>true</cbc:StillIllIndicator>
+          <cbc:DiedIndicator>false</cbc:DiedIndicator>
+          <cbc:StillOnBoardIndicator>true</cbc:StillOnBoardIndicator>
+          <cbc:EvacuatedIndicator>false</cbc:EvacuatedIndicator>
+          <cbc:BuriedAtSeaIndicator>false</cbc:BuriedAtSeaIndicator>
+          <cbc:Note>Fit for light duty.</cbc:Note>
+          <cac:Person>
+            <cbc:FirstName>Rafe</cbc:FirstName>
+            <cbc:FamilyName>Dunmore</cbc:FamilyName>
+            <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+          </cac:Person>
+        </cac:PersonnelHealthIncident>
+        <cac:SanitaryMeasure>
+          <cbc:SanitaryMeasureTypeCode>Disinfection</cbc:SanitaryMeasureTypeCode>
+          <cbc:ApplicationDate>2026-05-15</cbc:ApplicationDate>
+        </cac:SanitaryMeasure>
+        <cac:PlaceOfReportLocation>
+          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+        </cac:PlaceOfReportLocation>
+        <cac:MedicalCertificate>
+          <cbc:ID>MC-TH-2026</cbc:ID>
+          <cbc:CertificateType>Medicine chest</cbc:CertificateType>
+        </cac:MedicalCertificate>
+        <cac:ShipSanitationControlCertificate>
+          <cbc:ID>SSCC-XB-2025-0911</cbc:ID>
+          <cbc:CertificateType>Ship sanitation control</cbc:CertificateType>
+        </cac:ShipSanitationControlCertificate>
+        <cac:ShipSanitationControlExemptionDocumentReference>
+          <cbc:ID>none</cbc:ID>
+        </cac:ShipSanitationControlExemptionDocumentReference>
+      </cac:MaritimeHealthDeclaration>
+      <cac:FuelConsumption>
+        <cbc:ID>FC-26-19E</cbc:ID>
+        <cbc:FuelTypeCode>MGO</cbc:FuelTypeCode>
+        <cbc:FuelType>Marine gas oil, 0.1 % sulphur</cbc:FuelType>
+        <cbc:FuelConsumptionMeasure unitCode="TNE">38</cbc:FuelConsumptionMeasure>
+        <cac:AdditionalFuelProperty>
+          <cbc:TypeID>Sulphur</cbc:TypeID>
+          <cbc:Value>0.1 %</cbc:Value>
+        </cac:AdditionalFuelProperty>
+        <cac:FuelMetering>
+          <cbc:TypeID>FlowMeter</cbc:TypeID>
+          <cbc:Value>38.2 t</cbc:Value>
+        </cac:FuelMetering>
+        <cac:EnvironmentalEmission>
+          <cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+          <cbc:ValueMeasure unitCode="TNE">122</cbc:ValueMeasure>
+        </cac:EnvironmentalEmission>
+        <cac:FuelProviderParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+          </cac:PartyName>
+        </cac:FuelProviderParty>
+      </cac:FuelConsumption>
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:TransportMeans>
@@ -291,12 +611,21 @@
       <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
       <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
       <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+      <cbc:INFShipClassCode>INF1</cbc:INFShipClassCode>
+      <cbc:AntennaLocus>Mast, 28 m above the waterline</cbc:AntennaLocus>
       <cac:RegistryCertificateDocumentReference>
         <cbc:ID>REG-XB-S-20117</cbc:ID>
       </cac:RegistryCertificateDocumentReference>
       <cac:RegistryPortLocation>
         <cbc:Name>Lumeport</cbc:Name>
       </cac:RegistryPortLocation>
+      <cac:VesselDynamics>
+        <cbc:NavigationStatusCode>0</cbc:NavigationStatusCode>
+        <cbc:AtAnchorageIndicator>false</cbc:AtAnchorageIndicator>
+        <cbc:CourseOverGroundDirection>088</cbc:CourseOverGroundDirection>
+        <cbc:SpeedOverGroundMeasure unitCode="KNT">13.5</cbc:SpeedOverGroundMeasure>
+        <cbc:RateOfTurnMeasure unitCode="C62">0</cbc:RateOfTurnMeasure>
+      </cac:VesselDynamics>
     </cac:MaritimeTransport>
   </cac:TransportMeans>
   <cac:DocumentReference>

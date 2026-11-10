@@ -334,18 +334,390 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `ShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41037** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Port of Selanu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ShipmentStage/PassengerPerson/FirstName` = **Ines**  
+  The one passenger, a supercargo.
+- `ShipmentStage/PassengerPerson/FamilyName` = **Tavari**  
+  The family name.
+- `ShipmentStage/PassengerPerson/RoleCode` = **Passenger**  
+  The person's role on board.
+- `ShipmentStage/ReportingPerson/FirstName` = **Corin**  
+  The master reports.
+- `ShipmentStage/ReportingPerson/FamilyName` = **Halvard**  
+  The family name.
+- `ShipmentStage/ReportingPerson/RoleCode` = **Master**  
+  The person's role on board.
+- `ShipmentStage/CrewMemberPerson/FirstName` = **Corin**  
+  The master.
+- `ShipmentStage/CrewMemberPerson/FamilyName` = **Halvard**  
+  The family name.
+- `ShipmentStage/CrewMemberPerson/RoleCode` = **Master**  
+  The person's role on board.
+- `ShipmentStage/CrewMemberPerson/FirstName` = **Elsbeth**  
+  The chief officer, also the ship's medical officer.
+- `ShipmentStage/CrewMemberPerson/FamilyName` = **Marrin**  
+  The family name.
+- `ShipmentStage/CrewMemberPerson/RoleCode` = **ChiefOfficer**  
+  The person's role on board.
+- `ShipmentStage/CrewMemberPerson/FirstName` = **Rafe**  
+  The chief engineer.
+- `ShipmentStage/CrewMemberPerson/FamilyName` = **Dunmore**  
+  The family name.
+- `ShipmentStage/CrewMemberPerson/RoleCode` = **ChiefEngineer**  
+  The person's role on board.
+- `ShipmentStage/SecurityOfficerPerson/FirstName` = **Elsbeth**  
+  The ship security officer.
+- `ShipmentStage/SecurityOfficerPerson/FamilyName` = **Marrin**  
+  The family name.
+- `ShipmentStage/SecurityOfficerPerson/RoleCode` = **SSO**  
+  The person's role on board.
+- `ShipmentStage/ShipsSurgeonPerson/FirstName` = **Elsbeth**  
+  No surgeon on a feeder: the chief officer is the medical officer.
+- `ShipmentStage/ShipsSurgeonPerson/FamilyName` = **Marrin**  
+  The family name.
+- `ShipmentStage/ShipsSurgeonPerson/RoleCode` = **MedicalOfficer**  
+  The person's role on board.
+- `ShipmentStage/DestinationPortCall/ID` = **XLSEL-26-0517**  
+  The port call at Selanu.
+- `ShipmentStage/DestinationPortCall/PlannedOperationsDescription` = **Discharge one container, load six.**  
+  What the ship will do.
+- `ShipmentStage/DestinationPortCall/PlannedWorksDescription` = **None.**  
+  No repairs planned.
+- `ShipmentStage/DestinationPortCall/PlannedInspectionsDescription` = **Port state control is due.**  
+  An inspection is expected.
+- `ShipmentStage/DestinationPortCall/ExpectedAnchorageIndicator` = **false**  
+  Straight to the berth.
+- `ShipmentStage/DestinationPortCall/PositionInPortID` = **BERTH-2**  
+  The container berth.
+- `ShipmentStage/DestinationPortCall/CargoAndBallastTankConditionDescription` = **Tanks clean; ballast exchanged at sea.**  
+  Their condition.
+- `ShipmentStage/DestinationPortCall/ShipRequirement/ID` = **SR-1**  
+  A need of the ship.
+- `ShipmentStage/DestinationPortCall/ShipRequirement/Description` = **Fresh water, 40 tonnes.**  
+  What it needs.
+- `ShipmentStage/DestinationPortCall/PrimaryPortCallPurpose/PurposeTypeCode` = **Cargo**  
+  Cargo operations.
+- `ShipmentStage/DestinationPortCall/PrimaryPortCallPurpose/PurposeType` = **Cargo operations**  
+  In words.
+- `ShipmentStage/DestinationPortCall/PrimaryPortCallPurpose/Description` = **Discharge and load containers.**  
+  The purpose.
+- `ShipmentStage/DestinationPortCall/AdditionalPortCallPurpose/PurposeTypeCode` = **Water**  
+  Taking on water.
+- `ShipmentStage/DestinationPortCall/AdditionalPortCallPurpose/PurposeType` = **Bunkering of fresh water**  
+  In words.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/IdentificationID` = **ARR-XLSEL-0517**  
+  The requested arrival.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceDate` = **2026-05-18**  
+  The day.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceTime` = **06:00:00**  
+  At first light.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/TypeCode` = **Arrival**  
+  An arrival.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Description` = **Pilot on board at the fairway buoy.**  
+  What is asked.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/CompletionIndicator` = **false**  
+  Not yet.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/CurrentStatus/ConditionCode` = **OnTime**  
+  Expected on time.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Name` = **Bridge**  
+  Whom to call.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Telephone` = **+999 2 3900 2117**  
+  The ship's satellite phone.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceLocation/Name` = **Selanu fairway buoy**  
+  Where the pilot boards.
+- `ShipmentStage/ShipStoreArticle/ID` = **ST-1**  
+  Spirits in the bonded store.
+- `ShipmentStage/ShipStoreArticle/Name` = **Spirits**  
+  What.
+- `ShipmentStage/ShipStoreArticle/Quantity` = **24** (unitCode `LTR`)  
+  Litres.
+- `ShipmentStage/ShipStoreArticle/OfficialUse` = **Sealed by customs at Lumeport.**  
+  Under seal.
+- `ShipmentStage/ShipStoreArticle/Stowage/LocationID` = **BOND-1**  
+  The bonded locker.
+- `ShipmentStage/ShipStoreArticle/Stowage/Location` = **Bonded locker, accommodation deck**  
+  Where.
+- `ShipmentStage/ShipStoreArticle/ID` = **ST-2**  
+  Cigarettes.
+- `ShipmentStage/ShipStoreArticle/Name` = **Cigarettes**  
+  What.
+- `ShipmentStage/ShipStoreArticle/Quantity` = **2000** (unitCode `H87`)  
+  Pieces.
+- `ShipmentStage/CrewPersonEffect/EffectDescription` = **One camera, one laptop.**  
+  What the crew member declares.
+- `ShipmentStage/CrewPersonEffect/CrewPerson/FirstName` = **Rafe**  
+  The chief engineer.
+- `ShipmentStage/CrewPersonEffect/CrewPerson/FamilyName` = **Dunmore**  
+  The family name.
+- `ShipmentStage/CrewPersonEffect/CrewPerson/RoleCode` = **ChiefEngineer**  
+  The person's role on board.
+- `ShipmentStage/MaritimeWaste/ID` = **W-1**  
+  Oily waste.
+- `ShipmentStage/MaritimeWaste/Description` = **Sludge from the fuel separators.**  
+  What.
+- `ShipmentStage/MaritimeWaste/WasteTypeCode` = **Oil**  
+  MARPOL Annex I waste.
+- `ShipmentStage/MaritimeWaste/ToBeDeliveredMeasure` = **2.4** (unitCode `MTQ`)  
+  To be delivered at Selanu.
+- `ShipmentStage/MaritimeWaste/RetainedOnBoardMeasure` = **0.6** (unitCode `MTQ`)  
+  Kept on board.
+- `ShipmentStage/MaritimeWaste/MaxDedicatedStorageCapacityMeasure` = **8** (unitCode `MTQ`)  
+  The tank's capacity.
+- `ShipmentStage/MaritimeWaste/EstimatedGeneratedUntilNextPortMeasure` = **0.8** (unitCode `MTQ`)  
+  Until Lumeport again.
+- `ShipmentStage/MaritimeWaste/RemainingWasteDeliveryPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/MaritimeWaste/RemainingWasteDeliveryPortLocation/Name` = **Port of Lumeport**  
+  The rest goes ashore at Lumeport.
+- `ShipmentStage/MaritimeWaste/RemainingWasteDeliveryPortLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `ShipmentStage/MaritimeWaste/ID` = **W-2**  
+  Garbage.
+- `ShipmentStage/MaritimeWaste/Description` = **Food and packaging waste.**  
+  What.
+- `ShipmentStage/MaritimeWaste/WasteTypeCode` = **Garbage**  
+  MARPOL Annex V waste.
+- `ShipmentStage/MaritimeWaste/ToBeDeliveredMeasure` = **1.5** (unitCode `MTQ`)  
+  To be delivered.
+- `ShipmentStage/BallastWaterSummary/ID` = **BW-26-0517**  
+  The ballast water report.
+- `ShipmentStage/BallastWaterSummary/ManagementPlanOnBoardIndicator` = **true**  
+  The plan is on board.
+- `ShipmentStage/BallastWaterSummary/ManagementPlanImplementedIndicator` = **true**  
+  And followed.
+- `ShipmentStage/BallastWaterSummary/IMOGuidelinesOnBoardIndicator` = **true**  
+  The IMO guidelines are on board.
+- `ShipmentStage/BallastWaterSummary/TotalBallastTanksOnBoardQuantity` = **8** (unitCode `C62`)  
+  Ballast tanks.
+- `ShipmentStage/BallastWaterSummary/TanksInBallastQuantity` = **4** (unitCode `C62`)  
+  Tanks with ballast now.
+- `ShipmentStage/BallastWaterSummary/TanksExchangedQuantity` = **4** (unitCode `C62`)  
+  Exchanged at sea.
+- `ShipmentStage/BallastWaterSummary/TanksNotExchangedQuantity` = **0** (unitCode `C62`)  
+  None left unexchanged.
+- `ShipmentStage/BallastWaterSummary/TotalBallastWaterOnBoardMeasure` = **1240** (unitCode `TNE`)  
+  Ballast on board.
+- `ShipmentStage/BallastWaterSummary/TotalBallastWaterCapacityMeasure` = **2480** (unitCode `TNE`)  
+  The capacity.
+- `ShipmentStage/BallastWaterSummary/OtherControlActions` = **None.**  
+  No other measures.
+- `ShipmentStage/BallastWaterSummary/NoControlActionsReason` = **Exchange done at more than 200 nautical miles from land.**  
+  Why no treatment was needed.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankID` = **BT-3**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **Wing**  
+  A wing tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `TNE`)  
+  Taken up at Lumeport.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure` = **2** (unitCode `MTR`)  
+  The depth of the intake.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SalinityMeasure` = **30** (unitCode `GL`)  
+  Salinity.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TransactionDate` = **2026-05-14**  
+  At Lumeport.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Name` = **Port of Lumeport**  
+  The port.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/AttributeID` = **Water**  
+  The water.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/Measure` = **16** (unitCode `CEL`)  
+  Its temperature.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TankID` = **BT-3**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangeMethodCode` = **Sequential**  
+  Emptied and refilled.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangedPercent` = **95**  
+  Of the volume.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `TNE`)  
+  Exchanged.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-16**  
+  At sea.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, 120 nautical miles west of Selanu**  
+  Where.
+- `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TankID` = **BT-3**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/VolumeMeasure` = **120** (unitCode `TNE`)  
+  To be discharged at Selanu.
+- `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TransactionDate` = **2026-05-18**  
+  In port.
+- `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/FirstName` = **Elsbeth**  
+  The chief officer, also the ship's medical officer.
+- `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/FamilyName` = **Marrin**  
+  The family name.
+- `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/RoleCode` = **ChiefOfficer**  
+  The person's role on board.
 - `ShipmentStage/ISPSRequirements/ID` = **ISSC-XL-2026-0117**  
   The number of the ship's International Ship Security Certificate.
 - `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **true**  
   The ship holds a valid security certificate.
+- `ShipmentStage/ISPSRequirements/ISSCAbsenceReason` = **Not applicable: the certificate is on board.**  
+  Stated, not left out.
 - `ShipmentStage/ISPSRequirements/ISSCExpiryDate` = **2028-09-30**  
   The certificate is valid for five years from its issue.
+- `ShipmentStage/ISPSRequirements/SSPOnBoardIndicator` = **true**  
+  The security plan is on board.
+- `ShipmentStage/ISPSRequirements/SSPSecurityMeasuresAppliedIndicator` = **true**  
+  Its measures were applied.
 - `ShipmentStage/ISPSRequirements/CurrentOperatingSecurityLevelCode` = **1**  
   Security level 1, the normal level.
+- `ShipmentStage/ISPSRequirements/AdditionalMattersDescription` = **None.**  
+  Nothing else to report.
+- `ShipmentStage/ISPSRequirements/AdditionalSecurityMeasure/ID` = **SM-1**  
+  An extra measure.
+- `ShipmentStage/ISPSRequirements/AdditionalSecurityMeasure/Description` = **Gangway watch at Selanu.**  
+  What the ship adds.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/ID` = **PCR-1**  
+  The last port call.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/SecurityLevelCode` = **1**  
+  Security level 1 at Lumeport.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/SecurityMeasure/Description` = **Normal access control.**  
+  The measures.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/PortFacilityLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/PortFacilityLocation/Name` = **Port of Lumeport**  
+  The port facility.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/PortFacilityLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/Period/StartDate` = **2026-05-13**  
+  Arrived.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/Period/EndDate` = **2026-05-14**  
+  Sailed.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/ID` = **STS-0**  
+  Ship-to-ship activity.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Description` = **None during the last ten port calls.**  
+  The record.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/ID` = **SM-0**  
+  No measure needed.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/Description` = **None: no ship-to-ship activity.**  
+  Stated.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartDate` = **2026-01-01**  
+  Since.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndDate` = **2026-05-17**  
+  Until now.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/Name` = **At sea, 120 nautical miles west of Selanu**  
+  Where.
+- `ShipmentStage/ISPSRequirements/ReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
+  Where.
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **IC42270** (schemeID `urn:ubl-examples:world:XL:register`)  
   The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name` = **Maritime Administration of Lisavu**  
   The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
+- `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/FirstName` = **Elsbeth**  
+  The chief officer, also the ship's medical officer.
+- `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/FamilyName` = **Marrin**  
+  The family name.
+- `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/RoleCode` = **ChiefOfficer**  
+  The person's role on board.
+- `ShipmentStage/MaritimeHealthDeclaration/ID` = **MDH-26-0517**  
+  The maritime declaration of health.
+- `ShipmentStage/MaritimeHealthDeclaration/InfectiousDiseaseCaseOnBoardIndicator` = **false**  
+  No infectious disease.
+- `ShipmentStage/MaritimeHealthDeclaration/MoreIllThanExpectedIndicator` = **false**  
+  No more ill than usual.
+- `ShipmentStage/MaritimeHealthDeclaration/MedicalPractitionerConsultedIndicator` = **true**  
+  A doctor was consulted by radio.
+- `ShipmentStage/MaritimeHealthDeclaration/StowawaysFoundOnBoardIndicator` = **false**  
+  No stowaways.
+- `ShipmentStage/MaritimeHealthDeclaration/SickAnimalOnBoardIndicator` = **false**  
+  No sick animals.
+- `ShipmentStage/MaritimeHealthDeclaration/FumigatedCargoTransportIndicator` = **false**  
+  No fumigated cargo.
+- `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasuresAppliedIndicator` = **true**  
+  The galley was disinfected.
+- `ShipmentStage/MaritimeHealthDeclaration/ValidSanitationCertificateOnBoardIndicator` = **true**  
+  The certificate is valid.
+- `ShipmentStage/MaritimeHealthDeclaration/ReinspectionRequiredIndicator` = **false**  
+  No reinspection needed.
+- `ShipmentStage/MaritimeHealthDeclaration/TotalDeadPersonQuantity` = **0** (unitCode `C62`)  
+  None.
+- `ShipmentStage/MaritimeHealthDeclaration/TotalIllPersonQuantity` = **1** (unitCode `C62`)  
+  One crew member with a sprained wrist.
+- `ShipmentStage/MaritimeHealthDeclaration/SickAnimalDescription` = **None on board.**  
+  No animals.
+- `ShipmentStage/MaritimeHealthDeclaration/StowawayDescription` = **None found in the search before departure.**  
+  The search.
+- `ShipmentStage/MaritimeHealthDeclaration/LastDrinkingWaterAnalysisDate` = **2026-04-02**  
+  The last water test.
+- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/VisitDate` = **2026-03-28**  
+  No affected area in the last 30 days: the last port visited was Lumeport.
+- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/Name` = **Port of Lumeport**  
+  Not an affected area.
+- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/ID` = **HI-1**  
+  The one incident.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/JoinedShipDate` = **2025-11-01**  
+  When the person joined.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/NatureOfIllnessDescription` = **Sprained wrist.**  
+  What happened.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/OnsetDate` = **2026-05-16**  
+  When.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/ReportedToMedicalOfficerIndicator` = **true**  
+  Reported.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/GivenTreatmentDescription` = **Bandage and rest.**  
+  Treatment.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/StillIllIndicator` = **true**  
+  Still recovering.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/DiedIndicator` = **false**  
+  No.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/StillOnBoardIndicator` = **true**  
+  On board.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/EvacuatedIndicator` = **false**  
+  Not evacuated.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/BuriedAtSeaIndicator` = **false**  
+  No.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/Note` = **Fit for light duty.**  
+  The status.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/Person/FirstName` = **Rafe**  
+  The chief engineer.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/Person/FamilyName` = **Dunmore**  
+  The family name.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/Person/RoleCode` = **ChiefEngineer**  
+  The person's role on board.
+- `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasure/SanitaryMeasureTypeCode` = **Disinfection**  
+  The galley was disinfected.
+- `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasure/ApplicationDate` = **2026-05-15**  
+  When.
+- `ShipmentStage/MaritimeHealthDeclaration/PlaceOfReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
+  Where.
+- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/ID` = **MC-TH-2026**  
+  The ship's medicine chest certificate.
+- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/CertificateType` = **Medicine chest**  
+  Its kind.
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/ID` = **SSCC-XB-2025-0911**  
+  The sanitation control certificate.
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/CertificateType` = **Ship sanitation control**  
+  Its kind.
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/ID` = **none**  
+  No exemption: the ship holds the control certificate.
+- `ShipmentStage/FuelConsumption/ID` = **FC-26-19E**  
+  The fuel of the voyage.
+- `ShipmentStage/FuelConsumption/FuelTypeCode` = **MGO**  
+  Marine gas oil.
+- `ShipmentStage/FuelConsumption/FuelType` = **Marine gas oil, 0.1 % sulphur**  
+  In words.
+- `ShipmentStage/FuelConsumption/FuelConsumptionMeasure` = **38** (unitCode `TNE`)  
+  Used from Lumeport.
+- `ShipmentStage/FuelConsumption/AdditionalFuelProperty/TypeID` = **Sulphur**  
+  The sulphur content.
+- `ShipmentStage/FuelConsumption/AdditionalFuelProperty/Value` = **0.1 %**  
+  Its value.
+- `ShipmentStage/FuelConsumption/FuelMetering/TypeID` = **FlowMeter**  
+  Measured by the flow meter.
+- `ShipmentStage/FuelConsumption/FuelMetering/Value` = **38.2 t**  
+  The reading.
+- `ShipmentStage/FuelConsumption/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2**  
+  Carbon dioxide.
+- `ShipmentStage/FuelConsumption/EnvironmentalEmission/ValueMeasure` = **122** (unitCode `TNE`)  
+  From 38 t of gas oil.
+- `ShipmentStage/FuelConsumption/FuelProviderParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/FuelConsumption/FuelProviderParty/PartyName/Name` = **Port of Lumeport**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Transport Means
 
@@ -379,10 +751,24 @@ Inside `TransportMeans`:
   The capacity of the tanks for ballast water only.
 - `MaritimeTransport/ShipConfigurationCode` = **Feeder container ship, 1,000 TEU**  
   The kind of vessel.
+- `MaritimeTransport/INFShipClassCode` = **INF1**  
+  IMO INF class 1: may not carry irradiated fuel in quantity.
+- `MaritimeTransport/AntennaLocus` = **Mast, 28 m above the waterline**  
+  Where the AIS antenna is.
 - `MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
   The ship's certificate of registry.
 - `MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
   The port the vessel is registered in.
+- `MaritimeTransport/VesselDynamics/NavigationStatusCode` = **0**  
+  AIS status 0: under way using engine.
+- `MaritimeTransport/VesselDynamics/AtAnchorageIndicator` = **false**  
+  Not at anchor.
+- `MaritimeTransport/VesselDynamics/CourseOverGroundDirection` = **088**  
+  Course over ground, in degrees.
+- `MaritimeTransport/VesselDynamics/SpeedOverGroundMeasure` = **13.5** (unitCode `KNT`)  
+  Speed over ground.
+- `MaritimeTransport/VesselDynamics/RateOfTurnMeasure` = **0** (unitCode `C62`)  
+  Not turning.
 
 ### Document Reference
 
@@ -666,11 +1052,234 @@ Inside `Signature`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
+      <cac:PassengerPerson>
+        <cbc:FirstName>Ines</cbc:FirstName>
+        <cbc:FamilyName>Tavari</cbc:FamilyName>
+        <cbc:RoleCode>Passenger</cbc:RoleCode>
+      </cac:PassengerPerson>
+      <cac:ReportingPerson>
+        <cbc:FirstName>Corin</cbc:FirstName>
+        <cbc:FamilyName>Halvard</cbc:FamilyName>
+        <cbc:RoleCode>Master</cbc:RoleCode>
+      </cac:ReportingPerson>
+      <cac:CrewMemberPerson>
+        <cbc:FirstName>Corin</cbc:FirstName>
+        <cbc:FamilyName>Halvard</cbc:FamilyName>
+        <cbc:RoleCode>Master</cbc:RoleCode>
+      </cac:CrewMemberPerson>
+      <cac:CrewMemberPerson>
+        <cbc:FirstName>Elsbeth</cbc:FirstName>
+        <cbc:FamilyName>Marrin</cbc:FamilyName>
+        <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+      </cac:CrewMemberPerson>
+      <cac:CrewMemberPerson>
+        <cbc:FirstName>Rafe</cbc:FirstName>
+        <cbc:FamilyName>Dunmore</cbc:FamilyName>
+        <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+      </cac:CrewMemberPerson>
+      <cac:SecurityOfficerPerson>
+        <cbc:FirstName>Elsbeth</cbc:FirstName>
+        <cbc:FamilyName>Marrin</cbc:FamilyName>
+        <cbc:RoleCode>SSO</cbc:RoleCode>
+      </cac:SecurityOfficerPerson>
+      <cac:ShipsSurgeonPerson>
+        <cbc:FirstName>Elsbeth</cbc:FirstName>
+        <cbc:FamilyName>Marrin</cbc:FamilyName>
+        <cbc:RoleCode>MedicalOfficer</cbc:RoleCode>
+      </cac:ShipsSurgeonPerson>
+      <cac:DestinationPortCall>
+        <cbc:ID>XLSEL-26-0517</cbc:ID>
+        <cbc:PlannedOperationsDescription>Discharge one container, load six.</cbc:PlannedOperationsDescription>
+        <cbc:PlannedWorksDescription>None.</cbc:PlannedWorksDescription>
+        <cbc:PlannedInspectionsDescription>Port state control is due.</cbc:PlannedInspectionsDescription>
+        <cbc:ExpectedAnchorageIndicator>false</cbc:ExpectedAnchorageIndicator>
+        <cbc:PositionInPortID>BERTH-2</cbc:PositionInPortID>
+        <cbc:CargoAndBallastTankConditionDescription>Tanks clean; ballast exchanged at sea.</cbc:CargoAndBallastTankConditionDescription>
+        <cac:ShipRequirement>
+          <cbc:ID>SR-1</cbc:ID>
+          <cbc:Description>Fresh water, 40 tonnes.</cbc:Description>
+        </cac:ShipRequirement>
+        <cac:PrimaryPortCallPurpose>
+          <cbc:PurposeTypeCode>Cargo</cbc:PurposeTypeCode>
+          <cbc:PurposeType>Cargo operations</cbc:PurposeType>
+          <cbc:Description>Discharge and load containers.</cbc:Description>
+        </cac:PrimaryPortCallPurpose>
+        <cac:AdditionalPortCallPurpose>
+          <cbc:PurposeTypeCode>Water</cbc:PurposeTypeCode>
+          <cbc:PurposeType>Bunkering of fresh water</cbc:PurposeType>
+        </cac:AdditionalPortCallPurpose>
+        <cac:RequestedArrivalEvent>
+          <cbc:IdentificationID>ARR-XLSEL-0517</cbc:IdentificationID>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+          <cbc:TypeCode>Arrival</cbc:TypeCode>
+          <cbc:Description>Pilot on board at the fairway buoy.</cbc:Description>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:CurrentStatus>
+            <cbc:ConditionCode>OnTime</cbc:ConditionCode>
+          </cac:CurrentStatus>
+          <cac:Contact>
+            <cbc:Name>Bridge</cbc:Name>
+            <cbc:Telephone>+999 2 3900 2117</cbc:Telephone>
+          </cac:Contact>
+          <cac:OccurrenceLocation>
+            <cbc:Name>Selanu fairway buoy</cbc:Name>
+          </cac:OccurrenceLocation>
+        </cac:RequestedArrivalEvent>
+      </cac:DestinationPortCall>
+      <cac:ShipStoreArticle>
+        <cbc:ID>ST-1</cbc:ID>
+        <cbc:Name>Spirits</cbc:Name>
+        <cbc:Quantity unitCode="LTR">24</cbc:Quantity>
+        <cbc:OfficialUse>Sealed by customs at Lumeport.</cbc:OfficialUse>
+        <cac:Stowage>
+          <cbc:LocationID>BOND-1</cbc:LocationID>
+          <cbc:Location>Bonded locker, accommodation deck</cbc:Location>
+        </cac:Stowage>
+      </cac:ShipStoreArticle>
+      <cac:ShipStoreArticle>
+        <cbc:ID>ST-2</cbc:ID>
+        <cbc:Name>Cigarettes</cbc:Name>
+        <cbc:Quantity unitCode="H87">2000</cbc:Quantity>
+      </cac:ShipStoreArticle>
+      <cac:CrewPersonEffect>
+        <cbc:EffectDescription>One camera, one laptop.</cbc:EffectDescription>
+        <cac:CrewPerson>
+          <cbc:FirstName>Rafe</cbc:FirstName>
+          <cbc:FamilyName>Dunmore</cbc:FamilyName>
+          <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+        </cac:CrewPerson>
+      </cac:CrewPersonEffect>
+      <cac:MaritimeWaste>
+        <cbc:ID>W-1</cbc:ID>
+        <cbc:Description>Sludge from the fuel separators.</cbc:Description>
+        <cbc:WasteTypeCode>Oil</cbc:WasteTypeCode>
+        <cbc:ToBeDeliveredMeasure unitCode="MTQ">2.4</cbc:ToBeDeliveredMeasure>
+        <cbc:RetainedOnBoardMeasure unitCode="MTQ">0.6</cbc:RetainedOnBoardMeasure>
+        <cbc:MaxDedicatedStorageCapacityMeasure unitCode="MTQ">8</cbc:MaxDedicatedStorageCapacityMeasure>
+        <cbc:EstimatedGeneratedUntilNextPortMeasure unitCode="MTQ">0.8</cbc:EstimatedGeneratedUntilNextPortMeasure>
+        <cac:RemainingWasteDeliveryPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:RemainingWasteDeliveryPortLocation>
+      </cac:MaritimeWaste>
+      <cac:MaritimeWaste>
+        <cbc:ID>W-2</cbc:ID>
+        <cbc:Description>Food and packaging waste.</cbc:Description>
+        <cbc:WasteTypeCode>Garbage</cbc:WasteTypeCode>
+        <cbc:ToBeDeliveredMeasure unitCode="MTQ">1.5</cbc:ToBeDeliveredMeasure>
+      </cac:MaritimeWaste>
+      <cac:BallastWaterSummary>
+        <cbc:ID>BW-26-0517</cbc:ID>
+        <cbc:ManagementPlanOnBoardIndicator>true</cbc:ManagementPlanOnBoardIndicator>
+        <cbc:ManagementPlanImplementedIndicator>true</cbc:ManagementPlanImplementedIndicator>
+        <cbc:IMOGuidelinesOnBoardIndicator>true</cbc:IMOGuidelinesOnBoardIndicator>
+        <cbc:TotalBallastTanksOnBoardQuantity unitCode="C62">8</cbc:TotalBallastTanksOnBoardQuantity>
+        <cbc:TanksInBallastQuantity unitCode="C62">4</cbc:TanksInBallastQuantity>
+        <cbc:TanksExchangedQuantity unitCode="C62">4</cbc:TanksExchangedQuantity>
+        <cbc:TanksNotExchangedQuantity unitCode="C62">0</cbc:TanksNotExchangedQuantity>
+        <cbc:TotalBallastWaterOnBoardMeasure unitCode="TNE">1240</cbc:TotalBallastWaterOnBoardMeasure>
+        <cbc:TotalBallastWaterCapacityMeasure unitCode="TNE">2480</cbc:TotalBallastWaterCapacityMeasure>
+        <cbc:OtherControlActions>None.</cbc:OtherControlActions>
+        <cbc:NoControlActionsReason>Exchange done at more than 200 nautical miles from land.</cbc:NoControlActionsReason>
+        <cac:UptakeBallastWaterTransaction>
+          <cbc:TankID>BT-3</cbc:TankID>
+          <cbc:TankTypeCode>Wing</cbc:TankTypeCode>
+          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
+          <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
+          <cbc:TransactionDate>2026-05-14</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+          <cac:BallastWaterTemperature>
+            <cbc:AttributeID>Water</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">16</cbc:Measure>
+          </cac:BallastWaterTemperature>
+        </cac:UptakeBallastWaterTransaction>
+        <cac:ExchangeBallastWaterTransaction>
+          <cbc:TankID>BT-3</cbc:TankID>
+          <cbc:ExchangeMethodCode>Sequential</cbc:ExchangeMethodCode>
+          <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
+          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:TransactionDate>2026-05-16</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          </cac:Location>
+        </cac:ExchangeBallastWaterTransaction>
+        <cac:DischargeBallastWaterTransaction>
+          <cbc:TankID>BT-3</cbc:TankID>
+          <cbc:VolumeMeasure unitCode="TNE">120</cbc:VolumeMeasure>
+          <cbc:TransactionDate>2026-05-18</cbc:TransactionDate>
+        </cac:DischargeBallastWaterTransaction>
+        <cac:ResponsibleOfficerPerson>
+          <cbc:FirstName>Elsbeth</cbc:FirstName>
+          <cbc:FamilyName>Marrin</cbc:FamilyName>
+          <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+        </cac:ResponsibleOfficerPerson>
+      </cac:BallastWaterSummary>
       <cac:ISPSRequirements>
         <cbc:ID>ISSC-XL-2026-0117</cbc:ID>
         <cbc:ValidISSCIndicator>true</cbc:ValidISSCIndicator>
+        <cbc:ISSCAbsenceReason>Not applicable: the certificate is on board.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2028-09-30</cbc:ISSCExpiryDate>
+        <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
+        <cbc:SSPSecurityMeasuresAppliedIndicator>true</cbc:SSPSecurityMeasuresAppliedIndicator>
         <cbc:CurrentOperatingSecurityLevelCode>1</cbc:CurrentOperatingSecurityLevelCode>
+        <cbc:AdditionalMattersDescription>None.</cbc:AdditionalMattersDescription>
+        <cac:AdditionalSecurityMeasure>
+          <cbc:ID>SM-1</cbc:ID>
+          <cbc:Description>Gangway watch at Selanu.</cbc:Description>
+        </cac:AdditionalSecurityMeasure>
+        <cac:PortCallRecord>
+          <cbc:ID>PCR-1</cbc:ID>
+          <cbc:SecurityLevelCode>1</cbc:SecurityLevelCode>
+          <cac:SecurityMeasure>
+            <cbc:Description>Normal access control.</cbc:Description>
+          </cac:SecurityMeasure>
+          <cac:PortFacilityLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:PortFacilityLocation>
+          <cac:Period>
+            <cbc:StartDate>2026-05-13</cbc:StartDate>
+            <cbc:EndDate>2026-05-14</cbc:EndDate>
+          </cac:Period>
+        </cac:PortCallRecord>
+        <cac:ShipToShipActivityRecord>
+          <cbc:ID>STS-0</cbc:ID>
+          <cbc:Description>None during the last ten port calls.</cbc:Description>
+          <cac:AppliedSecurityMeasure>
+            <cbc:ID>SM-0</cbc:ID>
+            <cbc:Description>None: no ship-to-ship activity.</cbc:Description>
+          </cac:AppliedSecurityMeasure>
+          <cac:Period>
+            <cbc:StartDate>2026-01-01</cbc:StartDate>
+            <cbc:EndDate>2026-05-17</cbc:EndDate>
+          </cac:Period>
+          <cac:Location>
+            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          </cac:Location>
+        </cac:ShipToShipActivityRecord>
+        <cac:ReportLocation>
+          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+        </cac:ReportLocation>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:ID>
@@ -679,7 +1288,104 @@ Inside `Signature`:
             <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
           </cac:PartyName>
         </cac:ISSCIssuerParty>
+        <cac:SecurityOfficerPerson>
+          <cbc:FirstName>Elsbeth</cbc:FirstName>
+          <cbc:FamilyName>Marrin</cbc:FamilyName>
+          <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+        </cac:SecurityOfficerPerson>
       </cac:ISPSRequirements>
+      <cac:MaritimeHealthDeclaration>
+        <cbc:ID>MDH-26-0517</cbc:ID>
+        <cbc:InfectiousDiseaseCaseOnBoardIndicator>false</cbc:InfectiousDiseaseCaseOnBoardIndicator>
+        <cbc:MoreIllThanExpectedIndicator>false</cbc:MoreIllThanExpectedIndicator>
+        <cbc:MedicalPractitionerConsultedIndicator>true</cbc:MedicalPractitionerConsultedIndicator>
+        <cbc:StowawaysFoundOnBoardIndicator>false</cbc:StowawaysFoundOnBoardIndicator>
+        <cbc:SickAnimalOnBoardIndicator>false</cbc:SickAnimalOnBoardIndicator>
+        <cbc:FumigatedCargoTransportIndicator>false</cbc:FumigatedCargoTransportIndicator>
+        <cbc:SanitaryMeasuresAppliedIndicator>true</cbc:SanitaryMeasuresAppliedIndicator>
+        <cbc:ValidSanitationCertificateOnBoardIndicator>true</cbc:ValidSanitationCertificateOnBoardIndicator>
+        <cbc:ReinspectionRequiredIndicator>false</cbc:ReinspectionRequiredIndicator>
+        <cbc:TotalDeadPersonQuantity unitCode="C62">0</cbc:TotalDeadPersonQuantity>
+        <cbc:TotalIllPersonQuantity unitCode="C62">1</cbc:TotalIllPersonQuantity>
+        <cbc:SickAnimalDescription>None on board.</cbc:SickAnimalDescription>
+        <cbc:StowawayDescription>None found in the search before departure.</cbc:StowawayDescription>
+        <cbc:LastDrinkingWaterAnalysisDate>2026-04-02</cbc:LastDrinkingWaterAnalysisDate>
+        <cac:WHOAffectedAreaVisit>
+          <cbc:VisitDate>2026-03-28</cbc:VisitDate>
+          <cac:WHOAffectedAreaPortLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:WHOAffectedAreaPortLocation>
+        </cac:WHOAffectedAreaVisit>
+        <cac:PersonnelHealthIncident>
+          <cbc:ID>HI-1</cbc:ID>
+          <cbc:JoinedShipDate>2025-11-01</cbc:JoinedShipDate>
+          <cbc:NatureOfIllnessDescription>Sprained wrist.</cbc:NatureOfIllnessDescription>
+          <cbc:OnsetDate>2026-05-16</cbc:OnsetDate>
+          <cbc:ReportedToMedicalOfficerIndicator>true</cbc:ReportedToMedicalOfficerIndicator>
+          <cbc:GivenTreatmentDescription>Bandage and rest.</cbc:GivenTreatmentDescription>
+          <cbc:StillIllIndicator>true</cbc:StillIllIndicator>
+          <cbc:DiedIndicator>false</cbc:DiedIndicator>
+          <cbc:StillOnBoardIndicator>true</cbc:StillOnBoardIndicator>
+          <cbc:EvacuatedIndicator>false</cbc:EvacuatedIndicator>
+          <cbc:BuriedAtSeaIndicator>false</cbc:BuriedAtSeaIndicator>
+          <cbc:Note>Fit for light duty.</cbc:Note>
+          <cac:Person>
+            <cbc:FirstName>Rafe</cbc:FirstName>
+            <cbc:FamilyName>Dunmore</cbc:FamilyName>
+            <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+          </cac:Person>
+        </cac:PersonnelHealthIncident>
+        <cac:SanitaryMeasure>
+          <cbc:SanitaryMeasureTypeCode>Disinfection</cbc:SanitaryMeasureTypeCode>
+          <cbc:ApplicationDate>2026-05-15</cbc:ApplicationDate>
+        </cac:SanitaryMeasure>
+        <cac:PlaceOfReportLocation>
+          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+        </cac:PlaceOfReportLocation>
+        <cac:MedicalCertificate>
+          <cbc:ID>MC-TH-2026</cbc:ID>
+          <cbc:CertificateType>Medicine chest</cbc:CertificateType>
+        </cac:MedicalCertificate>
+        <cac:ShipSanitationControlCertificate>
+          <cbc:ID>SSCC-XB-2025-0911</cbc:ID>
+          <cbc:CertificateType>Ship sanitation control</cbc:CertificateType>
+        </cac:ShipSanitationControlCertificate>
+        <cac:ShipSanitationControlExemptionDocumentReference>
+          <cbc:ID>none</cbc:ID>
+        </cac:ShipSanitationControlExemptionDocumentReference>
+      </cac:MaritimeHealthDeclaration>
+      <cac:FuelConsumption>
+        <cbc:ID>FC-26-19E</cbc:ID>
+        <cbc:FuelTypeCode>MGO</cbc:FuelTypeCode>
+        <cbc:FuelType>Marine gas oil, 0.1 % sulphur</cbc:FuelType>
+        <cbc:FuelConsumptionMeasure unitCode="TNE">38</cbc:FuelConsumptionMeasure>
+        <cac:AdditionalFuelProperty>
+          <cbc:TypeID>Sulphur</cbc:TypeID>
+          <cbc:Value>0.1 %</cbc:Value>
+        </cac:AdditionalFuelProperty>
+        <cac:FuelMetering>
+          <cbc:TypeID>FlowMeter</cbc:TypeID>
+          <cbc:Value>38.2 t</cbc:Value>
+        </cac:FuelMetering>
+        <cac:EnvironmentalEmission>
+          <cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+          <cbc:ValueMeasure unitCode="TNE">122</cbc:ValueMeasure>
+        </cac:EnvironmentalEmission>
+        <cac:FuelProviderParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+          </cac:PartyName>
+        </cac:FuelProviderParty>
+      </cac:FuelConsumption>
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:TransportMeans>
@@ -698,12 +1404,21 @@ Inside `Signature`:
       <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
       <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
       <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+      <cbc:INFShipClassCode>INF1</cbc:INFShipClassCode>
+      <cbc:AntennaLocus>Mast, 28 m above the waterline</cbc:AntennaLocus>
       <cac:RegistryCertificateDocumentReference>
         <cbc:ID>REG-XB-S-20117</cbc:ID>
       </cac:RegistryCertificateDocumentReference>
       <cac:RegistryPortLocation>
         <cbc:Name>Lumeport</cbc:Name>
       </cac:RegistryPortLocation>
+      <cac:VesselDynamics>
+        <cbc:NavigationStatusCode>0</cbc:NavigationStatusCode>
+        <cbc:AtAnchorageIndicator>false</cbc:AtAnchorageIndicator>
+        <cbc:CourseOverGroundDirection>088</cbc:CourseOverGroundDirection>
+        <cbc:SpeedOverGroundMeasure unitCode="KNT">13.5</cbc:SpeedOverGroundMeasure>
+        <cbc:RateOfTurnMeasure unitCode="C62">0</cbc:RateOfTurnMeasure>
+      </cac:VesselDynamics>
     </cac:MaritimeTransport>
   </cac:TransportMeans>
   <cac:DocumentReference>
