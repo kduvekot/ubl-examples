@@ -413,7 +413,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **520.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **494.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -430,13 +430,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **520.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **494.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **520.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **494.00** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **520.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **494.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **520.00** (currencyID `XBL`)  
+- `PayableAmount` = **494.00** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Credit Note Line
@@ -449,7 +449,7 @@ Inside `CreditNoteLine`:
   Why the line is credited.
 - `CreditedQuantity` = **1** (unitCode `H87`)  
   The bench refused at delivery.
-- `LineExtensionAmount` = **520.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **494.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `OrderLineReference/LineID` = **1**  
   The order line.
@@ -1005,7 +1005,7 @@ Inside `CreditNoteLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">520.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">494.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -1018,16 +1018,16 @@ Inside `CreditNoteLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">520.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">520.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">520.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">494.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">494.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">494.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

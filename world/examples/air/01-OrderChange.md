@@ -20,14 +20,22 @@ Part of the quantity is needed urgently: delivery by air, CPT island airport, at
   This run of the process: the same in every document of the flow.
 - `ID` = **VT-OC-26-0320**  
   The number of this change.
+- `SalesOrderID` = **LD-SO-26-0123**  
+  The distributor's sales order the change applies to.
 - `UUID` = **8d871217-f7db-5dad-9bd8-24d8c75c812d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-11**  
   The buyer needs eight side frames urgently.
+- `IssueTime` = **07:50:00**  
+  First thing in the morning, when the shortage was noticed.
 - `SequenceNumberID` = **1**  
   The first change to the order.
+- `Note` = **Add eight side frames by air; the rest of the order is unchanged.**  
+  The change in words.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals.
+- `CustomerReference` = **Harbour parks Selanu**  
+  The buyer's project.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Stock for municipal projects**  
@@ -41,6 +49,13 @@ Inside `OrderReference`:
 
 - `ID` = **VT-PO-26-0127**  
   The order of the sea flow that this change extends.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **LD-DAG-26-0125**  
+  The digital agreement the order runs under.
 
 ### Buyer Customer Party
 
@@ -222,6 +237,24 @@ Inside `SellerSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Accounting Customer Party
+
+Inside `AccountingCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Accounting Supplier Party
+
+Inside `AccountingSupplierParty`:
+
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Delivery
 
 Inside `Delivery`:
@@ -316,6 +349,41 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Description` = **Selanu airport, cargo terminal**  
   Where the delivery terms place the handover of the goods.
 
+### Destination Country
+
+Inside `DestinationCountry`:
+
+- `IdentificationCode` = **XL**  
+  The island.
+
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  The sum of the tax of all categories.
+- `TaxSubtotal/TaxableAmount` = **51200.00** (currencyID `XBL`)  
+  The order as changed; no tax on an export.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **G**  
+  An export from Bayvarra: the state sales tax is not charged (category G).
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+
+### Anticipated Monetary Total
+
+Inside `AnticipatedMonetaryTotal`:
+
+- `LineExtensionAmount` = **51200.00** (currencyID `XBL`)  
+  The order as changed: the lines of the sea order and the eight frames added.
+- `PayableAmount` = **51200.00** (currencyID `XBL`)  
+  No tax on an export; freight comes on the invoices.
+
 ### Order Line
 
 Inside `OrderLine`:
@@ -365,16 +433,23 @@ Inside `OrderLine`:
   <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-OC-26-0320</cbc:ID>
+  <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
   <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
+  <cbc:IssueTime>07:50:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:Note>Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:Contract>
+    <cbc:ID>LD-DAG-26-0125</cbc:ID>
+  </cac:Contract>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -532,6 +607,26 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
   <cac:Delivery>
     <cac:CarrierParty>
       <cac:PartyIdentification>
@@ -622,6 +717,28 @@ Inside `OrderLine`:
       <cbc:Description>Selanu airport, cargo terminal</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">51200.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:AnticipatedMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">51200.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">51200.00</cbc:PayableAmount>
+  </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>

@@ -24,6 +24,8 @@ Delivery terms DDP retailer's shop: the order names only where to deliver; trans
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-24**  
   The store replenishes before the promotion.
+- `IssueTime` = **08:15:00**  
+  Sent from the store's replenishment system each morning.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -34,6 +36,38 @@ Delivery terms DDP retailer's shop: the order names only where to deliver; trans
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of order lines.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `EndDate` = **2026-04-26**  
+  The order lapses if not confirmed within two days: the promotion cannot wait.
+
+### Catalogue Reference
+
+Inside `CatalogueReference`:
+
+- `ID` = **LD-CAT-26-0218**  
+  The spring catalogue ordered from.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BS-RE-26-0222**  
+  The promotion the benches are ordered for.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0424**  
+  The store's electronic seal on the order.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Buyer Customer Party
 
@@ -273,6 +307,46 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Description` = **Brightmarket Stores, goods-in, Lumeport**  
   Where the delivery terms place the handover of the goods.
 
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  The store pays by credit transfer.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **30 days net, as agreed with the distributor.**  
+  The terms the store orders on.
+
+### Transaction Conditions
+
+Inside `TransactionConditions`:
+
+- `ID` = **LD-TC-01**  
+  The distributor's conditions of sale.
+- `ActionCode` = **Accepted**  
+  The store accepts them.
+
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **false**  
+  An allowance the distributor granted.
+- `AllowanceChargeReasonCode` = **72** (listID `UN/EDIFACT EDED 5189`)  
+  UN/EDIFACT 5189 code 72: temporary special promotion.
+- `AllowanceChargeReason` = **Promotion support**  
+  In words.
+- `MultiplierFactorNumeric` = **0.05**  
+  Five percent.
+- `Amount` = **624.00** (currencyID `XBL`)  
+  5 % of the goods, agreed for the promotion.
+- `BaseAmount` = **12480.00** (currencyID `XBL`)  
+  The goods.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -298,8 +372,10 @@ Inside `AnticipatedMonetaryTotal`:
 
 - `LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **12480.00** (currencyID `XBL`)  
-  What the buyer expects to pay, tax included.
+- `AllowanceTotalAmount` = **624.00** (currencyID `XBL`)  
+  The promotion support.
+- `PayableAmount` = **11856.00** (currencyID `XBL`)  
+  What the store pays: the goods less the promotion support.
 
 ### Order Line
 
@@ -517,6 +593,18 @@ Inside `OrderLine`:
   The scale of the score.
 - `LineItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `BuyerProposedSubstituteLineItem/ID` = **1**  
+  The store's fall-back if the Serra 180 is out of stock.
+- `BuyerProposedSubstituteLineItem/Quantity` = **24** (unitCode `H87`)  
+  The same quantity.
+- `BuyerProposedSubstituteLineItem/Item/Name` = **Park bench Serra 180, moss green**  
+  The other frame colour: the store would take it.
+- `BuyerProposedSubstituteLineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The distributor's number.
+- `BuyerProposedSubstituteLineItem/Item/SellersItemIdentification/ExtendedID` = **GRN**  
+  The green variant.
+- `CatalogueLineReference/LineID` = **1**  
+  The catalogue line ordered from.
 
 ## The document
 
@@ -530,11 +618,32 @@ Inside `OrderLine`:
   <cbc:ID>BS-PO-26-0224</cbc:ID>
   <cbc:UUID>38f1ecfc-42b0-532a-921c-171e17782563</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
+  <cbc:IssueTime>08:15:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:ValidityPeriod>
+    <cbc:EndDate>2026-04-26</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:CatalogueReference>
+    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+  </cac:CatalogueReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BS-RE-26-0222</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0424</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -742,6 +851,24 @@ Inside `OrderLine`:
       <cbc:Description>Brightmarket Stores, goods-in, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>30 days net, as agreed with the distributor.</cbc:Note>
+  </cac:PaymentTerms>
+  <cac:TransactionConditions>
+    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:ActionCode>Accepted</cbc:ActionCode>
+  </cac:TransactionConditions>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -759,7 +886,8 @@ Inside `OrderLine`:
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">12480.00</cbc:PayableAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">624.00</cbc:AllowanceTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">11856.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -954,6 +1082,20 @@ Inside `OrderLine`:
         </cac:CircularityProfile>
       </cac:Item>
     </cac:LineItem>
+    <cac:BuyerProposedSubstituteLineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">24</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180, moss green</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ExtendedID>GRN</cbc:ExtendedID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:BuyerProposedSubstituteLineItem>
+    <cac:CatalogueLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:CatalogueLineReference>
   </cac:OrderLine>
 </Order>
 ```

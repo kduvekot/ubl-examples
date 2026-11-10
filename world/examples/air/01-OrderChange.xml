@@ -5,16 +5,23 @@
   <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-OC-26-0320</cbc:ID>
+  <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
   <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
+  <cbc:IssueTime>07:50:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:Note>Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:Contract>
+    <cbc:ID>LD-DAG-26-0125</cbc:ID>
+  </cac:Contract>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -172,6 +179,26 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
   <cac:Delivery>
     <cac:CarrierParty>
       <cac:PartyIdentification>
@@ -262,6 +289,28 @@
       <cbc:Description>Selanu airport, cargo terminal</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">51200.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:AnticipatedMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">51200.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">51200.00</cbc:PayableAmount>
+  </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>

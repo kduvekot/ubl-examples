@@ -229,6 +229,41 @@ def road(n, doc):
                                                            "EndDate": V(f.date(8), "Or the morning after.")},
                                "ResponsibleParty": party("8-xu", short=True),
                                "NotifyParty": party("6-xb", short=True)}}
+        bench, frame = ITEM["bench-serra"], ITEM["bench-casting"]
+        out["OrderResponseCode"] = V("CA", "UN/EDIFACT 4343 code CA: conditionally accepted, with the substitution "
+                                           "of line 2.")
+        out["Note"] = V("Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the "
+                        "same price.", "The condition in words.")
+        out["OrderLine"] = [
+            {"LineItem": {"ID": V("1", "The benches."), "LineStatusCode": V("NoStatus", "Accepted as ordered."),
+                          "Quantity": qty(96, "H87", "As ordered."),
+                          "Item": {"Name": V(bench["name"], "Named only."),
+                                   "SellersItemIdentification": {"ID": V(bench["sellers_id"], "The seller's "
+                                                                                              "number.")}}},
+             "OrderLineReference": {"LineID": V("1", "The order line.")}},
+            {"LineItem": {"ID": V("2", "The side frames, as ordered."),
+                          "LineStatusCode": V("Revised", "Changed by the seller."),
+                          "Quantity": qty(12, "H87", "As ordered."),
+                          "Item": {"Name": V(frame["name"], "The frame ordered."),
+                                   "SellersItemIdentification": {"ID": V(frame["sellers_id"], "Its number.")}}},
+             "SubstitutionStatusCode": V("Substitution", "The line is delivered with a substitute item."),
+             "Note": V("Same fit and price; the old casting is no longer made.", "Why the substitute is offered."),
+             "SellerSubstitutedLineItem": {
+                 "ID": V("2", "The substitute for line 2."),
+                 "Quantity": qty(12, "H87", "The same quantity."),
+                 "Price": kit.price_block("bench-casting"),
+                 "Item": {"Name": V("Bench side frame casting, 2026", "The substitute."),
+                          "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The same item number."),
+                                                        "ExtendedID": V("2026", "The new version.")}}},
+             "SellerProposedSubstituteLineItem": {
+                 "ID": V("2", "What the seller would also accept to ship, if the buyer prefers."),
+                 "Quantity": qty(12, "H87", "The same quantity."),
+                 "Item": {"Name": V("Bench side frame casting, 2025, from stock", "Six left in stock; the rest would "
+                                                                                  "follow in May."),
+                          "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The item number."),
+                                                        "ExtendedID": V("2025", "The old version.")}}},
+             "OrderLineReference": {"LineID": V("2", "The order line."),
+                                    "SalesOrderLineID": V("2", "The seller's line.")}}]
         return out
     if doc["doc"] == "TransportExecutionPlanRequest":
         out = kit.tep_request(f, n, doc, 1, "The distributor books the truck once the order is accepted.", 7, weight,
@@ -832,7 +867,46 @@ def plastics(n, doc):
 # ---------------------------------------------------------------- the retail flow (Bayvarra, DDP)
 RETAIL = kit.Flow("retail", "2026-04-20", [
     {"item": "bench-serra-b", "ordered": 24, "why": "Six pallets for the garden department's spring promotion.",
-     "received": 23, "received_why": "One bench arrived in a damaged carton and was refused."}])
+     "received": 23, "received_why": "One bench arrived in a damaged carton and was refused.",
+     "orderline_extra": {
+         "CatalogueLineReference": {"LineID": V("1", "The catalogue line ordered from.")},
+         "BuyerProposedSubstituteLineItem": {
+             "ID": V("1", "The store's fall-back if the Serra 180 is out of stock."),
+             "Quantity": qty(24, "H87", "The same quantity."),
+             "Item": {"Name": V("Park bench Serra 180, moss green", "The other frame colour: the store would take "
+                                                                     "it."),
+                      "SellersItemIdentification": {"ID": V("LD-10442", "The distributor's number."),
+                                                    "ExtendedID": V("GRN", "The green variant.")}}}}}])
+
+
+PROMO = Decimal("0.05")          # the distributor's promotion support on the store's order
+
+
+def promo_allowance(base, why):
+    return {"ChargeIndicator": V("false", "An allowance the distributor granted."),
+            "AllowanceChargeReasonCode": V("72", "UN/EDIFACT 5189 code 72: temporary special promotion.",
+                                           listID="UN/EDIFACT EDED 5189"),
+            "AllowanceChargeReason": V("Promotion support", "In words."),
+            "MultiplierFactorNumeric": V(str(PROMO), "Five percent."),
+            "Amount": amount(base * PROMO, "XBL", why),
+            "BaseAmount": amount(base, "XBL", "The goods.")}
+
+
+def with_allowance(out, total_key, base, why):
+    """Apply the promotion allowance to a document's totals (no tax: a sale for resale)."""
+    a = money(base * PROMO, "XBL")
+    ac = promo_allowance(base, why)
+    if total_key == "LegalMonetaryTotal":             # on the invoice the allowance carries its tax category
+        ac["TaxCategory"] = kit.tax_category(kit.tax_rule("6-xb", "26-xb", "bench-serra-b"))
+    out["AllowanceCharge"] = ac
+    t = out[total_key]
+    t["AllowanceTotalAmount"] = amount(a, "XBL", "The promotion support.")
+    if "TaxExclusiveAmount" in t:
+        t["TaxExclusiveAmount"] = amount(base - a, "XBL", "The goods less the allowance; no tax on a sale for "
+                                                          "resale.")
+        t["TaxInclusiveAmount"] = amount(base - a, "XBL", "The same: no tax.")
+    t["PayableAmount"] = amount(base - a, "XBL", "What the store pays: the goods less the promotion support.")
+    return base - a
 
 
 def retail(n, doc):
@@ -868,11 +942,30 @@ def retail(n, doc):
                                         "Quantity": qty(3, "H87", "Three benches left in the garden department."),
                                         "Item": item("bench-serra-b")}}
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 4, "The store replenishes before the promotion.",
+        out = kit.order(f, n, doc, 4, "The store replenishes before the promotion.",
                          "Delivered duty paid at the store: the distributor arranges and pays the transport and every "
                          "cost, so the order names only where to deliver.", "Brightmarket Stores, goods-in, Lumeport",
                          {"Delivery": {"DeliveryLocation": {"Description": V("Goods-in, garden department",
-                                                                             "Where the truck unloads.")}}})
+                                                                             "Where the truck unloads.")}},
+                          "IssueTime": V("08:15:00", "Sent from the store's replenishment system each morning."),
+                          "ValidityPeriod": {"EndDate": V(f.date(6), "The order lapses if not confirmed within two "
+                                                                     "days: the promotion cannot wait.")},
+                          "CatalogueReference": {"ID": V(f.numbers["catalogue"], "The spring catalogue ordered "
+                                                                                 "from.")},
+                          "AdditionalDocumentReference": {"ID": V(f.numbers["event"], "The promotion the "
+                                                                  "benches are ordered for.")},
+                          "PaymentMeans": {"PaymentMeansCode": V("30", "The store pays by credit transfer.",
+                                                                 listID="UN/EDIFACT EDED 4461")},
+                          "PaymentTerms": {"Note": V("30 days net, as agreed with the distributor.", "The terms the "
+                                                     "store orders on.")},
+
+                          "TransactionConditions": {"ID": V("LD-TC-01", "The distributor's conditions of sale."),
+                                                    "ActionCode": V("Accepted", "The store accepts them.")},
+                          "Signature": {"ID": V("BM-SIG-26-0424", "The store's electronic seal on the order."),
+                                        "SignatoryParty": party("26-xb", short=True)}})
+        with_allowance(out, "AnticipatedMonetaryTotal", Decimal("12480.00"), "5 % of the goods, agreed for the "
+                                                                              "promotion.")
+        return out
     if doc["doc"] == "TransportExecutionPlanRequest":
         return kit.tep_request(f, n, doc, 5, "Because it sold delivered duty paid, the distributor books the truck.", 9,
                                w, "Six pallets of benches.")
@@ -928,13 +1021,23 @@ def retail(n, doc):
                                    "RejectReason": V("Damaged in transit.", "Why.")}}}
         return out
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 10, 30, "Issued on delivery.",
-                           {"OrderReference": {"ID": V(f.numbers["order"], "The store's order.")},
-                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
-                           [{"item": "bench-serra-b", "qty": 24, "invoice_why": "The benches despatched."}])
+        out = kit.invoice(f, n, doc, 10, 30, "Issued on delivery.",
+                          {"OrderReference": {"ID": V(f.numbers["order"], "The store's order.")},
+                           "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")},
+                           "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The store's receipt "
+                                                                                      "advice.")}},
+                          [{"item": "bench-serra-b", "qty": 24, "invoice_why": "The benches despatched."}])
+        payable = with_allowance(out, "LegalMonetaryTotal", Decimal("12480.00"), "The promotion support of the "
+                                                                                 "order.")
+        out["PaymentTerms"]["PenaltyAmount"] = amount(payable * Decimal("0.015"), "XBL", "The surcharge for the "
+                                                                                         "first month late.")
+        f.numbers["invoice-amount"] = payable
+        return out
     if doc["doc"] == "CreditNote":
         out = kit.credit_note(f, n, doc, 12, "Issued after the receipt advice reported the refused bench.",
-                               [{"item": "bench-serra-b", "qty": 1, "why": "The bench refused at delivery."}],
+                               [{"item": "bench-serra-b", "qty": 1, "why": "The bench refused at delivery.",
+                                 "unit_price": "494.00", "unit_price_why": "The invoiced price less the 5 % "
+                                                                           "promotion support."}],
                                {"BillingReference": {"InvoiceDocumentReference": {
                                    "ID": V(f.numbers["invoice"], "The invoice this credit note corrects."),
                                    "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
@@ -1713,8 +1816,27 @@ def air(n, doc):
         order = kit.order(f, n, doc, 0, "The buyer needs eight side frames urgently.",
                           "Carriage paid to the island's airport for the urgent frames: the distributor pays the air "
                           "freight; the rest of the order stays CIF by sea.", "Selanu airport, cargo terminal")
-        for k in ("TaxTotal", "AnticipatedMonetaryTotal", "OrderTypeCode"):
-            order.pop(k)
+        order.pop("OrderTypeCode")
+        sea_base = sum(r[2] for r in kit.lines(SEA, "6-xb", "1-xl", "XBL"))
+        air_base = Decimal(order["AnticipatedMonetaryTotal"]["LineExtensionAmount"].value)
+        order["AnticipatedMonetaryTotal"] = {
+            "LineExtensionAmount": amount(sea_base + air_base, "XBL", "The order as changed: the lines of the sea "
+                                                                      "order and the eight frames added."),
+            "PayableAmount": amount(sea_base + air_base, "XBL", "No tax on an export; freight comes on the "
+                                                                "invoices.")}
+        order["TaxTotal"]["TaxSubtotal"][0]["TaxableAmount"] = amount(sea_base + air_base, "XBL", "The order as "
+                                                                      "changed; no tax on an export.")
+        order.update({
+            "SalesOrderID": V(SEA.numbers.get("sales-order", f"LD-SO-26-{SEA.base:04d}"), "The distributor's "
+                                                                                           "sales order the "
+                                                                                           "change applies to."),
+            "IssueTime": V("07:50:00", "First thing in the morning, when the shortage was noticed."),
+            "Note": V("Add eight side frames by air; the rest of the order is unchanged.", "The change in words."),
+            "CustomerReference": V("Harbour parks Selanu", "The buyer's project."),
+            "Contract": {"ID": V(SEA.numbers["agreement"], "The digital agreement the order runs under.")},
+            "AccountingCustomerParty": {"Party": party("1-xl", short=True)},
+            "AccountingSupplierParty": {"Party": party("6-xb", short=True)},
+            "DestinationCountry": {"IdentificationCode": V("XL", "The island.")}})
         order["Delivery"] = {"DeliveryTerms": {"ID": V("CPT", "Incoterms 2020: carriage paid to, for this delivery "
                                                               "only.", schemeID="INCOTERMS"),
                                                "SpecialTerms": V("The rest of the order stays CIF by sea.", "Why the "

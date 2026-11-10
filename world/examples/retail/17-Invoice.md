@@ -53,6 +53,13 @@ Inside `DespatchDocumentReference`:
 - `ID` = **LD-DA-26-0229**  
   The despatch advice.
 
+### Receipt Document Reference
+
+Inside `ReceiptDocumentReference`:
+
+- `ID` = **BS-RA-26-0234**  
+  The store's receipt advice.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -447,7 +454,7 @@ Inside `PaymentTerms`:
   Bayvarran practice: a surcharge per month of late payment, no discount.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **187.20** (currencyID `XBL`)  
+- `PenaltyAmount` = **177.84** (currencyID `XBL`)  
   The surcharge for the first month late.
 - `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
   The seller's general terms of payment.
@@ -457,6 +464,31 @@ Inside `PaymentTerms`:
   From the day after the due date.
 - `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
   Per month.
+
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **false**  
+  An allowance the distributor granted.
+- `AllowanceChargeReasonCode` = **72** (listID `UN/EDIFACT EDED 5189`)  
+  UN/EDIFACT 5189 code 72: temporary special promotion.
+- `AllowanceChargeReason` = **Promotion support**  
+  In words.
+- `MultiplierFactorNumeric` = **0.05**  
+  Five percent.
+- `Amount` = **624.00** (currencyID `XBL`)  
+  The promotion support of the order.
+- `BaseAmount` = **12480.00** (currencyID `XBL`)  
+  The goods.
+- `TaxCategory/ID` = **E**  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E).
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 
 ### Tax Total
 
@@ -483,12 +515,14 @@ Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **12480.00** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **12480.00** (currencyID `XBL`)  
-  The total without tax plus the tax.
-- `PayableAmount` = **12480.00** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `TaxExclusiveAmount` = **11856.00** (currencyID `XBL`)  
+  The goods less the allowance; no tax on a sale for resale.
+- `TaxInclusiveAmount` = **11856.00** (currencyID `XBL`)  
+  The same: no tax.
+- `AllowanceTotalAmount` = **624.00** (currencyID `XBL`)  
+  The promotion support.
+- `PayableAmount` = **11856.00** (currencyID `XBL`)  
+  What the store pays: the goods less the promotion support.
 
 ### Invoice Line
 
@@ -736,6 +770,9 @@ Inside `InvoiceLine`:
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>BS-RA-26-0234</cbc:ID>
+  </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -1067,7 +1104,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">187.20</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">177.84</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -1075,6 +1112,22 @@ Inside `InvoiceLine`:
       <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID>E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -1092,9 +1145,10 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">12480.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">12480.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">12480.00</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">11856.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">11856.00</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">624.00</cbc:AllowanceTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">11856.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

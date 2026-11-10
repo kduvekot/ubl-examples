@@ -324,7 +324,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">520.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">494.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -337,16 +337,16 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">520.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">520.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">520.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">494.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">494.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">494.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
