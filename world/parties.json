@@ -1001,7 +1001,7 @@
    "h": 2,
    "kind": "office",
    "proposed": true,
-   "what": "Tenders together with the manufacturer as consortium partner or subcontractor.",
+   "what": "Tenders together with the manufacturer as consortium partner or subcontractor; supplies back-up power and safety equipment for telecom masts, dangerous goods included.",
    "how": "A consortium partner tenders together with a main tenderer. UBL tenders and qualification documents name each partner and its qualifications separately, so the authority can see who contributes what.",
    "identity": {
     "name": "Saltmere Engineering",

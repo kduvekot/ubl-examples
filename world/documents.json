@@ -334,6 +334,34 @@
      "why": "Shirts to the store."
     }
    ]
+  },
+  {
+   "id": "mast",
+   "title": "Batteries for the island's telecom mast, by air (dangerous goods)",
+   "text": "The island's telecom company orders back-up batteries, smoke detectors and a coating stripper for its mast from an engineering firm in Bayvarra. All three are dangerous goods; the batteries fly in a temperature-controlled container.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "27-xb",
+     "to": "17-xb",
+     "carrier": "10-xb",
+     "why": "The forwarder collects the dangerous goods and brings them to the cargo terminal."
+    },
+    {
+     "mode": "air",
+     "from": "17-xb",
+     "to": "17-xl",
+     "carrier": "12-xl",
+     "why": "A cargo-aircraft-only flight to the island."
+    },
+    {
+     "mode": "road",
+     "from": "17-xl",
+     "to": "35-xl",
+     "carrier": "9-xl",
+     "why": "The 3PL trucks them to the telecom company."
+    }
+   ]
   }
  ],
  "documents": [
@@ -2984,6 +3012,75 @@
    "parties": {
     "AccountingSupplierParty": "26-xb",
     "AccountingCustomerParty": "c-xb"
+   }
+  },
+  {
+   "flow": "mast",
+   "doc": "Order",
+   "from": "35-xl",
+   "to": "27-xb",
+   "why": "The telecom company orders back-up power and safety equipment for its mast. Carriage paid to its site: the seller arranges the dangerous goods transport.",
+   "parties": {
+    "BuyerCustomerParty": "35-xl",
+    "SellerSupplierParty": "27-xb",
+    "Delivery/DeliveryParty": "35-xl"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "mast",
+   "doc": "ForwardingInstructions",
+   "from": "27-xb",
+   "to": "10-xb",
+   "why": "The engineering firm instructs the forwarder, with the shipper's declaration of dangerous goods.",
+   "parties": {
+    "ConsignorParty": "27-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "35-xl"
+   }
+  },
+  {
+   "flow": "mast",
+   "doc": "Waybill",
+   "from": "12-xl",
+   "to": "10-xb",
+   "why": "The air waybill for cargo aircraft only, with the dangerous goods on it.",
+   "parties": {
+    "SenderParty": "12-xl",
+    "ReceiverParty": "10-xb",
+    "CarrierParty": "12-xl",
+    "ConsignorParty": "27-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "35-xl"
+   }
+  },
+  {
+   "flow": "mast",
+   "doc": "DespatchAdvice",
+   "from": "27-xb",
+   "to": "35-xl",
+   "why": "The engineering firm announces the goods to the telecom company.",
+   "parties": {
+    "DespatchSupplierParty": "27-xb",
+    "DeliveryCustomerParty": "35-xl",
+    "BuyerCustomerParty": "35-xl",
+    "SellerSupplierParty": "27-xb",
+    "Shipment/Consignment/CarrierParty": "12-xl"
+   }
+  },
+  {
+   "flow": "mast",
+   "doc": "Invoice",
+   "from": "27-xb",
+   "to": "35-xl",
+   "why": "Goods and carriage to the site; an export, so no sales tax.",
+   "parties": {
+    "AccountingSupplierParty": "27-xb",
+    "AccountingCustomerParty": "35-xl",
+    "SellerSupplierParty": "27-xb",
+    "BuyerCustomerParty": "35-xl"
    }
   }
  ]

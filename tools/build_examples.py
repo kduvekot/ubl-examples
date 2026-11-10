@@ -466,6 +466,50 @@ def item_property(pr, src):
     return out
 
 
+def hazardous_item(it):
+    """The dangerous goods data of an item (world/items.json), as the UN Model Regulations describe it."""
+    hz = it["hazard"]
+    out = {"ID": V(f"{it['sellers_id']}-DG", "The seller's dangerous goods record of the item."),
+           "UNDGCode": V(hz["un"][2:], "The UN number of the UN Model Regulations.", listID="UNCL8273"),
+           "ProperShippingName": V(hz["name"], "The proper shipping name."),
+           "HazardClassID": V(hz["class"], "The UN hazard class."),
+           "HazardousCategoryCode": V("UN", "Classified under the UN Model Regulations."),
+           "EmergencyProceduresCode": V(hz.get("ems", "None"), "The emergency schedules for ships (EmS)."),
+           "MedicalFirstAidGuideCode": V(hz["erg"], "The emergency response guide number."),
+           "AdditionalInformation": V(hz.get("note", "Packed as the rules require."), "What the shipper adds."),
+           "PlacardNotation": V(hz["class"], "The class shown on the placard."),
+           "MarkingID": V(hz["un"], "The UN number marked on each package.")}
+    if hz.get("label"):
+        out["PlacardEndorsement"] = V(hz["label"], "The hazard label on the package.")
+    if hz.get("pg"):
+        out["UNPackingGroupCode"] = V(hz["pg"], "The packing group: medium danger.")
+        out["UNPackingGroup"] = V("Medium danger", "In words.")
+    if hz.get("tunnel"):
+        out["TunnelRestrictionCode"] = V(hz["tunnel"], "The tunnel restriction code for road transport.")
+    if hz.get("technical"):
+        out["TechnicalName"] = V(hz["technical"], "The technical name, needed with an n.o.s. entry.")
+    if hz.get("sub"):
+        out["SecondaryHazard"] = {"ID": V(hz["sub"], "The subsidiary hazard: flammable."),
+                                  "PlacardNotation": V(hz["sub"], "Shown on a second label."),
+                                  "PlacardEndorsement": V("3", "The flammable liquid label."),
+                                  "EmergencyProceduresCode": V("F-E", "The fire schedule."),
+                                  "Extension": V("Subsidiary risk 3", "In words.")}
+        out["FlashpointTemperature"] = {"AttributeID": V("Flashpoint", "Closed cup."),
+                                        "Measure": V(hz["flash"], "The flashpoint.", unitCode="CEL")}
+        out["MaritimePollutantCode"] = V("N", "Not a marine pollutant.")
+    if hz.get("isotope"):
+        name, act, unit = hz["isotope"]
+        out["RadioactiveMaterial"] = {"Name": V("Americium-241 sources in smoke detectors", "The material."),
+                                      "SpecialFormDescription": V("Sealed source, not special form.", "Its form."),
+                                      "TransportIndexNumeric": V("0", "Excepted package: no dose rate to "
+                                                                      "speak of."),
+                                      "FissileCriticalitySafetyIndexNumeric": V("0", "Not fissile."),
+                                      "ApplicableRadioactiveIsotope": {"Name": V(name, "The isotope."),
+                                                                       "ActivityLevelMeasure": V(act, "Per detector.",
+                                                                                                 unitCode=unit)}}
+    return out
+
+
 def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref=None):
     """The content of a cac:Item element, from the items layer. `catalogue` is (catalogue number, line) for a
     catalogue line; `catalogue_ref` the catalogue an order line was ordered from."""
@@ -662,6 +706,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
             circ["EndOfLifeTreatment"] = {"TreatmentPathwayCode": V(ci["end_of_life"], "What happens to the item "
                                                                                        "after use.")}
         out["CircularityProfile"] = circ
+    if maker.get("hazard"):
+        out["HazardousRiskIndicator"] = V("true", "The item is dangerous goods.")
+        out["HazardousItem"] = hazardous_item(maker)
     if maker.get("emission"):
         em = maker["emission"]
         out["EnvironmentalEmission"] = {
@@ -887,7 +934,7 @@ def main(flow_id, check=False):
 
 
 FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton", "tender", "carnet",
-                       "waste", "utilities", "wood", "furniture", "packaging"]
+                       "waste", "utilities", "wood", "furniture", "packaging", "mast"]
 
 
 if __name__ == "__main__":

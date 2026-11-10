@@ -1033,6 +1033,109 @@
    },
    "sellers_id": "VI-INST-B",
    "description": "Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers."
+  },
+  {
+   "id": "battery-pack",
+   "seller": "27-xb",
+   "name": "Lithium-ion battery pack 48 V 100 Ah",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 2400.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "SE-BAT-48100",
+   "standard_id": "772050000117",
+   "hs": "8507.60",
+   "origin": "XB",
+   "description": "Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.",
+   "net_kg": 52,
+   "gross_kg": 58,
+   "package": {
+    "type": "CR",
+    "per_package": 1
+   },
+   "hazard": {
+    "un": "UN3480",
+    "class": "9",
+    "name": "Lithium ion batteries",
+    "label": "9A",
+    "pi": "965",
+    "ems": "F-A, S-I",
+    "erg": "147",
+    "tunnel": "E",
+    "note": "State of charge below 30 %, as the air rules require."
+   }
+  },
+  {
+   "id": "smoke-detector",
+   "seller": "27-xb",
+   "name": "Ionisation smoke detector set",
+   "kind": "goods",
+   "unit": "SET",
+   "price": {
+    "amount": 180.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "SE-SMK-10",
+   "standard_id": "772050000124",
+   "hs": "8531.10",
+   "origin": "XB",
+   "description": "Ten ionisation smoke detectors for the mast's equipment room, each with a small americium-241 source.",
+   "net_kg": 2,
+   "gross_kg": 3,
+   "package": {
+    "type": "BX",
+    "per_package": 1
+   },
+   "hazard": {
+    "un": "UN2911",
+    "class": "7",
+    "name": "Radioactive material, excepted package - instruments or articles",
+    "label": "",
+    "erg": "161",
+    "isotope": [
+     "Americium-241",
+     "37",
+     "2Q"
+    ],
+    "note": "Excepted package: no radioactive label, the UN number on the package."
+   }
+  },
+  {
+   "id": "coating-stripper",
+   "seller": "27-xb",
+   "name": "Coating stripper for electronics",
+   "kind": "goods",
+   "unit": "LTR",
+   "price": {
+    "amount": 9.5,
+    "currency": "XBL"
+   },
+   "sellers_id": "SE-CS-05",
+   "standard_id": "772050000131",
+   "hs": "3814.00",
+   "origin": "XB",
+   "description": "Remover for the protective coating of circuit boards, in 5-litre cans.",
+   "net_kg": 1.1,
+   "gross_kg": 1.25,
+   "package": {
+    "type": "CA",
+    "per_package": 5
+   },
+   "hazard": {
+    "un": "UN2920",
+    "class": "8",
+    "sub": "3",
+    "pg": "II",
+    "name": "Corrosive liquid, flammable, n.o.s.",
+    "technical": "ethanolamine, propanol",
+    "label": "8",
+    "flash": "28",
+    "ems": "F-E, S-C",
+    "erg": "132",
+    "tunnel": "D/E"
+   }
   }
  ]
 }

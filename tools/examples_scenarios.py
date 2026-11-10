@@ -5503,3 +5503,122 @@ def _(f, n, doc, out):
                                   "SpeedOverGroundMeasure": V("13.5", "Speed over ground.", unitCode="KNT"),
                                   "RateOfTurnMeasure": V("0", "Not turning.", unitCode="C62")}})
     return {}
+
+
+# ---------------------------------------------------------------- the mast flow (dangerous goods by air)
+MAST = kit.Flow("mast", "2026-06-01", [
+    {"item": "battery-pack", "ordered": 6, "why": "Six packs: four hours of back-up power for the mast."},
+    {"item": "smoke-detector", "ordered": 1, "why": "One set of ten for the equipment room."},
+    {"item": "coating-stripper", "ordered": 20, "why": "Four cans of five litres for the circuit boards."}])
+
+
+def dg_temperature(attr, lo, hi, why):
+    return ({"AttributeID": V(attr, why), "Measure": V(lo, "The lowest allowed.", unitCode="CEL")},
+            {"AttributeID": V(attr, why), "Measure": V(hi, "The highest allowed.", unitCode="CEL")})
+
+
+def mast_consignment(f, full):
+    lo, hi = dg_temperature("Battery", "5", "35", "Lithium-ion packs must not freeze nor overheat.")
+    bat = ITEM["battery-pack"]
+    loaded = {"ID": V("SE-BAT-48100-DG", "The battery packs in the container."),
+              "UNDGCode": V("3480", "UN 3480.", listID="UNCL8273"),
+              "ProperShippingName": V("Lithium ion batteries", "As on the declaration."),
+              "HazardClassID": V("9", "Class 9."),
+              "GrossWeightMeasure": qty(Decimal(6) * Decimal(str(bat["gross_kg"])), "KGM", "Six packs, packed."),
+              "NetWeightMeasure": qty(Decimal(6) * Decimal(str(bat["net_kg"])), "KGM", "The packs alone."),
+              "NetVolumeMeasure": V("0.24", "Their volume.", unitCode="MTQ"),
+              "Quantity": qty(6, "H87", "Six packs."),
+              "HazardousTypeCode": V("Article", "Batteries are articles, not substances."),
+              "PackagingDangerLevelCode": V("None", "Lithium batteries have no packing group."),
+              "UpperOrangeHazardPlacardID": V("90", "The hazard identification number for road transport."),
+              "LowerOrangeHazardPlacardID": V("3480", "The UN number on the orange plate."),
+              "CategoryName": V("Miscellaneous dangerous goods", "Class 9 in words."),
+              "ContactParty": party("27-xb", short=True),
+              "EmergencyTemperature": {"AttributeID": V("Emergency", "Above this, emergency procedures."),
+                                       "Measure": V("60", "Thermal runaway risk.", unitCode="CEL")},
+              "AdditionalTemperature": {"AttributeID": V("Storage", "Recommended storage."),
+                                        "Measure": V("20", "Around 20 °C.", unitCode="CEL")},
+              "PositionOnBoardStowage": {"LocationID": V("MD-L2", "Main deck, position L2."),
+                                         "Location": V("Main deck, accessible", "Where it flies.")},
+              "Package": {"ID": V("SE-CR-1..6", "The six crates."), "Quantity": qty(6, "H87", "Six."),
+                          "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: crate.")},
+              "HazardousGoodsTransit": {"TransportEmergencyCardCode": V("TEC-90-3480", "The emergency card on "
+                                                                                     "board."),
+                                        "PackingCriteriaCode": V("PI965-IA", "IATA packing instruction 965, "
+                                                                             "section IA."),
+                                        "HazardousRegulationCode": V("IATA", "Air: the IATA Dangerous Goods "
+                                                                             "Regulations."),
+                                        "InhalationToxicityZoneCode": V("None", "Not toxic by inhalation."),
+                                        "TransportAuthorizationCode": V("CAO", "Cargo aircraft only."),
+                                        "TransitDescription": V("Cargo aircraft only; state of charge below 30 %.",
+                                                                "The conditions."),
+                                        "MaximumTemperature": hi, "MinimumTemperature": lo}}
+    equipment = {"ID": V("RKN-41207-KC", "The temperature-controlled air container."),
+                 "TransportEquipmentTypeCode": V("AM", "UN/EDIFACT 8053 code AM: refrigerated container.",
+                                                 listID="UN/EDIFACT EDED 8053"),
+                 "RefrigeratedIndicator": V("true", "A temperature-controlled unit."),
+                 "RefrigerationOnIndicator": V("true", "The unit is switched on."),
+                 "AirFlowPercent": V("40", "The fan's air flow."),
+                 "HumidityPercent": V("50", "Humidity kept below 50 %."),
+                 "AnimalFoodApprovedIndicator": V("false", "Not for feed."),
+                 "HumanFoodApprovedIndicator": V("false", "Not for food."),
+                 "DangerousGoodsApprovedIndicator": V("true", "Approved for dangerous goods."),
+                 "PowerIndicator": V("true", "Battery-powered cooling and heating."),
+                 "MinimumTemperature": lo, "MaximumTemperature": hi,
+                 "LoadedHazardousItem": loaded, "HazardousGoodsTransit": loaded["HazardousGoodsTransit"]}
+    out = {"HazardousRiskIndicator": V("true", "The consignment holds dangerous goods."),
+           "HazardousItemNotificationParty": party("27-xb", short=True),
+           "TransportHandlingUnit": {"ID": V("RKN-41207-KC", "The container as a handling unit."),
+                                     "HazardousRiskIndicator": V("true", "Dangerous goods inside."),
+                                     "HazardousGoodsTransit": loaded["HazardousGoodsTransit"],
+                                     "MinimumTemperature": lo, "MaximumTemperature": hi,
+                                     "TransportEquipment": equipment}}
+    if full:
+        out["MainCarriageShipmentStage"] = {
+            "ID": V("1", "The flight."), "TransportModeCode": V("4", "Air transport.",
+                                                               listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                      "Transport"),
+            "HazardousRiskIndicator": V("true", "Dangerous goods on the flight."),
+            "TransportMeans": kit.means("12-xl", "KAC", "KAC209", "The cargo flight of the day.")}
+    return out
+
+
+def mast(n, doc):
+    f, d = MAST, doc["doc"]
+    w = kit.gross_weight(f, "ordered")
+    if d == "Order":
+        return kit.order(f, n, doc, 0, "The telecom company orders before the storm season.",
+                         "Carriage paid to the telecom company's site: the seller arranges the dangerous goods "
+                         "transport.", "Selanu Telecom, mast site")
+    if d == "ForwardingInstructions":
+        return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
+                "IssueDate": V(f.date(2), "With the shipper's declaration of dangerous goods."),
+                "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight."),
+                             "GoodsItem": [{"ID": V(str(i), "A goods item."),
+                                            "Description": V(ITEM[x["item"]]["name"], "The goods."),
+                                            "Temperature": {"AttributeID": V("Transport", "The temperature in "
+                                                                                          "transport."),
+                                                            "Measure": V("20", "Around 20 °C.", unitCode="CEL"),
+                                                            "MeasureCode": V("Target", "The target."),
+                                                            "Description": V("Keep away from heat.", "Why.")},
+                                            "MinimumTemperature": {"Measure": V("5", "At least.", unitCode="CEL")},
+                                            "MaximumTemperature": {"Measure": V("35", "At most.", unitCode="CEL")},
+                                            "Item": item(x["item"])} for i, x in enumerate(f.deal, 1)],
+                             "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
+                                                     "The consignment."), **mast_consignment(f, False)}}}
+    if d == "Waybill":
+        out = kit.waybill(f, n, doc, 3, "The air waybill, cargo aircraft only.", w, "The gross weight.")
+        kit.deep_merge(out["Shipment"]["Consignment"], mast_consignment(f, True))
+        return out
+    if d == "DespatchAdvice":
+        return kit.despatch_advice(f, n, doc, 3, "Sent when the goods leave for the airport.", "The gross weight.")
+    if d == "Invoice":
+        return kit.invoice(f, n, doc, 3, 45, "Issued on despatch.",
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The telecom company's order.")},
+                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}})
+    raise SystemExit(f"mast scenario: no document {n} {doc['doc']}")
+
+
+SCENARIOS["mast"] = _with_enrichment("mast", mast)
+FLOWS["mast"] = MAST
