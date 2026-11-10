@@ -14,7 +14,8 @@
 <p><em>#27 Consortium Partner · Bayvarra (XB) · Public procurement</em>
 · <em>proposed addition to the 26+C set</em></p>
 <p>Tenders together with the manufacturer as consortium partner or
-subcontractor.</p>
+subcontractor; supplies back-up power and safety equipment for telecom
+masts, dangerous goods included.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -56,12 +57,116 @@ bodies are exempt, and the invoice says so.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="what-it-sells">What it sells</h2>
+<p>Its items, as they appear on its quotations, catalogues and invoices.
+Units of measure and packaging types are UN/ECE Recommendation 20 and 21
+codes from the UBL code lists; customs tariff codes are Harmonized
+System subheadings.</p>
+<h3 id="lithium-ion-battery-pack-48-v-100-ah">Lithium-ion battery pack
+48 V 100 Ah</h3>
+<p>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel
+case.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>SE-BAT-48100</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>2,400.00 XBL per <code>H87</code> (piece)</td>
+</tr>
+<tr>
+<td>World item number</td>
+<td><code>772050000117</code> (issued by <a
+href="world-31-xu.html">Codana Identification Agency</a>)</td>
+</tr>
+<tr>
+<td>Customs tariff (HS)</td>
+<td><code>8507.60</code>; origin Bayvarra</td>
+</tr>
+<tr>
+<td>Weight per unit</td>
+<td>52 kg net, 58 kg gross</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td><code>CR</code> (Crate), 1 per package</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ionisation-smoke-detector-set">Ionisation smoke detector
+set</h3>
+<p>Ten ionisation smoke detectors for the mast's equipment room, each
+with a small americium-241 source.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>SE-SMK-10</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>180.00 XBL per <code>SET</code> (set)</td>
+</tr>
+<tr>
+<td>World item number</td>
+<td><code>772050000124</code> (issued by <a
+href="world-31-xu.html">Codana Identification Agency</a>)</td>
+</tr>
+<tr>
+<td>Customs tariff (HS)</td>
+<td><code>8531.10</code>; origin Bayvarra</td>
+</tr>
+<tr>
+<td>Weight per unit</td>
+<td>2 kg net, 3 kg gross</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td><code>BX</code> (Box), 1 per package</td>
+</tr>
+</tbody>
+</table>
+<h3 id="coating-stripper-for-electronics">Coating stripper for
+electronics</h3>
+<p>Remover for the protective coating of circuit boards, in 5-litre
+cans.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>SE-CS-05</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>9.50 XBL per <code>LTR</code> (litre)</td>
+</tr>
+<tr>
+<td>World item number</td>
+<td><code>772050000131</code> (issued by <a
+href="world-31-xu.html">Codana Identification Agency</a>)</td>
+</tr>
+<tr>
+<td>Customs tariff (HS)</td>
+<td><code>3814.00</code>; origin Bayvarra</td>
+</tr>
+<tr>
+<td>Weight per unit</td>
+<td>1.1 kg net, 1.25 kg gross</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td><code>CA</code> (Can, rectangular), 5 per package</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>A consortium partner tenders together with a main tenderer. UBL
 tenders and qualification documents name each partner and its
 qualifications separately, so the authority can see who contributes
 what.</p>
-<p>In this world it sends 0 and receives 0 documents, and is named in 2
+<p>In this world it sends 3 and receives 1 documents, and is named in 3
 documents between other parties. They are listed per flow below.</p>
 <h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
 <p>The contracting authority buys park benches and street furniture for
@@ -93,10 +198,79 @@ href="example-tender-15-Tender.html">See the example document</a>.</p>
 <p>In it as <code>SubcontractorParty</code> (The Subcontractor or other
 Tenderer who participates in the same Tender).</p></li>
 </ul>
+<h2
+id="batteries-for-the-islands-telecom-mast-by-air-dangerous-goods">Batteries
+for the island's telecom mast, by air (dangerous goods)</h2>
+<p>The island's telecom company orders back-up batteries, smoke
+detectors and a coating stripper for its mast from an engineering firm
+in Bayvarra. All three are dangerous goods; the batteries fly in a
+temperature-controlled container.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
+Instructions</strong></a> to <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The engineering firm instructs the forwarder, with the
+shipper's declaration of dangerous goods. <a
+href="example-mast-02-ForwardingInstructions.html">See the example
+document</a>.</p>
+<p>In it as <code>ConsignorParty</code>.</p>
+<p>Also mentions: <a href="world-35-xl.html">Selanu Telecom</a> as
+<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> to <a href="world-35-xl.html">Selanu Telecom</a>:
+The engineering firm announces the goods to the telecom company. <a
+href="example-mast-04-DespatchAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>DespatchSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-12-xl.html">Kelaro Air Cargo</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-35-xl.html">Selanu Telecom</a>: Goods and carriage to
+the site; an export, so no sales tax. <a
+href="example-mast-05-Invoice.html">See the example document</a>.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-35-xl.html">Selanu Telecom</a>: The telecom company
+orders back-up power and safety equipment for its mast. Carriage paid to
+its site: the seller arranges the dangerous goods transport. <a
+href="example-mast-01-Order.html">See the example document</a>.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
+from <a href="world-12-xl.html">Kelaro Air Cargo</a> to <a
+href="world-10-xb.html">Bayforth Forwarding</a>: The air waybill for
+cargo aircraft only, with the dangerous goods on it. <a
+href="example-mast-03-Waybill.html">See the example document</a>.</p>
+<p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
+sending the goods).</p>
+<p>Also mentions: <a href="world-35-xl.html">Selanu Telecom</a> as
+<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>AdditionalQualifyingParty</code>
-<code>SubcontractorParty</code></p>
+<code>SubcontractorParty</code> <code>SellerSupplierParty</code>
+<code>ConsignorParty</code> <code>DespatchSupplierParty</code>
+<code>AccountingSupplierParty</code></p>
+<h2 id="trading-partners-in-the-world">Trading partners in the
+world</h2>
+<p>The parties it exchanges documents with:</p>
+<ul>
+<li><a href="world-35-xl.html">Selanu Telecom</a>, Lisavu</li>
+<li><a href="world-10-xb.html">Bayforth Forwarding</a>, Bayvarra</li>
+</ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#27-xb">See Consortium Partner on the map</a> ·
 Bayvarra: Mainland, coast. Distribution, retail, seaport and airport
@@ -109,6 +283,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ffd7d93</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0de1e10</code></p></div></footer>
 </body>
 </html>

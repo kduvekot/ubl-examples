@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debit Note: Velumi Trading to Lumeway
+Distribution · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=cfc6fda70b">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html">World</a></li><li><a href="examples.html" aria-current="page">Examples</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="debit-note-velumi-trading-to-lumeway-distribution">Debit Note:
+Velumi Trading to Lumeway Distribution</h1>
+<p><em>Example 28 of the flow "Overseas by container ship, cost
+insurance and freight (Bayvarra → island Lisavu)" · <a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA">Debit
+Note in the UBL 2.5 specification</a></em></p>
+<p>One pallet's heat-treatment mark was illegible, so customs inspected
+the container; the buyer debits the distributor in coral for the
+inspection and storage, a packaging fault on the seller's side.</p>
+<p><a href="examples/sea/28-DebitNote.xml">The XML file</a> is valid
+against the UBL 2.5 schemas and the world's code lists. Below, every
+value with its place in the document and the reason for it.</p>
+<h2 id="values-and-their-reasons">Values and their reasons</h2>
+<h3 id="the-document-itself">The document itself</h3>
+<ul>
+<li><code>UBLVersionID</code> = <strong>2.5</strong><br />
+The documents of the world use UBL 2.5.</li>
+<li><code>CustomizationID</code> =
+<strong>urn:ubl-examples:world</strong><br />
+The example world is a customization of UBL: it uses its own code lists
+for countries and currencies.</li>
+<li><code>ProfileID</code> =
+<strong>urn:ubl-examples:world:process:sea</strong><br />
+The business process the document belongs to: the flow "Overseas by
+container ship, cost insurance and freight (Bayvarra → island
+Lisavu)".</li>
+<li><code>ProfileExecutionID</code> = <strong>SEA-2026-01</strong><br />
+This run of the process: the same in every document of the flow.</li>
+<li><code>ID</code> = <strong>VT-DOC-26-0153</strong><br />
+The buyer's debit note number.</li>
+<li><code>UUID</code> =
+<strong>4ac9595a-73a2-5f50-8296-73f9fae827e7</strong><br />
+A universally unique identifier of the document, derived from its place
+in the world (UUID version 5), so it stays the same on every build.</li>
+<li><code>IssueDate</code> = <strong>2026-05-22</strong><br />
+After customs charged the inspection.</li>
+<li><code>IssueTime</code> = <strong>10:30:00</strong><br />
+The time the sender's system issued the document, in the sender's local
+time.</li>
+<li><code>DueDate</code> = <strong>2026-06-21</strong><br />
+Thirty days.</li>
+<li><code>Note</code> = <strong>The illegible mark is the packer's
+responsibility under the agreement.</strong><br />
+Why the seller pays.</li>
+<li><code>DebitNoteTypeCode</code> = <strong>383</strong><br />
+UN/EDIFACT 1001 code 383: debit note.</li>
+<li><code>TaxPointDate</code> = <strong>2026-05-20</strong><br />
+The day the fee was charged.</li>
+<li><code>DocumentCurrencyCode</code> = <strong>XLC</strong><br />
+The coral, the buyer's currency, in which customs charged; it has three
+decimals.</li>
+<li><code>TaxCurrencyCode</code> = <strong>XLC</strong><br />
+No tax, but stated in the island's currency.</li>
+<li><code>PricingCurrencyCode</code> = <strong>XLC</strong><br />
+The fee is priced in coral.</li>
+<li><code>PaymentCurrencyCode</code> = <strong>XBL</strong><br />
+The distributor pays in lume.</li>
+<li><code>PaymentAlternativeCurrencyCode</code> =
+<strong>XLC</strong><br />
+The amount in coral, for comparison.</li>
+<li><code>AccountingCostCode</code> = <strong>500</strong><br />
+The buyer's cost centre.</li>
+<li><code>AccountingCost</code> = <strong>Stock for municipal
+projects</strong><br />
+The cost centre in words.</li>
+<li><code>LineCountNumeric</code> = <strong>1</strong><br />
+One line.</li>
+</ul>
+<h3 id="invoice-period">Invoice Period</h3>
+<p>Inside <code>InvoicePeriod</code>:</p>
+<ul>
+<li><code>StartDate</code> = <strong>2026-05-18</strong><br />
+Held from discharge</li>
+<li><code>EndDate</code> = <strong>2026-05-19</strong><br />
+to release.</li>
+</ul>
+<h3 id="discrepancy-response">Discrepancy Response</h3>
+<p>Inside <code>DiscrepancyResponse</code>:</p>
+<ul>
+<li><code>ResponseCode</code> = <strong>Packaging</strong><br />
+A packaging fault.</li>
+<li><code>Description</code> = <strong>Heat-treatment mark illegible on
+pallet LD-26-007.</strong><br />
+The fault.</li>
+</ul>
+<h3 id="order-reference">Order Reference</h3>
+<p>Inside <code>OrderReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>VT-PO-26-0127</strong><br />
+The order.</li>
+</ul>
+<h3 id="despatch-document-reference">Despatch Document Reference</h3>
+<p>Inside <code>DespatchDocumentReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>LD-DA-26-0145</strong><br />
+The despatch advice.</li>
+</ul>
+<h3 id="delivery-note-document-reference">Delivery Note Document
+Reference</h3>
+<p>Inside <code>DeliveryNoteDocumentReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>TOL-BL-26-0139</strong><br />
+The bill of lading, the note the goods came with.</li>
+</ul>
+<h3 id="work-report-document-reference">Work Report Document
+Reference</h3>
+<p>Inside <code>WorkReportDocumentReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>XL-CUS-INSP-26-0517</strong><br />
+Customs' inspection report.</li>
+</ul>
+<h3 id="receipt-document-reference">Receipt Document Reference</h3>
+<p>Inside <code>ReceiptDocumentReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>NW-RA-26-0146</strong><br />
+The receipt advice.</li>
+</ul>
+<h3 id="statement-document-reference">Statement Document Reference</h3>
+<p>Inside <code>StatementDocumentReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>HF-ST-26-0150</strong><br />
+The factor's statement, which this debit does not touch.</li>
+</ul>
+<h3 id="originator-document-reference">Originator Document
+Reference</h3>
+<p>Inside <code>OriginatorDocumentReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>VT-CLAIM-26-0021</strong><br />
+The buyer's claim.</li>
+</ul>
+<h3 id="contract-document-reference">Contract Document Reference</h3>
+<p>Inside <code>ContractDocumentReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>LD-DAG-26-0125</strong><br />
+The digital agreement.</li>
+</ul>
+<h3 id="project-reference">Project Reference</h3>
+<p>Inside <code>ProjectReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>Harbour parks Selanu</strong><br />
+The buyer's project.</li>
+<li><code>UUID</code> =
+<strong>46229671-46ba-571a-9284-46d0fb2b78c1</strong><br />
+Its UUID.</li>
+<li><code>IssueDate</code> = <strong>2026-05-07</strong><br />
+Started with the order.</li>
+<li><code>WorkPhaseReference/ID</code> = <strong>PH-1</strong><br />
+Benches for the harbour park.</li>
+<li><code>WorkPhaseReference/WorkPhaseCode</code> =
+<strong>Supply</strong><br />
+The supply phase.</li>
+</ul>
+<h3 id="buyer-assigned-reference">Buyer Assigned Reference</h3>
+<p>Inside <code>BuyerAssignedReference</code>:</p>
+<ul>
+<li><code>BuyerReferenceCode</code> =
+<strong>LD-AP-CLAIMS</strong><br />
+The distributor's claims desk.</li>
+</ul>
+<h3 id="purchase-reference">Purchase Reference</h3>
+<p>Inside <code>PurchaseReference</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>TWLU4120872</strong><br />
+The container the charge is about.</li>
+</ul>
+<h3 id="annotation">Annotation</h3>
+<p>Inside <code>Annotation</code>:</p>
+<ul>
+<li><code>AnnotationContent</code> = <strong>The distributor may claim
+it from the packer.</strong><br />
+A remark.</li>
+</ul>
+<h3 id="signature">Signature</h3>
+<p>Inside <code>Signature</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>VT-SIG-26-DN</strong><br />
+The sender's electronic seal.</li>
+<li><code>SignatoryParty/PartyIdentification/ID</code> =
+<strong>IC41859</strong> (schemeID
+<code>urn:ubl-examples:world:XL:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>SignatoryParty/PartyName/Name</code> = <strong>Velumi
+Trading</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+</ul>
+<h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
+<p>Inside <code>AccountingSupplierParty</code>:</p>
+<ul>
+<li><code>Party/WebsiteURI</code> = <strong><a
+href="https://www.lumeway.example">https://www.lumeway.example</a></strong><br />
+The party's website, under the reserved .example domain (RFC 2606);
+identity of Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/IndustryClassificationCode</code> =
+<strong>4649</strong> (listID <code>ISIC Rev.4</code>)<br />
+What the party does, as an ISIC Rev. 4 class of the United Nations'
+industry classification; identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/PartyIdentification/ID</code> =
+<strong>20410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+The party's preferred identifier: its number in the Federal business
+register of Bayvarra; identity of Lumeway Distribution
+(world/parties.json). Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
+<li><code>Party/AdditionalPartyIdentification/ID</code> =
+<strong>XB-TR-410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
+A second identifier: the party's customs trader number, because it
+imports or exports (XB-TR- and 6 digits); identity of Lumeway
+Distribution (world/parties.json).</li>
+<li><code>Party/PartyName/Name</code> = <strong>Lumeway
+Distribution</strong><br />
+The trading name; identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/Language/ID</code> = <strong>en</strong><br />
+English, the language the party does business in.</li>
+<li><code>Party/Language/Name</code> = <strong>English</strong><br />
+The language's name.</li>
+<li><code>Party/Language/LocaleCode</code> = <strong>EN</strong><br />
+The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Party/PostalAddress/AddressTypeCode</code> =
+<strong>Business</strong><br />
+The kind of address.</li>
+<li><code>Party/PostalAddress/AddressFormatCode</code> =
+<strong>XB</strong><br />
+The address follows Bayvarra's address format (world/countries.json):
+BuildingNumber StreetName / CityName CountrySubentity PostalZone.</li>
+<li><code>Party/PostalAddress/StreetName</code> = <strong>Distribution
+Drive</strong><br />
+Street of the postal address. identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/PostalAddress/AdditionalStreetName</code> = <strong>Gate
+3</strong><br />
+The gate of the business park to use. identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/PostalAddress/BlockName</code> = <strong>Marrowdale
+Business Park</strong><br />
+The business park the distribution centre stands in. identity of Lumeway
+Distribution (world/parties.json).</li>
+<li><code>Party/PostalAddress/BuildingNumber</code> =
+<strong>43</strong><br />
+Building number of the postal address. identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/PostalAddress/PlotIdentification</code> = <strong>Plot
+14</strong><br />
+The plot of the distribution centre in the business park. identity of
+Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/PostalAddress/CityName</code> =
+<strong>Marrowdale</strong><br />
+The town or locality nearest to the party's place on the map, in its own
+country and state. identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/PostalAddress/PostalZone</code> =
+<strong>71214</strong><br />
+Postal code in Bayvarra's format (5 digits). identity of Lumeway
+Distribution (world/parties.json).</li>
+<li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Upland
+State</strong><br />
+The state, part of an address in federal Bayvarra. identity of Lumeway
+Distribution (world/parties.json).</li>
+<li><code>Party/PostalAddress/CountrySubentityCode</code> =
+<strong>UL</strong><br />
+The state as a code of Bayvarra's address scheme (world/countries.json).
+identity of Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/PostalAddress/TimezoneOffset</code> =
+<strong>-1</strong><br />
+The party's time zone, one hour behind UTC, where the world lies
+(world/countries.json).</li>
+<li><code>Party/PostalAddress/Country/IdentificationCode</code> =
+<strong>XB</strong><br />
+Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
+list (world/codelists).</li>
+<li><code>Party/PostalAddress/Country/Name</code> =
+<strong>Bayvarra</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>Party/PartyTaxScheme/RegistrationName</code> = <strong>Lumeway
+Distribution Ltd</strong><br />
+The name under which the party is registered for state sales tax;
+identity of Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/PartyTaxScheme/CompanyID</code> =
+<strong>UL-1230822</strong><br />
+Tax number under Bayvarra's state sales tax (state code (UL Upland
+State, CO Coastal State), hyphen, 7 digits (sales tax permit of the
+state)); identity of Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/PartyTaxScheme/TaxLevelCode</code> =
+<strong>State</strong><br />
+The level of government that levies the tax: Bayvarra's state sales tax
+is levied by the states.</li>
+<li><code>Party/PartyTaxScheme/TaxScheme/ID</code> =
+<strong>STT</strong><br />
+UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
+<li><code>Party/PartyTaxScheme/TaxScheme/CurrencyCode</code> =
+<strong>XBL</strong><br />
+The tax is accounted for in the country's currency.</li>
+<li><code>Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
+= <strong>Upland State</strong><br />
+The state whose sales tax the party is registered for.</li>
+<li><code>Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
+= <strong>XB</strong><br />
+The country whose tax this is.</li>
+<li><code>Party/PartyLegalEntity/RegistrationName</code> =
+<strong>Lumeway Distribution Ltd</strong><br />
+The name under which the party is registered, with its legal form;
+identity of Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyID</code> =
+<strong>20410274</strong><br />
+Number in the Federal business register of Bayvarra; identity of Lumeway
+Distribution (world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/RegistrationDate</code> =
+<strong>1988-10-03</strong><br />
+The day the company was entered in the register; identity of Lumeway
+Distribution (world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyLegalFormCode</code> =
+<strong>Ltd</strong><br />
+The legal form, as abbreviated in Bayvarra (world/countries.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyLegalForm</code> =
+<strong>Limited company (private)</strong><br />
+The legal form, in words.</li>
+<li><code>Party/PartyLegalEntity/EntitySizeCode</code> =
+<strong>Medium</strong><br />
+The size class of the company (micro, small, medium or large); identity
+of Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyLiquidationStatusCode</code> =
+<strong>Active</strong><br />
+The register shows the company as active, not in liquidation.</li>
+<li><code>Party/PartyLegalEntity/CorporateStockAmount</code> =
+<strong>2500000</strong> (currencyID <code>XBL</code>)<br />
+The share capital, in lume; identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/FullyPaidSharesIndicator</code> =
+<strong>true</strong><br />
+All shares are paid up.</li>
+<li><code>Party/PartyLegalEntity/RegistrationAddress/CityName</code> =
+<strong>Marrowdale</strong><br />
+The registered office, as entered in the register.</li>
+<li><code>Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
+= <strong>XB</strong><br />
+The country of registration.</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
+<strong>XB:FBR</strong><br />
+The identifier of the register in the world (world/countries.json).</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/Name</code>
+= <strong>Federal business register of Bayvarra</strong><br />
+The register the company is entered in.</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
+= <strong>Commercial</strong><br />
+A register of businesses, not a register of charities or
+associations.</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
+= <strong>XB</strong><br />
+The register covers the whole country.</li>
+<li><code>Party/Contact/Name</code> = <strong>Customer
+service</strong><br />
+The desk that handles this document; identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/Contact/JobTitle</code> = <strong>Customer service
+officer</strong><br />
+The job of the person who answers at the desk; identity of Lumeway
+Distribution (world/parties.json).</li>
+<li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
+The department the desk belongs to; identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121
+0274</strong><br />
+Telephone under +999, a country code the ITU keeps in reserve (ITU-T
+E.164), so the number reaches no one; identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/Contact/ElectronicMail</code> = <strong><a
+href="mailto:customer@lumeway.example">customer@lumeway.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone; identity of Lumeway Distribution (world/parties.json).</li>
+<li><code>Party/Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
+When the desk can be reached; identity of Lumeway Distribution
+(world/parties.json).</li>
+<li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
+<strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
+<strong>XB:20410274</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and
+registry number; identity of Lumeway Distribution (world/parties.json).
+UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+</ul>
+<h3 id="accounting-customer-party">Accounting Customer Party</h3>
+<p>Inside <code>AccountingCustomerParty</code>:</p>
+<ul>
+<li><code>Party/WebsiteURI</code> = <strong><a
+href="https://www.velumi.example">https://www.velumi.example</a></strong><br />
+The party's website, under the reserved .example domain (RFC 2606);
+identity of Velumi Trading (world/parties.json).</li>
+<li><code>Party/IndustryClassificationCode</code> =
+<strong>4649</strong> (listID <code>ISIC Rev.4</code>)<br />
+What the party does, as an ISIC Rev. 4 class of the United Nations'
+industry classification; identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/PartyIdentification/ID</code> = <strong>IC41859</strong>
+(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+The party's preferred identifier: its number in the Island companies
+register; identity of Velumi Trading (world/parties.json). Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
+<li><code>Party/AdditionalPartyIdentification/ID</code> =
+<strong>XL-TR-041859</strong> (schemeID
+<code>urn:ubl-examples:world:XL:customs-trader</code>)<br />
+A second identifier: the party's customs trader number, because it
+imports or exports (XL-TR- and 6 digits); identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/PartyName/Name</code> = <strong>Velumi
+Trading</strong><br />
+The trading name; identity of Velumi Trading (world/parties.json).</li>
+<li><code>Party/Language/ID</code> = <strong>en</strong><br />
+English, the language the party does business in.</li>
+<li><code>Party/Language/Name</code> = <strong>English</strong><br />
+The language's name.</li>
+<li><code>Party/Language/LocaleCode</code> = <strong>EN</strong><br />
+The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Party/PostalAddress/AddressTypeCode</code> =
+<strong>Business</strong><br />
+The kind of address.</li>
+<li><code>Party/PostalAddress/AddressFormatCode</code> =
+<strong>XL</strong><br />
+The address follows Lisavu's address format (world/countries.json):
+BuildingNumber StreetName / CityName.</li>
+<li><code>Party/PostalAddress/StreetName</code> = <strong>Reef
+Street</strong><br />
+Street of the postal address. identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/PostalAddress/BuildingNumber</code> =
+<strong>16</strong><br />
+Building number of the postal address. identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/PostalAddress/CityName</code> =
+<strong>Selanu</strong><br />
+The town or locality nearest to the party's place on the map, in its own
+country and state. identity of Velumi Trading (world/parties.json).</li>
+<li><code>Party/PostalAddress/TimezoneOffset</code> =
+<strong>-1</strong><br />
+The party's time zone, one hour behind UTC, where the world lies
+(world/countries.json).</li>
+<li><code>Party/PostalAddress/Country/IdentificationCode</code> =
+<strong>XL</strong><br />
+Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
+list (world/codelists).</li>
+<li><code>Party/PostalAddress/Country/Name</code> =
+<strong>Lisavu</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>Party/PartyLegalEntity/RegistrationName</code> =
+<strong>Velumi Trading Ltd</strong><br />
+The name under which the party is registered, with its legal form;
+identity of Velumi Trading (world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyID</code> =
+<strong>IC41859</strong><br />
+Number in the Island companies register; identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/RegistrationDate</code> =
+<strong>1996-01-01</strong><br />
+The day the company was entered in the register; identity of Velumi
+Trading (world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyLegalFormCode</code> =
+<strong>Ltd</strong><br />
+The legal form, as abbreviated in Lisavu (world/countries.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyLegalForm</code> =
+<strong>Island limited company</strong><br />
+The legal form, in words.</li>
+<li><code>Party/PartyLegalEntity/EntitySizeCode</code> =
+<strong>Small</strong><br />
+The size class of the company (micro, small, medium or large); identity
+of Velumi Trading (world/parties.json).</li>
+<li><code>Party/PartyLegalEntity/CompanyLiquidationStatusCode</code> =
+<strong>Active</strong><br />
+The register shows the company as active, not in liquidation.</li>
+<li><code>Party/PartyLegalEntity/RegistrationAddress/CityName</code> =
+<strong>Selanu</strong><br />
+The registered office, as entered in the register.</li>
+<li><code>Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
+= <strong>XL</strong><br />
+The country of registration.</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
+<strong>XL:ICR</strong><br />
+The identifier of the register in the world (world/countries.json).</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/Name</code>
+= <strong>Island companies register</strong><br />
+The register the company is entered in.</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
+= <strong>Commercial</strong><br />
+A register of businesses, not a register of charities or
+associations.</li>
+<li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
+= <strong>XL</strong><br />
+The register covers the whole country.</li>
+<li><code>Party/Contact/Name</code> = <strong>Purchasing</strong><br />
+The desk that handles this document; identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/Contact/JobTitle</code> = <strong>Customer service
+officer</strong><br />
+The job of the person who answers at the desk; identity of Velumi
+Trading (world/parties.json).</li>
+<li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
+The department the desk belongs to; identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/Contact/Telephone</code> = <strong>+999 3 3000
+1859</strong><br />
+Telephone under +999, a country code the ITU keeps in reserve (ITU-T
+E.164), so the number reaches no one; identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/Contact/ElectronicMail</code> = <strong><a
+href="mailto:purchasing@velumi.example">purchasing@velumi.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone; identity of Velumi Trading (world/parties.json).</li>
+<li><code>Party/Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
+When the desk can be reached; identity of Velumi Trading
+(world/parties.json).</li>
+<li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
+<strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
+<strong>XL:IC41859</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and
+registry number; identity of Velumi Trading (world/parties.json). UBL
+2.5 carries it here; Party/EndpointID is deprecated.</li>
+</ul>
+<h3 id="payee-party">Payee Party</h3>
+<p>Inside <code>PayeeParty</code>:</p>
+<ul>
+<li><code>PartyIdentification/ID</code> = <strong>IC41859</strong>
+(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>PartyName/Name</code> = <strong>Velumi Trading</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+</ul>
+<h3 id="buyer-customer-party">Buyer Customer Party</h3>
+<p>Inside <code>BuyerCustomerParty</code>:</p>
+<ul>
+<li><code>Party/PartyIdentification/ID</code> =
+<strong>20410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>Party/PartyName/Name</code> = <strong>Lumeway
+Distribution</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+</ul>
+<h3 id="seller-supplier-party">Seller Supplier Party</h3>
+<p>Inside <code>SellerSupplierParty</code>:</p>
+<ul>
+<li><code>Party/PartyIdentification/ID</code> = <strong>IC41859</strong>
+(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>Party/PartyName/Name</code> = <strong>Velumi
+Trading</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+</ul>
+<h3 id="delivery">Delivery</h3>
+<p>Inside <code>Delivery</code>:</p>
+<ul>
+<li><code>ActualDeliveryDate</code> = <strong>2026-05-21</strong><br />
+The goods' arrival at the 3PL.</li>
+</ul>
+<h3 id="delivery-terms">Delivery Terms</h3>
+<p>Inside <code>DeliveryTerms</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>CIF</strong> (schemeID
+<code>INCOTERMS</code>)<br />
+As sold.</li>
+</ul>
+<h3 id="payment-means">Payment Means</h3>
+<p>Inside <code>PaymentMeans</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>1</strong><br />
+The first, and only, way to pay.</li>
+<li><code>PaymentMeansCode</code> = <strong>30</strong> (listID
+<code>UN/EDIFACT EDED 4461</code>)<br />
+UN/EDIFACT 4461 code 30: credit transfer. The listID is the
+identification of UBL's payment means code list, which code list
+validation checks.</li>
+<li><code>PaymentMeansDescription</code> = <strong>Credit
+transfer</strong><br />
+In words.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-06-21</strong><br />
+When the transfer must be credited.</li>
+<li><code>PaymentChannelCode</code> = <strong>IBAN</strong><br />
+Paid to an account identified in the format of ISO 13616.</li>
+<li><code>PaymentRailID</code> = <strong>TRADE-ACCORD-PAY</strong><br />
+The payment system the transfer runs over: the trade accord's link
+between the countries.</li>
+<li><code>InstructionNote</code> = <strong>Quote
+RF75VTDOC260153</strong><br />
+What the payer writes in the transfer.</li>
+<li><code>PaymentID</code> = <strong>RF75VTDOC260153</strong><br />
+The structured creditor reference of ISO 11649 to quote with the
+payment, made from the invoice number with its check digits.</li>
+<li><code>ChargeBearerCode</code> = <strong>SHAR</strong><br />
+ISO 20022 SHAR: each side pays its own bank's charges.</li>
+<li><code>PayeeFinancialAccount/ID</code> =
+<strong>XL13BSEL0003665515</strong> (schemeID
+<code>urn:ubl-examples:world:account</code>)<br />
+The buyer's account. The number follows the structure of ISO 13616 with
+its check digits, with the world's country code; it is not called an
+IBAN, because the world's countries are not registered IBAN
+countries.</li>
+<li><code>PayeeFinancialAccount/Name</code> = <strong>Velumi Trading
+Ltd</strong><br />
+The account holder, as the bank knows it.</li>
+<li><code>PayeeFinancialAccount/AccountTypeCode</code> =
+<strong>Current</strong><br />
+A current account, for payments in and out.</li>
+<li><code>PayeeFinancialAccount/AccountFormatCode</code> =
+<strong>ISO13616</strong><br />
+The account number has the structure of ISO 13616.</li>
+<li><code>PayeeFinancialAccount/CurrencyCode</code> =
+<strong>XLC</strong><br />
+The account is kept in the currency of the bank's country.</li>
+<li><code>PayeeFinancialAccount/PaymentNote</code> = <strong>Invoice
+VT-DOC-26-0153</strong><br />
+What the payer is asked to quote with the transfer, so the payment is
+matched.</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/ID</code> =
+<strong>BSEL-001</strong><br />
+The branch that keeps the account.</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/Name</code> =
+<strong>Main branch</strong><br />
+The branch's name.</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID</code>
+= <strong>BSEL</strong><br />
+The bank code, the part of every account number that names the bank;
+identity of Bank of Selanu (world/parties.json).</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name</code>
+= <strong>Bank of Selanu</strong><br />
+The bank; identity of Bank of Selanu (world/parties.json).</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
+= <strong>Reef Street</strong><br />
+The bank's head office; identity of Bank of Selanu
+(world/parties.json).</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber</code>
+= <strong>23</strong><br />
+Its building number; identity of Bank of Selanu
+(world/parties.json).</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
+= <strong>Selanu</strong><br />
+Its town; identity of Bank of Selanu (world/parties.json).</li>
+<li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode</code>
+= <strong>XL</strong><br />
+The bank's country.</li>
+<li><code>PayeeFinancialAccount/Country/IdentificationCode</code> =
+<strong>XL</strong><br />
+The country where the account is kept.</li>
+</ul>
+<h3 id="payment-terms">Payment Terms</h3>
+<p>Inside <code>PaymentTerms</code>:</p>
+<ul>
+<li><code>Note</code> = <strong>30 days net.</strong><br />
+The terms.</li>
+</ul>
+<h3 id="tax-exchange-rate">Tax Exchange Rate</h3>
+<p>Inside <code>TaxExchangeRate</code>:</p>
+<ul>
+<li><code>SourceCurrencyCode</code> = <strong>XLC</strong><br />
+The debit note's currency.</li>
+<li><code>TargetCurrencyCode</code> = <strong>XLC</strong><br />
+No conversion: the tax currency is coral.</li>
+<li><code>CalculationRate</code> = <strong>1</strong><br />
+The same currency.</li>
+<li><code>MathematicOperatorCode</code> =
+<strong>Multiply</strong><br />
+Coral times the rate gives lume.</li>
+<li><code>Date</code> = <strong>2026-05-22</strong><br />
+The rate of the issue date.</li>
+</ul>
+<h3 id="pricing-exchange-rate">Pricing Exchange Rate</h3>
+<p>Inside <code>PricingExchangeRate</code>:</p>
+<ul>
+<li><code>SourceCurrencyCode</code> = <strong>XLC</strong><br />
+The debit note's currency.</li>
+<li><code>TargetCurrencyCode</code> = <strong>XLC</strong><br />
+Priced in coral.</li>
+<li><code>CalculationRate</code> = <strong>1</strong><br />
+The same currency.</li>
+<li><code>MathematicOperatorCode</code> =
+<strong>Multiply</strong><br />
+Coral times the rate gives lume.</li>
+<li><code>Date</code> = <strong>2026-05-22</strong><br />
+The rate of the issue date.</li>
+</ul>
+<h3 id="payment-exchange-rate">Payment Exchange Rate</h3>
+<p>Inside <code>PaymentExchangeRate</code>:</p>
+<ul>
+<li><code>SourceCurrencyCode</code> = <strong>XLC</strong><br />
+The debit note's currency.</li>
+<li><code>TargetCurrencyCode</code> = <strong>XBL</strong><br />
+The distributor's currency.</li>
+<li><code>CalculationRate</code> = <strong>2.5</strong><br />
+1 coral = 2.5 lume, the reference rate.</li>
+<li><code>MathematicOperatorCode</code> =
+<strong>Multiply</strong><br />
+Coral times the rate gives lume.</li>
+<li><code>Date</code> = <strong>2026-05-22</strong><br />
+The rate of the issue date.</li>
+</ul>
+<h3 id="payment-alternative-exchange-rate">Payment Alternative Exchange
+Rate</h3>
+<p>Inside <code>PaymentAlternativeExchangeRate</code>:</p>
+<ul>
+<li><code>SourceCurrencyCode</code> = <strong>XLC</strong><br />
+The debit note's currency.</li>
+<li><code>TargetCurrencyCode</code> = <strong>XLC</strong><br />
+The coral equivalent.</li>
+<li><code>CalculationRate</code> = <strong>1</strong><br />
+The same.</li>
+<li><code>MathematicOperatorCode</code> =
+<strong>Multiply</strong><br />
+Coral times the rate gives lume.</li>
+<li><code>Date</code> = <strong>2026-05-22</strong><br />
+The rate of the issue date.</li>
+</ul>
+<h3 id="tax-total">Tax Total</h3>
+<p>Inside <code>TaxTotal</code>:</p>
+<ul>
+<li><code>TaxAmount</code> = <strong>0.000</strong> (currencyID
+<code>XLC</code>)<br />
+No tax on the island.</li>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>51.250</strong>
+(currencyID <code>XLC</code>)<br />
+The debit.</li>
+<li><code>TaxSubtotal/TaxAmount</code> = <strong>0.000</strong>
+(currencyID <code>XLC</code>)<br />
+None.</li>
+<li><code>TaxSubtotal/TaxCategory/ID</code> = <strong>O</strong><br />
+Lisavu has no sales tax: no tax applies (category O).</li>
+<li><code>TaxSubtotal/TaxCategory/Percent</code> =
+<strong>0</strong><br />
+No tax is charged in this category.</li>
+<li><code>TaxSubtotal/TaxCategory/TaxScheme/Name</code> = <strong>No
+general sales tax</strong><br />
+Lisavu has no general tax on sales; the scheme is named only, as
+UN/EDIFACT 5153 has no code for the absence of a tax.</li>
+</ul>
+<h3 id="legal-monetary-total">Legal Monetary Total</h3>
+<p>Inside <code>LegalMonetaryTotal</code>:</p>
+<ul>
+<li><code>LineExtensionAmount</code> = <strong>51.250</strong>
+(currencyID <code>XLC</code>)<br />
+The line.</li>
+<li><code>TaxExclusiveAmount</code> = <strong>51.250</strong>
+(currencyID <code>XLC</code>)<br />
+No tax.</li>
+<li><code>PayableAmount</code> = <strong>51.250</strong> (currencyID
+<code>XLC</code>)<br />
+Payable; 128.13 lume at the rate.</li>
+<li><code>PayableAlternativeAmount</code> = <strong>128.13</strong>
+(currencyID <code>XBL</code>)<br />
+The same in lume.</li>
+</ul>
+<h3 id="debit-note-line">Debit Note Line</h3>
+<p>Inside <code>DebitNoteLine</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>1</strong><br />
+The inspection.</li>
+<li><code>UUID</code> =
+<strong>5c8d9fe8-7400-5393-836e-91e7de617c83</strong><br />
+Its UUID.</li>
+<li><code>Note</code> = <strong>Customs inspection of the container at
+Selanu.</strong><br />
+What is charged.</li>
+<li><code>DebitedQuantity</code> = <strong>1</strong> (unitCode
+<code>E48</code>)<br />
+One inspection.</li>
+<li><code>LineExtensionAmount</code> = <strong>51.250</strong>
+(currencyID <code>XLC</code>)<br />
+Inspection and storage, as customs charged them.</li>
+<li><code>TaxInclusiveLineExtensionAmount</code> =
+<strong>51.250</strong> (currencyID <code>XLC</code>)<br />
+No tax on the island.</li>
+<li><code>TaxPointDate</code> = <strong>2026-05-20</strong><br />
+The day customs charged the fee.</li>
+<li><code>AccountingCostCode</code> = <strong>500</strong><br />
+The buyer's cost centre that paid customs.</li>
+<li><code>AccountingCost</code> = <strong>Stock for municipal
+projects</strong><br />
+The cost centre in words.</li>
+<li><code>PaymentPurposeCode</code> = <strong>GOVT</strong><br />
+ISO 20022 purpose code GOVT: a payment to the government,
+recharged.</li>
+<li><code>FreeOfChargeIndicator</code> = <strong>false</strong><br />
+Charged.</li>
+<li><code>InvoicePeriod/StartDate</code> =
+<strong>2026-05-18</strong><br />
+The container was held</li>
+<li><code>InvoicePeriod/EndDate</code> =
+<strong>2026-05-19</strong><br />
+for a day.</li>
+<li><code>OrderLineReference/LineID</code> = <strong>1</strong><br />
+The benches' order line.</li>
+<li><code>DespatchLineReference/LineID</code> = <strong>1</strong><br />
+The despatch line.</li>
+<li><code>DespatchLineReference/DocumentReference/ID</code> =
+<strong>LD-DA-26-0145</strong><br />
+The despatch advice.</li>
+<li><code>ReceiptLineReference/LineID</code> = <strong>1</strong><br />
+The receipt line.</li>
+<li><code>ReceiptLineReference/DocumentReference/ID</code> =
+<strong>NW-RA-26-0146</strong><br />
+The receipt advice.</li>
+<li><code>WorkReportLineReference/LineID</code> =
+<strong>1</strong><br />
+The inspection report's line.</li>
+<li><code>WorkReportLineReference/DocumentReference/ID</code> =
+<strong>XL-CUS-INSP-26-0517</strong><br />
+Customs' inspection report.</li>
+<li><code>BillingReference/InvoiceDocumentReference/ID</code> =
+<strong>LD-INV-26-0147</strong><br />
+The goods' invoice.</li>
+<li><code>DocumentReference/ID</code> =
+<strong>XL-CUS-RCPT-26-0517</strong><br />
+Customs' receipt for the fee.</li>
+<li><code>PricingReference/AlternativeConditionPrice/PriceAmount</code>
+= <strong>51.25</strong> (currencyID <code>XLC</code>)<br />
+The fee as customs set it.</li>
+<li><code>OriginatorParty/PartyIdentification/ID</code> =
+<strong>IC41448</strong> (schemeID
+<code>urn:ubl-examples:world:XL:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>OriginatorParty/PartyName/Name</code> = <strong>Island Customs
+Service</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>CollectedForParty/PartyIdentification/ID</code> =
+<strong>IC41448</strong> (schemeID
+<code>urn:ubl-examples:world:XL:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>CollectedForParty/PartyName/Name</code> = <strong>Island
+Customs Service</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>PaymentTerms/Note</code> = <strong>Pay within 30
+days.</strong><br />
+When.</li>
+<li><code>TaxTotal/TaxAmount</code> = <strong>0.000</strong> (currencyID
+<code>XLC</code>)<br />
+No tax.</li>
+<li><code>AllowanceCharge/ChargeIndicator</code> =
+<strong>true</strong><br />
+The storage, a charge on the line.</li>
+<li><code>AllowanceCharge/AllowanceChargeReason</code> = <strong>Storage
+while held</strong><br />
+In words.</li>
+<li><code>AllowanceCharge/Amount</code> = <strong>12.750</strong>
+(currencyID <code>XLC</code>)<br />
+One day's storage.</li>
+<li><code>AllowanceCharge/BaseAmount</code> = <strong>38.500</strong>
+(currencyID <code>XLC</code>)<br />
+The inspection fee.</li>
+<li><code>Item/Name</code> = <strong>Customs inspection of container
+TWLU4120872</strong><br />
+What is debited.</li>
+<li><code>Price/PriceAmount</code> = <strong>38.5</strong> (currencyID
+<code>XLC</code>)<br />
+The fee.</li>
+<li><code>DeliveryTerms/ID</code> = <strong>CIF</strong> (schemeID
+<code>INCOTERMS</code>)<br />
+As the goods were sold.</li>
+<li><code>SubDebitNoteLine/ID</code> = <strong>1.1</strong><br />
+The inspection fee.</li>
+<li><code>SubDebitNoteLine/LineExtensionAmount</code> =
+<strong>38.500</strong> (currencyID <code>XLC</code>)<br />
+Customs' fee.</li>
+<li><code>SubDebitNoteLine/Item/Name</code> = <strong>Customs inspection
+fee</strong><br />
+What.</li>
+<li><code>SubDebitNoteLine/ID</code> = <strong>1.2</strong><br />
+The storage.</li>
+<li><code>SubDebitNoteLine/LineExtensionAmount</code> =
+<strong>12.750</strong> (currencyID <code>XLC</code>)<br />
+One day.</li>
+<li><code>SubDebitNoteLine/Item/Name</code> = <strong>Storage at the
+port</strong><br />
+What.</li>
+<li><code>ItemPriceExtension/Amount</code> = <strong>51.250</strong>
+(currencyID <code>XLC</code>)<br />
+The line's price.</li>
+</ul>
+<h2 id="the-document">The document</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&#39;1.0&#39;</span> <span class="ot">encoding=</span><span class="st">&#39;UTF-8&#39;</span><span class="fu">?&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">DebitNote</span> <span class="ot">xmlns=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2&quot;</span> <span class="ot">xmlns:cac=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2&quot;</span> <span class="ot">xmlns:cbc=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2&quot;</span>&gt;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:process:sea&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;SEA-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VT-DOC-26-0153&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;4ac9595a-73a2-5f50-8296-73f9fae827e7&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-22&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;10:30:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-06-21&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The illegible mark is the packer&#39;s responsibility under the agreement.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DebitNoteTypeCode</span>&gt;383&lt;/<span class="kw">cbc:DebitNoteTypeCode</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-05-20&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:TaxCurrencyCode</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PricingCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:PricingCurrencyCode</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PaymentCurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:PaymentCurrencyCode</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PaymentAlternativeCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:PaymentAlternativeCurrencyCode</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;500&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Stock for municipal projects&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoicePeriod</span>&gt;</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-18&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoicePeriod</span>&gt;</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DiscrepancyResponse</span>&gt;</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ResponseCode</span>&gt;Packaging&lt;/<span class="kw">cbc:ResponseCode</span>&gt;</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Heat-treatment mark illegible on pallet LD-26-007.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DiscrepancyResponse</span>&gt;</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VT-PO-26-0127&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchDocumentReference</span>&gt;</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-DA-26-0145&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchDocumentReference</span>&gt;</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DeliveryNoteDocumentReference</span>&gt;</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TOL-BL-26-0139&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DeliveryNoteDocumentReference</span>&gt;</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:WorkReportDocumentReference</span>&gt;</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-INSP-26-0517&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:WorkReportDocumentReference</span>&gt;</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiptDocumentReference</span>&gt;</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;NW-RA-26-0146&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReceiptDocumentReference</span>&gt;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatementDocumentReference</span>&gt;</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;HF-ST-26-0150&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatementDocumentReference</span>&gt;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OriginatorDocumentReference</span>&gt;</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VT-CLAIM-26-0021&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OriginatorDocumentReference</span>&gt;</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-DAG-26-0125&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProjectReference</span>&gt;</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;Harbour parks Selanu&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;46229671-46ba-571a-9284-46d0fb2b78c1&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-07&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:WorkPhaseReference</span>&gt;</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PH-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WorkPhaseCode</span>&gt;Supply&lt;/<span class="kw">cbc:WorkPhaseCode</span>&gt;</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:WorkPhaseReference</span>&gt;</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProjectReference</span>&gt;</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BuyerAssignedReference</span>&gt;</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BuyerReferenceCode</span>&gt;LD-AP-CLAIMS&lt;/<span class="kw">cbc:BuyerReferenceCode</span>&gt;</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BuyerAssignedReference</span>&gt;</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TWLU4120872&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Annotation</span>&gt;</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AnnotationContent</span>&gt;The distributor may claim it from the packer.&lt;/<span class="kw">cbc:AnnotationContent</span>&gt;</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Annotation</span>&gt;</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VT-SIG-26-DN&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WebsiteURI</span>&gt;https://www.lumeway.example&lt;/<span class="kw">cbc:WebsiteURI</span>&gt;</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IndustryClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISIC Rev.4&quot;</span>&gt;4649&lt;/<span class="kw">cbc:IndustryClassificationCode</span>&gt;</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:customs-trader&quot;</span>&gt;XB-TR-410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span>&gt;Distribution Drive&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AdditionalStreetName</span>&gt;Gate 3&lt;/<span class="kw">cbc:AdditionalStreetName</span>&gt;</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BlockName</span>&gt;Marrowdale Business Park&lt;/<span class="kw">cbc:BlockName</span>&gt;</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;43&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlotIdentification</span>&gt;Plot 14&lt;/<span class="kw">cbc:PlotIdentification</span>&gt;</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PostalZone</span>&gt;71214&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Lumeway Distribution Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span>&gt;UL-1230822&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Lumeway Distribution Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span>&gt;20410274&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1988-10-03&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Ltd&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Limited company (private)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Medium&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateStockAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2500000&lt;/<span class="kw">cbc:CorporateStockAmount</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FullyPaidSharesIndicator</span>&gt;true&lt;/<span class="kw">cbc:FullyPaidSharesIndicator</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Customer service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customer service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 0274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;customer@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410274&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WebsiteURI</span>&gt;https://www.velumi.example&lt;/<span class="kw">cbc:WebsiteURI</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IndustryClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISIC Rev.4&quot;</span>&gt;4649&lt;/<span class="kw">cbc:IndustryClassificationCode</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:customs-trader&quot;</span>&gt;XL-TR-041859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span>&gt;Reef Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;16&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Velumi Trading Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span>&gt;IC41859&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1996-01-01&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Ltd&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Island limited company&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Small&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XL:ICR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Island companies register&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Purchasing&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customer service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 3000 1859&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;purchasing@velumi.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XL:IC41859&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PayeeParty</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PayeeParty</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ActualDeliveryDate</span>&gt;2026-05-21&lt;/<span class="kw">cbc:ActualDeliveryDate</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DeliveryTerms</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;INCOTERMS&quot;</span>&gt;CIF&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DeliveryTerms</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-21&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span>&gt;IBAN&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF75VTDOC260153&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span>&gt;RF75VTDOC260153&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeBearerCode</span>&gt;SHAR&lt;/<span class="kw">cbc:ChargeBearerCode</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XL13BSEL0003665515&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading Ltd&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span>&gt;Current&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Invoice VT-DOC-26-0153&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BSEL-001&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Main branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BSEL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bank of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span>&gt;Reef Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BuildingNumber</span>&gt;23&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;30 days net.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxExchangeRate</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;1&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-05-22&lt;/<span class="kw">cbc:Date</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxExchangeRate</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PricingExchangeRate</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;1&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-05-22&lt;/<span class="kw">cbc:Date</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PricingExchangeRate</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentExchangeRate</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;2.5&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-05-22&lt;/<span class="kw">cbc:Date</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentExchangeRate</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentAlternativeExchangeRate</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;1&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-05-22&lt;/<span class="kw">cbc:Date</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentAlternativeExchangeRate</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;0.000&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.250&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;0.000&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;O&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;No general sales tax&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.250&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.250&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.250&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAlternativeAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;128.13&lt;/<span class="kw">cbc:PayableAlternativeAmount</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DebitNoteLine</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;5c8d9fe8-7400-5393-836e-91e7de617c83&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Customs inspection of the container at Selanu.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E48&quot;</span>&gt;1&lt;/<span class="kw">cbc:DebitedQuantity</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.250&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.250&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-05-20&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;500&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AccountingCost</span>&gt;Stock for municipal projects&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span>&gt;GOVT&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FreeOfChargeIndicator</span>&gt;false&lt;/<span class="kw">cbc:FreeOfChargeIndicator</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:InvoicePeriod</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-18&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:InvoicePeriod</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DespatchLineReference</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-DA-26-0145&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DespatchLineReference</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ReceiptLineReference</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;NW-RA-26-0146&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ReceiptLineReference</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:WorkReportLineReference</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-INSP-26-0517&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:WorkReportLineReference</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-INV-26-0147&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-RCPT-26-0517&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PricingReference</span>&gt;</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AlternativeConditionPrice</span>&gt;</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.25&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AlternativeConditionPrice</span>&gt;</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PricingReference</span>&gt;</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OriginatorParty</span>&gt;</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41448&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OriginatorParty</span>&gt;</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CollectedForParty</span>&gt;</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41448&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CollectedForParty</span>&gt;</span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Pay within 30 days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;0.000&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Storage while held&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;12.750&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;38.500&lt;/<span class="kw">cbc:BaseAmount</span>&gt;</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Customs inspection of container TWLU4120872&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;38.5&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryTerms</span>&gt;</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;INCOTERMS&quot;</span>&gt;CIF&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryTerms</span>&gt;</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubDebitNoteLine</span>&gt;</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;38.500&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Customs inspection fee&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubDebitNoteLine</span>&gt;</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubDebitNoteLine</span>&gt;</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;12.750&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Storage at the port&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubDebitNoteLine</span>&gt;</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ItemPriceExtension</span>&gt;</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;51.250&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ItemPriceExtension</span>&gt;</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DebitNoteLine</span>&gt;</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DebitNote</span>&gt;</span></code></pre></div>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0de1e10</code></p></div></footer>
+</body>
+</html>
