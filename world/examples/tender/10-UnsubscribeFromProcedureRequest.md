@@ -28,6 +28,19 @@ The sawmill decides not to tender: a steel-framed bench is not its trade. It uns
   The sawmill decides before the deadline.
 - `IssueTime` = **14:30:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **No bench maker joined the sawmill; it will not tender.**  
+  Why it leaves the procedure.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **HS-SIG-UNS**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Marrowdale Sawmill**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Economic Operator Party
 
@@ -229,6 +242,22 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Procurement Project
+
+Inside `ProcurementProject`:
+
+- `Name` = **Park benches**  
+  The project, or the lot, the document is about.
+- `ProcurementTypeCode` = **Supplies**  
+  The kind of procurement.
+
+### Procurement Project Lot Reference
+
+Inside `ProcurementProjectLotReference`:
+
+- `ID` = **LOT-1**  
+  Lot 1 of the procedure.
+
 ## The document
 
 ```xml
@@ -243,6 +272,18 @@ Inside `ContractingParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-22</cbc:IssueDate>
   <cbc:IssueTime>14:30:00</cbc:IssueTime>
+  <cbc:Note>No bench maker joined the sawmill; it will not tender.</cbc:Note>
+  <cac:Signature>
+    <cbc:ID>HS-SIG-UNS</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -418,5 +459,12 @@ Inside `ContractingParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:ProcurementProject>
+    <cbc:Name>Park benches</cbc:Name>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLotReference>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLotReference>
 </UnsubscribeFromProcedureRequest>
 ```

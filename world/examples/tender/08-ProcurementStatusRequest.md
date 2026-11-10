@@ -28,6 +28,21 @@ The furniture maker asks whether the deadline still stands.
   The furniture maker asks a week before the deadline.
 - `IssueTime` = **15:50:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The name of the contract the procedure is for.
+- `Note` = **Does the deadline stand after the answers to the questions?**  
+  What the furniture maker asks.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-PSR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Contracting Party
 
@@ -227,6 +242,31 @@ Inside `EconomicOperatorParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Tendering Process
+
+Inside `TenderingProcess`:
+
+- `ID` = **PWD-2026-PARKS-P**  
+  The procedure asked about.
+
+### Procurement Project
+
+Inside `ProcurementProject`:
+
+- `Name` = **Park benches for the city parks**  
+  The project, or the lot, the document is about.
+- `ProcurementTypeCode` = **Supplies**  
+  The kind of procurement.
+
+### Procurement Project Lot
+
+Inside `ProcurementProjectLot`:
+
+- `ID` = **LOT-1**  
+  Lot 1.
+- `ID` = **LOT-2**  
+  Lot 2.
+
 ## The document
 
 ```xml
@@ -241,6 +281,19 @@ Inside `EconomicOperatorParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cbc:IssueTime>15:50:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>Does the deadline stand after the answers to the questions?</cbc:Note>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-PSR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -413,5 +466,18 @@ Inside `EconomicOperatorParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:TenderingProcess>
+    <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:Name>Park benches for the city parks</cbc:Name>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-2</cbc:ID>
+  </cac:ProcurementProjectLot>
 </ProcurementStatusRequest>
 ```

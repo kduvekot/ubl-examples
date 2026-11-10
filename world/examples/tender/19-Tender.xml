@@ -11,7 +11,7 @@
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>12:10:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:Note>Tender for both lots, with a recycled-plastic variant.</cbc:Note>
+  <cbc:Note>Tender for both lots, with a bench of the furniture maker's own make. It corrects the price per bench of the withdrawn tender.</cbc:Note>
   <cac:ValidityPeriod>
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
@@ -224,7 +224,7 @@
     </cac:PartyName>
   </cac:BeneficiaryParty>
   <cac:TenderedProject>
-    <cbc:VariantID>V1</cbc:VariantID>
+    <cbc:VariantID>V0</cbc:VariantID>
     <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
     <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
@@ -247,15 +247,15 @@
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     </cac:TaxTotal>
     <cac:LegalMonetaryTotal>
-      <cbc:LineExtensionAmount currencyID="XBL">127440.00</cbc:LineExtensionAmount>
-      <cbc:PayableAmount currencyID="XBL">127440.00</cbc:PayableAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">119040.00</cbc:LineExtensionAmount>
+      <cbc:PayableAmount currencyID="XBL">119040.00</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>
     <cac:TenderLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>Serra 180, as specified.</cbc:Note>
+      <cbc:Note>A bench of its own make: steel frame, hardwood slats.</cbc:Note>
       <cbc:Quantity unitCode="H87">240</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">123600.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">123600.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">115200.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">115200.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
       <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
@@ -265,24 +265,24 @@
       <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
       <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
       <cac:DocumentReference>
-        <cbc:ID>VI-DS-B180</cbc:ID>
+        <cbc:ID>BF-DS-PARK</cbc:ID>
       </cac:DocumentReference>
       <cac:Item>
-        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cbc:Name>Park bench Brackenmere PB-2</cbc:Name>
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
       </cac:OfferedItemLocationQuantity>
       <cac:ReplacementRelatedItem>
-        <cbc:ID>VI-C180-2026</cbc:ID>
+        <cbc:ID>BF-SLAT-PB2</cbc:ID>
         <cbc:Quantity unitCode="H87">1</cbc:Quantity>
       </cac:ReplacementRelatedItem>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
         </cac:PartyName>
       </cac:WarrantyParty>
       <cac:WarrantyValidityPeriod>
@@ -314,13 +314,13 @@
       <cbc:ID>ACR-1</cbc:ID>
       <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
       <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
-      <cbc:Description>Ten years on the coating.</cbc:Description>
-      <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
-      <cbc:Amount currencyID="XBL">127440.00</cbc:Amount>
+      <cbc:Description>Six years on the frame and the slats.</cbc:Description>
+      <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      <cbc:Amount currencyID="XBL">119040.00</cbc:Amount>
       <cac:SubordinateAwardingCriterionResponse>
         <cbc:ID>ACR-1.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
-        <cbc:Description>Hot-dip galvanised and powder coated.</cbc:Description>
+        <cbc:Description>Oiled hardwood, painted steel.</cbc:Description>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

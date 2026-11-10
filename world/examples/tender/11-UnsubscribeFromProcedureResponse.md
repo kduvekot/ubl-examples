@@ -28,6 +28,26 @@ The authority confirms the sawmill no longer receives the procedure's documents.
   The authority confirms the next day.
 - `IssueTime` = **14:48:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **The sawmill no longer receives the procedure's messages.**  
+  The answer.
+
+### Unsubscribe To Procedure Document Reference
+
+Inside `UnsubscribeToProcedureDocumentReference`:
+
+- `ID` = **MS-DOC-26-0196**  
+  The request answered.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-UNSR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Economic Operator Party
 
@@ -229,6 +249,22 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Procurement Project
+
+Inside `ProcurementProject`:
+
+- `Name` = **Park benches**  
+  The project, or the lot, the document is about.
+- `ProcurementTypeCode` = **Supplies**  
+  The kind of procurement.
+
+### Procurement Project Lot Reference
+
+Inside `ProcurementProjectLotReference`:
+
+- `ID` = **LOT-1**  
+  Lot 1 of the procedure.
+
 ## The document
 
 ```xml
@@ -243,6 +279,21 @@ Inside `ContractingParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>14:48:00</cbc:IssueTime>
+  <cbc:Note>The sawmill no longer receives the procedure's messages.</cbc:Note>
+  <cac:UnsubscribeToProcedureDocumentReference>
+    <cbc:ID>MS-DOC-26-0196</cbc:ID>
+  </cac:UnsubscribeToProcedureDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-UNSR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -418,5 +469,12 @@ Inside `ContractingParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:ProcurementProject>
+    <cbc:Name>Park benches</cbc:Name>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLotReference>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLotReference>
 </UnsubscribeFromProcedureResponse>
 ```

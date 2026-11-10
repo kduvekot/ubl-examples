@@ -9,9 +9,46 @@
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-21</cbc:IssueDate>
   <cbc:IssueTime>11:44:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>The deadline stands; the answers did not change the documents.</cbc:Note>
+  <cbc:ProcedureCode>Open</cbc:ProcedureCode>
   <cac:TenderSubmissionDeadlinePeriod>
-    <cbc:EndDate>2026-02-25</cbc:EndDate>
+    <cbc:EndDate>2026-02-26</cbc:EndDate>
+    <cbc:EndTime>12:00:00</cbc:EndTime>
   </cac:TenderSubmissionDeadlinePeriod>
+  <cac:InvitationSubmissionPeriod>
+    <cbc:StartDate>2026-01-26</cbc:StartDate>
+    <cbc:EndDate>2026-02-01</cbc:EndDate>
+  </cac:InvitationSubmissionPeriod>
+  <cac:ParticipationRequestReceptionPeriod>
+    <cbc:EndDate>2026-02-11</cbc:EndDate>
+  </cac:ParticipationRequestReceptionPeriod>
+  <cac:ProcurementLegislationDocumentReference>
+    <cbc:ID>XB-PPA-2019</cbc:ID>
+  </cac:ProcurementLegislationDocumentReference>
+  <cac:FiscalLegislationDocumentReference>
+    <cbc:ID>XB-STT-ACT</cbc:ID>
+  </cac:FiscalLegislationDocumentReference>
+  <cac:EnvironmentalLegislationDocumentReference>
+    <cbc:ID>XB-ENV-2021</cbc:ID>
+  </cac:EnvironmentalLegislationDocumentReference>
+  <cac:EmploymentLegislationDocumentReference>
+    <cbc:ID>XB-LAB-2018</cbc:ID>
+  </cac:EmploymentLegislationDocumentReference>
+  <cac:ProcedureStatusRequestDocumentReference>
+    <cbc:ID>BF-DOC-26-0194</cbc:ID>
+  </cac:ProcedureStatusRequestDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-PS</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -184,4 +221,30 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:DocumentProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:DocumentProviderParty>
+  <cac:TenderRecipientParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:TenderRecipientParty>
+  <cac:ProcurementProject>
+    <cbc:Name>Park benches for the city parks</cbc:Name>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-2</cbc:ID>
+  </cac:ProcurementProjectLot>
 </ProcurementStatus>

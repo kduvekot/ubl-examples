@@ -26,6 +26,42 @@ The authority checks the tenderer's registration with the business registry.
   The authority checks the tenderer's registration before evaluation.
 - `IssueTime` = **16:26:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Extract from the register of economic operators for the evaluation.**  
+  What it is.
+- `VersionID` = **1**  
+  The first extract.
+- `PreviousVersionID` = **0**  
+  None.
+- `BriefDescription` = **Valdara Industries: registered, no exclusion grounds recorded.**  
+  In short.
+- `RequestedPublicationDate` = **2026-02-27**  
+  Published on the register on the day of the extract.
+- `RegulatoryDomain` = **Bayvarra public procurement**  
+  The rules of the register.
+- `NoticeTypeCode` = **BusinessRegistration**  
+  A notice of registration information.
+- `NoticeLanguageCode` = **EN**  
+  In English.
+
+### Additional Notice Language
+
+Inside `AdditionalNoticeLanguage`:
+
+- `ID` = **fr**  
+  Also in French.
+- `LocaleCode` = **FR**  
+  As a code.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BIS-SIG-BI**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410959** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Bayvarra Information Service**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -324,6 +360,82 @@ Inside `BusinessParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Brochure Document Reference
+
+Inside `BrochureDocumentReference`:
+
+- `ID` = **VI-BROCHURE-26**  
+  The manufacturer's brochure, kept on the register.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **VI-ISO9001-CERT**  
+  Its quality certificate.
+
+### Business Capability
+
+Inside `BusinessCapability`:
+
+- `ID` = **CAP-1**  
+  A capability on record.
+- `CapabilityTypeCode` = **Production**  
+  Production capacity.
+- `Description` = **Steel frame benches, cast, galvanised and coated in its own plant.**  
+  What.
+- `ValueAmount` = **4800000.00** (currencyID `XBL`)  
+  Yearly turnover, converted to lume.
+- `ValueQuantity` = **6000** (unitCode `H87`)  
+  Benches a year.
+- `SuppliedEvidence/ID` = **EV-ACC-2025**  
+  The audited accounts of 2025.
+- `SuppliedEvidence/Name` = **Annual accounts**  
+  What.
+- `ValidityPeriod/EndDate` = **2026-12-31**  
+  Valid until the next accounts.
+- `WebSite/Name` = **Valdara Industries**  
+  Its site.
+- `WebSite/WebSiteTypeCode` = **Company**  
+  A company site.
+- `WebSite/URI` = **https://www.valdara.example**  
+  The address.
+
+### Business Party Group
+
+Inside `BusinessPartyGroup`:
+
+- `GroupTypeCode` = **SameActivity**  
+  Operators with the same registered activity.
+- `GroupType` = **Tenderers in this procedure registered for ISIC 3100**  
+  The group.
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Operation Type
+
+Inside `OperationType`:
+
+- `Code` = **Manufacture**  
+  Its operation.
+- `Description` = **Manufacture of furniture for public spaces.**  
+  In words.
+
+### Notice Sub Type
+
+Inside `NoticeSubType`:
+
+- `SubTypeCode` = **Extract**  
+  An extract on request.
+- `SubTypeDescription` = **Extract asked for by a contracting authority.**  
+  In words.
+
 ## The document
 
 ```xml
@@ -337,6 +449,29 @@ Inside `BusinessParty`:
   <cbc:UUID>caa9a455-79a7-5aae-9576-1eb0e65da6ee</cbc:UUID>
   <cbc:IssueDate>2026-02-27</cbc:IssueDate>
   <cbc:IssueTime>16:26:00</cbc:IssueTime>
+  <cbc:Note>Extract from the register of economic operators for the evaluation.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cbc:BriefDescription>Valdara Industries: registered, no exclusion grounds recorded.</cbc:BriefDescription>
+  <cbc:RequestedPublicationDate>2026-02-27</cbc:RequestedPublicationDate>
+  <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode>BusinessRegistration</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>EN</cbc:NoticeLanguageCode>
+  <cac:AdditionalNoticeLanguage>
+    <cbc:ID>fr</cbc:ID>
+    <cbc:LocaleCode>FR</cbc:LocaleCode>
+  </cac:AdditionalNoticeLanguage>
+  <cac:Signature>
+    <cbc:ID>BIS-SIG-BI</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410959</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayvarra Information Service</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -596,5 +731,58 @@ Inside `BusinessParty`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:BusinessParty>
+  <cac:BrochureDocumentReference>
+    <cbc:ID>VI-BROCHURE-26</cbc:ID>
+  </cac:BrochureDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-ISO9001-CERT</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:BusinessCapability>
+    <cbc:ID>CAP-1</cbc:ID>
+    <cbc:CapabilityTypeCode>Production</cbc:CapabilityTypeCode>
+    <cbc:Description>Steel frame benches, cast, galvanised and coated in its own plant.</cbc:Description>
+    <cbc:ValueAmount currencyID="XBL">4800000.00</cbc:ValueAmount>
+    <cbc:ValueQuantity unitCode="H87">6000</cbc:ValueQuantity>
+    <cac:SuppliedEvidence>
+      <cbc:ID>EV-ACC-2025</cbc:ID>
+      <cbc:Name>Annual accounts</cbc:Name>
+    </cac:SuppliedEvidence>
+    <cac:ValidityPeriod>
+      <cbc:EndDate>2026-12-31</cbc:EndDate>
+    </cac:ValidityPeriod>
+    <cac:WebSite>
+      <cbc:Name>Valdara Industries</cbc:Name>
+      <cbc:WebSiteTypeCode>Company</cbc:WebSiteTypeCode>
+      <cbc:URI>https://www.valdara.example</cbc:URI>
+    </cac:WebSite>
+  </cac:BusinessCapability>
+  <cac:BusinessPartyGroup>
+    <cbc:GroupTypeCode>SameActivity</cbc:GroupTypeCode>
+    <cbc:GroupType>Tenderers in this procedure registered for ISIC 3100</cbc:GroupType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BusinessPartyGroup>
+  <cac:OperationType>
+    <cbc:Code>Manufacture</cbc:Code>
+    <cbc:Description>Manufacture of furniture for public spaces.</cbc:Description>
+  </cac:OperationType>
+  <cac:NoticeSubType>
+    <cbc:SubTypeCode>Extract</cbc:SubTypeCode>
+    <cbc:SubTypeDescription>Extract asked for by a contracting authority.</cbc:SubTypeDescription>
+  </cac:NoticeSubType>
 </BusinessInformation>
 ```

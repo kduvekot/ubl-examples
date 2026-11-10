@@ -28,6 +28,10 @@ The winner is told directly that its tender won.
   The winner is told on the day of the award decision.
 - `IssueTime` = **13:37:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The name of the contract the procedure is for.
+- `Note` = **Your tender has won both lots. The contract follows after the standstill period.**  
+  The message.
 
 ### Sender Party
 
@@ -251,12 +255,92 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Minutes Document Reference
+
+Inside `MinutesDocumentReference`:
+
+- `ID` = **PWD-MIN-AWARD-26**  
+  The minutes of the evaluation.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **PWD-EVAL-REPORT-26**  
+  The evaluation report.
+
 ### Tender Result
 
 Inside `TenderResult`:
 
+- `AwardID` = **PWD-2026-PARKS-AWARD-1**  
+  The award decision.
+- `TenderResultCode` = **Awarded**  
+  The contract is awarded.
+- `Description` = **Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.**  
+  Why it won.
 - `AwardDate` = **2026-03-09**  
   The day of the award decision.
+- `AwardTime` = **09:30:00**  
+  The time of the decision, before the tenderers are told.
+- `Contract/ID` = **PWD-2026-PARKS**  
+  The framework contract.
+- `Contract/ContractTypeCode` = **Framework**  
+  A framework contract.
+- `Contract/ValidityPeriod/StartDate` = **2026-03-23**  
+  From the first call-off.
+- `Contract/ValidityPeriod/DurationMeasure` = **24** (unitCode `MON`)  
+  Two years.
+- `AwardedTenderedProject/VariantID` = **V0**  
+  The main offer.
+- `AwardedTenderedProject/ProcurementProjectLot/ID` = **LOT-1**  
+  Lot 1 of the procedure.
+- `AwardedTenderedProject/ProcurementProjectLot/ID` = **LOT-2**  
+  Lot 2 of the procedure.
+- `AwardedTenderedProject/LegalMonetaryTotal/PayableAmount` = **124080.00** (currencyID `XBL`)  
+  240 benches at 499 lume and their installation at 18 lume each.
+- `ContractFormalizationPeriod/StartDate` = **2026-03-19**  
+  After the standstill period.
+- `ContractFormalizationPeriod/EndDate` = **2026-03-22**  
+  Before the first call-off.
+- `SubcontractTerms/Rate` = **0**  
+  The manufacturer installs with its own staff.
+- `SubcontractTerms/UnknownPriceIndicator` = **false**  
+  Nothing is subcontracted.
+- `SubcontractTerms/Description` = **No subcontracting.**  
+  The tender's terms.
+- `WinningParty/Rank` = **1**  
+  First in the evaluation.
+- `WinningParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `WinningParty/Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Final Financial Guarantee
+
+Inside `FinalFinancialGuarantee`:
+
+- `GuaranteeTypeCode` = **PerformanceGuarantee**  
+  A performance guarantee.
+- `Description` = **A bank guarantee for the execution of the contract.**  
+  What the winner must provide.
+- `LiabilityAmount` = **6204.00** (currencyID `XBL`)  
+  5 % of the award.
+- `AmountRate` = **5**  
+  Five per cent.
+- `ConstitutionPeriod/EndDate` = **2026-03-19**  
+  Before the contract is signed.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-AWD**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -272,6 +356,8 @@ Inside `TenderResult`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>13:37:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>Your tender has won both lots. The contract follows after the standstill period.</cbc:Note>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -468,8 +554,78 @@ Inside `TenderResult`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:MinutesDocumentReference>
+    <cbc:ID>PWD-MIN-AWARD-26</cbc:ID>
+  </cac:MinutesDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD-EVAL-REPORT-26</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:TenderResult>
+    <cbc:AwardID>PWD-2026-PARKS-AWARD-1</cbc:AwardID>
+    <cbc:TenderResultCode>Awarded</cbc:TenderResultCode>
+    <cbc:Description>Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.</cbc:Description>
     <cbc:AwardDate>2026-03-09</cbc:AwardDate>
+    <cbc:AwardTime>09:30:00</cbc:AwardTime>
+    <cac:Contract>
+      <cbc:ID>PWD-2026-PARKS</cbc:ID>
+      <cbc:ContractTypeCode>Framework</cbc:ContractTypeCode>
+      <cac:ValidityPeriod>
+        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
+      </cac:ValidityPeriod>
+    </cac:Contract>
+    <cac:AwardedTenderedProject>
+      <cbc:VariantID>V0</cbc:VariantID>
+      <cac:ProcurementProjectLot>
+        <cbc:ID>LOT-1</cbc:ID>
+      </cac:ProcurementProjectLot>
+      <cac:ProcurementProjectLot>
+        <cbc:ID>LOT-2</cbc:ID>
+      </cac:ProcurementProjectLot>
+      <cac:LegalMonetaryTotal>
+        <cbc:PayableAmount currencyID="XBL">124080.00</cbc:PayableAmount>
+      </cac:LegalMonetaryTotal>
+    </cac:AwardedTenderedProject>
+    <cac:ContractFormalizationPeriod>
+      <cbc:StartDate>2026-03-19</cbc:StartDate>
+      <cbc:EndDate>2026-03-22</cbc:EndDate>
+    </cac:ContractFormalizationPeriod>
+    <cac:SubcontractTerms>
+      <cbc:Rate>0</cbc:Rate>
+      <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
+      <cbc:Description>No subcontracting.</cbc:Description>
+    </cac:SubcontractTerms>
+    <cac:WinningParty>
+      <cbc:Rank>1</cbc:Rank>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:WinningParty>
   </cac:TenderResult>
+  <cac:FinalFinancialGuarantee>
+    <cbc:GuaranteeTypeCode>PerformanceGuarantee</cbc:GuaranteeTypeCode>
+    <cbc:Description>A bank guarantee for the execution of the contract.</cbc:Description>
+    <cbc:LiabilityAmount currencyID="XBL">6204.00</cbc:LiabilityAmount>
+    <cbc:AmountRate>5</cbc:AmountRate>
+    <cac:ConstitutionPeriod>
+      <cbc:EndDate>2026-03-19</cbc:EndDate>
+    </cac:ConstitutionPeriod>
+  </cac:FinalFinancialGuarantee>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-AWD</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </AwardedNotification>
 ```

@@ -24,10 +24,14 @@ The manufacturer and its consortium partner are admitted to the evaluation.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The name of the contract the procedure is for.
 - `IssueDate` = **2026-03-03**  
   After the check of the qualifications.
 - `IssueTime` = **15:09:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Qualified for both lots.**  
+  The outcome.
 
 ### Sender Party
 
@@ -251,14 +255,75 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Resolution Document Reference
+
+Inside `ResolutionDocumentReference`:
+
+- `ID` = **PWD-MIN-QUAL-26**  
+  The minutes of the qualification check.
+
 ### Qualification Resolution
 
 Inside `QualificationResolution`:
 
 - `AdmissionCode` = **Admitted**  
   The tenderer meets the selection criteria and its tender is evaluated.
+- `ExclusionReason` = **None: no ground for exclusion applies.**  
+  Checked against the register.
+- `Resolution` = **Admitted to the evaluation of lot 1.**  
+  The decision.
 - `ResolutionDate` = **2026-03-03**  
   The day of the decision.
+- `ResolutionTime` = **10:00:00**  
+  The time of the decision.
+- `ProcurementProjectLot/ID` = **LOT-1**  
+  Lot 1.
+- `AdmissionCode` = **Admitted**  
+  The tenderer meets the selection criteria and its tender is evaluated.
+- `ExclusionReason` = **None: no ground for exclusion applies.**  
+  Checked.
+- `Resolution` = **Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.**  
+  The decision.
+- `ResolutionDate` = **2026-03-03**  
+  The day of the decision.
+- `ResolutionTime` = **10:00:00**  
+  The time.
+- `ProcurementProjectLot/ID` = **LOT-2**  
+  Lot 2.
+
+### Appeal Terms
+
+Inside `AppealTerms`:
+
+- `Description` = **An appeal against the decision goes to the review board within ten days.**  
+  How to appeal.
+- `PresentationPeriod/StartDate` = **2026-03-09**  
+  From the decision.
+- `PresentationPeriod/EndDate` = **2026-03-19**  
+  Ten days later, the end of the standstill period.
+- `AppealInformationParty/PartyIdentification/ID` = **20410822** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AppealInformationParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AppealReceiverParty/PartyIdentification/ID` = **20410822** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AppealReceiverParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `MediationParty/PartyIdentification/ID` = **20410822** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `MediationParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-TQR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -272,8 +337,10 @@ Inside `QualificationResolution`:
   <cbc:ID>LPWD-DOC-26-0206</cbc:ID>
   <cbc:UUID>e88bee18-0123-544d-a805-b3c5573d165c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cbc:IssueTime>15:09:00</cbc:IssueTime>
+  <cbc:Note>Qualified for both lots.</cbc:Note>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -470,9 +537,70 @@ Inside `QualificationResolution`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:ResolutionDocumentReference>
+    <cbc:ID>PWD-MIN-QUAL-26</cbc:ID>
+  </cac:ResolutionDocumentReference>
   <cac:QualificationResolution>
     <cbc:AdmissionCode>Admitted</cbc:AdmissionCode>
+    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
+    <cbc:Resolution>Admitted to the evaluation of lot 1.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
+    <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
+    <cac:ProcurementProjectLot>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:ProcurementProjectLot>
   </cac:QualificationResolution>
+  <cac:QualificationResolution>
+    <cbc:AdmissionCode>Admitted</cbc:AdmissionCode>
+    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
+    <cbc:Resolution>Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.</cbc:Resolution>
+    <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
+    <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
+    <cac:ProcurementProjectLot>
+      <cbc:ID>LOT-2</cbc:ID>
+    </cac:ProcurementProjectLot>
+  </cac:QualificationResolution>
+  <cac:AppealTerms>
+    <cbc:Description>An appeal against the decision goes to the review board within ten days.</cbc:Description>
+    <cac:PresentationPeriod>
+      <cbc:StartDate>2026-03-09</cbc:StartDate>
+      <cbc:EndDate>2026-03-19</cbc:EndDate>
+    </cac:PresentationPeriod>
+    <cac:AppealInformationParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410822</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
+      </cac:PartyName>
+    </cac:AppealInformationParty>
+    <cac:AppealReceiverParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410822</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
+      </cac:PartyName>
+    </cac:AppealReceiverParty>
+    <cac:MediationParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410822</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
+      </cac:PartyName>
+    </cac:MediationParty>
+  </cac:AppealTerms>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-TQR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </TendererQualificationResponse>
 ```

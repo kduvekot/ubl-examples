@@ -28,6 +28,30 @@ The authority confirms the sawmill is registered as an interested party.
   The authority confirms the registration the next day.
 - `IssueTime` = **08:35:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The name of the contract the procedure is for.
+- `TenderLanguageLocaleCode` = **EN**  
+  Tenders are written in English.
+- `Note` = **Registered: the sawmill receives every change to the documents.**  
+  The answer.
+
+### Expression of Interest Document Reference
+
+Inside `ExpressionOfInterestDocumentReference`:
+
+- `ID` = **MS-DOC-26-0190**  
+  The expression of interest answered.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-EOIR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Economic Operator Party
 
@@ -229,6 +253,22 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Procurement Project
+
+Inside `ProcurementProject`:
+
+- `Name` = **Park benches**  
+  The project, or the lot, the document is about.
+- `ProcurementTypeCode` = **Supplies**  
+  The kind of procurement.
+
+### Procurement Project Lot Reference
+
+Inside `ProcurementProjectLotReference`:
+
+- `ID` = **LOT-1**  
+  Lot 1 of the procedure.
+
 ## The document
 
 ```xml
@@ -243,6 +283,23 @@ Inside `ContractingParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-15</cbc:IssueDate>
   <cbc:IssueTime>08:35:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:TenderLanguageLocaleCode>EN</cbc:TenderLanguageLocaleCode>
+  <cbc:Note>Registered: the sawmill receives every change to the documents.</cbc:Note>
+  <cac:ExpressionOfInterestDocumentReference>
+    <cbc:ID>MS-DOC-26-0190</cbc:ID>
+  </cac:ExpressionOfInterestDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-EOIR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -418,5 +475,12 @@ Inside `ContractingParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:ProcurementProject>
+    <cbc:Name>Park benches</cbc:Name>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLotReference>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLotReference>
 </ExpressionOfInterestResponse>
 ```

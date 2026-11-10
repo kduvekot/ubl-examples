@@ -247,7 +247,7 @@
     <cac:RequiredFinancialGuarantee>
       <cbc:GuaranteeTypeCode>TenderGuarantee</cbc:GuaranteeTypeCode>
       <cbc:Description>A bank guarantee for the tender.</cbc:Description>
-      <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>
+      <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
       <cbc:AmountRate>2</cbc:AmountRate>
       <cac:ConstitutionPeriod>
         <cbc:EndDate>2026-02-26</cbc:EndDate>

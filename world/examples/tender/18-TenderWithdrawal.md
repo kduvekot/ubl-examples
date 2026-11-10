@@ -28,6 +28,10 @@ The furniture maker finds a price error in its tender and withdraws it before th
   Withdrawn before the deadline, which the procedure allows.
 - `IssueTime` = **17:56:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The name of the contract the procedure is for.
+- `Note` = **The price per bench was entered wrongly; a corrected tender follows.**  
+  Why it is withdrawn.
 - `WithdrawOfferIndicator` = **true**  
   The whole tender is withdrawn.
 
@@ -37,6 +41,24 @@ Inside `TenderDocumentReference`:
 
 - `ID` = **BF-DOC-26-0203**  
   The tender withdrawn.
+
+### Tender Notification Document Reference
+
+Inside `TenderNotificationDocumentReference`:
+
+- `ID` = **PWD-RCPT-BF-1**  
+  The receipt the platform issued for the tender withdrawn (not shown).
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-WD**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Contracting Party
 
@@ -250,10 +272,26 @@ Inside `TendererParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>17:56:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>The price per bench was entered wrongly; a corrected tender follows.</cbc:Note>
   <cbc:WithdrawOfferIndicator>true</cbc:WithdrawOfferIndicator>
   <cac:TenderDocumentReference>
     <cbc:ID>BF-DOC-26-0203</cbc:ID>
   </cac:TenderDocumentReference>
+  <cac:TenderNotificationDocumentReference>
+    <cbc:ID>PWD-RCPT-BF-1</cbc:ID>
+  </cac:TenderNotificationDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-WD</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

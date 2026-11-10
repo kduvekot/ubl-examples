@@ -2358,7 +2358,7 @@ def tender(n, doc):
                                                                       "price converted at the reference rate.")}}}
     if doc["doc"] == "ContractAwardNotice":
         return {"ID": V(f.number("award-notice", doc["from"], "ContractAwardNotice"), "The notice number."),
-                "IssueDate": V(f.date(60), "Published after the standstill period."), **folder,
+                "IssueDate": V(f.date(60), "Published four days after the award decision, while the standstill period runs."), **folder,
                 "TenderResult": {"AwardDate": V(f.date(56), "The day the authority decided the award.")}}
     if doc["doc"] == "AwardedNotification":
         return {"ID": V(f.number("awarded", doc["from"], "AwardedNotification"), "The notification number."),
@@ -3384,7 +3384,8 @@ def tender(n, doc):
         return {**head(f, "status-request", doc, 39, "The furniture maker asks a week before the deadline."), **folder}
     if d == "ProcurementStatus":
         return {**head(f, "procurement-status", doc, 40, "Answered the next day."), **folder,
-                "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(44), "The deadline for tenders stands.")}}
+                "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(45), "The deadline for tenders stands."),
+                                                   "EndTime": V("12:00:00", "At noon, as the notice says.")}}
     if d == "UnsubscribeFromProcedureRequest":
         return {**head(f, "unsubscribe", doc, 41, "The sawmill decides before the deadline."), **folder}
     if d == "UnsubscribeFromProcedureResponse":
@@ -6006,8 +6007,8 @@ def tendering_terms(f):
                                                                               "The penalty.")},
             "RequiredFinancialGuarantee": {"GuaranteeTypeCode": V("TenderGuarantee", "A tender guarantee."),
                                            "Description": V("A bank guarantee for the tender.", "What."),
-                                           "LiabilityAmount": amount(Decimal("2500.00"), "XBL", "Its amount."),
-                                           "AmountRate": V("2", "About 2 % of the estimate."),
+                                           "LiabilityAmount": amount(Decimal("2400.00"), "XBL", "Its amount."),
+                                           "AmountRate": V("2", "2 % of the estimated value of 120,000 lume."),
                                            "ConstitutionPeriod": {"EndDate": V(f.date(45), "With the tender.")}},
             "ProcurementLegislationDocumentReference": {"ID": V("XB-PPA-2019", "Bayvarra's public procurement "
                                                                                "act.")},
@@ -6182,7 +6183,7 @@ def notice_head(f, kind, code):
 
 
 def out_day(f, kind):
-    return f.date({"PIN": 1, "CN": 15, "CAN": 57}[kind])
+    return f.date({"PIN": 1, "CN": 15, "CAN": 61}[kind])
 
 
 def contracting_party_details():
@@ -6233,11 +6234,19 @@ def _(f, n, doc, out):
             "ProcurementProject": procurement_project(f), "ProcurementProjectLot": procurement_lots(f)}
 
 
-def tender_lines(f, bench_price, install_price):
+TENDERED_BENCH = {
+    "5-xu": {"name": "Park bench Serra 180", "note": "Serra 180, as specified.", "sheet": "VI-DS-B180",
+             "spare": "VI-C180-2026", "spare_why": "Spare frames available."},
+    "37-xb": {"name": "Park bench Brackenmere PB-2", "note": "A bench of its own make: steel frame, hardwood slats.",
+              "sheet": "BF-DS-PARK", "spare": "BF-SLAT-PB2", "spare_why": "Spare slat sets available."}}
+
+
+def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
+    t = TENDERED_BENCH[tenderer]
     b = Decimal(bench_price) * TENDER_QTY
     i = Decimal(install_price) * TENDER_QTY
     return b, i, [
-        {"ID": V("1", "The benches."), "Note": V("Serra 180, as specified.", "What is offered."),
+        {"ID": V("1", "The benches."), "Note": V(t["note"], "What is offered."),
          "Quantity": qty(TENDER_QTY, "H87", "240 benches."),
          "LineExtensionAmount": amount(b, "XBL", "240 at the unit price."),
          "TaxInclusiveLineExtensionAmount": amount(b, "XBL", "No tax for a public body."),
@@ -6249,12 +6258,12 @@ def tender_lines(f, bench_price, install_price):
          "MaximumOrderQuantity": qty(96, "H87", "At most a full truck."),
          "WarrantyInformation": V("Five years on the frame.", "The warranty."),
          "PackLevelCode": V("Pallet", "The pack level."),
-         "DocumentReference": {"ID": V("VI-DS-B180", "The datasheet.")},
-         "Item": {"Name": V("Park bench Serra 180", "The item offered.")},
+         "DocumentReference": {"ID": V(t["sheet"], "The datasheet.")},
+         "Item": {"Name": V(t["name"], "The item offered.")},
          "OfferedItemLocationQuantity": {"LeadTimeMeasure": V("7", "Seven days per release.", unitCode="DAY")},
-         "ReplacementRelatedItem": {"ID": V("VI-C180-2026", "Spare frames available."),
+         "ReplacementRelatedItem": {"ID": V(t["spare"], t["spare_why"]),
                                     "Quantity": qty(1, "H87", "One for one.")},
-         "WarrantyParty": party("5-xu", short=True),
+         "WarrantyParty": party(tenderer, short=True),
          "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
          "SubTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One set per bench."),
                            "Item": {"Name": V("Ground anchor set", "Included.")}},
@@ -6269,11 +6278,15 @@ def tender_lines(f, bench_price, install_price):
 @enrich("tender", "Tender")
 def _(f, n, doc, out):
     winner = doc["from"] == "5-xu"
-    b, i, lines = tender_lines(f, "499.00" if winner else "515.00", "18.00" if winner else "16.00")
+    k = nth("tender", n, doc)
+    bench = "499.00" if winner else ("470.00" if k == 1 else "480.00")
+    b, i, lines = tender_lines(f, bench, "18.00" if winner else "16.00", doc["from"])
     return {"TenderTypeCode": V("Combined", "Technical and financial in one."),
             "ContractName": V("Park benches for the parks renewal programme", "The contract tendered for."),
-            "Note": V("Tender for both lots." if winner else "Tender for both lots, with a recycled-plastic "
-                                                             "variant.", "What is offered."),
+            "Note": V("Tender for both lots." if winner else "Tender for both lots, with a bench of the furniture "
+                                                             "maker's own make." + (" It corrects the price per "
+                                                             "bench of the withdrawn tender." if k == 2 else ""),
+                      "What is offered."),
             "ValidityPeriod": {"DurationMeasure": V("90", "Valid for 90 days.", unitCode="DAY")},
             "CallForTenderDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
             "DocumentReference": {"ID": V("VI-DS-B180" if winner else "BF-DS-PARK", "The datasheet.")},
@@ -6283,7 +6296,7 @@ def _(f, n, doc, out):
             "OriginatorCustomerParty": {"Party": party(PWD, short=True)},
             "BeneficiaryParty": party(PWD, short=True),
             "TenderedProject": {
-                "VariantID": V("V0" if winner else "V1", "The main offer." if winner else "The variant."),
+                "VariantID": V("V0", "The main offer; no variant is tendered."),
                 "FeeAmount": amount(Decimal("50.00"), "XBL", "The documentation fee paid."),
                 "FeeDescription": V("Paper copy of the documents.", "What the fee was for."),
                 "TenderEnvelopeID": V("ENV-1", "The envelope."),
@@ -6301,13 +6314,16 @@ def _(f, n, doc, out):
                     "ID": V("ACR-1", "The response to the quality criterion."),
                     "AwardingCriterionID": V("AC-2", "Quality."),
                     "AwardingCriterionDescription": V("Warranty and coating.", "The criterion."),
-                    "Description": V("Ten years on the coating.", "The offer."),
-                    "Quantity": qty(10, "ANN", "Ten years."),
+                    "Description": V("Ten years on the coating." if winner else "Six years on the frame and the slats.",
+                                     "The offer."),
+                    "Quantity": qty(10 if winner else 6, "ANN", "The years of warranty offered."),
                     "Amount": amount(b + i, "XBL", "The price offered."),
                     "SubordinateAwardingCriterionResponse": {"ID": V("ACR-1.1", "Durability."),
                                                              "AwardingCriterionID": V("AC-2.1", "Its criterion."),
                                                              "Description": V("Hot-dip galvanised and powder "
-                                                                              "coated.", "The offer.")}}}}
+                                                                              "coated." if winner else
+                                                                              "Oiled hardwood, painted steel.",
+                                                                              "The offer.")}}}}
 
 
 @enrich("tender", "QualificationApplicationRequest")
@@ -6498,3 +6514,271 @@ def _(f, n, doc, out):
                                     "SharesNumberQuantity": qty(250, "C62", "250 shares."),
                                     "IssuerParty": party("5-xu", short=True)},
             "Signature": seal("25-xb", "BLUM-SIG-GC")}
+
+
+# --- Tendering, part 3: interest, status, unsubscribing, business information, the award and the contract ---------
+
+WINNER, RUNNER_UP, SAWMILL = "5-xu", "37-xb", "36-xb"
+WIN_TOTAL = TENDER_QTY * (Decimal("499.00") + Decimal("18.00"))
+RUNNER_UP_TOTAL = TENDER_QTY * (Decimal("480.00") + Decimal("16.00"))
+CONTRACT_NAME = "Park benches for the parks renewal programme"
+
+
+def contract_name():
+    return V(CONTRACT_NAME, "The name of the contract the procedure is for.")
+
+
+def project_brief(lot=None):
+    """A short procurement project: what is bought, without the full detail of the notice."""
+    name = {"LOT-1": "Park benches", "LOT-2": "Installation of the park benches"}.get(lot, "Park benches for the "
+                                                                                          "city parks")
+    return {"Name": V(name, "The project, or the lot, the document is about."),
+            "ProcurementTypeCode": V("Works" if lot == "LOT-2" else "Supplies", "The kind of procurement.")}
+
+
+def appeal_terms():
+    return {"Description": V("An appeal against the decision goes to the review board within ten days.", "How to "
+                                                                                                         "appeal."),
+            "PresentationPeriod": {"StartDate": V(TENDER.date(56), "From the decision."),
+                                   "EndDate": V(TENDER.date(66), "Ten days later, the end of the standstill period.")},
+            "AppealInformationParty": party(BOARD, short=True),
+            "AppealReceiverParty": party(BOARD, short=True),
+            "MediationParty": party(BOARD, short=True)}
+
+
+def tender_result(f, full=True):
+    """The result of the procedure: both lots awarded to the manufacturer, on the best price-quality ratio."""
+    out = {"AwardID": V(f"{FOLDER}-AWARD-1", "The award decision."),
+           "TenderResultCode": V("Awarded", "The contract is awarded."),
+           "Description": V("Both lots to Valdara Industries: the best price-quality ratio, with ten years of "
+                            "warranty on the coating.", "Why it won."),
+           "AwardTime": V("09:30:00", "The time of the decision, before the tenderers are told.")}
+    if full:
+        out.update({
+            "AdvertisementAmount": amount(Decimal("320.00"), "XBL", "What the winner pays for publishing the notice, "
+                                                                    "below the maximum of 500 lume."),
+            "ReceivedTenderQuantity": qty(2, "C62", "Two tenders: the furniture maker's first tender was withdrawn and "
+                                                    "replaced."),
+            "LowerTenderAmount": amount(RUNNER_UP_TOTAL, "XBL", "The lowest tender, the furniture maker's."),
+            "HigherTenderAmount": amount(WIN_TOTAL, "XBL", "The highest, the manufacturer's."),
+            "StartDate": V(f.date(70), "The contract starts with the first call-off."),
+            "ReceivedElectronicTenderQuantity": qty(2, "C62", "Both through the platform."),
+            "ReceivedForeignTenderQuantity": qty(1, "C62", "The manufacturer is established in Urvania.")})
+    out.update({
+        "Contract": {"ID": V(FOLDER, "The framework contract."), "ContractTypeCode": V("Framework", "A framework "
+                                                                                                    "contract."),
+                     "ValidityPeriod": {"StartDate": V(f.date(70), "From the first call-off."),
+                                        "DurationMeasure": V("24", "Two years.", unitCode="MON")}},
+        "AwardedTenderedProject": {
+            "VariantID": V("V0", "The main offer."),
+            "ProcurementProjectLot": [lot_ref("LOT-1"), lot_ref("LOT-2")],
+            "LegalMonetaryTotal": {"PayableAmount": amount(WIN_TOTAL, "XBL", f"{TENDER_QTY} benches at 499 lume and "
+                                                                             "their installation at 18 lume each.")}},
+        "ContractFormalizationPeriod": {"StartDate": V(f.date(66), "After the standstill period."),
+                                        "EndDate": V(f.date(69), "Before the first call-off.")},
+        "SubcontractTerms": {"Rate": V("0", "The manufacturer installs with its own staff."),
+                             "UnknownPriceIndicator": V("false", "Nothing is subcontracted."),
+                             "Description": V("No subcontracting.", "The tender's terms.")},
+        "WinningParty": {"Rank": V("1", "First in the evaluation."), "Party": party(WINNER, short=True)}})
+    return out
+
+
+@enrich("tender", "ExpressionOfInterestRequest")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "PreferredLanguageLocaleCode": V("EN", "The sawmill wants the "
+                                                                                    "documents in English."),
+            "Note": V("The sawmill considers a tender for lot 1 with a bench maker and asks to follow the "
+                      "procedure.", "Why it registers."),
+            "ValidityPeriod": {"EndDate": V(f.date(45), "Its interest lasts until the tender deadline.")},
+            "DocumentReference": {"ID": V(f.numbers.get("notice", f"{FOLDER}-CN"), "The contract notice it "
+                                                                                   "answers.")},
+            "Signature": seal(SAWMILL, "HS-SIG-EOI"),
+            "ProcurementProject": project_brief("LOT-1"), "ProcurementProjectLotReference": lot_ref("LOT-1")}
+
+
+@enrich("tender", "ExpressionOfInterestResponse")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "TenderLanguageLocaleCode": V("EN", "Tenders are written in English."),
+            "Note": V("Registered: the sawmill receives every change to the documents.", "The answer."),
+            "ExpressionOfInterestDocumentReference": {"ID": V(f.numbers["eoi"], "The expression of interest "
+                                                                                "answered.")},
+            "Signature": seal(PWD, "PWD-SIG-EOIR"),
+            "ProcurementProject": project_brief("LOT-1"), "ProcurementProjectLotReference": lot_ref("LOT-1")}
+
+
+@enrich("tender", "ProcurementStatusRequest")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "Note": V("Does the deadline stand after the answers to the "
+                                                       "questions?", "What the furniture maker asks."),
+            "Signature": seal(RUNNER_UP, "BF-SIG-PSR"),
+            "TenderingProcess": {"ID": V(f"{FOLDER}-P", "The procedure asked about.")},
+            "ProcurementProject": project_brief(), "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
+                                                                            {"ID": V("LOT-2", "Lot 2.")}]}
+
+
+@enrich("tender", "ProcurementStatus")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "Note": V("The deadline stands; the answers did not change the "
+                                                       "documents.", "The status."),
+            "ProcedureCode": V("Open", "Still an open procedure."),
+            "InvitationSubmissionPeriod": {"StartDate": V(f.date(14), "From."), "EndDate": V(f.date(20), "To.")},
+            "ParticipationRequestReceptionPeriod": {"EndDate": V(f.date(30), "Closed: requests to participate "
+                                                                             "were due then.")},
+            "ProcurementLegislationDocumentReference": {"ID": V("XB-PPA-2019", "The procurement act.")},
+            "FiscalLegislationDocumentReference": {"ID": V("XB-STT-ACT", "The state sales tax acts.")},
+            "EnvironmentalLegislationDocumentReference": {"ID": V("XB-ENV-2021", "The environmental act.")},
+            "EmploymentLegislationDocumentReference": {"ID": V("XB-LAB-2018", "The labour act.")},
+            "ProcedureStatusRequestDocumentReference": {"ID": V(f.numbers["status-request"], "The request "
+                                                                                             "answered.")},
+            "Signature": seal(PWD, "PWD-SIG-PS"),
+            "DocumentProviderParty": party(PWD, short=True), "TenderRecipientParty": party(PWD, short=True),
+            "ProcurementProject": project_brief(),
+            "ProcurementProjectLot": [{"ID": V("LOT-1", "Open for tenders.")},
+                                      {"ID": V("LOT-2", "Open for tenders.")}]}
+
+
+@enrich("tender", "UnsubscribeFromProcedureRequest")
+def _(f, n, doc, out):
+    return {"Note": V("No bench maker joined the sawmill; it will not tender.", "Why it leaves the procedure."),
+            "Signature": seal(SAWMILL, "HS-SIG-UNS"),
+            "ProcurementProject": project_brief("LOT-1"), "ProcurementProjectLotReference": lot_ref("LOT-1")}
+
+
+@enrich("tender", "UnsubscribeFromProcedureResponse")
+def _(f, n, doc, out):
+    return {"Note": V("The sawmill no longer receives the procedure's messages.", "The answer."),
+            "UnsubscribeToProcedureDocumentReference": {"ID": V(f.numbers["unsubscribe"], "The request "
+                                                                                          "answered.")},
+            "Signature": seal(PWD, "PWD-SIG-UNSR"),
+            "ProcurementProject": project_brief("LOT-1"), "ProcurementProjectLotReference": lot_ref("LOT-1")}
+
+
+@enrich("tender", "BusinessInformation")
+def _(f, n, doc, out):
+    return {"Note": V("Extract from the register of economic operators for the evaluation.", "What it is."),
+            "VersionID": V("1", "The first extract."), "PreviousVersionID": V("0", "None."),
+            "BriefDescription": V("Valdara Industries: registered, no exclusion grounds recorded.", "In short."),
+            "RequestedPublicationDate": V(f.date(46), "Published on the register on the day of the extract."),
+            "RegulatoryDomain": V("Bayvarra public procurement", "The rules of the register."),
+            "NoticeTypeCode": V("BusinessRegistration", "A notice of registration information."),
+            "NoticeLanguageCode": V("EN", "In English."),
+            "AdditionalNoticeLanguage": {"ID": V("fr", "Also in French."), "LocaleCode": V("FR", "As a code.")},
+            "Signature": seal(INFO, "BIS-SIG-BI"),
+            "BrochureDocumentReference": {"ID": V("VI-BROCHURE-26", "The manufacturer's brochure, kept on the "
+                                                                    "register.")},
+            "AdditionalDocumentReference": {"ID": V("VI-ISO9001-CERT", "Its quality certificate.")},
+            "BusinessCapability": {
+                "ID": V("CAP-1", "A capability on record."),
+                "CapabilityTypeCode": V("Production", "Production capacity."),
+                "Description": V("Steel frame benches, cast, galvanised and coated in its own plant.", "What."),
+                "ValueAmount": amount(Decimal("4800000.00"), "XBL", "Yearly turnover, converted to lume."),
+                "ValueQuantity": qty(6000, "H87", "Benches a year."),
+                "SuppliedEvidence": {"ID": V("EV-ACC-2025", "The audited accounts of 2025."),
+                                     "Name": V("Annual accounts", "What.")},
+                "ValidityPeriod": {"EndDate": V("2026-12-31", "Valid until the next accounts.")},
+                "WebSite": {"Name": V("Valdara Industries", "Its site."), "WebSiteTypeCode": V("Company", "A company "
+                                                                                                         "site."),
+                            "URI": V("https://www.valdara.example", "The address.")}},
+            "BusinessPartyGroup": {"GroupTypeCode": V("SameActivity", "Operators with the same registered "
+                                                                       "activity."),
+                                   "GroupType": V("Tenderers in this procedure registered for ISIC 3100", "The "
+                                                                                                         "group."),
+                                   "Party": [party(WINNER, short=True), party(RUNNER_UP, short=True)]},
+            "OperationType": {"Code": V("Manufacture", "Its operation."),
+                              "Description": V("Manufacture of furniture for public spaces.", "In words.")},
+            "NoticeSubType": {"SubTypeCode": V("Extract", "An extract on request."),
+                              "SubTypeDescription": V("Extract asked for by a contracting authority.", "In words.")}}
+
+
+@enrich("tender", "TenderReceipt")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "Note": V("Received on time, encrypted, unopened until the opening.",
+                                                       "The receipt."),
+            "Signature": seal(PWD, "PWD-SIG-RCPT")}
+
+
+@enrich("tender", "TenderWithdrawal")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "Note": V("The price per bench was entered wrongly; a corrected tender "
+                                                       "follows.", "Why it is withdrawn."),
+            "TenderNotificationDocumentReference": {"ID": V("PWD-RCPT-BF-1", "The receipt the platform issued for "
+                                                                             "the tender withdrawn (not shown).")},
+            "Signature": seal(RUNNER_UP, "BF-SIG-WD")}
+
+
+@enrich("tender", "TendererQualificationResponse")
+def _(f, n, doc, out):
+    res = out["QualificationResolution"]
+    return {"ContractName": contract_name(), "Note": V("Qualified for both lots.", "The outcome."),
+            "ResolutionDocumentReference": {"ID": V("PWD-MIN-QUAL-26", "The minutes of the qualification check.")},
+            "AppealTerms": appeal_terms(),
+            "Signature": seal(PWD, "PWD-SIG-TQR"),
+            "QualificationResolution": [
+                {**res, "ExclusionReason": V("None: no ground for exclusion applies.", "Checked against the "
+                                                                                       "register."),
+                 "Resolution": V("Admitted to the evaluation of lot 1.", "The decision."),
+                 "ResolutionTime": V("10:00:00", "The time of the decision."),
+                 "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")}},
+                {**res, "ExclusionReason": V("None: no ground for exclusion applies.", "Checked."),
+                 "Resolution": V("Admitted to the evaluation of lot 2; the installers' qualifications are "
+                                 "sufficient.", "The decision."),
+                 "ResolutionTime": V("10:00:00", "The time."),
+                 "ProcurementProjectLot": {"ID": V("LOT-2", "Lot 2.")}}]}
+
+
+@enrich("tender", "ContractAwardNotice")
+def _(f, n, doc, out):
+    return {**notice_head(f, "CAN", "ContractAwardNotice"),
+            "Note": V("Award of the framework contract for park benches.", "What."),
+            "PublishAwardIndicator": V("true", "The award is published."),
+            "PreviousDocumentReference": {"ID": V(f.numbers.get("notice", f"{FOLDER}-CN"), "The contract notice.")},
+            "MinutesDocumentReference": {"ID": V("PWD-MIN-AWARD-26", "The minutes of the evaluation.")},
+            "TenderingProcess": tendering_process(f), "ProcurementProject": procurement_project(f),
+            "ProcurementProjectLot": procurement_lots(f),
+            "TenderResult": {**out["TenderResult"], **tender_result(f)}}
+
+
+@enrich("tender", "AwardedNotification")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "Note": V("Your tender has won both lots. The contract follows after "
+                                                       "the standstill period.", "The message."),
+            "MinutesDocumentReference": {"ID": V("PWD-MIN-AWARD-26", "The minutes of the evaluation.")},
+            "AdditionalDocumentReference": {"ID": V("PWD-EVAL-REPORT-26", "The evaluation report.")},
+            "FinalFinancialGuarantee": {"GuaranteeTypeCode": V("PerformanceGuarantee", "A performance guarantee."),
+                                        "Description": V("A bank guarantee for the execution of the contract.",
+                                                         "What the winner must provide."),
+                                        "LiabilityAmount": amount(WIN_TOTAL * Decimal("0.05"), "XBL", "5 % of the "
+                                                                                                       "award."),
+                                        "AmountRate": V("5", "Five per cent."),
+                                        "ConstitutionPeriod": {"EndDate": V(f.date(66), "Before the contract is "
+                                                                                       "signed.")}},
+            "Signature": seal(PWD, "PWD-SIG-AWD"),
+            "TenderResult": {**out["TenderResult"], **tender_result(f, full=False)}}
+
+
+@enrich("tender", "UnawardedNotification")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "Note": V("Your tender ranked second. It was lower in price, but the "
+                                                       "warranty offered scored lower on quality.", "Why it lost."),
+            "Signature": seal(PWD, "PWD-SIG-UNAWD"),
+            "MinutesDocumentReference": {"ID": V("PWD-MIN-AWARD-26", "The minutes of the evaluation.")},
+            "AdditionalDocumentReference": {"ID": V("PWD-EVAL-SCORES-BF", "The furniture maker's scores.")},
+            "AppealTerms": appeal_terms(),
+            "TenderResult": {**out["TenderResult"], **tender_result(f, full=False)}}
+
+
+@enrich("tender", "TenderContract")
+def _(f, n, doc, out):
+    return {"ContractName": contract_name(), "Note": V("The framework contract, signed by both parties.", "What."),
+            "RegulatoryDomain": V("Bayvarra public procurement", "The rules the contract follows."),
+            "PublishAwardIndicator": V("true", "The award was published."),
+            "PreviousDocumentReference": {"ID": V(f.numbers["awarded"], "The award notification.")},
+            "ContractDocumentReference": {"ID": V("PWD-CONTRACT-2026-PARKS", "The signed contract.")},
+            "Signature": [seal(PWD, "PWD-SIG-CONTRACT", "The department's seal."),
+                          seal(WINNER, "VI-SIG-CONTRACT", "The manufacturer's seal.")],
+            "ReceiverParty": party(WINNER, short=True),
+            "TenderingTerms": tendering_terms(f),
+            "TenderingProcess": {"ID": V(f"{FOLDER}-P", "The procedure."), "ProcedureCode": V("Open", "Open.")},
+            "ProcurementProject": project_brief(), "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
+                                                                            {"ID": V("LOT-2", "Lot 2.")}],
+            "TenderResult": {**out["TenderResult"], **tender_result(f)}}

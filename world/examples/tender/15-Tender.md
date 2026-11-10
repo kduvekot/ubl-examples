@@ -406,7 +406,7 @@ Inside `BeneficiaryParty`:
 Inside `TenderedProject`:
 
 - `VariantID` = **V0**  
-  The main offer.
+  The main offer; no variant is tendered.
 - `FeeAmount` = **50.00** (currencyID `XBL`)  
   The documentation fee paid.
 - `FeeDescription` = **Paper copy of the documents.**  
@@ -502,7 +502,7 @@ Inside `TenderedProject`:
 - `AwardingCriterionResponse/Description` = **Ten years on the coating.**  
   The offer.
 - `AwardingCriterionResponse/Quantity` = **10** (unitCode `ANN`)  
-  Ten years.
+  The years of warranty offered.
 - `AwardingCriterionResponse/Amount` = **124080.00** (currencyID `XBL`)  
   The price offered.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-1.1**  

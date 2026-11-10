@@ -28,6 +28,10 @@ The authority acknowledges the manufacturer's tender, with the time it was regis
   Sent on receipt of the tender.
 - `IssueTime` = **17:47:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The name of the contract the procedure is for.
+- `Note` = **Received on time, encrypted, unopened until the opening.**  
+  The receipt.
 - `RegisteredDate` = **2026-02-25**  
   The day the tender was registered, before the deadline.
 - `RegisteredTime` = **11:42:00**  
@@ -39,6 +43,17 @@ Inside `TenderDocumentReference`:
 
 - `ID` = **VI-DOC-26-0201**  
   The tender received.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-RCPT**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -276,11 +291,24 @@ Inside `ReceiverParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>17:47:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>Received on time, encrypted, unopened until the opening.</cbc:Note>
   <cbc:RegisteredDate>2026-02-25</cbc:RegisteredDate>
   <cbc:RegisteredTime>11:42:00</cbc:RegisteredTime>
   <cac:TenderDocumentReference>
     <cbc:ID>VI-DOC-26-0201</cbc:ID>
   </cac:TenderDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-RCPT</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

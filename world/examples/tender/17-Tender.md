@@ -32,7 +32,7 @@ The furniture maker tenders wooden benches.
   The time the sender's system issued the document, in the sender's local time.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The contract tendered for.
-- `Note` = **Tender for both lots, with a recycled-plastic variant.**  
+- `Note` = **Tender for both lots, with a bench of the furniture maker's own make.**  
   What is offered.
 
 ### Validity Period
@@ -294,8 +294,8 @@ Inside `BeneficiaryParty`:
 
 Inside `TenderedProject`:
 
-- `VariantID` = **V1**  
-  The variant.
+- `VariantID` = **V0**  
+  The main offer; no variant is tendered.
 - `FeeAmount` = **50.00** (currencyID `XBL`)  
   The documentation fee paid.
 - `FeeDescription` = **Paper copy of the documents.**  
@@ -318,19 +318,19 @@ Inside `TenderedProject`:
   Reference letters.
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax for a public body.
-- `LegalMonetaryTotal/LineExtensionAmount` = **127440.00** (currencyID `XBL`)  
+- `LegalMonetaryTotal/LineExtensionAmount` = **116640.00** (currencyID `XBL`)  
   Both lots.
-- `LegalMonetaryTotal/PayableAmount` = **127440.00** (currencyID `XBL`)  
+- `LegalMonetaryTotal/PayableAmount` = **116640.00** (currencyID `XBL`)  
   The tender's total.
 - `TenderLine/ID` = **1**  
   The benches.
-- `TenderLine/Note` = **Serra 180, as specified.**  
+- `TenderLine/Note` = **A bench of its own make: steel frame, hardwood slats.**  
   What is offered.
 - `TenderLine/Quantity` = **240** (unitCode `H87`)  
   240 benches.
-- `TenderLine/LineExtensionAmount` = **123600.00** (currencyID `XBL`)  
+- `TenderLine/LineExtensionAmount` = **112800.00** (currencyID `XBL`)  
   240 at the unit price.
-- `TenderLine/TaxInclusiveLineExtensionAmount` = **123600.00** (currencyID `XBL`)  
+- `TenderLine/TaxInclusiveLineExtensionAmount` = **112800.00** (currencyID `XBL`)  
   No tax for a public body.
 - `TenderLine/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
   None.
@@ -348,19 +348,19 @@ Inside `TenderedProject`:
   The warranty.
 - `TenderLine/PackLevelCode` = **Pallet**  
   The pack level.
-- `TenderLine/DocumentReference/ID` = **VI-DS-B180**  
+- `TenderLine/DocumentReference/ID` = **BF-DS-PARK**  
   The datasheet.
-- `TenderLine/Item/Name` = **Park bench Serra 180**  
+- `TenderLine/Item/Name` = **Park bench Brackenmere PB-2**  
   The item offered.
 - `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  
   Seven days per release.
-- `TenderLine/ReplacementRelatedItem/ID` = **VI-C180-2026**  
-  Spare frames available.
+- `TenderLine/ReplacementRelatedItem/ID` = **BF-SLAT-PB2**  
+  Spare slat sets available.
 - `TenderLine/ReplacementRelatedItem/Quantity` = **1** (unitCode `H87`)  
   One for one.
-- `TenderLine/WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `TenderLine/WarrantyParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `TenderLine/WarrantyParty/PartyName/Name` = **Valdara Industries**  
+- `TenderLine/WarrantyParty/PartyName/Name` = **Brackenmere Furniture**  
   A party referred to from another party's details: its identifier and name are enough.
 - `TenderLine/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
@@ -388,17 +388,17 @@ Inside `TenderedProject`:
   Quality.
 - `AwardingCriterionResponse/AwardingCriterionDescription` = **Warranty and coating.**  
   The criterion.
-- `AwardingCriterionResponse/Description` = **Ten years on the coating.**  
+- `AwardingCriterionResponse/Description` = **Six years on the frame and the slats.**  
   The offer.
-- `AwardingCriterionResponse/Quantity` = **10** (unitCode `ANN`)  
-  Ten years.
-- `AwardingCriterionResponse/Amount` = **127440.00** (currencyID `XBL`)  
+- `AwardingCriterionResponse/Quantity` = **6** (unitCode `ANN`)  
+  The years of warranty offered.
+- `AwardingCriterionResponse/Amount` = **116640.00** (currencyID `XBL`)  
   The price offered.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-1.1**  
   Durability.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/AwardingCriterionID` = **AC-2.1**  
   Its criterion.
-- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description` = **Hot-dip galvanised and powder coated.**  
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description` = **Oiled hardwood, painted steel.**  
   The offer.
 
 ## The document
@@ -417,7 +417,7 @@ Inside `TenderedProject`:
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>16:37:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:Note>Tender for both lots, with a recycled-plastic variant.</cbc:Note>
+  <cbc:Note>Tender for both lots, with a bench of the furniture maker's own make.</cbc:Note>
   <cac:ValidityPeriod>
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
@@ -630,7 +630,7 @@ Inside `TenderedProject`:
     </cac:PartyName>
   </cac:BeneficiaryParty>
   <cac:TenderedProject>
-    <cbc:VariantID>V1</cbc:VariantID>
+    <cbc:VariantID>V0</cbc:VariantID>
     <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
     <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
@@ -653,15 +653,15 @@ Inside `TenderedProject`:
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     </cac:TaxTotal>
     <cac:LegalMonetaryTotal>
-      <cbc:LineExtensionAmount currencyID="XBL">127440.00</cbc:LineExtensionAmount>
-      <cbc:PayableAmount currencyID="XBL">127440.00</cbc:PayableAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">116640.00</cbc:LineExtensionAmount>
+      <cbc:PayableAmount currencyID="XBL">116640.00</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>
     <cac:TenderLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>Serra 180, as specified.</cbc:Note>
+      <cbc:Note>A bench of its own make: steel frame, hardwood slats.</cbc:Note>
       <cbc:Quantity unitCode="H87">240</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">123600.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">123600.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">112800.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">112800.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
       <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
@@ -671,24 +671,24 @@ Inside `TenderedProject`:
       <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
       <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
       <cac:DocumentReference>
-        <cbc:ID>VI-DS-B180</cbc:ID>
+        <cbc:ID>BF-DS-PARK</cbc:ID>
       </cac:DocumentReference>
       <cac:Item>
-        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cbc:Name>Park bench Brackenmere PB-2</cbc:Name>
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
       </cac:OfferedItemLocationQuantity>
       <cac:ReplacementRelatedItem>
-        <cbc:ID>VI-C180-2026</cbc:ID>
+        <cbc:ID>BF-SLAT-PB2</cbc:ID>
         <cbc:Quantity unitCode="H87">1</cbc:Quantity>
       </cac:ReplacementRelatedItem>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
         </cac:PartyName>
       </cac:WarrantyParty>
       <cac:WarrantyValidityPeriod>
@@ -720,13 +720,13 @@ Inside `TenderedProject`:
       <cbc:ID>ACR-1</cbc:ID>
       <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
       <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
-      <cbc:Description>Ten years on the coating.</cbc:Description>
-      <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
-      <cbc:Amount currencyID="XBL">127440.00</cbc:Amount>
+      <cbc:Description>Six years on the frame and the slats.</cbc:Description>
+      <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      <cbc:Amount currencyID="XBL">116640.00</cbc:Amount>
       <cac:SubordinateAwardingCriterionResponse>
         <cbc:ID>ACR-1.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
-        <cbc:Description>Hot-dip galvanised and powder coated.</cbc:Description>
+        <cbc:Description>Oiled hardwood, painted steel.</cbc:Description>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

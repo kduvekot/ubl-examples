@@ -336,10 +336,10 @@ Inside `TenderingTerms`:
   A tender guarantee.
 - `RequiredFinancialGuarantee/Description` = **A bank guarantee for the tender.**  
   What.
-- `RequiredFinancialGuarantee/LiabilityAmount` = **2500.00** (currencyID `XBL`)  
+- `RequiredFinancialGuarantee/LiabilityAmount` = **2400.00** (currencyID `XBL`)  
   Its amount.
 - `RequiredFinancialGuarantee/AmountRate` = **2**  
-  About 2 % of the estimate.
+  2 % of the estimated value of 120,000 lume.
 - `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-26**  
   With the tender.
 - `ProcurementLegislationDocumentReference/ID` = **XB-PPA-2019**  
@@ -1442,7 +1442,7 @@ Inside `ProcurementProjectLot`:
     <cac:RequiredFinancialGuarantee>
       <cbc:GuaranteeTypeCode>TenderGuarantee</cbc:GuaranteeTypeCode>
       <cbc:Description>A bank guarantee for the tender.</cbc:Description>
-      <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>
+      <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
       <cbc:AmountRate>2</cbc:AmountRate>
       <cac:ConstitutionPeriod>
         <cbc:EndDate>2026-02-26</cbc:EndDate>

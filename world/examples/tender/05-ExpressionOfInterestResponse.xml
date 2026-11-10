@@ -9,6 +9,23 @@
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-15</cbc:IssueDate>
   <cbc:IssueTime>08:35:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:TenderLanguageLocaleCode>EN</cbc:TenderLanguageLocaleCode>
+  <cbc:Note>Registered: the sawmill receives every change to the documents.</cbc:Note>
+  <cac:ExpressionOfInterestDocumentReference>
+    <cbc:ID>MS-DOC-26-0190</cbc:ID>
+  </cac:ExpressionOfInterestDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-EOIR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -184,4 +201,11 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:ProcurementProject>
+    <cbc:Name>Park benches</cbc:Name>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLotReference>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLotReference>
 </ExpressionOfInterestResponse>

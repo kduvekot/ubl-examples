@@ -28,13 +28,83 @@ The authority confirms the procedure and its deadline.
   Answered the next day.
 - `IssueTime` = **11:44:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The name of the contract the procedure is for.
+- `Note` = **The deadline stands; the answers did not change the documents.**  
+  The status.
+- `ProcedureCode` = **Open**  
+  Still an open procedure.
 
 ### Tender Submission Deadline Period
 
 Inside `TenderSubmissionDeadlinePeriod`:
 
-- `EndDate` = **2026-02-25**  
+- `EndDate` = **2026-02-26**  
   The deadline for tenders stands.
+- `EndTime` = **12:00:00**  
+  At noon, as the notice says.
+
+### Invitation Submission Period
+
+Inside `InvitationSubmissionPeriod`:
+
+- `StartDate` = **2026-01-26**  
+  From.
+- `EndDate` = **2026-02-01**  
+  To.
+
+### Participation Request Reception Period
+
+Inside `ParticipationRequestReceptionPeriod`:
+
+- `EndDate` = **2026-02-11**  
+  Closed: requests to participate were due then.
+
+### Procurement Legislation Document Reference
+
+Inside `ProcurementLegislationDocumentReference`:
+
+- `ID` = **XB-PPA-2019**  
+  The procurement act.
+
+### Fiscal Legislation Document Reference
+
+Inside `FiscalLegislationDocumentReference`:
+
+- `ID` = **XB-STT-ACT**  
+  The state sales tax acts.
+
+### Environmental Legislation Document Reference
+
+Inside `EnvironmentalLegislationDocumentReference`:
+
+- `ID` = **XB-ENV-2021**  
+  The environmental act.
+
+### Employment Legislation Document Reference
+
+Inside `EmploymentLegislationDocumentReference`:
+
+- `ID` = **XB-LAB-2018**  
+  The labour act.
+
+### Procedure Status Request Document Reference
+
+Inside `ProcedureStatusRequestDocumentReference`:
+
+- `ID` = **BF-DOC-26-0194**  
+  The request answered.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-PS**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Contracting Party
 
@@ -234,6 +304,42 @@ Inside `EconomicOperatorParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Document Provider Party
+
+Inside `DocumentProviderParty`:
+
+- `PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Tender Recipient Party
+
+Inside `TenderRecipientParty`:
+
+- `PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Procurement Project
+
+Inside `ProcurementProject`:
+
+- `Name` = **Park benches for the city parks**  
+  The project, or the lot, the document is about.
+- `ProcurementTypeCode` = **Supplies**  
+  The kind of procurement.
+
+### Procurement Project Lot
+
+Inside `ProcurementProjectLot`:
+
+- `ID` = **LOT-1**  
+  Open for tenders.
+- `ID` = **LOT-2**  
+  Open for tenders.
+
 ## The document
 
 ```xml
@@ -248,9 +354,46 @@ Inside `EconomicOperatorParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-21</cbc:IssueDate>
   <cbc:IssueTime>11:44:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>The deadline stands; the answers did not change the documents.</cbc:Note>
+  <cbc:ProcedureCode>Open</cbc:ProcedureCode>
   <cac:TenderSubmissionDeadlinePeriod>
-    <cbc:EndDate>2026-02-25</cbc:EndDate>
+    <cbc:EndDate>2026-02-26</cbc:EndDate>
+    <cbc:EndTime>12:00:00</cbc:EndTime>
   </cac:TenderSubmissionDeadlinePeriod>
+  <cac:InvitationSubmissionPeriod>
+    <cbc:StartDate>2026-01-26</cbc:StartDate>
+    <cbc:EndDate>2026-02-01</cbc:EndDate>
+  </cac:InvitationSubmissionPeriod>
+  <cac:ParticipationRequestReceptionPeriod>
+    <cbc:EndDate>2026-02-11</cbc:EndDate>
+  </cac:ParticipationRequestReceptionPeriod>
+  <cac:ProcurementLegislationDocumentReference>
+    <cbc:ID>XB-PPA-2019</cbc:ID>
+  </cac:ProcurementLegislationDocumentReference>
+  <cac:FiscalLegislationDocumentReference>
+    <cbc:ID>XB-STT-ACT</cbc:ID>
+  </cac:FiscalLegislationDocumentReference>
+  <cac:EnvironmentalLegislationDocumentReference>
+    <cbc:ID>XB-ENV-2021</cbc:ID>
+  </cac:EnvironmentalLegislationDocumentReference>
+  <cac:EmploymentLegislationDocumentReference>
+    <cbc:ID>XB-LAB-2018</cbc:ID>
+  </cac:EmploymentLegislationDocumentReference>
+  <cac:ProcedureStatusRequestDocumentReference>
+    <cbc:ID>BF-DOC-26-0194</cbc:ID>
+  </cac:ProcedureStatusRequestDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-PS</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -423,5 +566,31 @@ Inside `EconomicOperatorParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:DocumentProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:DocumentProviderParty>
+  <cac:TenderRecipientParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:TenderRecipientParty>
+  <cac:ProcurementProject>
+    <cbc:Name>Park benches for the city parks</cbc:Name>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-2</cbc:ID>
+  </cac:ProcurementProjectLot>
 </ProcurementStatus>
 ```
