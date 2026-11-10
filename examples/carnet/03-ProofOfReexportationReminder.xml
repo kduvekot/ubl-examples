@@ -9,6 +9,8 @@
   <cbc:IssueDate>2026-08-23</cbc:IssueDate>
   <cbc:IssueTime>12:04:00</cbc:IssueTime>
   <cbc:ProcedureCode>TemporaryAdmission</cbc:ProcedureCode>
+  <cbc:Note>Without proof, the import duties will be claimed from the guarantee.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ProofOfReexportationRequestDocumentReference>
     <cbc:ID>SCC-DOC-26-0726</cbc:ID>
@@ -200,7 +202,45 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ImportingCustomsParty>
+  <cac:IssuerEndorsement>
+    <cbc:DocumentID>SCC-DOC-26-0726</cbc:DocumentID>
+    <cbc:ApprovalStatus>Open</cbc:ApprovalStatus>
+    <cac:EndorserParty>
+      <cbc:RoleCode>Guarantor</cbc:RoleCode>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+      <cac:SignatoryContact>
+        <cbc:Name>Carnet desk</cbc:Name>
+      </cac:SignatoryContact>
+    </cac:EndorserParty>
+  </cac:IssuerEndorsement>
+  <cac:PaymentTerms>
+    <cbc:Note>Duties and import consumption tax of 1,300 coral fall due if no proof arrives within 30 days.</cbc:Note>
+    <cbc:Amount currencyID="XLC">1300.000</cbc:Amount>
+    <cbc:PaymentDueDate>2026-09-22</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
   </cac:GoodsItemPassportCounterfoil>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>SCC-SIG-26-PRM</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ProofOfReexportationReminder>

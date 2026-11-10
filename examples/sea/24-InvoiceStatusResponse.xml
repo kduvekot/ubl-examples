@@ -8,6 +8,19 @@
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>13:49:00</cbc:IssueTime>
+  <cbc:Note>Approved; the balance will be paid to the factor.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:Signature>
+    <cbc:ID>VT-SIG-26-ISP</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -161,6 +174,25 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:Payment>
+    <cbc:ID>VT-PAY-26-0199</cbc:ID>
+    <cbc:PaidAmount currencyID="XBL">43778.00</cbc:PaidAmount>
+    <cbc:PaidDate>2026-06-25</cbc:PaidDate>
+    <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
+    <cac:ExchangeRate>
+      <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+      <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+      <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    </cac:ExchangeRate>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0147</cbc:ID>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+    <cac:RemittanceDocumentReference>
+      <cbc:ID>to follow</cbc:ID>
+    </cac:RemittanceDocumentReference>
+  </cac:Payment>
   <cac:DocumentResponse>
     <cac:Response>
       <cbc:ResponseCode>AP</cbc:ResponseCode>
