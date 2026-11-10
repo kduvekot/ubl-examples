@@ -44,7 +44,12 @@
       ],
       "note": "An excise in ferra per kWh, lower above 50,000 kWh a month for industry; value added tax is charged on the price plus the energy tax."
      }
-    ]
+    ],
+    "exemption_codes": {
+     "Export of goods outside Urvania": "XU-EXP",
+     "Service to a business established outside Urvania": "XU-SVC-ABROAD"
+    },
+    "exemption_codes_note": "The world's own codes for the exemption reasons; the EU's VATEX list does not apply in the world."
    },
    "registry": {
     "name": "Commercial register of Urvania",
@@ -121,7 +126,16 @@
        "sale to a public body"
       ]
      }
-    ]
+    ],
+    "exemption_codes": {
+     "Export outside Bayvarra": "XB-EXP",
+     "Drinking water": "XB-WATER",
+     "Sale to a public body": "XB-PUBLIC",
+     "Service to a business": "XB-SVC-B2B",
+     "Sale for resale or manufacture": "XB-RESALE",
+     "Levy collected for a public body": "XB-LEVY"
+    },
+    "exemption_codes_note": "The world's own codes for the exemption reasons; the EU's VATEX list does not apply in the world."
    },
    "registry": {
     "name": "Federal business register of Bayvarra",

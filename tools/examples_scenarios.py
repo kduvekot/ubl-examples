@@ -1107,7 +1107,8 @@ SCENARIOS.update({"rail": rail, "plastics": plastics, "retail": retail})
 # ---------------------------------------------------------------- the sea flow (Bayvarra -> Lisavu, CIF)
 SEA = kit.Flow("sea", "2026-05-04", [
     {"item": "bench-serra-b", "ordered": 96, "why": "One 40-foot container: 24 pallets of 4 benches."},
-    {"item": "bench-casting-b", "ordered": 12, "why": "Spare side frames for the buyer's own service stock."}])
+    {"item": "bench-casting-b", "ordered": 12, "why": "Spare side frames for the buyer's own service stock.",
+     "received": 11, "received_why": "One box crushed at the port; the frame inside is cracked."}])
 CONTAINER = kit.container_number("TWL", 412087)       # Tidewell Ocean Lines' container (ISO 6346, with check digit)
 SEA_FREIGHT, INSURANCE = Decimal("2950.00"), Decimal("140.00")
 
@@ -1740,16 +1741,24 @@ def sea(n, doc):
         return sea_invoice_terms(f, out)
     if doc["doc"] == "Statement":
         cur, total = "XBL", f.numbers["invoice-amount"]
-        return {"ID": V(f.number("statement", doc["from"], "Statement"), "The factor's statement number."),
+        out = {"ID": V(f.number("statement", doc["from"], "Statement"), "The factor's statement number."),
                 "IssueDate": V(f.date(40), "The monthly statement of account."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoices"),
                 "StatementTypeCode": V("Account", "A statement of the account."),
                 "Note": V("Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring "
                           "holds.", "Who the statement is for."),
-                "TotalDebitAmount": amount(total, cur, "The open invoice."),
-                "TotalCreditAmount": amount(0, cur, "No payments yet."),
+                "TotalDebitAmount": amount(total + DEPOSIT, cur, "The invoice in full."),
+                "TotalCreditAmount": amount(DEPOSIT, cur, "The deposit the buyer paid on the order."),
                 "TotalBalanceAmount": amount(total, cur, "What is owed."),
-                "LineCountNumeric": V("1", "One line."),
+                "LineCountNumeric": V("2", "The invoice and the deposit."),
+                "AdditionalDocumentReference": {"ID": V("HF-FA-2026-007", "The factoring agreement between the "
+                                                                          "distributor and the factor.")},
+                "BuyerCustomerParty": {"Party": party("1-xl", short=True)},
+                "SellerSupplierParty": {"Party": party("6-xb", short=True)},
+                "PaymentTerms": {"Note": V("Pay the balance by the due date of the invoice.", "The terms."),
+                                 "PaymentDueDate": V(f.date(55), "The due date.")},
+                "Signature": {"ID": V("HF-SIG-26-0040", "The factor's seal on the statement."),
+                              "SignatoryParty": party("24-xb", short=True)},
                 "StatementPeriod": {"StartDate": V(f.date(10), "From the invoice."),
                                     "EndDate": V(f.date(40), "To the statement date.")},
                 "PaymentMeans": kit.payment_means(f, "24-xb", "1-xl", "24-xb", 40, 15, f.numbers["invoice"],
@@ -1773,8 +1782,67 @@ def sea(n, doc):
                                       "ID": V(f.numbers["invoice"], "The distributor's invoice, which the factor "
                                                                     "bought."),
                                       "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}}}}
+        out["StatementLine"].update({"DebitLineAmount": amount(total + DEPOSIT, cur, "The invoice in full."),
+                                     "BalanceAmount": amount(total + DEPOSIT, cur, "Before the deposit."),
+                                     "Note": V("The invoice, bought by the factor.", "What the line shows."),
+                                     "AccountingCustomerParty": {"Party": party("1-xl", short=True)},
+                                     "AccountingSupplierParty": {"Party": party("6-xb", short=True)},
+                                     "PayeeParty": party("24-xb", short=True)})
+        out["StatementLine"] = [out["StatementLine"], {
+            "ID": V("2", "The deposit."),
+            "Note": V("Paid to the distributor before the invoice was assigned.", "Why it is a credit."),
+            "CreditLineAmount": amount(DEPOSIT, cur, "The deposit."),
+            "BalanceAmount": amount(total, cur, "Open after the deposit: what the buyer still owes."),
+            "CollectedPayment": {"ID": V("VT-DEP-26-0412", "The deposit payment."),
+                                 "PaidAmount": amount(DEPOSIT, cur, "Paid."),
+                                 "ReceivedDate": V(f.date(5), "Received by the distributor.")},
+            "PaymentMeans": {"PaymentMeansCode": V("30", "Paid by credit transfer.", listID="UN/EDIFACT EDED 4461")},
+            "InvoicePeriod": {"StartDate": V(f.date(4), "The order's deposit period."),
+                              "EndDate": V(f.date(5), "Paid and received.")}}]
+        return out
     if doc["doc"] == "RemittanceAdvice":
-        return kit.remittance(f, n, doc, 52, "The buyer pays the factor, before the due date.")
+        return kit.remittance(f, n, doc, 52, "The buyer pays the factor, before the due date, less the credit note.",
+                              credit=(f.numbers["sea-credit"], f.numbers["sea-credit-date"],
+                                      f.numbers["sea-credit-amount"]))
+    if doc["doc"] == "CreditNote":
+        out = kit.credit_note(f, n, doc, 42, "Issued when the distributor accepted the buyer's claim.",
+                              [{"item": "bench-casting-b", "qty": 1, "why": "The frame that arrived cracked.",
+                                "line_extra": {"Note": V("Box crushed at the port of Selanu.", "What happened.")}}],
+                              {"BillingReference": {"InvoiceDocumentReference": {
+                                  "ID": V(f.numbers["invoice"], "The invoice of the frames."),
+                                  "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
+                               "Note": V("Under CIF the risk was the buyer's on board; the distributor credits the "
+                                         "frame as a goodwill gesture and claims from the insurer.", "Why a credit "
+                                                                                                    "under CIF."),
+                               "DiscrepancyResponse": {"ResponseCode": V("Damaged", "The goods arrived damaged."),
+                                                       "Description": V("One side frame cracked.", "In words.")},
+                               "OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
+                               "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The 3PL's receipt "
+                                                                                          "advice reporting it.")},
+                               "StatementDocumentReference": {"ID": V(f.numbers["statement"], "The factor's statement "
+                                                                      "the invoice is on.")},
+                               "ContractDocumentReference": {"ID": V(f.numbers["agreement"], "The digital "
+                                                                                             "agreement.")},
+                               "OriginatorDocumentReference": {"ID": V("VT-CLAIM-26-0019", "The buyer's claim.")},
+                               "ProjectReference": {"ID": V("Harbour parks Selanu", "The buyer's project.")},
+                               "BuyerAssignedReference": {"BuyerReferenceCode": V("VT-CLAIMS", "The buyer's claims "
+                                                                                               "desk.")},
+                               "Delivery": {"ActualDeliveryDate": V(f.date(17), "The goods arrived at the 3PL.")},
+                               "DeliveryTerms": {"ID": V("CIF", "As sold.", schemeID="INCOTERMS")},
+                               "PaymentAlternativeCurrencyCode": V("XLC", "The buyer's currency, shown too."),
+                               "PaymentAlternativeExchangeRate": {
+                                   "SourceCurrencyCode": V("XBL", "The credit's currency."),
+                                   "TargetCurrencyCode": V("XLC", "The buyer's."),
+                                   "CalculationRate": V("0.4", "The reference rate.")},
+                               "Annotation": {"AnnotationContent": V("Claimed from Wavesure Cargo Insurance under "
+                                                                     "policy WS-CP-26-4471.", "Where the cost goes "
+                                                                                              "in the end.")},
+                               "Signature": {"ID": V("LD-SIG-26-0042", "The distributor's seal."),
+                                             "SignatoryParty": party("6-xb", short=True)}})
+        f.numbers["sea-credit"] = out["ID"].value
+        f.numbers["sea-credit-date"] = f.date(42)
+        f.numbers["sea-credit-amount"] = Decimal(out["LegalMonetaryTotal"]["PayableAmount"].value)
+        return out
     raise SystemExit(f"sea scenario: no document {n} {doc['doc']}")
 
 
@@ -2369,6 +2437,11 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
          "35-xl": [{"item": "telecom-line", "qty": 6, "invoice_why": "Six business lines for the month."},
                    {"item": "telecom-data", "qty": 35, "invoice_why": "Mobile data beyond the subscriptions."}]}
 KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
+METERS = {"33-xu": ["FE-C-0047120", ("FE-M-881204", "Factory, main connection"),
+                    ("FE-M-881377", "Warehouse of Castrano Logistics")],
+          "34-xb:26-xb": ["CSW-C-260118", ("CSW-W-55102", "Shop, Lumeport"), None],
+          "34-xb:c-xb": ["CSW-C-311790", ("CSW-W-71844", "Gull Lane 57"), None],
+          "35-xl": ["ST-C-1077", ("ST-L-BUS6", "Six business lines"), ("ST-D-0042", "Mobile data pool")]}
 
 
 def energy_tax(f, out, key):
@@ -2449,8 +2522,14 @@ def utilities(n, doc):
                           BILLS[key], key=f"invoice-{key}", extra=MARCH)
         purpose = {"33-xu": ("ELEC", "electricity bill"), "35-xl": ("PHON", "telephone bill")}.get(
             key, ("WTER", "water bill"))
-        for line in out["InvoiceLine"]:
+        meters = METERS[key]
+        out["PurchaseReference"] = {"ID": V(meters[0], "The customer's contract number with the utility."),
+                                    "Description": V("Supply contract", "What the number is.")}
+        for line, meter in zip(out["InvoiceLine"], meters[1:]):
             line["PaymentPurposeCode"] = V(purpose[0], f"ISO 20022 purpose code {purpose[0]}: {purpose[1]}.")
+            if meter:
+                line["PurchaseReference"] = {"ID": V(meter[0], "The meter or subscription the line is for."),
+                                             "Description": V(meter[1], "Where it is.")}
         if key == "33-xu":
             out["InvoiceLine"][1]["OriginatorParty"] = party("8-xu", short=True)
             energy_tax(f, out, key)
@@ -2497,6 +2576,30 @@ def utilities(n, doc):
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the unpaid bill"),
                 "ReminderPeriod": {"StartDate": V(f.date(22), "Overdue from the failed collection."),
                                    "EndDate": V(f.date(30), "Until the reminder.")},
+                "AccountingCostCode": V("1210", "The water company's receivables account for households."),
+                "AccountingCost": V("Household receivables", "In words."),
+                "LineCountNumeric": V("2", "The bill and the fee."),
+                "AdditionalDocumentReference": {"ID": V("BLUM-RTN-26-04-0193", "The bank's notice that the direct "
+                                                                               "debit was returned."),
+                                                "DocumentTypeCode": V("ReturnNotice", "What the document is."),
+                                                "IssueDate": V(f.date(23), "The day after the failed collection."),
+                                                "DocumentDescription": V("Direct debit returned: insufficient "
+                                                                         "funds.", "What it says."),
+                                                "IssuerParty": party("25-xb", short=True)},
+                "PayeeParty": party("34-xb", short=True),
+                "PaymentTerms": {"Note": V("Please pay within ten days by credit transfer; the next collection will "
+                                           "be by direct debit again.", "What the household is asked to do."),
+                                 "PaymentDueDate": V(f.date(40), "Ten days after the reminder.")},
+                "TaxTotal": {"TaxAmount": amount(0, cur, "No sales tax on a reminder fee."),
+                             "TaxSubtotal": {"TaxableAmount": amount(Decimal("5.00"), cur, "The fee."),
+                                             "TaxAmount": amount(0, cur, "None."),
+                                             "TaxCategory": {"ID": V("O", "A reminder fee is compensation, not a "
+                                                                          "supply: outside the scope of the sales "
+                                                                          "tax."),
+                                                             "TaxExemptionReason": V("Compensation for late payment",
+                                                                                     "Why no tax."),
+                                                             "TaxScheme": {"ID": V("STT", "UN/EDIFACT 5153 code of "
+                                                                                         "the state sales tax.")}}}},
                 "PaymentMeans": {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer, how the household "
                                                              "is asked to pay.", listID="UN/EDIFACT EDED 4461"),
                                  "PayeeFinancialAccount": kit.account(doc["from"], "The utility's account, where the "

@@ -370,6 +370,8 @@ Inside `TaxTotal`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
@@ -728,6 +730,7 @@ Inside `OrderLine`:
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

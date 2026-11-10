@@ -14,6 +14,7 @@
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
+  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -30,6 +31,10 @@
   <cac:ProjectReference>
     <cbc:ID>PWD-PARKS-26</cbc:ID>
   </cac:ProjectReference>
+  <cac:BuyerAssignedReference>
+    <cbc:BuyerReferenceCode>PWD-PARKS-26-AP</cbc:BuyerReferenceCode>
+    <cbc:BuyerReference>Accounts payable, public works</cbc:BuyerReference>
+  </cac:BuyerAssignedReference>
   <cac:Annotation>
     <cbc:SubjectCode>Contract</cbc:SubjectCode>
     <cbc:Subject>Releases under the framework contract</cbc:Subject>
@@ -330,6 +335,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -346,6 +352,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -403,7 +410,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

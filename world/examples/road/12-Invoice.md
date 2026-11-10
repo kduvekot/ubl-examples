@@ -34,6 +34,8 @@ The carrier invoices the transport to the party that booked it; under FCA that i
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the seller's currency; it has no minor unit.
+- `PaymentCurrencyCode` = **XUF**  
+  Payment is asked in the invoice currency, also from abroad.
 - `AccountingCostCode` = **4410**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Stock purchases**  
@@ -389,6 +391,8 @@ Inside `TaxTotal`:
   A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XU-SVC-ABROAD**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
@@ -427,8 +431,12 @@ Inside `InvoiceLine`:
   A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XU-SVC-ABROAD**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `Price/PriceAmount` = **240.5** (currencyID `XUF`)  
@@ -453,6 +461,7 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-25</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -753,6 +762,7 @@ Inside `InvoiceLine`:
       <cac:TaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-SVC-ABROAD</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -779,7 +789,9 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-SVC-ABROAD</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

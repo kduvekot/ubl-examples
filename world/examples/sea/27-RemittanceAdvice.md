@@ -1,10 +1,10 @@
 # Remittance Advice: Velumi Trading to Harbourline Factoring
 
-*Example 26 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
+*Example 27 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
 
 The buyer pays the factor from its account at the buyer's bank and says which invoices it settles.
 
-[The XML file](26-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](27-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VT-RM-26-0151**  
+- `ID` = **VT-RM-26-0152**  
   The payer's remittance number.
-- `UUID` = **6b92e2fa-8820-5fb5-96a3-b2fe40d92909**  
+- `UUID` = **e979bb12-c34b-549e-a55c-2eaa6ba06d08**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-25**  
-  The buyer pays the factor, before the due date.
-- `IssueTime` = **10:49:00**  
+  The buyer pays the factor, before the due date, less the credit note.
+- `IssueTime` = **15:43:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `Note` = **Payment of the invoice below.**  
   What the advice is for.
@@ -32,18 +32,18 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The lume, the currency of the invoice paid; it has two decimals.
 - `TotalDebitAmount` = **43778.00** (currencyID `XBL`)  
   The invoices paid.
-- `TotalCreditAmount` = **0.00** (currencyID `XBL`)  
-  No credits taken.
-- `TotalPaymentAmount` = **43778.00** (currencyID `XBL`)  
-  The amount transferred: the payable amount of the invoice.
+- `TotalCreditAmount` = **64.00** (currencyID `XBL`)  
+  The credit note deducted.
+- `TotalPaymentAmount` = **43714.00** (currencyID `XBL`)  
+  The amount transferred: the invoice less the credit note.
 - `PaymentOrderReference` = **VT-PAY-26-0123**  
   The payment order the payer gave its bank.
 - `PayerReference` = **VT-0123**  
   The payer's own reference for this payment run.
 - `InvoicingPartyReference` = **RF20LDINV260147**  
   The reference the invoicing party asked to quote.
-- `LineCountNumeric` = **1**  
-  One invoice paid.
+- `LineCountNumeric` = **2**  
+  The invoice paid and the credit note deducted.
 
 ### Accounting Customer Party
 
@@ -419,6 +419,14 @@ Inside `RemittanceAdviceLine`:
   Its issue date.
 - `DocumentReference/DocumentTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
+- `ID` = **2**  
+  The credit note deducted.
+- `CreditLineAmount` = **64.00** (currencyID `XBL`)  
+  The amount of the credit note, set off against the payment.
+- `BillingReference/CreditNoteDocumentReference/ID` = **LD-CN-26-0151**  
+  The credit note deducted.
+- `BillingReference/CreditNoteDocumentReference/IssueDate` = **2026-06-15**  
+  Its issue date.
 
 ## The document
 
@@ -429,19 +437,19 @@ Inside `RemittanceAdviceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-RM-26-0151</cbc:ID>
-  <cbc:UUID>6b92e2fa-8820-5fb5-96a3-b2fe40d92909</cbc:UUID>
+  <cbc:ID>VT-RM-26-0152</cbc:ID>
+  <cbc:UUID>e979bb12-c34b-549e-a55c-2eaa6ba06d08</cbc:UUID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
-  <cbc:IssueTime>10:49:00</cbc:IssueTime>
+  <cbc:IssueTime>15:43:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">43778.00</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">43778.00</cbc:TotalPaymentAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">64.00</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">43714.00</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0123</cbc:PaymentOrderReference>
   <cbc:PayerReference>VT-0123</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -774,6 +782,16 @@ Inside `RemittanceAdviceLine`:
       <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
     </cac:DocumentReference>
+  </cac:RemittanceAdviceLine>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:CreditLineAmount currencyID="XBL">64.00</cbc:CreditLineAmount>
+    <cac:BillingReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>LD-CN-26-0151</cbc:ID>
+        <cbc:IssueDate>2026-06-15</cbc:IssueDate>
+      </cac:CreditNoteDocumentReference>
+    </cac:BillingReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

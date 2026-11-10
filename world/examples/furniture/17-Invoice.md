@@ -62,6 +62,15 @@ Inside `ProjectReference`:
 - `ID` = **PWD-PLAN-OFFICE-26**  
   The department's project: the new planning office.
 
+### Buyer Assigned Reference
+
+Inside `BuyerAssignedReference`:
+
+- `BuyerReferenceCode` = **PWD-PARKS-26-AP**  
+  The buyer's routing code for its invoices: the accounts-payable desk of the cost centre.
+- `BuyerReference` = **Accounts payable, public works**  
+  The desk in words.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -356,6 +365,8 @@ Inside `TaxTotal`:
   A sale to a public body is exempt from the state sales tax (category E).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XB-PUBLIC**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Sale to a public body**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
@@ -402,8 +413,12 @@ Inside `InvoiceLine`:
   A sale to a public body is exempt from the state sales tax (category E).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-PUBLIC**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale to a public body**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Item/Dimension/AttributeID` = **Length**  
@@ -448,8 +463,12 @@ Inside `InvoiceLine`:
   A sale to a public body is exempt from the state sales tax (category E).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-PUBLIC**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale to a public body**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Price/PriceAmount` = **48** (currencyID `XBL`)  
@@ -486,6 +505,10 @@ Inside `InvoiceLine`:
   <cac:ProjectReference>
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
+  <cac:BuyerAssignedReference>
+    <cbc:BuyerReferenceCode>PWD-PARKS-26-AP</cbc:BuyerReferenceCode>
+    <cbc:BuyerReference>Accounts payable, public works</cbc:BuyerReference>
+  </cac:BuyerAssignedReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -731,6 +754,7 @@ Inside `InvoiceLine`:
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -767,7 +791,9 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
@@ -814,7 +840,9 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

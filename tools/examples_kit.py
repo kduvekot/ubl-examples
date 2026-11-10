@@ -107,12 +107,20 @@ def tax_rule(seller, buyer, iid):
     return ("O", 0, None, "Lisavu has no sales tax or value added tax: no tax applies (category O).", None)
 
 
-def tax_category(rule):
+def tax_category(rule, kind=None):
     code, percent, scheme, why, exemption = rule
     out = {"ID": V(code, why), "Percent": V(str(percent), "The rate for this category." if percent else
                                             "No tax is charged in this category.")}
     if exemption:
+        codes = next((c["tax"].get("exemption_codes", {}) for c in WORLD["countries"].values()
+                      if exemption in c["tax"].get("exemption_codes", {})), {})
+        if exemption in codes:
+            out["TaxExemptionReasonCode"] = V(codes[exemption], "The world's code for the exemption reason "
+                                                                "(world/countries.json).")
         out["TaxExemptionReason"] = V(exemption, "Why no tax is charged, stated rather than left out (UBL rule IND6).")
+    if kind:
+        out["SupplyTypeCode"] = V("Goods" if kind == "goods" else "Services", "Whether the category applies to goods "
+                                                                               "or services.")
     if scheme:
         out["TaxScheme"] = {"ID": V(scheme["id"], f"UN/EDIFACT 5153 code of the seller's tax: {scheme['name'].lower()}.")}
     else:
@@ -447,6 +455,13 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][0], "The language the texts "
                                  "of the invoice are in: the seller's country's language."),
         **refs,
+        **({"PaymentCurrencyCode": V(cur, "Payment is asked in the invoice currency, also from abroad.")}
+           if cross_border(seller, buyer) else {}),
+        **({"BuyerAssignedReference": {
+            "BuyerReferenceCode": V(f"{PARTY[buyer]['identity']['cost_centre']['code']}-AP", "The buyer's routing "
+                                    "code for its invoices: the accounts-payable desk of the cost centre."),
+            "BuyerReference": V("Accounts payable, public works", "The desk in words.")}}
+           if is_public(buyer) and PARTY[buyer]["identity"].get("cost_centre") else {}),
         "PaymentMeans": payment_means(flow, seller, buyer, doc["parties"].get("PayeeParty", seller), day, due_days,
                                       flow.number(key, seller, "Invoice"), "The account to pay to."),
         "PaymentTerms": payment_terms(flow, seller, buyer, day, due_days, base + tax +
@@ -458,7 +473,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "InvoicedQuantity": qty(q, ITEM[d["item"]]["unit"], d.get("invoice_why", "The quantity delivered.")),
             "LineExtensionAmount": amount(amt, cur, f"{q} × {unit_price(d['item'], cur)}, rounded to the minor unit of "
                                                     "the currency."),
-            "Item": item(d["item"], tax_category(rule)),
+            "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
             "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
     line_features(rows, out["InvoiceLine"], cur, gross)
@@ -478,26 +493,31 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
     return merge_extra(out, extra)
 
 
-def remittance(flow, n, doc, day, why, key="invoice", discount=None):
+def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None):
+    """credit: (number, date, amount) of a credit note the payer deducts."""
     payer, payee = doc["from"], doc["to"]
     cur, total = flow.numbers[f"{key}-currency"], flow.numbers[f"{key}-amount"]
     paid = money(total * (1 - Decimal(discount) / 100), cur) if discount else total
-    return {
+    if credit:
+        paid -= credit[2]
+    out = {
         "ID": V(flow.number("remittance", payer, "RemittanceAdvice"), "The payer's remittance number."),
         "IssueDate": V(flow.date(day), why),
         "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice paid"),
         "Note": V("Payment of the invoice below.", "What the advice is for."),
         "TotalDebitAmount": amount(total, cur, "The invoices paid."),
         "TotalCreditAmount": amount(total - paid, cur, "Credits taken: the settlement discount." if discount else
-                                    "No credits taken."),
+                                    "The credit note deducted." if credit else "No credits taken."),
         "PaymentOrderReference": V(f"{initials(payer)}-PAY-26-{flow.base:04d}", "The payment order the payer gave "
                                                                                 "its bank."),
         "PayerReference": V(f"{initials(payer)}-{flow.base:04d}", "The payer's own reference for this payment run."),
         "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked to "
                                                                       "quote."),
-        "LineCountNumeric": V("1", "One invoice paid."),
+        "LineCountNumeric": V("2" if credit else "1", "The invoice paid" + (" and the credit note deducted."
+                                                                             if credit else ".")),
         "TotalPaymentAmount": amount(paid, cur, f"The amount transferred: the payable amount less the {discount} % "
                                                 f"discount for payment within the discount period." if discount else
+                                     "The amount transferred: the invoice less the credit note." if credit else
                                      "The amount transferred: the payable amount of the invoice."),
         "PaymentMeans": {
             "PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.", listID="UN/EDIFACT EDED 4461"),
@@ -529,6 +549,14 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None):
                 "ID": V(flow.numbers[key], "The invoice this payment settles."),
                 "IssueDate": V(flow.numbers[f"{key}-date"], "Its issue date, so the reference is unambiguous.")}}},
     }
+    if credit:
+        out["RemittanceAdviceLine"] = [out["RemittanceAdviceLine"], {
+            "ID": V("2", "The credit note deducted."),
+            "CreditLineAmount": amount(credit[2], cur, "The amount of the credit note, set off against the payment."),
+            "BillingReference": {"CreditNoteDocumentReference": {
+                "ID": V(credit[0], "The credit note deducted."),
+                "IssueDate": V(credit[1], "Its issue date.")}}}]
+    return out
 
 
 # ---------------------------------------------------------------- transport
@@ -699,7 +727,7 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs):
             "CreditNoteLine": [{"ID": V(str(i), "The line number."),
                                 "CreditedQuantity": qty(q, ITEM[d["item"]]["unit"], d["why"]),
                                 "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
-                                "Item": item(d["item"], tax_category(rule)),
+                                "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
                                 "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     line_features(rows, out["CreditNoteLine"], cur, gross)
     return out
@@ -874,7 +902,7 @@ def purchase_receipt(flow, n, doc, day, why, rows_spec, cash, promotion=None):
                                      "Quantity": qty(q, ITEM[d["item"]]["unit"], d["why"]),
                                      "LineExtensionAmount": amount(amt, cur, "Quantity times the price paid, before "
                                                                              "the sales tax."),
-                                     "Item": item(d["item"], tax_category(rule)),
+                                     "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
                                      "Price": line_price(d["item"], rule)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
 
 
@@ -902,7 +930,7 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
            line: [{"ID": V(str(i), "The line number."),
                    qname: qty(q, ITEM[d["item"]]["unit"], d["why"]),
                    "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
-                   "Item": item(d["item"], tax_category(rule)),
+                   "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
                    "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     if not credit:
         out["InvoiceTypeCode"] = V("389", "UN/EDIFACT 1001 code 389: self-billed invoice.")

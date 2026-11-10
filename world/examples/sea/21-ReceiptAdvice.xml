@@ -428,7 +428,7 @@
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:ReceivedQuantity unitCode="H87">12</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="H87">11</cbc:ReceivedQuantity>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

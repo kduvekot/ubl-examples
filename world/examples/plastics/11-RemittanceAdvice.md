@@ -43,7 +43,7 @@ The packaging maker pays from Bayvarra to the waste processor's account in Urvan
 - `InvoicingPartyReference` = **RF89RRINV260894**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
-  One invoice paid.
+  The invoice paid.
 
 ### Accounting Customer Party
 

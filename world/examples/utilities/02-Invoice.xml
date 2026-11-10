@@ -22,6 +22,10 @@
     <cbc:DescriptionCode>Month</cbc:DescriptionCode>
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
+  <cac:PurchaseReference>
+    <cbc:ID>FE-C-0047120</cbc:ID>
+    <cbc:Description>Supply contract</cbc:Description>
+  </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.ferranoenergy.example</cbc:WebsiteURI>
@@ -357,6 +361,10 @@
       <cbc:DescriptionCode>Month</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FE-M-881204</cbc:ID>
+      <cbc:Description>Factory, main connection</cbc:Description>
+    </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name>Electricity</cbc:Name>
@@ -366,6 +374,7 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
@@ -389,6 +398,10 @@
       <cbc:DescriptionCode>Month</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FE-M-881377</cbc:ID>
+      <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
+    </cac:PurchaseReference>
     <cac:OriginatorParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
@@ -411,6 +424,7 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

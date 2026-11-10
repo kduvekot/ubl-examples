@@ -43,7 +43,7 @@ The buyer pays the telecom bill from its account at the island's bank.
 - `InvoicingPartyReference` = **RF53STINV260322**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
-  One invoice paid.
+  The invoice paid.
 
 ### Accounting Customer Party
 

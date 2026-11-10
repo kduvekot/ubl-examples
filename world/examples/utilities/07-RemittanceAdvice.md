@@ -43,7 +43,7 @@ The shop pays its water bill and says which invoice the transfer settles.
 - `InvoicingPartyReference` = **RF03CSWCINV260317**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
-  One invoice paid.
+  The invoice paid.
 
 ### Accounting Customer Party
 

@@ -43,7 +43,7 @@ The mill pays the island's ginnery: money flows to the island for once.
 - `InvoicingPartyReference` = **RF30SCGINV260207**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
-  One invoice paid.
+  The invoice paid.
 
 ### Accounting Customer Party
 

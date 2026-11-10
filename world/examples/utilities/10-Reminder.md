@@ -34,6 +34,12 @@ The household has not paid by the due date; the utility reminds it of the amount
   Why the bill is unpaid.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the unpaid bill; it has two decimals.
+- `AccountingCostCode` = **1210**  
+  The water company's receivables account for households.
+- `AccountingCost` = **Household receivables**  
+  In words.
+- `LineCountNumeric` = **2**  
+  The bill and the fee.
 
 ### Reminder Period
 
@@ -43,6 +49,23 @@ Inside `ReminderPeriod`:
   Overdue from the failed collection.
 - `EndDate` = **2026-05-01**  
   Until the reminder.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BLUM-RTN-26-04-0193**  
+  The bank's notice that the direct debit was returned.
+- `IssueDate` = **2026-04-24**  
+  The day after the failed collection.
+- `DocumentTypeCode` = **ReturnNotice**  
+  What the document is.
+- `DocumentDescription` = **Direct debit returned: insufficient funds.**  
+  What it says.
+- `IssuerParty/PartyIdentification/ID` = **20411370** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `IssuerParty/PartyName/Name` = **Bank of Lumeport**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Supplier Party
 
@@ -172,6 +195,15 @@ Inside `AccountingCustomerParty`:
 - `Party/Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
 
+### Payee Party
+
+Inside `PayeeParty`:
+
+- `PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Coastal State Water Company**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -206,6 +238,32 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **Please pay within ten days by credit transfer; the next collection will be by direct debit again.**  
+  What the household is asked to do.
+- `PaymentDueDate` = **2026-05-11**  
+  Ten days after the reminder.
+
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  No sales tax on a reminder fee.
+- `TaxSubtotal/TaxableAmount` = **5.00** (currencyID `XBL`)  
+  The fee.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  None.
+- `TaxSubtotal/TaxCategory/ID` = **O**  
+  A reminder fee is compensation, not a supply: outside the scope of the sales tax.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Compensation for late payment**  
+  Why no tax.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the state sales tax.
 
 ### Legal Monetary Total
 
@@ -264,10 +322,27 @@ Inside `ReminderLine`:
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>1210</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Household receivables</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ReminderPeriod>
     <cbc:StartDate>2026-04-23</cbc:StartDate>
     <cbc:EndDate>2026-05-01</cbc:EndDate>
   </cac:ReminderPeriod>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BLUM-RTN-26-04-0193</cbc:ID>
+    <cbc:IssueDate>2026-04-24</cbc:IssueDate>
+    <cbc:DocumentTypeCode>ReturnNotice</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>Direct debit returned: insufficient funds.</cbc:DocumentDescription>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411370</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bank of Lumeport</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -377,6 +452,14 @@ Inside `ReminderLine`:
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Coastal State Water Company</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cac:PayeeFinancialAccount>
@@ -406,6 +489,24 @@ Inside `ReminderLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">5.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:TaxExemptionReason>Compensation for late payment</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">43.78</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">43.78</cbc:PayableAmount>

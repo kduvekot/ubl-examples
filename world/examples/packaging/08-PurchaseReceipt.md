@@ -299,6 +299,8 @@ Inside `PurchaseReceiptLine`:
   A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S).
 - `Item/ClassifiedTaxCategory/Percent` = **6.5**  
   The rate for this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Item/AdditionalItemProperty/Name` = **Material**  
@@ -533,6 +535,7 @@ Inside `PurchaseReceiptLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

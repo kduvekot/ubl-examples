@@ -279,6 +279,8 @@ Inside `TaxTotal`:
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XB-RESALE**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
@@ -558,6 +560,7 @@ Inside `OrderLine`:
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

@@ -56,6 +56,15 @@ Inside `InvoicePeriod`:
 - `Description` = **March 2026**  
   The period in words.
 
+### Purchase Reference
+
+Inside `PurchaseReference`:
+
+- `ID` = **FE-C-0047120**  
+  The customer's contract number with the utility.
+- `Description` = **Supply contract**  
+  What the number is.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -464,6 +473,10 @@ Inside `InvoiceLine`:
   A monthly bill.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
+- `PurchaseReference/ID` = **FE-M-881204**  
+  The meter or subscription the line is for.
+- `PurchaseReference/Description` = **Factory, main connection**  
+  Where it is.
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
   The seller's description; item electricity of Ferrano Energy (world/items.json).
 - `Item/Name` = **Electricity**  
@@ -474,6 +487,8 @@ Inside `InvoiceLine`:
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `Item/ClassifiedTaxCategory/Percent` = **20**  
   The rate for this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `Price/PriceAmount` = **27.3** (currencyID `XUF`)  
@@ -500,6 +515,10 @@ Inside `InvoiceLine`:
   A monthly bill.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
+- `PurchaseReference/ID` = **FE-M-881377**  
+  The meter or subscription the line is for.
+- `PurchaseReference/Description` = **Warehouse of Castrano Logistics**  
+  Where it is.
 - `OriginatorParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `OriginatorParty/PartyName/Name` = **Castrano Logistics**  
@@ -516,6 +535,8 @@ Inside `InvoiceLine`:
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `Item/ClassifiedTaxCategory/Percent` = **20**  
   The rate for this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `Price/PriceAmount` = **27.3** (currencyID `XUF`)  
@@ -550,6 +571,10 @@ Inside `InvoiceLine`:
     <cbc:DescriptionCode>Month</cbc:DescriptionCode>
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
+  <cac:PurchaseReference>
+    <cbc:ID>FE-C-0047120</cbc:ID>
+    <cbc:Description>Supply contract</cbc:Description>
+  </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.ferranoenergy.example</cbc:WebsiteURI>
@@ -885,6 +910,10 @@ Inside `InvoiceLine`:
       <cbc:DescriptionCode>Month</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FE-M-881204</cbc:ID>
+      <cbc:Description>Factory, main connection</cbc:Description>
+    </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name>Electricity</cbc:Name>
@@ -894,6 +923,7 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
@@ -917,6 +947,10 @@ Inside `InvoiceLine`:
       <cbc:DescriptionCode>Month</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FE-M-881377</cbc:ID>
+      <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
+    </cac:PurchaseReference>
     <cac:OriginatorParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
@@ -939,6 +973,7 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

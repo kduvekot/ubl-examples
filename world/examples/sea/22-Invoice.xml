@@ -12,6 +12,7 @@
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
   <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
@@ -431,6 +432,7 @@
     <cac:TaxCategory>
       <cbc:ID>G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
       <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
@@ -444,6 +446,7 @@
     <cac:TaxCategory>
       <cbc:ID>G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
       <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
@@ -465,6 +468,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -536,7 +540,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
@@ -709,7 +715,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

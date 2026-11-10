@@ -43,7 +43,7 @@ The distributor announces the cross-border payment and which invoices it settles
 - `InvoicingPartyReference` = **RF35VIINV260164**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
-  One invoice paid.
+  The invoice paid.
 
 ### Accounting Customer Party
 

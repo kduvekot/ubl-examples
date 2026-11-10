@@ -32,6 +32,8 @@ Packaging exported to Urvania: no sales tax in Bayvarra, stated.
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency; it has two decimals.
+- `PaymentCurrencyCode` = **XBL**  
+  Payment is asked in the invoice currency, also from abroad.
 - `AccountingCostCode` = **3100**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Raw materials and parts**  
@@ -358,6 +360,8 @@ Inside `TaxTotal`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
@@ -402,8 +406,12 @@ Inside `InvoiceLine`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Item/AdditionalItemProperty/Name` = **Thickness**  
@@ -439,6 +447,7 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-06-01</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -711,6 +720,7 @@ Inside `InvoiceLine`:
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -746,7 +756,9 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

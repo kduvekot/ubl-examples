@@ -1387,6 +1387,17 @@
   },
   {
    "flow": "sea",
+   "doc": "CreditNote",
+   "from": "6-xb",
+   "to": "1-xl",
+   "why": "One boxed side frame arrived crushed; the distributor credits it, and the buyer deducts the credit from what it pays the factor.",
+   "parties": {
+    "AccountingSupplierParty": "6-xb",
+    "AccountingCustomerParty": "1-xl"
+   }
+  },
+  {
+   "flow": "sea",
    "doc": "RemittanceAdvice",
    "from": "1-xl",
    "to": "24-xb",

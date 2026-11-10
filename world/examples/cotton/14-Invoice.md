@@ -32,6 +32,8 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the seller's currency; it has three decimals.
+- `PaymentCurrencyCode` = **XLC**  
+  Payment is asked in the invoice currency, also from abroad.
 - `AccountingCostCode` = **2200**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Raw cotton**  
@@ -374,6 +376,8 @@ Inside `InvoiceLine`:
   Lisavu has no sales tax or value added tax: no tax applies (category O).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Item/AdditionalItemProperty/Name` = **Grade**  
@@ -431,6 +435,7 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-04-01</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XLC</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -708,6 +713,7 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>

@@ -396,6 +396,8 @@ Inside `TaxTotal`:
   Bayvarra's sales tax is charged only on sales to final consumers; a service to a business is exempt (category E).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XB-SVC-B2B**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service to a business**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
@@ -452,6 +454,8 @@ Inside `DebitNoteLine`:
   Bayvarra's sales tax is charged only on sales to final consumers; a service to a business is exempt (category E).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-SVC-B2B**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service to a business**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
@@ -763,6 +767,7 @@ Inside `DebitNoteLine`:
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-SVC-B2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -812,6 +817,7 @@ Inside `DebitNoteLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-SVC-B2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

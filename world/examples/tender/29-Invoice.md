@@ -38,6 +38,8 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   The seller reports its value added tax in ferra.
 - `PricingCurrencyCode` = **XUF**  
   The contract prices are in ferra.
+- `PaymentCurrencyCode` = **XBL**  
+  Payment is asked in the invoice currency, also from abroad.
 - `AccountingCostCode` = **PWD-PARKS-26**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Parks renewal programme 2026**  
@@ -74,6 +76,15 @@ Inside `ProjectReference`:
 
 - `ID` = **PWD-PARKS-26**  
   The programme the department books it on.
+
+### Buyer Assigned Reference
+
+Inside `BuyerAssignedReference`:
+
+- `BuyerReferenceCode` = **PWD-PARKS-26-AP**  
+  The buyer's routing code for its invoices: the accounts-payable desk of the cost centre.
+- `BuyerReference` = **Accounts payable, public works**  
+  The desk in words.
 
 ### Annotation
 
@@ -443,6 +454,8 @@ Inside `TaxTotal`:
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XU-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
@@ -459,6 +472,8 @@ Inside `TaxTotal`:
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XU-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
@@ -535,8 +550,12 @@ Inside `InvoiceLine`:
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XU-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
@@ -721,6 +740,7 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
+  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -737,6 +757,10 @@ Inside `InvoiceLine`:
   <cac:ProjectReference>
     <cbc:ID>PWD-PARKS-26</cbc:ID>
   </cac:ProjectReference>
+  <cac:BuyerAssignedReference>
+    <cbc:BuyerReferenceCode>PWD-PARKS-26-AP</cbc:BuyerReferenceCode>
+    <cbc:BuyerReference>Accounts payable, public works</cbc:BuyerReference>
+  </cac:BuyerAssignedReference>
   <cac:Annotation>
     <cbc:SubjectCode>Contract</cbc:SubjectCode>
     <cbc:Subject>Releases under the framework contract</cbc:Subject>
@@ -1037,6 +1061,7 @@ Inside `InvoiceLine`:
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -1053,6 +1078,7 @@ Inside `InvoiceLine`:
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -1110,7 +1136,9 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

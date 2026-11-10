@@ -30,14 +30,14 @@ The factor, who now owns the receivables, sends the statement of account on beha
   Who the statement is for.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the invoices; it has two decimals.
-- `TotalDebitAmount` = **43778.00** (currencyID `XBL`)  
-  The open invoice.
-- `TotalCreditAmount` = **0.00** (currencyID `XBL`)  
-  No payments yet.
+- `TotalDebitAmount` = **53778.00** (currencyID `XBL`)  
+  The invoice in full.
+- `TotalCreditAmount` = **10000.00** (currencyID `XBL`)  
+  The deposit the buyer paid on the order.
 - `TotalBalanceAmount` = **43778.00** (currencyID `XBL`)  
   What is owed.
-- `LineCountNumeric` = **1**  
-  One line.
+- `LineCountNumeric` = **2**  
+  The invoice and the deposit.
 - `StatementTypeCode` = **Account**  
   A statement of the account.
 
@@ -49,6 +49,24 @@ Inside `StatementPeriod`:
   From the invoice.
 - `EndDate` = **2026-06-13**  
   To the statement date.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **HF-FA-2026-007**  
+  The factoring agreement between the distributor and the factor.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **HF-SIG-26-0040**  
+  The factor's seal on the statement.
+- `SignatoryParty/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Harbourline Factoring**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Supplier Party
 
@@ -230,6 +248,24 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Buyer Customer Party
+
+Inside `BuyerCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Seller Supplier Party
+
+Inside `SellerSupplierParty`:
+
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Payee Party
 
 Inside `PayeeParty`:
@@ -378,20 +414,29 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
 
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **Pay the balance by the due date of the invoice.**  
+  The terms.
+- `PaymentDueDate` = **2026-06-28**  
+  The due date.
+
 ### Statement Line
 
 Inside `StatementLine`:
 
 - `ID` = **1**  
   The open invoice.
-- `Note` = **Balance after the deposit of 10,000.00 lume.**  
+- `Note` = **The invoice, bought by the factor.**  
   What the line shows.
 - `BalanceBroughtForwardIndicator` = **false**  
   A new item, not a balance carried over.
-- `DebitLineAmount` = **43778.00** (currencyID `XBL`)  
-  The amount of the invoice, owed to the factor.
-- `BalanceAmount` = **43778.00** (currencyID `XBL`)  
-  Still open: nothing paid yet.
+- `DebitLineAmount` = **53778.00** (currencyID `XBL`)  
+  The invoice in full.
+- `BalanceAmount` = **53778.00** (currencyID `XBL`)  
+  Before the deposit.
 - `PaymentPurposeCode` = **GDDS**  
   ISO 20022 purpose code GDDS: purchase of goods.
 - `PaymentTerms/PaymentDueDate` = **2026-06-28**  
@@ -403,6 +448,18 @@ Inside `StatementLine`:
 - `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PayeeParty/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PayeeParty/PartyName/Name` = **Harbourline Factoring**  
   A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
   The distributor's invoice, which the factor bought.
@@ -416,6 +473,26 @@ Inside `StatementLine`:
   The buyer's currency.
 - `ExchangeRate/CalculationRate` = **0.4**  
   For the buyer's information.
+- `ID` = **2**  
+  The deposit.
+- `Note` = **Paid to the distributor before the invoice was assigned.**  
+  Why it is a credit.
+- `CreditLineAmount` = **10000.00** (currencyID `XBL`)  
+  The deposit.
+- `BalanceAmount` = **43778.00** (currencyID `XBL`)  
+  Open after the deposit: what the buyer still owes.
+- `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  Paid by credit transfer.
+- `InvoicePeriod/StartDate` = **2026-05-08**  
+  The order's deposit period.
+- `InvoicePeriod/EndDate` = **2026-05-09**  
+  Paid and received.
+- `CollectedPayment/ID` = **VT-DEP-26-0412**  
+  The deposit payment.
+- `CollectedPayment/PaidAmount` = **10000.00** (currencyID `XBL`)  
+  Paid.
+- `CollectedPayment/ReceivedDate` = **2026-05-09**  
+  Received by the distributor.
 
 ## The document
 
@@ -432,15 +509,29 @@ Inside `StatementLine`:
   <cbc:IssueTime>08:43:00</cbc:IssueTime>
   <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">43778.00</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">53778.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">10000.00</cbc:TotalCreditAmount>
   <cbc:TotalBalanceAmount currencyID="XBL">43778.00</cbc:TotalBalanceAmount>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:StatementTypeCode>Account</cbc:StatementTypeCode>
   <cac:StatementPeriod>
     <cbc:StartDate>2026-05-14</cbc:StartDate>
     <cbc:EndDate>2026-06-13</cbc:EndDate>
   </cac:StatementPeriod>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>HF-FA-2026-007</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>HF-SIG-26-0040</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Harbourline Factoring</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -598,6 +689,26 @@ Inside `StatementLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
   <cac:PayeeParty>
     <cbc:WebsiteURI>https://www.harbourline.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">6499</cbc:IndustryClassificationCode>
@@ -717,12 +828,16 @@ Inside `StatementLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
+    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Balance after the deposit of 10,000.00 lume.</cbc:Note>
+    <cbc:Note>The invoice, bought by the factor.</cbc:Note>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
-    <cbc:DebitLineAmount currencyID="XBL">43778.00</cbc:DebitLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">43778.00</cbc:BalanceAmount>
+    <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">53778.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>GDDS</cbc:PaymentPurposeCode>
     <cac:PaymentTerms>
       <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
@@ -747,6 +862,34 @@ Inside `StatementLine`:
         </cac:PartyName>
       </cac:Party>
     </cac:SellerSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:PayeeParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Harbourline Factoring</cbc:Name>
+      </cac:PartyName>
+    </cac:PayeeParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>LD-INV-26-0147</cbc:ID>
@@ -761,6 +904,24 @@ Inside `StatementLine`:
       <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
       <cbc:CalculationRate>0.4</cbc:CalculationRate>
     </cac:ExchangeRate>
+  </cac:StatementLine>
+  <cac:StatementLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Paid to the distributor before the invoice was assigned.</cbc:Note>
+    <cbc:CreditLineAmount currencyID="XBL">10000.00</cbc:CreditLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">43778.00</cbc:BalanceAmount>
+    <cac:PaymentMeans>
+      <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    </cac:PaymentMeans>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-05-08</cbc:StartDate>
+      <cbc:EndDate>2026-05-09</cbc:EndDate>
+    </cac:InvoicePeriod>
+    <cac:CollectedPayment>
+      <cbc:ID>VT-DEP-26-0412</cbc:ID>
+      <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
+      <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+    </cac:CollectedPayment>
   </cac:StatementLine>
 </Statement>
 ```

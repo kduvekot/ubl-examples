@@ -43,7 +43,7 @@ The manufacturer pays across the border.
 - `InvoicingPartyReference` = **RF83MSINV260635**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
-  One invoice paid.
+  The invoice paid.
 
 ### Accounting Customer Party
 

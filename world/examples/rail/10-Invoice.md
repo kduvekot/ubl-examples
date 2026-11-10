@@ -392,6 +392,8 @@ Inside `InvoiceLine`:
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `Item/ClassifiedTaxCategory/Percent` = **20**  
   The rate for this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `Price/PriceAmount` = **54600** (currencyID `XUF`)  
@@ -711,6 +713,7 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

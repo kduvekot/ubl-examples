@@ -34,6 +34,8 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   The notice of assignment the factoring agreement requires.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency; it has two decimals.
+- `PaymentCurrencyCode` = **XBL**  
+  Payment is asked in the invoice currency, also from abroad.
 - `PaymentAlternativeCurrencyCode` = **XLC**  
   The buyer's own currency, in which the amount is shown too.
 - `AccountingCostCode` = **500**  
@@ -556,6 +558,8 @@ Inside `AllowanceCharge`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxCategory/TaxScheme/ID` = **STT**  
@@ -570,6 +574,8 @@ Inside `AllowanceCharge`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxCategory/TaxScheme/ID` = **STT**  
@@ -604,6 +610,8 @@ Inside `TaxTotal`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
@@ -696,8 +704,12 @@ Inside `InvoiceLine`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
@@ -882,8 +894,12 @@ Inside `InvoiceLine`:
   An export from Bayvarra: the state sales tax is not charged (category G).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
   Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -912,6 +928,7 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
   <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
@@ -1331,6 +1348,7 @@ Inside `InvoiceLine`:
     <cac:TaxCategory>
       <cbc:ID>G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
       <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
@@ -1344,6 +1362,7 @@ Inside `InvoiceLine`:
     <cac:TaxCategory>
       <cbc:ID>G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
       <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
@@ -1365,6 +1384,7 @@ Inside `InvoiceLine`:
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -1436,7 +1456,9 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
@@ -1609,7 +1631,9 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

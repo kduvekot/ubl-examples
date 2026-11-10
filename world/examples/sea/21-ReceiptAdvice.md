@@ -511,8 +511,8 @@ Inside `ReceiptLine`:
   The repair and maintenance manual.
 - `ID` = **2**  
   The line number.
-- `ReceivedQuantity` = **12** (unitCode `H87`)  
-  Counted at the goods-in and found as announced.
+- `ReceivedQuantity` = **11** (unitCode `H87`)  
+  One box crushed at the port; the frame inside is cracked.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
@@ -971,7 +971,7 @@ Inside `ReceiptLine`:
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:ReceivedQuantity unitCode="H87">12</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="H87">11</cbc:ReceivedQuantity>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

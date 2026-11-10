@@ -43,7 +43,7 @@ The manufacturer tells the mine which invoices the transfer pays. Both companies
 - `InvoicingPartyReference` = **RF73SMINV260312**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
-  One invoice paid.
+  The invoice paid.
 
 ### Accounting Customer Party
 

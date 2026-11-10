@@ -54,6 +54,15 @@ Inside `InvoicePeriod`:
 - `Description` = **March 2026**  
   The period in words.
 
+### Purchase Reference
+
+Inside `PurchaseReference`:
+
+- `ID` = **ST-C-1077**  
+  The customer's contract number with the utility.
+- `Description` = **Supply contract**  
+  What the number is.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -334,6 +343,10 @@ Inside `InvoiceLine`:
   6 × 21.18, rounded to the minor unit of the currency.
 - `PaymentPurposeCode` = **PHON**  
   ISO 20022 purpose code PHON: telephone bill.
+- `PurchaseReference/ID` = **ST-L-BUS6**  
+  The meter or subscription the line is for.
+- `PurchaseReference/Description` = **Six business lines**  
+  Where it is.
 - `Item/Description` = **Business telephone and data line, monthly subscription.**  
   The seller's description; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/Name` = **Business telephone line**  
@@ -344,6 +357,8 @@ Inside `InvoiceLine`:
   Lisavu has no sales tax or value added tax: no tax applies (category O).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Price/PriceAmount` = **21.18** (currencyID `XLC`)  
@@ -358,6 +373,10 @@ Inside `InvoiceLine`:
   35 × 0.424, rounded to the minor unit of the currency.
 - `PaymentPurposeCode` = **PHON**  
   ISO 20022 purpose code PHON: telephone bill.
+- `PurchaseReference/ID` = **ST-D-0042**  
+  The meter or subscription the line is for.
+- `PurchaseReference/Description` = **Mobile data pool**  
+  Where it is.
 - `Item/Description` = **Mobile data beyond the subscription, per gigabyte.**  
   The seller's description; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/Name` = **Mobile data**  
@@ -368,6 +387,8 @@ Inside `InvoiceLine`:
   Lisavu has no sales tax or value added tax: no tax applies (category O).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Price/PriceAmount` = **0.424** (currencyID `XLC`)  
@@ -401,6 +422,10 @@ Inside `InvoiceLine`:
     <cbc:DescriptionCode>Month</cbc:DescriptionCode>
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
+  <cac:PurchaseReference>
+    <cbc:ID>ST-C-1077</cbc:ID>
+    <cbc:Description>Supply contract</cbc:Description>
+  </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
@@ -626,6 +651,10 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode>PHON</cbc:PaymentPurposeCode>
+    <cac:PurchaseReference>
+      <cbc:ID>ST-L-BUS6</cbc:ID>
+      <cbc:Description>Six business lines</cbc:Description>
+    </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
       <cbc:Name>Business telephone line</cbc:Name>
@@ -635,6 +664,7 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>
@@ -650,6 +680,10 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode>PHON</cbc:PaymentPurposeCode>
+    <cac:PurchaseReference>
+      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:Description>Mobile data pool</cbc:Description>
+    </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
       <cbc:Name>Mobile data</cbc:Name>
@@ -659,6 +693,7 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>
