@@ -543,6 +543,16 @@ Inside `Shipment`:
 
 - `ID` = **VI-SH-26-0725**  
   The samples travelling under the carnet.
+- `Consignment/ID` = **VI-CS-CARNET-26**  
+  The consignment of the samples.
+- `Consignment/TransportAdvisorParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportAdvisorParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransitCountry/IdentificationCode` = **XB**  
+  The samples cross Bayvarra by road to Lumeport airport: a transit country between Urvania and the island.
+- `Consignment/OfficeOfSubSequentiallyEntryLocation/Name` = **Island Customs Service, Selanu airport**  
+  Where the goods enter next, on the island.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -1333,6 +1343,23 @@ Inside `Signature`:
   </cac:ImportingCustomsParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0725</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>VI-CS-CARNET-26</cbc:ID>
+      <cac:TransportAdvisorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Bayforth Forwarding</cbc:Name>
+        </cac:PartyName>
+      </cac:TransportAdvisorParty>
+      <cac:TransitCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:TransitCountry>
+      <cac:OfficeOfSubSequentiallyEntryLocation>
+        <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      </cac:OfficeOfSubSequentiallyEntryLocation>
+    </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>

@@ -44,6 +44,13 @@ Inside `OrderReference`:
 - `ID` = **SCG-SEASON-2026/03**  
   The call-off under the season agreement.
 
+### Project Reference
+
+Inside `ProjectReference`:
+
+- `ID` = **SCC-COTTON-QUALITY-26**  
+  The chamber's cotton quality programme, under which the farm's seed cotton is classed.
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -282,6 +289,24 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at DespatchSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -337,6 +362,9 @@ Inside `DespatchLine`:
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
   </cac:OrderReference>
+  <cac:ProjectReference>
+    <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
+  </cac:ProjectReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -541,6 +569,24 @@ Inside `DespatchLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Textile Mill</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:Shipment>
     <cbc:ID>LCF-SH-26-03</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">20400</cbc:GrossWeightMeasure>

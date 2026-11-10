@@ -1610,6 +1610,11 @@
         <cbc:StartTime>09:00:00</cbc:StartTime>
         <cbc:EndTime>11:00:00</cbc:EndTime>
       </cac:EstimatedDeliveryPeriod>
+      <cac:FuelConsumption>
+        <cbc:ID>TH-FC-26-0159</cbc:ID>
+        <cbc:FuelTypeCode>Diesel</cbc:FuelTypeCode>
+        <cbc:FuelConsumptionMeasure unitCode="LTR">61</cbc:FuelConsumptionMeasure>
+      </cac:FuelConsumption>
     </cac:Delivery>
     <cac:ReturnAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

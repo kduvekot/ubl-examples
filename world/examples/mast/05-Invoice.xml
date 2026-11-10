@@ -270,6 +270,15 @@
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:PricingReference>
+      <cac:OriginalItemLocationQuantity>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        <cac:DeliveryUnit>
+          <cbc:BatchQuantity unitCode="C62">1</cbc:BatchQuantity>
+          <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        </cac:DeliveryUnit>
+      </cac:OriginalItemLocationQuantity>
+    </cac:PricingReference>
     <cac:Item>
       <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
       <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>

@@ -26,6 +26,21 @@ The manufacturer, as producer and notifier, notifies the planned movements to th
   Notified before the movements start.
 - `IssueTime` = **09:28:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `WasteNotificationTypeCode` = **Recovery**  
+  A notification of waste for recovery, not disposal.
+- `ConsignmentQuantity` = **12** (unitCode `C62`)  
+  About twelve movements over the year.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-WN**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -254,6 +269,15 @@ Inside `CustomsParty`:
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `PartyName/Name` = **Customs Administration of Urvania**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
+
+### Disposal Facility Party
+
+Inside `DisposalFacilityParty`:
+
+- `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Recovery Facility Party
 
@@ -486,6 +510,13 @@ Inside `Shipment`:
 - `GoodsItem/HazardousRiskIndicator` = **false**  
   Sorted polyethylene is not hazardous waste.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **VI-WASTE-CONTRACT-26**  
+  The contract between producer and recovery facility, which the notification needs.
+
 ## The document
 
 ```xml
@@ -499,6 +530,19 @@ Inside `Shipment`:
   <cbc:UUID>96a4f1da-8c13-5fd0-9418-114168f14a1f</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>09:28:00</cbc:IssueTime>
+  <cbc:WasteNotificationTypeCode>Recovery</cbc:WasteNotificationTypeCode>
+  <cbc:ConsignmentQuantity unitCode="C62">12</cbc:ConsignmentQuantity>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-WN</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -703,6 +747,14 @@ Inside `Shipment`:
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
   </cac:CustomsParty>
+  <cac:DisposalFacilityParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+  </cac:DisposalFacilityParty>
   <cac:RecoveryFacilityParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
@@ -909,5 +961,8 @@ Inside `Shipment`:
       <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>VI-WASTE-CONTRACT-26</cbc:ID>
+  </cac:DocumentReference>
 </WasteNotification>
 ```

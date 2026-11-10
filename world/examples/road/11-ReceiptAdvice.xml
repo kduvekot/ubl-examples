@@ -11,7 +11,7 @@
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
   <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode>Accepted</cbc:DeliveryAcceptanceCode>
-  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:Note>Counted and checked at goods-in: one bench short, one box of side frames over.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
@@ -339,8 +339,11 @@
   </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>
+    <cbc:UUID>01193af5-785e-5e35-84c8-25a8b365acea</cbc:UUID>
+    <cbc:Note>One pallet held three benches and a box of side frames: mis-picked at the 3PL.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="H87">95</cbc:ReceivedQuantity>
+    <cbc:ShortQuantity unitCode="H87">1</cbc:ShortQuantity>
+    <cbc:ShortageActionCode>Replace</cbc:ShortageActionCode>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -520,11 +523,16 @@
         </cac:ProductDocumentationDocumentReference>
       </cac:CircularityProfile>
     </cac:Item>
+    <cac:Shipment>
+      <cbc:ID>CL-SH-26-0154</cbc:ID>
+    </cac:Shipment>
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">12</cbc:ReceivedQuantity>
+    <cbc:UUID>986c8783-e70e-596b-82d0-e70c728412de</cbc:UUID>
+    <cbc:Note>The mis-picked box, in place of the missing bench.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="H87">13</cbc:ReceivedQuantity>
+    <cbc:OversupplyQuantity unitCode="H87">1</cbc:OversupplyQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>

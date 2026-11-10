@@ -424,6 +424,10 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/MortgageHolderParty/PartyIdentification/ID` = **IC41996** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/MortgageHolderParty/PartyName/Name` = **Bank of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Document Reference
 
@@ -813,6 +817,14 @@ Inside `Signature`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:MortgageHolderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41996</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Bank of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:MortgageHolderParty>
     </cac:Consignment>
   </cac:Shipment>
   <cac:DocumentReference>

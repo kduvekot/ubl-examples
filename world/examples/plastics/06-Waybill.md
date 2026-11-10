@@ -572,6 +572,10 @@ Inside `Shipment`:
   The barge's engine fuel.
 - `GoodsItem/EnergyConsumptionAllocation/AllocatedEnergyMeasure` = **5400** (unitCode `KWH`)  
   The goods' share of the voyage's energy, as fuel energy.
+- `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2**  
+  Greenhouse gases as CO2 equivalent.
+- `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/ValueMeasure` = **14.3** (unitCode `KGM`)  
+  2.65 kg per litre of the diesel allocated.
 
 ### Document Reference
 
@@ -1088,6 +1092,10 @@ Inside `Signature`:
       <cac:EnergyConsumptionAllocation>
         <cbc:EnergySourceTypeCode>Diesel</cbc:EnergySourceTypeCode>
         <cbc:AllocatedEnergyMeasure unitCode="KWH">5400</cbc:AllocatedEnergyMeasure>
+        <cac:EnvironmentalEmission>
+          <cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+          <cbc:ValueMeasure unitCode="KGM">14.3</cbc:ValueMeasure>
+        </cac:EnvironmentalEmission>
       </cac:EnergyConsumptionAllocation>
     </cac:GoodsItem>
   </cac:Shipment>

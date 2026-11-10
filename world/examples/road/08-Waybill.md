@@ -2028,6 +2028,12 @@ Inside `Shipment`:
   From nine.
 - `Delivery/EstimatedDeliveryPeriod/EndTime` = **11:00:00**  
   Until eleven.
+- `Delivery/FuelConsumption/ID` = **TH-FC-26-0159**  
+  The fuel of this delivery.
+- `Delivery/FuelConsumption/FuelTypeCode` = **Diesel**  
+  The truck runs on diesel.
+- `Delivery/FuelConsumption/FuelConsumptionMeasure` = **61** (unitCode `LTR`)  
+  About 33 litres per 100 km over 186 km.
 - `ReturnAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `ReturnAddress/AddressFormatCode` = **XU**  
@@ -3724,6 +3730,11 @@ Inside `Signature`:
         <cbc:StartTime>09:00:00</cbc:StartTime>
         <cbc:EndTime>11:00:00</cbc:EndTime>
       </cac:EstimatedDeliveryPeriod>
+      <cac:FuelConsumption>
+        <cbc:ID>TH-FC-26-0159</cbc:ID>
+        <cbc:FuelTypeCode>Diesel</cbc:FuelTypeCode>
+        <cbc:FuelConsumptionMeasure unitCode="LTR">61</cbc:FuelConsumptionMeasure>
+      </cac:FuelConsumption>
     </cac:Delivery>
     <cac:ReturnAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

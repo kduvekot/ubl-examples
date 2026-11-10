@@ -359,6 +359,12 @@ Inside `InvoiceLine`:
   6 × 2400.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
+- `PricingReference/OriginalItemLocationQuantity/HazardousRiskIndicator` = **true**  
+  The batteries are dangerous goods wherever they are delivered.
+- `PricingReference/OriginalItemLocationQuantity/DeliveryUnit/BatchQuantity` = **1** (unitCode `C62`)  
+  Delivered in single crates.
+- `PricingReference/OriginalItemLocationQuantity/DeliveryUnit/HazardousRiskIndicator` = **true**  
+  Each crate is dangerous goods: lithium-ion batteries.
 - `Item/Description` = **Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.**  
   The seller's description; item battery-pack of Saltmere Engineering (world/items.json).
 - `Item/Name` = **Lithium-ion battery pack 48 V 100 Ah**  
@@ -843,6 +849,15 @@ Inside `InvoiceLine`:
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:PricingReference>
+      <cac:OriginalItemLocationQuantity>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        <cac:DeliveryUnit>
+          <cbc:BatchQuantity unitCode="C62">1</cbc:BatchQuantity>
+          <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        </cac:DeliveryUnit>
+      </cac:OriginalItemLocationQuantity>
+    </cac:PricingReference>
     <cac:Item>
       <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
       <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>

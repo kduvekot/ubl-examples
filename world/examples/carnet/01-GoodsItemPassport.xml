@@ -457,6 +457,23 @@
   </cac:ImportingCustomsParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0725</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>VI-CS-CARNET-26</cbc:ID>
+      <cac:TransportAdvisorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Bayforth Forwarding</cbc:Name>
+        </cac:PartyName>
+      </cac:TransportAdvisorParty>
+      <cac:TransitCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:TransitCountry>
+      <cac:OfficeOfSubSequentiallyEntryLocation>
+        <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      </cac:OfficeOfSubSequentiallyEntryLocation>
+    </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>

@@ -7215,3 +7215,175 @@ def _(f, n, doc, out):
                                                                                     "equivalent."),
                                           "ValueMeasure": V("1.9", "Estimated for the trip, electric traction.",
                                                             unitCode="TNE")}}}
+
+
+# --- Coverage completion, batch C: agreements, waste, transit, hazards, deliveries ------------------------------
+
+
+@enrich("sea", "DigitalAgreement")
+def _(f, n, doc, out):
+    roles = {"6-xb": ("true", "The distributor proposed joining the agreement."),
+             "1-xl": ("false", "The trader accepted the proposal.")}
+    for pp in lines_of(out, "ParticipantParty"):
+        pid = pp["Party"].get("_pid")
+        init, why = roles.get(pid, ("false", "A participant."))
+        pp.update({"InitiatingPartyIndicator": V(init, why),
+                   "PrivatePartyIndicator": V("true", "A private company."),
+                   "PublicPartyIndicator": V("false", "Not a public body."),
+                   "ServiceProviderPartyIndicator": V("false", "It exchanges its own documents; it is not a "
+                                                               "service provider."),
+                   "LegalContact": {"Name": V("Legal department", "For legal notices under the agreement.")},
+                   "TechnicalContact": {"Name": V("Integration desk", "For the technical connection.")},
+                   "SupportContact": {"Name": V("Service desk", "For day-to-day questions.")},
+                   "CommercialContact": {"Name": V("Sales office" if pid == "6-xb" else "Purchasing",
+                                                   "For the trade itself.")}})
+    for ds in find_dicts(out, "DigitalService"):
+        for s in lines_of(ds, "DigitalService"):
+            s["CertificationDocumentReference"] = {"ID": V("LTAC-CERT-26-017", "The trade accord council's "
+                                                                               "certificate that the distributor's "
+                                                                               "system passed the conformance "
+                                                                               "test.")}
+    return {}
+
+
+@enrich("waste", "WasteNotification")
+def _(f, n, doc, out):
+    return {"WasteNotificationTypeCode": V("Recovery", "A notification of waste for recovery, not disposal."),
+            "ConsignmentQuantity": qty(12, "C62", "About twelve movements over the year."),
+            "DocumentReference": {"ID": V("VI-WASTE-CONTRACT-26", "The contract between producer and recovery "
+                                                                  "facility, which the notification needs.")},
+            "Signature": seal("5-xu", "VI-SIG-WN"),
+            "DisposalFacilityParty": party("7-xu", short=True)}
+
+
+@enrich("waste", "WasteMovement")
+def _(f, n, doc, out):
+    return {"WasteMovementTypeCode": V("Recovery", "A movement of waste for recovery."),
+            "SequenceNumberID": V("1", "The first movement under the notification."),
+            "ConsignmentQuantity": qty(12, "C62", "Of about twelve notified."),
+            "WasteNotificationDocumentReference": {"ID": V(f.numbers["notification"],
+                                                           "The notification the movement is made under.")},
+            "WeightStatementDocumentReference": {"ID": V("RR-WB-26-0412", "The weighbridge ticket of the "
+                                                                          "recovery plant (not shown).")},
+            "DocumentReference": {"ID": V("RR-REC-26-0412", "The certificate of recovery to follow.")},
+            "DocumentDistribution": {"DistributionTypeCode": V("Electronic", "Sent electronically."),
+                                     "DistributionType": V("A copy for the producer, who must keep it with the "
+                                                           "notification.", "Why."),
+                                     "Party": party("5-xu", short=True)},
+            "Signature": seal("7-xu", "RR-SIG-WM"),
+            "DisposalFacilityParty": party("7-xu", short=True)}
+
+
+@enrich("plastics", "Waybill")
+def _(f, n, doc, out):
+    for d in find_dicts(out, "EnergyConsumptionAllocation"):
+        for e in lines_of(d, "EnergyConsumptionAllocation"):
+            e["EnvironmentalEmission"] = {"EnvironmentalEmissionTypeCode": V("CO2", "Greenhouse gases as CO2 "
+                                                                                    "equivalent."),
+                                          "ValueMeasure": V("14.3", "2.65 kg per litre of the diesel allocated.",
+                                                            unitCode="KGM")}
+    return {}
+
+
+@enrich("carnet", "GoodsItemPassport")
+def _(f, n, doc, out):
+    sh = out["Shipment"]
+    cons = sh.get("Consignment") if isinstance(sh.get("Consignment"), dict) else {}
+    cons.update({"ID": V(cons["ID"].value if "ID" in cons else "VI-CS-CARNET-26", "The consignment of the "
+                                                                                  "samples."),
+                 "TransitCountry": [{"IdentificationCode": V("XB", "The samples cross Bayvarra by road to "
+                                                                   "Lumeport airport: a transit country between "
+                                                                   "Urvania and the island.")}],
+                 "OfficeOfSubSequentiallyEntryLocation": {"Name": V("Island Customs Service, Selanu airport",
+                                                                    "Where the goods enter next, on the "
+                                                                    "island.")},
+                 "TransportAdvisorParty": party("10-xb", short=True)})
+    sh["Consignment"] = cons
+    return {}
+
+
+@enrich("cotton", "BillOfLading")
+def _(f, n, doc, out):
+    for d in find_dicts(out, "Consignment"):
+        for c in lines_of(d, "Consignment"):
+            c["MortgageHolderParty"] = party("22-xl", short=True)
+        break
+    return {}
+
+
+@enrich("road", "Waybill")
+def _(f, n, doc, out):
+    for d in find_dicts(out, "Delivery"):
+        for dl in lines_of(d, "Delivery"):
+            dl["FuelConsumption"] = {"ID": V("TH-FC-26-0159", "The fuel of this delivery."),
+                                     "FuelTypeCode": V("Diesel", "The truck runs on diesel."),
+                                     "FuelConsumptionMeasure": V("61", f"About 33 litres per 100 km over "
+                                                                       f"{DISTANCE_KM} km.", unitCode="LTR")}
+        break
+    return {}
+
+
+@enrich("mast", "Invoice")
+def _(f, n, doc, out):
+    for ln in lines_of(out, "InvoiceLine")[:1]:
+        ln["PricingReference"] = {"OriginalItemLocationQuantity": {
+            "HazardousRiskIndicator": V("true", "The batteries are dangerous goods wherever they are delivered."),
+            "DeliveryUnit": {"BatchQuantity": qty(1, "C62", "Delivered in single crates."),
+                             "HazardousRiskIndicator": V("true", "Each crate is dangerous goods: lithium-ion "
+                                                                 "batteries.")}}}
+    return {}
+
+
+@enrich("cotton", "DeliveryNote")
+def _(f, n, doc, out):
+    return {"OriginatorCustomerParty": {"Party": party("40-xb", short=True)},
+            "BeneficiaryParty": party("40-xb", short=True),
+            "ProjectReference": {"ID": V("SCC-COTTON-QUALITY-26", "The chamber's cotton quality programme, under "
+                                                                  "which the farm's seed cotton is classed.")}}
+
+
+@enrich("air", "FulfilmentCancellation")
+def _(f, n, doc, out):
+    return {"OriginatorCustomerParty": {"Party": party(HARBOUR, short=True)},
+            "BeneficiaryParty": party(HARBOUR, short=True)}
+
+
+@enrich("tender", "DespatchAdvice")
+def _(f, n, doc, out):
+    ln = out["DespatchLine"][0]
+    ln.update({"UUID": line_uuid(f, "despatch", 1),
+               "Shipment": {"ID": V(f.numbers["shipment"], "The shipment the line travels in.")},
+               "SubDespatchLine": [
+                   {"ID": V("1.1", "The ground anchor sets that come with the benches."),
+                    "DeliveredQuantity": qty(36, "SET", "36 of the 40 sets."),
+                    "BackorderQuantity": qty(4, "SET", "Four sets follow."),
+                    "BackorderReason": V("The galvanising of the last batch is late; the sets follow within a "
+                                         "week, before the installers need them.", "Why."),
+                    "OrderLineReference": {"LineID": V("1", "Part of the bench line.")},
+                    "Item": {"Name": V("Ground anchor set", "Included in the bench.")}},
+                   {"ID": V("1.2", "The fixing bolts."),
+                    "DeliveredQuantity": qty(170, "H87", "Four per bench, and ten more."),
+                    "OversupplyQuantity": qty(10, "H87", "Ten bolts more than needed, as spares for the "
+                                                         "installers."),
+                    "OrderLineReference": {"LineID": V("1", "Part of the bench line.")},
+                    "Item": {"Name": V("Fixing bolt M12", "Included in the bench.")}}]})
+    return {}
+
+
+@enrich("road", "ReceiptAdvice")
+def _(f, n, doc, out):
+    b, c = out["ReceiptLine"][0], out["ReceiptLine"][1]
+    b.update({"ReceivedQuantity": qty(95, "H87", "One bench fewer than despatched."),
+              "ShortQuantity": qty(1, "H87", "One bench short."),
+              "ShortageActionCode": V("Replace", "The distributor asks for the missing bench with the next truck."),
+              "Note": V("One pallet held three benches and a box of side frames: mis-picked at the 3PL.", "What "
+                                                                                                          "was "
+                                                                                                          "found."),
+              "UUID": line_uuid(f, "receipt", 1),
+              "Shipment": {"ID": V(f.numbers["shipment"], "The shipment received.")}})
+    c.update({"ReceivedQuantity": qty(13, "H87", "One box more than despatched."),
+              "OversupplyQuantity": qty(1, "H87", "The extra box, held for collection by the next truck."),
+              "Note": V("The mis-picked box, in place of the missing bench.", "What was found."),
+              "UUID": line_uuid(f, "receipt", 2)})
+    return {"Note": V("Counted and checked at goods-in: one bench short, one box of side frames over.", "The "
+                                                                                                        "result.")}

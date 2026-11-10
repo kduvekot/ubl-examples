@@ -26,6 +26,23 @@ The recovery facility reports each movement received to the competent authority.
   Reported when the waste has been received.
 - `IssueTime` = **12:34:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `WasteMovementTypeCode` = **Recovery**  
+  A movement of waste for recovery.
+- `SequenceNumberID` = **1**  
+  The first movement under the notification.
+- `ConsignmentQuantity` = **12** (unitCode `C62`)  
+  Of about twelve notified.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **RR-SIG-WM**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -344,6 +361,15 @@ Inside `NotifierParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Disposal Facility Party
+
+Inside `DisposalFacilityParty`:
+
+- `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Recovery Facility Party
 
 Inside `RecoveryFacilityParty`:
@@ -477,6 +503,40 @@ Inside `Shipment`:
 - `GoodsItem/HazardousRiskIndicator` = **false**  
   Sorted polyethylene is not hazardous waste.
 
+### Waste Notification Document Reference
+
+Inside `WasteNotificationDocumentReference`:
+
+- `ID` = **VI-DOC-26-0204**  
+  The notification the movement is made under.
+
+### Weight Statement Document Reference
+
+Inside `WeightStatementDocumentReference`:
+
+- `ID` = **RR-WB-26-0412**  
+  The weighbridge ticket of the recovery plant (not shown).
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **RR-REC-26-0412**  
+  The certificate of recovery to follow.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `DistributionTypeCode` = **Electronic**  
+  Sent electronically.
+- `DistributionType` = **A copy for the producer, who must keep it with the notification.**  
+  Why.
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -490,6 +550,20 @@ Inside `Shipment`:
   <cbc:UUID>dbd3deda-0d71-53e4-9a07-a1f9d4add949</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>12:34:00</cbc:IssueTime>
+  <cbc:WasteMovementTypeCode>Recovery</cbc:WasteMovementTypeCode>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:ConsignmentQuantity unitCode="C62">12</cbc:ConsignmentQuantity>
+  <cac:Signature>
+    <cbc:ID>RR-SIG-WM</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rinova Recovery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
@@ -773,6 +847,14 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:NotifierParty>
+  <cac:DisposalFacilityParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+  </cac:DisposalFacilityParty>
   <cac:RecoveryFacilityParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
@@ -892,5 +974,26 @@ Inside `Shipment`:
       <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:WasteNotificationDocumentReference>
+    <cbc:ID>VI-DOC-26-0204</cbc:ID>
+  </cac:WasteNotificationDocumentReference>
+  <cac:WeightStatementDocumentReference>
+    <cbc:ID>RR-WB-26-0412</cbc:ID>
+  </cac:WeightStatementDocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>RR-REC-26-0412</cbc:ID>
+  </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cbc:DistributionType>A copy for the producer, who must keep it with the notification.</cbc:DistributionType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
 </WasteMovement>
 ```

@@ -519,6 +519,8 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `UUID` = **bf5c479c-ae74-54ad-8a20-aa2eeba424e0**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `Note` = **The first call-off under the contract: forty benches for the harbour park.**  
   The line as the order put it.
 - `LineStatusCode` = **NoStatus**  
@@ -737,6 +739,30 @@ Inside `DespatchLine`:
   The scale of the score.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `Shipment/ID` = **CL-SH-26-0213**  
+  The shipment the line travels in.
+- `SubDespatchLine/ID` = **1.1**  
+  The ground anchor sets that come with the benches.
+- `SubDespatchLine/DeliveredQuantity` = **36** (unitCode `SET`)  
+  36 of the 40 sets.
+- `SubDespatchLine/BackorderQuantity` = **4** (unitCode `SET`)  
+  Four sets follow.
+- `SubDespatchLine/BackorderReason` = **The galvanising of the last batch is late; the sets follow within a week, before the installers need them.**  
+  Why.
+- `SubDespatchLine/OrderLineReference/LineID` = **1**  
+  Part of the bench line.
+- `SubDespatchLine/Item/Name` = **Ground anchor set**  
+  Included in the bench.
+- `SubDespatchLine/ID` = **1.2**  
+  The fixing bolts.
+- `SubDespatchLine/DeliveredQuantity` = **170** (unitCode `H87`)  
+  Four per bench, and ten more.
+- `SubDespatchLine/OversupplyQuantity` = **10** (unitCode `H87`)  
+  Ten bolts more than needed, as spares for the installers.
+- `SubDespatchLine/OrderLineReference/LineID` = **1**  
+  Part of the bench line.
+- `SubDespatchLine/Item/Name` = **Fixing bolt M12**  
+  Included in the bench.
 
 ## The document
 
@@ -1186,6 +1212,7 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:UUID>bf5c479c-ae74-54ad-8a20-aa2eeba424e0</cbc:UUID>
     <cbc:Note>The first call-off under the contract: forty benches for the harbour park.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">40</cbc:DeliveredQuantity>
@@ -1375,6 +1402,32 @@ Inside `DespatchLine`:
         </cac:ProductDocumentationDocumentReference>
       </cac:CircularityProfile>
     </cac:Item>
+    <cac:Shipment>
+      <cbc:ID>CL-SH-26-0213</cbc:ID>
+    </cac:Shipment>
+    <cac:SubDespatchLine>
+      <cbc:ID>1.1</cbc:ID>
+      <cbc:DeliveredQuantity unitCode="SET">36</cbc:DeliveredQuantity>
+      <cbc:BackorderQuantity unitCode="SET">4</cbc:BackorderQuantity>
+      <cbc:BackorderReason>The galvanising of the last batch is late; the sets follow within a week, before the installers need them.</cbc:BackorderReason>
+      <cac:OrderLineReference>
+        <cbc:LineID>1</cbc:LineID>
+      </cac:OrderLineReference>
+      <cac:Item>
+        <cbc:Name>Ground anchor set</cbc:Name>
+      </cac:Item>
+    </cac:SubDespatchLine>
+    <cac:SubDespatchLine>
+      <cbc:ID>1.2</cbc:ID>
+      <cbc:DeliveredQuantity unitCode="H87">170</cbc:DeliveredQuantity>
+      <cbc:OversupplyQuantity unitCode="H87">10</cbc:OversupplyQuantity>
+      <cac:OrderLineReference>
+        <cbc:LineID>1</cbc:LineID>
+      </cac:OrderLineReference>
+      <cac:Item>
+        <cbc:Name>Fixing bolt M12</cbc:Name>
+      </cac:Item>
+    </cac:SubDespatchLine>
   </cac:DespatchLine>
 </DespatchAdvice>
 ```

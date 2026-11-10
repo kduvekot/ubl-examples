@@ -32,8 +32,8 @@ The distributor confirms what arrived to the party that despatched it, the 3PL, 
   UBL's receipt advice type code: the goods actually received.
 - `DeliveryAcceptanceCode` = **Accepted**  
   All goods accepted.
-- `Note` = **Counted and checked at goods-in.**  
-  How the goods were received.
+- `Note` = **Counted and checked at goods-in: one bench short, one box of side frames over.**  
+  The result.
 - `LineCountNumeric` = **2**  
   The number of lines.
 
@@ -410,10 +410,16 @@ Inside `ReceiptLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Received as despatched.**  
-  The line in words.
-- `ReceivedQuantity` = **96** (unitCode `H87`)  
-  Counted at the goods-in and found as announced.
+- `UUID` = **01193af5-785e-5e35-84c8-25a8b365acea**  
+  A universally unique identifier of the line, derived from the document and the line number.
+- `Note` = **One pallet held three benches and a box of side frames: mis-picked at the 3PL.**  
+  What was found.
+- `ReceivedQuantity` = **95** (unitCode `H87`)  
+  One bench fewer than despatched.
+- `ShortQuantity` = **1** (unitCode `H87`)  
+  One bench short.
+- `ShortageActionCode` = **Replace**  
+  The distributor asks for the missing bench with the next truck.
 - `ReceivedDate` = **2026-03-25**  
   Unloaded.
 - `OrderLineReference/LineID` = **1**  
@@ -616,12 +622,18 @@ Inside `ReceiptLine`:
   The scale of the score.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `Shipment/ID` = **CL-SH-26-0154**  
+  The shipment received.
 - `ID` = **2**  
   The line number.
-- `Note` = **Received as despatched.**  
-  The line in words.
-- `ReceivedQuantity` = **12** (unitCode `H87`)  
-  Counted at the goods-in and found as announced.
+- `UUID` = **986c8783-e70e-596b-82d0-e70c728412de**  
+  A universally unique identifier of the line, derived from the document and the line number.
+- `Note` = **The mis-picked box, in place of the missing bench.**  
+  What was found.
+- `ReceivedQuantity` = **13** (unitCode `H87`)  
+  One box more than despatched.
+- `OversupplyQuantity` = **1** (unitCode `H87`)  
+  The extra box, held for collection by the next truck.
 - `ReceivedDate` = **2026-03-25**  
   Unloaded.
 - `OrderLineReference/LineID` = **2**  
@@ -667,7 +679,7 @@ Inside `ReceiptLine`:
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
   <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode>Accepted</cbc:DeliveryAcceptanceCode>
-  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:Note>Counted and checked at goods-in: one bench short, one box of side frames over.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
@@ -995,8 +1007,11 @@ Inside `ReceiptLine`:
   </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>
+    <cbc:UUID>01193af5-785e-5e35-84c8-25a8b365acea</cbc:UUID>
+    <cbc:Note>One pallet held three benches and a box of side frames: mis-picked at the 3PL.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="H87">95</cbc:ReceivedQuantity>
+    <cbc:ShortQuantity unitCode="H87">1</cbc:ShortQuantity>
+    <cbc:ShortageActionCode>Replace</cbc:ShortageActionCode>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -1176,11 +1191,16 @@ Inside `ReceiptLine`:
         </cac:ProductDocumentationDocumentReference>
       </cac:CircularityProfile>
     </cac:Item>
+    <cac:Shipment>
+      <cbc:ID>CL-SH-26-0154</cbc:ID>
+    </cac:Shipment>
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">12</cbc:ReceivedQuantity>
+    <cbc:UUID>986c8783-e70e-596b-82d0-e70c728412de</cbc:UUID>
+    <cbc:Note>The mis-picked box, in place of the missing bench.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="H87">13</cbc:ReceivedQuantity>
+    <cbc:OversupplyQuantity unitCode="H87">1</cbc:OversupplyQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>

@@ -465,6 +465,10 @@
       <cac:EnergyConsumptionAllocation>
         <cbc:EnergySourceTypeCode>Diesel</cbc:EnergySourceTypeCode>
         <cbc:AllocatedEnergyMeasure unitCode="KWH">5400</cbc:AllocatedEnergyMeasure>
+        <cac:EnvironmentalEmission>
+          <cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+          <cbc:ValueMeasure unitCode="KGM">14.3</cbc:ValueMeasure>
+        </cac:EnvironmentalEmission>
       </cac:EnergyConsumptionAllocation>
     </cac:GoodsItem>
   </cac:Shipment>
