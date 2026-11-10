@@ -1,0 +1,558 @@
+{
+ "description": "The items of the UBL example world: what each party sells, goods and services, with identifiers, customs tariff codes (HS), units (UN/ECE Rec 20), packaging (Rec 21), weights and prices in the seller's currency. Goods carry a world item number issued by the identifier issuing agency (#31). A resold item points to the original.",
+ "items": [
+  {
+   "id": "ore-lump",
+   "seller": "4-xu",
+   "name": "Iron ore, lump",
+   "kind": "goods",
+   "unit": "TNE",
+   "price": {
+    "amount": 62.0,
+    "currency": "XUF"
+   },
+   "sellers_id": "SM-ORE-L",
+   "standard_id": "771010000013",
+   "hs": "2601.11",
+   "origin": "XU",
+   "description": "Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.",
+   "package": {
+    "type": "VO"
+   },
+   "net_kg": 1000,
+   "gross_kg": 1000
+  },
+  {
+   "id": "bench-serra",
+   "seller": "5-xu",
+   "name": "Park bench Serra 180",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 385.0,
+    "currency": "XUF"
+   },
+   "sellers_id": "VI-B180",
+   "standard_id": "771020000027",
+   "hs": "9401.79",
+   "origin": "XU",
+   "description": "Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.",
+   "dimensions_mm": [
+    1800,
+    620,
+    780
+   ],
+   "net_kg": 38.0,
+   "gross_kg": 41.5,
+   "package": {
+    "type": "PX",
+    "per_package": 4
+   },
+   "components": [
+    {
+     "item": "slat-1800",
+     "qty": 5
+    },
+    {
+     "item": "film-pe",
+     "qty": 0.4
+    }
+   ]
+  },
+  {
+   "id": "bench-casting",
+   "seller": "5-xu",
+   "name": "Bench side frame casting",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 46.0,
+    "currency": "XUF"
+   },
+   "sellers_id": "VI-C180",
+   "standard_id": "771020000034",
+   "hs": "7325.99",
+   "origin": "XU",
+   "description": "Replacement side frame for the Serra bench, cast steel, galvanised.",
+   "net_kg": 9.5,
+   "gross_kg": 10.2,
+   "package": {
+    "type": "BX",
+    "per_package": 1
+   }
+  },
+  {
+   "id": "granulate-pe",
+   "seller": "7-xu",
+   "name": "Recycled PE granulate",
+   "kind": "goods",
+   "unit": "TNE",
+   "price": {
+    "amount": 640.0,
+    "currency": "XUF"
+   },
+   "sellers_id": "RR-PE-R1",
+   "standard_id": "771030000048",
+   "hs": "3901.10",
+   "origin": "XU",
+   "description": "Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.",
+   "net_kg": 1000,
+   "gross_kg": 1004,
+   "package": {
+    "type": "JB",
+    "per_package": 1
+   }
+  },
+  {
+   "id": "waste-recovery",
+   "seller": "7-xu",
+   "name": "Collection and recovery of production waste",
+   "kind": "service",
+   "unit": "TNE",
+   "price": {
+    "amount": 95.0,
+    "currency": "XUF"
+   },
+   "sellers_id": "RR-SVC-01",
+   "description": "Collection at the factory and recovery of sorted production waste, per tonne collected."
+  },
+  {
+   "id": "road-transport",
+   "seller": "13-xu",
+   "name": "Road transport, full truck load",
+   "kind": "service",
+   "unit": "KMT",
+   "price": {
+    "amount": 1.85,
+    "currency": "XUF"
+   },
+   "sellers_id": "TH-FTL",
+   "description": "Full truck load, price per kilometre driven loaded, tolls included."
+  },
+  {
+   "id": "rail-ore",
+   "seller": "14-xu",
+   "name": "Rail freight, ore in bulk wagons",
+   "kind": "service",
+   "unit": "TNE",
+   "price": {
+    "amount": 7.4,
+    "currency": "XUF"
+   },
+   "sellers_id": "FRC-ORE",
+   "description": "Ore from the mine siding to the factory siding, per tonne."
+  },
+  {
+   "id": "rail-container",
+   "seller": "14-xu",
+   "name": "Rail freight, container slot",
+   "kind": "service",
+   "unit": "E48",
+   "price": {
+    "amount": 420.0,
+    "currency": "XUF"
+   },
+   "sellers_id": "FRC-CTR",
+   "description": "One container slot on the container train to the distributor's siding."
+  },
+  {
+   "id": "barge-freight",
+   "seller": "15-xu",
+   "name": "River freight, bulk",
+   "kind": "service",
+   "unit": "TNE",
+   "price": {
+    "amount": 11.5,
+    "currency": "XUF"
+   },
+   "sellers_id": "FB-BULK",
+   "description": "Bulk cargo down the river to the coast of Bayvarra, per tonne."
+  },
+  {
+   "id": "electricity",
+   "seller": "33-xu",
+   "name": "Electricity",
+   "kind": "service",
+   "unit": "KWH",
+   "price": {
+    "amount": 0.21,
+    "currency": "XUF"
+   },
+   "sellers_id": "FE-KWH",
+   "description": "Electricity supply, per kilowatt hour, network charges included."
+  },
+  {
+   "id": "slat-1800",
+   "seller": "36-xb",
+   "name": "Hardwood bench slat 1800",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 7.2,
+    "currency": "XBL"
+   },
+   "sellers_id": "MS-SL-1800",
+   "standard_id": "772010000058",
+   "hs": "4407.99",
+   "origin": "XB",
+   "description": "Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.",
+   "dimensions_mm": [
+    1800,
+    95,
+    38
+   ],
+   "net_kg": 4.5,
+   "gross_kg": 4.5,
+   "package": {
+    "type": "BE",
+    "per_package": 50
+   }
+  },
+  {
+   "id": "timber-beam",
+   "seller": "36-xb",
+   "name": "Hardwood timber",
+   "kind": "goods",
+   "unit": "MTQ",
+   "price": {
+    "amount": 540.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "MS-TB",
+   "standard_id": "772010000065",
+   "hs": "4407.99",
+   "origin": "XB",
+   "description": "Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.",
+   "net_kg": 700,
+   "gross_kg": 700,
+   "package": {
+    "type": "BE",
+    "per_package": 1
+   }
+  },
+  {
+   "id": "garden-set",
+   "seller": "37-xb",
+   "name": "Garden bench set Marrow",
+   "kind": "goods",
+   "unit": "SET",
+   "price": {
+    "amount": 610.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-GS-01",
+   "standard_id": "772020000079",
+   "hs": "9401.69",
+   "origin": "XB",
+   "description": "Garden bench and two chairs in hardwood, made for the department store's own line.",
+   "net_kg": 42.0,
+   "gross_kg": 47.0,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   }
+  },
+  {
+   "id": "office-desk",
+   "seller": "37-xb",
+   "name": "Office desk",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 880.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-DK-16",
+   "standard_id": "772020000086",
+   "hs": "9403.30",
+   "origin": "XB",
+   "description": "Office desk in hardwood, 1600 × 800 mm.",
+   "dimensions_mm": [
+    1600,
+    800,
+    740
+   ],
+   "net_kg": 48.0,
+   "gross_kg": 55.0,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   }
+  },
+  {
+   "id": "installation",
+   "seller": "37-xb",
+   "name": "Installation work",
+   "kind": "service",
+   "unit": "HUR",
+   "price": {
+    "amount": 48.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-INST",
+   "description": "Installation of furniture on site, per hour per installer."
+  },
+  {
+   "id": "shirt",
+   "seller": "40-xb",
+   "name": "Cotton shirt",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 14.5,
+    "currency": "XBL"
+   },
+   "sellers_id": "LT-SH-01",
+   "standard_id": "772030000090",
+   "hs": "6205.20",
+   "origin": "XB",
+   "description": "Men's shirt, woven cotton from Lisavu, in a garment bag.",
+   "net_kg": 0.25,
+   "gross_kg": 0.28,
+   "package": {
+    "type": "BG",
+    "per_package": 1
+   },
+   "components": [
+    {
+     "item": "garment-bag",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "film-pe",
+   "seller": "41-xb",
+   "name": "Recycled stretch film",
+   "kind": "goods",
+   "unit": "KGM",
+   "price": {
+    "amount": 3.1,
+    "currency": "XBL"
+   },
+   "sellers_id": "RP-SF-23",
+   "standard_id": "772040000103",
+   "hs": "3920.10",
+   "origin": "XB",
+   "description": "Stretch film of recycled polyethylene for pallet wrapping, on rolls of 16 kg.",
+   "net_kg": 1,
+   "gross_kg": 1.02,
+   "package": {
+    "type": "RO",
+    "per_package": 16
+   }
+  },
+  {
+   "id": "garment-bag",
+   "seller": "41-xb",
+   "name": "Garment bag",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 0.08,
+    "currency": "XBL"
+   },
+   "sellers_id": "RP-GB-60",
+   "standard_id": "772040000110",
+   "hs": "3923.21",
+   "origin": "XB",
+   "description": "Garment bag of recycled polyethylene, 60 cm, boxes of 500.",
+   "net_kg": 0.012,
+   "gross_kg": 0.012,
+   "package": {
+    "type": "BX",
+    "per_package": 500
+   }
+  },
+  {
+   "id": "water",
+   "seller": "34-xb",
+   "name": "Drinking water",
+   "kind": "service",
+   "unit": "MTQ",
+   "price": {
+    "amount": 2.35,
+    "currency": "XBL"
+   },
+   "sellers_id": "CW-M3",
+   "description": "Drinking water supply, per cubic metre."
+  },
+  {
+   "id": "sea-freight",
+   "seller": "10-xb",
+   "name": "Sea freight, 40-foot container",
+   "kind": "service",
+   "unit": "E48",
+   "price": {
+    "amount": 2950.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-SEA40",
+   "description": "Port-to-port sea freight for one 40-foot container, booked with the ocean carrier."
+  },
+  {
+   "id": "air-freight",
+   "seller": "10-xb",
+   "name": "Air freight",
+   "kind": "service",
+   "unit": "KGM",
+   "price": {
+    "amount": 6.8,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-AIR",
+   "description": "Airport-to-airport air freight per kilogram chargeable weight, road feeder included."
+  },
+  {
+   "id": "export-clearance",
+   "seller": "10-xb",
+   "name": "Export customs clearance",
+   "kind": "service",
+   "unit": "E48",
+   "price": {
+    "amount": 85.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-CLR",
+   "description": "Preparing and lodging one export declaration as customs agent."
+  },
+  {
+   "id": "cargo-insurance",
+   "seller": "10-xb",
+   "name": "Cargo insurance",
+   "kind": "service",
+   "unit": "E48",
+   "price": {
+    "amount": 140.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-INS",
+   "description": "Cargo insurance for one shipment, arranged with the insurer."
+  },
+  {
+   "id": "bench-serra-b",
+   "seller": "6-xb",
+   "name": "Park bench Serra 180",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 520.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "LD-10442",
+   "resale_of": "bench-serra",
+   "description": "The manufacturer's Serra bench, from the distributor's stock."
+  },
+  {
+   "id": "bench-casting-b",
+   "seller": "6-xb",
+   "name": "Bench side frame casting",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 64.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "LD-10443",
+   "resale_of": "bench-casting",
+   "description": "Spare side frame for the Serra bench."
+  },
+  {
+   "id": "shirt-r",
+   "seller": "26-xb",
+   "name": "Cotton shirt",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 29.95,
+    "currency": "XBL"
+   },
+   "sellers_id": "BM-778120",
+   "resale_of": "shirt",
+   "description": "Men's cotton shirt; the state sales tax is added at the till."
+  },
+  {
+   "id": "garden-set-r",
+   "seller": "26-xb",
+   "name": "Garden bench set Marrow",
+   "kind": "goods",
+   "unit": "SET",
+   "price": {
+    "amount": 899.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BM-551004",
+   "resale_of": "garden-set",
+   "description": "The store's own garden bench set."
+  },
+  {
+   "id": "seed-cotton",
+   "seller": "38-xl",
+   "name": "Seed cotton",
+   "kind": "goods",
+   "unit": "KGM",
+   "price": {
+    "amount": 48,
+    "currency": "XLC"
+   },
+   "sellers_id": "LCF-SC",
+   "standard_id": "773010000123",
+   "hs": "5201.00",
+   "origin": "XL",
+   "description": "Cotton as harvested, not ginned, delivered loose by trailer.",
+   "net_kg": 1,
+   "gross_kg": 1,
+   "package": {
+    "type": "NE"
+   }
+  },
+  {
+   "id": "cotton-bale",
+   "seller": "39-xl",
+   "name": "Cotton lint, compressed bale",
+   "kind": "goods",
+   "unit": "KGM",
+   "price": {
+    "amount": 210,
+    "currency": "XLC"
+   },
+   "sellers_id": "SCG-LINT",
+   "standard_id": "773020000137",
+   "hs": "5201.00",
+   "origin": "XL",
+   "description": "Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.",
+   "net_kg": 1,
+   "gross_kg": 1.01,
+   "package": {
+    "type": "BL",
+    "per_package": 227
+   }
+  },
+  {
+   "id": "telecom-line",
+   "seller": "35-xl",
+   "name": "Business telephone line",
+   "kind": "service",
+   "unit": "MON",
+   "price": {
+    "amount": 4500,
+    "currency": "XLC"
+   },
+   "sellers_id": "ST-BL",
+   "description": "Business telephone and data line, monthly subscription."
+  },
+  {
+   "id": "telecom-data",
+   "seller": "35-xl",
+   "name": "Mobile data",
+   "kind": "service",
+   "unit": "E34",
+   "price": {
+    "amount": 90,
+    "currency": "XLC"
+   },
+   "sellers_id": "ST-GB",
+   "description": "Mobile data beyond the subscription, per gigabyte."
+  }
+ ]
+}

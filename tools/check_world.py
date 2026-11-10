@@ -2,7 +2,7 @@
 """Check the UBL world: builds the tile model (tools/world_model.py) and
 reports every broken structural rule, then checks the documents of
 the world against the UBL 2.5 model (tools/world_docs.py), the identities of the parties
-(tools/world_parties.py), and that the world code lists
+(tools/world_parties.py), the items (tools/world_items.py), and that the world code lists
 are up to date (tools/build_codelists.py --check). Exit status 1 if there are problems.
 
 Usage: python3 tools/check_world.py
@@ -13,7 +13,7 @@ import sys
 
 sys.argv = [sys.argv[0]]
 failed = False
-for script, args in (("world_model.py", []), ("world_docs.py", []), ("world_parties.py", []), ("build_codelists.py", ["--check"])):
+for script, args in (("world_model.py", []), ("world_docs.py", []), ("world_parties.py", []), ("world_items.py", []), ("build_codelists.py", ["--check"])):
     sys.argv = [script] + args
     try:
         runpy.run_path(os.path.join(os.path.dirname(__file__), script), run_name="__main__")

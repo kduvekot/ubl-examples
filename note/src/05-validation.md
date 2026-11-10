@@ -47,6 +47,16 @@ the party's own country and state; every account is held at a bank of the
 world in the same country; and a bank named in a document is the bank where
 that party keeps its account.
 
+## The items
+
+Units and packaging types must be codes of the UBL default lists; world
+item numbers carry a valid check digit and are unique; prices are positive,
+in the seller's currency and with the right number of decimals; gross
+weight is at least net weight. Every party that bills or offers in a
+document has items to put on its lines, and every party with items bills
+or offers them. The exchange rates between the currencies agree with each
+other.
+
 ## The map and the code lists
 
 The map is checked as a structure: one connected road network per
@@ -56,7 +66,7 @@ lists are checked to hold exactly the codes of the countries layer.
 
 ## Still to come
 
-Later layers add their own checks: items and prices, amounts and taxes
-that add up, dates in a believable order, references between documents,
+Later layers add their own checks: document lines with items and
+quantities, amounts and taxes that add up, dates in a believable order, references between documents,
 and quantities that agree from order to invoice. Finally, every example
 document is validated against the UBL schemas and the world's code lists.

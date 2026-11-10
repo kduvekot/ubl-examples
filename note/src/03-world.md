@@ -10,6 +10,7 @@ before the next layer builds on it.
 | Parties | `world/parties.json` | the organisations: place on the map, role, identity |
 | Map | `world/map.json` | routes, towns and localities |
 | Documents | `world/documents.json` | the flows of documents between the parties |
+| Items | `world/items.json` | what the parties sell: goods and services, with prices |
 | UBL model | `world/ubl-model.json` | extracted from the UBL 2.5 semantic model |
 | Code lists | `world/codelists/` | UBL default code lists with the world's codes added |
 
@@ -67,6 +68,24 @@ reach a real organisation. Account numbers follow the structure of ISO 13616
 with its check digits, using the world's country codes, but they are not
 called IBANs, because the world's countries are not registered IBAN
 countries.
+
+## Items
+
+Every party that sells has items. Goods carry what the documents along
+their way need: a seller's item identifier, a world item number issued by
+the identifier issuing agency (twelve digits with a check digit, a scheme of
+the world, not a GTIN), a Harmonized System customs tariff code, the country
+of origin, dimensions, net and gross weight, and the packaging. Services
+have a unit and a price. Units of measure and packaging types are UN/ECE
+Recommendation 20 and 21 codes from the UBL default code lists. Prices are
+in the seller's currency, with no more decimals than the currency has; the
+coral of Lisavu has none.
+
+Items connect the chains. The park bench is made with slats from the
+sawmill and film from the packaging maker; the distributor resells the
+bench, and its own item points to the manufacturer's, so the maker's
+identifiers travel along. A component or a resold item is only possible
+if the maker or reseller orders it from that seller somewhere in the flows.
 
 ## Flows of documents
 

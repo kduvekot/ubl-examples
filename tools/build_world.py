@@ -64,6 +64,52 @@ def address_lines(p):
         out.append(" ".join(w for w in words if w))
     return out + [world["countries"][p["c"]]["name"]]
 
+import world_items  # noqa: E402
+CODES = world_items.codes()
+ITEMS = {i["id"]: i for i in world["items"]}
+
+def money(pr):
+    cur = next(c["currency"] for c in world["countries"].values() if c["currency"]["code"] == pr["currency"])
+    return f"{pr['amount']:,.{cur['minor_units']}f} {pr['currency']}"
+
+def sells(p):
+    mine = [i for i in world["items"] if i["seller"] == p["id"]]
+    if not mine:
+        return []
+    units, packs = CODES["UnitOfMeasureCode"]["codes"], CODES["PackagingTypeCode"]["codes"]
+    out = ["## What it sells", "",
+           "Its items, as they appear on its quotations, catalogues and invoices. Units of measure and "
+           "packaging types are UN/ECE Recommendation 20 and 21 codes from the UBL code lists; customs tariff "
+           "codes are Harmonized System subheadings.", ""]
+    for i in mine:
+        unit = f"`{i['unit']}` ({units[i['unit']]})"
+        rows = [("Seller's item ID", f"`{i['sellers_id']}`"), ("Price", f"{money(i['price'])} per {unit}")]
+        if i.get("resale_of"):
+            o = ITEMS[i["resale_of"]]
+            rows.append(("Resale of", f"{o['name']} by {link(o['seller'])}: world item number `{o['standard_id']}`, "
+                                      f"maker's ID `{o['sellers_id']}`"))
+        if i.get("standard_id"):
+            rows.append(("World item number", f"`{i['standard_id']}` (issued by {link(world_items.ISSUER)})"))
+        if i.get("hs"):
+            rows.append(("Customs tariff (HS)", f"`{i['hs']}`; origin {world['countries'][i['origin']]['name']}"))
+        if i.get("dimensions_mm"):
+            rows.append(("Dimensions", " × ".join(str(d) for d in i["dimensions_mm"]) + " mm"))
+        if i.get("net_kg") and i["kind"] == "goods":
+            rows.append(("Weight per unit", f"{i['net_kg']:g} kg net, {i['gross_kg']:g} kg gross"))
+        if i.get("package"):
+            pk = i["package"]
+            per = f", {pk['per_package']} per package" if pk.get("per_package") else ""
+            rows.append(("Packaging", f"`{pk['type']}` ({packs[pk['type']]}){per}"))
+        if i.get("components"):
+            def qty(c):
+                u = ITEMS[c["item"]]["unit"]
+                return f"{c['qty']:g} ×" if u in ("H87", "C62") else f"{c['qty']:g} {units[u].split(' (')[0]} of"
+            rows.append(("Made with", ", ".join(f"{qty(c)} {ITEMS[c['item']]['name']} ({link(ITEMS[c['item']]['seller'])})"
+                                                for c in i["components"])))
+        out += [f"### {i['name']}", "", i.get("description", ""), "", "| | |", "|---|---|"]
+        out += [f"| {k} | {v} |" for k, v in rows] + [""]
+    return out
+
 def identity(p):
     idn, c = p["identity"], world["countries"][p["c"]]
     rows = [("Name", idn["name"])]
@@ -154,7 +200,7 @@ for p in world["parties"]:
     meta = f"*#{p['n']} {p['name']} · {c['name']} ({p['c']}) · {CATEGORY[p['cat']]}*"
     if p.get("proposed"):
         meta += " · *proposed addition to the 26+C set*"
-    lines += [meta, "", p["what"], ""] + identity(p) + ["## How UBL helps", "", p["how"], ""]
+    lines += [meta, "", p["what"], ""] + identity(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
     lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
               f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]

@@ -156,6 +156,20 @@
   {
    "flow": "ore",
    "doc": "Invoice",
+   "from": "14-xu",
+   "to": "5-xu",
+   "why": "Under FCA the buyer pays the carriage: the rail carrier invoices the ore freight to the manufacturer, per tonne.",
+   "parties": {
+    "AccountingSupplierParty": "14-xu",
+    "AccountingCustomerParty": "5-xu",
+    "SellerSupplierParty": "14-xu",
+    "BuyerCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "ore",
+   "doc": "Invoice",
    "from": "4-xu",
    "to": "5-xu",
    "why": "The mine invoices the ore; transport is not on this invoice because under FCA the buyer pays it. Payment goes to the mine's account at the seller's bank.",
@@ -451,6 +465,20 @@
     "CarrierParty": "14-xu",
     "ConsignorParty": "5-xu",
     "Shipment/Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "Invoice",
+   "from": "14-xu",
+   "to": "5-xu",
+   "why": "Under DAP the seller pays the carriage: the rail carrier invoices the container slots to the manufacturer.",
+   "parties": {
+    "AccountingSupplierParty": "14-xu",
+    "AccountingCustomerParty": "5-xu",
+    "SellerSupplierParty": "14-xu",
+    "BuyerCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
@@ -1517,6 +1545,20 @@
     "CarrierParty": "15-xu",
     "ConsignorParty": "7-xu",
     "Shipment/Consignment/ConsigneeParty": "41-xb"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "Invoice",
+   "from": "15-xu",
+   "to": "7-xu",
+   "why": "Under CPT the seller pays the carriage: the barge operator invoices the river freight to the waste processor.",
+   "parties": {
+    "AccountingSupplierParty": "15-xu",
+    "AccountingCustomerParty": "7-xu",
+    "SellerSupplierParty": "15-xu",
+    "BuyerCustomerParty": "7-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {

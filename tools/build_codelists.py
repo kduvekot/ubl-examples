@@ -9,6 +9,8 @@ lists unchanged and adding the world's codes from world/countries.json:
 
   world/codelists/CountryIdentificationCode-2.4-world.gc
   world/codelists/CurrencyCode-2.4-world.gc
+  world/codelists/ubl-default-codes.json   the codes of default lists the world
+                                           uses unchanged (units, packaging), for the checks
 
 Each copy gets its own identification (version and URIs, under
 urn:ubl-examples:world), so a validator can tell it from the original; the
@@ -19,6 +21,7 @@ Usage: python3 tools/build_codelists.py            (downloads the originals, wri
        python3 tools/build_codelists.py --check    (no network: are the lists up to date?)
 """
 import hashlib
+import json
 import os
 import re
 import sys
@@ -32,6 +35,11 @@ BASE = "https://docs.oasis-open.org/ubl/os-UBL-2.5/cl/gc/default/"
 LISTS = {  # file -> sha256 of the UBL 2.5 original
     "CountryIdentificationCode-2.4.gc": "3b5f7249138e554574a4b31b5b6839fd0c92cb12bac8df597d37459db5962114",
     "CurrencyCode-2.4.gc": "ede125e1900093e6be9ff686d7c693ebf337dbbc674000cd323469367422c981",
+}
+# default lists the world uses unchanged: only their codes are kept, for the checks
+CODES_ONLY = {
+    "UnitOfMeasureCode-2.4.gc": "556ac4f0042788a419b78bff51016439c7327a46f05f37fa2624c3c665a248b4",
+    "PackagingTypeCode-2.4.gc": "e217f094afe3815ef1b1935cf317ab3255b617e2ea385c1a442477379f71ac94",
 }
 ISO4217 = "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml"
 GC = "http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
@@ -131,6 +139,20 @@ def main():
         print(f"warning: the current ISO 4217 list could not be read ({e}); currency codes not checked")
     rows = world_rows(countries)
     os.makedirs(OUT, exist_ok=True)
+    codes = {}
+    for name, short in CODES_ONLY.items():
+        raw = fetch(BASE + name)
+        if hashlib.sha256(raw).hexdigest() != short:
+            raise SystemExit(f"{name}: the UBL 2.5 original has changed")
+        root = ET.fromstring(raw)
+        codes[root.find("Identification/ShortName").text] = {
+            "source": BASE + name, "version": root.find("Identification/Version").text,
+            "codes": {r.find("Value[@ColumnRef='code']/SimpleValue").text: r.find("Value[@ColumnRef='name']/SimpleValue").text
+                      for r in root.find("SimpleCodeList")}}
+    with open(os.path.join(OUT, "ubl-default-codes.json"), "w", encoding="utf-8") as f:
+        json.dump(codes, f, ensure_ascii=False, indent=0, sort_keys=True)
+        f.write("\n")
+    print(f"world/codelists/ubl-default-codes.json: " + ", ".join(f"{k} {len(v['codes'])}" for k, v in codes.items()))
     for name in LISTS:
         raw = fetch(BASE + name)
         if hashlib.sha256(raw).hexdigest() != LISTS[name]:

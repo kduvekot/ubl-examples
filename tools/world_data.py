@@ -5,6 +5,7 @@
   world/parties.json     the parties: place on the map, what they do, their identity
   world/map.json         routes, towns and fields of the map
   world/documents.json   the flows of documents between the parties
+  world/items.json       the items the parties sell: goods and services
   world/ubl-model.json   generated from the UBL 2.5 model by tools/extract_ubl_model.py
 
 load() merges the layers into one dictionary (countries, parties, routes, towns,
@@ -14,7 +15,7 @@ import json
 import os
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
-LAYERS = ("countries", "parties", "map", "documents")
+LAYERS = ("countries", "parties", "map", "documents", "items")
 
 
 def path(layer):
