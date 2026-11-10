@@ -114,6 +114,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Buying office**  
   The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 3851 0411**  
@@ -132,6 +134,10 @@ Inside `ReceiverParty`:
   The kind of social medium.
 - `SocialMediaProfile/URI` = **https://social.example/brightmarket**  
   The profile's address, under the reserved .example domain.
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Provider Party
 
@@ -223,6 +229,8 @@ Inside `ProviderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Telephone` = **+999 2 7121 0274**  
@@ -231,6 +239,10 @@ Inside `ProviderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Seller Supplier Party
 
@@ -329,6 +341,7 @@ Inside `SellerSupplierParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Buying office</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
@@ -343,6 +356,10 @@ Inside `SellerSupplierParty`:
       <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
       <cbc:URI>https://social.example/brightmarket</cbc:URI>
     </cac:SocialMediaProfile>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:ProviderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -421,11 +438,16 @@ Inside `SellerSupplierParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ProviderParty>
   <cac:SellerSupplierParty>
     <cac:Party>

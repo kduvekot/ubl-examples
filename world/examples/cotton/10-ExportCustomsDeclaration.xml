@@ -58,11 +58,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Cotton sales</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
       <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>SCG-CD-26-0203</cbc:ID>
@@ -169,11 +174,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:ConsigneeParty>
     <cac:CustomsParty>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -221,11 +231,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Import office</cbc:Name>
+        <cbc:JobTitle>Public service officer</cbc:JobTitle>
         <cbc:Department>Public services</cbc:Department>
         <cbc:Telephone>+999 3 3000 1448</cbc:Telephone>
         <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:CustomsParty>
   </cac:CustomsDeclaration>
 </ExportCustomsDeclaration>

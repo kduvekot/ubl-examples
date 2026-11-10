@@ -95,6 +95,8 @@ Inside `SenderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Chartering desk**  
   The desk that handles this document; identity of Fiumella Barges (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Fiumella Barges (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Fiumella Barges (world/parties.json).
 - `Contact/Telephone` = **+999 1 4170 4959**  
@@ -103,6 +105,10 @@ Inside `SenderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Fiumella Barges (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Fiumella Barges (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104959** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Fiumella Barges (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -180,6 +186,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Rinova Recovery (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
 - `Contact/Telephone` = **+999 1 4140 4548**  
@@ -198,6 +206,10 @@ Inside `ReceiverParty`:
   A permit issued by an authority of the party's country.
 - `PartyAuthorization/Certificate/CertificateType` = **Operating permit**  
   The kind of certificate, in words.
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104548** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Rinova Recovery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Transport User Party
 
@@ -317,6 +329,8 @@ Inside `Consignment`:
   The register covers the whole country.
 - `ConsigneeParty/Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Rivermouth Packaging (world/parties.json).
+- `ConsigneeParty/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Telephone` = **+999 2 3850 2740**  
@@ -325,6 +339,10 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rivermouth Packaging (world/parties.json).
+- `ConsigneeParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412740** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Rivermouth Packaging (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -403,11 +421,16 @@ Inside `Consignment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Chartering desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 1 4170 4959</cbc:Telephone>
       <cbc:ElectronicMail>chartering@fiumella.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104959</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
@@ -479,6 +502,7 @@ Inside `Consignment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4140 4548</cbc:Telephone>
       <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
@@ -495,6 +519,10 @@ Inside `Consignment`:
         <cbc:CertificateType>Operating permit</cbc:CertificateType>
       </cac:Certificate>
     </cac:PartyAuthorization>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportUserParty>
     <cac:PartyIdentification>
@@ -594,11 +622,16 @@ Inside `Consignment`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:ConsigneeParty>
   </cac:Consignment>
 </TransportExecutionPlan>

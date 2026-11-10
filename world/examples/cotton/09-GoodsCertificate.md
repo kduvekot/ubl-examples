@@ -79,6 +79,8 @@ Inside `ExporterParty`:
   The register covers the whole country.
 - `Contact/Name` = **Cotton sales**  
   The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 2681**  
@@ -87,6 +89,10 @@ Inside `ExporterParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Importer Party
 
@@ -170,6 +176,8 @@ Inside `ImporterParty`:
   The register covers the whole country.
 - `Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Telephone` = **+999 2 3850 2603**  
@@ -178,6 +186,10 @@ Inside `ImporterParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Issuer Party
 
@@ -227,6 +239,8 @@ Inside `IssuerParty`:
   The register covers the whole country.
 - `Contact/Name` = **Carnet office**  
   The desk that handles this document; identity of Selanu Chamber of Commerce (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 2133**  
@@ -235,6 +249,10 @@ Inside `IssuerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Chamber of Commerce (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC42133** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Applicant Party
 
@@ -337,11 +355,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Cotton sales</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
       <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
@@ -416,11 +439,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Purchasing</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
       <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:IssuerParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
@@ -468,11 +496,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Carnet office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 3 3000 2133</cbc:Telephone>
       <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:IssuerParty>
   <cac:ApplicantParty>
     <cac:PartyIdentification>

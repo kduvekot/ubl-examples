@@ -101,6 +101,8 @@ Inside `ImporterParty`:
   The register covers the whole country.
 - `Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Telephone` = **+999 2 3850 2603**  
@@ -109,6 +111,10 @@ Inside `ImporterParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Consignor Party
 
@@ -170,6 +176,8 @@ Inside `ConsignorParty`:
   The register covers the whole country.
 - `Contact/Name` = **Cotton sales**  
   The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 2681**  
@@ -178,6 +186,10 @@ Inside `ConsignorParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Consignee Party
 
@@ -242,6 +254,8 @@ Inside `CustomsParty`:
   The register covers the whole country.
 - `Contact/Name` = **Border office**  
   The desk that handles this document; identity of Customs and Border Service of Bayvarra (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `Contact/Telephone` = **+999 2 7121 0137**  
@@ -250,6 +264,10 @@ Inside `CustomsParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Customs and Border Service of Bayvarra (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Shipment
 
@@ -371,11 +389,16 @@ Inside `AdditionalDocumentReference`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Purchasing</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
       <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -431,11 +454,16 @@ Inside `AdditionalDocumentReference`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Cotton sales</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
       <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:ConsigneeParty>
     <cac:PartyIdentification>
@@ -494,11 +522,16 @@ Inside `AdditionalDocumentReference`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Border office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 2 7121 0137</cbc:Telephone>
       <cbc:ElectronicMail>border@customs-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0199</cbc:ID>

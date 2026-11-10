@@ -78,11 +78,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Procurement office</cbc:Name>
+        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
         <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
   <cac:ReceiverParty>
@@ -135,11 +140,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 2 3852 0959</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410959</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TenderingTerms>
     <cac:AppealTerms>
@@ -193,11 +203,16 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Registry</cbc:Name>
+          <cbc:JobTitle>Procurement officer</cbc:JobTitle>
           <cbc:Department>Procurement</cbc:Department>
           <cbc:Telephone>+999 2 3851 0822</cbc:Telephone>
           <cbc:ElectronicMail>registry@review-xb.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410822</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:AppealReceiverParty>
       <cac:MediationParty>
         <cac:PartyIdentification>

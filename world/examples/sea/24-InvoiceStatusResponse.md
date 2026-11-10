@@ -79,6 +79,8 @@ Inside `SenderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Velumi Trading (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 1859**  
@@ -87,6 +89,10 @@ Inside `SenderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -178,6 +184,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Telephone` = **+999 2 7121 0274**  
@@ -186,6 +194,10 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Document Response
 
@@ -259,11 +271,16 @@ Inside `DocumentResponse`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Purchasing</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
       <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -342,11 +359,16 @@ Inside `DocumentResponse`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:DocumentResponse>
     <cac:Response>

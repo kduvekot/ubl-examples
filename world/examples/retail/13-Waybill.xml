@@ -71,6 +71,7 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Planning desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
       <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
@@ -87,6 +88,10 @@
         <cbc:CertificateType>Operating permit</cbc:CertificateType>
       </cac:Certificate>
     </cac:PartyAuthorization>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -165,11 +170,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
@@ -268,6 +278,7 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Buying office</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
           <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
@@ -282,6 +293,10 @@
           <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
           <cbc:URI>https://social.example/brightmarket</cbc:URI>
         </cac:SocialMediaProfile>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:ConsigneeParty>
     </cac:Consignment>
   </cac:Shipment>

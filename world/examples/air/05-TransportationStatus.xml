@@ -57,11 +57,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Cargo sales</cbc:Name>
+        <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 3 3000 1311</cbc:Telephone>
         <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41311</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -149,11 +154,16 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Cargo acceptance</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 2 3852 2055</cbc:Telephone>
           <cbc:ElectronicMail>cargo@lumeport-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412055</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>

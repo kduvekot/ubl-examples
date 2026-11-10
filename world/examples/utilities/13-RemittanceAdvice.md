@@ -83,6 +83,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Velumi Trading (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 3000 1859**  
@@ -91,6 +93,10 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Supplier Party
 
@@ -150,6 +156,8 @@ Inside `AccountingSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Business accounts**  
   The desk that handles this document; identity of Selanu Telecom (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 3000 2407**  
@@ -158,6 +166,10 @@ Inside `AccountingSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Telecom (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42407** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Telecom (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Payment Means
 
@@ -301,11 +313,16 @@ Inside `RemittanceAdviceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
@@ -360,11 +377,16 @@ Inside `RemittanceAdviceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Business accounts</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 3 3000 2407</cbc:Telephone>
         <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42407</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>

@@ -76,11 +76,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Bookings</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -159,11 +164,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportServiceProviderParty>
     <cac:PartyIdentification>

@@ -95,6 +95,8 @@ Inside `Consignment`:
   The register covers the whole country.
 - `CarrierParty/Contact/Name` = **Freight desk**  
   The desk that handles this document; identity of Ferrano Rail Cargo (world/parties.json).
+- `CarrierParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/Contact/Telephone` = **+999 1 4150 4685**  
@@ -103,6 +105,10 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Ferrano Rail Cargo (world/parties.json).
+- `CarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/ID` = **1**  
   The main carriage, by rail.
 - `MainCarriageShipmentStage/TerminalOperatorParty/WebsiteURI` = **https://www.ferranohub.example**  
@@ -175,6 +181,8 @@ Inside `Consignment`:
   The register covers the whole country.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Terminal control**  
   The desk that handles this document; identity of Ferrano Intermodal Hub (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 1 4180 5096**  
@@ -183,6 +191,10 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Ferrano Intermodal Hub (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105096** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Ferrano Intermodal Hub (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Transport Event
 
@@ -291,11 +303,16 @@ Inside `ReceiverParty`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Freight desk</cbc:Name>
+        <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 1 4150 4685</cbc:Telephone>
         <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -366,11 +383,16 @@ Inside `ReceiverParty`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Terminal control</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 4180 5096</cbc:Telephone>
           <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105096</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>

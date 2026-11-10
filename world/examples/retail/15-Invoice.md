@@ -106,6 +106,8 @@ Inside `AccountingSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Planning desk**  
   The desk that handles this document; identity of Trasvia Haulage (world/parties.json).
+- `Party/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Trasvia Haulage (world/parties.json).
 - `Party/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Trasvia Haulage (world/parties.json).
 - `Party/Contact/Telephone` = **+999 1 4160 4822**  
@@ -124,6 +126,10 @@ Inside `AccountingSupplierParty`:
   A permit issued by an authority of the party's country.
 - `Party/PartyAuthorization/Certificate/CertificateType` = **Operating permit**  
   The kind of certificate, in words.
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Customer Party
 
@@ -215,6 +221,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 7121 0274**  
@@ -223,6 +231,10 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -434,6 +446,7 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Planning desk</cbc:Name>
+        <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
         <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
@@ -450,6 +463,10 @@ Inside `InvoiceLine`:
           <cbc:CertificateType>Operating permit</cbc:CertificateType>
         </cac:Certificate>
       </cac:PartyAuthorization>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
@@ -530,11 +547,16 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Customer service</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:BuyerCustomerParty>

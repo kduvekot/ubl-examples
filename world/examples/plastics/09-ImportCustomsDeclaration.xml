@@ -77,11 +77,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
       <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
@@ -153,6 +158,7 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4140 4548</cbc:Telephone>
       <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
@@ -169,6 +175,10 @@
         <cbc:CertificateType>Operating permit</cbc:CertificateType>
       </cac:Certificate>
     </cac:PartyAuthorization>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:ConsigneeParty>
     <cac:PartyIdentification>
@@ -227,11 +237,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Border office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 2 7121 0137</cbc:Telephone>
       <cbc:ElectronicMail>border@customs-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>RR-SH-26-0889</cbc:ID>

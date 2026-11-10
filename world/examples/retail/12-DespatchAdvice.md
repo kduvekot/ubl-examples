@@ -116,6 +116,8 @@ Inside `DespatchSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 7121 0274**  
@@ -124,6 +126,10 @@ Inside `DespatchSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Delivery Customer Party
 
@@ -213,6 +219,8 @@ Inside `DeliveryCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Buying office**  
   The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3851 0411**  
@@ -231,6 +239,10 @@ Inside `DeliveryCustomerParty`:
   The kind of social medium.
 - `Party/SocialMediaProfile/URI` = **https://social.example/brightmarket**  
   The profile's address, under the reserved .example domain.
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -330,6 +342,8 @@ Inside `Shipment`:
   The register covers the whole country.
 - `Consignment/CarrierParty/Contact/Name` = **Planning desk**  
   The desk that handles this document; identity of Trasvia Haulage (world/parties.json).
+- `Consignment/CarrierParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/Contact/Telephone` = **+999 1 4160 4822**  
@@ -348,6 +362,10 @@ Inside `Shipment`:
   A permit issued by an authority of the party's country.
 - `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Operating permit**  
   The kind of certificate, in words.
+- `Consignment/CarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Despatch Line
 
@@ -464,11 +482,16 @@ Inside `DespatchLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Customer service</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:DespatchSupplierParty>
   <cac:DeliveryCustomerParty>
@@ -548,6 +571,7 @@ Inside `DespatchLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Buying office</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
@@ -562,6 +586,10 @@ Inside `DespatchLine`:
         <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>
       </cac:SocialMediaProfile>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:BuyerCustomerParty>
@@ -656,6 +684,7 @@ Inside `DespatchLine`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Planning desk</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
           <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
@@ -672,6 +701,10 @@ Inside `DespatchLine`:
             <cbc:CertificateType>Operating permit</cbc:CertificateType>
           </cac:Certificate>
         </cac:PartyAuthorization>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
   </cac:Shipment>

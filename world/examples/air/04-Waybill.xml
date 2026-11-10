@@ -55,11 +55,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Cargo sales</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 3 3000 1311</cbc:Telephone>
       <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41311</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
@@ -131,11 +136,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -214,11 +224,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:CarrierParty>
     <cac:PartyIdentification>
@@ -295,11 +310,16 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Purchasing</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
           <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:ConsigneeParty>
       <cac:SubstituteCarrierParty>
         <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
@@ -368,6 +388,7 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Planning desk</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
           <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
@@ -384,6 +405,10 @@
             <cbc:CertificateType>Operating permit</cbc:CertificateType>
           </cac:Certificate>
         </cac:PartyAuthorization>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:SubstituteCarrierParty>
     </cac:Consignment>
   </cac:Shipment>

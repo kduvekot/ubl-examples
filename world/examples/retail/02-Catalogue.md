@@ -120,6 +120,8 @@ Inside `ProviderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Telephone` = **+999 2 7121 0274**  
@@ -128,6 +130,10 @@ Inside `ProviderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -217,6 +223,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Buying office**  
   The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 3851 0411**  
@@ -235,6 +243,10 @@ Inside `ReceiverParty`:
   The kind of social medium.
 - `SocialMediaProfile/URI` = **https://social.example/brightmarket**  
   The profile's address, under the reserved .example domain.
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Seller Supplier Party
 
@@ -333,6 +345,8 @@ Inside `CatalogueLine`:
   The register covers the whole country.
 - `Item/StandardItemIdentification/IssuerParty/Contact/Name` = **Member services**  
   The desk that handles this document; identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/Contact/Telephone` = **+999 1 4130 5644**  
@@ -341,6 +355,10 @@ Inside `CatalogueLine`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Item/StandardItemIdentification/IssuerParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105644** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Codana Identification Agency (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `Item/OriginCountry/IdentificationCode` = **XU**  
   Where the item was produced; item bench-serra of Valdara Industries, which this item resells (world/items.json).
 - `Item/CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
@@ -461,11 +479,16 @@ Inside `CatalogueLine`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ProviderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -543,6 +566,7 @@ Inside `CatalogueLine`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Buying office</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
@@ -557,6 +581,10 @@ Inside `CatalogueLine`:
       <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
       <cbc:URI>https://social.example/brightmarket</cbc:URI>
     </cac:SocialMediaProfile>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:SellerSupplierParty>
     <cac:Party>
@@ -653,11 +681,16 @@ Inside `CatalogueLine`:
           </cac:PartyLegalEntity>
           <cac:Contact>
             <cbc:Name>Member services</cbc:Name>
+            <cbc:JobTitle>Public service officer</cbc:JobTitle>
             <cbc:Department>Public services</cbc:Department>
             <cbc:Telephone>+999 1 4130 5644</cbc:Telephone>
             <cbc:ElectronicMail>member@codana.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105644</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:OriginCountry>

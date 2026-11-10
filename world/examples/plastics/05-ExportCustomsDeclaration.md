@@ -95,6 +95,8 @@ Inside `ExporterParty`:
   The register covers the whole country.
 - `Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Rinova Recovery (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
 - `Contact/Telephone` = **+999 1 4140 4548**  
@@ -113,6 +115,10 @@ Inside `ExporterParty`:
   A permit issued by an authority of the party's country.
 - `PartyAuthorization/Certificate/CertificateType` = **Operating permit**  
   The kind of certificate, in words.
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104548** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Rinova Recovery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Customs Declaration
 
@@ -196,6 +202,8 @@ Inside `CustomsDeclaration`:
   The register covers the whole country.
 - `Shipment/Consignment/CarrierParty/Contact/Name` = **Chartering desk**  
   The desk that handles this document; identity of Fiumella Barges (world/parties.json).
+- `Shipment/Consignment/CarrierParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Fiumella Barges (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Fiumella Barges (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Telephone` = **+999 1 4170 4959**  
@@ -204,6 +212,10 @@ Inside `CustomsDeclaration`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Fiumella Barges (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Fiumella Barges (world/parties.json).
+- `Shipment/Consignment/CarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Shipment/Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104959** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Fiumella Barges (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `Shipment/GoodsItem/ID` = **1**  
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Recycled PE granulate**  
@@ -304,6 +316,8 @@ Inside `CustomsDeclaration`:
   The register covers the whole country.
 - `ConsigneeParty/Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Rivermouth Packaging (world/parties.json).
+- `ConsigneeParty/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Telephone` = **+999 2 3850 2740**  
@@ -312,6 +326,10 @@ Inside `CustomsDeclaration`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rivermouth Packaging (world/parties.json).
+- `ConsigneeParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412740** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Rivermouth Packaging (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `CustomsParty/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -374,6 +392,8 @@ Inside `CustomsDeclaration`:
   The register covers the whole country.
 - `CustomsParty/Contact/Name` = **Border office**  
   The desk that handles this document; identity of Customs Administration of Urvania (world/parties.json).
+- `CustomsParty/Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/Contact/Telephone` = **+999 1 4120 5507**  
@@ -384,6 +404,10 @@ Inside `CustomsDeclaration`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Customs Administration of Urvania (world/parties.json).
+- `CustomsParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105507** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -464,6 +488,7 @@ Inside `CustomsDeclaration`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4140 4548</cbc:Telephone>
       <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
@@ -480,6 +505,10 @@ Inside `CustomsDeclaration`:
         <cbc:CertificateType>Operating permit</cbc:CertificateType>
       </cac:Certificate>
     </cac:PartyAuthorization>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>RR-CD-26-0888</cbc:ID>
@@ -555,11 +584,16 @@ Inside `CustomsDeclaration`:
           </cac:PartyLegalEntity>
           <cac:Contact>
             <cbc:Name>Chartering desk</cbc:Name>
+            <cbc:JobTitle>Operations planner</cbc:JobTitle>
             <cbc:Department>Operations</cbc:Department>
             <cbc:Telephone>+999 1 4170 4959</cbc:Telephone>
             <cbc:ElectronicMail>chartering@fiumella.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104959</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
         </cac:CarrierParty>
       </cac:Consignment>
       <cac:GoodsItem>
@@ -659,11 +693,16 @@ Inside `CustomsDeclaration`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:ConsigneeParty>
     <cac:CustomsParty>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -728,12 +767,17 @@ Inside `CustomsDeclaration`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Border office</cbc:Name>
+        <cbc:JobTitle>Public service officer</cbc:JobTitle>
         <cbc:Department>Public services</cbc:Department>
         <cbc:Telephone>+999 1 4120 5507</cbc:Telephone>
         <cbc:Telefax>+999 1 4180 0018</cbc:Telefax>
         <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:CustomsParty>
   </cac:CustomsDeclaration>
 </ExportCustomsDeclaration>

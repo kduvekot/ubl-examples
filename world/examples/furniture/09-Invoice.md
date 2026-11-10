@@ -110,6 +110,8 @@ Inside `AccountingSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Trade sales**  
   The desk that handles this document; identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 7120 2466**  
@@ -118,6 +120,10 @@ Inside `AccountingSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Brackenmere Furniture (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Customer Party
 
@@ -207,6 +213,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Buying office**  
   The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3851 0411**  
@@ -225,6 +233,10 @@ Inside `AccountingCustomerParty`:
   The kind of social medium.
 - `Party/SocialMediaProfile/URI` = **https://social.example/brightmarket**  
   The profile's address, under the reserved .example domain.
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -433,11 +445,16 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Trade sales</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7120 2466</cbc:Telephone>
         <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
@@ -517,6 +534,7 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Buying office</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
@@ -531,6 +549,10 @@ Inside `InvoiceLine`:
         <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>
       </cac:SocialMediaProfile>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:BuyerCustomerParty>

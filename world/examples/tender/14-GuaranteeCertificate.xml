@@ -66,11 +66,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Trade services</cbc:Name>
+      <cbc:JobTitle>Client relationship manager</cbc:JobTitle>
       <cbc:Department>Client services</cbc:Department>
       <cbc:Telephone>+999 2 3852 1370</cbc:Telephone>
       <cbc:ElectronicMail>trade@bankoflumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411370</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:GuarantorParty>
   <cac:InterestedParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -144,10 +149,15 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cac:OtherCommunication>
+        <cbc:ChannelCode>AL</cbc:ChannelCode>
+        <cbc:Value>+999 1 7000 4274</cbc:Value>
+      </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -160,6 +170,10 @@
         </cac:PartyName>
       </cac:Party>
     </cac:ServiceProviderParty>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:InterestedParty>
   <cac:BeneficiaryParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -233,10 +247,15 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Procurement office</cbc:Name>
+      <cbc:JobTitle>Procurement officer</cbc:JobTitle>
       <cbc:Department>Procurement</cbc:Department>
       <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
       <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:BeneficiaryParty>
 </GuaranteeCertificate>

@@ -101,6 +101,8 @@ Inside `ContractingParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Procurement office**  
   The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Contact/JobTitle` = **Procurement officer**  
+  The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3851 0548**  
@@ -109,6 +111,10 @@ Inside `ContractingParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -166,6 +172,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Publications and register**  
   The desk that handles this document; identity of Bayvarra Information Service (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Telephone` = **+999 2 3852 0959**  
@@ -174,6 +182,10 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayvarra Information Service (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410959** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Bayvarra Information Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Tendering Terms
 
@@ -231,6 +243,8 @@ Inside `TenderingTerms`:
   The register covers the whole country.
 - `AppealTerms/AppealReceiverParty/Contact/Name` = **Registry**  
   The desk that handles this document; identity of Procurement Review Board of Bayvarra (world/parties.json).
+- `AppealTerms/AppealReceiverParty/Contact/JobTitle` = **Procurement officer**  
+  The job of the person who answers at the desk; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/Contact/Telephone` = **+999 2 3851 0822**  
@@ -239,6 +253,10 @@ Inside `TenderingTerms`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Procurement Review Board of Bayvarra (world/parties.json).
+- `AppealTerms/AppealReceiverParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `AppealTerms/AppealReceiverParty/ElectronicAddress/ElectronicAddressID` = **XB:20410822** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Procurement Review Board of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Tender Result
 
@@ -322,6 +340,8 @@ Inside `TenderResult`:
   The register covers the whole country.
 - `WinningParty/Party/Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
+- `WinningParty/Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/Telephone` = **+999 1 4120 4274**  
@@ -330,12 +350,20 @@ Inside `TenderResult`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
+- `WinningParty/Party/Contact/OtherCommunication/ChannelCode` = **AL**  
+  UN/EDIFACT 3155 code AL: cellular phone.
+- `WinningParty/Party/Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
+  The sales desk's mobile number, also under the reserved +999.
 - `WinningParty/Party/ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `WinningParty/Party/ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
   A party referred to from another party's details: its identifier and name are enough.
+- `WinningParty/Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `WinningParty/Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -420,11 +448,16 @@ Inside `TenderResult`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Procurement office</cbc:Name>
+        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
         <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
   <cac:ReceiverParty>
@@ -477,11 +510,16 @@ Inside `TenderResult`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 2 3852 0959</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410959</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TenderingTerms>
     <cac:AppealTerms>
@@ -535,11 +573,16 @@ Inside `TenderResult`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Registry</cbc:Name>
+          <cbc:JobTitle>Procurement officer</cbc:JobTitle>
           <cbc:Department>Procurement</cbc:Department>
           <cbc:Telephone>+999 2 3851 0822</cbc:Telephone>
           <cbc:ElectronicMail>registry@review-xb.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410822</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:AppealReceiverParty>
     </cac:AppealTerms>
   </cac:TenderingTerms>
@@ -618,10 +661,15 @@ Inside `TenderResult`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Order desk</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
           <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cac:OtherCommunication>
+            <cbc:ChannelCode>AL</cbc:ChannelCode>
+            <cbc:Value>+999 1 7000 4274</cbc:Value>
+          </cac:OtherCommunication>
         </cac:Contact>
         <cac:ServiceProviderParty>
           <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -634,6 +682,10 @@ Inside `TenderResult`:
             </cac:PartyName>
           </cac:Party>
         </cac:ServiceProviderParty>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:Party>
     </cac:WinningParty>
   </cac:TenderResult>

@@ -75,6 +75,8 @@ Inside `SenderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Publications and register**  
   The desk that handles this document; identity of Bayvarra Information Service (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Telephone` = **+999 2 3852 0959**  
@@ -83,6 +85,10 @@ Inside `SenderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayvarra Information Service (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410959** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Bayvarra Information Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -164,6 +170,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Procurement office**  
   The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+- `Contact/JobTitle` = **Procurement officer**  
+  The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/Telephone` = **+999 2 3851 0548**  
@@ -172,6 +180,10 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Public Works Department (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Business Party
 
@@ -253,6 +265,8 @@ Inside `BusinessParty`:
   The register covers the whole country.
 - `Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
 - `Contact/Telephone` = **+999 1 4120 4274**  
@@ -261,12 +275,20 @@ Inside `BusinessParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
+- `Contact/OtherCommunication/ChannelCode` = **AL**  
+  UN/EDIFACT 3155 code AL: cellular phone.
+- `Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
+  The sales desk's mobile number, also under the reserved +999.
 - `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
   A party referred to from another party's details: its identifier and name are enough.
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -327,11 +349,16 @@ Inside `BusinessParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 2 3852 0959</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410959</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -405,11 +432,16 @@ Inside `BusinessParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Procurement office</cbc:Name>
+      <cbc:JobTitle>Procurement officer</cbc:JobTitle>
       <cbc:Department>Procurement</cbc:Department>
       <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
       <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:BusinessParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -483,10 +515,15 @@ Inside `BusinessParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cac:OtherCommunication>
+        <cbc:ChannelCode>AL</cbc:ChannelCode>
+        <cbc:Value>+999 1 7000 4274</cbc:Value>
+      </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -499,6 +536,10 @@ Inside `BusinessParty`:
         </cac:PartyName>
       </cac:Party>
     </cac:ServiceProviderParty>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:BusinessParty>
 </BusinessInformation>
 ```

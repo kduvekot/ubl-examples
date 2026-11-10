@@ -58,11 +58,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Cotton sales</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
       <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
@@ -136,11 +141,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Bookings</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:WeighingParty>
     <cbc:WebsiteURI>https://www.port-selanu.example</cbc:WebsiteURI>
@@ -207,11 +217,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Port control</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 3 3000 1037</cbc:Telephone>
       <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:WeighingParty>
   <cac:ShipperParty>
     <cac:PartyIdentification>

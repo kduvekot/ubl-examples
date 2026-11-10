@@ -54,11 +54,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 2 3852 0959</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410959</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -132,11 +137,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Procurement office</cbc:Name>
+      <cbc:JobTitle>Procurement officer</cbc:JobTitle>
       <cbc:Department>Procurement</cbc:Department>
       <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
       <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:BusinessParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -210,10 +220,15 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cac:OtherCommunication>
+        <cbc:ChannelCode>AL</cbc:ChannelCode>
+        <cbc:Value>+999 1 7000 4274</cbc:Value>
+      </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -226,5 +241,9 @@
         </cac:PartyName>
       </cac:Party>
     </cac:ServiceProviderParty>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:BusinessParty>
 </BusinessInformation>

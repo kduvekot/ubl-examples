@@ -101,6 +101,8 @@ Inside `ContractingParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Procurement office**  
   The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Contact/JobTitle` = **Procurement officer**  
+  The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3851 0548**  
@@ -109,6 +111,10 @@ Inside `ContractingParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Economic Operator Party
 
@@ -188,6 +194,8 @@ Inside `EconomicOperatorParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Trade sales**  
   The desk that handles this document; identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 7120 2466**  
@@ -196,6 +204,10 @@ Inside `EconomicOperatorParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Brackenmere Furniture (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -280,11 +292,16 @@ Inside `EconomicOperatorParty`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Procurement office</cbc:Name>
+        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
         <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
   <cac:EconomicOperatorParty>
@@ -357,11 +374,16 @@ Inside `EconomicOperatorParty`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Trade sales</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7120 2466</cbc:Telephone>
         <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
 </QualificationApplicationRequest>

@@ -73,11 +73,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Freight desk</cbc:Name>
+        <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 1 4150 4685</cbc:Telephone>
         <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -148,11 +153,16 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Terminal control</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 4180 5096</cbc:Telephone>
           <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105096</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>

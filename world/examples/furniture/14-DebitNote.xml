@@ -80,11 +80,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Trade sales</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7120 2466</cbc:Telephone>
         <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
@@ -164,6 +169,7 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Buying office</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
@@ -178,6 +184,10 @@
         <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>
       </cac:SocialMediaProfile>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:TaxTotal>

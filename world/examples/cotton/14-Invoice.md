@@ -92,6 +92,8 @@ Inside `AccountingSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Cotton sales**  
   The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 3000 2681**  
@@ -100,6 +102,10 @@ Inside `AccountingSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Customer Party
 
@@ -183,6 +189,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3850 2603**  
@@ -191,6 +199,10 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -380,11 +392,16 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Cotton sales</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
         <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
@@ -461,11 +478,16 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:BuyerCustomerParty>

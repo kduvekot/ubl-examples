@@ -103,6 +103,8 @@ Inside `BuyerCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Rivermouth Packaging (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Rivermouth Packaging (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rivermouth Packaging (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3850 2740**  
@@ -111,6 +113,10 @@ Inside `BuyerCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rivermouth Packaging (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412740** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Rivermouth Packaging (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Seller Supplier Party
 
@@ -188,6 +194,8 @@ Inside `SellerSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Rinova Recovery (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/Telephone` = **+999 1 4140 4548**  
@@ -206,6 +214,10 @@ Inside `SellerSupplierParty`:
   A permit issued by an authority of the party's country.
 - `Party/PartyAuthorization/Certificate/CertificateType` = **Operating permit**  
   The kind of certificate, in words.
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104548** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Rinova Recovery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Delivery
 
@@ -364,11 +376,16 @@ Inside `OrderLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
@@ -442,6 +459,7 @@ Inside `OrderLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Customer service</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 1 4140 4548</cbc:Telephone>
         <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
@@ -458,6 +476,10 @@ Inside `OrderLine`:
           <cbc:CertificateType>Operating permit</cbc:CertificateType>
         </cac:Certificate>
       </cac:PartyAuthorization>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>

@@ -111,6 +111,13 @@ def party(pid, short=False):
     out["PostalAddress"] = address(pid)
     if idn.get("site"):
         out["PhysicalLocation"] = location(pid)
+    if idn.get("endpoint"):
+        out["ElectronicAddress"] = {   # new in UBL 2.5; Party/EndpointID is deprecated
+            "ExchangeNetworkID": V("urn:ubl-examples:world:network", "The network in which the address is registered: "
+                                   "the world's own exchange network."),
+            "ElectronicAddressID": V(idn["endpoint"], "The party's electronic address in that network: its country code and "
+                                     f"registry number; {src}. UBL 2.5 carries it here; Party/EndpointID is deprecated.",
+                                     schemeID="urn:ubl-examples:world:endpoint")}
     if idn.get("tax_id"):
         scheme = c["tax"]["schemes"][0]
         tax = {"RegistrationName": V(legal_name(pid), f"The name under which the party is registered for "
@@ -137,6 +144,8 @@ def party(pid, short=False):
     if idn.get("contact"):
         ct = idn["contact"]
         contact = {"Name": V(ct["name"], f"The desk that handles this document; {src}.")}
+        if ct.get("job_title"):
+            contact["JobTitle"] = V(ct["job_title"], f"The job of the person who answers at the desk; {src}.")
         if ct.get("department"):
             contact["Department"] = V(ct["department"], f"The department the desk belongs to; {src}.")
         if ct.get("telephone"):
@@ -148,6 +157,10 @@ def party(pid, short=False):
                                                    f"reach anyone; {src}.")
         if ct.get("hours"):
             contact["Note"] = V(ct["hours"], f"When the desk can be reached; {src}.")
+        if ct.get("mobile"):
+            contact["OtherCommunication"] = {"ChannelCode": V("AL", "UN/EDIFACT 3155 code AL: cellular phone."),
+                                             "Value": V(ct["mobile"], "The sales desk's mobile number, also under the "
+                                                                      "reserved +999.")}
         out["Contact"] = contact
     if idn.get("person_name"):
         out["Person"] = {"FirstName": V(idn["person_name"]["first"], f"The consumer's first name; {src}."),

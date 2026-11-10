@@ -78,11 +78,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4130 5781</cbc:Telephone>
       <cbc:ElectronicMail>customer@ferranoenergy.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105781</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.castrano.example</cbc:WebsiteURI>
@@ -162,11 +167,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Warehouse office</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4130 4411</cbc:Telephone>
       <cbc:ElectronicMail>warehouse@castrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104411</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:CustomerParty>
     <cac:Party>
@@ -241,10 +251,15 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cac:OtherCommunication>
+          <cbc:ChannelCode>AL</cbc:ChannelCode>
+          <cbc:Value>+999 1 7000 4274</cbc:Value>
+        </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
         <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -257,6 +272,10 @@
           </cac:PartyName>
         </cac:Party>
       </cac:ServiceProviderParty>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:CustomerParty>
   <cac:SubscriberParty>

@@ -103,6 +103,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
 - `Party/Contact/Telephone` = **+999 1 4120 4274**  
@@ -111,12 +113,20 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/OtherCommunication/ChannelCode` = **AL**  
+  UN/EDIFACT 3155 code AL: cellular phone.
+- `Party/Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
+  The sales desk's mobile number, also under the reserved +999.
 - `Party/ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `Party/ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
   A party referred to from another party's details: its identifier and name are enough.
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Supplier Party
 
@@ -198,6 +208,8 @@ Inside `AccountingSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Sales office**  
   The desk that handles this document; identity of Marrowdale Sawmill (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Marrowdale Sawmill (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Marrowdale Sawmill (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 7120 2329**  
@@ -206,6 +218,10 @@ Inside `AccountingSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Marrowdale Sawmill (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Marrowdale Sawmill (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412329** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Marrowdale Sawmill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Payment Means
 
@@ -367,10 +383,15 @@ Inside `RemittanceAdviceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cac:OtherCommunication>
+          <cbc:ChannelCode>AL</cbc:ChannelCode>
+          <cbc:Value>+999 1 7000 4274</cbc:Value>
+        </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
         <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -383,6 +404,10 @@ Inside `RemittanceAdviceLine`:
           </cac:PartyName>
         </cac:Party>
       </cac:ServiceProviderParty>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
@@ -458,11 +483,16 @@ Inside `RemittanceAdviceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Sales office</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7120 2329</cbc:Telephone>
         <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412329</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>

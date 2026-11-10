@@ -58,6 +58,7 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Purchasing</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
       <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
@@ -87,6 +88,10 @@
         <cbc:ID>MAND-2026-014</cbc:ID>
       </cac:MandateDocumentReference>
     </cac:PowerOfAttorney>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -165,11 +170,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:ConsigneeParty>
     <cac:PartyIdentification>
@@ -249,11 +259,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:CustomsParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -301,11 +316,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Import office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 3 3000 1448</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
@@ -414,11 +434,16 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Declarations</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 3 3000 1585</cbc:Telephone>
           <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41585</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:CustomsAgentParty>
     </cac:ShipmentStage>
   </cac:Shipment>

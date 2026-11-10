@@ -79,6 +79,8 @@ Inside `ConsignorParty`:
   The register covers the whole country.
 - `Contact/Name` = **Cotton sales**  
   The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 2681**  
@@ -87,6 +89,10 @@ Inside `ConsignorParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Freight Forwarder Party
 
@@ -168,6 +174,8 @@ Inside `FreightForwarderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Export desk**  
   The desk that handles this document; identity of Bayforth Forwarding (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 3852 1644**  
@@ -176,6 +184,10 @@ Inside `FreightForwarderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Shipment
 
@@ -265,6 +277,8 @@ Inside `Shipment`:
   The register covers the whole country.
 - `Consignment/ConsigneeParty/Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
+- `Consignment/ConsigneeParty/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Telephone` = **+999 2 3850 2603**  
@@ -273,6 +287,10 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
+- `Consignment/ConsigneeParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -337,11 +355,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Cotton sales</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
       <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:FreightForwarderParty>
     <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
@@ -413,11 +436,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0199</cbc:ID>
@@ -497,11 +525,16 @@ Inside `Shipment`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Purchasing</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
           <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:ConsigneeParty>
     </cac:Consignment>
   </cac:Shipment>

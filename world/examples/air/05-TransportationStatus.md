@@ -79,6 +79,8 @@ Inside `Consignment`:
   The register covers the whole country.
 - `CarrierParty/Contact/Name` = **Cargo sales**  
   The desk that handles this document; identity of Kelaro Air Cargo (world/parties.json).
+- `CarrierParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/Contact/Telephone` = **+999 3 3000 1311**  
@@ -87,6 +89,10 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Kelaro Air Cargo (world/parties.json).
+- `CarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `CarrierParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41311** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Kelaro Air Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/ID` = **1**  
   The flight.
 - `MainCarriageShipmentStage/TerminalOperatorParty/WebsiteURI` = **https://www.lumeport-cargo.example**  
@@ -185,6 +191,8 @@ Inside `Consignment`:
   The register covers the whole country.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Cargo acceptance**  
   The desk that handles this document; identity of Lumeport Airport Cargo Terminal (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 2 3852 2055**  
@@ -193,6 +201,10 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Airport Cargo Terminal (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XB:20412055** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Airport Cargo Terminal (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Transport Event
 
@@ -285,11 +297,16 @@ Inside `ReceiverParty`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Cargo sales</cbc:Name>
+        <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 3 3000 1311</cbc:Telephone>
         <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41311</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -377,11 +394,16 @@ Inside `ReceiverParty`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Cargo acceptance</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 2 3852 2055</cbc:Telephone>
           <cbc:ElectronicMail>cargo@lumeport-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412055</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>

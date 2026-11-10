@@ -76,11 +76,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Bookings</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReporterParty>
   <cac:AuthorityParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8413</cbc:IndustryClassificationCode>
@@ -128,11 +133,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Ship registry</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 3 3000 2270</cbc:Telephone>
       <cbc:ElectronicMail>ship@maritime-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42270</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:AuthorityParty>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -219,11 +229,16 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Port control</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 3 3000 1037</cbc:Telephone>
           <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
       <cac:ISPSRequirements>
         <cbc:ID>ISSC-XL-2026-0117</cbc:ID>

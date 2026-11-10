@@ -99,6 +99,8 @@ Inside `SenderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
 - `Contact/Telephone` = **+999 1 4120 4274**  
@@ -107,12 +109,20 @@ Inside `SenderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
+- `Contact/OtherCommunication/ChannelCode` = **AL**  
+  UN/EDIFACT 3155 code AL: cellular phone.
+- `Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
+  The sales desk's mobile number, also under the reserved +999.
 - `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
   A party referred to from another party's details: its identifier and name are enough.
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -188,6 +198,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Freight desk**  
   The desk that handles this document; identity of Ferrano Rail Cargo (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Telephone` = **+999 1 4150 4685**  
@@ -196,6 +208,10 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Ferrano Rail Cargo (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Transport User Party
 
@@ -330,6 +346,8 @@ Inside `Consignment`:
   The register covers the whole country.
 - `ConsignorParty/Contact/Name` = **Sales office**  
   The desk that handles this document; identity of Serravona Mining (world/parties.json).
+- `ConsignorParty/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/Contact/Telephone` = **+999 1 4110 4137**  
@@ -338,6 +356,10 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Serravona Mining (world/parties.json).
+- `ConsignorParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ConsignorParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104137** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Serravona Mining (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -420,10 +442,15 @@ Inside `Consignment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cac:OtherCommunication>
+        <cbc:ChannelCode>AL</cbc:ChannelCode>
+        <cbc:Value>+999 1 7000 4274</cbc:Value>
+      </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -436,6 +463,10 @@ Inside `Consignment`:
         </cac:PartyName>
       </cac:Party>
     </cac:ServiceProviderParty>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
@@ -504,11 +535,16 @@ Inside `Consignment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Freight desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 1 4150 4685</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportUserParty>
     <cac:PartyIdentification>
@@ -624,11 +660,16 @@ Inside `Consignment`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Sales office</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 1 4110 4137</cbc:Telephone>
         <cbc:ElectronicMail>sales@serravona.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104137</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:ConsignorParty>
   </cac:Consignment>
 </TransportExecutionPlanRequest>

@@ -79,6 +79,8 @@ Inside `SenderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Cotton sales**  
   The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 2681**  
@@ -87,6 +89,10 @@ Inside `SenderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -172,6 +178,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Bookings**  
   The desk that handles this document; identity of Tidewell Ocean Lines (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Telephone` = **+999 2 3852 1918**  
@@ -180,6 +188,10 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Tidewell Ocean Lines (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Weighing Party
 
@@ -259,6 +271,8 @@ Inside `WeighingParty`:
   The register covers the whole country.
 - `Contact/Name` = **Port control**  
   The desk that handles this document; identity of Port of Selanu (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Port of Selanu (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Port of Selanu (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 1037**  
@@ -267,6 +281,10 @@ Inside `WeighingParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Port of Selanu (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Port of Selanu (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC41037** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Port of Selanu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Shipper Party
 
@@ -353,11 +371,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Cotton sales</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
       <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
@@ -431,11 +454,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Bookings</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:WeighingParty>
     <cbc:WebsiteURI>https://www.port-selanu.example</cbc:WebsiteURI>
@@ -502,11 +530,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Port control</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 3 3000 1037</cbc:Telephone>
       <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:WeighingParty>
   <cac:ShipperParty>
     <cac:PartyIdentification>

@@ -67,12 +67,17 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Border office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 1 4120 5507</cbc:Telephone>
       <cbc:Telefax>+999 1 4180 0018</cbc:Telefax>
       <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ExportingCustomsParty>
   <cac:ImportingGuarantorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
@@ -120,11 +125,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Carnet office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 3 3000 2133</cbc:Telephone>
       <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ImportingGuarantorParty>
   <cac:ExportingGuarantorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
@@ -188,11 +198,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Certificates office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 1 4110 5370</cbc:Telephone>
       <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ExportingGuarantorParty>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REIMP-1</cbc:ID>

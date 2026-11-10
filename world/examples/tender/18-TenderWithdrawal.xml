@@ -82,11 +82,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Procurement office</cbc:Name>
+        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
         <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
   <cac:TendererParty>
@@ -158,10 +163,15 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Trade sales</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7120 2466</cbc:Telephone>
       <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:TendererParty>
 </TenderWithdrawal>

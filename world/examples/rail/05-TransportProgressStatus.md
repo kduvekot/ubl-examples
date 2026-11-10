@@ -95,6 +95,8 @@ Inside `SenderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Terminal control**  
   The desk that handles this document; identity of Ferrano Intermodal Hub (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/Telephone` = **+999 1 4180 5096**  
@@ -103,6 +105,10 @@ Inside `SenderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Ferrano Intermodal Hub (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105096** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Ferrano Intermodal Hub (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -178,6 +184,8 @@ Inside `ReceiverParty`:
   The register covers the whole country.
 - `Contact/Name` = **Freight desk**  
   The desk that handles this document; identity of Ferrano Rail Cargo (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Telephone` = **+999 1 4150 4685**  
@@ -186,6 +194,10 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Ferrano Rail Cargo (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Transport Means
 
@@ -271,11 +283,16 @@ Inside `TransportMeans`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Terminal control</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 1 4180 5096</cbc:Telephone>
       <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105096</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
@@ -344,11 +361,16 @@ Inside `TransportMeans`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Freight desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 1 4150 4685</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>

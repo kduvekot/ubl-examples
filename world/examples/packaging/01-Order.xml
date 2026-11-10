@@ -78,10 +78,15 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cac:OtherCommunication>
+          <cbc:ChannelCode>AL</cbc:ChannelCode>
+          <cbc:Value>+999 1 7000 4274</cbc:Value>
+        </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
         <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
@@ -94,6 +99,10 @@
           </cac:PartyName>
         </cac:Party>
       </cac:ServiceProviderParty>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
@@ -170,11 +179,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
@@ -254,6 +268,7 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Planning desk</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
           <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
@@ -270,6 +285,10 @@
             <cbc:CertificateType>Operating permit</cbc:CertificateType>
           </cac:Certificate>
         </cac:PartyAuthorization>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Despatch>
   </cac:Delivery>

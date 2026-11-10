@@ -103,6 +103,8 @@ Inside `ReporterParty`:
   The register covers the whole country.
 - `Contact/Name` = **Bookings**  
   The desk that handles this document; identity of Tidewell Ocean Lines (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Telephone` = **+999 2 3852 1918**  
@@ -111,6 +113,10 @@ Inside `ReporterParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Tidewell Ocean Lines (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Authority Party
 
@@ -160,6 +166,8 @@ Inside `AuthorityParty`:
   The register covers the whole country.
 - `Contact/Name` = **Ship registry**  
   The desk that handles this document; identity of Maritime Administration of Lisavu (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 2270**  
@@ -168,6 +176,10 @@ Inside `AuthorityParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Maritime Administration of Lisavu (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC42270** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Maritime Administration of Lisavu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Sender Party
 
@@ -269,6 +281,8 @@ Inside `Shipment`:
   The register covers the whole country.
 - `ShipmentStage/TerminalOperatorParty/Contact/Name` = **Port control**  
   The desk that handles this document; identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 3 3000 1037**  
@@ -277,6 +291,10 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41037** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Port of Selanu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `ShipmentStage/ISPSRequirements/ID` = **ISSC-XL-2026-0117**  
   The number of the ship's International Ship Security Certificate.
 - `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **true**  
@@ -371,11 +389,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Bookings</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ReporterParty>
   <cac:AuthorityParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8413</cbc:IndustryClassificationCode>
@@ -423,11 +446,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Ship registry</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 3 3000 2270</cbc:Telephone>
       <cbc:ElectronicMail>ship@maritime-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42270</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:AuthorityParty>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -514,11 +542,16 @@ Inside `Shipment`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Port control</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 3 3000 1037</cbc:Telephone>
           <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
       <cac:ISPSRequirements>
         <cbc:ID>ISSC-XL-2026-0117</cbc:ID>

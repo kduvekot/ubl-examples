@@ -112,6 +112,8 @@ Inside `AccountingSupplierParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Export desk**  
   The desk that handles this document; identity of Bayforth Forwarding (world/parties.json).
+- `Party/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Party/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3852 1644**  
@@ -120,6 +122,10 @@ Inside `AccountingSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Customer Party
 
@@ -203,6 +209,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 3850 2603**  
@@ -211,6 +219,10 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -316,6 +328,8 @@ Inside `Delivery`:
   The register covers the whole country.
 - `Shipment/Consignment/CarrierParty/Contact/Name` = **Bookings**  
   The desk that handles this document; identity of Tidewell Ocean Lines (world/parties.json).
+- `Shipment/Consignment/CarrierParty/Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Tidewell Ocean Lines (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Tidewell Ocean Lines (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Telephone` = **+999 2 3852 1918**  
@@ -324,6 +338,10 @@ Inside `Delivery`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Tidewell Ocean Lines (world/parties.json).
+- `Shipment/Consignment/CarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Shipment/Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Payment Means
 
@@ -509,11 +527,16 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Export desk</cbc:Name>
+        <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
         <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
@@ -590,11 +613,16 @@ Inside `InvoiceLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:BuyerCustomerParty>
@@ -693,11 +721,16 @@ Inside `InvoiceLine`:
           </cac:PartyLegalEntity>
           <cac:Contact>
             <cbc:Name>Bookings</cbc:Name>
+            <cbc:JobTitle>Operations planner</cbc:JobTitle>
             <cbc:Department>Operations</cbc:Department>
             <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
             <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
         </cac:CarrierParty>
       </cac:Consignment>
     </cac:Shipment>

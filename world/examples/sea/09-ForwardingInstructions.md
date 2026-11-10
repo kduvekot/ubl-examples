@@ -109,6 +109,8 @@ Inside `ConsignorParty`:
   The register covers the whole country.
 - `Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Telephone` = **+999 2 7121 0274**  
@@ -117,6 +119,10 @@ Inside `ConsignorParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Freight Forwarder Party
 
@@ -198,6 +204,8 @@ Inside `FreightForwarderParty`:
   The register covers the whole country.
 - `Contact/Name` = **Export desk**  
   The desk that handles this document; identity of Bayforth Forwarding (world/parties.json).
+- `Contact/JobTitle` = **Operations planner**  
+  The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 3852 1644**  
@@ -206,6 +214,10 @@ Inside `FreightForwarderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Shipment
 
@@ -273,6 +285,8 @@ Inside `Shipment`:
   The register covers the whole country.
 - `Consignment/ConsigneeParty/Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Velumi Trading (world/parties.json).
+- `Consignment/ConsigneeParty/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Telephone` = **+999 3 3000 1859**  
@@ -281,6 +295,10 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
+- `Consignment/ConsigneeParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance, all risks**  
   The cover the forwarder is to arrange.
 - `InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
@@ -361,6 +379,8 @@ Inside `Shipment`:
   The register covers the whole country.
 - `InsurancePolicy/InsurerParty/Contact/Name` = **Cargo claims**  
   The desk that handles this document; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/Contact/JobTitle` = **Client relationship manager**  
+  The job of the person who answers at the desk; identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/Contact/Department` = **Client services**  
   The department the desk belongs to; identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/Contact/Telephone` = **+999 2 3852 1507**  
@@ -369,6 +389,10 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `InsurancePolicy/InsurerParty/ElectronicAddress/ElectronicAddressID` = **XB:20411507** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Wavesure Cargo Insurance (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -456,11 +480,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:FreightForwarderParty>
     <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
@@ -532,11 +561,16 @@ Inside `Shipment`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
@@ -597,11 +631,16 @@ Inside `Shipment`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Purchasing</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
           <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:ConsigneeParty>
     </cac:Consignment>
     <cac:InsurancePolicy>
@@ -677,11 +716,16 @@ Inside `Shipment`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Cargo claims</cbc:Name>
+          <cbc:JobTitle>Client relationship manager</cbc:JobTitle>
           <cbc:Department>Client services</cbc:Department>
           <cbc:Telephone>+999 2 3852 1507</cbc:Telephone>
           <cbc:ElectronicMail>cargo@wavesure.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411507</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:InsurerParty>
     </cac:InsurancePolicy>
   </cac:Shipment>

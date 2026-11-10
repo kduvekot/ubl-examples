@@ -69,6 +69,8 @@ Inside `ImportingGuarantorParty`:
   The register covers the whole country.
 - `Contact/Name` = **Carnet office**  
   The desk that handles this document; identity of Selanu Chamber of Commerce (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 2133**  
@@ -77,6 +79,10 @@ Inside `ImportingGuarantorParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Chamber of Commerce (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC42133** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Selanu Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Exporting Guarantor Party
 
@@ -142,6 +148,8 @@ Inside `ExportingGuarantorParty`:
   The register covers the whole country.
 - `Contact/Name` = **Certificates office**  
   The desk that handles this document; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/Telephone` = **+999 1 4110 5370**  
@@ -150,6 +158,10 @@ Inside `ExportingGuarantorParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105370** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Ferrano Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Importing Customs Party
 
@@ -199,6 +211,8 @@ Inside `ImportingCustomsParty`:
   The register covers the whole country.
 - `Contact/Name` = **Import office**  
   The desk that handles this document; identity of Island Customs Service (world/parties.json).
+- `Contact/JobTitle` = **Public service officer**  
+  The job of the person who answers at the desk; identity of Island Customs Service (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Island Customs Service (world/parties.json).
 - `Contact/Telephone` = **+999 3 3000 1448**  
@@ -207,6 +221,10 @@ Inside `ImportingCustomsParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Island Customs Service (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Island Customs Service (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -264,11 +282,16 @@ Inside `ImportingCustomsParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Carnet office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 3 3000 2133</cbc:Telephone>
       <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ImportingGuarantorParty>
   <cac:ExportingGuarantorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
@@ -332,11 +355,16 @@ Inside `ImportingCustomsParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Certificates office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 1 4110 5370</cbc:Telephone>
       <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ExportingGuarantorParty>
   <cac:ImportingCustomsParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -384,11 +412,16 @@ Inside `ImportingCustomsParty`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Import office</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
       <cbc:Telephone>+999 3 3000 1448</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ImportingCustomsParty>
 </ProofOfReexportationRequest>
 ```

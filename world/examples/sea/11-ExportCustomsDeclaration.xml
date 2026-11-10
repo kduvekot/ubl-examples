@@ -81,11 +81,16 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>BF-CD-26-0136</cbc:ID>
@@ -218,11 +223,16 @@
           </cac:PartyLegalEntity>
           <cac:Contact>
             <cbc:Name>Export desk</cbc:Name>
+            <cbc:JobTitle>Operations planner</cbc:JobTitle>
             <cbc:Department>Operations</cbc:Department>
             <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
             <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
         </cac:CustomsAgentParty>
       </cac:ShipmentStage>
     </cac:Shipment>
@@ -280,11 +290,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:ConsigneeParty>
     <cac:CustomsParty>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -335,11 +350,16 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Border office</cbc:Name>
+        <cbc:JobTitle>Public service officer</cbc:JobTitle>
         <cbc:Department>Public services</cbc:Department>
         <cbc:Telephone>+999 2 7121 0137</cbc:Telephone>
         <cbc:ElectronicMail>border@customs-xb.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:CustomsParty>
   </cac:CustomsDeclaration>
 </ExportCustomsDeclaration>
