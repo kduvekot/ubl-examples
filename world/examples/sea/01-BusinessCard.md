@@ -26,6 +26,23 @@ The distributor introduces itself to the new island customer.
   Sent before the first offer to the new customer.
 - `IssueTime` = **16:39:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `VersionID` = **2**  
+  The card as updated this year.
+- `PreviousVersionID` = **1**  
+  Last year's card.
+- `BriefDescription` = **Distributor of street and garden furniture for Bayvarra and the islands.**  
+  The business in a sentence.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-BC**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -216,6 +233,75 @@ Inside `BusinessParty`:
 - `PartyName/Name` = **Lumeway Distribution**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 
+### Brochure Document Reference
+
+Inside `BrochureDocumentReference`:
+
+- `ID` = **LD-BROCHURE-2026**  
+  The distributor's brochure.
+- `Attachment/ExternalReference/URI` = **https://www.lumeway.example/brochure-2026.pdf**  
+  Where it is.
+- `Attachment/ExternalReference/MimeCode` = **application/pdf**  
+  A PDF.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **LD-REG-XB**  
+  The distributor's registration extract.
+
+### Business Capability
+
+Inside `BusinessCapability`:
+
+- `ID` = **CAP-STOCK**  
+  A capability.
+- `CapabilityTypeCode` = **Warehousing**  
+  What it can do.
+- `Description` = **Stock of 2,000 benches in Marrowdale.**  
+  In words.
+- `ValueAmount` = **1040000.00** (currencyID `XBL`)  
+  The stock's value.
+- `ValueQuantity` = **2000** (unitCode `H87`)  
+  Benches in stock.
+- `SuppliedEvidence/ID` = **LD-AUDIT-2025**  
+  The evidence.
+- `SuppliedEvidence/EvidenceTypeCode` = **Audit**  
+  An audit report.
+- `SuppliedEvidence/Name` = **Stock count 2025**  
+  Its name.
+- `SuppliedEvidence/Description` = **Year-end count by the auditor.**  
+  What it is.
+- `SuppliedEvidence/CandidateStatement` = **The stock is counted every year.**  
+  The company's statement.
+- `SuppliedEvidence/ConfidentialityLevelCode` = **Public**  
+  May be shared.
+- `SuppliedEvidence/EvidenceIssuingParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SuppliedEvidence/EvidenceIssuingParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SuppliedEvidence/Language/ID` = **en**  
+  English.
+- `ValidityPeriod/EndDate` = **2026-12-30**  
+  Until the next count.
+- `WebSite/ID` = **WEB-1**  
+  The stock page.
+- `WebSite/Name` = **Stock**  
+  Its name.
+- `WebSite/Description` = **Live stock levels.**  
+  What it shows.
+- `WebSite/WebSiteTypeCode` = **Extranet**  
+  For trade customers.
+- `WebSite/URI` = **https://www.lumeway.example/stock**  
+  Where.
+- `WebSite/WebSiteAccess/URI` = **https://www.lumeway.example/login**  
+  The login page.
+- `WebSite/WebSiteAccess/Password` = ************  
+  Never shown.
+- `WebSite/WebSiteAccess/Login` = **velumi**  
+  The buyer's login.
+
 ## The document
 
 ```xml
@@ -229,6 +315,20 @@ Inside `BusinessParty`:
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
   <cbc:IssueTime>16:39:00</cbc:IssueTime>
+  <cbc:VersionID>2</cbc:VersionID>
+  <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
+  <cbc:BriefDescription>Distributor of street and garden furniture for Bayvarra and the islands.</cbc:BriefDescription>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-BC</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -390,5 +490,58 @@ Inside `BusinessParty`:
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
   </cac:BusinessParty>
+  <cac:BrochureDocumentReference>
+    <cbc:ID>LD-BROCHURE-2026</cbc:ID>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://www.lumeway.example/brochure-2026.pdf</cbc:URI>
+        <cbc:MimeCode>application/pdf</cbc:MimeCode>
+      </cac:ExternalReference>
+    </cac:Attachment>
+  </cac:BrochureDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-REG-XB</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:BusinessCapability>
+    <cbc:ID>CAP-STOCK</cbc:ID>
+    <cbc:CapabilityTypeCode>Warehousing</cbc:CapabilityTypeCode>
+    <cbc:Description>Stock of 2,000 benches in Marrowdale.</cbc:Description>
+    <cbc:ValueAmount currencyID="XBL">1040000.00</cbc:ValueAmount>
+    <cbc:ValueQuantity unitCode="H87">2000</cbc:ValueQuantity>
+    <cac:SuppliedEvidence>
+      <cbc:ID>LD-AUDIT-2025</cbc:ID>
+      <cbc:EvidenceTypeCode>Audit</cbc:EvidenceTypeCode>
+      <cbc:Name>Stock count 2025</cbc:Name>
+      <cbc:Description>Year-end count by the auditor.</cbc:Description>
+      <cbc:CandidateStatement>The stock is counted every year.</cbc:CandidateStatement>
+      <cbc:ConfidentialityLevelCode>Public</cbc:ConfidentialityLevelCode>
+      <cac:EvidenceIssuingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:EvidenceIssuingParty>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+      </cac:Language>
+    </cac:SuppliedEvidence>
+    <cac:ValidityPeriod>
+      <cbc:EndDate>2026-12-30</cbc:EndDate>
+    </cac:ValidityPeriod>
+    <cac:WebSite>
+      <cbc:ID>WEB-1</cbc:ID>
+      <cbc:Name>Stock</cbc:Name>
+      <cbc:Description>Live stock levels.</cbc:Description>
+      <cbc:WebSiteTypeCode>Extranet</cbc:WebSiteTypeCode>
+      <cbc:URI>https://www.lumeway.example/stock</cbc:URI>
+      <cac:WebSiteAccess>
+        <cbc:URI>https://www.lumeway.example/login</cbc:URI>
+        <cbc:Password>********</cbc:Password>
+        <cbc:Login>velumi</cbc:Login>
+      </cac:WebSiteAccess>
+    </cac:WebSite>
+  </cac:BusinessCapability>
 </BusinessCard>
 ```

@@ -26,6 +26,19 @@ The distributor answers: confirmed, the truck is booked.
   Answered the same day.
 - `IssueTime` = **11:14:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Accepted and booked.**  
+  The answer.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-DS**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -254,6 +267,15 @@ Inside `DocumentResponse`:
 - `DocumentReference/ID` = **BS-PO-26-0224**  
   The order the status is about.
 
+### Additional Document Response
+
+Inside `AdditionalDocumentResponse`:
+
+- `Response/ResponseCode` = **AP**  
+  The transport booking is confirmed too.
+- `DocumentReference/ID` = ****  
+  The transport booking.
+
 ## The document
 
 ```xml
@@ -267,6 +289,18 @@ Inside `DocumentResponse`:
   <cbc:UUID>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
   <cbc:IssueTime>11:14:00</cbc:IssueTime>
+  <cbc:Note>Accepted and booked.</cbc:Note>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-DS</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -459,5 +493,13 @@ Inside `DocumentResponse`:
       <cbc:ID>BS-PO-26-0224</cbc:ID>
     </cac:DocumentReference>
   </cac:DocumentResponse>
+  <cac:AdditionalDocumentResponse>
+    <cac:Response>
+      <cbc:ResponseCode>AP</cbc:ResponseCode>
+    </cac:Response>
+    <cac:DocumentReference>
+      <cbc:ID></cbc:ID>
+    </cac:DocumentReference>
+  </cac:AdditionalDocumentResponse>
 </DocumentStatus>
 ```

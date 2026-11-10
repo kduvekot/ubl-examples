@@ -26,6 +26,25 @@ The distributor's system confirms the invoice was received and accepted.
   Sent automatically when the invoice was processed.
 - `IssueTime` = **11:07:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ResponseDate` = **2026-03-25**  
+  The day the invoice was processed.
+- `ResponseTime` = **06:12:00**  
+  Processed overnight.
+- `Note` = **Accepted for payment; line 2 matched the substituted casting.**  
+  The result.
+- `VersionID` = **1**  
+  The first response.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-AR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -243,8 +262,32 @@ Inside `DocumentResponse`:
 
 - `Response/ResponseCode` = **AP**  
   UN/EDIFACT 4343 code AP: the invoice is accepted.
+- `Response/EffectiveDate` = **2026-03-25**  
+  Effective at once.
+- `Response/EffectiveTime` = **06:12:00**  
+  When processed.
+- `Response/Status/ConditionCode` = **Matched**  
+  The invoice matched order and receipt.
+- `Response/Status/Description` = **Three-way match passed.**  
+  In words.
 - `DocumentReference/ID` = **VI-INV-26-0164**  
   The invoice responded to.
+- `IssuerParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `IssuerParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `RecipientParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `RecipientParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineResponse/LineReference/LineID` = **2**  
+  The invoice line of the side frames.
+- `LineResponse/Response/ReferenceID` = **2**  
+  The line.
+- `LineResponse/Response/ResponseCode` = **AP** (listID `UNCL4343`)  
+  Accepted.
+- `LineResponse/Response/Description` = **Matched to the substituted 2026 casting.**  
+  Why it needed a look.
 
 ## The document
 
@@ -259,6 +302,21 @@ Inside `DocumentResponse`:
   <cbc:UUID>46d48b5d-7711-585d-83b9-04b7dbc143c2</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>11:07:00</cbc:IssueTime>
+  <cbc:ResponseDate>2026-03-25</cbc:ResponseDate>
+  <cbc:ResponseTime>06:12:00</cbc:ResponseTime>
+  <cbc:Note>Accepted for payment; line 2 matched the substituted casting.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-AR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -448,10 +506,42 @@ Inside `DocumentResponse`:
   <cac:DocumentResponse>
     <cac:Response>
       <cbc:ResponseCode>AP</cbc:ResponseCode>
+      <cbc:EffectiveDate>2026-03-25</cbc:EffectiveDate>
+      <cbc:EffectiveTime>06:12:00</cbc:EffectiveTime>
+      <cac:Status>
+        <cbc:ConditionCode>Matched</cbc:ConditionCode>
+        <cbc:Description>Three-way match passed.</cbc:Description>
+      </cac:Status>
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>VI-INV-26-0164</cbc:ID>
     </cac:DocumentReference>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+    <cac:RecipientParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:RecipientParty>
+    <cac:LineResponse>
+      <cac:LineReference>
+        <cbc:LineID>2</cbc:LineID>
+      </cac:LineReference>
+      <cac:Response>
+        <cbc:ReferenceID>2</cbc:ReferenceID>
+        <cbc:ResponseCode listID="UNCL4343">AP</cbc:ResponseCode>
+        <cbc:Description>Matched to the substituted 2026 casting.</cbc:Description>
+      </cac:Response>
+    </cac:LineResponse>
   </cac:DocumentResponse>
 </ApplicationResponse>
 ```

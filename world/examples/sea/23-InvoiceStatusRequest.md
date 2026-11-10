@@ -24,6 +24,21 @@ The distributor asks whether its invoice has been accepted for payment.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `RequestDate` = **2026-05-29**  
   Two weeks after the invoice, without news from the buyer.
+- `RequestTime` = **10:00:00**  
+  When asked.
+- `Note` = **Has the invoice been approved?**  
+  The question.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-ISR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -224,6 +239,19 @@ Inside `BillingReference`:
   <cbc:ID>LD-DOC-26-0148</cbc:ID>
   <cbc:UUID>6d87ab88-a921-5dfb-90cb-d87a8fcb59ec</cbc:UUID>
   <cbc:RequestDate>2026-05-29</cbc:RequestDate>
+  <cbc:RequestTime>10:00:00</cbc:RequestTime>
+  <cbc:Note>Has the invoice been approved?</cbc:Note>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-ISR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

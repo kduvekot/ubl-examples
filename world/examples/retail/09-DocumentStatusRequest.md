@@ -26,6 +26,10 @@ The store asks where its order stands.
   Asked two days after ordering.
 - `IssueTime` = **11:52:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Has the order been accepted?**  
+  The question.
+- `TrackingID` = **BS-PO-26-0224**  
+  The order the store tracks.
 
 ### Requested Document Reference
 
@@ -33,6 +37,17 @@ Inside `RequestedDocumentReference`:
 
 - `ID` = **BS-PO-26-0224**  
   The order asked about.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-DSR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -265,9 +280,22 @@ Inside `ReceiverParty`:
   <cbc:UUID>44994824-762c-5e0e-a7c5-0010d1f4141f</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
   <cbc:IssueTime>11:52:00</cbc:IssueTime>
+  <cbc:Note>Has the order been accepted?</cbc:Note>
+  <cbc:TrackingID>BS-PO-26-0224</cbc:TrackingID>
   <cac:RequestedDocumentReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:RequestedDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-DSR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>

@@ -26,8 +26,43 @@ Before trading, the two parties join the multilateral digital agreement that fix
   Signed before the first order.
 - `IssueTime` = **12:59:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `AgreementTypeCode` = **Bilateral**  
+  An agreement between two parties.
 - `VersionID` = **1.0**  
   The first version of the agreement.
+- `PreviousVersionID` = **0.9**  
+  The draft both sides commented on.
+- `RequiredResponseMessageLevelCode` = **Business**  
+  A business response is required for every document.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-DA-1**  
+  The distributor's signature as governor.
+- `ReasonCode` = **Approval**  
+  The signer approves the document.
+- `Note` = **Signed with the company's seal certificate.**  
+  How.
+- `ValidationDate` = **2026-05-05**  
+  Checked on receipt.
+- `ValidationTime` = **09:05:00**  
+  At that time.
+- `ValidatorID` = **LTAC-VALIDATOR**  
+  The trade accord council's validation service.
+- `CanonicalizationMethod` = **http://www.w3.org/2006/12/xml-c14n11**  
+  Canonical XML 1.1.
+- `SignatureMethod` = **http://www.w3.org/2001/04/xmldsig-more#rsa-sha256**  
+  RSA with SHA-256.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalSignatureAttachment/EmbeddedDocumentBinaryObject` = **U2lnbmF0dXJlIHZhbHVlIG9mIExELVNJRy0yNi1EQS0xLCBzaG9ydGVuZWQgZm9yIHRoZSBleGFtcGxlIHdvcmxkLg==** (mimeCode `application/pkcs7-signature`)  
+  The signature value, Base64-encoded.
+- `OriginalDocumentReference/ID` = **LD-DOC-26-DA-1**  
+  The document as signed.
 
 ### Governor Party
 
@@ -275,6 +310,145 @@ Inside `ParticipantParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Agreement Country
+
+Inside `AgreementCountry`:
+
+- `IdentificationCode` = **XB**  
+  Governed by Bayvarra's law.
+
+### Required Certification Document Reference
+
+Inside `RequiredCertificationDocumentReference`:
+
+- `ID` = **LD-EDI-TERMS-1.0**  
+  The terms both sides must certify.
+- `UUID` = **ed76dcbb-efca-5239-9195-cf2d240a09d4**  
+  Its UUID.
+- `IssueDate` = **2026-05-05**  
+  Its issue date.
+- `IssueTime` = **12:00:00**  
+  And time.
+- `DocumentTypeCode` = **Terms**  
+  The kind of document.
+- `XPath` = **/DigitalAgreement/DigitalAgreementTerms**  
+  The part of this document the reference explains.
+- `ReferencedDocumentInternalAddress` = **section-2**  
+  The section of the referenced document meant.
+- `LanguageID` = **en**  
+  In English.
+- `LocaleCode` = **EN**  
+  The locale, as an ISO 639 code of UBL's language code list.
+- `VersionID` = **1.0**  
+  The version referred to.
+- `DocumentStatusCode` = **Confirmed**  
+  The version both sides confirmed.
+- `DocumentDescription` = **The terms of the digital trade agreement.**  
+  What it is.
+- `Attachment/EmbeddedDocumentBinaryObject` = **VGVybXMgb2YgdGhlIGRpZ2l0YWwgdHJhZGUgYWdyZWVtZW50IG9mIHRoZSB3b3JsZCwgdmVyc2lvbiAxLjAu** (mimeCode `text/plain`)  
+  A short text, Base64-encoded.
+- `Attachment/FileName` = **terms.txt**  
+  The file's name.
+- `Attachment/ExternalReference/URI` = **https://www.lumeway.example/edi/terms-1.0.pdf**  
+  The full text.
+- `Attachment/ExternalReference/DocumentHash` = **9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e**  
+  The SHA-256 hash of the full text, to check it is unchanged.
+- `Attachment/ExternalReference/HashAlgorithmMethod` = **http://www.w3.org/2001/04/xmlenc#sha256**  
+  SHA-256.
+- `Attachment/ExternalReference/ExpiryDate` = **2027-05-04**  
+  The link works for a year.
+- `Attachment/ExternalReference/ExpiryTime` = **23:59:00**  
+  Until the end of that day.
+- `Attachment/ExternalReference/MimeCode` = **application/pdf**  
+  A PDF.
+- `Attachment/ExternalReference/FormatCode` = **PDF/A-3**  
+  An archivable PDF.
+- `Attachment/ExternalReference/EncodingCode` = **Binary**  
+  Not encoded.
+- `Attachment/ExternalReference/CharacterSetCode` = **UTF-8**  
+  The character set of its text.
+- `Attachment/ExternalReference/FileName` = **terms-1.0.pdf**  
+  The file's name.
+- `Attachment/ExternalReference/Description` = **The full terms.**  
+  What it holds.
+- `ValidityPeriod/StartDate` = **2026-05-05**  
+  In force from signing.
+- `ValidityPeriod/EndDate` = **2027-05-05**  
+  For a year.
+- `ResultOfVerification/ValidatorID` = **LTAC-VALIDATOR**  
+  The council's validation service.
+- `ResultOfVerification/ValidationResultCode` = **Valid**  
+  The document's signature is valid.
+- `ResultOfVerification/ValidationDate` = **2026-05-05**  
+  Checked.
+- `ResultOfVerification/ValidationTime` = **12:05:00**  
+  At that time.
+- `ResultOfVerification/ValidateProcess` = **Signature and hash check**  
+  What was checked.
+- `ResultOfVerification/ValidateTool` = **Accord validator**  
+  The tool.
+- `ResultOfVerification/ValidateToolVersion` = **3.2**  
+  Its version.
+- `ResultOfVerification/SignatoryParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ResultOfVerification/SignatoryParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Digital Agreement Terms
+
+Inside `DigitalAgreementTerms`:
+
+- `Description` = **Documents are exchanged over the trade accord's network.**  
+  The terms.
+- `ValidityPeriod/StartDate` = **2026-05-05**  
+  From signing.
+- `ValidityPeriod/EndDate` = **2027-05-05**  
+  For a year.
+- `AdoptionPeriod/StartDate` = **2026-05-05**  
+  The buyer adopts it
+- `AdoptionPeriod/EndDate` = **2026-05-19**  
+  within two weeks.
+- `ServiceLevelAgreement/ID` = **LD-SLA-1**  
+  The service level.
+- `ServiceLevelAgreement/ServiceTypeCode` = **Messaging**  
+  For the exchange.
+- `ServiceLevelAgreement/ServiceType` = **Document exchange**  
+  In words.
+- `ServiceLevelAgreement/AvailabilityTimePercent` = **99.5**  
+  The access point is available 99.5 % of the time.
+- `ServiceLevelAgreement/MondayAvailabilityIndicator` = **true**  
+  Supported on Mondays.
+- `ServiceLevelAgreement/TuesdayAvailabilityIndicator` = **true**  
+  Supported on Tuesdays.
+- `ServiceLevelAgreement/WednesdayAvailabilityIndicator` = **true**  
+  Supported on Wednesdays.
+- `ServiceLevelAgreement/ThursdayAvailabilityIndicator` = **true**  
+  Supported on Thursdays.
+- `ServiceLevelAgreement/FridayAvailabilityIndicator` = **true**  
+  Supported on Fridays.
+- `ServiceLevelAgreement/SaturdayAvailabilityIndicator` = **false**  
+  No support on Saturdays.
+- `ServiceLevelAgreement/SundayAvailabilityIndicator` = **false**  
+  No support on Sundays.
+- `ServiceLevelAgreement/MinimumResponseTimeDurationMeasure` = **4** (unitCode `HUR`)  
+  An answer to a problem within four hours.
+- `ServiceLevelAgreement/MinimumDownTimeScheduleDurationMeasure` = **48** (unitCode `HUR`)  
+  Planned downtime announced 48 hours ahead.
+- `ServiceLevelAgreement/MaximumIncidentNotificationDurationMeasure` = **1** (unitCode `HUR`)  
+  An incident reported within an hour.
+- `ServiceLevelAgreement/MaximumDataLossDurationMeasure` = **0** (unitCode `HUR`)  
+  No document may be lost.
+- `ServiceLevelAgreement/MeanTimeToRecoverDurationMeasure` = **2** (unitCode `HUR`)  
+  Back in two hours on average.
+- `ServiceLevelAgreement/ServiceAvailabilityPeriod/StartTime` = **07:00:00**  
+  Support from seven.
+- `ServiceLevelAgreement/ServiceAvailabilityPeriod/EndTime` = **19:00:00**  
+  Until seven.
+- `ServiceLevelAgreement/ServiceMaintenancePeriod/StartTime` = **02:00:00**  
+  Maintenance at night.
+- `ServiceLevelAgreement/ServiceMaintenancePeriod/EndTime` = **04:00:00**  
+  Until four.
+
 ### Digital Process
 
 Inside `DigitalProcess`:
@@ -283,10 +457,142 @@ Inside `DigitalProcess`:
   A process the parties agree to exchange electronically.
 - `Description` = **Order, order response and order change.**  
   What the process covers.
+- `ProfileID` = **urn:ubl-examples:world:process:ordering**  
+  The process profile.
+- `DigitalCollaboration/ID` = **ordering-1**  
+  The main exchange of the process.
+- `DigitalCollaboration/SendingDigitalService/ID` = **VT-Order-OUT**  
+  The party's service for this document.
+- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
+  The customization the documents follow.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID` = **Order**  
+  The document type.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Order**  
+  The document type, as a code.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859**  
+  The party's address on it.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-1-xl**  
+  The access point's certificate.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH**  
+  The business envelope.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.1-xl.example/as4**  
+  The access point.
+- `DigitalCollaboration/ReceivingDigitalService/ID` = **LD-Order-IN**  
+  The party's service for this document.
+- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
+  The customization the documents follow.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID` = **Order**  
+  The document type.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Order**  
+  The document type, as a code.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274**  
+  The party's address on it.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-6-xb**  
+  The access point's certificate.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH**  
+  The business envelope.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.6-xb.example/as4**  
+  The access point.
+- `CertificationDocumentReference/ID` = **ACCORD-CERT-PROC-ordering**  
+  The council's certification of the process.
 - `ID` = **billing**  
   A process the parties agree to exchange electronically.
 - `Description` = **Invoice, credit note, statement and remittance advice.**  
   What the process covers.
+- `ProfileID` = **urn:ubl-examples:world:process:billing**  
+  The process profile.
+- `DigitalCollaboration/ID` = **billing-1**  
+  The main exchange of the process.
+- `DigitalCollaboration/SendingDigitalService/ID` = **LD-Invoice-OUT**  
+  The party's service for this document.
+- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
+  The customization the documents follow.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID` = **Invoice**  
+  The document type.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Invoice**  
+  The document type, as a code.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274**  
+  The party's address on it.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-6-xb**  
+  The access point's certificate.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH**  
+  The business envelope.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.6-xb.example/as4**  
+  The access point.
+- `DigitalCollaboration/ReceivingDigitalService/ID` = **VT-Invoice-IN**  
+  The party's service for this document.
+- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
+  The customization the documents follow.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID` = **Invoice**  
+  The document type.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Invoice**  
+  The document type, as a code.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859**  
+  The party's address on it.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-1-xl**  
+  The access point's certificate.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH**  
+  The business envelope.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.1-xl.example/as4**  
+  The access point.
+- `CertificationDocumentReference/ID` = **ACCORD-CERT-PROC-billing**  
+  The council's certification of the process.
 
 ## The document
 
@@ -301,7 +607,34 @@ Inside `DigitalProcess`:
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:59:00</cbc:IssueTime>
+  <cbc:AgreementTypeCode>Bilateral</cbc:AgreementTypeCode>
   <cbc:VersionID>1.0</cbc:VersionID>
+  <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
+  <cbc:RequiredResponseMessageLevelCode>Business</cbc:RequiredResponseMessageLevelCode>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-DA-1</cbc:ID>
+    <cbc:ReasonCode>Approval</cbc:ReasonCode>
+    <cbc:Note>Signed with the company's seal certificate.</cbc:Note>
+    <cbc:ValidationDate>2026-05-05</cbc:ValidationDate>
+    <cbc:ValidationTime>09:05:00</cbc:ValidationTime>
+    <cbc:ValidatorID>LTAC-VALIDATOR</cbc:ValidatorID>
+    <cbc:CanonicalizationMethod>http://www.w3.org/2006/12/xml-c14n11</cbc:CanonicalizationMethod>
+    <cbc:SignatureMethod>http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</cbc:SignatureMethod>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+    <cac:DigitalSignatureAttachment>
+      <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pkcs7-signature">U2lnbmF0dXJlIHZhbHVlIG9mIExELVNJRy0yNi1EQS0xLCBzaG9ydGVuZWQgZm9yIHRoZSBleGFtcGxlIHdvcmxkLg==</cbc:EmbeddedDocumentBinaryObject>
+    </cac:DigitalSignatureAttachment>
+    <cac:OriginalDocumentReference>
+      <cbc:ID>LD-DOC-26-DA-1</cbc:ID>
+    </cac:OriginalDocumentReference>
+  </cac:Signature>
   <cac:GovernorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -520,13 +853,219 @@ Inside `DigitalProcess`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ParticipantParty>
+  <cac:AgreementCountry>
+    <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+  </cac:AgreementCountry>
+  <cac:RequiredCertificationDocumentReference>
+    <cbc:ID>LD-EDI-TERMS-1.0</cbc:ID>
+    <cbc:UUID>ed76dcbb-efca-5239-9195-cf2d240a09d4</cbc:UUID>
+    <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+    <cbc:IssueTime>12:00:00</cbc:IssueTime>
+    <cbc:DocumentTypeCode>Terms</cbc:DocumentTypeCode>
+    <cbc:XPath>/DigitalAgreement/DigitalAgreementTerms</cbc:XPath>
+    <cbc:ReferencedDocumentInternalAddress>section-2</cbc:ReferencedDocumentInternalAddress>
+    <cbc:LanguageID>en</cbc:LanguageID>
+    <cbc:LocaleCode>EN</cbc:LocaleCode>
+    <cbc:VersionID>1.0</cbc:VersionID>
+    <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
+    <cbc:DocumentDescription>The terms of the digital trade agreement.</cbc:DocumentDescription>
+    <cac:Attachment>
+      <cbc:EmbeddedDocumentBinaryObject mimeCode="text/plain">VGVybXMgb2YgdGhlIGRpZ2l0YWwgdHJhZGUgYWdyZWVtZW50IG9mIHRoZSB3b3JsZCwgdmVyc2lvbiAxLjAu</cbc:EmbeddedDocumentBinaryObject>
+      <cbc:FileName>terms.txt</cbc:FileName>
+      <cac:ExternalReference>
+        <cbc:URI>https://www.lumeway.example/edi/terms-1.0.pdf</cbc:URI>
+        <cbc:DocumentHash>9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e</cbc:DocumentHash>
+        <cbc:HashAlgorithmMethod>http://www.w3.org/2001/04/xmlenc#sha256</cbc:HashAlgorithmMethod>
+        <cbc:ExpiryDate>2027-05-04</cbc:ExpiryDate>
+        <cbc:ExpiryTime>23:59:00</cbc:ExpiryTime>
+        <cbc:MimeCode>application/pdf</cbc:MimeCode>
+        <cbc:FormatCode>PDF/A-3</cbc:FormatCode>
+        <cbc:EncodingCode>Binary</cbc:EncodingCode>
+        <cbc:CharacterSetCode>UTF-8</cbc:CharacterSetCode>
+        <cbc:FileName>terms-1.0.pdf</cbc:FileName>
+        <cbc:Description>The full terms.</cbc:Description>
+      </cac:ExternalReference>
+    </cac:Attachment>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-05-05</cbc:StartDate>
+      <cbc:EndDate>2027-05-05</cbc:EndDate>
+    </cac:ValidityPeriod>
+    <cac:ResultOfVerification>
+      <cbc:ValidatorID>LTAC-VALIDATOR</cbc:ValidatorID>
+      <cbc:ValidationResultCode>Valid</cbc:ValidationResultCode>
+      <cbc:ValidationDate>2026-05-05</cbc:ValidationDate>
+      <cbc:ValidationTime>12:05:00</cbc:ValidationTime>
+      <cbc:ValidateProcess>Signature and hash check</cbc:ValidateProcess>
+      <cbc:ValidateTool>Accord validator</cbc:ValidateTool>
+      <cbc:ValidateToolVersion>3.2</cbc:ValidateToolVersion>
+      <cac:SignatoryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+        </cac:PartyName>
+      </cac:SignatoryParty>
+    </cac:ResultOfVerification>
+  </cac:RequiredCertificationDocumentReference>
+  <cac:DigitalAgreementTerms>
+    <cbc:Description>Documents are exchanged over the trade accord's network.</cbc:Description>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-05-05</cbc:StartDate>
+      <cbc:EndDate>2027-05-05</cbc:EndDate>
+    </cac:ValidityPeriod>
+    <cac:AdoptionPeriod>
+      <cbc:StartDate>2026-05-05</cbc:StartDate>
+      <cbc:EndDate>2026-05-19</cbc:EndDate>
+    </cac:AdoptionPeriod>
+    <cac:ServiceLevelAgreement>
+      <cbc:ID>LD-SLA-1</cbc:ID>
+      <cbc:ServiceTypeCode>Messaging</cbc:ServiceTypeCode>
+      <cbc:ServiceType>Document exchange</cbc:ServiceType>
+      <cbc:AvailabilityTimePercent>99.5</cbc:AvailabilityTimePercent>
+      <cbc:MondayAvailabilityIndicator>true</cbc:MondayAvailabilityIndicator>
+      <cbc:TuesdayAvailabilityIndicator>true</cbc:TuesdayAvailabilityIndicator>
+      <cbc:WednesdayAvailabilityIndicator>true</cbc:WednesdayAvailabilityIndicator>
+      <cbc:ThursdayAvailabilityIndicator>true</cbc:ThursdayAvailabilityIndicator>
+      <cbc:FridayAvailabilityIndicator>true</cbc:FridayAvailabilityIndicator>
+      <cbc:SaturdayAvailabilityIndicator>false</cbc:SaturdayAvailabilityIndicator>
+      <cbc:SundayAvailabilityIndicator>false</cbc:SundayAvailabilityIndicator>
+      <cbc:MinimumResponseTimeDurationMeasure unitCode="HUR">4</cbc:MinimumResponseTimeDurationMeasure>
+      <cbc:MinimumDownTimeScheduleDurationMeasure unitCode="HUR">48</cbc:MinimumDownTimeScheduleDurationMeasure>
+      <cbc:MaximumIncidentNotificationDurationMeasure unitCode="HUR">1</cbc:MaximumIncidentNotificationDurationMeasure>
+      <cbc:MaximumDataLossDurationMeasure unitCode="HUR">0</cbc:MaximumDataLossDurationMeasure>
+      <cbc:MeanTimeToRecoverDurationMeasure unitCode="HUR">2</cbc:MeanTimeToRecoverDurationMeasure>
+      <cac:ServiceAvailabilityPeriod>
+        <cbc:StartTime>07:00:00</cbc:StartTime>
+        <cbc:EndTime>19:00:00</cbc:EndTime>
+      </cac:ServiceAvailabilityPeriod>
+      <cac:ServiceMaintenancePeriod>
+        <cbc:StartTime>02:00:00</cbc:StartTime>
+        <cbc:EndTime>04:00:00</cbc:EndTime>
+      </cac:ServiceMaintenancePeriod>
+    </cac:ServiceLevelAgreement>
+  </cac:DigitalAgreementTerms>
   <cac:DigitalProcess>
     <cbc:ID>ordering</cbc:ID>
     <cbc:Description>Order, order response and order change.</cbc:Description>
+    <cbc:ProfileID>urn:ubl-examples:world:process:ordering</cbc:ProfileID>
+    <cac:DigitalCollaboration>
+      <cbc:ID>ordering-1</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>VT-Order-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>Order</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode>Order</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID>XL:IC41859</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>ACCORD-CERT-1-xl</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode>SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>LD-Order-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>Order</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode>Order</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID>XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>ACCORD-CERT-6-xb</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode>SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
+    <cac:CertificationDocumentReference>
+      <cbc:ID>ACCORD-CERT-PROC-ordering</cbc:ID>
+    </cac:CertificationDocumentReference>
   </cac:DigitalProcess>
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
     <cbc:Description>Invoice, credit note, statement and remittance advice.</cbc:Description>
+    <cbc:ProfileID>urn:ubl-examples:world:process:billing</cbc:ProfileID>
+    <cac:DigitalCollaboration>
+      <cbc:ID>billing-1</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>LD-Invoice-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>Invoice</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode>Invoice</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID>XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>ACCORD-CERT-6-xb</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode>SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>VT-Invoice-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>Invoice</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode>Invoice</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID>XL:IC41859</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>ACCORD-CERT-1-xl</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode>SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
+    <cac:CertificationDocumentReference>
+      <cbc:ID>ACCORD-CERT-PROC-billing</cbc:ID>
+    </cac:CertificationDocumentReference>
   </cac:DigitalProcess>
 </DigitalAgreement>
 ```

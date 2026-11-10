@@ -8,6 +8,20 @@
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
   <cbc:IssueTime>16:39:00</cbc:IssueTime>
+  <cbc:VersionID>2</cbc:VersionID>
+  <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
+  <cbc:BriefDescription>Distributor of street and garden furniture for Bayvarra and the islands.</cbc:BriefDescription>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-BC</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -169,4 +183,57 @@
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
   </cac:BusinessParty>
+  <cac:BrochureDocumentReference>
+    <cbc:ID>LD-BROCHURE-2026</cbc:ID>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://www.lumeway.example/brochure-2026.pdf</cbc:URI>
+        <cbc:MimeCode>application/pdf</cbc:MimeCode>
+      </cac:ExternalReference>
+    </cac:Attachment>
+  </cac:BrochureDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-REG-XB</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:BusinessCapability>
+    <cbc:ID>CAP-STOCK</cbc:ID>
+    <cbc:CapabilityTypeCode>Warehousing</cbc:CapabilityTypeCode>
+    <cbc:Description>Stock of 2,000 benches in Marrowdale.</cbc:Description>
+    <cbc:ValueAmount currencyID="XBL">1040000.00</cbc:ValueAmount>
+    <cbc:ValueQuantity unitCode="H87">2000</cbc:ValueQuantity>
+    <cac:SuppliedEvidence>
+      <cbc:ID>LD-AUDIT-2025</cbc:ID>
+      <cbc:EvidenceTypeCode>Audit</cbc:EvidenceTypeCode>
+      <cbc:Name>Stock count 2025</cbc:Name>
+      <cbc:Description>Year-end count by the auditor.</cbc:Description>
+      <cbc:CandidateStatement>The stock is counted every year.</cbc:CandidateStatement>
+      <cbc:ConfidentialityLevelCode>Public</cbc:ConfidentialityLevelCode>
+      <cac:EvidenceIssuingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:EvidenceIssuingParty>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+      </cac:Language>
+    </cac:SuppliedEvidence>
+    <cac:ValidityPeriod>
+      <cbc:EndDate>2026-12-30</cbc:EndDate>
+    </cac:ValidityPeriod>
+    <cac:WebSite>
+      <cbc:ID>WEB-1</cbc:ID>
+      <cbc:Name>Stock</cbc:Name>
+      <cbc:Description>Live stock levels.</cbc:Description>
+      <cbc:WebSiteTypeCode>Extranet</cbc:WebSiteTypeCode>
+      <cbc:URI>https://www.lumeway.example/stock</cbc:URI>
+      <cac:WebSiteAccess>
+        <cbc:URI>https://www.lumeway.example/login</cbc:URI>
+        <cbc:Password>********</cbc:Password>
+        <cbc:Login>velumi</cbc:Login>
+      </cac:WebSiteAccess>
+    </cac:WebSite>
+  </cac:BusinessCapability>
 </BusinessCard>

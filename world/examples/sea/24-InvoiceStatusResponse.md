@@ -26,6 +26,21 @@ The buyer answers: accepted and scheduled for payment.
   Answered the next day.
 - `IssueTime` = **13:49:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Approved; the balance will be paid to the factor.**  
+  The answer.
+- `VersionID` = **1**  
+  The first answer.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VT-SIG-26-ISP**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -207,6 +222,29 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Payment
+
+Inside `Payment`:
+
+- `ID` = **VT-PAY-26-0199**  
+  The payment planned.
+- `PaidAmount` = **43778.00** (currencyID `XBL`)  
+  The balance to be paid.
+- `PaidDate` = **2026-06-25**  
+  The planned payment day.
+- `InstructionID` = **VT-PAY-26-0199**  
+  The buyer's payment order.
+- `ExchangeRate/SourceCurrencyCode` = **XBL**  
+  The invoice currency.
+- `ExchangeRate/TargetCurrencyCode` = **XLC**  
+  The buyer's.
+- `ExchangeRate/CalculationRate` = **0.4**  
+  The reference rate.
+- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+  The invoice.
+- `RemittanceDocumentReference/ID` = **to follow**  
+  The remittance advice will follow with the payment.
+
 ### Document Response
 
 Inside `DocumentResponse`:
@@ -229,6 +267,19 @@ Inside `DocumentResponse`:
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>13:49:00</cbc:IssueTime>
+  <cbc:Note>Approved; the balance will be paid to the factor.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:Signature>
+    <cbc:ID>VT-SIG-26-ISP</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -382,6 +433,25 @@ Inside `DocumentResponse`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:Payment>
+    <cbc:ID>VT-PAY-26-0199</cbc:ID>
+    <cbc:PaidAmount currencyID="XBL">43778.00</cbc:PaidAmount>
+    <cbc:PaidDate>2026-06-25</cbc:PaidDate>
+    <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
+    <cac:ExchangeRate>
+      <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+      <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+      <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    </cac:ExchangeRate>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0147</cbc:ID>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+    <cac:RemittanceDocumentReference>
+      <cbc:ID>to follow</cbc:ID>
+    </cac:RemittanceDocumentReference>
+  </cac:Payment>
   <cac:DocumentResponse>
     <cac:Response>
       <cbc:ResponseCode>AP</cbc:ResponseCode>

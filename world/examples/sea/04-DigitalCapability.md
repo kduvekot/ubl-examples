@@ -26,6 +26,21 @@ The agreement's governor tells the buyer which documents the distributor can sen
   Sent when the buyer joins the agreement.
 - `IssueTime` = **09:44:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `VersionID` = **1.0**  
+  The first statement of capability.
+- `PreviousVersionID` = **0.9**  
+  The draft.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-DC**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -304,6 +319,19 @@ Inside `DigitalProcess`:
   <cbc:UUID>5754c138-ef9f-5b93-ae9f-9a48fe182097</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>09:44:00</cbc:IssueTime>
+  <cbc:VersionID>1.0</cbc:VersionID>
+  <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-DC</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

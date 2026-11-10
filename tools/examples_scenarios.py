@@ -4665,3 +4665,247 @@ def _(f, n, doc, out):
             "AdditionalDocumentReference": {"ID": V("XU-CUS-REIMP-26-0044", "Urvania's customs' re-import "
                                                                             "record.")},
             "Signature": seal(doc["from"], "FCC-SIG-26-POR")}
+
+
+import base64 as _b64  # noqa: E402
+
+
+def full_signature(pid, no, f, day, why):
+    """A signature with everything UBL can say about it: method, validation and the signature value itself."""
+    blob = _b64.b64encode(f"Signature value of {no}, shortened for the example world.".encode()).decode()
+    return {"ID": V(no, why), "ReasonCode": V("Approval", "The signer approves the document."),
+            "Note": V("Signed with the company's seal certificate.", "How."),
+            "ValidationDate": V(f.date(day), "Checked on receipt."), "ValidationTime": V("09:05:00", "At that time."),
+            "ValidatorID": V("LTAC-VALIDATOR", "The trade accord council's validation service."),
+            "CanonicalizationMethod": V("http://www.w3.org/2006/12/xml-c14n11", "Canonical XML 1.1."),
+            "SignatureMethod": V("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256", "RSA with SHA-256."),
+            "SignatoryParty": party(pid, short=True),
+            "DigitalSignatureAttachment": {
+                "EmbeddedDocumentBinaryObject": V(blob, "The signature value, Base64-encoded.",
+                                                  mimeCode="application/pkcs7-signature")},
+            "OriginalDocumentReference": {"ID": V(no.replace("SIG", "DOC"), "The document as signed.")}}
+
+
+def full_reference(f, rid, why, day):
+    """A document reference with everything UBL can say about it."""
+    text = _b64.b64encode(b"Terms of the digital trade agreement of the world, version 1.0.").decode()
+    return {"ID": V(rid, why),
+            "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:doc:{rid}")), "Its UUID."),
+            "IssueDate": V(f.date(day), "Its issue date."), "IssueTime": V("12:00:00", "And time."),
+            "DocumentTypeCode": V("Terms", "The kind of document."),
+            "DocumentDescription": V("The terms of the digital trade agreement.", "What it is."),
+            "XPath": V("/DigitalAgreement/DigitalAgreementTerms", "The part of this document the reference "
+                                                                  "explains."),
+            "ReferencedDocumentInternalAddress": V("section-2", "The section of the referenced document meant."),
+            "LanguageID": V("en", "In English."),
+            "LocaleCode": V("EN", "The locale, as an ISO 639 code of UBL's language code list."),
+            "VersionID": V("1.0", "The version referred to."),
+            "DocumentStatusCode": V("Confirmed", "The version both sides confirmed."),
+            "Attachment": {"EmbeddedDocumentBinaryObject": V(text, "A short text, Base64-encoded.",
+                                                             mimeCode="text/plain"),
+                           "FileName": V("terms.txt", "The file's name."),
+                           "ExternalReference": {
+                               "URI": V("https://www.lumeway.example/edi/terms-1.0.pdf", "The full text."),
+                               "DocumentHash": V("9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e",
+                                                 "The SHA-256 hash of the full text, to check it is unchanged."),
+                               "HashAlgorithmMethod": V("http://www.w3.org/2001/04/xmlenc#sha256", "SHA-256."),
+                               "ExpiryDate": V(f.date(365), "The link works for a year."),
+                               "ExpiryTime": V("23:59:00", "Until the end of that day."),
+                               "MimeCode": V("application/pdf", "A PDF."),
+                               "FormatCode": V("PDF/A-3", "An archivable PDF."),
+                               "EncodingCode": V("Binary", "Not encoded."),
+                               "CharacterSetCode": V("UTF-8", "The character set of its text."),
+                               "FileName": V("terms-1.0.pdf", "The file's name."),
+                               "Description": V("The full terms.", "What it holds.")}},
+            "ValidityPeriod": {"StartDate": V(f.date(day), "In force from signing."),
+                               "EndDate": V(f.date(day + 365), "For a year.")},
+            "ResultOfVerification": {"ValidatorID": V("LTAC-VALIDATOR", "The council's validation service."),
+                                     "ValidationResultCode": V("Valid", "The document's signature is valid."),
+                                     "ValidationDate": V(f.date(day), "Checked."),
+                                     "ValidationTime": V("12:05:00", "At that time."),
+                                     "ValidateProcess": V("Signature and hash check", "What was checked."),
+                                     "ValidateTool": V("Accord validator", "The tool."),
+                                     "ValidateToolVersion": V("3.2", "Its version."),
+                                     "SignatoryParty": party("32-xb", short=True)}}
+
+
+def digital_service(pid, doc_type, sending):
+    return {"ID": V(f"{kit.initials(pid)}-{doc_type}-{'OUT' if sending else 'IN'}", "The party's service for this "
+                                                                                     "document."),
+            "CustomizationID": V("urn:ubl-examples:world", "The customization the documents follow."),
+            "DigitalDocumentMetadata": {"ID": V(doc_type, "The document type."),
+                                        "FormatID": V("UBL", "The format."),
+                                        "VersionID": V("2.5", "Its version."),
+                                        "SchemaURI": V(f"https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/"
+                                                       f"UBL-{doc_type}-2.5.xsd", "The schema."),
+                                        "DocumentTypeCode": V(doc_type, "The document type, as a code.")},
+            "DigitalDeliveryChannel": {"NetworkID": V("ACCORD-NET", "The trade accord's document network."),
+                                       "ParticipantID": V(PARTY[pid]["identity"].get("endpoint", pid), "The party's "
+                                                                                                        "address on "
+                                                                                                        "it."),
+                                       "TestIndicator": V("false", "In production."),
+                                       "DigitalMessageDelivery": {"ProtocolID": V("AS4", "The transport protocol."),
+                                                                  "EnvelopeTypeCode": V("SBDH", "The business "
+                                                                                                "envelope."),
+                                                                  "EndpointURI": V(f"https://ap.{pid}.example/as4",
+                                                                                   "The access point.")},
+                                       "DigitalCertificate": {"ID": V(f"ACCORD-CERT-{pid}", "The access point's "
+                                                                                            "certificate."),
+                                                              "CertificateType": V("Access point", "Its kind.")}}}
+
+
+@enrich("sea", "DigitalAgreement")
+def _(f, n, doc, out):
+    procs = out["DigitalProcess"]
+    for p, (doc_type, send, recv) in zip(procs, (("Order", "1-xl", "6-xb"), ("Invoice", "6-xb", "1-xl"))):
+        p["ProfileID"] = V(f"urn:ubl-examples:world:process:{p['ID'].value}", "The process profile.")
+        p["DigitalCollaboration"] = {"ID": V(f"{p['ID'].value}-1", "The main exchange of the process."),
+                                     "SendingDigitalService": digital_service(send, doc_type, True),
+                                     "ReceivingDigitalService": digital_service(recv, doc_type, False)}
+        p["CertificationDocumentReference"] = {"ID": V(f"ACCORD-CERT-PROC-{p['ID'].value}", "The council's "
+                                                                                             "certification of "
+                                                                                             "the process.")}
+    return {"AgreementTypeCode": V("Bilateral", "An agreement between two parties."),
+            "PreviousVersionID": V("0.9", "The draft both sides commented on."),
+            "RequiredResponseMessageLevelCode": V("Business", "A business response is required for every "
+                                                              "document."),
+            "Signature": full_signature("6-xb", "LD-SIG-26-DA-1", f, 1, "The distributor's signature as "
+                                                                        "governor."),
+            "AgreementCountry": {"IdentificationCode": V("XB", "Governed by Bayvarra's law.")},
+            "RequiredCertificationDocumentReference": full_reference(f, "LD-EDI-TERMS-1.0", "The terms both sides "
+                                                                                            "must certify.", 1),
+            "DigitalAgreementTerms": {
+                "Description": V("Documents are exchanged over the trade accord's network.", "The terms."),
+                "ValidityPeriod": {"StartDate": V(f.date(1), "From signing."), "EndDate": V(f.date(366), "For a "
+                                                                                                         "year.")},
+                "AdoptionPeriod": {"StartDate": V(f.date(1), "The buyer adopts it"), "EndDate": V(f.date(15),
+                                                                                                "within two "
+                                                                                                "weeks.")},
+                "ServiceLevelAgreement": {
+                    "ID": V("LD-SLA-1", "The service level."), "ServiceTypeCode": V("Messaging", "For the "
+                                                                                                  "exchange."),
+                    "ServiceType": V("Document exchange", "In words."),
+                    "AvailabilityTimePercent": V("99.5", "The access point is available 99.5 % of the time."),
+                    **{f"{d}AvailabilityIndicator": V("true" if d not in ("Saturday", "Sunday") else "false",
+                                                      "Supported on " + d + "s." if d not in ("Saturday", "Sunday")
+                                                      else "No support on " + d + "s.")
+                       for d in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")},
+                    "MinimumResponseTimeDurationMeasure": V("4", "An answer to a problem within four hours.",
+                                                            unitCode="HUR"),
+                    "MinimumDownTimeScheduleDurationMeasure": V("48", "Planned downtime announced 48 hours ahead.",
+                                                                unitCode="HUR"),
+                    "MaximumIncidentNotificationDurationMeasure": V("1", "An incident reported within an hour.",
+                                                                    unitCode="HUR"),
+                    "MaximumDataLossDurationMeasure": V("0", "No document may be lost.", unitCode="HUR"),
+                    "MeanTimeToRecoverDurationMeasure": V("2", "Back in two hours on average.", unitCode="HUR"),
+                    "ServiceAvailabilityPeriod": {"StartTime": V("07:00:00", "Support from seven."),
+                                                  "EndTime": V("19:00:00", "Until seven.")},
+                    "ServiceMaintenancePeriod": {"StartTime": V("02:00:00", "Maintenance at night."),
+                                                 "EndTime": V("04:00:00", "Until four.")}}}}
+
+
+@enrich("sea", "DigitalCapability")
+def _(f, n, doc, out):
+    return {"VersionID": V("1.0", "The first statement of capability."),
+            "PreviousVersionID": V("0.9", "The draft."),
+            "Signature": seal(doc["from"], "LD-SIG-26-DC")}
+
+
+@enrich("sea", "BusinessCard")
+def _(f, n, doc, out):
+    return {"VersionID": V("2", "The card as updated this year."), "PreviousVersionID": V("1", "Last year's card."),
+            "BriefDescription": V("Distributor of street and garden furniture for Bayvarra and the islands.",
+                                  "The business in a sentence."),
+            "Signature": seal(doc["from"], "LD-SIG-26-BC"),
+            "BrochureDocumentReference": {"ID": V("LD-BROCHURE-2026", "The distributor's brochure."),
+                                          "Attachment": {"ExternalReference": {
+                                              "URI": V("https://www.lumeway.example/brochure-2026.pdf", "Where it "
+                                                                                                        "is."),
+                                              "MimeCode": V("application/pdf", "A PDF.")}}},
+            "AdditionalDocumentReference": {"ID": V("LD-REG-XB", "The distributor's registration extract.")},
+            "BusinessCapability": {"ID": V("CAP-STOCK", "A capability."),
+                                   "CapabilityTypeCode": V("Warehousing", "What it can do."),
+                                   "Description": V("Stock of 2,000 benches in Marrowdale.", "In words."),
+                                   "ValueAmount": amount(Decimal("1040000.00"), "XBL", "The stock's value."),
+                                   "ValueQuantity": qty(2000, "H87", "Benches in stock."),
+                                   "SuppliedEvidence": {"ID": V("LD-AUDIT-2025", "The evidence."),
+                                                        "EvidenceTypeCode": V("Audit", "An audit report."),
+                                                        "Name": V("Stock count 2025", "Its name."),
+                                                        "Description": V("Year-end count by the auditor.", "What "
+                                                                                                           "it is."),
+                                                        "CandidateStatement": V("The stock is counted every year.",
+                                                                                "The company's statement."),
+                                                        "ConfidentialityLevelCode": V("Public", "May be shared."),
+                                                        "EvidenceIssuingParty": party("6-xb", short=True),
+                                                        "Language": {"ID": V("en", "English.")}},
+                                   "ValidityPeriod": {"EndDate": V(f.date(240), "Until the next count.")},
+                                   "WebSite": {"ID": V("WEB-1", "The stock page."), "Name": V("Stock", "Its name."),
+                                               "Description": V("Live stock levels.", "What it shows."),
+                                               "WebSiteTypeCode": V("Extranet", "For trade customers."),
+                                               "URI": V("https://www.lumeway.example/stock", "Where."),
+                                               "WebSiteAccess": {"URI": V("https://www.lumeway.example/login",
+                                                                          "The login page."),
+                                                                 "Login": V("velumi", "The buyer's login."),
+                                                                 "Password": V("********", "Never shown.")}}}}
+
+
+@enrich("sea", "InvoiceStatusRequest")
+def _(f, n, doc, out):
+    return {"RequestTime": V("10:00:00", "When asked."), "Note": V("Has the invoice been approved?", "The question."),
+            "Signature": seal(doc["from"], "LD-SIG-26-ISR")}
+
+
+@enrich("sea", "InvoiceStatusResponse")
+def _(f, n, doc, out):
+    return {"Note": V("Approved; the balance will be paid to the factor.", "The answer."),
+            "VersionID": V("1", "The first answer."),
+            "Signature": seal(doc["from"], "VT-SIG-26-ISP"),
+            "Payment": {"ID": V("VT-PAY-26-0199", "The payment planned."),
+                        "PaidAmount": amount(f.numbers["invoice-amount"], "XBL", "The balance to be paid."),
+                        "PaidDate": V(f.date(52), "The planned payment day."),
+                        "InstructionID": V("VT-PAY-26-0199", "The buyer's payment order."),
+                        "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The invoice currency."),
+                                         "TargetCurrencyCode": V("XLC", "The buyer's."),
+                                         "CalculationRate": V("0.4", "The reference rate.")},
+                        "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
+                                                                                                        "invoice.")}},
+                        "RemittanceDocumentReference": {"ID": V("to follow", "The remittance advice will follow "
+                                                                             "with the payment.")}}}
+
+
+@enrich("road", "ApplicationResponse")
+def _(f, n, doc, out):
+    return {"ResponseDate": V(f.date(9), "The day the invoice was processed."),
+            "ResponseTime": V("06:12:00", "Processed overnight."),
+            "Note": V("Accepted for payment; line 2 matched the substituted casting.", "The result."),
+            "VersionID": V("1", "The first response."),
+            "Signature": seal(doc["from"], "LD-SIG-26-AR"),
+            "DocumentResponse": {
+                "Response": {"EffectiveDate": V(f.date(9), "Effective at once."),
+                             "EffectiveTime": V("06:12:00", "When processed."),
+                             "Status": {"ConditionCode": V("Matched", "The invoice matched order and receipt."),
+                                        "Description": V("Three-way match passed.", "In words.")}},
+                "IssuerParty": party(doc["from"], short=True),
+                "RecipientParty": party(doc["to"], short=True),
+                "LineResponse": {"LineReference": {"LineID": V("2", "The invoice line of the side frames.")},
+                                 "Response": {"ReferenceID": V("2", "The line."),
+                                              "ResponseCode": V("AP", "Accepted.", listID="UNCL4343"),
+                                              "Description": V("Matched to the substituted 2026 casting.",
+                                                               "Why it needed a look.")}}}}
+
+
+@enrich("retail", "DocumentStatusRequest")
+def _(f, n, doc, out):
+    return {"Note": V("Has the order been accepted?", "The question."),
+            "TrackingID": V(f.numbers["order"], "The order the store tracks."),
+            "Signature": seal(doc["from"], "BM-SIG-26-DSR")}
+
+
+@enrich("retail", "DocumentStatus")
+def _(f, n, doc, out):
+    return {"Note": V("Accepted and booked.", "The answer."),
+            "Signature": seal(doc["from"], "LD-SIG-26-DS"),
+            "AdditionalDocumentResponse": {"Response": {"ResponseCode": V("AP", "The transport booking is "
+                                                                                "confirmed too.")},
+                                           "DocumentReference": {"ID": V(f.numbers.get("tep-request", ""),
+                                                                         "The transport booking.")}}}
