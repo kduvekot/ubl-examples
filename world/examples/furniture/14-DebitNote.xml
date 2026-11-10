@@ -101,10 +101,10 @@
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
-  <cac:RequestedMonetaryTotal>
+  <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">85.00</cbc:PayableAmount>
-  </cac:RequestedMonetaryTotal>
+  </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>

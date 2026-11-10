@@ -253,6 +253,28 @@ def main():
                 raise
             endorsed_missing.add(d)
             abies[d]["deprecated"] = True
+    # ... and the same for properties: what the endorsed schemas leave out of an aggregate is deprecated,
+    # also where its definition does not say so (DebitNote/RequestedMonetaryTotal, for example)
+    XS = "{http://www.w3.org/2001/XMLSchema}"
+
+    def schema_types(url):
+        root = ET.fromstring(fetch(url))
+        return {ct.get("name"): {e.get("ref").split(":")[-1] for e in ct.iter(XS + "element") if e.get("ref")}
+                for ct in root.iter(XS + "complexType")}
+    library = schema_types(ENDORSED.replace("maindoc/", "common/") + "UBL-CommonAggregateComponents-2.5.xsd")
+    for name, a in abies.items():
+        if a["deprecated"]:
+            continue
+        endorsed = (schema_types(f"{ENDORSED}UBL-{name}-2.5.xsd").get(f"{name}Type") if name in docs
+                    else library.get(f"{name}Type"))
+        if endorsed is None:
+            a["deprecated"] = True
+            continue
+        a["not_endorsed"] = sorted({b[0] for b in a["bbies"]} - endorsed |
+                                   {x[0] for x in a["asbies"]} - endorsed)
+        for b in a["bbies"]:
+            if b[0] in a["not_endorsed"]:
+                b[2] = True
     out = {}
     problems = []
     for d in docs:
@@ -285,7 +307,8 @@ def main():
     if problems:
         raise SystemExit("\n".join(problems))
     result = {"source": MODEL, "sha256": MODEL_SHA256, "roles": ROLES, "documents": out,
-              "abies": {k: {"deprecated": v["deprecated"], "bbies": v["bbies"], "asbies": v["asbies"]}
+              "abies": {k: {"deprecated": v["deprecated"], "bbies": v["bbies"], "asbies": v["asbies"],
+                            **({"not_endorsed": v["not_endorsed"]} if v.get("not_endorsed") else {})}
                         for k, v in abies.items()}}
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, separators=(",", ":"))

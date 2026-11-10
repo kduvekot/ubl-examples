@@ -273,7 +273,7 @@ def fill(el, abie, content, path, reasons, seen):
         if name not in content:
             continue
         a = asbies[name]
-        if a[3].startswith(DEPRECATED) or MODEL["abies"][a[1]]["deprecated"]:
+        if a[3].startswith(DEPRECATED) or MODEL["abies"][a[1]]["deprecated"] or name in spec.get("not_endorsed", []):
             raise SystemExit(f"{path}/{name}: deprecated in UBL 2.5")
         for sub in content[name] if isinstance(content[name], list) else [content[name]]:
             here = f"{path}/{name}"

@@ -121,9 +121,9 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 
-### Requested Monetary Total
+### Legal Monetary Total
 
-Inside `RequestedMonetaryTotal`:
+Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
   The sum of the lines.
@@ -265,10 +265,10 @@ Inside `DebitNoteLine`:
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
-  <cac:RequestedMonetaryTotal>
+  <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">85.00</cbc:PayableAmount>
-  </cac:RequestedMonetaryTotal>
+  </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>

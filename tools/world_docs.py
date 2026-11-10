@@ -71,7 +71,8 @@ def walk(model, doc, path):
             if bbie and i == len(steps) - 1:
                 return [f"{doc}/{path}: {step} is deprecated"] if bbie[0][2] else []
             return [f"{doc}/{path} does not exist in UBL 2.5"]
-        if hit[0][3].startswith(DEPRECATED) or model["abies"][hit[0][1]]["deprecated"]:
+        if (hit[0][3].startswith(DEPRECATED) or model["abies"][hit[0][1]]["deprecated"]
+                or step in model["abies"][a].get("not_endorsed", [])):
             return [f"{doc}/{path}: {step} is deprecated"]
         a = hit[0][1]
     return []

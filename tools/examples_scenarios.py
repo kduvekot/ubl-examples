@@ -1385,7 +1385,7 @@ def furniture(n, doc):
                                                                                                      "of the returned "
                                                                                                      "sets.")}},
                 "TaxTotal": total,
-                "RequestedMonetaryTotal": {"LineExtensionAmount": amount(amt, "XBL", "The sum of the lines."),
+                "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, "XBL", "The sum of the lines."),
                                            "PayableAmount": amount(amt + tax, "XBL", "What the furniture maker owes "
                                                                                      "the store.")},
                 "DebitNoteLine": {"ID": V("1", "The return transport."),
