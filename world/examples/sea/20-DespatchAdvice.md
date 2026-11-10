@@ -362,7 +362,7 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The despatching party's shipment number.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight of the goods.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The consignment the goods travel in, as numbered when the transport was booked.
@@ -1189,7 +1189,7 @@ Inside `DespatchLine`:
   </cac:BeneficiaryParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cac:CarrierParty>

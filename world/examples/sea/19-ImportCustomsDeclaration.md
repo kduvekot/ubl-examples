@@ -464,7 +464,7 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment declared.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight arriving.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -472,7 +472,7 @@ Inside `Shipment`:
   What the goods are, in words.
 - `GoodsItem/DeclaredCustomsValueAmount` = **19968.000** (currencyID `XLC`)  
   The customs value in coral: the goods' value in lume at the world's reference rate (1 lume = 0.4 coral).
-- `GoodsItem/GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **96** (unitCode `H87`)  
   The quantity declared.
@@ -708,7 +708,7 @@ Inside `Shipment`:
   What the goods are, in words.
 - `GoodsItem/DeclaredCustomsValueAmount` = **307.200** (currencyID `XLC`)  
   The customs value in coral: the goods' value in lume at the world's reference rate (1 lume = 0.4 coral).
-- `GoodsItem/GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **12** (unitCode `H87`)  
   The quantity declared.
@@ -1226,12 +1226,12 @@ Inside `Signature`:
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XLC">19968.000</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="H87">96</cbc:Quantity>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -1441,7 +1441,7 @@ Inside `Signature`:
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XLC">307.200</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="H87">12</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

@@ -160,7 +160,7 @@ Inside `CustomsDeclaration`:
   The customs territory the goods leave.
 - `Shipment/ID` = **LD-SH-26-0132**  
   The shipment declared.
-- `Shipment/GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `Shipment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight leaving the country.
 - `Shipment/InsuranceValueAmount` = **59155.80** (currencyID `XBL`)  
   The cargo insurance the seller took out under CIF.
@@ -182,7 +182,7 @@ Inside `CustomsDeclaration`:
   What the goods are, in words.
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **49920.00** (currencyID `XBL`)  
   The value of the goods at export, in lume.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `Shipment/GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `Shipment/GoodsItem/Quantity` = **96** (unitCode `H87`)  
   The quantity declared.
@@ -402,7 +402,7 @@ Inside `CustomsDeclaration`:
   What the goods are, in words.
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **768.00** (currencyID `XBL`)  
   The value of the goods at export, in lume.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `Shipment/GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `Shipment/GoodsItem/Quantity` = **12** (unitCode `H87`)  
   The quantity declared.
@@ -825,7 +825,7 @@ Inside `Signature`:
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
       <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">50688.00</cbc:DeclaredCustomsValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">50688.00</cbc:DeclaredStatisticsValueAmount>
@@ -843,7 +843,7 @@ Inside `Signature`:
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XBL">49920.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="H87">96</cbc:Quantity>
         <cac:Item>
           <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -1037,7 +1037,7 @@ Inside `Signature`:
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XBL">768.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="H87">12</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

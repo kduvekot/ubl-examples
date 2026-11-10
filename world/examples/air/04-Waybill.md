@@ -367,7 +367,7 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0323**  
   The shipment as the despatching party numbered it.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
   The gross weight of the cargo.
 - `DeclaredForCarriageValueAmount` = **512.00** (currencyID `XBL`)  
   The value declared on the air waybill, as the distributor instructed.
@@ -910,7 +910,7 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0323</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
     <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>

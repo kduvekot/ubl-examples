@@ -379,7 +379,7 @@ Inside `Consignment`:
 
 - `ID` = **LD-CS-26-0228**  
   The transport user's number for this consignment, quoted along the chain.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **996** (unitCode `KGM`)  
   Six pallets of benches.
 - `ConsigneeParty/WebsiteURI` = **https://www.brightmarket.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Brightmarket Stores (world/parties.json).
@@ -774,7 +774,7 @@ Inside `Consignment`:
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
       <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>

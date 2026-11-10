@@ -278,7 +278,7 @@
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
     <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
@@ -651,7 +651,7 @@
           <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
           <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
           <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-          <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+          <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
           <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
           <cbc:StowagePositionID>140282</cbc:StowagePositionID>
           <cac:TransportEquipmentSeal>
@@ -907,7 +907,7 @@
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
-            <cbc:GrossMassMeasure unitCode="KGM">3750</cbc:GrossMassMeasure>
+            <cbc:GrossMassMeasure unitCode="KGM">7856.4</cbc:GrossMassMeasure>
             <cac:WeighingParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>

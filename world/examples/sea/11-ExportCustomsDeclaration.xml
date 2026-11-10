@@ -116,7 +116,7 @@
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
       <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">50688.00</cbc:DeclaredCustomsValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">50688.00</cbc:DeclaredStatisticsValueAmount>
@@ -134,7 +134,7 @@
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XBL">49920.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="H87">96</cbc:Quantity>
         <cac:Item>
           <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -328,7 +328,7 @@
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XBL">768.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="H87">12</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

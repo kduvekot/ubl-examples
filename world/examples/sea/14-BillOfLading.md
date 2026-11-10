@@ -364,7 +364,7 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment carried.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight of the cargo.
 - `TotalGoodsItemQuantity` = **2** (unitCode `H87`)  
   Benches and side frames.
@@ -752,7 +752,7 @@ Inside `Shipment`:
   A full container load.
 - `Consignment/TransportHandlingUnit/TransportEquipment/RefrigeratedIndicator` = **false**  
   A dry container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **3750** (unitCode `KGM`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7856.4** (unitCode `KGM`)  
   The verified gross mass: cargo and the container's own weight of 3,750 kg.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
@@ -1110,7 +1110,7 @@ Inside `Shipment`:
   The scale of the warehouse.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType` = **Platform scale**  
   Its kind.
-- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/GrossMassMeasure` = **3750** (unitCode `KGM`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/GrossMassMeasure` = **7856.4** (unitCode `KGM`)  
   The verified gross mass.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -1596,7 +1596,7 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
     <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
@@ -1969,7 +1969,7 @@ Inside `Signature`:
           <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
           <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
           <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-          <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+          <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
           <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
           <cbc:StowagePositionID>140282</cbc:StowagePositionID>
           <cac:TransportEquipmentSeal>
@@ -2225,7 +2225,7 @@ Inside `Signature`:
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
-            <cbc:GrossMassMeasure unitCode="KGM">3750</cbc:GrossMassMeasure>
+            <cbc:GrossMassMeasure unitCode="KGM">7856.4</cbc:GrossMassMeasure>
             <cac:WeighingParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>

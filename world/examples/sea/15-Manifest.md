@@ -439,7 +439,7 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment on the manifest.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight of this shipment.
 - `ShipmentStage/ID` = **2**  
   The sea leg.
@@ -499,7 +499,7 @@ Inside `Shipment`:
   UN/EDIFACT 8053 code CN: container.
 - `TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1**  
   ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose.
-- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **3750** (unitCode `KGM`)  
+- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7856.4** (unitCode `KGM`)  
   The verified gross mass: cargo and the container's own weight of 3,750 kg.
 - `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
@@ -894,7 +894,7 @@ Inside `Signature`:
   </cac:PassengerPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
@@ -942,7 +942,7 @@ Inside `Signature`:
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
         <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
-        <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
         <cac:TransportEquipmentSeal>
           <cbc:ID>TWL-S-0884213</cbc:ID>

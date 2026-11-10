@@ -456,7 +456,7 @@ def receipt_advice(flow, n, doc, day, why):
 
 
 def gross_weight(flow, which, deal=None):
-    return sum(Decimal(str(d[which])) * Decimal(str(ITEM[d["item"]].get("gross_kg", 0))) for d in (deal or flow.deal))
+    return sum(Decimal(str(d[which])) * Decimal(str(maker(d["item"]).get("gross_kg", 0))) for d in (deal or flow.deal))
 
 
 def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="invoice", extra=None, charges=None,
@@ -819,7 +819,7 @@ def goods_items(flow, currency, value_why, deal=None):
         out.append({"ID": V(str(i), "The goods item number."),
                     "Description": V(it["name"], "What the goods are, in words."),
                     "DeclaredCustomsValueAmount": amount(value, currency, value_why),
-                    "GrossWeightMeasure": qty(q * Decimal(str(it.get("gross_kg", 0))), "KGM",
+                    "GrossWeightMeasure": qty(q * Decimal(str(maker(d["item"]).get("gross_kg", 0))), "KGM",
                                               "The gross weight of the goods of this item."),
                     "Quantity": qty(q, it["unit"], "The quantity declared."),
                     "Item": customs_item(d["item"])})

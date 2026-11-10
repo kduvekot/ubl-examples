@@ -264,7 +264,7 @@ Inside `Shipment`:
   No priority: the next sailing will do.
 - `HandlingInstructions` = **Castings pallet at the doors.**  
   How the container is stowed.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight of the goods.
 - `NetWeightMeasure` = **3762** (unitCode `KGM`)  
   The goods without packaging.
@@ -358,7 +358,7 @@ Inside `Shipment`:
   What the goods are, in words.
 - `GoodsItem/DeclaredCustomsValueAmount` = **49920.00** (currencyID `XBL`)  
   The value of the goods, in lume.
-- `GoodsItem/GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **96** (unitCode `H87`)  
   The quantity declared.
@@ -578,7 +578,7 @@ Inside `Shipment`:
   What the goods are, in words.
 - `GoodsItem/DeclaredCustomsValueAmount` = **768.00** (currencyID `XBL`)  
   The value of the goods, in lume.
-- `GoodsItem/GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **12** (unitCode `H87`)  
   The quantity declared.
@@ -612,7 +612,7 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container's number: the owner code of the ocean carrier, U for a freight container, six digits and the ISO 6346 check digit.
-- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **3750** (unitCode `KGM`)  
+- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7856.4** (unitCode `KGM`)  
   The verified gross mass: cargo and the container's own weight of 3,750 kg.
 - `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
@@ -851,7 +851,7 @@ Inside `Signature`:
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:ShippingPriorityLevelCode>Standard</cbc:ShippingPriorityLevelCode>
     <cbc:HandlingInstructions>Castings pallet at the doors.</cbc:HandlingInstructions>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
     <cbc:NetVolumeMeasure unitCode="MTQ">38.9</cbc:NetVolumeMeasure>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="C62">25</cbc:TotalTransportHandlingUnitQuantity>
@@ -931,7 +931,7 @@ Inside `Signature`:
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">49920.00</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="H87">96</cbc:Quantity>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -1125,7 +1125,7 @@ Inside `Signature`:
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">768.00</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="H87">12</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
@@ -1163,7 +1163,7 @@ Inside `Signature`:
     <cac:TransportHandlingUnit>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
       </cac:TransportEquipment>
     </cac:TransportHandlingUnit>

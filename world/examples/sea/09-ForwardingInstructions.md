@@ -257,7 +257,7 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment to be booked.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight of the goods.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The distributor's consignment number.
@@ -700,7 +700,7 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cbc:ForwarderServiceInstructions>Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.</cbc:ForwarderServiceInstructions>

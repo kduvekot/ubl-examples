@@ -267,7 +267,7 @@
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
       <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>

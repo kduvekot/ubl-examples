@@ -36,7 +36,7 @@ The distributor accepts and confirms the sailing it plans to use.
   The lume, the distributor's currency, as in the order; it has two decimals.
 - `TotalPackagesQuantity` = **108** (unitCode `H87`)  
   96 benches and 12 boxed frames.
-- `GrossWeightMeasure` = **0** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The expected gross weight, for the booking.
 - `NetWeightMeasure` = **3762** (unitCode `KGM`)  
   The goods alone.
@@ -532,7 +532,7 @@ Inside `OrderLine`:
   <cbc:Note>Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalPackagesQuantity unitCode="H87">108</cbc:TotalPackagesQuantity>
-  <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+  <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
   <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
   <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
