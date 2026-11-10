@@ -153,6 +153,7 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.tr) t.tree = 1;
   if (m.yd) t.yard = 1;
   if (m.br) t.bridge = 1;
+  if (m.az) t.approach = 1;
   if (m.rd) t.links = { road: new Set(DIRS.filter((d, bit) => m.rd & (1 << bit)).map(d => d.join())) };
   if (m.rl) { (t.links ||= {}).rail = new Set(); t.pieces = { rail: m.rl }; for (const [a1, b1] of m.rl) { if (a1) t.links.rail.add(a1.join()); if (b1) t.links.rail.add(b1.join()); } }
   return t; }));
@@ -211,6 +212,22 @@ const world = document.createElement("canvas"); world.width = WORLD_W; world.hei
 const COLORS = { sea: "#2f6aa3", sea2: "#3a7bb6", grass: "#5f9e47", grass2: "#6aab4f", forest: "#3f7a36", rock: "#8a8676", field: "#b9a64a",
   river: "#3f86c4", road: "#7b7b78", rail: "#6b5848", sand: "#d8c98a" };
 let showGrid = false;
+// smooth coastline: in a corner between two neighbours of the other kind (land or water), draw a
+// triangle of that kind, with a beach along its edge. Returns the directions it covered.
+function coastCorners(g, i, j, onLand) {
+  const covered = new Set(), me = tiles[i][j];
+  for (let k = 0; k < 4; k++) { const d1 = DIRS[k], d2 = DIRS[(k + 1) % 4];
+    const n1 = tiles[i + d1[0]]?.[j + d1[1]], n2 = tiles[i + d2[0]]?.[j + d2[1]], nd = tiles[i + d1[0] + d2[0]]?.[j + d1[1] + d2[1]];
+    const other = n => n && (onLand ? !n.land && !n.water : n.land);
+    if (!(other(n1) && other(n2) && other(nd))) continue;
+    if (onLand && (me.building || me.house || me.links || me.yard)) continue;
+    const c = [d1[0] * .5 + d2[0] * .5, d1[1] * .5 + d2[1] * .5], a = [d1[0] * .5 - d2[0] * .5, d1[1] * .5 - d2[1] * .5], b = [d2[0] * .5 - d1[0] * .5, d2[1] * .5 - d1[1] * .5];
+    poly(g, [tp(i, j, ...a), tp(i, j, ...c), tp(i, j, ...b)], onLand ? COLORS.sea2 : COLORS.grass);
+    band(g, i, j, [a[0] * .92, a[1] * .92], [b[0] * .92, b[1] * .92], .09, COLORS.sand);
+    covered.add(d1.join()); covered.add(d2.join()); }
+  return covered; }
+// approach lights: a row of lights on the runway axis in the approach zone
+function approachLights(g, i, j) { for (const u of [-.3, 0, .3]) { const [x, y] = tp(i, j, u, u * .0); g.fillStyle = "#fff4b0"; g.fillRect(x - 1, y - 2, 2, 2); g.fillStyle = "rgba(0,0,0,.4)"; g.fillRect(x - .5, y, 1, 2); } }
 function groundTile(g, i, j, color) {
   const c = [[-.5, -.5], [.5, -.5], [.5, .5], [-.5, .5]].map(([u, v]) => tileWorld(i + u, j + v));
   const xs = c.map(p => p[0]), L = c[xs.indexOf(Math.min(...xs))], Rt = c[xs.indexOf(Math.max(...xs))];
@@ -224,17 +241,21 @@ function drawWorld() {
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
     const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x, y] = tileWorld(i, j);
     if (!t.land) { const shallow = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b]?.land);
-      groundTile(g, i, j, t.water ? (t.n > .5 ? "#3d7fbf" : "#3a7ab8") : shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea)); continue; }
+      groundTile(g, i, j, t.water ? (t.n > .5 ? "#3d7fbf" : "#3a7ab8") : shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea));
+      coastCorners(g, i, j, false);
+      if (t.approach) approachLights(g, i, j); continue; }
     const yUp = y;
     let base = t.yard ? "#a59c87" : t.t === "field" ? (t.n > .5 ? "#b9a64a" : "#a9a04a") : t.t === "rock" ? COLORS.rock : (t.n > .5 ? COLORS.grass2 : COLORS.grass);
     groundTile(g, i, j, base);
     // banks: a strip along every edge that borders water (sand on the sea, a muddy bank on the river)
-    DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land) return; const pv = [-dj, di];
+    const cut = coastCorners(g, i, j, true);
+    DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || cut.has(di + "," + dj)) return; const pv = [-dj, di];
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
         tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : COLORS.sand); });
     // hedges around fields, fences around industry yards
     if (t.t === "field" || t.yard) DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || !nb.land || (t.yard ? (nb.yard || nb.building) : nb.t === "field")) return;
       const pv = [-dj, di]; tline(g, i, j, [[di * .48 + pv[0] * .5, dj * .48 + pv[1] * .5], [di * .48 - pv[0] * .5, dj * .48 - pv[1] * .5]], t.yard ? "#e8e4da" : "#3f6b30", t.yard ? 1 : 2.5, t.yard ? [2, 2] : null); });
+    if (t.approach) approachLights(g, i, j);
     if (t.t === "field") { g.strokeStyle = "rgba(90,70,20,.35)"; g.lineWidth = 1; for (let k = -2; k <= 2; k++) { g.beginPath(); g.moveTo(x - 8 + k * 4, y - 4 + k * 2); g.lineTo(x + 8 + k * 4, y + 4 + k * 2); g.stroke(); } }
     if (t.t === "rock" && hash(i * 5, j * 3) > .3) rockMound(g, x + (hash(i, j) - .5) * 6, yUp + (hash(j, i) - .5) * 3, t.n * (.5 + hash(i * 7, j)));
   }
