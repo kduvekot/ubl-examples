@@ -289,9 +289,55 @@
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:HandlingCode>Upright</cbc:HandlingCode>
+    <cbc:Information>Steel street furniture for resale.</cbc:Information>
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:NetNetWeightMeasure unitCode="KGM">3762</cbc:NetNetWeightMeasure>
+    <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
+    <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
+    <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0152</cbc:ID>
+      <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
+      <cbc:ConsigneeAssignedID>LD-GI-0412</cbc:ConsigneeAssignedID>
+      <cbc:ConsignorAssignedID>CL-DA-26-0153</cbc:ConsignorAssignedID>
+      <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
+      <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
+      <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>
+      <cbc:Remarks>Received in apparent good order; seals XU-CL-77310 on the trailer doors.</cbc:Remarks>
+      <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
+      <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
+      <cbc:ThirdPartyPayerIndicator>false</cbc:ThirdPartyPayerIndicator>
+      <cbc:CustomsClearanceServiceInstructions>The export is declared by the 3PL in Ferrano; the import by the distributor at the border.</cbc:CustomsClearanceServiceInstructions>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="H87">25</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:DeliveryInstructions>Unload at dock 4; report to the gatehouse first.</cbc:DeliveryInstructions>
+      <cbc:HaulageInstructions>Wait at the warehouse until customs has released the export declaration.</cbc:HaulageInstructions>
+      <cbc:TotalPackagesQuantity unitCode="H87">108</cbc:TotalPackagesQuantity>
+      <cac:CustomsDeclaration>
+        <cbc:ID>VI-CD-26-0156</cbc:ID>
+        <cac:IssuerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Customs Administration of Urvania</cbc:Name>
+          </cac:PartyName>
+        </cac:IssuerParty>
+      </cac:CustomsDeclaration>
+      <cac:ActualPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualPickupTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -300,6 +346,1264 @@
           <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:ConsigneeParty>
+      <cac:OriginalDepartureCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:OriginalDepartureCountry>
+      <cac:FinalDestinationCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:FinalDestinationCountry>
+      <cac:DeliveryTerms>
+        <cbc:ID>FCA</cbc:ID>
+        <cbc:SpecialTerms>The buyer's carrier presents the truck; the seller loads it.</cbc:SpecialTerms>
+        <cbc:LossRiskResponsibilityCode>Buyer</cbc:LossRiskResponsibilityCode>
+        <cbc:LossRisk>The risk passes on loading at the 3PL's warehouse.</cbc:LossRisk>
+      </cac:DeliveryTerms>
+      <cac:CollectPaymentTerms>
+        <cbc:Note>The freight is paid by the consignee under its contract with the carrier.</cbc:Note>
+      </cac:CollectPaymentTerms>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+        <cbc:TransitDirectionCode>Export</cbc:TransitDirectionCode>
+        <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
+        <cbc:EstimatedDeliveryDate>2026-03-25</cbc:EstimatedDeliveryDate>
+        <cbc:EstimatedDeliveryTime>09:00:00</cbc:EstimatedDeliveryTime>
+        <cbc:RequiredDeliveryDate>2026-03-25</cbc:RequiredDeliveryDate>
+        <cbc:RequiredDeliveryTime>10:00:00</cbc:RequiredDeliveryTime>
+        <cac:TransitPeriod>
+          <cbc:StartDate>2026-03-23</cbc:StartDate>
+          <cbc:EndDate>2026-03-25</cbc:EndDate>
+        </cac:TransitPeriod>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TH-26-04471</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:DirectionCode>Westbound</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+          </cac:RoadTransport>
+          <cac:OwnerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Trasvia Haulage</cbc:Name>
+            </cac:PartyName>
+          </cac:OwnerParty>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Loading length</cbc:AttributeID>
+            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+          </cac:MeasurementDimension>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
+          <cbc:Name>Marrowdale</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:ExaminationTransportEvent>
+          <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
+          <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
+        </cac:ExaminationTransportEvent>
+        <cac:ActualDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:ActualDepartureTransportEvent>
+        <cac:DriverPerson>
+          <cbc:ID>XU-DL-0417722</cbc:ID>
+          <cbc:FirstName>Ilario</cbc:FirstName>
+          <cbc:FamilyName>Bencetti</cbc:FamilyName>
+        </cac:DriverPerson>
+      </cac:MainCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-001</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 001 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-001</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-001</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-001-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-002</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 002 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-002</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-002</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-002-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-003</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 003 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-003</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-003</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-003-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-004</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 004 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-004</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-004</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-004-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-005</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 005 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-005</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-005</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-005-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-006</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 006 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-006</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-006</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-006-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-007</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 007 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-007</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-007</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-007-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-008</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 008 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-008</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-008</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-008-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-009</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 009 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-009</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-009</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-009-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-010</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 010 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-010</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-010</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-010-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-011</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 011 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-011</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-011</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-011-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-012</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 012 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-012</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-012</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-012-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-013</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 013 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-013</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-013</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-013-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-014</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 014 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-014</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-014</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-014-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-015</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 015 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-015</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-015</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-015-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-016</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 016 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-016</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-016</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-016-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-017</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 017 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-017</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-017</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-017-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-018</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 018 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-018</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-018</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-018-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-019</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 019 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-019</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-019</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-019-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-020</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 020 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-020</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-020</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-020-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-021</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 021 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-021</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-021</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-021-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-022</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 022 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-022</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-022</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-022-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-023</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 023 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-023</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-023</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-023-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-024</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 024 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-024</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-024</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-024-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-025</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>NoStack</cbc:HandlingCode>
+        <cbc:HandlingInstructions>Load on top: nothing may be stacked on the boxes.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">12</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 025 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-025</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-025</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1200</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">800</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">900</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">0.96</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">1</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-025-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Cardboard box</cbc:PackagingType>
+          <cbc:PackingMaterial>Corrugated cardboard</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
     </cac:Consignment>
+    <cac:Delivery>
+      <cbc:LatestDeliveryDate>2026-03-25</cbc:LatestDeliveryDate>
+      <cbc:LatestDeliveryTime>12:00:00</cbc:LatestDeliveryTime>
+      <cbc:TrackingID>TH-26-04471</cbc:TrackingID>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-03-25</cbc:StartDate>
+        <cbc:StartTime>09:00:00</cbc:StartTime>
+        <cbc:EndTime>11:00:00</cbc:EndTime>
+      </cac:EstimatedDeliveryPeriod>
+    </cac:Delivery>
+    <cac:ReturnAddress>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:BuildingNumber>24</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:ReturnAddress>
+    <cac:OriginAddress>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:BuildingNumber>24</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:OriginAddress>
+    <cac:ExportCountry>
+      <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+    </cac:ExportCountry>
   </cac:Shipment>
 </Waybill>

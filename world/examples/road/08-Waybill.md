@@ -343,14 +343,1666 @@ Inside `Shipment`:
 
 - `ID` = **CL-SH-26-0154**  
   The shipment as the despatching party numbered it.
+- `HandlingCode` = **Upright**  
+  The carrier's handling code: keep upright.
+- `Information` = **Steel street furniture for resale.**  
+  What the goods are, for the driver.
 - `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight the carrier takes over.
+- `NetNetWeightMeasure` = **3762** (unitCode `KGM`)  
+  The goods alone, without any packaging.
+- `GrossVolumeMeasure` = **41.5** (unitCode `MTQ`)  
+  The volume of the 25 loaded pallets.
+- `TotalGoodsItemQuantity` = **2** (unitCode `H87`)  
+  Two kinds of goods: benches and side frames.
+- `SplitConsignmentIndicator` = **false**  
+  The whole consignment travels on this truck.
+- `ConsignmentQuantity` = **1** (unitCode `H87`)  
+  One consignment on the truck.
 - `Consignment/ID` = **LD-CS-26-0152**  
-  The consignment of the transport booking.
+  The distributor's consignment number, from its booking.
+- `Consignment/CarrierAssignedID` = **TH-26-04471**  
+  The carrier's job number.
+- `Consignment/ConsigneeAssignedID` = **LD-GI-0412**  
+  The distributor's goods-in booking for the slot.
+- `Consignment/ConsignorAssignedID` = **CL-DA-26-0153**  
+  The consignor's reference: its despatch advice.
+- `Consignment/SummaryDescription` = **Park benches and spare side frames on 25 pallets.**  
+  The goods in a few words, as on the consignment note.
+- `Consignment/NetWeightMeasure` = **3762** (unitCode `KGM`)  
+  The weight of the goods without packaging.
+- `Consignment/LoadingLengthMeasure` = **9.3** (unitCode `MTR`)  
+  Five rows of bench pallets, two high, and the castings: 9.3 m of the 13.6 m floor.
+- `Consignment/Remarks` = **Received in apparent good order; seals XU-CL-77310 on the trailer doors.**  
+  The driver's remarks at taking over, as the consignment note asks.
+- `Consignment/ContainerizedIndicator` = **false**  
+  The pallets are loaded on the truck, not in a container.
+- `Consignment/GeneralCargoIndicator` = **true**  
+  Packed goods on pallets.
+- `Consignment/ThirdPartyPayerIndicator` = **false**  
+  The consignee, who booked the truck, pays the freight.
+- `Consignment/CustomsClearanceServiceInstructions` = **The export is declared by the 3PL in Ferrano; the import by the distributor at the border.**  
+  Who clears the goods through customs.
+- `Consignment/TotalTransportHandlingUnitQuantity` = **25** (unitCode `H87`)  
+  25 pallets.
+- `Consignment/DeliveryInstructions` = **Unload at dock 4; report to the gatehouse first.**  
+  Where to go on arrival.
+- `Consignment/HaulageInstructions` = **Wait at the warehouse until customs has released the export declaration.**  
+  What the driver must do before leaving.
+- `Consignment/TotalPackagesQuantity` = **108** (unitCode `H87`)  
+  96 benches and 12 boxed frames.
+- `Consignment/CustomsDeclaration/ID` = **VI-CD-26-0156**  
+  The export declaration the goods travel under.
+- `Consignment/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/CustomsDeclaration/IssuerParty/PartyName/Name` = **Customs Administration of Urvania**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/ActualPickupTransportEvent/OccurrenceDate` = **2026-03-23**  
+  When the carrier took over the goods.
+- `Consignment/ActualPickupTransportEvent/OccurrenceTime` = **15:05:00**  
+  The local time.
+- `Consignment/ActualPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/ActualPickupTransportEvent/Location/Name` = **Ferrano**  
+  The 3PL's warehouse.
+- `Consignment/ActualPickupTransportEvent/Location/Address/Country/IdentificationCode` = **XU**  
+  The country the place is in.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
+- `Consignment/OriginalDepartureCountry/IdentificationCode` = **XU**  
+  The goods start in Urvania.
+- `Consignment/FinalDestinationCountry/IdentificationCode` = **XB**  
+  And end in Bayvarra.
+- `Consignment/DeliveryTerms/ID` = **FCA**  
+  Incoterms 2020: free carrier at the seller's warehouse.
+- `Consignment/DeliveryTerms/SpecialTerms` = **The buyer's carrier presents the truck; the seller loads it.**  
+  Who loads, under FCA at the seller's premises.
+- `Consignment/DeliveryTerms/LossRiskResponsibilityCode` = **Buyer**  
+  The risk passed to the buyer when the goods were loaded on the truck.
+- `Consignment/DeliveryTerms/LossRisk` = **The risk passes on loading at the 3PL's warehouse.**  
+  In words.
+- `Consignment/CollectPaymentTerms/Note` = **The freight is paid by the consignee under its contract with the carrier.**  
+  Freight collect: the consignee pays.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  The only stage: one truck from the warehouse to the distribution centre.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 3: road transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeansTypeCode` = **TE**  
+  The truck pulls a trailer.
+- `Consignment/MainCarriageShipmentStage/TransitDirectionCode` = **Export**  
+  The goods leave Urvania by this stage.
+- `Consignment/MainCarriageShipmentStage/CabotageIndicator` = **false**  
+  A carriage between two countries, not within a foreign one.
+- `Consignment/MainCarriageShipmentStage/EstimatedDeliveryDate` = **2026-03-25**  
+  The carrier's estimate when it takes over the goods.
+- `Consignment/MainCarriageShipmentStage/EstimatedDeliveryTime` = **09:00:00**  
+  Early in the working day.
+- `Consignment/MainCarriageShipmentStage/RequiredDeliveryDate` = **2026-03-25**  
+  The distributor's goods-in slot.
+- `Consignment/MainCarriageShipmentStage/RequiredDeliveryTime` = **10:00:00**  
+  The slot starts at ten.
+- `Consignment/MainCarriageShipmentStage/TransitPeriod/StartDate` = **2026-03-23**  
+  Collected in the afternoon.
+- `Consignment/MainCarriageShipmentStage/TransitPeriod/EndDate` = **2026-03-25**  
+  Delivered in the morning, after the night rest of the driver and the border.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **TH-26-04471**  
+  The carrier's job number, the same on every document of this truck.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
+  The country the means of transport is registered in.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **Westbound**  
+  The direction of the journey, as the carrier codes its services.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **TE**  
+  The carrier's code for the kind of means: tractor unit 07 with curtain-side trailer; the fleet of Trasvia Haulage (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 KT**  
+  The registration plate of the truck; the fleet of Trasvia Haulage (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **UR TR 3381**  
+  The trailer's own plate.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/OwnerParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/OwnerParty/PartyName/Name` = **Trasvia Haulage**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **Loading length**  
+  The length of the loading floor.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
+  Room for 33 pallets.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Ferrano**  
+  Loaded at the 3PL's warehouse in Ferrano.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XU**  
+  The country the place is in.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XBMRW** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Marrowdale**  
+  Unloaded at the distributor's distribution centre.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XB**  
+  The country the place is in.
+- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceDate` = **2026-03-24**  
+  Customs looked at the seals at the border.
+- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceTime` = **07:45:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/Description` = **Seal check, no inspection of the goods.**  
+  What happened, in words.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
+  The truck left the warehouse.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Ferrano**  
+  Castrano Logistics warehouse.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU**  
+  The country the place is in.
+- `Consignment/MainCarriageShipmentStage/DriverPerson/ID` = **XU-DL-0417722**  
+  The number of the driving licence.
+- `Consignment/MainCarriageShipmentStage/DriverPerson/FirstName` = **Ilario**  
+  The driver of the truck.
+- `Consignment/MainCarriageShipmentStage/DriverPerson/FamilyName` = **Bencetti**  
+  The family name.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-001**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 001 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-001**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-001**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-001-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-002**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 002 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-002**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-002**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-002-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-003**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 003 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-003**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-003**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-003-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-004**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 004 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-004**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-004**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-004-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-005**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 005 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-005**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-005**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-005-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-006**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 006 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-006**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-006**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-006-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-007**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 007 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-007**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-007**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-007-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-008**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 008 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-008**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-008**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-008-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-009**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 009 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-009**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-009**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-009-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-010**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 010 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-010**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-010**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-010-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-011**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 011 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-011**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-011**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-011-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-012**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 012 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-012**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-012**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-012-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-013**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 013 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-013**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-013**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-013-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-014**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 014 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-014**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-014**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-014-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-015**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 015 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-015**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-015**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-015-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-016**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 016 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-016**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-016**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-016-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-017**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 017 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-017**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-017**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-017-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-018**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 018 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-018**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-018**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-018-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-019**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 019 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-019**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-019**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-019-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-020**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 020 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-020**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-020**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-020-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-021**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 021 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-021**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-021**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-021-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-022**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 022 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-022**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-022**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-022-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-023**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 023 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-023**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-023**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-023-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-024**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **Stack2**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 024 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-024**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-024**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-024-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **SW**  
+  UN/ECE Recommendation 21: shrinkwrapped, each bench in film.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Bench in stretch film**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
+  What the packaging is made of.
+- `Consignment/TransportHandlingUnit/ID` = **CL-26-025**  
+  The number on the pallet label.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/HandlingCode` = **NoStack**  
+  The carrier's handling code: two high, or nothing on top.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **Load on top: nothing may be stacked on the boxes.**  
+  The handling, in words.
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `H87`)  
+  12 boxed side frames on the pallet.
+- `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 025 of 025**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TraceID` = **CL-26-025**  
+  The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-025**  
+  The pallet itself, as packed.
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+  One pallet.
+- `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet is exchanged with the carrier and goes back.
+- `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1200** (unitCode `MMT`)  
+  Its length.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
+  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **800** (unitCode `MMT`)  
+  Its width.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
+  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **900** (unitCode `MMT`)  
+  Its height.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
+  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **0.96** (unitCode `MTK`)  
+  In square metres.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
+  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **1** (unitCode `C62`)  
+  Half a place when two pallets are stacked; the castings take a whole one.
+- `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-025-1**  
+  The packages on the pallet.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **12** (unitCode `H87`)  
+  The packages of this kind on the pallet.
+- `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
+  The packaging is not returned.
+- `Consignment/TransportHandlingUnit/Package/PackageLevelCode` = **1**  
+  The inner packaging, below the pallet.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX**  
+  UN/ECE Recommendation 21: box.
+- `Consignment/TransportHandlingUnit/Package/PackagingType` = **Cardboard box**  
+  The packaging in words.
+- `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Corrugated cardboard**  
+  What the packaging is made of.
+- `Delivery/LatestDeliveryDate` = **2026-03-25**  
+  The goods-in slot cannot move.
+- `Delivery/LatestDeliveryTime` = **12:00:00**  
+  Dock 4 closes for the lunch change.
+- `Delivery/TrackingID` = **TH-26-04471**  
+  Track the truck with the carrier's job number.
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-03-25**  
+  The morning of the third day.
+- `Delivery/EstimatedDeliveryPeriod/StartTime` = **09:00:00**  
+  From nine.
+- `Delivery/EstimatedDeliveryPeriod/EndTime` = **11:00:00**  
+  Until eleven.
+- `ReturnAddress/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `ReturnAddress/StreetName` = **Via del Magazzino**  
+  Street of the postal address. identity of Castrano Logistics (world/parties.json).
+- `ReturnAddress/BuildingNumber` = **24**  
+  Building number of the postal address. identity of Castrano Logistics (world/parties.json).
+- `ReturnAddress/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `ReturnAddress/PostalZone` = **4130**  
+  Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
+- `ReturnAddress/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Castrano Logistics (world/parties.json).
+- `ReturnAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `ReturnAddress/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `ReturnAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `OriginAddress/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `OriginAddress/StreetName` = **Via del Magazzino**  
+  Street of the postal address. identity of Castrano Logistics (world/parties.json).
+- `OriginAddress/BuildingNumber` = **24**  
+  Building number of the postal address. identity of Castrano Logistics (world/parties.json).
+- `OriginAddress/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `OriginAddress/PostalZone` = **4130**  
+  Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
+- `OriginAddress/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Castrano Logistics (world/parties.json).
+- `OriginAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `OriginAddress/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `OriginAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `ExportCountry/IdentificationCode` = **XU**  
+  The goods are exported from Urvania.
 
 ## The document
 
@@ -646,9 +2298,55 @@ Inside `Shipment`:
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:HandlingCode>Upright</cbc:HandlingCode>
+    <cbc:Information>Steel street furniture for resale.</cbc:Information>
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:NetNetWeightMeasure unitCode="KGM">3762</cbc:NetNetWeightMeasure>
+    <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
+    <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
+    <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0152</cbc:ID>
+      <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
+      <cbc:ConsigneeAssignedID>LD-GI-0412</cbc:ConsigneeAssignedID>
+      <cbc:ConsignorAssignedID>CL-DA-26-0153</cbc:ConsignorAssignedID>
+      <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
+      <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
+      <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>
+      <cbc:Remarks>Received in apparent good order; seals XU-CL-77310 on the trailer doors.</cbc:Remarks>
+      <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
+      <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
+      <cbc:ThirdPartyPayerIndicator>false</cbc:ThirdPartyPayerIndicator>
+      <cbc:CustomsClearanceServiceInstructions>The export is declared by the 3PL in Ferrano; the import by the distributor at the border.</cbc:CustomsClearanceServiceInstructions>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="H87">25</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:DeliveryInstructions>Unload at dock 4; report to the gatehouse first.</cbc:DeliveryInstructions>
+      <cbc:HaulageInstructions>Wait at the warehouse until customs has released the export declaration.</cbc:HaulageInstructions>
+      <cbc:TotalPackagesQuantity unitCode="H87">108</cbc:TotalPackagesQuantity>
+      <cac:CustomsDeclaration>
+        <cbc:ID>VI-CD-26-0156</cbc:ID>
+        <cac:IssuerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Customs Administration of Urvania</cbc:Name>
+          </cac:PartyName>
+        </cac:IssuerParty>
+      </cac:CustomsDeclaration>
+      <cac:ActualPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualPickupTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -657,7 +2355,1265 @@ Inside `Shipment`:
           <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:ConsigneeParty>
+      <cac:OriginalDepartureCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:OriginalDepartureCountry>
+      <cac:FinalDestinationCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:FinalDestinationCountry>
+      <cac:DeliveryTerms>
+        <cbc:ID>FCA</cbc:ID>
+        <cbc:SpecialTerms>The buyer's carrier presents the truck; the seller loads it.</cbc:SpecialTerms>
+        <cbc:LossRiskResponsibilityCode>Buyer</cbc:LossRiskResponsibilityCode>
+        <cbc:LossRisk>The risk passes on loading at the 3PL's warehouse.</cbc:LossRisk>
+      </cac:DeliveryTerms>
+      <cac:CollectPaymentTerms>
+        <cbc:Note>The freight is paid by the consignee under its contract with the carrier.</cbc:Note>
+      </cac:CollectPaymentTerms>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+        <cbc:TransitDirectionCode>Export</cbc:TransitDirectionCode>
+        <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
+        <cbc:EstimatedDeliveryDate>2026-03-25</cbc:EstimatedDeliveryDate>
+        <cbc:EstimatedDeliveryTime>09:00:00</cbc:EstimatedDeliveryTime>
+        <cbc:RequiredDeliveryDate>2026-03-25</cbc:RequiredDeliveryDate>
+        <cbc:RequiredDeliveryTime>10:00:00</cbc:RequiredDeliveryTime>
+        <cac:TransitPeriod>
+          <cbc:StartDate>2026-03-23</cbc:StartDate>
+          <cbc:EndDate>2026-03-25</cbc:EndDate>
+        </cac:TransitPeriod>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TH-26-04471</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:DirectionCode>Westbound</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+          </cac:RoadTransport>
+          <cac:OwnerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Trasvia Haulage</cbc:Name>
+            </cac:PartyName>
+          </cac:OwnerParty>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Loading length</cbc:AttributeID>
+            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+          </cac:MeasurementDimension>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
+          <cbc:Name>Marrowdale</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:ExaminationTransportEvent>
+          <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
+          <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
+        </cac:ExaminationTransportEvent>
+        <cac:ActualDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:ActualDepartureTransportEvent>
+        <cac:DriverPerson>
+          <cbc:ID>XU-DL-0417722</cbc:ID>
+          <cbc:FirstName>Ilario</cbc:FirstName>
+          <cbc:FamilyName>Bencetti</cbc:FamilyName>
+        </cac:DriverPerson>
+      </cac:MainCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-001</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 001 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-001</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-001</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-001-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-002</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 002 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-002</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-002</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-002-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-003</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 003 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-003</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-003</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-003-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-004</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 004 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-004</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-004</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-004-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-005</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 005 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-005</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-005</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-005-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-006</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 006 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-006</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-006</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-006-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-007</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 007 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-007</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-007</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-007-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-008</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 008 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-008</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-008</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-008-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-009</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 009 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-009</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-009</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-009-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-010</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 010 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-010</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-010</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-010-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-011</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 011 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-011</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-011</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-011-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-012</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 012 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-012</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-012</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-012-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-013</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 013 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-013</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-013</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-013-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-014</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 014 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-014</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-014</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-014-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-015</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 015 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-015</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-015</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-015-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-016</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 016 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-016</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-016</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-016-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-017</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 017 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-017</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-017</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-017-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-018</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 018 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-018</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-018</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-018-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-019</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 019 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-019</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-019</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-019-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-020</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 020 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-020</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-020</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-020-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-021</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 021 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-021</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-021</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-021-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-022</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 022 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-022</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-022</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-022-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-023</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 023 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-023</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-023</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-023-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-024</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 024 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-024</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-024</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1850</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1650</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">0.5</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-024-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
+          <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>CL-26-025</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode>NoStack</cbc:HandlingCode>
+        <cbc:HandlingInstructions>Load on top: nothing may be stacked on the boxes.</cbc:HandlingInstructions>
+        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="H87">12</cbc:TotalPackageQuantity>
+        <cbc:ShippingMarks>LD MARROWDALE / 025 of 025</cbc:ShippingMarks>
+        <cbc:TraceID>CL-26-025</cbc:TraceID>
+        <cac:ActualPackage>
+          <cbc:ID>CL-26-025</cbc:ID>
+          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:ActualPackage>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1200</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">800</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">900</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:FloorSpaceMeasurementDimension>
+          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:Measure unitCode="MTK">0.96</cbc:Measure>
+        </cac:FloorSpaceMeasurementDimension>
+        <cac:PalletSpaceMeasurementDimension>
+          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:Measure unitCode="C62">1</cbc:Measure>
+        </cac:PalletSpaceMeasurementDimension>
+        <cac:Package>
+          <cbc:ID>CL-26-025-1</cbc:ID>
+          <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+          <cbc:PackagingType>Cardboard box</cbc:PackagingType>
+          <cbc:PackingMaterial>Corrugated cardboard</cbc:PackingMaterial>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
     </cac:Consignment>
+    <cac:Delivery>
+      <cbc:LatestDeliveryDate>2026-03-25</cbc:LatestDeliveryDate>
+      <cbc:LatestDeliveryTime>12:00:00</cbc:LatestDeliveryTime>
+      <cbc:TrackingID>TH-26-04471</cbc:TrackingID>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-03-25</cbc:StartDate>
+        <cbc:StartTime>09:00:00</cbc:StartTime>
+        <cbc:EndTime>11:00:00</cbc:EndTime>
+      </cac:EstimatedDeliveryPeriod>
+    </cac:Delivery>
+    <cac:ReturnAddress>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:BuildingNumber>24</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:ReturnAddress>
+    <cac:OriginAddress>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:BuildingNumber>24</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:OriginAddress>
+    <cac:ExportCountry>
+      <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+    </cac:ExportCountry>
   </cac:Shipment>
 </Waybill>
 ```

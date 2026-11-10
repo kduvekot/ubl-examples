@@ -182,7 +182,21 @@
       "percent": 100
      }
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "V-12",
+     "kind": "road",
+     "name": "Box truck 12",
+     "plate": "UR 4160 CL",
+     "type": "AE",
+     "driver": {
+      "first": "Nadia",
+      "family": "Orsello",
+      "id": "XU-DL-0388120"
+     }
+    }
+   ]
   },
   {
    "id": "7-xu",
@@ -286,7 +300,26 @@
      "founded": "1996-01-01",
      "size": "Small"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "FRC-4417",
+     "kind": "rail",
+     "name": "Container train Ferrano–Marrowdale",
+     "train": "FRC 4417",
+     "wagons": [
+      "XU-FRC 4521 0042",
+      "XU-FRC 4521 0043"
+     ],
+     "ore_wagons": [
+      "XU-FRC 6610 0101",
+      "XU-FRC 6610 0102",
+      "XU-FRC 6610 0103",
+      "XU-FRC 6610 0104"
+     ],
+     "ore_train": "FRC 2208"
+    }
+   ]
   },
   {
    "id": "13-xu",
@@ -340,7 +373,25 @@
      "valid_until": "2030-06-30",
      "certificate": "XU-HAUL-2020-0877"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "T-07",
+     "kind": "road",
+     "name": "Tractor unit 07 with curtain-side trailer",
+     "plate": "UR 4160 KT",
+     "trailer": "UR TR 3381",
+     "type": "TE",
+     "loading_m": "13.6",
+     "pallets": 33,
+     "driver": {
+      "first": "Ilario",
+      "family": "Bencetti",
+      "id": "XU-DL-0417722"
+     },
+     "owner": "13-xu"
+    }
+   ]
   },
   {
    "id": "15-xu",
@@ -389,7 +440,21 @@
      "founded": "1996-01-01",
      "size": "Small"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "FB-4",
+     "kind": "inland",
+     "name": "Fiumella IV",
+     "vessel_id": "XU-IW-08042",
+     "call_sign": "XUBF4",
+     "mmsi": "999801042",
+     "gross_t": "1210",
+     "net_t": "860",
+     "registry": "Ferrano",
+     "config": "Dry cargo barge"
+    }
+   ]
   },
   {
    "id": "18-xu",
@@ -1345,7 +1410,28 @@
      "size": "Large",
      "capital": 40000000
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "TH",
+     "kind": "sea",
+     "name": "Tidewell Harbour",
+     "vessel_id": "XB-S-20117",
+     "call_sign": "XBTH7",
+     "mmsi": "999702117",
+     "gross_t": "9940",
+     "net_t": "5120",
+     "registry": "Lumeport",
+     "ballast": "2480",
+     "voyage": "TH-26-19E",
+     "master": {
+      "first": "Corin",
+      "family": "Halvard"
+     },
+     "crew": 14,
+     "config": "Feeder container ship, 1,000 TEU"
+    }
+   ]
   },
   {
    "id": "17-xb",
@@ -1542,7 +1628,16 @@
      "founded": "1996-01-01",
      "size": "Small"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "KAC",
+     "kind": "air",
+     "name": "Freighter of Kelaro Air Cargo",
+     "aircraft": "XL-KAC",
+     "flight": "KAC207"
+    }
+   ]
   },
   {
    "id": "19-xl",

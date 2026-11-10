@@ -448,6 +448,16 @@ def merge_extra(out, extra):
     return out
 
 
+def deep_merge(out, extra):
+    """Merge `extra` into `out` at every level: nested blocks are completed, not replaced."""
+    for k, v in (extra or {}).items():
+        if isinstance(out.get(k), dict) and isinstance(v, dict) and not isinstance(v, V):
+            deep_merge(out[k], v)
+        else:
+            out[k] = v
+    return out
+
+
 # ---------------------------------------------------------------- customs
 def rate(a, b):
     """The world's reference exchange rate: units of b for one unit of a (world/countries.json)."""
@@ -739,3 +749,181 @@ def container_number(owner, serial):
     code = f"{owner}U{serial:06d}"
     total = sum((values[c] if c.isalpha() else int(c)) * 2 ** i for i, c in enumerate(code))
     return f"{code}{total % 11 % 10}"
+
+
+# ---------------------------------------------------------------- transport: places, means, events, units
+PLACES = {"XUFER": ("Ferrano", "XU"), "XUSRV": ("Serravona", "XU"), "XBMRW": ("Marrowdale", "XB"),
+          "XBLMP": ("Port of Lumeport", "XB"), "XBLMA": ("Lumeport airport", "XB"), "XLSEL": ("Port of Selanu", "XL"),
+          "XLSLA": ("Selanu airport", "XL")}
+
+
+def place(code, why, name=None):
+    """A cac:Location for a town, port or airport of the map, with a UN/LOCODE-form code of the world."""
+    n, c = PLACES[code]
+    return {"ID": V(code, "The place's code in the form of a UN/LOCODE, with the world's country code.",
+                    schemeID="UN/LOCODE"),
+            "Name": V(name or n, why),
+            "Address": {"Country": {"IdentificationCode": V(c, "The country the place is in.")}}}
+
+
+def fleet(pid, fid):
+    return next(x for x in PARTY[pid]["fleet"] if x["id"] == fid)
+
+
+def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
+    """A cac:TransportMeans from the carrier's fleet (world/parties.json): its registration and the vehicle,
+    train, vessel or aircraft."""
+    f, c = fleet(pid, fid), PARTY[pid]["c"]
+    name = PARTY[pid]["identity"]["name"]
+    src = f"the fleet of {name} (world/parties.json)"
+    out = {}
+    if journey:
+        out["JourneyID"] = V(journey, why_journey or "The journey: the carrier's number for this trip.")
+    out["RegistrationNationalityID"] = V(c, "The country the means of transport is registered in.")
+    out["RegistrationNationality"] = V(WORLD["countries"][c]["name"], "The same, in words.")
+    if direction:
+        out["DirectionCode"] = V(direction, "The direction of the journey, as the carrier codes its services.")
+    out["TransportMeansTypeCode"] = V(f.get("type", f["kind"].upper()), f"The carrier's code for the kind of means: "
+                                                                          f"{f['name'].lower()}; {src}.")
+    if f["kind"] == "road":
+        out["RoadTransport"] = {"LicensePlateID": V(f["plate"], f"The registration plate of the truck; {src}.")}
+        if f.get("trailer"):
+            out["RoadTransport"]["TrailerLicensePlateID"] = V(f["trailer"], "The trailer's own plate.")
+        if f.get("loading_m"):
+            out["MeasurementDimension"] = {"AttributeID": V("Loading length", "The length of the loading floor."),
+                                           "Measure": V(f["loading_m"], f"Room for {f['pallets']} pallets.",
+                                                        unitCode="MTR")}
+    if f["kind"] == "rail":
+        out["RailTransport"] = {"TrainID": V(f["ore_train"] if ore else f["train"], f"The train number; {src}.")}
+    if f["kind"] in ("inland", "sea"):
+        m = {"VesselID": V(f["vessel_id"], "The vessel's number in its country's register of ships; a number of the "
+                                           "world, not an IMO number.", schemeID="urn:ubl-examples:world:vessel"),
+             "VesselName": V(f["name"], f"The vessel's name; {src}."),
+             "RadioCallSignID": V(f["call_sign"], "The radio call sign, with the world's country code."),
+             "MMSIRegistrationID": V(f["mmsi"], "The Maritime Mobile Service Identity, nine digits; 999 is no real "
+                                                "country's maritime identification digits."),
+             "GrossTonnageMeasure": V(f["gross_t"], "The gross tonnage of the vessel, a number without a unit.", unitCode="C62"),
+             "NetTonnageMeasure": V(f["net_t"], "Its net tonnage, also without a unit.", unitCode="C62"),
+             "ShipConfigurationCode": V(f["config"], "The kind of vessel."),
+             "RegistryPortLocation": {"Name": V(f["registry"], "The port the vessel is registered in.")}}
+        if f.get("ballast"):
+            m["SegregatedBallastMeasure"] = V(f["ballast"], "The capacity of the tanks for ballast water only.",
+                                              unitCode="TNE")
+            m["ShipsRequirements"] = V("Shore power at the container quay.", "What the ship needs in port.")
+            m["RegistryCertificateDocumentReference"] = {"ID": V(f"REG-{f['vessel_id']}", "The ship's certificate "
+                                                                 "of registry.")}
+        out["MaritimeTransport"] = m
+    if f["kind"] == "air":
+        out["AirTransport"] = {"AircraftID": V(f["aircraft"], "The aircraft's registration, with the world's country "
+                                                              "code as its nationality mark.")}
+    if f.get("owner"):
+        out["OwnerParty"] = party_short(f["owner"])
+    return out
+
+
+def party_short(pid):
+    from build_examples import party
+    return party(pid, short=True)
+
+
+def person(first, family, why, pid=None, role=None, job=None):
+    out = {"FirstName": V(first, why), "FamilyName": V(family, "The family name.")}
+    if pid:
+        out["ID"] = V(pid, "The number of the driving licence.")
+    if job:
+        out["JobTitle"] = V(job, "The person's position.")
+    if role:
+        out["RoleCode"] = V(role, "The person's role on board.")
+    return out
+
+
+def event(flow, day, time, why, location=None, type_code=None, ident=None, description=None, done=None, **more):
+    """A transport event: when and where something happens to the goods."""
+    out = {}
+    if ident:
+        out["IdentificationID"] = V(ident, "The reporting party's number for this event.")
+    out["OccurrenceDate"] = V(flow.date(day), why)
+    if time:
+        out["OccurrenceTime"] = V(time, "The local time.")
+    if type_code:
+        out["TransportEventTypeCode"] = V(type_code, "The kind of event, as the carriers of the world code them.")
+    if description:
+        out["Description"] = V(description, "What happened, in words.")
+    if done is not None:
+        out["CompletionIndicator"] = V("true" if done else "false", "Whether the event has taken place (true) or is "
+                                                                    "still to come (false).")
+    if location:
+        out["Location"] = location
+    out.update(more)
+    return out
+
+
+def pallets(flow, deal):
+    """The transport handling units of a deal: the benches on pallets of four, the castings boxed on one pallet."""
+    units = []
+    k = 0
+    for d in deal:
+        it = ITEM[d["item"]]
+        while it.get("resale_of"):
+            it = ITEM[it["resale_of"]]
+        q = int(Decimal(str(d["ordered"])))
+        per = it["package"]["per_package"] if it["package"]["type"] == "PX" else q
+        for start in range(0, q, per):
+            k += 1
+            n_ = min(per, q - start)
+            units.append((k, it, n_))
+    return units
+
+
+def handling_units(flow, deal, prefix, marks, detail=False):
+    """The pallets of a deal, as transport handling units. Bench pallets (1850 x 650 mm, four benches) may go two
+    high; the pallet of boxed castings (1200 x 800 mm) carries nothing on top."""
+    out = []
+    units = pallets(flow, deal)
+    for k, it, n_ in units:
+        pal = it["package"]["type"] == "PX"
+        x = {"ID": V(f"{prefix}{k:03d}", "The number on the pallet label."),
+             "TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
+             "TotalGoodsItemQuantity": qty(1, "H87", "One kind of goods on the pallet."),
+             "TotalPackageQuantity": qty(n_, "H87", f"{n_} benches on the pallet, each wrapped in film." if pal
+                                         else f"{n_} boxed side frames on the pallet."),
+             "ShippingMarks": V(f"{marks} / {k:03d} of {len(units):03d}", "The marks on the pallet: the consignee's "
+                                                                          "mark and the pallet's place in the count."),
+             "TraceID": V(f"{prefix}{k:03d}", "The pallet's barcode, scanned at each handover.")}
+        if detail:
+            x["HandlingCode"] = V("Stack2" if pal else "NoStack", "The carrier's handling code: two high, or "
+                                                                  "nothing on top.")
+            x["HandlingInstructions"] = V("May be stacked two high, steel frames on steel frames." if pal else
+                                          "Load on top: nothing may be stacked on the boxes.", "The handling, in words.")
+            x["MeasurementDimension"] = [
+                {"AttributeID": V("Length", "The pallet's footprint."),
+                 "Measure": V("1850" if pal else "1200", "Its length.", unitCode="MMT")},
+                {"AttributeID": V("Width", "The pallet's footprint."),
+                 "Measure": V("650" if pal else "800", "Its width.", unitCode="MMT")},
+                {"AttributeID": V("Height", "The height of the loaded pallet."),
+                 "Measure": V("1650" if pal else "900", "Its height.", unitCode="MMT")}]
+            x["FloorSpaceMeasurementDimension"] = {"AttributeID": V("Floor space", "The floor the pallet takes."),
+                                                   "Measure": V("1.2" if pal else "0.96", "In square metres.",
+                                                                unitCode="MTK")}
+            x["PalletSpaceMeasurementDimension"] = {"AttributeID": V("Pallet places", "The pallet places taken on "
+                                                                                      "the truck."),
+                                                    "Measure": V("0.5" if pal else "1", "Half a place when two pallets "
+                                                                 "are stacked; the castings take a whole one.",
+                                                                 unitCode="C62")}
+            x["Package"] = {"ID": V(f"{prefix}{k:03d}-1", "The packages on the pallet."),
+                            "Quantity": qty(n_, "H87", "The packages of this kind on the pallet."),
+                            "PackagingTypeCode": V("SW" if pal else "BX", "UN/ECE Recommendation 21: "
+                                                   + ("shrinkwrapped, each bench in film" if pal else "box") + "."),
+                            "PackagingType": V("Bench in stretch film" if pal else "Cardboard box",
+                                               "The packaging in words."),
+                            "PackingMaterial": V("Recycled PE stretch film" if pal else "Corrugated cardboard",
+                                                 "What the packaging is made of."),
+                            "ReturnableMaterialIndicator": V("false", "The packaging is not returned."),
+                            "PackageLevelCode": V("1", "The inner packaging, below the pallet.")}
+            x["ActualPackage"] = {"ID": V(f"{prefix}{k:03d}", "The pallet itself, as packed."),
+                                  "Quantity": qty(1, "H87", "One pallet."),
+                                  "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
+                                  "ReturnableMaterialIndicator": V("true", "The pallet is exchanged with the "
+                                                                           "carrier and goes back.")}
+        out.append(x)
+    return out

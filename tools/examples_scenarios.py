@@ -9,7 +9,7 @@ lines, amounts and taxes are worked out by tools/examples_kit.py.
 from decimal import Decimal
 
 import examples_kit as kit
-from build_examples import ITEM, PARTY, WORLD, V, amount, item, money, party, price, qty
+from build_examples import ITEM, PARTY, WORLD, V, address, amount, item, money, party, price, qty
 
 
 def rate(a, b):
@@ -92,6 +92,93 @@ def goods_items(f, currency, value_why, convert=None):
     return out
 
 
+ROAD_JOB = "TH-26-04471"          # the carrier's job number for the truck
+
+
+def road_stage(f, actual):
+    """The main carriage by truck: Ferrano to Marrowdale, across the land border."""
+    stage = {"ID": V("1", "The only stage: one truck from the warehouse to the distribution centre."),
+             "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road transport.",
+                                    listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+             "TransportMeansTypeCode": V("TE", "The truck pulls a trailer."),
+             "TransitDirectionCode": V("Export", "The goods leave Urvania by this stage."),
+             "CabotageIndicator": V("false", "A carriage between two countries, not within a foreign one."),
+             "TransitPeriod": {"StartDate": V(f.date(7), "Collected in the afternoon."),
+                               "EndDate": V(f.date(9), "Delivered in the morning, after the night rest of the "
+                                                       "driver and the border.")},
+             "TransportMeans": kit.means("13-xu", "T-07", ROAD_JOB, "The carrier's job number, the same on every "
+                                                                   "document of this truck.", "Westbound"),
+             "DriverPerson": kit.person("Ilario", "Bencetti", "The driver of the truck.", "XU-DL-0417722"),
+             "LoadingPortLocation": kit.place("XUFER", "Loaded at the 3PL's warehouse in Ferrano."),
+             "UnloadingPortLocation": kit.place("XBMRW", "Unloaded at the distributor's distribution centre."),
+             "EstimatedDeliveryDate": V(f.date(9), "The carrier's estimate when it takes over the goods."),
+             "EstimatedDeliveryTime": V("09:00:00", "Early in the working day."),
+             "RequiredDeliveryDate": V(f.date(9), "The distributor's goods-in slot."),
+             "RequiredDeliveryTime": V("10:00:00", "The slot starts at ten.")}
+    if actual:
+        stage["ActualDepartureTransportEvent"] = kit.event(f, 7, "16:20:00", "The truck left the warehouse.",
+                                                           kit.place("XUFER", "Castrano Logistics warehouse."))
+        stage["ExaminationTransportEvent"] = kit.event(f, 8, "07:45:00", "Customs looked at the seals at the border.",
+                                                       description="Seal check, no inspection of the goods.")
+    return stage
+
+
+def road_consignment(f, view):
+    """The consignment of the truck. view: 'request' (the booking), 'plan' (the carrier's answer) or 'note' (the
+    consignment note when the goods are taken over)."""
+    d = f.deal
+    net = sum(Decimal(str(x["ordered"])) * Decimal(str(ITEM[x["item"]]["net_kg"])) for x in d)
+    out = {"ID": V(f.numbers["consignment"], "The distributor's consignment number, from its booking."),
+           "SummaryDescription": V("Park benches and spare side frames on 25 pallets.", "The goods in a few words, "
+                                                                                       "as on the consignment note."),
+           "GeneralCargoIndicator": V("true", "Packed goods on pallets."),
+           "ContainerizedIndicator": V("false", "The pallets are loaded on the truck, not in a container."),
+           "OriginalDepartureCountry": {"IdentificationCode": V("XU", "The goods start in Urvania.")},
+           "FinalDestinationCountry": {"IdentificationCode": V("XB", "And end in Bayvarra.")}}
+    if view == "request":
+        out["RequestedPickupTransportEvent"] = kit.event(f, 7, "14:00:00", "The day the goods are ready.",
+                                                         kit.place("XUFER", "The 3PL's warehouse."))
+        out["RequestedDeliveryTransportEvent"] = kit.event(f, 9, "10:00:00", "The distributor's goods-in slot.",
+                                                           kit.place("XBMRW", "The distribution centre."))
+        out["CarrierServiceInstructions"] = V("Curtain-side trailer; the goods are loaded from the side by forklift.",
+                                              "What the carrier must bring.")
+        return out
+    out.update({
+        "CarrierAssignedID": V(ROAD_JOB, "The carrier's job number."),
+        "ConsignorAssignedID": V(f.numbers["despatch"], "The consignor's reference: its despatch advice."),
+        "ConsigneeAssignedID": V("LD-GI-0412", "The distributor's goods-in booking for the slot."),
+        "NetWeightMeasure": qty(net, "KGM", "The weight of the goods without packaging."),
+        "LoadingLengthMeasure": V("9.3", "Five rows of bench pallets, two high, and the castings: 9.3 m of the "
+                                         "13.6 m floor.", unitCode="MTR"),
+        "Remarks": V("Received in apparent good order; seals XU-CL-77310 on the trailer doors.",
+                     "The driver's remarks at taking over, as the consignment note asks."),
+        "ThirdPartyPayerIndicator": V("false", "The consignee, who booked the truck, pays the freight."),
+        "HaulageInstructions": V("Wait at the warehouse until customs has released the export declaration.",
+                                 "What the driver must do before leaving."),
+        "CustomsClearanceServiceInstructions": V("The export is declared by the 3PL in Ferrano; the import by the "
+                                                 "distributor at the border.", "Who clears the goods through customs."),
+        "DeliveryInstructions": V("Unload at dock 4; report to the gatehouse first.", "Where to go on arrival."),
+        "TotalPackagesQuantity": qty(sum(int(Decimal(str(x["ordered"]))) for x in d), "H87",
+                                     "96 benches and 12 boxed frames."),
+        "TotalTransportHandlingUnitQuantity": qty(25, "H87", "25 pallets."),
+        "ActualPickupTransportEvent": kit.event(f, 7, "15:05:00", "When the carrier took over the goods.",
+                                                kit.place("XUFER", "The 3PL's warehouse.")),
+        "DeliveryTerms": {"ID": V("FCA", "Incoterms 2020: free carrier at the seller's warehouse."),
+                          "LossRiskResponsibilityCode": V("Buyer", "The risk passed to the buyer when the goods were "
+                                                                   "loaded on the truck."),
+                          "LossRisk": V("The risk passes on loading at the 3PL's warehouse.", "In words."),
+                          "SpecialTerms": V("The buyer's carrier presents the truck; the seller loads it.",
+                                            "Who loads, under FCA at the seller's premises.")},
+        "CollectPaymentTerms": {"Note": V("The freight is paid by the consignee under its contract with the carrier.",
+                                          "Freight collect: the consignee pays.")},
+        "CustomsDeclaration": {"ID": V(f.numbers["export-declaration"], "The export declaration the goods travel "
+                                                                        "under."),
+                               "IssuerParty": party("19-xu", short=True)},
+        "MainCarriageShipmentStage": road_stage(f, True),
+        "TransportHandlingUnit": kit.handling_units(f, d, "CL-26-", "LD MARROWDALE", detail=True)})
+    return out
+
+
 def road(n, doc):
     f = ROAD
     weight = kit.gross_weight(f, "ordered")
@@ -160,8 +247,28 @@ def road(n, doc):
                                     if endorsed else "Not yet endorsed: the application is with the chamber."),
                 "EndorserParty": signer}}
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 7, "Issued when the carrier collects the goods at the warehouse.", weight,
-                           "The gross weight the carrier takes over.")
+        out = kit.waybill(f, n, doc, 7, "Issued when the carrier collects the goods at the warehouse.", weight,
+                          "The gross weight the carrier takes over.")
+        net = sum(Decimal(str(x["ordered"])) * Decimal(str(ITEM[x["item"]]["net_kg"])) for x in f.deal)
+        kit.deep_merge(out["Shipment"], {
+            "NetNetWeightMeasure": qty(net, "KGM", "The goods alone, without any packaging."),
+            "GrossVolumeMeasure": V("41.5", "The volume of the 25 loaded pallets.", unitCode="MTQ"),
+            "TotalGoodsItemQuantity": qty(2, "H87", "Two kinds of goods: benches and side frames."),
+            "SplitConsignmentIndicator": V("false", "The whole consignment travels on this truck."),
+            "ConsignmentQuantity": qty(1, "H87", "One consignment on the truck."),
+            "HandlingCode": V("Upright", "The carrier's handling code: keep upright."),
+            "Information": V("Steel street furniture for resale.", "What the goods are, for the driver."),
+            "ExportCountry": {"IdentificationCode": V("XU", "The goods are exported from Urvania.")},
+            "OriginAddress": address("8-xu"),
+            "ReturnAddress": address("8-xu"),
+            "Consignment": road_consignment(f, "note"),
+            "Delivery": {"TrackingID": V(ROAD_JOB, "Track the truck with the carrier's job number."),
+                         "EstimatedDeliveryPeriod": {"StartDate": V(f.date(9), "The morning of the third day."),
+                                                     "StartTime": V("09:00:00", "From nine."),
+                                                     "EndTime": V("11:00:00", "Until eleven.")},
+                         "LatestDeliveryDate": V(f.date(9), "The goods-in slot cannot move."),
+                         "LatestDeliveryTime": V("12:00:00", "Dock 4 closes for the lunch change.")}})
+        return out
     if doc["doc"] == "TransportationStatus":
         return {"ID": V(f.number("status", doc["from"], "TransportationStatus"), "The carrier's status report number."),
                 "IssueDate": V(f.date(8), "The morning after collection, when the truck has crossed the border."),
