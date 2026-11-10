@@ -19,7 +19,7 @@
   <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-05-18</cbc:StartDate>
     <cbc:EndDate>2026-05-19</cbc:EndDate>
@@ -308,6 +308,12 @@
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XL</cbc:IdentificationCode>
@@ -365,13 +371,30 @@
     <cbc:PayableAmount currencyID="XLC">51.250</cbc:PayableAmount>
     <cbc:PayableAlternativeAmount currencyID="XBL">128.13</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
+  <cac:CollectionDebitNoteLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>The port's storage charge for the day the container was held, collected for the port.</cbc:Note>
+    <cbc:DebitedQuantity unitCode="DAY">1</cbc:DebitedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">12.750</cbc:LineExtensionAmount>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
+    <cac:Item>
+      <cbc:Name>Container storage at the port of Selanu</cbc:Name>
+    </cac:Item>
+  </cac:CollectionDebitNoteLine>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>5c8d9fe8-7400-5393-836e-91e7de617c83</cbc:UUID>
     <cbc:Note>Customs inspection of the container at Selanu.</cbc:Note>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">51.250</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">51.250</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">38.500</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">38.500</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
     <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
     <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
@@ -423,6 +446,14 @@
         <cbc:Name>Island Customs Service</cbc:Name>
       </cac:PartyName>
     </cac:OriginatorParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>

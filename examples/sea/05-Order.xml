@@ -175,6 +175,24 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -283,8 +301,36 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:UUID>b79591a7-1ff5-5442-b47e-328e3c23e0c7</cbc:UUID>
       <cbc:Quantity unitCode="H87">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cac:OriginatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginatorParty>
+      <cac:BeneficiaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:BeneficiaryParty>
+      <cac:OrderedShipment>
+        <cac:Shipment>
+          <cbc:ID>VT-SH-PLAN-1</cbc:ID>
+          <cbc:ShippingPriorityLevelCode>Normal</cbc:ShippingPriorityLevelCode>
+        </cac:Shipment>
+        <cac:Package>
+          <cbc:ID>PAL</cbc:ID>
+          <cbc:Quantity unitCode="C62">24</cbc:Quantity>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:Package>
+      </cac:OrderedShipment>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
@@ -445,11 +491,19 @@
             <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
             <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
             <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+            <cac:MeasurementPeriod>
+              <cbc:StartDate>2025-01-01</cbc:StartDate>
+              <cbc:EndDate>2025-12-31</cbc:EndDate>
+            </cac:MeasurementPeriod>
           </cac:ResourceConsumption>
           <cac:ResourceConsumption>
             <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
             <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
             <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+            <cac:MeasurementPeriod>
+              <cbc:StartDate>2025-01-01</cbc:StartDate>
+              <cbc:EndDate>2025-12-31</cbc:EndDate>
+            </cac:MeasurementPeriod>
           </cac:ResourceConsumption>
           <cac:WasteGenerated>
             <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
@@ -474,8 +528,25 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
+      <cbc:UUID>6c15f781-fb79-59c5-b7b2-bbd9c564ae2b</cbc:UUID>
       <cbc:Quantity unitCode="H87">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+      <cac:OriginatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginatorParty>
+      <cac:BeneficiaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:BeneficiaryParty>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>

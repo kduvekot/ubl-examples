@@ -139,7 +139,7 @@ feeder included.</p>
 forwarding instructions, packing lists and manifests to combine
 shipments, book carriers and arrange insurance, keeping one consignment
 reference across all of them.</p>
-<p>In this world it sends 7 and receives 14 documents, and is named in 3
+<p>In this world it sends 8 and receives 14 documents, and is named in 3
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
@@ -161,12 +161,20 @@ href="example-retail-13-Waybill.html">See the example document</a>.</p>
 <p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
+Status</strong></a> to <a href="world-6-xb.html">Lumeway
+Distribution</a>: The carrier answers the request: the truck is on its
+way and arrives in the afternoon. <a
+href="example-retail-15-TransportationStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: Under DDP the
 seller pays the transport, so the carrier invoices the distributor. A
 transport service is invoiced with the ordinary Invoice; the Freight
 Invoice is deprecated in UBL 2.5. <a
-href="example-retail-15-Invoice.html">See the example document</a>.</p>
+href="example-retail-16-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>,
 <code>Delivery/Shipment/Consignment/CarrierParty</code>.</p></li>
@@ -518,6 +526,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0ffc6c5</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>91a20cf</code></p></div></footer>
 </body>
 </html>

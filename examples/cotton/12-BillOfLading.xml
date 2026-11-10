@@ -339,6 +339,14 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:MortgageHolderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41996</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Bank of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:MortgageHolderParty>
     </cac:Consignment>
   </cac:Shipment>
   <cac:DocumentReference>

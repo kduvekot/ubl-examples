@@ -132,6 +132,38 @@
       <cac:Person>
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
+        <cac:FinancialAccount>
+          <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
+          <cbc:Name>Robin Ashdale</cbc:Name>
+          <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+          <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:FinancialInstitutionBranch>
+            <cbc:ID>BLUM-001</cbc:ID>
+            <cbc:Name>Main branch</cbc:Name>
+            <cac:FinancialInstitution>
+              <cbc:ID>BLUM</cbc:ID>
+              <cbc:Name>Bank of Lumeport</cbc:Name>
+              <cac:Address>
+                <cbc:StreetName>Exchange Street</cbc:StreetName>
+                <cbc:BuildingNumber>48</cbc:BuildingNumber>
+                <cbc:CityName>Lumeport</cbc:CityName>
+                <cac:Country>
+                  <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:FinancialInstitution>
+            <cac:Address>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitutionBranch>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:FinancialAccount>
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
@@ -161,6 +193,12 @@
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -169,6 +207,7 @@
     <cac:PaymentMandate>
       <cbc:ID>CSW-DD-2024-08812</cbc:ID>
       <cbc:MandateTypeCode>Recurrent</cbc:MandateTypeCode>
+      <cbc:MaximumPaymentInstructionsNumeric>12</cbc:MaximumPaymentInstructionsNumeric>
       <cbc:MaximumPaidAmount currencyID="XBL">150.00</cbc:MaximumPaidAmount>
       <cbc:SignatureID>SIG-CSW-DD-2024-08812</cbc:SignatureID>
       <cac:PayerParty>
@@ -197,6 +236,12 @@
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>
+          <cac:Address>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
         </cac:FinancialInstitutionBranch>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -262,6 +307,56 @@
     <cbc:TaxInclusiveAmount currencyID="XBL">38.78</cbc:TaxInclusiveAmount>
     <cbc:PayableAmount currencyID="XBL">38.78</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
+  <cac:CollectionInvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">5.88</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
+    <cac:CollectedForParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:CollectedForParty>
+    <cac:Item>
+      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
+      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>CSW-LEVY</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:CollectionInvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
@@ -296,48 +391,6 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
-    </cac:Price>
-  </cac:InvoiceLine>
-  <cac:InvoiceLine>
-    <cbc:ID>2</cbc:ID>
-    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
-    <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">5.88</cbc:LineExtensionAmount>
-    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-03-01</cbc:StartDate>
-      <cbc:EndDate>2026-03-31</cbc:EndDate>
-      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
-      <cbc:Description>March 2026</cbc:Description>
-    </cac:InvoicePeriod>
-    <cac:CollectedForParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:CollectedForParty>
-    <cac:Item>
-      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
-      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
-      <cac:SellersItemIdentification>
-        <cbc:ID>CSW-LEVY</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

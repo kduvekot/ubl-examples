@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>BF-TS-26-0233</cbc:ID>
+  <cbc:CarrierAssignedID>BF-ROAD-26-0231</cbc:CarrierAssignedID>
+  <cbc:UUID>c745dc93-d27a-532f-bd4c-8f30bcd9dadf</cbc:UUID>
+  <cbc:IssueDate>2026-04-29</cbc:IssueDate>
+  <cbc:IssueTime>11:49:00</cbc:IssueTime>
+  <cbc:TransportationStatusTypeCode>Current</cbc:TransportationStatusTypeCode>
+  <cac:Consignment>
+    <cbc:ID>LD-CS-26-0228</cbc:ID>
+  </cac:Consignment>
+  <cac:TransportEvent>
+    <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
+    <cbc:Description>On its way from the distribution centre; arrival expected at 14:00.</cbc:Description>
+    <cac:Location>
+      <cbc:Name>Marrowdale ring road</cbc:Name>
+    </cac:Location>
+  </cac:TransportEvent>
+  <cac:SenderParty>
+    <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID>en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode>EN</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Dockside Way</cbc:StreetName>
+      <cbc:BuildingNumber>4</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38525</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
+      <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:JurisdictionRegionAddress>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
+      <cbc:CompanyID>20411644</cbc:CompanyID>
+      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XB:FBR</cbc:ID>
+        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
+      <cbc:Department>Operations</cbc:Department>
+      <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
+      <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID>en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode>EN</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
+      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
+      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:JurisdictionRegionAddress>
+          <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
+      <cbc:CompanyID>20410274</cbc:CompanyID>
+      <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
+      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
+      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XB:FBR</cbc:ID>
+        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Sales</cbc:Department>
+      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+      <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReceiverParty>
+  <cac:TransportationStatusRequestDocumentReference>
+    <cbc:ID>LD-DOC-26-0232</cbc:ID>
+  </cac:TransportationStatusRequestDocumentReference>
+  <cac:UpdatedDeliveryTransportEvent>
+    <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+    <cbc:Description>Expected arrival at the store.</cbc:Description>
+  </cac:UpdatedDeliveryTransportEvent>
+</TransportationStatus>

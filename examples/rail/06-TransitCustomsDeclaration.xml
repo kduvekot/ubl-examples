@@ -104,6 +104,7 @@
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
         <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
       </cac:SecurityListing>
@@ -612,11 +613,19 @@
             <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
             <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
             <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+            <cac:MeasurementPeriod>
+              <cbc:StartDate>2025-01-01</cbc:StartDate>
+              <cbc:EndDate>2025-12-31</cbc:EndDate>
+            </cac:MeasurementPeriod>
           </cac:ResourceConsumption>
           <cac:ResourceConsumption>
             <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
             <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
             <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+            <cac:MeasurementPeriod>
+              <cbc:StartDate>2025-01-01</cbc:StartDate>
+              <cbc:EndDate>2025-12-31</cbc:EndDate>
+            </cac:MeasurementPeriod>
           </cac:ResourceConsumption>
           <cac:WasteGenerated>
             <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
@@ -638,6 +647,10 @@
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>VI-CD-26-0330E</cbc:ID>
+    <cbc:FunctionCode>Export</cbc:FunctionCode>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
   </cac:AdditionalDocumentReference>

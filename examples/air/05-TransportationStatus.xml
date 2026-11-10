@@ -124,6 +124,7 @@
             <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
             <cbc:LongitudeMinutesMeasure unitCode="D61">16.20</cbc:LongitudeMinutesMeasure>
             <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+            <cbc:AltitudeMeasure unitCode="MTR">14</cbc:AltitudeMeasure>
           </cac:LocationCoordinate>
         </cac:PhysicalLocation>
         <cac:PartyTaxScheme>

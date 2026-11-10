@@ -195,6 +195,7 @@
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
           <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
         </cac:SecurityListing>
@@ -284,6 +285,12 @@
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
@@ -381,6 +388,10 @@
     </cac:Price>
     <cac:ItemPriceExtension>
       <cbc:Amount currencyID="XUF">14414504</cbc:Amount>
+      <cbc:TaxInclusiveAmount currencyID="XUF">17297405</cbc:TaxInclusiveAmount>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
+      </cac:TaxTotal>
     </cac:ItemPriceExtension>
   </cac:InvoiceLine>
 </Invoice>

@@ -8,6 +8,20 @@
   <cbc:UUID>dbd3deda-0d71-53e4-9a07-a1f9d4add949</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>12:34:00</cbc:IssueTime>
+  <cbc:WasteMovementTypeCode>Recovery</cbc:WasteMovementTypeCode>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:ConsignmentQuantity unitCode="C62">12</cbc:ConsignmentQuantity>
+  <cac:Signature>
+    <cbc:ID>RR-SIG-WM</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rinova Recovery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
@@ -87,6 +101,7 @@
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:PartyAuthorization>
+      <cbc:PurposeCode>R3</cbc:PurposeCode>
       <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
       <cac:ValidityPeriod>
         <cbc:EndDate>2029-12-31</cbc:EndDate>
@@ -252,6 +267,7 @@
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
         <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
       </cac:SecurityListing>
@@ -289,6 +305,14 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:NotifierParty>
+  <cac:DisposalFacilityParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+  </cac:DisposalFacilityParty>
   <cac:RecoveryFacilityParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
@@ -408,4 +432,25 @@
       <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:WasteNotificationDocumentReference>
+    <cbc:ID>VI-DOC-26-0204</cbc:ID>
+  </cac:WasteNotificationDocumentReference>
+  <cac:WeightStatementDocumentReference>
+    <cbc:ID>RR-WB-26-0412</cbc:ID>
+  </cac:WeightStatementDocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>RR-REC-26-0412</cbc:ID>
+  </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cbc:DistributionType>A copy for the producer, who must keep it with the notification.</cbc:DistributionType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
 </WasteMovement>

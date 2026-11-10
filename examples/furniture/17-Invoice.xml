@@ -153,7 +153,15 @@
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode>XB-PUBLIC</cbc:ExemptionReasonCode>
         <cbc:ExemptionReason>Public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
           <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
@@ -251,6 +259,12 @@
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -262,7 +276,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">89.28</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">89.64</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.brackenmere.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -270,10 +284,24 @@
       <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Packaging disposal</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">24.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">5952.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">5976.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -288,9 +316,10 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">5952.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">5952.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">5952.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">5952.00</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">5976.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">5976.00</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">24.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">5976.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -355,6 +384,11 @@
         <cbc:ID>BF-DOC-26-0582</cbc:ID>
       </cac:DocumentReference>
     </cac:WorkReportLineReference>
+    <cac:BillingReference>
+      <cac:AdditionalDocumentReference>
+        <cbc:ID>BF-DOC-26-0582</cbc:ID>
+      </cac:AdditionalDocumentReference>
+    </cac:BillingReference>
     <cac:Item>
       <cbc:Description>Installation of furniture on site, per hour per installer.</cbc:Description>
       <cbc:Name>Installation work</cbc:Name>

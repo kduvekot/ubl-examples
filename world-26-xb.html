@@ -141,7 +141,7 @@ ID <code>VI-B180</code></td>
 orders and invoices, UBL lets it share forecasts, promotions and sales
 data with its supplier, and issue a structured purchase receipt to the
 consumer.</p>
-<p>In this world it sends 19 and receives 18 documents, and is named in
+<p>In this world it sends 20 and receives 18 documents, and is named in
 2 documents between other parties. They are listed per flow below.</p>
 <h2
 id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
@@ -204,7 +204,7 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
 Advice</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: The shop confirms the delivery and reports a damaged
-carton. <a href="example-retail-16-ReceiptAdvice.html">See the example
+carton. <a href="example-retail-17-ReceiptAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
@@ -212,7 +212,7 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
 Receipt</strong></a> to <a href="world-c-xb.html">Robin Ashdale</a>: A
 consumer buys in the shop and gets a receipt. <a
-href="example-retail-20-PurchaseReceipt.html">See the example
+href="example-retail-21-PurchaseReceipt.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
 </ul>
@@ -265,7 +265,7 @@ example document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-6-xb.html">Lumeway Distribution</a>: The distributor
 has sold its receivables to the factor, so the invoice names the factor
-as payee. <a href="example-retail-17-Invoice.html">See the example
+as payee. <a href="example-retail-18-Invoice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
@@ -277,7 +277,7 @@ Note</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The shop reported a damaged carton in its receipt
 advice; the distributor credits it. The factor stays the payee, because
 it owns the receivable being reduced. <a
-href="example-retail-18-CreditNote.html">See the example
+href="example-retail-19-CreditNote.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
@@ -288,7 +288,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-DELETI
 Deletion</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The spring catalogue ends; the distributor deletes it
 before the summer catalogue. <a
-href="example-retail-19-CatalogueDeletion.html">See the example
+href="example-retail-20-CatalogueDeletion.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p></li>
 </ul>
@@ -513,6 +513,15 @@ point where Bayvarra's tax is charged. <a
 href="example-packaging-08-PurchaseReceipt.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
+Receipt</strong></a> to <a href="world-1-xl.html">Velumi Trading</a>:
+The island trader's buyer, in Lumeport for the trade fair, buys shirts
+for the stand team and pays in coral with the island card: the till
+converts at the counter. <a
+href="example-packaging-09-PurchaseReceipt.html">See the example
+document</a>.</p>
+<p>In it as <code>AccountingSupplierParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -555,6 +564,7 @@ world</h2>
 Bayvarra</li>
 <li><a href="world-37-xb.html">Brackenmere Furniture</a>, Bayvarra</li>
 <li><a href="world-40-xb.html">Lumeport Textile Mill</a>, Bayvarra</li>
+<li><a href="world-1-xl.html">Velumi Trading</a>, Lisavu</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#26-xb">See Retailer on the map</a> · Bayvarra:
@@ -567,6 +577,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0ffc6c5</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>91a20cf</code></p></div></footer>
 </body>
 </html>

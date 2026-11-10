@@ -176,6 +176,7 @@
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
         <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
       </cac:SecurityListing>
@@ -432,6 +433,8 @@
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode>M</cbc:CurrentChargeTypeCode>
+          <cbc:OneTimeChargeType>Connection to the 10 kV grid, paid once in 2024</cbc:OneTimeChargeType>
+          <cbc:OneTimeChargeTypeCode>CONN</cbc:OneTimeChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID>S</cbc:ID>
             <cbc:Percent>20</cbc:Percent>

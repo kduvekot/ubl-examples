@@ -319,21 +319,24 @@
   <cac:CrewPerson>
     <cbc:FirstName>Corin</cbc:FirstName>
     <cbc:FamilyName>Halvard</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>Master</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:CrewPerson>
     <cbc:FirstName>Elsbeth</cbc:FirstName>
     <cbc:FamilyName>Marrin</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:PassengerPerson>
     <cbc:FirstName>Ines</cbc:FirstName>
     <cbc:FamilyName>Tavari</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>Passenger</cbc:RoleCode>
   </cac:PassengerPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
@@ -381,7 +384,7 @@
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
         <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
-        <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
         <cac:TransportEquipmentSeal>
           <cbc:ID>TWL-S-0884213</cbc:ID>
