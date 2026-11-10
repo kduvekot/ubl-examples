@@ -7243,8 +7243,9 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     roles = {"6-xb": ("true", "The distributor proposed joining the agreement."),
              "1-xl": ("false", "The trader accepted the proposal.")}
-    for pp in lines_of(out, "ParticipantParty"):
-        pid = pp["Party"].get("_pid")
+    order = doc["parties"]["ParticipantParty"]          # the participants, in the order world/documents.json gives
+    out["ParticipantParty"] = [{} for _ in order]
+    for pid, pp in zip(order, out["ParticipantParty"]):
         init, why = roles.get(pid, ("false", "A participant."))
         pp.update({"InitiatingPartyIndicator": V(init, why),
                    "PrivatePartyIndicator": V("true", "A private company."),
@@ -7256,8 +7257,8 @@ def _(f, n, doc, out):
                    "SupportContact": {"Name": V("Service desk", "For day-to-day questions.")},
                    "CommercialContact": {"Name": V("Sales office" if pid == "6-xb" else "Purchasing",
                                                    "For the trade itself.")}})
-    for ds in find_dicts(out, "DigitalService"):
-        for s in lines_of(ds, "DigitalService"):
+    for ds in find_dicts(out, "SendingDigitalService"):
+        for s in lines_of(ds, "SendingDigitalService"):
             s["CertificationDocumentReference"] = {"ID": V("LTAC-CERT-26-017", "The trade accord council's "
                                                                                "certificate that the distributor's "
                                                                                "system passed the conformance "

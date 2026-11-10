@@ -100,6 +100,10 @@
     </cac:ElectronicAddress>
   </cac:GovernorParty>
   <cac:ParticipantParty>
+    <cbc:InitiatingPartyIndicator>true</cbc:InitiatingPartyIndicator>
+    <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
+    <cbc:PublicPartyIndicator>false</cbc:PublicPartyIndicator>
+    <cbc:ServiceProviderPartyIndicator>false</cbc:ServiceProviderPartyIndicator>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -190,8 +194,24 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+    <cac:LegalContact>
+      <cbc:Name>Legal department</cbc:Name>
+    </cac:LegalContact>
+    <cac:TechnicalContact>
+      <cbc:Name>Integration desk</cbc:Name>
+    </cac:TechnicalContact>
+    <cac:SupportContact>
+      <cbc:Name>Service desk</cbc:Name>
+    </cac:SupportContact>
+    <cac:CommercialContact>
+      <cbc:Name>Sales office</cbc:Name>
+    </cac:CommercialContact>
   </cac:ParticipantParty>
   <cac:ParticipantParty>
+    <cbc:InitiatingPartyIndicator>false</cbc:InitiatingPartyIndicator>
+    <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
+    <cbc:PublicPartyIndicator>false</cbc:PublicPartyIndicator>
+    <cbc:ServiceProviderPartyIndicator>false</cbc:ServiceProviderPartyIndicator>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -259,6 +279,18 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+    <cac:LegalContact>
+      <cbc:Name>Legal department</cbc:Name>
+    </cac:LegalContact>
+    <cac:TechnicalContact>
+      <cbc:Name>Integration desk</cbc:Name>
+    </cac:TechnicalContact>
+    <cac:SupportContact>
+      <cbc:Name>Service desk</cbc:Name>
+    </cac:SupportContact>
+    <cac:CommercialContact>
+      <cbc:Name>Purchasing</cbc:Name>
+    </cac:CommercialContact>
   </cac:ParticipantParty>
   <cac:AgreementCountry>
     <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -382,6 +414,9 @@
             <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>LD-Order-IN</cbc:ID>
@@ -443,6 +478,9 @@
             <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>VT-Invoice-IN</cbc:ID>

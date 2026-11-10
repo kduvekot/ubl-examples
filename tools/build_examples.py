@@ -802,7 +802,9 @@ def place_parties(doc, content):
                     place_parties({"doc": target, "parties": {"/".join(steps[k + 1:]): pid}}, sub)
                 break
             if last and isinstance(pid, list):                   # several parties in one role: one element each
-                node[step] = [party(x) if target == "Party" else {"Party": party(x)} for x in pid]
+                given = node.get(step) if isinstance(node.get(step), list) else []
+                node[step] = [merge(given[i] if i < len(given) else {},
+                                    party(x) if target == "Party" else {"Party": party(x)}) for i, x in enumerate(pid)]
                 break
             if last:
                 if target == "Party":

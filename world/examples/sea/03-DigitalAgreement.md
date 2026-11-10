@@ -143,6 +143,14 @@ Inside `GovernorParty`:
 
 Inside `ParticipantParty`:
 
+- `InitiatingPartyIndicator` = **true**  
+  The distributor proposed joining the agreement.
+- `PrivatePartyIndicator` = **true**  
+  A private company.
+- `PublicPartyIndicator` = **false**  
+  Not a public body.
+- `ServiceProviderPartyIndicator` = **false**  
+  It exchanges its own documents; it is not a service provider.
 - `Party/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `Party/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -247,6 +255,22 @@ Inside `ParticipantParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `LegalContact/Name` = **Legal department**  
+  For legal notices under the agreement.
+- `TechnicalContact/Name` = **Integration desk**  
+  For the technical connection.
+- `SupportContact/Name` = **Service desk**  
+  For day-to-day questions.
+- `CommercialContact/Name` = **Sales office**  
+  For the trade itself.
+- `InitiatingPartyIndicator` = **false**  
+  The trader accepted the proposal.
+- `PrivatePartyIndicator` = **true**  
+  A private company.
+- `PublicPartyIndicator` = **false**  
+  Not a public body.
+- `ServiceProviderPartyIndicator` = **false**  
+  It exchanges its own documents; it is not a service provider.
 - `Party/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `Party/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -321,6 +345,14 @@ Inside `ParticipantParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `LegalContact/Name` = **Legal department**  
+  For legal notices under the agreement.
+- `TechnicalContact/Name` = **Integration desk**  
+  For the technical connection.
+- `SupportContact/Name` = **Service desk**  
+  For day-to-day questions.
+- `CommercialContact/Name` = **Purchasing**  
+  For the trade itself.
 
 ### Agreement Country
 
@@ -503,6 +535,8 @@ Inside `DigitalProcess`:
   The business envelope.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.1-xl.example/as4**  
   The access point.
+- `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
+  The trade accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **LD-Order-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
@@ -573,6 +607,8 @@ Inside `DigitalProcess`:
   The business envelope.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.6-xb.example/as4**  
   The access point.
+- `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
+  The trade accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **VT-Invoice-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
@@ -711,6 +747,10 @@ Inside `DigitalProcess`:
     </cac:ElectronicAddress>
   </cac:GovernorParty>
   <cac:ParticipantParty>
+    <cbc:InitiatingPartyIndicator>true</cbc:InitiatingPartyIndicator>
+    <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
+    <cbc:PublicPartyIndicator>false</cbc:PublicPartyIndicator>
+    <cbc:ServiceProviderPartyIndicator>false</cbc:ServiceProviderPartyIndicator>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -801,8 +841,24 @@ Inside `DigitalProcess`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+    <cac:LegalContact>
+      <cbc:Name>Legal department</cbc:Name>
+    </cac:LegalContact>
+    <cac:TechnicalContact>
+      <cbc:Name>Integration desk</cbc:Name>
+    </cac:TechnicalContact>
+    <cac:SupportContact>
+      <cbc:Name>Service desk</cbc:Name>
+    </cac:SupportContact>
+    <cac:CommercialContact>
+      <cbc:Name>Sales office</cbc:Name>
+    </cac:CommercialContact>
   </cac:ParticipantParty>
   <cac:ParticipantParty>
+    <cbc:InitiatingPartyIndicator>false</cbc:InitiatingPartyIndicator>
+    <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
+    <cbc:PublicPartyIndicator>false</cbc:PublicPartyIndicator>
+    <cbc:ServiceProviderPartyIndicator>false</cbc:ServiceProviderPartyIndicator>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -870,6 +926,18 @@ Inside `DigitalProcess`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+    <cac:LegalContact>
+      <cbc:Name>Legal department</cbc:Name>
+    </cac:LegalContact>
+    <cac:TechnicalContact>
+      <cbc:Name>Integration desk</cbc:Name>
+    </cac:TechnicalContact>
+    <cac:SupportContact>
+      <cbc:Name>Service desk</cbc:Name>
+    </cac:SupportContact>
+    <cac:CommercialContact>
+      <cbc:Name>Purchasing</cbc:Name>
+    </cac:CommercialContact>
   </cac:ParticipantParty>
   <cac:AgreementCountry>
     <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -993,6 +1061,9 @@ Inside `DigitalProcess`:
             <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>LD-Order-IN</cbc:ID>
@@ -1054,6 +1125,9 @@ Inside `DigitalProcess`:
             <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>VT-Invoice-IN</cbc:ID>
