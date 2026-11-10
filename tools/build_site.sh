@@ -35,7 +35,7 @@ CSSV=$(sha256sum site/site.css | cut -c1-10)
 BUILT=$(git rev-parse --short HEAD 2>/dev/null || echo local)
 
 # Header, the same on every page; $2 is the page it is shown on
-NAV_ITEMS="note/ubl-examples-method.html|Method releases.html|Releases history.html|History coverage.html|Coverage"
+NAV_ITEMS="note/ubl-examples-method.html|Method world.html|World releases.html|Releases history.html|History coverage.html|Coverage"
 LOGO='<svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg>'
 CODE_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>'
 nav() { # root-prefix, current-page
@@ -75,6 +75,7 @@ page analysis/element-coverage.md coverage.html "Element coverage" 2
 page analysis/element-coverage-details.md coverage-details.html "Element coverage: details" 3
 
 cp site/site.css "$OUT/site.css"
+cp site/world.html "$OUT/world.html"
 # Landing page: header, footer and key figures filled in
 nav "" index.html > "$OUT/.nav"
 footer > "$OUT/.footer"

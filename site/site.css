@@ -55,7 +55,7 @@ a { color:var(--accent); text-underline-offset:0.18em; }
 .nav-burger { display:none; }
 
 /* Phones: a menu button that opens the links as a panel */
-@media (max-width: 47.99rem) {
+@media (max-width: 55.99rem) {
   .site-header .bar { gap:0.75rem; }
   .brand { flex:1; }
   .source span { display:none; }
