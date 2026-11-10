@@ -14,7 +14,7 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LTM-FI-26-0202**  
+- `ID` = **LTM-FI-26-0198**  
   The mill's instruction number.
 - `IssueDate` = **2026-02-25**  
   Under FOB the buyer instructs the forwarder for the main carriage.
@@ -89,11 +89,11 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0203**  
+- `ID` = **SCG-SH-26-0199**  
   The shipment to be booked.
 - `GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the bales.
-- `Consignment/ID` = **LTM-CS-26-0204**  
+- `Consignment/ID` = **LTM-CS-26-0200**  
   The consignment.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Textile Mill (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -135,7 +135,7 @@ Inside `Shipment`:
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LTM-FI-26-0202</cbc:ID>
+  <cbc:ID>LTM-FI-26-0198</cbc:ID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
@@ -202,10 +202,10 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0203</cbc:ID>
+    <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0204</cbc:ID>
+      <cbc:ID>LTM-CS-26-0200</cbc:ID>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>

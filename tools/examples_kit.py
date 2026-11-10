@@ -41,12 +41,14 @@ class Flow:
     def __init__(self, flow_id, start, deal=None):
         self.id, self.start, self.deal = flow_id, datetime.date.fromisoformat(start), deal or []
         self.base = 100 + zlib.crc32(flow_id.encode()) % 800      # a stable sequence per flow
-        self.numbers = {}
+        self.numbers = {}          # document numbers, and amounts and dates other documents refer to
+        self.count = 0             # the sequence counts document numbers only
 
     def number(self, key, sender, doc_type):
         """The document number of a document, the same wherever the document is referred to."""
         if key not in self.numbers:
-            self.numbers[key] = f"{initials(sender)}-{CODES.get(doc_type, 'DOC')}-26-{self.base + len(self.numbers):04d}"
+            self.numbers[key] = f"{initials(sender)}-{CODES.get(doc_type, 'DOC')}-26-{self.base + self.count:04d}"
+            self.count += 1
         return self.numbers[key]
 
     def date(self, day):
@@ -116,12 +118,21 @@ def tax_category(rule):
 
 
 # ---------------------------------------------------------------- lines and totals
-def lines(flow, seller, buyer, currency, which="ordered"):
+def unit_price(iid, currency):
+    """The item's price in `currency`: its own price, or converted at the world's reference rate."""
+    it = ITEM[iid]
+    p = Decimal(str(it["price"]["amount"]))
+    if it["price"]["currency"] == currency:
+        return p
+    return money(p * rate(it["price"]["currency"], currency), currency)
+
+
+def lines(flow, seller, buyer, currency, which="ordered", deal=None):
     """The lines of a commercial document from the deal: (item, quantity, line amount, rule)."""
     out = []
-    for d in flow.deal:
+    for d in (deal or flow.deal):
         q = Decimal(str(d[which]))
-        p = Decimal(str(ITEM[d["item"]]["price"]["amount"]))
+        p = unit_price(d["item"], currency)
         out.append((d, q, money(q * p, currency), tax_rule(seller, buyer, d["item"])))
     return out
 
@@ -168,16 +179,18 @@ def currency_line(currency, who):
 
 
 # ---------------------------------------------------------------- documents of trade
-def order(flow, n, doc, day, why_date, terms_why, location, extra=None):
+def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=None, key="order", currency=None):
     buyer, seller = doc["from"], doc["to"]
-    cur = currency_of(seller)
-    rows = lines(flow, seller, buyer, cur)
+    cur = currency or currency_of(seller)
+    rows = lines(flow, seller, buyer, cur, deal=deal)
     base = sum(r[2] for r in rows)
     tax, total = tax_total(rows, cur)
     out = {
-        "ID": V(flow.number("order", buyer, "Order"), "The buyer's order number."),
+        "ID": V(flow.number(key, buyer, "Order"), "The buyer's order number."),
         "IssueDate": V(flow.date(day), why_date),
-        "DocumentCurrencyCode": currency_line(cur, "the seller's currency, in which the seller's prices are"),
+        "DocumentCurrencyCode": currency_line(cur, "the seller's currency, in which the seller's prices are"
+                                              if cur == currency_of(seller) else "the buyer's currency, agreed in the "
+                                                                                 "contract"),
         "DeliveryTerms": {"ID": V(doc["values"]["DeliveryTerms/ID"], terms_why, schemeID="INCOTERMS"),
                           "DeliveryLocation": {"Description": V(location, "Where the delivery terms place the "
                                                                           "handover of the goods.")}},
@@ -189,42 +202,49 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None):
             "ID": V(str(i), "The line number."),
             "Quantity": qty(q, ITEM[d["item"]]["unit"], d.get("why", "The quantity ordered.")),
             "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
-            "Price": price_block(d["item"]),
+            "Price": price_block(d["item"], cur),
             "Item": item(d["item"])}} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
     return merge_extra(out, extra)
 
 
-def order_response(flow, n, doc, day, why):
+def order_response(flow, n, doc, day, why, key="order"):
     return {"ID": V(flow.number("order-response", doc["from"], "OrderResponse"), "The seller's number for its response."),
             "IssueDate": V(flow.date(day), why),
             "OrderResponseCode": V("AP", "UN/EDIFACT 4343 code AP: accepted, the order is accepted as it stands."),
-            "OrderReference": {"ID": V(flow.numbers["order"], "The order this response answers.")}}
+            "OrderReference": {"ID": V(flow.numbers[key], "The order this response answers.")}}
 
 
-def price_block(iid):
+def price_block(iid, currency=None):
     it = ITEM[iid]
+    if currency and currency != it["price"]["currency"]:
+        return {"PriceAmount": price(unit_price(iid, currency), currency,
+                                     f"The seller's price of {it['price']['amount']} {it['price']['currency']}, converted "
+                                     f"to the buyer's currency at the world's reference rate, as the contract provides."),
+                "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
     return {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"], "The seller's price per unit "
                                                                                  "(world/items.json)."),
             "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
 
 
-def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None):
-    which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
+def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None, key="order"):
+    deal = deal or flow.deal
+    which = "delivered" if any("delivered" in d for d in deal) else "ordered"
     out = {
-        "ID": V(flow.number("despatch", doc["from"], "DespatchAdvice"), "The despatching party's number."),
+        "ID": V(flow.number(f"despatch-{key}", doc["from"], "DespatchAdvice"), "The despatching party's number."),
         "IssueDate": V(flow.date(day), why),
-        "OrderReference": {"ID": V(flow.numbers["order"], "The order this despatch fulfils.")},
+        "OrderReference": {"ID": V(flow.numbers[key], "The order this despatch fulfils.")},
         "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The despatching party's shipment number."),
-                     "GrossWeightMeasure": qty(gross_weight(flow, which), "KGM", shipment_why),
+                     "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM", shipment_why),
                      "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
                                              "The consignment the goods travel in, as numbered when the transport "
                                              "was booked.")}},
         "DespatchLine": [{"ID": V(str(i), "The line number."),
                           "DeliveredQuantity": qty(d[which], ITEM[d["item"]]["unit"], "What was despatched."),
                           "OrderLineReference": {"LineID": V(str(i), "The order line this line fulfils.")},
-                          "Item": item(d["item"])} for i, d in enumerate(flow.deal, 1)],
+                          "Item": item(d["item"])} for i, d in enumerate(deal, 1)],
     }
+    flow.numbers["despatch"] = flow.numbers[f"despatch-{key}"]
     return merge_extra(out, extra)
 
 
@@ -241,20 +261,21 @@ def receipt_advice(flow, n, doc, day, why):
                              "Item": item(d["item"])} for i, d in enumerate(flow.deal, 1)]}
 
 
-def gross_weight(flow, which):
-    return sum(Decimal(str(d[which])) * Decimal(str(ITEM[d["item"]].get("gross_kg", 0))) for d in flow.deal)
+def gross_weight(flow, which, deal=None):
+    return sum(Decimal(str(d[which])) * Decimal(str(ITEM[d["item"]].get("gross_kg", 0))) for d in (deal or flow.deal))
 
 
-def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="invoice", extra=None, charges=None):
+def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="invoice", extra=None, charges=None,
+            currency=None):
     """A commercial invoice from the seller (doc['from']) to the buyer; rows_spec overrides the deal."""
     seller, buyer = doc["from"], doc["to"]
-    cur = currency_of(seller)
+    cur = currency or currency_of(seller)
     if rows_spec is None:
         which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
         rows = lines(flow, seller, buyer, cur, which)
     else:
-        rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])),
-                                                   cur), tax_rule(seller, buyer, d["item"])) for d in rows_spec]
+        rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * unit_price(d["item"], cur), cur),
+                 tax_rule(seller, buyer, d["item"])) for d in rows_spec]
     base = sum(r[2] for r in rows)
     charge_rows = [({"item": c["like"]}, None, money(Decimal(str(c["amount"])), cur), tax_rule(seller, buyer, c["like"]))
                    for c in (charges or [])]
@@ -264,7 +285,8 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         "IssueDate": V(flow.date(day), why_date),
         "DueDate": V(flow.date(day + due_days), f"{due_days} days after the issue date, the agreed payment term."),
         "InvoiceTypeCode": V("380", "UN/EDIFACT 1001 code 380: commercial invoice."),
-        "DocumentCurrencyCode": currency_line(cur, "the seller's currency"),
+        "DocumentCurrencyCode": currency_line(cur, "the seller's currency" if cur == currency_of(seller)
+                                              else "the buyer's currency, agreed in the contract"),
         **refs,
         "PaymentMeans": {
             "PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of "
@@ -276,10 +298,10 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         "InvoiceLine": [{
             "ID": V(str(i), "The line number."),
             "InvoicedQuantity": qty(q, ITEM[d["item"]]["unit"], d.get("invoice_why", "The quantity delivered.")),
-            "LineExtensionAmount": amount(amt, cur, f"{q} × {ITEM[d['item']]['price']['amount']}, rounded to the minor "
-                                                    "unit of the currency."),
+            "LineExtensionAmount": amount(amt, cur, f"{q} × {unit_price(d['item'], cur)}, rounded to the minor unit of "
+                                                    "the currency."),
             "Item": item(d["item"], tax_category(rule)),
-            "Price": price_block(d["item"])} for i, (d, q, amt, rule) in enumerate(rows, 1)],
+            "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
     if charges:
         out["AllowanceCharge"] = [{"ChargeIndicator": V("true", "A charge, not an allowance: it adds to the amount."),
@@ -369,12 +391,13 @@ def rate(a, b):
     return Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
 
 
-def goods_items(flow, currency, value_why):
+def goods_items(flow, currency, value_why, deal=None):
     """GoodsItem per line of the deal: customs value (converted to `currency` at the reference rate if needed),
     gross weight, quantity and the item with its customs tariff code and origin."""
-    which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
+    deal = deal or flow.deal
+    which = "delivered" if any("delivered" in d for d in deal) else "ordered"
     out = []
-    for i, d in enumerate(flow.deal, 1):
+    for i, d in enumerate(deal, 1):
         it = ITEM[d["item"]]
         q = Decimal(str(d[which]))
         value = q * Decimal(str(it["price"]["amount"])) * rate(it["price"]["currency"], currency)
@@ -388,8 +411,9 @@ def goods_items(flow, currency, value_why):
     return out
 
 
-def export_declaration(flow, n, doc, day, why, value_why):
+def export_declaration(flow, n, doc, day, why, value_why, deal=None):
     cur = currency_of(doc["from"])
+    deal = deal or flow.deal
     return {"ID": V(flow.number("export", doc["from"], "ExportCustomsDeclaration"), "The exporter's reference."),
             "IssueDate": V(flow.date(day), why),
             "CustomsDeclaration": {
@@ -397,21 +421,22 @@ def export_declaration(flow, n, doc, day, why, value_why):
                         "The declaration as lodged with the customs of the exporting country."),
                 "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The shipment declared."),
                              "GrossWeightMeasure": qty(gross_weight(flow, "delivered" if any("delivered" in d for d in
-                                                                                         flow.deal) else "ordered"),
+                                                                                         deal) else "ordered", deal),
                                                        "KGM", "The gross weight leaving the country."),
-                             "GoodsItem": goods_items(flow, cur, value_why),
+                             "GoodsItem": goods_items(flow, cur, value_why, deal),
                              "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
                                                      "The consignment carried.")}}}}
 
 
-def import_declaration(flow, n, doc, day, why, value_why, refs=None):
+def import_declaration(flow, n, doc, day, why, value_why, refs=None, deal=None):
     cur = currency_of(doc["from"])
-    which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
+    deal = deal or flow.deal
+    which = "delivered" if any("delivered" in d for d in deal) else "ordered"
     out = {"ID": V(flow.number("import", doc["from"], "ImportCustomsDeclaration"), "The importer's declaration number."),
            "IssueDate": V(flow.date(day), why),
            "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The shipment declared."),
-                        "GrossWeightMeasure": qty(gross_weight(flow, which), "KGM", "The gross weight arriving."),
-                        "GoodsItem": goods_items(flow, cur, value_why)}}
+                        "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM", "The gross weight arriving."),
+                        "GoodsItem": goods_items(flow, cur, value_why, deal)}}
     if refs:
         out["AdditionalDocumentReference"] = refs
     return out

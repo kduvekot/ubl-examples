@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GoodsItemPassport xmlns="urn:oasis:names:specification:ubl:schema:xsd:GoodsItemPassport-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>FCC-DOC-26-0724</cbc:ID>
+  <cbc:IssueDate>2026-05-25</cbc:IssueDate>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-05-25</cbc:StartDate>
+    <cbc:EndDate>2027-05-25</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:IssuerParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Piazza del Mercato</cbc:StreetName>
+      <cbc:BuildingNumber>15</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4110</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>XU007376017</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
+      <cbc:CompanyID>XU-R-105370</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Certificates office</cbc:Name>
+      <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:IssuerParty>
+  <cac:HolderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Valdara Industries</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:BuildingNumber>17</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4120</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>XU007299291</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Valdara Industries</cbc:RegistrationName>
+      <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Order desk</cbc:Name>
+      <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:HolderParty>
+  <cac:ExportingGuarantorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+    </cac:PartyName>
+  </cac:ExportingGuarantorParty>
+  <cac:ImportingGuarantorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Reef Street</cbc:StreetName>
+      <cbc:BuildingNumber>30</cbc:BuildingNumber>
+      <cbc:CityName>Selanu</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
+      <cbc:CompanyID>IC42133</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Carnet office</cbc:Name>
+      <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ImportingGuarantorParty>
+  <cac:ExportingCustomsParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Customs Administration of Urvania</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Valico di Confine</cbc:StreetName>
+      <cbc:BuildingNumber>22</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4120</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>XU007385602</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
+      <cbc:CompanyID>XU-R-105507</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Border office</cbc:Name>
+      <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ExportingCustomsParty>
+  <cac:ImportingCustomsParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Island Customs Service</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Wharf Road</cbc:StreetName>
+      <cbc:BuildingNumber>53</cbc:BuildingNumber>
+      <cbc:CityName>Selanu</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
+      <cbc:CompanyID>IC41448</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Import office</cbc:Name>
+      <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ImportingCustomsParty>
+  <cac:Shipment>
+    <cbc:ID>VI-SH-26-0725</cbc:ID>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">99800</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">83</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-B180</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        </cac:StandardItemIdentification>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:Shipment>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>EXP-1</cbc:ID>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>IMP-1</cbc:ID>
+  </cac:GoodsItemPassportCounterfoil>
+</GoodsItemPassport>

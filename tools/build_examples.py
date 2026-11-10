@@ -365,7 +365,8 @@ def main(flow_id, check=False):
     return True
 
 
-FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton"]
+FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton", "tender", "carnet",
+                       "waste", "utilities", "wood", "furniture", "packaging"]
 
 
 if __name__ == "__main__":

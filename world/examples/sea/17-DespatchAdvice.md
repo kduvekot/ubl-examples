@@ -14,7 +14,7 @@ The distributor announces the shipment to the delivery party named in the order,
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LD-DA-26-0145**  
+- `ID` = **LD-DA-26-0142**  
   The despatching party's number.
 - `IssueDate` = **2026-05-13**  
   Sent to the delivery party named in the order when the container leaves.
@@ -225,7 +225,7 @@ Inside `DespatchLine`:
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-DA-26-0145</cbc:ID>
+  <cbc:ID>LD-DA-26-0142</cbc:ID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0126</cbc:ID>

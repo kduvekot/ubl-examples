@@ -14,7 +14,7 @@ The factor, who now owns the receivables, sends the statement of account on beha
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **HF-ST-26-0151**  
+- `ID` = **HF-ST-26-0145**  
   The factor's statement number.
 - `IssueDate` = **2026-06-13**  
   The monthly statement of account.
@@ -134,7 +134,7 @@ Inside `StatementLine`:
   The amount of the invoice, owed to the factor.
 - `BalanceAmount` = **53778.00** (currencyID `XBL`)  
   Still open: nothing paid yet.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0144**  
   The distributor's invoice, which the factor bought.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date.
@@ -146,7 +146,7 @@ Inside `StatementLine`:
 <Statement xmlns="urn:oasis:names:specification:ubl:schema:xsd:Statement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>HF-ST-26-0151</cbc:ID>
+  <cbc:ID>HF-ST-26-0145</cbc:ID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
@@ -259,7 +259,7 @@ Inside `StatementLine`:
     <cbc:BalanceAmount currencyID="XBL">53778.00</cbc:BalanceAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LD-INV-26-0144</cbc:ID>
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

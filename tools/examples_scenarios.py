@@ -749,3 +749,423 @@ def cotton(n, doc):
 
 
 SCENARIOS.update({"sea": sea, "air": air, "cotton": cotton})
+
+
+def ref(f, key, why):
+    return {"ID": V(f.numbers[key], why)}
+
+
+def period(f, start, end, why_start, why_end):
+    return {"StartDate": V(f.date(start), why_start), "EndDate": V(f.date(end), why_end)}
+
+
+# ---------------------------------------------------------------- the tender flow (Bayvarra, public procurement)
+TENDER = kit.Flow("tender", "2026-01-12", [
+    {"item": "bench-serra", "ordered": 40, "why": "The first call-off under the contract: forty benches for the "
+                                                  "harbour park."}])
+FOLDER = "PWD-2026-PARKS"
+TENDER_QTY = 240
+
+
+def tender(n, doc):
+    f = TENDER
+    folder = {"ContractFolderID": V(FOLDER, "The authority's file number for this procurement, the same on every "
+                                            "document of the procedure.")}
+    project = {"ProcurementProject": {
+        "Name": V("Park benches for the city parks", "The name of the procurement project."),
+        "Description": V(f"{TENDER_QTY} park benches with steel frames and hardwood slats over three years, ordered in "
+                         "call-offs.", "What the authority buys."),
+        "RequestedTenderTotal": {"EstimatedOverallContractAmount": amount(120000, "XBL", "The authority's estimate of "
+                                                                                         "the contract value, in lume.")}}}
+    appeal_why = "The independent review body for appeals and mediation in public procurement."
+    if doc["doc"] == "PriorInformationNotice":
+        return {"ID": V(f.number("pin", doc["from"], "PriorInformationNotice"), "The notice number."),
+                "IssueDate": V(f.date(0), "Published early in the year, before the call for competition."),
+                **folder, **project}
+    if doc["doc"] == "ContractNotice":
+        return {"ID": V(f.number("notice", doc["from"], "ContractNotice"), "The notice number."),
+                "IssueDate": V(f.date(30), "The call for competition, a month after the prior information notice."),
+                **folder, **project}
+    if doc["doc"] == "CallForTenders":
+        return {"ID": V(f.number("call", doc["from"], "CallForTenders"), "The number of the procurement documents."),
+                "IssueDate": V(f.date(31), "Retrieved by the manufacturer after the notice was published."),
+                **folder, **project}
+    if doc["doc"] == "BusinessInformation":
+        return {"ID": V(f.number("business-info", doc["from"], "BusinessInformation"), "The registry's extract number."),
+                "IssueDate": V(f.date(46), "The authority checks the tenderer's registration before evaluation.")}
+    if doc["doc"] == "TendererQualification":
+        return {"ID": V(f.number("qualification", doc["from"], "TendererQualification"), "The tenderer's number for "
+                                                                                       "its declaration."),
+                "IssueDate": V(f.date(44), "Submitted with the tender."), **folder}
+    if doc["doc"] == "GuaranteeCertificate":
+        return {"ID": V(f.number("guarantee", doc["from"], "GuaranteeCertificate"), "The guarantee's number."),
+                "IssueDate": V(f.date(43), "Issued before the tender deadline."), **folder,
+                "LiabilityAmount": amount(2400, "XBL", "The bid bond: 2 % of the estimated contract value, as the "
+                                                       "procurement documents ask.")}
+    if doc["doc"] == "Tender":
+        unit = kit.unit_price("bench-serra", "XBL")
+        return {"ID": V(f.number("tender", doc["from"], "Tender"), "The tenderer's number for its tender."),
+                "IssueDate": V(f.date(44), "Submitted before the deadline."), **folder,
+                "TenderedProject": {"LegalMonetaryTotal": {
+                    "PayableAmount": amount(unit * TENDER_QTY, "XBL", f"{TENDER_QTY} benches at {unit} lume: the bench "
+                                                                      "price converted at the reference rate.")}}}
+    if doc["doc"] == "ContractAwardNotice":
+        return {"ID": V(f.number("award-notice", doc["from"], "ContractAwardNotice"), "The notice number."),
+                "IssueDate": V(f.date(60), "Published after the standstill period."), **folder,
+                "TenderResult": {"AwardDate": V(f.date(56), "The day the authority decided the award.")}}
+    if doc["doc"] == "AwardedNotification":
+        return {"ID": V(f.number("awarded", doc["from"], "AwardedNotification"), "The notification number."),
+                "IssueDate": V(f.date(56), "The winner is told on the day of the award decision."), **folder,
+                "TenderResult": {"AwardDate": V(f.date(56), "The day of the award decision.")}}
+    if doc["doc"] == "Order":
+        return kit.order(f, n, doc, 70, "The first call-off under the awarded contract.",
+                         "Delivered at place, the authority's depot: the manufacturer delivers, by the carrier it "
+                         "chooses; the authority clears the import.", "Public works depot, Lumeport",
+                         {"Contract": {"ID": V(FOLDER, "The contract under which the call-off is made.")}},
+                         currency="XBL")
+    if doc["doc"] == "DespatchAdvice":
+        return kit.despatch_advice(f, n, doc, 77, "The day the call-off left the 3PL.", "The gross weight loaded.")
+    if doc["doc"] == "ExportCustomsDeclaration":
+        return kit.export_declaration(f, n, doc, 77, "Declared when the goods leave for the border.",
+                                      "The value of the goods, in ferra.")
+    if doc["doc"] == "ImportCustomsDeclaration":
+        return kit.import_declaration(f, n, doc, 78, "Under DAP the buyer clears the import: the authority declares "
+                                                     "the benches.", "The customs value in lume, at the reference rate.")
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 78, 30, "Issued on delivery.",
+                           {"OrderReference": ref(f, "order", "The authority's call-off order."),
+                            "ContractDocumentReference": {"ID": V(FOLDER, "The awarded contract.")}},
+                           currency="XBL")
+    raise SystemExit(f"tender scenario: no document {n} {doc['doc']}")
+
+
+# ---------------------------------------------------------------- the carnet flow (temporary export)
+CARNET = kit.Flow("carnet", "2026-05-25", [
+    {"item": "bench-serra", "ordered": 2, "why": "Two sample benches for the stand at the trade fair."}])
+
+
+def carnet(n, doc):
+    f = CARNET
+    return {"ID": V(f.number("carnet", doc["from"], "GoodsItemPassport"), "The carnet number, given by the chamber."),
+            "IssueDate": V(f.date(0), "Issued before the samples leave for the fair."),
+            "ValidityPeriod": period(f, 0, 365, "Valid from issue.", "A carnet is valid for one year."),
+            "Shipment": {"ID": V(f.number("shipment", doc["to"], "Shipment"), "The samples travelling under the carnet."),
+                         "GoodsItem": kit.goods_items(f, "XUF", "The value of the samples, for the guarantee.")},
+            "GoodsItemPassportCounterfoil": [
+                {"ID": V("EXP-1", "The exportation counterfoil, stamped by Urvania's customs when the samples leave.")},
+                {"ID": V("IMP-1", "The importation counterfoil, stamped by Lisavu's customs when they arrive.")}]}
+
+
+# ---------------------------------------------------------------- the waste flow (Urvania, domestic)
+WASTE = kit.Flow("waste", "2026-03-23")
+WASTE_DESCRIPTION = "Mixed polyethylene production waste, sorted, in big bags"
+
+
+def waste_shipment(f, tonnes, why):
+    return {"ID": V(f.number("waste-shipment", "5-xu", "Shipment"), "The movement's shipment number."),
+            "GrossWeightMeasure": qty(Decimal(tonnes) * 1000, "KGM", why),
+            "Consignment": {"ID": V(f.number("waste-consignment", "5-xu", "Consignment"), "The consignment carried "
+                                                                                          "by the road carrier.")},
+            "GoodsItem": {"ID": V("1", "The only goods item."),
+                          "Description": V(WASTE_DESCRIPTION, "What the waste is."),
+                          "HazardousRiskIndicator": V("false", "Sorted polyethylene is not hazardous waste.")}}
+
+
+def waste(n, doc):
+    f = WASTE
+    if doc["doc"] == "WasteNotification":
+        return {"ID": V(f.number("notification", doc["from"], "WasteNotification"), "The notification number."),
+                "IssueDate": V(f.date(0), "Notified before the movements start."),
+                "Shipment": waste_shipment(f, 40, "The planned movement: about 40 tonnes in two truck loads.")}
+    if doc["doc"] == "WasteMovement":
+        return {"ID": V(f.number("movement", doc["from"], "WasteMovement"), "The movement document number."),
+                "IssueDate": V(f.date(10), "Reported when the waste has been received."),
+                "Shipment": waste_shipment(f, "38.2", "Weighed on arrival at the recovery facility.")}
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 12, 30, "Issued after the waste was collected and recovered.",
+                           {"AdditionalDocumentReference": ref(f, "movement", "The waste movement document.")},
+                           [{"item": "waste-recovery", "qty": "38.2", "invoice_why": "The tonnes received, from the "
+                                                                                     "waste movement document."}])
+    raise SystemExit(f"waste scenario: no document {n} {doc['doc']}")
+
+
+# ---------------------------------------------------------------- the utilities flow (one utility per country)
+UTILITIES = kit.Flow("utilities", "2026-04-01")
+BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The factory's metered consumption in March."},
+                   {"item": "electricity", "qty": 18600, "invoice_why": "The warehouse's metered consumption in March; "
+                                                                        "the manufacturer pays for its building."}],
+         "34-xb:26-xb": [{"item": "water", "qty": 86, "invoice_why": "The shop's metered consumption in March."}],
+         "34-xb:c-xb": [{"item": "water", "qty": 14, "invoice_why": "The household's metered consumption in March."}],
+         "35-xl": [{"item": "telecom-line", "qty": 6, "invoice_why": "Six business lines for the month."},
+                   {"item": "telecom-data", "qty": 35, "invoice_why": "Mobile data beyond the subscriptions."}]}
+KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
+
+
+def bill_key(doc):
+    sup = doc["from"] if doc["doc"] != "RemittanceAdvice" else doc["to"]
+    cust = doc["to"] if doc["doc"] != "RemittanceAdvice" else doc["from"]
+    if sup == "34-xb":
+        return f"34-xb:{cust}"
+    return sup
+
+
+def utilities(n, doc):
+    f = UTILITIES
+    if doc["doc"] == "UtilityStatement":
+        sup = doc["from"]
+        key = bill_key({**doc, "to": doc["parties"].get("CustomerParty", doc["to"])})
+        invoice_no = f.number(f"invoice-{key}", sup, "Invoice")
+        return {"ID": V(f.number(f"statement-{n}", sup, "UtilityStatement"), "The utility's statement number."),
+                "IssueDate": V(f.date(1), "Issued with the bill for March."),
+                "UtilityStatementTypeCode": V(KIND[sup], "The kind of utility the statement is about."),
+                "DocumentCurrencyCode": kit.currency_line(kit.currency_of(sup), "the utility's currency"),
+                "ParentDocumentReference": {"ID": V(invoice_no, "The invoice this statement supplements: a utility "
+                                                                "statement adds the consumption behind the bill.")}}
+    if doc["doc"] == "Invoice":
+        key = bill_key(doc)
+        return kit.invoice(f, n, doc, 1, 21, "The monthly bill, issued on the first day of the next month.", {},
+                           BILLS[key], key=f"invoice-{key}")
+    if doc["doc"] == "RemittanceAdvice":
+        return kit.remittance(f, n, doc, 18, "Paid before the due date.", key=f"invoice-{bill_key(doc)}")
+    if doc["doc"] == "Reminder":
+        key, cur = bill_key(doc), "XBL"
+        due = f.numbers[f"invoice-{key}-amount"]
+        return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
+                "IssueDate": V(f.date(30), "Sent a week after the due date passed without payment."),
+                "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the unpaid bill"),
+                "PaymentMeans": {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer, how the household "
+                                                             "is asked to pay.", listID="UN/EDIFACT EDED 4461"),
+                                 "PayeeFinancialAccount": kit.account(doc["from"], "The utility's account, where the "
+                                                                                   "overdue amount is to be paid.")},
+                "LegalMonetaryTotal": {"PayableAmount": amount(due, cur, "The amount still due: the whole bill.")},
+                "ReminderLine": {"ID": V("1", "The unpaid bill."),
+                                 "DebitLineAmount": amount(due, cur, "The amount of the unpaid invoice."),
+                                 "BillingReference": {"InvoiceDocumentReference": {
+                                     "ID": V(f.numbers[f"invoice-{key}"], "The invoice not paid."),
+                                     "IssueDate": V(f.numbers[f"invoice-{key}-date"], "Its issue date.")}}}}
+    raise SystemExit(f"utilities scenario: no document {n} {doc['doc']}")
+
+
+# ---------------------------------------------------------------- the wood flow (Bayvarra -> Urvania, and at home)
+SLATS = [{"item": "slat-1800", "ordered": 4800, "why": "Slats for 960 benches: five per bench, 96 bundles of 50."}]
+TIMBER = [{"item": "timber-beam", "ordered": 12, "why": "Hardwood for a month of furniture production."}]
+WOOD = kit.Flow("wood", "2026-02-16", SLATS)
+
+
+def quotation_lines(f, deal, cur, with_price):
+    out = []
+    for i, d in enumerate(deal, 1):
+        li = {"ID": V(str(i), "The line number."),
+              "Quantity": qty(d["ordered"], ITEM[d["item"]]["unit"], d["why"]),
+              "Item": item(d["item"])}
+        if with_price:
+            p = kit.unit_price(d["item"], cur)
+            li["LineExtensionAmount"] = amount(Decimal(str(d["ordered"])) * p, cur, "Quantity times the quoted price.")
+            li["Price"] = kit.price_block(d["item"], cur)
+        out.append({"LineItem": li})
+    return out
+
+
+def rfq(f, doc, day, why, deal):
+    return {"ID": V(f.number("rfq", doc["from"], "RequestForQuotation"), "The buyer's request number."),
+            "IssueDate": V(f.date(day), why),
+            "IssueTime": V("10:00:00", "The time of the request; quotations refer to it."),
+            "RequestForQuotationLine": quotation_lines(f, deal, None, False)}
+
+
+def quotation(f, doc, day, why, deal, validity):
+    cur = kit.currency_of(doc["from"])
+    total = sum(Decimal(str(d["ordered"])) * kit.unit_price(d["item"], cur) for d in deal)
+    return {"ID": V(f.number("quotation", doc["from"], "Quotation"), "The seller's quotation number."),
+            "IssueDate": V(f.date(day), why),
+            "ValidityPeriod": {"EndDate": V(f.date(day + validity), "How long the quoted prices hold.")},
+            "RequestForQuotationDocumentReference": ref(f, "rfq", "The request this quotation answers."),
+            "QuotedMonetaryTotal": {"LineExtensionAmount": amount(total, cur, "The sum of the quoted lines."),
+                                    "PayableAmount": amount(total, cur, "The quoted total, before any tax.")},
+            "QuotationLine": quotation_lines(f, deal, cur, True)}
+
+
+def wood(n, doc):
+    f = WOOD
+    if doc["doc"] == "RequestForQuotation":
+        return rfq(f, doc, 0, "The manufacturer asks for slats to its own dimensions.", SLATS)
+    if doc["doc"] == "Quotation":
+        return quotation(f, doc, 3, "The sawmill quotes for the slats.", SLATS, 30)
+    if doc["doc"] == "Order" and doc["from"] == "5-xu":
+        return kit.order(f, n, doc, 6, "The manufacturer accepts the quotation and orders.",
+                         "Delivered at place, the factory: the sawmill delivers; the manufacturer clears the import.",
+                         "Valdara Industries, goods-in, Ferrano",
+                         {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
+    if doc["doc"] == "TransportExecutionPlanRequest":
+        return kit.tep_request(f, n, doc, 7, "Under DAP the sawmill books the truck across the border.", 10,
+                               kit.gross_weight(f, "ordered"), "96 bundles of slats.")
+    if doc["doc"] == "ExportCustomsDeclaration":
+        return kit.export_declaration(f, n, doc, 10, "Declared when the truck leaves for the border.",
+                                      "The value of the slats, in lume.")
+    if doc["doc"] == "DespatchAdvice":
+        return kit.despatch_advice(f, n, doc, 10, "The day the truck was loaded at the sawmill.",
+                                   "The gross weight of the bundles.")
+    if doc["doc"] == "ImportCustomsDeclaration":
+        return kit.import_declaration(f, n, doc, 11, "The manufacturer declares the import into Urvania.",
+                                      "The customs value in ferra: the value in lume at the reference rate (1 lume = 100 "
+                                      "ferra).")
+    if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
+        return kit.invoice(f, n, doc, 10, 30, "Issued when the slats leave.",
+                           {"OrderReference": ref(f, "order", "The manufacturer's order.")},
+                           [{"item": "slat-1800", "qty": 4800, "invoice_why": "The slats despatched."}])
+    if doc["doc"] == "RemittanceAdvice":
+        return kit.remittance(f, n, doc, 38, "The manufacturer pays across the border.")
+    if doc["doc"] == "Order":
+        return kit.order(f, n, doc, 20, "The furniture maker orders timber, collected with its own van.",
+                         "Ex works the sawmill: the buyer collects the timber and bears every cost from the sawmill's "
+                         "yard.", "Marrowdale Sawmill, timber yard", deal=TIMBER, key="order-timber")
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 21, 30, "Issued when the timber was collected.",
+                           {"OrderReference": ref(f, "order-timber", "The furniture maker's order.")},
+                           [{"item": "timber-beam", "qty": 12, "invoice_why": "The cubic metres collected."}],
+                           key="invoice-timber")
+    raise SystemExit(f"wood scenario: no document {n} {doc['doc']}")
+
+
+# ---------------------------------------------------------------- the furniture flow (Bayvarra)
+SETS = [{"item": "garden-set", "ordered": 20, "why": "The first delivery of the store's own garden furniture line."}]
+DESKS = [{"item": "office-desk", "ordered": 6, "why": "Six desks for the new planning office."},
+         {"item": "installation", "ordered": 14, "why": "Two installers for seven hours."}]
+FURNITURE = kit.Flow("furniture", "2026-03-02", SETS)
+
+
+def collab(f, doc, key, day, why):
+    return {"ID": V(f.number(key, doc["from"], key), f"The sender's number for its {key.replace('-', ' ')}."),
+            "IssueDate": V(f.date(day), why)}
+
+
+def furniture(n, doc):
+    f = FURNITURE
+    sets = item("garden-set")
+    if doc["doc"] == "RequestForQuotation":
+        return rfq(f, doc, 0, "The store wants its own garden furniture line.", SETS)
+    if doc["doc"] == "Quotation":
+        return quotation(f, doc, 4, "The furniture maker quotes the line.", SETS, 60)
+    if doc["doc"] == "ItemInformationRequest":
+        return {**collab(f, doc, "info-request", 10, "Asked before the first production run."),
+                "Period": period(f, 14, 70, "The season the information is wanted for.", "Its end."),
+                "ItemInformationRequestLine": {
+                    "Period": period(f, 14, 70, "Sales data for the season.", "Its end."),
+                    "SalesItem": {"Quantity": qty(20, "SET", "The quantity of the first delivery, to compare sales "
+                                                             "against."), "Item": sets}}}
+    if doc["doc"] == "TradeItemLocationProfile":
+        return {**collab(f, doc, "location-profile", 12, "The store sets its replenishment policy for the line."),
+                "Period": period(f, 14, 180, "The policy holds for the season.", "Its end."),
+                "ItemManagementProfile": {"EffectivePeriod": period(f, 14, 180, "From the first delivery.", "To the end of "
+                                                                                                         "the season."),
+                                          "Item": sets}}
+    if doc["doc"] == "ExceptionCriteria":
+        return {**collab(f, doc, "exception-criteria", 12, "Agreed together with the replenishment policy."),
+                "ValidityPeriod": period(f, 14, 180, "Valid for the season.", "Its end."),
+                "ExceptionCriteriaLine": {
+                    "ID": V("1", "The only criterion."),
+                    "ThresholdValueComparisonCode": V("LessThan", "An exception is raised when actual sales fall "
+                                                                  "below the threshold."),
+                    "ThresholdQuantity": qty(5, "SET", "Fewer than five sets sold in four weeks is worth a message."),
+                    "SupplyItem": sets}}
+    if doc["doc"] == "ProductActivity":
+        return {**collab(f, doc, "activity", 49, "The store's report of the first four weeks."),
+                "ActivityPeriod": period(f, 21, 49, "The four weeks reported.", "Their end."),
+                "SupplyChainActivityDataLine": {
+                    "ID": V("1", "The only line."),
+                    "SupplyChainActivityTypeCode": V("Sales", "The activity reported: sales to consumers."),
+                    "ActivityOriginLocation": {"Name": V("Brightmarket Stores, garden department, Lumeport",
+                                                         "Where the sales took place.")},
+                    "SalesItem": {"Quantity": qty(3, "SET", "Three sets sold in four weeks."), "Item": sets}}}
+    if doc["doc"] == "ExceptionNotification":
+        return {**collab(f, doc, "exception", 50, "The furniture maker sees the sales below the agreed threshold."),
+                "ExceptionObservationPeriod": period(f, 21, 49, "The four weeks observed.", "Their end."),
+                "ExceptionNotificationLine": {
+                    "ID": V("1", "The only exception."),
+                    "ComparedValueMeasure": V("5", "The agreed threshold: five sets in four weeks.", unitCode="SET"),
+                    "SourceValueMeasure": V("3", "The sales the store reported: three sets.", unitCode="SET"),
+                    "SupplyItem": sets}}
+    if doc["doc"] == "Order" and doc["from"] == "26-xb":
+        return kit.order(f, n, doc, 14, "The store orders the first delivery of its line.",
+                         "Delivered at place, the store: the furniture maker delivers with its own van.",
+                         "Brightmarket Stores, goods-in, Lumeport",
+                         {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
+    if doc["doc"] == "Invoice" and doc["to"] == "26-xb":
+        return kit.invoice(f, n, doc, 20, 30, "Issued on delivery.", {"OrderReference": ref(f, "order", "The store's "
+                                                                                                       "order.")},
+                           [{"item": "garden-set", "qty": 20, "invoice_why": "The sets delivered."}])
+    if doc["doc"] == "InstructionForReturns":
+        return {**collab(f, doc, "returns", 56, "The furniture maker takes back the sets that do not sell."),
+                "InstructionForReturnsLine": {"ID": V("1", "The only line."),
+                                              "Quantity": qty(6, "SET", "Six of the remaining sets, to free shelf "
+                                                                        "space."),
+                                              "Item": sets}}
+    if doc["doc"] == "CreditNote":
+        return kit.credit_note(f, n, doc, 62, "Issued when the returned sets arrived back.",
+                               [{"item": "garden-set", "qty": 6, "why": "The sets returned."}],
+                               {"BillingReference": {"InvoiceDocumentReference": {
+                                   "ID": V(f.numbers["invoice"], "The invoice of the returned sets."),
+                                   "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}}})
+    if doc["doc"] == "Order":
+        return kit.order(f, n, doc, 30, "The public works department furnishes its new planning office.",
+                         "Delivered at place, the office: the furniture maker delivers and installs.",
+                         "Lumeport Public Works Department, Civic Square", deal=DESKS, key="order-desks")
+    if doc["doc"] == "WorkReport":
+        return {**collab(f, doc, "work-report", 38, "Reported when the installation was finished."),
+                "WorkReportLine": {"ID": V("1", "The installation work."),
+                                   "Quantity": qty(14, "HUR", "Two installers for seven hours, approved by the "
+                                                              "department.")}}
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 38, 30, "Issued once the work report was approved.",
+                           {"OrderReference": ref(f, "order-desks", "The department's order.")},
+                           [{"item": "office-desk", "qty": 6, "invoice_why": "The desks delivered."},
+                            {"item": "installation", "qty": 14, "invoice_why": "The hours of the approved work report."}],
+                           key="invoice-desks")
+    raise SystemExit(f"furniture scenario: no document {n} {doc['doc']}")
+
+
+# ---------------------------------------------------------------- the packaging flow (Bayvarra -> Urvania, and at home)
+FILM = [{"item": "film-pe", "ordered": 480, "why": "Thirty rolls of 16 kg: wrapping for a month of bench pallets."}]
+BAGS = [{"item": "garment-bag", "ordered": 20000, "why": "Forty boxes of 500 bags."}]
+SHIRTS = [{"item": "shirt", "ordered": 600, "why": "The store's spring order of shirts."}]
+PACKAGING = kit.Flow("packaging", "2026-04-27", FILM)
+
+
+def packaging(n, doc):
+    f = PACKAGING
+    if doc["doc"] == "Order" and doc["from"] == "5-xu":
+        return kit.order(f, n, doc, 0, "The manufacturer orders pallet film.",
+                         "Free carrier at the packaging maker: the buyer books the road carrier that collects.",
+                         "Rivermouth Packaging, dispatch, Lumeport")
+    if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
+        return kit.invoice(f, n, doc, 5, 30, "Issued when the film was collected.",
+                           {"OrderReference": ref(f, "order", "The manufacturer's order.")},
+                           [{"item": "film-pe", "qty": 480, "invoice_why": "The kilograms collected."}])
+    if doc["doc"] == "Order" and doc["from"] == "40-xb":
+        return kit.order(f, n, doc, 2, "The textile mill orders garment bags.",
+                         "Delivered at place, the mill: the packaging maker delivers.", "Lumeport Textile Mill, goods-in",
+                         deal=BAGS, key="order-bags")
+    if doc["doc"] == "Invoice" and doc["to"] == "40-xb":
+        return kit.invoice(f, n, doc, 6, 30, "Issued on delivery.", {"OrderReference": ref(f, "order-bags",
+                                                                                           "The mill's order.")},
+                           [{"item": "garment-bag", "qty": 20000, "invoice_why": "The bags delivered."}],
+                           key="invoice-bags")
+    if doc["doc"] == "Order":
+        return kit.order(f, n, doc, 10, "The store orders shirts for spring.",
+                         "Delivered duty paid at the store: the mill delivers and bears every cost.",
+                         "Brightmarket Stores, goods-in, Lumeport", deal=SHIRTS, key="order-shirts")
+    if doc["doc"] == "DespatchAdvice":
+        return kit.despatch_advice(f, n, doc, 15, "The day the shirts left the mill.", "The gross weight of the cartons.",
+                                   deal=SHIRTS, key="order-shirts")
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 15, 30, "Issued on delivery.",
+                           {"OrderReference": ref(f, "order-shirts", "The store's order.")},
+                           [{"item": "shirt", "qty": 600, "invoice_why": "The shirts delivered."}], key="invoice-shirts")
+    if doc["doc"] == "PurchaseReceipt":
+        return kit.purchase_receipt(f, n, doc, 25, "A consumer buys two shirts.",
+                                    [{"item": "shirt-r", "qty": 2, "why": "Two shirts."}], cash=True)
+    raise SystemExit(f"packaging scenario: no document {n} {doc['doc']}")
+
+
+SCENARIOS.update({"tender": tender, "carnet": carnet, "waste": waste, "utilities": utilities, "wood": wood,
+                  "furniture": furniture, "packaging": packaging})

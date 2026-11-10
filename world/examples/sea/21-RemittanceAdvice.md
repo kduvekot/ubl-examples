@@ -14,7 +14,7 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **VT-RM-26-0152**  
+- `ID` = **VT-RM-26-0146**  
   The payer's remittance number.
 - `IssueDate` = **2026-06-25**  
   The buyer pays the factor, before the due date.
@@ -153,7 +153,7 @@ Inside `RemittanceAdviceLine`:
   One invoice paid.
 - `DebitLineAmount` = **53778.00** (currencyID `XBL`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0144**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date, so the reference is unambiguous.
@@ -165,7 +165,7 @@ Inside `RemittanceAdviceLine`:
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VT-RM-26-0152</cbc:ID>
+  <cbc:ID>VT-RM-26-0146</cbc:ID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XBL">53778.00</cbc:TotalPaymentAmount>
@@ -299,7 +299,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LD-INV-26-0144</cbc:ID>
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

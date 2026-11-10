@@ -14,7 +14,7 @@ A consumer buys in the shop and gets a receipt.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **BS-PR-26-0237**  
+- `ID` = **BS-PR-26-0231**  
   The till's receipt number.
 - `IssueDate` = **2026-05-15**  
   A consumer buys a bench during the promotion week.
@@ -156,7 +156,7 @@ Inside `PurchaseReceiptLine`:
 <PurchaseReceipt xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>BS-PR-26-0237</cbc:ID>
+  <cbc:ID>BS-PR-26-0231</cbc:ID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>

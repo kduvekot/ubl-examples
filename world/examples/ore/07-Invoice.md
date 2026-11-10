@@ -14,7 +14,7 @@ The mine invoices the ore; transport is not on this invoice because under FCA th
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SM-INV-26-0315**  
+- `ID` = **SM-INV-26-0312**  
   The seller's invoice number.
 - `IssueDate` = **2026-03-11**  
   Issued the day after the goods were despatched and weighed.
@@ -210,7 +210,7 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SM-INV-26-0315</cbc:ID>
+  <cbc:ID>SM-INV-26-0312</cbc:ID>
   <cbc:IssueDate>2026-03-11</cbc:IssueDate>
   <cbc:DueDate>2026-04-10</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>

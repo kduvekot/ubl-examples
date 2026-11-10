@@ -2,7 +2,7 @@
 <GoodsCertificate xmlns="urn:oasis:names:specification:ubl:schema:xsd:GoodsCertificate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SCC-GC-26-0205</cbc:ID>
+  <cbc:ID>SCC-GC-26-0201</cbc:ID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
   <cac:ExporterParty>
     <cac:PartyIdentification>
@@ -105,7 +105,7 @@
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0203</cbc:ID>
+    <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Cotton lint, compressed bale</cbc:Description>

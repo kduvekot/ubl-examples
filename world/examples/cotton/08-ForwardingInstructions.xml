@@ -2,7 +2,7 @@
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LTM-FI-26-0202</cbc:ID>
+  <cbc:ID>LTM-FI-26-0198</cbc:ID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
@@ -69,10 +69,10 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0203</cbc:ID>
+    <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0204</cbc:ID>
+      <cbc:ID>LTM-CS-26-0200</cbc:ID>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>

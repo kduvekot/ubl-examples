@@ -14,7 +14,7 @@ The ginnery pays the farm the net amount.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SCG-RM-26-0199**  
+- `ID` = **SCG-RM-26-0195**  
   The ginnery's remittance number.
 - `IssueDate` = **2026-02-16**  
   The ginnery pays the farm after classing.
@@ -112,7 +112,7 @@ Inside `RemittanceAdviceLine`:
   The self-billed credit note.
 - `CreditLineAmount` = **75.000** (currencyID `XLC`)  
   The amount credited, deducted from the payment.
-- `BillingReference/SelfBilledCreditNoteDocumentReference/ID` = **SCG-SBC-26-0196**  
+- `BillingReference/SelfBilledCreditNoteDocumentReference/ID` = **SCG-SBC-26-0194**  
   The self-billed credit note set off.
 
 ## The document
@@ -122,7 +122,7 @@ Inside `RemittanceAdviceLine`:
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SCG-RM-26-0199</cbc:ID>
+  <cbc:ID>SCG-RM-26-0195</cbc:ID>
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XLC">3993.000</cbc:TotalPaymentAmount>
@@ -220,7 +220,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:CreditLineAmount currencyID="XLC">75.000</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledCreditNoteDocumentReference>
-        <cbc:ID>SCG-SBC-26-0196</cbc:ID>
+        <cbc:ID>SCG-SBC-26-0194</cbc:ID>
       </cac:SelfBilledCreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

@@ -14,7 +14,7 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LD-CN-26-0236**  
+- `ID` = **LD-CN-26-0230**  
   The seller's credit note number.
 - `IssueDate` = **2026-05-02**  
   Issued after the receipt advice reported the refused bench.
@@ -27,7 +27,7 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **LD-INV-26-0232**  
+- `InvoiceDocumentReference/ID` = **LD-INV-26-0229**  
   The invoice this credit note corrects.
 - `InvoiceDocumentReference/IssueDate` = **2026-04-30**  
   Its issue date.
@@ -36,7 +36,7 @@ Inside `BillingReference`:
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **BS-RA-26-0231**  
+- `ID` = **BS-RA-26-0228**  
   The receipt advice that reported the damage.
 
 ### Accounting Supplier Party
@@ -244,18 +244,18 @@ Inside `CreditNoteLine`:
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-CN-26-0236</cbc:ID>
+  <cbc:ID>LD-CN-26-0230</cbc:ID>
   <cbc:IssueDate>2026-05-02</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0232</cbc:ID>
+      <cbc:ID>LD-INV-26-0229</cbc:ID>
       <cbc:IssueDate>2026-04-30</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>BS-RA-26-0231</cbc:ID>
+    <cbc:ID>BS-RA-26-0228</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

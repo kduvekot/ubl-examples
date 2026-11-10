@@ -14,7 +14,7 @@ The packaging maker declares the import in Bayvarra.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **RP-IM-26-0896**  
+- `ID` = **RP-IM-26-0893**  
   The importer's declaration number.
 - `IssueDate` = **2026-04-22**  
   Declared when the barge arrives at the coast.
@@ -171,7 +171,7 @@ Inside `Shipment`:
 <ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>RP-IM-26-0896</cbc:ID>
+  <cbc:ID>RP-IM-26-0893</cbc:ID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cac:ImporterParty>
     <cac:PartyIdentification>

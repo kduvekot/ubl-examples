@@ -2,7 +2,7 @@
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-RM-26-0171</cbc:ID>
+  <cbc:ID>LD-RM-26-0165</cbc:ID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
@@ -107,7 +107,7 @@
     <cbc:DebitLineAmount currencyID="XUF">4862160</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0167</cbc:ID>
+        <cbc:ID>VI-INV-26-0164</cbc:ID>
         <cbc:IssueDate>2026-03-24</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

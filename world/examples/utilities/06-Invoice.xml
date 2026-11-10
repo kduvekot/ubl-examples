@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:DueDate>2026-04-23</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Coastal State Water Company</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Reservoir Road</cbc:StreetName>
+        <cbc:BuildingNumber>51</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38500</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>CO-1236576</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Coastal State Water Company</cbc:RegistrationName>
+        <cbc:CompanyID>20412192</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customer service</cbc:Name>
+        <cbc:ElectronicMail>customer@coastalwater.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412192</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Market Street</cbc:StreetName>
+        <cbc:BuildingNumber>50</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38515</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Brightmarket Stores</cbc:RegistrationName>
+        <cbc:CompanyID>20410411</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Buying office</cbc:Name>
+        <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Coastal State Water Company</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB52BLUM0004189160</cbc:ID>
+      <cac:FinancialInstitutionBranch>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">202.10</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">202.10</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">202.10</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
+      <cbc:Name>Drinking water</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>CW-M3</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

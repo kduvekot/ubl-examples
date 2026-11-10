@@ -14,7 +14,7 @@ The mill declares the bales in Bayvarra.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LTM-IM-26-0210**  
+- `ID` = **LTM-IM-26-0206**  
   The importer's declaration number.
 - `IssueDate` = **2026-03-06**  
   The mill declares the bales in Bayvarra.
@@ -131,7 +131,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0203**  
+- `ID` = **SCG-SH-26-0199**  
   The shipment declared.
 - `GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight arriving.
@@ -162,7 +162,7 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TOL-BL-26-0209**  
+- `ID` = **TOL-BL-26-0205**  
   The bill of lading.
 
 ## The document
@@ -172,7 +172,7 @@ Inside `AdditionalDocumentReference`:
 <ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LTM-IM-26-0210</cbc:ID>
+  <cbc:ID>LTM-IM-26-0206</cbc:ID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
   <cac:ImporterParty>
     <cac:PartyIdentification>
@@ -277,7 +277,7 @@ Inside `AdditionalDocumentReference`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0203</cbc:ID>
+    <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -304,7 +304,7 @@ Inside `AdditionalDocumentReference`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0209</cbc:ID>
+    <cbc:ID>TOL-BL-26-0205</cbc:ID>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>
 ```

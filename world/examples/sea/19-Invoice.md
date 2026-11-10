@@ -14,7 +14,7 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LD-INV-26-0147**  
+- `ID` = **LD-INV-26-0144**  
   The seller's invoice number.
 - `IssueDate` = **2026-05-14**  
   Issued when the goods are on board.
@@ -338,7 +338,7 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-INV-26-0147</cbc:ID>
+  <cbc:ID>LD-INV-26-0144</cbc:ID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:DueDate>2026-06-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>

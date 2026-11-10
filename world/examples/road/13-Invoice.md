@@ -14,7 +14,7 @@ The manufacturer invoices the goods only (no freight under FCA) and asks for pay
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **VI-INV-26-0167**  
+- `ID` = **VI-INV-26-0164**  
   The seller's invoice number.
 - `IssueDate` = **2026-03-24**  
   Issued when the goods have left the warehouse.
@@ -255,7 +255,7 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VI-INV-26-0167</cbc:ID>
+  <cbc:ID>VI-INV-26-0164</cbc:ID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>

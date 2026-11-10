@@ -14,7 +14,7 @@ The packaging maker pays from Bayvarra to the waste processor's account in Urvan
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **RP-RM-26-0901**  
+- `ID` = **RP-RM-26-0895**  
   The payer's remittance number.
 - `IssueDate` = **2026-05-19**  
   The packaging maker pays across the border, before the due date.
@@ -122,7 +122,7 @@ Inside `RemittanceAdviceLine`:
   One invoice paid.
 - `DebitLineAmount` = **9984000** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
-- `BillingReference/InvoiceDocumentReference/ID` = **RR-INV-26-0897**  
+- `BillingReference/InvoiceDocumentReference/ID` = **RR-INV-26-0894**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-20**  
   Its issue date, so the reference is unambiguous.
@@ -134,7 +134,7 @@ Inside `RemittanceAdviceLine`:
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>RP-RM-26-0901</cbc:ID>
+  <cbc:ID>RP-RM-26-0895</cbc:ID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XUF">9984000</cbc:TotalPaymentAmount>
@@ -239,7 +239,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XUF">9984000</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>RR-INV-26-0897</cbc:ID>
+        <cbc:ID>RR-INV-26-0894</cbc:ID>
         <cbc:IssueDate>2026-04-20</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

@@ -14,7 +14,7 @@ The island's export: the ginnery declares the bales to customs.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SCG-EX-26-0206**  
+- `ID` = **SCG-EX-26-0202**  
   The exporter's reference.
 - `IssueDate` = **2026-03-01**  
   The island's export: declared before loading.
@@ -52,13 +52,13 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **SCG-CD-26-0207**  
+- `ID` = **SCG-CD-26-0203**  
   The declaration as lodged with the customs of the exporting country.
-- `Shipment/ID` = **SCG-SH-26-0203**  
+- `Shipment/ID` = **SCG-SH-26-0199**  
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight leaving the country.
-- `Shipment/Consignment/ID` = **LTM-CS-26-0204**  
+- `Shipment/Consignment/ID` = **LTM-CS-26-0200**  
   The consignment carried.
 - `Shipment/GoodsItem/ID` = **1**  
   The goods item number.
@@ -146,7 +146,7 @@ Inside `CustomsDeclaration`:
 <ExportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SCG-EX-26-0206</cbc:ID>
+  <cbc:ID>SCG-EX-26-0202</cbc:ID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
   <cac:ExporterParty>
     <cac:PartyIdentification>
@@ -177,12 +177,12 @@ Inside `CustomsDeclaration`:
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>SCG-CD-26-0207</cbc:ID>
+    <cbc:ID>SCG-CD-26-0203</cbc:ID>
     <cac:Shipment>
-      <cbc:ID>SCG-SH-26-0203</cbc:ID>
+      <cbc:ID>SCG-SH-26-0199</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cac:Consignment>
-        <cbc:ID>LTM-CS-26-0204</cbc:ID>
+        <cbc:ID>LTM-CS-26-0200</cbc:ID>
       </cac:Consignment>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>

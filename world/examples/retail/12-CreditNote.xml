@@ -2,18 +2,18 @@
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-CN-26-0236</cbc:ID>
+  <cbc:ID>LD-CN-26-0230</cbc:ID>
   <cbc:IssueDate>2026-05-02</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0232</cbc:ID>
+      <cbc:ID>LD-INV-26-0229</cbc:ID>
       <cbc:IssueDate>2026-04-30</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>BS-RA-26-0231</cbc:ID>
+    <cbc:ID>BS-RA-26-0228</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

@@ -14,7 +14,7 @@ Before loading, the shipper declares the verified gross mass of the container, w
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SCG-WS-26-0208**  
+- `ID` = **SCG-WS-26-0204**  
   The shipper's weight statement number.
 - `IssueDate` = **2026-03-01**  
   Declared before the container is loaded, as required for every packed container.
@@ -127,7 +127,7 @@ Inside `ShipperParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0203**  
+- `ID` = **SCG-SH-26-0199**  
   The shipment weighed.
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4123110** (schemeID `ISO6346`)  
   The container, with its ISO 6346 check digit.
@@ -143,7 +143,7 @@ Inside `Shipment`:
 <WeightStatement xmlns="urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SCG-WS-26-0208</cbc:ID>
+  <cbc:ID>SCG-WS-26-0204</cbc:ID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -246,7 +246,7 @@ Inside `Shipment`:
     </cac:PartyName>
   </cac:ShipperParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0203</cbc:ID>
+    <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cac:TransportHandlingUnit>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>

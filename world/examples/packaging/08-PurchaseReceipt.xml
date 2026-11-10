@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PurchaseReceipt xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>BS-PR-26-0530</cbc:ID>
+  <cbc:IssueDate>2026-05-22</cbc:IssueDate>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Market Street</cbc:StreetName>
+        <cbc:BuildingNumber>50</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38515</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Brightmarket Stores</cbc:RegistrationName>
+        <cbc:CompanyID>20410411</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Buying office</cbc:Name>
+        <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>Robin Ashdale</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Gull Lane</cbc:StreetName>
+        <cbc:BuildingNumber>57</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38516</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>
+  </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">3.89</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">59.90</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">3.89</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>6.5</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">59.90</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">63.79</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">63.79</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:PurchaseReceiptLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Name>Cotton shirt</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BM-778120</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>LT-SH-01</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:item">772030000090</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:OriginCountry>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="HS">6205.20</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>6.5</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">29.95</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:PurchaseReceiptLine>
+</PurchaseReceipt>

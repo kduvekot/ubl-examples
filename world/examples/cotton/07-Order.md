@@ -14,7 +14,7 @@ Bales of grade cotton. Delivery terms FOB the island port: the mill arranges the
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LTM-PO-26-0201**  
+- `ID` = **LTM-PO-26-0197**  
   The buyer's order number.
 - `IssueDate` = **2026-02-24**  
   The mill orders the first container of the season.
@@ -165,7 +165,7 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LTM-PO-26-0201</cbc:ID>
+  <cbc:ID>LTM-PO-26-0197</cbc:ID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cac:BuyerCustomerParty>

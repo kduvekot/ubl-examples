@@ -14,7 +14,7 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SCG-SBC-26-0196**  
+- `ID` = **SCG-SBC-26-0194**  
   The number the customer gives the self-billed document, under the self-billing agreement.
 - `IssueDate` = **2026-02-14**  
   Issued after classing showed part of the delivery a grade lower.
@@ -178,7 +178,7 @@ Inside `CreditNoteLine`:
 <SelfBilledCreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:SelfBilledCreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SCG-SBC-26-0196</cbc:ID>
+  <cbc:ID>SCG-SBC-26-0194</cbc:ID>
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>

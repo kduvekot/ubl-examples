@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<UtilityStatement xmlns="urn:oasis:names:specification:ubl:schema:xsd:UtilityStatement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>ST-DOC-26-0323</cbc:ID>
+  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:UtilityStatementTypeCode>Telephone</cbc:UtilityStatementTypeCode>
+  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cac:ParentDocumentReference>
+    <cbc:ID>ST-INV-26-0322</cbc:ID>
+  </cac:ParentDocumentReference>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Telecom</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Mast Hill Road</cbc:StreetName>
+      <cbc:BuildingNumber>58</cbc:BuildingNumber>
+      <cbc:CityName>Selanu</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Selanu Telecom</cbc:RegistrationName>
+      <cbc:CompanyID>IC42407</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Business accounts</cbc:Name>
+      <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42407</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Velumi Trading</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Reef Street</cbc:StreetName>
+      <cbc:BuildingNumber>16</cbc:BuildingNumber>
+      <cbc:CityName>Selanu</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Velumi Trading</cbc:RegistrationName>
+      <cbc:CompanyID>IC41859</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Purchasing</cbc:Name>
+      <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReceiverParty>
+  <cac:SubscriberParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Velumi Trading</cbc:Name>
+    </cac:PartyName>
+  </cac:SubscriberParty>
+</UtilityStatement>

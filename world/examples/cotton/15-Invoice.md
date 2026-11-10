@@ -14,7 +14,7 @@ The forwarder invoices the sea freight it booked for the mill.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **BF-INV-26-0215**  
+- `ID` = **BF-INV-26-0208**  
   The seller's invoice number.
 - `IssueDate` = **2026-03-04**  
   Issued after the sailing.
@@ -29,7 +29,7 @@ The forwarder invoices the sea freight it booked for the mill.
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TOL-BL-26-0209**  
+- `ID` = **TOL-BL-26-0205**  
   The bill of lading.
 
 ### Accounting Supplier Party
@@ -128,7 +128,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `Shipment/Consignment/ID` = **LTM-CS-26-0204**  
+- `Shipment/Consignment/ID` = **LTM-CS-26-0200**  
   The consignment shipped.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -244,13 +244,13 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>BF-INV-26-0215</cbc:ID>
+  <cbc:ID>BF-INV-26-0208</cbc:ID>
   <cbc:IssueDate>2026-03-04</cbc:IssueDate>
   <cbc:DueDate>2026-04-03</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0209</cbc:ID>
+    <cbc:ID>TOL-BL-26-0205</cbc:ID>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -351,7 +351,7 @@ Inside `InvoiceLine`:
   <cac:Delivery>
     <cac:Shipment>
       <cac:Consignment>
-        <cbc:ID>LTM-CS-26-0204</cbc:ID>
+        <cbc:ID>LTM-CS-26-0200</cbc:ID>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>

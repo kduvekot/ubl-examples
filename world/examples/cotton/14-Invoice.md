@@ -14,7 +14,7 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SCG-INV-26-0211**  
+- `ID` = **SCG-INV-26-0207**  
   The seller's invoice number.
 - `IssueDate` = **2026-03-02**  
   Issued when the bales are on board.
@@ -29,7 +29,7 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
 
 Inside `OrderReference`:
 
-- `ID` = **LTM-PO-26-0201**  
+- `ID` = **LTM-PO-26-0197**  
   The mill's order.
 
 ### Accounting Supplier Party
@@ -199,13 +199,13 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SCG-INV-26-0211</cbc:ID>
+  <cbc:ID>SCG-INV-26-0207</cbc:ID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:DueDate>2026-04-01</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cac:OrderReference>
-    <cbc:ID>LTM-PO-26-0201</cbc:ID>
+    <cbc:ID>LTM-PO-26-0197</cbc:ID>
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

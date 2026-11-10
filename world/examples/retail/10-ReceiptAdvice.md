@@ -14,7 +14,7 @@ The shop confirms the delivery and reports a damaged carton.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **BS-RA-26-0231**  
+- `ID` = **BS-RA-26-0228**  
   The receiving party's number.
 - `IssueDate` = **2026-04-30**  
   The day the goods were unloaded at the store.
@@ -155,7 +155,7 @@ Inside `ReceiptLine`:
 <ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>BS-RA-26-0231</cbc:ID>
+  <cbc:ID>BS-RA-26-0228</cbc:ID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0221</cbc:ID>

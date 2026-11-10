@@ -14,7 +14,7 @@ The island's chamber of commerce certifies the bales for export, at the ginnery'
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SCC-GC-26-0205**  
+- `ID` = **SCC-GC-26-0201**  
   The chamber's certificate number.
 - `IssueDate` = **2026-02-28**  
   Issued before shipment, at the ginnery's application.
@@ -127,7 +127,7 @@ Inside `ApplicantParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0203**  
+- `ID` = **SCG-SH-26-0199**  
   The shipment certified.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -159,7 +159,7 @@ Inside `Shipment`:
 <GoodsCertificate xmlns="urn:oasis:names:specification:ubl:schema:xsd:GoodsCertificate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SCC-GC-26-0205</cbc:ID>
+  <cbc:ID>SCC-GC-26-0201</cbc:ID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
   <cac:ExporterParty>
     <cac:PartyIdentification>
@@ -262,7 +262,7 @@ Inside `Shipment`:
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0203</cbc:ID>
+    <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Cotton lint, compressed bale</cbc:Description>

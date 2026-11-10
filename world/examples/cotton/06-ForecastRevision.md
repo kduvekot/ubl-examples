@@ -14,7 +14,7 @@ Demand for clothing is up; the mill revises its forecast upwards.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LTM-FR-26-0200**  
+- `ID` = **LTM-FR-26-0196**  
   The revision's number.
 - `IssueDate` = **2026-02-22**  
   Demand for clothing has risen.
@@ -148,7 +148,7 @@ Inside `ForecastRevisionLine`:
 <ForecastRevision xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForecastRevision-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LTM-FR-26-0200</cbc:ID>
+  <cbc:ID>LTM-FR-26-0196</cbc:ID>
   <cbc:IssueDate>2026-02-22</cbc:IssueDate>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cac:ForecastPeriod>

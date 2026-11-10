@@ -2,7 +2,7 @@
 <ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>TCB-IM-26-0144</cbc:ID>
+  <cbc:ID>TCB-IM-26-0141</cbc:ID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
   <cac:ImporterParty>
     <cac:PartyIdentification>

@@ -14,7 +14,7 @@ The buyer's 3PL confirms what arrived, for the buyer.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **NW-RA-26-0146**  
+- `ID` = **NW-RA-26-0143**  
   The receiving party's number.
 - `IssueDate` = **2026-05-21**  
   The buyer's 3PL confirms what arrived.
@@ -30,7 +30,7 @@ Inside `OrderReference`:
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **LD-DA-26-0145**  
+- `ID` = **LD-DA-26-0142**  
   The despatch advice this receipt answers.
 
 ### Delivery Customer Party
@@ -185,13 +185,13 @@ Inside `ReceiptLine`:
 <ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>NW-RA-26-0146</cbc:ID>
+  <cbc:ID>NW-RA-26-0143</cbc:ID>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0126</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0145</cbc:ID>
+    <cbc:ID>LD-DA-26-0142</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
