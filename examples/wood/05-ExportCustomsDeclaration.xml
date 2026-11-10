@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ExportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>MS-EX-26-0630</cbc:ID>
+  <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cac:ExporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Marrowdale Sawmill</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Timber Lane</cbc:StreetName>
+      <cbc:BuildingNumber>7</cbc:BuildingNumber>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71202</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>UL-1236987</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Marrowdale Sawmill</cbc:RegistrationName>
+      <cbc:CompanyID>20412329</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Sales office</cbc:Name>
+      <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412329</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ExporterParty>
+  <cac:CustomsDeclaration>
+    <cbc:ID>MS-CD-26-0631</cbc:ID>
+    <cac:Shipment>
+      <cbc:ID>MS-SH-26-0632</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
+      <cac:Consignment>
+        <cbc:ID>MS-CS-26-0629</cbc:ID>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Trasvia Haulage</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
+            <cbc:BuildingNumber>45</cbc:BuildingNumber>
+            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:PostalZone>4160</cbc:PostalZone>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:PartyTaxScheme>
+            <cbc:CompanyID>XU007337656</cbc:CompanyID>
+            <cac:TaxScheme>
+              <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:PartyTaxScheme>
+          <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Trasvia Haulage</cbc:RegistrationName>
+            <cbc:CompanyID>XU-R-104822</cbc:CompanyID>
+          </cac:PartyLegalEntity>
+          <cac:Contact>
+            <cbc:Name>Planning desk</cbc:Name>
+            <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
+          </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
+        </cac:CarrierParty>
+      </cac:Consignment>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+        <cbc:Description>Hardwood bench slat 1800</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">34560.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+        <cac:Item>
+          <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+          <cbc:Name>Hardwood bench slat 1800</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>MS-SL-1800</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:StandardItemIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:item">772010000058</cbc:ID>
+          </cac:StandardItemIdentification>
+          <cac:OriginCountry>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:OriginCountry>
+          <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">4407.99</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:GoodsItem>
+    </cac:Shipment>
+    <cac:ConsigneeParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:BuildingNumber>17</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>XU007299291</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Valdara Industries</cbc:RegistrationName>
+        <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Order desk</cbc:Name>
+        <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:ConsigneeParty>
+    <cac:CustomsParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410137</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Border Crossing Road</cbc:StreetName>
+        <cbc:BuildingNumber>36</cbc:BuildingNumber>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71213</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
+        <cbc:CompanyID>20410137</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Border office</cbc:Name>
+        <cbc:ElectronicMail>border@customs-xb.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:CustomsParty>
+  </cac:CustomsDeclaration>
+</ExportCustomsDeclaration>
