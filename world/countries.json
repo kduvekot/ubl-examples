@@ -271,7 +271,11 @@
     },
     "system": {
      "id": "CORAL-NET",
-     "name": "Coral net of the Bank of Selanu"
+     "name": "Coral net of the Bank of Selanu",
+     "ledger": {
+      "id": "CORAL-NET-L1",
+      "note": "Coral net settles tokenised coral deposits on the Bank of Selanu's permissioned ledger; an account on it names the ledger."
+     }
     },
     "note": "Island practice: longer terms, simple interest on late payment."
    },

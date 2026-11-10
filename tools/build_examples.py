@@ -420,6 +420,9 @@ def account(pid, why, note=None):
            "Name": V(legal_name(pid), "The account holder, as the bank knows it."),
            **({"AliasName": V(acc["alias"], "The short name the holder gave the account, shown in its bank's "
                                              "app.")} if acc.get("alias") else {}),
+           **({"BlockchainID": V(acc["ledger"], "The account holds tokenised coral deposits on the Bank of Selanu's "
+                                                "ledger, which Coral net settles on (world/countries.json).")}
+              if acc.get("ledger") else {}),
            "AccountTypeCode": V("Current", "A current account, for payments in and out."),
            "AccountFormatCode": V("ISO13616", "The account number has the structure of ISO 13616."),
            "CurrencyCode": V(WORLD["countries"][bank["c"]]["currency"]["code"], "The account is kept in the currency of "

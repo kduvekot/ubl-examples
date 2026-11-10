@@ -2182,7 +2182,8 @@
     },
     "account": {
      "bank": "22-xl",
-     "number": "XL88BSEL0004293889"
+     "number": "XL88BSEL0004293889",
+     "ledger": "CORAL-NET-L1"
     },
     "industry": "6110",
     "website": "https://www.selanutelecom.example",

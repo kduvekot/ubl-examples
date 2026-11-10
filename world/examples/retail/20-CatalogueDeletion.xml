@@ -4,11 +4,11 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0237</cbc:ID>
-  <cbc:UUID>3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29</cbc:UUID>
+  <cbc:ID>LD-DOC-26-0238</cbc:ID>
+  <cbc:UUID>f9877c55-f962-5da6-86c9-7b721989951a</cbc:UUID>
   <cbc:Name>Withdrawal of the spring catalogue</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
-  <cbc:IssueTime>13:26:00</cbc:IssueTime>
+  <cbc:IssueTime>17:05:00</cbc:IssueTime>
   <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
   <cbc:EffectiveTime>00:00:00</cbc:EffectiveTime>
   <cbc:Note>Replaced by the summer catalogue.</cbc:Note>

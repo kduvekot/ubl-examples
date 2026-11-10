@@ -359,7 +359,7 @@ Inside `PaymentTerms`:
   Bayvarran practice: a surcharge per month of late payment, no discount.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **518.40** (currencyID `XBL`)  
+- `PenaltyAmount` = **522.00** (currencyID `XBL`)  
   The surcharge for the first month late.
 - `PaymentTermsDetailsURI` = **https://www.marrowdalesawmill.example/terms**  
   The seller's general terms of payment.
@@ -370,13 +370,34 @@ Inside `PaymentTerms`:
 - `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
   Per month.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge, not an allowance: it adds to the amount.
+- `AllowanceChargeReason` = **Heat-treated export pallets**  
+  96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.
+- `Amount` = **240.00** (currencyID `XBL`)  
+  96 pallets at 2.50 lume.
+- `TaxCategory/ID` = **G**  
+  An export from Bayvarra: the state sales tax is not charged (category G).
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
+- `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+
 ### Tax Total
 
 Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **34560.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **34800.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -397,11 +418,13 @@ Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **34560.00** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **34560.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **34800.00** (currencyID `XBL`)  
+  The line amounts plus the charges, without tax.
+- `TaxInclusiveAmount` = **34800.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **34560.00** (currencyID `XBL`)  
+- `ChargeTotalAmount` = **240.00** (currencyID `XBL`)  
+  The sum of the charges at document level.
+- `PayableAmount` = **34800.00** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -832,7 +855,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">518.40</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">522.00</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-03-28</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -840,10 +863,24 @@ Inside `InvoiceLine`:
       <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>G</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">34560.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">34800.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
@@ -858,9 +895,10 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">34560.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">34560.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">34560.00</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">34800.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">34800.00</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

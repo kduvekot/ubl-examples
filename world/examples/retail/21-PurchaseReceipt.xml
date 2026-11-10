@@ -1,32 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<PurchaseReceipt xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-RA-26-0234</cbc:ID>
-  <cbc:UUID>72e2f38d-9c14-5700-9cf7-82648d72cd8e</cbc:UUID>
-  <cbc:IssueDate>2026-04-30</cbc:IssueDate>
-  <cbc:IssueTime>10:31:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
-  <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
-  <cbc:DeliveryAcceptanceCode>Partial</cbc:DeliveryAcceptanceCode>
-  <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
-  <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
-  <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
-  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
-  <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0224</cbc:ID>
-  </cac:OrderReference>
-  <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0229</cbc:ID>
-  </cac:DespatchDocumentReference>
+  <cbc:ID>BS-PR-26-0239</cbc:ID>
+  <cbc:UUID>bcdeb9a7-e515-519a-b488-de52151e844f</cbc:UUID>
+  <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:IssueTime>11:42:00</cbc:IssueTime>
+  <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
+  <cbc:TransactionTime>11:42:00</cbc:TransactionTime>
+  <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
+  <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
+  <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:PurchaseReference>
+    <cbc:ID>BM-LOYAL-0088127</cbc:ID>
+    <cbc:Description>Loyalty card</cbc:Description>
+  </cac:PurchaseReference>
+  <cac:SalesDocumentReference>
+    <cbc:ID>BM-DEL-26-0518-07</cbc:ID>
+  </cac:SalesDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BM-GI-PHOTO-26-0510</cbc:ID>
+    <cbc:ID>VI-WARRANTY-B180</cbc:ID>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
-    <cbc:ID>BM-SIG-26-RA</cbc:ID>
+    <cbc:ID>BM-SIG-POS-G2</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -36,7 +35,7 @@
       </cac:PartyName>
     </cac:SignatoryParty>
   </cac:Signature>
-  <cac:DeliveryCustomerParty>
+  <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
       <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -137,171 +136,192 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
-  </cac:DeliveryCustomerParty>
-  <cac:DespatchSupplierParty>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Lumeway Distribution</cbc:Name>
+        <cbc:Name>Robin Ashdale</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
-        <cbc:StreetName>Distribution Drive</cbc:StreetName>
-        <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
-        <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
-        <cbc:BuildingNumber>43</cbc:BuildingNumber>
-        <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cbc:PostalZone>71214</cbc:PostalZone>
-        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:StreetName>Gull Lane</cbc:StreetName>
+        <cbc:BuildingNumber>57</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38516</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+      <cac:Person>
+        <cbc:FirstName>Robin</cbc:FirstName>
+        <cbc:FamilyName>Ashdale</cbc:FamilyName>
+        <cac:FinancialAccount>
+          <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
+          <cbc:Name>Robin Ashdale</cbc:Name>
+          <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+          <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
           <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20410274</cbc:CompanyID>
-        <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
+          <cac:FinancialInstitutionBranch>
+            <cbc:ID>BLUM-001</cbc:ID>
+            <cbc:Name>Main branch</cbc:Name>
+            <cac:FinancialInstitution>
+              <cbc:ID>BLUM</cbc:ID>
+              <cbc:Name>Bank of Lumeport</cbc:Name>
+              <cac:Address>
+                <cbc:StreetName>Exchange Street</cbc:StreetName>
+                <cbc:BuildingNumber>48</cbc:BuildingNumber>
+                <cbc:CityName>Lumeport</cbc:CityName>
+                <cac:Country>
+                  <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:FinancialInstitution>
+            <cac:Address>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitutionBranch>
           <cac:Country>
             <cbc:IdentificationCode>XB</cbc:IdentificationCode>
           </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
-        <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-      </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
+        </cac:FinancialAccount>
+      </cac:Person>
     </cac:Party>
-  </cac:DespatchSupplierParty>
-  <cac:BuyerCustomerParty>
-    <cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:CashierContact>
+    <cbc:Name>Mira</cbc:Name>
+  </cac:CashierContact>
+  <cac:CashRegister>
+    <cbc:ID>G2</cbc:ID>
+    <cbc:SerialNumberID>BM-POS-G2-2219</cbc:SerialNumberID>
+  </cac:CashRegister>
+  <cac:PointOfSaleLocation>
+    <cbc:Description>Garden department, ground floor</cbc:Description>
+    <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
+  </cac:PointOfSaleLocation>
+  <cac:PointOfSaleContact>
+    <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+  </cac:PointOfSaleContact>
+  <cac:Delivery>
+    <cac:DeliveryAddress>
+      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Gull Lane</cbc:StreetName>
+      <cbc:BuildingNumber>57</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38516</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:DeliveryAddress>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-17</cbc:StartDate>
+      <cbc:StartTime>09:00:00</cbc:StartTime>
+      <cbc:EndTime>12:00:00</cbc:EndTime>
+    </cac:RequestedDeliveryPeriod>
+    <cac:CarrierParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brightmarket Stores</cbc:Name>
       </cac:PartyName>
-    </cac:Party>
-  </cac:BuyerCustomerParty>
-  <cac:SellerSupplierParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeway Distribution</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:SellerSupplierParty>
-  <cac:Shipment>
-    <cbc:ID>LD-SH-26-0230</cbc:ID>
-    <cac:TransportHandlingUnit>
-      <cbc:ID>LD-RT-003</cbc:ID>
-      <cbc:DamageRemarks>One carton torn, the bench's armrest bent.</cbc:DamageRemarks>
-      <cac:ReceivedHandlingUnitReceiptLine>
-        <cbc:ID>1</cbc:ID>
-        <cbc:ReceivedQuantity unitCode="H87">3</cbc:ReceivedQuantity>
-        <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
-        <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
-      </cac:ReceivedHandlingUnitReceiptLine>
-      <cac:Status>
-        <cbc:ConditionCode>Damaged</cbc:ConditionCode>
-        <cbc:Description>Three benches accepted, one refused.</cbc:Description>
-      </cac:Status>
-      <cac:DamageDocumentationAttachment>
-        <cac:ExternalReference>
-          <cbc:URI>https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg</cbc:URI>
-          <cbc:MimeCode>image/jpeg</cbc:MimeCode>
-          <cbc:FileName>pallet-3.jpg</cbc:FileName>
-        </cac:ExternalReference>
-      </cac:DamageDocumentationAttachment>
-    </cac:TransportHandlingUnit>
-  </cac:Shipment>
-  <cac:ReceiptLine>
+    </cac:CarrierParty>
+  </cac:Delivery>
+  <cac:Payment>
+    <cbc:ID>BM-G2-26-0518-0047</cbc:ID>
+    <cbc:PaidAmount currencyID="XBL">744.54</cbc:PaidAmount>
+    <cbc:PaidDate>2026-05-15</cbc:PaidDate>
+    <cbc:PaidTime>11:42:00</cbc:PaidTime>
+    <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
+    <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
+    <cbc:TransactionID>TX-26-0518-773104</cbc:TransactionID>
+    <cbc:PaymentTerminalID>PT-G2</cbc:PaymentTerminalID>
+    <cbc:StatusCode>Approved</cbc:StatusCode>
+  </cac:Payment>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
+    <cac:CardAccount>
+      <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
+      <cbc:NetworkID>LUMECARD</cbc:NetworkID>
+      <cbc:CardTypeCode>Debit</cbc:CardTypeCode>
+      <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
+      <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
+      <cbc:IssuerID>BLUM</cbc:IssuerID>
+      <cbc:IssueNumberID>01</cbc:IssueNumberID>
+      <cbc:CV2ID>***</cbc:CV2ID>
+      <cbc:CardChipCode>Chip</cbc:CardChipCode>
+      <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
+      <cbc:HolderName>R ASHDALE</cbc:HolderName>
+      <cbc:RoleCode>Holder</cbc:RoleCode>
+    </cac:CardAccount>
+  </cac:PaymentMeans>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Home delivery</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">25.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>S</cbc:ID>
+      <cbc:Percent>6.5</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">45.44</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">699.10</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">45.44</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>6.5</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">699.10</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">744.54</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">25.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">744.54</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:UUID>c9e54602-8f02-5581-88af-5ca8d0131f08</cbc:UUID>
-    <cbc:Note>One bench arrived in a damaged carton and was refused.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">23</cbc:ReceivedQuantity>
-    <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
-    <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
-    <cbc:RejectReason>One bench arrived in a damaged carton and was refused.</cbc:RejectReason>
-    <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
-    <cbc:QuantityDiscrepancyCode>Damaged</cbc:QuantityDiscrepancyCode>
-    <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>
-    <cbc:ReceivedTime>10:40:00</cbc:ReceivedTime>
-    <cbc:TimingComplaintCode>Late</cbc:TimingComplaintCode>
-    <cbc:TimingComplaint>Arrived 40 minutes into the slot; unloading delayed the next truck.</cbc:TimingComplaint>
-    <cac:OrderLineReference>
-      <cbc:LineID>1</cbc:LineID>
-    </cac:OrderLineReference>
-    <cac:DespatchLineReference>
-      <cbc:LineID>1</cbc:LineID>
-      <cac:DocumentReference>
-        <cbc:ID>LD-DA-26-0229</cbc:ID>
-      </cac:DocumentReference>
-    </cac:DespatchLineReference>
-    <cac:DocumentReference>
-      <cbc:ID>BS-PHOTO-26-0118</cbc:ID>
-    </cac:DocumentReference>
+    <cbc:UUID>ea701e0e-2453-5802-8bbd-0356ea20503d</cbc:UUID>
+    <cbc:Note>Promotion price.</cbc:Note>
+    <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+    <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">717.92</cbc:TaxInclusiveLineExtensionAmount>
+    <cac:PurchaseLinePeriod>
+      <cbc:StartDate>2026-05-15</cbc:StartDate>
+      <cbc:EndDate>2031-05-15</cbc:EndDate>
+    </cac:PurchaseLinePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>VI-SF-02170</cbc:ID>
+      <cbc:Description>Frame serial number</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:Item>
-      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Description>The Serra park bench in the store's garden department; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
@@ -309,11 +329,8 @@
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>BM-551210</cbc:ID>
-      </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>BM-551210</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID>Colour</cbc:AttributeID>
@@ -340,14 +357,14 @@
         <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:TransactionConditions>
-        <cbc:ID>LD-TC-01</cbc:ID>
-        <cbc:ActionCode>Trade</cbc:ActionCode>
-        <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
-        <cac:DocumentReference>
-          <cbc:ID>LD-GTC-2026</cbc:ID>
-        </cac:DocumentReference>
-      </cac:TransactionConditions>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>6.5</cbc:Percent>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
       <cac:AdditionalItemProperty>
         <cbc:Name>Frame material</cbc:Name>
         <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
@@ -488,5 +505,23 @@
         </cac:ProductDocumentationDocumentReference>
       </cac:CircularityProfile>
     </cac:Item>
-  </cac:ReceiptLine>
-</ReceiptAdvice>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">674.1</cbc:PriceAmount>
+      <cbc:TaxInclusivePriceAmount currencyID="XBL">717.92</cbc:TaxInclusivePriceAmount>
+      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:PriceChangeReason>Spring garden promotion</cbc:PriceChangeReason>
+      <cac:ValidityPeriod>
+        <cbc:StartDate>2026-05-12</cbc:StartDate>
+        <cbc:EndDate>2026-05-18</cbc:EndDate>
+      </cac:ValidityPeriod>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">75</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Spring garden promotion</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">749.00</cbc:BaseAmount>
+      </cac:AllowanceCharge>
+    </cac:Price>
+  </cac:PurchaseReceiptLine>
+</PurchaseReceipt>

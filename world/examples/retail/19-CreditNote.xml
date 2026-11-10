@@ -1,28 +1,38 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-INV-26-0235</cbc:ID>
-  <cbc:UUID>cae87fb6-c5ae-5ec4-95e7-3ff1a551ef34</cbc:UUID>
-  <cbc:IssueDate>2026-04-30</cbc:IssueDate>
-  <cbc:IssueTime>15:21:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-30</cbc:DueDate>
-  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:ID>LD-CN-26-0237</cbc:ID>
+  <cbc:UUID>21527992-a284-577e-b410-c834118ac671</cbc:UUID>
+  <cbc:IssueDate>2026-05-02</cbc:IssueDate>
+  <cbc:IssueTime>13:26:00</cbc:IssueTime>
+  <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:DiscrepancyResponse>
+    <cbc:ReferenceID>1</cbc:ReferenceID>
+    <cbc:ResponseCode>CN</cbc:ResponseCode>
+    <cbc:Description>One bench refused at goods-in, damaged in transit.</cbc:Description>
+  </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:OrderReference>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>LD-INV-26-0236</cbc:ID>
+      <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>BS-RA-26-0234</cbc:ID>
+    <cbc:ID>BS-RA-26-0235</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -321,83 +331,13 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:PaymentMeans>
-    <cbc:ID>1</cbc:ID>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
-    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF69LDINV260235</cbc:InstructionNote>
-    <cbc:PaymentID>RF69LDINV260235</cbc:PaymentID>
-    <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
-      <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-INV-26-0235</cbc:PaymentNote>
-      <cac:FinancialInstitutionBranch>
-        <cbc:ID>BLUM-001</cbc:ID>
-        <cbc:Name>Main branch</cbc:Name>
-        <cac:FinancialInstitution>
-          <cbc:ID>BLUM</cbc:ID>
-          <cbc:Name>Bank of Lumeport</cbc:Name>
-          <cac:Address>
-            <cbc:StreetName>Exchange Street</cbc:StreetName>
-            <cbc:BuildingNumber>48</cbc:BuildingNumber>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitution>
-        <cac:Address>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:FinancialInstitutionBranch>
-      <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PayeeFinancialAccount>
-  </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XB-STD</cbc:ID>
-    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
-    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">177.84</cbc:PenaltyAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
-    <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-05-31</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
-    </cac:PenaltyPeriod>
+    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
   </cac:PaymentTerms>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-    <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
-    <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
-    <cac:TaxCategory>
-      <cbc:ID>E</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
-      <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">12480.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">494.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -411,18 +351,28 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">11856.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">11856.00</cbc:TaxInclusiveAmount>
-    <cbc:AllowanceTotalAmount currencyID="XBL">624.00</cbc:AllowanceTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">11856.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">494.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">494.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">494.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
-  <cac:InvoiceLine>
+  <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:UUID>09323e18-1b75-5598-8829-c136e146de6a</cbc:UUID>
-    <cbc:InvoicedQuantity unitCode="H87">24</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:TaxPointDate>2026-05-08</cbc:TaxPointDate>
+    <cbc:UUID>226d335b-4a38-5919-b136-61b954cb2fa8</cbc:UUID>
+    <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
+    <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">494.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode>GDDS</cbc:PaymentPurposeCode>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DiscrepancyResponse>
+      <cbc:ReferenceID>1</cbc:ReferenceID>
+      <cbc:ResponseCode>Damaged</cbc:ResponseCode>
+    </cac:DiscrepancyResponse>
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
@@ -432,20 +382,31 @@
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>BS-RA-26-0234</cbc:ID>
+        <cbc:ID>BS-RA-26-0235</cbc:ID>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
-    <cac:DocumentReference>
-      <cbc:ID>LD-DS-B180</cbc:ID>
-    </cac:DocumentReference>
-    <cac:PricingReference>
-      <cac:OriginalItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      </cac:OriginalItemLocationQuantity>
-    </cac:PricingReference>
-    <cac:PaymentTerms>
-      <cbc:Note>The promotion stock is paid with the invoice, 30 days net.</cbc:Note>
-    </cac:PaymentTerms>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0236</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-04-30</cbc:ActualDeliveryDate>
+    </cac:Delivery>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="XBL">26.00</cbc:Amount>
+      <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
+    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -648,5 +609,8 @@
     <cac:DeliveryTerms>
       <cbc:ID schemeID="INCOTERMS">DDP</cbc:ID>
     </cac:DeliveryTerms>
-  </cac:InvoiceLine>
-</Invoice>
+    <cac:ItemPriceExtension>
+      <cbc:Amount currencyID="XBL">520.00</cbc:Amount>
+    </cac:ItemPriceExtension>
+  </cac:CreditNoteLine>
+</CreditNote>

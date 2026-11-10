@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-INV-26-0322</cbc:ID>
-  <cbc:UUID>d34bf420-eb98-5f5f-9d06-271cb4ca7e5a</cbc:UUID>
+  <cbc:ID>ST-INV-26-0323</cbc:ID>
+  <cbc:UUID>0228817f-8a56-5781-a34c-99eedb2ee7ee</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:37:00</cbc:IssueTime>
+  <cbc:IssueTime>11:19:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
@@ -187,15 +187,16 @@
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF53STINV260322</cbc:InstructionNote>
-    <cbc:PaymentID>RF53STINV260322</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF26STINV260323</cbc:InstructionNote>
+    <cbc:PaymentID>RF26STINV260323</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL88BSEL0004293889</cbc:ID>
       <cbc:Name>Selanu Telecom Ltd</cbc:Name>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice ST-INV-26-0322</cbc:PaymentNote>
+      <cbc:BlockchainID>CORAL-NET-L1</cbc:BlockchainID>
+      <cbc:PaymentNote>Invoice ST-INV-26-0323</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>

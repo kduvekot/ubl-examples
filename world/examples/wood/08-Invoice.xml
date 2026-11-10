@@ -288,7 +288,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">518.40</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">522.00</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-03-28</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -296,10 +296,24 @@
       <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>G</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">34560.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">34800.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
@@ -314,9 +328,10 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">34560.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">34560.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">34560.00</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">34800.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">34800.00</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

@@ -1,10 +1,10 @@
 # Invoice: Bayforth Forwarding to Lumeway Distribution
 
-*Example 15 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+*Example 16 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
 Under DDP the seller pays the transport, so the carrier invoices the distributor. A transport service is invoiced with the ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5.
 
-[The XML file](15-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](16-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ Under DDP the seller pays the transport, so the carrier invoices the distributor
   The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-INV-26-0233**  
+- `ID` = **BF-INV-26-0234**  
   The seller's invoice number.
-- `UUID` = **edc572c1-3523-5447-98dd-bde758d366e2**  
+- `UUID` = **bd9692ab-c902-5cad-bc2f-37c7464afe3c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-30**  
   Issued after delivery.
-- `IssueTime` = **11:49:00**  
+- `IssueTime` = **10:31:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-30**  
   30 days after the issue date, the agreed payment term.
@@ -301,9 +301,9 @@ Inside `PaymentMeans`:
   Paid to an account identified in the format of ISO 13616.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF93BFINV260233**  
+- `InstructionNote` = **Quote RF66BFINV260234**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF93BFINV260233**  
+- `PaymentID` = **RF66BFINV260234**  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
 - `PayeeFinancialAccount/ID` = **XB10BLUM0002618225** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -315,7 +315,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL**  
   The account is kept in the currency of the bank's country.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice BF-INV-26-0233**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice BF-INV-26-0234**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
   The branch that keeps the account.
@@ -439,10 +439,10 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-INV-26-0233</cbc:ID>
-  <cbc:UUID>edc572c1-3523-5447-98dd-bde758d366e2</cbc:UUID>
+  <cbc:ID>BF-INV-26-0234</cbc:ID>
+  <cbc:UUID>bd9692ab-c902-5cad-bc2f-37c7464afe3c</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
-  <cbc:IssueTime>11:49:00</cbc:IssueTime>
+  <cbc:IssueTime>10:31:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
@@ -672,15 +672,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF93BFINV260233</cbc:InstructionNote>
-    <cbc:PaymentID>RF93BFINV260233</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF66BFINV260234</cbc:InstructionNote>
+    <cbc:PaymentID>RF66BFINV260234</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB10BLUM0002618225</cbc:ID>
       <cbc:Name>Bayforth Forwarding Ltd</cbc:Name>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BF-INV-26-0233</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BF-INV-26-0234</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BLUM-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>

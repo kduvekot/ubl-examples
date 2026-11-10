@@ -1,10 +1,10 @@
-# Credit Note: Lumeway Distribution to Brightmarket Stores
+# Invoice: Lumeway Distribution to Brightmarket Stores
 
-*Example 18 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
+*Example 18 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The shop reported a damaged carton in its receipt advice; the distributor credits it. The factor stays the payee, because it owns the receivable being reduced.
+The distributor has sold its receivables to the factor, so the invoice names the factor as payee.
 
-[The XML file](18-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](18-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,37 +18,28 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
   The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LD-CN-26-0236**  
-  The seller's credit note number.
-- `UUID` = **9746d03d-d7e2-50c6-acf8-6b1c5d539f7e**  
+- `ID` = **LD-INV-26-0236**  
+  The seller's invoice number.
+- `UUID` = **e7e767e3-6c83-54a1-8abe-aa5f7c71f242**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-02**  
-  Issued after the receipt advice reported the refused bench.
+- `IssueDate` = **2026-04-30**  
+  Issued on delivery.
 - `IssueTime` = **15:52:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `CreditNoteTypeCode` = **381**  
-  UN/EDIFACT 1001 code 381: credit note.
+- `DueDate` = **2026-05-30**  
+  30 days after the issue date, the agreed payment term.
+- `InvoiceTypeCode` = **380**  
+  UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XBL**  
-  The lume, the currency of the invoice credited; it has two decimals.
+  The lume, the seller's currency; it has two decimals.
 - `AccountingCostCode` = **6120**  
-  The buyer's cost centre, as on the invoice credited.
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Garden department**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
-  The number of lines.
+  The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en**  
-  The language of the texts.
-
-### Discrepancy Response
-
-Inside `DiscrepancyResponse`:
-
-- `ReferenceID` = **1**  
-  The invoice line that was wrong.
-- `ResponseCode` = **CN**  
-  The distributor's answer: a credit for the refused bench.
-- `Description` = **One bench refused at goods-in, damaged in transit.**  
-  In words.
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Order Reference
 
@@ -57,28 +48,19 @@ Inside `OrderReference`:
 - `ID` = **BS-PO-26-0224**  
   The store's order.
 
-### Billing Reference
-
-Inside `BillingReference`:
-
-- `InvoiceDocumentReference/ID` = **LD-INV-26-0235**  
-  The invoice this credit note corrects.
-- `InvoiceDocumentReference/IssueDate` = **2026-04-30**  
-  Its issue date.
-
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
 - `ID` = **LD-DA-26-0229**  
-  The despatch advice of the goods.
+  The despatch advice.
 
 ### Receipt Document Reference
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **BS-RA-26-0234**  
-  The receipt advice that reported the damage.
+- `ID` = **BS-RA-26-0235**  
+  The store's receipt advice.
 
 ### Accounting Supplier Party
 
@@ -427,12 +409,110 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The first, and only, way to pay.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-05-30**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **LUMEPAY**  
+  The payment system the transfer runs over: the domestic clearing.
+- `InstructionNote` = **Quote RF42LDINV260236**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF42LDINV260236**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `PayeeFinancialAccount/ID` = **XB21BLUM0002304038** (schemeID `urn:ubl-examples:world:account`)  
+  The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PayeeFinancialAccount/Name` = **Harbourline Factoring Ltd**  
+  The account holder, as the bank knows it.
+- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/PaymentNote` = **Invoice LD-INV-26-0236**  
+  What the payer is asked to quote with the transfer, so the payment is matched.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
+
 ### Payment Terms
 
 Inside `PaymentTerms`:
 
-- `Note` = **Settled against the next payment to the seller, unless refunded.**  
-  How a credit note is settled in the world.
+- `ID` = **XB-STD**  
+  The standard terms of Bayvarra.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 1.5 % surcharge per month late.**  
+  Bayvarran practice: a surcharge per month of late payment, no discount.
+- `PenaltySurchargePercent` = **1.5**  
+  The surcharge per month of late payment.
+- `PenaltyAmount` = **177.84** (currencyID `XBL`)  
+  The surcharge for the first month late.
+- `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-05-30**  
+  The day the amount is due.
+- `PenaltyPeriod/StartDate` = **2026-05-31**  
+  From the day after the due date.
+- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
+  Per month.
+
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **false**  
+  An allowance the distributor granted.
+- `AllowanceChargeReasonCode` = **72** (listID `UN/EDIFACT EDED 5189`)  
+  UN/EDIFACT 5189 code 72: temporary special promotion.
+- `AllowanceChargeReason` = **Promotion support**  
+  In words.
+- `MultiplierFactorNumeric` = **0.05**  
+  Five percent.
+- `Amount` = **624.00** (currencyID `XBL`)  
+  The promotion support of the order.
+- `BaseAmount` = **12480.00** (currencyID `XBL`)  
+  The goods.
+- `TaxCategory/ID` = **E**  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E).
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **XB-RESALE**  
+  The world's code for the exemption reason (world/countries.json).
+- `TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 
 ### Tax Total
 
@@ -440,7 +520,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **494.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **12480.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -459,71 +539,45 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **494.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **494.00** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **494.00** (currencyID `XBL`)  
-  The total without tax plus the tax.
-- `PayableAmount` = **494.00** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `TaxExclusiveAmount` = **11856.00** (currencyID `XBL`)  
+  The goods less the allowance; no tax on a sale for resale.
+- `TaxInclusiveAmount` = **11856.00** (currencyID `XBL`)  
+  The same: no tax.
+- `AllowanceTotalAmount` = **624.00** (currencyID `XBL`)  
+  The promotion support.
+- `PayableAmount` = **11856.00** (currencyID `XBL`)  
+  What the store pays: the goods less the promotion support.
 
-### Credit Note Line
+### Invoice Line
 
-Inside `CreditNoteLine`:
+Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `UUID` = **f3bbed93-36d7-5427-b9e9-07555e85d5fe**  
+- `UUID` = **09323e18-1b75-5598-8829-c136e146de6a**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **Bench refused: armrest bent, carton torn.**  
-  Why the line is credited.
-- `CreditedQuantity` = **1** (unitCode `H87`)  
-  The bench refused at delivery.
-- `LineExtensionAmount` = **494.00** (currencyID `XBL`)  
-  1 × the price = 520.00, less the 5 % promotion support.
-- `TaxInclusiveLineExtensionAmount` = **494.00** (currencyID `XBL`)  
-  The line with its tax.
-- `AccountingCostCode` = **6120**  
-  The store's garden department.
-- `AccountingCost` = **Garden department**  
-  In words.
-- `PaymentPurposeCode` = **GDDS**  
-  ISO 20022 purpose code GDDS: goods.
-- `OrderLineReference/LineID` = **1**  
-  The order line.
-- `DiscrepancyResponse/ReferenceID` = **1**  
-  The invoice line.
-- `DiscrepancyResponse/ResponseCode` = **Damaged**  
-  Credited because damaged.
+- `InvoicedQuantity` = **24** (unitCode `H87`)  
+  The benches despatched.
+- `LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
+  24 × 520.0, rounded to the minor unit of the currency.
+- `TaxPointDate` = **2026-05-08**  
+  The day the goods were delivered.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
   The despatch advice.
 - `ReceiptLineReference/LineID` = **1**  
-  The receipt line that reported it.
-- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0234**  
+  The receipt line, with the damaged carton.
+- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0235**  
   The receipt advice.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0235**  
-  The invoice.
-- `BillingReference/BillingReferenceLine/ID` = **1**  
-  The invoice line credited.
-- `Delivery/ActualDeliveryDate` = **2026-04-30**  
-  The delivery the bench was refused at.
-- `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  0 % of the line amount, for the buyer's booking per line.
-- `AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance on the line.
-- `AllowanceCharge/AllowanceChargeReasonCode` = **72** (listID `UN/EDIFACT EDED 5189`)  
-  UN/EDIFACT 5189 code 72: temporary special promotion.
-- `AllowanceCharge/AllowanceChargeReason` = **Promotion support**  
-  The invoice gave 5 % on all benches, so the credit is 5 % less too.
-- `AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  The rate.
-- `AllowanceCharge/Amount` = **26.00** (currencyID `XBL`)  
-  The deduction on the line.
-- `AllowanceCharge/BaseAmount` = **520.00** (currencyID `XBL`)  
-  The line at the full price.
+- `DocumentReference/ID` = **LD-DS-B180**  
+  The distributor's datasheet for the bench.
+- `PricingReference/OriginalItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
+  As in the catalogue.
+- `PaymentTerms/Note` = **The promotion stock is paid with the invoice, 30 days net.**  
+  The line's terms.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -747,48 +801,36 @@ Inside `CreditNoteLine`:
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
 - `DeliveryTerms/ID` = **DDP** (schemeID `INCOTERMS`)  
-  As on the order: delivered duty paid.
-- `ItemPriceExtension/Amount` = **520.00** (currencyID `XBL`)  
-  Price times quantity, before the allowance.
+  Delivered duty paid, the store's shop, as for the whole order.
 
 ## The document
 
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
-<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0236</cbc:ID>
-  <cbc:UUID>9746d03d-d7e2-50c6-acf8-6b1c5d539f7e</cbc:UUID>
-  <cbc:IssueDate>2026-05-02</cbc:IssueDate>
+  <cbc:ID>LD-INV-26-0236</cbc:ID>
+  <cbc:UUID>e7e767e3-6c83-54a1-8abe-aa5f7c71f242</cbc:UUID>
+  <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>15:52:00</cbc:IssueTime>
-  <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
+  <cbc:DueDate>2026-05-30</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
-  <cac:DiscrepancyResponse>
-    <cbc:ReferenceID>1</cbc:ReferenceID>
-    <cbc:ResponseCode>CN</cbc:ResponseCode>
-    <cbc:Description>One bench refused at goods-in, damaged in transit.</cbc:Description>
-  </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:OrderReference>
-  <cac:BillingReference>
-    <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0235</cbc:ID>
-      <cbc:IssueDate>2026-04-30</cbc:IssueDate>
-    </cac:InvoiceDocumentReference>
-  </cac:BillingReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>BS-RA-26-0234</cbc:ID>
+    <cbc:ID>BS-RA-26-0235</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -1087,13 +1129,83 @@ Inside `CreditNoteLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF42LDINV260236</cbc:InstructionNote>
+    <cbc:PaymentID>RF42LDINV260236</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
+      <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice LD-INV-26-0236</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">177.84</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-05-31</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID>E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">494.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">12480.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -1107,28 +1219,18 @@ Inside `CreditNoteLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">494.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">494.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">494.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">11856.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">11856.00</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">624.00</cbc:AllowanceTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">11856.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
-  <cac:CreditNoteLine>
+  <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:UUID>f3bbed93-36d7-5427-b9e9-07555e85d5fe</cbc:UUID>
-    <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
-    <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">494.00</cbc:TaxInclusiveLineExtensionAmount>
-    <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
-    <cbc:PaymentPurposeCode>GDDS</cbc:PaymentPurposeCode>
-    <cac:OrderLineReference>
-      <cbc:LineID>1</cbc:LineID>
-    </cac:OrderLineReference>
-    <cac:DiscrepancyResponse>
-      <cbc:ReferenceID>1</cbc:ReferenceID>
-      <cbc:ResponseCode>Damaged</cbc:ResponseCode>
-    </cac:DiscrepancyResponse>
+    <cbc:UUID>09323e18-1b75-5598-8829-c136e146de6a</cbc:UUID>
+    <cbc:InvoicedQuantity unitCode="H87">24</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
+    <cbc:TaxPointDate>2026-05-08</cbc:TaxPointDate>
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
@@ -1138,31 +1240,20 @@ Inside `CreditNoteLine`:
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>BS-RA-26-0234</cbc:ID>
+        <cbc:ID>BS-RA-26-0235</cbc:ID>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
-    <cac:BillingReference>
-      <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0235</cbc:ID>
-      </cac:InvoiceDocumentReference>
-      <cac:BillingReferenceLine>
-        <cbc:ID>1</cbc:ID>
-      </cac:BillingReferenceLine>
-    </cac:BillingReference>
-    <cac:Delivery>
-      <cbc:ActualDeliveryDate>2026-04-30</cbc:ActualDeliveryDate>
-    </cac:Delivery>
-    <cac:TaxTotal>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-    </cac:TaxTotal>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:Amount currencyID="XBL">26.00</cbc:Amount>
-      <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
-    </cac:AllowanceCharge>
+    <cac:DocumentReference>
+      <cbc:ID>LD-DS-B180</cbc:ID>
+    </cac:DocumentReference>
+    <cac:PricingReference>
+      <cac:OriginalItemLocationQuantity>
+        <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
+      </cac:OriginalItemLocationQuantity>
+    </cac:PricingReference>
+    <cac:PaymentTerms>
+      <cbc:Note>The promotion stock is paid with the invoice, 30 days net.</cbc:Note>
+    </cac:PaymentTerms>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1365,9 +1456,6 @@ Inside `CreditNoteLine`:
     <cac:DeliveryTerms>
       <cbc:ID schemeID="INCOTERMS">DDP</cbc:ID>
     </cac:DeliveryTerms>
-    <cac:ItemPriceExtension>
-      <cbc:Amount currencyID="XBL">520.00</cbc:Amount>
-    </cac:ItemPriceExtension>
-  </cac:CreditNoteLine>
-</CreditNote>
+  </cac:InvoiceLine>
+</Invoice>
 ```

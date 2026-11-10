@@ -232,6 +232,11 @@
       <cbc:Description>Valdara Industries, goods-in, Ferrano</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -250,7 +255,8 @@
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">34560.00</cbc:PayableAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>

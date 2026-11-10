@@ -4,17 +4,17 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-DOC-26-0323</cbc:ID>
-  <cbc:UUID>07c60e96-9140-5775-a99d-f7b75b652e52</cbc:UUID>
+  <cbc:ID>ST-DOC-26-0324</cbc:ID>
+  <cbc:UUID>7b60d4fc-8fd7-5124-9e01-cfc520caed86</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>12:03:00</cbc:IssueTime>
+  <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Telephone</cbc:UtilityStatementTypeCode>
   <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cac:ParentDocumentReference>
-    <cbc:ID>ST-INV-26-0322</cbc:ID>
+    <cbc:ID>ST-INV-26-0323</cbc:ID>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>ST-TARIFF-2026</cbc:ID>

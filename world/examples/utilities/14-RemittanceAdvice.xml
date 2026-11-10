@@ -5,9 +5,9 @@
   <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
-  <cbc:UUID>bc63ad42-06f6-5e44-be9d-79eb5a603b68</cbc:UUID>
+  <cbc:UUID>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
-  <cbc:IssueTime>11:19:00</cbc:IssueTime>
+  <cbc:IssueTime>11:40:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XLC">135.566</cbc:TotalDebitAmount>
@@ -15,7 +15,7 @@
   <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:PayerReference>VT-0313</cbc:PayerReference>
-  <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>
+  <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -23,7 +23,7 @@
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>ST-INV-26-0322</cbc:ID>
+      <cbc:ID>ST-INV-26-0323</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
@@ -178,7 +178,7 @@
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:InstructionID>VT-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID>RF53STINV260322</cbc:PaymentID>
+    <cbc:PaymentID>RF26STINV260323</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL13BSEL0003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
@@ -217,6 +217,7 @@
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:BlockchainID>CORAL-NET-L1</cbc:BlockchainID>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -249,7 +250,7 @@
     <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
     <cac:AccountingSupplierParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -276,12 +277,12 @@
     </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>ST-INV-26-0322</cbc:ID>
+        <cbc:ID>ST-INV-26-0323</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
     <cac:DocumentReference>
-      <cbc:ID>ST-INV-26-0322</cbc:ID>
+      <cbc:ID>ST-INV-26-0323</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
     </cac:DocumentReference>

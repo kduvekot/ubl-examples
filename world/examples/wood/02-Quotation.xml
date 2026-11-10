@@ -249,6 +249,11 @@
   <cac:TransactionConditions>
     <cbc:Description>Quoted per thousand slats; minimum one truck.</cbc:Description>
   </cac:TransactionConditions>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:DestinationCountry>
     <cbc:IdentificationCode>XU</cbc:IdentificationCode>
   </cac:DestinationCountry>
@@ -257,7 +262,8 @@
   </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">34560.00</cbc:PayableAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cbc:ID>1</cbc:ID>

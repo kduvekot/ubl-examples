@@ -3069,6 +3069,9 @@ def utilities(n, doc):
 
 
 # ---------------------------------------------------------------- the wood flow (Bayvarra -> Urvania, and at home)
+PALLETS_CHARGE = {"like": "slat-1800", "amount": "240.00", "reason": "Heat-treated export pallets",
+                  "why": "96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.",
+                  "amount_why": "96 pallets at 2.50 lume."}
 SLATS = [{"item": "slat-1800", "ordered": 4800, "why": "Slats for 960 benches: five per bench, 96 bundles of 50."}]
 TIMBER = [{"item": "timber-beam", "ordered": 12, "why": "Hardwood for a month of furniture production."}]
 WOOD = kit.Flow("wood", "2026-02-16", SLATS)
@@ -3134,7 +3137,8 @@ def wood(n, doc):
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
         return kit.invoice(f, n, doc, 10, 30, "Issued when the slats leave.",
                            {"OrderReference": ref(f, "order", "The manufacturer's order.")},
-                           [{"item": "slat-1800", "qty": 4800, "invoice_why": "The slats despatched."}])
+                           [{"item": "slat-1800", "qty": 4800, "invoice_why": "The slats despatched."}],
+                           charges=[PALLETS_CHARGE])
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 38, "The manufacturer pays across the border.")
     if doc["doc"] == "Order":
@@ -8083,3 +8087,159 @@ def _(f, n, doc, out):
     return {"AllowanceCharge": {"ChargeIndicator": V("true", "The charges in the account, summed."),
                                 "AllowanceChargeReason": V("Freight and insurance of the CIF invoice", "Why."),
                                 "Amount": amount(SEA_FREIGHT + INSURANCE, "XBL", "Included in the balance.")}}
+
+
+def retail_complete(n, doc):
+    f = RETAIL
+    if doc["doc"] == "TransportationStatus":
+        return kit.transportation_status(
+            f, n, doc, 9, "Answered the same morning.", "On its way from the distribution centre; arrival expected "
+                                                        "at 14:00.", "Marrowdale ring road",
+            {"CarrierAssignedID": V("BF-ROAD-26-0231", "The carrier's own number for the job."),
+             "TransportationStatusRequestDocumentReference": {"ID": V(f.numbers["ts-request"], "The request "
+                                                                                               "answered.")},
+             "TransportationStatusTypeCode": V("Current", "The current status."),
+             "UpdatedDeliveryTransportEvent": {"OccurrenceDate": V(f.date(9), "Today."),
+                                               "OccurrenceTime": V("14:00:00", "The expected arrival."),
+                                               "Description": V("Expected arrival at the store.", "In words.")}})
+    return retail(n, doc)
+
+
+SCENARIOS["retail"] = _with_enrichment("retail", retail_complete)
+
+
+def pallets_charge(cur="XBL"):
+    return {"ChargeIndicator": V("true", "A charge."),
+            "AllowanceChargeReason": V(PALLETS_CHARGE["reason"], PALLETS_CHARGE["why"]),
+            "Amount": amount(Decimal(PALLETS_CHARGE["amount"]), cur, PALLETS_CHARGE["amount_why"])}
+
+
+@enrich("wood", "Quotation")
+def _(f, n, doc, out):
+    q = out["QuotedMonetaryTotal"]
+    base = Decimal(q["LineExtensionAmount"].value)
+    ch = Decimal(PALLETS_CHARGE["amount"])
+    q["ChargeTotalAmount"] = amount(ch, "XBL", "The export pallets.")
+    q["PayableAmount"] = amount(base + ch, "XBL", "The slats and the pallets; no tax on an export.")
+    return {"AllowanceCharge": pallets_charge()}
+
+
+@enrich("wood", "Order")
+def _(f, n, doc, out):
+    if doc["from"] != "5-xu":
+        return {}
+    a = out["AnticipatedMonetaryTotal"]
+    base = Decimal(a["LineExtensionAmount"].value)
+    ch = Decimal(PALLETS_CHARGE["amount"])
+    a["ChargeTotalAmount"] = amount(ch, "XBL", "The export pallets, as quoted.")
+    a["PayableAmount"] = amount(base + ch, "XBL", "The slats and the pallets.")
+    return {"AllowanceCharge": pallets_charge()}
+
+
+STT_RETAIL = Decimal("0.065")
+
+
+@enrich("retail", "PurchaseReceipt")
+def _(f, n, doc, out):
+    delivery = Decimal("25.00")
+    base = Decimal(out["LegalMonetaryTotal"]["LineExtensionAmount"].value) + delivery
+    tax = money(base * STT_RETAIL, "XBL")
+    total = base + tax
+    out["TaxTotal"]["TaxAmount"] = amount(tax, "XBL", "6.5 % state sales tax on the bench and the delivery.")
+    st = out["TaxTotal"]["TaxSubtotal"][0] if isinstance(out["TaxTotal"]["TaxSubtotal"], list) else \
+        out["TaxTotal"]["TaxSubtotal"]
+    st["TaxableAmount"] = amount(base, "XBL", "The bench and the home delivery.")
+    st["TaxAmount"] = amount(tax, "XBL", "6.5 %.")
+    lmt = out["LegalMonetaryTotal"]
+    lmt.update({"ChargeTotalAmount": amount(delivery, "XBL", "The home delivery."),
+                "TaxExclusiveAmount": amount(base, "XBL", "Before the sales tax."),
+                "TaxInclusiveAmount": amount(total, "XBL", "With the sales tax."),
+                "PayableAmount": amount(total, "XBL", "Paid by card: no cash rounding.")})
+    out["Payment"]["PaidAmount"] = amount(total, "XBL", "Paid by card.")
+    ca = out["PaymentMeans"]["CardAccount"]
+    ca["CV2ID"] = V("***", "Masked: card rules forbid printing or storing the card's security code.")
+    ca["IssueNumberID"] = V("01", "The card's issue number: the first card of this account.")
+    for ln in lines_of(out, "PurchaseReceiptLine"):
+        ln["UUID"] = line_uuid(f, "receipt-pos", ln["ID"].value)
+    return {"AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
+                                "AllowanceChargeReason": V("Home delivery", "Delivered on Saturday, as booked."),
+                                "Amount": amount(delivery, "XBL", "The store's flat delivery charge."),
+                                "TaxCategory": st["TaxCategory"]}}
+
+
+@enrich("packaging", "PurchaseReceipt")
+def _(f, n, doc, out):
+    ln = out["PurchaseReceiptLine"][0] if isinstance(out["PurchaseReceiptLine"], list) else \
+        out["PurchaseReceiptLine"]
+    gross = Decimal(ln["LineExtensionAmount"].value)
+    off = Decimal("5.00")
+    net = gross - off
+    tax = money(net * STT_RETAIL, "XBL")
+    total = net + tax
+    paid = (total / Decimal("0.05")).quantize(Decimal(1), rounding="ROUND_HALF_UP") * Decimal("0.05")
+    ln["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
+                             "AllowanceChargeReason": V("Two shirts: 5.00 off the pair", "The store's offer."),
+                             "Amount": amount(off, "XBL", "Off the pair."),
+                             "BaseAmount": amount(gross, "XBL", "Two shirts at the shelf price.")}
+    ln["LineExtensionAmount"] = amount(net, "XBL", "Two shirts less the offer.")
+    if "TaxInclusiveLineExtensionAmount" in ln:
+        ln["TaxInclusiveLineExtensionAmount"] = amount(total, "XBL", "With the sales tax.")
+    out["TaxTotal"]["TaxAmount"] = amount(tax, "XBL", "6.5 % state sales tax, the only point where Bayvarra's tax "
+                                                      "is charged.")
+    st = out["TaxTotal"]["TaxSubtotal"][0] if isinstance(out["TaxTotal"]["TaxSubtotal"], list) else \
+        out["TaxTotal"]["TaxSubtotal"]
+    st["TaxableAmount"] = amount(net, "XBL", "The shirts less the offer.")
+    st["TaxAmount"] = amount(tax, "XBL", "6.5 %.")
+    lmt = out["LegalMonetaryTotal"]
+    lmt.update({"LineExtensionAmount": amount(net, "XBL", "The line."),
+                "TaxExclusiveAmount": amount(net, "XBL", "Before tax."),
+                "TaxInclusiveAmount": amount(total, "XBL", "With tax."),
+                "PayableRoundingAmount": amount(paid - total, "XBL", "Cash is rounded to 5 cents, Bayvarra's "
+                                                                     "smallest coin."),
+                "PayableAmount": amount(paid, "XBL", "Paid in cash, rounded.")})
+    pay = out["Payment"]
+    pay["PaidAmount"] = amount(paid, "XBL", "Paid in cash.")
+    cash = Decimal(pay["PaidCashAmount"].value)
+    pay["CashChangeAmount"] = amount(cash - paid, "XBL", "The change given.")
+    return {}
+
+
+@enrich("sea", "DebitNote")
+def _(f, n, doc, out):
+    fee, storage = Decimal("38.500"), Decimal("12.750")
+    ln = out["DebitNoteLine"]
+    ln["LineExtensionAmount"] = amount(fee, "XLC", "The inspection fee, as customs charged it.")
+    ln["TaxInclusiveLineExtensionAmount"] = amount(fee, "XLC", "No tax on the island.")
+    ln["Note"] = V("Customs inspection of the container at Selanu.", "What is charged.")
+    out["CollectionDebitNoteLine"] = {
+        "ID": V("2", "The collection line."),
+        "Note": V("The port's storage charge for the day the container was held, collected for the port.", "What "
+                                                                                                          "it is."),
+        "DebitedQuantity": qty(1, "DAY", "One day."),
+        "LineExtensionAmount": amount(storage, "XLC", "The port's charge."),
+        "BeneficiaryParty": party(HARBOUR, short=True),
+        "Item": {"Name": V("Container storage at the port of Selanu", "What is collected.")}}
+    out["LineCountNumeric"] = V("2", "The inspection and the port's storage, collected; the totals include both.")
+    return {}
+
+
+def utilities_complete(n, doc):
+    f = UTILITIES
+    if doc["doc"] == "CreditNote":
+        rows = [{"item": "water", "qty": 2, "why": "Two cubic metres the meter over-read in March."},
+                {"item": "sewage-levy", "qty": 2, "why": "The city's levy on them."}]
+        out = kit.credit_note(f, n, doc, 34, "Issued when the meter test was in.", rows,
+                              {"BillingReference": {"InvoiceDocumentReference": {
+                                  "ID": V(f.numbers["invoice-34-xb:c-xb"], "The March bill corrected."),
+                                  "IssueDate": V(f.numbers["invoice-34-xb:c-xb-date"], "Its issue date.")}},
+                               "Note": V("The meter test found the meter over-reading by two cubic metres.", "Why.")})
+        levy = out["CreditNoteLine"].pop(1)
+        levy["BeneficiaryParty"] = party("2-xb", short=True)
+        levy["Note"] = V("The city's levy, credited for the city.", "Why it is a collection line.")
+        out["CollectionCreditNoteLine"] = levy
+        out["LineCountNumeric"] = V("2", "The water and the collection line of the levy; the totals include both.")
+        return out
+    return utilities(n, doc)
+
+
+SCENARIOS["utilities"] = _with_enrichment("utilities", utilities_complete)

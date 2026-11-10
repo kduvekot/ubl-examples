@@ -1007,6 +1007,17 @@
   },
   {
    "flow": "retail",
+   "doc": "TransportationStatus",
+   "from": "10-xb",
+   "to": "6-xb",
+   "why": "The carrier answers the request: the truck is on its way and arrives in the afternoon.",
+   "parties": {
+    "SenderParty": "10-xb",
+    "ReceiverParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
    "doc": "Invoice",
    "from": "10-xb",
    "to": "6-xb",
@@ -2168,6 +2179,17 @@
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "CreditNote",
+   "from": "34-xb",
+   "to": "c-xb",
+   "why": "After the reminder the household had its meter tested: it over-read by two cubic metres in March. The utility credits the water and the city's levy on them.",
+   "parties": {
+    "AccountingSupplierParty": "34-xb",
+    "AccountingCustomerParty": "c-xb"
    }
   },
   {

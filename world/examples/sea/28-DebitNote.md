@@ -48,8 +48,8 @@ One pallet's heat-treatment mark was illegible, so customs inspected the contain
   The buyer's cost centre.
 - `AccountingCost` = **Stock for municipal projects**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
-  One line.
+- `LineCountNumeric` = **2**  
+  The inspection and the port's storage, collected; the totals include both.
 
 ### Invoice Period
 
@@ -555,6 +555,25 @@ Inside `LegalMonetaryTotal`:
 - `PayableAlternativeAmount` = **128.13** (currencyID `XBL`)  
   The same in lume.
 
+### Collection Debit Note Line
+
+Inside `CollectionDebitNoteLine`:
+
+- `ID` = **2**  
+  The collection line.
+- `Note` = **The port's storage charge for the day the container was held, collected for the port.**  
+  What it is.
+- `DebitedQuantity` = **1** (unitCode `DAY`)  
+  One day.
+- `LineExtensionAmount` = **12.750** (currencyID `XLC`)  
+  The port's charge.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/Name` = **Container storage at the port of Selanu**  
+  What is collected.
+
 ### Debit Note Line
 
 Inside `DebitNoteLine`:
@@ -567,9 +586,9 @@ Inside `DebitNoteLine`:
   What is charged.
 - `DebitedQuantity` = **1** (unitCode `E48`)  
   One inspection.
-- `LineExtensionAmount` = **51.250** (currencyID `XLC`)  
-  Inspection and storage, as customs charged them.
-- `TaxInclusiveLineExtensionAmount` = **51.250** (currencyID `XLC`)  
+- `LineExtensionAmount` = **38.500** (currencyID `XLC`)  
+  The inspection fee, as customs charged it.
+- `TaxInclusiveLineExtensionAmount` = **38.500** (currencyID `XLC`)  
   No tax on the island.
 - `TaxPointDate` = **2026-05-20**  
   The day customs charged the fee.
@@ -674,7 +693,7 @@ Inside `DebitNoteLine`:
   <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-05-18</cbc:StartDate>
     <cbc:EndDate>2026-05-19</cbc:EndDate>
@@ -1026,13 +1045,30 @@ Inside `DebitNoteLine`:
     <cbc:PayableAmount currencyID="XLC">51.250</cbc:PayableAmount>
     <cbc:PayableAlternativeAmount currencyID="XBL">128.13</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
+  <cac:CollectionDebitNoteLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>The port's storage charge for the day the container was held, collected for the port.</cbc:Note>
+    <cbc:DebitedQuantity unitCode="DAY">1</cbc:DebitedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">12.750</cbc:LineExtensionAmount>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
+    <cac:Item>
+      <cbc:Name>Container storage at the port of Selanu</cbc:Name>
+    </cac:Item>
+  </cac:CollectionDebitNoteLine>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>5c8d9fe8-7400-5393-836e-91e7de617c83</cbc:UUID>
     <cbc:Note>Customs inspection of the container at Selanu.</cbc:Note>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">51.250</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">51.250</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">38.500</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">38.500</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
     <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
     <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>

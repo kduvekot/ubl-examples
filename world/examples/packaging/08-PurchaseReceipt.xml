@@ -189,9 +189,9 @@
     <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
   </cac:PointOfSaleContact>
   <cac:Payment>
-    <cbc:PaidAmount currencyID="XBL">63.80</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XBL">58.45</cbc:PaidAmount>
     <cbc:PaidCashAmount currencyID="XBL">70.00</cbc:PaidCashAmount>
-    <cbc:CashChangeAmount currencyID="XBL">6.20</cbc:CashChangeAmount>
+    <cbc:CashChangeAmount currencyID="XBL">11.55</cbc:CashChangeAmount>
     <cbc:PaidDate>2026-05-22</cbc:PaidDate>
     <cbc:PaidTime>16:05:00</cbc:PaidTime>
   </cac:Payment>
@@ -199,10 +199,10 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>
   </cac:PaymentMeans>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">3.89</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XBL">3.57</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">59.90</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">3.89</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XBL">54.90</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">3.57</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>
@@ -213,16 +213,22 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">59.90</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">63.79</cbc:TaxInclusiveAmount>
-    <cbc:PayableRoundingAmount currencyID="XBL">0.01</cbc:PayableRoundingAmount>
-    <cbc:PayableAmount currencyID="XBL">63.80</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54.90</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">54.90</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">58.47</cbc:TaxInclusiveAmount>
+    <cbc:PayableRoundingAmount currencyID="XBL">-0.02</cbc:PayableRoundingAmount>
+    <cbc:PayableAmount currencyID="XBL">58.45</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Quantity unitCode="H87">2</cbc:Quantity>
-    <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54.90</cbc:LineExtensionAmount>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Two shirts: 5.00 off the pair</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
+      <cbc:BaseAmount currencyID="XBL">59.90</cbc:BaseAmount>
+    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>

@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-INV-26-0233</cbc:ID>
-  <cbc:UUID>edc572c1-3523-5447-98dd-bde758d366e2</cbc:UUID>
+  <cbc:ID>BF-INV-26-0234</cbc:ID>
+  <cbc:UUID>bd9692ab-c902-5cad-bc2f-37c7464afe3c</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
-  <cbc:IssueTime>11:49:00</cbc:IssueTime>
+  <cbc:IssueTime>10:31:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
@@ -237,15 +237,15 @@
     <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF93BFINV260233</cbc:InstructionNote>
-    <cbc:PaymentID>RF93BFINV260233</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF66BFINV260234</cbc:InstructionNote>
+    <cbc:PaymentID>RF66BFINV260234</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB10BLUM0002618225</cbc:ID>
       <cbc:Name>Bayforth Forwarding Ltd</cbc:Name>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BF-INV-26-0233</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BF-INV-26-0234</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BLUM-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>

@@ -284,6 +284,17 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Description` = **Valdara Industries, goods-in, Ferrano**  
   Where the delivery terms place the handover of the goods.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge.
+- `AllowanceChargeReason` = **Heat-treated export pallets**  
+  96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.
+- `Amount` = **240.00** (currencyID `XBL`)  
+  96 pallets at 2.50 lume.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -311,8 +322,10 @@ Inside `AnticipatedMonetaryTotal`:
 
 - `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **34560.00** (currencyID `XBL`)  
-  What the buyer expects to pay, tax included.
+- `ChargeTotalAmount` = **240.00** (currencyID `XBL`)  
+  The export pallets, as quoted.
+- `PayableAmount` = **34800.00** (currencyID `XBL`)  
+  The slats and the pallets.
 
 ### Order Line
 
@@ -676,6 +689,11 @@ Inside `OrderLine`:
       <cbc:Description>Valdara Industries, goods-in, Ferrano</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -694,7 +712,8 @@ Inside `OrderLine`:
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">34560.00</cbc:PayableAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>

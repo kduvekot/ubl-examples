@@ -1,10 +1,10 @@
 # Remittance Advice: Velumi Trading to Selanu Telecom
 
-*Example 13 of the flow "Electricity, water and telecom (one utility in each country)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
+*Example 14 of the flow "Electricity, water and telecom (one utility in each country)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
 
 The buyer pays the telecom bill from its account at the island's bank.
 
-[The XML file](13-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](14-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -20,11 +20,11 @@ The buyer pays the telecom bill from its account at the island's bank.
   This run of the process: the same in every document of the flow.
 - `ID` = **VI-RM-26-0316**  
   The payer's remittance number.
-- `UUID` = **bc63ad42-06f6-5e44-be9d-79eb5a603b68**  
+- `UUID` = **bcb6eadf-33b2-550e-b57c-1a63cfc06bfc**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-19**  
   Paid before the due date.
-- `IssueTime` = **11:19:00**  
+- `IssueTime` = **11:40:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `Note` = **Payment of the invoice below.**  
   What the advice is for.
@@ -40,7 +40,7 @@ The buyer pays the telecom bill from its account at the island's bank.
   The payment order the payer gave its bank.
 - `PayerReference` = **VT-0313**  
   The payer's own reference for this payment run.
-- `InvoicingPartyReference` = **RF53STINV260322**  
+- `InvoicingPartyReference` = **RF26STINV260323**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
   The invoice paid.
@@ -58,7 +58,7 @@ Inside `InvoicePeriod`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **ST-INV-26-0322**  
+- `InvoiceDocumentReference/ID` = **ST-INV-26-0323**  
   The invoice this payment settles.
 
 ### Additional Document Reference
@@ -243,7 +243,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer.
 - `InstructionID` = **VT-PAY-26-0313**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF53STINV260322**  
+- `PaymentID` = **RF26STINV260323**  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically.
 - `PayerFinancialAccount/ID` = **XL13BSEL0003665515** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -287,6 +287,8 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC**  
   The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/BlockchainID` = **CORAL-NET-L1**  
+  The account holds tokenised coral deposits on the Bank of Selanu's ledger, which Coral net settles on (world/countries.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BSEL-001**  
   The branch that keeps the account.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
@@ -322,7 +324,7 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **SUPP**  
   ISO 20022 purpose code SUPP: payment to a supplier.
-- `InvoicingPartyReference` = **RF53STINV260322**  
+- `InvoicingPartyReference` = **RF26STINV260323**  
   The reference the invoicing party asked to quote.
 - `AccountingSupplierParty/Party/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -336,11 +338,11 @@ Inside `RemittanceAdviceLine`:
   March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
   Its end.
-- `BillingReference/InvoiceDocumentReference/ID` = **ST-INV-26-0322**  
+- `BillingReference/InvoiceDocumentReference/ID` = **ST-INV-26-0323**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
   Its issue date, so the reference is unambiguous.
-- `DocumentReference/ID` = **ST-INV-26-0322**  
+- `DocumentReference/ID` = **ST-INV-26-0323**  
   The invoice paid, as a document reference.
 - `DocumentReference/IssueDate` = **2026-04-02**  
   Its issue date.
@@ -357,9 +359,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
-  <cbc:UUID>bc63ad42-06f6-5e44-be9d-79eb5a603b68</cbc:UUID>
+  <cbc:UUID>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
-  <cbc:IssueTime>11:19:00</cbc:IssueTime>
+  <cbc:IssueTime>11:40:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XLC">135.566</cbc:TotalDebitAmount>
@@ -367,7 +369,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:PayerReference>VT-0313</cbc:PayerReference>
-  <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>
+  <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -375,7 +377,7 @@ Inside `RemittanceAdviceLine`:
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>ST-INV-26-0322</cbc:ID>
+      <cbc:ID>ST-INV-26-0323</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
@@ -530,7 +532,7 @@ Inside `RemittanceAdviceLine`:
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:InstructionID>VT-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID>RF53STINV260322</cbc:PaymentID>
+    <cbc:PaymentID>RF26STINV260323</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL13BSEL0003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
@@ -569,6 +571,7 @@ Inside `RemittanceAdviceLine`:
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:BlockchainID>CORAL-NET-L1</cbc:BlockchainID>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -601,7 +604,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
     <cac:AccountingSupplierParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -628,12 +631,12 @@ Inside `RemittanceAdviceLine`:
     </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>ST-INV-26-0322</cbc:ID>
+        <cbc:ID>ST-INV-26-0323</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
     <cac:DocumentReference>
-      <cbc:ID>ST-INV-26-0322</cbc:ID>
+      <cbc:ID>ST-INV-26-0323</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
     </cac:DocumentReference>

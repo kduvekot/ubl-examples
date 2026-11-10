@@ -324,6 +324,17 @@ Inside `TransactionConditions`:
 - `Description` = **Quoted per thousand slats; minimum one truck.**  
   The conditions.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge.
+- `AllowanceChargeReason` = **Heat-treated export pallets**  
+  96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.
+- `Amount` = **240.00** (currencyID `XBL`)  
+  96 pallets at 2.50 lume.
+
 ### Destination Country
 
 Inside `DestinationCountry`:
@@ -344,8 +355,10 @@ Inside `QuotedMonetaryTotal`:
 
 - `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
   The sum of the quoted lines.
-- `PayableAmount` = **34560.00** (currencyID `XBL`)  
-  The quoted total, before any tax.
+- `ChargeTotalAmount` = **240.00** (currencyID `XBL`)  
+  The export pallets.
+- `PayableAmount` = **34800.00** (currencyID `XBL`)  
+  The slats and the pallets; no tax on an export.
 
 ### Quotation Line
 
@@ -754,6 +767,11 @@ Inside `QuotationLine`:
   <cac:TransactionConditions>
     <cbc:Description>Quoted per thousand slats; minimum one truck.</cbc:Description>
   </cac:TransactionConditions>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:DestinationCountry>
     <cbc:IdentificationCode>XU</cbc:IdentificationCode>
   </cac:DestinationCountry>
@@ -762,7 +780,8 @@ Inside `QuotationLine`:
   </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">34560.00</cbc:PayableAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cbc:ID>1</cbc:ID>

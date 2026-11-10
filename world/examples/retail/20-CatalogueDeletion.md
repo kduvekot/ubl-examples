@@ -1,10 +1,10 @@
 # Catalogue Deletion: Lumeway Distribution to Brightmarket Stores
 
-*Example 19 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Catalogue Deletion in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-DELETION-SCHEMA)*
+*Example 20 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Catalogue Deletion in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-DELETION-SCHEMA)*
 
 The spring catalogue ends; the distributor deletes it before the summer catalogue.
 
-[The XML file](19-CatalogueDeletion.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](20-CatalogueDeletion.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,15 +18,15 @@ The spring catalogue ends; the distributor deletes it before the summer catalogu
   The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0237**  
+- `ID` = **LD-DOC-26-0238**  
   The sender's number for this document.
-- `UUID` = **3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29**  
+- `UUID` = **f9877c55-f962-5da6-86c9-7b721989951a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `Name` = **Withdrawal of the spring catalogue**  
   What it is.
 - `IssueDate` = **2026-06-19**  
   The spring catalogue is withdrawn before the summer one.
-- `IssueTime` = **13:26:00**  
+- `IssueTime` = **17:05:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `EffectiveDate` = **2026-06-20**  
   From the next day.
@@ -346,11 +346,11 @@ Inside `ContractorCustomerParty`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0237</cbc:ID>
-  <cbc:UUID>3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29</cbc:UUID>
+  <cbc:ID>LD-DOC-26-0238</cbc:ID>
+  <cbc:UUID>f9877c55-f962-5da6-86c9-7b721989951a</cbc:UUID>
   <cbc:Name>Withdrawal of the spring catalogue</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
-  <cbc:IssueTime>13:26:00</cbc:IssueTime>
+  <cbc:IssueTime>17:05:00</cbc:IssueTime>
   <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
   <cbc:EffectiveTime>00:00:00</cbc:EffectiveTime>
   <cbc:Note>Replaced by the summer catalogue.</cbc:Note>

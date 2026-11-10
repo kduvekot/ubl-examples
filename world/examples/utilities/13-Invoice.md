@@ -1,10 +1,10 @@
 # Invoice: Selanu Telecom to Velumi Trading
 
-*Example 12 of the flow "Electricity, water and telecom (one utility in each country)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+*Example 13 of the flow "Electricity, water and telecom (one utility in each country)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
 The telecom bill. The island has no sales tax or VAT, and the invoice says that no tax applies rather than leaving it out.
 
-[The XML file](12-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](13-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
   The business process the document belongs to: the flow "Electricity, water and telecom (one utility in each country)".
 - `ProfileExecutionID` = **UTILITIES-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **ST-INV-26-0322**  
+- `ID` = **ST-INV-26-0323**  
   The seller's invoice number.
-- `UUID` = **d34bf420-eb98-5f5f-9d06-271cb4ca7e5a**  
+- `UUID` = **0228817f-8a56-5781-a34c-99eedb2ee7ee**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   The monthly bill, issued on the first day of the next month.
-- `IssueTime` = **17:37:00**  
+- `IssueTime` = **11:19:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
   21 days after the issue date, the agreed payment term.
@@ -253,9 +253,9 @@ Inside `PaymentMeans`:
   Paid to an account identified in the format of ISO 13616.
 - `PaymentRailID` = **CORAL-NET**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF53STINV260322**  
+- `InstructionNote` = **Quote RF26STINV260323**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF53STINV260322**  
+- `PaymentID` = **RF26STINV260323**  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
 - `PayeeFinancialAccount/ID` = **XL88BSEL0004293889** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -267,7 +267,9 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC**  
   The account is kept in the currency of the bank's country.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice ST-INV-26-0322**  
+- `PayeeFinancialAccount/BlockchainID` = **CORAL-NET-L1**  
+  The account holds tokenised coral deposits on the Bank of Selanu's ledger, which Coral net settles on (world/countries.json).
+- `PayeeFinancialAccount/PaymentNote` = **Invoice ST-INV-26-0323**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BSEL-001**  
   The branch that keeps the account.
@@ -444,10 +446,10 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-INV-26-0322</cbc:ID>
-  <cbc:UUID>d34bf420-eb98-5f5f-9d06-271cb4ca7e5a</cbc:UUID>
+  <cbc:ID>ST-INV-26-0323</cbc:ID>
+  <cbc:UUID>0228817f-8a56-5781-a34c-99eedb2ee7ee</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:37:00</cbc:IssueTime>
+  <cbc:IssueTime>11:19:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
@@ -627,15 +629,16 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF53STINV260322</cbc:InstructionNote>
-    <cbc:PaymentID>RF53STINV260322</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF26STINV260323</cbc:InstructionNote>
+    <cbc:PaymentID>RF26STINV260323</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL88BSEL0004293889</cbc:ID>
       <cbc:Name>Selanu Telecom Ltd</cbc:Name>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice ST-INV-26-0322</cbc:PaymentNote>
+      <cbc:BlockchainID>CORAL-NET-L1</cbc:BlockchainID>
+      <cbc:PaymentNote>Invoice ST-INV-26-0323</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>

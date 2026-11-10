@@ -261,12 +261,12 @@ Inside `PointOfSaleContact`:
 
 Inside `Payment`:
 
-- `PaidAmount` = **63.80** (currencyID `XBL`)  
-  Paid.
+- `PaidAmount` = **58.45** (currencyID `XBL`)  
+  Paid in cash.
 - `PaidCashAmount` = **70.00** (currencyID `XBL`)  
   The notes the customer handed over.
-- `CashChangeAmount` = **6.20** (currencyID `XBL`)  
-  The change given back.
+- `CashChangeAmount` = **11.55** (currencyID `XBL`)  
+  The change given.
 - `PaidDate` = **2026-05-22**  
   At the till.
 - `PaidTime` = **16:05:00**  
@@ -283,12 +283,12 @@ Inside `PaymentMeans`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **3.89** (currencyID `XBL`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **59.90** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **3.89** (currencyID `XBL`)  
-  6.5 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxAmount` = **3.57** (currencyID `XBL`)  
+  6.5 % state sales tax, the only point where Bayvarra's tax is charged.
+- `TaxSubtotal/TaxableAmount` = **54.90** (currencyID `XBL`)  
+  The shirts less the offer.
+- `TaxSubtotal/TaxAmount` = **3.57** (currencyID `XBL`)  
+  6.5 %.
 - `TaxSubtotal/TaxCategory/ID` = **S**  
   A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S).
 - `TaxSubtotal/TaxCategory/Percent` = **6.5**  
@@ -300,16 +300,16 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **59.90** (currencyID `XBL`)  
-  The sum of the line amounts.
-- `TaxExclusiveAmount` = **59.90** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **63.79** (currencyID `XBL`)  
-  The total without tax plus the tax.
-- `PayableRoundingAmount` = **0.01** (currencyID `XBL`)  
-  The smallest coin of the lume is 5 cents: a cash payment is rounded to 0.05; a card payment is not.
-- `PayableAmount` = **63.80** (currencyID `XBL`)  
-  What the customer pays in cash, rounded to 5 cents.
+- `LineExtensionAmount` = **54.90** (currencyID `XBL`)  
+  The line.
+- `TaxExclusiveAmount` = **54.90** (currencyID `XBL`)  
+  Before tax.
+- `TaxInclusiveAmount` = **58.47** (currencyID `XBL`)  
+  With tax.
+- `PayableRoundingAmount` = **-0.02** (currencyID `XBL`)  
+  Cash is rounded to 5 cents, Bayvarra's smallest coin.
+- `PayableAmount` = **58.45** (currencyID `XBL`)  
+  Paid in cash, rounded.
 
 ### Purchase Receipt Line
 
@@ -319,8 +319,16 @@ Inside `PurchaseReceiptLine`:
   The line number.
 - `Quantity` = **2** (unitCode `H87`)  
   Two shirts.
-- `LineExtensionAmount` = **59.90** (currencyID `XBL`)  
-  Quantity times the price paid, before the sales tax.
+- `LineExtensionAmount` = **54.90** (currencyID `XBL`)  
+  Two shirts less the offer.
+- `AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance on the line.
+- `AllowanceCharge/AllowanceChargeReason` = **Two shirts: 5.00 off the pair**  
+  The store's offer.
+- `AllowanceCharge/Amount` = **5.00** (currencyID `XBL`)  
+  Off the pair.
+- `AllowanceCharge/BaseAmount` = **59.90** (currencyID `XBL`)  
+  Two shirts at the shelf price.
 - `Item/Description` = **Men's cotton shirt; the state sales tax is added at the till.**  
   The seller's description; item shirt-r of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Cotton shirt**  
@@ -558,9 +566,9 @@ Inside `PurchaseReceiptLine`:
     <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
   </cac:PointOfSaleContact>
   <cac:Payment>
-    <cbc:PaidAmount currencyID="XBL">63.80</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XBL">58.45</cbc:PaidAmount>
     <cbc:PaidCashAmount currencyID="XBL">70.00</cbc:PaidCashAmount>
-    <cbc:CashChangeAmount currencyID="XBL">6.20</cbc:CashChangeAmount>
+    <cbc:CashChangeAmount currencyID="XBL">11.55</cbc:CashChangeAmount>
     <cbc:PaidDate>2026-05-22</cbc:PaidDate>
     <cbc:PaidTime>16:05:00</cbc:PaidTime>
   </cac:Payment>
@@ -568,10 +576,10 @@ Inside `PurchaseReceiptLine`:
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>
   </cac:PaymentMeans>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">3.89</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XBL">3.57</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">59.90</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">3.89</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XBL">54.90</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">3.57</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>
@@ -582,16 +590,22 @@ Inside `PurchaseReceiptLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">59.90</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">63.79</cbc:TaxInclusiveAmount>
-    <cbc:PayableRoundingAmount currencyID="XBL">0.01</cbc:PayableRoundingAmount>
-    <cbc:PayableAmount currencyID="XBL">63.80</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54.90</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">54.90</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">58.47</cbc:TaxInclusiveAmount>
+    <cbc:PayableRoundingAmount currencyID="XBL">-0.02</cbc:PayableRoundingAmount>
+    <cbc:PayableAmount currencyID="XBL">58.45</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Quantity unitCode="H87">2</cbc:Quantity>
-    <cbc:LineExtensionAmount currencyID="XBL">59.90</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54.90</cbc:LineExtensionAmount>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Two shirts: 5.00 off the pair</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
+      <cbc:BaseAmount currencyID="XBL">59.90</cbc:BaseAmount>
+    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>

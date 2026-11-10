@@ -1,10 +1,10 @@
-# Purchase Receipt: Brightmarket Stores to Robin Ashdale
+# Receipt Advice: Brightmarket Stores to Lumeway Distribution
 
-*Example 20 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Purchase Receipt in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA)*
+*Example 17 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Receipt Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA)*
 
-A consumer buys in the shop and gets a receipt.
+The shop confirms the delivery and reports a damaged carton.
 
-[The XML file](20-PurchaseReceipt.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](17-ReceiptAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,64 +18,66 @@ A consumer buys in the shop and gets a receipt.
   The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BS-PR-26-0238**  
-  The till's receipt number.
-- `UUID` = **e73b5098-18b8-52b8-b457-5eb5411168d5**  
+- `ID` = **BS-RA-26-0235**  
+  The receiving party's number.
+- `UUID` = **aa88e826-e531-55ed-8ac7-22b653697864**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-15**  
-  A consumer buys a bench during the promotion week.
-- `IssueTime` = **11:42:00**  
-  Printed at the till.
-- `TransactionDate` = **2026-05-15**  
-  The day of the sale.
-- `TransactionTime` = **11:42:00**  
-  The time of the sale.
-- `PurchaseDate` = **2026-05-15**  
-  The day the customer bought.
-- `PurchaseTime` = **11:42:00**  
-  And when.
-- `Note` = **Home delivery booked for Saturday.**  
-  Printed on the receipt.
-- `DocumentCurrencyCode` = **XBL**  
-  The lume, the currency of the shop; it has two decimals.
+- `IssueDate` = **2026-04-30**  
+  The day the goods were unloaded at the store.
+- `IssueTime` = **15:21:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A first receipt advice.
+- `ReceiptAdviceTypeCode` = **Actual**  
+  UBL's receipt advice type code: the goods actually received.
+- `DeliveryAcceptanceCode` = **Partial**  
+  Part of the goods refused.
+- `RejectReasonCode` = **Damaged**  
+  The reason for the part refused.
+- `RejectReason` = **Damaged in transit.**  
+  In words.
+- `RejectActionCode` = **Credit**  
+  A credit is asked for the refused goods.
+- `Note` = **Counted and checked at goods-in.**  
+  How the goods were received.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
-### Purchase Reference
+### Order Reference
 
-Inside `PurchaseReference`:
+Inside `OrderReference`:
 
-- `ID` = **BM-LOYAL-0088127**  
-  The customer's loyalty card.
-- `Description` = **Loyalty card**  
-  What the number is.
+- `ID` = **BS-PO-26-0224**  
+  The order the goods were delivered for.
 
-### Sales Document Reference
+### Despatch Document Reference
 
-Inside `SalesDocumentReference`:
+Inside `DespatchDocumentReference`:
 
-- `ID` = **BM-DEL-26-0518-07**  
-  The home delivery order.
+- `ID` = **LD-DA-26-0229**  
+  The despatch advice this receipt answers.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **VI-WARRANTY-B180**  
-  The maker's warranty card.
+- `ID` = **BM-GI-PHOTO-26-0510**  
+  The goods-in photographs.
 
 ### Signature
 
 Inside `Signature`:
 
-- `ID` = **BM-SIG-POS-G2**  
+- `ID` = **BM-SIG-26-RA**  
   The sender's electronic seal.
 - `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
   A party referred to from another party's details: its identifier and name are enough.
 
-### Accounting Supplier Party
+### Delivery Customer Party
 
-Inside `AccountingSupplierParty`:
+Inside `DeliveryCustomerParty`:
 
 - `Party/WebsiteURI` = **https://www.brightmarket.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Brightmarket Stores (world/parties.json).
@@ -194,252 +196,204 @@ Inside `AccountingSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Accounting Customer Party
+### Despatch Supplier Party
 
-Inside `AccountingCustomerParty`:
+Inside `DespatchSupplierParty`:
 
-- `Party/PartyName/Name` = **Robin Ashdale**  
-  The trading name; identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/AddressTypeCode` = **Residential**  
+- `Party/WebsiteURI` = **https://www.lumeway.example**  
+  The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
+- `Party/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
+  A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  The trading name; identity of Lumeway Distribution (world/parties.json).
+- `Party/Language/ID` = **en**  
+  English, the language the party does business in.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **EN**  
+  The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
-- `Party/PostalAddress/StreetName` = **Gull Lane**  
-  Street of the postal address. identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/BuildingNumber` = **57**  
-  Building number of the postal address. identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **38516**  
-  Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Distribution Drive**  
+  Street of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/AdditionalStreetName` = **Gate 3**  
+  The gate of the business park to use. identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/BlockName` = **Marrowdale Business Park**  
+  The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/BuildingNumber` = **43**  
+  Building number of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/PlotIdentification` = **Plot 14**  
+  The plot of the distribution centre in the business park. identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/CityName` = **Marrowdale**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **71214**  
+  Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/CountrySubentity` = **Upland State**  
+  The state, part of an address in federal Bayvarra. identity of Lumeway Distribution (world/parties.json).
+- `Party/PostalAddress/CountrySubentityCode` = **UL**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XB**  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/Person/FirstName` = **Robin**  
-  The consumer's first name; identity of Robin Ashdale (world/parties.json).
-- `Party/Person/FamilyName` = **Ashdale**  
-  The consumer's family name; identity of Robin Ashdale (world/parties.json).
-- `Party/Person/FinancialAccount/ID` = **XB95BLUM0007251840** (schemeID `urn:ubl-examples:world:account`)  
-  The consumer's own account, from which the bills are paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `Party/Person/FinancialAccount/Name` = **Robin Ashdale**  
-  The account holder, as the bank knows it.
-- `Party/Person/FinancialAccount/AccountTypeCode` = **Current**  
-  A current account, for payments in and out.
-- `Party/Person/FinancialAccount/AccountFormatCode` = **ISO13616**  
-  The account number has the structure of ISO 13616.
-- `Party/Person/FinancialAccount/CurrencyCode` = **XBL**  
-  The account is kept in the currency of the bank's country.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
-  The branch that keeps the account.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
-  The branch's name.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
-  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
-  The bank; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
-  The bank's head office; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
-  Its building number; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
-  Its town; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
-  The bank's country.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
-  The branch is at the bank's head office.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
-  Its country.
-- `Party/Person/FinancialAccount/Country/IdentificationCode` = **XB**  
-  The country where the account is kept.
+- `Party/PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
+  The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **UL-1230822**  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyTaxScheme/TaxLevelCode` = **State**  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
+  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
+  The state whose sales tax the party is registered for.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
+  The country whose tax this is.
+- `Party/PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
+  The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20410274**  
+  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyLegalEntity/RegistrationDate` = **1988-10-03**  
+  The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
+  The legal form, as abbreviated in Bayvarra (world/countries.json).
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
+  The legal form, in words.
+- `Party/PartyLegalEntity/EntitySizeCode` = **Medium**  
+  The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
+  The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
+  All shares are paid up.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
+  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
+  The country of registration.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
+  The identifier of the register in the world (world/countries.json).
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
+  The register the company is entered in.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
+  A register of businesses, not a register of charities or associations.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
+  The register covers the whole country.
+- `Party/Contact/Name` = **Customer service**  
+  The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/Department` = **Sales**  
+  The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 7121 0274**  
+  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/ElectronicMail` = **customer@lumeway.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
+  When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Cashier Contact
+### Buyer Customer Party
 
-Inside `CashierContact`:
+Inside `BuyerCustomerParty`:
 
-- `Name` = **Mira**  
-  The cashier, by first name, as printed.
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The same party as at DeliveryCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  The same party as at DeliveryCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 
-### Cash Register
+### Seller Supplier Party
 
-Inside `CashRegister`:
+Inside `SellerSupplierParty`:
 
-- `ID` = **G2**  
-  The till.
-- `SerialNumberID` = **BM-POS-G2-2219**  
-  The till's serial number, as the tax rules require on a receipt.
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The same party as at DespatchSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  The same party as at DespatchSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
-### Point of Sale Location
+### Shipment
 
-Inside `PointOfSaleLocation`:
+Inside `Shipment`:
 
-- `Description` = **Garden department, ground floor**  
-  Where in the shop.
-- `Name` = **Brightmarket Stores, Lumeport**  
-  The shop.
+- `ID` = **LD-SH-26-0230**  
+  The shipment received.
+- `TransportHandlingUnit/ID` = **LD-RT-003**  
+  The pallet with the damaged carton.
+- `TransportHandlingUnit/DamageRemarks` = **One carton torn, the bench's armrest bent.**  
+  What the goods-in found.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/ID` = **1**  
+  The receipt of the pallet.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/ReceivedQuantity` = **3** (unitCode `H87`)  
+  Three benches accepted from this pallet.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/RejectedQuantity` = **1** (unitCode `H87`)  
+  One refused.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/RejectReason` = **Damaged in transit.**  
+  Why.
+- `TransportHandlingUnit/Status/ConditionCode` = **Damaged**  
+  The pallet's condition on arrival.
+- `TransportHandlingUnit/Status/Description` = **Three benches accepted, one refused.**  
+  What was done.
+- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/URI` = **https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg**  
+  The photograph taken at goods-in.
+- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/MimeCode` = **image/jpeg**  
+  A photograph.
+- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/FileName` = **pallet-3.jpg**  
+  The file name.
 
-### Point of Sale Contact
+### Receipt Line
 
-Inside `PointOfSaleContact`:
-
-- `Telephone` = **+999 2 3851 0411**  
-  The shop's number, for questions about the purchase.
-
-### Delivery
-
-Inside `Delivery`:
-
-- `DeliveryAddress/AddressTypeCode` = **Residential**  
-  The kind of address.
-- `DeliveryAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
-- `DeliveryAddress/StreetName` = **Gull Lane**  
-  Street of the postal address. identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/BuildingNumber` = **57**  
-  Building number of the postal address. identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/PostalZone` = **38516**  
-  Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `DeliveryAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
-- `DeliveryAddress/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `RequestedDeliveryPeriod/StartDate` = **2026-05-17**  
-  Saturday.
-- `RequestedDeliveryPeriod/StartTime` = **09:00:00**  
-  Morning.
-- `RequestedDeliveryPeriod/EndTime` = **12:00:00**  
-  Until noon.
-- `CarrierParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `CarrierParty/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Payment
-
-Inside `Payment`:
-
-- `ID` = **BM-G2-26-0518-0047**  
-  The till's number for the payment.
-- `PaidAmount` = **717.92** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
-- `PaidDate` = **2026-05-15**  
-  Paid at the till.
-- `PaidTime` = **11:42:00**  
-  At the time of the sale.
-- `MerchantID` = **LUMECARD-M-0026118**  
-  The store's merchant number with the card scheme.
-- `AuthorizationID` = **A71520**  
-  The approval code of the card issuer.
-- `TransactionID` = **TX-26-0518-773104**  
-  The card transaction.
-- `PaymentTerminalID` = **PT-G2**  
-  The card terminal at the till.
-- `StatusCode` = **Approved**  
-  The payment was approved.
-
-### Payment Means
-
-Inside `PaymentMeans`:
-
-- `PaymentMeansCode` = **55** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 55: debit card.
-- `CardAccount/PrimaryAccountNumberID` = **************4417**  
-  The card number, masked: a receipt shows only the last four digits.
-- `CardAccount/NetworkID` = **LUMECARD**  
-  The card scheme of the world: Lumeport's interbank card.
-- `CardAccount/CardTypeCode` = **Debit**  
-  A debit card.
-- `CardAccount/ValidityStartDate` = **2025-06-01**  
-  The card is valid from.
-- `CardAccount/ExpiryDate` = **2029-05-31**  
-  And until.
-- `CardAccount/IssuerID` = **BLUM**  
-  Issued by the Bank of Lumeport.
-- `CardAccount/CardChipCode` = **Chip**  
-  Read from the chip.
-- `CardAccount/ChipApplicationID` = **A0000099990001**  
-  The chip application used; an identifier of the world, not a registered one.
-- `CardAccount/HolderName` = **R ASHDALE**  
-  The name on the card.
-- `CardAccount/RoleCode` = **Holder**  
-  Paid by the card holder.
-
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **43.82** (currencyID `XBL`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **674.10** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **43.82** (currencyID `XBL`)  
-  6.5 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **S**  
-  A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S).
-- `TaxSubtotal/TaxCategory/Percent` = **6.5**  
-  The rate for this category.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
-
-### Legal Monetary Total
-
-Inside `LegalMonetaryTotal`:
-
-- `LineExtensionAmount` = **674.10** (currencyID `XBL`)  
-  The sum of the line amounts.
-- `TaxExclusiveAmount` = **674.10** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **717.92** (currencyID `XBL`)  
-  The total without tax plus the tax.
-- `PayableAmount` = **717.92** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
-
-### Purchase Receipt Line
-
-Inside `PurchaseReceiptLine`:
+Inside `ReceiptLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Promotion price.**  
-  As printed.
-- `Quantity` = **1** (unitCode `H87`)  
-  One bench.
-- `LineExtensionAmount` = **674.10** (currencyID `XBL`)  
-  Quantity times the price paid, before the sales tax.
-- `TaxInclusiveLineExtensionAmount` = **717.92** (currencyID `XBL`)  
-  With the 6.5 % sales tax.
-- `PurchaseLinePeriod/StartDate` = **2026-05-15**  
-  The warranty runs from the purchase
-- `PurchaseLinePeriod/EndDate` = **2031-05-15**  
-  for five years.
-- `PurchaseReference/ID` = **VI-SF-02170**  
-  The serial number of the bench's frame, for the warranty.
-- `PurchaseReference/Description` = **Frame serial number**  
-  What the number is.
-- `TaxTotal/TaxAmount` = **43.82** (currencyID `XBL`)  
-  The sales tax of the line.
-- `Item/Description` = **The Serra park bench in the store's garden department; the state sales tax is added at the till.**  
-  The seller's description; item bench-serra-r of Brightmarket Stores (world/items.json).
+- `UUID` = **c9e54602-8f02-5581-88af-5ca8d0131f08**  
+  A universally unique identifier of the line, derived from the document and the line number.
+- `Note` = **One bench arrived in a damaged carton and was refused.**  
+  The line in words.
+- `ReceivedQuantity` = **23** (unitCode `H87`)  
+  One bench arrived in a damaged carton and was refused.
+- `RejectedQuantity` = **1** (unitCode `H87`)  
+  Refused at goods-in.
+- `RejectReasonCode` = **Damaged**  
+  Why refused.
+- `RejectReason` = **One bench arrived in a damaged carton and was refused.**  
+  In words.
+- `RejectActionCode` = **Credit**  
+  The receiver asks for a credit, not a replacement.
+- `QuantityDiscrepancyCode` = **Damaged**  
+  Why the quantity differs from the despatch.
+- `ReceivedDate` = **2026-04-30**  
+  Unloaded.
+- `ReceivedTime` = **10:40:00**  
+  Forty minutes after the slot began.
+- `TimingComplaintCode` = **Late**  
+  The truck was late for its slot.
+- `TimingComplaint` = **Arrived 40 minutes into the slot; unloading delayed the next truck.**  
+  The complaint.
+- `OrderLineReference/LineID` = **1**  
+  The order line.
+- `DespatchLineReference/LineID` = **1**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
+  The despatch advice.
+- `DocumentReference/ID` = **BS-PHOTO-26-0118**  
+  The photograph of the damaged carton.
+- `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
+  The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
-  The item's short name; item bench-serra-r of Brightmarket Stores (world/items.json).
+  The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Keyword` = **park bench**  
@@ -452,8 +406,10 @@ Inside `PurchaseReceiptLine`:
   The model; item bench-serra of Valdara Industries (world/items.json).
 - `Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
   The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
-- `Item/SellersItemIdentification/ID` = **BM-551210**  
-  The seller's own item number; item bench-serra-r of Brightmarket Stores (world/items.json).
+- `Item/BuyersItemIdentification/ID` = **BM-551210**  
+  The buyer's own item number: it resells this item as its item bench-serra-r.
+- `Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **Colour**  
@@ -480,14 +436,14 @@ Inside `PurchaseReceiptLine`:
   The national tariff code below the HS subheading, as the customs of the maker's country uses it.
 - `Item/CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item bench-serra of Valdara Industries (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **S**  
-  A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S).
-- `Item/ClassifiedTaxCategory/Percent` = **6.5**  
-  The rate for this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
-  Whether the category applies to goods or services.
-- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Item/TransactionConditions/ID` = **LD-TC-01**  
+  The seller's number for these conditions of sale.
+- `Item/TransactionConditions/ActionCode` = **Trade**  
+  To whom the conditions apply.
+- `Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
+  The conditions in words.
+- `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
+  The seller's general terms of trade.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -642,62 +598,39 @@ Inside `PurchaseReceiptLine`:
   The scale of the score.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
-- `Price/PriceAmount` = **674.1** (currencyID `XBL`)  
-  The shelf price of 749.0 less the promotion discount.
-- `Price/TaxInclusivePriceAmount` = **717.92** (currencyID `XBL`)  
-  The price the customer pays, with the 6.5 % sales tax.
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
-  The price is per one unit.
-- `Price/PriceChangeReason` = **Spring garden promotion**  
-  Why the price differs from the shelf price.
-- `Price/ValidityPeriod/StartDate` = **2026-05-12**  
-  The first day of the promotion.
-- `Price/ValidityPeriod/EndDate` = **2026-05-18**  
-  The last day of the promotion.
-- `Price/AllowanceCharge/ChargeIndicator` = **false**  
-  A discount, not a charge.
-- `Price/AllowanceCharge/AllowanceChargeReasonCode` = **75** (listID `UN/EDIFACT EDED 5189`)  
-  UN/EDIFACT 5189 code 75: promotion discount.
-- `Price/AllowanceCharge/AllowanceChargeReason` = **Spring garden promotion**  
-  The promotion, as the till prints it.
-- `Price/AllowanceCharge/MultiplierFactorNumeric` = **0.1**  
-  The discount rate.
-- `Price/AllowanceCharge/Amount` = **74.90** (currencyID `XBL`)  
-  The discount per unit, deducted from the shelf price.
-- `Price/AllowanceCharge/BaseAmount` = **749.00** (currencyID `XBL`)  
-  The shelf price the discount is taken from.
 
 ## The document
 
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
-<PurchaseReceipt xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PR-26-0238</cbc:ID>
-  <cbc:UUID>e73b5098-18b8-52b8-b457-5eb5411168d5</cbc:UUID>
-  <cbc:IssueDate>2026-05-15</cbc:IssueDate>
-  <cbc:IssueTime>11:42:00</cbc:IssueTime>
-  <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
-  <cbc:TransactionTime>11:42:00</cbc:TransactionTime>
-  <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
-  <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
-  <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cac:PurchaseReference>
-    <cbc:ID>BM-LOYAL-0088127</cbc:ID>
-    <cbc:Description>Loyalty card</cbc:Description>
-  </cac:PurchaseReference>
-  <cac:SalesDocumentReference>
-    <cbc:ID>BM-DEL-26-0518-07</cbc:ID>
-  </cac:SalesDocumentReference>
+  <cbc:ID>BS-RA-26-0235</cbc:ID>
+  <cbc:UUID>aa88e826-e531-55ed-8ac7-22b653697864</cbc:UUID>
+  <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+  <cbc:IssueTime>15:21:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
+  <cbc:DeliveryAcceptanceCode>Partial</cbc:DeliveryAcceptanceCode>
+  <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+  <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
+  <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OrderReference>
+    <cbc:ID>BS-PO-26-0224</cbc:ID>
+  </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>LD-DA-26-0229</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-WARRANTY-B180</cbc:ID>
+    <cbc:ID>BM-GI-PHOTO-26-0510</cbc:ID>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
-    <cbc:ID>BM-SIG-POS-G2</cbc:ID>
+    <cbc:ID>BM-SIG-26-RA</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -707,7 +640,7 @@ Inside `PurchaseReceiptLine`:
       </cac:PartyName>
     </cac:SignatoryParty>
   </cac:Signature>
-  <cac:AccountingSupplierParty>
+  <cac:DeliveryCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
       <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -808,176 +741,171 @@ Inside `PurchaseReceiptLine`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
-  </cac:AccountingSupplierParty>
-  <cac:AccountingCustomerParty>
+  </cac:DeliveryCustomerParty>
+  <cac:DespatchSupplierParty>
     <cac:Party>
+      <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Robin Ashdale</cbc:Name>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
-        <cbc:StreetName>Gull Lane</cbc:StreetName>
-        <cbc:BuildingNumber>57</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cbc:PostalZone>38516</cbc:PostalZone>
-        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:StreetName>Distribution Drive</cbc:StreetName>
+        <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
+        <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+        <cbc:BuildingNumber>43</cbc:BuildingNumber>
+        <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71214</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:Person>
-        <cbc:FirstName>Robin</cbc:FirstName>
-        <cbc:FamilyName>Ashdale</cbc:FamilyName>
-        <cac:FinancialAccount>
-          <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
-          <cbc:Name>Robin Ashdale</cbc:Name>
-          <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
+        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
           <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
-          <cac:FinancialInstitutionBranch>
-            <cbc:ID>BLUM-001</cbc:ID>
-            <cbc:Name>Main branch</cbc:Name>
-            <cac:FinancialInstitution>
-              <cbc:ID>BLUM</cbc:ID>
-              <cbc:Name>Bank of Lumeport</cbc:Name>
-              <cac:Address>
-                <cbc:StreetName>Exchange Street</cbc:StreetName>
-                <cbc:BuildingNumber>48</cbc:BuildingNumber>
-                <cbc:CityName>Lumeport</cbc:CityName>
-                <cac:Country>
-                  <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-                </cac:Country>
-              </cac:Address>
-            </cac:FinancialInstitution>
-            <cac:Address>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitutionBranch>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
+        <cbc:CompanyID>20410274</cbc:CompanyID>
+        <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode>XB</cbc:IdentificationCode>
           </cac:Country>
-        </cac:FinancialAccount>
-      </cac:Person>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customer service</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
     </cac:Party>
-  </cac:AccountingCustomerParty>
-  <cac:CashierContact>
-    <cbc:Name>Mira</cbc:Name>
-  </cac:CashierContact>
-  <cac:CashRegister>
-    <cbc:ID>G2</cbc:ID>
-    <cbc:SerialNumberID>BM-POS-G2-2219</cbc:SerialNumberID>
-  </cac:CashRegister>
-  <cac:PointOfSaleLocation>
-    <cbc:Description>Garden department, ground floor</cbc:Description>
-    <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
-  </cac:PointOfSaleLocation>
-  <cac:PointOfSaleContact>
-    <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
-  </cac:PointOfSaleContact>
-  <cac:Delivery>
-    <cac:DeliveryAddress>
-      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Gull Lane</cbc:StreetName>
-      <cbc:BuildingNumber>57</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
-      <cbc:CityName>Lumeport</cbc:CityName>
-      <cbc:PostalZone>38516</cbc:PostalZone>
-      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:DeliveryAddress>
-    <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-05-17</cbc:StartDate>
-      <cbc:StartTime>09:00:00</cbc:StartTime>
-      <cbc:EndTime>12:00:00</cbc:EndTime>
-    </cac:RequestedDeliveryPeriod>
-    <cac:CarrierParty>
+  </cac:DespatchSupplierParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brightmarket Stores</cbc:Name>
       </cac:PartyName>
-    </cac:CarrierParty>
-  </cac:Delivery>
-  <cac:Payment>
-    <cbc:ID>BM-G2-26-0518-0047</cbc:ID>
-    <cbc:PaidAmount currencyID="XBL">717.92</cbc:PaidAmount>
-    <cbc:PaidDate>2026-05-15</cbc:PaidDate>
-    <cbc:PaidTime>11:42:00</cbc:PaidTime>
-    <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
-    <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
-    <cbc:TransactionID>TX-26-0518-773104</cbc:TransactionID>
-    <cbc:PaymentTerminalID>PT-G2</cbc:PaymentTerminalID>
-    <cbc:StatusCode>Approved</cbc:StatusCode>
-  </cac:Payment>
-  <cac:PaymentMeans>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
-    <cac:CardAccount>
-      <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
-      <cbc:NetworkID>LUMECARD</cbc:NetworkID>
-      <cbc:CardTypeCode>Debit</cbc:CardTypeCode>
-      <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
-      <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
-      <cbc:IssuerID>BLUM</cbc:IssuerID>
-      <cbc:CardChipCode>Chip</cbc:CardChipCode>
-      <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
-      <cbc:HolderName>R ASHDALE</cbc:HolderName>
-      <cbc:RoleCode>Holder</cbc:RoleCode>
-    </cac:CardAccount>
-  </cac:PaymentMeans>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">674.10</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>6.5</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
-  <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">674.10</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">717.92</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">717.92</cbc:PayableAmount>
-  </cac:LegalMonetaryTotal>
-  <cac:PurchaseReceiptLine>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>LD-SH-26-0230</cbc:ID>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-003</cbc:ID>
+      <cbc:DamageRemarks>One carton torn, the bench's armrest bent.</cbc:DamageRemarks>
+      <cac:ReceivedHandlingUnitReceiptLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ReceivedQuantity unitCode="H87">3</cbc:ReceivedQuantity>
+        <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+        <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
+      </cac:ReceivedHandlingUnitReceiptLine>
+      <cac:Status>
+        <cbc:ConditionCode>Damaged</cbc:ConditionCode>
+        <cbc:Description>Three benches accepted, one refused.</cbc:Description>
+      </cac:Status>
+      <cac:DamageDocumentationAttachment>
+        <cac:ExternalReference>
+          <cbc:URI>https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg</cbc:URI>
+          <cbc:MimeCode>image/jpeg</cbc:MimeCode>
+          <cbc:FileName>pallet-3.jpg</cbc:FileName>
+        </cac:ExternalReference>
+      </cac:DamageDocumentationAttachment>
+    </cac:TransportHandlingUnit>
+  </cac:Shipment>
+  <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Promotion price.</cbc:Note>
-    <cbc:Quantity unitCode="H87">1</cbc:Quantity>
-    <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">717.92</cbc:TaxInclusiveLineExtensionAmount>
-    <cac:PurchaseLinePeriod>
-      <cbc:StartDate>2026-05-15</cbc:StartDate>
-      <cbc:EndDate>2031-05-15</cbc:EndDate>
-    </cac:PurchaseLinePeriod>
-    <cac:PurchaseReference>
-      <cbc:ID>VI-SF-02170</cbc:ID>
-      <cbc:Description>Frame serial number</cbc:Description>
-    </cac:PurchaseReference>
-    <cac:TaxTotal>
-      <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
-    </cac:TaxTotal>
+    <cbc:UUID>c9e54602-8f02-5581-88af-5ca8d0131f08</cbc:UUID>
+    <cbc:Note>One bench arrived in a damaged carton and was refused.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="H87">23</cbc:ReceivedQuantity>
+    <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+    <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+    <cbc:RejectReason>One bench arrived in a damaged carton and was refused.</cbc:RejectReason>
+    <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+    <cbc:QuantityDiscrepancyCode>Damaged</cbc:QuantityDiscrepancyCode>
+    <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>
+    <cbc:ReceivedTime>10:40:00</cbc:ReceivedTime>
+    <cbc:TimingComplaintCode>Late</cbc:TimingComplaintCode>
+    <cbc:TimingComplaint>Arrived 40 minutes into the slot; unloading delayed the next truck.</cbc:TimingComplaint>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0229</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>BS-PHOTO-26-0118</cbc:ID>
+    </cac:DocumentReference>
     <cac:Item>
-      <cbc:Description>The Serra park bench in the store's garden department; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
@@ -985,8 +913,11 @@ Inside `PurchaseReceiptLine`:
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
-      <cac:SellersItemIdentification>
+      <cac:BuyersItemIdentification>
         <cbc:ID>BM-551210</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID>Colour</cbc:AttributeID>
@@ -1013,14 +944,14 @@ Inside `PurchaseReceiptLine`:
         <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>6.5</cbc:Percent>
-        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
+      <cac:TransactionConditions>
+        <cbc:ID>LD-TC-01</cbc:ID>
+        <cbc:ActionCode>Trade</cbc:ActionCode>
+        <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
+        <cac:DocumentReference>
+          <cbc:ID>LD-GTC-2026</cbc:ID>
+        </cac:DocumentReference>
+      </cac:TransactionConditions>
       <cac:AdditionalItemProperty>
         <cbc:Name>Frame material</cbc:Name>
         <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
@@ -1161,24 +1092,6 @@ Inside `PurchaseReceiptLine`:
         </cac:ProductDocumentationDocumentReference>
       </cac:CircularityProfile>
     </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">674.1</cbc:PriceAmount>
-      <cbc:TaxInclusivePriceAmount currencyID="XBL">717.92</cbc:TaxInclusivePriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
-      <cbc:PriceChangeReason>Spring garden promotion</cbc:PriceChangeReason>
-      <cac:ValidityPeriod>
-        <cbc:StartDate>2026-05-12</cbc:StartDate>
-        <cbc:EndDate>2026-05-18</cbc:EndDate>
-      </cac:ValidityPeriod>
-      <cac:AllowanceCharge>
-        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">75</cbc:AllowanceChargeReasonCode>
-        <cbc:AllowanceChargeReason>Spring garden promotion</cbc:AllowanceChargeReason>
-        <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
-        <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
-        <cbc:BaseAmount currencyID="XBL">749.00</cbc:BaseAmount>
-      </cac:AllowanceCharge>
-    </cac:Price>
-  </cac:PurchaseReceiptLine>
-</PurchaseReceipt>
+  </cac:ReceiptLine>
+</ReceiptAdvice>
 ```
