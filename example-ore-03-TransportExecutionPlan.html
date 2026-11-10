@@ -32,8 +32,8 @@ The documents of the world use UBL 2.5.</li>
 <strong>urn:ubl-examples:world</strong><br />
 The example world is a customization of UBL: it uses its own code lists
 for countries and currencies.</li>
-<li><code>ID</code> = <strong>FRC-TEP-26-1193</strong><br />
-The rail carrier's number for the agreed plan.</li>
+<li><code>ID</code> = <strong>FRC-TEP-26-0307</strong><br />
+The carrier's number for the agreed plan.</li>
 <li><code>IssueDate</code> = <strong>2026-03-04</strong><br />
 The day after the request.</li>
 <li><code>DocumentStatusCode</code> = <strong>Confirmed</strong><br />
@@ -203,22 +203,22 @@ Execution Plan Request Document Reference</h3>
 <p>Inside
 <code>TransportExecutionPlanRequestDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-TR-26-0087</strong><br />
+<li><code>ID</code> = <strong>VI-TR-26-0305</strong><br />
 The request this plan answers.</li>
 </ul>
 <h3 id="service-start-time-period">Service Start Time Period</h3>
 <p>Inside <code>ServiceStartTimePeriod</code>:</p>
 <ul>
 <li><code>StartDate</code> = <strong>2026-03-10</strong><br />
-Loading at the mine, as requested.</li>
+Collection, as requested.</li>
 </ul>
 <h3 id="consignment">Consignment</h3>
 <p>Inside <code>Consignment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-CN-26-0412</strong><br />
+<li><code>ID</code> = <strong>VI-CS-26-0306</strong><br />
 The consignment of the request.</li>
-<li><code>GrossWeightMeasure</code> = <strong>1800</strong> (unitCode
-<code>TNE</code>)<br />
+<li><code>GrossWeightMeasure</code> = <strong>1800000</strong> (unitCode
+<code>KGM</code>)<br />
 The weight the plan is made for.</li>
 <li><code>ConsigneeParty/PartyIdentification/ID</code> =
 <strong>XU-R-104274</strong> (schemeID
@@ -302,7 +302,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">TransportExecutionPlan</span> <span class="ot">xmlns=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2&quot;</span> <span class="ot">xmlns:cac=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2&quot;</span> <span class="ot">xmlns:cbc=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2&quot;</span>&gt;</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;FRC-TEP-26-1193&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;FRC-TEP-26-0307&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-04&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusCode</span>&gt;Confirmed&lt;/<span class="kw">cbc:DocumentStatusCode</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SenderParty</span>&gt;</span>
@@ -392,14 +392,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportServiceProviderParty</span>&gt;</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportExecutionPlanRequestDocumentReference</span>&gt;</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-TR-26-0087&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-TR-26-0305&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportExecutionPlanRequestDocumentReference</span>&gt;</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-10&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-CN-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1800&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-CS-26-0306&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;1800000&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -447,6 +447,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlan</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>fe8bc0a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
 </body>
 </html>

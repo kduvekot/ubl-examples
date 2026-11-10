@@ -255,13 +255,17 @@ distributor for import.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
 Response</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: The manufacturer accepts the order and confirms the
-collection date at its warehouse.</p>
+collection date at its warehouse. <a
+href="example-road-02-OrderResponse.html">See the example
+document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
 Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
 Administration of Urvania</a>: Goods leave Urvania: the manufacturer, as
-exporter, declares them to the customs office at the land border.</p>
+exporter, declares them to the customs office at the land border. <a
+href="example-road-05-ExportCustomsDeclaration.html">See the example
+document</a>.</p>
 <p>In it as <code>ExporterParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>CustomsDeclaration/ConsigneeParty</code>; <a
@@ -272,7 +276,8 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-O
 of Origin</strong></a> to <a href="world-20-xu.html">Ferrano Chamber of
 Commerce</a>: The goods qualify for preferential duty in Bayvarra; the
 manufacturer applies to its chamber of commerce for a certificate of
-origin.</p>
+origin. <a href="example-road-06-CertificateOfOrigin.html">See the
+example document</a>.</p>
 <p>In it as <code>ExporterParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>ImporterParty</code>.</p></li>
@@ -280,7 +285,8 @@ origin.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: The manufacturer
 invoices the goods only (no freight under FCA) and asks for payment to
-its account at the seller's bank.</p>
+its account at the seller's bank. <a
+href="example-road-13-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -293,7 +299,8 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><s
 from <a href="world-6-xb.html">Lumeway Distribution</a>: Delivery terms
 FCA seller's warehouse: the order names the warehouse where the goods
 are collected and the road carrier the distributor has booked to collect
-them.</p>
+them. <a href="example-road-01-Order.html">See the example
+document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-8-xu.html">Castrano Logistics</a> as
 <code>Delivery/Despatch/DespatchParty</code>; <a
@@ -303,7 +310,9 @@ href="world-13-xu.html">Trasvia Haulage</a> as
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The distributor announces the cross-border payment and
-which invoices it settles.</p>
+which invoices it settles. <a
+href="example-road-14-RemittanceAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
@@ -316,7 +325,9 @@ Execution Plan Request</strong></a> from <a
 href="world-6-xb.html">Lumeway Distribution</a> to <a
 href="world-13-xu.html">Trasvia Haulage</a>: The distributor, as
 transport user, books the truck: collection at the seller's 3PL,
-delivery at its own distribution centre, across the border.</p>
+delivery at its own distribution centre, across the border. <a
+href="example-road-03-TransportExecutionPlanRequest.html">See the
+example document</a>.</p>
 <p>In it as <code>Consignment/ConsignorParty</code> (The Party who is
 reponsible for sending the goods).</p></li>
 <li><p><a
@@ -324,7 +335,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-
 Advice</strong></a> from <a href="world-8-xu.html">Castrano
 Logistics</a> to <a href="world-6-xb.html">Lumeway Distribution</a>: The
 3PL picks and loads the goods for the manufacturer and announces the
-despatch; it knows the goods and the truck but not the prices.</p>
+despatch; it knows the goods and the truck but not the prices. <a
+href="example-road-04-DespatchAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code> (The seller).</p>
 <p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
@@ -333,7 +346,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-O
 of Origin</strong></a> from <a href="world-20-xu.html">Ferrano Chamber
 of Commerce</a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
 The chamber endorses the certificate and makes it available to the
-importer, who needs it for the import declaration.</p>
+importer, who needs it for the import declaration. <a
+href="example-road-07-CertificateOfOrigin.html">See the example
+document</a>.</p>
 <p>In it as <code>ExporterParty</code> (The Party who makes the export
 declaration, or on whose behalf the export declaration is made, and who
 is the owner of the goods or has similar right of disposal over them at
@@ -343,7 +358,8 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA">
 from <a href="world-13-xu.html">Trasvia Haulage</a> to <a
 href="world-6-xb.html">Lumeway Distribution</a>: The road consignment
 note goes to the party that booked the truck, the distributor; it names
-the manufacturer as consignor.</p>
+the manufacturer as consignor. <a
+href="example-road-08-Waybill.html">See the example document</a>.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p></li>
 <li><p><a
@@ -352,7 +368,9 @@ Customs Declaration</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-19-xb.html">Customs and Border
 Service of Bayvarra</a>: The distributor, as importer, declares the
 goods in Bayvarra and claims the preferential duty rate with the
-certificate of origin.</p>
+certificate of origin. <a
+href="example-road-10-ImportCustomsDeclaration.html">See the example
+document</a>.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p></li>
 <li><p><a
@@ -360,7 +378,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-S
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-8-xu.html">Castrano Logistics</a>:
 The distributor confirms what arrived to the party that despatched it,
-the 3PL, naming the manufacturer as seller.</p>
+the 3PL, naming the manufacturer as seller. <a
+href="example-road-11-ReceiptAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code> (The seller).</p></li>
 </ul>
 <h2 id="containers-by-rail-under-transit-urvania--bayvarra">Containers
@@ -830,6 +850,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>fe8bc0a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VI-TR-26-0087</cbc:ID>
+  <cbc:ID>VI-TR-26-0305</cbc:ID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -94,8 +94,8 @@
     <cbc:StartDate>2026-03-10</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
-    <cbc:ID>VI-CN-26-0412</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="TNE">1800</cbc:GrossWeightMeasure>
+    <cbc:ID>VI-CS-26-0306</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

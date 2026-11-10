@@ -32,29 +32,27 @@ The documents of the world use UBL 2.5.</li>
 <strong>urn:ubl-examples:world</strong><br />
 The example world is a customization of UBL: it uses its own code lists
 for countries and currencies.</li>
-<li><code>ID</code> = <strong>SM-INV-26-0311</strong><br />
+<li><code>ID</code> = <strong>SM-INV-26-0315</strong><br />
 The seller's invoice number.</li>
 <li><code>IssueDate</code> = <strong>2026-03-11</strong><br />
 Issued the day after the goods were despatched and weighed.</li>
 <li><code>DueDate</code> = <strong>2026-04-10</strong><br />
-Thirty days after the issue date, the payment term of the world's
-domestic trade.</li>
+30 days after the issue date, the agreed payment term.</li>
 <li><code>InvoiceTypeCode</code> = <strong>380</strong><br />
 UN/EDIFACT 1001 code 380: commercial invoice.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XUF</strong><br />
-The ferra, the seller's currency, in the world's currency code
-list.</li>
+The ferra, the seller's currency; it has no minor unit.</li>
 </ul>
 <h3 id="order-reference">Order Reference</h3>
 <p>Inside <code>OrderReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-PO-26-0412</strong><br />
+<li><code>ID</code> = <strong>VI-PO-26-0304</strong><br />
 The buyer's order.</li>
 </ul>
 <h3 id="despatch-document-reference">Despatch Document Reference</h3>
 <p>Inside <code>DespatchDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>SM-DA-26-0311</strong><br />
+<li><code>ID</code> = <strong>SM-DA-26-0308</strong><br />
 The despatch advice of the goods invoiced.</li>
 </ul>
 <h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
@@ -227,16 +225,16 @@ details are given; only its identifier and name are repeated.</li>
 <ul>
 <li><code>PaymentMeansCode</code> = <strong>30</strong> (listID
 <code>UN/EDIFACT EDED 4461</code>)<br />
-UN/EDIFACT 4461 code 30: credit transfer, how businesses in Urvania pay.
-The listID is the identification of UBL's payment means code list, which
-code list validation checks.</li>
+UN/EDIFACT 4461 code 30: credit transfer. The listID is the
+identification of UBL's payment means code list, which code list
+validation checks.</li>
 <li><code>PayeeFinancialAccount/ID</code> =
 <strong>XU56CREV0000104729</strong> (schemeID
 <code>urn:ubl-examples:world:account</code>)<br />
-The seller's account, where the buyer is to pay. The number follows the
-structure of ISO 13616 with its check digits, with the world's country
-code; it is not called an IBAN, because the world's countries are not
-registered IBAN countries.</li>
+The account to pay to. The number follows the structure of ISO 13616
+with its check digits, with the world's country code; it is not called
+an IBAN, because the world's countries are not registered IBAN
+countries.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID</code>
 = <strong>CREV</strong><br />
 The bank code, the part of every account number that names the bank;
@@ -250,24 +248,23 @@ The bank; identity of Crevalto Bank (world/parties.json).</li>
 <ul>
 <li><code>TaxAmount</code> = <strong>2882901</strong> (currencyID
 <code>XUF</code>)<br />
-The value added tax of the invoice. Rounded to whole ferra, which have
-no minor unit.</li>
+The sum of the tax of all categories.</li>
 <li><code>TaxSubtotal/TaxableAmount</code> = <strong>14414504</strong>
 (currencyID <code>XUF</code>)<br />
-The sum of the line amounts at the standard rate.</li>
+The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>2882901</strong>
 (currencyID <code>XUF</code>)<br />
-20 % of the taxable amount, rounded to whole ferra.</li>
+20 % of the taxable amount, rounded to the minor unit of the
+currency.</li>
 <li><code>TaxSubtotal/TaxCategory/ID</code> = <strong>S</strong><br />
-A domestic supply in Urvania: Urvania's value added tax applies at the
-standard rate. UN/EDIFACT 5305 code S, standard rate.</li>
+A domestic supply in Urvania: its value added tax applies at the
+standard rate (category S).</li>
 <li><code>TaxSubtotal/TaxCategory/Percent</code> =
 <strong>20</strong><br />
-The rate of Urvania's value added tax for this category
-(world/countries.json).</li>
+The rate for this category.</li>
 <li><code>TaxSubtotal/TaxCategory/TaxScheme/ID</code> =
 <strong>VAT</strong><br />
-UN/EDIFACT 5153 code of Urvania's value added tax.</li>
+UN/EDIFACT 5153 code of the seller's tax: value added tax.</li>
 </ul>
 <h3 id="legal-monetary-total">Legal Monetary Total</h3>
 <p>Inside <code>LegalMonetaryTotal</code>:</p>
@@ -277,11 +274,10 @@ UN/EDIFACT 5153 code of Urvania's value added tax.</li>
 The sum of the line amounts.</li>
 <li><code>TaxExclusiveAmount</code> = <strong>14414504</strong>
 (currencyID <code>XUF</code>)<br />
-The total without tax: the sum of the line amounts, no allowances or
-charges.</li>
+The total without tax: the line amounts, no allowances or charges.</li>
 <li><code>TaxInclusiveAmount</code> = <strong>17297405</strong>
 (currencyID <code>XUF</code>)<br />
-The total without tax plus the value added tax.</li>
+The total without tax plus the tax.</li>
 <li><code>PayableAmount</code> = <strong>17297405</strong> (currencyID
 <code>XUF</code>)<br />
 What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
@@ -291,14 +287,14 @@ What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 <p>Inside <code>InvoiceLine</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
-The first and only line.</li>
+The line number.</li>
 <li><code>InvoicedQuantity</code> = <strong>1788.4</strong> (unitCode
 <code>TNE</code>)<br />
 The weighed quantity from the despatch advice, not the ordered
 quantity.</li>
 <li><code>LineExtensionAmount</code> = <strong>14414504</strong>
 (currencyID <code>XUF</code>)<br />
-1788.4 × 8060 ferra, rounded to whole ferra.</li>
+1788.4 × 8060, rounded to the minor unit of the currency.</li>
 <li><code>Item/Description</code> = <strong>Non-agglomerated iron ore,
 lump size 10–30 mm, 62 % Fe, loose in rail wagons.</strong><br />
 The seller's description; item ore-lump of Serravona Mining
@@ -326,15 +322,14 @@ Harmonized System subheading of the World Customs Organization; item
 ore-lump of Serravona Mining (world/items.json).</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> =
 <strong>S</strong><br />
-A domestic supply in Urvania: Urvania's value added tax applies at the
-standard rate. UN/EDIFACT 5305 code S, standard rate.</li>
+A domestic supply in Urvania: its value added tax applies at the
+standard rate (category S).</li>
 <li><code>Item/ClassifiedTaxCategory/Percent</code> =
 <strong>20</strong><br />
-The rate of Urvania's value added tax for this category
-(world/countries.json).</li>
+The rate for this category.</li>
 <li><code>Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
 <strong>VAT</strong><br />
-UN/EDIFACT 5153 code of Urvania's value added tax.</li>
+UN/EDIFACT 5153 code of the seller's tax: value added tax.</li>
 <li><code>Price/PriceAmount</code> = <strong>8060</strong> (currencyID
 <code>XUF</code>)<br />
 The seller's price per unit (world/items.json).</li>
@@ -348,16 +343,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Invoice</span> <span class="ot">xmlns=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:Invoice-2&quot;</span> <span class="ot">xmlns:cac=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2&quot;</span> <span class="ot">xmlns:cbc=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2&quot;</span>&gt;</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SM-INV-26-0311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SM-INV-26-0315&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-11&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-04-10&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-PO-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-PO-26-0304&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchDocumentReference</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SM-DA-26-0311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SM-DA-26-0308&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchDocumentReference</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
@@ -520,6 +515,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>fe8bc0a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
 </body>
 </html>

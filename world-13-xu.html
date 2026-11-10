@@ -97,7 +97,8 @@ distributor for import.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: The road
 consignment note goes to the party that booked the truck, the
-distributor; it names the manufacturer as consignor.</p>
+distributor; it names the manufacturer as consignor. <a
+href="example-road-08-Waybill.html">See the example document</a>.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
 <p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
 <code>ConsignorParty</code>.</p></li>
@@ -105,7 +106,9 @@ distributor; it names the manufacturer as consignor.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
 Status</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: The carrier reports that the truck has cleared the
-border and gives the expected arrival time.</p>
+border and gives the expected arrival time. <a
+href="example-road-09-TransportationStatus.html">See the example
+document</a>.</p>
 <p>In it as <code>SenderParty</code>,
 <code>Consignment/CarrierParty</code>.</p></li>
 <li><p><a
@@ -113,7 +116,8 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA">
 to <a href="world-6-xb.html">Lumeway Distribution</a>: The carrier
 invoices the transport to the party that booked it; under FCA that is
 the buyer, not the seller. A transport service is invoiced with the
-ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5.</p>
+ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5. <a
+href="example-road-12-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>,
 <code>Delivery/Shipment/Consignment/CarrierParty</code>.</p></li>
@@ -125,7 +129,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUT
 Execution Plan Request</strong></a> from <a
 href="world-6-xb.html">Lumeway Distribution</a>: The distributor, as
 transport user, books the truck: collection at the seller's 3PL,
-delivery at its own distribution centre, across the border.</p>
+delivery at its own distribution centre, across the border. <a
+href="example-road-03-TransportExecutionPlanRequest.html">See the
+example document</a>.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>TransportServiceProviderParty</code>.</p>
 <p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
@@ -139,7 +145,8 @@ from <a href="world-6-xb.html">Lumeway Distribution</a> to <a
 href="world-5-xu.html">Valdara Industries</a>: Delivery terms FCA
 seller's warehouse: the order names the warehouse where the goods are
 collected and the road carrier the distributor has booked to collect
-them.</p>
+them. <a href="example-road-01-Order.html">See the example
+document</a>.</p>
 <p>In it as <code>Delivery/Despatch/CarrierParty</code> (The Party who
 provides the transport of goods between named points).</p>
 <p>Also mentions: <a href="world-8-xu.html">Castrano Logistics</a> as
@@ -149,7 +156,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-
 Advice</strong></a> from <a href="world-8-xu.html">Castrano
 Logistics</a> to <a href="world-6-xb.html">Lumeway Distribution</a>: The
 3PL picks and loads the goods for the manufacturer and announces the
-despatch; it knows the goods and the truck but not the prices.</p>
+despatch; it knows the goods and the truck but not the prices. <a
+href="example-road-04-DespatchAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
 who provides the transport of goods between named points).</p>
 <p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
@@ -159,7 +168,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-D
 Customs Declaration</strong></a> from <a href="world-5-xu.html">Valdara
 Industries</a> to <a href="world-19-xu.html">Customs Administration of
 Urvania</a>: Goods leave Urvania: the manufacturer, as exporter,
-declares them to the customs office at the land border.</p>
+declares them to the customs office at the land border. <a
+href="example-road-05-ExportCustomsDeclaration.html">See the example
+document</a>.</p>
 <p>In it as
 <code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code> (The
 Party who provides the transport of goods between named points).</p>
@@ -392,6 +403,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>fe8bc0a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
 </body>
 </html>

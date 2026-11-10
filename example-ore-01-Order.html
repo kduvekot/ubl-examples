@@ -31,7 +31,7 @@ The documents of the world use UBL 2.5.</li>
 <strong>urn:ubl-examples:world</strong><br />
 The example world is a customization of UBL: it uses its own code lists
 for countries and currencies.</li>
-<li><code>ID</code> = <strong>VI-PO-26-0412</strong><br />
+<li><code>ID</code> = <strong>VI-PO-26-0304</strong><br />
 The buyer's order number.</li>
 <li><code>IssueDate</code> = <strong>2026-03-02</strong><br />
 The first working day of the month: the monthly ore call-off.</li>
@@ -39,7 +39,8 @@ The first working day of the month: the monthly ore call-off.</li>
 train.</strong><br />
 Says in words what the order is for.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XUF</strong><br />
-The ferra, the currency of the domestic trade in Urvania.</li>
+The ferra, the seller's currency, in which the seller's prices are; it
+has no minor unit.</li>
 </ul>
 <h3 id="buyer-customer-party">Buyer Customer Party</h3>
 <p>Inside <code>BuyerCustomerParty</code>:</p>
@@ -285,60 +286,58 @@ transport, so the order names the carrier the buyer has booked. Stated,
 because leaving it out would carry no meaning (UBL rule IND6).</li>
 <li><code>DeliveryLocation/Description</code> = <strong>Mine siding,
 Serravona</strong><br />
-Where the seller hands the ore to the carrier under FCA.</li>
+Where the delivery terms place the handover of the goods.</li>
 </ul>
 <h3 id="tax-total">Tax Total</h3>
 <p>Inside <code>TaxTotal</code>:</p>
 <ul>
 <li><code>TaxAmount</code> = <strong>2901600</strong> (currencyID
 <code>XUF</code>)<br />
-The value added tax the buyer expects to pay. Rounded to whole ferra,
-which have no minor unit.</li>
+The sum of the tax of all categories.</li>
 <li><code>TaxSubtotal/TaxableAmount</code> = <strong>14508000</strong>
 (currencyID <code>XUF</code>)<br />
-The sum of the line amounts at the standard rate.</li>
+The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>2901600</strong>
 (currencyID <code>XUF</code>)<br />
-20 % of the taxable amount, rounded to whole ferra.</li>
+20 % of the taxable amount, rounded to the minor unit of the
+currency.</li>
 <li><code>TaxSubtotal/TaxCategory/ID</code> = <strong>S</strong><br />
-A domestic supply in Urvania: Urvania's value added tax applies at the
-standard rate. UN/EDIFACT 5305 code S, standard rate.</li>
+A domestic supply in Urvania: its value added tax applies at the
+standard rate (category S).</li>
 <li><code>TaxSubtotal/TaxCategory/Percent</code> =
 <strong>20</strong><br />
-The rate of Urvania's value added tax for this category
-(world/countries.json).</li>
+The rate for this category.</li>
 <li><code>TaxSubtotal/TaxCategory/TaxScheme/ID</code> =
 <strong>VAT</strong><br />
-UN/EDIFACT 5153 code of Urvania's value added tax.</li>
+UN/EDIFACT 5153 code of the seller's tax: value added tax.</li>
 </ul>
 <h3 id="anticipated-monetary-total">Anticipated Monetary Total</h3>
 <p>Inside <code>AnticipatedMonetaryTotal</code>:</p>
 <ul>
 <li><code>LineExtensionAmount</code> = <strong>14508000</strong>
 (currencyID <code>XUF</code>)<br />
-1800 tonnes × 8060 ferra.</li>
+The sum of the line amounts.</li>
 <li><code>PayableAmount</code> = <strong>17409600</strong> (currencyID
 <code>XUF</code>)<br />
-What the buyer expects to pay, value added tax included.</li>
+What the buyer expects to pay, tax included.</li>
 </ul>
 <h3 id="order-line">Order Line</h3>
 <p>Inside <code>OrderLine</code>:</p>
 <ul>
 <li><code>LineItem/ID</code> = <strong>1</strong><br />
-The first and only line.</li>
+The line number.</li>
 <li><code>LineItem/Quantity</code> = <strong>1800</strong> (unitCode
 <code>TNE</code>)<br />
-One train: 30 wagons of about 60 tonnes. Tonne is UN/ECE Rec 20 code
-TNE.</li>
+One train: 30 wagons of about 60 tonnes.</li>
 <li><code>LineItem/LineExtensionAmount</code> =
 <strong>14508000</strong> (currencyID <code>XUF</code>)<br />
-Quantity times price.</li>
+Quantity times price, rounded to the minor unit.</li>
 <li><code>LineItem/Price/PriceAmount</code> = <strong>8060</strong>
 (currencyID <code>XUF</code>)<br />
-The mine's price per tonne (world/items.json).</li>
+The seller's price per unit (world/items.json).</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
 (unitCode <code>TNE</code>)<br />
-The price is per tonne.</li>
+The price is per one unit.</li>
 <li><code>LineItem/Item/Description</code> = <strong>Non-agglomerated
 iron ore, lump size 10–30 mm, 62 % Fe, loose in rail
 wagons.</strong><br />
@@ -373,7 +372,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Order</span> <span class="ot">xmlns=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:Order-2&quot;</span> <span class="ot">xmlns:cac=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2&quot;</span> <span class="ot">xmlns:cbc=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2&quot;</span>&gt;</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-PO-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-PO-26-0304&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Monthly call-off, one train.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
@@ -564,6 +563,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>fe8bc0a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
 </body>
 </html>

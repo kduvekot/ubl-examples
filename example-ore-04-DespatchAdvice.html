@@ -31,15 +31,15 @@ The documents of the world use UBL 2.5.</li>
 <strong>urn:ubl-examples:world</strong><br />
 The example world is a customization of UBL: it uses its own code lists
 for countries and currencies.</li>
-<li><code>ID</code> = <strong>SM-DA-26-0311</strong><br />
-The mine's despatch advice number.</li>
+<li><code>ID</code> = <strong>SM-DA-26-0308</strong><br />
+The despatching party's number.</li>
 <li><code>IssueDate</code> = <strong>2026-03-10</strong><br />
 The day the train was loaded and weighed.</li>
 </ul>
 <h3 id="order-reference">Order Reference</h3>
 <p>Inside <code>OrderReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-PO-26-0412</strong><br />
+<li><code>ID</code> = <strong>VI-PO-26-0304</strong><br />
 The order this despatch fulfils.</li>
 </ul>
 <h3 id="despatch-supplier-party">Despatch Supplier Party</h3>
@@ -210,12 +210,12 @@ are given; only its identifier and name are repeated.</li>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>SM-SH-26-0311</strong><br />
-The mine's number for the shipment.</li>
-<li><code>GrossWeightMeasure</code> = <strong>1788.4</strong> (unitCode
-<code>TNE</code>)<br />
+<li><code>ID</code> = <strong>SM-SH-26-0309</strong><br />
+The despatching party's shipment number.</li>
+<li><code>GrossWeightMeasure</code> = <strong>1788400</strong> (unitCode
+<code>KGM</code>)<br />
 Weighed on the weighbridge at loading: 30 wagons.</li>
-<li><code>Consignment/ID</code> = <strong>VI-CN-26-0412</strong><br />
+<li><code>Consignment/ID</code> = <strong>VI-CS-26-0306</strong><br />
 The buyer's consignment, quoted back.</li>
 <li><code>Consignment/CarrierParty/PartyIdentification/ID</code> =
 <strong>XU-R-104685</strong> (schemeID
@@ -289,11 +289,10 @@ UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 <p>Inside <code>DespatchLine</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
-The first and only line.</li>
+The line number.</li>
 <li><code>DeliveredQuantity</code> = <strong>1788.4</strong> (unitCode
 <code>TNE</code>)<br />
-What was loaded, weighed; slightly less than ordered, as with every bulk
-load.</li>
+What was despatched.</li>
 <li><code>OrderLineReference/LineID</code> = <strong>1</strong><br />
 The order line this line fulfils.</li>
 <li><code>Item/Description</code> = <strong>Non-agglomerated iron ore,
@@ -328,10 +327,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">DespatchAdvice</span> <span class="ot">xmlns=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2&quot;</span> <span class="ot">xmlns:cac=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2&quot;</span> <span class="ot">xmlns:cbc=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2&quot;</span>&gt;</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SM-DA-26-0311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SM-DA-26-0308&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-10&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-PO-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-PO-26-0304&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchSupplierParty</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
@@ -428,10 +427,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SM-SH-26-0311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1788.4&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SM-SH-26-0309&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;1788400&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-CN-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-CS-26-0306&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104685&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -495,6 +494,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>fe8bc0a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
 </body>
 </html>
