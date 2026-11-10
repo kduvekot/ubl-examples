@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="An interactive map of the UBL example world: three countries, the parties, their supply chains and transport.">
+<title>UBL World Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a game screen. Toolbar on top, the isometric map fills the left,
+   a party panel on the right (below the map on narrow screens).
+   Single dark theme by choice: it is a game world, it looks the same on any host. */
+:root {
+  color-scheme: dark;
+  --ui-bg: #1c2230;        /* panels and toolbar */
+  --ui-bg-2: #252d3f;      /* raised controls */
+  --ui-line: #3a4560;
+  --ui-text: #e9edf5;
+  --ui-muted: #9aa6bf;
+  --sign: #11151f;         /* map signs */
+  --c-commerce: #e8a33d;   /* buyers, sellers, warehouses */
+  --c-logistics: #4fa3e3;  /* carriers, forwarders, ports */
+  --c-government: #b07ce8; /* customs, registries, authorities */
+  --c-finance: #e6d36a;    /* banks, insurer */
+  --c-procurement: #4cc9a6;/* contracting authority, tenderers */
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; background: var(--ui-bg); color: var(--ui-text); font: 14px/1.5 var(--font-text);
+  display: flex; flex-direction: column; overflow: hidden; }
+.toolbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--ui-bg); border-bottom: 2px solid #0d1018; box-shadow: inset 0 -1px 0 var(--ui-line); }
+.back { color: var(--ui-muted); text-decoration: none; font: 700 18px/1 var(--font-text); padding: 4px 6px; border-radius: 4px; }
+.back:hover { color: var(--ui-text); background: var(--ui-bg-2); }
+.toolbar h1 { font: 700 20px/1 var(--font-pixel); margin: 0; letter-spacing: .02em; white-space: nowrap; }
+.toolbar h1 span { color: var(--c-logistics); }
+.layers { display: flex; gap: 6px; flex-wrap: wrap; }
+.layers button, .zoom button { font: 500 13px/1 var(--font-pixel); color: var(--ui-text); background: var(--ui-bg-2);
+  border: 1px solid var(--ui-line); border-bottom-width: 3px; border-radius: 4px; padding: 6px 10px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px; }
+.layers button[aria-pressed="false"] { opacity: .45; }
+.layers button:focus-visible, .zoom button:focus-visible, .party:focus-visible { outline: 2px solid var(--c-logistics); outline-offset: 2px; }
+.dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.zoom { margin-left: auto; display: flex; gap: 6px; }
+.main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 340px; min-height: 0; }
+.mapwrap { position: relative; min-width: 0; min-height: 0; background: #2b5d8f; }
+canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+canvas.dragging { cursor: grabbing; }
+.hint { position: absolute; left: 12px; bottom: 12px; font: 500 12px/1.3 var(--font-pixel); color: #fff;
+  background: rgba(17,21,31,.78); padding: 6px 9px; border-radius: 4px; pointer-events: none; }
+.panel { border-left: 2px solid #0d1018; background: var(--ui-bg); overflow-y: auto; display: flex; flex-direction: column; }
+.card { padding: 16px max(16px, env(safe-area-inset-right, 0px)) 16px 16px; border-bottom: 1px solid var(--ui-line); background: var(--ui-bg-2); }
+.card .num { font: 600 12px/1 var(--font-text); color: var(--ui-muted); letter-spacing: .04em; }
+.card h2 { font: 700 20px/1.15 var(--font-pixel); margin: 4px 0 8px; text-wrap: balance; }
+.card .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #0f1320; border: 1px solid var(--ui-line); color: var(--ui-muted); }
+.card p { margin: 0 0 10px; max-width: 60ch; }
+.card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; }
+.card dt { color: var(--ui-muted); }
+.card dd { margin: 0; }
+.card code { font-size: 12px; background: #0f1320; padding: 1px 5px; border-radius: 3px; }
+.list { padding: 8px 0 16px; }
+.list h3 { font: 700 14px/1 var(--font-pixel); margin: 14px 16px 6px; color: var(--ui-muted); letter-spacing: .05em; text-transform: uppercase; }
+.party { display: flex; gap: 10px; align-items: baseline; width: 100%; text-align: left; background: none; border: 0;
+  color: var(--ui-text); font: 13px/1.35 var(--font-text); padding: 5px 16px; cursor: pointer; }
+.party:hover, .party[aria-current="true"] { background: var(--ui-bg-2); }
+.party .n { font: 700 12px/1 var(--font-text); min-width: 2.6em; color: var(--ui-muted); font-variant-numeric: tabular-nums; }
+.party .new { font-size: 11px; color: var(--c-procurement); margin-left: auto; }
+.foot { margin-top: auto; padding: 12px 16px; font-size: 12px; color: var(--ui-muted); border-top: 1px solid var(--ui-line); }
+@media (max-width: 760px) {
+  body { overflow: auto; height: auto; }
+  .main { grid-template-columns: 1fr; }
+  .mapwrap { height: 62vh; min-height: 340px; }
+  .panel { border-left: 0; border-top: 2px solid #0d1018; }
+  .zoom { margin-left: 0; }
+  .layers { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; scrollbar-width: none; }
+  .layers button { flex: none; }
+  .card { padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+}
+</style>
+</head>
+<body>
+<header class="toolbar">
+  <a class="back" href="index.html" title="UBL Example Documents">←</a>
+  <h1>UBL <span>World</span></h1>
+  <div class="layers" role="group" aria-label="Map layers">
+    <button id="layer-chain" aria-pressed="true" data-layer="chain"><span class="dot" style="background:var(--c-commerce)"></span>Supply chains</button>
+    <button id="layer-transport" aria-pressed="true" data-layer="transport"><span class="dot" style="background:var(--c-logistics)"></span>Transport</button>
+    <button id="layer-gov" aria-pressed="true" data-layer="gov"><span class="dot" style="background:var(--c-government)"></span>Government</button>
+    <button id="layer-fin" aria-pressed="true" data-layer="fin"><span class="dot" style="background:var(--c-finance)"></span>Finance</button>
+    <button id="layer-proc" aria-pressed="true" data-layer="proc"><span class="dot" style="background:var(--c-procurement)"></span>Procurement</button>
+  </div>
+  <div class="zoom">
+    <button id="zoom-out" aria-label="Zoom out">−</button>
+    <button id="zoom-in" aria-label="Zoom in">+</button>
+    <button id="zoom-fit">Fit</button>
+  </div>
+</header>
+
+<div class="main">
+  <div class="mapwrap">
+    <canvas id="map" aria-label="Isometric map of the UBL example world with three countries and their parties"></canvas>
+    <div class="hint">Drag to move · scroll or pinch to zoom · click a building</div>
+  </div>
+  <aside class="panel">
+    <section class="card" id="card" aria-live="polite"></section>
+    <nav class="list" id="list" aria-label="Parties"></nav>
+    <p class="foot">Example world, work in progress. Countries are placeholders with ISO user-assigned codes (XA, XB, XC). Parties 27–32 are the proposed additions to the 26+C set.</p>
+  </aside>
+</div>
+
+<script>
+(() => {
+"use strict";
+// ---------------------------------------------------------------- world data
+const W = 64, H = 48;               // tiles
+const TW = 32, TH = 16;             // tile size in pixels (isometric)
+const COUNTRIES = {
+  XA: { name: "Country A", note: "Mainland, inland. Raw materials and manufacturing." },
+  XB: { name: "Country B", note: "Mainland, coast. Distribution, retail, seaport and airport hub." },
+  XC: { name: "Country C", note: "Island. The overseas buyer, reached by sea and air." },
+};
+const CAT = { commerce: "--c-commerce", logistics: "--c-logistics", government: "--c-government", finance: "--c-finance", procurement: "--c-procurement" };
+const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov", finance: "fin", procurement: "proc" };
+
+// Parties: number from the 26+C set (27-32 proposed), tile position, country.
+const P = [
+  // Country A
+  { n: "4", name: "Raw Material Supplier", cat: "commerce", c: "XA", at: [9, 10], h: 2, kind: "mine",
+    what: "Mines the ore at the start of the chain and sells it to the manufacturer.",
+    docs: "Order, DespatchAdvice, Invoice", roles: "AccountingSupplierParty, ConsignorParty" },
+  { n: "5", name: "Manufacturer", cat: "commerce", c: "XA", at: [14, 19], h: 3, kind: "factory",
+    what: "Turns raw material into finished goods; buys from #4, sells to #6 abroad and tenders in public procurement.",
+    docs: "Order, OrderResponse, Invoice, Tender, CertificateOfOrigin", roles: "SellerSupplierParty, AccountingSupplierParty, ExporterParty, EconomicOperatorParty" },
+  { n: "8", name: "Seller's Warehouse (3PL)", cat: "commerce", c: "XA", at: [16, 23], h: 2, kind: "warehouse",
+    what: "Picks, packs and hands the goods to the carrier for the manufacturer; knows nothing about prices.",
+    docs: "DespatchAdvice, InventoryReport", roles: "DespatchParty, ConsignorParty" },
+  { n: "7", name: "Waste Processor", cat: "commerce", c: "XA", at: [10, 25], h: 2, kind: "waste",
+    what: "Takes production waste from the manufacturer and invoices the removal.",
+    docs: "WasteNotification, WasteMovement, Invoice", roles: "RecoveryFacilityParty, DisposalFacilityParty" },
+  { n: "14", name: "Rail Carrier", cat: "logistics", c: "XA", at: [10, 16], h: 2, kind: "depot",
+    what: "Runs the ore trains from the mine to the factory and container trains to the border.",
+    docs: "Waybill, TransportExecutionPlan, TransportationStatus", roles: "CarrierParty, TransportServiceProviderParty" },
+  { n: "13", name: "Road Carrier", cat: "logistics", c: "XA", at: [17, 26], h: 1, kind: "depot",
+    what: "Trucks the goods across the land border to the distributor; last-mile delivery.",
+    docs: "Waybill, TransportationStatus, FreightInvoice", roles: "CarrierParty" },
+  { n: "15", name: "Inland Waterway Carrier", cat: "logistics", c: "XA", at: [18, 21], h: 1, kind: "quay",
+    what: "Moves bulk on the river from Country A down to the coast of Country B.",
+    docs: "Waybill, TransportExecutionPlan", roles: "CarrierParty, PerformingCarrierParty" },
+  { n: "18", name: "Rail Hub / Intermodal Terminal", cat: "logistics", c: "XA", at: [19, 16], h: 2, kind: "terminal",
+    what: "Transfers containers between rail and road at the border; manages tracks and slots.",
+    docs: "TransportationStatus, CommonTransportationReport", roles: "TerminalOperatorParty, AuthorityParty" },
+  { n: "23", name: "Seller's Bank", cat: "finance", c: "XA", at: [12, 21], h: 3, kind: "bank",
+    what: "Holds the manufacturer's account and receives the payments from abroad.",
+    docs: "Invoice (PayeeFinancialAccount), RemittanceAdvice", roles: "PayeeParty (account holder)" },
+  { n: "20", name: "Chamber of Commerce (XA)", cat: "government", c: "XA", at: [13, 23], h: 2, kind: "office",
+    what: "Certifies the origin of the exported goods and issues ATA carnets.",
+    docs: "CertificateOfOrigin, GoodsItemPassport", roles: "IssuerParty, EndorserParty, ExportingGuarantorParty" },
+  { n: "19", name: "Customs (XA)", cat: "government", c: "XA", at: [20, 22], h: 1, kind: "customs",
+    what: "Export customs at the land border crossing.",
+    docs: "ExportCustomsDeclaration, GoodsItemPassport", roles: "CustomsParty, ExportingCustomsParty" },
+  { n: "31", name: "Identifier Issuing Agency", cat: "government", c: "XA", at: [11, 22], h: 2, kind: "office", proposed: true,
+    what: "Issues item and property identifiers used across the world (a fictional numbering organisation).",
+    docs: "Catalogue, Item identifiers in every document", roles: "IssuerParty (ItemIdentification, PropertyIdentification)" },
+  // Country B
+  { n: "19", name: "Customs (XB)", cat: "government", c: "XB", at: [23, 22], h: 1, kind: "customs",
+    what: "Import customs at the land border crossing and at the seaport.",
+    docs: "ImportCustomsDeclaration, TransitCustomsDeclaration", roles: "CustomsParty, ImportingCustomsParty" },
+  { n: "6", name: "Distributor", cat: "commerce", c: "XB", at: [28, 26], h: 3, kind: "warehouse",
+    what: "Buys finished goods from #5, stocks them in its distribution centre, publishes the catalogue and sells to #26 and overseas to #1.",
+    docs: "Catalogue, Order, DespatchAdvice, Invoice, ReceiptAdvice", roles: "SellerSupplierParty, BuyerCustomerParty, ProviderParty" },
+  { n: "26", name: "Retailer", cat: "commerce", c: "XB", at: [33, 30], h: 2, kind: "shop",
+    what: "Buys from the distributor, sells to consumers; shares forecasts and promotions.",
+    docs: "Order, Forecast, RetailEvent, PurchaseReceipt", roles: "BuyerCustomerParty, RetailerCustomerParty" },
+  { n: "C", name: "Consumer", cat: "commerce", c: "XB", at: [35, 32], h: 1, kind: "house",
+    what: "A private person buying in the shop; receives a purchase receipt.",
+    docs: "PurchaseReceipt", roles: "AccountingCustomerParty (PurchaseReceipt)" },
+  { n: "2", name: "Contracting Authority", cat: "procurement", c: "XB", at: [31, 27], h: 4, kind: "townhall",
+    what: "A public body that buys under procurement law: publishes notices, receives and evaluates tenders.",
+    docs: "ContractNotice, CallForTenders, ContractAwardNotice", roles: "ContractingParty, TenderRecipientParty, TenderEvaluationParty" },
+  { n: "27", name: "Consortium Partner", cat: "procurement", c: "XB", at: [26, 31], h: 2, kind: "office", proposed: true,
+    what: "Tenders together with the manufacturer as consortium partner or subcontractor.",
+    docs: "Tender, TendererQualification", roles: "SubcontractorParty, AdditionalQualifyingParty" },
+  { n: "28", name: "Review Body", cat: "procurement", c: "XB", at: [33, 26], h: 3, kind: "office", proposed: true,
+    what: "Independent body that handles appeals and mediation in public procurement.",
+    docs: "ContractNotice, ContractAwardNotice (AppealTerms)", roles: "AppealReceiverParty, MediationParty" },
+  { n: "21", name: "Government Information Service", cat: "government", c: "XB", at: [30, 25], h: 3, kind: "office",
+    what: "Publishes procurement notices and keeps the business registry.",
+    docs: "PriorInformationNotice, BusinessInformation", roles: "ReceiverParty (notices), EvidenceIssuingParty" },
+  { n: "32", name: "Digital Agreement Governor", cat: "government", c: "XB", at: [29, 29], h: 2, kind: "office", proposed: true,
+    what: "Governs the multilateral digital agreement under which the parties exchange UBL documents.",
+    docs: "DigitalAgreement, DigitalCapability", roles: "GovernorParty" },
+  { n: "24", name: "Factor", cat: "finance", c: "XB", at: [31, 31], h: 3, kind: "bank",
+    what: "Buys the distributor's receivables and becomes the payee on its invoices.",
+    docs: "Invoice, Statement", roles: "PayeeParty" },
+  { n: "25", name: "Guarantor", cat: "finance", c: "XB", at: [32, 33], h: 2, kind: "bank",
+    what: "Issues guarantees, such as the bid bond for a tender.",
+    docs: "GuaranteeCertificate", roles: "GuarantorParty" },
+  { n: "29", name: "Insurer", cat: "finance", c: "XB", at: [34, 28], h: 3, kind: "bank", proposed: true,
+    what: "Insures the cargo on its way overseas.",
+    docs: "BillOfLading, Waybill (InsurancePolicy)", roles: "InsurerParty" },
+  { n: "10", name: "Freight Forwarder", cat: "logistics", c: "XB", at: [37, 25], h: 2, kind: "office",
+    what: "Books the transport, consolidates shipments and prepares the export documents; also arranges cargo insurance.",
+    docs: "ForwardingInstructions, PackingList, Manifest", roles: "FreightForwarderParty, LogisticsOperatorParty, BrokerParty" },
+  { n: "16", name: "Seaport (XB)", cat: "logistics", c: "XB", at: [39, 22], h: 2, kind: "port",
+    what: "Port of loading: berths, container yard and vessel traffic.",
+    docs: "CommonTransportationReport, TransportationStatus", roles: "TerminalOperatorParty, AuthorityParty" },
+  { n: "11", name: "Ocean Carrier", cat: "logistics", c: "XB", at: [38, 19], h: 2, kind: "office",
+    what: "Sails the container ship to the island and issues the negotiable bill of lading.",
+    docs: "BillOfLading, Waybill, CommonTransportationReport", roles: "CarrierParty, ReporterParty" },
+  { n: "17", name: "Airport (XB)", cat: "logistics", c: "XB", at: [33, 19], h: 1, kind: "airport",
+    what: "Air cargo terminal for urgent shipments overseas.",
+    docs: "TransportationStatus", roles: "TerminalOperatorParty" },
+  // Country C (island)
+  { n: "16", name: "Seaport (XC)", cat: "logistics", c: "XC", at: [46, 22], h: 2, kind: "port",
+    what: "Port of discharge on the island.",
+    docs: "CommonTransportationReport", roles: "TerminalOperatorParty, AuthorityParty" },
+  { n: "17", name: "Airport (XC)", cat: "logistics", c: "XC", at: [52, 15], h: 1, kind: "airport",
+    what: "The island's airport, where the air cargo arrives.",
+    docs: "TransportationStatus", roles: "TerminalOperatorParty" },
+  { n: "12", name: "Air Carrier", cat: "logistics", c: "XC", at: [54, 17], h: 2, kind: "office",
+    what: "The island's airline; flies urgent cargo and uses road feeder services on the mainland.",
+    docs: "Waybill (air waybill), TransportationStatus", roles: "CarrierParty, SubstituteCarrierParty via #13" },
+  { n: "19", name: "Customs (XC)", cat: "government", c: "XC", at: [47, 24], h: 1, kind: "customs",
+    what: "Import customs on the island.",
+    docs: "ImportCustomsDeclaration", roles: "CustomsParty, ImportingCustomsParty" },
+  { n: "3", name: "Customs Declarant / Broker", cat: "logistics", c: "XC", at: [49, 21], h: 2, kind: "office",
+    what: "Licensed agent that files the import declaration for the buyer; also acts as tax representative.",
+    docs: "ImportCustomsDeclaration, Invoice (tax representative)", roles: "CustomsAgentParty, TaxRepresentativeParty" },
+  { n: "9", name: "Buyer's Warehouse (3PL)", cat: "commerce", c: "XC", at: [50, 26], h: 2, kind: "warehouse",
+    what: "Receives the goods for the buyer and confirms what arrived.",
+    docs: "ReceiptAdvice, InventoryReport", roles: "DeliveryParty, ConsigneeParty" },
+  { n: "1", name: "Commercial Buyer", cat: "commerce", c: "XC", at: [53, 24], h: 3, kind: "office",
+    what: "Needs the goods: orders from the distributor overseas and pays the invoice.",
+    docs: "Order, OrderChange, ReceiptAdvice, RemittanceAdvice", roles: "BuyerCustomerParty, AccountingCustomerParty, ImporterParty" },
+  { n: "22", name: "Buyer's Bank", cat: "finance", c: "XC", at: [55, 26], h: 3, kind: "bank",
+    what: "Holds the buyer's account and sends the payment abroad.",
+    docs: "RemittanceAdvice (PaymentMeans)", roles: "PayerFinancialAccount holder" },
+  { n: "20", name: "Chamber of Commerce (XC)", cat: "government", c: "XC", at: [54, 21], h: 2, kind: "office",
+    what: "Guarantees ATA carnets on the import side.",
+    docs: "GoodsItemPassport", roles: "ImportingGuarantorParty" },
+  { n: "30", name: "Maritime Administration", cat: "government", c: "XC", at: [56, 23], h: 2, kind: "office", proposed: true,
+    what: "The island's flag state administration; issues ship security certificates.",
+    docs: "CommonTransportationReport (ISPSRequirements)", roles: "ISSCIssuerParty, LegalAuthorityParty" },
+];
+
+// Routes in tile coordinates. Each has a mode, a layer and a vehicle.
+const ROUTES = [
+  { id: "ore", mode: "rail", layer: "chain", label: "Ore by rail (domestic XA)", pts: [[9,11],[9,14],[10,16],[12,18],[14,19]] },
+  { id: "rail-x", mode: "rail", layer: "transport", label: "Containers to the border hub", pts: [[14,19],[16,17],[19,16],[24,17],[27,20],[28,25]] },
+  { id: "road", mode: "road", layer: "chain", label: "Finished goods by road, across the border (XA → XB)", pts: [[16,23],[18,23],[20,22],[23,22],[26,24],[28,26]] },
+  { id: "road-b", mode: "road", layer: "chain", label: "Distributor to retailer (domestic XB)", pts: [[28,26],[30,28],[33,30]] },
+  { id: "road-port", mode: "road", layer: "transport", label: "Distributor to the seaport", pts: [[28,26],[32,24],[36,24],[39,22]] },
+  { id: "river", mode: "river", layer: "transport", label: "River barge (XA → XB)", pts: [[7,15],[11,18],[18,21],[22,25],[27,29],[33,34],[39,37],[42,38]] },
+  { id: "sea", mode: "sea", layer: "chain", label: "Container ship overseas (XB → XC)", pts: [[40,22],[42,21],[44,21],[45,22]] },
+  { id: "air", mode: "air", layer: "transport", label: "Air cargo (XB → XC)", pts: [[33,19],[43,13],[52,15]] },
+  { id: "road-c", mode: "road", layer: "chain", label: "Port to buyer (domestic XC)", pts: [[46,22],[48,24],[50,26],[53,24]] },
+  { id: "waste", mode: "road", layer: "chain", label: "Production waste", pts: [[14,19],[12,22],[10,25]] },
+];
+
+// ---------------------------------------------------------------- terrain
+// Deterministic pseudo-random noise, so the world is the same on every load.
+const hash = (x, y) => { let h = (x * 374761393 + y * 668265263) | 0; h = (h ^ (h >>> 13)) * 1274126177; return ((h ^ (h >>> 16)) >>> 0) / 4294967295; };
+const smooth = (x, y) => { const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+  const a = hash(xi, yi), b = hash(xi + 1, yi), c = hash(xi, yi + 1), d = hash(xi + 1, yi + 1);
+  const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf); return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v; };
+const noise = (x, y) => smooth(x / 6, y / 6) * .6 + smooth(x / 3, y / 3) * .3 + smooth(x, y) * .1;
+const border = j => 21.5 + 1.6 * Math.sin(j / 4.2);
+const tiles = [];
+for (let i = 0; i < W; i++) { tiles[i] = []; for (let j = 0; j < H; j++) {
+  const n = noise(i, j);
+  const main = ((i - 21.5) / 19.5) ** 2 + ((j - 24.5) / 20) ** 2 < 1 - (n - .5) * .55;
+  const isle = ((i - 52.5) / 8.2) ** 2 + ((j - 21.5) / 11.5) ** 2 < 1 - (n - .5) * .5;
+  const land = main || isle;
+  const country = !land ? null : isle ? "XC" : (i < border(j) ? "XA" : "XB");
+  let t = land ? "grass" : "sea";
+  if (land && country === "XA" && j < 15 && i < 17 && n > .42) t = "rock";
+  else if (land && n > .62) t = "forest";
+  else if (land && country === "XB" && n < .33 && i > 24 && i < 32) t = "field";
+  tiles[i][j] = { land, country, t, n };
+}}
+// Routes on land force their tiles to land; river and sea draw water.
+const lineTiles = pts => { const out = []; for (let k = 0; k < pts.length - 1; k++) {
+  const [a, b] = [pts[k], pts[k + 1]]; const steps = Math.max(Math.abs(b[0] - a[0]), Math.abs(b[1] - a[1])) * 2;
+  for (let s = 0; s <= steps; s++) out.push([Math.round(a[0] + (b[0] - a[0]) * s / steps), Math.round(a[1] + (b[1] - a[1]) * s / steps)]); } return out; };
+for (const r of ROUTES) {
+  if (r.mode === "sea" || r.mode === "air") continue;
+  for (const [i, j] of lineTiles(r.pts)) { const t = tiles[i]?.[j]; if (!t) continue;
+    if (r.mode === "river") { if (t.land) { t.t = "river"; } }
+    else { if (!t.land) { t.land = true; t.country = i < 42 ? (i < border(j) ? "XA" : "XB") : "XC"; } if (t.t !== "river") t.t = r.mode; else t.bridge = r.mode; }
+  }
+}
+for (const p of P) { const t = tiles[p.at[0]][p.at[1]]; t.land = true; t.country = p.c; if (t.t === "forest" || t.t === "rock") t.t = "grass"; t.building = p; }
+// Town houses around a few centres (decorative)
+const TOWNS = [ { c: [13, 22], r: 3.2, name: "Ferrano" }, { c: [31, 29], r: 4, name: "Lumeport" }, { c: [53, 23], r: 3, name: "Kaimoa" } ];
+for (const tw of TOWNS) for (let i = -5; i <= 5; i++) for (let j = -5; j <= 5; j++) {
+  const x = tw.c[0] + i, y = tw.c[1] + j, t = tiles[x]?.[y]; if (!t || !t.land || t.building || t.t !== "grass" && t.t !== "forest" && t.t !== "field") continue;
+  if (Math.hypot(i, j) < tw.r && hash(x * 7, y * 3) > .38) { t.t = "grass"; t.house = 1 + Math.floor(hash(x, y * 5) * 3); }
+}
+
+// ---------------------------------------------------------------- drawing helpers
+const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const iso = (i, j) => [(i - j) * TW / 2, (i + j) * TH / 2];
+const OX = H * TW / 2 + 40, OY = 60;                 // offset of tile (0,0) on the world canvas
+const WORLD_W = (W + H) * TW / 2 + 80, WORLD_H = (W + H) * TH / 2 + 140;
+const shade = (hex, f) => { const v = parseInt(hex.slice(1), 16); let r = v >> 16, g = (v >> 8) & 255, b = v & 255;
+  const m = c => Math.max(0, Math.min(255, Math.round(f > 0 ? c + (255 - c) * f : c * (1 + f)))); return `rgb(${m(r)},${m(g)},${m(b)})`; };
+function diamond(g, x, y, fill, stroke) { g.beginPath(); g.moveTo(x, y - TH / 2); g.lineTo(x + TW / 2, y); g.lineTo(x, y + TH / 2); g.lineTo(x - TW / 2, y); g.closePath();
+  g.fillStyle = fill; g.fill(); if (stroke) { g.strokeStyle = stroke; g.lineWidth = 1; g.stroke(); } }
+function box(g, x, y, w, d, h, top, side) { // isometric block standing on (x, y)
+  const hw = w * TW / 2, hd = d * TH / 2;
+  g.beginPath(); g.moveTo(x - hw, y - h); g.lineTo(x, y + hd - h); g.lineTo(x, y + hd); g.lineTo(x - hw, y); g.closePath(); g.fillStyle = shade(side, -.18); g.fill();
+  g.beginPath(); g.moveTo(x + hw, y - h); g.lineTo(x, y + hd - h); g.lineTo(x, y + hd); g.lineTo(x + hw, y); g.closePath(); g.fillStyle = shade(side, -.36); g.fill();
+  g.beginPath(); g.moveTo(x, y - hd - h); g.lineTo(x + hw, y - h); g.lineTo(x, y + hd - h); g.lineTo(x - hw, y - h); g.closePath(); g.fillStyle = top; g.fill();
+  g.strokeStyle = "rgba(0,0,0,.35)"; g.lineWidth = 1; g.stroke();
+}
+
+// ---------------------------------------------------------------- static world layer
+const world = document.createElement("canvas"); world.width = WORLD_W; world.height = WORLD_H;
+const COLORS = { sea: "#2f6aa3", sea2: "#3a7bb6", grass: "#5f9e47", grass2: "#6aab4f", forest: "#3f7a36", rock: "#8a8676", field: "#b9a64a",
+  river: "#3f86c4", road: "#7b7b78", rail: "#6b5848", sand: "#d8c98a" };
+function drawWorld() {
+  const g = world.getContext("2d"); g.clearRect(0, 0, WORLD_W, WORLD_H); g.imageSmoothingEnabled = false;
+  for (let s = 0; s < W + H; s++) for (let i = 0; i < W; i++) { const j = s - i; if (j < 0 || j >= H) continue;
+    const t = tiles[i][j]; const [x0, y0] = iso(i, j); const x = x0 + OX, y = y0 + OY;
+    if (!t.land) { const shallow = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b]?.land);
+      diamond(g, x, y, shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea)); continue; }
+    const coast = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b] && !tiles[i+a][j+b].land);
+    let base = t.t === "field" ? COLORS.field : t.t === "rock" ? COLORS.rock : (t.n > .5 ? COLORS.grass2 : COLORS.grass);
+    if (coast && t.t === "grass") base = COLORS.sand;
+    if (t.t === "river") base = COLORS.river;
+    diamond(g, x, y, base, "rgba(0,0,0,.08)");
+    if (t.t === "field") { g.strokeStyle = "rgba(90,70,20,.45)"; for (let k = -2; k <= 2; k++) { g.beginPath(); g.moveTo(x - 8 + k * 4, y - 4 + k * 2); g.lineTo(x + 8 + k * 4, y + 4 + k * 2); g.stroke(); } }
+    if (t.t === "road" || t.bridge === "road") { diamond(g, x, y, t.bridge ? "#8c7656" : COLORS.road); g.strokeStyle = "#d9d39a"; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(x - 7, y - 3); g.lineTo(x + 7, y + 3); g.stroke(); g.setLineDash([]); }
+    if (t.t === "rail" || t.bridge === "rail") { diamond(g, x, y, t.bridge ? "#8c7656" : "#8d7d63"); g.strokeStyle = "#4b3a2c"; g.lineWidth = 2;
+      for (let k = -2; k <= 2; k++) { g.beginPath(); g.moveTo(x + k * 4 - 3, y + k * 2 + 1.5); g.lineTo(x + k * 4 + 3, y + k * 2 - 1.5); g.stroke(); }
+      g.strokeStyle = "#c9c9c9"; g.lineWidth = 1; g.beginPath(); g.moveTo(x - 9, y - 2); g.lineTo(x + 7, y + 6); g.moveTo(x - 7, y - 6); g.lineTo(x + 9, y + 2); g.stroke(); }
+    if (t.t === "rock") { g.fillStyle = "#6e6a5c"; g.beginPath(); g.moveTo(x - 6, y + 2); g.lineTo(x - 1, y - 7); g.lineTo(x + 5, y + 2); g.fill(); g.fillStyle = "#e7e3d6"; g.beginPath(); g.moveTo(x - 2.5, y - 4); g.lineTo(x - 1, y - 7); g.lineTo(x + .8, y - 4); g.fill(); }
+    if (t.t === "forest" && !t.building) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) { g.fillStyle = "#5a3d24"; g.fillRect(x + dx - 1, y + dy - 1, 2, 4);
+      g.fillStyle = hash(i * 3 + dx, j) > .5 ? "#2f6b2c" : "#3b7f33"; g.beginPath(); g.moveTo(x + dx - 4, y + dy); g.lineTo(x + dx, y + dy - 10); g.lineTo(x + dx + 4, y + dy); g.fill(); }
+    if (t.house) { const roof = ["#b5523b", "#7a6a8f", "#3f6f8e"][t.house - 1]; box(g, x, y + 2, .5, .5, 6 + t.house * 3, roof, "#d8d0bf"); }
+    if (t.building) drawBuilding(g, x, y, t.building);
+  }
+  // country borders: dashed line along tile edges where the country changes on land
+  g.strokeStyle = "#d94a4a"; g.lineWidth = 2; g.setLineDash([5, 4]);
+  for (let i = 0; i < W - 1; i++) for (let j = 0; j < H; j++) { const a = tiles[i][j], b = tiles[i + 1][j];
+    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); g.beginPath(); g.moveTo(x + OX, y + OY - TH / 2 + TH); g.lineTo(x + OX + TW / 2, y + OY); g.stroke(); } }
+  for (let i = 0; i < W; i++) for (let j = 0; j < H - 1; j++) { const a = tiles[i][j], b = tiles[i][j + 1];
+    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); g.beginPath(); g.moveTo(x + OX, y + OY + TH / 2); g.lineTo(x + OX - TW / 2, y + OY); g.stroke(); } }
+  g.setLineDash([]);
+}
+function drawBuilding(g, x, y, p) {
+  const col = css(CAT[p.cat]) || "#888";
+  const k = p.kind;
+  if (k === "mine") { box(g, x - 4, y + 2, .45, .45, 18, "#555", "#6d6d6d"); box(g, x + 5, y + 3, .5, .5, 8, col, "#8e7a5c"); }
+  else if (k === "factory") { box(g, x, y + 2, .9, .9, 16, shade(col, -.1), "#b8a48a"); g.fillStyle = "#5c5c5c"; g.fillRect(x + 4, y - 26, 4, 14); g.fillRect(x - 2, y - 30, 4, 16); }
+  else if (k === "warehouse") box(g, x, y + 2, .95, .8, 10, shade(col, -.15), "#c9bfa9");
+  else if (k === "waste") { box(g, x, y + 2, .7, .7, 7, "#6e7f4a", "#9a9a86"); g.fillStyle = "#4b5d33"; g.beginPath(); g.ellipse(x + 6, y + 1, 5, 2.5, 0, 0, 7); g.fill(); }
+  else if (k === "depot") box(g, x, y + 2, .8, .7, 9, col, "#a29a8c");
+  else if (k === "quay") { box(g, x, y + 3, .9, .5, 4, "#8c7656", "#7a6a50"); box(g, x - 3, y, .3, .3, 10, col, "#9a8f80"); }
+  else if (k === "terminal") { box(g, x, y + 2, .9, .9, 6, "#9d9d9d", "#888"); box(g, x - 5, y - 2, .25, .25, 18, col, "#7a7a7a"); }
+  else if (k === "port") { box(g, x, y + 3, .95, .95, 4, "#a4a4a0", "#888"); for (const [dx, c] of [[-6, "#c0392b"], [0, "#2e86c1"], [6, "#d4ac0d"]]) box(g, x + dx, y + 1, .2, .15, 5, c, c);
+    g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.moveTo(x + 8, y - 2); g.lineTo(x + 8, y - 22); g.lineTo(x - 4, y - 18); g.stroke(); }
+  else if (k === "airport") { diamond(g, x, y, "#8f9396"); g.strokeStyle = "#f2f2f2"; g.setLineDash([3, 2]); g.beginPath(); g.moveTo(x - 12, y - 6); g.lineTo(x + 12, y + 6); g.stroke(); g.setLineDash([]);
+    box(g, x - 7, y + 1, .3, .3, 12, col, "#bfc4c7"); }
+  else if (k === "bank") { box(g, x, y + 2, .75, .75, 8 + p.h * 5, col, "#e9e4d5"); g.fillStyle = "rgba(0,0,0,.25)"; for (let r = 0; r < p.h; r++) g.fillRect(x - 9, y - 6 - r * 5, 6, 2); }
+  else if (k === "townhall") { box(g, x, y + 2, .85, .85, 16, col, "#ede6d2"); g.fillStyle = shade(col, -.25); g.beginPath(); g.moveTo(x - 6, y - 22); g.lineTo(x, y - 32); g.lineTo(x + 6, y - 22); g.fill(); }
+  else if (k === "customs") { box(g, x, y + 2, .5, .5, 9, col, "#d9d2c3"); g.strokeStyle = "#e8e8e8"; g.lineWidth = 2; g.beginPath(); g.moveTo(x + 4, y + 4); g.lineTo(x + 13, y + 0); g.stroke(); g.strokeStyle = "#c0392b"; g.setLineDash([2, 2]); g.stroke(); g.setLineDash([]); }
+  else if (k === "shop") { box(g, x, y + 2, .8, .7, 9, col, "#efe7d5"); g.fillStyle = "#c0392b"; g.fillRect(x - 10, y - 3, 10, 2); }
+  else if (k === "house") box(g, x, y + 2, .45, .45, 8, col, "#e6dccb");
+  else box(g, x, y + 2, .7, .7, 8 + p.h * 5, col, "#ddd5c4");
+}
+
+// ---------------------------------------------------------------- view, animation, interaction
+const cv = document.getElementById("map"), ctx = cv.getContext("2d");
+const view = { s: 1, x: 0, y: 0 };
+const layers = { chain: true, transport: true, gov: true, fin: true, proc: true };
+let selected = null, dpr = 1;
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function resize() { dpr = Math.min(2, window.devicePixelRatio || 1); const r = cv.getBoundingClientRect();
+  cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); if (!view.fitted) fit(); }
+// bounding box of all land, in world pixels
+const LAND = (() => { let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (tiles[i][j].land) { const [x, y] = iso(i, j);
+    x0 = Math.min(x0, x + OX - TW / 2); x1 = Math.max(x1, x + OX + TW / 2); y0 = Math.min(y0, y + OY - 40); y1 = Math.max(y1, y + OY + TH); }
+  return { x0, y0, x1, y1 }; })();
+function fit() { const r = cv.getBoundingClientRect(), pad = 16, w = LAND.x1 - LAND.x0, h = LAND.y1 - LAND.y0;
+  view.s = Math.max(.35, Math.min(2.5, Math.min((r.width - 2 * pad) / w, (r.height - 2 * pad) / h)));
+  view.x = (r.width - w * view.s) / 2 - LAND.x0 * view.s; view.y = (r.height - h * view.s) / 2 - LAND.y0 * view.s; view.fitted = true; }
+const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
+const tileWorld = (i, j) => { const [x, y] = iso(i, j); return [x + OX, y + OY]; };
+function pathLen(pts) { let L = 0; const seg = []; for (let k = 0; k < pts.length - 1; k++) { const [a, b] = [tileWorld(...pts[k]), tileWorld(...pts[k + 1])]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); seg.push([a, b, l]); L += l; } return { seg, L }; }
+for (const r of ROUTES) Object.assign(r, pathLen(r.pts));
+function along(r, f) { let d = f * r.L; for (const [a, b, l] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0])]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], 0]; }
+
+function drawVehicle(g, r, t) {
+  const f = ((t / (r.L * 45)) + (r.id.length * .13)) % 1, [x, y] = along(r, r.mode === "air" ? f : (f < .5 ? f * 2 : 2 - f * 2));
+  const [sx, sy] = toScreen(x, y), s = Math.max(.7, view.s);
+  g.save(); g.translate(sx, sy); g.scale(s, s);
+  if (r.mode === "rail") { g.fillStyle = "#c0392b"; g.fillRect(-6, -7, 12, 5); g.fillStyle = "#2c3e50"; g.fillRect(-6, -3, 12, 2); }
+  else if (r.mode === "road") { g.fillStyle = "#f4f4f4"; g.fillRect(-5, -6, 8, 4); g.fillStyle = "#e67e22"; g.fillRect(3, -6, 3, 4); }
+  else if (r.mode === "river") { g.fillStyle = "#7d5a3c"; g.fillRect(-7, -3, 14, 3); g.fillStyle = "#e8e2c8"; g.fillRect(2, -6, 4, 3); }
+  else if (r.mode === "sea") { g.fillStyle = "#1f2a44"; g.beginPath(); g.moveTo(-10, -2); g.lineTo(10, -2); g.lineTo(7, 2); g.lineTo(-8, 2); g.fill();
+    for (const [dx, c] of [[-6, "#c0392b"], [-2, "#2e86c1"], [2, "#d4ac0d"]]) { g.fillStyle = c; g.fillRect(dx, -6, 4, 4); } }
+  else if (r.mode === "air") { const lift = Math.sin(f * Math.PI) * 30; g.translate(0, -lift); g.fillStyle = "rgba(0,0,0,.25)"; g.fillRect(-6, lift, 12, 2);
+    g.fillStyle = "#f2f2f2"; g.fillRect(-8, -2, 16, 3); g.fillRect(-2, -6, 3, 11); g.fillStyle = "#2e86c1"; g.fillRect(6, -5, 2, 4); }
+  g.restore();
+}
+function signBox(g, text, active) { g.font = `600 ${active ? 13 : 12}px Inter, system-ui, sans-serif`; return [g.measureText(text).width + 12, active ? 19 : 17]; }
+function dot(g, x, y, col) { g.fillStyle = "rgba(17,21,31,.85)"; g.fillRect(Math.round(x - 5), Math.round(y - 9), 10, 10); g.fillStyle = col; g.fillRect(Math.round(x - 3), Math.round(y - 7), 6, 6); }
+function sign(g, x, y, text, col, active) {
+  const [w, h] = signBox(g, text, active);
+  g.fillStyle = active ? "#ffffff" : "rgba(17,21,31,.88)"; g.fillRect(Math.round(x - w / 2), Math.round(y - h), Math.round(w), h);
+  g.fillStyle = col; g.fillRect(Math.round(x - w / 2), Math.round(y - h), 3, h);
+  g.fillStyle = active ? "#11151f" : "#ffffff"; g.textBaseline = "middle"; g.fillText(text, Math.round(x - w / 2 + 7), Math.round(y - h / 2 + 1));
+}
+function frame(t) {
+  const r = cv.getBoundingClientRect(); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, r.width, r.height);
+  ctx.fillStyle = "#2b5d8f"; ctx.fillRect(0, 0, r.width, r.height);
+  ctx.imageSmoothingEnabled = view.s < 1; ctx.drawImage(world, view.x, view.y, WORLD_W * view.s, WORLD_H * view.s);
+  // routes overlay for sea and air, highlighted when a layer is on
+  for (const ro of ROUTES) { if (!layers[ro.layer]) continue;
+    if (ro.mode === "sea" || ro.mode === "air") { ctx.strokeStyle = ro.mode === "sea" ? "rgba(255,255,255,.65)" : "rgba(255,255,255,.5)"; ctx.lineWidth = 2; ctx.setLineDash(ro.mode === "air" ? [2, 6] : [8, 6]);
+      ctx.beginPath(); ro.pts.forEach((p, k) => { const [x, y] = toScreen(...tileWorld(...p)); k ? ctx.lineTo(x, y - (ro.mode === "air" ? 16 : 0)) : ctx.moveTo(x, y); }); ctx.stroke(); ctx.setLineDash([]); } }
+  if (!reduced) for (const ro of ROUTES) if (layers[ro.layer]) drawVehicle(ctx, ro, t);
+  // country names
+  ctx.textAlign = "center";
+  for (const [code, pos] of [["XA", [11, 30]], ["XB", [33, 38]], ["XC", [55, 31]]]) { const [x, y] = toScreen(...tileWorld(...pos));
+    ctx.font = `700 ${Math.round(14 + 5 * view.s)}px Inter, system-ui, sans-serif`; ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.strokeStyle = "rgba(0,0,0,.55)"; ctx.lineWidth = 3;
+    const label = `${COUNTRIES[code].name} · ${code}`; ctx.strokeText(label, x, y); ctx.fillText(label, x, y); }
+  ctx.textAlign = "left";
+  // party signs, back to front
+  const order = P.map((p, k) => ({ p, k })).sort((a, b) => (a.p.at[0] + a.p.at[1]) - (b.p.at[0] + b.p.at[1]));
+  // place signs front to back so the nearest ones win; overlapping ones become dots
+  const placed = [], todo = [];
+  for (const { p } of order.slice().reverse()) { if (!layers[LAYER_OF[p.cat]] && p !== selected) continue;
+    const [wx, wy] = tileWorld(...p.at); const [x, y] = toScreen(wx, wy - 14 - p.h * 6);
+    p._sx = x; p._sy = y; const text = (view.s > 1.15 || p === selected) ? `#${p.n} ${p.name}` : `#${p.n}`;
+    const [w, h] = signBox(ctx, text, p === selected), rect = [x - w / 2 - 2, y - h - 2, x + w / 2 + 2, y + 2];
+    const free = !placed.some(q => rect[0] < q[2] && rect[2] > q[0] && rect[1] < q[3] && rect[3] > q[1]);
+    if (free || p === selected) { placed.push(rect); todo.push([p, x, y, text, true]); } else todo.push([p, x, y, text, false]); }
+  for (const [p, x, y, text, full] of todo.reverse()) full ? sign(ctx, x, y, text, css(CAT[p.cat]), p === selected) : dot(ctx, x, y, css(CAT[p.cat]));
+  if (selected && selected._sx != null) sign(ctx, selected._sx, selected._sy, `#${selected.n} ${selected.name}`, css(CAT[selected.cat]), true);
+  if (!reduced) requestAnimationFrame(frame);
+}
+const redraw = () => { if (reduced) frame(0); };
+
+// panel
+const card = document.getElementById("card"), list = document.getElementById("list");
+function showCard(p) {
+  if (!p) { card.innerHTML = `<div class="num">THE UBL EXAMPLE WORLD</div><h2>Three countries, 38 places, one story</h2>
+    <p>Ore is mined and processed in <b>Country A</b>, crosses the land border by road, rail and river to the distributor in <b>Country B</b>, and goes overseas by ship and plane to the buyer on the island <b>Country C</b>. Every country has its own customs, chamber and banks.</p>
+    <p>Click a building or choose a party below to see its role and the UBL documents it sends and receives.</p>`; return; }
+  const col = css(CAT[p.cat]);
+  card.innerHTML = `<div class="num">PARTY #${p.n}${p.proposed ? " · PROPOSED" : ""}</div><h2 style="color:${col}">${p.name}</h2>
+    <div class="tags"><span class="tag">${COUNTRIES[p.c].name} (${p.c})</span><span class="tag">${p.cat}</span></div>
+    <p>${p.what}</p><dl><dt>Documents</dt><dd>${p.docs}</dd><dt>UBL roles</dt><dd><code>${p.roles.split(", ").join("</code> <code>")}</code></dd></dl>`;
+}
+function select(p, center) { selected = p; showCard(p);
+  for (const b of list.querySelectorAll(".party")) b.setAttribute("aria-current", b._p === p ? "true" : "false");
+  if (p && center) { const r = cv.getBoundingClientRect(); const [wx, wy] = tileWorld(...p.at); view.s = Math.max(view.s, 1.4); view.x = r.width / 2 - wx * view.s; view.y = r.height / 2 - wy * view.s; }
+  redraw(); }
+for (const code of ["XA", "XB", "XC"]) { const h = document.createElement("h3"); h.textContent = `${COUNTRIES[code].name} · ${code}`; list.appendChild(h);
+  for (const p of P.filter(p => p.c === code).sort((a, b) => (parseInt(a.n) || 99) - (parseInt(b.n) || 99))) {
+    const b = document.createElement("button"); b.className = "party"; b._p = p; b.type = "button";
+    b.innerHTML = `<span class="n" style="color:${css(CAT[p.cat])}">#${p.n}</span><span>${p.name}</span>${p.proposed ? '<span class="new">new</span>' : ""}`;
+    b.addEventListener("click", () => select(p, true)); list.appendChild(b); } }
+
+// layer toggles
+for (const b of document.querySelectorAll(".layers button")) b.addEventListener("click", () => {
+  const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); layers[b.dataset.layer] = on; redraw(); });
+// pan and zoom
+const zoomAt = (f, cx, cy) => { const ns = Math.max(.35, Math.min(3, view.s * f)); view.x = cx - (cx - view.x) * ns / view.s; view.y = cy - (cy - view.y) * ns / view.s; view.s = ns; redraw(); };
+document.getElementById("zoom-in").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(1.25, r.width / 2, r.height / 2); };
+document.getElementById("zoom-out").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(.8, r.width / 2, r.height / 2); };
+document.getElementById("zoom-fit").onclick = () => { fit(); redraw(); };
+cv.addEventListener("wheel", e => { e.preventDefault(); const r = cv.getBoundingClientRect(); zoomAt(e.deltaY < 0 ? 1.12 : .89, e.clientX - r.left, e.clientY - r.top); }, { passive: false });
+const pointers = new Map(); let moved = 0, pinch = 0;
+cv.addEventListener("pointerdown", e => { cv.setPointerCapture(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]); moved = 0; cv.classList.add("dragging"); });
+cv.addEventListener("pointermove", e => { if (!pointers.has(e.pointerId)) return; const [px, py] = pointers.get(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]);
+  if (pointers.size === 2) { const [a, b] = [...pointers.values()]; const d = Math.hypot(a[0] - b[0], a[1] - b[1]); const r = cv.getBoundingClientRect();
+    if (pinch) zoomAt(d / pinch, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); pinch = d; moved += 10; return; }
+  view.x += e.clientX - px; view.y += e.clientY - py; moved += Math.abs(e.clientX - px) + Math.abs(e.clientY - py); redraw(); });
+const up = e => { pointers.delete(e.pointerId); if (pointers.size < 2) pinch = 0; cv.classList.remove("dragging");
+  if (moved < 5 && e.type === "pointerup") { const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    let best = null, bd = 30; for (const p of P) { if (p._sx == null) continue; const d = Math.hypot(p._sx - x, p._sy - y + 6); if (d < bd) { bd = d; best = p; } }
+    select(best, false); } };
+cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
+
+window.addEventListener("resize", () => { view.fitted = false; resize(); redraw(); });
+document.fonts?.ready.then(() => { drawWorld(); redraw(); });
+drawWorld(); resize(); showCard(null);
+if (reduced) frame(0); else requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
