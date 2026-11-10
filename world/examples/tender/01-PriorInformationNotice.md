@@ -28,11 +28,68 @@ The authority announces the planned purchase early, through the publication serv
   Published early in the year, before the call for competition.
 - `IssueTime` = **14:18:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Advance notice of the bench procedure.**  
+  What.
+- `VersionID` = **1**  
+  The first version.
+- `PreviousVersionID` = **0**  
+  No earlier version.
+- `RequestedPublicationDate` = **2026-01-13**  
+  When to publish.
+- `PlannedDate` = **2026-01-26**  
+  The contract notice is planned for then.
+- `RegulatoryDomain` = **Bayvarra public procurement**  
+  The rules the notice follows.
+- `NoticeTypeCode` = **PIN**  
+  The kind of notice.
+- `NoticeLanguageCode` = **EN**  
+  In English, as an ISO 639 code.
+
+### Additional Notice Language
+
+Inside `AdditionalNoticeLanguage`:
+
+- `ID` = **fr**  
+  Also published in French, for tenderers from outside the trade accord.
+- `LocaleCode` = **FR**  
+  As an ISO 639 code.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **PWD-PARKS-PLAN-26**  
+  The parks plan.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-PIN**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Contracting Party
 
 Inside `ContractingParty`:
 
+- `BuyerProfileURI` = **https://tenders.lumeport.example/buyers/pwd**  
+  The buyer's profile.
+- `ContractingPartyType/PartyTypeCode` = **Local**  
+  A local authority.
+- `ContractingPartyType/PartyType` = **Department of a city**  
+  In words.
+- `ContractingActivity/ActivityTypeCode` = **Public works**  
+  Its activity.
+- `ContractingActivity/ActivityType` = **Public works and parks**  
+  In words.
+- `ContractingRepresentationType/RepresentationTypeCode` = **Own**  
+  On its own behalf.
+- `ContractingRepresentationType/RepresentationType` = **Buys for itself**  
+  In words.
 - `Party/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -130,6 +187,24 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Receiver Party
 
 Inside `ReceiverParty`:
@@ -209,12 +284,126 @@ Inside `ReceiverParty`:
 
 Inside `ProcurementProject`:
 
-- `Name` = **Park benches for the city parks**  
-  The name of the procurement project.
-- `Description` = **240 park benches with steel frames and hardwood slats over three years, ordered in call-offs.**  
-  What the authority buys.
-- `RequestedTenderTotal/EstimatedOverallContractAmount` = **120000.00** (currencyID `XBL`)  
-  The authority's estimate of the contract value, in lume.
+- `ID` = **PWD-2026-PARKS**  
+  The project's identifier.
+- `Name` = **Park benches for the parks renewal programme**  
+  The project's name.
+- `Description` = **240 steel park benches with hardwood slats over two years, delivered and anchored.**  
+  What is bought.
+- `ProcurementTypeCode` = **Supplies**  
+  Supplies or services.
+- `ProcurementSubTypeCode` = **Purchase**  
+  The kind within it.
+- `QualityControlCode` = **Inspection**  
+  Each release is inspected on delivery.
+- `RequiredFeeAmount` = **50.00** (currencyID `XBL`)  
+  The fee for the tender documents on paper.
+- `FeeDescription` = **Electronic documents are free; paper copies cost 50 lume.**  
+  The fee.
+- `RequestedDeliveryDate` = **2026-04-02**  
+  The first release.
+- `EstimatedOverallContractQuantity` = **240** (unitCode `H87`)  
+  240 benches over the contract.
+- `Note` = **Part of the parks renewal programme 2026.**  
+  The programme.
+- `SMESuitableIndicator` = **true**  
+  Small and medium firms can tender.
+- `ProcurementAdditionalType/ProcurementTypeCode` = **Green**  
+  Green public procurement.
+- `ProcurementAdditionalType/ProcurementType` = **Recycled steel and certified timber are asked.**  
+  In words.
+- `RequestedTenderTotal/EstimatedOverallContractAmount` = **124080.00** (currencyID `XBL`)  
+  The estimated value.
+- `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124080.00** (currencyID `XBL`)  
+  The framework's estimate.
+- `RequestedTenderTotal/TotalAmount` = **124080.00** (currencyID `XBL`)  
+  The budget.
+- `RequestedTenderTotal/TaxIncludedIndicator` = **false**  
+  Without tax: a public body pays no sales tax.
+- `RequestedTenderTotal/MinimumAmount` = **62040.00** (currencyID `XBL`)  
+  At least half will be called off.
+- `RequestedTenderTotal/MaximumAmount` = **148896.00** (currencyID `XBL`)  
+  At most 20 % more.
+- `RequestedTenderTotal/MonetaryScope` = **Two years of releases.**  
+  What the amount covers.
+- `RequestedTenderTotal/AverageSubsequentContractAmount` = **20680.00** (currencyID `XBL`)  
+  Six releases on average.
+- `RequestedTenderTotal/ApplicableTaxCategory/ID` = **E**  
+  A sale to a public body is exempt from the state sales tax (category E).
+- `RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **XB-PUBLIC**  
+  The world's code for the exemption reason (world/countries.json).
+- `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `MainCommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
+  The goods' HS subheading.
+- `AdditionalCommodityClassification/CommodityCode` = **PARKS-FURN**  
+  The department's own category: park furniture.
+- `RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
+  Where the benches go.
+- `RealizedLocation/Address/CityName` = **Lumeport**  
+  The city.
+- `RealizedLocation/Address/Country/IdentificationCode` = **XB**  
+  Bayvarra.
+- `PlannedPeriod/StartDate` = **2026-03-23**  
+  From the first release.
+- `PlannedPeriod/EndDate` = **2028-03-22**  
+  For two years.
+- `ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
+  The option.
+- `ContractExtension/MinimumNumberNumeric` = **0**  
+  None need be used.
+- `ContractExtension/MaximumNumberNumeric` = **1**  
+  At most one.
+- `ContractExtension/RenewalsIndicator` = **true**  
+  The contract may be renewed.
+- `ContractExtension/OptionValidityPeriod/EndDate` = **2028-03-22**  
+  Decided before it ends.
+- `ContractExtension/Renewal/Amount` = **62040.00** (currencyID `XBL`)  
+  The value of a renewal.
+- `ContractExtension/Renewal/Period/DurationMeasure` = **12** (unitCode `MON`)  
+  Twelve months.
+- `RequestForTenderLine/ID` = **1**  
+  The benches.
+- `RequestForTenderLine/UUID` = **b98b5bc4-6b96-59da-b8e9-89fc28afcae4**  
+  Its UUID.
+- `RequestForTenderLine/Note` = **Steel frame, five hardwood slats, ground anchors.**  
+  The requirement.
+- `RequestForTenderLine/Quantity` = **240** (unitCode `H87`)  
+  Over the contract.
+- `RequestForTenderLine/MinimumQuantity` = **120** (unitCode `H87`)  
+  At least.
+- `RequestForTenderLine/MaximumQuantity` = **288** (unitCode `H87`)  
+  At most.
+- `RequestForTenderLine/TaxIncludedIndicator` = **false**  
+  Prices without tax.
+- `RequestForTenderLine/MinimumAmount` = **350.00** (currencyID `XBL`)  
+  A unit price below this would be abnormally low.
+- `RequestForTenderLine/MaximumAmount` = **600.00** (currencyID `XBL`)  
+  The most the budget allows per bench.
+- `RequestForTenderLine/EstimatedAmount` = **119760.00** (currencyID `XBL`)  
+  The estimate.
+- `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
+  The technical specification.
+- `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
+  Releases from.
+- `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-22**  
+  To.
+- `RequestForTenderLine/RequiredItemLocationQuantity/LeadTimeMeasure` = **10** (unitCode `DAY`)  
+  Ten days per release.
+- `RequestForTenderLine/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
+  Five years.
+- `RequestForTenderLine/Item/Name` = **Park bench, 1800 mm**  
+  The item asked for.
+- `RequestForTenderLine/SubRequestForTenderLine/ID` = **1.1**  
+  The anchors.
+- `RequestForTenderLine/SubRequestForTenderLine/Quantity` = **240** (unitCode `SET`)  
+  One set per bench.
+- `RequestForTenderLine/SubRequestForTenderLine/Item/Name` = **Ground anchor set**  
+  Part of the bench.
 
 ## The document
 
@@ -230,7 +419,46 @@ Inside `ProcurementProject`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
   <cbc:IssueTime>14:18:00</cbc:IssueTime>
+  <cbc:Note>Advance notice of the bench procedure.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cbc:RequestedPublicationDate>2026-01-13</cbc:RequestedPublicationDate>
+  <cbc:PlannedDate>2026-01-26</cbc:PlannedDate>
+  <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode>PIN</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>EN</cbc:NoticeLanguageCode>
+  <cac:AdditionalNoticeLanguage>
+    <cbc:ID>fr</cbc:ID>
+    <cbc:LocaleCode>FR</cbc:LocaleCode>
+  </cac:AdditionalNoticeLanguage>
+  <cac:DocumentReference>
+    <cbc:ID>PWD-PARKS-PLAN-26</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-PIN</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode>Local</cbc:PartyTypeCode>
+      <cbc:PartyType>Department of a city</cbc:PartyType>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode>Public works</cbc:ActivityTypeCode>
+      <cbc:ActivityType>Public works and parks</cbc:ActivityType>
+    </cac:ContractingActivity>
+    <cac:ContractingRepresentationType>
+      <cbc:RepresentationTypeCode>Own</cbc:RepresentationTypeCode>
+      <cbc:RepresentationType>Buys for itself</cbc:RepresentationType>
+    </cac:ContractingRepresentationType>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
@@ -318,6 +546,24 @@ Inside `ProcurementProject`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:ReceiverParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -382,11 +628,110 @@ Inside `ProcurementProject`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:ProcurementProject>
-    <cbc:Name>Park benches for the city parks</cbc:Name>
-    <cbc:Description>240 park benches with steel frames and hardwood slats over three years, ordered in call-offs.</cbc:Description>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
+    <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+    <cbc:ProcurementSubTypeCode>Purchase</cbc:ProcurementSubTypeCode>
+    <cbc:QualityControlCode>Inspection</cbc:QualityControlCode>
+    <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
+    <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
+    <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
+    <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+    <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+    <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+    <cac:ProcurementAdditionalType>
+      <cbc:ProcurementTypeCode>Green</cbc:ProcurementTypeCode>
+      <cbc:ProcurementType>Recycled steel and certified timber are asked.</cbc:ProcurementType>
+    </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
-      <cbc:EstimatedOverallContractAmount currencyID="XBL">120000.00</cbc:EstimatedOverallContractAmount>
+      <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
+      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124080.00</cbc:EstimatedOverallFrameworkContractsAmount>
+      <cbc:TotalAmount currencyID="XBL">124080.00</cbc:TotalAmount>
+      <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+      <cbc:MinimumAmount currencyID="XBL">62040.00</cbc:MinimumAmount>
+      <cbc:MaximumAmount currencyID="XBL">148896.00</cbc:MaximumAmount>
+      <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
+      <cbc:AverageSubsequentContractAmount currencyID="XBL">20680.00</cbc:AverageSubsequentContractAmount>
+      <cac:ApplicableTaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ApplicableTaxCategory>
     </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:CommodityCode>PARKS-FURN</cbc:CommodityCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
+      <cac:Address>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+    <cac:PlannedPeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2028-03-22</cbc:EndDate>
+    </cac:PlannedPeriod>
+    <cac:ContractExtension>
+      <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
+      <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
+      <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+      <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
+      <cac:OptionValidityPeriod>
+        <cbc:EndDate>2028-03-22</cbc:EndDate>
+      </cac:OptionValidityPeriod>
+      <cac:Renewal>
+        <cbc:Amount currencyID="XBL">62040.00</cbc:Amount>
+        <cac:Period>
+          <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
+        </cac:Period>
+      </cac:Renewal>
+    </cac:ContractExtension>
+    <cac:RequestForTenderLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
+      <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
+      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:MinimumQuantity unitCode="H87">120</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="H87">288</cbc:MaximumQuantity>
+      <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+      <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
+      <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
+      <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
+      <cac:DocumentReference>
+        <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+      </cac:DocumentReference>
+      <cac:DeliveryPeriod>
+        <cbc:StartDate>2026-04-02</cbc:StartDate>
+        <cbc:EndDate>2028-03-22</cbc:EndDate>
+      </cac:DeliveryPeriod>
+      <cac:RequiredItemLocationQuantity>
+        <cbc:LeadTimeMeasure unitCode="DAY">10</cbc:LeadTimeMeasure>
+      </cac:RequiredItemLocationQuantity>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:Item>
+        <cbc:Name>Park bench, 1800 mm</cbc:Name>
+      </cac:Item>
+      <cac:SubRequestForTenderLine>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Quantity unitCode="SET">240</cbc:Quantity>
+        <cac:Item>
+          <cbc:Name>Ground anchor set</cbc:Name>
+        </cac:Item>
+      </cac:SubRequestForTenderLine>
+    </cac:RequestForTenderLine>
   </cac:ProcurementProject>
 </PriorInformationNotice>
 ```

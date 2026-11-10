@@ -5816,3 +5816,418 @@ def tender_with_credit(n, doc):
 
 SCENARIOS["sea"] = _with_enrichment("sea", sea_with_debit)
 SCENARIOS["tender"] = _with_enrichment("tender", tender_with_credit)
+
+
+# ================================================================ public procurement: the shared blocks of the tender
+PWD, BOARD, INFO = "2-xb", "28-xb", "21-xb"
+EST_BENCHES = Decimal(TENDER_QTY) * Decimal("499.00")
+EST_INSTALL = Decimal(TENDER_QTY) * Decimal("18.00")
+
+
+def lot_ref(lot):
+    return {"ID": V(lot, f"Lot {lot[-1]} of the procedure.")}
+
+
+def procurement_project(f, lot=None):
+    """The procurement as a whole, or one lot of it: benches (lot 1) and their installation (lot 2)."""
+    goods = lot != "LOT-2"
+    est = EST_BENCHES if lot == "LOT-1" else EST_INSTALL if lot == "LOT-2" else EST_BENCHES + EST_INSTALL
+    out = {"ID": V(lot or FOLDER, "The project's identifier."),
+           "Name": V({"LOT-1": "Park benches", "LOT-2": "Installation of the benches"}.get(lot, "Park benches for the "
+                                                                                        "parks renewal programme"),
+                     "The project's name."),
+           "Description": V("240 steel park benches with hardwood slats over two years, delivered and anchored.",
+                            "What is bought."),
+           "ProcurementTypeCode": V("Supplies" if goods else "Services", "Supplies or services."),
+           "ProcurementSubTypeCode": V("Purchase" if goods else "Installation", "The kind within it."),
+           "QualityControlCode": V("Inspection", "Each release is inspected on delivery."),
+           "RequiredFeeAmount": amount(Decimal("50.00"), "XBL", "The fee for the tender documents on paper."),
+           "FeeDescription": V("Electronic documents are free; paper copies cost 50 lume.", "The fee."),
+           "RequestedDeliveryDate": V(f.date(80), "The first release."),
+           "EstimatedOverallContractQuantity": qty(TENDER_QTY, "H87", "240 benches over the contract."),
+           "Note": V("Part of the parks renewal programme 2026.", "The programme."),
+           "SMESuitableIndicator": V("true", "Small and medium firms can tender."),
+           "ProcurementAdditionalType": {"ProcurementTypeCode": V("Green", "Green public procurement."),
+                                         "ProcurementType": V("Recycled steel and certified timber are asked.",
+                                                              "In words.")},
+           "RequestedTenderTotal": {
+               "EstimatedOverallContractAmount": amount(est, "XBL", "The estimated value."),
+               "EstimatedOverallFrameworkContractsAmount": amount(est, "XBL", "The framework's estimate."),
+               "TotalAmount": amount(est, "XBL", "The budget."),
+               "TaxIncludedIndicator": V("false", "Without tax: a public body pays no sales tax."),
+               "MinimumAmount": amount(est * Decimal("0.5"), "XBL", "At least half will be called off."),
+               "MaximumAmount": amount(est * Decimal("1.2"), "XBL", "At most 20 % more."),
+               "MonetaryScope": V("Two years of releases.", "What the amount covers."),
+               "AverageSubsequentContractAmount": amount(est / 6, "XBL", "Six releases on average."),
+               "ApplicableTaxCategory": kit.tax_category(kit.tax_rule("6-xb", PWD, "bench-serra-b"))},
+           "MainCommodityClassification": {"ItemClassificationCode": V("9401.79" if goods else "9988.00",
+                                                                       "The goods' HS subheading." if goods else
+                                                                       "A service: no HS subheading.", listID="HS")},
+           "AdditionalCommodityClassification": {"CommodityCode": V("PARKS-FURN", "The department's own category: "
+                                                                                  "park furniture.")},
+           "RealizedLocation": {"Name": V("Harbour park and town parks, Lumeport", "Where the benches go."),
+                                "Address": {"CityName": V("Lumeport", "The city."),
+                                            "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
+           "PlannedPeriod": {"StartDate": V(f.date(70), "From the first release."),
+                             "EndDate": V(f.date(800), "For two years.")},
+           "ContractExtension": {"OptionsDescription": V("One extension of a year with 120 more benches.", "The "
+                                                                                                           "option."),
+                                 "MinimumNumberNumeric": V("0", "None need be used."),
+                                 "MaximumNumberNumeric": V("1", "At most one."),
+                                 "RenewalsIndicator": V("true", "The contract may be renewed."),
+                                 "OptionValidityPeriod": {"EndDate": V(f.date(800), "Decided before it ends.")},
+                                 "Renewal": {"Amount": amount(est / 2, "XBL", "The value of a renewal."),
+                                             "Period": {"DurationMeasure": V("12", "Twelve months.",
+                                                                             unitCode="MON")}}}}
+    if lot != "LOT-2":
+        out["RequestForTenderLine"] = {
+            "ID": V("1", "The benches."), "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:{FOLDER}:rftl:1")),
+                                                   "Its UUID."),
+            "Note": V("Steel frame, five hardwood slats, ground anchors.", "The requirement."),
+            "Quantity": qty(TENDER_QTY, "H87", "Over the contract."),
+            "MinimumQuantity": qty(120, "H87", "At least."), "MaximumQuantity": qty(288, "H87", "At most."),
+            "TaxIncludedIndicator": V("false", "Prices without tax."),
+            "MinimumAmount": amount(Decimal("350"), "XBL", "A unit price below this would be abnormally low."),
+            "MaximumAmount": amount(Decimal("600"), "XBL", "The most the budget allows per bench."),
+            "EstimatedAmount": amount(EST_BENCHES, "XBL", "The estimate."),
+            "DocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The technical specification.")},
+            "DeliveryPeriod": {"StartDate": V(f.date(80), "Releases from."), "EndDate": V(f.date(800), "To.")},
+            "RequiredItemLocationQuantity": {"LeadTimeMeasure": V("10", "Ten days per release.", unitCode="DAY")},
+            "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
+            "Item": {"Name": V("Park bench, 1800 mm", "The item asked for.")},
+            "SubRequestForTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One "
+                                                                                                         "set per "
+                                                                                                         "bench."),
+                                        "Item": {"Name": V("Ground anchor set", "Part of the bench.")}}}
+    return out
+
+
+def tendering_process(f):
+    return {"ID": V(f"{FOLDER}-P", "The procedure."), "OriginalContractingSystemID": V("PWD-FW-2024-PARKS", "The "
+                                                                                       "framework this one "
+                                                                                       "follows."),
+            "Description": V("Open procedure with two lots.", "The procedure."),
+            "NegotiationDescription": V("No negotiation: the award is on the tenders as submitted.", "Why none."),
+            "ProcedureCode": V("Open", "An open procedure."), "UrgencyCode": V("Normal", "No urgency."),
+            "ExpenseCode": V("Investment", "Paid from the investment budget."),
+            "PartPresentationCode": V("OneOrMore", "Tenders for one or both lots."),
+            "ContractingSystemCode": V("Framework", "A framework agreement."),
+            "SubmissionMethodCode": V("Electronic", "Tenders are submitted electronically."),
+            "CandidateReductionConstraintIndicator": V("false", "No reduction of candidates."),
+            "GovernmentAgreementConstraintIndicator": V("true", "Covered by the trade accord's procurement chapter."),
+            "AccessToolsURI": V("https://tenders.lumeport.example/PWD-2026-PARKS", "Where the documents are."),
+            "TerminatedIndicator": V("false", "The procedure runs."),
+            "DocumentAvailabilityPeriod": {"StartDate": V(f.date(14), "From the notice."),
+                                           "EndDate": V(f.date(44), "Until the day before the deadline.")},
+            "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(45), "The deadline."),
+                                               "EndTime": V("12:00:00", "At noon.")},
+            "InvitationSubmissionPeriod": {"StartDate": V(f.date(14), "Invitations from."),
+                                           "EndDate": V(f.date(20), "To.")},
+            "ParticipationInvitationPeriod": {"StartDate": V(f.date(14), "Participation invited from."),
+                                              "EndDate": V(f.date(30), "To.")},
+            "ParticipationRequestReceptionPeriod": {"EndDate": V(f.date(30), "Requests to participate by then.")},
+            "AdditionalInformationRequestPeriod": {"EndDate": V(f.date(38), "Questions by then.")},
+            "NoticeDocumentReference": {"ID": V(f.numbers.get("pin", f"{FOLDER}-PIN"), "The prior information "
+                                                                                       "notice.")},
+            "AdditionalDocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The specification.")},
+            "ProcessJustification": {"PreviousCancellationReasonCode": V("None", "No earlier procedure was "
+                                                                                "cancelled."),
+                                     "ProcessReasonCode": V("Standard", "The open procedure is the rule."),
+                                     "ProcessReason": V("Value above the threshold for open procedures.", "Why."),
+                                     "Description": V("No exception applies.", "In words.")},
+            "EconomicOperatorShortList": {"LimitationDescription": V("No short list in an open procedure.", "Why."),
+                                          "ExpectedQuantity": V("0", "None expected."),
+                                          "MaximumQuantity": V("0", "None."), "MinimumQuantity": V("0", "None."),
+                                          "PreSelectedParty": party("5-xu", short=True)},
+            "OpenTenderEvent": {"IdentificationID": V("OPEN-1", "The opening of the tenders."),
+                                "OccurrenceDate": V(f.date(45), "The deadline day."),
+                                "OccurrenceTime": V("14:00:00", "Two hours after the deadline."),
+                                "TypeCode": V("Opening", "A tender opening."),
+                                "Description": V("Electronic opening; tenderers may follow it online.", "How."),
+                                "CompletionIndicator": V("false", "To come."),
+                                "CurrentStatus": {"ConditionCode": V("Scheduled", "Planned.")},
+                                "Contact": {"Name": V("Procurement office", "Whom to ask.")},
+                                "OccurrenceLocation": {"Name": V("Lumeport Public Works Department, Civic Square",
+                                                                 "Where.")}},
+            "AuctionTerms": {"AuctionConstraintIndicator": V("false", "No electronic auction."),
+                             "JustificationDescription": V("The award uses quality as well as price.", "Why not."),
+                             "Description": V("No auction.", "In words."),
+                             "ProcessDescription": V("Not applicable.", "No process."),
+                             "ConditionsDescription": V("Not applicable.", "No conditions."),
+                             "ElectronicDeviceDescription": V("Not applicable.", "No device."),
+                             "AuctionURI": V("https://tenders.lumeport.example/auctions", "The platform, unused.")},
+            "FrameworkAgreement": {"ExpectedOperatorQuantity": V("1", "One supplier."),
+                                   "MaximumOperatorQuantity": V("1", "At most one."),
+                                   "Justification": V("Uniform benches across the parks.", "Why one."),
+                                   "Frequency": V("Releases every few months.", "How often."),
+                                   "EstimatedMaximumValueAmount": amount((EST_BENCHES + EST_INSTALL) * Decimal("1.2"),
+                                                                         "XBL", "The estimated maximum."),
+                                   "MaximumValueAmount": amount((EST_BENCHES + EST_INSTALL) * Decimal("1.5"), "XBL",
+                                                                "With the extension."),
+                                   "DurationPeriod": {"DurationMeasure": V("24", "Two years.", unitCode="MON")},
+                                   "SubsequentProcessTenderRequirement": {"Name": V("Release order", "Each release "
+                                                                                                     "is a call-off "
+                                                                                                     "order."),
+                                                                          "Description": V("No new competition.",
+                                                                                           "How.")}},
+            "ContractingSystem": {"ID": V("FW-1", "The framework."),
+                                  "ContractingSystemTypeCode": V("Framework", "A framework agreement."),
+                                  "Description": V("Framework with one supplier.", "In words.")}}
+
+
+def tendering_terms(f):
+    return {"AwardingMethodTypeCode": V("BestValue", "The best price-quality ratio."),
+            "PriceEvaluationCode": V("UnitPrice", "Evaluated on the unit prices."),
+            "MaximumVariantQuantity": V("1", "One variant allowed."),
+            "VariantConstraintIndicator": V("true", "Variants are allowed."),
+            "AcceptedVariantsDescription": V("A bench of recycled plastic slats.", "The variant allowed."),
+            "VariantConstraintCode": V("Allowed", "As a code."),
+            "PriceRevisionFormulaDescription": V("Steel index each January.", "How prices change."),
+            "FundingProgramCode": V("PARKS-26", "The programme."),
+            "FundingProgram": V("Parks renewal programme 2026", "In words."),
+            "MaximumAdvertisementAmount": amount(Decimal("500.00"), "XBL", "The most the winner pays for "
+                                                                           "publication."),
+            "Note": V("Questions through the platform only.", "How to ask."),
+            "PaymentFrequencyCode": V("PerRelease", "Payment after each release."),
+            "EconomicOperatorRegistryURI": V("https://register.bayvarra.example", "Where tenderers are "
+                                                                                  "registered."),
+            "RequiredCurriculaIndicator": V("true", "The installers' qualifications are asked."),
+            "RequiredCurriculaCode": V("Installers", "For lot 2."),
+            "OtherConditionsIndicator": V("true", "There are other conditions."),
+            "RecurringProcurementIndicator": V("true", "The parks are renewed every few years."),
+            "RecurringProcurementDescription": V("A next procedure in about four years.", "When."),
+            "EstimatedTimingFurtherPublication": V("2030", "The next notice."),
+            "AdditionalConditions": V("Benches must carry the maker's serial number.", "A condition."),
+            "LatestSecurityClearanceDate": V(f.date(40), "No clearance is needed; the date is the latest for "
+                                                         "site access passes."),
+            "DocumentationFeeAmount": amount(Decimal("50.00"), "XBL", "For paper documents."),
+            "MultipleTendersCode": V("NotAllowed", "One tender per tenderer."),
+            "PenaltyClause": {"ID": V("PEN-1", "Late delivery."), "Content": V("0.5 % per day late, at most 10 %.",
+                                                                              "The penalty.")},
+            "RequiredFinancialGuarantee": {"GuaranteeTypeCode": V("TenderGuarantee", "A tender guarantee."),
+                                           "Description": V("A bank guarantee for the tender.", "What."),
+                                           "LiabilityAmount": amount(Decimal("2500.00"), "XBL", "Its amount."),
+                                           "AmountRate": V("2", "About 2 % of the estimate."),
+                                           "ConstitutionPeriod": {"EndDate": V(f.date(45), "With the tender.")}},
+            "ProcurementLegislationDocumentReference": {"ID": V("XB-PPA-2019", "Bayvarra's public procurement "
+                                                                               "act.")},
+            "FiscalLegislationDocumentReference": {"ID": V("XB-STT-ACT", "The state sales tax acts.")},
+            "EnvironmentalLegislationDocumentReference": {"ID": V("XB-ENV-2021", "The environmental act.")},
+            "EmploymentLegislationDocumentReference": {"ID": V("XB-LAB-2018", "The labour act.")},
+            "ContractualDocumentReference": {"ID": V("PWD-CONTRACT-DRAFT", "The draft framework contract.")},
+            "CallForTendersDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
+            "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
+            "PaymentTerms": {"Note": V("30 days after each accepted release.", "The terms.")},
+            "TendererQualificationRequest": {
+                "CompanyLegalFormCode": V("Any", "Any legal form."),
+                "CompanyLegalForm": V("Consortia must name a lead member.", "The rule."),
+                "PersonalSituation": V("No exclusion grounds.", "The tenderer's situation."),
+                "OperatingYearsQuantity": qty(3, "ANN", "At least three years in business."),
+                "EmployeeQuantity": qty(10, "C62", "At least ten employees."),
+                "Description": V("Economic and technical capacity.", "What is asked."),
+                "RequiredBusinessClassificationScheme": {"ID": V("ISIC4", "ISIC Rev. 4."),
+                                                         "Name": V("ISIC Rev. 4", "The classification."),
+                                                         "ClassificationCategory": {"CodeValue": V("3100", "Furniture "
+                                                                                                   "manufacture."),
+                                                                                    "Name": V("Manufacture of "
+                                                                                              "furniture", "In "
+                                                                                                           "words.")}},
+                "TechnicalEvaluationCriterion": {"EvaluationCriterionTypeCode": V("References", "References."),
+                                                 "Description": V("Three similar supplies in five years.", "What."),
+                                                 "ThresholdQuantity": qty(3, "C62", "Three."),
+                                                 "DurationPeriod": {"DurationMeasure": V("5", "Five years.",
+                                                                                         unitCode="ANN")},
+                                                 "SuggestedEvidence": {"ID": V("EV-REF", "Reference letters."),
+                                                                       "Name": V("References", "What.")}},
+                "FinancialEvaluationCriterion": {"EvaluationCriterionTypeCode": V("Turnover", "Turnover."),
+                                                 "Description": V("Yearly turnover of at least twice the "
+                                                                  "estimate.", "What."),
+                                                 "ThresholdAmount": amount(Decimal("250000"), "XBL", "The minimum."),
+                                                 "ExpressionCode": V("GreaterThan", "As a rule."),
+                                                 "Expression": V("Turnover > 2 × estimate", "The formula.")},
+                "SpecificTendererRequirement": {"Name": V("Certified timber", "The requirement."),
+                                                "TendererRequirementTypeCode": V("Environmental", "Its kind."),
+                                                "Description": V("Slats from forests managed for regrowth.", "What."),
+                                                "LegalReference": V("XB-ENV-2021 art. 12", "The rule."),
+                                                "SuggestedEvidence": {"ID": V("EV-FOR", "A forestry certificate."),
+                                                                      "Name": V("Forestry certificate", "What.")}},
+                "EconomicOperatorRole": {"RoleCode": V("Lead", "The lead tenderer."),
+                                         "RoleDescription": V("Leads a consortium.", "In words.")}},
+            "AllowedSubcontractTerms": {"Rate": V("30", "Up to 30 % subcontracted."),
+                                        "UnknownPriceIndicator": V("false", "The subcontracting share is known."),
+                                        "Description": V("Installation may be subcontracted.", "What."),
+                                        "Amount": amount(EST_INSTALL, "XBL", "Lot 2's value."),
+                                        "SubcontractingConditionsCode": V("Allowed", "As a code."),
+                                        "MaximumPercent": V("30", "At most."), "MinimumPercent": V("0", "At least.")},
+            "TenderPreparation": {"TenderEnvelopeID": V("ENV-1", "One envelope."),
+                                  "TenderEnvelopeTypeCode": V("Combined", "Technical and price together."),
+                                  "Description": V("One encrypted envelope per tender.", "How."),
+                                  "OpenTenderID": V("OPEN-1", "Opened at the opening."),
+                                  "ProcurementProjectLot": {"ID": V("LOT-1", "For lot 1 and lot 2 alike.")},
+                                  "DocumentTenderRequirement": {"Name": V("Price schedule", "A document to submit."),
+                                                                "Description": V("Unit prices per lot.", "What."),
+                                                                "TemplateDocumentReference": {
+                                                                    "ID": V("PWD-PRICE-TPL", "The template.")}},
+                                  "TenderEncryptionData": {
+                                      "MessageFormat": V("CMS", "Cryptographic Message Syntax."),
+                                      "EncryptionCertificateAttachment": {"ExternalReference": {
+                                          "URI": V("https://tenders.lumeport.example/cert.pem", "The certificate.")}},
+                                      "EncryptionCertificatePathChain": {"Value": V("PWD-CA > PWD-TENDER", "The "
+                                                                                                           "chain."),
+                                                                         "URI": V("https://tenders.lumeport.example/"
+                                                                                  "chain.pem", "Where.")},
+                                      "EncryptionSymmetricAlgorithm": {"ID": V("AES-256-GCM", "The algorithm."),
+                                                                       "OID": V("2.16.840.1.101.3.4.1.46", "Its "
+                                                                                                           "OID.")}}},
+            "ContractExecutionRequirement": {"Name": V("Recycled steel", "A condition of execution."),
+                                             "ExecutionRequirementCode": V("Environmental", "Its kind."),
+                                             "Description": V("At least 30 % recycled steel in the frames.",
+                                                              "What.")},
+            "AwardingTerms": {
+                "WeightingAlgorithmCode": V("WeightedSum", "A weighted sum."),
+                "Description": V("Price 60 %, quality 40 %.", "The award."),
+                "TechnicalCommitteeDescription": V("Three officers of the department.", "Who evaluates."),
+                "LowTendersDescription": V("Prices 30 % below the average are examined.", "Abnormally low."),
+                "PrizeIndicator": V("false", "Not a design contest."),
+                "PrizeDescription": V("None.", "No prize."),
+                "PaymentDescription": V("No payment for tendering.", "None."),
+                "FollowupContractIndicator": V("false", "No follow-up contract."),
+                "BindingOnBuyerIndicator": V("true", "The evaluation binds the buyer."),
+                "NoFurtherNegotiationIndicator": V("true", "No negotiation after the award."),
+                "AwardingCriterion": [
+                    {"ID": V("AC-1", "Price."), "AwardingCriterionTypeCode": V("Price", "Its kind."),
+                     "Name": V("Price", "Name."), "Description": V("The lowest total of unit prices.", "How."),
+                     "WeightNumeric": V("60", "Weight."), "Weight": V("60 %", "In words."),
+                     "CalculationExpression": V("60 × lowest / tendered", "The formula."),
+                     "CalculationExpressionCode": V("Inverse", "As a code."),
+                     "MinimumAmount": amount(Decimal("350"), "XBL", "Unit price at least."),
+                     "MaximumAmount": amount(Decimal("600"), "XBL", "At most."),
+                     "MinimumImprovementBid": V("Not applicable: no auction.", "Stated.")},
+                    {"ID": V("AC-2", "Quality."), "AwardingCriterionTypeCode": V("Quality", "Its kind."),
+                     "Name": V("Quality", "Name."), "WeightNumeric": V("40", "Weight."),
+                     "MinimumQuantity": qty(5, "ANN", "Warranty of at least five years."),
+                     "MaximumQuantity": qty(10, "ANN", "Up to ten years counts."),
+                     "SubordinateAwardingCriterion": {"ID": V("AC-2.1", "Durability."),
+                                                      "Name": V("Durability of the coating", "Name."),
+                                                      "WeightNumeric": V("20", "Half of quality.")}}],
+                "TechnicalCommitteePerson": kit.person("Mara", "Delling", "The head of parks on the committee.",
+                                                       job="Head of parks"),
+                "Prize": {"RankCode": V("None", "No prizes in a tender."), "Description": V("Not a contest.",
+                                                                                           "Why.")}},
+            "AdditionalInformationParty": party(PWD, short=True),
+            "DocumentProviderParty": party(PWD, short=True),
+            "TenderRecipientParty": party(PWD, short=True),
+            "ContractResponsibleParty": party(PWD, short=True),
+            "TenderEvaluationParty": party(PWD, short=True),
+            "QualificationRequestRecipientParty": party(PWD, short=True),
+            "TenderValidityPeriod": {"DurationMeasure": V("90", "Tenders hold for 90 days.", unitCode="DAY")},
+            "ContractAcceptancePeriod": {"DurationMeasure": V("10", "The standstill: ten days.", unitCode="DAY")},
+            "AppealTerms": {"Description": V("Appeals to the review board within ten days of the award.", "How."),
+                            "PresentationPeriod": {"DurationMeasure": V("10", "Ten days.", unitCode="DAY")},
+                            "AppealInformationParty": party(BOARD, short=True)},
+            "Language": {"ID": V("en", "English."), "Name": V("English", "In words."),
+                         "LocaleCode": V("EN", "As an ISO 639 code.")},
+            "BudgetAccountLine": {"ID": V("BL-PARKS-26", "The budget line."),
+                                  "TotalAmount": amount(EST_BENCHES + EST_INSTALL, "XBL", "Its amount."),
+                                  "BudgetAccount": {"ID": V("4.2.110", "The city's budget account."),
+                                                    "BudgetYearNumeric": V("2026", "The budget year."),
+                                                    "RequiredClassificationScheme": {
+                                                        "ID": V("LUM-BUDGET", "The city's budget classification."),
+                                                        "ClassificationCategory": {"CodeValue": V("4.2", "Parks and "
+                                                                                                         "green "
+                                                                                                         "spaces."),
+                                                                                   "Name": V("Parks", "In words.")}}}},
+            "ReplacedNoticeDocumentReference": {"ID": V(f"{FOLDER}-PIN", "The prior information notice this "
+                                                                         "notice follows.")},
+            "LotDistribution": {"MaximumLotsAwardedNumeric": V("2", "Both lots to one tenderer if best."),
+                                "MaximumLotsSubmittedNumeric": V("2", "Tenders for both lots allowed."),
+                                "GroupingLots": V("Lots 1 and 2 may be awarded together.", "The grouping."),
+                                "LotsGroup": {"LotsGroupID": V("G-1", "The group."),
+                                              "ProcurementProjectLotReference": [lot_ref("LOT-1"),
+                                                                                 lot_ref("LOT-2")]}},
+            "PostAwardProcess": {"ElectronicCatalogueUsageIndicator": V("true", "A catalogue of the benches."),
+                                 "ElectronicInvoiceAcceptedIndicator": V("true", "Invoices in UBL."),
+                                 "ElectronicOrderUsageIndicator": V("true", "Call-offs as UBL orders."),
+                                 "ElectronicPaymentUsageIndicator": V("true", "Paid by transfer.")},
+            "EconomicOperatorShortList": {"LimitationDescription": V("No short list.", "An open procedure.")},
+            "SecurityClearanceTerm": {"Code": V("None", "No security clearance."),
+                                      "Description": V("Parks are public places.", "Why.")}}
+
+
+def procurement_lots(f):
+    def lot(lid):
+        return {"ID": V(lid, f"Lot {lid[-1]}."),
+                "LegalDocumentReference": {"ID": V("XB-PPA-2019", "The procurement act.")},
+                "TechnicalDocumentReference": {"ID": V(f"PWD-SPEC-{lid}", "The lot's specification.")},
+                "RequiredDocumentReference": {"ID": V("PWD-PRICE-TPL", "The price schedule to submit.")},
+                "ProvidedDocumentReference": {"ID": V("PWD-SITE-PLAN", "The parks' site plan.")},
+                "AdditionalDocumentReference": {"ID": V("PWD-QA-26", "Questions and answers.")},
+                "TenderingTerms": {"Note": V("As for the procedure.", "The lot's terms.")},
+                "TenderingProcess": {"Description": V("As for the procedure.", "The lot's process.")},
+                "ProcurementProject": procurement_project(f, lid)}
+    return [lot("LOT-1"), lot("LOT-2")]
+
+
+def notice_head(f, kind, code):
+    return {"VersionID": V("1", "The first version."), "PreviousVersionID": V("0", "No earlier version."),
+            "RequestedPublicationDate": V(out_day(f, kind), "When to publish."),
+            "RegulatoryDomain": V("Bayvarra public procurement", "The rules the notice follows."),
+            "NoticeTypeCode": V(code, "The kind of notice."),
+            "NoticeLanguageCode": V("EN", "In English, as an ISO 639 code."),
+            "AdditionalNoticeLanguage": {"ID": V("fr", "Also published in French, for tenderers from outside the trade accord."),
+                                         "LocaleCode": V("FR", "As an ISO 639 code.")},
+            "Signature": seal(PWD, f"PWD-SIG-{kind}"),
+            "OriginatorCustomerParty": {"Party": party("2-xb", short=True)},
+            "BeneficiaryParty": party("2-xb", short=True)}
+
+
+def out_day(f, kind):
+    return f.date({"PIN": 1, "CN": 15, "CAN": 57}[kind])
+
+
+def contracting_party_details():
+    return {"BuyerProfileURI": V("https://tenders.lumeport.example/buyers/pwd", "The buyer's profile."),
+            "ContractingPartyType": {"PartyTypeCode": V("Local", "A local authority."),
+                                     "PartyType": V("Department of a city", "In words.")},
+            "ContractingActivity": {"ActivityTypeCode": V("Public works", "Its activity."),
+                                    "ActivityType": V("Public works and parks", "In words.")},
+            "ContractingRepresentationType": {"RepresentationTypeCode": V("Own", "On its own behalf."),
+                                              "RepresentationType": V("Buys for itself", "In words.")}}
+
+
+@enrich("tender", "PriorInformationNotice")
+def _(f, n, doc, out):
+    f.numbers["pin"] = out["ID"].value if "ID" in out else f"{FOLDER}-PIN"
+    return {**notice_head(f, "PIN", "PIN"), "Note": V("Advance notice of the bench procedure.", "What."),
+            "PlannedDate": V(f.date(14), "The contract notice is planned for then."),
+            "DocumentReference": {"ID": V("PWD-PARKS-PLAN-26", "The parks plan.")},
+            "ContractingParty": contracting_party_details(),
+            "ProcurementProject": procurement_project(f)}
+
+
+@enrich("tender", "ContractNotice")
+def _(f, n, doc, out):
+    return {**notice_head(f, "CN", "ContractNotice"), "Note": V("Open procedure in two lots.", "What."),
+            "FrequencyPeriod": {"DurationMeasure": V("4", "Notices like this about every four years.",
+                                                     unitCode="ANN")},
+            "ContractingParty": contracting_party_details(),
+            "TenderingTerms": tendering_terms(f), "TenderingProcess": tendering_process(f),
+            "ProcurementProject": procurement_project(f), "ProcurementProjectLot": procurement_lots(f)}
+
+
+@enrich("tender", "CallForTenders")
+def _(f, n, doc, out):
+    return {"ApprovalDate": V(f.date(13), "Approved by the department's head."),
+            "Note": V("The documents of the procedure.", "What."), "VersionID": V("1", "The first version."),
+            "PreviousVersionID": V("0", "None."),
+            "LegalDocumentReference": {"ID": V("PWD-LEGAL-26", "The legal conditions.")},
+            "TechnicalDocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The specification.")},
+            "RequiredDocumentReference": {"ID": V("PWD-PRICE-TPL", "The price schedule.")},
+            "ProvidedDocumentReference": {"ID": V("PWD-SITE-PLAN", "The site plan.")},
+            "AdditionalDocumentReference": {"ID": V("PWD-QA-26", "Questions and answers.")},
+            "Signature": seal(PWD, "PWD-SIG-CFT"),
+            "OriginatorCustomerParty": {"Party": party("2-xb", short=True)},
+            "BeneficiaryParty": party("2-xb", short=True),
+            "ContractingParty": contracting_party_details(),
+            "TenderingTerms": tendering_terms(f), "TenderingProcess": tendering_process(f),
+            "ProcurementProject": procurement_project(f), "ProcurementProjectLot": procurement_lots(f)}
