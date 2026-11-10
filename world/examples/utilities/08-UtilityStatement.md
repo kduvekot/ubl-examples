@@ -195,6 +195,38 @@ Inside `ReceiverParty`:
   The consumer's first name; identity of Robin Ashdale (world/parties.json).
 - `Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
+- `Person/FinancialAccount/ID` = **XB95BLUM0007251840** (schemeID `urn:ubl-examples:world:account`)  
+  The consumer's own account, from which the bills are paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `Person/FinancialAccount/Name` = **Robin Ashdale**  
+  The account holder, as the bank knows it.
+- `Person/FinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `Person/FinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `Person/FinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `Person/FinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `Person/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `Person/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
+- `Person/FinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
 
 ### Customer Party
 
@@ -639,6 +671,38 @@ Inside `SubscriberConsumption`:
     <cac:Person>
       <cbc:FirstName>Robin</cbc:FirstName>
       <cbc:FamilyName>Ashdale</cbc:FamilyName>
+      <cac:FinancialAccount>
+        <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
+        <cbc:Name>Robin Ashdale</cbc:Name>
+        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:FinancialInstitutionBranch>
+          <cbc:ID>BLUM-001</cbc:ID>
+          <cbc:Name>Main branch</cbc:Name>
+          <cac:FinancialInstitution>
+            <cbc:ID>BLUM</cbc:ID>
+            <cbc:Name>Bank of Lumeport</cbc:Name>
+            <cac:Address>
+              <cbc:StreetName>Exchange Street</cbc:StreetName>
+              <cbc:BuildingNumber>48</cbc:BuildingNumber>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitution>
+          <cac:Address>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitutionBranch>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:FinancialAccount>
     </cac:Person>
   </cac:ReceiverParty>
   <cac:CustomerParty>

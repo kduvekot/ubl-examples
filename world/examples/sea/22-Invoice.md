@@ -503,6 +503,10 @@ Inside `PaymentMeans`:
   Its town; identity of Bank of Lumeport (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
   The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
 - `TradeFinancing/ID` = **HF-FA-2026-007/18**  
@@ -543,6 +547,10 @@ Inside `PaymentMeans`:
   Its town; identity of Bank of Lumeport (world/parties.json).
 - `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
   The bank's country.
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
 - `TradeFinancing/FinancingFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
 - `TradeFinancing/Clause/ID` = **HF-FA-7.2**  
@@ -920,12 +928,20 @@ Inside `InvoiceLine`:
   How much of it one item uses.
 - `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
   Where the material comes from.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the production of 2025.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
 - `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Hardwood**  
   A material the item is made of.
 - `Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
   How much of it one item uses.
 - `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
   Where the material comes from.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the production of 2025.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
 - `Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **Packaging**  
   The kind of waste the item leaves.
 - `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
@@ -1397,6 +1413,12 @@ Inside `InvoiceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -1440,6 +1462,12 @@ Inside `InvoiceLine`:
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>
+          <cac:Address>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
         </cac:FinancialInstitutionBranch>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -1737,11 +1765,19 @@ Inside `InvoiceLine`:
           <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
           <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>

@@ -177,6 +177,8 @@ Inside `Consignment`:
   The minutes of the longitude.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West**  
   West of the Greenwich meridian.
+- `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/AltitudeMeasure` = **14** (unitCode `MTR`)  
+  The height of the place above sea level.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/RegistrationName` = **Lumeport Airport Cargo Terminal Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/CompanyID` = **CO-1236165**  
@@ -426,6 +428,7 @@ Inside `StatusPeriod`:
             <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
             <cbc:LongitudeMinutesMeasure unitCode="D61">16.20</cbc:LongitudeMinutesMeasure>
             <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+            <cbc:AltitudeMeasure unitCode="MTR">14</cbc:AltitudeMeasure>
           </cac:LocationCoordinate>
         </cac:PhysicalLocation>
         <cac:PartyTaxScheme>

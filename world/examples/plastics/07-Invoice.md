@@ -233,6 +233,8 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rinova Recovery (world/parties.json).
+- `Party/PartyAuthorization/PurposeCode` = **R3**  
+  The purpose as a code.
 - `Party/PartyAuthorization/Purpose` = **Recovery of non-hazardous plastic waste**  
   What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
 - `Party/PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
@@ -314,6 +316,10 @@ Inside `PaymentMeans`:
   Its town; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU**  
   The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU**  
+  Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
 
@@ -591,6 +597,7 @@ Inside `InvoiceLine`:
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:PartyAuthorization>
+        <cbc:PurposeCode>R3</cbc:PurposeCode>
         <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
         <cac:ValidityPeriod>
           <cbc:EndDate>2029-12-31</cbc:EndDate>
@@ -658,6 +665,12 @@ Inside `InvoiceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>

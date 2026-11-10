@@ -249,6 +249,10 @@ Inside `Consignment`:
   A register of businesses, not a register of charities or associations.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL**  
   The register covers the whole country.
+- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/HeadOfficeParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/HeadOfficeParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Import desk**  
   The desk that handles this document; identity of Selanu Airport Cargo (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Operations planner**  
@@ -623,6 +627,14 @@ Inside `StatusPeriod`:
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
+          <cac:HeadOfficeParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Port of Selanu</cbc:Name>
+            </cac:PartyName>
+          </cac:HeadOfficeParty>
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Import desk</cbc:Name>

@@ -146,6 +146,8 @@ def party(pid, short=False):
     if idn.get("contact"):
         ct = idn["contact"]
         contact = {"Name": V(ct["name"], f"The desk that handles this document; {src}.")}
+        if ct.get("id"):
+            contact = {"ID": V(ct["id"], "The desk's number in the party's own contact list."), **contact}
         if ct.get("job_title"):
             contact["JobTitle"] = V(ct["job_title"], f"The job of the person who answers at the desk; {src}.")
         if ct.get("department"):
@@ -167,6 +169,12 @@ def party(pid, short=False):
     if idn.get("person_name"):
         out["Person"] = {"FirstName": V(idn["person_name"]["first"], f"The consumer's first name; {src}."),
                          "FamilyName": V(idn["person_name"]["family"], f"The consumer's family name; {src}.")}
+        if idn.get("account"):
+            out["Person"]["FinancialAccount"] = account(pid, "The consumer's own account, from which the bills are "
+                                                             "paid.")
+    if idn.get("party_account_shown"):
+        out["FinancialAccount"] = account(pid, "The party's account, given with its details so that payments can be "
+                                               "sent to it.")
     if idn.get("service_provider"):
         sp = idn["service_provider"]
         out["ServiceProviderParty"] = {"ID": V(f"{pid}-SP-{sp['party']}", "The service contract between the two."),
@@ -178,7 +186,9 @@ def party(pid, short=False):
                                        "Party": party(sp["party"], short=True)}
     if idn.get("authorization"):
         au = idn["authorization"]
-        out["PartyAuthorization"] = {"Purpose": V(au["purpose"], f"What the authority has authorized the party to do; "
+        out["PartyAuthorization"] = {**({"PurposeCode": V(au["purpose_code"], "The purpose as a code.")}
+                                        if au.get("purpose_code") else {}),
+                                     "Purpose": V(au["purpose"], f"What the authority has authorized the party to do; "
                                                                  f"{src}."),
                                      "ValidityPeriod": {"EndDate": V(au["valid_until"], "The authorization expires on "
                                                                                         "this date.")},
@@ -192,7 +202,9 @@ def party(pid, short=False):
                                     "URI": V(idn["shop_website"], "Under the reserved .example domain.")}
     if idn.get("social"):
         so = idn["social"]
-        out["SocialMediaProfile"] = {"Name": V(so["name"], "The store's profile name."),
+        out["SocialMediaProfile"] = {**({"ID": V(so["id"], "The profile's number on the medium.")} if so.get("id")
+                                        else {}),
+                                     "Name": V(so["name"], "The store's profile name."),
                                      "SocialMediaTypeCode": V(so["type"], "The kind of social medium."),
                                      "URI": V(so["uri"], "The profile's address, under the reserved .example domain.")}
     out["_keys"] = set(out)
@@ -248,12 +260,16 @@ def legal_entity(pid):
         out["ShareholderParty"] = {"ParticipationPercent": V(str(sh["percent"]), "The share it holds in this company; "
                                                                                  f"{src}."),
                                    "Party": party(sh["party"], short=True)}
+    if le.get("head_office"):
+        out["HeadOfficeParty"] = party(le["head_office"], short=True)
     if le.get("listing"):
         li = le["listing"]
         out["SecurityListing"] = {"ID": V(li["id"], "The identifier of the listed shares, in the form of an ISIN with the "
                                                     "world's country code."),
                                   "MarketName": V(li["market"], "The regulated market where the shares are listed."),
                                   "MarketCode": V(li["code"], "The market's code.")}
+        if li.get("description"):
+            out["SecurityListing"]["Description"] = V(li["description"], "What is listed.")
     return out
 
 
@@ -340,6 +356,9 @@ def location(pid):
     if p["identity"].get("website"):
         out["InformationURI"] = V(p["identity"]["website"], "Where to find more about the place.")
     out["LocationCoordinate"] = coordinate(p["at"])
+    if site.get("altitude"):
+        out["LocationCoordinate"]["AltitudeMeasure"] = V(str(site["altitude"]), "The height of the place above sea "
+                                                                               "level.", unitCode="MTR")
     if site.get("subsidiary"):
         out["SubsidiaryLocation"] = {"Name": V(site["subsidiary"], "A part of the port with its own location: where "
                                                                    "containers are handled.")}
@@ -400,7 +419,11 @@ def account(pid, why, note=None):
     if branch:
         out["FinancialInstitutionBranch"] = {"ID": V(branch["id"], "The branch that keeps the account."),
                                              "Name": V(branch["name"], "The branch's name."),
-                                             "FinancialInstitution": institution(acc["bank"])}
+                                             "FinancialInstitution": institution(acc["bank"]),
+                                             "Address": {"CityName": V(bank["identity"]["address"]["CityName"],
+                                                                       "The branch is at the bank's head office."),
+                                                         "Country": {"IdentificationCode": V(bank["c"], "Its "
+                                                                                                       "country.")}}}
     out["Country"] = {"IdentificationCode": V(bank["c"], "The country where the account is kept.")}
     return out
 
@@ -684,7 +707,10 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         if ci.get("resources"):
             circ["ResourceConsumption"] = [{"ResourceTypeCode": V(r, "A material the item is made of."),
                                             "ConsumptionMeasure": V(q, "How much of it one item uses.", unitCode=u),
-                                            "ResourceOriginDescription": V(o, "Where the material comes from.")}
+                                            "ResourceOriginDescription": V(o, "Where the material comes from."),
+                                            "MeasurementPeriod": {"StartDate": V("2025-01-01", "Measured over the "
+                                                                                               "production of 2025."),
+                                                                  "EndDate": V("2025-12-31", "Its last day.")}}
                                            for r, q, u, o in ci["resources"]]
         if ci.get("repairability"):
             circ["RepairabilityScore"] = {"ScoreNumeric": V(ci["repairability"], "Side frames and slats can be "
@@ -705,6 +731,14 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         if ci.get("end_of_life"):
             circ["EndOfLifeTreatment"] = {"TreatmentPathwayCode": V(ci["end_of_life"], "What happens to the item "
                                                                                        "after use.")}
+            if ci.get("end_of_life_detail"):
+                d = ci["end_of_life_detail"]
+                circ["EndOfLifeTreatment"].update({
+                    "ProcessingTypeCode": V(d["processing"], "How the used item is processed."),
+                    "ImpactCode": V(d["impact"], "The environmental impact of that end of life."),
+                    "TreatmentLocation": {"Name": V(d["where"], "Where it is treated."),
+                                          "Address": {"Country": {"IdentificationCode": V(d["country"], "Its "
+                                                                                                       "country.")}}}})
         out["CircularityProfile"] = circ
     if maker.get("hazard"):
         out["HazardousRiskIndicator"] = V("true", "The item is dangerous goods.")

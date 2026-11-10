@@ -163,6 +163,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
+  What is listed.
 - `Party/PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
   The regulated market where the shares are listed.
 - `Party/PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
@@ -333,6 +335,10 @@ Inside `PaymentMeans`:
   Its town; identity of Crevalto Bank (world/parties.json).
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU**  
   The bank's country.
+- `PayerFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano**  
+  The branch is at the bank's head office.
+- `PayerFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU**  
+  Its country.
 - `PayerFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
 - `PayeeFinancialAccount/ID` = **XU46CREV0004084431** (schemeID `urn:ubl-examples:world:account`)  
@@ -361,6 +367,10 @@ Inside `PaymentMeans`:
   Its town; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU**  
   The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU**  
+  Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
 
@@ -524,6 +534,7 @@ Inside `RemittanceAdviceLine`:
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
           <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
         </cac:SecurityListing>
@@ -671,6 +682,12 @@ Inside `RemittanceAdviceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
@@ -697,6 +714,12 @@ Inside `RemittanceAdviceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>

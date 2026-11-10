@@ -256,6 +256,8 @@ Inside `BuyerCustomerParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
   The register covers the whole country.
+- `Party/Contact/ID` = **BM-CT-01**  
+  The desk's number in the party's own contact list.
 - `Party/Contact/Name` = **Buying office**  
   The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -272,6 +274,8 @@ Inside `BuyerCustomerParty`:
   The store's second website, where consumers buy.
 - `Party/AdditionalWebSite/URI` = **https://shop.brightmarket.example**  
   Under the reserved .example domain.
+- `Party/SocialMediaProfile/ID` = **10442197**  
+  The profile's number on the medium.
 - `Party/SocialMediaProfile/Name` = **brightmarket**  
   The store's profile name.
 - `Party/SocialMediaProfile/SocialMediaTypeCode` = **Photo sharing**  
@@ -554,6 +558,7 @@ Inside `RequestForQuotationLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
+        <cbc:ID>BM-CT-01</cbc:ID>
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
@@ -566,6 +571,7 @@ Inside `RequestForQuotationLine`:
         <cbc:URI>https://shop.brightmarket.example</cbc:URI>
       </cac:AdditionalWebSite>
       <cac:SocialMediaProfile>
+        <cbc:ID>10442197</cbc:ID>
         <cbc:Name>brightmarket</cbc:Name>
         <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>

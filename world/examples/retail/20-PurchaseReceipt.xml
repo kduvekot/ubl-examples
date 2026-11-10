@@ -113,6 +113,7 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
+        <cbc:ID>BM-CT-01</cbc:ID>
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
@@ -125,6 +126,7 @@
         <cbc:URI>https://shop.brightmarket.example</cbc:URI>
       </cac:AdditionalWebSite>
       <cac:SocialMediaProfile>
+        <cbc:ID>10442197</cbc:ID>
         <cbc:Name>brightmarket</cbc:Name>
         <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>
@@ -159,6 +161,38 @@
       <cac:Person>
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
+        <cac:FinancialAccount>
+          <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
+          <cbc:Name>Robin Ashdale</cbc:Name>
+          <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+          <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:FinancialInstitutionBranch>
+            <cbc:ID>BLUM-001</cbc:ID>
+            <cbc:Name>Main branch</cbc:Name>
+            <cac:FinancialInstitution>
+              <cbc:ID>BLUM</cbc:ID>
+              <cbc:Name>Bank of Lumeport</cbc:Name>
+              <cac:Address>
+                <cbc:StreetName>Exchange Street</cbc:StreetName>
+                <cbc:BuildingNumber>48</cbc:BuildingNumber>
+                <cbc:CityName>Lumeport</cbc:CityName>
+                <cac:Country>
+                  <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:FinancialInstitution>
+            <cac:Address>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitutionBranch>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:FinancialAccount>
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
@@ -423,11 +457,19 @@
           <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
           <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>

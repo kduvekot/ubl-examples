@@ -181,6 +181,7 @@
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:PartyAuthorization>
+        <cbc:PurposeCode>R3</cbc:PurposeCode>
         <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
         <cac:ValidityPeriod>
           <cbc:EndDate>2029-12-31</cbc:EndDate>
@@ -248,6 +249,12 @@
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>

@@ -233,6 +233,8 @@ Inside `AccountingCustomerParty`:
   The register covers the whole country.
 - `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
+  What is listed.
 - `Party/PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
   The regulated market where the shares are listed.
 - `Party/PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
@@ -338,6 +340,10 @@ Inside `PaymentMeans`:
   Its town; identity of Bank of Lumeport (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
   The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
 
@@ -718,6 +724,7 @@ Inside `InvoiceLine`:
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
           <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
         </cac:SecurityListing>
@@ -808,6 +815,12 @@ Inside `InvoiceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>

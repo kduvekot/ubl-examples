@@ -117,6 +117,8 @@ Inside `SenderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rinova Recovery (world/parties.json).
+- `PartyAuthorization/PurposeCode` = **R3**  
+  The purpose as a code.
 - `PartyAuthorization/Purpose` = **Recovery of non-hazardous plastic waste**  
   What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
 - `PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
@@ -303,6 +305,8 @@ Inside `NotifierParty`:
   The register covers the whole country.
 - `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
+  What is listed.
 - `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
   The regulated market where the shares are listed.
 - `PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
@@ -565,6 +569,7 @@ Inside `Shipment`:
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:PartyAuthorization>
+      <cbc:PurposeCode>R3</cbc:PurposeCode>
       <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
       <cac:ValidityPeriod>
         <cbc:EndDate>2029-12-31</cbc:EndDate>
@@ -730,6 +735,7 @@ Inside `Shipment`:
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
         <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
       </cac:SecurityListing>

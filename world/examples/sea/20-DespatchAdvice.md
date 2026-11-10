@@ -645,12 +645,20 @@ Inside `DespatchLine`:
   How much of it one item uses.
 - `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
   Where the material comes from.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the production of 2025.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
 - `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Hardwood**  
   A material the item is made of.
 - `Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
   How much of it one item uses.
 - `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
   Where the material comes from.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the production of 2025.
+- `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
 - `Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **Packaging**  
   The kind of waste the item leaves.
 - `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
@@ -1406,11 +1414,19 @@ Inside `DespatchLine`:
           <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
           <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>

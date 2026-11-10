@@ -709,7 +709,13 @@
     "type": "Recycled",
     "recycled": "100",
     "recyclable": "100",
-    "end_of_life": "Mechanical recycling"
+    "end_of_life": "Mechanical recycling",
+    "end_of_life_detail": {
+     "processing": "Mechanical",
+     "impact": "Low: the film becomes granulate again",
+     "where": "Rinova Recovery's plant, Ferrano",
+     "country": "XU"
+    }
    }
   },
   {

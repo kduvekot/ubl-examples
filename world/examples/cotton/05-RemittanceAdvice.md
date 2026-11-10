@@ -265,6 +265,10 @@ Inside `PaymentMeans`:
   Its town; identity of Bank of Selanu (world/parties.json).
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL**  
   The bank's country.
+- `PayerFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu**  
+  The branch is at the bank's head office.
+- `PayerFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL**  
+  Its country.
 - `PayerFinancialAccount/Country/IdentificationCode` = **XL**  
   The country where the account is kept.
 - `PayeeFinancialAccount/ID` = **XL05BSEL0004817534** (schemeID `urn:ubl-examples:world:account`)  
@@ -293,6 +297,10 @@ Inside `PaymentMeans`:
   Its town; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL**  
   The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL**  
+  Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XL**  
   The country where the account is kept.
 
@@ -521,6 +529,12 @@ Inside `RemittanceAdviceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XL</cbc:IdentificationCode>
@@ -547,6 +561,12 @@ Inside `RemittanceAdviceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XL</cbc:IdentificationCode>

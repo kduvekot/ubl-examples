@@ -127,6 +127,8 @@ Inside `AccountingSupplierParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
   The register covers the whole country.
+- `Party/Contact/ID` = **BM-CT-01**  
+  The desk's number in the party's own contact list.
 - `Party/Contact/Name` = **Buying office**  
   The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -143,6 +145,8 @@ Inside `AccountingSupplierParty`:
   The store's second website, where consumers buy.
 - `Party/AdditionalWebSite/URI` = **https://shop.brightmarket.example**  
   Under the reserved .example domain.
+- `Party/SocialMediaProfile/ID` = **10442197**  
+  The profile's number on the medium.
 - `Party/SocialMediaProfile/Name` = **brightmarket**  
   The store's profile name.
 - `Party/SocialMediaProfile/SocialMediaTypeCode` = **Photo sharing**  
@@ -188,6 +192,38 @@ Inside `AccountingCustomerParty`:
   The consumer's first name; identity of Robin Ashdale (world/parties.json).
 - `Party/Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
+- `Party/Person/FinancialAccount/ID` = **XB95BLUM0007251840** (schemeID `urn:ubl-examples:world:account`)  
+  The consumer's own account, from which the bills are paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `Party/Person/FinancialAccount/Name` = **Robin Ashdale**  
+  The account holder, as the bank knows it.
+- `Party/Person/FinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `Party/Person/FinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `Party/Person/FinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
+- `Party/Person/FinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
 
 ### Cashier Contact
 
@@ -424,6 +460,7 @@ Inside `PurchaseReceiptLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
+        <cbc:ID>BM-CT-01</cbc:ID>
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
@@ -436,6 +473,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:URI>https://shop.brightmarket.example</cbc:URI>
       </cac:AdditionalWebSite>
       <cac:SocialMediaProfile>
+        <cbc:ID>10442197</cbc:ID>
         <cbc:Name>brightmarket</cbc:Name>
         <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>
@@ -470,6 +508,38 @@ Inside `PurchaseReceiptLine`:
       <cac:Person>
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
+        <cac:FinancialAccount>
+          <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
+          <cbc:Name>Robin Ashdale</cbc:Name>
+          <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+          <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:FinancialInstitutionBranch>
+            <cbc:ID>BLUM-001</cbc:ID>
+            <cbc:Name>Main branch</cbc:Name>
+            <cac:FinancialInstitution>
+              <cbc:ID>BLUM</cbc:ID>
+              <cbc:Name>Bank of Lumeport</cbc:Name>
+              <cac:Address>
+                <cbc:StreetName>Exchange Street</cbc:StreetName>
+                <cbc:BuildingNumber>48</cbc:BuildingNumber>
+                <cbc:CityName>Lumeport</cbc:CityName>
+                <cac:Country>
+                  <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:FinancialInstitution>
+            <cac:Address>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitutionBranch>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:FinancialAccount>
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>

@@ -105,6 +105,7 @@
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
         <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
       </cac:SecurityListing>

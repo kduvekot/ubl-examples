@@ -151,6 +151,8 @@ Inside `AccountingSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rinova Recovery (world/parties.json).
+- `Party/PartyAuthorization/PurposeCode` = **R3**  
+  The purpose as a code.
 - `Party/PartyAuthorization/Purpose` = **Recovery of non-hazardous plastic waste**  
   What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
 - `Party/PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
@@ -262,6 +264,38 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rivermouth Packaging (world/parties.json).
+- `Party/FinancialAccount/ID` = **XB66BLUM0004712805** (schemeID `urn:ubl-examples:world:account`)  
+  The party's account, given with its details so that payments can be sent to it. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `Party/FinancialAccount/Name` = **Rivermouth Packaging Ltd**  
+  The account holder, as the bank knows it.
+- `Party/FinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `Party/FinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `Party/FinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `Party/FinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `Party/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `Party/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `Party/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `Party/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `Party/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `Party/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `Party/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `Party/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `Party/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
+- `Party/FinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412740** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -335,6 +369,10 @@ Inside `PaymentMeans`:
   Its town; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU**  
   The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU**  
+  Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
 
@@ -567,6 +605,7 @@ Inside `InvoiceLine`:
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:PartyAuthorization>
+        <cbc:PurposeCode>R3</cbc:PurposeCode>
         <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
         <cac:ValidityPeriod>
           <cbc:EndDate>2029-12-31</cbc:EndDate>
@@ -665,6 +704,38 @@ Inside `InvoiceLine`:
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:FinancialAccount>
+        <cbc:ID schemeID="urn:ubl-examples:world:account">XB66BLUM0004712805</cbc:ID>
+        <cbc:Name>Rivermouth Packaging Ltd</cbc:Name>
+        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:FinancialInstitutionBranch>
+          <cbc:ID>BLUM-001</cbc:ID>
+          <cbc:Name>Main branch</cbc:Name>
+          <cac:FinancialInstitution>
+            <cbc:ID>BLUM</cbc:ID>
+            <cbc:Name>Bank of Lumeport</cbc:Name>
+            <cac:Address>
+              <cbc:StreetName>Exchange Street</cbc:StreetName>
+              <cbc:BuildingNumber>48</cbc:BuildingNumber>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitution>
+          <cac:Address>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitutionBranch>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:FinancialAccount>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
@@ -723,6 +794,12 @@ Inside `InvoiceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>

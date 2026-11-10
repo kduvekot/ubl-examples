@@ -397,6 +397,12 @@
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -440,6 +446,12 @@
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>
+          <cac:Address>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
         </cac:FinancialInstitutionBranch>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -737,11 +749,19 @@
           <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
           <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>

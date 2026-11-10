@@ -242,6 +242,8 @@ Inside `AccountingCustomerParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
   The register covers the whole country.
+- `Party/Contact/ID` = **BM-CT-01**  
+  The desk's number in the party's own contact list.
 - `Party/Contact/Name` = **Buying office**  
   The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -258,6 +260,8 @@ Inside `AccountingCustomerParty`:
   The store's second website, where consumers buy.
 - `Party/AdditionalWebSite/URI` = **https://shop.brightmarket.example**  
   Under the reserved .example domain.
+- `Party/SocialMediaProfile/ID` = **10442197**  
+  The profile's number on the medium.
 - `Party/SocialMediaProfile/Name` = **brightmarket**  
   The store's profile name.
 - `Party/SocialMediaProfile/SocialMediaTypeCode` = **Photo sharing**  
@@ -335,6 +339,10 @@ Inside `PaymentMeans`:
   Its town; identity of Bank of Lumeport (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
   The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
 
@@ -654,6 +662,7 @@ Inside `InvoiceLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
+        <cbc:ID>BM-CT-01</cbc:ID>
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
@@ -666,6 +675,7 @@ Inside `InvoiceLine`:
         <cbc:URI>https://shop.brightmarket.example</cbc:URI>
       </cac:AdditionalWebSite>
       <cac:SocialMediaProfile>
+        <cbc:ID>10442197</cbc:ID>
         <cbc:Name>brightmarket</cbc:Name>
         <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>
@@ -727,6 +737,12 @@ Inside `InvoiceLine`:
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>

@@ -111,7 +111,8 @@
      "listing": {
       "market": "Ferrano Stock Exchange",
       "code": "FSE",
-      "id": "XU0001042505"
+      "id": "XU0001042505",
+      "description": "Ordinary shares of Valdara Industries"
      }
     },
     "service_provider": {
@@ -261,7 +262,8 @@
     "authorization": {
      "purpose": "Recovery of non-hazardous plastic waste",
      "valid_until": "2029-12-31",
-     "certificate": "XU-ENV-2024-0311"
+     "certificate": "XU-ENV-2024-0311",
+     "purpose_code": "R3"
     },
     "customs_id": "XU-TR-104548",
     "cost_centre": {
@@ -843,7 +845,8 @@
      "telephone": "+999 2 3851 0411",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Customer service officer",
+     "id": "BM-CT-01"
     },
     "tax_id": "CO-1231233",
     "address": {
@@ -874,7 +877,8 @@
     "social": {
      "type": "Photo sharing",
      "name": "brightmarket",
-     "uri": "https://social.example/brightmarket"
+     "uri": "https://social.example/brightmarket",
+     "id": "10442197"
     },
     "cost_centre": {
      "code": "6120",
@@ -1559,7 +1563,8 @@
     },
     "site": {
      "locode": "XBLMA",
-     "description": "Lumeport airport"
+     "description": "Lumeport airport",
+     "altitude": 14
     }
    }
   },
@@ -1659,7 +1664,8 @@
     "legal": {
      "form": "Ltd",
      "founded": "1996-01-01",
-     "size": "Small"
+     "size": "Small",
+     "head_office": "16-xl"
     }
    }
   },
@@ -2429,7 +2435,8 @@
     "cost_centre": {
      "code": "1300",
      "name": "Raw materials"
-    }
+    },
+    "party_account_shown": true
    }
   },
   {

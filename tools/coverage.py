@@ -22,8 +22,14 @@ Placement rules for an element that no example uses (parent P, child C):
   * Else a new example of the closest home document is needed -> "new example"
   * Aggregates that no document type can reach are listed  -> "not reachable"
 
+With --endorsed world/ubl-model.json only what UBL 2.5 endorses and does not
+deprecate is counted: deprecated document types and aggregates, properties
+whose definition starts with "(Deprecated)", properties the endorsed schemas
+leave out, and associations to deprecated aggregates are dropped, and so are
+aggregates that no endorsed document type can still reach.
+
 Usage
-  python3 tools/coverage.py --model UBL-Entities-2.5.gc [--examples xml] > report.md
+  python3 tools/coverage.py --model UBL-Entities-2.5.gc [--examples xml] [--endorsed world/ubl-model.json] > report.md
 """
 import argparse
 import collections
@@ -58,6 +64,43 @@ def load_model(path):
                 q, o = p.get("AssociatedObjectClassQualifier", ""), p["AssociatedObjectClass"]
                 p["target"] = abie_by_den[f"{q}_ {o}" if q else o]
     return abies, docs
+
+
+def endorsed_only(abies, docs, model_json):
+    """Keep only what UBL 2.5 endorses and does not deprecate (see world/ubl-model.json)."""
+    import json
+    m = json.load(open(model_json))["abies"]
+    dropped = collections.Counter()
+
+    def gone(name):
+        return name not in m or m[name]["deprecated"]
+    for a in [a for a in abies if gone(a)]:
+        dropped["deprecated document types and aggregates"] += 1
+        del abies[a]
+    docs = {d for d in docs if d in abies}
+    for a, v in abies.items():
+        ne = set(m[a].get("not_endorsed", []))
+        keep = []
+        for p in v["props"]:
+            if p.get("Definition", "").startswith("(Deprecated)") or p["ComponentName"] in ne:
+                dropped["deprecated properties"] += 1
+            elif p.get("target") and p["target"] not in abies:
+                dropped["associations to deprecated aggregates"] += 1
+            else:
+                keep.append(p)
+        v["props"] = keep
+    reach = set(docs)
+    todo = list(docs)
+    while todo:
+        for p in abies[todo.pop()]["props"]:
+            t = p.get("target")
+            if t and t not in reach:
+                reach.add(t)
+                todo.append(t)
+    for a in [a for a in abies if a not in reach]:
+        dropped[f"aggregates no endorsed document reaches ({a})"] += len(abies[a]["props"])
+        del abies[a]
+    return abies, docs, dropped
 
 
 def depths(abies, docs):
@@ -141,9 +184,13 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", required=True)
     ap.add_argument("--examples", default="xml")
+    ap.add_argument("--endorsed", help="world/ubl-model.json: count only endorsed, not deprecated elements")
     args = ap.parse_args()
 
     abies, docs = load_model(args.model)
+    dropped = {}
+    if args.endorsed:
+        abies, docs, dropped = endorsed_only(abies, docs, args.endorsed)
     dep = depths(abies, docs)
     used, instances, ex_doc, skipped = scan_examples(args.examples, abies, docs)
     docs_with_ex = collections.defaultdict(list)
@@ -203,12 +250,17 @@ def main():
     w("# UBL 2.5 element coverage of the sample documents\n")
     w(f"Model: `{os.path.basename(args.model)}` · examples: `{args.examples}/` "
       f"({len(ex_doc)} UBL documents, {len(skipped)} other files)\n")
+    if dropped:
+        w("Counted: only what UBL 2.5 endorses and does not deprecate. Left out:\n")
+        for k, n in sorted(dropped.items()):
+            w(f"- {k}: {n}")
+        w("")
     w("## Summary\n")
     w("| | Elements | Used in an example | Missing | Coverage |\n|---|---:|---:|---:|---:|")
     for label, sel in (("Document level", [x for x in props if x[0] in docs]), ("Library (cac/cbc in context)", lib),
                        ("All", props)):
         u = sum(1 for a, p in sel if (a, p["ComponentName"]) in used)
-        w(f"| {label} | {len(sel)} | {u} | {len(sel) - u} | {100 * u / len(sel):.0f}% |")
+        w(f"| {label} | {len(sel)} | {u} | {len(sel) - u} | {100 * u / len(sel):.1f}% |")
     aggs_used = sum(1 for a in abies if a not in docs and instances.get(a))
     w(f"\nAggregates (cac types) instantiated at least once: {aggs_used} of {len(abies) - len(docs)}.")
     w(f"Document types with at least one example: {len(docs_with_ex)} of {len(docs)}.\n")

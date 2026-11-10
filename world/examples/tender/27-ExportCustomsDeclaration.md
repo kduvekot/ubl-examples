@@ -119,6 +119,8 @@ Inside `ExporterParty`:
   The register covers the whole country.
 - `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
+  What is listed.
 - `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
   The regulated market where the shares are listed.
 - `PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
@@ -450,12 +452,20 @@ Inside `CustomsDeclaration`:
   How much of it one item uses.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
   Where the material comes from.
+- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the production of 2025.
+- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Hardwood**  
   A material the item is made of.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
   How much of it one item uses.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
   Where the material comes from.
+- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the production of 2025.
+- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
 - `Shipment/GoodsItem/Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **Packaging**  
   The kind of waste the item leaves.
 - `Shipment/GoodsItem/Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
@@ -760,6 +770,7 @@ Inside `Signature`:
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
         <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
       </cac:SecurityListing>
@@ -1048,11 +1059,19 @@ Inside `Signature`:
               <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
               <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
               <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+              <cac:MeasurementPeriod>
+                <cbc:StartDate>2025-01-01</cbc:StartDate>
+                <cbc:EndDate>2025-12-31</cbc:EndDate>
+              </cac:MeasurementPeriod>
             </cac:ResourceConsumption>
             <cac:ResourceConsumption>
               <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
               <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
               <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+              <cac:MeasurementPeriod>
+                <cbc:StartDate>2025-01-01</cbc:StartDate>
+                <cbc:EndDate>2025-12-31</cbc:EndDate>
+              </cac:MeasurementPeriod>
             </cac:ResourceConsumption>
             <cac:WasteGenerated>
               <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>

@@ -323,6 +323,8 @@ Inside `BusinessParty`:
   The register covers the whole country.
 - `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
+  What is listed.
 - `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
   The regulated market where the shares are listed.
 - `PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
@@ -694,6 +696,7 @@ Inside `NoticeSubType`:
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
         <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
       </cac:SecurityListing>

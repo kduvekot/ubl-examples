@@ -100,6 +100,38 @@
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
+      <cac:FinancialAccount>
+        <cbc:ID schemeID="urn:ubl-examples:world:account">XB66BLUM0004712805</cbc:ID>
+        <cbc:Name>Rivermouth Packaging Ltd</cbc:Name>
+        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:FinancialInstitutionBranch>
+          <cbc:ID>BLUM-001</cbc:ID>
+          <cbc:Name>Main branch</cbc:Name>
+          <cac:FinancialInstitution>
+            <cbc:ID>BLUM</cbc:ID>
+            <cbc:Name>Bank of Lumeport</cbc:Name>
+            <cac:Address>
+              <cbc:StreetName>Exchange Street</cbc:StreetName>
+              <cbc:BuildingNumber>48</cbc:BuildingNumber>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitution>
+          <cac:Address>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitutionBranch>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:FinancialAccount>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
@@ -245,6 +277,12 @@
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
