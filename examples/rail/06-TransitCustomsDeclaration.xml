@@ -356,6 +356,58 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:CarrierParty>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRCU1044171</cbc:ID>
+          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode>45G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30411</cbc:ID>
+            <cbc:SealIssuerTypeCode>Shipper</cbc:SealIssuerTypeCode>
+            <cbc:Condition>Intact</cbc:Condition>
+            <cbc:SealStatusCode>Applied</cbc:SealStatusCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRCU1044187</cbc:ID>
+          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode>45G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30412</cbc:ID>
+            <cbc:SealIssuerTypeCode>Shipper</cbc:SealIssuerTypeCode>
+            <cbc:Condition>Intact</cbc:Condition>
+            <cbc:SealStatusCode>Applied</cbc:SealStatusCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:OfficeOfEntryLocation>
+        <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
+      </cac:OfficeOfEntryLocation>
+      <cac:OfficeOfExitLocation>
+        <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
+      </cac:OfficeOfExitLocation>
+      <cac:OfficeOfDepartureLocation>
+        <cbc:Name>Customs office Ferrano Intermodal Hub</cbc:Name>
+      </cac:OfficeOfDepartureLocation>
+      <cac:OfficeOfDestinationLocation>
+        <cbc:Name>Customs office Marrowdale</cbc:Name>
+      </cac:OfficeOfDestinationLocation>
+      <cac:OfficeOfImportLocation>
+        <cbc:Name>Customs office Marrowdale</cbc:Name>
+      </cac:OfficeOfImportLocation>
+      <cac:OfficeOfTransitLocation>
+        <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
+      </cac:OfficeOfTransitLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

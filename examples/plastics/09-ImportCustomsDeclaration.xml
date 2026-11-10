@@ -255,8 +255,17 @@
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Recycled PE granulate</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">99840.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">99840.00</cbc:DeclaredStatisticsValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">98046.00</cbc:FreeOnBoardValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">0.00</cbc:InsuranceValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
+      <cbc:PreferenceCriterionCode>P</cbc:PreferenceCriterionCode>
+      <cbc:RequiredCustomsID>3901.10.00</cbc:RequiredCustomsID>
+      <cbc:CustomsStatusCode>Foreign</cbc:CustomsStatusCode>
+      <cbc:CustomsProcedureCode>4000</cbc:CustomsProcedureCode>
+      <cbc:CustomsTariffQuantity unitCode="KGM">120000</cbc:CustomsTariffQuantity>
+      <cbc:CustomsImportClassifiedIndicator>true</cbc:CustomsImportClassifiedIndicator>
       <cac:Item>
         <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
         <cbc:Name>Recycled PE granulate</cbc:Name>
@@ -289,6 +298,12 @@
           <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
         </cac:EnvironmentalCertificate>
       </cac:Item>
+      <cac:BondedWarehouseLocation>
+        <cbc:Name>Bonded store at the river quay, Lumeport</cbc:Name>
+      </cac:BondedWarehouseLocation>
+      <cac:AdditionalDocumentReference>
+        <cbc:ID>FB-WB-26-0890</cbc:ID>
+      </cac:AdditionalDocumentReference>
     </cac:GoodsItem>
   </cac:Shipment>
 </ImportCustomsDeclaration>

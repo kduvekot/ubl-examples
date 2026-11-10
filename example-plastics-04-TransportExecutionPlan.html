@@ -417,7 +417,7 @@ Collection, as requested.</li>
 <p>Inside <code>Consignment</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>RR-CS-26-0885</strong><br />
-The consignment of the request.</li>
+The seller's consignment number.</li>
 <li><code>GrossWeightMeasure</code> = <strong>120480</strong> (unitCode
 <code>KGM</code>)<br />
 The weight the plan is made for.</li>
@@ -600,6 +600,103 @@ network.</li>
 The party's electronic address in that network: its country code and
 registry number; identity of Rivermouth Packaging (world/parties.json).
 UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+<li><code>MainCarriageShipmentStage/ID</code> = <strong>1</strong><br />
+Down the river, from the recovery plant's quay to the river quay in
+Lumeport.</li>
+<li><code>MainCarriageShipmentStage/TransportModeCode</code> =
+<strong>8</strong> (listID
+<code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
+UN/ECE Recommendation 19 code 8: inland water transport.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/JourneyID</code> =
+<strong>FB4-26-031</strong><br />
+The barge operator's voyage number.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID</code>
+= <strong>XU</strong><br />
+The country the means of transport is registered in.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/RegistrationNationality</code>
+= <strong>Urvania</strong><br />
+The same, in words.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/DirectionCode</code>
+= <strong>Downstream</strong><br />
+The direction of the journey, as the carrier codes its services.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode</code>
+= <strong>INLAND</strong><br />
+The carrier's code for the kind of means: fiumella iv; the fleet of
+Fiumella Barges (world/parties.json).</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID</code>
+= <strong>XU-IW-08042</strong> (schemeID
+<code>urn:ubl-examples:world:vessel</code>)<br />
+The vessel's number in its country's register of ships; a number of the
+world, not an IMO number.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName</code>
+= <strong>Fiumella IV</strong><br />
+The vessel's name; the fleet of Fiumella Barges
+(world/parties.json).</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID</code>
+= <strong>XUBF4</strong><br />
+The radio call sign, with the world's country code.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID</code>
+= <strong>999801042</strong><br />
+The Maritime Mobile Service Identity, nine digits; 999 is no real
+country's maritime identification digits.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure</code>
+= <strong>1210</strong> (unitCode <code>C62</code>)<br />
+The gross tonnage of the vessel, a number without a unit.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure</code>
+= <strong>860</strong> (unitCode <code>C62</code>)<br />
+Its net tonnage, also without a unit.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode</code>
+= <strong>Dry cargo barge</strong><br />
+The kind of vessel.</li>
+<li><code>MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name</code>
+= <strong>Ferrano</strong><br />
+The port the vessel is registered in.</li>
+<li><code>MainCarriageShipmentStage/LoadingPortLocation/Name</code> =
+<strong>Quay of Rinova Recovery, Ferrano</strong><br />
+Where the bags are loaded.</li>
+<li><code>MainCarriageShipmentStage/UnloadingPortLocation/Name</code> =
+<strong>River quay, Lumeport</strong><br />
+The place named in the CPT terms.</li>
+<li><code>MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate</code>
+= <strong>2026-04-19</strong><br />
+Loading finished: 120 bags in the hold.</li>
+<li><code>MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime</code>
+= <strong>13:30:00</strong><br />
+The local time.</li>
+<li><code>MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate</code>
+= <strong>2026-04-20</strong><br />
+The barge leaves Urvania at the river border.</li>
+<li><code>MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime</code>
+= <strong>16:00:00</strong><br />
+The local time.</li>
+<li><code>MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate</code>
+= <strong>2026-04-22</strong><br />
+Planned unloading at the Lumeport quay.</li>
+<li><code>MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime</code>
+= <strong>08:00:00</strong><br />
+The local time.</li>
+<li><code>MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator</code>
+= <strong>false</strong><br />
+Whether the event has taken place (true) or is still to come
+(false).</li>
+<li><code>MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate</code>
+= <strong>2026-04-19</strong><br />
+The barge operator takes over the bags at the quay.</li>
+<li><code>MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime</code>
+= <strong>09:00:00</strong><br />
+The local time.</li>
+<li><code>MainCarriageShipmentStage/EstimatedTransitPeriod/DurationMeasure</code>
+= <strong>3</strong> (unitCode <code>DAY</code>)<br />
+Three days downstream, with the locks.</li>
+<li><code>MainCarriageShipmentStage/MasterPerson/FirstName</code> =
+<strong>Tomaso</strong><br />
+The skipper of the barge.</li>
+<li><code>MainCarriageShipmentStage/MasterPerson/FamilyName</code> =
+<strong>Riverra</strong><br />
+The family name.</li>
+<li><code>MainCarriageShipmentStage/MasterPerson/JobTitle</code> =
+<strong>Skipper</strong><br />
+The person's position.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -889,10 +986,64 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20412740&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlan</span>&gt;</span></code></pre></div>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCarriageShipmentStage</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;8&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JourneyID</span>&gt;FB4-26-031&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationalityID</span>&gt;XU&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Urvania&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DirectionCode</span>&gt;Downstream&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportMeansTypeCode</span>&gt;INLAND&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MaritimeTransport</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VesselID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:vessel&quot;</span>&gt;XU-IW-08042&lt;/<span class="kw">cbc:VesselID</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VesselName</span>&gt;Fiumella IV&lt;/<span class="kw">cbc:VesselName</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RadioCallSignID</span>&gt;XUBF4&lt;/<span class="kw">cbc:RadioCallSignID</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MMSIRegistrationID</span>&gt;999801042&lt;/<span class="kw">cbc:MMSIRegistrationID</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GrossTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;1210&lt;/<span class="kw">cbc:GrossTonnageMeasure</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NetTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;860&lt;/<span class="kw">cbc:NetTonnageMeasure</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ShipConfigurationCode</span>&gt;Dry cargo barge&lt;/<span class="kw">cbc:ShipConfigurationCode</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MaritimeTransport</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LoadingPortLocation</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Quay of Rinova Recovery, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LoadingPortLocation</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;River quay, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LoadingTransportEvent</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-19&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LoadingTransportEvent</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ExportationTransportEvent</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;16:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ExportationTransportEvent</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-22&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TakeoverTransportEvent</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-19&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TakeoverTransportEvent</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedTransitPeriod</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;3&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedTransitPeriod</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MasterPerson</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FirstName</span>&gt;Tomaso&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FamilyName</span>&gt;Riverra&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Skipper&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MasterPerson</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCarriageShipmentStage</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlan</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>831eab6</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>3653693</code></p></div></footer>
 </body>
 </html>

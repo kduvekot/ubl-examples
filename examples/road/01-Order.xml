@@ -196,6 +196,30 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cbc:ID>LD-DL-26-0412</cbc:ID>
+    <cbc:Quantity unitCode="H87">108</cbc:Quantity>
+    <cbc:MinimumQuantity unitCode="H87">108</cbc:MinimumQuantity>
+    <cbc:MaximumQuantity unitCode="H87">108</cbc:MaximumQuantity>
+    <cac:DeliveryAddress>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
+      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:DeliveryAddress>
+    <cac:AlternativeDeliveryLocation>
+      <cbc:Description>Gate B of the business park, if dock 4 is blocked.</cbc:Description>
+    </cac:AlternativeDeliveryLocation>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -205,6 +229,25 @@
       </cac:PartyName>
     </cac:DeliveryParty>
     <cac:Despatch>
+      <cbc:RequestedDespatchDate>2026-03-23</cbc:RequestedDespatchDate>
+      <cbc:RequestedDespatchTime>14:00:00</cbc:RequestedDespatchTime>
+      <cbc:Instructions>Have the export declaration ready when the truck arrives.</cbc:Instructions>
+      <cac:DespatchAddress>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+        <cbc:BuildingNumber>24</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:DespatchAddress>
+      <cac:DespatchLocation>
+        <cbc:Description>Loading bays 1–3 of the warehouse.</cbc:Description>
+      </cac:DespatchLocation>
       <cac:DespatchParty>
         <cbc:WebsiteURI>https://www.castrano.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>
@@ -383,7 +426,23 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:CarrierParty>
+      <cac:Contact>
+        <cbc:Name>Warehouse office</cbc:Name>
+        <cbc:Telephone>+999 1 4130 4411</cbc:Telephone>
+      </cac:Contact>
+      <cac:RequestedDespatchPeriod>
+        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:StartTime>13:00:00</cbc:StartTime>
+        <cbc:EndTime>17:00:00</cbc:EndTime>
+      </cac:RequestedDespatchPeriod>
     </cac:Despatch>
+    <cac:MinimumDeliveryUnit>
+      <cbc:BatchQuantity unitCode="H87">4</cbc:BatchQuantity>
+      <cbc:ConsumerUnitQuantity unitCode="H87">1</cbc:ConsumerUnitQuantity>
+    </cac:MinimumDeliveryUnit>
+    <cac:MaximumDeliveryUnit>
+      <cbc:BatchQuantity unitCode="H87">100</cbc:BatchQuantity>
+    </cac:MaximumDeliveryUnit>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>

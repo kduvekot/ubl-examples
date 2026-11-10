@@ -201,7 +201,16 @@
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
+    <cac:RequestedPickupTransportEvent>
+      <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+    </cac:RequestedPickupTransportEvent>
+    <cac:RequestedDeliveryTransportEvent>
+      <cbc:OccurrenceDate>2026-04-16</cbc:OccurrenceDate>
+    </cac:RequestedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

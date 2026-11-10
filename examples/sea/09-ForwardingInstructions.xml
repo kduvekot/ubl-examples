@@ -178,6 +178,9 @@
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:ForwarderServiceInstructions>Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.</cbc:ForwarderServiceInstructions>
+      <cbc:SpecialInstructions>Load the castings last, behind the doors.</cbc:SpecialInstructions>
+      <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -243,6 +246,38 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:ExporterParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:ExporterParty>
+      <cac:ImporterParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:ImporterParty>
+      <cac:InsuranceParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+        </cac:PartyName>
+      </cac:InsuranceParty>
+      <cac:OriginalDespatchTransportationService>
+        <cbc:TransportServiceCode>MerchantHaulage</cbc:TransportServiceCode>
+        <cbc:Name>Truck from Marrowdale to the port of Lumeport</cbc:Name>
+      </cac:OriginalDespatchTransportationService>
+      <cac:FinalDeliveryTransportationService>
+        <cbc:TransportServiceCode>MerchantHaulage</cbc:TransportServiceCode>
+        <cbc:Name>Truck from the port of Selanu to the 3PL</cbc:Name>
+      </cac:FinalDeliveryTransportationService>
     </cac:Consignment>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>

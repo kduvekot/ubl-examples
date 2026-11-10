@@ -4,6 +4,8 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ID>TOL-MF-26-0140</cbc:ID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:ManifestTypeCode>Cargo</cbc:ManifestTypeCode>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -297,8 +299,92 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ConsigneeParty>
+  <cac:CrewPerson>
+    <cbc:FirstName>Corin</cbc:FirstName>
+    <cbc:FamilyName>Halvard</cbc:FamilyName>
+    <cbc:RoleCode>Master</cbc:RoleCode>
+  </cac:CrewPerson>
+  <cac:CrewPerson>
+    <cbc:FirstName>Elsbeth</cbc:FirstName>
+    <cbc:FamilyName>Marrin</cbc:FamilyName>
+    <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+  </cac:CrewPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cac:ShipmentStage>
+      <cbc:ID>2</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      <cbc:CrewQuantity unitCode="C62">14</cbc:CrewQuantity>
+      <cac:TransportMeans>
+        <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
+        <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+        <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
+        <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+        <cac:MaritimeTransport>
+          <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+          <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+          <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
+          <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+          <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+          <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+          <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+          <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
+          <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+          <cac:RegistryCertificateDocumentReference>
+            <cbc:ID>REG-XB-S-20117</cbc:ID>
+          </cac:RegistryCertificateDocumentReference>
+          <cac:RegistryPortLocation>
+            <cbc:Name>Lumeport</cbc:Name>
+          </cac:RegistryPortLocation>
+        </cac:MaritimeTransport>
+      </cac:TransportMeans>
+      <cac:EstimatedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-05-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+      </cac:EstimatedDepartureTransportEvent>
+      <cac:EstimatedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>22:00:00</cbc:OccurrenceTime>
+      </cac:EstimatedArrivalTransportEvent>
+      <cac:MasterPerson>
+        <cbc:FirstName>Corin</cbc:FirstName>
+        <cbc:FamilyName>Halvard</cbc:FamilyName>
+        <cbc:RoleCode>Master</cbc:RoleCode>
+      </cac:MasterPerson>
+    </cac:ShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+        <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+        <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+        <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+        <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+        <cac:TransportEquipmentSeal>
+          <cbc:ID>TWL-S-0884213</cbc:ID>
+          <cbc:SealIssuerTypeCode>Carrier</cbc:SealIssuerTypeCode>
+          <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+        </cac:TransportEquipmentSeal>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:FirstArrivalPortLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:FirstArrivalPortLocation>
+    <cac:LastExitPortLocation>
+      <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+      <cbc:Name>Port of Lumeport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:LastExitPortLocation>
   </cac:Shipment>
 </Manifest>

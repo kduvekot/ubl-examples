@@ -393,6 +393,14 @@
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:Despatch>
+        <cbc:ID>CL-OUT-26-0871</cbc:ID>
+        <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchTime>16:20:00</cbc:ActualDespatchTime>
+        <cbc:ReleaseID>XU-EX-REL-55120</cbc:ReleaseID>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

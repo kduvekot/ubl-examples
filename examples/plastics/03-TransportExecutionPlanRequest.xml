@@ -196,6 +196,11 @@
   <cac:Consignment>
     <cbc:ID>RR-CS-26-0885</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+    <cbc:AnimalFoodIndicator>false</cbc:AnimalFoodIndicator>
+    <cbc:HumanFoodIndicator>false</cbc:HumanFoodIndicator>
+    <cbc:LivestockIndicator>false</cbc:LivestockIndicator>
+    <cbc:BulkCargoIndicator>false</cbc:BulkCargoIndicator>
+    <cbc:SpecialSecurityIndicator>false</cbc:SpecialSecurityIndicator>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>

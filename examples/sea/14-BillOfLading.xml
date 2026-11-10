@@ -3,7 +3,12 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ID>TOL-BL-26-0139</cbc:ID>
+  <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
+  <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Three originals issued.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -259,8 +264,25 @@
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
+    <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
+      <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
+      <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
+      <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
+      <cbc:TotalInvoiceAmount currencyID="XBL">50688.00</cbc:TotalInvoiceAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">53778.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
+      <cbc:TariffCode>9401.79</cbc:TariffCode>
+      <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+      <cbc:ShippingPriorityLevelCode>Standard</cbc:ShippingPriorityLevelCode>
+      <cbc:HandlingCode>Deck</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
+      <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
+      <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">50688.00</cbc:FreeOnBoardValueAmount>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -388,14 +410,493 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41722</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:NotifyParty>
+      <cac:OriginalDespatchParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginalDespatchParty>
+      <cac:FinalDeliveryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:FinalDeliveryParty>
+      <cac:LogisticsOperatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
+        </cac:PartyName>
+      </cac:LogisticsOperatorParty>
+      <cac:BillOfLadingHolderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:BillOfLadingHolderParty>
+      <cac:OriginalDepartureCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:OriginalDepartureCountry>
+      <cac:FinalDestinationCountry>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:FinalDestinationCountry>
+      <cac:DeliveryTerms>
+        <cbc:ID>CIF</cbc:ID>
+        <cbc:LossRiskResponsibilityCode>Buyer</cbc:LossRiskResponsibilityCode>
+        <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
+        <cbc:Amount currencyID="XBL">53778.00</cbc:Amount>
+        <cac:DeliveryLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:DeliveryLocation>
+        <cac:AllowanceCharge>
+          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReason>Terminal handling at Selanu, for the buyer</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">185.00</cbc:Amount>
+        </cac:AllowanceCharge>
+      </cac:DeliveryTerms>
+      <cac:PaymentTerms>
+        <cbc:Note>Ocean freight payable before release of the bill of lading.</cbc:Note>
+      </cac:PaymentTerms>
+      <cac:CollectPaymentTerms>
+        <cbc:Note>Terminal handling at Selanu collect from the consignee.</cbc:Note>
+      </cac:CollectPaymentTerms>
+      <cac:DisbursementPaymentTerms>
+        <cbc:Note>Island customs fees advanced by the broker and recharged to the consignee.</cbc:Note>
+      </cac:DisbursementPaymentTerms>
+      <cac:PrepaidPaymentTerms>
+        <cbc:Note>Ocean freight and bunker surcharge prepaid by the shipper.</cbc:Note>
+      </cac:PrepaidPaymentTerms>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Ocean freight, 40-foot container</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">2700.00</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:ExtraAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Bunker surcharge</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">250.00</cbc:Amount>
+      </cac:ExtraAllowanceCharge>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
+          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+            <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+            <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+            <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+            <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
+            <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20117</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:TransshipPortLocation>
+          <cbc:Name>None: a direct sailing</cbc:Name>
+        </cac:TransshipPortLocation>
+        <cac:AvailabilityTransportEvent>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:AvailabilityTransportEvent>
+        <cac:StorageTransportEvent>
+          <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+        </cac:StorageTransportEvent>
+        <cac:AcceptanceTransportEvent>
+          <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+        </cac:AcceptanceTransportEvent>
+        <cac:FreightChargeLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FreightChargeLocation>
+      </cac:MainCarriageShipmentStage>
+      <cac:PreCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
+        <cbc:CabotageIndicator>true</cbc:CabotageIndicator>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Trasvia Haulage</cbc:Name>
+          </cac:PartyName>
+        </cac:CarrierParty>
+        <cac:TransportMeans>
+          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+          </cac:RoadTransport>
+          <cac:OwnerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Trasvia Haulage</cbc:Name>
+            </cac:PartyName>
+          </cac:OwnerParty>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Loading length</cbc:AttributeID>
+            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+          </cac:MeasurementDimension>
+        </cac:TransportMeans>
+        <cac:DropoffTransportEvent>
+          <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+        </cac:DropoffTransportEvent>
+      </cac:PreCarriageShipmentStage>
+      <cac:OnCarriageShipmentStage>
+        <cbc:ID>3</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:OnCarriageIndicator>true</cbc:OnCarriageIndicator>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Nalevi Warehousing</cbc:Name>
+          </cac:PartyName>
+        </cac:CarrierParty>
+        <cac:WarehousingTransportEvent>
+          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:WarehousingTransportEvent>
+        <cac:ReceiptTransportEvent>
+          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        </cac:ReceiptTransportEvent>
+      </cac:OnCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+          <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
+          <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+          <cbc:StowagePositionID>140282</cbc:StowagePositionID>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>TWL-S-0884213</cbc:ID>
+            <cbc:SealIssuerTypeCode>Carrier</cbc:SealIssuerTypeCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-001</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 001 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-001</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-002</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 002 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-002</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-003</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 003 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-003</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-004</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 004 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-004</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-005</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 005 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-005</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-006</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 006 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-006</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-007</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 007 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-007</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-008</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 008 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-008</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-009</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 009 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-009</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-010</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 010 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-010</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-011</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 011 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-011</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-012</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 012 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-012</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-013</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 013 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-013</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-014</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 014 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-014</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-015</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 015 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-015</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-016</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 016 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-016</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-017</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 017 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-017</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-018</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 018 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-018</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-019</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 019 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-019</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-020</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 020 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-020</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-021</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 021 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-021</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-022</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 022 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-022</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-023</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 023 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-023</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-024</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 024 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-024</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID>LD-26-025</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="H87">12</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
+            <cbc:TraceID>LD-26-025</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:GoodsItem>
+            <cbc:ID>1</cbc:ID>
+            <cbc:Description>Park benches and spare side frames</cbc:Description>
+          </cac:GoodsItem>
+          <cac:VerifiedGrossMass>
+            <cbc:ID>VGM-26-0510</cbc:ID>
+            <cbc:WeighingDate>2026-05-12</cbc:WeighingDate>
+            <cbc:WeighingTime>15:30:00</cbc:WeighingTime>
+            <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
+            <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
+            <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
+            <cbc:GrossMassMeasure unitCode="KGM">3750</cbc:GrossMassMeasure>
+            <cac:WeighingParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeway Distribution</cbc:Name>
+              </cac:PartyName>
+            </cac:WeighingParty>
+            <cac:ShipperParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeway Distribution</cbc:Name>
+              </cac:PartyName>
+            </cac:ShipperParty>
+            <cac:ResponsibleParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeway Distribution</cbc:Name>
+              </cac:PartyName>
+            </cac:ResponsibleParty>
+            <cac:DocumentReference>
+              <cbc:ID>VGM-26-0510</cbc:ID>
+            </cac:DocumentReference>
+          </cac:VerifiedGrossMass>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+      <cac:FirstArrivalPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+        <cbc:Name>Port of Selanu</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FirstArrivalPortLocation>
+      <cac:LastExitPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LastExitPortLocation>
     </cac:Consignment>
-    <cac:TransportHandlingUnit>
-      <cac:TransportEquipment>
-        <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">3750</cbc:GrossWeightMeasure>
-        <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
-      </cac:TransportEquipment>
-    </cac:TransportHandlingUnit>
     <cac:InsurancePolicy>
       <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
       <cac:InsurerParty>

@@ -198,4 +198,36 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:PromisedDeliveryPeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-03-23</cbc:EndDate>
+    </cac:PromisedDeliveryPeriod>
+    <cac:Despatch>
+      <cbc:EstimatedDespatchDate>2026-03-23</cbc:EstimatedDespatchDate>
+      <cbc:EstimatedDespatchTime>14:00:00</cbc:EstimatedDespatchTime>
+      <cbc:GuaranteedDespatchDate>2026-03-24</cbc:GuaranteedDespatchDate>
+      <cbc:GuaranteedDespatchTime>12:00:00</cbc:GuaranteedDespatchTime>
+      <cac:NotifyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:NotifyParty>
+      <cac:ResponsibleParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Castrano Logistics</cbc:Name>
+        </cac:PartyName>
+      </cac:ResponsibleParty>
+      <cac:EstimatedDespatchPeriod>
+        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:EndDate>2026-03-24</cbc:EndDate>
+      </cac:EstimatedDespatchPeriod>
+    </cac:Despatch>
+  </cac:Delivery>
 </OrderResponse>
