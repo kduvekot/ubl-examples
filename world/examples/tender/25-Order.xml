@@ -9,12 +9,19 @@
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:OriginatorDocumentReference>
   <cac:Contract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
   </cac:Contract>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PARKS-26</cbc:ID>
+  </cac:ProjectReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -217,6 +224,13 @@
       <cbc:Description>Public works depot, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:PricingExchangeRate>
+    <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.01</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-01-02</cbc:Date>
+  </cac:PricingExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

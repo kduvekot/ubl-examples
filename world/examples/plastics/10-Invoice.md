@@ -40,6 +40,8 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Order Reference
 
@@ -458,6 +460,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>

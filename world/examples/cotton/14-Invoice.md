@@ -36,6 +36,8 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Order Reference
 
@@ -429,6 +431,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>LTM-PO-26-0197</cbc:ID>
   </cac:OrderReference>

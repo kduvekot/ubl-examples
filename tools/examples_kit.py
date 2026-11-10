@@ -440,6 +440,8 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         **cost_centre(buyer, "The buyer's cost centre, quoted in its order, so the invoice is booked without "
                             "asking."),
         "LineCountNumeric": V(str(len(rows)), "The number of invoice lines, as a check on the transfer."),
+        "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][0], "The language the texts "
+                                 "of the invoice are in: the seller's country's language."),
         **refs,
         "PaymentMeans": payment_means(flow, seller, buyer, doc["parties"].get("PayeeParty", seller), day, due_days,
                                       flow.number(key, seller, "Invoice"), "The account to pay to."),

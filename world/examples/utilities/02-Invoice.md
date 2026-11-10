@@ -38,6 +38,8 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Invoice Period
 
@@ -468,6 +470,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
     <cbc:EndDate>2026-03-31</cbc:EndDate>

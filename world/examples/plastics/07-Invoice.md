@@ -38,6 +38,8 @@ Under CPT the seller pays the carriage: the barge operator invoices the river fr
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Additional Document Reference
 
@@ -410,6 +412,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>4100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Freight</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FB-WB-26-0890</cbc:ID>
   </cac:AdditionalDocumentReference>

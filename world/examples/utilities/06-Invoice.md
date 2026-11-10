@@ -36,6 +36,8 @@ The water bill for the shop. Water is exempt from the state sales tax, and the i
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Invoice Period
 
@@ -487,6 +489,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
     <cbc:EndDate>2026-03-31</cbc:EndDate>

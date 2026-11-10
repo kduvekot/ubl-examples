@@ -36,6 +36,8 @@ The forwarder invoices the sea freight it booked for the mill.
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Additional Document Reference
 
@@ -508,6 +510,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0205</cbc:ID>
   </cac:AdditionalDocumentReference>

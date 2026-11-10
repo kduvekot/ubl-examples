@@ -32,6 +32,8 @@ The household's water bill, exempt from sales tax like every water bill.
   The lume, the seller's currency; it has two decimals.
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Invoice Period
 
@@ -419,6 +421,7 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
     <cbc:EndDate>2026-03-31</cbc:EndDate>

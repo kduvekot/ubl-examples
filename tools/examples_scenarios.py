@@ -1950,6 +1950,11 @@ TENDER = kit.Flow("tender", "2026-01-12", [
     {"item": "bench-serra", "ordered": 40, "why": "The first call-off under the contract: forty benches for the "
                                                   "harbour park."}])
 FOLDER = "PWD-2026-PARKS"
+PRICING_RATE = {"SourceCurrencyCode": V("XUF", "The currency of the contract prices."),
+                "TargetCurrencyCode": V("XBL", "The currency of the order and the invoice."),
+                "CalculationRate": V("0.01", "The world's reference rate fixed in the contract."),
+                "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume."),
+                "Date": V("2026-01-02", "The rate of the first working day of the year, as the contract says.")}
 TENDER_QTY = 240
 
 
@@ -2009,7 +2014,13 @@ def tender(n, doc):
                          "chooses; the authority clears the import.", "Public works depot, Lumeport",
                          {"Contract": {"ID": V(FOLDER, "The contract under which the call-off is made.")},
                           "Delivery": {"ReleaseID": V("1", "The first release under the contract: 40 of the 240 "
-                                                           "benches.")}},
+                                                           "benches.")},
+                          "PricingCurrencyCode": V("XUF", "The contract prices are the manufacturer's, in ferra."),
+                          "PricingExchangeRate": PRICING_RATE,
+                          "ProjectReference": {"ID": V("PWD-PARKS-26", "The parks renewal programme the benches "
+                                                                       "are for.")},
+                          "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure the order "
+                                                                          "results from.")}},
                          currency="XBL")
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 77, "The day the call-off left the 3PL.", "The gross weight loaded.")
@@ -2020,10 +2031,32 @@ def tender(n, doc):
         return kit.import_declaration(f, n, doc, 78, "Under DAP the buyer clears the import: the authority declares "
                                                      "the benches.", "The customs value in lume, at the reference rate.")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 78, 30, "Issued on delivery.",
-                           {"OrderReference": ref(f, "order", "The authority's call-off order."),
-                            "ContractDocumentReference": {"ID": V(FOLDER, "The awarded contract.")}},
-                           currency="XBL")
+        out = kit.invoice(f, n, doc, 78, 30, "Issued on delivery.",
+                          {"OrderReference": ref(f, "order", "The authority's call-off order."),
+                           "ContractDocumentReference": {"ID": V(FOLDER, "The awarded contract.")},
+                           "ProjectReference": {"ID": V("PWD-PARKS-26", "The programme the department books it on.")},
+                           "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure.")}},
+                          currency="XBL")
+        out["PricingCurrencyCode"] = V("XUF", "The contract prices are in ferra.")
+        out["PricingExchangeRate"] = PRICING_RATE
+        out["TaxCurrencyCode"] = V("XUF", "The seller reports its value added tax in ferra.")
+        out["TaxExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The invoice currency."),
+                                  "TargetCurrencyCode": V("XUF", "The seller's tax currency."),
+                                  "CalculationRate": V("100", "1 lume = 100 ferra, the reference rate."),
+                                  "MathematicOperatorCode": V("Multiply", "Lume times the rate gives ferra."),
+                                  "Date": V(f.date(78), "The rate of the tax point.")}
+        out["TaxTotal"] = [out["TaxTotal"], {"TaxAmount": amount(0, "XUF", "The same tax in ferra, for the seller's "
+                                                                           "tax return: none on an export.")}]
+        out["Annotation"] = {"SubjectCode": V("Contract", "The annotation is about the contract."),
+                             "Subject": V("Releases under the framework contract", "Its subject."),
+                             "AnnotationContent": V("First release: 40 benches; 200 remain.", "A remark for the "
+                                                                                              "department's "
+                                                                                              "accounts.")}
+        out["Signature"] = {"ID": V("VI-SIG-26-0078", "The seller's electronic signature on the invoice, which "
+                                                      "Bayvarra's public bodies ask for."),
+                            "SignatureMethod": V("XAdES-BES", "The kind of signature."),
+                            "SignatoryParty": party("5-xu", short=True)}
+        return out
     raise SystemExit(f"tender scenario: no document {n} {doc['doc']}")
 
 

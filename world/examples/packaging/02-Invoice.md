@@ -36,6 +36,8 @@ Packaging exported to Urvania: no sales tax in Bayvarra, stated.
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Order Reference
 
@@ -437,6 +439,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0521</cbc:ID>
   </cac:OrderReference>

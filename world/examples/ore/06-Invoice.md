@@ -38,6 +38,8 @@ Under FCA the buyer pays the carriage: the rail carrier invoices the ore freight
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Additional Document Reference
 
@@ -416,6 +418,7 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>
   </cac:AdditionalDocumentReference>

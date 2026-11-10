@@ -28,6 +28,8 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the buyer's currency, agreed in the contract; it has two decimals.
+- `PricingCurrencyCode` = **XUF**  
+  The contract prices are the manufacturer's, in ferra.
 - `AccountingCostCode` = **PWD-PARKS-26**  
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Parks renewal programme 2026**  
@@ -35,12 +37,26 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
 - `LineCountNumeric` = **1**  
   The number of order lines.
 
+### Originator Document Reference
+
+Inside `OriginatorDocumentReference`:
+
+- `ID` = **PWD-2026-PARKS**  
+  The procurement procedure the order results from.
+
 ### Contract
 
 Inside `Contract`:
 
 - `ID` = **PWD-2026-PARKS**  
   The contract under which the call-off is made.
+
+### Project Reference
+
+Inside `ProjectReference`:
+
+- `ID` = **PWD-PARKS-26**  
+  The parks renewal programme the benches are for.
 
 ### Buyer Customer Party
 
@@ -261,6 +277,21 @@ Inside `DeliveryTerms`:
   Delivered at place, the authority's depot: the manufacturer delivers, by the carrier it chooses; the authority clears the import.
 - `DeliveryLocation/Description` = **Public works depot, Lumeport**  
   Where the delivery terms place the handover of the goods.
+
+### Pricing Exchange Rate
+
+Inside `PricingExchangeRate`:
+
+- `SourceCurrencyCode` = **XUF**  
+  The currency of the contract prices.
+- `TargetCurrencyCode` = **XBL**  
+  The currency of the order and the invoice.
+- `CalculationRate` = **0.01**  
+  The world's reference rate fixed in the contract.
+- `MathematicOperatorCode` = **Multiply**  
+  Ferra times the rate gives lume.
+- `Date` = **2026-01-02**  
+  The rate of the first working day of the year, as the contract says.
 
 ### Tax Total
 
@@ -519,12 +550,19 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:OriginatorDocumentReference>
   <cac:Contract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
   </cac:Contract>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PARKS-26</cbc:ID>
+  </cac:ProjectReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -727,6 +765,13 @@ Inside `OrderLine`:
       <cbc:Description>Public works depot, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:PricingExchangeRate>
+    <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.01</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-01-02</cbc:Date>
+  </cac:PricingExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

@@ -32,12 +32,18 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the buyer's currency, agreed in the contract; it has two decimals.
+- `TaxCurrencyCode` = **XUF**  
+  The seller reports its value added tax in ferra.
+- `PricingCurrencyCode` = **XUF**  
+  The contract prices are in ferra.
 - `AccountingCostCode` = **PWD-PARKS-26**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Parks renewal programme 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
 
 ### Order Reference
 
@@ -46,12 +52,50 @@ Inside `OrderReference`:
 - `ID` = **LPWD-PO-26-0211**  
   The authority's call-off order.
 
+### Originator Document Reference
+
+Inside `OriginatorDocumentReference`:
+
+- `ID` = **PWD-2026-PARKS**  
+  The procurement procedure.
+
 ### Contract Document Reference
 
 Inside `ContractDocumentReference`:
 
 - `ID` = **PWD-2026-PARKS**  
   The awarded contract.
+
+### Project Reference
+
+Inside `ProjectReference`:
+
+- `ID` = **PWD-PARKS-26**  
+  The programme the department books it on.
+
+### Annotation
+
+Inside `Annotation`:
+
+- `SubjectCode` = **Contract**  
+  The annotation is about the contract.
+- `Subject` = **Releases under the framework contract**  
+  Its subject.
+- `AnnotationContent` = **First release: 40 benches; 200 remain.**  
+  A remark for the department's accounts.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-26-0078**  
+  The seller's electronic signature on the invoice, which Bayvarra's public bodies ask for.
+- `SignatureMethod` = **XAdES-BES**  
+  The kind of signature.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Supplier Party
 
@@ -353,6 +397,36 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
   Simple interest, per day late.
 
+### Tax Exchange Rate
+
+Inside `TaxExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The invoice currency.
+- `TargetCurrencyCode` = **XUF**  
+  The seller's tax currency.
+- `CalculationRate` = **100**  
+  1 lume = 100 ferra, the reference rate.
+- `MathematicOperatorCode` = **Multiply**  
+  Lume times the rate gives ferra.
+- `Date` = **2026-03-31**  
+  The rate of the tax point.
+
+### Pricing Exchange Rate
+
+Inside `PricingExchangeRate`:
+
+- `SourceCurrencyCode` = **XUF**  
+  The currency of the contract prices.
+- `TargetCurrencyCode` = **XBL**  
+  The currency of the order and the invoice.
+- `CalculationRate` = **0.01**  
+  The world's reference rate fixed in the contract.
+- `MathematicOperatorCode` = **Multiply**  
+  Ferra times the rate gives lume.
+- `Date` = **2026-01-02**  
+  The rate of the first working day of the year, as the contract says.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -371,6 +445,8 @@ Inside `TaxTotal`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `TaxAmount` = **0** (currencyID `XUF`)  
+  The same tax in ferra, for the seller's tax return: none on an export.
 
 ### Legal Monetary Total
 
@@ -626,15 +702,41 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
+  <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0211</cbc:ID>
   </cac:OrderReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:OriginatorDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
   </cac:ContractDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PARKS-26</cbc:ID>
+  </cac:ProjectReference>
+  <cac:Annotation>
+    <cbc:SubjectCode>Contract</cbc:SubjectCode>
+    <cbc:Subject>Releases under the framework contract</cbc:Subject>
+    <cbc:AnnotationContent>First release: 40 benches; 200 remain.</cbc:AnnotationContent>
+  </cac:Annotation>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-26-0078</cbc:ID>
+    <cbc:SignatureMethod>XAdES-BES</cbc:SignatureMethod>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -896,6 +998,20 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:TaxExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-31</cbc:Date>
+  </cac:TaxExchangeRate>
+  <cac:PricingExchangeRate>
+    <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.01</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-01-02</cbc:Date>
+  </cac:PricingExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -910,6 +1026,9 @@ Inside `InvoiceLine`:
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
