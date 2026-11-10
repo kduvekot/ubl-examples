@@ -126,7 +126,7 @@ main { min-width:0; }
 .prose code { font-family:var(--mono); font-size:0.86em; background:var(--code-bg); border:1px solid var(--line);
   border-radius:5px; padding:0.1em 0.35em; }
 .prose pre, .prose div.sourceCode { background:var(--code-bg); border:1px solid var(--line); border-radius:var(--radius); }
-.prose div.sourceCode { margin:1rem 0; overflow:hidden; }
+.prose div.sourceCode { margin:1rem 0; overflow-x:auto; }
 .prose div.sourceCode pre { border:0; margin:0; }
 .prose pre { padding:0.9rem 1.1rem; overflow-x:auto; line-height:1.55; }
 .prose pre code { background:none; border:0; padding:0; font-size:0.85rem; }

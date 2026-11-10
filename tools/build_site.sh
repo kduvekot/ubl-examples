@@ -7,6 +7,9 @@
 #   _site/releases.html               README.md: releases and their changes
 #   _site/coverage.html               element coverage analysis
 #   _site/coverage-details.html       every missing element
+#   _site/world.html, world-*.html    the example world: map and party pages
+#   _site/examples.html, example-*    the example documents, with the reason for every value
+#   _site/examples/<flow>/*.xml       the example documents themselves
 #
 # Usage: tools/build_site.sh [out-dir]
 # Requires: xsltproc, xmllint, pandoc; fetches the OASIS stylesheets into .oasis
@@ -18,6 +21,10 @@ ROOT=$(pwd)
 tools/fetch_oasis_stylesheets.sh .oasis
 tools/md2docbook.sh --check
 python3 tools/check_world.py
+# The example documents: up to date with the world, and valid (UBL schemas, code lists)
+python3 tools/build_examples.py --check
+sh tools/fetch_ubl_validation.sh $(ls world/examples/*/*.xml | sed 's#.*/[0-9]*-\(.*\)\.xml#\1#' | sort -u)
+python3 tools/validate_examples.py world/examples/*/*.xml
 
 rm -rf "$OUT"
 mkdir -p "$OUT/note"
@@ -36,13 +43,14 @@ CSSV=$(sha256sum site/site.css | cut -c1-10)
 BUILT=$(git rev-parse --short HEAD 2>/dev/null || echo local)
 
 # Header, the same on every page; $2 is the page it is shown on
-NAV_ITEMS="note/ubl-examples-method.html|Method world.html|World releases.html|Releases history.html|History coverage.html|Coverage"
+NAV_ITEMS="note/ubl-examples-method.html|Method world.html|World examples.html|Examples releases.html|Releases history.html|History coverage.html|Coverage"
 LOGO='<svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg>'
 CODE_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>'
 nav() { # root-prefix, current-page
   section=$2
   [ "$section" = coverage-details.html ] && section=coverage.html  # sub-page of Coverage
   case "$section" in world-*.html) section=world.html ;; esac       # party pages belong to World
+  case "$section" in example-*.html) section=examples.html ;; esac  # example pages belong to Examples
   printf '<header class="site-header"><div class="bar">'
   printf '<a class="brand" href="%sindex.html">%s<span>UBL Example Documents</span></a>' "$1" "$LOGO"
   printf '<input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label>'
@@ -85,6 +93,14 @@ for md in "$OUT"/.world-md/*.md; do
   page "$md" "$name.html" "$(sed -n '1s/^# //p' "$md")"
 done
 rm -rf "$OUT/.world-md"
+# The example documents: a page per document (values and reasons), and the XML files themselves
+for md in world/examples/*/*.md; do
+  flow=$(basename "$(dirname "$md")"); name=$(basename "$md" .md)
+  mkdir -p "$OUT/examples/$flow" && cp "world/examples/$flow/$name.xml" "$OUT/examples/$flow/"
+  sed "s#](\($name\.xml\))#](examples/$flow/\1)#" "$md" > "$OUT/.example.md"
+  page "$OUT/.example.md" "example-$flow-$name.html" "$(sed -n '1s/^# //p' "$md")"
+done
+rm -f "$OUT/.example.md"
 # Landing page: header, footer and key figures filled in
 nav "" index.html > "$OUT/.nav"
 footer > "$OUT/.footer"

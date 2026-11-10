@@ -154,6 +154,13 @@ def others(d, pid):
                 rows.append(f"{link(o)} as `{path}`")
     return rows
 
+def example_of(d):
+    """The page of the example document for a document of the world, if it has one."""
+    same = [x for x in world["documents"] if x["flow"] == d["flow"]]
+    n = next(i for i, x in enumerate(same, 1) if x is d)
+    md = os.path.join(root, "world", "examples", d["flow"], f"{n:02d}-{d['doc']}.md")
+    return f"example-{d['flow']}-{n:02d}-{d['doc']}.html" if os.path.exists(md) else None
+
 def entry(d, pid, kind):
     doc = f"[**{world_docs.words(d['doc'])}**]({world_docs.spec_link(d['doc'])})"
     if kind == "sends":
@@ -162,7 +169,8 @@ def entry(d, pid, kind):
         head = f"{doc} from {link(d['from'])}"
     else:
         head = f"{doc} from {link(d['from'])} to {link(d['to'])}"
-    lines = [f"- {head}: {d['why']}", ""]
+    ex = example_of(d)
+    lines = [f"- {head}: {d['why']}" + (f" [See the example document]({ex})." if ex else ""), ""]
     me = f"  In it as {as_roles(d, pid)}"
     agent = d.get("sends_for") if kind == "sends" else d.get("receives_for") if kind == "receives" else None
     if agent:
@@ -221,4 +229,22 @@ for p in world["parties"]:
               "elements), completed by the party role table of the UBL specification where the model does not say it. "
               "Every place named in a document is checked against the UBL 2.5 structure.*", ""]
     open(os.path.join(mddir, f"world-{p['id']}.md"), "w", encoding="utf-8").write("\n".join(lines))
+# The examples: an index of the flows that have example documents
+ex_lines = ["# Example documents", "",
+            "Real UBL 2.5 documents from the example world. Every document is valid against the UBL 2.5 schemas of "
+            "the endorsed document types and against the world's code lists, and every value in it comes with the "
+            "reason why it is that value. The documents are generated from the world's layers, so the parties, items, "
+            "currencies and taxes in them agree with the rest of the world.", "",
+            "These examples are kept apart from the examples of the OASIS UBL Technical Committee, whose history is "
+            "in this repository's `xml/` folder.", ""]
+for f in world["flows"]:
+    same = [x for x in world["documents"] if x["flow"] == f["id"]]
+    rows = [(n, x) for n, x in enumerate(same, 1) if example_of(x)]
+    if not rows:
+        continue
+    ex_lines += [f"## {f['title']}", "", f["text"], "", "| | Document | From | To |", "|---|---|---|---|"]
+    for n, x in rows:
+        ex_lines.append(f"| {n} | [{world_docs.words(x['doc'])}]({example_of(x)}) | {link(x['from'])} | {link(x['to'])} |")
+    ex_lines.append("")
+open(os.path.join(mddir, "examples.md"), "w", encoding="utf-8").write("\n".join(ex_lines))
 print(f"world: map, {len(world['parties'])} party pages, {len(world['documents'])} documents")

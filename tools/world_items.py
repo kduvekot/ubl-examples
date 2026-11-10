@@ -55,7 +55,13 @@ def valid_item_number(n):
 
 
 def codes():
-    return json.load(open(os.path.join(world_data.ROOT, "world", "codelists", "ubl-default-codes.json"), encoding="utf-8"))
+    """The codes of each UBL default code list (all versions the UBL 2.5 CVA names), with their names:
+    {"UnitOfMeasureCode": {"codes": {code: name}}, ...}."""
+    cva = json.load(open(os.path.join(world_data.ROOT, "world", "codelists", "ubl-default-codes.json"), encoding="utf-8"))
+    out = {}
+    for lst in sorted(cva["lists"].values(), key=lambda x: x["uri"]):   # later versions override names
+        out.setdefault(lst["short"], {"codes": {}})["codes"].update(lst["names"])
+    return out
 
 
 def check(world):

@@ -64,9 +64,27 @@ landmass, houses on streets, nothing built on roads or water, believable
 terrain, and customs posts where roads cross a border. The world's code
 lists are checked to hold exactly the codes of the countries layer.
 
+## The example documents
+
+Every example document is validated in the two phases UBL prescribes:
+
+- **Phase 1:** against the UBL 2.5 runtime schema of its document type,
+  from the endorsed set.
+- **Phase 2:** its coded values against the code lists, using UBL's
+  context/value associations (CVA). It runs twice. First UBL's own phase 2,
+  unchanged, with the UBL default code lists: it must object to exactly the
+  world's country and currency codes and to nothing else. Then the same
+  associations with the world's code lists in place of the defaults: here
+  every value, and the list identifier where a document gives one, must
+  pass.
+
+The committed examples must also be up to date: they are generated again
+from the world's layers and compared, so a change in the world cannot leave
+an example behind.
+
 ## Still to come
 
 Later layers add their own checks: document lines with items and
 quantities, amounts and taxes that add up, dates in a believable order, references between documents,
-and quantities that agree from order to invoice. Finally, every example
-document is validated against the UBL schemas and the world's code lists.
+and quantities that agree from order to invoice. These apply to the
+example documents as they are generated for every flow.

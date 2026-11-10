@@ -24,7 +24,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y -q xsltproc libxml2-utils pandoc
+          sudo apt-get install -y -q xsltproc libxml2-utils pandoc python3-lxml
 
       - name: Build site
         run: tools/build_site.sh _site
