@@ -9,7 +9,45 @@
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-11</cbc:IssueDate>
   <cbc:IssueTime>08:32:00</cbc:IssueTime>
+  <cbc:Note>Open procedure in two lots.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cbc:RequestedPublicationDate>2026-01-27</cbc:RequestedPublicationDate>
+  <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode>ContractNotice</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>EN</cbc:NoticeLanguageCode>
+  <cac:AdditionalNoticeLanguage>
+    <cbc:ID>fr</cbc:ID>
+    <cbc:LocaleCode>FR</cbc:LocaleCode>
+  </cac:AdditionalNoticeLanguage>
+  <cac:FrequencyPeriod>
+    <cbc:DurationMeasure unitCode="ANN">4</cbc:DurationMeasure>
+  </cac:FrequencyPeriod>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-CN</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode>Local</cbc:PartyTypeCode>
+      <cbc:PartyType>Department of a city</cbc:PartyType>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode>Public works</cbc:ActivityTypeCode>
+      <cbc:ActivityType>Public works and parks</cbc:ActivityType>
+    </cac:ContractingActivity>
+    <cac:ContractingRepresentationType>
+      <cbc:RepresentationTypeCode>Own</cbc:RepresentationTypeCode>
+      <cbc:RepresentationType>Buys for itself</cbc:RepresentationType>
+    </cac:ContractingRepresentationType>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
@@ -97,6 +135,24 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:ReceiverParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -161,7 +217,276 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TenderingTerms>
+    <cbc:AwardingMethodTypeCode>BestValue</cbc:AwardingMethodTypeCode>
+    <cbc:PriceEvaluationCode>UnitPrice</cbc:PriceEvaluationCode>
+    <cbc:MaximumVariantQuantity>1</cbc:MaximumVariantQuantity>
+    <cbc:VariantConstraintIndicator>true</cbc:VariantConstraintIndicator>
+    <cbc:AcceptedVariantsDescription>A bench of recycled plastic slats.</cbc:AcceptedVariantsDescription>
+    <cbc:VariantConstraintCode>Allowed</cbc:VariantConstraintCode>
+    <cbc:PriceRevisionFormulaDescription>Steel index each January.</cbc:PriceRevisionFormulaDescription>
+    <cbc:FundingProgramCode>PARKS-26</cbc:FundingProgramCode>
+    <cbc:FundingProgram>Parks renewal programme 2026</cbc:FundingProgram>
+    <cbc:MaximumAdvertisementAmount currencyID="XBL">500.00</cbc:MaximumAdvertisementAmount>
+    <cbc:Note>Questions through the platform only.</cbc:Note>
+    <cbc:PaymentFrequencyCode>PerRelease</cbc:PaymentFrequencyCode>
+    <cbc:EconomicOperatorRegistryURI>https://register.bayvarra.example</cbc:EconomicOperatorRegistryURI>
+    <cbc:RequiredCurriculaIndicator>true</cbc:RequiredCurriculaIndicator>
+    <cbc:RequiredCurriculaCode>Installers</cbc:RequiredCurriculaCode>
+    <cbc:OtherConditionsIndicator>true</cbc:OtherConditionsIndicator>
+    <cbc:RecurringProcurementIndicator>true</cbc:RecurringProcurementIndicator>
+    <cbc:RecurringProcurementDescription>A next procedure in about four years.</cbc:RecurringProcurementDescription>
+    <cbc:EstimatedTimingFurtherPublication>2030</cbc:EstimatedTimingFurtherPublication>
+    <cbc:AdditionalConditions>Benches must carry the maker's serial number.</cbc:AdditionalConditions>
+    <cbc:LatestSecurityClearanceDate>2026-02-21</cbc:LatestSecurityClearanceDate>
+    <cbc:DocumentationFeeAmount currencyID="XBL">50.00</cbc:DocumentationFeeAmount>
+    <cbc:MultipleTendersCode>NotAllowed</cbc:MultipleTendersCode>
+    <cac:PenaltyClause>
+      <cbc:ID>PEN-1</cbc:ID>
+      <cbc:Content>0.5 % per day late, at most 10 %.</cbc:Content>
+    </cac:PenaltyClause>
+    <cac:RequiredFinancialGuarantee>
+      <cbc:GuaranteeTypeCode>TenderGuarantee</cbc:GuaranteeTypeCode>
+      <cbc:Description>A bank guarantee for the tender.</cbc:Description>
+      <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
+      <cbc:AmountRate>2</cbc:AmountRate>
+      <cac:ConstitutionPeriod>
+        <cbc:EndDate>2026-02-26</cbc:EndDate>
+      </cac:ConstitutionPeriod>
+    </cac:RequiredFinancialGuarantee>
+    <cac:ProcurementLegislationDocumentReference>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+    </cac:ProcurementLegislationDocumentReference>
+    <cac:FiscalLegislationDocumentReference>
+      <cbc:ID>XB-STT-ACT</cbc:ID>
+    </cac:FiscalLegislationDocumentReference>
+    <cac:EnvironmentalLegislationDocumentReference>
+      <cbc:ID>XB-ENV-2021</cbc:ID>
+    </cac:EnvironmentalLegislationDocumentReference>
+    <cac:EmploymentLegislationDocumentReference>
+      <cbc:ID>XB-LAB-2018</cbc:ID>
+    </cac:EmploymentLegislationDocumentReference>
+    <cac:ContractualDocumentReference>
+      <cbc:ID>PWD-CONTRACT-DRAFT</cbc:ID>
+    </cac:ContractualDocumentReference>
+    <cac:CallForTendersDocumentReference>
+      <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+    </cac:CallForTendersDocumentReference>
+    <cac:WarrantyValidityPeriod>
+      <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+    </cac:WarrantyValidityPeriod>
+    <cac:PaymentTerms>
+      <cbc:Note>30 days after each accepted release.</cbc:Note>
+    </cac:PaymentTerms>
+    <cac:TendererQualificationRequest>
+      <cbc:CompanyLegalFormCode>Any</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm>Consortia must name a lead member.</cbc:CompanyLegalForm>
+      <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
+      <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
+      <cbc:EmployeeQuantity unitCode="C62">10</cbc:EmployeeQuantity>
+      <cbc:Description>Economic and technical capacity.</cbc:Description>
+      <cac:RequiredBusinessClassificationScheme>
+        <cbc:ID>ISIC4</cbc:ID>
+        <cbc:Name>ISIC Rev. 4</cbc:Name>
+        <cac:ClassificationCategory>
+          <cbc:Name>Manufacture of furniture</cbc:Name>
+          <cbc:CodeValue>3100</cbc:CodeValue>
+        </cac:ClassificationCategory>
+      </cac:RequiredBusinessClassificationScheme>
+      <cac:TechnicalEvaluationCriterion>
+        <cbc:EvaluationCriterionTypeCode>References</cbc:EvaluationCriterionTypeCode>
+        <cbc:Description>Three similar supplies in five years.</cbc:Description>
+        <cbc:ThresholdQuantity unitCode="C62">3</cbc:ThresholdQuantity>
+        <cac:DurationPeriod>
+          <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+        </cac:DurationPeriod>
+        <cac:SuggestedEvidence>
+          <cbc:ID>EV-REF</cbc:ID>
+          <cbc:Name>References</cbc:Name>
+        </cac:SuggestedEvidence>
+      </cac:TechnicalEvaluationCriterion>
+      <cac:FinancialEvaluationCriterion>
+        <cbc:EvaluationCriterionTypeCode>Turnover</cbc:EvaluationCriterionTypeCode>
+        <cbc:Description>Yearly turnover of at least twice the estimate.</cbc:Description>
+        <cbc:ThresholdAmount currencyID="XBL">250000.00</cbc:ThresholdAmount>
+        <cbc:ExpressionCode>GreaterThan</cbc:ExpressionCode>
+        <cbc:Expression>Turnover &gt; 2 × estimate</cbc:Expression>
+      </cac:FinancialEvaluationCriterion>
+      <cac:SpecificTendererRequirement>
+        <cbc:Name>Certified timber</cbc:Name>
+        <cbc:TendererRequirementTypeCode>Environmental</cbc:TendererRequirementTypeCode>
+        <cbc:Description>Slats from forests managed for regrowth.</cbc:Description>
+        <cbc:LegalReference>XB-ENV-2021 art. 12</cbc:LegalReference>
+        <cac:SuggestedEvidence>
+          <cbc:ID>EV-FOR</cbc:ID>
+          <cbc:Name>Forestry certificate</cbc:Name>
+        </cac:SuggestedEvidence>
+      </cac:SpecificTendererRequirement>
+      <cac:EconomicOperatorRole>
+        <cbc:RoleCode>Lead</cbc:RoleCode>
+        <cbc:RoleDescription>Leads a consortium.</cbc:RoleDescription>
+      </cac:EconomicOperatorRole>
+    </cac:TendererQualificationRequest>
+    <cac:AllowedSubcontractTerms>
+      <cbc:Rate>30</cbc:Rate>
+      <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
+      <cbc:Description>Installation may be subcontracted.</cbc:Description>
+      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
+      <cbc:SubcontractingConditionsCode>Allowed</cbc:SubcontractingConditionsCode>
+      <cbc:MaximumPercent>30</cbc:MaximumPercent>
+      <cbc:MinimumPercent>0</cbc:MinimumPercent>
+    </cac:AllowedSubcontractTerms>
+    <cac:TenderPreparation>
+      <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
+      <cbc:TenderEnvelopeTypeCode>Combined</cbc:TenderEnvelopeTypeCode>
+      <cbc:Description>One encrypted envelope per tender.</cbc:Description>
+      <cbc:OpenTenderID>OPEN-1</cbc:OpenTenderID>
+      <cac:ProcurementProjectLot>
+        <cbc:ID>LOT-1</cbc:ID>
+      </cac:ProcurementProjectLot>
+      <cac:DocumentTenderRequirement>
+        <cbc:Name>Price schedule</cbc:Name>
+        <cbc:Description>Unit prices per lot.</cbc:Description>
+        <cac:TemplateDocumentReference>
+          <cbc:ID>PWD-PRICE-TPL</cbc:ID>
+        </cac:TemplateDocumentReference>
+      </cac:DocumentTenderRequirement>
+      <cac:TenderEncryptionData>
+        <cbc:MessageFormat>CMS</cbc:MessageFormat>
+        <cac:EncryptionCertificateAttachment>
+          <cac:ExternalReference>
+            <cbc:URI>https://tenders.lumeport.example/cert.pem</cbc:URI>
+          </cac:ExternalReference>
+        </cac:EncryptionCertificateAttachment>
+        <cac:EncryptionCertificatePathChain>
+          <cbc:Value>PWD-CA &gt; PWD-TENDER</cbc:Value>
+          <cbc:URI>https://tenders.lumeport.example/chain.pem</cbc:URI>
+        </cac:EncryptionCertificatePathChain>
+        <cac:EncryptionSymmetricAlgorithm>
+          <cbc:ID>AES-256-GCM</cbc:ID>
+          <cbc:OID>2.16.840.1.101.3.4.1.46</cbc:OID>
+        </cac:EncryptionSymmetricAlgorithm>
+      </cac:TenderEncryptionData>
+    </cac:TenderPreparation>
+    <cac:ContractExecutionRequirement>
+      <cbc:Name>Recycled steel</cbc:Name>
+      <cbc:ExecutionRequirementCode>Environmental</cbc:ExecutionRequirementCode>
+      <cbc:Description>At least 30 % recycled steel in the frames.</cbc:Description>
+    </cac:ContractExecutionRequirement>
+    <cac:AwardingTerms>
+      <cbc:WeightingAlgorithmCode>WeightedSum</cbc:WeightingAlgorithmCode>
+      <cbc:Description>Price 60 %, quality 40 %.</cbc:Description>
+      <cbc:TechnicalCommitteeDescription>Three officers of the department.</cbc:TechnicalCommitteeDescription>
+      <cbc:LowTendersDescription>Prices 30 % below the average are examined.</cbc:LowTendersDescription>
+      <cbc:PrizeIndicator>false</cbc:PrizeIndicator>
+      <cbc:PrizeDescription>None.</cbc:PrizeDescription>
+      <cbc:PaymentDescription>No payment for tendering.</cbc:PaymentDescription>
+      <cbc:FollowupContractIndicator>false</cbc:FollowupContractIndicator>
+      <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
+      <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
+      <cac:AwardingCriterion>
+        <cbc:ID>AC-1</cbc:ID>
+        <cbc:AwardingCriterionTypeCode>Price</cbc:AwardingCriterionTypeCode>
+        <cbc:Name>Price</cbc:Name>
+        <cbc:Description>The lowest total of unit prices.</cbc:Description>
+        <cbc:WeightNumeric>60</cbc:WeightNumeric>
+        <cbc:Weight>60 %</cbc:Weight>
+        <cbc:CalculationExpression>60 × lowest / tendered</cbc:CalculationExpression>
+        <cbc:CalculationExpressionCode>Inverse</cbc:CalculationExpressionCode>
+        <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
+        <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
+        <cbc:MinimumImprovementBid>Not applicable: no auction.</cbc:MinimumImprovementBid>
+      </cac:AwardingCriterion>
+      <cac:AwardingCriterion>
+        <cbc:ID>AC-2</cbc:ID>
+        <cbc:AwardingCriterionTypeCode>Quality</cbc:AwardingCriterionTypeCode>
+        <cbc:Name>Quality</cbc:Name>
+        <cbc:WeightNumeric>40</cbc:WeightNumeric>
+        <cbc:MinimumQuantity unitCode="ANN">5</cbc:MinimumQuantity>
+        <cbc:MaximumQuantity unitCode="ANN">10</cbc:MaximumQuantity>
+        <cac:SubordinateAwardingCriterion>
+          <cbc:ID>AC-2.1</cbc:ID>
+          <cbc:Name>Durability of the coating</cbc:Name>
+          <cbc:WeightNumeric>20</cbc:WeightNumeric>
+        </cac:SubordinateAwardingCriterion>
+      </cac:AwardingCriterion>
+      <cac:TechnicalCommitteePerson>
+        <cbc:FirstName>Mara</cbc:FirstName>
+        <cbc:FamilyName>Delling</cbc:FamilyName>
+        <cbc:JobTitle>Head of parks</cbc:JobTitle>
+      </cac:TechnicalCommitteePerson>
+      <cac:Prize>
+        <cbc:RankCode>None</cbc:RankCode>
+        <cbc:ValueAmount currencyID="XBL">0.00</cbc:ValueAmount>
+        <cbc:Description>Not a contest.</cbc:Description>
+      </cac:Prize>
+    </cac:AwardingTerms>
+    <cac:AdditionalInformationParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:AdditionalInformationParty>
+    <cac:DocumentProviderParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:DocumentProviderParty>
+    <cac:TenderRecipientParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:TenderRecipientParty>
+    <cac:ContractResponsibleParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:ContractResponsibleParty>
+    <cac:TenderEvaluationParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:TenderEvaluationParty>
+    <cac:QualificationRequestRecipientParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:QualificationRequestRecipientParty>
+    <cac:TenderValidityPeriod>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:TenderValidityPeriod>
+    <cac:ContractAcceptancePeriod>
+      <cbc:DurationMeasure unitCode="DAY">10</cbc:DurationMeasure>
+    </cac:ContractAcceptancePeriod>
     <cac:AppealTerms>
+      <cbc:Description>Appeals to the review board within ten days of the award.</cbc:Description>
+      <cac:PresentationPeriod>
+        <cbc:DurationMeasure unitCode="DAY">10</cbc:DurationMeasure>
+      </cac:PresentationPeriod>
+      <cac:AppealInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410822</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
+        </cac:PartyName>
+      </cac:AppealInformationParty>
       <cac:AppealReceiverParty>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">8423</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
@@ -234,12 +559,496 @@
         </cac:PartyName>
       </cac:MediationParty>
     </cac:AppealTerms>
+    <cac:Language>
+      <cbc:ID>en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode>EN</cbc:LocaleCode>
+    </cac:Language>
+    <cac:BudgetAccountLine>
+      <cbc:ID>BL-PARKS-26</cbc:ID>
+      <cbc:TotalAmount currencyID="XBL">124080.00</cbc:TotalAmount>
+      <cac:BudgetAccount>
+        <cbc:ID>4.2.110</cbc:ID>
+        <cbc:BudgetYearNumeric>2026</cbc:BudgetYearNumeric>
+        <cac:RequiredClassificationScheme>
+          <cbc:ID>LUM-BUDGET</cbc:ID>
+          <cac:ClassificationCategory>
+            <cbc:Name>Parks</cbc:Name>
+            <cbc:CodeValue>4.2</cbc:CodeValue>
+          </cac:ClassificationCategory>
+        </cac:RequiredClassificationScheme>
+      </cac:BudgetAccount>
+    </cac:BudgetAccountLine>
+    <cac:ReplacedNoticeDocumentReference>
+      <cbc:ID>PWD-2026-PARKS-PIN</cbc:ID>
+    </cac:ReplacedNoticeDocumentReference>
+    <cac:LotDistribution>
+      <cbc:MaximumLotsAwardedNumeric>2</cbc:MaximumLotsAwardedNumeric>
+      <cbc:MaximumLotsSubmittedNumeric>2</cbc:MaximumLotsSubmittedNumeric>
+      <cbc:GroupingLots>Lots 1 and 2 may be awarded together.</cbc:GroupingLots>
+      <cac:LotsGroup>
+        <cbc:LotsGroupID>G-1</cbc:LotsGroupID>
+        <cac:ProcurementProjectLotReference>
+          <cbc:ID>LOT-1</cbc:ID>
+        </cac:ProcurementProjectLotReference>
+        <cac:ProcurementProjectLotReference>
+          <cbc:ID>LOT-2</cbc:ID>
+        </cac:ProcurementProjectLotReference>
+      </cac:LotsGroup>
+    </cac:LotDistribution>
+    <cac:PostAwardProcess>
+      <cbc:ElectronicCatalogueUsageIndicator>true</cbc:ElectronicCatalogueUsageIndicator>
+      <cbc:ElectronicInvoiceAcceptedIndicator>true</cbc:ElectronicInvoiceAcceptedIndicator>
+      <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+      <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+    </cac:PostAwardProcess>
+    <cac:EconomicOperatorShortList>
+      <cbc:LimitationDescription>No short list.</cbc:LimitationDescription>
+    </cac:EconomicOperatorShortList>
+    <cac:SecurityClearanceTerm>
+      <cbc:Code>None</cbc:Code>
+      <cbc:Description>Parks are public places.</cbc:Description>
+    </cac:SecurityClearanceTerm>
   </cac:TenderingTerms>
+  <cac:TenderingProcess>
+    <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
+    <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
+    <cbc:Description>Open procedure with two lots.</cbc:Description>
+    <cbc:NegotiationDescription>No negotiation: the award is on the tenders as submitted.</cbc:NegotiationDescription>
+    <cbc:ProcedureCode>Open</cbc:ProcedureCode>
+    <cbc:UrgencyCode>Normal</cbc:UrgencyCode>
+    <cbc:ExpenseCode>Investment</cbc:ExpenseCode>
+    <cbc:PartPresentationCode>OneOrMore</cbc:PartPresentationCode>
+    <cbc:ContractingSystemCode>Framework</cbc:ContractingSystemCode>
+    <cbc:SubmissionMethodCode>Electronic</cbc:SubmissionMethodCode>
+    <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
+    <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+    <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
+    <cbc:TerminatedIndicator>false</cbc:TerminatedIndicator>
+    <cac:DocumentAvailabilityPeriod>
+      <cbc:StartDate>2026-01-26</cbc:StartDate>
+      <cbc:EndDate>2026-02-25</cbc:EndDate>
+    </cac:DocumentAvailabilityPeriod>
+    <cac:TenderSubmissionDeadlinePeriod>
+      <cbc:EndDate>2026-02-26</cbc:EndDate>
+      <cbc:EndTime>12:00:00</cbc:EndTime>
+    </cac:TenderSubmissionDeadlinePeriod>
+    <cac:InvitationSubmissionPeriod>
+      <cbc:StartDate>2026-01-26</cbc:StartDate>
+      <cbc:EndDate>2026-02-01</cbc:EndDate>
+    </cac:InvitationSubmissionPeriod>
+    <cac:ParticipationInvitationPeriod>
+      <cbc:StartDate>2026-01-26</cbc:StartDate>
+      <cbc:EndDate>2026-02-11</cbc:EndDate>
+    </cac:ParticipationInvitationPeriod>
+    <cac:ParticipationRequestReceptionPeriod>
+      <cbc:EndDate>2026-02-11</cbc:EndDate>
+    </cac:ParticipationRequestReceptionPeriod>
+    <cac:AdditionalInformationRequestPeriod>
+      <cbc:EndDate>2026-02-19</cbc:EndDate>
+    </cac:AdditionalInformationRequestPeriod>
+    <cac:NoticeDocumentReference>
+      <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+    </cac:AdditionalDocumentReference>
+    <cac:ProcessJustification>
+      <cbc:PreviousCancellationReasonCode>None</cbc:PreviousCancellationReasonCode>
+      <cbc:ProcessReasonCode>Standard</cbc:ProcessReasonCode>
+      <cbc:ProcessReason>Value above the threshold for open procedures.</cbc:ProcessReason>
+      <cbc:Description>No exception applies.</cbc:Description>
+    </cac:ProcessJustification>
+    <cac:EconomicOperatorShortList>
+      <cbc:LimitationDescription>No short list in an open procedure.</cbc:LimitationDescription>
+      <cbc:ExpectedQuantity>0</cbc:ExpectedQuantity>
+      <cbc:MaximumQuantity>0</cbc:MaximumQuantity>
+      <cbc:MinimumQuantity>0</cbc:MinimumQuantity>
+      <cac:PreSelectedParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:PreSelectedParty>
+    </cac:EconomicOperatorShortList>
+    <cac:OpenTenderEvent>
+      <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
+      <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cbc:TypeCode>Opening</cbc:TypeCode>
+      <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
+      <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      <cac:CurrentStatus>
+        <cbc:ConditionCode>Scheduled</cbc:ConditionCode>
+      </cac:CurrentStatus>
+      <cac:Contact>
+        <cbc:Name>Procurement office</cbc:Name>
+      </cac:Contact>
+      <cac:OccurrenceLocation>
+        <cbc:Name>Lumeport Public Works Department, Civic Square</cbc:Name>
+      </cac:OccurrenceLocation>
+    </cac:OpenTenderEvent>
+    <cac:AuctionTerms>
+      <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      <cbc:JustificationDescription>The award uses quality as well as price.</cbc:JustificationDescription>
+      <cbc:Description>No auction.</cbc:Description>
+      <cbc:ProcessDescription>Not applicable.</cbc:ProcessDescription>
+      <cbc:ConditionsDescription>Not applicable.</cbc:ConditionsDescription>
+      <cbc:ElectronicDeviceDescription>Not applicable.</cbc:ElectronicDeviceDescription>
+      <cbc:AuctionURI>https://tenders.lumeport.example/auctions</cbc:AuctionURI>
+    </cac:AuctionTerms>
+    <cac:FrameworkAgreement>
+      <cbc:ExpectedOperatorQuantity>1</cbc:ExpectedOperatorQuantity>
+      <cbc:MaximumOperatorQuantity>1</cbc:MaximumOperatorQuantity>
+      <cbc:Justification>Uniform benches across the parks.</cbc:Justification>
+      <cbc:Frequency>Releases every few months.</cbc:Frequency>
+      <cbc:EstimatedMaximumValueAmount currencyID="XBL">148896.00</cbc:EstimatedMaximumValueAmount>
+      <cbc:MaximumValueAmount currencyID="XBL">186120.00</cbc:MaximumValueAmount>
+      <cac:DurationPeriod>
+        <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
+      </cac:DurationPeriod>
+      <cac:SubsequentProcessTenderRequirement>
+        <cbc:Name>Release order</cbc:Name>
+        <cbc:Description>No new competition.</cbc:Description>
+      </cac:SubsequentProcessTenderRequirement>
+    </cac:FrameworkAgreement>
+    <cac:ContractingSystem>
+      <cbc:ID>FW-1</cbc:ID>
+      <cbc:ContractingSystemTypeCode>Framework</cbc:ContractingSystemTypeCode>
+      <cbc:Description>Framework with one supplier.</cbc:Description>
+    </cac:ContractingSystem>
+  </cac:TenderingProcess>
   <cac:ProcurementProject>
-    <cbc:Name>Park benches for the city parks</cbc:Name>
-    <cbc:Description>240 park benches with steel frames and hardwood slats over three years, ordered in call-offs.</cbc:Description>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
+    <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+    <cbc:ProcurementSubTypeCode>Purchase</cbc:ProcurementSubTypeCode>
+    <cbc:QualityControlCode>Inspection</cbc:QualityControlCode>
+    <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
+    <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
+    <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
+    <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+    <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+    <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+    <cac:ProcurementAdditionalType>
+      <cbc:ProcurementTypeCode>Green</cbc:ProcurementTypeCode>
+      <cbc:ProcurementType>Recycled steel and certified timber are asked.</cbc:ProcurementType>
+    </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
-      <cbc:EstimatedOverallContractAmount currencyID="XBL">120000.00</cbc:EstimatedOverallContractAmount>
+      <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
+      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124080.00</cbc:EstimatedOverallFrameworkContractsAmount>
+      <cbc:TotalAmount currencyID="XBL">124080.00</cbc:TotalAmount>
+      <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+      <cbc:MinimumAmount currencyID="XBL">62040.00</cbc:MinimumAmount>
+      <cbc:MaximumAmount currencyID="XBL">148896.00</cbc:MaximumAmount>
+      <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
+      <cbc:AverageSubsequentContractAmount currencyID="XBL">20680.00</cbc:AverageSubsequentContractAmount>
+      <cac:ApplicableTaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ApplicableTaxCategory>
     </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:CommodityCode>PARKS-FURN</cbc:CommodityCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
+      <cac:Address>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+    <cac:PlannedPeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2028-03-22</cbc:EndDate>
+    </cac:PlannedPeriod>
+    <cac:ContractExtension>
+      <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
+      <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
+      <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+      <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
+      <cac:OptionValidityPeriod>
+        <cbc:EndDate>2028-03-22</cbc:EndDate>
+      </cac:OptionValidityPeriod>
+      <cac:Renewal>
+        <cbc:Amount currencyID="XBL">62040.00</cbc:Amount>
+        <cac:Period>
+          <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
+        </cac:Period>
+      </cac:Renewal>
+    </cac:ContractExtension>
+    <cac:RequestForTenderLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
+      <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
+      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:MinimumQuantity unitCode="H87">120</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="H87">288</cbc:MaximumQuantity>
+      <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+      <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
+      <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
+      <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
+      <cac:DocumentReference>
+        <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+      </cac:DocumentReference>
+      <cac:DeliveryPeriod>
+        <cbc:StartDate>2026-04-02</cbc:StartDate>
+        <cbc:EndDate>2028-03-22</cbc:EndDate>
+      </cac:DeliveryPeriod>
+      <cac:RequiredItemLocationQuantity>
+        <cbc:LeadTimeMeasure unitCode="DAY">10</cbc:LeadTimeMeasure>
+      </cac:RequiredItemLocationQuantity>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:Item>
+        <cbc:Name>Park bench, 1800 mm</cbc:Name>
+      </cac:Item>
+      <cac:SubRequestForTenderLine>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Quantity unitCode="SET">240</cbc:Quantity>
+        <cac:Item>
+          <cbc:Name>Ground anchor set</cbc:Name>
+        </cac:Item>
+      </cac:SubRequestForTenderLine>
+    </cac:RequestForTenderLine>
   </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+    <cac:LegalDocumentReference>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+    </cac:LegalDocumentReference>
+    <cac:TechnicalDocumentReference>
+      <cbc:ID>PWD-SPEC-LOT-1</cbc:ID>
+    </cac:TechnicalDocumentReference>
+    <cac:RequiredDocumentReference>
+      <cbc:ID>PWD-PRICE-TPL</cbc:ID>
+    </cac:RequiredDocumentReference>
+    <cac:ProvidedDocumentReference>
+      <cbc:ID>PWD-SITE-PLAN</cbc:ID>
+    </cac:ProvidedDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>PWD-QA-26</cbc:ID>
+    </cac:AdditionalDocumentReference>
+    <cac:TenderingTerms>
+      <cbc:Note>As for the procedure.</cbc:Note>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:Description>As for the procedure.</cbc:Description>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>LOT-1</cbc:ID>
+      <cbc:Name>Park benches</cbc:Name>
+      <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+      <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
+      <cbc:ProcurementSubTypeCode>Purchase</cbc:ProcurementSubTypeCode>
+      <cbc:QualityControlCode>Inspection</cbc:QualityControlCode>
+      <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
+      <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
+      <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
+      <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+      <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+      <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode>Green</cbc:ProcurementTypeCode>
+        <cbc:ProcurementType>Recycled steel and certified timber are asked.</cbc:ProcurementType>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="XBL">119760.00</cbc:EstimatedOverallContractAmount>
+        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">119760.00</cbc:EstimatedOverallFrameworkContractsAmount>
+        <cbc:TotalAmount currencyID="XBL">119760.00</cbc:TotalAmount>
+        <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+        <cbc:MinimumAmount currencyID="XBL">59880.00</cbc:MinimumAmount>
+        <cbc:MaximumAmount currencyID="XBL">143712.00</cbc:MaximumAmount>
+        <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
+        <cbc:AverageSubsequentContractAmount currencyID="XBL">19960.00</cbc:AverageSubsequentContractAmount>
+        <cac:ApplicableTaxCategory>
+          <cbc:ID>E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID>STT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ApplicableTaxCategory>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:CommodityCode>PARKS-FURN</cbc:CommodityCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:EndDate>2028-03-22</cbc:EndDate>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
+        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
+        <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+        <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
+        <cac:OptionValidityPeriod>
+          <cbc:EndDate>2028-03-22</cbc:EndDate>
+        </cac:OptionValidityPeriod>
+        <cac:Renewal>
+          <cbc:Amount currencyID="XBL">59880.00</cbc:Amount>
+          <cac:Period>
+            <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
+          </cac:Period>
+        </cac:Renewal>
+      </cac:ContractExtension>
+      <cac:RequestForTenderLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
+        <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
+        <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+        <cbc:MinimumQuantity unitCode="H87">120</cbc:MinimumQuantity>
+        <cbc:MaximumQuantity unitCode="H87">288</cbc:MaximumQuantity>
+        <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+        <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
+        <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
+        <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
+        <cac:DocumentReference>
+          <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+        </cac:DocumentReference>
+        <cac:DeliveryPeriod>
+          <cbc:StartDate>2026-04-02</cbc:StartDate>
+          <cbc:EndDate>2028-03-22</cbc:EndDate>
+        </cac:DeliveryPeriod>
+        <cac:RequiredItemLocationQuantity>
+          <cbc:LeadTimeMeasure unitCode="DAY">10</cbc:LeadTimeMeasure>
+        </cac:RequiredItemLocationQuantity>
+        <cac:WarrantyValidityPeriod>
+          <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+        </cac:WarrantyValidityPeriod>
+        <cac:Item>
+          <cbc:Name>Park bench, 1800 mm</cbc:Name>
+        </cac:Item>
+        <cac:SubRequestForTenderLine>
+          <cbc:ID>1.1</cbc:ID>
+          <cbc:Quantity unitCode="SET">240</cbc:Quantity>
+          <cac:Item>
+            <cbc:Name>Ground anchor set</cbc:Name>
+          </cac:Item>
+        </cac:SubRequestForTenderLine>
+      </cac:RequestForTenderLine>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-2</cbc:ID>
+    <cac:LegalDocumentReference>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+    </cac:LegalDocumentReference>
+    <cac:TechnicalDocumentReference>
+      <cbc:ID>PWD-SPEC-LOT-2</cbc:ID>
+    </cac:TechnicalDocumentReference>
+    <cac:RequiredDocumentReference>
+      <cbc:ID>PWD-PRICE-TPL</cbc:ID>
+    </cac:RequiredDocumentReference>
+    <cac:ProvidedDocumentReference>
+      <cbc:ID>PWD-SITE-PLAN</cbc:ID>
+    </cac:ProvidedDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>PWD-QA-26</cbc:ID>
+    </cac:AdditionalDocumentReference>
+    <cac:TenderingTerms>
+      <cbc:Note>As for the procedure.</cbc:Note>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:Description>As for the procedure.</cbc:Description>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>LOT-2</cbc:ID>
+      <cbc:Name>Installation of the benches</cbc:Name>
+      <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+      <cbc:ProcurementTypeCode>Services</cbc:ProcurementTypeCode>
+      <cbc:ProcurementSubTypeCode>Installation</cbc:ProcurementSubTypeCode>
+      <cbc:QualityControlCode>Inspection</cbc:QualityControlCode>
+      <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
+      <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
+      <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
+      <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+      <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+      <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode>Green</cbc:ProcurementTypeCode>
+        <cbc:ProcurementType>Recycled steel and certified timber are asked.</cbc:ProcurementType>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="XBL">4320.00</cbc:EstimatedOverallContractAmount>
+        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">4320.00</cbc:EstimatedOverallFrameworkContractsAmount>
+        <cbc:TotalAmount currencyID="XBL">4320.00</cbc:TotalAmount>
+        <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+        <cbc:MinimumAmount currencyID="XBL">2160.00</cbc:MinimumAmount>
+        <cbc:MaximumAmount currencyID="XBL">5184.00</cbc:MaximumAmount>
+        <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
+        <cbc:AverageSubsequentContractAmount currencyID="XBL">720.00</cbc:AverageSubsequentContractAmount>
+        <cac:ApplicableTaxCategory>
+          <cbc:ID>E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID>STT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ApplicableTaxCategory>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listID="HS">9988.00</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:CommodityCode>PARKS-FURN</cbc:CommodityCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:EndDate>2028-03-22</cbc:EndDate>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
+        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
+        <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+        <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
+        <cac:OptionValidityPeriod>
+          <cbc:EndDate>2028-03-22</cbc:EndDate>
+        </cac:OptionValidityPeriod>
+        <cac:Renewal>
+          <cbc:Amount currencyID="XBL">2160.00</cbc:Amount>
+          <cac:Period>
+            <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
+          </cac:Period>
+        </cac:Renewal>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
 </ContractNotice>

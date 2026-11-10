@@ -7,8 +7,17 @@
   <cbc:ID>BF-DOC-26-0193</cbc:ID>
   <cbc:UUID>27b07b57-4421-5730-8be4-08222db0cc1c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>10:47:00</cbc:IssueTime>
+  <cbc:EconomicOperatorGroupName>Brackenmere Furniture</cbc:EconomicOperatorGroupName>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cbc:ProcedureCode>Open</cbc:ProcedureCode>
+  <cbc:QualificationApplicationTypeCode>Regulated</cbc:QualificationApplicationTypeCode>
+  <cbc:WeightScoringMethodologyNote>Pass or fail.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightingTypeCode>None</cbc:WeightingTypeCode>
+  <cbc:Note>All criteria answered.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -181,8 +190,85 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:ProcurementProject>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TURNOVER</cbc:ID>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterionResponse>
-    <cbc:ID>SEL-1</cbc:ID>
-    <cbc:Description>Annual turnover in furniture above 500,000 lume in each of the last three years.</cbc:Description>
+    <cbc:ID>CRR-1</cbc:ID>
+    <cbc:Name>Turnover</cbc:Name>
+    <cbc:Description>Yearly turnover of 410,000 lume.</cbc:Description>
+    <cbc:ValidatedCriterionPropertyID>P-1</cbc:ValidatedCriterionPropertyID>
+    <cbc:ConfidentialityLevelCode>Confidential</cbc:ConfidentialityLevelCode>
+    <cac:ResponseValue>
+      <cbc:ID>RV-1</cbc:ID>
+      <cbc:Description>Turnover 2025.</cbc:Description>
+      <cbc:Response>As in the accounts.</cbc:Response>
+      <cbc:ResponseAmount currencyID="XBL">410000.00</cbc:ResponseAmount>
+      <cbc:ResponseBinaryObject mimeCode="text/plain">QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu</cbc:ResponseBinaryObject>
+      <cbc:ResponseCode>Met</cbc:ResponseCode>
+      <cbc:ResponseDate>2025-12-31</cbc:ResponseDate>
+      <cbc:ResponseID>BF-ACC-2025</cbc:ResponseID>
+      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
+      <cbc:ResponseMeasure unitCode="MON">12</cbc:ResponseMeasure>
+      <cbc:ResponseNumeric>26</cbc:ResponseNumeric>
+      <cbc:ResponseQuantity unitCode="ANN">26</cbc:ResponseQuantity>
+      <cbc:ResponseTime>12:00:00</cbc:ResponseTime>
+      <cbc:ResponseURI>https://www.brackenmere.example/accounts-2025.pdf</cbc:ResponseURI>
+    </cac:ResponseValue>
+    <cac:ApplicablePeriod>
+      <cbc:StartDate>2025-01-01</cbc:StartDate>
+      <cbc:EndDate>2025-12-31</cbc:EndDate>
+    </cac:ApplicablePeriod>
+    <cac:SuppliedEvidence>
+      <cbc:ID>EV-ACC-BF</cbc:ID>
+    </cac:SuppliedEvidence>
+    <cac:ProcurementProjectLotReference>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:ProcurementProjectLotReference>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
   </cac:TenderingCriterionResponse>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-ESPD-26</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Evidence>
+    <cbc:ID>EV-ACC-BF</cbc:ID>
+    <cbc:EvidenceTypeCode>Accounts</cbc:EvidenceTypeCode>
+    <cbc:Name>Annual accounts 2025</cbc:Name>
+    <cbc:Description>Audited.</cbc:Description>
+    <cbc:CandidateStatement>True and complete.</cbc:CandidateStatement>
+    <cbc:ConfidentialityLevelCode>Confidential</cbc:ConfidentialityLevelCode>
+    <cac:EvidenceIssuingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:EvidenceIssuingParty>
+    <cac:DocumentReference>
+      <cbc:ID>BF-ACC-2025</cbc:ID>
+    </cac:DocumentReference>
+    <cac:Language>
+      <cbc:ID>en</cbc:ID>
+    </cac:Language>
+  </cac:Evidence>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-QAR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </QualificationApplicationResponse>

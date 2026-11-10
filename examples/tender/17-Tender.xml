@@ -6,9 +6,32 @@
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0203</cbc:ID>
   <cbc:UUID>21770882-3c11-5392-aed3-5bd95b4c3cc7</cbc:UUID>
+  <cbc:TenderTypeCode>Combined</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>16:37:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>Tender for both lots, with a bench of the furniture maker's own make.</cbc:Note>
+  <cac:ValidityPeriod>
+    <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CallForTenderDocumentReference>
+    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+  </cac:CallForTenderDocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BF-DS-PARK</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-TENDER-17</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:TendererParty>
     <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -91,6 +114,9 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:TendererParty>
+  <cac:TendererQualificationDocumentReference>
+    <cbc:ID>VI-DOC-26-0199</cbc:ID>
+  </cac:TendererQualificationDocumentReference>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -179,9 +205,123 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:TenderedProject>
+    <cbc:VariantID>V0</cbc:VariantID>
+    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
+    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
+    <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
+    <cbc:TenderEnvelopeTypeCode>Combined</cbc:TenderEnvelopeTypeCode>
+    <cac:AdditionalFee>
+      <cbc:FeeTypeCode>Courier</cbc:FeeTypeCode>
+      <cbc:FeeAmount currencyID="XBL">12.00</cbc:FeeAmount>
+      <cbc:FeeDescription>Courier of the guarantee's original.</cbc:FeeDescription>
+    </cac:AdditionalFee>
+    <cac:ProcurementProjectLot>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:ProcurementProjectLot>
+    <cac:ProcurementProjectLot>
+      <cbc:ID>LOT-2</cbc:ID>
+    </cac:ProcurementProjectLot>
+    <cac:EvidenceDocumentReference>
+      <cbc:ID>VI-REF-2025</cbc:ID>
+    </cac:EvidenceDocumentReference>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:LegalMonetaryTotal>
-      <cbc:PayableAmount currencyID="XBL">112800.00</cbc:PayableAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">116640.00</cbc:LineExtensionAmount>
+      <cbc:PayableAmount currencyID="XBL">116640.00</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>
+    <cac:TenderLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Note>A bench of its own make: steel frame, hardwood slats.</cbc:Note>
+      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">112800.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">112800.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
+      <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
+      <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
+      <cbc:MinimumOrderQuantity unitCode="H87">20</cbc:MinimumOrderQuantity>
+      <cbc:MaximumOrderQuantity unitCode="H87">96</cbc:MaximumOrderQuantity>
+      <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
+      <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
+      <cac:DocumentReference>
+        <cbc:ID>BF-DS-PARK</cbc:ID>
+      </cac:DocumentReference>
+      <cac:Item>
+        <cbc:Name>Park bench Brackenmere PB-2</cbc:Name>
+      </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+      </cac:OfferedItemLocationQuantity>
+      <cac:ReplacementRelatedItem>
+        <cbc:ID>BF-SLAT-PB2</cbc:ID>
+        <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      </cac:ReplacementRelatedItem>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:SubTenderLine>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Quantity unitCode="SET">240</cbc:Quantity>
+        <cac:Item>
+          <cbc:Name>Ground anchor set</cbc:Name>
+        </cac:Item>
+      </cac:SubTenderLine>
+      <cac:CallForTendersLineReference>
+        <cbc:LineID>1</cbc:LineID>
+      </cac:CallForTendersLineReference>
+      <cac:CallForTendersDocumentReference>
+        <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+      </cac:CallForTendersDocumentReference>
+    </cac:TenderLine>
+    <cac:TenderLine>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">3840.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Installation of a park bench</cbc:Name>
+      </cac:Item>
+    </cac:TenderLine>
+    <cac:AwardingCriterionResponse>
+      <cbc:ID>ACR-1</cbc:ID>
+      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
+      <cbc:Description>Six years on the frame and the slats.</cbc:Description>
+      <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      <cbc:Amount currencyID="XBL">116640.00</cbc:Amount>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-1.1</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
+        <cbc:Description>Oiled hardwood, painted steel.</cbc:Description>
+      </cac:SubordinateAwardingCriterionResponse>
+    </cac:AwardingCriterionResponse>
   </cac:TenderedProject>
 </Tender>
