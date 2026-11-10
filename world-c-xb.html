@@ -37,7 +37,7 @@ bodies are exempt, and the invoice says so.</td>
 <p>A consumer rarely deals with UBL directly, but a structured purchase
 receipt means the receipt can be stored, searched or used for a warranty
 claim without a paper slip.</p>
-<p>In this world it sends 0 and receives 1 documents, and is named in 0
+<p>In this world it sends 0 and receives 4 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="distributor-to-retailer-delivered-duty-paid-domestic-country-b">Distributor
@@ -55,14 +55,51 @@ Receipt</strong></a> from <a href="world-26-xb.html">Brightmarket
 Stores</a>: A consumer buys in the shop and gets a receipt.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
 </ul>
+<h2
+id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
+water and telecom (one utility in each country)</h2>
+<p>Every business and household pays a utility. UBL bills a utility with
+an Invoice and supplements it with a Utility Statement: the consumption
+behind the bill, per connection, with meter readings (UBL 2.5, section
+2.3.7.2, Utility Billing). The three utilities differ on purpose:
+electricity and water use the energy and water supply structure, telecom
+its own telecommunications structure, and the three countries tax them
+differently.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
+Statement</strong></a> from <a href="world-34-xb.html">Coastal State
+Water Company</a>: The household's water consumption.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SubscriberParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-34-xb.html">Coastal State Water Company</a>: The
+household's water bill, exempt from sales tax like every water bill.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMINDER-SCHEMA"><strong>Reminder</strong></a>
+from <a href="world-34-xb.html">Coastal State Water Company</a>: The
+household has not paid by the due date; the utility reminds it of the
+amount past due, referring to the invoice.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<p><code>AccountingCustomerParty</code></p>
+<p><code>AccountingCustomerParty</code> <code>ReceiverParty</code>
+<code>SubscriberParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
 <li><a href="world-26-xb.html">Brightmarket Stores</a>, Country B</li>
+<li><a href="world-34-xb.html">Coastal State Water Company</a>, Country
+B</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#c-xb">See Consumer on the map</a> · Country B:
@@ -75,6 +112,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
 </body>
 </html>

@@ -53,7 +53,8 @@ href="world-8-xa.html">Castrano Logistics</a>, <a
 href="world-7-xa.html">Rinova Recovery</a>, <a
 href="world-14-xa.html">Ferrano Rail Cargo</a>, <a
 href="world-13-xa.html">Trasvia Haulage</a>, <a
-href="world-15-xa.html">Fiumella Barges</a></td>
+href="world-15-xa.html">Fiumella Barges</a>, <a
+href="world-33-xa.html">Ferrano Energy</a></td>
 </tr>
 <tr>
 <td>In Country A</td>
@@ -68,7 +69,7 @@ charged on exports.</td>
 invoices carry the payee account and a payment reference, and remittance
 advices repeat that reference, incoming payments can be matched to the
 right invoices automatically.</p>
-<p>In this world it sends 0 and receives 0 documents, and is named in 7
+<p>In this world it sends 0 and receives 0 documents, and is named in 9
 documents between other parties. They are listed per flow below.</p>
 <h2 id="ore-from-the-mine-to-the-factory-domestic-country-a">Ore from
 the mine to the factory (domestic, Country A)</h2>
@@ -188,6 +189,40 @@ its account at the seller's bank.</p>
 (The financial institution that this branch belongs to (if
 applicable)).</p></li>
 </ul>
+<h2
+id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
+water and telecom (one utility in each country)</h2>
+<p>Every business and household pays a utility. UBL bills a utility with
+an Invoice and supplements it with a Utility Statement: the consumption
+behind the bill, per connection, with meter readings (UBL 2.5, section
+2.3.7.2, Utility Billing). The three utilities differ on purpose:
+electricity and water use the energy and water supply structure, telecom
+its own telecommunications structure, and the three countries tax them
+differently.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-33-xa.html">Ferrano Energy</a> to <a
+href="world-5-xa.html">Valdara Industries</a>: The electricity bill,
+with Country A's VAT; it refers to the utility statement for the
+consumption.</p>
+<p>In it as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a> to <a href="world-33-xa.html">Ferrano Energy</a>: The
+manufacturer pays both electricity bills in one transfer.</p>
+<p>In it as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>,
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if applicable))
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>FinancialInstitution</code></p>
@@ -202,6 +237,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
 </body>
 </html>

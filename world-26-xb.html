@@ -60,7 +60,7 @@ bodies are exempt, and the invoice says so.</td>
 orders and invoices, UBL lets it share forecasts, promotions and sales
 data with its supplier, and issue a structured purchase receipt to the
 consumer.</p>
-<p>In this world it sends 6 and receives 4 documents, and is named in 2
+<p>In this world it sends 7 and receives 6 documents, and is named in 2
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="distributor-to-retailer-delivered-duty-paid-domestic-country-b">Distributor
@@ -172,6 +172,49 @@ the retailer is only the consignee.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
 </ul>
+<h2
+id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
+water and telecom (one utility in each country)</h2>
+<p>Every business and household pays a utility. UBL bills a utility with
+an Invoice and supplements it with a Utility Statement: the consumption
+behind the bill, per connection, with meter readings (UBL 2.5, section
+2.3.7.2, Utility Billing). The three utilities differ on purpose:
+electricity and water use the energy and water supply structure, telecom
+its own telecommunications structure, and the three countries tax them
+differently.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> to <a href="world-34-xb.html">Coastal State Water
+Company</a>: The shop pays its water bill and says which invoice the
+transfer settles.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
+Statement</strong></a> from <a href="world-34-xb.html">Coastal State
+Water Company</a>: The shop's water consumption, read from its
+meter.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SubscriberParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-34-xb.html">Coastal State Water Company</a>: The
+water bill for the shop. Water is exempt from the state sales tax, and
+the invoice says so with the exemption reason: leaving the tax out would
+say nothing (IND6).</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ReceiverParty</code> <code>SenderParty</code>
@@ -179,13 +222,15 @@ who receives the goods).</p></li>
 <code>InventoryReportingParty</code> <code>DeliveryParty</code>
 <code>ConsigneeParty</code> <code>DeliveryCustomerParty</code>
 <code>AccountingCustomerParty</code>
-<code>AccountingSupplierParty</code></p>
+<code>AccountingSupplierParty</code> <code>SubscriberParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
 <li><a href="world-6-xb.html">Lumeway Distribution</a>, Country B</li>
 <li><a href="world-c-xb.html">Robin Ashdale</a>, Country B</li>
+<li><a href="world-34-xb.html">Coastal State Water Company</a>, Country
+B</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#26-xb">See Retailer on the map</a> · Country B:
@@ -198,6 +243,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
 </body>
 </html>

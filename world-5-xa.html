@@ -60,8 +60,8 @@ sells, exports and tenders. UBL gives it one vocabulary for all of that,
 from the order it places with the mine to the certificate of origin and
 the tender it submits to a public buyer, so the same item, party and
 price data are reused instead of re-entered for every partner.</p>
-<p>In this world it sends 18 and receives 17 documents, and is named in
-12 documents between other parties. They are listed per flow below.</p>
+<p>In this world it sends 19 and receives 19 documents, and is named in
+13 documents between other parties. They are listed per flow below.</p>
 <h2 id="ore-from-the-mine-to-the-factory-domestic-country-a">Ore from
 the mine to the factory (domestic, Country A)</h2>
 <p>The manufacturer buys ore free carrier (FCA) at the mine: the buyer
@@ -566,6 +566,61 @@ covered by this document) (The Party producing the waste material).</p>
 <p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
+<h2
+id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
+water and telecom (one utility in each country)</h2>
+<p>Every business and household pays a utility. UBL bills a utility with
+an Invoice and supplements it with a Utility Statement: the consumption
+behind the bill, per connection, with meter readings (UBL 2.5, section
+2.3.7.2, Utility Billing). The three utilities differ on purpose:
+electricity and water use the energy and water supply structure, telecom
+its own telecommunications structure, and the three countries tax them
+differently.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> to <a href="world-33-xa.html">Ferrano Energy</a>:
+The manufacturer pays both electricity bills in one transfer.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-23-xa.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
+Statement</strong></a> from <a href="world-33-xa.html">Ferrano
+Energy</a>: The factory's monthly electricity consumption: meter
+readings and consumption per connection, in the energy and water supply
+structure.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SubscriberParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-33-xa.html">Ferrano Energy</a>: The electricity
+bill, with Country A's VAT; it refers to the utility statement for the
+consumption.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
+Statement</strong></a> from <a href="world-33-xa.html">Ferrano
+Energy</a> to <a href="world-8-xa.html">Castrano Logistics</a>: The
+3PL's warehouse is the manufacturer's building: the 3PL is the
+subscriber at the connection and receives the statement, but the
+manufacturer pays. The statement therefore names the manufacturer as
+customer, the buyer that differs from the receiver.</p>
+<p>In it as <code>CustomerParty</code> (The buyer, if different from the
+receiver of the document).</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>BuyerCustomerParty</code> <code>DeliveryParty</code>
@@ -578,7 +633,8 @@ covered by this document) (The Party producing the waste material).</p>
 <code>BusinessParty</code> <code>MainQualifyingParty</code>
 <code>InterestedParty</code> <code>TendererParty</code>
 <code>WinningParty</code> <code>HolderParty</code>
-<code>NotifierParty</code> <code>WasteProducerParty</code></p>
+<code>NotifierParty</code> <code>WasteProducerParty</code>
+<code>SubscriberParty</code> <code>CustomerParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -594,6 +650,7 @@ A</li>
 <li><a href="world-2-xb.html">Lumeport Public Works Department</a>,
 Country B</li>
 <li><a href="world-7-xa.html">Rinova Recovery</a>, Country A</li>
+<li><a href="world-33-xa.html">Ferrano Energy</a>, Country A</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#5-xa">See Manufacturer on the map</a> · Country
@@ -606,6 +663,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
 </body>
 </html>

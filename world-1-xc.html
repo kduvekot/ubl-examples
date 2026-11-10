@@ -56,7 +56,7 @@ sales carry no tax, and the invoice says so.</td>
 lets it order from the distributor's catalogue, follow the goods through
 despatch and transport, match the invoice to the order and the receipt,
 and send a remittance advice with its payment.</p>
-<p>In this world it sends 3 and receives 7 documents, and is named in 14
+<p>In this world it sends 4 and receives 9 documents, and is named in 14
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-country-b--island-country-c">Overseas
@@ -313,11 +313,54 @@ receives the goods).</p>
 <p>Also mentions: <a href="world-12-xc.html">Kelaro Air Cargo</a> as
 <code>Consignment/CarrierParty</code>.</p></li>
 </ul>
+<h2
+id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
+water and telecom (one utility in each country)</h2>
+<p>Every business and household pays a utility. UBL bills a utility with
+an Invoice and supplements it with a Utility Statement: the consumption
+behind the bill, per connection, with meter readings (UBL 2.5, section
+2.3.7.2, Utility Billing). The three utilities differ on purpose:
+electricity and water use the energy and water supply structure, telecom
+its own telecommunications structure, and the three countries tax them
+differently.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> to <a href="world-35-xc.html">Selanu Telecom</a>:
+The buyer pays the telecom bill from its account at the island's
+bank.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-22-xc.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-22-xc.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
+Statement</strong></a> from <a href="world-35-xc.html">Selanu
+Telecom</a>: Calls, data and subscriptions per telephone line of the
+buyer, in the telecommunications supply structure.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SubscriberParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-35-xc.html">Selanu Telecom</a>: The telecom bill.
+The island has no sales tax or VAT, and the invoice says that no tax
+applies rather than leaving it out.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-22-xc.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ReceiverParty</code> <code>ParticipantParty</code>
 <code>BuyerCustomerParty</code> <code>AccountingCustomerParty</code>
-<code>ConsigneeParty</code> <code>ImporterParty</code></p>
+<code>ConsigneeParty</code> <code>ImporterParty</code>
+<code>SubscriberParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -326,6 +369,7 @@ world</h2>
 <li><a href="world-32-xb.html">Lumeport Trade Accord Council</a>,
 Country B</li>
 <li><a href="world-24-xb.html">Harbourline Factoring</a>, Country B</li>
+<li><a href="world-35-xc.html">Selanu Telecom</a>, Country C</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#1-xc">See Commercial Buyer on the map</a> ·
@@ -338,6 +382,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
 </body>
 </html>
