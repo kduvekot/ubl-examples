@@ -30,11 +30,11 @@ The buyer pays the telecom bill from its account at the island's bank.
   What the advice is for.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the currency of the invoice paid; it has three decimals.
-- `TotalDebitAmount` = **141.920** (currencyID `XLC`)  
+- `TotalDebitAmount` = **135.566** (currencyID `XLC`)  
   The invoices paid.
 - `TotalCreditAmount` = **0.000** (currencyID `XLC`)  
   No credits taken.
-- `TotalPaymentAmount` = **141.920** (currencyID `XLC`)  
+- `TotalPaymentAmount` = **135.566** (currencyID `XLC`)  
   The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **VT-PAY-26-0313**  
   The payment order the payer gave its bank.
@@ -316,7 +316,7 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `DebitLineAmount` = **141.920** (currencyID `XLC`)  
+- `DebitLineAmount` = **135.566** (currencyID `XLC`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.000** (currencyID `XLC`)  
   Nothing remains open on the invoice after this payment.
@@ -362,9 +362,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:IssueTime>11:19:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XLC">141.920</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XLC">135.566</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XLC">141.920</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:PayerReference>VT-0313</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>
@@ -598,7 +598,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XLC">141.920</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>

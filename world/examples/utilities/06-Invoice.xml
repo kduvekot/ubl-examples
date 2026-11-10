@@ -323,6 +323,56 @@
     <cbc:TaxInclusiveAmount currencyID="XBL">238.22</cbc:TaxInclusiveAmount>
     <cbc:PayableAmount currencyID="XBL">238.22</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
+  <cac:CollectionInvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
+    <cac:CollectedForParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:CollectedForParty>
+    <cac:Item>
+      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
+      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>CSW-LEVY</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:CollectionInvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
@@ -357,48 +407,6 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
-    </cac:Price>
-  </cac:InvoiceLine>
-  <cac:InvoiceLine>
-    <cbc:ID>2</cbc:ID>
-    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
-    <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
-    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-03-01</cbc:StartDate>
-      <cbc:EndDate>2026-03-31</cbc:EndDate>
-      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
-      <cbc:Description>March 2026</cbc:Description>
-    </cac:InvoicePeriod>
-    <cac:CollectedForParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:CollectedForParty>
-    <cac:Item>
-      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
-      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
-      <cac:SellersItemIdentification>
-        <cbc:ID>CSW-LEVY</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

@@ -271,6 +271,16 @@ Inside `SubscriberConsumption`:
   March.
 - `Consumption/MainPeriod/EndDate` = **2026-03-31**  
   Its last day.
+- `Consumption/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `Consumption/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `Consumption/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `Consumption/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Consumption/AllowanceCharge/Amount` = **6.354** (currencyID `XLC`)  
+  5 % of the six subscriptions.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyType` = **Business lines and data**  
   The supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyTypeCode` = **BUS**  
@@ -291,6 +301,26 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/SourceCurrencyCode` = **XBL**  
+  The currency the roaming partner charged in.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/TargetCurrencyCode` = **XLC**  
+  The bill's currency.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/CalculationRate` = **0.4**  
+  The reference rate.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/MathematicOperatorCode` = **Multiply**  
+  Lume times the rate.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/Date` = **2026-03-31**  
+  The rate at the end of the month.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
+  The line's share of the bundle discount.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-1**  
@@ -333,6 +363,14 @@ Inside `SubscriberConsumption`:
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Country/IdentificationCode` = **XB**  
   The country called.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Calls to the trade accord countries are included in the subscription**  
+  Why the call costs nothing.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.400** (currencyID `XLC`)  
+  All of it.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/BaseAmount` = **2.400** (currencyID `XLC`)  
+  Twelve minutes at the 0.200 tariff for calls abroad.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Amount` = **0.000** (currencyID `XLC`)  
@@ -385,6 +423,16 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
+  The line's share of the bundle discount.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-2**  
@@ -401,6 +449,24 @@ Inside `SubscriberConsumption`:
   Minutes called on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **V-0320-02**  
+  A film rented on line 2.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-20**  
+  The day.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **12:30:00**  
+  At lunch.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **video**  
+  The operator's video service, no number called.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Video on demand**  
+  The kind of service.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/MovieTitle` = **Safe Lifting in the Warehouse**  
+  A training film the trader's staff watched.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/PayPerView` = **true**  
+  Paid per film.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **1** (unitCode `C62`)  
+  One film.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
+  Training films are included in the business bundle.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **3**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 3000 1852**  
@@ -411,6 +477,16 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
+  The line's share of the bundle discount.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-3**  
@@ -437,6 +513,16 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
+  The line's share of the bundle discount.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-4**  
@@ -463,6 +549,16 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
+  The line's share of the bundle discount.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-5**  
@@ -489,6 +585,16 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
+  The line's share of the bundle discount.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-6**  
@@ -529,8 +635,10 @@ Inside `SubscriberConsumption`:
   At the data tariff.
 - `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **141.920** (currencyID `XLC`)  
   The supply.
-- `Consumption/LegalMonetaryTotal/PayableAmount` = **141.920** (currencyID `XLC`)  
-  No tax on the island.
+- `Consumption/LegalMonetaryTotal/AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
+  The bundle discount.
+- `Consumption/LegalMonetaryTotal/PayableAmount` = **135.566** (currencyID `XLC`)  
+  The supply less the discount; no tax.
 - `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SupplierConsumption/UtilitySupplierParty/PartyName/Name` = **Selanu Telecom**  
@@ -541,8 +649,10 @@ Inside `SubscriberConsumption`:
   A party referred to from another party's details: its identifier and name are enough.
 - `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **141.920** (currencyID `XLC`)  
   The supply.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **141.920** (currencyID `XLC`)  
-  No tax on the island.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
+  The bundle discount.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **135.566** (currencyID `XLC`)  
+  The supply less the discount.
 - `SupplierConsumption/ConsumptionLine/ID` = **1**  
   The line of the consumption.
 - `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **1**  
@@ -557,6 +667,16 @@ Inside `SubscriberConsumption`:
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
+- `SupplierConsumption/ConsumptionLine/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `SupplierConsumption/ConsumptionLine/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `SupplierConsumption/ConsumptionLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `SupplierConsumption/ConsumptionLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `SupplierConsumption/ConsumptionLine/AllowanceCharge/Amount` = **6.354** (currencyID `XLC`)  
+  On the subscriptions of this line.
 - `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-BL**  
@@ -623,6 +743,10 @@ Inside `SubscriberConsumption`:
   As a code.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Mobile data beyond the subscription, per gigabyte.**  
   The tariff in words.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/PackQuantity` = **5** (unitCode `E34`)  
+  Data beyond the subscriptions is sold in packs of 5 GB.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/PackSizeNumeric` = **7**  
+  Seven packs: the 35 GB of March.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
   How the quantity is measured.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET**  
@@ -848,6 +972,13 @@ Inside `SubscriberConsumption`:
         <cbc:StartDate>2026-03-01</cbc:StartDate>
         <cbc:EndDate>2026-03-31</cbc:EndDate>
       </cac:MainPeriod>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
+      </cac:AllowanceCharge>
       <cac:TelecommunicationsSupply>
         <cbc:TelecommunicationsSupplyType>Business lines and data</cbc:TelecommunicationsSupplyType>
         <cbc:TelecommunicationsSupplyTypeCode>BUS</cbc:TelecommunicationsSupplyTypeCode>
@@ -860,6 +991,20 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:ExchangeRate>
+            <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+            <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+            <cbc:CalculationRate>0.4</cbc:CalculationRate>
+            <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+            <cbc:Date>2026-03-31</cbc:Date>
+          </cac:ExchangeRate>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -890,6 +1035,12 @@ Inside `SubscriberConsumption`:
             <cac:Country>
               <cbc:IdentificationCode>XB</cbc:IdentificationCode>
             </cac:Country>
+            <cac:AllowanceCharge>
+              <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+              <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
+              <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
+              <cbc:BaseAmount currencyID="XLC">2.400</cbc:BaseAmount>
+            </cac:AllowanceCharge>
             <cac:TaxTotal>
               <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
             </cac:TaxTotal>
@@ -933,6 +1084,13 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -945,6 +1103,17 @@ Inside `SubscriberConsumption`:
             <cbc:Quantity unitCode="MIN">165</cbc:Quantity>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
           </cac:TelecommunicationsService>
+          <cac:TelecommunicationsService>
+            <cbc:ID>V-0320-02</cbc:ID>
+            <cbc:CallDate>2026-03-20</cbc:CallDate>
+            <cbc:CallTime>12:30:00</cbc:CallTime>
+            <cbc:ServiceNumberCalled>video</cbc:ServiceNumberCalled>
+            <cbc:TelecommunicationsServiceCategory>Video on demand</cbc:TelecommunicationsServiceCategory>
+            <cbc:MovieTitle>Safe Lifting in the Warehouse</cbc:MovieTitle>
+            <cbc:PayPerView>true</cbc:PayPerView>
+            <cbc:Quantity unitCode="C62">1</cbc:Quantity>
+            <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
+          </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>3</cbc:ID>
@@ -952,6 +1121,13 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -971,6 +1147,13 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -990,6 +1173,13 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -1009,6 +1199,13 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -1040,7 +1237,8 @@ Inside `SubscriberConsumption`:
       </cac:TelecommunicationsSupply>
       <cac:LegalMonetaryTotal>
         <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XLC">141.920</cbc:PayableAmount>
+        <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
+        <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
     <cac:SupplierConsumption>
@@ -1063,7 +1261,8 @@ Inside `SubscriberConsumption`:
       <cac:Consumption>
         <cac:LegalMonetaryTotal>
           <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XLC">141.920</cbc:PayableAmount>
+          <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
+          <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:ConsumptionLine>
@@ -1076,6 +1275,13 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:AllowanceCharge>
+          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+          <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+          <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+          <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
+        </cac:AllowanceCharge>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -1134,6 +1340,8 @@ Inside `SubscriberConsumption`:
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
           <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
           <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
+          <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
+          <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>

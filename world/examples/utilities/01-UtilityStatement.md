@@ -535,6 +535,10 @@ Inside `SubscriberConsumption`:
   Charged every month.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M**  
   As a code.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/OneTimeChargeType` = **Connection to the 10 kV grid, paid once in 2024**  
+  The one-time charge of the contract.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/OneTimeChargeTypeCode` = **CONN**  
+  As a code: a connection charge.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/ID` = **S**  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/Percent` = **20**  
@@ -986,6 +990,8 @@ Inside `SubscriberConsumption`:
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode>M</cbc:CurrentChargeTypeCode>
+          <cbc:OneTimeChargeType>Connection to the 10 kV grid, paid once in 2024</cbc:OneTimeChargeType>
+          <cbc:OneTimeChargeTypeCode>CONN</cbc:OneTimeChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID>S</cbc:ID>
             <cbc:Percent>20</cbc:Percent>

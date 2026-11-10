@@ -199,6 +199,13 @@
         <cbc:StartDate>2026-03-01</cbc:StartDate>
         <cbc:EndDate>2026-03-31</cbc:EndDate>
       </cac:MainPeriod>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
+      </cac:AllowanceCharge>
       <cac:TelecommunicationsSupply>
         <cbc:TelecommunicationsSupplyType>Business lines and data</cbc:TelecommunicationsSupplyType>
         <cbc:TelecommunicationsSupplyTypeCode>BUS</cbc:TelecommunicationsSupplyTypeCode>
@@ -211,6 +218,20 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:ExchangeRate>
+            <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+            <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+            <cbc:CalculationRate>0.4</cbc:CalculationRate>
+            <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+            <cbc:Date>2026-03-31</cbc:Date>
+          </cac:ExchangeRate>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -241,6 +262,12 @@
             <cac:Country>
               <cbc:IdentificationCode>XB</cbc:IdentificationCode>
             </cac:Country>
+            <cac:AllowanceCharge>
+              <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+              <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
+              <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
+              <cbc:BaseAmount currencyID="XLC">2.400</cbc:BaseAmount>
+            </cac:AllowanceCharge>
             <cac:TaxTotal>
               <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
             </cac:TaxTotal>
@@ -284,6 +311,13 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -296,6 +330,17 @@
             <cbc:Quantity unitCode="MIN">165</cbc:Quantity>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
           </cac:TelecommunicationsService>
+          <cac:TelecommunicationsService>
+            <cbc:ID>V-0320-02</cbc:ID>
+            <cbc:CallDate>2026-03-20</cbc:CallDate>
+            <cbc:CallTime>12:30:00</cbc:CallTime>
+            <cbc:ServiceNumberCalled>video</cbc:ServiceNumberCalled>
+            <cbc:TelecommunicationsServiceCategory>Video on demand</cbc:TelecommunicationsServiceCategory>
+            <cbc:MovieTitle>Safe Lifting in the Warehouse</cbc:MovieTitle>
+            <cbc:PayPerView>true</cbc:PayPerView>
+            <cbc:Quantity unitCode="C62">1</cbc:Quantity>
+            <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
+          </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>3</cbc:ID>
@@ -303,6 +348,13 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -322,6 +374,13 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -341,6 +400,13 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -360,6 +426,13 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
+          </cac:AllowanceCharge>
           <cac:TaxTotal>
             <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
           </cac:TaxTotal>
@@ -391,7 +464,8 @@
       </cac:TelecommunicationsSupply>
       <cac:LegalMonetaryTotal>
         <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XLC">141.920</cbc:PayableAmount>
+        <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
+        <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
     <cac:SupplierConsumption>
@@ -414,7 +488,8 @@
       <cac:Consumption>
         <cac:LegalMonetaryTotal>
           <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XLC">141.920</cbc:PayableAmount>
+          <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
+          <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:ConsumptionLine>
@@ -427,6 +502,13 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:AllowanceCharge>
+          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+          <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+          <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+          <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
+        </cac:AllowanceCharge>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -485,6 +567,8 @@
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
           <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
           <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
+          <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
+          <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>

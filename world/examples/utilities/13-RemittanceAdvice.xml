@@ -10,9 +10,9 @@
   <cbc:IssueTime>11:19:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XLC">141.920</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XLC">135.566</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XLC">141.920</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:PayerReference>VT-0313</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>
@@ -246,7 +246,7 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XLC">141.920</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>

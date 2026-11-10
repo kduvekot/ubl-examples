@@ -449,6 +449,26 @@ Inside `SubscriberConsumption`:
   What this month cost.
 - `Consumption/EnergyWaterSupply/ConsumptionAverage/Description` = **The average over the last three months is 14 m³.**  
   For comparison.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionType` = **District heating cooling correction**  
+  The water company also runs the city's district heating; the heat of the flat is settled once a year, and the statement shows the month's cooling correction.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionTypeCode` = **COOL**  
+  As a code.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/MeterNumber` = **CSW-H-71844**  
+  The heat meter of the flat.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ActualTemperatureReductionQuantity` = **31** (unitCode `CEL`)  
+  The water cooled by 31 degrees in the flat.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/NormalTemperatureReductionQuantity` = **35** (unitCode `CEL`)  
+  The network's standard cooling.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/DifferenceTemperatureReductionQuantity` = **-4** (unitCode `CEL`)  
+  Four degrees less than the standard.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/Description` = **Poor cooling makes the network pump more water; the shortfall is charged on the annual account.**  
+  Why.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionUnitAmount` = **0.80** (currencyID `XBL`)  
+  The surcharge per cubic metre per degree short.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionWaterQuantity` = **6.2** (unitCode `MTQ`)  
+  District heating water that passed the flat in March.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionAmount` = **19.84** (currencyID `XBL`)  
+  6.2 m³ × 4 degrees × 0.80: added to the annual heating account, not to this bill.
 - `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **32.90** (currencyID `XBL`)  
   The consumption.
 - `Consumption/LegalMonetaryTotal/PayableAmount` = **32.90** (currencyID `XBL`)  
@@ -869,6 +889,18 @@ Inside `SubscriberConsumption`:
           <cbc:AverageAmount currencyID="XBL">32.90</cbc:AverageAmount>
           <cbc:Description>The average over the last three months is 14 m³.</cbc:Description>
         </cac:ConsumptionAverage>
+        <cac:EnergyWaterConsumptionCorrection>
+          <cbc:CorrectionType>District heating cooling correction</cbc:CorrectionType>
+          <cbc:CorrectionTypeCode>COOL</cbc:CorrectionTypeCode>
+          <cbc:MeterNumber>CSW-H-71844</cbc:MeterNumber>
+          <cbc:ActualTemperatureReductionQuantity unitCode="CEL">31</cbc:ActualTemperatureReductionQuantity>
+          <cbc:NormalTemperatureReductionQuantity unitCode="CEL">35</cbc:NormalTemperatureReductionQuantity>
+          <cbc:DifferenceTemperatureReductionQuantity unitCode="CEL">-4</cbc:DifferenceTemperatureReductionQuantity>
+          <cbc:Description>Poor cooling makes the network pump more water; the shortfall is charged on the annual account.</cbc:Description>
+          <cbc:CorrectionUnitAmount currencyID="XBL">0.80</cbc:CorrectionUnitAmount>
+          <cbc:ConsumptionWaterQuantity unitCode="MTQ">6.2</cbc:ConsumptionWaterQuantity>
+          <cbc:CorrectionAmount currencyID="XBL">19.84</cbc:CorrectionAmount>
+        </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
         <cbc:LineExtensionAmount currencyID="XBL">32.90</cbc:LineExtensionAmount>

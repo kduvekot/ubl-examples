@@ -32,6 +32,8 @@ The household has not paid by the due date; the utility reminds it of the amount
   The first reminder.
 - `Note` = **The direct debit was returned by your bank: insufficient funds.**  
   Why the bill is unpaid.
+- `TaxPointDate` = **2026-05-01**  
+  The fee becomes due on the reminder date.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the unpaid bill; it has two decimals.
 - `AccountingCostCode` = **1210**  
@@ -65,6 +67,17 @@ Inside `AdditionalDocumentReference`:
 - `IssuerParty/PartyIdentification/ID` = **20411370** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `IssuerParty/PartyName/Name` = **Bank of Lumeport**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **CSWC-SIG-26-REM**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Coastal State Water Company**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Supplier Party
@@ -322,6 +335,10 @@ Inside `ReminderLine`:
 
 - `ID` = **1**  
   The unpaid bill.
+- `Note` = **The direct debit of 23 April was returned.**  
+  What happened.
+- `UUID` = **4551969c-5ba6-519a-a531-cc362de15d58**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `BalanceBroughtForwardIndicator` = **false**  
   Not a balance carried over: one bill.
 - `DebitLineAmount` = **38.78** (currencyID `XBL`)  
@@ -336,6 +353,10 @@ Inside `ReminderLine`:
   Its issue date.
 - `ID` = **2**  
   The reminder fee.
+- `Note` = **The fee for the returned direct debit.**  
+  What it is.
+- `UUID` = **d00e70a0-d7c3-5fb5-ac47-8f037a876e63**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **5.00** (currencyID `XBL`)  
   The fee for a returned direct debit, as the terms set.
 - `AccountingCostCode` = **8320**  
@@ -363,6 +384,7 @@ Inside `ReminderLine`:
   <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
+  <cbc:TaxPointDate>2026-05-01</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1210</cbc:AccountingCostCode>
   <cbc:AccountingCost>Household receivables</cbc:AccountingCost>
@@ -385,6 +407,17 @@ Inside `ReminderLine`:
       </cac:PartyName>
     </cac:IssuerParty>
   </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>CSWC-SIG-26-REM</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Coastal State Water Company</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -596,6 +629,8 @@ Inside `ReminderLine`:
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>The direct debit of 23 April was returned.</cbc:Note>
+    <cbc:UUID>4551969c-5ba6-519a-a531-cc362de15d58</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
     <cbc:DebitLineAmount currencyID="XBL">38.78</cbc:DebitLineAmount>
     <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
@@ -611,6 +646,8 @@ Inside `ReminderLine`:
   </cac:ReminderLine>
   <cac:ReminderLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>The fee for the returned direct debit.</cbc:Note>
+    <cbc:UUID>d00e70a0-d7c3-5fb5-ac47-8f037a876e63</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
     <cbc:AccountingCostCode>8320</cbc:AccountingCostCode>
     <cbc:AccountingCost>Reminder fees</cbc:AccountingCost>

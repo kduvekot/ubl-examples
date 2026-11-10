@@ -37,7 +37,7 @@ The water bill for the shop. Water is exempt from the state sales tax, and the i
 - `AccountingCost` = **Garden department**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
-  The number of invoice lines, as a check on the transfer.
+  The number of lines: one invoice line for the water and one collection line for the city's levy; the totals include both.
 - `DefaultLanguageCode` = **en**  
   The language the texts of the invoice are in: the seller's country's language.
 
@@ -427,6 +427,59 @@ Inside `LegalMonetaryTotal`:
 - `PayableAmount` = **238.22** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
+### Collection Invoice Line
+
+Inside `CollectionInvoiceLine`:
+
+- `ID` = **2**  
+  The line number.
+- `Note` = **Collected for the city of Lumeport and paid on to it.**  
+  Why the water company bills it.
+- `InvoicedQuantity` = **86** (unitCode `MTQ`)  
+  The shop's water use, on which the city charges its levy.
+- `LineExtensionAmount` = **36.12** (currencyID `XBL`)  
+  86 × 0.42, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **WTER**  
+  ISO 20022 purpose code WTER: water bill.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  The month billed: March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **Month**  
+  A monthly bill.
+- `InvoicePeriod/Description` = **March 2026**  
+  The period in words.
+- `BeneficiaryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `CollectedForParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `CollectedForParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/Description` = **The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.**  
+  The seller's description; item sewage-levy of Coastal State Water Company (world/items.json).
+- `Item/Name` = **Sewage levy of the city of Lumeport**  
+  The item's short name; item sewage-levy of Coastal State Water Company (world/items.json).
+- `Item/SellersItemIdentification/ID` = **CSW-LEVY**  
+  The seller's own item number; item sewage-levy of Coastal State Water Company (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **O**  
+  A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O).
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-LEVY**  
+  The world's code for the exemption reason (world/countries.json).
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Levy collected for a public body**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Price/PriceAmount` = **0.42** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `MTQ`)  
+  The price is per one unit.
+
 ### Invoice Line
 
 Inside `InvoiceLine`:
@@ -470,50 +523,6 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Price/PriceAmount` = **2.35** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `MTQ`)  
-  The price is per one unit.
-- `ID` = **2**  
-  The line number.
-- `Note` = **Collected for the city of Lumeport and paid on to it.**  
-  Why the water company bills it.
-- `InvoicedQuantity` = **86** (unitCode `MTQ`)  
-  The shop's water use, on which the city charges its levy.
-- `LineExtensionAmount` = **36.12** (currencyID `XBL`)  
-  86 × 0.42, rounded to the minor unit of the currency.
-- `PaymentPurposeCode` = **WTER**  
-  ISO 20022 purpose code WTER: water bill.
-- `InvoicePeriod/StartDate` = **2026-03-01**  
-  The month billed: March.
-- `InvoicePeriod/EndDate` = **2026-03-31**  
-  Its last day.
-- `InvoicePeriod/DescriptionCode` = **Month**  
-  A monthly bill.
-- `InvoicePeriod/Description` = **March 2026**  
-  The period in words.
-- `CollectedForParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `CollectedForParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Item/Description` = **The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.**  
-  The seller's description; item sewage-levy of Coastal State Water Company (world/items.json).
-- `Item/Name` = **Sewage levy of the city of Lumeport**  
-  The item's short name; item sewage-levy of Coastal State Water Company (world/items.json).
-- `Item/SellersItemIdentification/ID` = **CSW-LEVY**  
-  The seller's own item number; item sewage-levy of Coastal State Water Company (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **O**  
-  A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O).
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-LEVY**  
-  The world's code for the exemption reason (world/countries.json).
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Levy collected for a public body**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
-  Whether the category applies to goods or services.
-- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
-- `Price/PriceAmount` = **0.42** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `MTQ`)  
   The price is per one unit.
@@ -846,6 +855,56 @@ Inside `InvoiceLine`:
     <cbc:TaxInclusiveAmount currencyID="XBL">238.22</cbc:TaxInclusiveAmount>
     <cbc:PayableAmount currencyID="XBL">238.22</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
+  <cac:CollectionInvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
+    <cac:CollectedForParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:CollectedForParty>
+    <cac:Item>
+      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
+      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>CSW-LEVY</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:CollectionInvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
@@ -880,48 +939,6 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
-    </cac:Price>
-  </cac:InvoiceLine>
-  <cac:InvoiceLine>
-    <cbc:ID>2</cbc:ID>
-    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
-    <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
-    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-03-01</cbc:StartDate>
-      <cbc:EndDate>2026-03-31</cbc:EndDate>
-      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
-      <cbc:Description>March 2026</cbc:Description>
-    </cac:InvoicePeriod>
-    <cac:CollectedForParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:CollectedForParty>
-    <cac:Item>
-      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
-      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
-      <cac:SellersItemIdentification>
-        <cbc:ID>CSW-LEVY</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

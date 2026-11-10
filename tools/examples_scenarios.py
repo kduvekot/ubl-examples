@@ -7387,3 +7387,156 @@ def _(f, n, doc, out):
               "UUID": line_uuid(f, "receipt", 2)})
     return {"Note": V("Counted and checked at goods-in: one bench short, one box of side frames over.", "The "
                                                                                                         "result.")}
+
+
+# --- Coverage completion, batch D: utilities -------------------------------------------------------------------
+# The water company collects the city's sewage levy for the city: on its bills the levy is a collection line, an
+# amount collected on behalf of a third party, with the city as the line's beneficiary. The telecom company gives a
+# business bundle discount of 5 % on the subscriptions; calls abroad are included in the subscription.
+BUNDLE_PERCENT = Decimal("5")
+
+
+def bundle_discount():
+    return money(Decimal(6) * Decimal(str(ITEM["telecom-line"]["price"]["amount"])) * BUNDLE_PERCENT / 100, "XLC")
+
+
+def bundle_allowance(amt, why):
+    return {"ChargeIndicator": V("false", "An allowance: it lowers the amount."),
+            "AllowanceChargeReasonCode": V("95", "UN/EDIFACT 5189 code 95: discount."),
+            "AllowanceChargeReason": V("Business bundle discount", "The reason in words."),
+            "MultiplierFactorNumeric": V(str(BUNDLE_PERCENT / 100), "5 %."),
+            "Amount": amount(amt, "XLC", why)}
+
+
+@enrich("utilities", "Invoice")
+def _(f, n, doc, out):
+    key = bill_key(doc)
+    if key.startswith("34-xb"):
+        lines = out["InvoiceLine"]
+        levy_line = lines.pop(1)
+        levy_line["BeneficiaryParty"] = party("2-xb", short=True)
+        out["InvoiceLine"] = lines
+        out["CollectionInvoiceLine"] = levy_line
+        out["LineCountNumeric"] = V("2", "The number of lines: one invoice line for the water and one collection line "
+                                         "for the city's levy; the totals include both.")
+    if key == "33-xu":
+        total = out["TaxTotal"]
+        subs = total["TaxSubtotal"]
+        exc_subs, vat_sub = subs[:-1], subs[-1]
+        excise = sum(Decimal(s["TaxAmount"].value) for s in exc_subs)
+        vat = Decimal(vat_sub["TaxAmount"].value)
+        out["TaxTotal"] = [
+            {"TaxAmount": amount(excise, "XUF", "The energy tax, in its two tiers."),
+             "CalculationSequenceNumeric": V("1", "The energy tax is calculated first."),
+             "TaxIncludedIndicator": V("false", "The line prices do not include it."),
+             "TaxSubtotal": exc_subs},
+            {"TaxAmount": amount(vat, "XUF", "The value added tax, on the price plus the energy tax."),
+             "RoundingAmount": amount(0, "XUF", "No rounding was needed: 20 % of the base is whole ferra."),
+             "CalculationSequenceNumeric": V("2", "Calculated on the price and the energy tax."),
+             "TaxEvidenceIndicator": V("true", "This tax total is the evidence for the manufacturer's deduction "
+                                               "of value added tax."),
+             "TaxIncludedIndicator": V("false", "The line prices do not include it."),
+             "TaxSubtotal": vat_sub}]
+    if key == "35-xl":
+        disc = bundle_discount()
+        lmt = out["LegalMonetaryTotal"]
+        lines_amt = Decimal(lmt["LineExtensionAmount"].value)
+        net = lines_amt - disc
+        out["AllowanceCharge"] = {**bundle_allowance(disc, "5 % of the six subscriptions."),
+                                  "BaseAmount": amount(Decimal(6) * Decimal(str(ITEM["telecom-line"]["price"]
+                                                                                ["amount"])), "XLC",
+                                                       "The six subscriptions."),
+                                  "TaxCategory": kit.tax_category(kit.tax_rule("35-xl", "1-xl", "telecom-line"))}
+        lmt.update({"AllowanceTotalAmount": amount(disc, "XLC", "The bundle discount."),
+                    "AllowanceTotalTaxInclusiveAmount": amount(disc, "XLC", "The same: no tax on the island."),
+                    "TaxExclusiveAmount": amount(net, "XLC", "The lines less the discount."),
+                    "TaxInclusiveAmount": amount(net, "XLC", "No tax on the island."),
+                    "PayableAmount": amount(net, "XLC", "What the trader pays.")})
+        for st in lines_of(out["TaxTotal"], "TaxSubtotal"):
+            st["TaxableAmount"] = amount(net, "XLC", "The lines less the discount: no tax applies on the island.")
+        f.numbers[f"invoice-{key}-amount"] = net
+    return {}
+
+
+@enrich("utilities", "UtilityStatement")
+def _(f, n, doc, out):
+    sc = out["SubscriberConsumption"]
+    sup = doc["from"]
+    if sup == "33-xu" and doc["to"] == "5-xu":
+        it = sc["SupplierConsumption"]["ConsumptionLine"]["UtilityItem"]
+        it["OneTimeChargeType"] = V("Connection to the 10 kV grid, paid once in 2024", "The one-time charge of the "
+                                                                                     "contract.")
+        it["OneTimeChargeTypeCode"] = V("CONN", "As a code: a connection charge.")
+    if sup == "34-xb" and doc["to"] == "c-xb":
+        sc["Consumption"]["EnergyWaterSupply"]["EnergyWaterConsumptionCorrection"] = {
+            "CorrectionType": V("District heating cooling correction", "The water company also runs the city's "
+                                                                       "district heating; the heat of the flat is "
+                                                                       "settled once a year, and the statement shows "
+                                                                       "the month's cooling correction."),
+            "CorrectionTypeCode": V("COOL", "As a code."),
+            "MeterNumber": V("CSW-H-71844", "The heat meter of the flat."),
+            "ConsumptionWaterQuantity": qty(Decimal("6.2"), "MTQ", "District heating water that passed the flat "
+                                                                   "in March."),
+            "ActualTemperatureReductionQuantity": qty(31, "CEL", "The water cooled by 31 degrees in the flat."),
+            "NormalTemperatureReductionQuantity": qty(35, "CEL", "The network's standard cooling."),
+            "DifferenceTemperatureReductionQuantity": qty(-4, "CEL", "Four degrees less than the standard."),
+            "CorrectionUnitAmount": amount(Decimal("0.80"), "XBL", "The surcharge per cubic metre per degree "
+                                                                   "short."),
+            "CorrectionAmount": amount(Decimal("19.84"), "XBL", "6.2 m³ × 4 degrees × 0.80: added to the annual "
+                                                                "heating account, not to this bill."),
+            "Description": V("Poor cooling makes the network pump more water; the shortfall is charged on the "
+                             "annual account.", "Why.")}
+    if sup == "35-xl":
+        disc = bundle_discount()
+        cons = sc["Consumption"]
+        cons["AllowanceCharge"] = bundle_allowance(disc, "5 % of the six subscriptions.")
+        lmt = cons["LegalMonetaryTotal"]
+        total = Decimal(lmt["LineExtensionAmount"].value)
+        lmt.update({"AllowanceTotalAmount": amount(disc, "XLC", "The bundle discount."),
+                    "PayableAmount": amount(total - disc, "XLC", "The supply less the discount; no tax.")})
+        sup_lmt = sc["SupplierConsumption"]["Consumption"]["LegalMonetaryTotal"]
+        sup_lmt.update({"AllowanceTotalAmount": amount(disc, "XLC", "The bundle discount."),
+                        "PayableAmount": amount(total - disc, "XLC", "The supply less the discount.")})
+        cl = sc["SupplierConsumption"]["ConsumptionLine"]
+        cl[0]["AllowanceCharge"] = bundle_allowance(disc, "On the subscriptions of this line.")
+        cl[1]["UtilityItem"]["PackQuantity"] = qty(5, "E34", "Data beyond the subscriptions is sold in packs of "
+                                                             "5 GB.")
+        cl[1]["UtilityItem"]["PackSizeNumeric"] = V("7", "Seven packs: the 35 GB of March.")
+        tsl = cons["TelecommunicationsSupply"]["TelecommunicationsSupplyLine"]
+        per_line = money(disc / 6, "XLC")
+        for x in tsl[:6]:
+            x["AllowanceCharge"] = bundle_allowance(per_line, "The line's share of the bundle discount.")
+        first = tsl[0]
+        first["ExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The currency the roaming partner charged in."),
+                                 "TargetCurrencyCode": V("XLC", "The bill's currency."),
+                                 "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The reference rate."),
+                                 "MathematicOperatorCode": V("Multiply", "Lume times the rate."),
+                                 "Date": V("2026-03-31", "The rate at the end of the month.")}
+        services = first["TelecommunicationsService"]
+        call = services[1]
+        call["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance."),
+                                   "AllowanceChargeReason": V("Calls to the trade accord countries are included in "
+                                                              "the subscription", "Why the call costs nothing."),
+                                   "BaseAmount": amount(Decimal("2.400"), "XLC", "Twelve minutes at the 0.200 "
+                                                                                 "tariff for calls abroad."),
+                                   "Amount": amount(Decimal("2.400"), "XLC", "All of it.")}
+        tsl[1]["TelecommunicationsService"] = [tsl[1]["TelecommunicationsService"], {
+            "ID": V("V-0320-02", "A film rented on line 2."), "CallDate": V("2026-03-20", "The day."),
+            "CallTime": V("12:30:00", "At lunch."),
+            "ServiceNumberCalled": V("video", "The operator's video service, no number called."),
+            "TelecommunicationsServiceCategory": V("Video on demand", "The kind of service."),
+            "MovieTitle": V("Safe Lifting in the Warehouse", "A training film the trader's staff watched."),
+            "PayPerView": V("true", "Paid per film."),
+            "Quantity": qty(1, "C62", "One film."),
+            "CallExtensionAmount": amount(0, "XLC", "Training films are included in the business bundle.")}]
+    return {}
+
+
+@enrich("utilities", "Reminder")
+def _(f, n, doc, out):
+    for ln in out["ReminderLine"]:
+        ln["UUID"] = line_uuid(f, "reminder", ln["ID"].value)
+    out["ReminderLine"][0]["Note"] = V("The direct debit of 23 April was returned.", "What happened.")
+    out["ReminderLine"][1]["Note"] = V("The fee for the returned direct debit.", "What it is.")
+    return {"Signature": seal("34-xb", "CSWC-SIG-26-REM"),
+            "TaxPointDate": V(f.date(30), "The fee becomes due on the reminder date.")}

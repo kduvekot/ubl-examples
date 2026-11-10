@@ -334,6 +334,18 @@
           <cbc:AverageAmount currencyID="XBL">32.90</cbc:AverageAmount>
           <cbc:Description>The average over the last three months is 14 m³.</cbc:Description>
         </cac:ConsumptionAverage>
+        <cac:EnergyWaterConsumptionCorrection>
+          <cbc:CorrectionType>District heating cooling correction</cbc:CorrectionType>
+          <cbc:CorrectionTypeCode>COOL</cbc:CorrectionTypeCode>
+          <cbc:MeterNumber>CSW-H-71844</cbc:MeterNumber>
+          <cbc:ActualTemperatureReductionQuantity unitCode="CEL">31</cbc:ActualTemperatureReductionQuantity>
+          <cbc:NormalTemperatureReductionQuantity unitCode="CEL">35</cbc:NormalTemperatureReductionQuantity>
+          <cbc:DifferenceTemperatureReductionQuantity unitCode="CEL">-4</cbc:DifferenceTemperatureReductionQuantity>
+          <cbc:Description>Poor cooling makes the network pump more water; the shortfall is charged on the annual account.</cbc:Description>
+          <cbc:CorrectionUnitAmount currencyID="XBL">0.80</cbc:CorrectionUnitAmount>
+          <cbc:ConsumptionWaterQuantity unitCode="MTQ">6.2</cbc:ConsumptionWaterQuantity>
+          <cbc:CorrectionAmount currencyID="XBL">19.84</cbc:CorrectionAmount>
+        </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
         <cbc:LineExtensionAmount currencyID="XBL">32.90</cbc:LineExtensionAmount>

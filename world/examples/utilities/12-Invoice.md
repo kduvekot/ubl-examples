@@ -313,14 +313,37 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
   Simple interest, per day late.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `AllowanceChargeReason` = **Business bundle discount**  
+  The reason in words.
+- `MultiplierFactorNumeric` = **0.05**  
+  5 %.
+- `Amount` = **6.354** (currencyID `XLC`)  
+  5 % of the six subscriptions.
+- `BaseAmount` = **127.080** (currencyID `XLC`)  
+  The six subscriptions.
+- `TaxCategory/ID` = **O**  
+  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxScheme/Name` = **No general sales tax**  
+  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
+
 ### Tax Total
 
 Inside `TaxTotal`:
 
 - `TaxAmount` = **0.000** (currencyID `XLC`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **141.920** (currencyID `XLC`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **135.566** (currencyID `XLC`)  
+  The lines less the discount: no tax applies on the island.
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O**  
@@ -336,12 +359,16 @@ Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **141.920** (currencyID `XLC`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **141.920** (currencyID `XLC`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **141.920** (currencyID `XLC`)  
-  The total without tax plus the tax.
-- `PayableAmount` = **141.920** (currencyID `XLC`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `TaxExclusiveAmount` = **135.566** (currencyID `XLC`)  
+  The lines less the discount.
+- `TaxInclusiveAmount` = **135.566** (currencyID `XLC`)  
+  No tax on the island.
+- `AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
+  The bundle discount.
+- `AllowanceTotalTaxInclusiveAmount` = **6.354** (currencyID `XLC`)  
+  The same: no tax on the island.
+- `PayableAmount` = **135.566** (currencyID `XLC`)  
+  What the trader pays.
 
 ### Invoice Line
 
@@ -648,10 +675,25 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
+    <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID>O</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:Name>No general sales tax</cbc:Name>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">141.920</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XLC">135.566</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>O</cbc:ID>
@@ -664,9 +706,11 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">141.920</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">141.920</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">141.920</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">135.566</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">135.566</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
+    <cbc:AllowanceTotalTaxInclusiveAmount currencyID="XLC">6.354</cbc:AllowanceTotalTaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

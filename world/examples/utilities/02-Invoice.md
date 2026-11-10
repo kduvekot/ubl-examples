@@ -402,12 +402,12 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **2702052** (currencyID `XUF`)  
-  Energy tax and value added tax together.
-- `TaxEvidenceIndicator` = **true**  
-  This tax total is the evidence for the customer's deduction of value added tax.
+- `TaxAmount` = **288840** (currencyID `XUF`)  
+  The energy tax, in its two tiers.
+- `CalculationSequenceNumeric` = **1**  
+  The energy tax is calculated first.
 - `TaxIncludedIndicator` = **false**  
-  The line prices do not include the taxes.
+  The line prices do not include it.
 - `TaxSubtotal/TaxableAmount` = **60000** (currencyID `XUF`)  
   The tax base of the tier, in ferra.
 - `TaxSubtotal/TaxAmount` = **60000** (currencyID `XUF`)  
@@ -460,6 +460,16 @@ Inside `TaxTotal`:
   UN/EDIFACT 5153 code EXC: excise duty, the energy tax.
 - `TaxSubtotal/TaxDueCountry/IdentificationCode` = **XU**  
   Due in Urvania.
+- `TaxAmount` = **2413212** (currencyID `XUF`)  
+  The value added tax, on the price plus the energy tax.
+- `CalculationSequenceNumeric` = **2**  
+  Calculated on the price and the energy tax.
+- `RoundingAmount` = **0** (currencyID `XUF`)  
+  No rounding was needed: 20 % of the base is whole ferra.
+- `TaxEvidenceIndicator` = **true**  
+  This tax total is the evidence for the manufacturer's deduction of value added tax.
+- `TaxIncludedIndicator` = **false**  
+  The line prices do not include it.
 - `TaxSubtotal/TaxableAmount` = **12066060** (currencyID `XUF`)  
   The price plus the energy tax: value added tax is charged on both.
 - `TaxSubtotal/TaxAmount` = **2413212** (currencyID `XUF`)  
@@ -900,8 +910,8 @@ Inside `InvoiceLine`:
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2702052</cbc:TaxAmount>
-    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cbc:TaxAmount currencyID="XUF">288840</cbc:TaxAmount>
+    <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
     <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XUF">60000</cbc:TaxableAmount>
@@ -945,6 +955,13 @@ Inside `InvoiceLine`:
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
       </cac:TaxDueCountry>
     </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+    <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
+    <cbc:RoundingAmount currencyID="XUF">0</cbc:RoundingAmount>
+    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XUF">12066060</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>

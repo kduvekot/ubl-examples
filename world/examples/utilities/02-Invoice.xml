@@ -314,8 +314,8 @@
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2702052</cbc:TaxAmount>
-    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cbc:TaxAmount currencyID="XUF">288840</cbc:TaxAmount>
+    <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
     <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XUF">60000</cbc:TaxableAmount>
@@ -359,6 +359,13 @@
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
       </cac:TaxDueCountry>
     </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+    <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
+    <cbc:RoundingAmount currencyID="XUF">0</cbc:RoundingAmount>
+    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XUF">12066060</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>

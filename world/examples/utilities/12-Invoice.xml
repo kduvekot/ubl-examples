@@ -235,10 +235,25 @@
       <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
+    <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID>O</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:Name>No general sales tax</cbc:Name>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">141.920</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XLC">135.566</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>O</cbc:ID>
@@ -251,9 +266,11 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">141.920</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">141.920</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">141.920</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">135.566</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">135.566</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
+    <cbc:AllowanceTotalTaxInclusiveAmount currencyID="XLC">6.354</cbc:AllowanceTotalTaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
