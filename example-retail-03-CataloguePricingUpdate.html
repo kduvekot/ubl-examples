@@ -460,6 +460,24 @@ The new price of the side frame, down from 64.00.</li>
 <li><code>RequiredItemLocationQuantity/Price/BaseQuantity</code> =
 <strong>1</strong> (unitCode <code>H87</code>)<br />
 Per piece.</li>
+<li><code>RequiredItemLocationQuantity/Price/PriceList/ID</code> =
+<strong>6-XB-PL-2026-2</strong><br />
+The new price list.</li>
+<li><code>RequiredItemLocationQuantity/Price/PriceList/StatusCode</code>
+= <strong>Active</strong><br />
+It is in force from today.</li>
+<li><code>RequiredItemLocationQuantity/Price/PriceList/ValidityPeriod/StartDate</code>
+= <strong>2026-05-20</strong><br />
+From the update.</li>
+<li><code>RequiredItemLocationQuantity/Price/PriceList/ValidityPeriod/EndDate</code>
+= <strong>2026-07-19</strong><br />
+Until the catalogue ends.</li>
+<li><code>RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/ID</code>
+= <strong>6-XB-PL-2026</strong><br />
+The price list of the spring catalogue it replaces.</li>
+<li><code>RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/StatusCode</code>
+= <strong>Replaced</strong><br />
+No longer in force.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -672,12 +690,24 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;58&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CataloguePricingUpdateLine</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CataloguePricingUpdate</span>&gt;</span></code></pre></div>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PriceList</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;6-XB-PL-2026-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StatusCode</span>&gt;Active&lt;/<span class="kw">cbc:StatusCode</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-20&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2026-07-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PreviousPriceList</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;6-XB-PL-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StatusCode</span>&gt;Replaced&lt;/<span class="kw">cbc:StatusCode</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PreviousPriceList</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PriceList</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CataloguePricingUpdateLine</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CataloguePricingUpdate</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0d5fe32</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>831eab6</code></p></div></footer>
 </body>
 </html>

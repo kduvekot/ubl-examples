@@ -279,19 +279,108 @@
       <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+        <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+        <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Hardwood bench slat 1800</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>MS-SL-1800</cbc:ID>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Length</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+          </cac:MeasurementDimension>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:item">772010000058</cbc:ID>
         </cac:StandardItemIdentification>
+        <cac:AdditionalItemIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:item">772010000065</cbc:ID>
+        </cac:AdditionalItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
+          <cbc:NatureCode>IX</cbc:NatureCode>
+          <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
           <cbc:ItemClassificationCode listID="HS">4407.99</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:ID>MC</cbc:ID>
+          <cbc:Name>Moisture content</cbc:Name>
+          <cbc:NameCode>MC</cbc:NameCode>
+          <cbc:TestMethod>Oven-dry method on samples from each kiln charge</cbc:TestMethod>
+          <cbc:ValueQuantity unitCode="P1">12</cbc:ValueQuantity>
+          <cbc:ValueQualifier>Average of the kiln charge</cbc:ValueQualifier>
+          <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          <cac:ItemPropertyGroup>
+            <cbc:ID>QUA</cbc:ID>
+            <cbc:Name>Wood quality</cbc:Name>
+            <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          </cac:ItemPropertyGroup>
+          <cac:ItemPropertyRange>
+            <cbc:MinimumValue>10</cbc:MinimumValue>
+            <cbc:MaximumValue>14</cbc:MaximumValue>
+          </cac:ItemPropertyRange>
+          <cac:StandardPropertyIdentification>
+            <cbc:ID>UR-WD-0012</cbc:ID>
+            <cbc:IssuerScopeID>Codana timber properties</cbc:IssuerScopeID>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Codana Identification Agency</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:StandardPropertyIdentification>
+          <cac:SubItemProperty>
+            <cbc:Name>Moisture at the core</cbc:Name>
+            <cbc:ValueQuantity unitCode="P1">13</cbc:ValueQuantity>
+          </cac:SubItemProperty>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Thickness tolerance</cbc:Name>
+          <cac:RangeDimension>
+            <cbc:AttributeID>Thickness</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">38</cbc:Measure>
+            <cbc:MinimumMeasure unitCode="MMT">37.5</cbc:MinimumMeasure>
+            <cbc:MaximumMeasure unitCode="MMT">38.5</cbc:MaximumMeasure>
+          </cac:RangeDimension>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Surface</cbc:Name>
+          <cbc:Value>Planed on four sides</cbc:Value>
+          <cac:UsabilityPeriod>
+            <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
+          </cac:UsabilityPeriod>
+        </cac:AdditionalItemProperty>
+        <cac:Certificate>
+          <cbc:ID>XB-FOR-2025-118</cbc:ID>
+          <cbc:CertificateTypeCode>Sustainableforestry</cbc:CertificateTypeCode>
+          <cbc:CertificateType>Sustainable forestry</cbc:CertificateType>
+          <cbc:CertificateReferenceID>XB-FOR-REG-0118</cbc:CertificateReferenceID>
+          <cbc:ApplicableCategoryCode>HW</cbc:ApplicableCategoryCode>
+          <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>
+          <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-118</cbc:CertificateURI>
+          <cbc:Remarks>The timber comes from forests in Upland State managed for regrowth.</cbc:Remarks>
+          <cac:CertificateValidityPeriod>
+            <cbc:EndDate>2027-12-31</cbc:EndDate>
+          </cac:CertificateValidityPeriod>
+          <cac:DocumentReference>
+            <cbc:ID>XB-FOR-AUD-2025-118</cbc:ID>
+          </cac:DocumentReference>
+        </cac:Certificate>
+        <cac:Dimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">95</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Thickness</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">38</cbc:Measure>
+        </cac:Dimension>
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>

@@ -602,6 +602,26 @@ Why no tax is charged, stated rather than left out (UBL rule IND6).</li>
 <li><code>Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
 <strong>STT</strong><br />
 UN/EDIFACT 5153 code of the seller's tax: state sales tax.</li>
+<li><code>Item/AdditionalItemProperty/Name</code> =
+<strong>Thickness</strong><br />
+A measured property of the item.</li>
+<li><code>Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>23</strong> (unitCode <code>4H</code>)<br />
+Its measured value; item film-pe of Rivermouth Packaging
+(world/items.json).</li>
+<li><code>Item/CircularityProfile/CircularityTypeCode</code> =
+<strong>Recycled</strong><br />
+The circular strategy behind the item.</li>
+<li><code>Item/CircularityProfile/RecycledContentPercent</code> =
+<strong>100</strong><br />
+The share of recycled material: the film is made from the recycled
+granulate.</li>
+<li><code>Item/CircularityProfile/RecyclabilityPercent</code> =
+<strong>100</strong><br />
+The share that can be recycled again.</li>
+<li><code>Item/CircularityProfile/EndOfLifeTreatment/TreatmentPathwayCode</code>
+= <strong>Mechanical recycling</strong><br />
+What happens to the item after use.</li>
 <li><code>Price/PriceAmount</code> = <strong>3.1</strong> (currencyID
 <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
@@ -907,15 +927,27 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;3.1&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Thickness&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;4H&quot;</span>&gt;23&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CircularityProfile</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CircularityTypeCode</span>&gt;Recycled&lt;/<span class="kw">cbc:CircularityTypeCode</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RecycledContentPercent</span>&gt;100&lt;/<span class="kw">cbc:RecycledContentPercent</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RecyclabilityPercent</span>&gt;100&lt;/<span class="kw">cbc:RecyclabilityPercent</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EndOfLifeTreatment</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TreatmentPathwayCode</span>&gt;Mechanical recycling&lt;/<span class="kw">cbc:TreatmentPathwayCode</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EndOfLifeTreatment</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CircularityProfile</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;3.1&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0d5fe32</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>831eab6</code></p></div></footer>
 </body>
 </html>

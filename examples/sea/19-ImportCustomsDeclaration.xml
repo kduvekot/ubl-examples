@@ -339,21 +339,181 @@
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+        <cbc:Keyword>park bench</cbc:Keyword>
+        <cbc:Keyword>street furniture</cbc:Keyword>
+        <cbc:BrandName>Valdara</cbc:BrandName>
+        <cbc:ModelName>Serra 180</cbc:ModelName>
+        <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
         <cac:SellersItemIdentification>
           <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ExtendedID>GRY</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID>Colour</cbc:AttributeID>
+            <cbc:PositionCode>FRM</cbc:PositionCode>
+            <cbc:DescriptionCode>GRY</cbc:DescriptionCode>
+            <cbc:Description>Frame in Ferro grey</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
           <cbc:ID>VI-B180</cbc:ID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+          <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+          <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
+        <cac:ItemSpecificationDocumentReference>
+          <cbc:ID>VI-DS-B180</cbc:ID>
+        </cac:ItemSpecificationDocumentReference>
         <cac:OriginCountry>
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
+          <cbc:NatureCode>XX</cbc:NatureCode>
+          <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:TransactionConditions>
+          <cbc:ID>LD-TC-01</cbc:ID>
+          <cbc:ActionCode>Trade</cbc:ActionCode>
+          <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
+          <cac:DocumentReference>
+            <cbc:ID>LD-GTC-2026</cbc:ID>
+          </cac:DocumentReference>
+        </cac:TransactionConditions>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Frame material</cbc:Name>
+          <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Slat wood</cbc:Name>
+          <cbc:Value>Kiln-dried hardwood</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Seats</cbc:Name>
+          <cbc:Value>3</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:ID>COL</cbc:ID>
+          <cbc:Name>Frame colour</cbc:Name>
+          <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+          <cbc:ListValue>Ferro grey</cbc:ListValue>
+          <cbc:ListValue>Moss green</cbc:ListValue>
+          <cac:ItemPropertyGroup>
+            <cbc:ID>APP</cbc:ID>
+            <cbc:Name>Appearance</cbc:Name>
+            <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+          </cac:ItemPropertyGroup>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:ID>LOAD</cbc:ID>
+          <cbc:Name>Load capacity</cbc:Name>
+          <cbc:NameCode>LOAD</cbc:NameCode>
+          <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
+          <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
+          <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
+          <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          <cac:ItemPropertyGroup>
+            <cbc:ID>SAF</cbc:ID>
+            <cbc:Name>Safety</cbc:Name>
+            <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          </cac:ItemPropertyGroup>
+          <cac:StandardPropertyIdentification>
+            <cbc:ID>UR-SF-0450</cbc:ID>
+            <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Codana Identification Agency</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:StandardPropertyIdentification>
+        </cac:AdditionalItemProperty>
+        <cac:ManufacturerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Valdara Industries</cbc:Name>
+          </cac:PartyName>
+        </cac:ManufacturerParty>
+        <cac:Dimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+          <cbc:Description>Over the armrests</cbc:Description>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Depth</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">620</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">780</cbc:Measure>
+          <cbc:Description>Seat back at its highest point</cbc:Description>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Seat height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">450</cbc:Measure>
+          <cbc:Description>Above the ground when anchored</cbc:Description>
+          <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>
+          <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
+        </cac:Dimension>
+        <cac:EnvironmentalEmission>
+          <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+          <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
+          <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
+          <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+          <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
+          <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
+          <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
+          <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
+          <cac:EmissionCalculationMethod>
+            <cbc:CalculationMethodCode>Calculated</cbc:CalculationMethodCode>
+            <cbc:FullnessIndicationCode>Cradle to gate</cbc:FullnessIndicationCode>
+            <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
+            <cac:EmissionFactorDocumentReference>
+              <cbc:ID>VI-LCA-2025</cbc:ID>
+            </cac:EmissionFactorDocumentReference>
+          </cac:EmissionCalculationMethod>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
+        </cac:EnvironmentalEmission>
+        <cac:CircularityProfile>
+          <cbc:MaintenanceFrequencyCode>Yearly</cbc:MaintenanceFrequencyCode>
+          <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
+          <cac:ResourceConsumption>
+            <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
+            <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
+            <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+          </cac:ResourceConsumption>
+          <cac:ResourceConsumption>
+            <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
+            <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
+            <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+          </cac:ResourceConsumption>
+          <cac:WasteGenerated>
+            <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
+            <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
+            <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
+            <cac:MeasurementPeriod>
+              <cbc:StartDate>2025-01-01</cbc:StartDate>
+              <cbc:EndDate>2025-12-31</cbc:EndDate>
+            </cac:MeasurementPeriod>
+          </cac:WasteGenerated>
+          <cac:RepairabilityScore>
+            <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
+            <cbc:ScoringSystemCode>Repairability index, 0–10</cbc:ScoringSystemCode>
+          </cac:RepairabilityScore>
+          <cac:ProductDocumentationDocumentReference>
+            <cbc:ID>VI-RM-B180</cbc:ID>
+          </cac:ProductDocumentationDocumentReference>
+        </cac:CircularityProfile>
       </cac:Item>
     </cac:GoodsItem>
     <cac:GoodsItem>
@@ -365,6 +525,8 @@
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
         <cbc:Name>Bench side frame casting</cbc:Name>
+        <cbc:BrandName>Valdara</cbc:BrandName>
+        <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>LD-10443</cbc:ID>
         </cac:SellersItemIdentification>
@@ -378,8 +540,19 @@
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
+          <cbc:NatureCode>XV</cbc:NatureCode>
+          <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode>7325.99.90</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:ManufacturerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Valdara Industries</cbc:Name>
+          </cac:PartyName>
+        </cac:ManufacturerParty>
       </cac:Item>
     </cac:GoodsItem>
     <cac:ShipmentStage>

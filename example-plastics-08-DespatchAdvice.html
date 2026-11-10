@@ -645,6 +645,53 @@ Where the item was produced; item granulate-pe of Rinova Recovery
 <strong>3901.10</strong> (listID <code>HS</code>)<br />
 Harmonized System subheading of the World Customs Organization; item
 granulate-pe of Rinova Recovery (world/items.json).</li>
+<li><code>Item/AdditionalItemProperty/Name</code> =
+<strong>Density</strong><br />
+A measured property of the item.</li>
+<li><code>Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>0.92</strong> (unitCode <code>23</code>)<br />
+Its measured value; item granulate-pe of Rinova Recovery
+(world/items.json).</li>
+<li><code>Item/AdditionalItemProperty/Name</code> = <strong>Recycled
+content</strong><br />
+A measured property of the item.</li>
+<li><code>Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>100</strong> (unitCode <code>P1</code>)<br />
+Its measured value; item granulate-pe of Rinova Recovery
+(world/items.json).</li>
+<li><code>Item/ItemInstance/ManufactureDate</code> =
+<strong>2026-04-16</strong><br />
+The day the lot was produced.</li>
+<li><code>Item/ItemInstance/BestBeforeDate</code> =
+<strong>2027-04-16</strong><br />
+Best used within 12 months: the granulate takes up moisture in
+storage.</li>
+<li><code>Item/ItemInstance/LotIdentification/LotNumberID</code> =
+<strong>RR-PE-0416</strong><br />
+The production lot, from the maker's prefix and the production day; a
+recall names the lot.</li>
+<li><code>Item/ItemInstance/LotIdentification/ExpiryDate</code> =
+<strong>2027-04-16</strong><br />
+The lot's quality data apply until then.</li>
+<li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name</code>
+= <strong>Melt flow index</strong><br />
+A fact about this lot.</li>
+<li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value</code>
+= <strong>0.9 g/10 min</strong><br />
+Its value for this lot.</li>
+<li><code>Item/EnvironmentalCertificate/ID</code> =
+<strong>XU-RC-2026-007</strong><br />
+The number of the environmental certificate.</li>
+<li><code>Item/EnvironmentalCertificate/CertificateTypeCode</code> =
+<strong>Recycledcontent</strong><br />
+The kind of claim, as a code.</li>
+<li><code>Item/EnvironmentalCertificate/CertificateType</code> =
+<strong>Recycled content</strong><br />
+The environmental claim certified.</li>
+<li><code>Item/EnvironmentalCertificate/Remarks</code> = <strong>Made
+entirely from sorted production waste recovered in
+Urvania.</strong><br />
+What the certificate states.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -963,11 +1010,37 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;3901.10&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
 <span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Density&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;23&quot;</span>&gt;0.92&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Recycled content&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;100&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManufactureDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:ManufactureDate</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BestBeforeDate</span>&gt;2027-04-16&lt;/<span class="kw">cbc:BestBeforeDate</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LotIdentification</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LotNumberID</span>&gt;RR-PE-0416&lt;/<span class="kw">cbc:LotNumberID</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExpiryDate</span>&gt;2027-04-16&lt;/<span class="kw">cbc:ExpiryDate</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Melt flow index&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Value</span>&gt;0.9 g/10 min&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LotIdentification</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EnvironmentalCertificate</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU-RC-2026-007&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificateTypeCode</span>&gt;Recycledcontent&lt;/<span class="kw">cbc:CertificateTypeCode</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificateType</span>&gt;Recycled content&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Remarks</span>&gt;Made entirely from sorted production waste recovered in Urvania.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EnvironmentalCertificate</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0d5fe32</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>831eab6</code></p></div></footer>
 </body>
 </html>

@@ -603,6 +603,33 @@ Why no tax is charged, stated rather than left out (UBL rule IND6).</li>
 <li><code>Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
 <strong>VAT</strong><br />
 UN/EDIFACT 5153 code of the seller's tax: value added tax.</li>
+<li><code>Item/AdditionalItemProperty/Name</code> =
+<strong>Density</strong><br />
+A measured property of the item.</li>
+<li><code>Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>0.92</strong> (unitCode <code>23</code>)<br />
+Its measured value; item granulate-pe of Rinova Recovery
+(world/items.json).</li>
+<li><code>Item/AdditionalItemProperty/Name</code> = <strong>Recycled
+content</strong><br />
+A measured property of the item.</li>
+<li><code>Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>100</strong> (unitCode <code>P1</code>)<br />
+Its measured value; item granulate-pe of Rinova Recovery
+(world/items.json).</li>
+<li><code>Item/EnvironmentalCertificate/ID</code> =
+<strong>XU-RC-2026-007</strong><br />
+The number of the environmental certificate.</li>
+<li><code>Item/EnvironmentalCertificate/CertificateTypeCode</code> =
+<strong>Recycledcontent</strong><br />
+The kind of claim, as a code.</li>
+<li><code>Item/EnvironmentalCertificate/CertificateType</code> =
+<strong>Recycled content</strong><br />
+The environmental claim certified.</li>
+<li><code>Item/EnvironmentalCertificate/Remarks</code> = <strong>Made
+entirely from sorted production waste recovered in
+Urvania.</strong><br />
+What the certificate states.</li>
 <li><code>Price/PriceAmount</code> = <strong>83200</strong> (currencyID
 <code>XUF</code>)<br />
 The seller's price per unit (world/items.json).</li>
@@ -906,15 +933,29 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;83200&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Density&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;23&quot;</span>&gt;0.92&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Recycled content&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;100&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EnvironmentalCertificate</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU-RC-2026-007&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificateTypeCode</span>&gt;Recycledcontent&lt;/<span class="kw">cbc:CertificateTypeCode</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificateType</span>&gt;Recycled content&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Remarks</span>&gt;Made entirely from sorted production waste recovered in Urvania.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EnvironmentalCertificate</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;83200&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0d5fe32</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>831eab6</code></p></div></footer>
 </body>
 </html>

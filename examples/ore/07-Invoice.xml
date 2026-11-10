@@ -306,6 +306,10 @@
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Iron content</cbc:Name>
+        <cbc:ValueQuantity unitCode="P1">62</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">8060</cbc:PriceAmount>

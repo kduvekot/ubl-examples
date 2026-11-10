@@ -292,6 +292,20 @@
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Density</cbc:Name>
+        <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Recycled content</cbc:Name>
+        <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:EnvironmentalCertificate>
+        <cbc:ID>XU-RC-2026-007</cbc:ID>
+        <cbc:CertificateTypeCode>Recycledcontent</cbc:CertificateTypeCode>
+        <cbc:CertificateType>Recycled content</cbc:CertificateType>
+        <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+      </cac:EnvironmentalCertificate>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">83200</cbc:PriceAmount>

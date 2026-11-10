@@ -186,6 +186,8 @@
       <cbc:Quantity unitCode="KGM">24000</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
+        <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+        <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
         <cbc:Name>Cotton lint, compressed bale</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
@@ -199,6 +201,47 @@
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">5201.00</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Grade</cbc:Name>
+          <cbc:Value>Middling</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Staple length</cbc:Name>
+          <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
+        </cac:AdditionalItemProperty>
+        <cac:OriginAddress>
+          <cbc:Region>North coast</cbc:Region>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:OriginAddress>
+        <cac:Certificate>
+          <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+          <cbc:CertificateTypeCode>Cottonclassing</cbc:CertificateTypeCode>
+          <cbc:CertificateType>Cotton classing</cbc:CertificateType>
+          <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+          <cac:Signature>
+            <cbc:ID>SCC-SIG-2026-0042</cbc:ID>
+            <cbc:Note>Signed by the cotton classer of the chamber.</cbc:Note>
+            <cbc:ValidationDate>2026-02-20</cbc:ValidationDate>
+            <cac:SignatoryParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+              </cac:PartyName>
+            </cac:SignatoryParty>
+          </cac:Signature>
+        </cac:Certificate>
       </cac:Item>
     </cac:SalesItem>
   </cac:ForecastLine>

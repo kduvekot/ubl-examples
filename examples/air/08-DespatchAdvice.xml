@@ -316,6 +316,8 @@
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
+      <cbc:BrandName>Valdara</cbc:BrandName>
+      <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
         <cbc:ID>LD-10443</cbc:ID>
       </cac:SellersItemIdentification>
@@ -329,8 +331,105 @@
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
+        <cbc:CommodityCode>7325.99.90</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
+      <cac:ManufacturerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:ManufacturerParty>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03190</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03190</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03190</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03191</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03191</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03191</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03192</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03192</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03192</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03193</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03193</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03193</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03194</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03194</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03194</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03195</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03195</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03195</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03196</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03196</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03196</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ProductTraceID>VI-TR-03197</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-05-11</cbc:ManufactureDate>
+        <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
+        <cbc:RegistrationID>VI-QR-03197</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-03197</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Melt number</cbc:Name>
+          <cbc:Value>M-26-0412</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
     </cac:Item>
   </cac:DespatchLine>
 </DespatchAdvice>

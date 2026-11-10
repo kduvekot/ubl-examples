@@ -697,6 +697,26 @@ Where the item was produced; item film-pe of Rivermouth Packaging
 = <strong>3920.10</strong> (listID <code>HS</code>)<br />
 Harmonized System subheading of the World Customs Organization; item
 film-pe of Rivermouth Packaging (world/items.json).</li>
+<li><code>LineItem/Item/AdditionalItemProperty/Name</code> =
+<strong>Thickness</strong><br />
+A measured property of the item.</li>
+<li><code>LineItem/Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>23</strong> (unitCode <code>4H</code>)<br />
+Its measured value; item film-pe of Rivermouth Packaging
+(world/items.json).</li>
+<li><code>LineItem/Item/CircularityProfile/CircularityTypeCode</code> =
+<strong>Recycled</strong><br />
+The circular strategy behind the item.</li>
+<li><code>LineItem/Item/CircularityProfile/RecycledContentPercent</code>
+= <strong>100</strong><br />
+The share of recycled material: the film is made from the recycled
+granulate.</li>
+<li><code>LineItem/Item/CircularityProfile/RecyclabilityPercent</code> =
+<strong>100</strong><br />
+The share that can be recycled again.</li>
+<li><code>LineItem/Item/CircularityProfile/EndOfLifeTreatment/TreatmentPathwayCode</code>
+= <strong>Mechanical recycling</strong><br />
+What happens to the item after use.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -1043,12 +1063,24 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;3920.10&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Thickness&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;4H&quot;</span>&gt;23&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CircularityProfile</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CircularityTypeCode</span>&gt;Recycled&lt;/<span class="kw">cbc:CircularityTypeCode</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RecycledContentPercent</span>&gt;100&lt;/<span class="kw">cbc:RecycledContentPercent</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RecyclabilityPercent</span>&gt;100&lt;/<span class="kw">cbc:RecyclabilityPercent</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:EndOfLifeTreatment</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TreatmentPathwayCode</span>&gt;Mechanical recycling&lt;/<span class="kw">cbc:TreatmentPathwayCode</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:EndOfLifeTreatment</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CircularityProfile</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0d5fe32</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>831eab6</code></p></div></footer>
 </body>
 </html>

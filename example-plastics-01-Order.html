@@ -507,6 +507,33 @@ Where the item was produced; item granulate-pe of Rinova Recovery
 = <strong>3901.10</strong> (listID <code>HS</code>)<br />
 Harmonized System subheading of the World Customs Organization; item
 granulate-pe of Rinova Recovery (world/items.json).</li>
+<li><code>LineItem/Item/AdditionalItemProperty/Name</code> =
+<strong>Density</strong><br />
+A measured property of the item.</li>
+<li><code>LineItem/Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>0.92</strong> (unitCode <code>23</code>)<br />
+Its measured value; item granulate-pe of Rinova Recovery
+(world/items.json).</li>
+<li><code>LineItem/Item/AdditionalItemProperty/Name</code> =
+<strong>Recycled content</strong><br />
+A measured property of the item.</li>
+<li><code>LineItem/Item/AdditionalItemProperty/ValueQuantity</code> =
+<strong>100</strong> (unitCode <code>P1</code>)<br />
+Its measured value; item granulate-pe of Rinova Recovery
+(world/items.json).</li>
+<li><code>LineItem/Item/EnvironmentalCertificate/ID</code> =
+<strong>XU-RC-2026-007</strong><br />
+The number of the environmental certificate.</li>
+<li><code>LineItem/Item/EnvironmentalCertificate/CertificateTypeCode</code>
+= <strong>Recycledcontent</strong><br />
+The kind of claim, as a code.</li>
+<li><code>LineItem/Item/EnvironmentalCertificate/CertificateType</code>
+= <strong>Recycled content</strong><br />
+The environmental claim certified.</li>
+<li><code>LineItem/Item/EnvironmentalCertificate/Remarks</code> =
+<strong>Made entirely from sorted production waste recovered in
+Urvania.</strong><br />
+What the certificate states.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -756,12 +783,26 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;3901.10&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Density&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;23&quot;</span>&gt;0.92&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Recycled content&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;100&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EnvironmentalCertificate</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XU-RC-2026-007&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CertificateTypeCode</span>&gt;Recycledcontent&lt;/<span class="kw">cbc:CertificateTypeCode</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CertificateType</span>&gt;Recycled content&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Remarks</span>&gt;Made entirely from sorted production waste recovered in Urvania.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EnvironmentalCertificate</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0d5fe32</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>831eab6</code></p></div></footer>
 </body>
 </html>

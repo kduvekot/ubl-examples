@@ -261,6 +261,8 @@
     <cac:Item>
       <cbc:Description>Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
       <cbc:Name>Collection and recovery of production waste</cbc:Name>
+      <cbc:LifecycleStageCode>End-of-life</cbc:LifecycleStageCode>
+      <cbc:LifecycleStageDescription>The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-SVC-01</cbc:ID>
       </cac:SellersItemIdentification>
