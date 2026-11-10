@@ -246,22 +246,44 @@ Inside `RepresentativeParty`:
   The first name of the employee who travels with the samples; identity of Valdara Industries (world/parties.json).
 - `Person/FamilyName` = **Orsenna**  
   Their family name; identity of Valdara Industries (world/parties.json).
+- `Person/Title` = **Ing.**  
+  The professional title, as on the travel documents.
+- `Person/MiddleName` = **Ilse**  
+  The middle name, as in the passport.
+- `Person/OtherName` = **Mara**  
+  The name the employee goes by.
+- `Person/NameSuffix` = **Jr**  
+  As in the passport.
 - `Person/JobTitle` = **Sales engineer**  
   Their job; identity of Valdara Industries (world/parties.json).
 - `Person/NationalID` = **XU-NID-55102311**  
   The national identity number, which customs may ask for at the border.
+- `Person/NationalityCode` = **XU**  
+  Urvanian.
 - `Person/BirthDate` = **1984-05-17**  
   The birth date, as in the passport.
 - `Person/BirthplaceName` = **Ferrano**  
   The place of birth, as in the passport.
 - `Person/OrganizationDepartment` = **Export sales**  
   The department the employee works in; identity of Valdara Industries (world/parties.json).
+- `Person/BirthplaceLocation/Name` = **Ferrano**  
+  The place of birth.
+- `Person/BirthplaceLocation/Address/Country/IdentificationCode` = **XU**  
+  In Urvania.
 - `Person/CitizenshipCountry/IdentificationCode` = **XU**  
   The employee is a citizen of Urvania.
+- `Person/Contact/Name` = **Mobile on the road**  
+  How to reach the employee at the fair.
+- `Person/Contact/Telephone` = **+999 1 4120 4274**  
+  The number.
 - `Person/IdentityDocumentReference/ID` = **XU-P-2210931**  
   The passport the employee travels on.
 - `Person/IdentityDocumentReference/DocumentType` = **Passport**  
   The kind of identity document.
+- `Person/ResidenceAddress/CityName` = **Ferrano**  
+  Where the employee lives.
+- `Person/ResidenceAddress/Country/IdentificationCode` = **XU**  
+  In Urvania.
 
 ### Exporting Guarantor Party
 
@@ -1012,18 +1034,41 @@ Inside `Signature`:
       <cbc:ID>VI-E-0412</cbc:ID>
       <cbc:FirstName>Davide</cbc:FirstName>
       <cbc:FamilyName>Orsenna</cbc:FamilyName>
+      <cbc:Title>Ing.</cbc:Title>
+      <cbc:MiddleName>Ilse</cbc:MiddleName>
+      <cbc:OtherName>Mara</cbc:OtherName>
+      <cbc:NameSuffix>Jr</cbc:NameSuffix>
       <cbc:JobTitle>Sales engineer</cbc:JobTitle>
       <cbc:NationalID>XU-NID-55102311</cbc:NationalID>
+      <cbc:NationalityCode>XU</cbc:NationalityCode>
       <cbc:BirthDate>1984-05-17</cbc:BirthDate>
       <cbc:BirthplaceName>Ferrano</cbc:BirthplaceName>
       <cbc:OrganizationDepartment>Export sales</cbc:OrganizationDepartment>
+      <cac:BirthplaceLocation>
+        <cbc:Name>Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:BirthplaceLocation>
       <cac:CitizenshipCountry>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
       </cac:CitizenshipCountry>
+      <cac:Contact>
+        <cbc:Name>Mobile on the road</cbc:Name>
+        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+      </cac:Contact>
       <cac:IdentityDocumentReference>
         <cbc:ID>XU-P-2210931</cbc:ID>
         <cbc:DocumentType>Passport</cbc:DocumentType>
       </cac:IdentityDocumentReference>
+      <cac:ResidenceAddress>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:ResidenceAddress>
     </cac:Person>
   </cac:RepresentativeParty>
   <cac:ExportingGuarantorParty>

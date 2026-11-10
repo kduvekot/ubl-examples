@@ -231,7 +231,26 @@
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+    <cbc:IssueTime>10:00:00</cbc:IssueTime>
+    <cbc:NominationDate>2026-04-08</cbc:NominationDate>
+    <cbc:NominationTime>09:00:00</cbc:NominationTime>
+    <cbc:ContractTypeCode>Framework</cbc:ContractTypeCode>
     <cbc:ContractType>Framework transport agreement</cbc:ContractType>
+    <cbc:Note>Call-off 88 of the year.</cbc:Note>
+    <cbc:VersionID>2</cbc:VersionID>
+    <cbc:ModificationReasonCode>Volume</cbc:ModificationReasonCode>
+    <cbc:ModificationReasonDescription>Ten more slots a month from April.</cbc:ModificationReasonDescription>
+    <cbc:Description>Container slots between the Ferrano hub and Marrowdale.</cbc:Description>
+    <cac:ContractDocumentReference>
+      <cbc:ID>FRC-CON-2026-005-A1</cbc:ID>
+    </cac:ContractDocumentReference>
+    <cac:NominationPeriod>
+      <cbc:StartDate>2026-04-06</cbc:StartDate>
+      <cbc:EndDate>2026-04-12</cbc:EndDate>
+    </cac:NominationPeriod>
+    <cac:ContractualDelivery>
+      <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
+    </cac:ContractualDelivery>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseRequiredPeriod>
     <cbc:EndDate>2026-04-08</cbc:EndDate>

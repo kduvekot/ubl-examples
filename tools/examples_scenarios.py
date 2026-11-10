@@ -4909,3 +4909,113 @@ def _(f, n, doc, out):
                                                                                 "confirmed too.")},
                                            "DocumentReference": {"ID": V(f.numbers.get("tep-request", ""),
                                                                          "The transport booking.")}}}
+
+
+def contact(name, why, tel_of=None, email=None):
+    c = {"Name": V(name, why)}
+    if tel_of:
+        c["Telephone"] = V(PARTY[tel_of]["identity"]["contact"]["telephone"], "The number.")
+    if email:
+        c["ElectronicMail"] = V(email, "The address, under the reserved .example domain.")
+    return c
+
+
+@enrich("retail", "Order")
+def _(f, n, doc, out):
+    return {"BuyerCustomerParty": {"CustomerAssignedAccountID": V("BM-6120", "The store's own number for its "
+                                                                             "garden department."),
+                                   "SupplierAssignedAccountID": V("LD-C-0418", "The distributor's customer number "
+                                                                               "for the store."),
+                                   "AdditionalAccountID": V("BM-LUM-01", "The store's branch number."),
+                                   "DeliveryContact": contact("Goods-in, garden department", "Whom the driver "
+                                                              "reports to.", "26-xb"),
+                                   "AccountingContact": contact("Accounts payable", "Where invoices go.",
+                                                                email="invoices@brightmarket.example"),
+                                   "BuyerContact": contact("Garden department buyer", "Who placed the order.",
+                                                           "26-xb")},
+            "SellerSupplierParty": {"CustomerAssignedAccountID": V("BM-S-0071", "The store's supplier number for "
+                                                                                "the distributor."),
+                                    "AdditionalAccountID": V("LD-XB-01", "The distributor's sales office."),
+                                    "DataSendingCapability": V("UBL 2.5 over the trade accord network", "How the "
+                                                                                                         "distributor "
+                                                                                                         "sends "
+                                                                                                         "documents."),
+                                    "DespatchContact": contact("Dispatch office", "Who despatches.", "6-xb"),
+                                    "AccountingContact": contact("Accounts receivable", "For payment questions.",
+                                                                 email="ar@lumeway.example"),
+                                    "SellerContact": contact("Key account manager, retail", "The store's contact "
+                                                                                            "at the distributor.",
+                                                             "6-xb")}}
+
+
+@enrich("sea", "Invoice")
+def _(f, n, doc, out):
+    if doc["from"] != "6-xb":
+        return {}
+    return {"PaymentMeans": {
+        "PaymentPlatformID": V("HF-COLLECT", "The factor's collection platform the payment is matched on."),
+        "ServiceLevelCode": V("NURG", "ISO 20022 service level NURG: a normal, not urgent, payment."),
+        "TradeFinancing": {"ID": V("HF-FA-2026-007/18", "The financing of this receivable under the factoring "
+                                                        "agreement."),
+                           "FinancingInstrumentCode": V("Factoring", "The receivable was sold to the factor."),
+                           "ContractDocumentReference": {"ID": V("HF-FA-2026-007", "The factoring agreement.")},
+                           "DocumentReference": {"ID": V("HF-ASSIGN-26-0091", "The notice of assignment.")},
+                           "FinancingParty": party("24-xb", short=True),
+                           "FinancingFinancialAccount": kit.account("24-xb", "The factor's account."),
+                           "Clause": {"ID": V("HF-FA-7.2", "The clause on payment."),
+                                      "Content": V("Payment to any other account does not discharge the buyer.",
+                                                   "What it says.")}},
+        "RemittanceDocumentDistribution": {"ID": V("1", "Where the remittance advice goes."),
+                                           "DocumentTypeCode": V("RemittanceAdvice", "The document."),
+                                           "DistributionTypeCode": V("Electronic", "By message."),
+                                           "Communication": {"ChannelCode": V("EM", "UN/EDIFACT 3155 code EM: "
+                                                                                    "electronic mail.",
+                                                                              listID="UN/EDIFACT EDED 3155"),
+                                                             "Channel": V("E-mail", "In words."),
+                                                             "Value": V("remittance@harbourline.example", "The "
+                                                                                                        "factor's "
+                                                                                                        "address.")},
+                                           "Party": party("24-xb", short=True)},
+        "PaymentInstructionAttachment": {"ExternalReference": {"URI": V("https://www.harbourline.example/pay/"
+                                                                        "HF-FA-2026-007-18", "The factor's payment "
+                                                                                             "page for this "
+                                                                                             "invoice."),
+                                                               "MimeCode": V("application/pdf", "A PDF.")}}}}
+
+
+@enrich("rail", "TransportExecutionPlan")
+def _(f, n, doc, out):
+    return {"TransportContract": {"IssueTime": V("10:00:00", "Signed in the morning."),
+                                  "NominationDate": V(f.date(2), "The slots of this train were nominated today."),
+                                  "NominationTime": V("09:00:00", "At that time."),
+                                  "ContractTypeCode": V("Framework", "A framework contract."),
+                                  "Note": V("Call-off 88 of the year.", "Which call-off."),
+                                  "VersionID": V("2", "The contract as amended in March."),
+                                  "ModificationReasonCode": V("Volume", "Amended for higher volumes."),
+                                  "ModificationReasonDescription": V("Ten more slots a month from April.", "The "
+                                                                                                          "change."),
+                                  "Description": V("Container slots between the Ferrano hub and Marrowdale.", "What "
+                                                                                                            "it "
+                                                                                                            "covers."),
+                                  "ContractDocumentReference": {"ID": V("FRC-CON-2026-005-A1", "The amendment.")},
+                                  "NominationPeriod": {"StartDate": V(f.date(0), "Slots are nominated a week"),
+                                                       "EndDate": V(f.date(6), "before the train.")},
+                                  "ContractualDelivery": {"LatestDeliveryDate": V(f.date(10), "The contract's latest "
+                                                                                              "delivery for this "
+                                                                                              "call-off.")}}}
+
+
+@enrich("carnet", "GoodsItemPassport")
+def _(f, n, doc, out):
+    e = PARTY["5-xu"]["identity"]["employee"]
+    return {"RepresentativeParty": {"Person": {
+        "Title": V("Ing.", "The professional title, as on the travel documents."),
+        "MiddleName": V("Ilse", "The middle name, as in the passport."),
+        "OtherName": V("Mara", "The name the employee goes by."),
+        "NameSuffix": V("Jr", "As in the passport."),
+        "NationalityCode": V("XU", "Urvanian."),
+        "BirthplaceLocation": {"Name": V(e["birthplace"], "The place of birth."),
+                               "Address": {"Country": {"IdentificationCode": V("XU", "In Urvania.")}}},
+        "Contact": contact("Mobile on the road", "How to reach the employee at the fair.", "5-xu"),
+        "ResidenceAddress": {"CityName": V("Ferrano", "Where the employee lives."),
+                             "Country": {"IdentificationCode": V("XU", "In Urvania.")}}}}}

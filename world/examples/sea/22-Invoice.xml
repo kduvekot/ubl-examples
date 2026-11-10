@@ -362,9 +362,11 @@
     <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
     <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
     <cbc:PaymentID>RF20LDINV260147</cbc:PaymentID>
     <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cbc:ServiceLevelCode>NURG</cbc:ServiceLevelCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
       <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
@@ -392,6 +394,78 @@
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
+    <cac:TradeFinancing>
+      <cbc:ID>HF-FA-2026-007/18</cbc:ID>
+      <cbc:FinancingInstrumentCode>Factoring</cbc:FinancingInstrumentCode>
+      <cac:ContractDocumentReference>
+        <cbc:ID>HF-FA-2026-007</cbc:ID>
+      </cac:ContractDocumentReference>
+      <cac:DocumentReference>
+        <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+      </cac:DocumentReference>
+      <cac:FinancingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harbourline Factoring</cbc:Name>
+        </cac:PartyName>
+      </cac:FinancingParty>
+      <cac:FinancingFinancialAccount>
+        <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
+        <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
+        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:FinancialInstitutionBranch>
+          <cbc:ID>BLUM-001</cbc:ID>
+          <cbc:Name>Main branch</cbc:Name>
+          <cac:FinancialInstitution>
+            <cbc:ID>BLUM</cbc:ID>
+            <cbc:Name>Bank of Lumeport</cbc:Name>
+            <cac:Address>
+              <cbc:StreetName>Exchange Street</cbc:StreetName>
+              <cbc:BuildingNumber>48</cbc:BuildingNumber>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitution>
+        </cac:FinancialInstitutionBranch>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:FinancingFinancialAccount>
+      <cac:Clause>
+        <cbc:ID>HF-FA-7.2</cbc:ID>
+        <cbc:Content>Payment to any other account does not discharge the buyer.</cbc:Content>
+      </cac:Clause>
+    </cac:TradeFinancing>
+    <cac:RemittanceDocumentDistribution>
+      <cbc:ID>1</cbc:ID>
+      <cbc:DocumentTypeCode>RemittanceAdvice</cbc:DocumentTypeCode>
+      <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+      <cac:Communication>
+        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">EM</cbc:ChannelCode>
+        <cbc:Channel>E-mail</cbc:Channel>
+        <cbc:Value>remittance@harbourline.example</cbc:Value>
+      </cac:Communication>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harbourline Factoring</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:RemittanceDocumentDistribution>
+    <cac:PaymentInstructionAttachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://www.harbourline.example/pay/HF-FA-2026-007-18</cbc:URI>
+        <cbc:MimeCode>application/pdf</cbc:MimeCode>
+      </cac:ExternalReference>
+    </cac:PaymentInstructionAttachment>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:ID>DEPOSIT</cbc:ID>

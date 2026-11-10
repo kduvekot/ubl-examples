@@ -200,18 +200,41 @@
       <cbc:ID>VI-E-0412</cbc:ID>
       <cbc:FirstName>Davide</cbc:FirstName>
       <cbc:FamilyName>Orsenna</cbc:FamilyName>
+      <cbc:Title>Ing.</cbc:Title>
+      <cbc:MiddleName>Ilse</cbc:MiddleName>
+      <cbc:OtherName>Mara</cbc:OtherName>
+      <cbc:NameSuffix>Jr</cbc:NameSuffix>
       <cbc:JobTitle>Sales engineer</cbc:JobTitle>
       <cbc:NationalID>XU-NID-55102311</cbc:NationalID>
+      <cbc:NationalityCode>XU</cbc:NationalityCode>
       <cbc:BirthDate>1984-05-17</cbc:BirthDate>
       <cbc:BirthplaceName>Ferrano</cbc:BirthplaceName>
       <cbc:OrganizationDepartment>Export sales</cbc:OrganizationDepartment>
+      <cac:BirthplaceLocation>
+        <cbc:Name>Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:BirthplaceLocation>
       <cac:CitizenshipCountry>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
       </cac:CitizenshipCountry>
+      <cac:Contact>
+        <cbc:Name>Mobile on the road</cbc:Name>
+        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+      </cac:Contact>
       <cac:IdentityDocumentReference>
         <cbc:ID>XU-P-2210931</cbc:ID>
         <cbc:DocumentType>Passport</cbc:DocumentType>
       </cac:IdentityDocumentReference>
+      <cac:ResidenceAddress>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:ResidenceAddress>
     </cac:Person>
   </cac:RepresentativeParty>
   <cac:ExportingGuarantorParty>

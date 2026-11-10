@@ -449,12 +449,16 @@ Inside `PaymentMeans`:
   Paid to an account identified in the format of ISO 13616.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
+- `PaymentPlatformID` = **HF-COLLECT**  
+  The factor's collection platform the payment is matched on.
 - `InstructionNote` = **Quote RF20LDINV260147**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF20LDINV260147**  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
 - `ChargeBearerCode` = **SHAR**  
   ISO 20022 SHAR: each side pays its own bank's charges.
+- `ServiceLevelCode` = **NURG**  
+  ISO 20022 service level NURG: a normal, not urgent, payment.
 - `PayeeFinancialAccount/ID` = **XB21BLUM0002304038** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Harbourline Factoring Ltd**  
@@ -485,6 +489,70 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
+- `TradeFinancing/ID` = **HF-FA-2026-007/18**  
+  The financing of this receivable under the factoring agreement.
+- `TradeFinancing/FinancingInstrumentCode` = **Factoring**  
+  The receivable was sold to the factor.
+- `TradeFinancing/ContractDocumentReference/ID` = **HF-FA-2026-007**  
+  The factoring agreement.
+- `TradeFinancing/DocumentReference/ID` = **HF-ASSIGN-26-0091**  
+  The notice of assignment.
+- `TradeFinancing/FinancingParty/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `TradeFinancing/FinancingParty/PartyName/Name` = **Harbourline Factoring**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `TradeFinancing/FinancingFinancialAccount/ID` = **XB21BLUM0002304038** (schemeID `urn:ubl-examples:world:account`)  
+  The factor's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `TradeFinancing/FinancingFinancialAccount/Name` = **Harbourline Factoring Ltd**  
+  The account holder, as the bank knows it.
+- `TradeFinancing/FinancingFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `TradeFinancing/FinancingFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `TradeFinancing/FinancingFinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `TradeFinancing/FinancingFinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
+- `TradeFinancing/Clause/ID` = **HF-FA-7.2**  
+  The clause on payment.
+- `TradeFinancing/Clause/Content` = **Payment to any other account does not discharge the buyer.**  
+  What it says.
+- `RemittanceDocumentDistribution/ID` = **1**  
+  Where the remittance advice goes.
+- `RemittanceDocumentDistribution/DocumentTypeCode` = **RemittanceAdvice**  
+  The document.
+- `RemittanceDocumentDistribution/DistributionTypeCode` = **Electronic**  
+  By message.
+- `RemittanceDocumentDistribution/Communication/ChannelCode` = **EM** (listID `UN/EDIFACT EDED 3155`)  
+  UN/EDIFACT 3155 code EM: electronic mail.
+- `RemittanceDocumentDistribution/Communication/Channel` = **E-mail**  
+  In words.
+- `RemittanceDocumentDistribution/Communication/Value` = **remittance@harbourline.example**  
+  The factor's address.
+- `RemittanceDocumentDistribution/Party/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `RemittanceDocumentDistribution/Party/PartyName/Name` = **Harbourline Factoring**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PaymentInstructionAttachment/ExternalReference/URI` = **https://www.harbourline.example/pay/HF-FA-2026-007-18**  
+  The factor's payment page for this invoice.
+- `PaymentInstructionAttachment/ExternalReference/MimeCode` = **application/pdf**  
+  A PDF.
 
 ### Payment Terms
 
@@ -1278,9 +1346,11 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
     <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
     <cbc:PaymentID>RF20LDINV260147</cbc:PaymentID>
     <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cbc:ServiceLevelCode>NURG</cbc:ServiceLevelCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
       <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
@@ -1308,6 +1378,78 @@ Inside `InvoiceLine`:
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
+    <cac:TradeFinancing>
+      <cbc:ID>HF-FA-2026-007/18</cbc:ID>
+      <cbc:FinancingInstrumentCode>Factoring</cbc:FinancingInstrumentCode>
+      <cac:ContractDocumentReference>
+        <cbc:ID>HF-FA-2026-007</cbc:ID>
+      </cac:ContractDocumentReference>
+      <cac:DocumentReference>
+        <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+      </cac:DocumentReference>
+      <cac:FinancingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harbourline Factoring</cbc:Name>
+        </cac:PartyName>
+      </cac:FinancingParty>
+      <cac:FinancingFinancialAccount>
+        <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
+        <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
+        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:FinancialInstitutionBranch>
+          <cbc:ID>BLUM-001</cbc:ID>
+          <cbc:Name>Main branch</cbc:Name>
+          <cac:FinancialInstitution>
+            <cbc:ID>BLUM</cbc:ID>
+            <cbc:Name>Bank of Lumeport</cbc:Name>
+            <cac:Address>
+              <cbc:StreetName>Exchange Street</cbc:StreetName>
+              <cbc:BuildingNumber>48</cbc:BuildingNumber>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitution>
+        </cac:FinancialInstitutionBranch>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:FinancingFinancialAccount>
+      <cac:Clause>
+        <cbc:ID>HF-FA-7.2</cbc:ID>
+        <cbc:Content>Payment to any other account does not discharge the buyer.</cbc:Content>
+      </cac:Clause>
+    </cac:TradeFinancing>
+    <cac:RemittanceDocumentDistribution>
+      <cbc:ID>1</cbc:ID>
+      <cbc:DocumentTypeCode>RemittanceAdvice</cbc:DocumentTypeCode>
+      <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+      <cac:Communication>
+        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">EM</cbc:ChannelCode>
+        <cbc:Channel>E-mail</cbc:Channel>
+        <cbc:Value>remittance@harbourline.example</cbc:Value>
+      </cac:Communication>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harbourline Factoring</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:RemittanceDocumentDistribution>
+    <cac:PaymentInstructionAttachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://www.harbourline.example/pay/HF-FA-2026-007-18</cbc:URI>
+        <cbc:MimeCode>application/pdf</cbc:MimeCode>
+      </cac:ExternalReference>
+    </cac:PaymentInstructionAttachment>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:ID>DEPOSIT</cbc:ID>

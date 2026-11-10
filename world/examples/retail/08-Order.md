@@ -73,6 +73,12 @@ Inside `Signature`:
 
 Inside `BuyerCustomerParty`:
 
+- `CustomerAssignedAccountID` = **BM-6120**  
+  The store's own number for its garden department.
+- `SupplierAssignedAccountID` = **LD-C-0418**  
+  The distributor's customer number for the store.
+- `AdditionalAccountID` = **BM-LUM-01**  
+  The store's branch number.
 - `Party/WebsiteURI` = **https://www.brightmarket.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Brightmarket Stores (world/parties.json).
 - `Party/LogoReferenceID` = **BM-LOGO-2024**  
@@ -181,11 +187,29 @@ Inside `BuyerCustomerParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `DeliveryContact/Name` = **Goods-in, garden department**  
+  Whom the driver reports to.
+- `DeliveryContact/Telephone` = **+999 2 3851 0411**  
+  The number.
+- `AccountingContact/Name` = **Accounts payable**  
+  Where invoices go.
+- `AccountingContact/ElectronicMail` = **invoices@brightmarket.example**  
+  The address, under the reserved .example domain.
+- `BuyerContact/Name` = **Garden department buyer**  
+  Who placed the order.
+- `BuyerContact/Telephone` = **+999 2 3851 0411**  
+  The number.
 
 ### Seller Supplier Party
 
 Inside `SellerSupplierParty`:
 
+- `CustomerAssignedAccountID` = **BM-S-0071**  
+  The store's supplier number for the distributor.
+- `AdditionalAccountID` = **LD-XB-01**  
+  The distributor's sales office.
+- `DataSendingCapability` = **UBL 2.5 over the trade accord network**  
+  How the distributor sends documents.
 - `Party/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `Party/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -286,6 +310,18 @@ Inside `SellerSupplierParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `DespatchContact/Name` = **Dispatch office**  
+  Who despatches.
+- `DespatchContact/Telephone` = **+999 2 7121 0274**  
+  The number.
+- `AccountingContact/Name` = **Accounts receivable**  
+  For payment questions.
+- `AccountingContact/ElectronicMail` = **ar@lumeway.example**  
+  The address, under the reserved .example domain.
+- `SellerContact/Name` = **Key account manager, retail**  
+  The store's contact at the distributor.
+- `SellerContact/Telephone` = **+999 2 7121 0274**  
+  The number.
 
 ### Delivery
 
@@ -647,6 +683,9 @@ Inside `OrderLine`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:BuyerCustomerParty>
+    <cbc:CustomerAssignedAccountID>BM-6120</cbc:CustomerAssignedAccountID>
+    <cbc:SupplierAssignedAccountID>LD-C-0418</cbc:SupplierAssignedAccountID>
+    <cbc:AdditionalAccountID>BM-LUM-01</cbc:AdditionalAccountID>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
       <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -743,8 +782,23 @@ Inside `OrderLine`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+    <cac:DeliveryContact>
+      <cbc:Name>Goods-in, garden department</cbc:Name>
+      <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+    </cac:DeliveryContact>
+    <cac:AccountingContact>
+      <cbc:Name>Accounts payable</cbc:Name>
+      <cbc:ElectronicMail>invoices@brightmarket.example</cbc:ElectronicMail>
+    </cac:AccountingContact>
+    <cac:BuyerContact>
+      <cbc:Name>Garden department buyer</cbc:Name>
+      <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+    </cac:BuyerContact>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
+    <cbc:CustomerAssignedAccountID>BM-S-0071</cbc:CustomerAssignedAccountID>
+    <cbc:AdditionalAccountID>LD-XB-01</cbc:AdditionalAccountID>
+    <cbc:DataSendingCapability>UBL 2.5 over the trade accord network</cbc:DataSendingCapability>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -833,6 +887,18 @@ Inside `OrderLine`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+    <cac:DespatchContact>
+      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+    </cac:DespatchContact>
+    <cac:AccountingContact>
+      <cbc:Name>Accounts receivable</cbc:Name>
+      <cbc:ElectronicMail>ar@lumeway.example</cbc:ElectronicMail>
+    </cac:AccountingContact>
+    <cac:SellerContact>
+      <cbc:Name>Key account manager, retail</cbc:Name>
+      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+    </cac:SellerContact>
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>

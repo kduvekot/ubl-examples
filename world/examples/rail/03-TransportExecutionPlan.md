@@ -286,8 +286,34 @@ Inside `TransportContract`:
 
 - `ID` = **VI-FRC-FW-2026**  
   The framework agreement.
+- `IssueTime` = **10:00:00**  
+  Signed in the morning.
+- `NominationDate` = **2026-04-08**  
+  The slots of this train were nominated today.
+- `NominationTime` = **09:00:00**  
+  At that time.
+- `ContractTypeCode` = **Framework**  
+  A framework contract.
 - `ContractType` = **Framework transport agreement**  
   Its kind.
+- `Note` = **Call-off 88 of the year.**  
+  Which call-off.
+- `VersionID` = **2**  
+  The contract as amended in March.
+- `ModificationReasonCode` = **Volume**  
+  Amended for higher volumes.
+- `ModificationReasonDescription` = **Ten more slots a month from April.**  
+  The change.
+- `Description` = **Container slots between the Ferrano hub and Marrowdale.**  
+  What it covers.
+- `ContractDocumentReference/ID` = **FRC-CON-2026-005-A1**  
+  The amendment.
+- `NominationPeriod/StartDate` = **2026-04-06**  
+  Slots are nominated a week
+- `NominationPeriod/EndDate` = **2026-04-12**  
+  before the train.
+- `ContractualDelivery/LatestDeliveryDate` = **2026-04-16**  
+  The contract's latest delivery for this call-off.
 
 ### Transport Service Provider Response Required Period
 
@@ -845,7 +871,26 @@ Inside `Consignment`:
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+    <cbc:IssueTime>10:00:00</cbc:IssueTime>
+    <cbc:NominationDate>2026-04-08</cbc:NominationDate>
+    <cbc:NominationTime>09:00:00</cbc:NominationTime>
+    <cbc:ContractTypeCode>Framework</cbc:ContractTypeCode>
     <cbc:ContractType>Framework transport agreement</cbc:ContractType>
+    <cbc:Note>Call-off 88 of the year.</cbc:Note>
+    <cbc:VersionID>2</cbc:VersionID>
+    <cbc:ModificationReasonCode>Volume</cbc:ModificationReasonCode>
+    <cbc:ModificationReasonDescription>Ten more slots a month from April.</cbc:ModificationReasonDescription>
+    <cbc:Description>Container slots between the Ferrano hub and Marrowdale.</cbc:Description>
+    <cac:ContractDocumentReference>
+      <cbc:ID>FRC-CON-2026-005-A1</cbc:ID>
+    </cac:ContractDocumentReference>
+    <cac:NominationPeriod>
+      <cbc:StartDate>2026-04-06</cbc:StartDate>
+      <cbc:EndDate>2026-04-12</cbc:EndDate>
+    </cac:NominationPeriod>
+    <cac:ContractualDelivery>
+      <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
+    </cac:ContractualDelivery>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseRequiredPeriod>
     <cbc:EndDate>2026-04-08</cbc:EndDate>
