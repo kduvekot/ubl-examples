@@ -50,6 +50,11 @@
    "id": "waste",
    "title": "Production waste to recovery (domestic, Country A)",
    "text": "The factory's hazardous production waste may only move with a notification. In Country A one administration acts as customs and as competent authority for waste permits. The waste processor recovers the material and invoices the service."
+  },
+  {
+   "id": "utilities",
+   "title": "Electricity, water and telecom (one utility in each country)",
+   "text": "Every business and household pays a utility. UBL bills a utility with an Invoice and supplements it with a Utility Statement: the consumption behind the bill, per connection, with meter readings (UBL 2.5, section 2.3.7.2, Utility Billing). The three utilities differ on purpose: electricity and water use the energy and water supply structure, telecom its own telecommunications structure, and the three countries tax them differently."
   }
  ],
  "documents": [
@@ -1329,6 +1334,172 @@
    "parties": {
     "AccountingSupplierParty": "7-xa",
     "AccountingCustomerParty": "5-xa"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "UtilityStatement",
+   "from": "33-xa",
+   "to": "5-xa",
+   "why": "The factory's monthly electricity consumption: meter readings and consumption per connection, in the energy and water supply structure.",
+   "parties": {
+    "SenderParty": "33-xa",
+    "ReceiverParty": "5-xa",
+    "SubscriberParty": "5-xa"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "Invoice",
+   "from": "33-xa",
+   "to": "5-xa",
+   "why": "The electricity bill, with Country A's VAT; it refers to the utility statement for the consumption.",
+   "parties": {
+    "AccountingSupplierParty": "33-xa",
+    "AccountingCustomerParty": "5-xa",
+    "SellerSupplierParty": "33-xa",
+    "BuyerCustomerParty": "5-xa",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "UtilityStatement",
+   "from": "33-xa",
+   "to": "8-xa",
+   "why": "The 3PL's warehouse is the manufacturer's building: the 3PL is the subscriber at the connection and receives the statement, but the manufacturer pays. The statement therefore names the manufacturer as customer, the buyer that differs from the receiver.",
+   "parties": {
+    "SenderParty": "33-xa",
+    "ReceiverParty": "8-xa",
+    "SubscriberParty": "8-xa",
+    "CustomerParty": "5-xa"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "RemittanceAdvice",
+   "from": "5-xa",
+   "to": "33-xa",
+   "why": "The manufacturer pays both electricity bills in one transfer.",
+   "parties": {
+    "AccountingCustomerParty": "5-xa",
+    "AccountingSupplierParty": "33-xa",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "UtilityStatement",
+   "from": "34-xb",
+   "to": "26-xb",
+   "why": "The shop's water consumption, read from its meter.",
+   "parties": {
+    "SenderParty": "34-xb",
+    "ReceiverParty": "26-xb",
+    "SubscriberParty": "26-xb"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "Invoice",
+   "from": "34-xb",
+   "to": "26-xb",
+   "why": "The water bill for the shop. Water is exempt from the state sales tax, and the invoice says so with the exemption reason: leaving the tax out would say nothing (IND6).",
+   "parties": {
+    "AccountingSupplierParty": "34-xb",
+    "AccountingCustomerParty": "26-xb",
+    "SellerSupplierParty": "34-xb",
+    "BuyerCustomerParty": "26-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "RemittanceAdvice",
+   "from": "26-xb",
+   "to": "34-xb",
+   "why": "The shop pays its water bill and says which invoice the transfer settles.",
+   "parties": {
+    "AccountingCustomerParty": "26-xb",
+    "AccountingSupplierParty": "34-xb",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "UtilityStatement",
+   "from": "34-xb",
+   "to": "c-xb",
+   "why": "The household's water consumption.",
+   "parties": {
+    "SenderParty": "34-xb",
+    "ReceiverParty": "c-xb",
+    "SubscriberParty": "c-xb"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "Invoice",
+   "from": "34-xb",
+   "to": "c-xb",
+   "why": "The household's water bill, exempt from sales tax like every water bill.",
+   "parties": {
+    "AccountingSupplierParty": "34-xb",
+    "AccountingCustomerParty": "c-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "Reminder",
+   "from": "34-xb",
+   "to": "c-xb",
+   "why": "The household has not paid by the due date; the utility reminds it of the amount past due, referring to the invoice.",
+   "parties": {
+    "AccountingSupplierParty": "34-xb",
+    "AccountingCustomerParty": "c-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "UtilityStatement",
+   "from": "35-xc",
+   "to": "1-xc",
+   "why": "Calls, data and subscriptions per telephone line of the buyer, in the telecommunications supply structure.",
+   "parties": {
+    "SenderParty": "35-xc",
+    "ReceiverParty": "1-xc",
+    "SubscriberParty": "1-xc"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "Invoice",
+   "from": "35-xc",
+   "to": "1-xc",
+   "why": "The telecom bill. The island has no sales tax or VAT, and the invoice says that no tax applies rather than leaving it out.",
+   "parties": {
+    "AccountingSupplierParty": "35-xc",
+    "AccountingCustomerParty": "1-xc",
+    "SellerSupplierParty": "35-xc",
+    "BuyerCustomerParty": "1-xc",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc"
+   }
+  },
+  {
+   "flow": "utilities",
+   "doc": "RemittanceAdvice",
+   "from": "1-xc",
+   "to": "35-xc",
+   "why": "The buyer pays the telecom bill from its account at the island's bank.",
+   "parties": {
+    "AccountingCustomerParty": "1-xc",
+    "AccountingSupplierParty": "35-xc",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc"
    }
   }
  ]

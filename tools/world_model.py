@@ -35,6 +35,8 @@ Structural rules (the build stops when one is broken):
     crossings are a straight road across a straight rail;
   * straight road and rail tiles may rise one level along their direction
     (a ramp); everything else built stands on flat ground;
+  * tall structures (a mast, a cooling tower) keep 4 tiles from an airport and
+    its approach zones;
   * an airport has an approach zone of 3 tiles beyond each runway end, low
     and flat at runway height, with nothing tall in it;
   * a road across a land border passes a customs post on each side; a rail
@@ -52,6 +54,8 @@ from collections import deque
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 W, H = 64, 48
+TALL = {"telecom", "power"}                       # kinds with a mast or a cooling tower
+TALL_CLEARANCE = 4                                # tiles they keep from an airport and its approach zones
 DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]        # bit 0..3 of the road mask
 
 
@@ -436,6 +440,15 @@ def build(world):
             o = owner.get(q)
             if o:
                 problems.append(f"#{o['n']} {o['name']} stands in the approach zone of #{p['n']} {p['name']} at {q}")
+        # tall structures (masts, cooling towers) keep clear of the airport and its approach
+        # zones by at least TALL_CLEARANCE tiles in every direction
+        near = set(zone) | {(i0 + di, j0 + dj) for di in range(a) for dj in range(b)}
+        for o in world["parties"]:
+            if o["kind"] in TALL:
+                gap = min(max(abs(x - u), abs(y - v)) for (x, y) in footprint(o) for (u, v) in near)
+                if gap < TALL_CLEARANCE:
+                    problems.append(f"#{o['n']} {o['name']} ({o['kind']}) is {gap} tiles from the runway or approach "
+                                    f"of #{p['n']} {p['name']}; tall structures keep {TALL_CLEARANCE} tiles clear")
 
     # 6. houses: in towns, on free tiles next to a street, facing it; taller in the centre
     def degree(q):

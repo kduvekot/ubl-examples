@@ -1320,6 +1320,120 @@
      "CityName": "Selanu"
     }
    }
+  },
+  {
+   "id": "33-xa",
+   "n": "33",
+   "name": "Electricity Utility",
+   "cat": "commerce",
+   "c": "XA",
+   "at": [
+    18,
+    13
+   ],
+   "size": [
+    2,
+    2
+   ],
+   "h": 2,
+   "kind": "power",
+   "proposed": true,
+   "what": "Generates and supplies electricity in Country A; its biggest customer is the factory.",
+   "how": "A utility bills thousands of connections every month. UBL separates the bill (the Invoice) from the consumption behind it (the Utility Statement with meter readings per connection), so a customer with many sites can check each one automatically and a household gets the same structured bill as a factory.",
+   "identity": {
+    "name": "Ferrano Energy",
+    "kind": "company",
+    "registry_id": "XA-R-105781",
+    "endpoint": "XA:XA-R-105781",
+    "contact": {
+     "name": "Customer service",
+     "email": "customer@ferranoenergy.example"
+    },
+    "tax_id": "XA007404785",
+    "address": {
+     "StreetName": "Via della Centrale",
+     "BuildingNumber": "44",
+     "CityName": "Serravona",
+     "PostalZone": "4130"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA09CREV0004084431"
+    }
+   }
+  },
+  {
+   "id": "34-xb",
+   "n": "34",
+   "name": "Water Utility",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    37,
+    29
+   ],
+   "h": 2,
+   "kind": "waterworks",
+   "proposed": true,
+   "what": "Supplies drinking water in Coastal State, to shops and households.",
+   "how": "Water is billed on metered consumption. With UBL the Utility Statement carries the meter readings and the Invoice the amount; the tax exemption for water is stated explicitly, and a Reminder follows the same structure when a household pays late.",
+   "identity": {
+    "name": "Coastal State Water Company",
+    "kind": "company",
+    "registry_id": "20412192",
+    "endpoint": "XB:20412192",
+    "contact": {
+     "name": "Customer service",
+     "email": "customer@coastalwater.example"
+    },
+    "tax_id": "CS-1236576",
+    "address": {
+     "StreetName": "Reservoir Road",
+     "BuildingNumber": "51",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38500"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB52BLUM0004189160"
+    }
+   }
+  },
+  {
+   "id": "35-xc",
+   "n": "35",
+   "name": "Telecom Utility",
+   "cat": "commerce",
+   "c": "XC",
+   "at": [
+    57,
+    28
+   ],
+   "h": 2,
+   "kind": "telecom",
+   "proposed": true,
+   "what": "The island's telephone and data provider.",
+   "how": "Telecom bills list calls, data and subscriptions per line. The UBL Utility Statement has a telecommunications structure of its own, so a business customer can allocate the costs of each line without retyping a paper bill.",
+   "identity": {
+    "name": "Selanu Telecom",
+    "kind": "company",
+    "registry_id": "IC42407",
+    "endpoint": "XC:IC42407",
+    "contact": {
+     "name": "Business accounts",
+     "email": "business@selanutelecom.example"
+    },
+    "address": {
+     "StreetName": "Mast Hill Road",
+     "BuildingNumber": "58",
+     "CityName": "Selanu"
+    },
+    "account": {
+     "bank": "22-xc",
+     "number": "XC18BSEL0004293889"
+    }
+   }
   }
  ]
 }

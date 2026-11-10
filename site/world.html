@@ -404,6 +404,25 @@ function drawBuilding(g, x, y, p) {
     const G = geo(x, y + 3, .95, .75, 10); walls(g, G, "#cfc4ad");
     for (let u = .1; u < .9; u += .27) door(g, G, "L", u, .16, 7, "#5d6670"); windows(g, G, "R", 3, 1, glass, { top: .9, bottom: .65 });
     gableRoof(g, G, 4, shade(col, -.1), "#cfc4ad"); return; }
+  if (k === "power") {                                  // turbine hall, cooling tower with steam, transformer yard
+    g.fillStyle = "#8d8f8a"; g.beginPath(); g.moveTo(x + 2, y + 10); g.lineTo(x + 16, y + 3); g.lineTo(x + 26, y + 8); g.lineTo(x + 12, y + 15); g.closePath(); g.fill();
+    g.strokeStyle = "#555"; g.lineWidth = 1; for (const [dx, dy] of [[8, 9], [14, 6], [18, 11]]) { g.beginPath(); g.moveTo(x + dx, y + dy); g.lineTo(x + dx, y + dy - 7); g.moveTo(x + dx - 3, y + dy - 6); g.lineTo(x + dx + 3, y + dy - 6); g.stroke(); }
+    const G = geo(x - 6, y + 6, .8, .7, 12); walls(g, G, "#c9c2b2"); windows(g, G, "L", 3, 1, glass, { top: .85, bottom: .55 }); flatRoof(g, G, shade(col, -.15));
+    const cx = x + 8, cy = y - 4;                       // cooling tower: curved sides, wider at the bottom
+    g.fillStyle = "#d9d6cf"; g.beginPath(); g.moveTo(cx - 11, cy + 6); g.quadraticCurveTo(cx - 5, cy - 9, cx - 7, cy - 22); g.lineTo(cx + 7, cy - 22); g.quadraticCurveTo(cx + 5, cy - 9, cx + 11, cy + 6); g.closePath(); g.fill();
+    g.fillStyle = "#b8b4ab"; g.beginPath(); g.moveTo(cx + 2, cy + 6); g.quadraticCurveTo(cx + 3, cy - 9, cx + 1, cy - 22); g.lineTo(cx + 7, cy - 22); g.quadraticCurveTo(cx + 5, cy - 9, cx + 11, cy + 6); g.closePath(); g.fill();
+    g.fillStyle = "#8f8b83"; g.beginPath(); g.ellipse(cx, cy - 22, 7, 2.2, 0, 0, 7); g.fill(); smoke(g, cx - 2, cy - 24); return; }
+  if (k === "waterworks") {                             // treatment basins and a water tower
+    for (const [dx, dy] of [[-7, 4], [1, 7]]) { g.fillStyle = "#9aa3a6"; g.beginPath(); g.ellipse(x + dx, y + dy, 6.5, 3.2, 0, 0, 7); g.fill(); g.fillStyle = "#4f8fbf"; g.beginPath(); g.ellipse(x + dx, y + dy - .5, 5.2, 2.4, 0, 0, 7); g.fill(); }
+    g.strokeStyle = "#5c6166"; g.lineWidth = 1.3; g.beginPath();
+    for (const dx of [-3, 3]) { g.moveTo(x + 6 + dx, y + 2); g.lineTo(x + 6 + dx * .5, y - 14); } g.moveTo(x + 3.5, y - 5); g.lineTo(x + 8.5, y - 5); g.stroke();
+    g.fillStyle = col; g.beginPath(); g.ellipse(x + 6, y - 15, 5, 2, 0, 0, 7); g.fill(); g.fillRect(x + 1, y - 21, 10, 6); g.fillStyle = shade(col, .2); g.beginPath(); g.ellipse(x + 6, y - 21, 5, 2, 0, 0, 7); g.fill(); return; }
+  if (k === "telecom") {                                // equipment building and a lattice mast with red bands
+    const S = geo(x - 4, y + 4, .45, .4, 6); walls(g, S, "#d8d3c6"); flatRoof(g, S, col);
+    const bx = x + 5, by = y + 2, top = by - 34;
+    g.lineWidth = 1; for (let i = 0; i < 6; i++) { const a = by - i * 5.6, b2 = by - (i + 1) * 5.6, wa = 3 - i * .4, wb = 3 - (i + 1) * .4;
+      g.strokeStyle = i % 2 ? "#f2f2f2" : "#c0392b"; g.beginPath(); g.moveTo(bx - wa, a); g.lineTo(bx - wb, b2); g.moveTo(bx + wa, a); g.lineTo(bx + wb, b2); g.moveTo(bx - wa, a); g.lineTo(bx + wb, b2); g.stroke(); }
+    g.fillStyle = "#e8e8e8"; g.fillRect(bx - 3.5, top + 6, 2, 4); g.fillRect(bx + 1.5, top + 9, 2, 4); g.fillStyle = "#ff4d4d"; g.beginPath(); g.arc(bx, top, 1.2, 0, 7); g.fill(); return; }
   if (k === "waste") {                                  // heaps of sorted material and a shed
     for (const [dx, dy, c] of [[-6, 2, "#6d7f43"], [3, 4, "#7a6650"], [8, 0, "#8f8f86"]]) { g.fillStyle = c; g.beginPath(); g.moveTo(dx + x - 6, y + dy); g.lineTo(dx + x, y + dy - 7); g.lineTo(dx + x + 6, y + dy); g.fill(); }
     const S = geo(x - 2, y - 4, .4, .35, 6); walls(g, S, "#a9a493"); gableRoof(g, S, 3, col, "#a9a493"); return; }
@@ -592,7 +611,7 @@ const redraw = () => { if (reduced) frame(0); };
 // panel
 const card = document.getElementById("card"), list = document.getElementById("list");
 function showCard(p) {
-  if (!p) { card.innerHTML = `<div class="num">THE UBL EXAMPLE WORLD</div><h2>Three countries, 38 places, one story</h2>
+  if (!p) { card.innerHTML = `<div class="num">THE UBL EXAMPLE WORLD</div><h2>Three countries, ${P.length} places, one story</h2>
     <p>Ore is mined and processed in <b>Country A</b>, crosses the land border by road, rail and river to the distributor in <b>Country B</b>, and goes overseas by ship and plane to the buyer on the island <b>Country C</b>. Every country has its own customs, chamber and banks.</p>
     <p>Click a building or choose a party below to see its role and the UBL documents it sends and receives.</p>`; return; }
   const col = css(CAT[p.cat]);
