@@ -8,6 +8,7 @@
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueTime>09:17:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-05-04</cbc:StartDate>
     <cbc:EndDate>2026-10-31</cbc:EndDate>
@@ -212,6 +213,7 @@
       <cac:ApplicableTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -533,6 +535,7 @@
       <cac:ApplicableTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

@@ -7,6 +7,7 @@
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
   <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueTime>11:12:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-03</cbc:DueDate>
   <cbc:Note>The furniture maker asked for the sets back; the store charges the transport.</cbc:Note>
   <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
@@ -15,6 +16,10 @@
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:DiscrepancyResponse>
+    <cbc:ResponseCode>ReturnCost</cbc:ResponseCode>
+    <cbc:Description>Return transport of six unsold garden sets.</cbc:Description>
+  </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
@@ -23,6 +28,9 @@
       <cbc:ID>BF-CN-26-0579</cbc:ID>
     </cac:CreditNoteDocumentReference>
   </cac:BillingReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-DOC-26-0578</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -206,6 +214,40 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Brightmarket Stores</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Brackenmere Furniture, Marrowdale</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
@@ -255,6 +297,7 @@
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-SVC-B2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -271,9 +314,30 @@
     <cbc:Note>Collected with the store's van.</cbc:Note>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">85.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode>TRPT</cbc:PaymentPurposeCode>
+    <cac:DiscrepancyResponse>
+      <cbc:ResponseCode>ReturnCost</cbc:ResponseCode>
+    </cac:DiscrepancyResponse>
+    <cac:BillingReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>BF-CN-26-0579</cbc:ID>
+      </cac:CreditNoteDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>BF-DOC-26-0578</cbc:ID>
+    </cac:DocumentReference>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
     </cac:Delivery>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>Transport of returned goods back to the supplier, per delivery.</cbc:Description>
       <cbc:Name>Return transport</cbc:Name>
@@ -283,6 +347,7 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-SVC-B2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

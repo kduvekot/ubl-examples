@@ -7,6 +7,7 @@
   <cbc:ID>BF-PO-26-0637</cbc:ID>
   <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
   <cbc:IssueDate>2026-03-08</cbc:IssueDate>
+  <cbc:IssueTime>16:20:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
@@ -205,6 +206,7 @@
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

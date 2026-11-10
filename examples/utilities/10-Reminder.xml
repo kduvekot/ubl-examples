@@ -7,14 +7,32 @@
   <cbc:ID>CSWC-DOC-26-0321</cbc:ID>
   <cbc:UUID>ff7b6a47-db42-5844-b098-ee8d7f1a7e38</cbc:UUID>
   <cbc:IssueDate>2026-05-01</cbc:IssueDate>
+  <cbc:IssueTime>14:29:00</cbc:IssueTime>
   <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>1210</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Household receivables</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ReminderPeriod>
     <cbc:StartDate>2026-04-23</cbc:StartDate>
     <cbc:EndDate>2026-05-01</cbc:EndDate>
   </cac:ReminderPeriod>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BLUM-RTN-26-04-0193</cbc:ID>
+    <cbc:IssueDate>2026-04-24</cbc:IssueDate>
+    <cbc:DocumentTypeCode>ReturnNotice</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>Direct debit returned: insufficient funds.</cbc:DocumentDescription>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411370</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bank of Lumeport</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -124,6 +142,14 @@
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Coastal State Water Company</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cac:PayeeFinancialAccount>
@@ -153,6 +179,24 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">5.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:TaxExemptionReason>Compensation for late payment</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">43.78</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">43.78</cbc:PayableAmount>

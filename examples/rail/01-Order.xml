@@ -7,6 +7,7 @@
   <cbc:ID>LD-PO-26-0325</cbc:ID>
   <cbc:UUID>e3c80bc4-b2b9-5396-a910-bff342f77805</cbc:UUID>
   <cbc:IssueDate>2026-04-06</cbc:IssueDate>
+  <cbc:IssueTime>16:18:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
@@ -226,6 +227,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>

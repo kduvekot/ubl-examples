@@ -7,6 +7,7 @@
   <cbc:ID>VI-PO-26-0521</cbc:ID>
   <cbc:UUID>bb51160f-cb33-5e41-a695-75ac4b4523df</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>08:44:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
@@ -313,6 +314,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

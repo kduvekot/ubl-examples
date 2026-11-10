@@ -7,6 +7,7 @@
   <cbc:ID>CSWC-INV-26-0319</cbc:ID>
   <cbc:UUID>4d48b45e-73c0-5476-98a9-69e873037095</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>15:44:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
@@ -18,6 +19,10 @@
     <cbc:DescriptionCode>Month</cbc:DescriptionCode>
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
+  <cac:PurchaseReference>
+    <cbc:ID>CSW-C-311790</cbc:ID>
+    <cbc:Description>Supply contract</cbc:Description>
+  </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -227,6 +232,7 @@
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-WATER</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -239,6 +245,7 @@
       <cac:TaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -263,6 +270,10 @@
       <cbc:DescriptionCode>Month</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>CSW-W-71844</cbc:ID>
+      <cbc:Description>Gull Lane 57</cbc:Description>
+    </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
       <cbc:Name>Drinking water</cbc:Name>
@@ -272,7 +283,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-WATER</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
@@ -312,7 +325,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

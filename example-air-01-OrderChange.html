@@ -632,6 +632,9 @@ G).</li>
 <li><code>TaxSubtotal/TaxCategory/Percent</code> =
 <strong>0</strong><br />
 No tax is charged in this category.</li>
+<li><code>TaxSubtotal/TaxCategory/TaxExemptionReasonCode</code> =
+<strong>XB-EXP</strong><br />
+The world's code for the exemption reason (world/countries.json).</li>
 <li><code>TaxSubtotal/TaxCategory/TaxExemptionReason</code> =
 <strong>Export outside Bayvarra</strong><br />
 Why no tax is charged, stated rather than left out (UBL rule IND6).</li>
@@ -1023,61 +1026,62 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export outside Bayvarra&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;51200.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;51200.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;8&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;512.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;64&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Spare side frame for the Serra bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BrandName</span>&gt;Valdara&lt;/<span class="kw">cbc:BrandName</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ModelName</span>&gt;Serra 180 side frame&lt;/<span class="kw">cbc:ModelName</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LD-10443&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000034&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span>&gt;7325.99.90&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;7325.99&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturerParty</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturerParty</span>&gt;</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderChange</span>&gt;</span></code></pre></div>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;XB-EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export outside Bayvarra&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;51200.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;51200.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;8&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;512.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;64&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Spare side frame for the Serra bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BrandName</span>&gt;Valdara&lt;/<span class="kw">cbc:BrandName</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ModelName</span>&gt;Serra 180 side frame&lt;/<span class="kw">cbc:ModelName</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LD-10443&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000034&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span>&gt;7325.99.90&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;7325.99&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturerParty</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturerParty</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderChange</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>66f3b6a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>1ee00f2</code></p></div></footer>
 </body>
 </html>

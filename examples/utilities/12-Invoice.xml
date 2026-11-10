@@ -7,6 +7,7 @@
   <cbc:ID>ST-INV-26-0322</cbc:ID>
   <cbc:UUID>d34bf420-eb98-5f5f-9d06-271cb4ca7e5a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
@@ -20,6 +21,10 @@
     <cbc:DescriptionCode>Month</cbc:DescriptionCode>
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
+  <cac:PurchaseReference>
+    <cbc:ID>ST-C-1077</cbc:ID>
+    <cbc:Description>Supply contract</cbc:Description>
+  </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
@@ -245,6 +250,10 @@
     <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode>PHON</cbc:PaymentPurposeCode>
+    <cac:PurchaseReference>
+      <cbc:ID>ST-L-BUS6</cbc:ID>
+      <cbc:Description>Six business lines</cbc:Description>
+    </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
       <cbc:Name>Business telephone line</cbc:Name>
@@ -254,6 +263,7 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>
@@ -269,6 +279,10 @@
     <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode>PHON</cbc:PaymentPurposeCode>
+    <cac:PurchaseReference>
+      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:Description>Mobile data pool</cbc:Description>
+    </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
       <cbc:Name>Mobile data</cbc:Name>
@@ -278,6 +292,7 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>

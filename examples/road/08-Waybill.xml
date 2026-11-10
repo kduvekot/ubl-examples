@@ -7,6 +7,7 @@
   <cbc:ID>TH-WB-26-0159</cbc:ID>
   <cbc:UUID>4891662e-273a-5190-9aa7-edb87e35d8b5</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueTime>08:16:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>

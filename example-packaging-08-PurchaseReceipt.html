@@ -467,6 +467,9 @@ takes place, applies (category S).</li>
 <li><code>Item/ClassifiedTaxCategory/Percent</code> =
 <strong>6.5</strong><br />
 The rate for this category.</li>
+<li><code>Item/ClassifiedTaxCategory/SupplyTypeCode</code> =
+<strong>Goods</strong><br />
+Whether the category applies to goods or services.</li>
 <li><code>Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
 <strong>STT</strong><br />
 UN/EDIFACT 5153 code of the seller's tax: state sales tax.</li>
@@ -713,36 +716,37 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;6.5&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Material&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;100 % cotton grown on Lisavu&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sizes&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;S to XL&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ManufacturerParty</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Textile Mill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ManufacturerParty</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;29.95&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxInclusivePriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;31.9&lt;/<span class="kw">cbc:TaxInclusivePriceAmount</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PurchaseReceiptLine</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PurchaseReceipt</span>&gt;</span></code></pre></div>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span>&gt;Goods&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Material&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;100 % cotton grown on Lisavu&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sizes&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;S to XL&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ManufacturerParty</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Textile Mill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ManufacturerParty</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;29.95&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxInclusivePriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;31.9&lt;/<span class="kw">cbc:TaxInclusivePriceAmount</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PurchaseReceiptLine</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PurchaseReceipt</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>66f3b6a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>1ee00f2</code></p></div></footer>
 </body>
 </html>

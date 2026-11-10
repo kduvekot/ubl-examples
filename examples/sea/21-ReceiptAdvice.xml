@@ -7,6 +7,7 @@
   <cbc:ID>NW-RA-26-0146</cbc:ID>
   <cbc:UUID>5c11e38e-6191-5e5e-892a-38c6eedf1df0</cbc:UUID>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
+  <cbc:IssueTime>17:22:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -427,7 +428,7 @@
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:ReceivedQuantity unitCode="H87">12</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="H87">11</cbc:ReceivedQuantity>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

@@ -300,6 +300,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

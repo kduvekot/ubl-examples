@@ -7,6 +7,7 @@
   <cbc:ID>BIS-DOC-26-0198</cbc:ID>
   <cbc:UUID>caa9a455-79a7-5aae-9576-1eb0e65da6ee</cbc:UUID>
   <cbc:IssueDate>2026-02-27</cbc:IssueDate>
+  <cbc:IssueTime>16:26:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

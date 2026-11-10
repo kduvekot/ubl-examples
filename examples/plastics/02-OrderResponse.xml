@@ -7,6 +7,7 @@
   <cbc:ID>RR-OR-26-0883</cbc:ID>
   <cbc:UUID>d96e3f6a-2649-56f7-9849-4bc3034c1d57</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>15:39:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>

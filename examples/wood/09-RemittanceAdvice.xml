@@ -7,8 +7,16 @@
   <cbc:ID>VI-RM-26-0636</cbc:ID>
   <cbc:UUID>e5f65c03-a244-5c3b-a933-778dccb8be58</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
+  <cbc:IssueTime>14:22:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XBL">34560.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">34560.00</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>VI-PAY-26-0625</cbc:PaymentOrderReference>
+  <cbc:PayerReference>VI-0625</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -257,11 +265,36 @@
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Marrowdale Sawmill</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>MS-INV-26-0635</cbc:ID>
         <cbc:IssueDate>2026-02-26</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>MS-INV-26-0635</cbc:ID>
+      <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

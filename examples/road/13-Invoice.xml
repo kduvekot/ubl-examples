@@ -7,10 +7,12 @@
   <cbc:ID>VI-INV-26-0164</cbc:ID>
   <cbc:UUID>5c2aeb3c-f6ea-5197-8c3b-8b6246918f0f</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
+  <cbc:IssueTime>10:48:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-24</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -297,6 +299,13 @@
       <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:PaymentExchangeRate>
+    <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.01</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-24</cbc:Date>
+  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -305,6 +314,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -362,7 +372,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
@@ -524,7 +536,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

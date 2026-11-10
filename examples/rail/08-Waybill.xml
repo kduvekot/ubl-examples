@@ -7,6 +7,7 @@
   <cbc:ID>FRC-WB-26-0334</cbc:ID>
   <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>

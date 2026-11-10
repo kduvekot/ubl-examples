@@ -7,6 +7,7 @@
   <cbc:ID>SM-DA-26-0308</cbc:ID>
   <cbc:UUID>e3281a6d-51f4-5981-b7f0-b43b6a9cf2da</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
+  <cbc:IssueTime>15:37:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>

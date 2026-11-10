@@ -7,6 +7,7 @@
   <cbc:ID>FB-TEP-26-0886</cbc:ID>
   <cbc:UUID>32791589-65d7-5d36-bda8-9b68dad29bdd</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
+  <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>

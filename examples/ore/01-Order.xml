@@ -7,6 +7,7 @@
   <cbc:ID>VI-PO-26-0304</cbc:ID>
   <cbc:UUID>f7a41c69-f150-5204-9582-ff383282ea1c</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+  <cbc:IssueTime>11:10:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:Note>Monthly call-off, one train.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>

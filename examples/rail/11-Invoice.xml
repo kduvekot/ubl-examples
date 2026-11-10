@@ -7,11 +7,13 @@
   <cbc:ID>VI-INV-26-0337</cbc:ID>
   <cbc:UUID>4e437657-fd23-506f-a503-988422d5e64c</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
+  <cbc:IssueTime>11:14:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-17</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Delivered at place: the price includes the carriage to the siding.</cbc:Note>
   <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -293,6 +295,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -350,7 +353,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

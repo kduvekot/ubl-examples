@@ -7,6 +7,7 @@
   <cbc:ID>VT-PO-26-0127</cbc:ID>
   <cbc:UUID>96cdcd1a-b60b-535b-b857-023213a9b16e</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
+  <cbc:IssueTime>11:10:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
@@ -261,6 +262,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>

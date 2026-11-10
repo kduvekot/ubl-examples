@@ -7,6 +7,7 @@
   <cbc:ID>SM-INV-26-0312</cbc:ID>
   <cbc:UUID>b47d9e09-122e-55a3-a2d2-dde5a4947c4f</cbc:UUID>
   <cbc:IssueDate>2026-03-11</cbc:IssueDate>
+  <cbc:IssueTime>14:59:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-10</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-11</cbc:TaxPointDate>
@@ -350,6 +351,7 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

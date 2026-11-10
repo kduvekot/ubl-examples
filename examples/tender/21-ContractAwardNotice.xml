@@ -8,6 +8,7 @@
   <cbc:UUID>12583d9b-2491-50ee-89c4-489940d246f5</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-13</cbc:IssueDate>
+  <cbc:IssueTime>13:55:00</cbc:IssueTime>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

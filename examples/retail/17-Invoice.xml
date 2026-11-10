@@ -7,6 +7,7 @@
   <cbc:ID>LD-INV-26-0235</cbc:ID>
   <cbc:UUID>cae87fb6-c5ae-5ec4-95e7-3ff1a551ef34</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+  <cbc:IssueTime>15:21:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
@@ -372,6 +373,7 @@
     <cac:TaxCategory>
       <cbc:ID>E</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
       <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
@@ -386,6 +388,7 @@
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -452,7 +455,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

@@ -7,6 +7,7 @@
   <cbc:ID>BF-INV-26-0208</cbc:ID>
   <cbc:UUID>daf1a713-cff7-51df-92eb-5540cd00d87b</cbc:UUID>
   <cbc:IssueDate>2026-03-04</cbc:IssueDate>
+  <cbc:IssueTime>15:32:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-03</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
@@ -354,6 +355,7 @@
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-SVC-B2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -380,7 +382,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-SVC-B2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

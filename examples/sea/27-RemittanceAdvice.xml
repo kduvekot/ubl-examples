@@ -4,11 +4,19 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-RM-26-0151</cbc:ID>
-  <cbc:UUID>6b92e2fa-8820-5fb5-96a3-b2fe40d92909</cbc:UUID>
+  <cbc:ID>VT-RM-26-0152</cbc:ID>
+  <cbc:UUID>e979bb12-c34b-549e-a55c-2eaa6ba06d08</cbc:UUID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
+  <cbc:IssueTime>15:43:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XBL">43778.00</cbc:TotalPaymentAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">43778.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">64.00</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">43714.00</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>VT-PAY-26-0123</cbc:PaymentOrderReference>
+  <cbc:PayerReference>VT-0123</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -310,11 +318,46 @@
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harbourline Factoring</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>LD-INV-26-0147</cbc:ID>
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
+  </cac:RemittanceAdviceLine>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:CreditLineAmount currencyID="XBL">64.00</cbc:CreditLineAmount>
+    <cac:BillingReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>LD-CN-26-0151</cbc:ID>
+        <cbc:IssueDate>2026-06-15</cbc:IssueDate>
+      </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

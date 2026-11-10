@@ -7,11 +7,13 @@
   <cbc:ID>RR-INV-26-0894</cbc:ID>
   <cbc:UUID>462dcfae-0a9f-5692-9219-92c1bf595e5d</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueTime>11:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
   <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -286,6 +288,7 @@
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
@@ -324,7 +327,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

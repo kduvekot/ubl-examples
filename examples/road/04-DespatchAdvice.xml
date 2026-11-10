@@ -7,6 +7,7 @@
   <cbc:ID>CL-DA-26-0153</cbc:ID>
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueTime>15:15:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>
