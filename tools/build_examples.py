@@ -90,7 +90,12 @@ def party(pid):
         address["CountrySubentity"] = V(a["CountrySubentity"], f"The state, part of an address in federal {c['name']}; {src}.")
     address["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}: a user-assigned ISO 3166-1 code, in the world's "
                                                           "country code list (world/codelists).")}
-    out = {}
+    out = {"_pid": pid}
+    if idn.get("registry_id"):
+        out["PartyIdentification"] = {"ID": V(idn["registry_id"], f"The party's preferred identifier: its number in the "
+                                              f"{c['registry']['name']}; {src}. Later mentions of the same party in "
+                                              "this document repeat only this identifier and the name.",
+                                              schemeID=register_scheme(p["c"]))}
     if idn.get("endpoint"):
         out["ElectronicAddress"] = {   # new in UBL 2.5; Party/EndpointID is deprecated
             "ExchangeNetworkID": V("urn:ubl-examples:world:network", "The network in which the address is registered: "
@@ -117,13 +122,33 @@ def party(pid):
     return out
 
 
+def register_scheme(country):
+    return f"urn:ubl-examples:world:{country}:register"
+
+
+def party_again(pid, first):
+    """A later mention of a party already given in full in this document: its identifier and name only."""
+    idn = PARTY[pid]["identity"]
+    why = f"The same party as at {first}, where its full details are given; only its identifier and name are repeated."
+    out = {"PartyName": {"Name": V(idn["name"], why)}}
+    if idn.get("registry_id"):
+        out["PartyIdentification"] = {"ID": V(idn["registry_id"], why, schemeID=register_scheme(PARTY[pid]["c"]))}
+    return out
+
+
 def institution(pid):
     """The content of a cac:FinancialInstitution element, for a bank of the world."""
     p = PARTY[pid]
     idn = p["identity"]
     src = f"identity of {idn['name']} (world/parties.json)"
-    return {"ID": V(idn["bank_code"], f"The bank code, the part of every account number that names the bank; {src}."),
+    return {"_bank": pid,
+            "ID": V(idn["bank_code"], f"The bank code, the part of every account number that names the bank; {src}."),
             "Name": V(idn["name"], f"The bank; {src}.")}
+
+
+def institution_again(pid, first):
+    return {"ID": V(PARTY[pid]["identity"]["bank_code"], f"The same bank as at {first}, where its name is given; "
+                                                          "only its code is repeated.")}
 
 
 def account(pid, why):
@@ -199,14 +224,17 @@ def build(doc_type, content):
     nsmap = {None: f"urn:oasis:names:specification:ubl:schema:xsd:{doc_type}-2", "cac": NS_CAC, "cbc": NS_CBC}
     root = etree.Element(f"{{{nsmap[None]}}}{doc_type}", nsmap=nsmap)
     reasons = []
-    fill(root, doc_type, content, doc_type, reasons)
+    fill(root, doc_type, content, doc_type, reasons, {})
     return root, reasons
 
 
-def fill(el, abie, content, path, reasons):
+def fill(el, abie, content, path, reasons, seen):
+    """Write content under el. seen records where each party and bank was first given in full: in document
+    order, a later mention of the same party (or bank) holds only its identifier and name (or code)."""
     spec = MODEL["abies"][abie]
     bbies = {b[0]: b for b in spec["bbies"]}
     asbies = {a[0]: a for a in spec["asbies"]}
+    content = {k: v for k, v in content.items() if not k.startswith("_")}
     for name in content:
         if name not in bbies and name not in asbies:
             raise SystemExit(f"{path}/{name}: not in the UBL 2.5 model")
@@ -228,8 +256,15 @@ def fill(el, abie, content, path, reasons):
         if a[3].startswith(DEPRECATED) or MODEL["abies"][a[1]]["deprecated"]:
             raise SystemExit(f"{path}/{name}: deprecated in UBL 2.5")
         for sub in content[name] if isinstance(content[name], list) else [content[name]]:
+            here = f"{path}/{name}"
+            for key, again in (("_pid", party_again), ("_bank", institution_again)):
+                if key in sub:
+                    if sub[key] in seen:
+                        sub = again(sub[key], seen[sub[key]].split("/", 1)[1])
+                    else:
+                        seen[sub[key]] = here
             e = etree.SubElement(el, f"{{{NS_CAC}}}{name}")
-            fill(e, a[1], sub, f"{path}/{name}", reasons)
+            fill(e, a[1], sub, here, reasons, seen)
             if len(e) == 0:
                 raise SystemExit(f"{path}/{name}: empty element (UBL rule IND5)")
 

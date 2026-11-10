@@ -27,6 +27,8 @@ The manufacturer tells the mine which invoices the transfer pays. Both companies
 
 Inside `AccountingCustomerParty`:
 
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via delle Officine**  
@@ -60,6 +62,8 @@ Inside `AccountingCustomerParty`:
 
 Inside `AccountingSupplierParty`:
 
+- `Party/PartyIdentification/ID` = **XU-R-104137** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Serravona Mining (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Serravona Mining**  
   The trading name; identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Strada della Miniera**  
@@ -104,9 +108,7 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/ID` = **XU56CREV0000104729** (schemeID `urn:ubl-examples:world:account`)  
   The mine's account, as stated on its invoice. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **CREV**  
-  The bank code, the part of every account number that names the bank; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Crevalto Bank**  
-  The bank; identity of Crevalto Bank (world/parties.json).
+  The same bank as at PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution, where its name is given; only its code is repeated.
 
 ### Remittance Advice Line
 
@@ -134,6 +136,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalPaymentAmount currencyID="XUF">17297405</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
@@ -168,6 +173,9 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104137</cbc:ID>
+      </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Serravona Mining</cbc:Name>
       </cac:PartyName>
@@ -216,7 +224,6 @@ Inside `RemittanceAdviceLine`:
       <cac:FinancialInstitutionBranch>
         <cac:FinancialInstitution>
           <cbc:ID>CREV</cbc:ID>
-          <cbc:Name>Crevalto Bank</cbc:Name>
         </cac:FinancialInstitution>
       </cac:FinancialInstitutionBranch>
     </cac:PayeeFinancialAccount>

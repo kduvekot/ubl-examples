@@ -38,6 +38,17 @@ country rule or a specific process appears only as an illustration. For
 example, the quantity on an invoice for bulk ore is the weighed quantity
 from the despatch advice, not the ordered quantity, and its reason says so.
 
+## A party is described once per document
+
+A party often plays several roles in one document: the buyer of an order
+is usually also its delivery party. Its full details (address, tax number,
+legal registration, contact, electronic address) are given once, at its
+first place in the document. Every later mention of the same party holds
+only its identifier and its name: enough to identify it, and never empty,
+as UBL requires (rule IND5). The same applies to a bank named more than
+once. The identifier is the party's number in its country's company
+register, given as `PartyIdentification` with the register as its scheme.
+
 ## Only what UBL 2.5 endorses
 
 The documents use only endorsed document types and elements, and they are
