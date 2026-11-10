@@ -212,6 +212,9 @@ def place_parties(doc, content):
                 for sub in node[step]:
                     place_parties({"doc": target, "parties": {"/".join(steps[k + 1:]): pid}}, sub)
                 break
+            if last and isinstance(pid, list):                   # several parties in one role: one element each
+                node[step] = [party(x) if target == "Party" else {"Party": party(x)} for x in pid]
+                break
             if last:
                 if target == "Party":
                     block = party(pid)
@@ -362,7 +365,7 @@ def main(flow_id, check=False):
     return True
 
 
-FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail"]
+FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton"]
 
 
 if __name__ == "__main__":

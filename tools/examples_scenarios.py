@@ -386,3 +386,366 @@ def retail(n, doc):
 
 
 SCENARIOS.update({"rail": rail, "plastics": plastics, "retail": retail})
+
+
+# ---------------------------------------------------------------- the sea flow (Bayvarra -> Lisavu, CIF)
+SEA = kit.Flow("sea", "2026-05-04", [
+    {"item": "bench-serra-b", "ordered": 96, "why": "One 40-foot container: 24 pallets of 4 benches."},
+    {"item": "bench-casting-b", "ordered": 12, "why": "Spare side frames for the buyer's own service stock."}])
+CONTAINER = kit.container_number("TWL", 412087)       # Tidewell Ocean Lines' container (ISO 6346, with check digit)
+SEA_FREIGHT, INSURANCE = Decimal("2950.00"), Decimal("140.00")
+
+
+def cif_value(f):
+    goods = sum(Decimal(str(d["ordered"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])) for d in f.deal)
+    return goods + SEA_FREIGHT + INSURANCE
+
+
+def container(f, gross_why):
+    return {"TransportHandlingUnit": {"TransportEquipment": {
+        "ID": V(CONTAINER, "The container's number: the owner code of the ocean carrier, U for a freight container, six "
+                           "digits and the ISO 6346 check digit.", schemeID="ISO6346"),
+        "GrossWeightMeasure": qty(kit.gross_weight(f, "ordered") + 3750, "KGM", gross_why),
+        "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight, as marked on its door.")}}}
+
+
+def sea(n, doc):
+    f = SEA
+    w = kit.gross_weight(f, "ordered")
+    if doc["doc"] == "Catalogue":
+        return kit.catalogue(f, n, doc, 0, "The export catalogue for the island customer.",
+                             ["bench-serra-b", "bench-casting-b"], 180)
+    if doc["doc"] == "DigitalAgreement":
+        return {"ID": V(f.number("agreement", doc["from"], "DigitalAgreement"), "The agreement's number."),
+                "IssueDate": V(f.date(1), "Signed before the first order."),
+                "VersionID": V("1.0", "The first version of the agreement."),
+                "DigitalProcess": [{"ID": V(p, "A process the parties agree to exchange electronically."),
+                                    "Description": V(d, "What the process covers.")}
+                                   for p, d in (("ordering", "Order, order response and order change."),
+                                                ("billing", "Invoice, credit note, statement and remittance advice."))]}
+    if doc["doc"] == "DigitalCapability":
+        return {"ID": V(f.number("capability", doc["from"], "DigitalCapability"), "The governor's number."),
+                "IssueDate": V(f.date(1), "Sent when the buyer joins the agreement."),
+                "DigitalProcess": [{"ID": V(p, "A process the distributor supports."),
+                                    "Description": V(d, "What it covers.")}
+                                   for p, d in (("ordering", "Receives orders and order changes, sends order "
+                                                             "responses."),
+                                                ("billing", "Sends invoices and statements, receives remittance "
+                                                            "advices."))]}
+    if doc["doc"] == "Order":
+        return kit.order(f, n, doc, 3, "The island buyer orders benches for its city's parks.",
+                         "Cost, insurance and freight to the port of Selanu: the seller pays the sea freight and insures "
+                         "the cargo; the risk passes when the goods are on board in Lumeport.", "Port of Selanu",
+                         {"Delivery": {"DeliveryLocation": {"Description": V("Lanoro warehouse, Selanu",
+                                                                             "The buyer's 3PL, where the goods go after "
+                                                                             "customs clearance.")}}})
+    if doc["doc"] == "OrderResponse":
+        return kit.order_response(f, n, doc, 4, "The distributor accepts the order the next day.")
+    if doc["doc"] == "ForwardingInstructions" and doc["from"] == "6-xb":
+        return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The distributor's "
+                                                                                       "instruction number."),
+                "IssueDate": V(f.date(5), "The distributor instructs its forwarder once the order is accepted."),
+                "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
+                             "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
+                                                     "The consignment to be shipped.")},
+                             "InsurancePolicy": {
+                                 "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
+                                                              "CIF requires insurance of at least 110 % of the value; "
+                                                              "the CIF value is the goods, freight and insurance."),
+                                 "InsuranceTypeDescription": V("Cargo insurance, all risks", "The cover the forwarder "
+                                                                                            "is to arrange.")}}}
+    if doc["doc"] == "PackingList":
+        return {"ID": V(f.number("packing", doc["from"], "PackingList"), "The distributor's packing list number."),
+                "IssueDate": V(f.date(8), "Made when the container is packed."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment packed."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")},
+                             "GoodsItem": kit.goods_items(f, "XBL", "The value of the goods, in lume."),
+                             **container(f, "The verified gross mass: cargo and the container's own weight of 3,750 "
+                                            "kg.")}}
+    if doc["doc"] == "ExportCustomsDeclaration":
+        return kit.export_declaration(f, n, doc, 8, "The forwarder, as customs agent, declares the export at the "
+                                                    "seaport.", "The value of the goods at export, in lume.")
+    if doc["doc"] == "ForwardingInstructions":
+        return {"ID": V(f.number("instructions-carrier", doc["from"], "ForwardingInstructions"),
+                        "The forwarder's booking number with the ocean carrier."),
+                "IssueDate": V(f.date(6), "The forwarder books the container."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment booked."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")}}}
+    if doc["doc"] == "TransportationStatus" and doc["from"] == "16-xb":
+        return kit.transportation_status(f, n, doc, 10, "Reported when the container is on board.",
+                                         f"Container {CONTAINER} loaded on board.", "Port of Lumeport, container quay",
+                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The sea leg.")}}})
+    if doc["doc"] == "BillOfLading":
+        return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
+                "IssueDate": V(f.date(10), "Issued when the goods are shipped on board."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the cargo."),
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")},
+                             "InsurancePolicy": {"InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
+                                                                              "The insured value, 110 % of the CIF "
+                                                                              "value.")},
+                             **container(f, "The container's gross mass as declared.")}}
+    if doc["doc"] == "Manifest":
+        return {"ID": V(f.number("manifest", doc["from"], "Manifest"), "The carrier's cargo manifest number."),
+                "IssueDate": V(f.date(11), "Sent to the island's customs before arrival."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment on the manifest."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of this shipment.")}}
+    if doc["doc"] == "CommonTransportationReport":
+        return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
+                "IssueDate": V(f.date(12), "Sent before the ship enters the port of Selanu."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment the report is for."),
+                             "ShipmentStage": {"ID": V("1", "The sea leg to Selanu."),
+                                               "ISPSRequirements": {
+                                                   "ID": V("ISSC-XL-2026-0117", "The number of the ship's International "
+                                                                                 "Ship Security Certificate."),
+                                                   "ValidISSCIndicator": V("true", "The ship holds a valid security "
+                                                                                   "certificate."),
+                                                   "ISSCExpiryDate": V("2028-09-30", "The certificate is valid for five "
+                                                                                     "years from its issue."),
+                                                   "CurrentOperatingSecurityLevelCode": V("1", "Security level 1, the "
+                                                                                              "normal level.")}}}}
+    if doc["doc"] == "TransportationStatus":
+        return kit.transportation_status(f, n, doc, 14, "Reported when the container is discharged.",
+                                         f"Container {CONTAINER} discharged and available for customs clearance.",
+                                         "Port of Selanu", {"Consignment": {"MainCarriageShipmentStage": {
+                                             "ID": V("1", "The sea leg.")}}})
+    if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
+        return kit.invoice(f, n, doc, 15, 30, "Issued after the sailing.",
+                           {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
+                           [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container."},
+                            {"item": "export-clearance", "qty": 1, "invoice_why": "One export declaration."},
+                            {"item": "cargo-insurance", "qty": 1, "invoice_why": "Insurance of this shipment."}],
+                           key="forwarder-invoice",
+                           extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
+                                                                                   "The consignment shipped.")}}}})
+    if doc["doc"] == "ImportCustomsDeclaration":
+        return kit.import_declaration(f, n, doc, 15, "The customs broker declares the import for the buyer.",
+                                      "The customs value in coral: the goods' value in lume at the world's reference "
+                                      "rate (1 lume = 0.4 coral).",
+                                      {"ID": V(f.numbers["bl"], "The bill of lading of the goods.")})
+    if doc["doc"] == "DespatchAdvice":
+        return kit.despatch_advice(f, n, doc, 9, "Sent to the delivery party named in the order when the container "
+                                                 "leaves.", "The gross weight of the goods.")
+    if doc["doc"] == "ReceiptAdvice":
+        return kit.receipt_advice(f, n, doc, 17, "The buyer's 3PL confirms what arrived.")
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 10, 45, "Issued when the goods are on board.",
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
+                           charges=[{"like": "bench-serra-b", "reason": "Sea freight", "amount": SEA_FREIGHT,
+                                     "why": "Under CIF the seller pays the sea freight and charges it on the invoice.",
+                                     "amount_why": "The freight the forwarder charged for the container."},
+                                    {"like": "bench-serra-b", "reason": "Cargo insurance", "amount": INSURANCE,
+                                     "why": "Under CIF the seller insures the cargo and charges the insurance.",
+                                     "amount_why": "The premium of the cargo insurance."}])
+    if doc["doc"] == "Statement":
+        cur, total = "XBL", f.numbers["invoice-amount"]
+        return {"ID": V(f.number("statement", doc["from"], "Statement"), "The factor's statement number."),
+                "IssueDate": V(f.date(40), "The monthly statement of account."),
+                "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoices"),
+                "StatementLine": {"ID": V("1", "The open invoice."),
+                                  "DebitLineAmount": amount(total, cur, "The amount of the invoice, owed to the factor."),
+                                  "BalanceAmount": amount(total, cur, "Still open: nothing paid yet."),
+                                  "BillingReference": {"InvoiceDocumentReference": {
+                                      "ID": V(f.numbers["invoice"], "The distributor's invoice, which the factor "
+                                                                    "bought."),
+                                      "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}}}}
+    if doc["doc"] == "RemittanceAdvice":
+        return kit.remittance(f, n, doc, 52, "The buyer pays the factor, before the due date.")
+    raise SystemExit(f"sea scenario: no document {n} {doc['doc']}")
+
+
+# ---------------------------------------------------------------- the air flow (an urgent part, CPT airport)
+AIR = kit.Flow("air", "2026-05-11", [
+    {"item": "bench-casting-b", "ordered": 8, "why": "Eight side frames, needed before the ship arrives."}])
+
+
+def air(n, doc):
+    f = AIR
+    w = kit.gross_weight(f, "ordered")
+    if doc["doc"] == "OrderChange":
+        order = kit.order(f, n, doc, 0, "The buyer needs eight side frames urgently.",
+                          "Carriage paid to the island's airport for the urgent frames: the distributor pays the air "
+                          "freight; the rest of the order stays CIF by sea.", "Selanu airport, cargo terminal")
+        for k in ("TaxTotal", "AnticipatedMonetaryTotal"):
+            order.pop(k)
+        return {**order, "ID": V(f.number("order-change", doc["from"], "OrderChange"), "The number of this change."),
+                "SequenceNumberID": V("1", "The first change to the order."),
+                "OrderReference": {"ID": V(SEA.numbers["order"], "The order of the sea flow that this change "
+                                                                 "extends.")}}
+    if doc["doc"] == "OrderResponse":
+        out = kit.order_response(f, n, doc, 1, "The distributor accepts the change.")
+        out["OrderReference"] = {"ID": V(f.numbers["order-change"], "The order change this response answers.")}
+        return out
+    if doc["doc"] == "ForwardingInstructions":
+        return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
+                "IssueDate": V(f.date(1), "The distributor asks its forwarder to book air freight."),
+                "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the eight boxed frames."),
+                             "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
+                                                     "The consignment.")}}}
+    if doc["doc"] == "Waybill":
+        return kit.waybill(f, n, doc, 2, "The air waybill, issued when the airline accepts the cargo.", w,
+                           "The gross weight of the cargo.")
+    if doc["doc"] == "TransportationStatus" and doc["from"] == "17-xb":
+        return kit.transportation_status(f, n, doc, 2, "Reported when the cargo is built up for the flight.",
+                                         "Cargo accepted and built up for the flight.", "Lumeport airport, cargo "
+                                                                                        "terminal",
+                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}})
+    if doc["doc"] == "DespatchAdvice":
+        return kit.despatch_advice(f, n, doc, 2, "Sent to the buyer's 3PL when the cargo leaves.",
+                                   "The gross weight of the boxed frames.")
+    if doc["doc"] == "TransportationStatus":
+        return kit.transportation_status(f, n, doc, 3, "Reported when the cargo has landed.",
+                                         "Cargo arrived and ready for customs clearance.", "Selanu airport, cargo "
+                                                                                          "terminal",
+                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}})
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 4, 30, "Issued after the flight.",
+                           {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The air waybill.")}},
+                           [{"item": "air-freight", "qty": w, "invoice_why": "The chargeable weight: the gross weight "
+                                                                             "of the boxed frames."}],
+                           key="forwarder-invoice",
+                           extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
+                                                                                   "The consignment flown.")}}}})
+    raise SystemExit(f"air scenario: no document {n} {doc['doc']}")
+
+
+# ---------------------------------------------------------------- the cotton flow (Lisavu -> Bayvarra, FOB)
+COTTON = kit.Flow("cotton", "2026-02-02", [
+    {"item": "cotton-bale", "ordered": 6129, "why": "27 bales of about 227 kg: one container of lint."}])
+SEED_KG = 18000
+
+
+def cotton(n, doc):
+    f = COTTON
+    w = kit.gross_weight(f, "ordered")
+    farm_rows = [{"item": "seed-cotton", "qty": SEED_KG, "why": "The weighed seed cotton of three trailer loads."}]
+    if doc["doc"] == "Forecast":
+        return {"ID": V(f.number("forecast", doc["from"], "Forecast"), "The mill's forecast number."),
+                "IssueDate": V(f.date(0), "Sent at the start of the ginning season."),
+                "IssueTime": V("09:00:00", "The time is stated, because a revision refers to the forecast by its issue "
+                                           "date and time."),
+                "ForecastPurposeCode": V("Order", "A forecast of what the mill will order, so the ginnery can plan."),
+                "ForecastPeriod": {"StartDate": V(f.date(14), "The season's shipping period."),
+                                   "EndDate": V(f.date(120), "Its end.")},
+                "ForecastLine": {"ID": V("1", "The only line."),
+                                 "ForecastTypeCode": V("Total", "The total expected purchase in the period."),
+                                 "SalesItem": {"Quantity": qty(24000, "KGM", "About four containers of lint."),
+                                               "Item": item("cotton-bale")}}}
+    if doc["doc"] == "DeliveryNote":
+        return {"ID": V(f.number("delivery", doc["from"], "DeliveryNote"), "The farm's delivery note number."),
+                "IssueDate": V(f.date(3), "The day the trailers were weighed at the gin."),
+                "DespatchLine": {"ID": V("1", "The only line."),
+                                 "DeliveredQuantity": qty(SEED_KG, "KGM", "Weighed at the gin's weighbridge."),
+                                 "OrderLineReference": {"LineID": V("1", "The line of the season agreement between farm "
+                                                                         "and ginnery under which the cotton is "
+                                                                         "delivered.")},
+                                 "Item": item("seed-cotton")}}
+    if doc["doc"] == "SelfBilledInvoice":
+        return kit.self_billed(f, n, doc, 5, "The ginnery bills itself for the delivery, as the self-billing agreement "
+                                             "provides.", farm_rows,
+                               {"DespatchDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery "
+                                                                                             "note.")}})
+    if doc["doc"] == "SelfBilledCreditNote":
+        return kit.self_billed(f, n, doc, 12, "Issued after classing showed part of the delivery a grade lower.",
+                               [{"item": "seed-cotton", "qty": 2500, "unit_price": "0.030",
+                                 "unit_price_why": "The price difference between the agreed grade and the lower grade, "
+                                                   "per kilogram.", "why": "The part of the delivery classed lower."}],
+                               {"BillingReference": {"SelfBilledInvoiceDocumentReference": {
+                                   "ID": V(f.numbers["self-billed-3"], "The self-billed invoice this corrects."),
+                                   "IssueDate": V(f.numbers["self-billed-3-date"], "Its issue date.")}}}, credit=True)
+    if doc["doc"] == "RemittanceAdvice" and doc["from"] == "39-xl":
+        inv, cn = f.numbers["self-billed-3-amount"], f.numbers["self-billed-4-amount"]
+        return {"ID": V(f.number("remittance-farm", doc["from"], "RemittanceAdvice"), "The ginnery's remittance number."),
+                "IssueDate": V(f.date(14), "The ginnery pays the farm after classing."),
+                "DocumentCurrencyCode": kit.currency_line("XLC", "the island's currency"),
+                "TotalPaymentAmount": amount(inv - cn, "XLC", "The invoice minus the credit note."),
+                "PaymentMeans": {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.",
+                                                       listID="UN/EDIFACT EDED 4461"),
+                                 "PayerFinancialAccount": kit.account("39-xl", "The ginnery's account."),
+                                 "PayeeFinancialAccount": kit.account("38-xl", "The farm's account.")},
+                "RemittanceAdviceLine": [
+                    {"ID": V("1", "The self-billed invoice."),
+                     "DebitLineAmount": amount(inv, "XLC", "The amount of the self-billed invoice."),
+                     "BillingReference": {"SelfBilledInvoiceDocumentReference": {
+                         "ID": V(f.numbers["self-billed-3"], "The self-billed invoice paid.")}}},
+                    {"ID": V("2", "The self-billed credit note."),
+                     "CreditLineAmount": amount(cn, "XLC", "The amount credited, deducted from the payment."),
+                     "BillingReference": {"SelfBilledCreditNoteDocumentReference": {
+                         "ID": V(f.numbers["self-billed-4"], "The self-billed credit note set off.")}}}]}
+    if doc["doc"] == "ForecastRevision":
+        return {"ID": V(f.number("forecast-revision", doc["from"], "ForecastRevision"), "The revision's number."),
+                "IssueDate": V(f.date(20), "Demand for clothing has risen."),
+                "SequenceNumberID": V("1", "The first revision of the forecast."),
+                "ForecastPeriod": {"StartDate": V(f.date(14), "The same period."), "EndDate": V(f.date(120), "Its end.")},
+                "ForecastRevisionLine": {"ID": V("1", "The only line."),
+                                         "RevisedForecastLineID": V("1", "The forecast line revised."),
+                                         "SourceForecastIssueDate": V(f.date(0), "The issue date of the forecast "
+                                                                                 "revised."),
+                                         "SourceForecastIssueTime": V("09:00:00", "Its issue time."),
+                                         "SalesItem": {"Quantity": qty(30000, "KGM", "Raised to five containers."),
+                                                       "Item": item("cotton-bale")}}}
+    if doc["doc"] == "Order":
+        return kit.order(f, n, doc, 22, "The mill orders the first container of the season.",
+                         "Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk "
+                         "passes when the bales are on board.", "Port of Selanu")
+    if doc["doc"] == "ForwardingInstructions":
+        return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The mill's instruction "
+                                                                                       "number."),
+                "IssueDate": V(f.date(23), "Under FOB the buyer instructs the forwarder for the main carriage."),
+                "Shipment": {"ID": V(f.number("shipment", "39-xl", "Shipment"), "The shipment to be booked."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the bales."),
+                             "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
+                                                     "The consignment.")}}}
+    if doc["doc"] == "GoodsCertificate":
+        return {"ID": V(f.number("goods-certificate", doc["from"], "GoodsCertificate"), "The chamber's certificate "
+                                                                                       "number."),
+                "IssueDate": V(f.date(26), "Issued before shipment, at the ginnery's application."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment certified."),
+                             "GoodsItem": kit.goods_items(f, "XLC", "The value of the bales, in coral.")}}
+    if doc["doc"] == "ExportCustomsDeclaration":
+        return kit.export_declaration(f, n, doc, 27, "The island's export: declared before loading.",
+                                      "The value of the bales, in coral.")
+    if doc["doc"] == "WeightStatement":
+        return {"ID": V(f.number("vgm", doc["from"], "WeightStatement"), "The shipper's weight statement number."),
+                "IssueDate": V(f.date(27), "Declared before the container is loaded, as required for every packed "
+                                           "container."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment weighed."),
+                             "TransportHandlingUnit": {"TransportEquipment": {
+                                 "ID": V(kit.container_number("TWL", 412311), "The container, with its ISO 6346 check "
+                                                                              "digit.", schemeID="ISO6346"),
+                                 "GrossWeightMeasure": qty(w + 3750, "KGM", "The verified gross mass: the bales and the "
+                                                                            "container's own weight, weighed on the "
+                                                                            "port's weighbridge."),
+                                 "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight.")}}}}
+    if doc["doc"] == "BillOfLading":
+        return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
+                "IssueDate": V(f.date(28), "Issued when the bales are on board."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the bales."),
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")}}}
+    if doc["doc"] == "ImportCustomsDeclaration":
+        return kit.import_declaration(f, n, doc, 32, "The mill declares the bales in Bayvarra.",
+                                      "The customs value in lume: the value in coral at the world's reference rate "
+                                      "(1 lume = 0.4 coral, so 1 coral = 2.5 lume).",
+                                      {"ID": V(f.numbers["bl"], "The bill of lading.")})
+    if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
+        return kit.invoice(f, n, doc, 30, 30, "Issued after the sailing.",
+                           {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
+                           [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container, booked for the "
+                                                                             "mill under FOB."}],
+                           key="forwarder-invoice",
+                           extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
+                                                                                   "The consignment shipped.")}}}})
+    if doc["doc"] == "Invoice":
+        return kit.invoice(f, n, doc, 28, 30, "Issued when the bales are on board.",
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The mill's order.")}})
+    if doc["doc"] == "RemittanceAdvice":
+        return kit.remittance(f, n, doc, 55, "The mill pays the ginnery: money flows to the island.")
+    raise SystemExit(f"cotton scenario: no document {n} {doc['doc']}")
+
+
+SCENARIOS.update({"sea": sea, "air": air, "cotton": cotton})

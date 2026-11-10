@@ -24,7 +24,11 @@ CODES = {"Order": "PO", "OrderResponse": "OR", "OrderChange": "OC", "Invoice": "
          "TransportationStatus": "TS", "ExportCustomsDeclaration": "EX", "ImportCustomsDeclaration": "IM",
          "CertificateOfOrigin": "CO", "Shipment": "SH", "Consignment": "CS", "CustomsDeclaration": "CD",
          "Application": "AP", "TransitCustomsDeclaration": "TD", "Catalogue": "CAT", "Forecast": "FC",
-         "RetailEvent": "RE", "InventoryReport": "IR", "PurchaseReceipt": "PR"}
+         "RetailEvent": "RE", "InventoryReport": "IR", "PurchaseReceipt": "PR", "DigitalAgreement": "DAG",
+         "DigitalCapability": "DCP", "ForwardingInstructions": "FI", "PackingList": "PL", "BillOfLading": "BL",
+         "Manifest": "MF", "CommonTransportationReport": "CTR", "Statement": "ST", "DeliveryNote": "DN",
+         "SelfBilledInvoice": "SBI", "SelfBilledCreditNote": "SBC", "ForecastRevision": "FR", "GoodsCertificate": "GC",
+         "WeightStatement": "WS"}
 
 
 def initials(pid):
@@ -88,6 +92,9 @@ def tax_rule(seller, buyer, iid):
         if is_public(buyer):
             return ("E", 0, scheme, "A sale to a public body is exempt from the state sales tax (category E).",
                     "Sale to a public body")
+        if it["kind"] == "service":
+            return ("E", 0, scheme, "Bayvarra's sales tax is charged only on sales to final consumers; a service to a "
+                                    "business is exempt (category E).", "Service to a business")
         return ("E", 0, scheme, "A sale to a business that resells or processes the goods is exempt from the state sales "
                                 "tax, which is charged only on the sale to the final consumer (category E).",
                 "Sale for resale or manufacture")
@@ -135,13 +142,19 @@ def tax_total(rows, currency):
     return total, {"TaxAmount": amount(total, currency, "The sum of the tax of all categories."), "TaxSubtotal": subs}
 
 
-def monetary_total(base, tax, currency):
-    return {"LineExtensionAmount": amount(base, currency, "The sum of the line amounts."),
-            "TaxExclusiveAmount": amount(base, currency, "The total without tax: the line amounts, no allowances or "
-                                                         "charges."),
-            "TaxInclusiveAmount": amount(base + tax, currency, "The total without tax plus the tax."),
-            "PayableAmount": amount(base + tax, currency, "What the buyer is to pay; stated, not left to be calculated "
-                                                          "(UBL 2.5, 2.2.2 Manifest Values).")}
+def monetary_total(base, tax, currency, charges=Decimal(0)):
+    out = {"LineExtensionAmount": amount(base, currency, "The sum of the line amounts.")}
+    if charges:
+        out["TaxExclusiveAmount"] = amount(base + charges, currency, "The line amounts plus the charges, without tax.")
+    else:
+        out["TaxExclusiveAmount"] = amount(base, currency, "The total without tax: the line amounts, no allowances or "
+                                                           "charges.")
+    out["TaxInclusiveAmount"] = amount(base + charges + tax, currency, "The total without tax plus the tax.")
+    if charges:
+        out["ChargeTotalAmount"] = amount(charges, currency, "The sum of the charges at document level.")
+    out["PayableAmount"] = amount(base + charges + tax, currency, "What the buyer is to pay; stated, not left to be "
+                                                                  "calculated (UBL 2.5, 2.2.2 Manifest Values).")
+    return out
 
 
 def currency_of(pid):
@@ -232,7 +245,7 @@ def gross_weight(flow, which):
     return sum(Decimal(str(d[which])) * Decimal(str(ITEM[d["item"]].get("gross_kg", 0))) for d in flow.deal)
 
 
-def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="invoice", extra=None):
+def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="invoice", extra=None, charges=None):
     """A commercial invoice from the seller (doc['from']) to the buyer; rows_spec overrides the deal."""
     seller, buyer = doc["from"], doc["to"]
     cur = currency_of(seller)
@@ -243,7 +256,9 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])),
                                                    cur), tax_rule(seller, buyer, d["item"])) for d in rows_spec]
     base = sum(r[2] for r in rows)
-    tax, total = tax_total(rows, cur)
+    charge_rows = [({"item": c["like"]}, None, money(Decimal(str(c["amount"])), cur), tax_rule(seller, buyer, c["like"]))
+                   for c in (charges or [])]
+    tax, total = tax_total(rows + charge_rows, cur)
     out = {
         "ID": V(flow.number(key, seller, "Invoice"), "The seller's invoice number."),
         "IssueDate": V(flow.date(day), why_date),
@@ -257,7 +272,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
                                   listID="UN/EDIFACT EDED 4461"),
             "PayeeFinancialAccount": account(doc["parties"].get("PayeeParty", seller), "The account to pay to.")},
         "TaxTotal": total,
-        "LegalMonetaryTotal": monetary_total(base, tax, cur),
+        "LegalMonetaryTotal": monetary_total(base, tax, cur, sum(r[2] for r in charge_rows)),
         "InvoiceLine": [{
             "ID": V(str(i), "The line number."),
             "InvoicedQuantity": qty(q, ITEM[d["item"]]["unit"], d.get("invoice_why", "The quantity delivered.")),
@@ -266,7 +281,12 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "Item": item(d["item"], tax_category(rule)),
             "Price": price_block(d["item"])} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
-    flow.numbers[f"{key}-amount"] = base + tax
+    if charges:
+        out["AllowanceCharge"] = [{"ChargeIndicator": V("true", "A charge, not an allowance: it adds to the amount."),
+                                   "AllowanceChargeReason": V(c["reason"], c["why"]),
+                                   "Amount": amount(c["amount"], cur, c["amount_why"]),
+                                   "TaxCategory": tax_category(r[3])} for c, r in zip(charges, charge_rows)]
+    flow.numbers[f"{key}-amount"] = base + sum(r[2] for r in charge_rows) + tax
     flow.numbers[f"{key}-date"] = flow.date(day)
     flow.numbers[f"{key}-currency"] = cur
     return merge_extra(out, extra)
@@ -412,8 +432,7 @@ def transportation_status(flow, n, doc, day, event_why, description, location, e
 def credit_note(flow, n, doc, day, why, rows_spec, refs):
     seller, buyer = doc["from"], doc["to"]
     cur = currency_of(seller)
-    rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])),
-                                               cur), tax_rule(seller, buyer, d["item"])) for d in rows_spec]
+    rows = spec_rows(rows_spec, seller, buyer, cur)
     base = sum(r[2] for r in rows)
     tax, total = tax_total(rows, cur)
     return {"ID": V(flow.number(f"credit-{n}", seller, "CreditNote"), "The seller's credit note number."),
@@ -428,6 +447,22 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs):
                                 "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
                                 "Item": item(d["item"], tax_category(rule)),
                                 "Price": price_block(d["item"])} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+
+
+def spec_rows(rows_spec, seller, buyer, cur):
+    """Rows from an explicit list: item, quantity and, for a price difference, an own unit price."""
+    out = []
+    for d in rows_spec:
+        p = Decimal(str(d.get("unit_price", ITEM[d["item"]]["price"]["amount"])))
+        out.append((d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * p, cur), tax_rule(seller, buyer, d["item"])))
+    return out
+
+
+def line_price(d, cur):
+    if "unit_price" in d:
+        return {"PriceAmount": price(d["unit_price"], cur, d["unit_price_why"]),
+                "BaseQuantity": qty(1, ITEM[d["item"]]["unit"], "The price is per one unit.")}
+    return price_block(d["item"])
 
 
 def catalogue(flow, n, doc, day, why, items, validity_days):
@@ -462,3 +497,48 @@ def purchase_receipt(flow, n, doc, day, why, rows_spec, cash):
                                                                              "the sales tax."),
                                      "Item": item(d["item"], tax_category(rule)),
                                      "Price": price_block(d["item"])} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+
+
+
+# ---------------------------------------------------------------- self-billing (the customer writes the document)
+def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
+    """A self-billed invoice or credit note: written by the customer (doc['from']) on behalf of the supplier."""
+    customer, supplier = doc["from"], doc["to"]
+    cur = currency_of(supplier)
+    rows = spec_rows(rows_spec, supplier, customer, cur)
+    base = sum(r[2] for r in rows)
+    tax, total = tax_total(rows, cur)
+    line, qname = ("CreditNoteLine", "CreditedQuantity") if credit else ("InvoiceLine", "InvoicedQuantity")
+    out = {"ID": V(flow.number(f"self-billed-{n}", customer, "SelfBilledCreditNote" if credit else "SelfBilledInvoice"),
+                   "The number the customer gives the self-billed document, under the self-billing agreement."),
+           "IssueDate": V(flow.date(day), why),
+           "DocumentCurrencyCode": currency_line(cur, "the supplier's currency"),
+           **refs,
+           "TaxTotal": total,
+           "LegalMonetaryTotal": monetary_total(base, tax, cur),
+           line: [{"ID": V(str(i), "The line number."),
+                   qname: qty(q, ITEM[d["item"]]["unit"], d["why"]),
+                   "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
+                   "Item": item(d["item"], tax_category(rule)),
+                   "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+    if not credit:
+        out["InvoiceTypeCode"] = V("389", "UN/EDIFACT 1001 code 389: self-billed invoice.")
+        out["PaymentMeans"] = {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.",
+                                                     listID="UN/EDIFACT EDED 4461"),
+                               "PayeeFinancialAccount": account(supplier, "The supplier's account, where the customer "
+                                                                          "pays what it billed itself.")}
+    else:
+        out["CreditNoteTypeCode"] = V("261", "UN/EDIFACT 1001 code 261: self-billed credit note.")
+    flow.numbers[f"self-billed-{n}-amount"] = base + tax
+    flow.numbers[f"self-billed-{n}-date"] = flow.date(day)
+    return out
+
+
+# ---------------------------------------------------------------- containers
+def container_number(owner, serial):
+    """An ISO 6346 container number: owner code, U (freight container), six digits and the check digit."""
+    values = {c: v for c, v in zip("ABCDEFGHIJKLMNOPQRSTUVWXYZ", [10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25,
+                                                                   26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38])}
+    code = f"{owner}U{serial:06d}"
+    total = sum((values[c] if c.isalpha() else int(c)) * 2 ** i for i, c in enumerate(code))
+    return f"{code}{total % 11 % 10}"
