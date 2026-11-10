@@ -2,9 +2,17 @@
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-PO-26-0127</cbc:ID>
+  <cbc:UUID>96cdcd1a-b60b-535b-b857-023213a9b16e</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>

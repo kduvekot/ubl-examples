@@ -2,9 +2,16 @@
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-PO-26-0197</cbc:ID>
+  <cbc:UUID>ae776d06-38fa-5aaf-bb6f-68a20f9b7dff</cbc:UUID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>

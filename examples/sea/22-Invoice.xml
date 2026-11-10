@@ -2,11 +2,20 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-INV-26-0147</cbc:ID>
+  <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:DueDate>2026-06-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -332,8 +341,28 @@
       </cac:ElectronicAddress>
     </cac:DeliveryParty>
   </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
+    <cbc:PaymentID>RF20LDINV260147</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
       <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
@@ -362,6 +391,38 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>DEPOSIT</cbc:ID>
+    <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
+    <cbc:ReferenceEventCode>OrderAccepted</cbc:ReferenceEventCode>
+    <cbc:PaymentPercent>18.59</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
+    <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
+  </cac:PaymentTerms>
+  <cac:PaymentTerms>
+    <cbc:ID>BALANCE</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:ReferenceEventCode>Shipment</cbc:ReferenceEventCode>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PaymentPercent>81.41</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">43778.00</cbc:Amount>
+    <cbc:PenaltyAmount currencyID="XBL">656.67</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
+    <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-06-29</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
+  <cac:PrepaidPayment>
+    <cbc:ID>VT-DEP-26-0412</cbc:ID>
+    <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
+    <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+    <cbc:PaidDate>2026-05-08</cbc:PaidDate>
+    <cbc:InstructionID>VT-PAY-26-0077</cbc:InstructionID>
+  </cac:PrepaidPayment>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
@@ -388,6 +449,13 @@
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
+  <cac:PaymentAlternativeExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-05-14</cbc:Date>
+  </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -408,12 +476,17 @@
     <cbc:TaxExclusiveAmount currencyID="XBL">53778.00</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="XBL">53778.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">53778.00</cbc:PayableAmount>
+    <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
+    <cbc:PayableAmount currencyID="XBL">43778.00</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">17511.200</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="H87">96</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -608,6 +681,9 @@
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="H87">12</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

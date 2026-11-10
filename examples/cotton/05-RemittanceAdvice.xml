@@ -2,7 +2,10 @@
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-RM-26-0195</cbc:ID>
+  <cbc:UUID>9639158a-259f-55f7-8e76-a4797f59548c</cbc:UUID>
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XLC">3993.000</cbc:TotalPaymentAmount>

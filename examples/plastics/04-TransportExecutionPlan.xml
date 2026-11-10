@@ -2,7 +2,10 @@
 <TransportExecutionPlan xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FB-TEP-26-0886</cbc:ID>
+  <cbc:UUID>32791589-65d7-5d36-bda8-9b68dad29bdd</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>

@@ -2,7 +2,10 @@
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TH-WB-26-0159</cbc:ID>
+  <cbc:UUID>4891662e-273a-5190-9aa7-edb87e35d8b5</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>

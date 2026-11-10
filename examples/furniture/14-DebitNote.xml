@@ -2,14 +2,30 @@
 <DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
+  <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:DueDate>2026-06-03</cbc:DueDate>
+  <cbc:Note>The furniture maker asked for the sets back; the store charges the transport.</cbc:Note>
+  <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:OrderReference>
+    <cbc:ID>BS-PO-26-0574</cbc:ID>
+  </cac:OrderReference>
   <cac:BillingReference>
     <cac:CreditNoteDocumentReference>
       <cbc:ID>BF-CN-26-0579</cbc:ID>
     </cac:CreditNoteDocumentReference>
   </cac:BillingReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-DOC-26-0578</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -190,6 +206,47 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
+    <cbc:PaymentID>RF86BSDOC260580</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB79BLUM0001570935</cbc:ID>
+      <cbc:Name>Brightmarket Stores Corp</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice BS-DOC-26-0580</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>30 days net.</cbc:Note>
+    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -211,8 +268,12 @@
   </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Collected with the store's van.</cbc:Note>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description>Transport of returned goods back to the supplier, per delivery.</cbc:Description>
       <cbc:Name>Return transport</cbc:Name>

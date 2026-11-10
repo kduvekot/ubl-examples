@@ -2,9 +2,13 @@
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-OR-26-0150</cbc:ID>
+  <cbc:UUID>1146579f-1ec8-554d-82aa-cfc09cc9d888</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
-  <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
+  <cbc:OrderResponseCode>CA</cbc:OrderResponseCode>
+  <cbc:Note>Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.</cbc:Note>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>
@@ -230,4 +234,65 @@
       </cac:EstimatedDespatchPeriod>
     </cac:Despatch>
   </cac:Delivery>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+      <cbc:Quantity unitCode="H87">96</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-B180</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cbc:SubstitutionStatusCode>Substitution</cbc:SubstitutionStatusCode>
+    <cbc:Note>Same fit and price; the old casting is no longer made.</cbc:Note>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
+      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-C180</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+    <cac:SellerProposedSubstituteLineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting, 2025, from stock</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-C180</cbc:ID>
+          <cbc:ExtendedID>2025</cbc:ExtendedID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:SellerProposedSubstituteLineItem>
+    <cac:SellerSubstitutedLineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XUF">5980</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting, 2026</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-C180</cbc:ID>
+          <cbc:ExtendedID>2026</cbc:ExtendedID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:SellerSubstitutedLineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+      <cbc:SalesOrderLineID>2</cbc:SalesOrderLineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
 </OrderResponse>

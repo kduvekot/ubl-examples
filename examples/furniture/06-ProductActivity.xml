@@ -2,7 +2,10 @@
 <ProductActivity xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProductActivity-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0572</cbc:ID>
+  <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cac:ActivityPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>

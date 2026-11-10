@@ -2,9 +2,16 @@
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+  <cbc:UUID>79d5286c-bb4d-5697-8d30-f0cc964b8ddf</cbc:UUID>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

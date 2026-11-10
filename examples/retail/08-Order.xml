@@ -2,9 +2,37 @@
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-PO-26-0224</cbc:ID>
+  <cbc:UUID>38f1ecfc-42b0-532a-921c-171e17782563</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
+  <cbc:IssueTime>08:15:00</cbc:IssueTime>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:ValidityPeriod>
+    <cbc:EndDate>2026-04-26</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:CatalogueReference>
+    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+  </cac:CatalogueReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BS-RE-26-0222</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0424</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -212,6 +240,24 @@
       <cbc:Description>Brightmarket Stores, goods-in, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>30 days net, as agreed with the distributor.</cbc:Note>
+  </cac:PaymentTerms>
+  <cac:TransactionConditions>
+    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:ActionCode>Accepted</cbc:ActionCode>
+  </cac:TransactionConditions>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -229,7 +275,8 @@
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">12480.00</cbc:PayableAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">624.00</cbc:AllowanceTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">11856.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -424,5 +471,19 @@
         </cac:CircularityProfile>
       </cac:Item>
     </cac:LineItem>
+    <cac:BuyerProposedSubstituteLineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">24</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180, moss green</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ExtendedID>GRN</cbc:ExtendedID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:BuyerProposedSubstituteLineItem>
+    <cac:CatalogueLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:CatalogueLineReference>
   </cac:OrderLine>
 </Order>

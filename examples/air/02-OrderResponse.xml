@@ -2,7 +2,10 @@
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
+  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-OR-26-0321</cbc:ID>
+  <cbc:UUID>bb1366b0-cfa6-5b51-b032-09e912dd0b93</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>

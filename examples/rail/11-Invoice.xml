@@ -2,12 +2,20 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-INV-26-0337</cbc:ID>
+  <cbc:UUID>4e437657-fd23-506f-a503-988422d5e64c</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
   <cbc:DueDate>2026-05-17</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Delivered at place: the price includes the carriage to the siding.</cbc:Note>
+  <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0325</cbc:ID>
   </cac:OrderReference>
@@ -222,7 +230,15 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF20VIINV260337</cbc:InstructionNote>
+    <cbc:PaymentID>RF20VIINV260337</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU20CREV0000209458</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
@@ -251,6 +267,24 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XUF">191616</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-04-17</cbc:StartDate>
+      <cbc:EndDate>2026-04-27</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -276,6 +310,9 @@
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="H87">192</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">9580800</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

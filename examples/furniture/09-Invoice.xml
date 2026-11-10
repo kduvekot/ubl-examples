@@ -2,11 +2,18 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-INV-26-0575</cbc:ID>
+  <cbc:UUID>a4b6b0fa-d2df-5444-8c02-41ff99bd3bac</cbc:UUID>
   <cbc:IssueDate>2026-03-22</cbc:IssueDate>
   <cbc:DueDate>2026-04-21</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
@@ -211,7 +218,14 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-21</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF74BFINV260575</cbc:InstructionNote>
+    <cbc:PaymentID>RF74BFINV260575</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB41BLUM0004503347</cbc:ID>
       <cbc:Name>Brackenmere Furniture Ltd</cbc:Name>
@@ -240,6 +254,19 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">183.00</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.brackenmere.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-21</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-04-22</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -299,5 +326,33 @@
       <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:SubInvoiceLine>
+      <cbc:ID>1.1</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">20</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-GS-01-B</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      </cac:Price>
+    </cac:SubInvoiceLine>
+    <cac:SubInvoiceLine>
+      <cbc:ID>1.2</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">40</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Garden chair Marrow</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-GS-01-C</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      </cac:Price>
+    </cac:SubInvoiceLine>
   </cac:InvoiceLine>
 </Invoice>

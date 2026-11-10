@@ -2,7 +2,10 @@
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-DA-26-0633</cbc:ID>
+  <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>

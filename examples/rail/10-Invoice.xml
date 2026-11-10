@@ -2,11 +2,19 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-INV-26-0336</cbc:ID>
+  <cbc:UUID>f02614a5-c969-547f-8808-35c583fe56d6</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
   <cbc:DueDate>2026-05-17</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-WB-26-0334</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -211,7 +219,14 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF13FRCINV260336</cbc:InstructionNote>
+    <cbc:PaymentID>RF13FRCINV260336</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU09CREV0000523645</cbc:ID>
       <cbc:Name>Ferrano Rail Cargo SRU</cbc:Name>
@@ -240,6 +255,24 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XUF">2621</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.ferranorail.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-04-17</cbc:StartDate>
+      <cbc:EndDate>2026-04-27</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">21840</cbc:TaxAmount>
     <cac:TaxSubtotal>

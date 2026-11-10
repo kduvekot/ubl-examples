@@ -2,7 +2,10 @@
 <InvoiceStatusResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:InvoiceStatusResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-DOC-26-0149</cbc:ID>
+  <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>

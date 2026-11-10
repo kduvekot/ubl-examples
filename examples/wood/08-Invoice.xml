@@ -2,11 +2,18 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-INV-26-0635</cbc:ID>
+  <cbc:UUID>ae3fabe1-02f6-56f3-a403-bd58b53f0ab9</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:DueDate>2026-03-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>
@@ -216,7 +223,15 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-03-28</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF83MSINV260635</cbc:InstructionNote>
+    <cbc:PaymentID>RF83MSINV260635</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM0004398618</cbc:ID>
       <cbc:Name>Marrowdale Sawmill Ltd</cbc:Name>
@@ -245,6 +260,19 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">518.40</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-03-28</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-03-29</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

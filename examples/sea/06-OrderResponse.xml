@@ -2,12 +2,29 @@
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-OR-26-0128</cbc:ID>
+  <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
+  <cbc:UUID>df6ccf81-d94b-523e-8f0a-e86231966bf9</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
+  <cbc:IssueTime>09:30:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
+  <cbc:Note>Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.</cbc:Note>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:TotalPackagesQuantity unitCode="H87">108</cbc:TotalPackagesQuantity>
+  <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
+  <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
+  <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:Contract>
+    <cbc:ID>LD-DAG-26-0125</cbc:ID>
+    <cbc:ContractType>Digital trade agreement</cbc:ContractType>
+  </cac:Contract>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -165,4 +182,196 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF41LDSO260123</cbc:InstructionNote>
+    <cbc:PaymentID>RF41LDSO260123</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
+      <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice LD-SO-26-0123</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>DEPOSIT</cbc:ID>
+    <cbc:Note>Deposit due on acceptance.</cbc:Note>
+    <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
+    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
+  <cac:TransactionConditions>
+    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:Description>Sold to trade customers only.</cbc:Description>
+  </cac:TransactionConditions>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">50688.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">50688.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">50688.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
+      <cbc:Note>Confirmed as ordered.</cbc:Note>
+      <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+      <cbc:Quantity unitCode="H87">96</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+      <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
+      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-14</cbc:StartDate>
+          <cbc:EndDate>2026-05-18</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+    </cac:LineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:Note>Confirmed as ordered.</cbc:Note>
+      <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">768.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+      <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
+      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-14</cbc:StartDate>
+          <cbc:EndDate>2026-05-18</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10443</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+    </cac:LineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
 </OrderResponse>

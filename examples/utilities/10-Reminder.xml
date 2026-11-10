@@ -2,9 +2,19 @@
 <Reminder xmlns="urn:oasis:names:specification:ubl:schema:xsd:Reminder-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
+  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>CSWC-DOC-26-0321</cbc:ID>
+  <cbc:UUID>ff7b6a47-db42-5844-b098-ee8d7f1a7e38</cbc:UUID>
   <cbc:IssueDate>2026-05-01</cbc:IssueDate>
+  <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
+  <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
+  <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:ReminderPeriod>
+    <cbc:StartDate>2026-04-23</cbc:StartDate>
+    <cbc:EndDate>2026-05-01</cbc:EndDate>
+  </cac:ReminderPeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -144,16 +154,30 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="XBL">32.90</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">43.78</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">43.78</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">32.90</cbc:DebitLineAmount>
+    <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
+    <cbc:DebitLineAmount currencyID="XBL">38.78</cbc:DebitLineAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
+    <cac:ReminderPeriod>
+      <cbc:StartDate>2026-04-23</cbc:StartDate>
+    </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>CSWC-INV-26-0319</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+  </cac:ReminderLine>
+  <cac:ReminderLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
+    <cbc:AccountingCostCode>8320</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Reminder fees</cbc:AccountingCost>
+    <cbc:PenaltySurchargePercent>0</cbc:PenaltySurchargePercent>
+    <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
   </cac:ReminderLine>
 </Reminder>

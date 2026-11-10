@@ -2,7 +2,10 @@
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-FI-26-0137</cbc:ID>
+  <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
   <cbc:IssueDate>2026-05-10</cbc:IssueDate>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

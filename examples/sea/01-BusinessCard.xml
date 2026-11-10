@@ -2,7 +2,10 @@
 <BusinessCard xmlns="urn:oasis:names:specification:ubl:schema:xsd:BusinessCard-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0123</cbc:ID>
+  <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

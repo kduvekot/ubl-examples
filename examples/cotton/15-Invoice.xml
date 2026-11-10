@@ -2,11 +2,18 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-INV-26-0208</cbc:ID>
+  <cbc:UUID>daf1a713-cff7-51df-92eb-5540cd00d87b</cbc:UUID>
   <cbc:IssueDate>2026-03-04</cbc:IssueDate>
   <cbc:DueDate>2026-04-03</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0205</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -290,7 +297,14 @@
     </cac:Shipment>
   </cac:Delivery>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-03</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF89BFINV260208</cbc:InstructionNote>
+    <cbc:PaymentID>RF89BFINV260208</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB10BLUM0002618225</cbc:ID>
       <cbc:Name>Bayforth Forwarding Ltd</cbc:Name>
@@ -319,6 +333,19 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">44.25</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.bayforth.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-03</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-04-04</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

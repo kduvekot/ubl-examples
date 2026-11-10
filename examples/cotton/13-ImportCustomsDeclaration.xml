@@ -2,7 +2,10 @@
 <ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-IM-26-0206</cbc:ID>
+  <cbc:UUID>fe5926c9-1714-5ac7-a08f-f5b1b1c97285</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>

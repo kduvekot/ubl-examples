@@ -2,7 +2,10 @@
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-RM-26-0166</cbc:ID>
+  <cbc:UUID>5d324406-618b-5169-8bce-e128a07f2637</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
@@ -198,6 +201,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionID>LD-PAY-26-0149</cbc:InstructionID>
+    <cbc:PaymentID>RF35VIINV260164</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
@@ -254,6 +259,9 @@
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XUF">4862160</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
+    <cbc:InvoicingPartyReference>RF35VIINV260164</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0164</cbc:ID>

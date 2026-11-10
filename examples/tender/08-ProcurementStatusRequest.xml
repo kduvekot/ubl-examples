@@ -2,7 +2,10 @@
 <ProcurementStatusRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProcurementStatusRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0194</cbc:ID>
+  <cbc:UUID>d56f561d-6196-5f1c-88f8-b1e34accd398</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cac:ContractingParty>

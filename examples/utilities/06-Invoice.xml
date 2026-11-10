@@ -2,11 +2,24 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
+  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+  <cbc:UUID>4c1bf28b-075a-5826-abaf-d62f14b2f8da</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+    <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+    <cbc:Description>March 2026</cbc:Description>
+  </cac:InvoicePeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -209,7 +222,14 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF03CSWCINV260317</cbc:InstructionNote>
+    <cbc:PaymentID>RF03CSWCINV260317</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB52BLUM0004189160</cbc:ID>
       <cbc:Name>Coastal State Water Company Ltd</cbc:Name>
@@ -238,6 +258,19 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">3.57</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.coastalwater.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-04-24</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -252,17 +285,36 @@
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">36.12</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">202.10</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">202.10</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">238.22</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">238.22</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">238.22</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">238.22</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
     <cac:Item>
       <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
       <cbc:Name>Drinking water</cbc:Name>
@@ -280,6 +332,46 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:CollectedForParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:CollectedForParty>
+    <cac:Item>
+      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
+      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>CSW-LEVY</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

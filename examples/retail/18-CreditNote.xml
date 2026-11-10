@@ -2,16 +2,34 @@
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-CN-26-0236</cbc:ID>
+  <cbc:UUID>9746d03d-d7e2-50c6-acf8-6b1c5d539f7e</cbc:UUID>
   <cbc:IssueDate>2026-05-02</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:DiscrepancyResponse>
+    <cbc:ReferenceID>1</cbc:ReferenceID>
+    <cbc:ResponseCode>CN</cbc:ResponseCode>
+    <cbc:Description>One bench refused at goods-in, damaged in transit.</cbc:Description>
+  </cac:DiscrepancyResponse>
+  <cac:OrderReference>
+    <cbc:ID>BS-PO-26-0224</cbc:ID>
+  </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>LD-INV-26-0235</cbc:ID>
       <cbc:IssueDate>2026-04-30</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>LD-DA-26-0229</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:ReceiptDocumentReference>
     <cbc:ID>BS-RA-26-0234</cbc:ID>
   </cac:ReceiptDocumentReference>
@@ -304,10 +322,13 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:PaymentTerms>
+    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">520.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">494.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -320,15 +341,37 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">520.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">520.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">520.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">494.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">494.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">494.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DiscrepancyResponse>
+      <cbc:ReferenceID>1</cbc:ReferenceID>
+      <cbc:ResponseCode>Damaged</cbc:ResponseCode>
+    </cac:DiscrepancyResponse>
+    <cac:ReceiptLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>BS-RA-26-0234</cbc:ID>
+      </cac:DocumentReference>
+    </cac:ReceiptLineReference>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0235</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

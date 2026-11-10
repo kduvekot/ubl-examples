@@ -2,17 +2,27 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-INV-26-0235</cbc:ID>
+  <cbc:UUID>cae87fb6-c5ae-5ec4-95e7-3ff1a551ef34</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>BS-RA-26-0234</cbc:ID>
+  </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -303,7 +313,14 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF69LDINV260235</cbc:InstructionNote>
+    <cbc:PaymentID>RF69LDINV260235</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
       <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
@@ -332,6 +349,35 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">177.84</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-05-31</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID>E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -349,9 +395,10 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">12480.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">12480.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">12480.00</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">11856.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">11856.00</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">624.00</cbc:AllowanceTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">11856.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

@@ -2,7 +2,10 @@
 <CatalogueDeletion xmlns="urn:oasis:names:specification:ubl:schema:xsd:CatalogueDeletion-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0237</cbc:ID>
+  <cbc:UUID>3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29</cbc:UUID>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>

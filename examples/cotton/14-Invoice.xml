@@ -2,11 +2,18 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-INV-26-0207</cbc:ID>
+  <cbc:UUID>4f18c6ce-24a6-56a3-a394-583665232c05</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:DueDate>2026-04-01</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>LTM-PO-26-0197</cbc:ID>
   </cac:OrderReference>
@@ -184,7 +191,15 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-01</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF30SCGINV260207</cbc:InstructionNote>
+    <cbc:PaymentID>RF30SCGINV260207</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL66BSEL0004922263</cbc:ID>
       <cbc:Name>Selanu Cotton Ginnery Ltd</cbc:Name>
@@ -213,6 +228,18 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XL-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>45 days net.</cbc:Note>
+    <cbc:PaymentTermsDetailsURI>https://www.selanuginnery.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-01</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -237,6 +264,9 @@
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KGM">6129</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">6055.452</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
       <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>

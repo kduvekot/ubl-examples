@@ -2,10 +2,13 @@
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
+  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
+  <cbc:IssueDate>2026-04-10</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XUF">14132664</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">14189687</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -190,6 +193,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionID>VI-PAY-26-0313</cbc:InstructionID>
+    <cbc:PaymentID>RF58FEINV260313</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU20CREV0000209458</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
@@ -245,7 +250,12 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XUF">14132664</cbc:DebitLineAmount>
+    <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>
+    <cbc:DebitLineAmount currencyID="XUF">14479272</cbc:DebitLineAmount>
+    <cbc:CreditLineAmount currencyID="XUF">289585</cbc:CreditLineAmount>
+    <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
+    <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>FE-INV-26-0313</cbc:ID>

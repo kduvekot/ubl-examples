@@ -2,7 +2,10 @@
 <TransportExecutionPlan xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+  <cbc:UUID>eb749a49-fd81-59f8-9c7a-8cb356fa55f1</cbc:UUID>
   <cbc:IssueDate>2026-04-08</cbc:IssueDate>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>

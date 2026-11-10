@@ -2,14 +2,27 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-INV-26-0583</cbc:ID>
+  <cbc:UUID>fd8a81de-9573-5186-80c9-8de9f5f56682</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:DueDate>2026-05-09</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0581</cbc:ID>
   </cac:OrderReference>
+  <cac:WorkReportDocumentReference>
+    <cbc:ID>BF-DOC-26-0582</cbc:ID>
+  </cac:WorkReportDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
+  </cac:ProjectReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -198,7 +211,14 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF52BFINV260583</cbc:InstructionNote>
+    <cbc:PaymentID>RF52BFINV260583</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB41BLUM0004503347</cbc:ID>
       <cbc:Name>Brackenmere Furniture Ltd</cbc:Name>
@@ -227,6 +247,19 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">89.28</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.brackenmere.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-05-10</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -296,8 +329,19 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Two installers, seven hours.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="HUR">14</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-04-08</cbc:StartDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
+    </cac:InvoicePeriod>
+    <cac:WorkReportLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>BF-DOC-26-0582</cbc:ID>
+      </cac:DocumentReference>
+    </cac:WorkReportLineReference>
     <cac:Item>
       <cbc:Description>Installation of furniture on site, per hour per installer.</cbc:Description>
       <cbc:Name>Installation work</cbc:Name>
