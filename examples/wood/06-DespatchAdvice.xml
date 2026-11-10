@@ -9,35 +9,82 @@
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
+      <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412329</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Marrowdale Sawmill</cbc:Name>
       </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Timber Lane</cbc:StreetName>
         <cbc:BuildingNumber>7</cbc:BuildingNumber>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71202</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1236987</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Marrowdale Sawmill</cbc:RegistrationName>
+        <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412329</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Marrowdale</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Sales office</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 7120 2329</cbc:Telephone>
         <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -47,35 +94,98 @@
   </cac:DespatchSupplierParty>
   <cac:DeliveryCustomerParty>
     <cac:Party>
+      <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
         <cbc:CompanyID>XU007299291</cbc:CompanyID>
+        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
+          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Valdara Industries</cbc:RegistrationName>
+        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
         <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+        <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XU:CR</cbc:ID>
+          <cbc:Name>Commercial register of Urvania</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cac:OtherCommunication>
+          <cbc:ChannelCode>AL</cbc:ChannelCode>
+          <cbc:Value>+999 1 7000 4274</cbc:Value>
+        </cac:OtherCommunication>
       </cac:Contact>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Castrano Logistics</cbc:Name>
+          </cac:PartyName>
+        </cac:Party>
+      </cac:ServiceProviderParty>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
@@ -108,35 +218,89 @@
     <cac:Consignment>
       <cbc:ID>MS-CS-26-0629</cbc:ID>
       <cac:CarrierParty>
+        <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
+        <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Trasvia Haulage</cbc:Name>
         </cac:PartyName>
+        <cac:Language>
+          <cbc:ID>en</cbc:ID>
+          <cbc:Name>English</cbc:Name>
+          <cbc:LocaleCode>EN</cbc:LocaleCode>
+        </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
           <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
           <cbc:BuildingNumber>45</cbc:BuildingNumber>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cbc:PostalZone>4160</cbc:PostalZone>
+          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:Name>Urvania</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
+          <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
           <cbc:CompanyID>XU007337656</cbc:CompanyID>
+          <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
           <cac:TaxScheme>
             <cbc:ID>VAT</cbc:ID>
+            <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+            <cac:JurisdictionRegionAddress>
+              <cac:Country>
+                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:JurisdictionRegionAddress>
           </cac:TaxScheme>
         </cac:PartyTaxScheme>
         <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Trasvia Haulage</cbc:RegistrationName>
+          <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
           <cbc:CompanyID>XU-R-104822</cbc:CompanyID>
+          <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+          <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+          <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+          <cac:RegistrationAddress>
+            <cbc:CityName>Ferrano</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:RegistrationAddress>
+          <cac:CorporateRegistrationScheme>
+            <cbc:ID>XU:CR</cbc:ID>
+            <cbc:Name>Commercial register of Urvania</cbc:Name>
+            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cac:JurisdictionRegionAddress>
+              <cac:Country>
+                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:JurisdictionRegionAddress>
+          </cac:CorporateRegistrationScheme>
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Planning desk</cbc:Name>
+          <cbc:JobTitle>Operations planner</cbc:JobTitle>
+          <cbc:Department>Operations</cbc:Department>
+          <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
           <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
+          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
+        <cac:PartyAuthorization>
+          <cbc:Purpose>International road haulage</cbc:Purpose>
+          <cac:ValidityPeriod>
+            <cbc:EndDate>2030-06-30</cbc:EndDate>
+          </cac:ValidityPeriod>
+          <cac:Certificate>
+            <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
+            <cbc:CertificateTypeCode>Permit</cbc:CertificateTypeCode>
+            <cbc:CertificateType>Operating permit</cbc:CertificateType>
+          </cac:Certificate>
+        </cac:PartyAuthorization>
         <cac:ElectronicAddress>
           <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
