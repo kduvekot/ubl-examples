@@ -8,6 +8,18 @@
   <cbc:UUID>7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:30:00</cbc:IssueTime>
+  <cbc:Note>Has the container train left?</cbc:Note>
+  <cac:Signature>
+    <cbc:ID>FRC-SIG-TPSR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
@@ -167,4 +179,7 @@
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>
   </cac:TransportMeans>
+  <cac:StatusLocation>
+    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+  </cac:StatusLocation>
 </TransportProgressStatusRequest>

@@ -20,6 +20,8 @@ The rail carrier confirms the train and the slot at the intermodal hub.
   This run of the process: the same in every document of the flow.
 - `ID` = **FRC-TEP-26-0328**  
   The carrier's number for the agreed plan.
+- `VersionID` = **1**  
+  The first version of the plan.
 - `UUID` = **eb749a49-fd81-59f8-9c7a-8cb356fa55f1**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-08**  
@@ -28,6 +30,16 @@ The rail carrier confirms the train and the slot at the intermodal hub.
   The time the sender's system issued the document, in the sender's local time.
 - `DocumentStatusCode` = **Confirmed**  
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed).
+- `DocumentStatusReasonCode` = **AsRequested**  
+  Confirmed without changes.
+- `DocumentStatusReasonDescription` = **Capacity available on the requested day.**  
+  Why it is confirmed.
+- `Note` = **Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.**  
+  The transport agreed.
+- `TransportUserRemarks` = **Please confirm by return.**  
+  The user's remark from the request.
+- `TransportServiceProviderRemarks` = **Collection as requested; notice two hours before arrival.**  
+  The carrier's remark.
 
 ### Sender Party
 
@@ -241,6 +253,26 @@ Inside `TransportServiceProviderParty`:
 - `PartyName/Name` = **Ferrano Rail Cargo**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 
+### Bill To Party
+
+Inside `BillToParty`:
+
+- `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FRC-SIG-325**  
+  The carrier's seal on the plan.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Transport Execution Plan Request Document Reference
 
 Inside `TransportExecutionPlanRequestDocumentReference`:
@@ -248,12 +280,161 @@ Inside `TransportExecutionPlanRequestDocumentReference`:
 - `ID` = **VI-TR-26-0326**  
   The request this plan answers.
 
+### Transport Contract
+
+Inside `TransportContract`:
+
+- `ID` = **VI-FRC-FW-2026**  
+  The framework agreement.
+- `ContractType` = **Framework transport agreement**  
+  Its kind.
+
+### Transport Service Provider Response Required Period
+
+Inside `TransportServiceProviderResponseRequiredPeriod`:
+
+- `EndDate` = **2026-04-08**  
+  The carrier answered the same day.
+
+### Transport User Response Required Period
+
+Inside `TransportUserResponseRequiredPeriod`:
+
+- `EndDate` = **2026-04-09**  
+  The user may object until the next day.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-04-08**  
+  From the confirmation.
+- `EndDate` = **2026-04-17**  
+  Until the carriage is done.
+
+### Main Transportation Service
+
+Inside `MainTransportationService`:
+
+- `TransportServiceCode` = **ROAD**  
+  The main service: road.
+- `Name` = **Full truck load**  
+  In words.
+
+### Additional Transportation Service
+
+Inside `AdditionalTransportationService`:
+
+- `TransportServiceCode` = **NOTIFY**  
+  Pre-arrival notice.
+- `Name` = **Notice two hours before arrival**  
+  In words.
+
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-04-14**  
   Collection, as requested.
+
+### Service End Time Period
+
+Inside `ServiceEndTimePeriod`:
+
+- `EndDate` = **2026-04-17**  
+  Delivered within three days.
+
+### From Location
+
+Inside `FromLocation`:
+
+- `Name` = **Castrano Logistics**  
+  Where the goods are taken over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Via del Magazzino**  
+  Street of the postal address. identity of Castrano Logistics (world/parties.json).
+- `Address/BuildingNumber` = **24**  
+  Building number of the postal address. identity of Castrano Logistics (world/parties.json).
+- `Address/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Address/PostalZone` = **4130**  
+  Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Castrano Logistics (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+
+### To Location
+
+Inside `ToLocation`:
+
+- `Name` = **Ferrano Intermodal Hub**  
+  Where the goods are handed over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Via del Terminal**  
+  Street of the postal address. identity of Ferrano Intermodal Hub (world/parties.json).
+- `Address/BuildingNumber` = **59**  
+  Building number of the postal address. identity of Ferrano Intermodal Hub (world/parties.json).
+- `Address/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Intermodal Hub (world/parties.json).
+- `Address/PostalZone` = **4180**  
+  Postal code in Urvania's format (4 digits). identity of Ferrano Intermodal Hub (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Ferrano Intermodal Hub (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+
+### At Location
+
+Inside `AtLocation`:
+
+- `Name` = **Ferrano Rail Cargo**  
+  Where the carrier's planning sits.
+
+### Transport Execution Terms
+
+Inside `TransportExecutionTerms`:
+
+- `TransportUserSpecialTerms` = **Delivery within the agreed slot; the consignee unloads.**  
+  The user's terms.
+- `TransportServiceProviderSpecialTerms` = **Waiting time beyond two hours is charged.**  
+  The carrier's.
+- `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
+  When the plan may change.
+- `PaymentTerms/Note` = **30 days net from the consignment note.**  
+  When the freight is paid.
+- `BonusPaymentTerms/Note` = **None.**  
+  No bonus for early delivery: the slot is fixed.
+- `CommissionPaymentTerms/Note` = **No commission: booked directly with the carrier.**  
+  Why none.
+- `PenaltyPaymentTerms/Note` = **5 % of the freight per day late, at most 25 %.**  
+  The penalty for late delivery.
+- `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
+  Per day late.
+- `NotificationRequirement/NotificationTypeCode` = **PreArrival**  
+  Notice before arrival.
+- `NotificationRequirement/PostEventNotificationDurationMeasure` = **1** (unitCode `HUR`)  
+  And an hour after delivery the proof.
+- `NotificationRequirement/PreEventNotificationDurationMeasure` = **2** (unitCode `HUR`)  
+  Two hours before.
+- `NotificationRequirement/NotifyParty/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `NotificationRequirement/NotifyParty/PartyName/Name` = **Ferrano Intermodal Hub**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `NotificationRequirement/NotificationLocation/Name` = **Ferrano Intermodal Hub**  
+  Where the notice is for.
+- `ServiceChargePaymentTerms/Note` = **Waiting time 40 per hour beyond two hours.**  
+  The service charge.
 
 ### Consignment
 
@@ -438,10 +619,16 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>eb749a49-fd81-59f8-9c7a-8cb356fa55f1</cbc:UUID>
   <cbc:IssueDate>2026-04-08</cbc:IssueDate>
   <cbc:IssueTime>16:46:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
+  <cbc:DocumentStatusReasonCode>AsRequested</cbc:DocumentStatusReasonCode>
+  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
+  <cbc:Note>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Note>
+  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
+  <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
@@ -634,12 +821,128 @@ Inside `Consignment`:
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Valdara Industries</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:Signature>
+    <cbc:ID>FRC-SIG-325</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:TransportExecutionPlanRequestDocumentReference>
     <cbc:ID>VI-TR-26-0326</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
+  <cac:TransportContract>
+    <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+    <cbc:ContractType>Framework transport agreement</cbc:ContractType>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseRequiredPeriod>
+    <cbc:EndDate>2026-04-08</cbc:EndDate>
+  </cac:TransportServiceProviderResponseRequiredPeriod>
+  <cac:TransportUserResponseRequiredPeriod>
+    <cbc:EndDate>2026-04-09</cbc:EndDate>
+  </cac:TransportUserResponseRequiredPeriod>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-08</cbc:StartDate>
+    <cbc:EndDate>2026-04-17</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>ROAD</cbc:TransportServiceCode>
+    <cbc:Name>Full truck load</cbc:Name>
+  </cac:MainTransportationService>
+  <cac:AdditionalTransportationService>
+    <cbc:TransportServiceCode>NOTIFY</cbc:TransportServiceCode>
+    <cbc:Name>Notice two hours before arrival</cbc:Name>
+  </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-14</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:EndDate>2026-04-17</cbc:EndDate>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:BuildingNumber>24</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via del Terminal</cbc:StreetName>
+      <cbc:BuildingNumber>59</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4180</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ToLocation>
+  <cac:AtLocation>
+    <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+  </cac:AtLocation>
+  <cac:TransportExecutionTerms>
+    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
+    <cac:PaymentTerms>
+      <cbc:Note>30 days net from the consignment note.</cbc:Note>
+    </cac:PaymentTerms>
+    <cac:BonusPaymentTerms>
+      <cbc:Note>None.</cbc:Note>
+    </cac:BonusPaymentTerms>
+    <cac:CommissionPaymentTerms>
+      <cbc:Note>No commission: booked directly with the carrier.</cbc:Note>
+    </cac:CommissionPaymentTerms>
+    <cac:PenaltyPaymentTerms>
+      <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
+      <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>
+    </cac:PenaltyPaymentTerms>
+    <cac:NotificationRequirement>
+      <cbc:NotificationTypeCode>PreArrival</cbc:NotificationTypeCode>
+      <cbc:PostEventNotificationDurationMeasure unitCode="HUR">1</cbc:PostEventNotificationDurationMeasure>
+      <cbc:PreEventNotificationDurationMeasure unitCode="HUR">2</cbc:PreEventNotificationDurationMeasure>
+      <cac:NotifyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        </cac:PartyName>
+      </cac:NotifyParty>
+      <cac:NotificationLocation>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      </cac:NotificationLocation>
+    </cac:NotificationRequirement>
+    <cac:ServiceChargePaymentTerms>
+      <cbc:Note>Waiting time 40 per hour beyond two hours.</cbc:Note>
+    </cac:ServiceChargePaymentTerms>
+  </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
     <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>

@@ -26,6 +26,18 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
   Reported when the cargo has landed.
 - `IssueTime` = **17:58:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Transportation status**  
+  The kind of report.
+- `Description` = **Cargo arrived and ready for customs clearance.**  
+  In words.
+- `Note` = **Automatic report from the sender's tracking system.**  
+  How it was made.
+- `ShippingOrderID` = **LD-CS-26-0324**  
+  The shipper's booking it reports on.
+- `OtherInstruction` = **Reply only if the delivery slot must change.**  
+  What the receiver should do.
+- `TransportExecutionStatusCode` = **InProgress**  
+  The carriage is under way.
 
 ### Consignment
 
@@ -253,6 +265,24 @@ Inside `TransportEvent`:
 - `Location/Name` = **Selanu airport, cargo terminal**  
   Where it happened.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **KAC-WB-26-0325**  
+  The transport document of the consignment.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **SAC-SIG-TS-09**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC41174** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Selanu Airport Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Sender Party
 
 Inside `SenderParty`:
@@ -357,6 +387,22 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Status Location
+
+Inside `StatusLocation`:
+
+- `Name` = **Selanu Airport Cargo**  
+  Where the status was recorded.
+
+### Status Period
+
+Inside `StatusPeriod`:
+
+- `StartDate` = **2026-05-14**  
+  The status holds from the report.
+- `EndDate` = **2026-05-14**  
+  Until the next report.
+
 ## The document
 
 ```xml
@@ -370,6 +416,12 @@ Inside `ReceiverParty`:
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>17:58:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0324</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
     <cac:ConsigneeParty>
@@ -572,6 +624,20 @@ Inside `ReceiverParty`:
       <cbc:Name>Selanu airport, cargo terminal</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>KAC-WB-26-0325</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>SAC-SIG-TS-09</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Airport Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
@@ -661,5 +727,12 @@ Inside `ReceiverParty`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:StatusLocation>
+    <cbc:Name>Selanu Airport Cargo</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:EndDate>2026-05-14</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>
 ```

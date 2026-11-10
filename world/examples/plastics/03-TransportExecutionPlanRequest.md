@@ -20,12 +20,20 @@ Under CPT the waste processor is the transport user; it asks the barge operator 
   This run of the process: the same in every document of the flow.
 - `ID` = **RR-TR-26-0884**  
   The transport user's request number.
+- `VersionID` = **1**  
+  The first version of the request.
 - `UUID` = **256f8176-ee49-5cca-9761-ba9a8673cb84**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Under CPT the seller is the transport user and books the barge.
 - `IssueTime` = **09:57:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new request, without a status yet.
+- `Note` = **The barge from the quay next to the recovery plant down the river to the packaging maker.**  
+  The transport asked for.
+- `TransportUserRemarks` = **Please confirm by return.**  
+  The user's remark.
 
 ### Sender Party
 
@@ -235,12 +243,105 @@ Inside `TransportServiceProviderParty`:
 - `PartyName/Name` = **Fiumella Barges**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Bill To Party
+
+Inside `BillToParty`:
+
+- `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Transport Contract
+
+Inside `TransportContract`:
+
+- `ID` = **RR-FB-FW-2026**  
+  The framework agreement with the carrier.
+
+### Transport Service Provider Response Deadline Period
+
+Inside `TransportServiceProviderResponseDeadlinePeriod`:
+
+- `EndDate` = **2026-04-15**  
+  An answer is needed by the next day.
+
+### Main Transportation Service
+
+Inside `MainTransportationService`:
+
+- `TransportServiceCode` = **RIVER**  
+  The main service: river.
+- `Name` = **River barge**  
+  In words.
+
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-04-19**  
   The day the goods should be collected.
+
+### Service End Time Period
+
+Inside `ServiceEndTimePeriod`:
+
+- `EndDate` = **2026-04-22**  
+  Delivered within three days.
+
+### From Location
+
+Inside `FromLocation`:
+
+- `Name` = **Fiumella Barges**  
+  Where the goods are taken over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Banchina del Fiume**  
+  Street of the postal address. identity of Fiumella Barges (world/parties.json).
+- `Address/BuildingNumber` = **52**  
+  Building number of the postal address. identity of Fiumella Barges (world/parties.json).
+- `Address/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Fiumella Barges (world/parties.json).
+- `Address/PostalZone` = **4170**  
+  Postal code in Urvania's format (4 digits). identity of Fiumella Barges (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Fiumella Barges (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+
+### To Location
+
+Inside `ToLocation`:
+
+- `Name` = **Rivermouth Packaging**  
+  Where the goods are handed over.
+- `Address/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Address/StreetName` = **Estuary Road**  
+  Street of the postal address. identity of Rivermouth Packaging (world/parties.json).
+- `Address/BuildingNumber` = **28**  
+  Building number of the postal address. identity of Rivermouth Packaging (world/parties.json).
+- `Address/CitySubdivisionName` = **Old town**  
+  The quarter of Lumeport the party is in. identity of Rivermouth Packaging (world/parties.json).
+- `Address/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Rivermouth Packaging (world/parties.json).
+- `Address/PostalZone` = **38505**  
+  Postal code in Bayvarra's format (5 digits). identity of Rivermouth Packaging (world/parties.json).
+- `Address/CountrySubentity` = **Coastal State**  
+  The state, part of an address in federal Bayvarra. identity of Rivermouth Packaging (world/parties.json).
+- `Address/CountrySubentityCode` = **CO**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Rivermouth Packaging (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
 
 ### Consignment
 
@@ -367,9 +468,13 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-TR-26-0884</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>256f8176-ee49-5cca-9761-ba9a8673cb84</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:57:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:Note>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Note>
+  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
@@ -556,9 +661,64 @@ Inside `Consignment`:
       <cbc:Name>Fiumella Barges</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:TransportContract>
+    <cbc:ID>RR-FB-FW-2026</cbc:ID>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseDeadlinePeriod>
+    <cbc:EndDate>2026-04-15</cbc:EndDate>
+  </cac:TransportServiceProviderResponseDeadlinePeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>RIVER</cbc:TransportServiceCode>
+    <cbc:Name>River barge</cbc:Name>
+  </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-19</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:EndDate>2026-04-22</cbc:EndDate>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:Name>Fiumella Barges</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
+      <cbc:BuildingNumber>52</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4170</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:Name>Rivermouth Packaging</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Estuary Road</cbc:StreetName>
+      <cbc:BuildingNumber>28</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38505</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>RR-CS-26-0885</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>

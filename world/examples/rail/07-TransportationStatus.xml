@@ -8,6 +8,12 @@
   <cbc:UUID>514b9478-0214-5ce0-9018-7c4cf752cbd3</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>13:11:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Two containers loaded on the container train.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
     <cac:CarrierParty>
@@ -196,6 +202,20 @@
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>VI-CS-26-0327</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>FIH-SIG-TS-07</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
@@ -212,4 +232,14 @@
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:TransportExecutionPlanDocumentReference>
+    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+  </cac:TransportExecutionPlanDocumentReference>
+  <cac:StatusLocation>
+    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-04-14</cbc:StartDate>
+    <cbc:EndDate>2026-04-14</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>

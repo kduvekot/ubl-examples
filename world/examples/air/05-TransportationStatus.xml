@@ -8,6 +8,12 @@
   <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>10:05:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0324</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
     <cac:CarrierParty>
@@ -178,6 +184,20 @@
       <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>KAC-WB-26-0325</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>LACT-SIG-TS-05</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
@@ -194,4 +214,11 @@
       <cbc:Name>Kelaro Air Cargo</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:StatusLocation>
+    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-05-13</cbc:StartDate>
+    <cbc:EndDate>2026-05-13</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>

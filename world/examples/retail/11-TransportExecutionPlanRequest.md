@@ -20,12 +20,20 @@ Because it sold DDP, the distributor books the outgoing truck from its distribut
   This run of the process: the same in every document of the flow.
 - `ID` = **LD-TR-26-0227**  
   The transport user's request number.
+- `VersionID` = **1**  
+  The first version of the request.
 - `UUID` = **3486a63d-1d8e-580d-902a-948d6ff352c9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-25**  
   Because it sold delivered duty paid, the distributor books the truck.
 - `IssueTime` = **10:28:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new request, without a status yet.
+- `Note` = **The forwarder's truck from the distribution centre to the store.**  
+  The transport asked for.
+- `TransportUserRemarks` = **Please confirm by return.**  
+  The user's remark.
 
 ### Sender Party
 
@@ -245,12 +253,113 @@ Inside `TransportServiceProviderParty`:
 - `PartyName/Name` = **Bayforth Forwarding**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Bill To Party
+
+Inside `BillToParty`:
+
+- `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Transport Contract
+
+Inside `TransportContract`:
+
+- `ID` = **LD-BF-FW-2026**  
+  The framework agreement with the carrier.
+
+### Transport Service Provider Response Deadline Period
+
+Inside `TransportServiceProviderResponseDeadlinePeriod`:
+
+- `EndDate` = **2026-04-26**  
+  An answer is needed by the next day.
+
+### Main Transportation Service
+
+Inside `MainTransportationService`:
+
+- `TransportServiceCode` = **ROAD**  
+  The main service: road.
+- `Name` = **Full truck load**  
+  In words.
+
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-04-29**  
   The day the goods should be collected.
+
+### Service End Time Period
+
+Inside `ServiceEndTimePeriod`:
+
+- `EndDate` = **2026-05-02**  
+  Delivered within three days.
+
+### From Location
+
+Inside `FromLocation`:
+
+- `Name` = **Lumeway Distribution**  
+  Where the goods are taken over.
+- `Address/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Address/StreetName` = **Distribution Drive**  
+  Street of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `Address/AdditionalStreetName` = **Gate 3**  
+  The gate of the business park to use. identity of Lumeway Distribution (world/parties.json).
+- `Address/BlockName` = **Marrowdale Business Park**  
+  The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
+- `Address/BuildingNumber` = **43**  
+  Building number of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `Address/PlotIdentification` = **Plot 14**  
+  The plot of the distribution centre in the business park. identity of Lumeway Distribution (world/parties.json).
+- `Address/CityName` = **Marrowdale**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeway Distribution (world/parties.json).
+- `Address/PostalZone` = **71214**  
+  Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
+- `Address/CountrySubentity` = **Upland State**  
+  The state, part of an address in federal Bayvarra. identity of Lumeway Distribution (world/parties.json).
+- `Address/CountrySubentityCode` = **UL**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+
+### To Location
+
+Inside `ToLocation`:
+
+- `Name` = **Brightmarket Stores**  
+  Where the goods are handed over.
+- `Address/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Address/StreetName` = **Market Street**  
+  Street of the postal address. identity of Brightmarket Stores (world/parties.json).
+- `Address/BuildingNumber` = **50**  
+  Building number of the postal address. identity of Brightmarket Stores (world/parties.json).
+- `Address/CitySubdivisionName` = **Old town**  
+  The quarter of Lumeport the party is in. identity of Brightmarket Stores (world/parties.json).
+- `Address/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Brightmarket Stores (world/parties.json).
+- `Address/PostalZone` = **38515**  
+  Postal code in Bayvarra's format (5 digits). identity of Brightmarket Stores (world/parties.json).
+- `Address/CountrySubentity` = **Coastal State**  
+  The state, part of an address in federal Bayvarra. identity of Brightmarket Stores (world/parties.json).
+- `Address/CountrySubentityCode` = **CO**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Brightmarket Stores (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
 
 ### Consignment
 
@@ -383,9 +492,13 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-TR-26-0227</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>3486a63d-1d8e-580d-902a-948d6ff352c9</cbc:UUID>
   <cbc:IssueDate>2026-04-25</cbc:IssueDate>
   <cbc:IssueTime>10:28:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:Note>The forwarder's truck from the distribution centre to the store.</cbc:Note>
+  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -571,9 +684,68 @@ Inside `Consignment`:
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:TransportContract>
+    <cbc:ID>LD-BF-FW-2026</cbc:ID>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseDeadlinePeriod>
+    <cbc:EndDate>2026-04-26</cbc:EndDate>
+  </cac:TransportServiceProviderResponseDeadlinePeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>ROAD</cbc:TransportServiceCode>
+    <cbc:Name>Full truck load</cbc:Name>
+  </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-29</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:EndDate>2026-05-02</cbc:EndDate>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:Name>Lumeway Distribution</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
+      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:Name>Brightmarket Stores</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Market Street</cbc:StreetName>
+      <cbc:BuildingNumber>50</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38515</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>

@@ -20,12 +20,20 @@ Under DAP the sawmill is the transport user; it books the road carrier across th
   This run of the process: the same in every document of the flow.
 - `ID` = **MS-TR-26-0628**  
   The transport user's request number.
+- `VersionID` = **1**  
+  The first version of the request.
 - `UUID` = **b76f67b2-bdec-5954-8847-a49b1f0dd043**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-23**  
   Under DAP the sawmill books the truck across the border.
 - `IssueTime` = **16:19:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new request, without a status yet.
+- `Note` = **The slats across the border to the bench factory.**  
+  The transport asked for.
+- `TransportUserRemarks` = **Please confirm by return.**  
+  The user's remark.
 
 ### Sender Party
 
@@ -239,12 +247,103 @@ Inside `TransportServiceProviderParty`:
 - `PartyName/Name` = **Trasvia Haulage**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Bill To Party
+
+Inside `BillToParty`:
+
+- `PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Marrowdale Sawmill**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Transport Contract
+
+Inside `TransportContract`:
+
+- `ID` = **MS-TH-FW-2026**  
+  The framework agreement with the carrier.
+
+### Transport Service Provider Response Deadline Period
+
+Inside `TransportServiceProviderResponseDeadlinePeriod`:
+
+- `EndDate` = **2026-02-24**  
+  An answer is needed by the next day.
+
+### Main Transportation Service
+
+Inside `MainTransportationService`:
+
+- `TransportServiceCode` = **ROAD**  
+  The main service: road.
+- `Name` = **Full truck load**  
+  In words.
+
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-02-26**  
   The day the goods should be collected.
+
+### Service End Time Period
+
+Inside `ServiceEndTimePeriod`:
+
+- `EndDate` = **2026-03-01**  
+  Delivered within three days.
+
+### From Location
+
+Inside `FromLocation`:
+
+- `Name` = **Marrowdale Sawmill**  
+  Where the goods are taken over.
+- `Address/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Address/StreetName` = **Timber Lane**  
+  Street of the postal address. identity of Marrowdale Sawmill (world/parties.json).
+- `Address/BuildingNumber` = **7**  
+  Building number of the postal address. identity of Marrowdale Sawmill (world/parties.json).
+- `Address/CityName` = **Marrowdale**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Marrowdale Sawmill (world/parties.json).
+- `Address/PostalZone` = **71202**  
+  Postal code in Bayvarra's format (5 digits). identity of Marrowdale Sawmill (world/parties.json).
+- `Address/CountrySubentity` = **Upland State**  
+  The state, part of an address in federal Bayvarra. identity of Marrowdale Sawmill (world/parties.json).
+- `Address/CountrySubentityCode` = **UL**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Marrowdale Sawmill (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+
+### To Location
+
+Inside `ToLocation`:
+
+- `Name` = **Valdara Industries**  
+  Where the goods are handed over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Via delle Officine**  
+  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Address/BuildingNumber` = **17**  
+  Building number of the postal address. identity of Valdara Industries (world/parties.json).
+- `Address/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Address/PostalZone` = **4120**  
+  Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Valdara Industries (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
 
 ### Consignment
 
@@ -369,9 +468,13 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-TR-26-0628</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>16:19:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:Note>The slats across the border to the bench factory.</cbc:Note>
+  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>
@@ -560,9 +663,63 @@ Inside `Consignment`:
       <cbc:Name>Trasvia Haulage</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Marrowdale Sawmill</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:TransportContract>
+    <cbc:ID>MS-TH-FW-2026</cbc:ID>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseDeadlinePeriod>
+    <cbc:EndDate>2026-02-24</cbc:EndDate>
+  </cac:TransportServiceProviderResponseDeadlinePeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>ROAD</cbc:TransportServiceCode>
+    <cbc:Name>Full truck load</cbc:Name>
+  </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-02-26</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:EndDate>2026-03-01</cbc:EndDate>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:Name>Marrowdale Sawmill</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Timber Lane</cbc:StreetName>
+      <cbc:BuildingNumber>7</cbc:BuildingNumber>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71202</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:Name>Valdara Industries</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:BuildingNumber>17</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4120</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>MS-CS-26-0629</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>

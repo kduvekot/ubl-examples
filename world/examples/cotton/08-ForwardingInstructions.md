@@ -26,6 +26,22 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   Under FOB the buyer instructs the forwarder for the main carriage.
 - `IssueTime` = **10:37:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Forwarding instructions**  
+  What they are.
+- `Description` = **Instructions for the bales to Bayvarra.**  
+  In words.
+- `Note` = **Please confirm the booking.**  
+  What the sender expects.
+- `DocumentStatusCode` = **NoStatus**  
+  New instructions.
+- `ShippingOrderID` = **SCG-SH-26-0199**  
+  The shipment to be booked.
+- `ToOrderIndicator` = **false**  
+  A straight bill: the consignee is named.
+- `AdValoremIndicator` = **false**  
+  No value declared for the carriage.
+- `OtherInstruction` = **Send the bill of lading to the forwarder.**  
+  Where the documents go.
 
 ### Consignor Party
 
@@ -300,6 +316,50 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **LTM-PO-26-0197**  
+  The order the goods are for.
+
+### Exchange Rate
+
+Inside `ExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The freight's currency.
+- `TargetCurrencyCode` = **XLC**  
+  The island's currency.
+- `CalculationRate` = **0.4**  
+  The reference rate.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  A copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  As this UBL document.
+- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LTM-SIG-FI-08**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -313,6 +373,14 @@ Inside `Shipment`:
   <cbc:UUID>7991b479-392b-5bc2-90ba-107a0778b62f</cbc:UUID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>10:37:00</cbc:IssueTime>
+  <cbc:Name>Forwarding instructions</cbc:Name>
+  <cbc:Description>Instructions for the bales to Bayvarra.</cbc:Description>
+  <cbc:Note>Please confirm the booking.</cbc:Note>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ShippingOrderID>SCG-SH-26-0199</cbc:ShippingOrderID>
+  <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -550,5 +618,37 @@ Inside `Shipment`:
       </cac:ConsigneeParty>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>LTM-PO-26-0197</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+  </cac:ExchangeRate>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>LTM-SIG-FI-08</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ForwardingInstructions>
 ```

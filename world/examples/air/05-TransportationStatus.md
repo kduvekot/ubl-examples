@@ -26,6 +26,18 @@ The air cargo terminal reports the cargo accepted and built up for the flight.
   Reported when the cargo is built up for the flight.
 - `IssueTime` = **10:05:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Transportation status**  
+  The kind of report.
+- `Description` = **Cargo accepted and built up for the flight.**  
+  In words.
+- `Note` = **Automatic report from the sender's tracking system.**  
+  How it was made.
+- `ShippingOrderID` = **LD-CS-26-0324**  
+  The shipper's booking it reports on.
+- `OtherInstruction` = **Reply only if the delivery slot must change.**  
+  What the receiver should do.
+- `TransportExecutionStatusCode` = **InProgress**  
+  The carriage is under way.
 
 ### Consignment
 
@@ -225,6 +237,24 @@ Inside `TransportEvent`:
 - `Location/Name` = **Lumeport airport, cargo terminal**  
   Where it happened.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **KAC-WB-26-0325**  
+  The transport document of the consignment.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LACT-SIG-TS-05**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412055** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Airport Cargo Terminal**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Sender Party
 
 Inside `SenderParty`:
@@ -243,6 +273,22 @@ Inside `ReceiverParty`:
 - `PartyName/Name` = **Kelaro Air Cargo**  
   The same party as at Consignment/CarrierParty, where its full details are given; only its identifier and name are repeated.
 
+### Status Location
+
+Inside `StatusLocation`:
+
+- `Name` = **Lumeport Airport Cargo Terminal**  
+  Where the status was recorded.
+
+### Status Period
+
+Inside `StatusPeriod`:
+
+- `StartDate` = **2026-05-13**  
+  The status holds from the report.
+- `EndDate` = **2026-05-13**  
+  Until the next report.
+
 ## The document
 
 ```xml
@@ -256,6 +302,12 @@ Inside `ReceiverParty`:
   <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>10:05:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0324</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
     <cac:CarrierParty>
@@ -426,6 +478,20 @@ Inside `ReceiverParty`:
       <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>KAC-WB-26-0325</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>LACT-SIG-TS-05</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
@@ -442,5 +508,12 @@ Inside `ReceiverParty`:
       <cbc:Name>Kelaro Air Cargo</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:StatusLocation>
+    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-05-13</cbc:StartDate>
+    <cbc:EndDate>2026-05-13</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>
 ```

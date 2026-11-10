@@ -1980,6 +1980,10 @@ def air(n, doc):
     if doc["doc"] == "Waybill":
         out = kit.waybill(f, n, doc, 2, "The air waybill, issued when the airline accepts the cargo.", w,
                           "The gross weight of the cargo.")
+        out["AdValoremIndicator"] = V("true", "A value is declared to the airline, which raises its liability.")
+        out["DeclaredCarriageValueAmount"] = amount(Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]
+                                                                             ["amount"])), "XBL",
+                                                    "The value declared for carriage.")
         out["Shipment"]["DeclaredForCarriageValueAmount"] = amount(
             Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]["amount"])), "XBL",
             "The value declared on the air waybill, as the distributor instructed.")
@@ -4140,3 +4144,213 @@ def _(f, n, doc, out):
                                                                                              "agreement the line "
                                                                                              "falls under.")},
                               out["CatalogueLine"][1]]}
+
+
+def status_extras(f, n, doc, out):
+    """What every transportation status report adds: what it is, the plan it reports on, where and when."""
+    x = {"Name": V("Transportation status", "The kind of report."),
+         "Description": V(out["TransportEvent"]["Description"].value if isinstance(out.get("TransportEvent"), dict)
+                          and "Description" in out["TransportEvent"] else "Status of the consignment.", "In words."),
+         "Note": V("Automatic report from the sender's tracking system.", "How it was made."),
+         "ShippingOrderID": V(f.numbers.get("consignment", ""), "The shipper's booking it reports on."),
+         "OtherInstruction": V("Reply only if the delivery slot must change.", "What the receiver should do."),
+         "TransportExecutionStatusCode": V("InProgress", "The carriage is under way."),
+         "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TS-{n:02d}"),
+         "StatusLocation": {"Name": V(PARTY[doc["from"]]["identity"]["name"], "Where the status was recorded.")},
+         "StatusPeriod": {"StartDate": V(out["IssueDate"].value, "The status holds from the report."),
+                          "EndDate": V(out["IssueDate"].value, "Until the next report.")},
+         "DocumentReference": {"ID": V(f.numbers.get("waybill", f.numbers.get("bl", f.numbers.get("consignment"))),
+                                       "The transport document of the consignment.")}}
+    if "tep" in f.numbers:
+        x["TransportExecutionPlanDocumentReference"] = {"ID": V(f.numbers["tep"], "The plan the carriage follows.")}
+    if "ts-request" in f.numbers:
+        x["TransportationStatusRequestDocumentReference"] = {"ID": V(f.numbers["ts-request"], "The request "
+                                                                                              "answered.")}
+    if f.id == "road":
+        x["UpdatedDeliveryTransportEvent"] = kit.event(f, 9, "09:30:00", "The delivery as now expected.")
+        x["UpdatedPickupTransportEvent"] = kit.event(f, 7, "15:05:00", "The collection as it happened.")
+    return x
+
+
+for _fid in ("road", "rail", "sea", "air"):
+    enrich(_fid, "TransportationStatus")(status_extras)
+
+
+@enrich("retail", "TransportationStatusRequest")
+def _(f, n, doc, out):
+    return {"CarrierAssignedID": V(f.numbers.get("waybill", ""), "The carrier's consignment note."),
+            "Name": V("Status request", "What it is."),
+            "Description": V("When will the benches arrive?", "The question."),
+            "Note": V("The promotion starts soon.", "Why the store asks."),
+            "ShippingOrderID": V(f.numbers["consignment"], "The booking asked about."),
+            "OtherInstruction": V("Answer with the expected delivery time.", "What the answer should hold."),
+            "TransportationStatusTypeCode": V("Delivery", "The status of the delivery is asked."),
+            "DocumentReference": {"ID": V(f.numbers["order"], "The store's order.")},
+            "Signature": seal(doc["from"], "LD-SIG-26-TSR"),
+            "RequestedStatusLocation": {"Name": V("Brightmarket Stores, goods-in", "Status at the store.")},
+            "RequestedStatusPeriod": {"StartDate": V(f.date(9), "For today."), "EndDate": V(f.date(10), "And "
+                                                                                                       "tomorrow.")}}
+
+
+@enrich("rail", "TransportProgressStatusRequest")
+def _(f, n, doc, out):
+    return {"Note": V("Has the container train left?", "The question."),
+            "Signature": seal(doc["from"], "FRC-SIG-TPSR"),
+            "StatusLocation": {"Name": V("Ferrano Intermodal Hub", "Where the status is asked for.")}}
+
+
+@enrich("rail", "TransportProgressStatus")
+def _(f, n, doc, out):
+    return {"Note": V("Left on time.", "The answer."),
+            "StatusAvailableIndicator": V("true", "A status is available."),
+            "Signature": seal(doc["from"], "FIH-SIG-TPS"),
+            "SourceIssuerParty": party("18-xu", short=True),
+            "TransportProgressStatusRequestDocumentReference": {"ID": V(f.numbers["tps-request"], "The request "
+                                                                                                  "answered.")},
+            "TransportSchedule": {"SequenceNumeric": V("1", "The first stop: the hub."),
+                                  "ReferenceDate": V(f.date(8), "The day."), "ReferenceTime": V("06:45:00", "The "
+                                                                                                           "time."),
+                                  "ReliabilityPercent": V("95", "How sure the schedule is."),
+                                  "Remarks": V("On time.", "The status."),
+                                  "StatusLocation": {"Name": V("Ferrano Intermodal Hub", "The stop.")},
+                                  "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable."),
+                                  "ActualDepartureTransportEvent": kit.event(f, 8, "06:52:00", "The departure."),
+                                  "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "Expected in "
+                                                                                                "Marrowdale."),
+                                  "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable."),
+                                  "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "As expected "
+                                                                                                  "that morning."),
+                                  "ActualArrivalTransportEvent": kit.event(f, 8, "05:30:00", "The train arrived "
+                                                                                             "at the hub for "
+                                                                                             "loading.")}}
+
+
+@enrich("rail", "GoodsItemItinerary")
+def _(f, n, doc, out):
+    return {"Note": V("The itinerary of the two containers.", "What it shows."),
+            "Signature": seal(doc["from"], "FRC-SIG-GII"),
+            "ReferencedConsignment": {"ID": V(f.numbers["consignment"], "The consignment.")},
+            "ReferencedTransportEquipment": {"ID": V(RAIL_BOXES[0], "The first container.", schemeID="ISO6346")},
+            "ReferencedPackage": {"ID": V("CL-26-001", "The first pallet in it.")},
+            "ReferencedGoodsItem": {"ID": V("1", "The benches.")}}
+
+
+@enrich("sea", "TransportServiceDescriptionRequest")
+def _(f, n, doc, out):
+    return {"Note": V("Weekly sailings to Selanu, please.", "What the distributor asks."),
+            "ServiceInformationPreferenceCode": V("Schedule", "It wants the schedule first."),
+            "Signature": seal(doc["from"], "LD-SIG-TSDR"),
+            "TransportServiceProviderParty": party("11-xb", short=True)}
+
+
+@enrich("sea", "TransportServiceDescription")
+def _(f, n, doc, out):
+    return {"Note": V("Our island service.", "What follows."), "ServiceName": V("Island feeder", "The service's "
+                                                                                                "name."),
+            "ResponseCode": V("Offered", "The service is offered."),
+            "Signature": seal(doc["from"], "TWL-SIG-TSD"),
+            "TransportServiceDescriptionRequestDocumentReference": {"ID": V(f.numbers["tsd-request"], "The request "
+                                                                                                      "answered.")},
+            "ServiceChargePaymentTerms": {"Note": V("Freight prepaid before the bill of lading is released.",
+                                                    "When the freight is paid.")},
+            "ValidityPeriod": {"StartDate": V(f.date(5), "From now."), "EndDate": V(f.date(95), "For three "
+                                                                                              "months.")}}
+
+
+def fi_extras(f, n, doc, out):
+    carrier_booking = doc["to"] == "11-xb"
+    x = {"Name": V("Forwarding instructions", "What they are."),
+         "Description": V("Instructions for the shipment to the island." if f.id != "cotton" else
+                          "Instructions for the bales to Bayvarra.", "In words."),
+         "Note": V("Please confirm the booking.", "What the sender expects."),
+         "DocumentStatusCode": V("NoStatus", "New instructions."),
+         "ShippingOrderID": V(f.numbers.get("shipment", ""), "The shipment to be booked."),
+         "ToOrderIndicator": V("true" if f.id == "sea" else "false", "A bill of lading to order, so the buyer can "
+                                                                     "transfer it." if f.id == "sea" else
+                               "A straight bill: the consignee is named."),
+         "AdValoremIndicator": V("false", "No value declared for the carriage."),
+         "OtherInstruction": V("Send the bill of lading to the forwarder.", "Where the documents go."),
+         "DocumentReference": {"ID": V(f.numbers.get("order", ""), "The order the goods are for.")},
+         "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
+                          "TargetCurrencyCode": V("XLC", "The island's currency."),
+                          "CalculationRate": V("0.4", "The reference rate.")},
+         "DocumentDistribution": {"ID": V("1", "A copy."), "DocumentTypeCode": V("Copy", "A copy."),
+                                  "DistributionTypeCode": V("Electronic", "As this UBL document."),
+                                  "Party": party(doc["to"], short=True)},
+         "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-FI-{n:02d}")}
+    if carrier_booking:
+        x["CarrierAssignedID"] = V(SEA_BOOKING, "The booking number the carrier gave.")
+    return x
+
+
+for _fid in ("sea", "air", "cotton"):
+    enrich(_fid, "ForwardingInstructions")(fi_extras)
+
+
+def bl_extras(f, n, doc, out):
+    return {"Name": V("Bill of lading", "What it is."),
+            "Description": V("Shipped on board.", "The kind of bill."),
+            "Note": V("Freight prepaid." if f.id == "sea" else "Freight collect.", "Who has paid the freight."),
+            "DocumentStatusCode": V("Confirmed", "Issued."),
+            "DeclaredCarriageValueAmount": amount(0, "XBL", "No value declared."),
+            "DocumentReference": {"ID": V(f.numbers.get("instructions-carrier", f.numbers.get("instructions", "")),
+                                          "The forwarding instructions it was issued on.")},
+            "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
+                             "TargetCurrencyCode": V("XLC", "The island's currency."),
+                             "CalculationRate": V("0.4", "The reference rate.")},
+            "DocumentDistribution": {"ID": V("1", "Three originals."), "DocumentTypeCode": V("Original", "Originals."),
+                                     "DistributionTypeCode": V("Paper", "On paper, by courier."),
+                                     "Party": party(doc["to"], short=True)},
+            "Signature": seal(doc["from"], f"TWL-SIG-BL-{f.id}", "The master's signature, by the carrier's agent.")}
+
+
+for _fid in ("sea", "cotton"):
+    enrich(_fid, "BillOfLading")(bl_extras)
+
+
+@enrich("sea", "Manifest")
+def _(f, n, doc, out):
+    return {"ManifestType": V("Cargo manifest", "In words."), "Description": V("Cargo for Selanu.", "What it "
+                                                                                                     "lists."),
+            "Note": V("One container for Selanu.", "The cargo."), "VersionID": V("1", "The first version."),
+            "DeclaredCarriageValueAmount": amount(0, "XBL", "No value declared."),
+            "PassengerPerson": kit.person("Ines", "Tavari", "The one passenger: a supercargo travelling with the "
+                                                            "cargo.", role="Passenger"),
+            "DocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading of the container.")},
+            "DocumentDistribution": {"ID": V("1", "To customs."), "DistributionTypeCode": V("Electronic", "By "
+                                                                                                          "message."),
+                                     "Party": party("19-xl", short=True)},
+            "Signature": seal(doc["from"], "TWL-SIG-MF", "The master's signature.")}
+
+
+@enrich("sea", "PackingList")
+def _(f, n, doc, out):
+    return {"Name": V("Packing list", "What it is."), "Description": V("The container's contents.", "In words."),
+            "Note": V("25 pallets.", "The count."), "VersionID": V("1", "The first version."),
+            "OtherInstruction": V("Keep with the container's documents.", "Where it goes."),
+            "CarrierParty": party("11-xb", short=True),
+            "DocumentReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
+            "DocumentDistribution": {"ID": V("1", "To the forwarder."), "DistributionTypeCode": V("Electronic",
+                                                                                                  "By message."),
+                                     "Party": party("10-xb", short=True)},
+            "Signature": seal(doc["from"], "LD-SIG-PL")}
+
+
+@enrich("sea", "CommonTransportationReport")
+def _(f, n, doc, out):
+    return {"DocumentStatusCode": V("NoStatus", "A first report."),
+            "ReportTypeCode": V("PreArrival", "The report before entering the port."),
+            "ReportType": V("Pre-arrival report", "In words."),
+            "Description": V("The ship's report before arrival at Selanu.", "What it is."),
+            "Note": V("No incidents on board.", "The master's note."), "VersionID": V("1", "The first version."),
+            "ReportingLocation": {"Name": V("At sea, 40 nautical miles off Selanu", "Where the report was made.")},
+            "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage.", "Eastbound"),
+            "DocumentReference": {"ID": V(f.numbers["manifest"], "The cargo manifest.")},
+            "Signature": seal(doc["from"], "TWL-SIG-CTR", "The master's signature.")}
+
+
+@enrich("cotton", "WeightStatement")
+def _(f, n, doc, out):
+    return {"WeightStatementTypeCode": V("VGM", "A statement of the verified gross mass."),
+            "Signature": seal(doc["from"], "SCG-SIG-VGM", "The shipper's signature, as SOLAS requires."),
+            "ResponsibleParty": party("39-xl", short=True)}

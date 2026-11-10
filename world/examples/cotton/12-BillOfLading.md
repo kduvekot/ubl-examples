@@ -26,6 +26,16 @@ The bill of lading goes to the forwarder that booked the freight for the mill; t
   Issued when the bales are on board.
 - `IssueTime` = **15:19:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Bill of lading**  
+  What it is.
+- `Description` = **Shipped on board.**  
+  The kind of bill.
+- `Note` = **Freight collect.**  
+  Who has paid the freight.
+- `DocumentStatusCode` = **Confirmed**  
+  Issued.
+- `DeclaredCarriageValueAmount` = **0.00** (currencyID `XBL`)  
+  No value declared.
 
 ### Consignor Party
 
@@ -399,6 +409,50 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **LTM-FI-26-0198**  
+  The forwarding instructions it was issued on.
+
+### Exchange Rate
+
+Inside `ExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The freight's currency.
+- `TargetCurrencyCode` = **XLC**  
+  The island's currency.
+- `CalculationRate` = **0.4**  
+  The reference rate.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  Three originals.
+- `DocumentTypeCode` = **Original**  
+  Originals.
+- `DistributionTypeCode` = **Paper**  
+  On paper, by courier.
+- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **TWL-SIG-BL-cotton**  
+  The master's signature, by the carrier's agent.
+- `SignatoryParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -412,6 +466,11 @@ Inside `Shipment`:
   <cbc:UUID>3321e495-7627-5d35-94f2-0b1a66354dbc</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>15:19:00</cbc:IssueTime>
+  <cbc:Name>Bill of lading</cbc:Name>
+  <cbc:Description>Shipped on board.</cbc:Description>
+  <cbc:Note>Freight collect.</cbc:Note>
+  <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
+  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -732,5 +791,37 @@ Inside `Shipment`:
       </cac:ConsigneeParty>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>LTM-FI-26-0198</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+  </cac:ExchangeRate>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>TWL-SIG-BL-cotton</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </BillOfLading>
 ```

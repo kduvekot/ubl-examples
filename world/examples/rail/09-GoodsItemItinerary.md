@@ -26,10 +26,23 @@ The carrier tells the transport user the route and timing of the containers.
   Sent when the containers are on the train.
 - `IssueTime` = **09:00:00**  
   After loading.
+- `Note` = **The itinerary of the two containers.**  
+  What it shows.
 - `VersionID` = **1**  
   The first version of the itinerary.
 - `TransportExecutionPlanReferenceID` = **FRC-TEP-26-0328**  
   The transport plan the itinerary belongs to.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FRC-SIG-GII**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -225,6 +238,34 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Referenced Consignment
+
+Inside `ReferencedConsignment`:
+
+- `ID` = **VI-CS-26-0327**  
+  The consignment.
+
+### Referenced Transport Equipment
+
+Inside `ReferencedTransportEquipment`:
+
+- `ID` = **FRCU1044171** (schemeID `ISO6346`)  
+  The first container.
+
+### Referenced Package
+
+Inside `ReferencedPackage`:
+
+- `ID` = **CL-26-001**  
+  The first pallet in it.
+
+### Referenced Goods Item
+
+Inside `ReferencedGoodsItem`:
+
+- `ID` = **1**  
+  The benches.
+
 ### Transportation Segment
 
 Inside `TransportationSegment`:
@@ -259,8 +300,20 @@ Inside `TransportationSegment`:
   <cbc:UUID>e53fe159-3e7a-5848-95d5-9dad68594dd0</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:00:00</cbc:IssueTime>
+  <cbc:Note>The itinerary of the two containers.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+  <cac:Signature>
+    <cbc:ID>FRC-SIG-GII</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
@@ -437,6 +490,18 @@ Inside `TransportationSegment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:ReferencedConsignment>
+    <cbc:ID>VI-CS-26-0327</cbc:ID>
+  </cac:ReferencedConsignment>
+  <cac:ReferencedTransportEquipment>
+    <cbc:ID schemeID="ISO6346">FRCU1044171</cbc:ID>
+  </cac:ReferencedTransportEquipment>
+  <cac:ReferencedPackage>
+    <cbc:ID>CL-26-001</cbc:ID>
+  </cac:ReferencedPackage>
+  <cac:ReferencedGoodsItem>
+    <cbc:ID>1</cbc:ID>
+  </cac:ReferencedGoodsItem>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>

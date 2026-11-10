@@ -20,12 +20,30 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
   This run of the process: the same in every document of the flow.
 - `ID` = **BF-FI-26-0137**  
   The forwarder's booking number with the ocean carrier.
+- `CarrierAssignedID` = **TWL-BK-26-55710**  
+  The booking number the carrier gave.
 - `UUID` = **a28c5575-3d16-5217-93bf-9cf7fe81d417**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-10**  
   The forwarder books the container.
 - `IssueTime` = **09:15:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Forwarding instructions**  
+  What they are.
+- `Description` = **Instructions for the shipment to the island.**  
+  In words.
+- `Note` = **Please confirm the booking.**  
+  What the sender expects.
+- `DocumentStatusCode` = **NoStatus**  
+  New instructions.
+- `ShippingOrderID` = **LD-SH-26-0132**  
+  The shipment to be booked.
+- `ToOrderIndicator` = **true**  
+  A bill of lading to order, so the buyer can transfer it.
+- `AdValoremIndicator` = **false**  
+  No value declared for the carriage.
+- `OtherInstruction` = **Send the bill of lading to the forwarder.**  
+  Where the documents go.
 
 ### Consignor Party
 
@@ -407,6 +425,50 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **VT-PO-26-0127**  
+  The order the goods are for.
+
+### Exchange Rate
+
+Inside `ExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The freight's currency.
+- `TargetCurrencyCode` = **XLC**  
+  The island's currency.
+- `CalculationRate` = **0.4**  
+  The reference rate.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  A copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  As this UBL document.
+- `Party/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-FI-12**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -417,9 +479,18 @@ Inside `Shipment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-FI-26-0137</cbc:ID>
+  <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
   <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
   <cbc:IssueDate>2026-05-10</cbc:IssueDate>
   <cbc:IssueTime>09:15:00</cbc:IssueTime>
+  <cbc:Name>Forwarding instructions</cbc:Name>
+  <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
+  <cbc:Note>Please confirm the booking.</cbc:Note>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ShippingOrderID>LD-SH-26-0132</cbc:ShippingOrderID>
+  <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -744,5 +815,37 @@ Inside `Shipment`:
       </cac:ConsigneeParty>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>VT-PO-26-0127</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+  </cac:ExchangeRate>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-FI-12</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ForwardingInstructions>
 ```

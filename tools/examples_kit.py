@@ -560,21 +560,115 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
 
 
 # ---------------------------------------------------------------- transport
+def flow_leg(flow, carrier):
+    """The flow's transport leg carried by `carrier` (world/documents.json, "legs")."""
+    f = next(x for x in WORLD["flows"] if x["id"] == flow.id)
+    return next(leg for leg in f["legs"] if leg["carrier"] == carrier)
+
+
+MODE_SERVICE = {"road": "Full truck load", "rail": "Container train", "river": "River barge", "sea": "Liner service",
+                "air": "Air cargo"}
+
+
+def leg_places(flow, carrier):
+    leg = flow_leg(flow, carrier)
+    loc = lambda pid, why: {"Name": V(PARTY[pid]["identity"]["name"], why), "Address": address_of(pid)}
+    return leg, {"FromLocation": loc(leg["from"], "Where the goods are taken over."),
+                 "ToLocation": loc(leg["to"], "Where the goods are handed over.")}
+
+
+def address_of(pid):
+    from build_examples import address
+    return address(pid)
+
+
+def tep_terms(flow, user, provider, days):
+    """The terms of a transport plan: payment, a penalty for late delivery, notification before arrival."""
+    leg = flow_leg(flow, provider)
+    return {"TransportUserSpecialTerms": V("Delivery within the agreed slot; the consignee unloads.", "The user's "
+                                                                                                     "terms."),
+            "TransportServiceProviderSpecialTerms": V("Waiting time beyond two hours is charged.", "The carrier's."),
+            "ChangeConditions": V("Changes up to 24 hours before collection without charge.", "When the plan may "
+                                                                                              "change."),
+            "PaymentTerms": {"Note": V("30 days net from the consignment note.", "When the freight is paid.")},
+            "PenaltyPaymentTerms": {"Note": V("5 % of the freight per day late, at most 25 %.", "The penalty for "
+                                                                                                "late delivery."),
+                                    "PenaltySurchargePercent": V("5", "Per day late.")},
+            "BonusPaymentTerms": {"Note": V("None.", "No bonus for early delivery: the slot is fixed.")},
+            "CommissionPaymentTerms": {"Note": V("No commission: booked directly with the carrier.", "Why none.")},
+            "ServiceChargePaymentTerms": {"Note": V("Waiting time 40 per hour beyond two hours.", "The service "
+                                                                                                  "charge.")},
+            "NotificationRequirement": {"NotificationTypeCode": V("PreArrival", "Notice before arrival."),
+                                        "PreEventNotificationDurationMeasure": V("2", "Two hours before.",
+                                                                                 unitCode="HUR"),
+                                        "PostEventNotificationDurationMeasure": V("1", "And an hour after delivery "
+                                                                                       "the proof.", unitCode="HUR"),
+                                        "NotifyParty": party_short(leg["to"]),
+                                        "NotificationLocation": {"Name": V(PARTY[leg["to"]]["identity"]["name"],
+                                                                           "Where the notice is for.")}}}
+
+
 def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
+    leg, places = leg_places(flow, doc["to"])
+    mode = leg["mode"]
     return {"ID": V(flow.number("tep-request", doc["from"], "TransportExecutionPlanRequest"),
                     "The transport user's request number."),
+            "VersionID": V("1", "The first version of the request."),
             "IssueDate": V(flow.date(day), why),
+            "DocumentStatusCode": V("NoStatus", "A new request, without a status yet."),
+            "Note": V(leg["why"], "The transport asked for."),
+            "TransportUserRemarks": V("Please confirm by return.", "The user's remark."),
+            "BillToParty": party_short(doc["from"]),
+            "TransportContract": {"ID": V(f"{initials(doc['from'])}-{initials(doc['to'])}-FW-2026", "The framework "
+                                                                                                  "agreement with "
+                                                                                                  "the carrier.")},
+            "TransportServiceProviderResponseDeadlinePeriod": {"EndDate": V(flow.date(day + 1), "An answer is "
+                                                                                                 "needed by the "
+                                                                                                 "next day.")},
+            "MainTransportationService": {"TransportServiceCode": V(mode.upper(), f"The main service: {mode}."),
+                                          "Name": V(MODE_SERVICE[mode], "In words.")},
             "ServiceStartTimePeriod": {"StartDate": V(flow.date(start_day), "The day the goods should be collected.")},
+            "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
+            **places,
             "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
                                     "The transport user's number for this consignment, quoted along the chain."),
                             "GrossWeightMeasure": qty(weight, "KGM", why_weight)}}
 
 
 def tep(flow, n, doc, day, why, start_day, weight):
+    leg, places = leg_places(flow, doc["from"])
+    mode = leg["mode"]
     return {"ID": V(flow.number("tep", doc["from"], "TransportExecutionPlan"), "The carrier's number for the agreed plan."),
+            "VersionID": V("1", "The first version of the plan."),
             "IssueDate": V(flow.date(day), why),
             "DocumentStatusCode": V("Confirmed", "The carrier confirms the plan as requested. A value of UBL's document "
                                                  "status code list (2.1: Document has been confirmed)."),
+            "DocumentStatusReasonCode": V("AsRequested", "Confirmed without changes."),
+            "DocumentStatusReasonDescription": V("Capacity available on the requested day.", "Why it is confirmed."),
+            "Note": V(leg["why"], "The transport agreed."),
+            "TransportUserRemarks": V("Please confirm by return.", "The user's remark from the request."),
+            "TransportServiceProviderRemarks": V("Collection as requested; notice two hours before arrival.",
+                                                 "The carrier's remark."),
+            "BillToParty": party_short(doc["to"]),
+            "Signature": {"ID": V(f"{initials(doc['from'])}-SIG-{flow.base}", "The carrier's seal on the plan."),
+                          "SignatoryParty": party_short(doc["from"])},
+            "TransportContract": {"ID": V(f"{initials(doc['to'])}-{initials(doc['from'])}-FW-2026", "The framework "
+                                                                                                  "agreement."),
+                                  "ContractType": V("Framework transport agreement", "Its kind.")},
+            "TransportUserResponseRequiredPeriod": {"EndDate": V(flow.date(day + 1), "The user may object until "
+                                                                                     "the next day.")},
+            "TransportServiceProviderResponseRequiredPeriod": {"EndDate": V(flow.date(day), "The carrier answered "
+                                                                                            "the same day.")},
+            "ValidityPeriod": {"StartDate": V(flow.date(day), "From the confirmation."),
+                               "EndDate": V(flow.date(start_day + 3), "Until the carriage is done.")},
+            "MainTransportationService": {"TransportServiceCode": V(mode.upper(), f"The main service: {mode}."),
+                                          "Name": V(MODE_SERVICE[mode], "In words.")},
+            "AdditionalTransportationService": {"TransportServiceCode": V("NOTIFY", "Pre-arrival notice."),
+                                                "Name": V("Notice two hours before arrival", "In words.")},
+            "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
+            **places,
+            "AtLocation": {"Name": V(PARTY[doc["from"]]["identity"]["name"], "Where the carrier's planning sits.")},
+            "TransportExecutionTerms": tep_terms(flow, doc["to"], doc["from"], 3),
             "TransportExecutionPlanRequestDocumentReference": {"ID": V(flow.numbers["tep-request"],
                                                                        "The request this plan answers.")},
             "ServiceStartTimePeriod": {"StartDate": V(flow.date(start_day), "Collection, as requested.")},
@@ -582,9 +676,43 @@ def tep(flow, n, doc, day, why, start_day, weight):
                             "GrossWeightMeasure": qty(weight, "KGM", "The weight the plan is made for.")}}
 
 
+WAYBILL_KIND = {"road": ("CMR", "Consignment note under the road convention, the CMR"),
+                "rail": ("CIM", "Rail consignment note under the CIM uniform rules"),
+                "river": ("CMNI", "Inland waterway consignment note under the CMNI"),
+                "air": ("AWB", "Air waybill under the Montreal Convention")}
+
+
 def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
-    out = {"ID": V(flow.number("waybill", doc["from"], "Waybill"), "The consignment note number."),
+    carrier = doc["from"]
+    leg = flow_leg(flow, carrier)
+    kind, kind_name = WAYBILL_KIND[leg["mode"]]
+    number = flow.number("waybill", doc["from"], "Waybill")
+    out = {"ID": V(number, "The consignment note number."),
+           "CarrierAssignedID": V(f"{initials(carrier)}-{kind}-26-{flow.base:04d}", "The carrier's own number for "
+                                                                                    "the carriage."),
+           "VersionID": V("1", "The original, not a corrected version."),
            "IssueDate": V(flow.date(day), why),
+           "Name": V(kind_name, "The kind of transport document."),
+           "Description": V(leg["why"], "The carriage in words."),
+           "Note": V("Three originals: consignor, consignee, carrier.", "As the convention prescribes."),
+           "WaybillTypeCode": V(kind, "The convention the document follows."),
+           "ConsolidatedIndicator": V("false", "One consignment, not a consolidation."),
+           "AdValoremIndicator": V("false", "No value declared to raise the carrier's liability."),
+           "OtherInstruction": V("Deliver against signature of the consignee.", "What the carrier must do at "
+                                                                               "delivery."),
+           "IssueLocation": {"Name": V(PARTY[leg["from"]]["identity"]["name"], "Where the carrier took over the "
+                                                                             "goods and issued the note.")},
+           "DocumentDistribution": [
+               {"ID": V("1", "The first original."), "DocumentTypeCode": V("Original", "An original."),
+                "DistributionTypeCode": V("Paper", "Handed over on paper."),
+                "DistributionType": V("With the goods", "It travels with the goods."),
+                "Party": party_short(leg["to"])},
+               {"ID": V("2", "The electronic copy."), "DocumentTypeCode": V("Copy", "A copy."),
+                "DistributionTypeCode": V("Electronic", "Sent as this UBL document."),
+                "Party": party_short(doc["to"])}],
+           "Signature": {"ID": V(f"{initials(carrier)}-SIG-{number}", "The carrier's signature on taking over the "
+                                                                      "goods."),
+                         "SignatoryParty": party_short(carrier)},
            "Shipment": {"ID": V(flow.numbers.get("shipment") or flow.number("shipment", doc["from"], "Shipment"),
                                 "The shipment as the despatching party numbered it."),
                         "GrossWeightMeasure": qty(weight, "KGM", why_weight),

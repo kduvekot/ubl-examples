@@ -26,6 +26,22 @@ The distributor asks its forwarder to book air freight for the urgent part.
   The distributor asks its forwarder to book air freight.
 - `IssueTime` = **13:44:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Forwarding instructions**  
+  What they are.
+- `Description` = **Instructions for the shipment to the island.**  
+  In words.
+- `Note` = **Please confirm the booking.**  
+  What the sender expects.
+- `DocumentStatusCode` = **NoStatus**  
+  New instructions.
+- `ShippingOrderID` = **LD-SH-26-0323**  
+  The shipment to be booked.
+- `ToOrderIndicator` = **false**  
+  A straight bill: the consignee is named.
+- `AdValoremIndicator` = **false**  
+  No value declared for the carriage.
+- `OtherInstruction` = **Send the bill of lading to the forwarder.**  
+  Where the documents go.
 
 ### Consignor Party
 
@@ -388,6 +404,50 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/Status/Description` = **Waiting at the distributor's dispatch area.**  
   Where they are.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **VT-PO-26-0319**  
+  The order the goods are for.
+
+### Exchange Rate
+
+Inside `ExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The freight's currency.
+- `TargetCurrencyCode` = **XLC**  
+  The island's currency.
+- `CalculationRate` = **0.4**  
+  The reference rate.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  A copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  As this UBL document.
+- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-FI-03**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -401,6 +461,14 @@ Inside `Shipment`:
   <cbc:UUID>8a0ceec7-aa03-5c38-8c5d-9f93d07709aa</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>13:44:00</cbc:IssueTime>
+  <cbc:Name>Forwarding instructions</cbc:Name>
+  <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
+  <cbc:Note>Please confirm the booking.</cbc:Note>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ShippingOrderID>LD-SH-26-0323</cbc:ShippingOrderID>
+  <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -724,5 +792,37 @@ Inside `Shipment`:
       </cac:TransportHandlingUnit>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>VT-PO-26-0319</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+  </cac:ExchangeRate>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-FI-03</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ForwardingInstructions>
 ```

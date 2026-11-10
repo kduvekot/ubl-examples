@@ -20,12 +20,39 @@ The air waybill; the airline's road feeder service, run by the road carrier, is 
   This run of the process: the same in every document of the flow.
 - `ID` = **KAC-WB-26-0325**  
   The consignment note number.
+- `CarrierAssignedID` = **KAC-AWB-26-0319**  
+  The carrier's own number for the carriage.
 - `UUID` = **cbf5d04c-eecc-510a-b84b-bf76e2526b98**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `VersionID` = **1**  
+  The original, not a corrected version.
 - `IssueDate` = **2026-05-13**  
   The air waybill, issued when the airline accepts the cargo.
 - `IssueTime` = **10:43:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Air waybill under the Montreal Convention**  
+  The kind of transport document.
+- `Description` = **The flight to the island.**  
+  The carriage in words.
+- `Note` = **Three originals: consignor, consignee, carrier.**  
+  As the convention prescribes.
+- `WaybillTypeCode` = **AWB**  
+  The convention the document follows.
+- `ConsolidatedIndicator` = **false**  
+  One consignment, not a consolidation.
+- `AdValoremIndicator` = **true**  
+  A value is declared to the airline, which raises its liability.
+- `DeclaredCarriageValueAmount` = **512.00** (currencyID `XBL`)  
+  The value declared for carriage.
+- `OtherInstruction` = **Deliver against signature of the consignee.**  
+  What the carrier must do at delivery.
+
+### Issue Location
+
+Inside `IssueLocation`:
+
+- `Name` = **Lumeport Airport Cargo Terminal**  
+  Where the carrier took over the goods and issued the note.
 
 ### Sender Party
 
@@ -523,6 +550,44 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceTime` = **10:00:00**  
   The local time.
 
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  The first original.
+- `DocumentTypeCode` = **Original**  
+  An original.
+- `DistributionTypeCode` = **Paper**  
+  Handed over on paper.
+- `DistributionType` = **With the goods**  
+  It travels with the goods.
+- `Party/PartyIdentification/ID` = **IC41174** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Selanu Airport Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
+  The electronic copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  Sent as this UBL document.
+- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **KAC-SIG-KAC-WB-26-0325**  
+  The carrier's signature on taking over the goods.
+- `SignatoryParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Kelaro Air Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -533,9 +598,22 @@ Inside `Shipment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>KAC-WB-26-0325</cbc:ID>
+  <cbc:CarrierAssignedID>KAC-AWB-26-0319</cbc:CarrierAssignedID>
   <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>10:43:00</cbc:IssueTime>
+  <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
+  <cbc:Description>The flight to the island.</cbc:Description>
+  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:WaybillTypeCode>AWB</cbc:WaybillTypeCode>
+  <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
+  <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
+  <cbc:DeclaredCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredCarriageValueAmount>
+  <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
+  <cac:IssueLocation>
+    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+  </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5120</cbc:IndustryClassificationCode>
@@ -971,5 +1049,43 @@ Inside `Shipment`:
       </cac:MainCarriageShipmentStage>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cbc:DistributionType>With the goods</cbc:DistributionType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Airport Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>KAC-SIG-KAC-WB-26-0325</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Kelaro Air Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </Waybill>
 ```

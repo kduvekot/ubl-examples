@@ -26,6 +26,21 @@ The hub, as network manager, reports the train's position and timetable.
   Answered at once.
 - `IssueTime` = **06:45:00**  
   A quarter of an hour later.
+- `Note` = **Left on time.**  
+  The answer.
+- `StatusAvailableIndicator` = **true**  
+  A status is available.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FIH-SIG-TPS**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Intermodal Hub**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -205,12 +220,69 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Source Issuer Party
+
+Inside `SourceIssuerParty`:
+
+- `PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Ferrano Intermodal Hub**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Transport Progress Status Request Document Reference
+
+Inside `TransportProgressStatusRequestDocumentReference`:
+
+- `ID` = **FRC-DOC-26-0329**  
+  The request answered.
+
 ### Transport Means
 
 Inside `TransportMeans`:
 
 - `JourneyID` = **CT 4471**  
   The number of the container train in the hub's timetable.
+
+### Transport Schedule
+
+Inside `TransportSchedule`:
+
+- `SequenceNumeric` = **1**  
+  The first stop: the hub.
+- `ReferenceDate` = **2026-04-14**  
+  The day.
+- `ReferenceTime` = **06:45:00**  
+  The time.
+- `ReliabilityPercent` = **95**  
+  How sure the schedule is.
+- `Remarks` = **On time.**  
+  The status.
+- `StatusLocation/Name` = **Ferrano Intermodal Hub**  
+  The stop.
+- `ActualArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The train arrived at the hub for loading.
+- `ActualArrivalTransportEvent/OccurrenceTime` = **05:30:00**  
+  The local time.
+- `ActualDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The departure.
+- `ActualDepartureTransportEvent/OccurrenceTime` = **06:52:00**  
+  The local time.
+- `EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
+  As expected that morning.
+- `EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00**  
+  The local time.
+- `EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
+  Expected in Marrowdale.
+- `EstimatedArrivalTransportEvent/OccurrenceTime` = **10:40:00**  
+  The local time.
+- `PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The timetable.
+- `PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00**  
+  The local time.
+- `PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
+  The timetable.
+- `PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00**  
+  The local time.
 
 ## The document
 
@@ -225,6 +297,19 @@ Inside `TransportMeans`:
   <cbc:UUID>78d6602f-27f8-5e6a-b8c0-36b493a71754</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:45:00</cbc:IssueTime>
+  <cbc:Note>Left on time.</cbc:Note>
+  <cbc:StatusAvailableIndicator>true</cbc:StatusAvailableIndicator>
+  <cac:Signature>
+    <cbc:ID>FIH-SIG-TPS</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranohub.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5221</cbc:IndustryClassificationCode>
@@ -381,8 +466,53 @@ Inside `TransportMeans`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:SourceIssuerParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+    </cac:PartyName>
+  </cac:SourceIssuerParty>
+  <cac:TransportProgressStatusRequestDocumentReference>
+    <cbc:ID>FRC-DOC-26-0329</cbc:ID>
+  </cac:TransportProgressStatusRequestDocumentReference>
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>
   </cac:TransportMeans>
+  <cac:TransportSchedule>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:ReferenceDate>2026-04-14</cbc:ReferenceDate>
+    <cbc:ReferenceTime>06:45:00</cbc:ReferenceTime>
+    <cbc:ReliabilityPercent>95</cbc:ReliabilityPercent>
+    <cbc:Remarks>On time.</cbc:Remarks>
+    <cac:StatusLocation>
+      <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+    </cac:StatusLocation>
+    <cac:ActualArrivalTransportEvent>
+      <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>05:30:00</cbc:OccurrenceTime>
+    </cac:ActualArrivalTransportEvent>
+    <cac:ActualDepartureTransportEvent>
+      <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
+    </cac:ActualDepartureTransportEvent>
+    <cac:EstimatedDepartureTransportEvent>
+      <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+    </cac:EstimatedDepartureTransportEvent>
+    <cac:EstimatedArrivalTransportEvent>
+      <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+    </cac:EstimatedArrivalTransportEvent>
+    <cac:PlannedDepartureTransportEvent>
+      <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+    </cac:PlannedDepartureTransportEvent>
+    <cac:PlannedArrivalTransportEvent>
+      <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+    </cac:PlannedArrivalTransportEvent>
+  </cac:TransportSchedule>
 </TransportProgressStatus>
 ```

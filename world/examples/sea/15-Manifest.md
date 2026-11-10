@@ -28,8 +28,18 @@ Before arrival the carrier lists the cargo on board for the island's customs.
   The time the sender's system issued the document, in the sender's local time.
 - `ManifestTypeCode` = **Cargo**  
   A cargo manifest, of what the ship carries for Selanu.
+- `ManifestType` = **Cargo manifest**  
+  In words.
+- `Description` = **Cargo for Selanu.**  
+  What it lists.
+- `Note` = **One container for Selanu.**  
+  The cargo.
+- `VersionID` = **1**  
+  The first version.
 - `AdValoremIndicator` = **false**  
   No value declared for the carriage.
+- `DeclaredCarriageValueAmount` = **0.00** (currencyID `XBL`)  
+  No value declared.
 
 ### Sending Logistics Operator Party
 
@@ -390,6 +400,17 @@ Inside `CrewPerson`:
 - `RoleCode` = **ChiefOfficer**  
   The person's role on board.
 
+### Passenger Person
+
+Inside `PassengerPerson`:
+
+- `FirstName` = **Ines**  
+  The one passenger: a supercargo travelling with the cargo.
+- `FamilyName` = **Tavari**  
+  The family name.
+- `RoleCode` = **Passenger**  
+  The person's role on board.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -479,6 +500,37 @@ Inside `Shipment`:
 - `LastExitPortLocation/Address/Country/IdentificationCode` = **XB**  
   The country the place is in.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **TOL-BL-26-0139**  
+  The bill of lading of the container.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  To customs.
+- `DistributionTypeCode` = **Electronic**  
+  By message.
+- `Party/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Island Customs Service**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **TWL-SIG-MF**  
+  The master's signature.
+- `SignatoryParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -493,7 +545,12 @@ Inside `Shipment`:
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>16:08:00</cbc:IssueTime>
   <cbc:ManifestTypeCode>Cargo</cbc:ManifestTypeCode>
+  <cbc:ManifestType>Cargo manifest</cbc:ManifestType>
+  <cbc:Description>Cargo for Selanu.</cbc:Description>
+  <cbc:Note>One container for Selanu.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -797,6 +854,11 @@ Inside `Shipment`:
     <cbc:FamilyName>Marrin</cbc:FamilyName>
     <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
   </cac:CrewPerson>
+  <cac:PassengerPerson>
+    <cbc:FirstName>Ines</cbc:FirstName>
+    <cbc:FamilyName>Tavari</cbc:FamilyName>
+    <cbc:RoleCode>Passenger</cbc:RoleCode>
+  </cac:PassengerPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
@@ -875,5 +937,31 @@ Inside `Shipment`:
       </cac:Address>
     </cac:LastExitPortLocation>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+  </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Island Customs Service</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>TWL-SIG-MF</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </Manifest>
 ```

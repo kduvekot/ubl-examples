@@ -26,6 +26,18 @@ The intermodal terminal reports to the rail carrier that the containers are load
   Reported when the containers are on the train.
 - `IssueTime` = **13:11:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Transportation status**  
+  The kind of report.
+- `Description` = **Two containers loaded on the container train.**  
+  In words.
+- `Note` = **Automatic report from the sender's tracking system.**  
+  How it was made.
+- `ShippingOrderID` = **VI-CS-26-0327**  
+  The shipper's booking it reports on.
+- `OtherInstruction` = **Reply only if the delivery slot must change.**  
+  What the receiver should do.
+- `TransportExecutionStatusCode` = **InProgress**  
+  The carriage is under way.
 
 ### Consignment
 
@@ -237,6 +249,24 @@ Inside `TransportEvent`:
 - `Location/Name` = **Ferrano Intermodal Hub**  
   Where it happened.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **VI-CS-26-0327**  
+  The transport document of the consignment.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FIH-SIG-TS-07**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Intermodal Hub**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Sender Party
 
 Inside `SenderParty`:
@@ -255,6 +285,29 @@ Inside `ReceiverParty`:
 - `PartyName/Name` = **Ferrano Rail Cargo**  
   The same party as at Consignment/CarrierParty, where its full details are given; only its identifier and name are repeated.
 
+### Transport Execution Plan Document Reference
+
+Inside `TransportExecutionPlanDocumentReference`:
+
+- `ID` = **FRC-TEP-26-0328**  
+  The plan the carriage follows.
+
+### Status Location
+
+Inside `StatusLocation`:
+
+- `Name` = **Ferrano Intermodal Hub**  
+  Where the status was recorded.
+
+### Status Period
+
+Inside `StatusPeriod`:
+
+- `StartDate` = **2026-04-14**  
+  The status holds from the report.
+- `EndDate` = **2026-04-14**  
+  Until the next report.
+
 ## The document
 
 ```xml
@@ -268,6 +321,12 @@ Inside `ReceiverParty`:
   <cbc:UUID>514b9478-0214-5ce0-9018-7c4cf752cbd3</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>13:11:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Two containers loaded on the container train.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
     <cac:CarrierParty>
@@ -456,6 +515,20 @@ Inside `ReceiverParty`:
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>VI-CS-26-0327</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>FIH-SIG-TS-07</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
@@ -472,5 +545,15 @@ Inside `ReceiverParty`:
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:TransportExecutionPlanDocumentReference>
+    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+  </cac:TransportExecutionPlanDocumentReference>
+  <cac:StatusLocation>
+    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-04-14</cbc:StartDate>
+    <cbc:EndDate>2026-04-14</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>
 ```

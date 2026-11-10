@@ -20,12 +20,37 @@ The inland waterway consignment note, issued to the shipper.
   This run of the process: the same in every document of the flow.
 - `ID` = **FB-WB-26-0890**  
   The consignment note number.
+- `CarrierAssignedID` = **FB-CMNI-26-0882**  
+  The carrier's own number for the carriage.
 - `UUID` = **0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `VersionID` = **1**  
+  The original, not a corrected version.
 - `IssueDate` = **2026-04-19**  
   Issued when the barge is loaded.
 - `IssueTime` = **09:38:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Inland waterway consignment note under the CMNI**  
+  The kind of transport document.
+- `Description` = **The barge from the quay next to the recovery plant down the river to the packaging maker.**  
+  The carriage in words.
+- `Note` = **Three originals: consignor, consignee, carrier.**  
+  As the convention prescribes.
+- `WaybillTypeCode` = **CMNI**  
+  The convention the document follows.
+- `ConsolidatedIndicator` = **false**  
+  One consignment, not a consolidation.
+- `AdValoremIndicator` = **false**  
+  No value declared to raise the carrier's liability.
+- `OtherInstruction` = **Deliver against signature of the consignee.**  
+  What the carrier must do at delivery.
+
+### Issue Location
+
+Inside `IssueLocation`:
+
+- `Name` = **Fiumella Barges**  
+  Where the carrier took over the goods and issued the note.
 
 ### Sender Party
 
@@ -503,6 +528,44 @@ Inside `DocumentReference`:
 - `ID` = **FB-TEP-26-0886**  
   The transport plan under which the carriage is performed.
 
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  The first original.
+- `DocumentTypeCode` = **Original**  
+  An original.
+- `DistributionTypeCode` = **Paper**  
+  Handed over on paper.
+- `DistributionType` = **With the goods**  
+  It travels with the goods.
+- `Party/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Rivermouth Packaging**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
+  The electronic copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  Sent as this UBL document.
+- `Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FB-SIG-FB-WB-26-0890**  
+  The carrier's signature on taking over the goods.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Fiumella Barges**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -513,9 +576,21 @@ Inside `DocumentReference`:
   <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FB-WB-26-0890</cbc:ID>
+  <cbc:CarrierAssignedID>FB-CMNI-26-0882</cbc:CarrierAssignedID>
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>09:38:00</cbc:IssueTime>
+  <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
+  <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
+  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:WaybillTypeCode>CMNI</cbc:WaybillTypeCode>
+  <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
+  <cac:IssueLocation>
+    <cbc:Name>Fiumella Barges</cbc:Name>
+  </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5022</cbc:IndustryClassificationCode>
@@ -925,5 +1000,43 @@ Inside `DocumentReference`:
   <cac:DocumentReference>
     <cbc:ID>FB-TEP-26-0886</cbc:ID>
   </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cbc:DistributionType>With the goods</cbc:DistributionType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rivermouth Packaging</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rinova Recovery</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>FB-SIG-FB-WB-26-0890</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Fiumella Barges</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </Waybill>
 ```

@@ -20,12 +20,37 @@ The rail consignment note goes to the party that contracted the carriage, the ma
   This run of the process: the same in every document of the flow.
 - `ID` = **FRC-WB-26-0310**  
   The consignment note number.
+- `CarrierAssignedID` = **FRC-CIM-26-0304**  
+  The carrier's own number for the carriage.
 - `UUID` = **04bf0219-eb96-5f58-b434-f608b27f5387**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `VersionID` = **1**  
+  The original, not a corrected version.
 - `IssueDate` = **2026-03-10**  
   Issued when the carrier takes over the loaded train.
 - `IssueTime` = **11:35:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Rail consignment note under the CIM uniform rules**  
+  The kind of transport document.
+- `Description` = **The ore train from the mine siding to the factory.**  
+  The carriage in words.
+- `Note` = **Three originals: consignor, consignee, carrier.**  
+  As the convention prescribes.
+- `WaybillTypeCode` = **CIM**  
+  The convention the document follows.
+- `ConsolidatedIndicator` = **false**  
+  One consignment, not a consolidation.
+- `AdValoremIndicator` = **false**  
+  No value declared to raise the carrier's liability.
+- `OtherInstruction` = **Deliver against signature of the consignee.**  
+  What the carrier must do at delivery.
+
+### Issue Location
+
+Inside `IssueLocation`:
+
+- `Name` = **Serravona Mining**  
+  Where the carrier took over the goods and issued the note.
 
 ### Sender Party
 
@@ -367,6 +392,44 @@ Inside `DocumentReference`:
 - `ID` = **FRC-TEP-26-0307**  
   The transport plan under which the carriage is performed.
 
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  The first original.
+- `DocumentTypeCode` = **Original**  
+  An original.
+- `DistributionTypeCode` = **Paper**  
+  Handed over on paper.
+- `DistributionType` = **With the goods**  
+  It travels with the goods.
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
+  The electronic copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  Sent as this UBL document.
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FRC-SIG-FRC-WB-26-0310**  
+  The carrier's signature on taking over the goods.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -377,9 +440,21 @@ Inside `DocumentReference`:
   <cbc:ProfileID>urn:ubl-examples:world:process:ore</cbc:ProfileID>
   <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-WB-26-0310</cbc:ID>
+  <cbc:CarrierAssignedID>FRC-CIM-26-0304</cbc:CarrierAssignedID>
   <cbc:UUID>04bf0219-eb96-5f58-b434-f608b27f5387</cbc:UUID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>11:35:00</cbc:IssueTime>
+  <cbc:Name>Rail consignment note under the CIM uniform rules</cbc:Name>
+  <cbc:Description>The ore train from the mine siding to the factory.</cbc:Description>
+  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:WaybillTypeCode>CIM</cbc:WaybillTypeCode>
+  <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
+  <cac:IssueLocation>
+    <cbc:Name>Serravona Mining</cbc:Name>
+  </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
@@ -677,5 +752,43 @@ Inside `DocumentReference`:
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>
   </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cbc:DistributionType>With the goods</cbc:DistributionType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>FRC-SIG-FRC-WB-26-0310</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </Waybill>
 ```

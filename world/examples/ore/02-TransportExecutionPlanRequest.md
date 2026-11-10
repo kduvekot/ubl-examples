@@ -20,12 +20,20 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   This run of the process: the same in every document of the flow.
 - `ID` = **VI-TR-26-0305**  
   The transport user's request number.
+- `VersionID` = **1**  
+  The first version of the request.
 - `UUID` = **1136675e-5400-5624-8e01-dc21b86cbdfe**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-03**  
   The day after the order: the buyer books the train it named in its order.
 - `IssueTime` = **09:24:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new request, without a status yet.
+- `Note` = **The ore train from the mine siding to the factory.**  
+  The transport asked for.
+- `TransportUserRemarks` = **Please confirm by return.**  
+  The user's remark.
 
 ### Sender Party
 
@@ -239,12 +247,101 @@ Inside `TransportServiceProviderParty`:
 - `PartyName/Name` = **Ferrano Rail Cargo**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Bill To Party
+
+Inside `BillToParty`:
+
+- `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Transport Contract
+
+Inside `TransportContract`:
+
+- `ID` = **VI-FRC-FW-2026**  
+  The framework agreement with the carrier.
+
+### Transport Service Provider Response Deadline Period
+
+Inside `TransportServiceProviderResponseDeadlinePeriod`:
+
+- `EndDate` = **2026-03-04**  
+  An answer is needed by the next day.
+
+### Main Transportation Service
+
+Inside `MainTransportationService`:
+
+- `TransportServiceCode` = **RAIL**  
+  The main service: rail.
+- `Name` = **Container train**  
+  In words.
+
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-03-10**  
   The day the goods should be collected.
+
+### Service End Time Period
+
+Inside `ServiceEndTimePeriod`:
+
+- `EndDate` = **2026-03-13**  
+  Delivered within three days.
+
+### From Location
+
+Inside `FromLocation`:
+
+- `Name` = **Serravona Mining**  
+  Where the goods are taken over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Strada della Miniera**  
+  Street of the postal address. identity of Serravona Mining (world/parties.json).
+- `Address/BuildingNumber` = **10**  
+  Building number of the postal address. identity of Serravona Mining (world/parties.json).
+- `Address/CityName` = **Serravona**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
+- `Address/PostalZone` = **4110**  
+  Postal code in Urvania's format (4 digits). identity of Serravona Mining (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Serravona Mining (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+
+### To Location
+
+Inside `ToLocation`:
+
+- `Name` = **Valdara Industries**  
+  Where the goods are handed over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Via delle Officine**  
+  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Address/BuildingNumber` = **17**  
+  Building number of the postal address. identity of Valdara Industries (world/parties.json).
+- `Address/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Address/PostalZone` = **4120**  
+  Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Valdara Industries (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
 
 ### Consignment
 
@@ -379,9 +476,13 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:ore</cbc:ProfileID>
   <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-TR-26-0305</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>1136675e-5400-5624-8e01-dc21b86cbdfe</cbc:UUID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cbc:IssueTime>09:24:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:Note>The ore train from the mine siding to the factory.</cbc:Note>
+  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -574,9 +675,62 @@ Inside `Consignment`:
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Valdara Industries</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:TransportContract>
+    <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseDeadlinePeriod>
+    <cbc:EndDate>2026-03-04</cbc:EndDate>
+  </cac:TransportServiceProviderResponseDeadlinePeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>RAIL</cbc:TransportServiceCode>
+    <cbc:Name>Container train</cbc:Name>
+  </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-03-10</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:EndDate>2026-03-13</cbc:EndDate>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:Name>Serravona Mining</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Strada della Miniera</cbc:StreetName>
+      <cbc:BuildingNumber>10</cbc:BuildingNumber>
+      <cbc:CityName>Serravona</cbc:CityName>
+      <cbc:PostalZone>4110</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:Name>Valdara Industries</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:BuildingNumber>17</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4120</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>

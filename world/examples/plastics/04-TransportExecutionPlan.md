@@ -20,6 +20,8 @@ The barge operator confirms the vessel and the sailing.
   This run of the process: the same in every document of the flow.
 - `ID` = **FB-TEP-26-0886**  
   The carrier's number for the agreed plan.
+- `VersionID` = **1**  
+  The first version of the plan.
 - `UUID` = **32791589-65d7-5d36-bda8-9b68dad29bdd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-15**  
@@ -28,6 +30,16 @@ The barge operator confirms the vessel and the sailing.
   The time the sender's system issued the document, in the sender's local time.
 - `DocumentStatusCode` = **Confirmed**  
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed).
+- `DocumentStatusReasonCode` = **AsRequested**  
+  Confirmed without changes.
+- `DocumentStatusReasonDescription` = **Capacity available on the requested day.**  
+  Why it is confirmed.
+- `Note` = **The barge from the quay next to the recovery plant down the river to the packaging maker.**  
+  The transport agreed.
+- `TransportUserRemarks` = **Please confirm by return.**  
+  The user's remark from the request.
+- `TransportServiceProviderRemarks` = **Collection as requested; notice two hours before arrival.**  
+  The carrier's remark.
 
 ### Sender Party
 
@@ -237,6 +249,26 @@ Inside `TransportServiceProviderParty`:
 - `PartyName/Name` = **Fiumella Barges**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 
+### Bill To Party
+
+Inside `BillToParty`:
+
+- `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FB-SIG-882**  
+  The carrier's seal on the plan.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Fiumella Barges**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Transport Execution Plan Request Document Reference
 
 Inside `TransportExecutionPlanRequestDocumentReference`:
@@ -244,12 +276,165 @@ Inside `TransportExecutionPlanRequestDocumentReference`:
 - `ID` = **RR-TR-26-0884**  
   The request this plan answers.
 
+### Transport Contract
+
+Inside `TransportContract`:
+
+- `ID` = **RR-FB-FW-2026**  
+  The framework agreement.
+- `ContractType` = **Framework transport agreement**  
+  Its kind.
+
+### Transport Service Provider Response Required Period
+
+Inside `TransportServiceProviderResponseRequiredPeriod`:
+
+- `EndDate` = **2026-04-15**  
+  The carrier answered the same day.
+
+### Transport User Response Required Period
+
+Inside `TransportUserResponseRequiredPeriod`:
+
+- `EndDate` = **2026-04-16**  
+  The user may object until the next day.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-04-15**  
+  From the confirmation.
+- `EndDate` = **2026-04-22**  
+  Until the carriage is done.
+
+### Main Transportation Service
+
+Inside `MainTransportationService`:
+
+- `TransportServiceCode` = **RIVER**  
+  The main service: river.
+- `Name` = **River barge**  
+  In words.
+
+### Additional Transportation Service
+
+Inside `AdditionalTransportationService`:
+
+- `TransportServiceCode` = **NOTIFY**  
+  Pre-arrival notice.
+- `Name` = **Notice two hours before arrival**  
+  In words.
+
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-04-19**  
   Collection, as requested.
+
+### Service End Time Period
+
+Inside `ServiceEndTimePeriod`:
+
+- `EndDate` = **2026-04-22**  
+  Delivered within three days.
+
+### From Location
+
+Inside `FromLocation`:
+
+- `Name` = **Fiumella Barges**  
+  Where the goods are taken over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Banchina del Fiume**  
+  Street of the postal address. identity of Fiumella Barges (world/parties.json).
+- `Address/BuildingNumber` = **52**  
+  Building number of the postal address. identity of Fiumella Barges (world/parties.json).
+- `Address/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Fiumella Barges (world/parties.json).
+- `Address/PostalZone` = **4170**  
+  Postal code in Urvania's format (4 digits). identity of Fiumella Barges (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Fiumella Barges (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+
+### To Location
+
+Inside `ToLocation`:
+
+- `Name` = **Rivermouth Packaging**  
+  Where the goods are handed over.
+- `Address/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Address/StreetName` = **Estuary Road**  
+  Street of the postal address. identity of Rivermouth Packaging (world/parties.json).
+- `Address/BuildingNumber` = **28**  
+  Building number of the postal address. identity of Rivermouth Packaging (world/parties.json).
+- `Address/CitySubdivisionName` = **Old town**  
+  The quarter of Lumeport the party is in. identity of Rivermouth Packaging (world/parties.json).
+- `Address/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Rivermouth Packaging (world/parties.json).
+- `Address/PostalZone` = **38505**  
+  Postal code in Bayvarra's format (5 digits). identity of Rivermouth Packaging (world/parties.json).
+- `Address/CountrySubentity` = **Coastal State**  
+  The state, part of an address in federal Bayvarra. identity of Rivermouth Packaging (world/parties.json).
+- `Address/CountrySubentityCode` = **CO**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Rivermouth Packaging (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+
+### At Location
+
+Inside `AtLocation`:
+
+- `Name` = **Fiumella Barges**  
+  Where the carrier's planning sits.
+
+### Transport Execution Terms
+
+Inside `TransportExecutionTerms`:
+
+- `TransportUserSpecialTerms` = **Delivery within the agreed slot; the consignee unloads.**  
+  The user's terms.
+- `TransportServiceProviderSpecialTerms` = **Waiting time beyond two hours is charged.**  
+  The carrier's.
+- `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
+  When the plan may change.
+- `PaymentTerms/Note` = **30 days net from the consignment note.**  
+  When the freight is paid.
+- `BonusPaymentTerms/Note` = **None.**  
+  No bonus for early delivery: the slot is fixed.
+- `CommissionPaymentTerms/Note` = **No commission: booked directly with the carrier.**  
+  Why none.
+- `PenaltyPaymentTerms/Note` = **5 % of the freight per day late, at most 25 %.**  
+  The penalty for late delivery.
+- `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
+  Per day late.
+- `NotificationRequirement/NotificationTypeCode` = **PreArrival**  
+  Notice before arrival.
+- `NotificationRequirement/PostEventNotificationDurationMeasure` = **1** (unitCode `HUR`)  
+  And an hour after delivery the proof.
+- `NotificationRequirement/PreEventNotificationDurationMeasure` = **2** (unitCode `HUR`)  
+  Two hours before.
+- `NotificationRequirement/NotifyParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `NotificationRequirement/NotifyParty/PartyName/Name` = **Rivermouth Packaging**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `NotificationRequirement/NotificationLocation/Name` = **Rivermouth Packaging**  
+  Where the notice is for.
+- `ServiceChargePaymentTerms/Note` = **Waiting time 40 per hour beyond two hours.**  
+  The service charge.
 
 ### Consignment
 
@@ -422,10 +607,16 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FB-TEP-26-0886</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>32791589-65d7-5d36-bda8-9b68dad29bdd</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
   <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
+  <cbc:DocumentStatusReasonCode>AsRequested</cbc:DocumentStatusReasonCode>
+  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
+  <cbc:Note>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Note>
+  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
+  <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5022</cbc:IndustryClassificationCode>
@@ -612,12 +803,130 @@ Inside `Consignment`:
       <cbc:Name>Fiumella Barges</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:Signature>
+    <cbc:ID>FB-SIG-882</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Fiumella Barges</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:TransportExecutionPlanRequestDocumentReference>
     <cbc:ID>RR-TR-26-0884</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
+  <cac:TransportContract>
+    <cbc:ID>RR-FB-FW-2026</cbc:ID>
+    <cbc:ContractType>Framework transport agreement</cbc:ContractType>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseRequiredPeriod>
+    <cbc:EndDate>2026-04-15</cbc:EndDate>
+  </cac:TransportServiceProviderResponseRequiredPeriod>
+  <cac:TransportUserResponseRequiredPeriod>
+    <cbc:EndDate>2026-04-16</cbc:EndDate>
+  </cac:TransportUserResponseRequiredPeriod>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-15</cbc:StartDate>
+    <cbc:EndDate>2026-04-22</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>RIVER</cbc:TransportServiceCode>
+    <cbc:Name>River barge</cbc:Name>
+  </cac:MainTransportationService>
+  <cac:AdditionalTransportationService>
+    <cbc:TransportServiceCode>NOTIFY</cbc:TransportServiceCode>
+    <cbc:Name>Notice two hours before arrival</cbc:Name>
+  </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-19</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:EndDate>2026-04-22</cbc:EndDate>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:Name>Fiumella Barges</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
+      <cbc:BuildingNumber>52</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4170</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:Name>Rivermouth Packaging</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Estuary Road</cbc:StreetName>
+      <cbc:BuildingNumber>28</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38505</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ToLocation>
+  <cac:AtLocation>
+    <cbc:Name>Fiumella Barges</cbc:Name>
+  </cac:AtLocation>
+  <cac:TransportExecutionTerms>
+    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
+    <cac:PaymentTerms>
+      <cbc:Note>30 days net from the consignment note.</cbc:Note>
+    </cac:PaymentTerms>
+    <cac:BonusPaymentTerms>
+      <cbc:Note>None.</cbc:Note>
+    </cac:BonusPaymentTerms>
+    <cac:CommissionPaymentTerms>
+      <cbc:Note>No commission: booked directly with the carrier.</cbc:Note>
+    </cac:CommissionPaymentTerms>
+    <cac:PenaltyPaymentTerms>
+      <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
+      <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>
+    </cac:PenaltyPaymentTerms>
+    <cac:NotificationRequirement>
+      <cbc:NotificationTypeCode>PreArrival</cbc:NotificationTypeCode>
+      <cbc:PostEventNotificationDurationMeasure unitCode="HUR">1</cbc:PostEventNotificationDurationMeasure>
+      <cbc:PreEventNotificationDurationMeasure unitCode="HUR">2</cbc:PreEventNotificationDurationMeasure>
+      <cac:NotifyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Rivermouth Packaging</cbc:Name>
+        </cac:PartyName>
+      </cac:NotifyParty>
+      <cac:NotificationLocation>
+        <cbc:Name>Rivermouth Packaging</cbc:Name>
+      </cac:NotificationLocation>
+    </cac:NotificationRequirement>
+    <cac:ServiceChargePaymentTerms>
+      <cbc:Note>Waiting time 40 per hour beyond two hours.</cbc:Note>
+    </cac:ServiceChargePaymentTerms>
+  </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>RR-CS-26-0885</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>

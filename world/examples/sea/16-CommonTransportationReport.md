@@ -26,6 +26,18 @@ The ship flies the island's flag; before entering port the carrier reports to th
   Sent before the ship enters the port of Selanu.
 - `IssueTime` = **15:38:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A first report.
+- `ReportTypeCode` = **PreArrival**  
+  The report before entering the port.
+- `ReportType` = **Pre-arrival report**  
+  In words.
+- `Description` = **The ship's report before arrival at Selanu.**  
+  What it is.
+- `Note` = **No incidents on board.**  
+  The master's note.
+- `VersionID` = **1**  
+  The first version.
 
 ### Reporter Party
 
@@ -207,6 +219,13 @@ Inside `ReceiverParty`:
 - `PartyName/Name` = **Maritime Administration of Lisavu**  
   The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
 
+### Reporting Location
+
+Inside `ReportingLocation`:
+
+- `Name` = **At sea, 40 nautical miles off Selanu**  
+  Where the report was made.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -316,6 +335,61 @@ Inside `Shipment`:
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name` = **Maritime Administration of Lisavu**  
   The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
 
+### Transport Means
+
+Inside `TransportMeans`:
+
+- `JourneyID` = **TH-26-19E**  
+  The voyage.
+- `RegistrationNationalityID` = **XB**  
+  The country the means of transport is registered in.
+- `RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `DirectionCode` = **Eastbound**  
+  The direction of the journey, as the carrier codes its services.
+- `TransportMeansTypeCode` = **SEA**  
+  The carrier's code for the kind of means: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+- `MaritimeTransport/VesselName` = **Tidewell Harbour**  
+  The vessel's name; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `MaritimeTransport/RadioCallSignID` = **XBTH7**  
+  The radio call sign, with the world's country code.
+- `MaritimeTransport/MMSIRegistrationID` = **999702117**  
+  The Maritime Mobile Service Identity, nine digits; 999 is no real country's maritime identification digits.
+- `MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
+  What the ship needs in port.
+- `MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `MaritimeTransport/NetTonnageMeasure` = **5120** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `MaritimeTransport/SegregatedBallastMeasure` = **2480** (unitCode `TNE`)  
+  The capacity of the tanks for ballast water only.
+- `MaritimeTransport/ShipConfigurationCode` = **Feeder container ship, 1,000 TEU**  
+  The kind of vessel.
+- `MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
+  The ship's certificate of registry.
+- `MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
+  The port the vessel is registered in.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **TOL-MF-26-0140**  
+  The cargo manifest.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **TWL-SIG-CTR**  
+  The master's signature.
+- `SignatoryParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -329,6 +403,12 @@ Inside `Shipment`:
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
   <cbc:IssueTime>15:38:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReportTypeCode>PreArrival</cbc:ReportTypeCode>
+  <cbc:ReportType>Pre-arrival report</cbc:ReportType>
+  <cbc:Description>The ship's report before arrival at Selanu.</cbc:Description>
+  <cbc:Note>No incidents on board.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ReporterParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -485,6 +565,9 @@ Inside `Shipment`:
       <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:ReportingLocation>
+    <cbc:Name>At sea, 40 nautical miles off Selanu</cbc:Name>
+  </cac:ReportingLocation>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:ShipmentStage>
@@ -581,5 +664,43 @@ Inside `Shipment`:
       </cac:ISPSRequirements>
     </cac:ShipmentStage>
   </cac:Shipment>
+  <cac:TransportMeans>
+    <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
+    <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+    <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+    <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
+    <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+    <cac:MaritimeTransport>
+      <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+      <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+      <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
+      <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+      <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+      <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+      <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+      <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
+      <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+      <cac:RegistryCertificateDocumentReference>
+        <cbc:ID>REG-XB-S-20117</cbc:ID>
+      </cac:RegistryCertificateDocumentReference>
+      <cac:RegistryPortLocation>
+        <cbc:Name>Lumeport</cbc:Name>
+      </cac:RegistryPortLocation>
+    </cac:MaritimeTransport>
+  </cac:TransportMeans>
+  <cac:DocumentReference>
+    <cbc:ID>TOL-MF-26-0140</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>TWL-SIG-CTR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </CommonTransportationReport>
 ```

@@ -20,12 +20,20 @@ The distributor, as transport user, books the truck: collection at the seller's 
   This run of the process: the same in every document of the flow.
 - `ID` = **LD-TR-26-0151**  
   The transport user's request number.
+- `VersionID` = **1**  
+  The first version of the request.
 - `UUID` = **4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-17**  
   The distributor books the truck once the order is accepted.
 - `IssueTime` = **14:16:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new request, without a status yet.
+- `Note` = **The truck the distributor booked, from the 3PL's warehouse across the border.**  
+  The transport asked for.
+- `TransportUserRemarks` = **Please confirm by return.**  
+  The user's remark.
 
 ### Sender Party
 
@@ -249,12 +257,109 @@ Inside `TransportServiceProviderParty`:
 - `PartyName/Name` = **Trasvia Haulage**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Bill To Party
+
+Inside `BillToParty`:
+
+- `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Transport Contract
+
+Inside `TransportContract`:
+
+- `ID` = **LD-TH-FW-2026**  
+  The framework agreement with the carrier.
+
+### Transport Service Provider Response Deadline Period
+
+Inside `TransportServiceProviderResponseDeadlinePeriod`:
+
+- `EndDate` = **2026-03-18**  
+  An answer is needed by the next day.
+
+### Main Transportation Service
+
+Inside `MainTransportationService`:
+
+- `TransportServiceCode` = **ROAD**  
+  The main service: road.
+- `Name` = **Full truck load**  
+  In words.
+
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-03-23**  
   The day the goods should be collected.
+
+### Service End Time Period
+
+Inside `ServiceEndTimePeriod`:
+
+- `EndDate` = **2026-03-26**  
+  Delivered within three days.
+
+### From Location
+
+Inside `FromLocation`:
+
+- `Name` = **Castrano Logistics**  
+  Where the goods are taken over.
+- `Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Address/StreetName` = **Via del Magazzino**  
+  Street of the postal address. identity of Castrano Logistics (world/parties.json).
+- `Address/BuildingNumber` = **24**  
+  Building number of the postal address. identity of Castrano Logistics (world/parties.json).
+- `Address/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Address/PostalZone` = **4130**  
+  Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
+- `Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Castrano Logistics (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+
+### To Location
+
+Inside `ToLocation`:
+
+- `Name` = **Lumeway Distribution**  
+  Where the goods are handed over.
+- `Address/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Address/StreetName` = **Distribution Drive**  
+  Street of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `Address/AdditionalStreetName` = **Gate 3**  
+  The gate of the business park to use. identity of Lumeway Distribution (world/parties.json).
+- `Address/BlockName` = **Marrowdale Business Park**  
+  The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
+- `Address/BuildingNumber` = **43**  
+  Building number of the postal address. identity of Lumeway Distribution (world/parties.json).
+- `Address/PlotIdentification` = **Plot 14**  
+  The plot of the distribution centre in the business park. identity of Lumeway Distribution (world/parties.json).
+- `Address/CityName` = **Marrowdale**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeway Distribution (world/parties.json).
+- `Address/PostalZone` = **71214**  
+  Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
+- `Address/CountrySubentity` = **Upland State**  
+  The state, part of an address in federal Bayvarra. identity of Lumeway Distribution (world/parties.json).
+- `Address/CountrySubentityCode` = **UL**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json).
+- `Address/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Address/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Address/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
 
 ### Consignment
 
@@ -411,9 +516,13 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-TR-26-0151</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:IssueTime>14:16:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:Note>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Note>
+  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -607,9 +716,66 @@ Inside `Consignment`:
       <cbc:Name>Trasvia Haulage</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:TransportContract>
+    <cbc:ID>LD-TH-FW-2026</cbc:ID>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseDeadlinePeriod>
+    <cbc:EndDate>2026-03-18</cbc:EndDate>
+  </cac:TransportServiceProviderResponseDeadlinePeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>ROAD</cbc:TransportServiceCode>
+    <cbc:Name>Full truck load</cbc:Name>
+  </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:EndDate>2026-03-26</cbc:EndDate>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:BuildingNumber>24</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:Name>Lumeway Distribution</cbc:Name>
+    <cac:Address>
+      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
+      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:Address>
+  </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0152</cbc:ID>
     <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>

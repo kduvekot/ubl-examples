@@ -8,6 +8,12 @@
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
   <cbc:IssueTime>15:38:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReportTypeCode>PreArrival</cbc:ReportTypeCode>
+  <cbc:ReportType>Pre-arrival report</cbc:ReportType>
+  <cbc:Description>The ship's report before arrival at Selanu.</cbc:Description>
+  <cbc:Note>No incidents on board.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ReporterParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -164,6 +170,9 @@
       <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:ReportingLocation>
+    <cbc:Name>At sea, 40 nautical miles off Selanu</cbc:Name>
+  </cac:ReportingLocation>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:ShipmentStage>
@@ -260,4 +269,42 @@
       </cac:ISPSRequirements>
     </cac:ShipmentStage>
   </cac:Shipment>
+  <cac:TransportMeans>
+    <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
+    <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+    <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+    <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
+    <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+    <cac:MaritimeTransport>
+      <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+      <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+      <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
+      <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+      <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+      <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+      <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+      <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
+      <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+      <cac:RegistryCertificateDocumentReference>
+        <cbc:ID>REG-XB-S-20117</cbc:ID>
+      </cac:RegistryCertificateDocumentReference>
+      <cac:RegistryPortLocation>
+        <cbc:Name>Lumeport</cbc:Name>
+      </cac:RegistryPortLocation>
+    </cac:MaritimeTransport>
+  </cac:TransportMeans>
+  <cac:DocumentReference>
+    <cbc:ID>TOL-MF-26-0140</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>TWL-SIG-CTR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </CommonTransportationReport>

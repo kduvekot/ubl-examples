@@ -26,6 +26,18 @@ The port of discharge reports the container discharged and available.
   Reported when the container is discharged.
 - `IssueTime` = **16:36:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Transportation status**  
+  The kind of report.
+- `Description` = **Container TWLU4120872 discharged and available for customs clearance.**  
+  In words.
+- `Note` = **Automatic report from the sender's tracking system.**  
+  How it was made.
+- `ShippingOrderID` = **LD-CS-26-0133**  
+  The shipper's booking it reports on.
+- `OtherInstruction` = **Reply only if the delivery slot must change.**  
+  What the receiver should do.
+- `TransportExecutionStatusCode` = **InProgress**  
+  The carriage is under way.
 
 ### Consignment
 
@@ -339,6 +351,24 @@ Inside `TransportEvent`:
 - `Location/Name` = **Port of Selanu**  
   Where it happened.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **TOL-BL-26-0139**  
+  The transport document of the consignment.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PS-SIG-TS-17**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Sender Party
 
 Inside `SenderParty`:
@@ -443,6 +473,22 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Status Location
+
+Inside `StatusLocation`:
+
+- `Name` = **Port of Selanu**  
+  Where the status was recorded.
+
+### Status Period
+
+Inside `StatusPeriod`:
+
+- `StartDate` = **2026-05-18**  
+  The status holds from the report.
+- `EndDate` = **2026-05-18**  
+  Until the next report.
+
 ## The document
 
 ```xml
@@ -456,6 +502,12 @@ Inside `ReceiverParty`:
   <cbc:UUID>1713d8c6-6d60-56cc-af96-b2eb848695b4</cbc:UUID>
   <cbc:IssueDate>2026-05-18</cbc:IssueDate>
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>
     <cac:ConsigneeParty>
@@ -731,6 +783,20 @@ Inside `ReceiverParty`:
       <cbc:Name>Port of Selanu</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>PS-SIG-TS-17</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
@@ -820,5 +886,12 @@ Inside `ReceiverParty`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:StatusLocation>
+    <cbc:Name>Port of Selanu</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-05-18</cbc:StartDate>
+    <cbc:EndDate>2026-05-18</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>
 ```

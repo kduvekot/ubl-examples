@@ -20,12 +20,37 @@ The rail consignment note goes to the transport user, now the seller.
   This run of the process: the same in every document of the flow.
 - `ID` = **FRC-WB-26-0334**  
   The consignment note number.
+- `CarrierAssignedID` = **FRC-CMR-26-0325**  
+  The carrier's own number for the carriage.
 - `UUID` = **2af02244-330b-5e9f-85c5-1ad7dcce9c43**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `VersionID` = **1**  
+  The original, not a corrected version.
 - `IssueDate` = **2026-04-14**  
   Issued when the carrier takes over the containers.
 - `IssueTime` = **13:10:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Consignment note under the road convention, the CMR**  
+  The kind of transport document.
+- `Description` = **Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.**  
+  The carriage in words.
+- `Note` = **Three originals: consignor, consignee, carrier.**  
+  As the convention prescribes.
+- `WaybillTypeCode` = **CMR**  
+  The convention the document follows.
+- `ConsolidatedIndicator` = **false**  
+  One consignment, not a consolidation.
+- `AdValoremIndicator` = **false**  
+  No value declared to raise the carrier's liability.
+- `OtherInstruction` = **Deliver against signature of the consignee.**  
+  What the carrier must do at delivery.
+
+### Issue Location
+
+Inside `IssueLocation`:
+
+- `Name` = **Castrano Logistics**  
+  Where the carrier took over the goods and issued the note.
 
 ### Sender Party
 
@@ -635,6 +660,44 @@ Inside `DocumentReference`:
 - `ID` = **FRC-TEP-26-0328**  
   The transport plan under which the carriage is performed.
 
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  The first original.
+- `DocumentTypeCode` = **Original**  
+  An original.
+- `DistributionTypeCode` = **Paper**  
+  Handed over on paper.
+- `DistributionType` = **With the goods**  
+  It travels with the goods.
+- `Party/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Ferrano Intermodal Hub**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
+  The electronic copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  Sent as this UBL document.
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FRC-SIG-FRC-WB-26-0334**  
+  The carrier's signature on taking over the goods.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -645,9 +708,21 @@ Inside `DocumentReference`:
   <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-WB-26-0334</cbc:ID>
+  <cbc:CarrierAssignedID>FRC-CMR-26-0325</cbc:CarrierAssignedID>
   <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>13:10:00</cbc:IssueTime>
+  <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
+  <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
+  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:WaybillTypeCode>CMR</cbc:WaybillTypeCode>
+  <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
+  <cac:IssueLocation>
+    <cbc:Name>Castrano Logistics</cbc:Name>
+  </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
@@ -1223,5 +1298,43 @@ Inside `DocumentReference`:
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
   </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cbc:DistributionType>With the goods</cbc:DistributionType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>FRC-SIG-FRC-WB-26-0334</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </Waybill>
 ```

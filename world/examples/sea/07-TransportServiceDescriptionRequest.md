@@ -26,6 +26,21 @@ The distributor asks the ocean carrier for its sailings to the island.
   Asked once the order is accepted.
 - `IssueTime` = **14:00:00**  
   The time of the request.
+- `Note` = **Weekly sailings to Selanu, please.**  
+  What the distributor asks.
+- `ServiceInformationPreferenceCode` = **Schedule**  
+  It wants the schedule first.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-TSDR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -231,6 +246,15 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Transport Service Provider Party
+
+Inside `TransportServiceProviderParty`:
+
+- `PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Transportation Service
 
 Inside `TransportationService`:
@@ -251,6 +275,19 @@ Inside `TransportationService`:
   <cbc:UUID>85aef8c8-1b9f-512f-8ae1-044576d7ea15</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>14:00:00</cbc:IssueTime>
+  <cbc:Note>Weekly sailings to Selanu, please.</cbc:Note>
+  <cbc:ServiceInformationPreferenceCode>Schedule</cbc:ServiceInformationPreferenceCode>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-TSDR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -422,6 +459,14 @@ Inside `TransportationService`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:TransportServiceProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+    </cac:PartyName>
+  </cac:TransportServiceProviderParty>
   <cac:TransportationService>
     <cbc:TransportServiceCode>OceanContainer</cbc:TransportServiceCode>
   </cac:TransportationService>

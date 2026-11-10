@@ -20,12 +20,26 @@ The distributor, as transport user, asks the carrier for the truck's arrival tim
   This run of the process: the same in every document of the flow.
 - `ID` = **LD-DOC-26-0232**  
   The sender's number for this document.
+- `CarrierAssignedID` = **BF-WB-26-0231**  
+  The carrier's consignment note.
 - `UUID` = **05570b50-9875-5f68-94e9-eb597fa0f1b7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-29**  
   The store asks when to expect the delivery.
 - `IssueTime` = **10:59:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Status request**  
+  What it is.
+- `Description` = **When will the benches arrive?**  
+  The question.
+- `Note` = **The promotion starts soon.**  
+  Why the store asks.
+- `ShippingOrderID` = **LD-CS-26-0228**  
+  The booking asked about.
+- `OtherInstruction` = **Answer with the expected delivery time.**  
+  What the answer should hold.
+- `TransportationStatusTypeCode` = **Delivery**  
+  The status of the delivery is asked.
 
 ### Sender Party
 
@@ -234,6 +248,40 @@ Inside `Consignment`:
 - `ID` = **LD-CS-26-0228**  
   The consignment asked about.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BS-PO-26-0224**  
+  The store's order.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-TSR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Requested Status Location
+
+Inside `RequestedStatusLocation`:
+
+- `Name` = **Brightmarket Stores, goods-in**  
+  Status at the store.
+
+### Requested Status Period
+
+Inside `RequestedStatusPeriod`:
+
+- `StartDate` = **2026-04-29**  
+  For today.
+- `EndDate` = **2026-04-30**  
+  And tomorrow.
+
 ## The document
 
 ```xml
@@ -244,9 +292,16 @@ Inside `Consignment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0232</cbc:ID>
+  <cbc:CarrierAssignedID>BF-WB-26-0231</cbc:CarrierAssignedID>
   <cbc:UUID>05570b50-9875-5f68-94e9-eb597fa0f1b7</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>10:59:00</cbc:IssueTime>
+  <cbc:Name>Status request</cbc:Name>
+  <cbc:Description>When will the benches arrive?</cbc:Description>
+  <cbc:Note>The promotion starts soon.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0228</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Answer with the expected delivery time.</cbc:OtherInstruction>
+  <cbc:TransportationStatusTypeCode>Delivery</cbc:TransportationStatusTypeCode>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -419,5 +474,26 @@ Inside `Consignment`:
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
   </cac:Consignment>
+  <cac:DocumentReference>
+    <cbc:ID>BS-PO-26-0224</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-TSR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:RequestedStatusLocation>
+    <cbc:Name>Brightmarket Stores, goods-in</cbc:Name>
+  </cac:RequestedStatusLocation>
+  <cac:RequestedStatusPeriod>
+    <cbc:StartDate>2026-04-29</cbc:StartDate>
+    <cbc:EndDate>2026-04-30</cbc:EndDate>
+  </cac:RequestedStatusPeriod>
 </TransportationStatusRequest>
 ```

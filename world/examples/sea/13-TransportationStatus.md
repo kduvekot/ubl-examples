@@ -26,6 +26,18 @@ The port of loading reports the container loaded on board.
   Reported when the container is on board.
 - `IssueTime` = **16:05:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Transportation status**  
+  The kind of report.
+- `Description` = **Container TWLU4120872 loaded on board.**  
+  In words.
+- `Note` = **Automatic report from the sender's tracking system.**  
+  How it was made.
+- `ShippingOrderID` = **LD-CS-26-0133**  
+  The shipper's booking it reports on.
+- `OtherInstruction` = **Reply only if the delivery slot must change.**  
+  What the receiver should do.
+- `TransportExecutionStatusCode` = **InProgress**  
+  The carriage is under way.
 
 ### Consignment
 
@@ -249,6 +261,24 @@ Inside `TransportEvent`:
 - `Location/Name` = **Port of Lumeport, container quay**  
   Where it happened.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **LD-CS-26-0133**  
+  The transport document of the consignment.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PL-SIG-TS-13**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Port of Lumeport**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Sender Party
 
 Inside `SenderParty`:
@@ -353,6 +383,22 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Status Location
+
+Inside `StatusLocation`:
+
+- `Name` = **Port of Lumeport**  
+  Where the status was recorded.
+
+### Status Period
+
+Inside `StatusPeriod`:
+
+- `StartDate` = **2026-05-14**  
+  The status holds from the report.
+- `EndDate` = **2026-05-14**  
+  Until the next report.
+
 ## The document
 
 ```xml
@@ -366,6 +412,12 @@ Inside `ReceiverParty`:
   <cbc:UUID>2564cf59-a7e2-5a31-9b4c-e17cc91746d5</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>16:05:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>
     <cac:CarrierParty>
@@ -554,6 +606,20 @@ Inside `ReceiverParty`:
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>LD-CS-26-0133</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>PL-SIG-TS-13</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
@@ -643,5 +709,12 @@ Inside `ReceiverParty`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:StatusLocation>
+    <cbc:Name>Port of Lumeport</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:EndDate>2026-05-14</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>
 ```

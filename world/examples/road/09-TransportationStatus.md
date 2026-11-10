@@ -26,8 +26,20 @@ The carrier reports that the truck has cleared the border and gives the expected
   The morning after collection, when the truck has crossed the border.
 - `IssueTime` = **09:10:00**  
   Sent as soon as the truck was through.
+- `Name` = **Transportation status**  
+  The kind of report.
+- `Description` = **Border crossing passed; customs cleared on both sides.**  
+  In words.
+- `Note` = **Automatic report from the sender's tracking system.**  
+  How it was made.
+- `ShippingOrderID` = **LD-CS-26-0152**  
+  The shipper's booking it reports on.
+- `OtherInstruction` = **Reply only if the delivery slot must change.**  
+  What the receiver should do.
 - `TransportationStatusTypeCode` = **Progress**  
   A report on the progress of the carriage.
+- `TransportExecutionStatusCode` = **InProgress**  
+  The carriage is under way.
 
 ### Consignment
 
@@ -311,6 +323,24 @@ Inside `TransportEvent`:
 - `Period/EndTime` = **08:55:00**  
   And left the customs post.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **TH-WB-26-0159**  
+  The transport document of the consignment.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **TH-SIG-TS-09**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Trasvia Haulage**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Sender Party
 
 Inside `SenderParty`:
@@ -329,6 +359,40 @@ Inside `ReceiverParty`:
 - `PartyName/Name` = **Lumeway Distribution**  
   The same party as at Consignment/ConsigneeParty, where its full details are given; only its identifier and name are repeated.
 
+### Updated Pickup Transport Event
+
+Inside `UpdatedPickupTransportEvent`:
+
+- `OccurrenceDate` = **2026-03-23**  
+  The collection as it happened.
+- `OccurrenceTime` = **15:05:00**  
+  The local time.
+
+### Updated Delivery Transport Event
+
+Inside `UpdatedDeliveryTransportEvent`:
+
+- `OccurrenceDate` = **2026-03-25**  
+  The delivery as now expected.
+- `OccurrenceTime` = **09:30:00**  
+  The local time.
+
+### Status Location
+
+Inside `StatusLocation`:
+
+- `Name` = **Trasvia Haulage**  
+  Where the status was recorded.
+
+### Status Period
+
+Inside `StatusPeriod`:
+
+- `StartDate` = **2026-03-24**  
+  The status holds from the report.
+- `EndDate` = **2026-03-24**  
+  Until the next report.
+
 ## The document
 
 ```xml
@@ -342,7 +406,13 @@ Inside `ReceiverParty`:
   <cbc:UUID>bef60481-e21d-568c-918b-caeb273b9ce0</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>09:10:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode>Progress</cbc:TransportationStatusTypeCode>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0152</cbc:ID>
     <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
@@ -597,6 +667,20 @@ Inside `ReceiverParty`:
       <cbc:EndTime>08:55:00</cbc:EndTime>
     </cac:Period>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>TH-WB-26-0159</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>TH-SIG-TS-09</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Trasvia Haulage</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -613,5 +697,20 @@ Inside `ReceiverParty`:
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:UpdatedPickupTransportEvent>
+    <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
+  </cac:UpdatedPickupTransportEvent>
+  <cac:UpdatedDeliveryTransportEvent>
+    <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>09:30:00</cbc:OccurrenceTime>
+  </cac:UpdatedDeliveryTransportEvent>
+  <cac:StatusLocation>
+    <cbc:Name>Trasvia Haulage</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-03-24</cbc:StartDate>
+    <cbc:EndDate>2026-03-24</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>
 ```

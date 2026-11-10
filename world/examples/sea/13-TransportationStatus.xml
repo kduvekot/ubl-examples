@@ -8,6 +8,12 @@
   <cbc:UUID>2564cf59-a7e2-5a31-9b4c-e17cc91746d5</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>16:05:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>
     <cac:CarrierParty>
@@ -196,6 +202,20 @@
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
+  <cac:DocumentReference>
+    <cbc:ID>LD-CS-26-0133</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>PL-SIG-TS-13</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
@@ -285,4 +305,11 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:StatusLocation>
+    <cbc:Name>Port of Lumeport</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:EndDate>2026-05-14</cbc:EndDate>
+  </cac:StatusPeriod>
 </TransportationStatus>

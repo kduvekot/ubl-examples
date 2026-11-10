@@ -26,6 +26,19 @@ Before loading, the shipper declares the verified gross mass of the container, w
   Declared before the container is loaded, as required for every packed container.
 - `IssueTime` = **13:33:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `WeightStatementTypeCode` = **VGM**  
+  A statement of the verified gross mass.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **SCG-SIG-VGM**  
+  The shipper's signature, as SOLAS requires.
+- `SignatoryParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -303,6 +316,15 @@ Inside `ShipperParty`:
 - `PartyName/Name` = **Selanu Cotton Ginnery**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 
+### Responsible Party
+
+Inside `ResponsibleParty`:
+
+- `PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -329,6 +351,18 @@ Inside `Shipment`:
   <cbc:UUID>c50e041b-0c85-5be7-a47a-5549a622d6dd</cbc:UUID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
   <cbc:IssueTime>13:33:00</cbc:IssueTime>
+  <cbc:WeightStatementTypeCode>VGM</cbc:WeightStatementTypeCode>
+  <cac:Signature>
+    <cbc:ID>SCG-SIG-VGM</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -561,6 +595,14 @@ Inside `Shipment`:
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
   </cac:ShipperParty>
+  <cac:ResponsibleParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+    </cac:PartyName>
+  </cac:ResponsibleParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cac:TransportHandlingUnit>

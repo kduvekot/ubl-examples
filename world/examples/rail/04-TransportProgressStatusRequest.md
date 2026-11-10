@@ -26,6 +26,19 @@ The rail carrier asks the hub, which manages the tracks and slots, where the con
   Asked on the morning of departure.
 - `IssueTime` = **06:30:00**  
   Before the train leaves the hub.
+- `Note` = **Has the container train left?**  
+  The question.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FRC-SIG-TPSR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -212,6 +225,13 @@ Inside `TransportMeans`:
 - `JourneyID` = **CT 4471**  
   The number of the container train in the hub's timetable.
 
+### Status Location
+
+Inside `StatusLocation`:
+
+- `Name` = **Ferrano Intermodal Hub**  
+  Where the status is asked for.
+
 ## The document
 
 ```xml
@@ -225,6 +245,18 @@ Inside `TransportMeans`:
   <cbc:UUID>7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:30:00</cbc:IssueTime>
+  <cbc:Note>Has the container train left?</cbc:Note>
+  <cac:Signature>
+    <cbc:ID>FRC-SIG-TPSR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
@@ -384,5 +416,8 @@ Inside `TransportMeans`:
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>
   </cac:TransportMeans>
+  <cac:StatusLocation>
+    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+  </cac:StatusLocation>
 </TransportProgressStatusRequest>
 ```

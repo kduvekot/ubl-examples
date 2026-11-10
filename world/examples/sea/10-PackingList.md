@@ -26,6 +26,16 @@ How the goods are packed in the container, for the forwarder's booking and the e
   Made when the container is packed.
 - `IssueTime` = **15:59:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Packing list**  
+  What it is.
+- `Description` = **The container's contents.**  
+  In words.
+- `Note` = **25 pallets.**  
+  The count.
+- `VersionID` = **1**  
+  The first version.
+- `OtherInstruction` = **Keep with the container's documents.**  
+  Where it goes.
 
 ### Consignor Party
 
@@ -131,6 +141,15 @@ Inside `ConsignorParty`:
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Carrier Party
+
+Inside `CarrierParty`:
+
+- `PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Freight Forwarder Party
 
@@ -578,6 +597,37 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
 
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **VT-PO-26-0127**  
+  The buyer's order.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  To the forwarder.
+- `DistributionTypeCode` = **Electronic**  
+  By message.
+- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-PL**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -591,6 +641,11 @@ Inside `Shipment`:
   <cbc:UUID>51ffd2ec-220f-52f3-bbda-f00884ed47a2</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>15:59:00</cbc:IssueTime>
+  <cbc:Name>Packing list</cbc:Name>
+  <cbc:Description>The container's contents.</cbc:Description>
+  <cbc:Note>25 pallets.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:OtherInstruction>Keep with the container's documents.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -679,6 +734,14 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ConsignorParty>
+  <cac:CarrierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+    </cac:PartyName>
+  </cac:CarrierParty>
   <cac:FreightForwarderParty>
     <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
@@ -1071,5 +1134,31 @@ Inside `Shipment`:
       </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>VT-PO-26-0127</cbc:ID>
+  </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-PL</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </PackingList>
 ```

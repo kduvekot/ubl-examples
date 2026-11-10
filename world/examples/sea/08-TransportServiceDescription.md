@@ -26,6 +26,23 @@ The ocean carrier describes its weekly service to Selanu.
   The carrier answers the next day.
 - `IssueTime` = **12:03:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Our island service.**  
+  What follows.
+- `ServiceName` = **Island feeder**  
+  The service's name.
+- `ResponseCode` = **Offered**  
+  The service is offered.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **TWL-SIG-TSD**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -231,6 +248,13 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Transport Service Description Request Document Reference
+
+Inside `TransportServiceDescriptionRequestDocumentReference`:
+
+- `ID` = **LD-DOC-26-0129**  
+  The request answered.
+
 ### Transport Service Provider Party
 
 Inside `TransportServiceProviderParty`:
@@ -239,6 +263,22 @@ Inside `TransportServiceProviderParty`:
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 - `PartyName/Name` = **Tidewell Ocean Lines**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
+
+### Service Charge Payment Terms
+
+Inside `ServiceChargePaymentTerms`:
+
+- `Note` = **Freight prepaid before the bill of lading is released.**  
+  When the freight is paid.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-05-09**  
+  From now.
+- `EndDate` = **2026-08-07**  
+  For three months.
 
 ### Transportation Service
 
@@ -326,6 +366,20 @@ Inside `TransportationService`:
   <cbc:UUID>bee924a8-76e1-5c8f-be45-927bde1567a4</cbc:UUID>
   <cbc:IssueDate>2026-05-09</cbc:IssueDate>
   <cbc:IssueTime>12:03:00</cbc:IssueTime>
+  <cbc:Note>Our island service.</cbc:Note>
+  <cbc:ServiceName>Island feeder</cbc:ServiceName>
+  <cbc:ResponseCode>Offered</cbc:ResponseCode>
+  <cac:Signature>
+    <cbc:ID>TWL-SIG-TSD</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -497,6 +551,9 @@ Inside `TransportationService`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:TransportServiceDescriptionRequestDocumentReference>
+    <cbc:ID>LD-DOC-26-0129</cbc:ID>
+  </cac:TransportServiceDescriptionRequestDocumentReference>
   <cac:TransportServiceProviderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
@@ -505,6 +562,13 @@ Inside `TransportationService`:
       <cbc:Name>Tidewell Ocean Lines</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:ServiceChargePaymentTerms>
+    <cbc:Note>Freight prepaid before the bill of lading is released.</cbc:Note>
+  </cac:ServiceChargePaymentTerms>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-05-09</cbc:StartDate>
+    <cbc:EndDate>2026-08-07</cbc:EndDate>
+  </cac:ValidityPeriod>
   <cac:TransportationService>
     <cbc:TransportServiceCode>OceanContainer</cbc:TransportServiceCode>
     <cbc:TariffClassCode>FAK</cbc:TariffClassCode>

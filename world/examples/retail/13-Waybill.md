@@ -20,12 +20,37 @@ The outgoing consignment note goes to the distributor, who contracted the carria
   This run of the process: the same in every document of the flow.
 - `ID` = **BF-WB-26-0231**  
   The consignment note number.
+- `CarrierAssignedID` = **BF-CMR-26-0217**  
+  The carrier's own number for the carriage.
 - `UUID` = **e32f4317-c5ee-5095-aa3a-8afa0c5b9ab2**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `VersionID` = **1**  
+  The original, not a corrected version.
 - `IssueDate` = **2026-04-29**  
   Issued when the carrier collects at the distribution centre.
 - `IssueTime` = **08:56:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Name` = **Consignment note under the road convention, the CMR**  
+  The kind of transport document.
+- `Description` = **The forwarder's truck from the distribution centre to the store.**  
+  The carriage in words.
+- `Note` = **Three originals: consignor, consignee, carrier.**  
+  As the convention prescribes.
+- `WaybillTypeCode` = **CMR**  
+  The convention the document follows.
+- `ConsolidatedIndicator` = **false**  
+  One consignment, not a consolidation.
+- `AdValoremIndicator` = **false**  
+  No value declared to raise the carrier's liability.
+- `OtherInstruction` = **Deliver against signature of the consignee.**  
+  What the carrier must do at delivery.
+
+### Issue Location
+
+Inside `IssueLocation`:
+
+- `Name` = **Lumeway Distribution**  
+  Where the carrier took over the goods and issued the note.
 
 ### Sender Party
 
@@ -364,6 +389,44 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  The first original.
+- `DocumentTypeCode` = **Original**  
+  An original.
+- `DistributionTypeCode` = **Paper**  
+  Handed over on paper.
+- `DistributionType` = **With the goods**  
+  It travels with the goods.
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
+  The electronic copy.
+- `DocumentTypeCode` = **Copy**  
+  A copy.
+- `DistributionTypeCode` = **Electronic**  
+  Sent as this UBL document.
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-BF-WB-26-0231**  
+  The carrier's signature on taking over the goods.
+- `SignatoryParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -374,9 +437,21 @@ Inside `Shipment`:
   <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-WB-26-0231</cbc:ID>
+  <cbc:CarrierAssignedID>BF-CMR-26-0217</cbc:CarrierAssignedID>
   <cbc:UUID>e32f4317-c5ee-5095-aa3a-8afa0c5b9ab2</cbc:UUID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>08:56:00</cbc:IssueTime>
+  <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
+  <cbc:Description>The forwarder's truck from the distribution centre to the store.</cbc:Description>
+  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:WaybillTypeCode>CMR</cbc:WaybillTypeCode>
+  <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
+  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
+  <cac:IssueLocation>
+    <cbc:Name>Lumeway Distribution</cbc:Name>
+  </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
@@ -665,5 +740,43 @@ Inside `Shipment`:
       </cac:ConsigneeParty>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cbc:DistributionType>With the goods</cbc:DistributionType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-BF-WB-26-0231</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </Waybill>
 ```
