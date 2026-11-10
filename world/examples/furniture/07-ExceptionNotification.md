@@ -306,6 +306,10 @@ Inside `ExceptionNotificationLine`:
   Measured on sales.
 - `PerformanceMetricTypeCode` = **SalesUnits**  
   In sets.
+- `ExceptionObservationPeriod/StartDate` = **2026-03-23**  
+  The four weeks.
+- `ExceptionObservationPeriod/EndDate` = **2026-04-20**  
+  Their end.
 - `DocumentReference/ID` = **BS-DOC-26-0572**  
   The product activity reported.
 - `ForecastException/ForecastPurposeCode` = **Sales**  
@@ -585,6 +589,10 @@ Inside `ExceptionNotificationLine`:
     <cbc:VarianceQuantity unitCode="SET">-2</cbc:VarianceQuantity>
     <cbc:SupplyChainActivityTypeCode>Sales</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode>SalesUnits</cbc:PerformanceMetricTypeCode>
+    <cac:ExceptionObservationPeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-04-20</cbc:EndDate>
+    </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
       <cbc:ID>BS-DOC-26-0572</cbc:ID>
     </cac:DocumentReference>

@@ -352,6 +352,8 @@ Inside `CatalogueLine`:
   The line is new in this catalogue.
 - `LifeCycleStatusCode` = **Active**  
   The item is sold now.
+- `ContractSubdivision` = **Garden**  
+  The part of the supply agreement the line falls under.
 - `Note` = **Pallets of four only.**  
   How it is sold.
 - `OrderableIndicator` = **true**  
@@ -1154,6 +1156,7 @@ Inside `CatalogueLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:ActionCode>Add</cbc:ActionCode>
     <cbc:LifeCycleStatusCode>Active</cbc:LifeCycleStatusCode>
+    <cbc:ContractSubdivision>Garden</cbc:ContractSubdivision>
     <cbc:Note>Pallets of four only.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>

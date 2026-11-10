@@ -4111,3 +4111,32 @@ def _(f, n, doc, out):
                                      "AdjustmentReasonCode": V("Demand", "Higher demand."),
                                      "ForecastPeriod": {"StartDate": V(f.date(60), "From mid-season."),
                                                         "EndDate": V(f.date(120), "To the end.")}}}
+
+
+@enrich("furniture", "InstructionForReturns")
+def _(f, n, doc, out):
+    return {"Note": V("The maker takes back six sets to free the store's shelf.", "Why."),
+            "DocumentReference": {"ID": V(f.numbers["exception"], "The exception that led to the return.")},
+            "Signature": seal(doc["from"], "BF-SIG-26-0427"),
+            "Shipment": {"ID": V("BM-RET-26-0427", "The return shipment."),
+                         "GrossWeightMeasure": qty(282, "KGM", "Six sets of 47 kg."),
+                         "Delivery": {"RequestedDeliveryPeriod": {"StartDate": V(f.date(58), "The store's van "
+                                                                                             "brings them."),
+                                                                  "EndDate": V(f.date(61), "Within the week.")}}},
+            "InstructionForReturnsLine": {"Note": V("In their original cartons.", "How they are to be returned."),
+                                          "ManufacturerParty": party("37-xb", short=True)}}
+
+
+@enrich("furniture", "ExceptionNotification")
+def _(f, n, doc, out):
+    return {"ExceptionNotificationLine": {"ExceptionObservationPeriod": {"StartDate": V(f.date(21), "The four "
+                                                                                                  "weeks."),
+                                                                         "EndDate": V(f.date(49), "Their end.")}}}
+
+
+@enrich("retail", "Catalogue")
+def _(f, n, doc, out):
+    return {"CatalogueLine": [{**out["CatalogueLine"][0], "ContractSubdivision": V("Garden", "The part of the supply "
+                                                                                             "agreement the line "
+                                                                                             "falls under.")},
+                              out["CatalogueLine"][1]]}

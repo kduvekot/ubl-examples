@@ -264,6 +264,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:ActionCode>Add</cbc:ActionCode>
     <cbc:LifeCycleStatusCode>Active</cbc:LifeCycleStatusCode>
+    <cbc:ContractSubdivision>Garden</cbc:ContractSubdivision>
     <cbc:Note>Pallets of four only.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>

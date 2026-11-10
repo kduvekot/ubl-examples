@@ -26,6 +26,26 @@ The bench set does not sell; the furniture maker asks for the remaining stock ba
   The furniture maker takes back the sets that do not sell.
 - `IssueTime` = **14:21:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **The maker takes back six sets to free the store's shelf.**  
+  Why.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BF-DOC-26-0573**  
+  The exception that led to the return.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-26-0427**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Seller Supplier Party
 
@@ -242,14 +262,33 @@ Inside `ManufacturerParty`:
 - `PartyName/Name` = **Brackenmere Furniture**  
   The same party as at SellerSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Shipment
+
+Inside `Shipment`:
+
+- `ID` = **BM-RET-26-0427**  
+  The return shipment.
+- `GrossWeightMeasure` = **282** (unitCode `KGM`)  
+  Six sets of 47 kg.
+- `Delivery/RequestedDeliveryPeriod/StartDate` = **2026-04-29**  
+  The store's van brings them.
+- `Delivery/RequestedDeliveryPeriod/EndDate` = **2026-05-02**  
+  Within the week.
+
 ### Instruction For Returns Line
 
 Inside `InstructionForReturnsLine`:
 
 - `ID` = **1**  
   The only line.
+- `Note` = **In their original cartons.**  
+  How they are to be returned.
 - `Quantity` = **6** (unitCode `SET`)  
   Six of the remaining sets, to free shelf space.
+- `ManufacturerParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ManufacturerParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `Item/Name` = **Garden bench set Marrow**  
@@ -284,6 +323,21 @@ Inside `InstructionForReturnsLine`:
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cbc:IssueTime>14:21:00</cbc:IssueTime>
+  <cbc:Note>The maker takes back six sets to free the store's shelf.</cbc:Note>
+  <cac:DocumentReference>
+    <cbc:ID>BF-DOC-26-0573</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-26-0427</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -472,9 +526,28 @@ Inside `InstructionForReturnsLine`:
       <cbc:Name>Brackenmere Furniture</cbc:Name>
     </cac:PartyName>
   </cac:ManufacturerParty>
+  <cac:Shipment>
+    <cbc:ID>BM-RET-26-0427</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">282</cbc:GrossWeightMeasure>
+    <cac:Delivery>
+      <cac:RequestedDeliveryPeriod>
+        <cbc:StartDate>2026-04-29</cbc:StartDate>
+        <cbc:EndDate>2026-05-02</cbc:EndDate>
+      </cac:RequestedDeliveryPeriod>
+    </cac:Delivery>
+  </cac:Shipment>
   <cac:InstructionForReturnsLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>In their original cartons.</cbc:Note>
     <cbc:Quantity unitCode="SET">6</cbc:Quantity>
+    <cac:ManufacturerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:ManufacturerParty>
     <cac:Item>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>
