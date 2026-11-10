@@ -372,6 +372,17 @@
   },
   {
    "flow": "road",
+   "doc": "ApplicationResponse",
+   "from": "6-xb",
+   "to": "5-xu",
+   "why": "The distributor's system confirms the invoice was received and accepted.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "5-xu"
+   }
+  },
+  {
+   "flow": "road",
    "doc": "RemittanceAdvice",
    "from": "6-xb",
    "to": "5-xu",
@@ -428,6 +439,28 @@
   },
   {
    "flow": "rail",
+   "doc": "TransportProgressStatusRequest",
+   "from": "14-xu",
+   "to": "18-xu",
+   "why": "The rail carrier asks the hub, which manages the tracks and slots, where the container train stands.",
+   "parties": {
+    "SenderParty": "14-xu",
+    "ReceiverParty": "18-xu"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "TransportProgressStatus",
+   "from": "18-xu",
+   "to": "14-xu",
+   "why": "The hub, as network manager, reports the train's position and timetable.",
+   "parties": {
+    "SenderParty": "18-xu",
+    "ReceiverParty": "14-xu"
+   }
+  },
+  {
+   "flow": "rail",
    "doc": "TransitCustomsDeclaration",
    "from": "5-xu",
    "to": "19-xu",
@@ -469,6 +502,18 @@
   },
   {
    "flow": "rail",
+   "doc": "GoodsItemItinerary",
+   "from": "14-xu",
+   "to": "5-xu",
+   "why": "The carrier tells the transport user the route and timing of the containers.",
+   "parties": {
+    "SenderParty": "14-xu",
+    "ReceiverParty": "5-xu",
+    "TransportationSegment/TransportServiceProviderParty": "14-xu"
+   }
+  },
+  {
+   "flow": "rail",
    "doc": "Invoice",
    "from": "14-xu",
    "to": "5-xu",
@@ -497,6 +542,18 @@
   },
   {
    "flow": "retail",
+   "doc": "CatalogueRequest",
+   "from": "26-xb",
+   "to": "6-xb",
+   "why": "The store asks the distributor for its spring catalogue.",
+   "parties": {
+    "ProviderParty": "26-xb",
+    "ReceiverParty": "6-xb",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
    "doc": "Catalogue",
    "from": "6-xb",
    "to": "26-xb",
@@ -506,6 +563,30 @@
     "ReceiverParty": "26-xb",
     "SellerSupplierParty": "6-xb",
     "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xu"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "CataloguePricingUpdate",
+   "from": "6-xb",
+   "to": "26-xb",
+   "why": "The distributor lowers the price of the spare side frame.",
+   "parties": {
+    "ProviderParty": "6-xb",
+    "ReceiverParty": "26-xb",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "CatalogueItemSpecificationUpdate",
+   "from": "6-xb",
+   "to": "26-xb",
+   "why": "The bench now comes with slats from a different hardwood; the description is updated.",
+   "parties": {
+    "ProviderParty": "6-xb",
+    "ReceiverParty": "26-xb",
+    "SellerSupplierParty": "6-xb"
    }
   },
   {
@@ -563,6 +644,28 @@
   },
   {
    "flow": "retail",
+   "doc": "DocumentStatusRequest",
+   "from": "26-xb",
+   "to": "6-xb",
+   "why": "The store asks where its order stands.",
+   "parties": {
+    "SenderParty": "26-xb",
+    "ReceiverParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "DocumentStatus",
+   "from": "6-xb",
+   "to": "26-xb",
+   "why": "The distributor answers: confirmed, the truck is booked.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "26-xb"
+   }
+  },
+  {
+   "flow": "retail",
    "doc": "TransportExecutionPlanRequest",
    "from": "6-xb",
    "to": "13-xu",
@@ -602,6 +705,17 @@
     "CarrierParty": "13-xu",
     "ConsignorParty": "6-xb",
     "Shipment/Consignment/ConsigneeParty": "26-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "TransportationStatusRequest",
+   "from": "6-xb",
+   "to": "13-xu",
+   "why": "The distributor, as transport user, asks the carrier for the truck's arrival time.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "13-xu"
    }
   },
   {
@@ -661,6 +775,18 @@
   },
   {
    "flow": "retail",
+   "doc": "CatalogueDeletion",
+   "from": "6-xb",
+   "to": "26-xb",
+   "why": "The spring catalogue ends; the distributor deletes it before the summer catalogue.",
+   "parties": {
+    "ProviderParty": "6-xb",
+    "ReceiverParty": "26-xb",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
    "doc": "PurchaseReceipt",
    "from": "26-xb",
    "to": "c-xb",
@@ -668,6 +794,18 @@
    "parties": {
     "AccountingSupplierParty": "26-xb",
     "AccountingCustomerParty": "c-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "BusinessCard",
+   "from": "6-xb",
+   "to": "1-xl",
+   "why": "The distributor introduces itself to the new island customer.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "1-xl",
+    "BusinessParty": "6-xb"
    }
   },
   {
@@ -734,6 +872,29 @@
    "parties": {
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "1-xl"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "TransportServiceDescriptionRequest",
+   "from": "6-xb",
+   "to": "11-xb",
+   "why": "The distributor asks the ocean carrier for its sailings to the island.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "11-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "TransportServiceDescription",
+   "from": "11-xb",
+   "to": "6-xb",
+   "why": "The ocean carrier describes its weekly service to Selanu.",
+   "parties": {
+    "SenderParty": "11-xb",
+    "ReceiverParty": "6-xb",
+    "TransportServiceProviderParty": "11-xb"
    }
   },
   {
@@ -932,6 +1093,28 @@
   },
   {
    "flow": "sea",
+   "doc": "InvoiceStatusRequest",
+   "from": "6-xb",
+   "to": "1-xl",
+   "why": "The distributor asks whether its invoice has been accepted for payment.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "1-xl"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "InvoiceStatusResponse",
+   "from": "1-xl",
+   "to": "6-xb",
+   "why": "The buyer answers: accepted and scheduled for payment.",
+   "parties": {
+    "SenderParty": "1-xl",
+    "ReceiverParty": "6-xb"
+   }
+  },
+  {
+   "flow": "sea",
    "doc": "Statement",
    "from": "24-xb",
    "to": "1-xl",
@@ -954,6 +1137,28 @@
     "AccountingSupplierParty": "6-xb",
     "PayeeParty": "24-xb",
     "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "Enquiry",
+   "from": "1-xl",
+   "to": "6-xb",
+   "why": "The buyer asks whether spare side frames are in stock and how fast they can come.",
+   "parties": {
+    "RequestorParty": "1-xl",
+    "ResponderParty": "6-xb"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "EnquiryResponse",
+   "from": "6-xb",
+   "to": "1-xl",
+   "why": "The distributor answers: eight in stock, by air within a week.",
+   "parties": {
+    "RequestorParty": "1-xl",
+    "ResponderParty": "6-xb"
    }
   },
   {
@@ -1039,6 +1244,32 @@
   },
   {
    "flow": "air",
+   "doc": "FulfilmentCancellation",
+   "from": "6-xb",
+   "to": "1-xl",
+   "why": "The cargo missed its flight; the despatch advice is cancelled and a new one follows for the next flight.",
+   "parties": {
+    "SellerSupplierParty": "6-xb",
+    "BuyerCustomerParty": "1-xl",
+    "DeliveryCustomerParty": "9-xl"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "DespatchAdvice",
+   "from": "6-xb",
+   "to": "9-xl",
+   "why": "The new despatch advice, for the next day's flight.",
+   "parties": {
+    "DespatchSupplierParty": "6-xb",
+    "DeliveryCustomerParty": "9-xl",
+    "BuyerCustomerParty": "1-xl",
+    "SellerSupplierParty": "6-xb",
+    "Shipment/Consignment/CarrierParty": "12-xl"
+   }
+  },
+  {
+   "flow": "air",
    "doc": "TransportationStatus",
    "from": "17-xl",
    "to": "10-xb",
@@ -1103,6 +1334,94 @@
   },
   {
    "flow": "tender",
+   "doc": "ExpressionOfInterestRequest",
+   "from": "36-xb",
+   "to": "2-xb",
+   "why": "The sawmill registers its interest, to receive the documents of the procedure.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "36-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "ExpressionOfInterestResponse",
+   "from": "2-xb",
+   "to": "36-xb",
+   "why": "The authority confirms the sawmill is registered as an interested party.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "36-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "QualificationApplicationRequest",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "The authority sends the furniture maker the self-declaration it must fill in: exclusion grounds and selection criteria.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "QualificationApplicationResponse",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The furniture maker declares it meets the selection criteria.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "ProcurementStatusRequest",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The furniture maker asks whether the deadline still stands.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "ProcurementStatus",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "The authority confirms the procedure and its deadline.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "UnsubscribeFromProcedureRequest",
+   "from": "36-xb",
+   "to": "2-xb",
+   "why": "The sawmill decides not to tender: a steel-framed bench is not its trade. It unsubscribes.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "36-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "UnsubscribeFromProcedureResponse",
+   "from": "2-xb",
+   "to": "36-xb",
+   "why": "The authority confirms the sawmill no longer receives the procedure's documents.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "36-xb"
+   }
+  },
+  {
+   "flow": "tender",
    "doc": "BusinessInformation",
    "from": "21-xb",
    "to": "2-xb",
@@ -1151,6 +1470,61 @@
   },
   {
    "flow": "tender",
+   "doc": "TenderReceipt",
+   "from": "2-xb",
+   "to": "5-xu",
+   "why": "The authority acknowledges the manufacturer's tender, with the time it was registered.",
+   "parties": {
+    "SenderParty": "2-xb",
+    "ReceiverParty": "5-xu"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "Tender",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The furniture maker tenders wooden benches.",
+   "parties": {
+    "TendererParty": "37-xb",
+    "ContractingParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "TenderWithdrawal",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The furniture maker finds a price error in its tender and withdraws it before the deadline.",
+   "parties": {
+    "TendererParty": "37-xb",
+    "ContractingParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "Tender",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The furniture maker submits its corrected tender.",
+   "parties": {
+    "TendererParty": "37-xb",
+    "ContractingParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "TendererQualificationResponse",
+   "from": "2-xb",
+   "to": "5-xu",
+   "why": "The manufacturer and its consortium partner are admitted to the evaluation.",
+   "parties": {
+    "SenderParty": "2-xb",
+    "ReceiverParty": "5-xu"
+   }
+  },
+  {
+   "flow": "tender",
    "doc": "ContractAwardNotice",
    "from": "2-xb",
    "to": "21-xb",
@@ -1171,6 +1545,28 @@
    "parties": {
     "SenderParty": "2-xb",
     "ReceiverParty": "5-xu"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "UnawardedNotification",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "The furniture maker is told that the contract went to another tenderer.",
+   "parties": {
+    "SenderParty": "2-xb",
+    "ReceiverParty": "37-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "TenderContract",
+   "from": "2-xb",
+   "to": "5-xu",
+   "why": "After the standstill period the authority and the manufacturer conclude the contract.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "5-xu"
    }
   },
   {
@@ -1255,6 +1651,42 @@
     "ImportingGuarantorParty": "20-xl",
     "ExportingCustomsParty": "19-xu",
     "ImportingCustomsParty": "19-xl"
+   }
+  },
+  {
+   "flow": "carnet",
+   "doc": "ProofOfReexportationRequest",
+   "from": "20-xl",
+   "to": "20-xu",
+   "why": "The island's chamber has no re-export stamp for the samples and asks for proof that they left.",
+   "parties": {
+    "ImportingGuarantorParty": "20-xl",
+    "ExportingGuarantorParty": "20-xu",
+    "ImportingCustomsParty": "19-xl"
+   }
+  },
+  {
+   "flow": "carnet",
+   "doc": "ProofOfReexportationReminder",
+   "from": "20-xl",
+   "to": "20-xu",
+   "why": "No answer after a month: a reminder.",
+   "parties": {
+    "ImportingGuarantorParty": "20-xl",
+    "ExportingGuarantorParty": "20-xu",
+    "ImportingCustomsParty": "19-xl"
+   }
+  },
+  {
+   "flow": "carnet",
+   "doc": "ProofOfReexportation",
+   "from": "20-xu",
+   "to": "20-xl",
+   "why": "Urvania's chamber proves the samples were re-exported: they came home through Urvania's customs.",
+   "parties": {
+    "ExportingGuarantorParty": "20-xu",
+    "ImportingGuarantorParty": "20-xl",
+    "ExportingCustomsParty": "19-xu"
    }
   },
   {
@@ -1879,6 +2311,32 @@
   },
   {
    "flow": "furniture",
+   "doc": "Order",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "A second delivery, placed before the slow sales were clear.",
+   "parties": {
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb",
+    "Delivery/DeliveryParty": "26-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DAP"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "OrderCancellation",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "With sales below the threshold, the store cancels the second delivery.",
+   "parties": {
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb"
+   }
+  },
+  {
+   "flow": "furniture",
    "doc": "InstructionForReturns",
    "from": "37-xb",
    "to": "26-xb",
@@ -1900,6 +2358,17 @@
     "AccountingCustomerParty": "26-xb",
     "SellerSupplierParty": "37-xb",
     "BuyerCustomerParty": "26-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "DebitNote",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "The store charges the furniture maker for transporting the returned sets back.",
+   "parties": {
+    "AccountingCustomerParty": "26-xb",
+    "AccountingSupplierParty": "37-xb"
    }
   },
   {

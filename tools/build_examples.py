@@ -358,6 +358,14 @@ def main(flow_id, check=False):
                     f.write(data)
         if not check:
             print(f"world/examples/{flow_id}/{xmlname(n, doc)}: {len(reasons)} values")
+    produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
+                                                                  for n, d in enumerate(docs, 1)}
+    for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow
+        if name not in produced:
+            if check:
+                stale.append(f"world/examples/{flow_id}/{name} (no longer a document of the flow)")
+            else:
+                os.remove(os.path.join(out, name))
     if check:
         print("\n".join(f"out of date: {s} (run tools/build_examples.py {flow_id})" for s in stale)
               or f"examples of flow {flow_id}: up to date")

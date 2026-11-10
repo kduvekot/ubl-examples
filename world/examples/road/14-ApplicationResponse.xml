@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>LD-DOC-26-0165</cbc:ID>
+  <cbc:IssueDate>2026-03-25</cbc:IssueDate>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Lumeway Distribution</cbc:RegistrationName>
+      <cbc:CompanyID>20410274</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Valdara Industries</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:BuildingNumber>17</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4120</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>XU007299291</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Valdara Industries</cbc:RegistrationName>
+      <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Order desk</cbc:Name>
+      <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReceiverParty>
+  <cac:DocumentResponse>
+    <cac:Response>
+      <cbc:ResponseCode>AP</cbc:ResponseCode>
+    </cac:Response>
+    <cac:DocumentReference>
+      <cbc:ID>VI-INV-26-0164</cbc:ID>
+    </cac:DocumentReference>
+  </cac:DocumentResponse>
+</ApplicationResponse>

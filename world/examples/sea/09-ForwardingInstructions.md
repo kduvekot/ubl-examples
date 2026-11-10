@@ -1,8 +1,8 @@
-# Forwarding Instructions: Bayforth Forwarding to Tidewell Ocean Lines
+# Forwarding Instructions: Lumeway Distribution to Bayforth Forwarding
 
 *Example 9 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
 
-The forwarder, now acting as shipper, books the container with the ocean carrier.
+The distributor instructs its forwarder: book the sea freight to the island and insure the cargo (CIF obliges the seller to insure).
 
 [The XML file](09-ForwardingInstructions.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -14,10 +14,10 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **BF-FI-26-0134**  
-  The forwarder's booking number with the ocean carrier.
-- `IssueDate` = **2026-05-10**  
-  The forwarder books the container.
+- `ID` = **LD-FI-26-0131**  
+  The distributor's instruction number.
+- `IssueDate` = **2026-05-09**  
+  The distributor instructs its forwarder once the order is accepted.
 
 ### Consignor Party
 
@@ -55,43 +55,6 @@ Inside `ConsignorParty`:
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-
-### Carrier Party
-
-Inside `CarrierParty`:
-
-- `PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `PartyName/Name` = **Tidewell Ocean Lines**  
-  The trading name; identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/StreetName` = **Harbour Road**  
-  Street of the postal address; identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/BuildingNumber` = **18**  
-  Building number of the postal address; identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state; identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/PostalZone` = **38527**  
-  Postal code in Bayvarra's format (5 digits); identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra; identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
-- `PartyTaxScheme/CompanyID` = **CO-1235754**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
-- `PartyLegalEntity/RegistrationName` = **Tidewell Ocean Lines**  
-  The name under which the party is registered; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411918**  
-  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json).
-- `Contact/Name` = **Bookings**  
-  The department that handles this document; identity of Tidewell Ocean Lines (world/parties.json).
-- `Contact/ElectronicMail` = **bookings@tidewell.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Freight Forwarder Party
 
@@ -134,12 +97,12 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0129**  
-  The shipment booked.
+- `ID` = **LD-SH-26-0132**  
+  The shipment to be booked.
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of the goods.
-- `Consignment/ID` = **LD-CS-26-0130**  
-  The consignment.
+- `Consignment/ID` = **LD-CS-26-0133**  
+  The consignment to be shipped.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Velumi Trading**  
@@ -164,6 +127,42 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance, all risks**  
+  The cover the forwarder is to arrange.
+- `InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
+  CIF requires insurance of at least 110 % of the value; the CIF value is the goods, freight and insurance.
+- `InsurancePolicy/InsurerParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `InsurancePolicy/InsurerParty/PartyName/Name` = **Wavesure Cargo Insurance**  
+  The trading name; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PostalAddress/StreetName` = **Beacon Avenue**  
+  Street of the postal address; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PostalAddress/BuildingNumber` = **55**  
+  Building number of the postal address; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PostalAddress/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PostalAddress/PostalZone` = **38524**  
+  Postal code in Bayvarra's format (5 digits); identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PostalAddress/CountrySubentity` = **Coastal State**  
+  The state, part of an address in federal Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PostalAddress/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `InsurancePolicy/InsurerParty/PartyTaxScheme/CompanyID` = **CO-1234521**  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PartyTaxScheme/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `InsurancePolicy/InsurerParty/PartyLegalEntity/RegistrationName` = **Wavesure Cargo Insurance**  
+  The name under which the party is registered; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PartyLegalEntity/CompanyID` = **20411507**  
+  Number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/Contact/Name` = **Cargo claims**  
+  The department that handles this document; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/Contact/ElectronicMail` = **cargo@wavesure.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `InsurancePolicy/InsurerParty/ElectronicAddress/ElectronicAddressID` = **XB:20411507** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Wavesure Cargo Insurance (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -172,8 +171,8 @@ Inside `Shipment`:
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>BF-FI-26-0134</cbc:ID>
-  <cbc:IssueDate>2026-05-10</cbc:IssueDate>
+  <cbc:ID>LD-FI-26-0131</cbc:ID>
+  <cbc:IssueDate>2026-05-09</cbc:IssueDate>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -210,42 +209,6 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ConsignorParty>
-  <cac:CarrierParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:StreetName>Harbour Road</cbc:StreetName>
-      <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CityName>Lumeport</cbc:CityName>
-      <cbc:PostalZone>38527</cbc:PostalZone>
-      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:CompanyID>CO-1235754</cbc:CompanyID>
-      <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Tidewell Ocean Lines</cbc:RegistrationName>
-      <cbc:CompanyID>20411918</cbc:CompanyID>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Bookings</cbc:Name>
-      <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
-  </cac:CarrierParty>
   <cac:FreightForwarderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -283,10 +246,10 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0129</cbc:ID>
+    <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0130</cbc:ID>
+      <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -316,6 +279,46 @@ Inside `Shipment`:
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
     </cac:Consignment>
+    <cac:InsurancePolicy>
+      <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
+      <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
+      <cac:InsurerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+          <cbc:StreetName>Beacon Avenue</cbc:StreetName>
+          <cbc:BuildingNumber>55</cbc:BuildingNumber>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:PostalZone>38524</cbc:PostalZone>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:PartyTaxScheme>
+          <cbc:CompanyID>CO-1234521</cbc:CompanyID>
+          <cac:TaxScheme>
+            <cbc:ID>STT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:PartyTaxScheme>
+        <cac:PartyLegalEntity>
+          <cbc:RegistrationName>Wavesure Cargo Insurance</cbc:RegistrationName>
+          <cbc:CompanyID>20411507</cbc:CompanyID>
+        </cac:PartyLegalEntity>
+        <cac:Contact>
+          <cbc:Name>Cargo claims</cbc:Name>
+          <cbc:ElectronicMail>cargo@wavesure.example</cbc:ElectronicMail>
+        </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411507</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
+      </cac:InsurerParty>
+    </cac:InsurancePolicy>
   </cac:Shipment>
 </ForwardingInstructions>
 ```

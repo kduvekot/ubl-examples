@@ -567,6 +567,19 @@
    "sellers_id": "BM-551210",
    "resale_of": "bench-serra-b",
    "description": "The Serra park bench in the store's garden department; the state sales tax is added at the till."
+  },
+  {
+   "id": "return-transport",
+   "seller": "26-xb",
+   "name": "Return transport",
+   "kind": "service",
+   "unit": "E48",
+   "price": {
+    "amount": 85.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BM-SVC-RT",
+   "description": "Transport of returned goods back to the supplier, per delivery."
   }
  ]
 }

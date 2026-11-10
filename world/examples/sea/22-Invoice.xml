@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>LD-INV-26-0147</cbc:ID>
+  <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:DueDate>2026-06-28</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:OrderReference>
+    <cbc:ID>VT-PO-26-0127</cbc:ID>
+  </cac:OrderReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Distribution Drive</cbc:StreetName>
+        <cbc:BuildingNumber>43</cbc:BuildingNumber>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71214</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeway Distribution</cbc:RegistrationName>
+        <cbc:CompanyID>20410274</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customer service</cbc:Name>
+        <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Reef Street</cbc:StreetName>
+        <cbc:BuildingNumber>16</cbc:BuildingNumber>
+        <cbc:CityName>Selanu</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Velumi Trading</cbc:RegistrationName>
+        <cbc:CompanyID>IC41859</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harbourline Factoring</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Exchange Street</cbc:StreetName>
+      <cbc:BuildingNumber>41</cbc:BuildingNumber>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38522</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>CO-1233699</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Harbourline Factoring</cbc:RegistrationName>
+      <cbc:CompanyID>20411233</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Client accounts</cbc:Name>
+      <cbc:ElectronicMail>client@harbourline.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411233</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:PayeeParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Nalevi Warehousing</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Lagoon Road</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName>Selanu</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Nalevi Warehousing</cbc:RegistrationName>
+        <cbc:CompanyID>IC41722</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Goods inwards</cbc:Name>
+        <cbc:ElectronicMail>goods@nalevi.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41722</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:DeliveryParty>
+  </cac:Delivery>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
+      <cac:FinancialInstitutionBranch>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>G</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">140.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>G</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">53778.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">50688.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">53778.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">53778.00</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">53778.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="H87">96</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:OriginCountry>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="H87">12</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
+      <cbc:Name>Bench side frame casting</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10443</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-C180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:OriginCountry>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

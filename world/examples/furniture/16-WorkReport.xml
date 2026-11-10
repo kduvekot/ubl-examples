@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WorkReport xmlns="urn:oasis:names:specification:ubl:schema:xsd:WorkReport-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>BF-DOC-26-0582</cbc:ID>
+  <cbc:IssueDate>2026-04-09</cbc:IssueDate>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Joiners Row</cbc:StreetName>
+        <cbc:BuildingNumber>14</cbc:BuildingNumber>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71203</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>UL-1237398</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Brackenmere Furniture</cbc:RegistrationName>
+        <cbc:CompanyID>20412466</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Trade sales</cbc:Name>
+        <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Civic Square</cbc:StreetName>
+        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38517</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
+        <cbc:CompanyID>20410548</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Procurement office</cbc:Name>
+        <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:ApproverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:ApproverParty>
+  <cac:WorkReportLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Quantity unitCode="HUR">14</cbc:Quantity>
+  </cac:WorkReportLine>
+</WorkReport>

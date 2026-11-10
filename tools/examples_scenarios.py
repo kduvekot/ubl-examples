@@ -9,7 +9,7 @@ lines, amounts and taxes are worked out by tools/examples_kit.py.
 from decimal import Decimal
 
 import examples_kit as kit
-from build_examples import ITEM, PARTY, WORLD, V, amount, item, money, party, qty
+from build_examples import ITEM, PARTY, WORLD, V, amount, item, money, party, price, qty
 
 
 def rate(a, b):
@@ -1169,3 +1169,266 @@ def packaging(n, doc):
 
 SCENARIOS.update({"tender": tender, "carnet": carnet, "waste": waste, "utilities": utilities, "wood": wood,
                   "furniture": furniture, "packaging": packaging})
+
+
+# ================================================================ step 2: the document types the flows did not use yet
+def nth(flow_id, n, doc):
+    """Which occurrence of the same document type between the same parties this is, within the flow (1, 2, ...)."""
+    same = [d for d in kit.WORLD["documents"] if d["flow"] == flow_id]
+    return sum(1 for d in same[:n] if (d["doc"], d["from"], d["to"]) == (doc["doc"], doc["from"], doc["to"]))
+
+
+def head(f, key, doc, day, why, doc_type=None):
+    return {"ID": V(f.number(key, doc["from"], doc_type or doc["doc"]), "The sender's number for this document."),
+            "IssueDate": V(f.date(day), why)}
+
+
+def response(code, why, ref_id, ref_why):
+    """A DocumentResponse: the response code and the document it is about."""
+    return {"Response": {"ResponseCode": V(code, why)},
+            "DocumentReference": {"ID": V(ref_id, ref_why)}}
+
+
+_tender, _rail, _sea, _air, _retail, _road, _furniture, _carnet = tender, rail, sea, air, retail, road, furniture, carnet
+
+
+def tender(n, doc):
+    f, d = TENDER, doc["doc"]
+    folder = {"ContractFolderID": V(FOLDER, "The authority's file number for this procurement, the same on every "
+                                            "document of the procedure.")}
+    if d == "ExpressionOfInterestRequest":
+        return {**head(f, "eoi", doc, 33, "Sent after the contract notice was published."), **folder}
+    if d == "ExpressionOfInterestResponse":
+        return {**head(f, "eoi-response", doc, 34, "The authority confirms the registration the next day."), **folder}
+    if d == "QualificationApplicationRequest":
+        return {**head(f, "qar", doc, 32, "Sent with the procurement documents."), **folder}
+    if d == "QualificationApplicationResponse":
+        return {**head(f, "qar-response", doc, 38, "Returned before the tender deadline."), **folder,
+                "TenderingCriterionResponse": {
+                    "ID": V("SEL-1", "The response to the authority's first selection criterion."),
+                    "Description": V("Annual turnover in furniture above 500,000 lume in each of the last three "
+                                     "years.", "What the furniture maker declares for this criterion.")}}
+    if d == "ProcurementStatusRequest":
+        return {**head(f, "status-request", doc, 39, "The furniture maker asks a week before the deadline."), **folder}
+    if d == "ProcurementStatus":
+        return {**head(f, "procurement-status", doc, 40, "Answered the next day."), **folder,
+                "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(44), "The deadline for tenders stands.")}}
+    if d == "UnsubscribeFromProcedureRequest":
+        return {**head(f, "unsubscribe", doc, 41, "The sawmill decides before the deadline."), **folder}
+    if d == "UnsubscribeFromProcedureResponse":
+        return {**head(f, "unsubscribe-response", doc, 42, "The authority confirms the next day."), **folder}
+    if d == "TenderReceipt":
+        return {**head(f, "tender-receipt", doc, 44, "Sent on receipt of the tender."), **folder,
+                "RegisteredDate": V(f.date(44), "The day the tender was registered, before the deadline."),
+                "RegisteredTime": V("11:42:00", "The time it was registered, which proves it was on time."),
+                "TenderDocumentReference": {"ID": V(f.numbers["tender"], "The tender received.")}}
+    if d == "Tender" and doc["from"] == "37-xb":
+        k = nth("tender", n, doc)
+        price = Decimal("470.00") if k == 1 else Decimal("480.00")
+        return {"ID": V(f.number(f"tender-37-{k}", doc["from"], "Tender"), "The furniture maker's number for this "
+                                                                           "tender."),
+                "IssueDate": V(f.date(42 if k == 1 else 43), "Submitted before the deadline." if k == 1 else
+                               "The corrected tender, submitted the day after the withdrawal."),
+                **folder,
+                "TenderedProject": {"LegalMonetaryTotal": {
+                    "PayableAmount": amount(price * TENDER_QTY, "XBL",
+                                            f"{TENDER_QTY} wooden benches at {price} lume" +
+                                            (": the price per bench was entered wrongly." if k == 1 else
+                                             ", the corrected price."))}}}
+    if d == "TenderWithdrawal":
+        return {**head(f, "withdrawal", doc, 43, "Withdrawn before the deadline, which the procedure allows."),
+                **folder,
+                "WithdrawOfferIndicator": V("true", "The whole tender is withdrawn."),
+                "TenderDocumentReference": {"ID": V(f.numbers["tender-37-1"], "The tender withdrawn.")}}
+    if d == "TendererQualificationResponse":
+        return {**head(f, "qualification-response", doc, 50, "After the check of the qualifications."), **folder,
+                "QualificationResolution": {"AdmissionCode": V("Admitted", "The tenderer meets the selection criteria "
+                                                                           "and its tender is evaluated."),
+                                            "ResolutionDate": V(f.date(50), "The day of the decision.")}}
+    if d == "UnawardedNotification":
+        return {**head(f, "unawarded", doc, 56, "Told on the day of the award decision, as the winner is."), **folder,
+                "TenderResult": {"AwardDate": V(f.date(56), "The day the contract was awarded to another tenderer.")}}
+    if d == "TenderContract":
+        return {**head(f, "contract", doc, 66, "Concluded after the ten-day standstill period."), **folder,
+                "TenderResult": {"AwardDate": V(f.date(56), "The day of the award decision.")}}
+    return _tender(n, doc)
+
+
+def rail(n, doc):
+    f, d = RAIL, doc["doc"]
+    train = {"JourneyID": V("CT 4471", "The number of the container train in the hub's timetable.")}
+    if d == "TransportProgressStatusRequest":
+        return {**head(f, "tps-request", doc, 8, "Asked on the morning of departure."),
+                "IssueTime": V("06:30:00", "Before the train leaves the hub."), "TransportMeans": train}
+    if d == "TransportProgressStatus":
+        return {**head(f, "tps", doc, 8, "Answered at once."), "IssueTime": V("06:45:00", "A quarter of an hour later."),
+                "TransportMeans": train}
+    if d == "GoodsItemItinerary":
+        return {**head(f, "itinerary", doc, 8, "Sent when the containers are on the train."),
+                "IssueTime": V("09:00:00", "After loading."),
+                "VersionID": V("1", "The first version of the itinerary."),
+                "TransportExecutionPlanReferenceID": V(f.numbers["tep"], "The transport plan the itinerary belongs to."),
+                "TransportationSegment": {
+                    "SequenceNumeric": V("1", "One segment: by rail from the hub to the distributor's siding."),
+                    "TransportationService": {"TransportServiceCode": V("RailContainer", "The rail carrier's own code "
+                                                                                         "for its container train "
+                                                                                         "service.")}}}
+    return _rail(n, doc)
+
+
+def sea(n, doc):
+    f, d = SEA, doc["doc"]
+    service = {"TransportServiceCode": V("OceanContainer", "The carrier's code for its container liner service."),
+               "Name": V("Weekly service Lumeport–Selanu", "The name of the service.")}
+    if d == "BusinessCard":
+        return head(f, "business-card", doc, 0, "Sent before the first offer to the new customer.")
+    if d == "TransportServiceDescriptionRequest":
+        return {**head(f, "tsd-request", doc, 4, "Asked once the order is accepted."),
+                "IssueTime": V("14:00:00", "The time of the request."),
+                "TransportationService": {"TransportServiceCode": V("OceanContainer", "The service asked about: a "
+                                                                                      "container liner service.")}}
+    if d == "TransportServiceDescription":
+        return {**head(f, "tsd", doc, 5, "The carrier answers the next day."), "TransportationService": service}
+    if d == "InvoiceStatusRequest":
+        return {"ID": V(f.number("invoice-status-request", doc["from"], d), "The distributor's request number."),
+                "RequestDate": V(f.date(25), "Two weeks after the invoice, without news from the buyer."),
+                "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The invoice asked "
+                                                                                                "about.")}}}
+    if d == "InvoiceStatusResponse":
+        return {**head(f, "invoice-status", doc, 26, "Answered the next day."),
+                "DocumentResponse": response("AP", "UN/EDIFACT 4343 code AP: accepted; the invoice is scheduled for "
+                                                   "payment.", f.numbers["invoice"], "The invoice the status is about.")}
+    return _sea(n, doc)
+
+
+def air(n, doc):
+    f, d = AIR, doc["doc"]
+    if d == "Enquiry":
+        return {**head(f, "enquiry", doc, 0, "The buyer asks before changing its order."),
+                "Description": V("Are eight spare side frames in stock, and how fast can they reach Selanu?",
+                                 "The question, in words.")}
+    if d == "EnquiryResponse":
+        return {**head(f, "enquiry-response", doc, 0, "Answered the same day."),
+                "Description": V("Eight in stock; by air within a week, carriage paid to Selanu airport.",
+                                 "The answer, in words."),
+                "ParentDocumentReference": {"ID": V(f.numbers["enquiry"], "The enquiry this answers.")}}
+    if d == "FulfilmentCancellation":
+        return {**head(f, "fulfilment-cancellation", doc, 3, "The flight left without the cargo."),
+                "CancellationNote": V("The cargo missed its flight; it goes on the next day's flight under a new "
+                                      "despatch advice.", "Why the despatch advice is cancelled."),
+                "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice cancelled.")}}
+    if d == "DespatchAdvice" and nth("air", n, doc) == 2:
+        out = kit.despatch_advice(f, n, doc, 3, "Sent for the next day's flight.", "The gross weight of the boxed "
+                                                                                    "frames.")
+        out["ID"] = V(f.number("despatch-2", doc["from"], "DespatchAdvice"), "A new number: the first despatch "
+                                                                             "advice was cancelled.")
+        return out
+    return _air(n, doc)
+
+
+def retail(n, doc):
+    f, d = RETAIL, doc["doc"]
+    cat = {"ID": V(f.numbers.get("catalogue", ""), "The catalogue concerned.")} if "catalogue" in f.numbers else None
+    if d == "CatalogueRequest":
+        return head(f, "catalogue-request", doc, 0, "The store asks for the spring catalogue. As UBL defines it, the "
+                                                     "party that sends a catalogue request is its ProviderParty.")
+    if d == "CataloguePricingUpdate":
+        return {**head(f, "pricing-update", doc, 30, "The distributor lowers a price during the season."),
+                "RelatedCatalogueReference": cat,
+                "CataloguePricingUpdateLine": {"ID": V("1", "The line of the side frame."),
+                                               "RequiredItemLocationQuantity": {"Price": {
+                                                   "PriceAmount": price("58.00", "XBL", "The new price of the side "
+                                                                                        "frame, down from 64.00."),
+                                                   "BaseQuantity": qty(1, "H87", "Per piece.")}}}}
+    if d == "CatalogueItemSpecificationUpdate":
+        it = item("bench-serra-b")
+        it["Description"] = V("Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried "
+                              "hardwood, for bolting to the ground.", "The new description: the slats are now of a "
+                                                                      "different hardwood.")
+        return {**head(f, "spec-update", doc, 31, "The bench's slats changed wood."), "RelatedCatalogueReference": cat,
+                "CatalogueItemSpecificationUpdateLine": {"ID": V("1", "The line of the bench."), "Item": it}}
+    if d == "CatalogueDeletion":
+        return {**head(f, "catalogue-deletion", doc, 60, "The spring catalogue is withdrawn before the summer one."),
+                "DeletedCatalogueReference": cat}
+    if d == "DocumentStatusRequest":
+        return {**head(f, "status-request", doc, 6, "Asked two days after ordering."),
+                "RequestedDocumentReference": {"ID": V(f.numbers["order"], "The order asked about.")}}
+    if d == "DocumentStatus":
+        return {**head(f, "document-status", doc, 6, "Answered the same day."),
+                "DocumentResponse": response("AP", "UN/EDIFACT 4343 code AP: the order is accepted and the truck is "
+                                                   "booked.", f.numbers["order"], "The order the status is about.")}
+    if d == "TransportationStatusRequest":
+        return {**head(f, "ts-request", doc, 9, "The store asks when to expect the delivery."),
+                "Consignment": {"ID": V(f.numbers["consignment"], "The consignment asked about.")}}
+    return _retail(n, doc)
+
+
+def road(n, doc):
+    f = ROAD
+    if doc["doc"] == "ApplicationResponse":
+        return {**head(f, "application-response", doc, 9, "Sent automatically when the invoice was processed."),
+                "DocumentResponse": response("AP", "UN/EDIFACT 4343 code AP: the invoice is accepted.",
+                                             f.numbers["invoice"], "The invoice responded to.")}
+    return _road(n, doc)
+
+
+def furniture(n, doc):
+    f, d = FURNITURE, doc["doc"]
+    if d == "Order" and doc["from"] == "26-xb" and nth("furniture", n, doc) == 2:
+        return kit.order(f, n, doc, 45, "A second delivery, before the slow sales were clear.",
+                         "Delivered at place, the store, as the first delivery.", "Brightmarket Stores, goods-in, "
+                                                                                 "Lumeport", key="order-2")
+    if d == "OrderCancellation":
+        return {**head(f, "order-cancellation", doc, 51, "Cancelled the day after the exception notification."),
+                "CancellationNote": V("Sales of the line are below the agreed threshold; the second delivery is not "
+                                      "needed.", "Why the order is cancelled."),
+                "OrderReference": {"ID": V(f.numbers["order-2"], "The order cancelled.")}}
+    if d == "DebitNote":
+        rows = kit.spec_rows([{"item": "return-transport", "qty": 1}], "26-xb", "37-xb", "XBL")
+        tax, total = kit.tax_total(rows, "XBL")
+        amt = rows[0][2]
+        return {**head(f, "debit-note", doc, 63, "After the returned sets were collected."),
+                "DocumentCurrencyCode": kit.currency_line("XBL", "the currency of the trade"),
+                "BillingReference": {"CreditNoteDocumentReference": {"ID": V(next(v for k, v in f.numbers.items()
+                                                                          if k.startswith("credit-")), "The credit note "
+                                                                                                     "of the returned "
+                                                                                                     "sets.")}},
+                "TaxTotal": total,
+                "RequestedMonetaryTotal": {"LineExtensionAmount": amount(amt, "XBL", "The sum of the lines."),
+                                           "PayableAmount": amount(amt + tax, "XBL", "What the furniture maker owes "
+                                                                                     "the store.")},
+                "DebitNoteLine": {"ID": V("1", "The return transport."),
+                                  "DebitedQuantity": qty(1, "E48", "One return delivery."),
+                                  "LineExtensionAmount": amount(amt, "XBL", "The store's charge for one return delivery."),
+                                  "Item": item("return-transport", kit.tax_category(rows[0][3])),
+                                  "Price": kit.price_block("return-transport")}}
+    return _furniture(n, doc)
+
+
+def carnet(n, doc):
+    f, d = CARNET, doc["doc"]
+    passport = {"GoodsItemPassportID": V(f.numbers.get("carnet", ""), "The carnet the samples travelled under.")}
+    if d == "ProofOfReexportationRequest":
+        return {**head(f, "por-request", doc, 60, "Two months after the fair the samples' re-export is not recorded."),
+                **passport}
+    if d == "ProofOfReexportationReminder":
+        return {**head(f, "por-reminder", doc, 90, "No answer after a month."),
+                "ProcedureCode": V("TemporaryAdmission", "The procedure the samples were under on the island."),
+                **passport,
+                "ProofOfReexportationRequestDocumentReference": {"ID": V(f.numbers["por-request"], "The request "
+                                                                                                   "unanswered.")},
+                "GoodsItemPassportCounterfoil": {"ID": V("IMP-1", "The importation counterfoil without a re-export "
+                                                                  "stamp.")}}
+    if d == "ProofOfReexportation":
+        return {**head(f, "proof", doc, 95, "Urvania's chamber answers with the proof."),
+                "GoodsItemPassportCounterfoil": {"ID": V("REIMP-1", "The re-importation counterfoil, stamped by "
+                                                                    "Urvania's customs when the samples came home.")},
+                "ReexportationEvidence": {"ID": V("REIMP-1", "The evidence is the re-importation counterfoil itself."),
+                                          "Description": V("Re-importation counterfoil of the carnet, stamped by "
+                                                           "Urvania's customs: the samples left the island and came "
+                                                           "home.", "What the evidence shows.")}}
+    return _carnet(n, doc)
+
+
+SCENARIOS.update({"tender": tender, "rail": rail, "sea": sea, "air": air, "retail": retail, "road": road,
+                  "furniture": furniture, "carnet": carnet})

@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>BF-INV-26-0333</cbc:ID>
+  <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:DueDate>2026-06-14</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>KAC-WB-26-0327</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Dockside Way</cbc:StreetName>
+        <cbc:BuildingNumber>4</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38525</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Bayforth Forwarding</cbc:RegistrationName>
+        <cbc:CompanyID>20411644</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Export desk</cbc:Name>
+        <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Distribution Drive</cbc:StreetName>
+        <cbc:BuildingNumber>43</cbc:BuildingNumber>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71214</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeway Distribution</cbc:RegistrationName>
+        <cbc:CompanyID>20410274</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customer service</cbc:Name>
+        <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:Shipment>
+      <cac:Consignment>
+        <cbc:ID>LD-CS-26-0326</cbc:ID>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Kelaro Air Cargo</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:StreetName>Airfield Road</cbc:StreetName>
+            <cbc:BuildingNumber>46</cbc:BuildingNumber>
+            <cbc:CityName>Selanu</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Kelaro Air Cargo</cbc:RegistrationName>
+            <cbc:CompanyID>IC41311</cbc:CompanyID>
+          </cac:PartyLegalEntity>
+          <cac:Contact>
+            <cbc:Name>Cargo sales</cbc:Name>
+            <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
+          </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41311</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
+        </cac:CarrierParty>
+      </cac:Consignment>
+    </cac:Shipment>
+  </cac:Delivery>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB10BLUM0002618225</cbc:ID>
+      <cac:FinancialInstitutionBranch>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">0.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">0.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">0.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KGM">0</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Airport-to-airport air freight per kilogram chargeable weight, road feeder included.</cbc:Description>
+      <cbc:Name>Air freight</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-AIR</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">6.8</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>
