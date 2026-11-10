@@ -37,6 +37,13 @@ A second delivery, placed before the slow sales were clear.
 - `LineCountNumeric` = **1**  
   The number of order lines.
 
+### Order Document Reference
+
+Inside `OrderDocumentReference`:
+
+- `ID` = **BS-PO-26-0574**  
+  The first order of the line: this one is a second delivery of the same sets.
+
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -298,10 +305,10 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **12200.00** (currencyID `XBL`)  
-  The sum of the line amounts.
-- `PayableAmount` = **12200.00** (currencyID `XBL`)  
-  What the buyer expects to pay, tax included.
+- `LineExtensionAmount` = **11834.00** (currencyID `XBL`)  
+  Net of the repeat-order discount; no sales tax on goods bought for resale.
+- `PayableAmount` = **11834.00** (currencyID `XBL`)  
+  Net of the repeat-order discount; no sales tax on goods bought for resale.
 
 ### Order Line
 
@@ -315,8 +322,8 @@ Inside `OrderLine`:
   What the line is.
 - `LineItem/Quantity` = **20** (unitCode `SET`)  
   The first delivery of the store's own garden furniture line.
-- `LineItem/LineExtensionAmount` = **12200.00** (currencyID `XBL`)  
-  Quantity times price, rounded to the minor unit.
+- `LineItem/LineExtensionAmount` = **11834.00** (currencyID `XBL`)  
+  The line less the repeat-order discount.
 - `LineItem/MinimumQuantity` = **10** (unitCode `SET`)  
   The store accepts a first part of at least ten sets.
 - `LineItem/MaximumQuantity` = **20** (unitCode `SET`)  
@@ -335,6 +342,18 @@ Inside `OrderLine`:
   In words.
 - `LineItem/PricingReference/OriginalItemLocationQuantity/Price/PriceAmount` = **610** (currencyID `XBL`)  
   The price of the quotation, which the order accepts.
+- `LineItem/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance on the line.
+- `LineItem/AllowanceCharge/AllowanceChargeReasonCode` = **95**  
+  UN/EDIFACT 5189 code 95: discount.
+- `LineItem/AllowanceCharge/AllowanceChargeReason` = **Repeat order**  
+  The quotation gives 3 % on a repeat order of the line.
+- `LineItem/AllowanceCharge/MultiplierFactorNumeric` = **0.03**  
+  3 %.
+- `LineItem/AllowanceCharge/Amount` = **366.00** (currencyID `XBL`)  
+  3 % of the line.
+- `LineItem/AllowanceCharge/BaseAmount` = **12200.00** (currencyID `XBL`)  
+  The line at the quoted price.
 - `LineItem/Price/PriceAmount` = **610** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `SET`)  
@@ -412,6 +431,9 @@ Inside `OrderLine`:
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OrderDocumentReference>
+    <cbc:ID>BS-PO-26-0574</cbc:ID>
+  </cac:OrderDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -631,8 +653,8 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">11834.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">11834.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cbc:Note>Price as quoted.</cbc:Note>
@@ -640,7 +662,7 @@ Inside `OrderLine`:
       <cbc:ID>1</cbc:ID>
       <cbc:Note>The store's own line: bench and two chairs per set.</cbc:Note>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">11834.00</cbc:LineExtensionAmount>
       <cbc:MinimumQuantity unitCode="SET">10</cbc:MinimumQuantity>
       <cbc:MaximumQuantity unitCode="SET">20</cbc:MaximumQuantity>
       <cbc:MinimumBackorderQuantity unitCode="SET">5</cbc:MinimumBackorderQuantity>
@@ -656,6 +678,14 @@ Inside `OrderLine`:
           </cac:Price>
         </cac:OriginalItemLocationQuantity>
       </cac:PricingReference>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XBL">366.00</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">12200.00</cbc:BaseAmount>
+      </cac:AllowanceCharge>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>

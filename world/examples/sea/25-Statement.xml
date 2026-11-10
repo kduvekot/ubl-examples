@@ -363,6 +363,11 @@
     <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Freight and insurance of the CIF invoice</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">3090.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
   </cac:TaxTotal>
@@ -457,6 +462,16 @@
       <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
       <cbc:CalculationRate>0.4</cbc:CalculationRate>
     </cac:ExchangeRate>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
+    </cac:AllowanceCharge>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XBL">140.00</cbc:Amount>
+    </cac:AllowanceCharge>
   </cac:StatementLine>
   <cac:StatementLine>
     <cbc:ID>2</cbc:ID>

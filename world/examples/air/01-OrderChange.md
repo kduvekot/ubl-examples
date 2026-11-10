@@ -245,6 +245,24 @@ Inside `SellerSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Accounting Customer Party
 
 Inside `AccountingCustomerParty`:
@@ -625,6 +643,24 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>

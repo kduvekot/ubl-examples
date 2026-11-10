@@ -78,6 +78,13 @@ Inside `ProjectReference`:
 - `ID` = **PWD-PLAN-OFFICE-26**  
   The new planning office.
 
+### Billing Reference
+
+Inside `BillingReference`:
+
+- `AdditionalDocumentReference/ID` = **PWD-COMMIT-26-0381**  
+  The department's budget commitment the work will be billed against.
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -300,6 +307,17 @@ Inside `ApproverParty`:
 - `PartyName/Name` = **Lumeport Public Works Department**  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge.
+- `AllowanceChargeReason` = **Packaging disposal**  
+  The installers took the packaging away.
+- `Amount` = **24.00** (currencyID `XBL`)  
+  A flat charge.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -313,8 +331,10 @@ Inside `StatementMonetaryTotal`:
 
 - `LineExtensionAmount` = **672.00** (currencyID `XBL`)  
   14 hours at 48 lume.
-- `PayableAmount` = **672.00** (currencyID `XBL`)  
-  What the invoice will charge.
+- `ChargeTotalAmount` = **24.00** (currencyID `XBL`)  
+  The packaging disposal.
+- `PayableAmount` = **696.00** (currencyID `XBL`)  
+  What the invoice will charge: the hours and the disposal.
 
 ### Work Report Line
 
@@ -431,6 +451,11 @@ Inside `WorkReportLine`:
   <cac:ProjectReference>
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
+  <cac:BillingReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    </cac:AdditionalDocumentReference>
+  </cac:BillingReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-PHOTO-26-0408</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -622,12 +647,18 @@ Inside `WorkReportLine`:
       <cbc:Name>Lumeport Public Works Department</cbc:Name>
     </cac:PartyName>
   </cac:ApproverParty>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Packaging disposal</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">24.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
   </cac:TaxTotal>
   <cac:StatementMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">672.00</cbc:PayableAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">24.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">696.00</cbc:PayableAmount>
   </cac:StatementMonetaryTotal>
   <cac:WorkReportLine>
     <cbc:ID>1</cbc:ID>

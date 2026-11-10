@@ -454,6 +454,14 @@ Inside `DebitNoteLine`:
   The credit note.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
   Its line of the returned sets.
+- `BillingReference/BillingReferenceLine/Amount` = **3477.00** (currencyID `XBL`)  
+  The amount of the credit note line the transport belongs to.
+- `BillingReference/BillingReferenceLine/AllowanceCharge/ChargeIndicator` = **false**  
+  The allowance on that line.
+- `BillingReference/BillingReferenceLine/AllowanceCharge/AllowanceChargeReason` = **Restocking deduction**  
+  As on the credit note.
+- `BillingReference/BillingReferenceLine/AllowanceCharge/Amount` = **183.00** (currencyID `XBL`)  
+  5 % of the sets returned.
 - `DocumentReference/ID` = **BF-DOC-26-0578**  
   The instruction for returns.
 - `Delivery/ActualDeliveryDate` = **2026-05-02**  
@@ -825,6 +833,12 @@ Inside `DebitNoteLine`:
       </cac:CreditNoteDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
+        <cbc:Amount currencyID="XBL">3477.00</cbc:Amount>
+        <cac:AllowanceCharge>
+          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReason>Restocking deduction</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">183.00</cbc:Amount>
+        </cac:AllowanceCharge>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
     <cac:DocumentReference>

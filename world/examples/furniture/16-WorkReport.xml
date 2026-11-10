@@ -37,6 +37,11 @@
   <cac:ProjectReference>
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
+  <cac:BillingReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    </cac:AdditionalDocumentReference>
+  </cac:BillingReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-PHOTO-26-0408</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -228,12 +233,18 @@
       <cbc:Name>Lumeport Public Works Department</cbc:Name>
     </cac:PartyName>
   </cac:ApproverParty>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Packaging disposal</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">24.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
   </cac:TaxTotal>
   <cac:StatementMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">672.00</cbc:PayableAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">24.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">696.00</cbc:PayableAmount>
   </cac:StatementMonetaryTotal>
   <cac:WorkReportLine>
     <cbc:ID>1</cbc:ID>

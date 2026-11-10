@@ -3266,7 +3266,12 @@ def furniture(n, doc):
                                               "Item": sets}}
     if doc["doc"] == "CreditNote":
         out = kit.credit_note(f, n, doc, 62, "Issued when the returned sets arrived back.",
-                              [{"item": "garden-set", "qty": 6, "why": "The sets returned."}],
+                              [{"item": "garden-set", "qty": 6, "why": "The sets returned.",
+                                "line_allowance": {"percent": "5", "code": "64",
+                                                   "code_why": "UN/EDIFACT 5189 code 64: special agreement.",
+                                                   "reason": "Restocking deduction",
+                                                   "why": "The instruction for returns lets the furniture maker "
+                                                          "keep 5 % for restocking the sets."}}],
                               {"BillingReference": {"InvoiceDocumentReference": {
                                   "ID": V(f.numbers["invoice"], "The invoice of the returned sets."),
                                   "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
@@ -3303,6 +3308,9 @@ def furniture(n, doc):
                                                              "DocumentReference": {"ID": V(f.numbers["work-report"],
                                                                                            "The work report.")}}}}],
                            key="invoice-desks",
+                           charges=[{"like": "installation", "amount": "24.00", "reason": "Packaging disposal",
+                                     "why": "The installers took the desks' packaging away, as the work report "
+                                            "records.", "amount_why": "The flat charge for disposal."}],
                            extra={"WorkReportDocumentReference": {"ID": V(f.numbers["work-report"], "The approved "
                                                                           "work report the hours come from.")},
                                   "ProjectReference": {"ID": V("PWD-PLAN-OFFICE-26", "The department's project: the "
@@ -7974,3 +7982,104 @@ def _(f, n, doc, out):
                                 "AllowanceChargeReason": V("Classing fee", "The farm bears the classing of its "
                                                                            "cotton, as the agreement says."),
                                 "Amount": amount(fee, "XLC", "The chamber's fee for the lot.")}}
+
+
+# --- Coverage completion, batch G: references, allowances and the remaining details -----------------------------
+
+
+@enrich("air", "OrderChange")
+def _(f, n, doc, out):
+    return for_harbour()
+
+
+@enrich("furniture", "Order")
+def _(f, n, doc, out):
+    if n != 10:
+        return {}
+    li = out["OrderLine"][0]["LineItem"] if isinstance(out["OrderLine"], list) else out["OrderLine"]["LineItem"]
+    gross = Decimal(li["LineExtensionAmount"].value)
+    disc = money(gross * Decimal("0.03"), "XBL")
+    li["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
+                             "AllowanceChargeReasonCode": V("95", "UN/EDIFACT 5189 code 95: discount."),
+                             "AllowanceChargeReason": V("Repeat order", "The quotation gives 3 % on a repeat "
+                                                                        "order of the line."),
+                             "MultiplierFactorNumeric": V("0.03", "3 %."),
+                             "Amount": amount(disc, "XBL", "3 % of the line."),
+                             "BaseAmount": amount(gross, "XBL", "The line at the quoted price.")}
+    li["LineExtensionAmount"] = amount(gross - disc, "XBL", "The line less the repeat-order discount.")
+    amt = out["AnticipatedMonetaryTotal"]
+    for k in ("LineExtensionAmount", "TaxExclusiveAmount", "TaxInclusiveAmount", "PayableAmount"):
+        if k in amt:
+            amt[k] = amount(gross - disc, "XBL", "Net of the repeat-order discount; no sales tax on goods bought "
+                                                 "for resale.")
+    return {"OrderDocumentReference": {"ID": V(f.numbers["order"], "The first order of the line: this one is a "
+                                                                   "second delivery of the same sets.")}}
+
+
+@enrich("furniture", "WorkReport")
+def _(f, n, doc, out):
+    smt = out["StatementMonetaryTotal"]
+    amt = Decimal(smt["LineExtensionAmount"].value)
+    smt["ChargeTotalAmount"] = amount(Decimal("24.00"), "XBL", "The packaging disposal.")
+    smt["PayableAmount"] = amount(amt + Decimal("24.00"), "XBL", "What the invoice will charge: the hours and the "
+                                                                 "disposal.")
+    return {"AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
+                                "AllowanceChargeReason": V("Packaging disposal", "The installers took the "
+                                                                                 "packaging away."),
+                                "Amount": amount(Decimal("24.00"), "XBL", "A flat charge.")},
+            "BillingReference": {"AdditionalDocumentReference": {"ID": V("PWD-COMMIT-26-0381", "The department's "
+                                                                                               "budget commitment "
+                                                                                               "the work will be "
+                                                                                               "billed against.")}}}
+
+
+@enrich("furniture", "DebitNote")
+def _(f, n, doc, out):
+    br = out["DebitNoteLine"]["BillingReference"]["BillingReferenceLine"]
+    gross = Decimal(6) * Decimal(str(ITEM["garden-set"]["price"]["amount"]))
+    ded = money(gross * Decimal("0.05"), "XBL")
+    br["Amount"] = amount(gross - ded, "XBL", "The amount of the credit note line the transport belongs to.")
+    br["AllowanceCharge"] = {"ChargeIndicator": V("false", "The allowance on that line."),
+                             "AllowanceChargeReason": V("Restocking deduction", "As on the credit note."),
+                             "Amount": amount(ded, "XBL", "5 % of the sets returned.")}
+    return {}
+
+
+@enrich("furniture", "Invoice")
+def _(f, n, doc, out):
+    if n != 9:
+        return {}
+    lines = out["InvoiceLine"] if isinstance(out["InvoiceLine"], list) else [out["InvoiceLine"]]
+    lines.append({"ID": V(str(len(lines) + 1), "A line without charge."),
+                  "InvoicedQuantity": qty(20, "C62", "One care kit with each set."),
+                  "LineExtensionAmount": amount(0, "XBL", "Free of charge."),
+                  "FreeOfChargeIndicator": V("true", "The care kits are given with the sets."),
+                  "Note": V("Wood oil and a cloth, for the store to hand to its customers.", "What they are."),
+                  "Item": {"Name": V("Care kit for the garden bench set", "The item."),
+                           "ClassifiedTaxCategory": kit.tax_category(kit.tax_rule("37-xb", "26-xb", "garden-set"))},
+                  "Price": {"PriceAmount": price("0", "XBL", "No price: free.")}})
+    out["InvoiceLine"] = lines
+    out["LineCountNumeric"] = V(str(len(lines)), "The number of lines, the free line included.")
+    return {}
+
+
+@enrich("air", "Invoice")
+def _(f, n, doc, out):
+    return {"StatementDocumentReference": {"ID": V("BF-SOA-26-05", "The forwarder's statement of account for May, "
+                                                                   "on which the invoice will appear (not "
+                                                                   "shown).")}}
+
+
+@enrich("sea", "Statement")
+def _(f, n, doc, out):
+    first = out["StatementLine"][0]
+    first["AllowanceCharge"] = [
+        {"ChargeIndicator": V("true", "A charge in the invoice of the line."),
+         "AllowanceChargeReason": V("Sea freight", "As on the invoice: CIF."),
+         "Amount": amount(SEA_FREIGHT, "XBL", "The freight.")},
+        {"ChargeIndicator": V("true", "A charge."), "AllowanceChargeReason": V("Cargo insurance", "As on the "
+                                                                                                "invoice."),
+         "Amount": amount(INSURANCE, "XBL", "The premium.")}]
+    return {"AllowanceCharge": {"ChargeIndicator": V("true", "The charges in the account, summed."),
+                                "AllowanceChargeReason": V("Freight and insurance of the CIF invoice", "Why."),
+                                "Amount": amount(SEA_FREIGHT + INSURANCE, "XBL", "Included in the balance.")}}

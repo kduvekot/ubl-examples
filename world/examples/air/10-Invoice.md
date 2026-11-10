@@ -41,6 +41,13 @@ The forwarder invoices the air freight, including the road feeder leg, to the di
 - `DefaultLanguageCode` = **en**  
   The language the texts of the invoice are in: the seller's country's language.
 
+### Statement Document Reference
+
+Inside `StatementDocumentReference`:
+
+- `ID` = **BF-SOA-26-05**  
+  The forwarder's statement of account for May, on which the invoice will appear (not shown).
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -518,6 +525,9 @@ Inside `InvoiceLine`:
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:StatementDocumentReference>
+    <cbc:ID>BF-SOA-26-05</cbc:ID>
+  </cac:StatementDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>KAC-WB-26-0325</cbc:ID>
   </cac:AdditionalDocumentReference>

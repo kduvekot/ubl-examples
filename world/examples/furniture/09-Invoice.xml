@@ -13,7 +13,7 @@
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
@@ -373,5 +373,27 @@
         <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
       </cac:Price>
     </cac:SubInvoiceLine>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Wood oil and a cloth, for the store to hand to its customers.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="C62">20</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+    <cbc:FreeOfChargeIndicator>true</cbc:FreeOfChargeIndicator>
+    <cac:Item>
+      <cbc:Name>Care kit for the garden bench set</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">0</cbc:PriceAmount>
+    </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

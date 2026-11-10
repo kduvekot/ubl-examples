@@ -283,7 +283,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">3660.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">3477.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -297,15 +297,23 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">3660.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">3660.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">3660.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">3660.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">3477.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">3477.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">3477.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="SET">6</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">3660.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Restocking deduction</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="XBL">183.00</cbc:Amount>
+      <cbc:BaseAmount currencyID="XBL">3660.00</cbc:BaseAmount>
+    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>
@@ -342,5 +350,8 @@
       <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:ItemPriceExtension>
+      <cbc:Amount currencyID="XBL">3660.00</cbc:Amount>
+    </cac:ItemPriceExtension>
   </cac:CreditNoteLine>
 </CreditNote>

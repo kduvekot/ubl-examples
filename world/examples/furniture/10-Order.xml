@@ -13,6 +13,9 @@
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OrderDocumentReference>
+    <cbc:ID>BS-PO-26-0574</cbc:ID>
+  </cac:OrderDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -232,8 +235,8 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">11834.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">11834.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cbc:Note>Price as quoted.</cbc:Note>
@@ -241,7 +244,7 @@
       <cbc:ID>1</cbc:ID>
       <cbc:Note>The store's own line: bench and two chairs per set.</cbc:Note>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">11834.00</cbc:LineExtensionAmount>
       <cbc:MinimumQuantity unitCode="SET">10</cbc:MinimumQuantity>
       <cbc:MaximumQuantity unitCode="SET">20</cbc:MaximumQuantity>
       <cbc:MinimumBackorderQuantity unitCode="SET">5</cbc:MinimumBackorderQuantity>
@@ -257,6 +260,14 @@
           </cac:Price>
         </cac:OriginalItemLocationQuantity>
       </cac:PricingReference>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XBL">366.00</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">12200.00</cbc:BaseAmount>
+      </cac:AllowanceCharge>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>

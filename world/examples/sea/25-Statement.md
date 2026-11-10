@@ -457,6 +457,17 @@ Inside `PaymentTerms`:
 - `PaymentDueDate` = **2026-06-28**  
   The due date.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  The charges in the account, summed.
+- `AllowanceChargeReason` = **Freight and insurance of the CIF invoice**  
+  Why.
+- `Amount` = **3090.00** (currencyID `XBL`)  
+  Included in the balance.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -524,6 +535,18 @@ Inside `StatementLine`:
   The buyer's currency.
 - `ExchangeRate/CalculationRate` = **0.4**  
   For the buyer's information.
+- `AllowanceCharge/ChargeIndicator` = **true**  
+  A charge in the invoice of the line.
+- `AllowanceCharge/AllowanceChargeReason` = **Sea freight**  
+  As on the invoice: CIF.
+- `AllowanceCharge/Amount` = **2950.00** (currencyID `XBL`)  
+  The freight.
+- `AllowanceCharge/ChargeIndicator` = **true**  
+  A charge.
+- `AllowanceCharge/AllowanceChargeReason` = **Cargo insurance**  
+  As on the invoice.
+- `AllowanceCharge/Amount` = **140.00** (currencyID `XBL`)  
+  The premium.
 - `ID` = **2**  
   The deposit.
 - `Note` = **Paid to the distributor before the invoice was assigned.**  
@@ -923,6 +946,11 @@ Inside `StatementLine`:
     <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Freight and insurance of the CIF invoice</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">3090.00</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
   </cac:TaxTotal>
@@ -1017,6 +1045,16 @@ Inside `StatementLine`:
       <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
       <cbc:CalculationRate>0.4</cbc:CalculationRate>
     </cac:ExchangeRate>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
+    </cac:AllowanceCharge>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XBL">140.00</cbc:Amount>
+    </cac:AllowanceCharge>
   </cac:StatementLine>
   <cac:StatementLine>
     <cbc:ID>2</cbc:ID>

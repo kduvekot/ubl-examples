@@ -370,7 +370,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **3660.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **3477.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -389,13 +389,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **3660.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **3477.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **3660.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **3477.00** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **3660.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **3477.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **3660.00** (currencyID `XBL`)  
+- `PayableAmount` = **3477.00** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Credit Note Line
@@ -406,8 +406,20 @@ Inside `CreditNoteLine`:
   The line number.
 - `CreditedQuantity` = **6** (unitCode `SET`)  
   The sets returned.
-- `LineExtensionAmount` = **3660.00** (currencyID `XBL`)  
-  Quantity times price, rounded to the minor unit.
+- `LineExtensionAmount` = **3477.00** (currencyID `XBL`)  
+  6 × the price = 3660.00, less the 5 % restocking deduction.
+- `AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance on the line.
+- `AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
+  UN/EDIFACT 5189 code 64: special agreement.
+- `AllowanceCharge/AllowanceChargeReason` = **Restocking deduction**  
+  The instruction for returns lets the furniture maker keep 5 % for restocking the sets.
+- `AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  The rate.
+- `AllowanceCharge/Amount` = **183.00** (currencyID `XBL`)  
+  The deduction on the line.
+- `AllowanceCharge/BaseAmount` = **3660.00** (currencyID `XBL`)  
+  The line at the full price.
 - `Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `Item/Name` = **Garden bench set Marrow**  
@@ -444,6 +456,8 @@ Inside `CreditNoteLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `SET`)  
   The price is per one unit.
+- `ItemPriceExtension/Amount` = **3660.00** (currencyID `XBL`)  
+  Price times quantity, before the allowance.
 
 ## The document
 
@@ -733,7 +747,7 @@ Inside `CreditNoteLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">3660.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">3477.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -747,15 +761,23 @@ Inside `CreditNoteLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">3660.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">3660.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">3660.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">3660.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">3477.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">3477.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">3477.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="SET">6</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">3660.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Restocking deduction</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="XBL">183.00</cbc:Amount>
+      <cbc:BaseAmount currencyID="XBL">3660.00</cbc:BaseAmount>
+    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>
@@ -792,6 +814,9 @@ Inside `CreditNoteLine`:
       <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:ItemPriceExtension>
+      <cbc:Amount currencyID="XBL">3660.00</cbc:Amount>
+    </cac:ItemPriceExtension>
   </cac:CreditNoteLine>
 </CreditNote>
 ```

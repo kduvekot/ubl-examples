@@ -36,8 +36,8 @@ Furniture sold for resale: exempt from the state sales tax, which the store char
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Garden department**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
-  The number of invoice lines, as a check on the transfer.
+- `LineCountNumeric` = **2**  
+  The number of lines, the free line included.
 - `DefaultLanguageCode` = **en**  
   The language the texts of the invoice are in: the seller's country's language.
 
@@ -473,6 +473,30 @@ Inside `InvoiceLine`:
   The maker's number for the part.
 - `SubInvoiceLine/Price/PriceAmount` = **115** (currencyID `XBL`)  
   The part's share of the set price.
+- `ID` = **2**  
+  A line without charge.
+- `Note` = **Wood oil and a cloth, for the store to hand to its customers.**  
+  What they are.
+- `InvoicedQuantity` = **20** (unitCode `C62`)  
+  One care kit with each set.
+- `LineExtensionAmount` = **0.00** (currencyID `XBL`)  
+  Free of charge.
+- `FreeOfChargeIndicator` = **true**  
+  The care kits are given with the sets.
+- `Item/Name` = **Care kit for the garden bench set**  
+  The item.
+- `Item/ClassifiedTaxCategory/ID` = **E**  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E).
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-RESALE**  
+  The world's code for the exemption reason (world/countries.json).
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Price/PriceAmount` = **0** (currencyID `XBL`)  
+  No price: free.
 
 ## The document
 
@@ -492,7 +516,7 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
@@ -852,6 +876,28 @@ Inside `InvoiceLine`:
         <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
       </cac:Price>
     </cac:SubInvoiceLine>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Wood oil and a cloth, for the store to hand to its customers.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="C62">20</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+    <cbc:FreeOfChargeIndicator>true</cbc:FreeOfChargeIndicator>
+    <cac:Item>
+      <cbc:Name>Care kit for the garden bench set</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">0</cbc:PriceAmount>
+    </cac:Price>
   </cac:InvoiceLine>
 </Invoice>
 ```

@@ -15,6 +15,9 @@
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:StatementDocumentReference>
+    <cbc:ID>BF-SOA-26-05</cbc:ID>
+  </cac:StatementDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>KAC-WB-26-0325</cbc:ID>
   </cac:AdditionalDocumentReference>
