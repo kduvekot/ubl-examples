@@ -598,7 +598,7 @@ function showCard(p) {
   const col = css(CAT[p.cat]);
   card.innerHTML = `<div class="num">PARTY #${p.n}${p.proposed ? " · PROPOSED" : ""}</div><h2 style="color:${col}">${p.name}</h2>
     <div class="tags"><span class="tag">${COUNTRIES[p.c].name} (${p.c})</span><span class="tag">${p.cat}</span></div>
-    <p>${p.what}</p><dl><dt>Documents</dt><dd>${p.docs}</dd><dt>UBL roles</dt><dd><code>${p.roles.split(", ").join("</code> <code>")}</code></dd></dl>
+    <p>${p.what}</p><dl><dt>Sends</dt><dd>${p.sends}</dd><dt>Receives</dt><dd>${p.receives}</dd><dt>UBL roles</dt><dd><code>${p.roles.split(", ").join("</code> <code>")}</code></dd></dl>
     <p class="more"><a href="world-${p.id}.html">How UBL helps ${p.name.replace(/ \(X.\)$/, "")} →</a></p>`;
 }
 function select(p, center) { selected = p; showCard(p);

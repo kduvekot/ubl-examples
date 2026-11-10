@@ -1,5 +1,5 @@
 {
- "description": "The UBL example world: countries and parties. Source for the map (world.html) and the party pages.",
+ "description": "The UBL example world: countries, parties, routes and towns (the map), and the flows of documents between the parties. Each document names its sender, its receiver and every party it mentions at its place in the UBL structure; tools/world_docs.py checks them against world/ubl-model.json, extracted from the UBL 2.5 semantic model by tools/extract_ubl_model.py.",
  "countries": {
   "XA": {
    "name": "Country A",
@@ -28,14 +28,7 @@
    "h": 2,
    "kind": "mine",
    "what": "Mines the ore at the start of the chain and sells it to the manufacturer.",
-   "docs": "Order, DespatchAdvice, Invoice",
-   "roles": "AccountingSupplierParty, ConsignorParty",
-   "how": "A mine sells a few products in large volumes to a small number of customers. With UBL, its orders, despatch advices and invoices carry the same quantities, lot numbers and weights from the first document to the last, so the buyer can match them without retyping weighbridge tickets.",
-   "partners": [
-    "5-xa",
-    "14-xa",
-    "23-xa"
-   ]
+   "how": "A mine sells a few products in large volumes to a small number of customers. With UBL, its orders, despatch advices and invoices carry the same quantities, lot numbers and weights from the first document to the last, so the buyer can match them without retyping weighbridge tickets."
   },
   {
    "id": "5-xa",
@@ -50,19 +43,7 @@
    "h": 3,
    "kind": "factory",
    "what": "Turns raw material into finished goods; buys from #4, sells to #6 abroad and tenders in public procurement.",
-   "docs": "Order, OrderResponse, Invoice, Tender, CertificateOfOrigin",
-   "roles": "SellerSupplierParty, AccountingSupplierParty, ExporterParty, EconomicOperatorParty",
    "how": "The manufacturer sits in the middle of the chain: it buys, produces, sells, exports and tenders. UBL gives it one vocabulary for all of that, from the order it places with the mine to the certificate of origin and the tender it submits to a public buyer, so the same item, party and price data are reused instead of re-entered for every partner.",
-   "partners": [
-    "4-xa",
-    "6-xb",
-    "8-xa",
-    "7-xa",
-    "23-xa",
-    "20-xa",
-    "2-xb",
-    "27-xb"
-   ],
    "size": [
     2,
     2
@@ -81,14 +62,7 @@
    "h": 2,
    "kind": "warehouse",
    "what": "Picks, packs and hands the goods to the carrier for the manufacturer; knows nothing about prices.",
-   "docs": "DespatchAdvice, InventoryReport",
-   "roles": "DespatchParty, ConsignorParty",
    "how": "A third-party warehouse acts on instructions from its client but never sees the commercial terms. UBL separates the two: the warehouse sends despatch advices and inventory reports with exactly the logistic details (packages, weights, serial numbers) while prices stay in the documents between seller and buyer.",
-   "partners": [
-    "5-xa",
-    "13-xa",
-    "14-xa"
-   ],
    "size": [
     2,
     1
@@ -107,13 +81,7 @@
    "h": 2,
    "kind": "waste",
    "what": "Takes production waste from the manufacturer and invoices the removal.",
-   "docs": "WasteNotification, WasteMovement, Invoice",
-   "roles": "RecoveryFacilityParty, DisposalFacilityParty",
-   "how": "Waste movements must be announced and tracked before the waste leaves the site. UBL's waste notification and waste movement documents describe the waste, its producer and the facility that recovers or disposes of it, and the same parties then appear on the invoice for the removal service.",
-   "partners": [
-    "5-xa",
-    "13-xa"
-   ]
+   "how": "Waste movements must be announced and tracked before the waste leaves the site. UBL's waste notification and waste movement documents describe the waste, its producer and the facility that recovers or disposes of it, and the same parties then appear on the invoice for the removal service."
   },
   {
    "id": "14-xa",
@@ -128,15 +96,7 @@
    "h": 2,
    "kind": "depot",
    "what": "Runs the ore trains from the mine to the factory and container trains to the border.",
-   "docs": "Waybill, TransportExecutionPlan, TransportationStatus",
-   "roles": "CarrierParty, TransportServiceProviderParty",
-   "how": "A rail carrier plans capacity on a fixed timetable. UBL transport documents let its customers request and confirm transport plans and receive status updates per train and wagon, with the same consignment references the forwarder and the receiving terminal use.",
-   "partners": [
-    "4-xa",
-    "5-xa",
-    "18-xa",
-    "8-xa"
-   ]
+   "how": "A rail carrier plans capacity on a fixed timetable. UBL transport documents let its customers request and confirm transport plans and receive status updates per train and wagon, with the same consignment references the forwarder and the receiving terminal use."
   },
   {
    "id": "13-xa",
@@ -151,16 +111,7 @@
    "h": 1,
    "kind": "depot",
    "what": "Trucks the goods across the land border to the distributor; last-mile delivery.",
-   "docs": "Waybill, TransportationStatus, FreightInvoice",
-   "roles": "CarrierParty",
-   "how": "Road carriers handle many short jobs with frequent changes. With UBL they receive transport instructions, report status at each stop and invoice the freight in one structured format, so every customer, large or small, can process them automatically.",
-   "partners": [
-    "8-xa",
-    "6-xb",
-    "19-xa",
-    "19-xb",
-    "12-xc"
-   ]
+   "how": "Road carriers handle many short jobs with frequent changes. With UBL they receive transport instructions, report status at each stop and invoice the freight in one structured format, so every customer, large or small, can process them automatically."
   },
   {
    "id": "15-xa",
@@ -175,14 +126,7 @@
    "h": 1,
    "kind": "quay",
    "what": "Moves bulk on the river from Country A down to the coast of Country B.",
-   "docs": "Waybill, TransportExecutionPlan",
-   "roles": "CarrierParty, PerformingCarrierParty",
-   "how": "Inland waterway transport moves large volumes slowly. UBL transport execution plans and waybills carry the barge, the loading and discharge quays and the cargo per hold, so shippers and terminals can plan around long transit times.",
-   "partners": [
-    "5-xa",
-    "6-xb",
-    "18-xa"
-   ]
+   "how": "Inland waterway transport moves large volumes slowly. UBL transport execution plans and waybills carry the barge, the loading and discharge quays and the cargo per hold, so shippers and terminals can plan around long transit times."
   },
   {
    "id": "18-xa",
@@ -197,15 +141,7 @@
    "h": 2,
    "kind": "terminal",
    "what": "Transfers containers between rail and road at the border; manages tracks and slots.",
-   "docs": "TransportationStatus, CommonTransportationReport",
-   "roles": "TerminalOperatorParty, AuthorityParty",
    "how": "An intermodal terminal is where rail and road meet. UBL status messages and transport reports let it tell carriers and forwarders when a container arrived, was transferred or left, using the same equipment and consignment identifiers on both sides of the transfer.",
-   "partners": [
-    "14-xa",
-    "13-xa",
-    "15-xa",
-    "10-xb"
-   ],
    "size": [
     2,
     1
@@ -225,14 +161,7 @@
    "h": 3,
    "kind": "bank",
    "what": "Holds the manufacturer's account and receives the payments from abroad.",
-   "docs": "Invoice (PayeeFinancialAccount), RemittanceAdvice",
-   "roles": "PayeeParty (account holder)",
-   "how": "The seller's bank receives payments from many countries. Because UBL invoices carry the payee account and a payment reference, and remittance advices repeat that reference, incoming payments can be matched to the right invoices automatically.",
-   "partners": [
-    "5-xa",
-    "22-xc",
-    "4-xa"
-   ]
+   "how": "The seller's bank receives payments from many countries. Because UBL invoices carry the payee account and a payment reference, and remittance advices repeat that reference, incoming payments can be matched to the right invoices automatically."
   },
   {
    "id": "20-xa",
@@ -247,14 +176,7 @@
    "h": 2,
    "kind": "office",
    "what": "Certifies the origin of the exported goods and issues ATA carnets.",
-   "docs": "CertificateOfOrigin, GoodsItemPassport",
-   "roles": "IssuerParty, EndorserParty, ExportingGuarantorParty",
-   "how": "A chamber of commerce certifies that goods come from where the exporter says. UBL certificate-of-origin and goods-item-passport documents carry the application, the endorsements and the goods in a form customs on the other side can read and verify.",
-   "partners": [
-    "5-xa",
-    "19-xa",
-    "20-xc"
-   ]
+   "how": "A chamber of commerce certifies that goods come from where the exporter says. UBL certificate-of-origin and goods-item-passport documents carry the application, the endorsements and the goods in a form customs on the other side can read and verify."
   },
   {
    "id": "19-xa",
@@ -269,15 +191,7 @@
    "h": 1,
    "kind": "customs",
    "what": "Export customs at the land border crossing.",
-   "docs": "ExportCustomsDeclaration, GoodsItemPassport",
-   "roles": "CustomsParty, ExportingCustomsParty",
    "how": "Export customs needs to know what leaves the country, for whom and how. UBL customs declarations reuse the parties, goods and transport details already present in the commercial and transport documents, so the declarant does not have to collect them again.",
-   "partners": [
-    "5-xa",
-    "13-xa",
-    "19-xb",
-    "3-xc"
-   ],
    "on": "road"
   },
   {
@@ -294,13 +208,7 @@
    "kind": "office",
    "proposed": true,
    "what": "Issues item and property identifiers used across the world (a fictional numbering organisation).",
-   "docs": "Catalogue, Item identifiers in every document",
-   "roles": "IssuerParty (ItemIdentification, PropertyIdentification)",
-   "how": "Everyone in the world refers to the same products and properties. An identifier issuing agency gives those items and properties stable identifiers, which UBL documents carry in their identification elements, so a catalogue line, an order line and an invoice line point to exactly the same thing.",
-   "partners": [
-    "6-xb",
-    "5-xa"
-   ]
+   "how": "Everyone in the world refers to the same products and properties. An identifier issuing agency gives those items and properties stable identifiers, which UBL documents carry in their identification elements, so a catalogue line, an order line and an invoice line point to exactly the same thing."
   },
   {
    "id": "19-xb",
@@ -315,15 +223,7 @@
    "h": 1,
    "kind": "customs",
    "what": "Import customs at the land border crossing and at the seaport.",
-   "docs": "ImportCustomsDeclaration, TransitCustomsDeclaration",
-   "roles": "CustomsParty, ImportingCustomsParty",
    "how": "Import customs checks goods arriving over the land border and through the seaport. UBL import and transit declarations carry the same consignment and goods data as the export declaration on the other side, which makes it possible to compare them.",
-   "partners": [
-    "19-xa",
-    "13-xa",
-    "6-xb",
-    "16-xb"
-   ],
    "on": "road"
   },
   {
@@ -339,17 +239,7 @@
    "h": 3,
    "kind": "warehouse",
    "what": "Buys finished goods from #5, stocks them in its distribution centre, publishes the catalogue and sells to #26 and overseas to #1.",
-   "docs": "Catalogue, Order, DespatchAdvice, Invoice, ReceiptAdvice",
-   "roles": "SellerSupplierParty, BuyerCustomerParty, ProviderParty",
    "how": "The distributor publishes the catalogue its customers order from, buys from manufacturers and sells at home and overseas. UBL links all of it: catalogue items appear unchanged in orders, orders are referenced by despatch advices and invoices, and receipt advices confirm what actually arrived.",
-   "partners": [
-    "5-xa",
-    "26-xb",
-    "1-xc",
-    "10-xb",
-    "24-xb",
-    "19-xb"
-   ],
    "size": [
     2,
     2
@@ -368,13 +258,7 @@
    "h": 2,
    "kind": "shop",
    "what": "Buys from the distributor, sells to consumers; shares forecasts and promotions.",
-   "docs": "Order, Forecast, RetailEvent, PurchaseReceipt",
-   "roles": "BuyerCustomerParty, RetailerCustomerParty",
-   "how": "A retailer buys from the distributor and sells to consumers. Besides orders and invoices, UBL lets it share forecasts, promotions and sales data with its supplier, and issue a structured purchase receipt to the consumer.",
-   "partners": [
-    "6-xb",
-    "c-xb"
-   ]
+   "how": "A retailer buys from the distributor and sells to consumers. Besides orders and invoices, UBL lets it share forecasts, promotions and sales data with its supplier, and issue a structured purchase receipt to the consumer."
   },
   {
    "id": "c-xb",
@@ -389,12 +273,7 @@
    "h": 1,
    "kind": "house",
    "what": "A private person buying in the shop; receives a purchase receipt.",
-   "docs": "PurchaseReceipt",
-   "roles": "AccountingCustomerParty (PurchaseReceipt)",
-   "how": "A consumer rarely deals with UBL directly, but a structured purchase receipt means the receipt can be stored, searched or used for a warranty claim without a paper slip.",
-   "partners": [
-    "26-xb"
-   ]
+   "how": "A consumer rarely deals with UBL directly, but a structured purchase receipt means the receipt can be stored, searched or used for a warranty claim without a paper slip."
   },
   {
    "id": "2-xb",
@@ -409,16 +288,7 @@
    "h": 4,
    "kind": "townhall",
    "what": "A public body that buys under procurement law: publishes notices, receives and evaluates tenders.",
-   "docs": "ContractNotice, CallForTenders, ContractAwardNotice",
-   "roles": "ContractingParty, TenderRecipientParty, TenderEvaluationParty",
-   "how": "A contracting authority has to buy in a transparent and comparable way. UBL tendering documents take it from the prior information notice to the contract award, so tenders arrive in a structured form that can be checked and evaluated consistently.",
-   "partners": [
-    "21-xb",
-    "5-xa",
-    "27-xb",
-    "28-xb",
-    "25-xb"
-   ]
+   "how": "A contracting authority has to buy in a transparent and comparable way. UBL tendering documents take it from the prior information notice to the contract award, so tenders arrive in a structured form that can be checked and evaluated consistently."
   },
   {
    "id": "27-xb",
@@ -434,13 +304,7 @@
    "kind": "office",
    "proposed": true,
    "what": "Tenders together with the manufacturer as consortium partner or subcontractor.",
-   "docs": "Tender, TendererQualification",
-   "roles": "SubcontractorParty, AdditionalQualifyingParty",
-   "how": "A consortium partner tenders together with a main tenderer. UBL tenders and qualification documents name each partner and its qualifications separately, so the authority can see who contributes what.",
-   "partners": [
-    "5-xa",
-    "2-xb"
-   ]
+   "how": "A consortium partner tenders together with a main tenderer. UBL tenders and qualification documents name each partner and its qualifications separately, so the authority can see who contributes what."
   },
   {
    "id": "28-xb",
@@ -456,13 +320,7 @@
    "kind": "office",
    "proposed": true,
    "what": "Independent body that handles appeals and mediation in public procurement.",
-   "docs": "ContractNotice, ContractAwardNotice (AppealTerms)",
-   "roles": "AppealReceiverParty, MediationParty",
-   "how": "A review body handles appeals against procurement decisions. The tendering documents name it, with the deadlines for an appeal, so every tenderer knows where and when to go.",
-   "partners": [
-    "2-xb",
-    "5-xa"
-   ]
+   "how": "A review body handles appeals against procurement decisions. The tendering documents name it, with the deadlines for an appeal, so every tenderer knows where and when to go."
   },
   {
    "id": "21-xb",
@@ -477,14 +335,7 @@
    "h": 3,
    "kind": "office",
    "what": "Publishes procurement notices and keeps the business registry.",
-   "docs": "PriorInformationNotice, BusinessInformation",
-   "roles": "ReceiverParty (notices), EvidenceIssuingParty",
-   "how": "A government information service publishes procurement notices and keeps the business registry. UBL notices reach it in one structured format, and business information documents let it share registry data that tenderers can reuse as evidence.",
-   "partners": [
-    "2-xb",
-    "5-xa",
-    "6-xb"
-   ]
+   "how": "A government information service publishes procurement notices and keeps the business registry. UBL notices reach it in one structured format, and business information documents let it share registry data that tenderers can reuse as evidence."
   },
   {
    "id": "32-xb",
@@ -500,14 +351,7 @@
    "kind": "office",
    "proposed": true,
    "what": "Governs the multilateral digital agreement under which the parties exchange UBL documents.",
-   "docs": "DigitalAgreement, DigitalCapability",
-   "roles": "GovernorParty",
-   "how": "A digital agreement sets out which documents the participants exchange and under which rules. UBL's digital agreement and digital capability documents describe that framework, and its governor keeps it up to date for all participants.",
-   "partners": [
-    "5-xa",
-    "6-xb",
-    "1-xc"
-   ]
+   "how": "A digital agreement sets out which documents the participants exchange and under which rules. UBL's digital agreement and digital capability documents describe that framework, and its governor keeps it up to date for all participants."
   },
   {
    "id": "24-xb",
@@ -522,13 +366,7 @@
    "h": 3,
    "kind": "bank",
    "what": "Buys the distributor's receivables and becomes the payee on its invoices.",
-   "docs": "Invoice, Statement",
-   "roles": "PayeeParty",
-   "how": "A factor buys the distributor's invoices and collects the payment. UBL invoices can name the factor as payee, with its account, so the buyer pays the right party without a separate letter.",
-   "partners": [
-    "6-xb",
-    "1-xc"
-   ]
+   "how": "A factor buys the distributor's invoices and collects the payment. UBL invoices can name the factor as payee, with its account, so the buyer pays the right party without a separate letter."
   },
   {
    "id": "25-xb",
@@ -543,13 +381,7 @@
    "h": 2,
    "kind": "bank",
    "what": "Issues guarantees, such as the bid bond for a tender.",
-   "docs": "GuaranteeCertificate",
-   "roles": "GuarantorParty",
-   "how": "A guarantor stands surety, for example for a bid bond in a tender. UBL's guarantee certificate names the guarantee, the tenderer and the contracting authority, so the authority can check it is valid.",
-   "partners": [
-    "5-xa",
-    "2-xb"
-   ]
+   "how": "A guarantor stands surety, for example for a bid bond in a tender. UBL's guarantee certificate names the guarantee, the tenderer and the contracting authority, so the authority can check it is valid."
   },
   {
    "id": "29-xb",
@@ -565,14 +397,7 @@
    "kind": "bank",
    "proposed": true,
    "what": "Insures the cargo on its way overseas.",
-   "docs": "BillOfLading, Waybill (InsurancePolicy)",
-   "roles": "InsurerParty",
-   "how": "An insurer covers the cargo while it travels. UBL transport documents can carry the insurance policy with the insurer, the policy holder and the insured value, so every party in the transport chain knows the goods are covered.",
-   "partners": [
-    "10-xb",
-    "6-xb",
-    "11-xb"
-   ]
+   "how": "An insurer covers the cargo while it travels. UBL transport documents can carry the insurance policy with the insurer, the policy holder and the insured value, so every party in the transport chain knows the goods are covered."
   },
   {
    "id": "10-xb",
@@ -587,17 +412,7 @@
    "h": 2,
    "kind": "office",
    "what": "Books the transport, consolidates shipments and prepares the export documents; also arranges cargo insurance.",
-   "docs": "ForwardingInstructions, PackingList, Manifest",
-   "roles": "FreightForwarderParty, LogisticsOperatorParty, BrokerParty",
-   "how": "A freight forwarder organises transport for others. It uses UBL forwarding instructions, packing lists and manifests to combine shipments, book carriers and arrange insurance, keeping one consignment reference across all of them.",
-   "partners": [
-    "6-xb",
-    "11-xb",
-    "13-xa",
-    "16-xb",
-    "29-xb",
-    "3-xc"
-   ]
+   "how": "A freight forwarder organises transport for others. It uses UBL forwarding instructions, packing lists and manifests to combine shipments, book carriers and arrange insurance, keeping one consignment reference across all of them."
   },
   {
    "id": "16-xb",
@@ -612,15 +427,7 @@
    "h": 2,
    "kind": "port",
    "what": "Port of loading: berths, container yard and vessel traffic.",
-   "docs": "CommonTransportationReport, TransportationStatus",
-   "roles": "TerminalOperatorParty, AuthorityParty",
    "how": "The seaport loads the ship. UBL transport reports and status messages tell the port which containers are coming, and tell carriers and authorities what was loaded, on which vessel and when.",
-   "partners": [
-    "11-xb",
-    "10-xb",
-    "19-xb",
-    "16-xc"
-   ],
    "size": [
     1,
     2
@@ -643,16 +450,7 @@
    "h": 2,
    "kind": "office",
    "what": "Sails the container ship to the island and issues the negotiable bill of lading.",
-   "docs": "BillOfLading, Waybill, CommonTransportationReport",
-   "roles": "CarrierParty, ReporterParty",
-   "how": "The ocean carrier issues the bill of lading, the document that represents the goods at sea. With UBL that document, the vessel reports and the status updates share the same consignment and container references as the forwarder's booking.",
-   "partners": [
-    "10-xb",
-    "16-xb",
-    "16-xc",
-    "6-xb",
-    "1-xc"
-   ]
+   "how": "The ocean carrier issues the bill of lading, the document that represents the goods at sea. With UBL that document, the vessel reports and the status updates share the same consignment and container references as the forwarder's booking."
   },
   {
    "id": "17-xb",
@@ -667,13 +465,7 @@
    "h": 1,
    "kind": "airport",
    "what": "Air cargo terminal for urgent shipments overseas.",
-   "docs": "TransportationStatus",
-   "roles": "TerminalOperatorParty",
    "how": "The airport handles urgent cargo. UBL status messages let it report acceptance, loading and departure, with the air waybill reference the carrier and forwarder use.",
-   "partners": [
-    "12-xc",
-    "10-xb"
-   ],
    "size": [
     3,
     2
@@ -692,15 +484,7 @@
    "h": 2,
    "kind": "port",
    "what": "Port of discharge on the island.",
-   "docs": "CommonTransportationReport",
-   "roles": "TerminalOperatorParty, AuthorityParty",
    "how": "The island's seaport discharges the ship. It receives the same UBL transport report the loading port sent, so it can plan berths and inform customs before the vessel arrives.",
-   "partners": [
-    "11-xb",
-    "19-xc",
-    "3-xc",
-    "9-xc"
-   ],
    "size": [
     1,
     2
@@ -723,13 +507,7 @@
    "h": 1,
    "kind": "airport",
    "what": "The island's airport, where the air cargo arrives.",
-   "docs": "TransportationStatus",
-   "roles": "TerminalOperatorParty",
    "how": "The island's airport receives the air cargo and reports its arrival to the carrier and the consignee in UBL status messages.",
-   "partners": [
-    "12-xc",
-    "9-xc"
-   ],
    "size": [
     3,
     2
@@ -748,15 +526,7 @@
    "h": 2,
    "kind": "office",
    "what": "The island's airline; flies urgent cargo and uses road feeder services on the mainland.",
-   "docs": "Waybill (air waybill), TransportationStatus",
-   "roles": "CarrierParty, SubstituteCarrierParty via #13",
-   "how": "The air carrier flies urgent shipments and uses road feeder services on the mainland. UBL waybills can name the road carrier as substitute carrier, so the whole route, by truck and by plane, stays under one transport document.",
-   "partners": [
-    "13-xa",
-    "17-xb",
-    "17-xc",
-    "10-xb"
-   ]
+   "how": "The air carrier flies urgent shipments and uses road feeder services on the mainland. UBL waybills can name the road carrier as substitute carrier, so the whole route, by truck and by plane, stays under one transport document."
   },
   {
    "id": "19-xc",
@@ -771,14 +541,7 @@
    "h": 1,
    "kind": "customs",
    "what": "Import customs on the island.",
-   "docs": "ImportCustomsDeclaration",
-   "roles": "CustomsParty, ImportingCustomsParty",
    "how": "Import customs on the island receives a declaration that reuses the data of the export side and the transport documents, which speeds up clearance at the port.",
-   "partners": [
-    "3-xc",
-    "16-xc",
-    "19-xb"
-   ],
    "on": "road"
   },
   {
@@ -794,14 +557,7 @@
    "h": 2,
    "kind": "office",
    "what": "Licensed agent that files the import declaration for the buyer; also acts as tax representative.",
-   "docs": "ImportCustomsDeclaration, Invoice (tax representative)",
-   "roles": "CustomsAgentParty, TaxRepresentativeParty",
-   "how": "A customs declarant files declarations for importers and can act as their tax representative. UBL gives it the commercial, transport and customs data in one vocabulary, so it can assemble the declaration from documents it already receives.",
-   "partners": [
-    "1-xc",
-    "19-xc",
-    "10-xb"
-   ]
+   "how": "A customs declarant files declarations for importers and can act as their tax representative. UBL gives it the commercial, transport and customs data in one vocabulary, so it can assemble the declaration from documents it already receives."
   },
   {
    "id": "9-xc",
@@ -816,14 +572,7 @@
    "h": 2,
    "kind": "warehouse",
    "what": "Receives the goods for the buyer and confirms what arrived.",
-   "docs": "ReceiptAdvice, InventoryReport",
-   "roles": "DeliveryParty, ConsigneeParty",
    "how": "The buyer's warehouse receives the goods. Its UBL receipt advice confirms what arrived, per line and per package, which lets the buyer approve the invoice for exactly what was delivered.",
-   "partners": [
-    "1-xc",
-    "16-xc",
-    "11-xb"
-   ],
    "size": [
     2,
     1
@@ -842,16 +591,7 @@
    "h": 3,
    "kind": "office",
    "what": "Needs the goods: orders from the distributor overseas and pays the invoice.",
-   "docs": "Order, OrderChange, ReceiptAdvice, RemittanceAdvice",
-   "roles": "BuyerCustomerParty, AccountingCustomerParty, ImporterParty",
-   "how": "The commercial buyer orders overseas and pays across borders. UBL lets it order from the distributor's catalogue, follow the goods through despatch and transport, match the invoice to the order and the receipt, and send a remittance advice with its payment.",
-   "partners": [
-    "6-xb",
-    "9-xc",
-    "22-xc",
-    "3-xc",
-    "24-xb"
-   ]
+   "how": "The commercial buyer orders overseas and pays across borders. UBL lets it order from the distributor's catalogue, follow the goods through despatch and transport, match the invoice to the order and the receipt, and send a remittance advice with its payment."
   },
   {
    "id": "22-xc",
@@ -866,13 +606,7 @@
    "h": 3,
    "kind": "bank",
    "what": "Holds the buyer's account and sends the payment abroad.",
-   "docs": "RemittanceAdvice (PaymentMeans)",
-   "roles": "PayerFinancialAccount holder",
-   "how": "The buyer's bank sends the payment abroad. The payment reference and payee account come straight from the UBL invoice, so the payment arrives with the information the seller's bank needs to match it.",
-   "partners": [
-    "1-xc",
-    "23-xa"
-   ]
+   "how": "The buyer's bank sends the payment abroad. The payment reference and payee account come straight from the UBL invoice, so the payment arrives with the information the seller's bank needs to match it."
   },
   {
    "id": "20-xc",
@@ -887,13 +621,7 @@
    "h": 2,
    "kind": "office",
    "what": "Guarantees ATA carnets on the import side.",
-   "docs": "GoodsItemPassport",
-   "roles": "ImportingGuarantorParty",
-   "how": "The chamber of commerce on the island guarantees goods-item passports for goods that enter temporarily, so customs can accept them without duties.",
-   "partners": [
-    "20-xa",
-    "19-xc"
-   ]
+   "how": "The chamber of commerce on the island guarantees goods-item passports for goods that enter temporarily, so customs can accept them without duties."
   },
   {
    "id": "30-xc",
@@ -909,13 +637,7 @@
    "kind": "office",
    "proposed": true,
    "what": "The island's flag state administration; issues ship security certificates.",
-   "docs": "CommonTransportationReport (ISPSRequirements)",
-   "roles": "ISSCIssuerParty, LegalAuthorityParty",
-   "how": "The island's maritime administration issues ship security certificates. UBL transport reports to the port carry the certificate and its issuer, so the port can check them before the ship arrives.",
-   "partners": [
-    "11-xb",
-    "16-xc"
-   ]
+   "how": "The island's maritime administration issues ship security certificates. UBL transport reports to the port carry the certificate and its issuer, so the port can check them before the ship arrives."
   }
  ],
  "routes": [
@@ -1185,6 +907,1138 @@
     20
    ],
    "r": 3
+  }
+ ],
+ "flows": [
+  {
+   "id": "ore",
+   "title": "Ore from the mine to the factory (domestic, Country A)",
+   "text": "The manufacturer buys ore free carrier (FCA) at the mine: the buyer arranges and pays the main transport, so the manufacturer, not the mine, books the ore train with the rail carrier."
+  },
+  {
+   "id": "road",
+   "title": "Finished goods by truck across the land border (Country A → Country B)",
+   "text": "The distributor buys free carrier (FCA) at the manufacturer's warehouse. Because the buyer arranges the transport, the distributor books the road carrier itself and tells the seller in the order which truck company will pick the goods up and where. The seller's 3PL hands the goods over; the seller clears them for export, the distributor for import."
+  },
+  {
+   "id": "rail",
+   "title": "Containers by rail under transit (Country A → Country B)",
+   "text": "For full container loads the manufacturer sells delivered at place (DAP) the distributor's rail siding. Now the seller arranges and pays the transport: it books the container train and moves the goods under a transit declaration, so that import formalities happen at the destination. The intermodal hub loads the containers on the train."
+  },
+  {
+   "id": "barge",
+   "title": "Bulk by river barge (Country A → Country B)",
+   "text": "Bulk lots go down the river. The distributor buys carriage paid to (CPT) the river quay in Country B: the manufacturer books the barge and pays the freight; the risk passes when the barge is loaded."
+  },
+  {
+   "id": "retail",
+   "title": "Distributor to retailer, delivered duty paid (domestic, Country B)",
+   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment."
+  },
+  {
+   "id": "sea",
+   "title": "Overseas by container ship, cost insurance and freight (Country B → island Country C)",
+   "text": "The commercial buyer on the island buys cost, insurance and freight (CIF) to the port of discharge. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them."
+  },
+  {
+   "id": "air",
+   "title": "An urgent part of the order by air (Country B → island Country C)",
+   "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport."
+  },
+  {
+   "id": "tender",
+   "title": "A public tender (Country B)",
+   "text": "The contracting authority buys equipment under procurement law. The notices are published through the government information service; the manufacturer tenders together with a consortium partner, backed by a bid bond."
+  },
+  {
+   "id": "carnet",
+   "title": "Samples to a trade fair on the island (temporary export)",
+   "text": "The manufacturer shows samples at a trade fair on the island and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, avoids paying duties."
+  },
+  {
+   "id": "waste",
+   "title": "Production waste to recovery (domestic, Country A)",
+   "text": "The factory's hazardous production waste may only move with a notification. In Country A one administration acts as customs and as competent authority for waste permits. The waste processor recovers the material and invoices the service."
+  }
+ ],
+ "documents": [
+  {
+   "flow": "ore",
+   "doc": "Order",
+   "from": "5-xa",
+   "to": "4-xa",
+   "why": "Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the order names the rail carrier that will collect.",
+   "parties": {
+    "BuyerCustomerParty": "5-xa",
+    "SellerSupplierParty": "4-xa",
+    "Delivery/DeliveryParty": "5-xa",
+    "Delivery/Despatch/DespatchParty": "4-xa",
+    "Delivery/Despatch/CarrierParty": "14-xa"
+   }
+  },
+  {
+   "flow": "ore",
+   "doc": "TransportExecutionPlanRequest",
+   "from": "5-xa",
+   "to": "14-xa",
+   "why": "The manufacturer, as transport user, asks the rail carrier for wagons and a slot to move the ore from the mine to its siding.",
+   "parties": {
+    "SenderParty": "5-xa",
+    "ReceiverParty": "14-xa",
+    "TransportUserParty": "5-xa",
+    "TransportServiceProviderParty": "14-xa",
+    "Consignment/ConsignorParty": "4-xa",
+    "Consignment/ConsigneeParty": "5-xa"
+   }
+  },
+  {
+   "flow": "ore",
+   "doc": "TransportExecutionPlan",
+   "from": "14-xa",
+   "to": "5-xa",
+   "why": "The rail carrier confirms the train, the wagons and the schedule; this is the agreed transport plan.",
+   "parties": {
+    "SenderParty": "14-xa",
+    "ReceiverParty": "5-xa",
+    "TransportUserParty": "5-xa",
+    "TransportServiceProviderParty": "14-xa",
+    "Consignment/ConsignorParty": "4-xa",
+    "Consignment/ConsigneeParty": "5-xa"
+   }
+  },
+  {
+   "flow": "ore",
+   "doc": "DespatchAdvice",
+   "from": "4-xa",
+   "to": "5-xa",
+   "why": "The mine announces what was loaded into which wagons, so the factory can plan the unloading.",
+   "parties": {
+    "DespatchSupplierParty": "4-xa",
+    "DeliveryCustomerParty": "5-xa",
+    "SellerSupplierParty": "4-xa",
+    "BuyerCustomerParty": "5-xa",
+    "Shipment/Consignment/CarrierParty": "14-xa"
+   }
+  },
+  {
+   "flow": "ore",
+   "doc": "Waybill",
+   "from": "14-xa",
+   "to": "5-xa",
+   "why": "The rail consignment note goes to the party that contracted the carriage, the manufacturer; the mine is named as consignor because the ore is loaded there.",
+   "parties": {
+    "SenderParty": "14-xa",
+    "ReceiverParty": "5-xa",
+    "CarrierParty": "14-xa",
+    "ConsignorParty": "4-xa",
+    "Shipment/Consignment/ConsigneeParty": "5-xa"
+   }
+  },
+  {
+   "flow": "ore",
+   "doc": "Invoice",
+   "from": "4-xa",
+   "to": "5-xa",
+   "why": "The mine invoices the ore; transport is not on this invoice because under FCA the buyer pays it. Payment goes to the mine's account at the seller's bank.",
+   "parties": {
+    "AccountingSupplierParty": "4-xa",
+    "AccountingCustomerParty": "5-xa",
+    "SellerSupplierParty": "4-xa",
+    "BuyerCustomerParty": "5-xa",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+   }
+  },
+  {
+   "flow": "ore",
+   "doc": "RemittanceAdvice",
+   "from": "5-xa",
+   "to": "4-xa",
+   "why": "The manufacturer tells the mine which invoices the transfer pays. Both companies bank at the same domestic bank.",
+   "parties": {
+    "AccountingCustomerParty": "5-xa",
+    "AccountingSupplierParty": "4-xa",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "Order",
+   "from": "6-xb",
+   "to": "5-xa",
+   "why": "Delivery terms FCA seller's warehouse: the order names the warehouse where the goods are collected and the road carrier the distributor has booked to collect them.",
+   "parties": {
+    "BuyerCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xa",
+    "Delivery/DeliveryParty": "6-xb",
+    "Delivery/Despatch/DespatchParty": "8-xa",
+    "Delivery/Despatch/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "OrderResponse",
+   "from": "5-xa",
+   "to": "6-xb",
+   "why": "The manufacturer accepts the order and confirms the collection date at its warehouse.",
+   "parties": {
+    "SellerSupplierParty": "5-xa",
+    "BuyerCustomerParty": "6-xb"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "TransportExecutionPlanRequest",
+   "from": "6-xb",
+   "to": "13-xa",
+   "why": "The distributor, as transport user, books the truck: collection at the seller's 3PL, delivery at its own distribution centre, across the border.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "13-xa",
+    "TransportUserParty": "6-xb",
+    "TransportServiceProviderParty": "13-xa",
+    "Consignment/ConsignorParty": "5-xa",
+    "Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "DespatchAdvice",
+   "from": "8-xa",
+   "to": "6-xb",
+   "why": "The 3PL picks and loads the goods for the manufacturer and announces the despatch; it knows the goods and the truck but not the prices.",
+   "parties": {
+    "DespatchSupplierParty": "8-xa",
+    "DeliveryCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xa",
+    "BuyerCustomerParty": "6-xb",
+    "Shipment/Consignment/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "ExportCustomsDeclaration",
+   "from": "5-xa",
+   "to": "19-xa",
+   "why": "Goods leave Country A: the manufacturer, as exporter, declares them to the customs office at the land border.",
+   "parties": {
+    "ExporterParty": "5-xa",
+    "CustomsDeclaration/CustomsParty": "19-xa",
+    "CustomsDeclaration/ConsigneeParty": "6-xb",
+    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "CertificateOfOrigin",
+   "from": "5-xa",
+   "to": "20-xa",
+   "why": "The goods qualify for preferential duty in Country B; the manufacturer applies to its chamber of commerce for a certificate of origin.",
+   "parties": {
+    "ExporterParty": "5-xa",
+    "ImporterParty": "6-xb",
+    "EndorserParty": "20-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "CertificateOfOrigin",
+   "from": "20-xa",
+   "to": "6-xb",
+   "why": "The chamber endorses the certificate and makes it available to the importer, who needs it for the import declaration.",
+   "parties": {
+    "ExporterParty": "5-xa",
+    "ImporterParty": "6-xb",
+    "EndorserParty": "20-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "Waybill",
+   "from": "13-xa",
+   "to": "6-xb",
+   "why": "The road consignment note goes to the party that booked the truck, the distributor; it names the manufacturer as consignor.",
+   "parties": {
+    "SenderParty": "13-xa",
+    "ReceiverParty": "6-xb",
+    "CarrierParty": "13-xa",
+    "ConsignorParty": "5-xa",
+    "Shipment/Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "TransportationStatus",
+   "from": "13-xa",
+   "to": "6-xb",
+   "why": "The carrier reports that the truck has cleared the border and gives the expected arrival time.",
+   "parties": {
+    "SenderParty": "13-xa",
+    "ReceiverParty": "6-xb",
+    "Consignment/CarrierParty": "13-xa",
+    "Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "ImportCustomsDeclaration",
+   "from": "6-xb",
+   "to": "19-xb",
+   "why": "The distributor, as importer, declares the goods in Country B and claims the preferential duty rate with the certificate of origin.",
+   "parties": {
+    "ImporterParty": "6-xb",
+    "ConsignorParty": "5-xa",
+    "ConsigneeParty": "6-xb",
+    "CustomsParty": "19-xb"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "ReceiptAdvice",
+   "from": "6-xb",
+   "to": "8-xa",
+   "why": "The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller.",
+   "parties": {
+    "DeliveryCustomerParty": "6-xb",
+    "DespatchSupplierParty": "8-xa",
+    "BuyerCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "FreightInvoice",
+   "from": "13-xa",
+   "to": "6-xb",
+   "why": "The carrier invoices the transport to the party that booked it; under FCA that is the buyer, not the seller.",
+   "parties": {
+    "AccountingSupplierParty": "13-xa",
+    "AccountingCustomerParty": "6-xb",
+    "Shipment/Consignment/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "Invoice",
+   "from": "5-xa",
+   "to": "6-xb",
+   "why": "The manufacturer invoices the goods only (no freight under FCA) and asks for payment to its account at the seller's bank.",
+   "parties": {
+    "AccountingSupplierParty": "5-xa",
+    "AccountingCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xa",
+    "BuyerCustomerParty": "6-xb",
+    "Delivery/DeliveryParty": "6-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "RemittanceAdvice",
+   "from": "6-xb",
+   "to": "5-xa",
+   "why": "The distributor announces the cross-border payment and which invoices it settles.",
+   "parties": {
+    "AccountingCustomerParty": "6-xb",
+    "AccountingSupplierParty": "5-xa",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "Order",
+   "from": "6-xb",
+   "to": "5-xa",
+   "why": "Delivery terms DAP distributor's siding: no carrier in the order, because the seller chooses and pays the transport.",
+   "parties": {
+    "BuyerCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xa",
+    "Delivery/DeliveryParty": "6-xb"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "TransportExecutionPlanRequest",
+   "from": "5-xa",
+   "to": "14-xa",
+   "why": "Under DAP the manufacturer is the transport user; it books a container train to the distributor's siding.",
+   "parties": {
+    "SenderParty": "5-xa",
+    "ReceiverParty": "14-xa",
+    "TransportUserParty": "5-xa",
+    "TransportServiceProviderParty": "14-xa",
+    "Consignment/ConsignorParty": "5-xa",
+    "Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "TransportExecutionPlan",
+   "from": "14-xa",
+   "to": "5-xa",
+   "why": "The rail carrier confirms the train and the slot at the intermodal hub.",
+   "parties": {
+    "SenderParty": "14-xa",
+    "ReceiverParty": "5-xa",
+    "TransportUserParty": "5-xa",
+    "TransportServiceProviderParty": "14-xa",
+    "Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "TransitCustomsDeclaration",
+   "from": "5-xa",
+   "to": "19-xa",
+   "why": "The goods travel under customs transit from Country A to the destination in Country B; the manufacturer, as holder of the procedure, lodges the declaration at the office of departure.",
+   "parties": {
+    "TransitExporterParty": "5-xa",
+    "ConsignorParty": "5-xa",
+    "ConsigneeParty": "6-xb",
+    "CustomsParty": "19-xa",
+    "Shipment/Consignment/CarrierParty": "14-xa"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "TransportationStatus",
+   "from": "18-xa",
+   "to": "14-xa",
+   "why": "The intermodal terminal reports to the rail carrier that the containers are loaded on the train.",
+   "parties": {
+    "SenderParty": "18-xa",
+    "ReceiverParty": "14-xa",
+    "Consignment/CarrierParty": "14-xa",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "18-xa"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "Waybill",
+   "from": "14-xa",
+   "to": "5-xa",
+   "why": "The rail consignment note goes to the transport user, now the seller.",
+   "parties": {
+    "SenderParty": "14-xa",
+    "ReceiverParty": "5-xa",
+    "CarrierParty": "14-xa",
+    "ConsignorParty": "5-xa",
+    "Shipment/Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "Invoice",
+   "from": "5-xa",
+   "to": "6-xb",
+   "why": "Under DAP the price includes the transport, so the invoice covers goods and freight.",
+   "parties": {
+    "AccountingSupplierParty": "5-xa",
+    "AccountingCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xa",
+    "BuyerCustomerParty": "6-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+   }
+  },
+  {
+   "flow": "barge",
+   "doc": "Order",
+   "from": "6-xb",
+   "to": "5-xa",
+   "why": "Delivery terms CPT river quay: the seller books the barge, the buyer collects at the quay.",
+   "parties": {
+    "BuyerCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xa",
+    "Delivery/DeliveryParty": "6-xb"
+   }
+  },
+  {
+   "flow": "barge",
+   "doc": "TransportExecutionPlanRequest",
+   "from": "5-xa",
+   "to": "15-xa",
+   "why": "The manufacturer, as transport user under CPT, asks the inland waterway carrier for barge capacity.",
+   "parties": {
+    "SenderParty": "5-xa",
+    "ReceiverParty": "15-xa",
+    "TransportUserParty": "5-xa",
+    "TransportServiceProviderParty": "15-xa",
+    "Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "barge",
+   "doc": "TransportExecutionPlan",
+   "from": "15-xa",
+   "to": "5-xa",
+   "why": "The barge operator confirms the vessel and the sailing.",
+   "parties": {
+    "SenderParty": "15-xa",
+    "ReceiverParty": "5-xa",
+    "TransportUserParty": "5-xa",
+    "TransportServiceProviderParty": "15-xa",
+    "Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "barge",
+   "doc": "Waybill",
+   "from": "15-xa",
+   "to": "5-xa",
+   "why": "The inland waterway consignment note, issued to the shipper.",
+   "parties": {
+    "SenderParty": "15-xa",
+    "ReceiverParty": "5-xa",
+    "CarrierParty": "15-xa",
+    "ConsignorParty": "5-xa",
+    "Shipment/Consignment/ConsigneeParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "Catalogue",
+   "from": "6-xb",
+   "to": "26-xb",
+   "why": "The distributor's catalogue of items and prices; items carry the identifiers of the identifier issuing agency.",
+   "parties": {
+    "ProviderParty": "6-xb",
+    "ReceiverParty": "26-xb",
+    "SellerSupplierParty": "6-xb",
+    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xa"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "Forecast",
+   "from": "26-xb",
+   "to": "6-xb",
+   "why": "The retailer forecasts its sales for the coming weeks.",
+   "parties": {
+    "SenderParty": "26-xb",
+    "ReceiverParty": "6-xb",
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "RetailEvent",
+   "from": "26-xb",
+   "to": "6-xb",
+   "why": "A promotion next month will lift demand; the distributor needs to know before it orders from the manufacturer.",
+   "parties": {
+    "SenderParty": "26-xb",
+    "ReceiverParty": "6-xb",
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "InventoryReport",
+   "from": "26-xb",
+   "to": "6-xb",
+   "why": "The retailer reports its stock per item, so the distributor can replenish.",
+   "parties": {
+    "RetailerCustomerParty": "26-xb",
+    "InventoryReportingParty": "26-xb",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "Order",
+   "from": "26-xb",
+   "to": "6-xb",
+   "why": "Delivery terms DDP retailer's shop: the order names only where to deliver; transport is the distributor's business.",
+   "parties": {
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "6-xb",
+    "Delivery/DeliveryParty": "26-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "TransportExecutionPlanRequest",
+   "from": "6-xb",
+   "to": "13-xa",
+   "why": "Because it sold DDP, the distributor books the outgoing truck from its distribution centre to the shop.",
+   "parties": {
+    "SenderParty": "6-xb",
+    "ReceiverParty": "13-xa",
+    "TransportUserParty": "6-xb",
+    "TransportServiceProviderParty": "13-xa",
+    "Consignment/ConsignorParty": "6-xb",
+    "Consignment/ConsigneeParty": "26-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "DespatchAdvice",
+   "from": "6-xb",
+   "to": "26-xb",
+   "why": "The distributor announces the delivery and the truck that brings it.",
+   "parties": {
+    "DespatchSupplierParty": "6-xb",
+    "DeliveryCustomerParty": "26-xb",
+    "SellerSupplierParty": "6-xb",
+    "BuyerCustomerParty": "26-xb",
+    "Shipment/Consignment/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "Waybill",
+   "from": "13-xa",
+   "to": "6-xb",
+   "why": "The outgoing consignment note goes to the distributor, who contracted the carriage; the retailer is only the consignee.",
+   "parties": {
+    "SenderParty": "13-xa",
+    "ReceiverParty": "6-xb",
+    "CarrierParty": "13-xa",
+    "ConsignorParty": "6-xb",
+    "Shipment/Consignment/ConsigneeParty": "26-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "FreightInvoice",
+   "from": "13-xa",
+   "to": "6-xb",
+   "why": "Under DDP the seller pays the transport, so the carrier invoices the distributor.",
+   "parties": {
+    "AccountingSupplierParty": "13-xa",
+    "AccountingCustomerParty": "6-xb",
+    "Shipment/Consignment/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "ReceiptAdvice",
+   "from": "26-xb",
+   "to": "6-xb",
+   "why": "The shop confirms the delivery and reports a damaged carton.",
+   "parties": {
+    "DeliveryCustomerParty": "26-xb",
+    "DespatchSupplierParty": "6-xb",
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "Invoice",
+   "from": "6-xb",
+   "to": "26-xb",
+   "why": "The distributor has sold its receivables to the factor, so the invoice names the factor as payee.",
+   "parties": {
+    "AccountingSupplierParty": "6-xb",
+    "AccountingCustomerParty": "26-xb",
+    "SellerSupplierParty": "6-xb",
+    "BuyerCustomerParty": "26-xb",
+    "PayeeParty": "24-xb"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "PurchaseReceipt",
+   "from": "26-xb",
+   "to": "c-xb",
+   "why": "A consumer buys in the shop and gets a receipt.",
+   "parties": {
+    "AccountingSupplierParty": "26-xb",
+    "AccountingCustomerParty": "c-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "Catalogue",
+   "from": "6-xb",
+   "to": "1-xc",
+   "why": "The export catalogue for the island customer.",
+   "parties": {
+    "ProviderParty": "6-xb",
+    "ReceiverParty": "1-xc",
+    "SellerSupplierParty": "6-xb",
+    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xa"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "DigitalAgreement",
+   "from": "6-xb",
+   "to": "1-xc",
+   "why": "Before trading, the two parties join the multilateral digital agreement that fixes which UBL processes they use.",
+   "parties": {
+    "ParticipantParty": [
+     "6-xb",
+     "1-xc"
+    ],
+    "GovernorParty": "32-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "DigitalCapability",
+   "from": "32-xb",
+   "to": "1-xc",
+   "why": "The agreement's governor tells the buyer which documents the distributor can send and receive.",
+   "parties": {
+    "SenderParty": "32-xb",
+    "ReceiverParty": "1-xc",
+    "BusinessParty": "6-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "Order",
+   "from": "1-xc",
+   "to": "6-xb",
+   "why": "Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
+   "parties": {
+    "BuyerCustomerParty": "1-xc",
+    "SellerSupplierParty": "6-xb",
+    "AccountingCustomerParty": "1-xc",
+    "Delivery/DeliveryParty": "9-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "OrderResponse",
+   "from": "6-xb",
+   "to": "1-xc",
+   "why": "The distributor accepts and confirms the sailing it plans to use.",
+   "parties": {
+    "SellerSupplierParty": "6-xb",
+    "BuyerCustomerParty": "1-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "ForwardingInstructions",
+   "from": "6-xb",
+   "to": "10-xb",
+   "why": "The distributor instructs its forwarder: book the sea freight to the island and insure the cargo (CIF obliges the seller to insure).",
+   "parties": {
+    "ConsignorParty": "6-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "1-xc",
+    "Shipment/InsurancePolicy/InsurerParty": "29-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "PackingList",
+   "from": "6-xb",
+   "to": "10-xb",
+   "why": "How the goods are packed in the container, for the forwarder's booking and the export declaration.",
+   "parties": {
+    "ConsignorParty": "6-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "1-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "ExportCustomsDeclaration",
+   "from": "10-xb",
+   "to": "19-xb",
+   "why": "The forwarder, as customs agent, declares the export for the distributor at the seaport.",
+   "parties": {
+    "ExporterParty": "6-xb",
+    "CustomsDeclaration/CustomsParty": "19-xb",
+    "CustomsDeclaration/ConsigneeParty": "1-xc",
+    "CustomsDeclaration/Shipment/ShipmentStage/CustomsAgentParty": "10-xb"
+   },
+   "sends_for": "ExporterParty"
+  },
+  {
+   "flow": "sea",
+   "doc": "ForwardingInstructions",
+   "from": "10-xb",
+   "to": "11-xb",
+   "why": "The forwarder, now acting as shipper, books the container with the ocean carrier.",
+   "parties": {
+    "FreightForwarderParty": "10-xb",
+    "ConsignorParty": "6-xb",
+    "CarrierParty": "11-xb",
+    "Shipment/Consignment/ConsigneeParty": "1-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "TransportationStatus",
+   "from": "16-xb",
+   "to": "10-xb",
+   "why": "The port of loading reports the container loaded on board.",
+   "parties": {
+    "SenderParty": "16-xb",
+    "ReceiverParty": "10-xb",
+    "Consignment/CarrierParty": "11-xb",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "16-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "BillOfLading",
+   "from": "11-xb",
+   "to": "10-xb",
+   "why": "The negotiable bill of lading, issued to the forwarder that gave the instructions; it names the insurer of the cargo and the buyer's 3PL as party to notify on arrival.",
+   "parties": {
+    "CarrierParty": "11-xb",
+    "FreightForwarderParty": "10-xb",
+    "ConsignorParty": "6-xb",
+    "Shipment/Consignment/ConsigneeParty": "1-xc",
+    "Shipment/Consignment/NotifyParty": "9-xc",
+    "Shipment/InsurancePolicy/InsurerParty": "29-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "Manifest",
+   "from": "11-xb",
+   "to": "19-xc",
+   "why": "Before arrival the carrier lists the cargo on board for the island's customs.",
+   "parties": {
+    "SendingLogisticsOperatorParty": "11-xb",
+    "AuthorityParty": "19-xc",
+    "ConsignorParty": "6-xb",
+    "ConsigneeParty": "1-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "CommonTransportationReport",
+   "from": "11-xb",
+   "to": "30-xc",
+   "why": "The ship flies the island's flag; before entering port the carrier reports to the maritime administration, which also issued the ship's security certificate.",
+   "parties": {
+    "SenderParty": "11-xb",
+    "ReceiverParty": "30-xc",
+    "ReporterParty": "11-xb",
+    "AuthorityParty": "30-xc",
+    "Shipment/ShipmentStage/TerminalOperatorParty": "16-xc",
+    "Shipment/ShipmentStage/ISPSRequirements/ISSCIssuerParty": "30-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "TransportationStatus",
+   "from": "16-xc",
+   "to": "10-xb",
+   "why": "The port of discharge reports the container discharged and available.",
+   "parties": {
+    "SenderParty": "16-xc",
+    "ReceiverParty": "10-xb",
+    "Consignment/CarrierParty": "11-xb",
+    "Consignment/ConsigneeParty": "1-xc",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "16-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "ImportCustomsDeclaration",
+   "from": "3-xc",
+   "to": "19-xc",
+   "why": "Under CIF the buyer clears the import; its licensed customs broker files the declaration on its behalf.",
+   "parties": {
+    "ImporterParty": "1-xc",
+    "ConsignorParty": "6-xb",
+    "ConsigneeParty": "1-xc",
+    "CustomsParty": "19-xc",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/ShipmentStage/CustomsAgentParty": "3-xc"
+   },
+   "sends_for": "ImporterParty"
+  },
+  {
+   "flow": "sea",
+   "doc": "DespatchAdvice",
+   "from": "6-xb",
+   "to": "9-xc",
+   "why": "The distributor announces the shipment to the delivery party named in the order, the buyer's 3PL.",
+   "parties": {
+    "DespatchSupplierParty": "6-xb",
+    "DeliveryCustomerParty": "9-xc",
+    "BuyerCustomerParty": "1-xc",
+    "SellerSupplierParty": "6-xb",
+    "Shipment/Consignment/CarrierParty": "11-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "ReceiptAdvice",
+   "from": "9-xc",
+   "to": "6-xb",
+   "why": "The buyer's 3PL confirms what arrived, for the buyer.",
+   "parties": {
+    "DeliveryCustomerParty": "9-xc",
+    "DespatchSupplierParty": "6-xb",
+    "BuyerCustomerParty": "1-xc",
+    "SellerSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "Invoice",
+   "from": "6-xb",
+   "to": "1-xc",
+   "why": "Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to the factor, who is the payee.",
+   "parties": {
+    "AccountingSupplierParty": "6-xb",
+    "AccountingCustomerParty": "1-xc",
+    "SellerSupplierParty": "6-xb",
+    "BuyerCustomerParty": "1-xc",
+    "PayeeParty": "24-xb",
+    "Delivery/DeliveryParty": "9-xc"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "Statement",
+   "from": "24-xb",
+   "to": "1-xc",
+   "why": "The factor, who now owns the receivables, sends the statement of account on behalf of the distributor.",
+   "parties": {
+    "AccountingSupplierParty": "6-xb",
+    "AccountingCustomerParty": "1-xc",
+    "PayeeParty": "24-xb"
+   },
+   "sends_for": "AccountingSupplierParty"
+  },
+  {
+   "flow": "sea",
+   "doc": "RemittanceAdvice",
+   "from": "1-xc",
+   "to": "24-xb",
+   "why": "The buyer pays the factor from its account at the buyer's bank and says which invoices it settles.",
+   "parties": {
+    "AccountingCustomerParty": "1-xc",
+    "AccountingSupplierParty": "6-xb",
+    "PayeeParty": "24-xb",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "OrderChange",
+   "from": "1-xc",
+   "to": "6-xb",
+   "why": "Part of the quantity is needed urgently: delivery by air, CPT island airport, at an extra charge.",
+   "parties": {
+    "BuyerCustomerParty": "1-xc",
+    "SellerSupplierParty": "6-xb",
+    "Delivery/DeliveryParty": "9-xc"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "ForwardingInstructions",
+   "from": "6-xb",
+   "to": "10-xb",
+   "why": "The distributor asks its forwarder to book air freight for the urgent part.",
+   "parties": {
+    "ConsignorParty": "6-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "1-xc"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "Waybill",
+   "from": "12-xc",
+   "to": "10-xb",
+   "why": "The air waybill; the airline's road feeder service, run by the road carrier, is named as substitute carrier for the truck leg to the airport.",
+   "parties": {
+    "SenderParty": "12-xc",
+    "ReceiverParty": "10-xb",
+    "CarrierParty": "12-xc",
+    "ConsignorParty": "6-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "1-xc",
+    "Shipment/Consignment/SubstituteCarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "TransportationStatus",
+   "from": "17-xb",
+   "to": "12-xc",
+   "why": "The air cargo terminal reports the cargo accepted and built up for the flight.",
+   "parties": {
+    "SenderParty": "17-xb",
+    "ReceiverParty": "12-xc",
+    "Consignment/CarrierParty": "12-xc",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xb"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "TransportationStatus",
+   "from": "17-xc",
+   "to": "10-xb",
+   "why": "The island's air cargo terminal reports the cargo arrived and ready for customs clearance.",
+   "parties": {
+    "SenderParty": "17-xc",
+    "ReceiverParty": "10-xb",
+    "Consignment/CarrierParty": "12-xc",
+    "Consignment/ConsigneeParty": "1-xc",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xc"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "PriorInformationNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "The authority announces the planned purchase early, through the publication service.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "ContractNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "The call for competition is published; it names the review body for appeals and mediation.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb",
+    "TenderingTerms/AppealTerms/MediationParty": "28-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "CallForTenders",
+   "from": "2-xb",
+   "to": "5-xa",
+   "why": "The manufacturer retrieves the procurement documents.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "5-xa",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "BusinessInformation",
+   "from": "21-xb",
+   "to": "2-xb",
+   "why": "The authority checks the tenderer's registration with the business registry.",
+   "parties": {
+    "SenderParty": "21-xb",
+    "ReceiverParty": "2-xb",
+    "BusinessParty": "5-xa"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "TendererQualification",
+   "from": "5-xa",
+   "to": "2-xb",
+   "why": "The manufacturer declares its qualifications and those of its consortium partner.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "TendererPartyQualification/MainQualifyingParty": "5-xa",
+    "TendererPartyQualification/AdditionalQualifyingParty": "27-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "GuaranteeCertificate",
+   "from": "25-xb",
+   "to": "2-xb",
+   "why": "The guarantor notifies the authority of the bid bond deposited for the manufacturer's tender.",
+   "parties": {
+    "GuarantorParty": "25-xb",
+    "InterestedParty": "5-xa",
+    "BeneficiaryParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "Tender",
+   "from": "5-xa",
+   "to": "2-xb",
+   "why": "The tender, with the consortium partner as subcontractor.",
+   "parties": {
+    "TendererParty": "5-xa",
+    "SubcontractorParty": "27-xb",
+    "ContractingParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "ContractAwardNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "The award is published; the review body is named for appeals.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb",
+    "TenderResult/WinningParty": "5-xa",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
+   }
+  },
+  {
+   "flow": "carnet",
+   "doc": "GoodsItemPassport",
+   "from": "20-xa",
+   "to": "5-xa",
+   "why": "The chamber issues the carnet to the manufacturer, who holds it while the samples travel.",
+   "parties": {
+    "IssuerParty": "20-xa",
+    "HolderParty": "5-xa",
+    "ExportingGuarantorParty": "20-xa",
+    "ImportingGuarantorParty": "20-xc",
+    "ExportingCustomsParty": "19-xa",
+    "ImportingCustomsParty": "19-xc"
+   }
+  },
+  {
+   "flow": "waste",
+   "doc": "WasteNotification",
+   "from": "5-xa",
+   "to": "19-xa",
+   "why": "The manufacturer, as producer and notifier, notifies the planned movements to the competent authority.",
+   "parties": {
+    "SenderParty": "5-xa",
+    "ReceiverParty": "19-xa",
+    "NotifierParty": "5-xa",
+    "WasteProducerParty": "5-xa",
+    "RecoveryFacilityParty": "7-xa",
+    "CustomsParty": "19-xa",
+    "Shipment/Consignment/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "waste",
+   "doc": "WasteMovement",
+   "from": "7-xa",
+   "to": "19-xa",
+   "why": "The recovery facility reports each movement received to the competent authority.",
+   "parties": {
+    "SenderParty": "7-xa",
+    "ReceiverParty": "19-xa",
+    "NotifierParty": "5-xa",
+    "WasteProducerParty": "5-xa",
+    "RecoveryFacilityParty": "7-xa",
+    "Shipment/Consignment/CarrierParty": "13-xa"
+   }
+  },
+  {
+   "flow": "waste",
+   "doc": "Invoice",
+   "from": "7-xa",
+   "to": "5-xa",
+   "why": "The waste processor invoices collection and recovery.",
+   "parties": {
+    "AccountingSupplierParty": "7-xa",
+    "AccountingCustomerParty": "5-xa"
+   }
   }
  ]
 }

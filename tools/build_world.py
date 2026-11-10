@@ -23,6 +23,20 @@ model, problems = world_model.build(world)
 if problems:
     sys.exit("world model problems:\n  " + "\n  ".join(problems))
 
+# The documents: checked against the UBL 2.5 model by tools/world_docs.py
+import world_docs  # noqa: E402
+model_ubl = world_docs.load_model()
+problems = world_docs.check(world, model_ubl)
+if problems:
+    sys.exit("world document problems:\n  " + "\n  ".join(problems))
+view = world_docs.views(world, model_ubl)
+uniq = lambda xs: ", ".join(dict.fromkeys(world_docs.words(x) for x in xs)) or "–"
+for p in world["parties"]:
+    v = view[p["id"]]
+    p["sends"] = uniq(d["doc"] for d in v["sends"])
+    p["receives"] = uniq(d["doc"] for d in v["receives"])
+    p["roles"] = ", ".join(v["elements"])
+
 # The map: fill in the data
 page = open(os.path.join(root, "site", "world.html"), encoding="utf-8").read()
 data = json.dumps({"countries": world["countries"], "parties": world["parties"], "routes": world["routes"],
@@ -37,26 +51,88 @@ CATEGORY = {"commerce": "Commerce", "logistics": "Logistics", "government": "Gov
 def label(p):
     return f"#{p['n']} {p['name']}"
 
+def link(pid):
+    return f"[{label(parties[pid])}](world-{pid}.html)"
+
+flows = {f["id"]: f for f in world["flows"]}
+
+def as_roles(d, pid):
+    return ", ".join(f"`{x}`" for x in world_docs.fills(d, pid)) or "no party element of its own"
+
+def others(d, pid):
+    """The other parties a document mentions, with their place in it."""
+    rows = []
+    for path, v in d["parties"].items():
+        for o in world_docs.ids(v):
+            if o != pid and o not in (d["from"], d["to"]):
+                rows.append(f"{link(o)} as `{path}`")
+    return rows
+
+def entry(d, pid, kind):
+    doc = f"[**{world_docs.words(d['doc'])}**]({world_docs.spec_link(d['doc'])})"
+    if kind == "sends":
+        head = f"{doc} to {link(d['to'])}"
+    elif kind == "receives":
+        head = f"{doc} from {link(d['from'])}"
+    else:
+        head = f"{doc} from {link(d['from'])} to {link(d['to'])}"
+    lines = [f"- {head}: {d['why']}", ""]
+    me = f"  In it as {as_roles(d, pid)}"
+    agent = d.get("sends_for") if kind == "sends" else d.get("receives_for") if kind == "receives" else None
+    if agent:
+        principal = world_docs.ids(d["parties"][agent])[0]
+        me += f", on behalf of {link(principal)} (`{agent}`)"
+    if kind == "mentioned":
+        defs = [world_docs.definition(model_ubl, d, x) for x in world_docs.fills(d, pid)]
+        me += "".join(f" ({x.rstrip('.')})" for x in defs if x)
+    lines.append(me + ".")
+    rest = others(d, pid)
+    if rest:
+        lines += ["", "  Also mentions: " + "; ".join(rest) + "."]
+    return lines + [""]
+
+KINDS = (("sends", "Sends"), ("receives", "Receives"), ("mentioned", "Is named in documents between others"))
+
+def by_flow(v, pid):
+    """One section per flow the party takes part in: what it sends, receives and is named in."""
+    out = []
+    for fid, f in flows.items():
+        parts = [(kind, title, [d for d in v[kind] if d["flow"] == fid]) for kind, title in KINDS]
+        if not any(docs for _, _, docs in parts):
+            continue
+        out += [f"## {f['title']}", "", f["text"], ""]
+        for kind, title, docs in parts:
+            if docs:
+                out += [f"**{title}**", ""]
+                for d in docs:
+                    out += entry(d, pid, kind)
+    return out
+
 os.makedirs(mddir, exist_ok=True)
 for p in world["parties"]:
     c = world["countries"][p["c"]]
+    v = view[p["id"]]
     lines = [f"# {label(p)}", ""]
     meta = f"*{c['name']} ({p['c']}) · {CATEGORY[p['cat']]}*"
     if p.get("proposed"):
         meta += " · *proposed addition to the 26+C set*"
     lines += [meta, "", p["what"], "", "## How UBL helps", "", p["how"], ""]
-    lines += ["## Documents it exchanges", ""] + [f"- {d.strip()}" for d in p["docs"].split(",")] + [""]
-    lines += ["## UBL roles", "", "The party elements in which this party appears:", ""]
-    lines += [f"- `{r.strip()}`" for r in p["roles"].split(",")] + [""]
-    if p.get("partners"):
-        lines += ["## Trading partners in the world", ""]
-        for q in p["partners"]:
-            o = parties[q]
-            lines.append(f"- [{label(o)}](world-{o['id']}.html), {world['countries'][o['c']]['name']}")
-        lines.append("")
+    n = lambda k: len(v[k])
+    lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
+              f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]
+    lines += by_flow(v, p["id"])
+    lines += ["## UBL party elements", "", "The party elements in which this party appears:", "",
+              " ".join(f"`{e}`" for e in v["elements"]), ""]
+    if v["partners"]:
+        lines += ["## Trading partners in the world", "",
+                  "The parties it exchanges documents with:", ""]
+        lines += [f"- {link(q)}, {world['countries'][parties[q]['c']]['name']}" for q in v["partners"]] + [""]
     lines += ["## In the world", "",
               f"[See {p['name']} on the map](world.html#{p['id']}) · "
               f"{c['name']}: {c['note']}", "",
-              "*Example documents for this party will follow as the example world is built.*", ""]
+              "*Who sends and who receives each document type follows the UBL 2.5 semantic model "
+              "(the SenderParty and ReceiverParty elements and the definitions of the documents and their party "
+              "elements), completed by the party role table of the UBL specification where the model does not say it. "
+              "Every place named in a document is checked against the UBL 2.5 structure.*", ""]
     open(os.path.join(mddir, f"world-{p['id']}.md"), "w", encoding="utf-8").write("\n".join(lines))
-print(f"world: map and {len(world['parties'])} party pages")
+print(f"world: map, {len(world['parties'])} party pages, {len(world['documents'])} documents")
