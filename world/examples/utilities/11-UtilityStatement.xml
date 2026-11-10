@@ -206,6 +206,9 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-1</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -233,6 +236,9 @@
             <cac:Country>
               <cbc:IdentificationCode>XB</cbc:IdentificationCode>
             </cac:Country>
+            <cac:TaxTotal>
+              <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+            </cac:TaxTotal>
             <cac:CallDuty>
               <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
               <cbc:Duty>Set-up</cbc:Duty>
@@ -273,6 +279,9 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-2</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -289,6 +298,9 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-3</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -305,6 +317,9 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-4</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -321,6 +336,9 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-5</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -337,6 +355,9 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-6</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -408,6 +429,7 @@
           <cbc:ID>ST-BL</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
           <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
           <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>SUB</cbc:ConsumptionTypeCode>
@@ -420,11 +442,19 @@
               <cbc:Name>No general sales tax</cbc:Name>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>ST-C-1077</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
         </cac:Price>
+        <cac:UnstructuredPrice>
+          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
+          <cbc:TaxInclusivePriceAmount currencyID="XLC">21.18</cbc:TaxInclusivePriceAmount>
+          <cbc:TimeAmount>per month</cbc:TimeAmount>
+        </cac:UnstructuredPrice>
       </cac:ConsumptionLine>
       <cac:ConsumptionLine>
         <cbc:ID>2</cbc:ID>
@@ -436,6 +466,11 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -443,6 +478,7 @@
           <cbc:ID>ST-GB</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
           <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -455,6 +491,9 @@
               <cbc:Name>No general sales tax</cbc:Name>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>ST-C-1077</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>

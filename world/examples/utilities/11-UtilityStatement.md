@@ -281,6 +281,8 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
+  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-1**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -321,6 +323,8 @@ Inside `SubscriberConsumption`:
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Country/IdentificationCode` = **XB**  
   The country called.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
+  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Amount` = **0.000** (currencyID `XLC`)  
   No call duty: included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Duty` = **Set-up**  
@@ -371,6 +375,8 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
+  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-2**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -394,6 +400,8 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
+  No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-3**  
   The month's calls on the island, summed: they are included.
@@ -419,6 +427,8 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
+  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-4**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -443,6 +453,8 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
+  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-5**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -466,6 +478,8 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
+  No tax on the island.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-6**  
   The month's calls on the island, summed: they are included.
@@ -541,6 +555,8 @@ Inside `SubscriberConsumption`:
   The customer's contract.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Telephone**  
   The kind of supply.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TELE**  
+  As a code.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Business telephone and data line, monthly subscription.**  
   The tariff in words.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Subscription**  
@@ -557,10 +573,18 @@ Inside `SubscriberConsumption`:
   No tax is charged in this category.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
+  The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **21.18** (currencyID `XLC`)  
   The tariff (world/items.json).
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MON`)  
   Per unit.
+- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/PriceAmount` = **21.18** (currencyID `XLC`)  
+  The subscription price as the tariff sheet states it.
+- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/TaxInclusivePriceAmount` = **21.18** (currencyID `XLC`)  
+  No tax on the island.
+- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/TimeAmount` = **per month**  
+  The period the price is for.
 - `SupplierConsumption/ConsumptionLine/ID` = **2**  
   The line of the consumption.
 - `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **2**  
@@ -575,6 +599,8 @@ Inside `SubscriberConsumption`:
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
+- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
+  Where it was delivered.
 - `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-GB**  
@@ -583,6 +609,8 @@ Inside `SubscriberConsumption`:
   The customer's contract.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Telephone**  
   The kind of supply.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TELE**  
+  As a code.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Mobile data beyond the subscription, per gigabyte.**  
   The tariff in words.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
@@ -599,6 +627,8 @@ Inside `SubscriberConsumption`:
   No tax is charged in this category.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
+  The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **0.424** (currencyID `XLC`)  
   The tariff (world/items.json).
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `E34`)  
@@ -815,6 +845,9 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-1</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -842,6 +875,9 @@ Inside `SubscriberConsumption`:
             <cac:Country>
               <cbc:IdentificationCode>XB</cbc:IdentificationCode>
             </cac:Country>
+            <cac:TaxTotal>
+              <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+            </cac:TaxTotal>
             <cac:CallDuty>
               <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
               <cbc:Duty>Set-up</cbc:Duty>
@@ -882,6 +918,9 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-2</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -898,6 +937,9 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-3</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -914,6 +956,9 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-4</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -930,6 +975,9 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-5</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -946,6 +994,9 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
+          <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-6</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -1017,6 +1068,7 @@ Inside `SubscriberConsumption`:
           <cbc:ID>ST-BL</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
           <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
           <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>SUB</cbc:ConsumptionTypeCode>
@@ -1029,11 +1081,19 @@ Inside `SubscriberConsumption`:
               <cbc:Name>No general sales tax</cbc:Name>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>ST-C-1077</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
         </cac:Price>
+        <cac:UnstructuredPrice>
+          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
+          <cbc:TaxInclusivePriceAmount currencyID="XLC">21.18</cbc:TaxInclusivePriceAmount>
+          <cbc:TimeAmount>per month</cbc:TimeAmount>
+        </cac:UnstructuredPrice>
       </cac:ConsumptionLine>
       <cac:ConsumptionLine>
         <cbc:ID>2</cbc:ID>
@@ -1045,6 +1105,11 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -1052,6 +1117,7 @@ Inside `SubscriberConsumption`:
           <cbc:ID>ST-GB</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
           <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -1064,6 +1130,9 @@ Inside `SubscriberConsumption`:
               <cbc:Name>No general sales tax</cbc:Name>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>ST-C-1077</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>

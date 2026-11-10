@@ -51,6 +51,17 @@ Inside `AdditionalDocumentReference`:
 - `DocumentDescription` = **Prices per unit and the terms of supply.**  
   What it holds.
 
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **CSW-SIG-26-0401**  
+  The water company's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Coastal State Water Company**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Sender Party
 
 Inside `SenderParty`:
@@ -193,6 +204,17 @@ Inside `SubscriberParty`:
 - `PartyName/Name` = **Robin Ashdale**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Main On Account Payment
+
+Inside `MainOnAccountPayment`:
+
+- `EstimatedConsumedQuantity` = **14** (unitCode `MTQ`)  
+  The household's expected monthly use.
+- `Note` = **The basis of the direct debit limit.**  
+  Why it is stated.
+- `PaymentTerms/Note` = **Collected by direct debit; the mandate's limit is set well above this estimate.**  
+  How it is paid.
+
 ### Subscriber Consumption
 
 Inside `SubscriberConsumption`:
@@ -287,6 +309,10 @@ Inside `SubscriberConsumption`:
   Class 1.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQualifier` = **Calibrated 2024**  
   When it was checked.
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Maximum flow**  
+  A rating of the meter.
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQuantity` = **2.5** (unitCode `MQH`)  
+  Its value.
 - `OnAccountPayment/EstimatedConsumedQuantity` = **14** (unitCode `MTQ`)  
   The expected use next month.
 - `OnAccountPayment/Note` = **No payment on account: the bill follows the reading.**  
@@ -339,6 +365,8 @@ Inside `SubscriberConsumption`:
   The report of February.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
   Of the same kind.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode` = **MON**  
+  As a code.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity` = **13** (unitCode `MTQ`)  
   What February's report said.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate` = **2026-02-01**  
@@ -349,6 +377,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **15** (unitCode `MTQ`)  
   The month's consumption.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **35.25** (currencyID `XBL`)  
+  What it cost at the tariff.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **Normal**  
   Within the usual range.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -363,6 +393,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **13** (unitCode `MTQ`)  
   The month's consumption.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **30.55** (currencyID `XBL`)  
+  What it cost at the tariff.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **Normal**  
   Within the usual range.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -419,6 +451,8 @@ Inside `SubscriberConsumption`:
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
+- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
+  Where it was delivered.
 - `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **CW-M3**  
@@ -427,6 +461,8 @@ Inside `SubscriberConsumption`:
   The customer's contract.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Water**  
   The kind of supply.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **WATE**  
+  As a code.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Drinking water supply, per cubic metre.**  
   The tariff in words.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
@@ -447,6 +483,8 @@ Inside `SubscriberConsumption`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **CSW-C-311790**  
+  The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **2.35** (currencyID `XBL`)  
   The tariff (world/items.json).
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
@@ -476,6 +514,17 @@ Inside `SubscriberConsumption`:
     <cbc:DocumentTypeCode>Tariff</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>CSW-SIG-26-0401</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Coastal State Water Company</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3600</cbc:IndustryClassificationCode>
@@ -593,6 +642,13 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Robin Ashdale</cbc:Name>
     </cac:PartyName>
   </cac:SubscriberParty>
+  <cac:MainOnAccountPayment>
+    <cbc:EstimatedConsumedQuantity unitCode="MTQ">14</cbc:EstimatedConsumedQuantity>
+    <cbc:Note>The basis of the direct debit limit.</cbc:Note>
+    <cac:PaymentTerms>
+      <cbc:Note>Collected by direct debit; the mandate's limit is set well above this estimate.</cbc:Note>
+    </cac:PaymentTerms>
+  </cac:MainOnAccountPayment>
   <cac:SubscriberConsumption>
     <cbc:ConsumptionID>CSW-CP-38516-57-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode>Detailed</cbc:SpecificationTypeCode>
@@ -651,6 +707,10 @@ Inside `SubscriberConsumption`:
           <cbc:Value>1</cbc:Value>
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
+        <cac:MeterProperty>
+          <cbc:Name>Maximum flow</cbc:Name>
+          <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
+        </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:OnAccountPayment>
@@ -697,6 +757,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>CSW-CP-38516-57-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="MTQ">13</cbc:TotalConsumedQuantity>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
@@ -706,6 +767,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">15</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">35.25</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -717,6 +779,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">13</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">30.55</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -779,6 +842,11 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -786,6 +854,7 @@ Inside `SubscriberConsumption`:
           <cbc:ID>CW-M3</cbc:ID>
           <cbc:SubscriberID>CSW-C-311790</cbc:SubscriberID>
           <cbc:SubscriberType>Water</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>WATE</cbc:SubscriberTypeCode>
           <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -800,6 +869,9 @@ Inside `SubscriberConsumption`:
               <cbc:ID>STT</cbc:ID>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>CSW-C-311790</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>

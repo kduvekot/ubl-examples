@@ -19,6 +19,17 @@
     <cbc:DocumentTypeCode>Tariff</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>CSW-SIG-26-0401</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Coastal State Water Company</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3600</cbc:IndustryClassificationCode>
@@ -136,6 +147,13 @@
       <cbc:Name>Robin Ashdale</cbc:Name>
     </cac:PartyName>
   </cac:SubscriberParty>
+  <cac:MainOnAccountPayment>
+    <cbc:EstimatedConsumedQuantity unitCode="MTQ">14</cbc:EstimatedConsumedQuantity>
+    <cbc:Note>The basis of the direct debit limit.</cbc:Note>
+    <cac:PaymentTerms>
+      <cbc:Note>Collected by direct debit; the mandate's limit is set well above this estimate.</cbc:Note>
+    </cac:PaymentTerms>
+  </cac:MainOnAccountPayment>
   <cac:SubscriberConsumption>
     <cbc:ConsumptionID>CSW-CP-38516-57-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode>Detailed</cbc:SpecificationTypeCode>
@@ -194,6 +212,10 @@
           <cbc:Value>1</cbc:Value>
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
+        <cac:MeterProperty>
+          <cbc:Name>Maximum flow</cbc:Name>
+          <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
+        </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:OnAccountPayment>
@@ -240,6 +262,7 @@
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>CSW-CP-38516-57-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="MTQ">13</cbc:TotalConsumedQuantity>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
@@ -249,6 +272,7 @@
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">15</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">35.25</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -260,6 +284,7 @@
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">13</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">30.55</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -322,6 +347,11 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -329,6 +359,7 @@
           <cbc:ID>CW-M3</cbc:ID>
           <cbc:SubscriberID>CSW-C-311790</cbc:SubscriberID>
           <cbc:SubscriberType>Water</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>WATE</cbc:SubscriberTypeCode>
           <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -343,6 +374,9 @@
               <cbc:ID>STT</cbc:ID>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>CSW-C-311790</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>

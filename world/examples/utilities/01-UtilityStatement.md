@@ -361,6 +361,10 @@ Inside `SubscriberConsumption`:
   Class 1.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQualifier` = **Calibrated 2024**  
   When it was checked.
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Rated current**  
+  A rating of the meter.
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQuantity` = **5** (unitCode `AMP`)  
+  Its value.
 - `Consumption/UtilityStatementTypeCode` = **Electricity**  
   The kind of supply.
 - `Consumption/MainPeriod/StartDate` = **2026-03-01**  
@@ -389,6 +393,8 @@ Inside `SubscriberConsumption`:
   The report of February.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
   Of the same kind.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode` = **MON**  
+  As a code.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity` = **405100** (unitCode `KWH`)  
   What February's report said.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate` = **2026-02-01**  
@@ -399,6 +405,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **398400** (unitCode `KWH`)  
   The month's consumption.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **10876320** (currencyID `XUF`)  
+  What it cost at the tariff.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **Normal**  
   Within the usual range.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -413,6 +421,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **405100** (unitCode `KWH`)  
   The month's consumption.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **11059230** (currencyID `XUF`)  
+  What it cost at the tariff.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **Normal**  
   Within the usual range.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -479,6 +489,8 @@ Inside `SubscriberConsumption`:
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
+- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
+  Where it was delivered.
 - `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **2253888** (currencyID `XUF`)  
   20 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **FE-KWH**  
@@ -487,6 +499,8 @@ Inside `SubscriberConsumption`:
   The customer's contract.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Electricity**  
   The kind of supply.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **ELEC**  
+  As a code.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
   The tariff in words.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
@@ -503,6 +517,8 @@ Inside `SubscriberConsumption`:
   The rate for this category.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **FE-C-0047120**  
+  The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **27.3** (currencyID `XUF`)  
   The tariff (world/items.json).
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `KWH`)  
@@ -786,6 +802,10 @@ Inside `SubscriberConsumption`:
           <cbc:Value>1</cbc:Value>
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
+        <cac:MeterProperty>
+          <cbc:Name>Rated current</cbc:Name>
+          <cbc:ValueQuantity unitCode="AMP">5</cbc:ValueQuantity>
+        </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:Consumption>
@@ -812,6 +832,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>FE-CP-4120-01-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
@@ -821,6 +842,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
+            <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -832,6 +854,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
+            <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -905,6 +928,11 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XUF">2253888</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -912,6 +940,7 @@ Inside `SubscriberConsumption`:
           <cbc:ID>FE-KWH</cbc:ID>
           <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
           <cbc:SubscriberType>Electricity</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>ELEC</cbc:SubscriberTypeCode>
           <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -924,6 +953,9 @@ Inside `SubscriberConsumption`:
               <cbc:ID>VAT</cbc:ID>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>FE-C-0047120</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>

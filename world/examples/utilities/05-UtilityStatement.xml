@@ -274,6 +274,10 @@
           <cbc:Value>1</cbc:Value>
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
+        <cac:MeterProperty>
+          <cbc:Name>Maximum flow</cbc:Name>
+          <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
+        </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:Consumption>
@@ -300,6 +304,7 @@
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>CSW-CP-38510-411-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="MTQ">79</cbc:TotalConsumedQuantity>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
@@ -309,6 +314,7 @@
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">81</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">190.35</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -320,6 +326,7 @@
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">79</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">185.65</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -385,6 +392,11 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -392,6 +404,7 @@
           <cbc:ID>CW-M3</cbc:ID>
           <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
           <cbc:SubscriberType>Water</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>WATE</cbc:SubscriberTypeCode>
           <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -406,6 +419,9 @@
               <cbc:ID>STT</cbc:ID>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>CSW-C-260118</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>

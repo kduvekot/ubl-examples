@@ -375,6 +375,10 @@ Inside `SubscriberConsumption`:
   Class 1.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQualifier` = **Calibrated 2024**  
   When it was checked.
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Maximum flow**  
+  A rating of the meter.
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQuantity` = **2.5** (unitCode `MQH`)  
+  Its value.
 - `Consumption/UtilityStatementTypeCode` = **Water**  
   The kind of supply.
 - `Consumption/MainPeriod/StartDate` = **2026-03-01**  
@@ -403,6 +407,8 @@ Inside `SubscriberConsumption`:
   The report of February.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
   Of the same kind.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode` = **MON**  
+  As a code.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity` = **79** (unitCode `MTQ`)  
   What February's report said.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate` = **2026-02-01**  
@@ -413,6 +419,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **81** (unitCode `MTQ`)  
   The month's consumption.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **190.35** (currencyID `XBL`)  
+  What it cost at the tariff.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **Normal**  
   Within the usual range.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -427,6 +435,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **79** (unitCode `MTQ`)  
   The month's consumption.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **185.65** (currencyID `XBL`)  
+  What it cost at the tariff.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **Normal**  
   Within the usual range.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -485,6 +495,8 @@ Inside `SubscriberConsumption`:
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
+- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
+  Where it was delivered.
 - `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **CW-M3**  
@@ -493,6 +505,8 @@ Inside `SubscriberConsumption`:
   The customer's contract.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Water**  
   The kind of supply.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **WATE**  
+  As a code.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Drinking water supply, per cubic metre.**  
   The tariff in words.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
@@ -513,6 +527,8 @@ Inside `SubscriberConsumption`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **CSW-C-260118**  
+  The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **2.35** (currencyID `XBL`)  
   The tariff (world/items.json).
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
@@ -797,6 +813,10 @@ Inside `SubscriberConsumption`:
           <cbc:Value>1</cbc:Value>
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
+        <cac:MeterProperty>
+          <cbc:Name>Maximum flow</cbc:Name>
+          <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
+        </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:Consumption>
@@ -823,6 +843,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>CSW-CP-38510-411-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="MTQ">79</cbc:TotalConsumedQuantity>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
@@ -832,6 +853,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">81</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">190.35</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -843,6 +865,7 @@ Inside `SubscriberConsumption`:
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">79</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">185.65</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -908,6 +931,11 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -915,6 +943,7 @@ Inside `SubscriberConsumption`:
           <cbc:ID>CW-M3</cbc:ID>
           <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
           <cbc:SubscriberType>Water</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>WATE</cbc:SubscriberTypeCode>
           <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -929,6 +958,9 @@ Inside `SubscriberConsumption`:
               <cbc:ID>STT</cbc:ID>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>CSW-C-260118</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>

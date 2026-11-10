@@ -2611,6 +2611,8 @@ def consumption_line(f, sup, key, k, d, why):
             "UtilityItem": {"ID": V(it["sellers_id"], "The utility's tariff item."),
                             "SubscriberID": V(METERS[key][0], "The customer's contract."),
                             "SubscriberType": V(KIND[sup], "The kind of supply."),
+                            "SubscriberTypeCode": V(KIND[sup][:4].upper(), "As a code."),
+                            "Contract": {"ID": V(METERS[key][0], "The supply contract the tariff belongs to.")},
                             "Description": V(it["description"], "The tariff in words."),
                             "ConsumptionType": V("Metered" if it["kind"] == "goods" or d["item"] != "telecom-line"
                                                  else "Subscription", "How the quantity is measured."),
@@ -2619,7 +2621,15 @@ def consumption_line(f, sup, key, k, d, why):
                             "CurrentChargeTypeCode": V("M", "As a code."),
                             "TaxCategory": kit.tax_category(rule)},
             "Price": {"PriceAmount": price(it["price"]["amount"], cur, "The tariff (world/items.json)."),
-                      "BaseQuantity": qty(1, it["unit"], "Per unit.")}}, amt, tax
+                      "BaseQuantity": qty(1, it["unit"], "Per unit.")},
+            **({"UnstructuredPrice": {"PriceAmount": price(it["price"]["amount"], cur, "The subscription price as "
+                                                           "the tariff sheet states it."),
+                                      "TaxInclusivePriceAmount": price(it["price"]["amount"], cur, "No tax on the "
+                                                                                                   "island."),
+                                      "TimeAmount": V("per month", "The period the price is for.")}}
+               if d["item"] == "telecom-line" else
+               {"Delivery": {"DeliveryLocation": {"Description": V("The consumption point of the statement.",
+                                                                   "Where it was delivered.")}}})}, amt, tax
 
 
 def bill_customer(key):
@@ -2674,11 +2684,15 @@ def utility_statement(f, n, doc, key, invoice_no):
                   "ConsumptionReportReference": {
                       "ConsumptionReportID": V(f"{pt['id']}-2602", "The report of February."),
                       "ConsumptionType": V("Monthly consumption", "Of the same kind."),
+                      "ConsumptionTypeCode": V("MON", "As a code."),
                       "TotalConsumedQuantity": qty(pt["history"][-1][2], unit, "What February's report said."),
                       "Period": {"StartDate": V(pt["history"][-1][0], "February."),
                                  "EndDate": V(pt["history"][-1][1], "Its last day.")}},
                   "ConsumptionHistory": [{"MeterNumber": V(pt["meter"][0], "The meter."),
                                           "Quantity": qty(q_, unit, "The month's consumption."),
+                                          "Amount": amount(Decimal(q_) * Decimal(str(ITEM[d["item"]]["price"]
+                                                                                    ["amount"])), cur,
+                                                           "What it cost at the tariff."),
                                           "ConsumptionLevelCode": V("Normal", "Within the usual range."),
                                           "ConsumptionLevel": V("Normal", "In words."),
                                           "Description": V("Earlier month.", "For comparison."),
@@ -2749,11 +2763,16 @@ def utility_statement(f, n, doc, key, invoice_no):
                                     "MeterConstantCode": V(pt["meter"][3], "Why: " + pt["meter"][3].lower() + "."),
                                     "TotalDeliveredQuantity": qty(consumed, unit, "Delivered in March."),
                                     "MeterReading": reading,
-                                    "MeterProperty": {"Name": V("Accuracy class", "A property of the meter."),
-                                                      "NameCode": V("ACC", "As a code."),
-                                                      "Value": V("1", "Class 1."),
-                                                      "ValueQualifier": V("Calibrated 2024", "When it was "
-                                                                                             "checked.")}}},
+                                    "MeterProperty": [{"Name": V("Accuracy class", "A property of the meter."),
+                                                       "NameCode": V("ACC", "As a code."),
+                                                       "Value": V("1", "Class 1."),
+                                                       "ValueQualifier": V("Calibrated 2024", "When it was "
+                                                                                              "checked.")},
+                                                      {"Name": V("Maximum flow" if unit == "MTQ" else "Rated "
+                                                                 "current", "A rating of the meter."),
+                                                       "ValueQuantity": qty("2.5" if unit == "MTQ" else "5",
+                                                                            "MQH" if unit == "MTQ" else "AMP",
+                                                                            "Its value.")}]}},
                "Consumption": consumption,
                "SupplierConsumption": {
                    "Description": V("The supply under the customer's contract.", "What follows."),
@@ -2769,7 +2788,18 @@ def utility_statement(f, n, doc, key, invoice_no):
                                 "ContractType": V(f"{KIND[sup]} supply", "Its kind."),
                                 "ValidityPeriod": {"StartDate": V("2024-01-01", "In force since.")}},
                    "ConsumptionLine": line}}
+        if subscriber != customer:
+            sub["SubscriberParty"] = party(subscriber, short=True)
         if pt.get("household"):
+            out["MainOnAccountPayment"] = {"EstimatedConsumedQuantity": qty(14, unit, "The household's expected "
+                                                                                      "monthly use."),
+                                           "Note": V("The basis of the direct debit limit.", "Why it is "
+                                                                                             "stated."),
+                                           "PaymentTerms": {"Note": V("Collected by direct debit; the mandate's limit "
+                                                                      "is set well above this estimate.",
+                                                                      "How it is paid.")}}
+            out["Signature"] = {"ID": V("CSW-SIG-26-0401", "The water company's seal."),
+                                "SignatoryParty": party(sup, short=True)}
             sub["OnAccountPayment"] = {"EstimatedConsumedQuantity": qty(14, unit, "The expected use next month."),
                                        "Note": V("No payment on account: the bill follows the reading.",
                                                  "How the household pays."),
@@ -2792,7 +2822,8 @@ def telecom_consumption(f, sup, key, customer):
              "PhoneNumber": V(number, "The line's number; +999 is reserved, no real country's code."),
              "Description": V("Business line with calls on the island included.", "The subscription."),
              "LineExtensionAmount": amount(line_item["price"]["amount"], cur, "The monthly subscription."),
-             "TaxInclusiveLineExtensionAmount": amount(line_item["price"]["amount"], cur, "No tax on the island.")}
+             "TaxInclusiveLineExtensionAmount": amount(line_item["price"]["amount"], cur, "No tax on the island."),
+             "TaxTotal": {"TaxAmount": amount(0, cur, "No tax on the island.")}}
         x["TelecommunicationsService"] = {
             "ID": V(f"S-03-{k + 1}", "The month's calls on the island, summed: they are included."),
             "CallDate": V("2026-03-31", "Summed at the end of the month."),
@@ -2820,7 +2851,8 @@ def telecom_consumption(f, sup, key, customer):
                               "TaxCategory": kit.tax_category(kit.tax_rule(sup, customer, "telecom-line"))},
                  "TimeDuty": {"Amount": amount(0, cur, "No time duty: included."),
                               "Duty": V("Per minute", "The kind of duty."), "DutyCode": V("MIN", "As a code.")},
-                 "Price": {"PriceAmount": price("0", cur, "Included in the subscription.")}},
+                 "Price": {"PriceAmount": price("0", cur, "Included in the subscription.")},
+                 "TaxTotal": {"TaxAmount": amount(0, cur, "No tax on the island.")}},
                 {"ID": V("D-0318-01", "Mobile data abroad."), "CallDate": V("2026-03-18", "The day."),
                  "CallTime": V("08:00:00", "From the morning."),
                  "ServiceNumberCalled": V("data", "Mobile data, no number called."),

@@ -273,6 +273,10 @@
           <cbc:Value>1</cbc:Value>
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
+        <cac:MeterProperty>
+          <cbc:Name>Rated current</cbc:Name>
+          <cbc:ValueQuantity unitCode="AMP">5</cbc:ValueQuantity>
+        </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:Consumption>
@@ -299,6 +303,7 @@
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>FE-CP-4120-01-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
@@ -308,6 +313,7 @@
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
+            <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -319,6 +325,7 @@
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
+            <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
             <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
@@ -392,6 +399,11 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XUF">2253888</cbc:TaxAmount>
         </cac:TaxTotal>
@@ -399,6 +411,7 @@
           <cbc:ID>FE-KWH</cbc:ID>
           <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
           <cbc:SubscriberType>Electricity</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>ELEC</cbc:SubscriberTypeCode>
           <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
@@ -411,6 +424,9 @@
               <cbc:ID>VAT</cbc:ID>
             </cac:TaxScheme>
           </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>FE-C-0047120</cbc:ID>
+          </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
