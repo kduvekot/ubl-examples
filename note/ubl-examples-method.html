@@ -486,7 +486,20 @@ a[href]:hover { background: #ffa }
           every party it mentions, at its place in the UBL structure,
           for example the road carrier at
           <code class="literal">Order/Delivery/Despatch/CarrierParty</code>.
-        </p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-who-sends-and-who-receives"></a>3.5 Who sends and who receives</h3></div></div></div><p>
+        </p></li></ul></div><p>
+      A flow also lists its transport legs: the mode, from which party
+      to which, and the carrier. The goods only move where the world
+      allows it. A road leg needs a road from party to party, so a truck
+      cannot drive to the island; a rail leg needs a rail line between
+      them, a barge needs the river at both ends, a ship a sea route
+      from port to port and an aircraft an air route from airport to
+      airport. The carrier must have a vehicle, train, vessel or
+      aircraft of that mode in its fleet, and every carrier a document
+      of the flow names must carry one of its legs. Domestic jobs go to
+      a carrier of that country: a truck of one country driving within
+      another would be cabotage, which only happens where a document
+      says so.
+    </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-who-sends-and-who-receives"></a>3.5 Who sends and who receives</h3></div></div></div><p>
       Who sends and who receives a document type comes from the UBL 2.5
       semantic model first: the elements <code class="literal">SenderParty</code>
       and <code class="literal">ReceiverParty</code>, or a definition of the

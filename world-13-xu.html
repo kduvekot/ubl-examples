@@ -12,8 +12,8 @@
 <main class="prose">
 <h1 id="trasvia-haulage">Trasvia Haulage</h1>
 <p><em>#13 Road Carrier · Urvania (XU) · Logistics</em></p>
-<p>Trucks the goods across the land border to the distributor; last-mile
-delivery.</p>
+<p>Trucks the goods across the land border, both ways: benches to
+Bayvarra, slats and film back to Urvania.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -80,7 +80,7 @@ included.</p>
 they receive transport instructions, report status at each stop and
 invoice the freight in one structured format, so every customer, large
 or small, can process them automatically.</p>
-<p>In this world it sends 5 and receives 4 documents, and is named in 13
+<p>In this world it sends 3 and receives 2 documents, and is named in 10
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="finished-goods-by-truck-across-the-land-border-urvania--bayvarra">Finished
@@ -176,93 +176,6 @@ document</a>.</p>
 Party who provides the transport of goods between named points).</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>CustomsDeclaration/ConsigneeParty</code>.</p></li>
-</ul>
-<h2
-id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
-to retailer, delivered duty paid (domestic, Bayvarra)</h2>
-<p>The retailer buys delivered duty paid (DDP) at its shop: the
-distributor arranges the transport and bears all costs, so the
-distributor, not the retailer, books the truck and receives the
-transport documents. The retailer shares forecasts, promotions and its
-stock levels so the distributor can plan replenishment.</p>
-<p><strong>Sends</strong></p>
-<ul>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-to <a href="world-6-xb.html">Lumeway Distribution</a>: The outgoing
-consignment note goes to the distributor, who contracted the carriage;
-the retailer is only the consignee. <a
-href="example-retail-13-Waybill.html">See the example document</a>.</p>
-<p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
-<p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
-<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-to <a href="world-6-xb.html">Lumeway Distribution</a>: Under DDP the
-seller pays the transport, so the carrier invoices the distributor. A
-transport service is invoiced with the ordinary Invoice; the Freight
-Invoice is deprecated in UBL 2.5. <a
-href="example-retail-15-Invoice.html">See the example document</a>.</p>
-<p>In it as <code>AccountingSupplierParty</code>,
-<code>SellerSupplierParty</code>,
-<code>Delivery/Shipment/Consignment/CarrierParty</code>.</p></li>
-</ul>
-<p><strong>Receives</strong></p>
-<ul>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
-Execution Plan Request</strong></a> from <a
-href="world-6-xb.html">Lumeway Distribution</a>: Because it sold DDP,
-the distributor books the outgoing truck from its distribution centre to
-the shop. <a
-href="example-retail-11-TransportExecutionPlanRequest.html">See the
-example document</a>.</p>
-<p>In it as <code>ReceiverParty</code>,
-<code>TransportServiceProviderParty</code>.</p>
-<p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
-<code>Consignment/ConsigneeParty</code>.</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-REQUEST-SCHEMA"><strong>Transportation
-Status Request</strong></a> from <a href="world-6-xb.html">Lumeway
-Distribution</a>: The distributor, as transport user, asks the carrier
-for the truck's arrival time. <a
-href="example-retail-14-TransportationStatusRequest.html">See the
-example document</a>.</p>
-<p>In it as <code>ReceiverParty</code>.</p></li>
-</ul>
-<p><strong>Is named in documents between others</strong></p>
-<ul>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-6-xb.html">Lumeway
-Distribution</a> to <a href="world-26-xb.html">Brightmarket Stores</a>:
-The distributor announces the delivery and the truck that brings it. <a
-href="example-retail-12-DespatchAdvice.html">See the example
-document</a>.</p>
-<p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
-who provides the transport of goods between named points).</p></li>
-</ul>
-<h2 id="an-urgent-part-of-the-order-by-air-bayvarra--island-lisavu">An
-urgent part of the order by air (Bayvarra → island Lisavu)</h2>
-<p>The buyer needs part of the quantity before the ship arrives. It
-changes the order: that part goes by air, carriage paid to (CPT) the
-island's airport. The forwarder books the airline, whose road feeder
-service (the road carrier) trucks the cargo to the airport.</p>
-<p><strong>Is named in documents between others</strong></p>
-<ul>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-12-xl.html">Kelaro Air Cargo</a> to <a
-href="world-10-xb.html">Bayforth Forwarding</a>: The air waybill; the
-airline's road feeder service, run by the road carrier, is named as
-substitute carrier for the truck leg to the airport. <a
-href="example-air-04-Waybill.html">See the example document</a>.</p>
-<p>In it as <code>Shipment/Consignment/SubstituteCarrierParty</code>
-(The Party who subtitutes the carrier of this Consignment).</p>
-<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
-<code>ConsignorParty</code>; <a href="world-1-xl.html">Velumi
-Trading</a> as
-<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 </ul>
 <h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
 <p>The contracting authority buys park benches and street furniture for
@@ -396,22 +309,13 @@ packaging maker. <a href="example-packaging-01-Order.html">See the
 example document</a>.</p>
 <p>In it as <code>Delivery/Despatch/CarrierParty</code> (The Party who
 provides the transport of goods between named points).</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-40-xb.html">Lumeport Textile
-Mill</a> to <a href="world-26-xb.html">Brightmarket Stores</a>: The mill
-announces the delivery with the road carrier it booked. <a
-href="example-packaging-06-DespatchAdvice.html">See the example
-document</a>.</p>
-<p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
-who provides the transport of goods between named points).</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>CarrierParty</code> <code>ReceiverParty</code>
 <code>TransportServiceProviderParty</code> <code>SenderParty</code>
-<code>AccountingSupplierParty</code> <code>SellerSupplierParty</code>
-<code>SubstituteCarrierParty</code></p>
+<code>AccountingSupplierParty</code>
+<code>SellerSupplierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -430,6 +334,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>441976b</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>44861a4</code></p></div></footer>
 </body>
 </html>

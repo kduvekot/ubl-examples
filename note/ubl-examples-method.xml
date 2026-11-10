@@ -467,6 +467,20 @@
         </para>
       </listitem>
     </itemizedlist>
+    <para>
+      A flow also lists its transport legs: the mode, from which party
+      to which, and the carrier. The goods only move where the world
+      allows it. A road leg needs a road from party to party, so a truck
+      cannot drive to the island; a rail leg needs a rail line between
+      them, a barge needs the river at both ends, a ship a sea route
+      from port to port and an aircraft an air route from airport to
+      airport. The carrier must have a vehicle, train, vessel or
+      aircraft of that mode in its fleet, and every carrier a document
+      of the flow names must carry one of its legs. Domestic jobs go to
+      a carrier of that country: a truck of one country driving within
+      another would be cabotage, which only happens where a document
+      says so.
+    </para>
   </section>
   <section id="S-03-world-who-sends-and-who-receives">
     <title>Who sends and who receives</title>
