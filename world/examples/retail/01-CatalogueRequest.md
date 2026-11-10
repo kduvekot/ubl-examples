@@ -22,10 +22,42 @@ The store asks the distributor for its spring catalogue.
   The sender's number for this document.
 - `UUID` = **5e45c6c8-ba0a-5689-b0f9-f653754fd6b8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `Name` = **Spring catalogue 2026**  
+  The catalogue asked for.
 - `IssueDate` = **2026-04-20**  
   The store asks for the spring catalogue. As UBL defines it, the party that sends a catalogue request is its ProviderParty.
 - `IssueTime` = **08:42:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **For the garden department.**  
+  Who it is for.
+- `Description` = **Benches and spare parts.**  
+  What the store wants to see.
+- `PricingUpdateRequestIndicator` = **true**  
+  The store wants price updates during the season.
+- `ItemUpdateRequestIndicator` = **true**  
+  And changes to the items.
+- `LineCountNumeric` = **2**  
+  Two lines.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-04-20**  
+  For the season.
+- `EndDate` = **2026-07-19**  
+  Its end.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0420**  
+  The store's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Receiver Party
 
@@ -254,6 +286,105 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Contractor Customer Party
+
+Inside `ContractorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Requested Catalogue Reference
+
+Inside `RequestedCatalogueReference`:
+
+- `ID` = **LD-CAT-SPRING-26**  
+  The catalogue as announced at the fair.
+
+### Referenced Contract
+
+Inside `ReferencedContract`:
+
+- `ID` = **LD-BM-SUPPLY-2026**  
+  The supply agreement.
+
+### Trading Terms
+
+Inside `TradingTerms`:
+
+- `Information` = **Delivered duty paid to the store.**  
+  The terms the store expects.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BM-RANGE-26**  
+  The store's range plan.
+
+### Applicable Territory Address
+
+Inside `ApplicableTerritoryAddress`:
+
+- `Country/IdentificationCode` = **XB**  
+  For the store in Bayvarra.
+
+### Requested Language
+
+Inside `RequestedLanguage`:
+
+- `ID` = **en**  
+  English.
+- `Name` = **English**  
+  In words.
+- `LocaleCode` = **EN**  
+  The locale, as an ISO 639 code of UBL's language code list.
+
+### Requested Classification Scheme
+
+Inside `RequestedClassificationScheme`:
+
+- `ID` = **HS**  
+  Items classified by the Harmonized System.
+- `Name` = **Harmonized System**  
+  In words.
+- `AgencyID` = **WCO**  
+  The World Customs Organization.
+- `AgencyName` = **World Customs Organization**  
+  In words.
+- `VersionID` = **2022**  
+  The edition.
+- `URI` = **https://www.wcoomd.org**  
+  Where it is published.
+- `LanguageID` = **en**  
+  In English.
+- `ClassificationCategory/Name` = **Seats**  
+  The heading the benches fall in.
+- `ClassificationCategory/CodeValue` = **9401**  
+  HS heading 94.01.
+
+### Catalogue Request Line
+
+Inside `CatalogueRequestLine`:
+
+- `ID` = **1**  
+  Benches.
+- `ContractSubdivision` = **Garden**  
+  The part of the agreement.
+- `Note` = **Pallet prices, please.**  
+  What the store asks.
+- `LineValidityPeriod/EndDate` = **2026-07-19**  
+  For the season.
+- `RequiredItemLocationQuantity/MinimumQuantity` = **24** (unitCode `H87`)  
+  The store's first order.
+- `Item/Name` = **Park bench Serra 180**  
+  The item asked for.
+- `ID` = **2**  
+  Spare frames.
+- `Item/Name` = **Bench side frame casting**  
+  The item asked for.
+
 ## The document
 
 ```xml
@@ -265,8 +396,29 @@ Inside `SellerSupplierParty`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0217</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
+  <cbc:Name>Spring catalogue 2026</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>08:42:00</cbc:IssueTime>
+  <cbc:Note>For the garden department.</cbc:Note>
+  <cbc:Description>Benches and spare parts.</cbc:Description>
+  <cbc:PricingUpdateRequestIndicator>true</cbc:PricingUpdateRequestIndicator>
+  <cbc:ItemUpdateRequestIndicator>true</cbc:ItemUpdateRequestIndicator>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-20</cbc:StartDate>
+    <cbc:EndDate>2026-07-19</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0420</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -461,5 +613,70 @@ Inside `SellerSupplierParty`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:ContractorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ContractorCustomerParty>
+  <cac:RequestedCatalogueReference>
+    <cbc:ID>LD-CAT-SPRING-26</cbc:ID>
+  </cac:RequestedCatalogueReference>
+  <cac:ReferencedContract>
+    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+  </cac:ReferencedContract>
+  <cac:TradingTerms>
+    <cbc:Information>Delivered duty paid to the store.</cbc:Information>
+  </cac:TradingTerms>
+  <cac:DocumentReference>
+    <cbc:ID>BM-RANGE-26</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ApplicableTerritoryAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:ApplicableTerritoryAddress>
+  <cac:RequestedLanguage>
+    <cbc:ID>en</cbc:ID>
+    <cbc:Name>English</cbc:Name>
+    <cbc:LocaleCode>EN</cbc:LocaleCode>
+  </cac:RequestedLanguage>
+  <cac:RequestedClassificationScheme>
+    <cbc:ID>HS</cbc:ID>
+    <cbc:Name>Harmonized System</cbc:Name>
+    <cbc:AgencyID>WCO</cbc:AgencyID>
+    <cbc:AgencyName>World Customs Organization</cbc:AgencyName>
+    <cbc:VersionID>2022</cbc:VersionID>
+    <cbc:URI>https://www.wcoomd.org</cbc:URI>
+    <cbc:LanguageID>en</cbc:LanguageID>
+    <cac:ClassificationCategory>
+      <cbc:Name>Seats</cbc:Name>
+      <cbc:CodeValue>9401</cbc:CodeValue>
+    </cac:ClassificationCategory>
+  </cac:RequestedClassificationScheme>
+  <cac:CatalogueRequestLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:ContractSubdivision>Garden</cbc:ContractSubdivision>
+    <cbc:Note>Pallet prices, please.</cbc:Note>
+    <cac:LineValidityPeriod>
+      <cbc:EndDate>2026-07-19</cbc:EndDate>
+    </cac:LineValidityPeriod>
+    <cac:RequiredItemLocationQuantity>
+      <cbc:MinimumQuantity unitCode="H87">24</cbc:MinimumQuantity>
+    </cac:RequiredItemLocationQuantity>
+    <cac:Item>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+    </cac:Item>
+  </cac:CatalogueRequestLine>
+  <cac:CatalogueRequestLine>
+    <cbc:ID>2</cbc:ID>
+    <cac:Item>
+      <cbc:Name>Bench side frame casting</cbc:Name>
+    </cac:Item>
+  </cac:CatalogueRequestLine>
 </CatalogueRequest>
 ```

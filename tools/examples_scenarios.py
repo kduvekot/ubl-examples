@@ -6,6 +6,7 @@ its reason. The parties are placed by tools/build_examples.py from
 world/documents.json; party, item and account content comes from the layers;
 lines, amounts and taxes are worked out by tools/examples_kit.py.
 """
+import uuid
 from decimal import Decimal
 
 import examples_kit as kit
@@ -3702,3 +3703,275 @@ def carnet(n, doc):
 
 SCENARIOS.update({"tender": tender, "rail": rail, "sea": sea, "air": air, "retail": retail, "road": road,
                   "furniture": furniture, "carnet": carnet})
+
+
+# ================================================================ enrichments: what a document adds, by flow and type
+ENRICH = {}
+
+
+def enrich(flow_id, doc_type):
+    """Register extra content for a flow's document type: fn(f, n, doc, out) returns a dict merged into the
+    document (nested blocks are completed, not replaced)."""
+    def deco(fn):
+        ENRICH.setdefault((flow_id, doc_type), []).append(fn)
+        return fn
+    return deco
+
+
+def _with_enrichment(flow_id, fn):
+    def run(n, doc):
+        out = fn(n, doc)
+        for e in ENRICH.get((flow_id, doc["doc"]), []):
+            kit.deep_merge(out, e(FLOWS[flow_id], n, doc, out) or {})
+        return out
+    return run
+
+
+def catalogue_ref(f, why, key="catalogue", version="1.0"):
+    return {"ID": V(f.numbers[key], why), "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:"
+                                                                                       f"{f.id}:{key}")),
+                                                     "The catalogue's UUID, as stated in the catalogue."),
+            "IssueDate": V(f.date(0), "Its issue date."), "IssueTime": V("09:00:00", "And time."),
+            "RevisionDate": V(f.date(31), "Revised by the specification update."),
+            "RevisionTime": V("14:00:00", "At that time."),
+            "Note": V("Spring catalogue 2026.", "Which catalogue."),
+            "Description": V("Benches and spare parts for resale.", "What it holds."),
+            "VersionID": V(version, "The version referred to."),
+            "PreviousVersionID": V("0.9", "The draft the store saw at the fair.")}
+
+
+def related(iid, q, why):
+    it = ITEM[iid]
+    return {"ID": V(it["sellers_id"], f"The related item: {it['name']}."), "Quantity": qty(q, it["unit"], why),
+            "Description": V(it["name"], "In words.")}
+
+
+@enrich("retail", "Catalogue")
+def _(f, n, doc, out):
+    lines = out["CatalogueLine"]
+    bench, frame = lines[0], lines[1]
+    common = {"ActionCode": V("Add", "The line is new in this catalogue."),
+              "LifeCycleStatusCode": V("Active", "The item is sold now."),
+              "OrderableIndicator": V("true", "It can be ordered."),
+              "SellerSupplierParty": {"Party": party("6-xb", short=True)},
+              "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
+              "LineValidityPeriod": {"StartDate": V(f.date(0), "From the issue."),
+                                     "EndDate": V(f.date(90), "With the catalogue.")}}
+    kit.deep_merge(bench, {**common,
+                           "Note": V("Pallets of four only.", "How it is sold."),
+                           "OrderableUnit": V("Pallet of 4", "The unit the store orders in."),
+                           "ContentUnitQuantity": qty(4, "H87", "Four benches in an orderable unit."),
+                           "OrderQuantityIncrementNumeric": V("4", "Orders go up in steps of four."),
+                           "MinimumOrderQuantity": qty(4, "H87", "One pallet."),
+                           "MaximumOrderQuantity": qty(192, "H87", "Two containers."),
+                           "WarrantyInformation": V("Five years on the frame, from the maker.", "The warranty."),
+                           "PackLevelCode": V("Pallet", "The pack level the line is for."),
+                           "WarrantyParty": party("5-xu", short=True),
+                           "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
+                           "ItemComparison": {"PriceAmount": price("520.00", "XBL", "The price per bench."),
+                                              "Quantity": qty(1, "H87", "For comparing per bench.")},
+                           "ComponentRelatedItem": [related("slat-1800", 5, "Five slats per bench."),
+                                                    related("bench-casting", 2, "Two side frames per bench.")],
+                           "AccessoryRelatedItem": {"ID": V("VI-ANCHOR-4", "The ground anchor set."),
+                                                    "Quantity": qty(1, "SET", "Supplied with each bench."),
+                                                    "Description": V("Four ground anchors and bolts.", "In words.")},
+                           "ComplementaryRelatedItem": related("garden-set-r", 1, "The store's garden set sells "
+                                                                                  "alongside."),
+                           "DocumentReference": {"ID": V("VI-DS-B180", "The maker's datasheet.")},
+                           "KeywordItemProperty": {"Name": V("Keyword", "A search word of the catalogue."),
+                                                   "Value": V("park bench", "The word.")}})
+    kit.deep_merge(frame, {**common,
+                           "Note": V("Spare part for the Serra 180.", "What it is for."),
+                           "OrderableUnit": V("Box", "One frame per box."),
+                           "MinimumOrderQuantity": qty(1, "H87", "Any quantity."),
+                           "RequiredRelatedItem": related("bench-serra-b", 1, "Fits only the Serra 180."),
+                           "ReplacementRelatedItem": {"ID": V("VI-C180-2026", "The 2026 casting replaces it from "
+                                                                              "May."),
+                                                      "Quantity": qty(1, "H87", "One for one.")},
+                           "ReplacedRelatedItem": {"ID": V("VI-C180-2024", "The casting this one replaced."),
+                                                   "Quantity": qty(1, "H87", "One for one.")}})
+    return {"ActionCode": V("Add", "A new catalogue."),
+            "RevisionDate": V(f.date(0), "Not revised yet: the issue date."),
+            "RevisionTime": V("09:00:00", "The issue time."),
+            "Note": V("Prices for trade customers, before sales tax.", "What the prices are."),
+            "Description": V("Benches and spare parts for resale.", "What the catalogue holds."),
+            "VersionID": V("1.0", "The first version."),
+            "PreviousVersionID": V("0.9", "The draft the store saw at the fair."),
+            "LineCountNumeric": V("2", "Two lines."),
+            "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement with the store."),
+                                   "ContractType": V("Supply agreement", "Its kind.")},
+            "SourceCatalogueReference": {"ID": V("VI-CAT-2026", "The maker's catalogue the lines come from.")},
+            "DocumentReference": {"ID": V("LD-GTC-2026", "The general terms of trade.")},
+            "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V("XB", "Sold in Bayvarra.")}},
+            "Signature": {"ID": V("LD-SIG-26-0420", "The distributor's seal."),
+                          "SignatoryParty": party("6-xb", short=True)},
+            "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
+            "TradingTerms": {"Information": V("Delivered duty paid to the store; 30 days net.", "The terms."),
+                             "Reference": V("LD-GTC-2026", "Where they are."),
+                             "ApplicableAddress": {"Country": {"IdentificationCode": V("XB", "In Bayvarra.")}}}}
+
+
+@enrich("retail", "CatalogueRequest")
+def _(f, n, doc, out):
+    return {"Name": V("Spring catalogue 2026", "The catalogue asked for."),
+            "Note": V("For the garden department.", "Who it is for."),
+            "Description": V("Benches and spare parts.", "What the store wants to see."),
+            "PricingUpdateRequestIndicator": V("true", "The store wants price updates during the season."),
+            "ItemUpdateRequestIndicator": V("true", "And changes to the items."),
+            "LineCountNumeric": V("2", "Two lines."),
+            "ValidityPeriod": {"StartDate": V(f.date(0), "For the season."), "EndDate": V(f.date(90), "Its end.")},
+            "Signature": {"ID": V("BM-SIG-26-0420", "The store's seal."), "SignatoryParty": party("26-xb",
+                                                                                                short=True)},
+            "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
+            "RequestedCatalogueReference": {"ID": V("LD-CAT-SPRING-26", "The catalogue as announced at the fair.")},
+            "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement.")},
+            "TradingTerms": {"Information": V("Delivered duty paid to the store.", "The terms the store expects.")},
+            "DocumentReference": {"ID": V("BM-RANGE-26", "The store's range plan.")},
+            "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V("XB", "For the store in Bayvarra.")}},
+            "RequestedLanguage": {"ID": V("en", "English."), "Name": V("English", "In words."),
+                                  "LocaleCode": V("EN", "The locale, as an ISO 639 code of UBL's language code list.")},
+            "RequestedClassificationScheme": {"ID": V("HS", "Items classified by the Harmonized System."),
+                                              "Name": V("Harmonized System", "In words."),
+                                              "AgencyID": V("WCO", "The World Customs Organization."),
+                                              "AgencyName": V("World Customs Organization", "In words."),
+                                              "VersionID": V("2022", "The edition."),
+                                              "URI": V("https://www.wcoomd.org", "Where it is published."),
+                                              "LanguageID": V("en", "In English."),
+                                              "ClassificationCategory": {"Name": V("Seats", "The heading the benches "
+                                                                                           "fall in."),
+                                                                         "CodeValue": V("9401", "HS heading 94.01.")}},
+            "CatalogueRequestLine": [
+                {"ID": V("1", "Benches."), "ContractSubdivision": V("Garden", "The part of the agreement."),
+                 "Note": V("Pallet prices, please.", "What the store asks."),
+                 "LineValidityPeriod": {"EndDate": V(f.date(90), "For the season.")},
+                 "RequiredItemLocationQuantity": {"MinimumQuantity": qty(24, "H87", "The store's first order.")},
+                 "Item": {"Name": V("Park bench Serra 180", "The item asked for.")}},
+                {"ID": V("2", "Spare frames."),
+                 "Item": {"Name": V("Bench side frame casting", "The item asked for.")}}]}
+
+
+def catalogue_update_head(f, name, version):
+    return {"Name": V(name, "What the update is."),
+            "RevisionDate": V(f.date(30), "The day of the change."),
+            "RevisionTime": V("14:00:00", "At that time."),
+            "Note": V("Applies to the spring catalogue.", "Which catalogue."),
+            "Description": V(name, "In words."),
+            "VersionID": V(version, "The catalogue version after the update."),
+            "LineCountNumeric": V("1", "One line."),
+            "ValidityPeriod": {"StartDate": V(f.date(30), "From the change."),
+                               "EndDate": V(f.date(90), "Until the catalogue ends.")},
+            "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement.")},
+            "Signature": {"ID": V(f"LD-SIG-26-{version}", "The distributor's seal."),
+                          "SignatoryParty": party("6-xb", short=True)},
+            "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
+            "TradingTerms": {"Information": V("Unchanged.", "The terms stay as in the catalogue.")},
+            "DefaultLanguage": {"ID": V("en", "English."), "Name": V("English", "In words.")},
+            "RelatedCatalogueReference": catalogue_ref(f, "The catalogue updated.")}
+
+
+@enrich("retail", "CataloguePricingUpdate")
+def _(f, n, doc, out):
+    return {**catalogue_update_head(f, "Price change of the side frame", "1.1"),
+            "CataloguePricingUpdateLine": {"ContractorCustomerParty": {"Party": party("26-xb", short=True)},
+                                           "SellerSupplierParty": {"Party": party("6-xb", short=True)}}}
+
+
+@enrich("retail", "CatalogueItemSpecificationUpdate")
+def _(f, n, doc, out):
+    return {**catalogue_update_head(f, "New slat wood for the Serra 180", "1.2"),
+            "CatalogueItemSpecificationUpdateLine": {"ContractorCustomerParty": {"Party": party("26-xb",
+                                                                                                short=True)},
+                                                     "SellerSupplierParty": {"Party": party("6-xb", short=True)}}}
+
+
+@enrich("retail", "CatalogueDeletion")
+def _(f, n, doc, out):
+    return {"Name": V("Withdrawal of the spring catalogue", "What it is."),
+            "EffectiveDate": V(f.date(61), "From the next day."), "EffectiveTime": V("00:00:00", "From midnight."),
+            "Note": V("Replaced by the summer catalogue.", "Why."), "VersionID": V("1.2", "The last version."),
+            "Description": V("The spring catalogue is no longer valid.", "In words."),
+            "ValidityPeriod": {"EndDate": V(f.date(60), "The last day it was valid.")},
+            "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement.")},
+            "Signature": {"ID": V("LD-SIG-26-0619", "The distributor's seal."),
+                          "SignatoryParty": party("6-xb", short=True)},
+            "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
+            "DeletedCatalogueReference": catalogue_ref(f, "The catalogue withdrawn.", version="1.2")}
+
+
+@enrich("retail", "Forecast")
+def _(f, n, doc, out):
+    return {"Note": V("Includes the spring garden promotion.", "What the figure includes."),
+            "VersionID": V("1", "The first forecast of the season."),
+            "BasedOnConsensusIndicator": V("false", "The store's own figure, not yet agreed with the distributor."),
+            "AdditionalDocumentReference": {"ID": V(f.numbers.get("event", "BM-RE-26"), "The promotion it counts "
+                                                                                       "on.")},
+            "Signature": {"ID": V("BM-SIG-26-0422", "The store's seal."),
+                          "SignatoryParty": party("26-xb", short=True)},
+            "ForecastLine": {"Note": V("Week-by-week figures follow in the store's portal.", "Where the detail is."),
+                             "FrozenDocumentIndicator": V("false", "The figure may still change."),
+                             "ForecastPeriod": {"StartDate": V(f.date(14), "The six weeks."),
+                                                "EndDate": V(f.date(56), "Their end.")}}}
+
+
+@enrich("retail", "RetailEvent")
+def _(f, n, doc, out):
+    bench = {"Name": V("Park bench Serra 180", "The item promoted."),
+             "SellersItemIdentification": {"ID": V("LD-10442", "The distributor's number.")}}
+    return {"Note": V("Agreed with the distributor's sales team.", "Status of the agreement."),
+            "SellerEventID": V("LD-PROMO-26-03", "The distributor's number for the promotion."),
+            "BuyerEventID": V("BM-SPRING-GARDEN-26", "The store's number."),
+            "OriginalDocumentReference": {"ID": V("BM-PROMO-PLAN-26", "The store's promotion plan.")},
+            "Signature": {"ID": V("BM-SIG-26-0422E", "The store's seal."),
+                          "SignatoryParty": party("26-xb", short=True)},
+            "EventComment": {"Comment": V("Shelf space for 12 benches at the entrance.", "What the store "
+                                                                                          "prepares."),
+                             "IssueDate": V(f.date(2), "Written with the announcement."),
+                             "IssueTime": V("11:00:00", "At that time.")},
+            "PromotionalEvent": {
+                "PromotionalEventTypeCode": V("TPR", "A temporary price reduction."),
+                "SubmissionDate": V(f.date(2), "Proposed now."),
+                "FirstShipmentAvailabilityDate": V(f.date(9), "Stock can arrive from day 9."),
+                "LatestProposalAcceptanceDate": V(f.date(6), "The distributor answers by day 6."),
+                "PromotionalSpecification": {
+                    "SpecificationID": V("BM-SPRING-GARDEN-26/1", "The first part of the promotion."),
+                    "PromotionalEventLineItem": {
+                        "Amount": amount(Decimal("74.90"), "XBL", "The price reduction per bench: 10 % of 749."),
+                        "EventLineItem": {
+                            "LineNumberNumeric": V("1", "The line."),
+                            "ParticipatingLocationsLocation": {"Name": V("Brightmarket Stores, Lumeport", "The "
+                                                                                                           "shop.")},
+                            "RetailPlannedImpact": {"Amount": amount(Decimal("17976.00"), "XBL", "24 benches more "
+                                                                     "at 749.00."),
+                                                    "ForecastPurposeCode": V("Sales", "Planned extra sales."),
+                                                    "ForecastTypeCode": V("Total", "In total."),
+                                                    "Period": {"StartDate": V(f.date(21), "The promotion."),
+                                                               "EndDate": V(f.date(34), "Its end.")}},
+                            "SupplyItem": bench}}}},
+            "MiscellaneousEvent": {"MiscellaneousEventTypeCode": V("StoreOpening", "Late opening on the first "
+                                                                                   "Saturday."),
+                                   "EventLineItem": {"LineNumberNumeric": V("1", "The line."),
+                                                     "SupplyItem": bench}}}
+
+
+@enrich("retail", "InventoryReport")
+def _(f, n, doc, out):
+    return {"Note": V("Counted on Sunday evening.", "When."),
+            "DocumentCurrencyCode": kit.currency_line("XBL", "the store's currency"),
+            "InventoryPeriod": {"StartDate": V(f.date(-4), "The week."), "EndDate": V(f.date(3), "Its end.")},
+            "DocumentReference": {"ID": V(f.numbers.get("forecast", ""), "The forecast the stock is compared "
+                                                                         "with.")},
+            "Signature": {"ID": V("BM-SIG-26-0423", "The store's seal."),
+                          "SignatoryParty": party("26-xb", short=True)},
+            "InventoryReportLine": {"Note": V("Below the minimum of 6 before the promotion.", "Why it matters."),
+                                    "InventoryValueAmount": amount(Decimal("1560.00"), "XBL", "Three at the "
+                                                                                              "purchase price."),
+                                    "AvailabilityDate": V(f.date(3), "Available now."),
+                                    "AvailabilityStatusCode": V("Available", "On the shelf."),
+                                    "InventoryLocation": {"Name": V("Garden department, ground floor",
+                                                                    "Where they stand.")}}}
+
+
+FLOWS = {"ore": ORE, "road": ROAD, "rail": RAIL, "plastics": PLASTICS, "retail": RETAIL, "sea": SEA, "air": AIR,
+         "cotton": COTTON, "tender": TENDER, "carnet": CARNET, "waste": WASTE, "utilities": UTILITIES, "wood": WOOD,
+         "furniture": FURNITURE, "packaging": PACKAGING}
+SCENARIOS = {k: _with_enrichment(k, v) for k, v in SCENARIOS.items()}

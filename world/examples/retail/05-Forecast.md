@@ -26,6 +26,12 @@ The retailer forecasts its sales for the coming weeks.
   Sent after the catalogue arrived.
 - `IssueTime` = **11:55:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Includes the spring garden promotion.**  
+  What the figure includes.
+- `VersionID` = **1**  
+  The first forecast of the season.
+- `BasedOnConsensusIndicator` = **false**  
+  The store's own figure, not yet agreed with the distributor.
 - `ForecastPurposeCode` = **Sales**  
   A forecast of the store's sales, so the distributor can plan its stock.
 
@@ -37,6 +43,24 @@ Inside `ForecastPeriod`:
   The forecast covers the next six weeks.
 - `EndDate` = **2026-06-15**  
   The end of the forecast period.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BM-RE-26**  
+  The promotion it counts on.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0422**  
+  The store's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -280,8 +304,16 @@ Inside `ForecastLine`:
 
 - `ID` = **1**  
   The first and only line.
+- `Note` = **Week-by-week figures follow in the store's portal.**  
+  Where the detail is.
+- `FrozenDocumentIndicator` = **false**  
+  The figure may still change.
 - `ForecastTypeCode` = **Total**  
   The total expected sales of the item in the period.
+- `ForecastPeriod/StartDate` = **2026-05-04**  
+  The six weeks.
+- `ForecastPeriod/EndDate` = **2026-06-15**  
+  Their end.
 - `SalesItem/Quantity` = **40** (unitCode `H87`)  
   Forty benches over six weeks, promotion included.
 - `SalesItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
@@ -496,11 +528,28 @@ Inside `ForecastLine`:
   <cbc:UUID>60706c39-36eb-5254-aefe-265082af3657</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>11:55:00</cbc:IssueTime>
+  <cbc:Note>Includes the spring garden promotion.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:BasedOnConsensusIndicator>false</cbc:BasedOnConsensusIndicator>
   <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
   <cac:ForecastPeriod>
     <cbc:StartDate>2026-05-04</cbc:StartDate>
     <cbc:EndDate>2026-06-15</cbc:EndDate>
   </cac:ForecastPeriod>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BM-RE-26</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0422</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -707,7 +756,13 @@ Inside `ForecastLine`:
   </cac:SellerSupplierParty>
   <cac:ForecastLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Week-by-week figures follow in the store's portal.</cbc:Note>
+    <cbc:FrozenDocumentIndicator>false</cbc:FrozenDocumentIndicator>
     <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+    <cac:ForecastPeriod>
+      <cbc:StartDate>2026-05-04</cbc:StartDate>
+      <cbc:EndDate>2026-06-15</cbc:EndDate>
+    </cac:ForecastPeriod>
     <cac:SalesItem>
       <cbc:Quantity unitCode="H87">40</cbc:Quantity>
       <cac:Item>

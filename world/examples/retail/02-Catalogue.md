@@ -22,12 +22,28 @@ The distributor's catalogue of items and prices; items carry the identifiers of 
   The provider's catalogue number.
 - `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `ActionCode` = **Add**  
+  A new catalogue.
 - `Name` = **Lumeway Distribution catalogue**  
   The catalogue's title.
 - `IssueDate` = **2026-04-20**  
   The spring catalogue for the store.
 - `IssueTime` = **17:28:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `RevisionDate` = **2026-04-20**  
+  Not revised yet: the issue date.
+- `RevisionTime` = **09:00:00**  
+  The issue time.
+- `Note` = **Prices for trade customers, before sales tax.**  
+  What the prices are.
+- `Description` = **Benches and spare parts for resale.**  
+  What the catalogue holds.
+- `VersionID` = **1.0**  
+  The first version.
+- `PreviousVersionID` = **0.9**  
+  The draft the store saw at the fair.
+- `LineCountNumeric` = **2**  
+  Two lines.
 
 ### Validity Period
 
@@ -37,6 +53,47 @@ Inside `ValidityPeriod`:
   The prices apply from the issue date.
 - `EndDate` = **2026-07-19**  
   Until the next catalogue.
+
+### Referenced Contract
+
+Inside `ReferencedContract`:
+
+- `ID` = **LD-BM-SUPPLY-2026**  
+  The supply agreement with the store.
+- `ContractType` = **Supply agreement**  
+  Its kind.
+
+### Source Catalogue Reference
+
+Inside `SourceCatalogueReference`:
+
+- `ID` = **VI-CAT-2026**  
+  The maker's catalogue the lines come from.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **LD-GTC-2026**  
+  The general terms of trade.
+
+### Applicable Territory Address
+
+Inside `ApplicableTerritoryAddress`:
+
+- `Country/IdentificationCode` = **XB**  
+  Sold in Bayvarra.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-0420**  
+  The distributor's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Provider Party
 
@@ -265,12 +322,100 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 
+### Contractor Customer Party
+
+Inside `ContractorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Trading Terms
+
+Inside `TradingTerms`:
+
+- `Information` = **Delivered duty paid to the store; 30 days net.**  
+  The terms.
+- `Reference` = **LD-GTC-2026**  
+  Where they are.
+- `ApplicableAddress/Country/IdentificationCode` = **XB**  
+  In Bayvarra.
+
 ### Catalogue Line
 
 Inside `CatalogueLine`:
 
 - `ID` = **1**  
   The line number.
+- `ActionCode` = **Add**  
+  The line is new in this catalogue.
+- `LifeCycleStatusCode` = **Active**  
+  The item is sold now.
+- `Note` = **Pallets of four only.**  
+  How it is sold.
+- `OrderableIndicator` = **true**  
+  It can be ordered.
+- `OrderableUnit` = **Pallet of 4**  
+  The unit the store orders in.
+- `ContentUnitQuantity` = **4** (unitCode `H87`)  
+  Four benches in an orderable unit.
+- `OrderQuantityIncrementNumeric` = **4**  
+  Orders go up in steps of four.
+- `MinimumOrderQuantity` = **4** (unitCode `H87`)  
+  One pallet.
+- `MaximumOrderQuantity` = **192** (unitCode `H87`)  
+  Two containers.
+- `WarrantyInformation` = **Five years on the frame, from the maker.**  
+  The warranty.
+- `PackLevelCode` = **Pallet**  
+  The pack level the line is for.
+- `ContractorCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ContractorCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `WarrantyParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
+  Five years.
+- `LineValidityPeriod/StartDate` = **2026-04-20**  
+  From the issue.
+- `LineValidityPeriod/EndDate` = **2026-07-19**  
+  With the catalogue.
+- `ItemComparison/PriceAmount` = **520** (currencyID `XBL`)  
+  The price per bench.
+- `ItemComparison/Quantity` = **1** (unitCode `H87`)  
+  For comparing per bench.
+- `ComponentRelatedItem/ID` = **MS-SL-1800**  
+  The related item: Hardwood bench slat 1800.
+- `ComponentRelatedItem/Quantity` = **5** (unitCode `H87`)  
+  Five slats per bench.
+- `ComponentRelatedItem/Description` = **Hardwood bench slat 1800**  
+  In words.
+- `ComponentRelatedItem/ID` = **VI-C180**  
+  The related item: Bench side frame casting.
+- `ComponentRelatedItem/Quantity` = **2** (unitCode `H87`)  
+  Two side frames per bench.
+- `ComponentRelatedItem/Description` = **Bench side frame casting**  
+  In words.
+- `AccessoryRelatedItem/ID` = **VI-ANCHOR-4**  
+  The ground anchor set.
+- `AccessoryRelatedItem/Quantity` = **1** (unitCode `SET`)  
+  Supplied with each bench.
+- `AccessoryRelatedItem/Description` = **Four ground anchors and bolts.**  
+  In words.
+- `ComplementaryRelatedItem/ID` = **BM-551004**  
+  The related item: Garden bench set Marrow.
+- `ComplementaryRelatedItem/Quantity` = **1** (unitCode `SET`)  
+  The store's garden set sells alongside.
+- `ComplementaryRelatedItem/Description` = **Garden bench set Marrow**  
+  In words.
 - `RequiredItemLocationQuantity/LeadTimeMeasure` = **3** (unitCode `DAY`)  
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **4** (unitCode `H87`)  
@@ -333,6 +478,8 @@ Inside `CatalogueLine`:
   The first deliveries from the season's stock.
 - `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/EndDate` = **2026-07-19**  
   The last.
+- `DocumentReference/ID` = **VI-DS-B180**  
+  The maker's datasheet.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/CatalogueIndicator` = **true**  
@@ -621,8 +768,50 @@ Inside `CatalogueLine`:
   The scale of the score.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `KeywordItemProperty/Name` = **Keyword**  
+  A search word of the catalogue.
+- `KeywordItemProperty/Value` = **park bench**  
+  The word.
 - `ID` = **2**  
   The line number.
+- `ActionCode` = **Add**  
+  The line is new in this catalogue.
+- `LifeCycleStatusCode` = **Active**  
+  The item is sold now.
+- `Note` = **Spare part for the Serra 180.**  
+  What it is for.
+- `OrderableIndicator` = **true**  
+  It can be ordered.
+- `OrderableUnit` = **Box**  
+  One frame per box.
+- `MinimumOrderQuantity` = **1** (unitCode `H87`)  
+  Any quantity.
+- `ContractorCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ContractorCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineValidityPeriod/StartDate` = **2026-04-20**  
+  From the issue.
+- `LineValidityPeriod/EndDate` = **2026-07-19**  
+  With the catalogue.
+- `RequiredRelatedItem/ID` = **LD-10442**  
+  The related item: Park bench Serra 180.
+- `RequiredRelatedItem/Quantity` = **1** (unitCode `H87`)  
+  Fits only the Serra 180.
+- `RequiredRelatedItem/Description` = **Park bench Serra 180**  
+  In words.
+- `ReplacementRelatedItem/ID` = **VI-C180-2026**  
+  The 2026 casting replaces it from May.
+- `ReplacementRelatedItem/Quantity` = **1** (unitCode `H87`)  
+  One for one.
+- `ReplacedRelatedItem/ID` = **VI-C180-2024**  
+  The casting this one replaced.
+- `ReplacedRelatedItem/Quantity` = **1** (unitCode `H87`)  
+  One for one.
 - `RequiredItemLocationQuantity/LeadTimeMeasure` = **2** (unitCode `DAY`)  
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `H87`)  
@@ -707,13 +896,47 @@ Inside `CatalogueLine`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-CAT-26-0218</cbc:ID>
   <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
+  <cbc:ActionCode>Add</cbc:ActionCode>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:28:00</cbc:IssueTime>
+  <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
+  <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
+  <cbc:Note>Prices for trade customers, before sales tax.</cbc:Note>
+  <cbc:Description>Benches and spare parts for resale.</cbc:Description>
+  <cbc:VersionID>1.0</cbc:VersionID>
+  <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-20</cbc:StartDate>
     <cbc:EndDate>2026-07-19</cbc:EndDate>
   </cac:ValidityPeriod>
+  <cac:ReferencedContract>
+    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+    <cbc:ContractType>Supply agreement</cbc:ContractType>
+  </cac:ReferencedContract>
+  <cac:SourceCatalogueReference>
+    <cbc:ID>VI-CAT-2026</cbc:ID>
+  </cac:SourceCatalogueReference>
+  <cac:DocumentReference>
+    <cbc:ID>LD-GTC-2026</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ApplicableTerritoryAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:ApplicableTerritoryAddress>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-0420</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ProviderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -908,8 +1131,97 @@ Inside `CatalogueLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:ContractorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ContractorCustomerParty>
+  <cac:TradingTerms>
+    <cbc:Information>Delivered duty paid to the store; 30 days net.</cbc:Information>
+    <cbc:Reference>LD-GTC-2026</cbc:Reference>
+    <cac:ApplicableAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableAddress>
+  </cac:TradingTerms>
   <cac:CatalogueLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:LifeCycleStatusCode>Active</cbc:LifeCycleStatusCode>
+    <cbc:Note>Pallets of four only.</cbc:Note>
+    <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+    <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
+    <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
+    <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
+    <cbc:MinimumOrderQuantity unitCode="H87">4</cbc:MinimumOrderQuantity>
+    <cbc:MaximumOrderQuantity unitCode="H87">192</cbc:MaximumOrderQuantity>
+    <cbc:WarrantyInformation>Five years on the frame, from the maker.</cbc:WarrantyInformation>
+    <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
+    <cac:ContractorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brightmarket Stores</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:ContractorCustomerParty>
+    <cac:SellerSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:SellerSupplierParty>
+    <cac:WarrantyParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:WarrantyParty>
+    <cac:WarrantyValidityPeriod>
+      <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+    </cac:WarrantyValidityPeriod>
+    <cac:LineValidityPeriod>
+      <cbc:StartDate>2026-04-20</cbc:StartDate>
+      <cbc:EndDate>2026-07-19</cbc:EndDate>
+    </cac:LineValidityPeriod>
+    <cac:ItemComparison>
+      <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+    </cac:ItemComparison>
+    <cac:ComponentRelatedItem>
+      <cbc:ID>MS-SL-1800</cbc:ID>
+      <cbc:Quantity unitCode="H87">5</cbc:Quantity>
+      <cbc:Description>Hardwood bench slat 1800</cbc:Description>
+    </cac:ComponentRelatedItem>
+    <cac:ComponentRelatedItem>
+      <cbc:ID>VI-C180</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+      <cbc:Description>Bench side frame casting</cbc:Description>
+    </cac:ComponentRelatedItem>
+    <cac:AccessoryRelatedItem>
+      <cbc:ID>VI-ANCHOR-4</cbc:ID>
+      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
+      <cbc:Description>Four ground anchors and bolts.</cbc:Description>
+    </cac:AccessoryRelatedItem>
+    <cac:ComplementaryRelatedItem>
+      <cbc:ID>BM-551004</cbc:ID>
+      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
+      <cbc:Description>Garden bench set Marrow</cbc:Description>
+    </cac:ComplementaryRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="H87">4</cbc:MinimumQuantity>
@@ -965,6 +1277,9 @@ Inside `CatalogueLine`:
         <cbc:EndDate>2026-07-19</cbc:EndDate>
       </cac:ApplicableDeliveryPeriod>
     </cac:RequiredItemLocationQuantity>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-B180</cbc:ID>
+    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
@@ -1231,9 +1546,56 @@ Inside `CatalogueLine`:
         </cac:ProductDocumentationDocumentReference>
       </cac:CircularityProfile>
     </cac:Item>
+    <cac:KeywordItemProperty>
+      <cbc:Name>Keyword</cbc:Name>
+      <cbc:Value>park bench</cbc:Value>
+    </cac:KeywordItemProperty>
   </cac:CatalogueLine>
   <cac:CatalogueLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:LifeCycleStatusCode>Active</cbc:LifeCycleStatusCode>
+    <cbc:Note>Spare part for the Serra 180.</cbc:Note>
+    <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+    <cbc:OrderableUnit>Box</cbc:OrderableUnit>
+    <cbc:MinimumOrderQuantity unitCode="H87">1</cbc:MinimumOrderQuantity>
+    <cac:ContractorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brightmarket Stores</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:ContractorCustomerParty>
+    <cac:SellerSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:SellerSupplierParty>
+    <cac:LineValidityPeriod>
+      <cbc:StartDate>2026-04-20</cbc:StartDate>
+      <cbc:EndDate>2026-07-19</cbc:EndDate>
+    </cac:LineValidityPeriod>
+    <cac:RequiredRelatedItem>
+      <cbc:ID>LD-10442</cbc:ID>
+      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+    </cac:RequiredRelatedItem>
+    <cac:ReplacementRelatedItem>
+      <cbc:ID>VI-C180-2026</cbc:ID>
+      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+    </cac:ReplacementRelatedItem>
+    <cac:ReplacedRelatedItem>
+      <cbc:ID>VI-C180-2024</cbc:ID>
+      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+    </cac:ReplacedRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">2</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="H87">1</cbc:MinimumQuantity>

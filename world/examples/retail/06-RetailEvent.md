@@ -26,10 +26,16 @@ A promotion next month will lift demand; the distributor needs to know before it
   Announced with the forecast.
 - `IssueTime` = **08:17:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Agreed with the distributor's sales team.**  
+  Status of the agreement.
 - `RetailEventName` = **Spring garden promotion**  
   The name of the promotion.
 - `RetailEventStatusCode` = **Confirmed**  
   The promotion is decided, not only planned.
+- `SellerEventID` = **LD-PROMO-26-03**  
+  The distributor's number for the promotion.
+- `BuyerEventID` = **BM-SPRING-GARDEN-26**  
+  The store's number.
 - `Description` = **Ten per cent off garden furniture for two weeks.**  
   What the promotion is.
 
@@ -41,6 +47,24 @@ Inside `Period`:
   The promotion starts in three weeks.
 - `EndDate` = **2026-05-24**  
   It lasts two weeks.
+
+### Original Document Reference
+
+Inside `OriginalDocumentReference`:
+
+- `ID` = **BM-PROMO-PLAN-26**  
+  The store's promotion plan.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0422E**  
+  The store's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -278,6 +302,65 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 
+### Event Comment
+
+Inside `EventComment`:
+
+- `Comment` = **Shelf space for 12 benches at the entrance.**  
+  What the store prepares.
+- `IssueDate` = **2026-04-22**  
+  Written with the announcement.
+- `IssueTime` = **11:00:00**  
+  At that time.
+
+### Promotional Event
+
+Inside `PromotionalEvent`:
+
+- `PromotionalEventTypeCode` = **TPR**  
+  A temporary price reduction.
+- `SubmissionDate` = **2026-04-22**  
+  Proposed now.
+- `FirstShipmentAvailabilityDate` = **2026-04-29**  
+  Stock can arrive from day 9.
+- `LatestProposalAcceptanceDate` = **2026-04-26**  
+  The distributor answers by day 6.
+- `PromotionalSpecification/SpecificationID` = **BM-SPRING-GARDEN-26/1**  
+  The first part of the promotion.
+- `PromotionalSpecification/PromotionalEventLineItem/Amount` = **74.90** (currencyID `XBL`)  
+  The price reduction per bench: 10 % of 749.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/LineNumberNumeric` = **1**  
+  The line.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/ParticipatingLocationsLocation/Name` = **Brightmarket Stores, Lumeport**  
+  The shop.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/Amount` = **17976.00** (currencyID `XBL`)  
+  24 benches more at 749.00.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/ForecastPurposeCode` = **Sales**  
+  Planned extra sales.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/ForecastTypeCode` = **Total**  
+  In total.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/Period/StartDate` = **2026-05-11**  
+  The promotion.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/Period/EndDate` = **2026-05-24**  
+  Its end.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/SupplyItem/Name` = **Park bench Serra 180**  
+  The item promoted.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LD-10442**  
+  The distributor's number.
+
+### Miscellaneous Event
+
+Inside `MiscellaneousEvent`:
+
+- `MiscellaneousEventTypeCode` = **StoreOpening**  
+  Late opening on the first Saturday.
+- `EventLineItem/LineNumberNumeric` = **1**  
+  The line.
+- `EventLineItem/SupplyItem/Name` = **Park bench Serra 180**  
+  The item promoted.
+- `EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LD-10442**  
+  The distributor's number.
+
 ## The document
 
 ```xml
@@ -291,13 +374,30 @@ Inside `SellerSupplierParty`:
   <cbc:UUID>31926ddb-5dfd-59d6-bb1b-86b3926753e7</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>08:17:00</cbc:IssueTime>
+  <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
   <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
   <cbc:RetailEventStatusCode>Confirmed</cbc:RetailEventStatusCode>
+  <cbc:SellerEventID>LD-PROMO-26-03</cbc:SellerEventID>
+  <cbc:BuyerEventID>BM-SPRING-GARDEN-26</cbc:BuyerEventID>
   <cbc:Description>Ten per cent off garden furniture for two weeks.</cbc:Description>
   <cac:Period>
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-05-24</cbc:EndDate>
   </cac:Period>
+  <cac:OriginalDocumentReference>
+    <cbc:ID>BM-PROMO-PLAN-26</cbc:ID>
+  </cac:OriginalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0422E</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -502,5 +602,55 @@ Inside `SellerSupplierParty`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:EventComment>
+    <cbc:Comment>Shelf space for 12 benches at the entrance.</cbc:Comment>
+    <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+    <cbc:IssueTime>11:00:00</cbc:IssueTime>
+  </cac:EventComment>
+  <cac:PromotionalEvent>
+    <cbc:PromotionalEventTypeCode>TPR</cbc:PromotionalEventTypeCode>
+    <cbc:SubmissionDate>2026-04-22</cbc:SubmissionDate>
+    <cbc:FirstShipmentAvailabilityDate>2026-04-29</cbc:FirstShipmentAvailabilityDate>
+    <cbc:LatestProposalAcceptanceDate>2026-04-26</cbc:LatestProposalAcceptanceDate>
+    <cac:PromotionalSpecification>
+      <cbc:SpecificationID>BM-SPRING-GARDEN-26/1</cbc:SpecificationID>
+      <cac:PromotionalEventLineItem>
+        <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
+        <cac:EventLineItem>
+          <cbc:LineNumberNumeric>1</cbc:LineNumberNumeric>
+          <cac:ParticipatingLocationsLocation>
+            <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
+          </cac:ParticipatingLocationsLocation>
+          <cac:RetailPlannedImpact>
+            <cbc:Amount currencyID="XBL">17976.00</cbc:Amount>
+            <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
+            <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+            <cac:Period>
+              <cbc:StartDate>2026-05-11</cbc:StartDate>
+              <cbc:EndDate>2026-05-24</cbc:EndDate>
+            </cac:Period>
+          </cac:RetailPlannedImpact>
+          <cac:SupplyItem>
+            <cbc:Name>Park bench Serra 180</cbc:Name>
+            <cac:SellersItemIdentification>
+              <cbc:ID>LD-10442</cbc:ID>
+            </cac:SellersItemIdentification>
+          </cac:SupplyItem>
+        </cac:EventLineItem>
+      </cac:PromotionalEventLineItem>
+    </cac:PromotionalSpecification>
+  </cac:PromotionalEvent>
+  <cac:MiscellaneousEvent>
+    <cbc:MiscellaneousEventTypeCode>StoreOpening</cbc:MiscellaneousEventTypeCode>
+    <cac:EventLineItem>
+      <cbc:LineNumberNumeric>1</cbc:LineNumberNumeric>
+      <cac:SupplyItem>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:SupplyItem>
+    </cac:EventLineItem>
+  </cac:MiscellaneousEvent>
 </RetailEvent>
 ```

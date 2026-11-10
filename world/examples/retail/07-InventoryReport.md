@@ -26,6 +26,37 @@ The retailer reports its stock per item, so the distributor can replenish.
   The weekly stock report.
 - `IssueTime` = **17:43:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Counted on Sunday evening.**  
+  When.
+- `DocumentCurrencyCode` = **XBL**  
+  The lume, the store's currency; it has two decimals.
+
+### Inventory Period
+
+Inside `InventoryPeriod`:
+
+- `StartDate` = **2026-04-16**  
+  The week.
+- `EndDate` = **2026-04-23**  
+  Its end.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BS-FC-26-0221**  
+  The forecast the stock is compared with.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0423**  
+  The store's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Retailer Customer Party
 
@@ -260,8 +291,16 @@ Inside `InventoryReportLine`:
 
 - `ID` = **1**  
   The first and only line.
+- `Note` = **Below the minimum of 6 before the promotion.**  
+  Why it matters.
 - `Quantity` = **3** (unitCode `H87`)  
   Three benches left in the garden department.
+- `InventoryValueAmount` = **1560.00** (currencyID `XBL`)  
+  Three at the purchase price.
+- `AvailabilityDate` = **2026-04-23**  
+  Available now.
+- `AvailabilityStatusCode` = **Available**  
+  On the shelf.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -460,6 +499,8 @@ Inside `InventoryReportLine`:
   The scale of the score.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `InventoryLocation/Name` = **Garden department, ground floor**  
+  Where they stand.
 
 ## The document
 
@@ -474,6 +515,26 @@ Inside `InventoryReportLine`:
   <cbc:UUID>fad19e90-681e-50c2-8501-5068414c15a8</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>17:43:00</cbc:IssueTime>
+  <cbc:Note>Counted on Sunday evening.</cbc:Note>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:InventoryPeriod>
+    <cbc:StartDate>2026-04-16</cbc:StartDate>
+    <cbc:EndDate>2026-04-23</cbc:EndDate>
+  </cac:InventoryPeriod>
+  <cac:DocumentReference>
+    <cbc:ID>BS-FC-26-0221</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0423</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:RetailerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -672,7 +733,11 @@ Inside `InventoryReportLine`:
   </cac:SellerSupplierParty>
   <cac:InventoryReportLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Below the minimum of 6 before the promotion.</cbc:Note>
     <cbc:Quantity unitCode="H87">3</cbc:Quantity>
+    <cbc:InventoryValueAmount currencyID="XBL">1560.00</cbc:InventoryValueAmount>
+    <cbc:AvailabilityDate>2026-04-23</cbc:AvailabilityDate>
+    <cbc:AvailabilityStatusCode>Available</cbc:AvailabilityStatusCode>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -850,6 +915,9 @@ Inside `InventoryReportLine`:
         </cac:ProductDocumentationDocumentReference>
       </cac:CircularityProfile>
     </cac:Item>
+    <cac:InventoryLocation>
+      <cbc:Name>Garden department, ground floor</cbc:Name>
+    </cac:InventoryLocation>
   </cac:InventoryReportLine>
 </InventoryReport>
 ```

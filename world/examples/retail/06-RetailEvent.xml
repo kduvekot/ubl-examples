@@ -8,13 +8,30 @@
   <cbc:UUID>31926ddb-5dfd-59d6-bb1b-86b3926753e7</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>08:17:00</cbc:IssueTime>
+  <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
   <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
   <cbc:RetailEventStatusCode>Confirmed</cbc:RetailEventStatusCode>
+  <cbc:SellerEventID>LD-PROMO-26-03</cbc:SellerEventID>
+  <cbc:BuyerEventID>BM-SPRING-GARDEN-26</cbc:BuyerEventID>
   <cbc:Description>Ten per cent off garden furniture for two weeks.</cbc:Description>
   <cac:Period>
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-05-24</cbc:EndDate>
   </cac:Period>
+  <cac:OriginalDocumentReference>
+    <cbc:ID>BM-PROMO-PLAN-26</cbc:ID>
+  </cac:OriginalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0422E</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -219,4 +236,54 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:EventComment>
+    <cbc:Comment>Shelf space for 12 benches at the entrance.</cbc:Comment>
+    <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+    <cbc:IssueTime>11:00:00</cbc:IssueTime>
+  </cac:EventComment>
+  <cac:PromotionalEvent>
+    <cbc:PromotionalEventTypeCode>TPR</cbc:PromotionalEventTypeCode>
+    <cbc:SubmissionDate>2026-04-22</cbc:SubmissionDate>
+    <cbc:FirstShipmentAvailabilityDate>2026-04-29</cbc:FirstShipmentAvailabilityDate>
+    <cbc:LatestProposalAcceptanceDate>2026-04-26</cbc:LatestProposalAcceptanceDate>
+    <cac:PromotionalSpecification>
+      <cbc:SpecificationID>BM-SPRING-GARDEN-26/1</cbc:SpecificationID>
+      <cac:PromotionalEventLineItem>
+        <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
+        <cac:EventLineItem>
+          <cbc:LineNumberNumeric>1</cbc:LineNumberNumeric>
+          <cac:ParticipatingLocationsLocation>
+            <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
+          </cac:ParticipatingLocationsLocation>
+          <cac:RetailPlannedImpact>
+            <cbc:Amount currencyID="XBL">17976.00</cbc:Amount>
+            <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
+            <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+            <cac:Period>
+              <cbc:StartDate>2026-05-11</cbc:StartDate>
+              <cbc:EndDate>2026-05-24</cbc:EndDate>
+            </cac:Period>
+          </cac:RetailPlannedImpact>
+          <cac:SupplyItem>
+            <cbc:Name>Park bench Serra 180</cbc:Name>
+            <cac:SellersItemIdentification>
+              <cbc:ID>LD-10442</cbc:ID>
+            </cac:SellersItemIdentification>
+          </cac:SupplyItem>
+        </cac:EventLineItem>
+      </cac:PromotionalEventLineItem>
+    </cac:PromotionalSpecification>
+  </cac:PromotionalEvent>
+  <cac:MiscellaneousEvent>
+    <cbc:MiscellaneousEventTypeCode>StoreOpening</cbc:MiscellaneousEventTypeCode>
+    <cac:EventLineItem>
+      <cbc:LineNumberNumeric>1</cbc:LineNumberNumeric>
+      <cac:SupplyItem>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:SupplyItem>
+    </cac:EventLineItem>
+  </cac:MiscellaneousEvent>
 </RetailEvent>

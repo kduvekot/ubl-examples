@@ -22,17 +22,76 @@ The bench now comes with slats from a different hardwood; the description is upd
   The sender's number for this document.
 - `UUID` = **7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `Name` = **New slat wood for the Serra 180**  
+  What the update is.
 - `IssueDate` = **2026-05-21**  
   The bench's slats changed wood.
 - `IssueTime` = **09:01:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `RevisionDate` = **2026-05-20**  
+  The day of the change.
+- `RevisionTime` = **14:00:00**  
+  At that time.
+- `Note` = **Applies to the spring catalogue.**  
+  Which catalogue.
+- `Description` = **New slat wood for the Serra 180**  
+  In words.
+- `VersionID` = **1.2**  
+  The catalogue version after the update.
+- `LineCountNumeric` = **1**  
+  One line.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-05-20**  
+  From the change.
+- `EndDate` = **2026-07-19**  
+  Until the catalogue ends.
 
 ### Related Catalogue Reference
 
 Inside `RelatedCatalogueReference`:
 
 - `ID` = **LD-CAT-26-0218**  
-  The catalogue concerned.
+  The catalogue updated.
+- `UUID` = **8fbee548-a66b-588f-b69b-2e8546501907**  
+  The catalogue's UUID, as stated in the catalogue.
+- `IssueDate` = **2026-04-20**  
+  Its issue date.
+- `IssueTime` = **09:00:00**  
+  And time.
+- `RevisionDate` = **2026-05-21**  
+  Revised by the specification update.
+- `RevisionTime` = **14:00:00**  
+  At that time.
+- `Note` = **Spring catalogue 2026.**  
+  Which catalogue.
+- `Description` = **Benches and spare parts for resale.**  
+  What it holds.
+- `VersionID` = **1.0**  
+  The version referred to.
+- `PreviousVersionID` = **0.9**  
+  The draft the store saw at the fair.
+
+### Referenced Contract
+
+Inside `ReferencedContract`:
+
+- `ID` = **LD-BM-SUPPLY-2026**  
+  The supply agreement.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-1.2**  
+  The distributor's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Provider Party
 
@@ -261,12 +320,45 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 
+### Contractor Customer Party
+
+Inside `ContractorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Trading Terms
+
+Inside `TradingTerms`:
+
+- `Information` = **Unchanged.**  
+  The terms stay as in the catalogue.
+
+### Default Language
+
+Inside `DefaultLanguage`:
+
+- `ID` = **en**  
+  English.
+- `Name` = **English**  
+  In words.
+
 ### Catalogue Item Specification Update Line
 
 Inside `CatalogueItemSpecificationUpdateLine`:
 
 - `ID` = **1**  
   The line of the bench.
+- `ContractorCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ContractorCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.**  
   The new description: the slats are now of a different hardwood.
 - `Item/Name` = **Park bench Serra 180**  
@@ -477,11 +569,45 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0220</cbc:ID>
   <cbc:UUID>7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448</cbc:UUID>
+  <cbc:Name>New slat wood for the Serra 180</cbc:Name>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>09:01:00</cbc:IssueTime>
+  <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
+  <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+  <cbc:Note>Applies to the spring catalogue.</cbc:Note>
+  <cbc:Description>New slat wood for the Serra 180</cbc:Description>
+  <cbc:VersionID>1.2</cbc:VersionID>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-05-20</cbc:StartDate>
+    <cbc:EndDate>2026-07-19</cbc:EndDate>
+  </cac:ValidityPeriod>
   <cac:RelatedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:UUID>8fbee548-a66b-588f-b69b-2e8546501907</cbc:UUID>
+    <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+    <cbc:IssueTime>09:00:00</cbc:IssueTime>
+    <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
+    <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Description>Benches and spare parts for resale.</cbc:Description>
+    <cbc:VersionID>1.0</cbc:VersionID>
+    <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
   </cac:RelatedCatalogueReference>
+  <cac:ReferencedContract>
+    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+  </cac:ReferencedContract>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-1.2</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ProviderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -676,8 +802,45 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:ContractorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ContractorCustomerParty>
+  <cac:TradingTerms>
+    <cbc:Information>Unchanged.</cbc:Information>
+  </cac:TradingTerms>
+  <cac:DefaultLanguage>
+    <cbc:ID>en</cbc:ID>
+    <cbc:Name>English</cbc:Name>
+  </cac:DefaultLanguage>
   <cac:CatalogueItemSpecificationUpdateLine>
     <cbc:ID>1</cbc:ID>
+    <cac:ContractorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brightmarket Stores</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:ContractorCustomerParty>
+    <cac:SellerSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:SellerSupplierParty>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

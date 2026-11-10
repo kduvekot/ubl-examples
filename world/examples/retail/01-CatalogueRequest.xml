@@ -6,8 +6,29 @@
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0217</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
+  <cbc:Name>Spring catalogue 2026</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>08:42:00</cbc:IssueTime>
+  <cbc:Note>For the garden department.</cbc:Note>
+  <cbc:Description>Benches and spare parts.</cbc:Description>
+  <cbc:PricingUpdateRequestIndicator>true</cbc:PricingUpdateRequestIndicator>
+  <cbc:ItemUpdateRequestIndicator>true</cbc:ItemUpdateRequestIndicator>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-20</cbc:StartDate>
+    <cbc:EndDate>2026-07-19</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0420</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -202,4 +223,69 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:ContractorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ContractorCustomerParty>
+  <cac:RequestedCatalogueReference>
+    <cbc:ID>LD-CAT-SPRING-26</cbc:ID>
+  </cac:RequestedCatalogueReference>
+  <cac:ReferencedContract>
+    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+  </cac:ReferencedContract>
+  <cac:TradingTerms>
+    <cbc:Information>Delivered duty paid to the store.</cbc:Information>
+  </cac:TradingTerms>
+  <cac:DocumentReference>
+    <cbc:ID>BM-RANGE-26</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ApplicableTerritoryAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:ApplicableTerritoryAddress>
+  <cac:RequestedLanguage>
+    <cbc:ID>en</cbc:ID>
+    <cbc:Name>English</cbc:Name>
+    <cbc:LocaleCode>EN</cbc:LocaleCode>
+  </cac:RequestedLanguage>
+  <cac:RequestedClassificationScheme>
+    <cbc:ID>HS</cbc:ID>
+    <cbc:Name>Harmonized System</cbc:Name>
+    <cbc:AgencyID>WCO</cbc:AgencyID>
+    <cbc:AgencyName>World Customs Organization</cbc:AgencyName>
+    <cbc:VersionID>2022</cbc:VersionID>
+    <cbc:URI>https://www.wcoomd.org</cbc:URI>
+    <cbc:LanguageID>en</cbc:LanguageID>
+    <cac:ClassificationCategory>
+      <cbc:Name>Seats</cbc:Name>
+      <cbc:CodeValue>9401</cbc:CodeValue>
+    </cac:ClassificationCategory>
+  </cac:RequestedClassificationScheme>
+  <cac:CatalogueRequestLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:ContractSubdivision>Garden</cbc:ContractSubdivision>
+    <cbc:Note>Pallet prices, please.</cbc:Note>
+    <cac:LineValidityPeriod>
+      <cbc:EndDate>2026-07-19</cbc:EndDate>
+    </cac:LineValidityPeriod>
+    <cac:RequiredItemLocationQuantity>
+      <cbc:MinimumQuantity unitCode="H87">24</cbc:MinimumQuantity>
+    </cac:RequiredItemLocationQuantity>
+    <cac:Item>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+    </cac:Item>
+  </cac:CatalogueRequestLine>
+  <cac:CatalogueRequestLine>
+    <cbc:ID>2</cbc:ID>
+    <cac:Item>
+      <cbc:Name>Bench side frame casting</cbc:Name>
+    </cac:Item>
+  </cac:CatalogueRequestLine>
 </CatalogueRequest>

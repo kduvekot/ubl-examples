@@ -22,17 +22,72 @@ The spring catalogue ends; the distributor deletes it before the summer catalogu
   The sender's number for this document.
 - `UUID` = **3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `Name` = **Withdrawal of the spring catalogue**  
+  What it is.
 - `IssueDate` = **2026-06-19**  
   The spring catalogue is withdrawn before the summer one.
 - `IssueTime` = **13:26:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `EffectiveDate` = **2026-06-20**  
+  From the next day.
+- `EffectiveTime` = **00:00:00**  
+  From midnight.
+- `Note` = **Replaced by the summer catalogue.**  
+  Why.
+- `VersionID` = **1.2**  
+  The last version.
+- `Description` = **The spring catalogue is no longer valid.**  
+  In words.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `EndDate` = **2026-06-19**  
+  The last day it was valid.
 
 ### Deleted Catalogue Reference
 
 Inside `DeletedCatalogueReference`:
 
 - `ID` = **LD-CAT-26-0218**  
-  The catalogue concerned.
+  The catalogue withdrawn.
+- `UUID` = **8fbee548-a66b-588f-b69b-2e8546501907**  
+  The catalogue's UUID, as stated in the catalogue.
+- `IssueDate` = **2026-04-20**  
+  Its issue date.
+- `IssueTime` = **09:00:00**  
+  And time.
+- `RevisionDate` = **2026-05-21**  
+  Revised by the specification update.
+- `RevisionTime` = **14:00:00**  
+  At that time.
+- `Note` = **Spring catalogue 2026.**  
+  Which catalogue.
+- `Description` = **Benches and spare parts for resale.**  
+  What it holds.
+- `VersionID` = **1.2**  
+  The version referred to.
+- `PreviousVersionID` = **0.9**  
+  The draft the store saw at the fair.
+
+### Referenced Contract
+
+Inside `ReferencedContract`:
+
+- `ID` = **LD-BM-SUPPLY-2026**  
+  The supply agreement.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-0619**  
+  The distributor's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Receiver Party
 
@@ -261,6 +316,15 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 
+### Contractor Customer Party
+
+Inside `ContractorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -272,11 +336,43 @@ Inside `SellerSupplierParty`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0237</cbc:ID>
   <cbc:UUID>3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29</cbc:UUID>
+  <cbc:Name>Withdrawal of the spring catalogue</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
   <cbc:IssueTime>13:26:00</cbc:IssueTime>
+  <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
+  <cbc:EffectiveTime>00:00:00</cbc:EffectiveTime>
+  <cbc:Note>Replaced by the summer catalogue.</cbc:Note>
+  <cbc:VersionID>1.2</cbc:VersionID>
+  <cbc:Description>The spring catalogue is no longer valid.</cbc:Description>
+  <cac:ValidityPeriod>
+    <cbc:EndDate>2026-06-19</cbc:EndDate>
+  </cac:ValidityPeriod>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:UUID>8fbee548-a66b-588f-b69b-2e8546501907</cbc:UUID>
+    <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+    <cbc:IssueTime>09:00:00</cbc:IssueTime>
+    <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
+    <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Description>Benches and spare parts for resale.</cbc:Description>
+    <cbc:VersionID>1.2</cbc:VersionID>
+    <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
   </cac:DeletedCatalogueReference>
+  <cac:ReferencedContract>
+    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+  </cac:ReferencedContract>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-0619</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -471,5 +567,15 @@ Inside `SellerSupplierParty`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:ContractorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ContractorCustomerParty>
 </CatalogueDeletion>
 ```
