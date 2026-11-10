@@ -157,6 +157,11 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.rl) { (t.links ||= {}).rail = new Set(); t.pieces = { rail: m.rl }; for (const [a1, b1] of m.rl) { if (a1) t.links.rail.add(a1.join()); if (b1) t.links.rail.add(b1.join()); } }
   return t; }));
 const TOWNS = WORLD.towns.map(tw => ({ ...tw }));
+// terrain height: one value per tile corner (model "v"); the ground height anywhere is interpolated
+const V = WORLD.model.v, HU = 8;                    // HU: pixels per height level
+function heightAt(x, y) { const vx = Math.max(0, Math.min(W, x + .5)), vy = Math.max(0, Math.min(H, y + .5));
+  const i0 = Math.min(W - 1, Math.floor(vx)), j0 = Math.min(H - 1, Math.floor(vy)), u = vx - i0, v = vy - j0;
+  return V[i0][j0] * (1 - u) * (1 - v) + V[i0 + 1][j0] * u * (1 - v) + V[i0][j0 + 1] * (1 - u) * v + V[i0 + 1][j0 + 1] * u * v; }
 
 // middle of each country's land, for its name on the map
 const CENTRE = (() => { const sum = {}; for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j];
@@ -206,20 +211,25 @@ const world = document.createElement("canvas"); world.width = WORLD_W; world.hei
 const COLORS = { sea: "#2f6aa3", sea2: "#3a7bb6", grass: "#5f9e47", grass2: "#6aab4f", forest: "#3f7a36", rock: "#8a8676", field: "#b9a64a",
   river: "#3f86c4", road: "#7b7b78", rail: "#6b5848", sand: "#d8c98a" };
 let showGrid = false;
+function groundTile(g, i, j, color) {
+  const c = [[-.5, -.5], [.5, -.5], [.5, .5], [-.5, .5]].map(([u, v]) => tileWorld(i + u, j + v));
+  const xs = c.map(p => p[0]), L = c[xs.indexOf(Math.min(...xs))], Rt = c[xs.indexOf(Math.max(...xs))];
+  const ys = c.map(p => p[1]), top = Math.min(...ys), bot = Math.max(...ys);
+  const facing = (L[1] - Rt[1]) / HU, tilt = ((bot - top) - TH) / HU;   // >0: faces the light (left) / the viewer
+  poly(g, c, Math.abs(facing) + Math.abs(tilt) < .01 ? color : shade(color, Math.max(-.35, Math.min(.3, facing * .14 + tilt * .05))));
+  if (showGrid) { g.strokeStyle = "rgba(0,0,0,.12)"; g.lineWidth = 1; g.stroke(); } }
 function drawWorld() {
   const g = world.getContext("2d"); g.clearRect(0, 0, WORLD_W, WORLD_H); g.imageSmoothingEnabled = false;
   OX = RH() * TW / 2 + 40;
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
-    const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x0, y0] = iso(ri, rj); const x = x0 + OX, y = y0 + OY;
+    const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x, y] = tileWorld(i, j);
     if (!t.land) { const shallow = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b]?.land);
-      diamond(g, x, y, t.water ? (t.n > .5 ? "#3d7fbf" : "#3a7ab8") : shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea)); continue; }
-    const yUp = y - t.h * 7;                               // hills are raised tiles
-    if (t.h) { const [l, f, r2] = [[x - TW / 2, y], [x, y + TH / 2], [x + TW / 2, y]];
-      poly(g, [[l[0], l[1] - t.h * 7], [f[0], f[1] - t.h * 7], f, l], "#7d7464"); poly(g, [[f[0], f[1] - t.h * 7], [r2[0], r2[1] - t.h * 7], r2, f], "#655d50"); }
+      groundTile(g, i, j, t.water ? (t.n > .5 ? "#3d7fbf" : "#3a7ab8") : shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea)); continue; }
+    const yUp = y;
     let base = t.yard ? "#a59c87" : t.t === "field" ? (t.n > .5 ? "#b9a64a" : "#a9a04a") : t.t === "rock" ? COLORS.rock : (t.n > .5 ? COLORS.grass2 : COLORS.grass);
-    diamond(g, x, yUp, base, showGrid ? "rgba(0,0,0,.12)" : null);
+    groundTile(g, i, j, base);
     // banks: a strip along every edge that borders water (sand on the sea, a muddy bank on the river)
-    DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || t.h) return; const pv = [-dj, di];
+    DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land) return; const pv = [-dj, di];
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
         tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : COLORS.sand); });
     // hedges around fields, fences around industry yards
@@ -231,7 +241,7 @@ function drawWorld() {
   drawRoutes(g);
   // objects, back to front: trees, houses, buildings
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
-    const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x0, y0] = iso(ri, rj); const x = x0 + OX, y = y0 + OY;
+    const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x, y] = tileWorld(i, j);
     if (t.t === "forest" && !t.building && !t.links) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) tree(g, x + dx, y + dy, hash(i * 3 + dx, j));
     if (t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     if (t.house) house(g, x, y, t.house[0], hash(i, j * 7));
@@ -443,7 +453,7 @@ function fit() { const r = cv.getBoundingClientRect(), pad = 16, w = LAND.x1 - L
   view.x = (r.width - w * view.s) / 2 - LAND.x0 * view.s; view.y = (r.height - h * view.s) / 2 - LAND.y0 * view.s; view.fitted = true; }
 const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
 // world pixel position of an original tile, in the current rotation
-const tileWorld = (i, j) => { const [x, y] = iso(...R(i, j)); return [x + OX, y + OY]; };
+const tileWorld = (i, j) => { const [x, y] = iso(...R(i, j)); return [x + OX, y + OY - heightAt(i, j) * HU]; };
 // world position of a point inside tile (i, j): u, v in tile units from its centre
 const tp = (i, j, u, v) => tileWorld(i + u, j + v);
 // vehicles follow the pieces: roads from tile centre to tile centre, rail and river from edge to edge
