@@ -11,10 +11,11 @@
 <div class="layout">
 <main class="prose">
 <h1 id="ferrano-energy">Ferrano Energy</h1>
-<p><em>#33 Electricity Utility · Urvania (XU) · Commerce</em> ·
-<em>proposed addition to the 26+C set</em></p>
-<p>Generates and supplies electricity in Urvania; its biggest customer
-is the factory.</p>
+<p><em>#33 Energy Retailer · Urvania (XU) · Commerce</em> · <em>proposed
+addition to the 26+C set</em></p>
+<p>Sells electricity and gas to Urvania's homes and businesses: buys
+electricity from the power station and gas from the gas producer, pays
+the grid operator for the networks, and bills the customers.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -32,7 +33,7 @@ is the factory.</p>
 </tr>
 <tr>
 <td>Address</td>
-<td>Via della Centrale 44<br>4130 Serravona<br>Urvania</td>
+<td>Corso della Repubblica 9<br>4150 Ferrano<br>Urvania</td>
 </tr>
 <tr>
 <td>Electronic address</td>
@@ -74,13 +75,29 @@ System subheadings.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="natural-gas-supply">Natural gas supply</h3>
+<p>Natural gas supply, per kilowatt hour: the metered volume converted
+with the grid operator's correction for pressure and calorific value;
+network charges included.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>FE-GAS</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>8.4 XUF per <code>KWH</code> (kilowatt hour)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
-<p>A utility bills thousands of connections every month. UBL separates
-the bill (the Invoice) from the consumption behind it (the Utility
-Statement with meter readings per connection), so a customer with many
-sites can check each one automatically and a household gets the same
-structured bill as a factory.</p>
-<p>In this world it sends 3 and receives 1 documents, and is named in 0
+<p>In an unbundled market the retailer bills, but the grid operator owns
+and reads the meters. UBL keeps the two apart: the grid operator's
+Utility Statement carries the readings to the retailer, and the
+retailer's Invoice and Utility Statement carry them on to the
+customer.</p>
+<p>In this world it sends 3 and receives 5 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
@@ -139,19 +156,73 @@ example document</a>.</p>
 <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
+<h2
+id="gas-and-electricity-in-an-unbundled-market-bayvarras-gas-field--urvania">Gas
+and electricity in an unbundled market (Bayvarra's gas field →
+Urvania)</h2>
+<p>Urvania's energy market is unbundled, as the EU's is: a power station
+produces electricity, a grid operator runs the networks and reads the
+meters, and a retail company buys the energy and bills the customers.
+The gas comes from an offshore field off Bayvarra's north coast, by
+pipeline across the border. The documents show the grid operator's
+metering with the correction a gas meter needs, the wholesale and
+network invoices, the customs declarations of a pipeline, and a reminder
+across currencies when the power station pays late.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
+Statement</strong></a> from <a href="world-44-xu.html">Ferrano Grid</a>:
+The grid operator reads the factory's gas meter and sends the retail
+company the consumption: the volume at line pressure, converted to
+standard cubic metres and to energy. <a
+href="example-energy-01-UtilityStatement.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>, <code>CustomerParty</code>.</p>
+<p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
+<code>SubscriberParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-44-xu.html">Ferrano Grid</a>: The grid operator
+charges the retail company for the use of the networks at the factory's
+and the warehouse's connections. <a
+href="example-energy-02-Invoice.html">See the example document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-43-xu.html">Montebrio Power</a>: The power station
+invoices the electricity it fed in for the retail company in March. <a
+href="example-energy-03-Invoice.html">See the example document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-42-xb.html">Kelpstone Gas</a>: The gas producer
+invoices the gas it fed into the grid for the retail company's
+customers. <a href="example-energy-07-Invoice.html">See the example
+document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>SenderParty</code> <code>AccountingSupplierParty</code>
-<code>SellerSupplierParty</code></p>
+<code>SellerSupplierParty</code> <code>ReceiverParty</code>
+<code>CustomerParty</code> <code>AccountingCustomerParty</code>
+<code>BuyerCustomerParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
 <li><a href="world-5-xu.html">Valdara Industries</a>, Urvania</li>
 <li><a href="world-8-xu.html">Castrano Logistics</a>, Urvania</li>
+<li><a href="world-44-xu.html">Ferrano Grid</a>, Urvania</li>
+<li><a href="world-43-xu.html">Montebrio Power</a>, Urvania</li>
+<li><a href="world-42-xb.html">Kelpstone Gas</a>, Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#33-xu">See Electricity Utility on the map</a> ·
+<p><a href="world.html#33-xu">See Energy Retailer on the map</a> ·
 Urvania: Mainland, inland. Raw materials and manufacturing.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
@@ -161,6 +232,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>91a20cf</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>097e71d</code></p></div></footer>
 </body>
 </html>

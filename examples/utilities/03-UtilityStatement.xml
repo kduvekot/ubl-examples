@@ -38,10 +38,10 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via della Centrale</cbc:StreetName>
-      <cbc:BuildingNumber>44</cbc:BuildingNumber>
-      <cbc:CityName>Serravona</cbc:CityName>
-      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+      <cbc:BuildingNumber>9</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
@@ -74,7 +74,7 @@
       <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
         </cac:Country>

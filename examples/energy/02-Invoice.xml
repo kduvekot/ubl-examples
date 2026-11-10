@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:energy</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>FG-INV-26-0150</cbc:ID>
+  <cbc:UUID>af7f93bd-4f82-5130-82e5-5b40a1c4cefa</cbc:UUID>
+  <cbc:IssueDate>2026-04-03</cbc:IssueDate>
+  <cbc:IssueTime>08:20:00</cbc:IssueTime>
+  <cbc:DueDate>2026-05-03</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:TaxPointDate>2026-04-03</cbc:TaxPointDate>
+  <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+    <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+    <cbc:Description>March 2026</cbc:Description>
+  </cac:InvoicePeriod>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.ferranogrid.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3513</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Grid</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via della Rete</cbc:StreetName>
+        <cbc:BuildingNumber>3</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4140</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Ferrano Grid SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU007423962</cbc:CompanyID>
+        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Ferrano Grid SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU-R-106055</cbc:CompanyID>
+        <cbc:RegistrationDate>2007-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CorporateStockAmount currencyID="XUF">80000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XU:CR</cbc:ID>
+          <cbc:Name>Commercial register of Urvania</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Metering office</cbc:Name>
+        <cbc:JobTitle>Metering officer</cbc:JobTitle>
+        <cbc:Department>Metering</cbc:Department>
+        <cbc:Telephone>+999 1 4140 6055</cbc:Telephone>
+        <cbc:ElectronicMail>metering@ferranogrid.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-106055</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.ferranoenergy.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3510</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Energy</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4150</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Ferrano Energy SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU007404785</cbc:CompanyID>
+        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Ferrano Energy SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU-R-105781</cbc:CompanyID>
+        <cbc:RegistrationDate>1949-01-15</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XU:CR</cbc:ID>
+          <cbc:Name>Commercial register of Urvania</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customer service</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 1 4130 5781</cbc:Telephone>
+        <cbc:ElectronicMail>customer@ferranoenergy.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105781</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Energy</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Grid</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF13FGINV260150</cbc:InstructionNote>
+    <cbc:PaymentID>RF13FGINV260150</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XU50CREV0005126721</cbc:ID>
+      <cbc:Name>Ferrano Grid SUA</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice FG-INV-26-0150</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>CREV-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>CREV</cbc:ID>
+          <cbc:Name>Crevalto Bank</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
+            <cbc:BuildingNumber>8</cbc:BuildingNumber>
+            <cbc:CityName>Ferrano</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XUF">66983</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.ferranogrid.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-04-03</cbc:StartDate>
+      <cbc:EndDate>2026-04-13</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">2790960</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XUF">2790960</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">2790960</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">3349152</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">3349152</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+      <cbc:Name>Electricity network use</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FG-NET-E</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">6.2</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+      <cbc:Name>Electricity network use</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FG-NET-E</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">6.2</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
+      <cbc:Name>Gas network use</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FG-NET-G</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">1.9</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

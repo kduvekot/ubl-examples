@@ -14,7 +14,7 @@
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -53,10 +53,10 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Centrale</cbc:StreetName>
-        <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
@@ -89,7 +89,7 @@
         <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode>XU</cbc:IdentificationCode>
           </cac:Country>
@@ -300,7 +300,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">289585</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">301923</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranoenergy.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -361,15 +361,15 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">2516028</cbc:TaxAmount>
     <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
     <cbc:RoundingAmount currencyID="XUF">0</cbc:RoundingAmount>
     <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
     <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">12066060</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
-      <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
+      <cbc:TaxableAmount currencyID="XUF">12580140</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">2516028</cbc:TaxAmount>
+      <cbc:TaxInclusiveAmount currencyID="XUF">15096168</cbc:TaxInclusiveAmount>
       <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
       <cbc:Percent>20</cbc:Percent>
       <cac:TaxCategory>
@@ -382,10 +382,10 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">11777220</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">11777220</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">14479272</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">12291300</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">12291300</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">15096168</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">15096168</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -469,6 +469,42 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>1,350 m³ at 4 bar, converted to 61,200 kWh by the grid operator's metering report.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">514080</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>ELEC</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FG-G-20417</cbc:ID>
+      <cbc:Description>Factory, gas of the coating line</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:Item>
+      <cbc:Description>Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
+      <cbc:Name>Natural gas supply</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FE-GAS</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">8.4</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
