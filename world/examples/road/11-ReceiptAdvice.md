@@ -26,6 +26,16 @@ The distributor confirms what arrived to the party that despatched it, the 3PL, 
   The day the truck was unloaded at the distribution centre.
 - `IssueTime` = **15:40:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A first receipt advice.
+- `ReceiptAdviceTypeCode` = **Actual**  
+  UBL's receipt advice type code: the goods actually received.
+- `DeliveryAcceptanceCode` = **Accepted**  
+  All goods accepted.
+- `Note` = **Counted and checked at goods-in.**  
+  How the goods were received.
+- `LineCountNumeric` = **2**  
+  The number of lines.
 
 ### Order Reference
 
@@ -374,8 +384,18 @@ Inside `ReceiptLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **Received as despatched.**  
+  The line in words.
 - `ReceivedQuantity` = **96** (unitCode `H87`)  
   Counted at the goods-in and found as announced.
+- `ReceivedDate` = **2026-03-25**  
+  Unloaded.
+- `OrderLineReference/LineID` = **1**  
+  The order line.
+- `DespatchLineReference/LineID` = **1**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+  The despatch advice.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -564,8 +584,18 @@ Inside `ReceiptLine`:
   The repair and maintenance manual.
 - `ID` = **2**  
   The line number.
+- `Note` = **Received as despatched.**  
+  The line in words.
 - `ReceivedQuantity` = **12** (unitCode `H87`)  
   Counted at the goods-in and found as announced.
+- `ReceivedDate` = **2026-03-25**  
+  Unloaded.
+- `OrderLineReference/LineID` = **2**  
+  The order line.
+- `DespatchLineReference/LineID` = **2**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+  The despatch advice.
 - `Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.**  
   The seller's description; item bench-casting of Valdara Industries (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
@@ -600,6 +630,11 @@ Inside `ReceiptLine`:
   <cbc:UUID>496ff071-d380-5baa-87d1-43a590437ea5</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>15:40:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
+  <cbc:DeliveryAcceptanceCode>Accepted</cbc:DeliveryAcceptanceCode>
+  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>
@@ -909,7 +944,18 @@ Inside `ReceiptLine`:
   </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Received as despatched.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>
+    <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>CL-DA-26-0153</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1074,7 +1120,18 @@ Inside `ReceiptLine`:
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Received as despatched.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">12</cbc:ReceivedQuantity>
+    <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>2</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>CL-DA-26-0153</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

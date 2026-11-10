@@ -4354,3 +4354,55 @@ def _(f, n, doc, out):
     return {"WeightStatementTypeCode": V("VGM", "A statement of the verified gross mass."),
             "Signature": seal(doc["from"], "SCG-SIG-VGM", "The shipper's signature, as SOLAS requires."),
             "ResponsibleParty": party("39-xl", short=True)}
+
+
+@enrich("retail", "ReceiptAdvice")
+def _(f, n, doc, out):
+    lines = out["ReceiptLine"] if isinstance(out["ReceiptLine"], list) else [out["ReceiptLine"]]
+    lines[0].update({"ReceivedTime": V("10:40:00", "Forty minutes after the slot began."),
+                     "TimingComplaintCode": V("Late", "The truck was late for its slot."),
+                     "TimingComplaint": V("Arrived 40 minutes into the slot; unloading delayed the next truck.",
+                                          "The complaint.")})
+    return {"AdditionalDocumentReference": {"ID": V("BM-GI-PHOTO-26-0510", "The goods-in photographs.")},
+            "Signature": seal(doc["from"], "BM-SIG-26-RA")}
+
+
+@enrich("sea", "ReceiptAdvice")
+def _(f, n, doc, out):
+    return {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading the goods came "
+                                                                     "under.")},
+            "Signature": seal(doc["from"], "NW-SIG-26-RA")}
+
+
+@enrich("sea", "DespatchAdvice")
+def _(f, n, doc, out):
+    return {**kit.cost_centre("1-xl", "The buyer's cost centre, from its order."),
+            "AdditionalDocumentReference": {"ID": V(f.numbers["packing"], "The packing list of the container.")},
+            "Signature": seal(doc["from"], "LD-SIG-26-DA")}
+
+
+@enrich("tender", "DespatchAdvice")
+def _(f, n, doc, out):
+    lines = out["DespatchLine"] if isinstance(out["DespatchLine"], list) else [out["DespatchLine"]]
+    lines[0].update({"OutstandingQuantity": qty(TENDER_QTY - 40, "H87", "Still to come under the contract."),
+                     "OutstandingReason": V("Later releases under the framework contract.", "Why."),
+                     **kit.cost_centre("2-xb", "The department's programme."),
+                     "DocumentReference": {"ID": V(FOLDER, "The contract.")}})
+    return {"ProjectReference": {"ID": V("PWD-PARKS-26", "The parks renewal programme.")},
+            **kit.cost_centre("2-xb", "The department's cost centre."),
+            "Signature": seal(doc["from"], "CL-SIG-26-DA")}
+
+
+@enrich("cotton", "DeliveryNote")
+def _(f, n, doc, out):
+    return {"DocumentStatusCode": V("NoStatus", "A first delivery note."),
+            "Note": V("Three trailer loads, weighed at the gin.", "What was delivered."),
+            **kit.cost_centre("39-xl", "The gin's cost centre for seed cotton."),
+            "LineCountNumeric": V("1", "One line."),
+            "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off under the season agreement.")},
+            "AdditionalDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket.")},
+            "Signature": seal(doc["from"], "LCF-SIG-26-DN"),
+            "Shipment": {"ID": V("LCF-SH-26-03", "The farm's three trailer loads."),
+                         "GrossWeightMeasure": qty(SEED_KG + 2400, "KGM", "The cotton and the empty trailers' "
+                                                                          "tare of 2,400 kg, as weighed."),
+                         "Delivery": {"ActualDeliveryDate": V(f.date(3), "At the gin.")}}}

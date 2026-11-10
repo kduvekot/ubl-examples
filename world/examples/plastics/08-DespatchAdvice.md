@@ -26,6 +26,14 @@ The waste processor announces the lot loaded on the barge.
   The day the barge was loaded.
 - `IssueTime` = **17:57:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Order Reference
 
@@ -351,6 +359,10 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **One barge load of recycled granulate in jumbo bags.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **120** (unitCode `TNE`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -409,6 +421,10 @@ Inside `DespatchLine`:
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>17:57:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>
@@ -699,6 +715,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>One barge load of recycled granulate in jumbo bags.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="TNE">120</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

@@ -26,6 +26,14 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
   The day the 3PL loaded the truck.
 - `IssueTime` = **15:15:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `LineCountNumeric` = **2**  
+  The number of lines.
 
 ### Order Reference
 
@@ -467,6 +475,10 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **24 pallets of 4 benches: one full truck.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **96** (unitCode `H87`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -667,6 +679,10 @@ Inside `DespatchLine`:
   The repair and maintenance manual.
 - `ID` = **2**  
   The line number.
+- `Note` = **Spare side frames, for the distributor's service stock.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **12** (unitCode `H87`)  
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
@@ -873,6 +889,10 @@ Inside `DespatchLine`:
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>15:15:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>
@@ -1273,6 +1293,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>24 pallets of 4 benches: one full truck.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -1451,6 +1473,8 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Spare side frames, for the distributor's service stock.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>

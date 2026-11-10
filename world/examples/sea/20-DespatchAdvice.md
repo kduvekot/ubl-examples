@@ -26,6 +26,18 @@ The distributor announces the shipment to the delivery party named in the order,
   Sent to the delivery party named in the order when the container leaves.
 - `IssueTime` = **08:52:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `AccountingCostCode` = **500**  
+  The buyer's cost centre, from its order.
+- `AccountingCost` = **Stock for municipal projects**  
+  The cost centre in words.
+- `LineCountNumeric` = **2**  
+  The number of lines.
 
 ### Order Reference
 
@@ -33,6 +45,24 @@ Inside `OrderReference`:
 
 - `ID` = **VT-PO-26-0127**  
   The order this despatch fulfils.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **LD-PL-26-0134**  
+  The packing list of the container.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-DA**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Despatch Supplier Party
 
@@ -407,6 +437,10 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **One 40-foot container: 24 pallets of 4 benches.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **96** (unitCode `H87`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -619,6 +653,10 @@ Inside `DespatchLine`:
   The repair and maintenance manual.
 - `ID` = **2**  
   The line number.
+- `Note` = **Spare side frames for the buyer's own service stock.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **12** (unitCode `H87`)  
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
@@ -829,9 +867,29 @@ Inside `DespatchLine`:
   <cbc:UUID>70786038-c76e-51c0-a900-7b06c6127d9e</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>08:52:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-PL-26-0134</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-DA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -1155,6 +1213,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>One 40-foot container: 24 pallets of 4 benches.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -1349,6 +1409,8 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Spare side frames for the buyer's own service stock.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>

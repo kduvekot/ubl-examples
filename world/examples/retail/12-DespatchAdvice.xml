@@ -8,6 +8,10 @@
   <cbc:UUID>4b7e9055-23cd-5fbb-b498-b08f07b17c6e</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>15:34:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:OrderReference>
@@ -454,6 +458,8 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Six pallets for the garden department's spring promotion.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">24</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

@@ -393,6 +393,12 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
     out = {
         "ID": V(flow.number(f"despatch-{key}", doc["from"], "DespatchAdvice"), "The despatching party's number."),
         "IssueDate": V(flow.date(day), why),
+        "DocumentStatusCode": V("NoStatus", "A new despatch advice, not a correction."),
+        "DespatchAdviceTypeCode": V("Delivery", "Advice of goods despatched for delivery."),
+        "Note": V("Please check the goods on arrival and report any damage on the consignment note.", "What the "
+                                                                                                      "receiver "
+                                                                                                      "should do."),
+        "LineCountNumeric": V(str(len(deal)), "The number of lines."),
         "OrderReference": {"ID": V(flow.numbers[key], "The order this despatch fulfils.")},
         "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The despatching party's shipment number."),
                      "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM", shipment_why),
@@ -400,6 +406,8 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
                                              "The consignment the goods travel in, as numbered when the transport "
                                              "was booked.")}},
         "DespatchLine": [{"ID": V(str(i), "The line number."),
+                          "Note": V(d.get("why", "As ordered."), "The line as the order put it."),
+                          "LineStatusCode": V("NoStatus", "Despatched as ordered."),
                           "DeliveredQuantity": qty(d[which], ITEM[d["item"]]["unit"], "What was despatched."),
                           "OrderLineReference": {"LineID": V(str(i), "The order line this line fulfils.")},
                           "Item": item(d["item"], buyer=doc["to"], instance=instances(flow, d, which, day))}
@@ -411,15 +419,40 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
 
 def receipt_advice(flow, n, doc, day, why):
     which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
-    return {"ID": V(flow.number("receipt", doc["from"], "ReceiptAdvice"), "The receiving party's number."),
+    short = any("received" in d for d in flow.deal)
+    out = {"ID": V(flow.number("receipt", doc["from"], "ReceiptAdvice"), "The receiving party's number."),
             "IssueDate": V(flow.date(day), why),
+            "DocumentStatusCode": V("NoStatus", "A first receipt advice."),
+            "ReceiptAdviceTypeCode": V("Actual", "UBL's receipt advice type code: the goods actually received."),
+            "DeliveryAcceptanceCode": V("Partial" if short else "Accepted", "Part of the goods refused." if short
+                                        else "All goods accepted."),
+            "Note": V("Counted and checked at goods-in.", "How the goods were received."),
+            "LineCountNumeric": V(str(len(flow.deal)), "The number of lines."),
             "OrderReference": {"ID": V(flow.numbers["order"], "The order the goods were delivered for.")},
             "DespatchDocumentReference": {"ID": V(flow.numbers["despatch"], "The despatch advice this receipt answers.")},
             "ReceiptLine": [{"ID": V(str(i), "The line number."),
                              "ReceivedQuantity": qty(d.get("received", d[which]), ITEM[d["item"]]["unit"],
                                                      d.get("received_why", "Counted at the goods-in and found as "
                                                                            "announced.")),
+                             "Note": V(d.get("received_why", "Received as despatched."), "The line in words."),
+                             "ReceivedDate": V(flow.date(day), "Unloaded."),
+                             "OrderLineReference": {"LineID": V(str(i), "The order line.")},
+                             "DespatchLineReference": {"LineID": V(str(i), "The despatch line."),
+                                                       "DocumentReference": {"ID": V(flow.numbers["despatch"],
+                                                                                     "The despatch advice.")}},
                              "Item": item(d["item"], buyer=doc["from"])} for i, d in enumerate(flow.deal, 1)]}
+    for d, line in zip(flow.deal, out["ReceiptLine"]):
+        if "received" in d:
+            refused = Decimal(str(d[which])) - Decimal(str(d["received"]))
+            line.update({"RejectedQuantity": qty(refused, ITEM[d["item"]]["unit"], "Refused at goods-in."),
+                         "RejectReasonCode": V("Damaged", "Why refused."),
+                         "RejectReason": V(d["received_why"], "In words."),
+                         "RejectActionCode": V("Credit", "The receiver asks for a credit, not a replacement."),
+                         "QuantityDiscrepancyCode": V("Damaged", "Why the quantity differs from the despatch.")})
+            out.update({"RejectReasonCode": V("Damaged", "The reason for the part refused."),
+                        "RejectReason": V("Damaged in transit.", "In words."),
+                        "RejectActionCode": V("Credit", "A credit is asked for the refused goods.")})
+    return out
 
 
 def gross_weight(flow, which, deal=None):

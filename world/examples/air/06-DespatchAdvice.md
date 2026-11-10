@@ -26,6 +26,14 @@ The distributor announces the air part to the buyer's 3PL, with the airline as c
   Sent to the buyer's 3PL when the cargo leaves.
 - `IssueTime` = **10:07:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Order Reference
 
@@ -381,6 +389,10 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **Eight side frames, needed before the ship arrives.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **8** (unitCode `H87`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -535,6 +547,10 @@ Inside `DespatchLine`:
   <cbc:UUID>93132e8b-1df2-5401-9265-5f8de7ffa70a</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>10:07:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0319</cbc:ID>
   </cac:OrderReference>
@@ -840,6 +856,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Eight side frames, needed before the ship arrives.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">8</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

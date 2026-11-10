@@ -26,6 +26,14 @@ The sawmill announces the slats per lot, so the factory can trace the wood of ev
   The day the truck was loaded at the sawmill.
 - `IssueTime` = **08:31:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Order Reference
 
@@ -363,6 +371,10 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **Slats for 960 benches: five per bench, 96 bundles of 50.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **4800** (unitCode `H87`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -497,6 +509,10 @@ Inside `DespatchLine`:
   <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:IssueTime>08:31:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>
@@ -803,6 +819,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Slats for 960 benches: five per bench, 96 bundles of 50.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">4800</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

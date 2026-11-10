@@ -8,6 +8,28 @@
   <cbc:UUID>975a163a-1aaf-5b83-ac7f-ec67ac956a54</cbc:UUID>
   <cbc:IssueDate>2026-02-05</cbc:IssueDate>
   <cbc:IssueTime>14:59:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:Note>Three trailer loads, weighed at the gin.</cbc:Note>
+  <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OrderReference>
+    <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
+  </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCG-WB-26-0311</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LCF-SIG-26-DN</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lisavu Cotton Farm</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lisavufarm.example</cbc:WebsiteURI>
@@ -193,6 +215,13 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>LCF-SH-26-03</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">20400</cbc:GrossWeightMeasure>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    </cac:Delivery>
+  </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DeliveredQuantity unitCode="KGM">18000</cbc:DeliveredQuantity>

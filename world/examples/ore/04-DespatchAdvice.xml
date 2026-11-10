@@ -8,6 +8,10 @@
   <cbc:UUID>e3281a6d-51f4-5981-b7f0-b43b6a9cf2da</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>15:37:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>
@@ -315,6 +319,8 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>One train: 30 wagons of about 60 tonnes.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="TNE">1788.4</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

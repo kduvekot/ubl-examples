@@ -26,6 +26,14 @@ The mill announces the delivery with the road carrier it booked.
   The day the shirts left the mill.
 - `IssueTime` = **11:35:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Order Reference
 
@@ -369,6 +377,10 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **The store's spring order of shirts.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **600** (unitCode `H87`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -411,6 +423,10 @@ Inside `DespatchLine`:
   <cbc:UUID>c1af718a-512a-5aed-8622-6a31ae7211c9</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>11:35:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0525</cbc:ID>
   </cac:OrderReference>
@@ -708,6 +724,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>The store's spring order of shirts.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">600</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

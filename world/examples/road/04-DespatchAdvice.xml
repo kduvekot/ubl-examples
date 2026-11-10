@@ -8,6 +8,10 @@
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>15:15:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>
@@ -408,6 +412,8 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>24 pallets of 4 benches: one full truck.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -586,6 +592,8 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Spare side frames, for the distributor's service stock.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>

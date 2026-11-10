@@ -26,6 +26,22 @@ The buyer's 3PL confirms what arrived, for the buyer.
   The buyer's 3PL confirms what arrived.
 - `IssueTime` = **17:22:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A first receipt advice.
+- `ReceiptAdviceTypeCode` = **Actual**  
+  UBL's receipt advice type code: the goods actually received.
+- `DeliveryAcceptanceCode` = **Partial**  
+  Part of the goods refused.
+- `RejectReasonCode` = **Damaged**  
+  The reason for the part refused.
+- `RejectReason` = **Damaged in transit.**  
+  In words.
+- `RejectActionCode` = **Credit**  
+  A credit is asked for the refused goods.
+- `Note` = **Counted and checked at goods-in.**  
+  How the goods were received.
+- `LineCountNumeric` = **2**  
+  The number of lines.
 
 ### Order Reference
 
@@ -40,6 +56,24 @@ Inside `DespatchDocumentReference`:
 
 - `ID` = **LD-DA-26-0145**  
   The despatch advice this receipt answers.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **TOL-BL-26-0139**  
+  The bill of lading the goods came under.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **NW-SIG-26-RA**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Nalevi Warehousing**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Delivery Customer Party
 
@@ -309,8 +343,18 @@ Inside `ReceiptLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **Received as despatched.**  
+  The line in words.
 - `ReceivedQuantity` = **96** (unitCode `H87`)  
   Counted at the goods-in and found as announced.
+- `ReceivedDate` = **2026-05-21**  
+  Unloaded.
+- `OrderLineReference/LineID` = **1**  
+  The order line.
+- `DespatchLineReference/LineID` = **1**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0145**  
+  The despatch advice.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -511,8 +555,28 @@ Inside `ReceiptLine`:
   The repair and maintenance manual.
 - `ID` = **2**  
   The line number.
+- `Note` = **One box crushed at the port; the frame inside is cracked.**  
+  The line in words.
 - `ReceivedQuantity` = **11** (unitCode `H87`)  
   One box crushed at the port; the frame inside is cracked.
+- `RejectedQuantity` = **1** (unitCode `H87`)  
+  Refused at goods-in.
+- `RejectReasonCode` = **Damaged**  
+  Why refused.
+- `RejectReason` = **One box crushed at the port; the frame inside is cracked.**  
+  In words.
+- `RejectActionCode` = **Credit**  
+  The receiver asks for a credit, not a replacement.
+- `QuantityDiscrepancyCode` = **Damaged**  
+  Why the quantity differs from the despatch.
+- `ReceivedDate` = **2026-05-21**  
+  Unloaded.
+- `OrderLineReference/LineID` = **2**  
+  The order line.
+- `DespatchLineReference/LineID` = **2**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0145**  
+  The despatch advice.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
@@ -551,12 +615,34 @@ Inside `ReceiptLine`:
   <cbc:UUID>5c11e38e-6191-5e5e-892a-38c6eedf1df0</cbc:UUID>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>17:22:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
+  <cbc:DeliveryAcceptanceCode>Partial</cbc:DeliveryAcceptanceCode>
+  <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+  <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
+  <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0145</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>NW-SIG-26-RA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Nalevi Warehousing</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:DeliveryCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
@@ -790,7 +876,18 @@ Inside `ReceiptLine`:
   </cac:SellerSupplierParty>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Received as despatched.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>
+    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0145</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -971,7 +1068,23 @@ Inside `ReceiptLine`:
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>One box crushed at the port; the frame inside is cracked.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">11</cbc:ReceivedQuantity>
+    <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+    <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+    <cbc:RejectReason>One box crushed at the port; the frame inside is cracked.</cbc:RejectReason>
+    <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+    <cbc:QuantityDiscrepancyCode>Damaged</cbc:QuantityDiscrepancyCode>
+    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>2</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0145</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

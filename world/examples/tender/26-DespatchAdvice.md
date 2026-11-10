@@ -26,6 +26,18 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
   The day the call-off left the 3PL.
 - `IssueTime` = **14:40:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `AccountingCostCode` = **PWD-PARKS-26**  
+  The department's cost centre.
+- `AccountingCost` = **Parks renewal programme 2026**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Order Reference
 
@@ -33,6 +45,24 @@ Inside `OrderReference`:
 
 - `ID` = **LPWD-PO-26-0211**  
   The order this despatch fulfils.
+
+### Project Reference
+
+Inside `ProjectReference`:
+
+- `ID` = **PWD-PARKS-26**  
+  The parks renewal programme.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **CL-SIG-26-DA**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Castrano Logistics**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Despatch Supplier Party
 
@@ -449,10 +479,24 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **The first call-off under the contract: forty benches for the harbour park.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **40** (unitCode `H87`)  
   What was despatched.
+- `OutstandingQuantity` = **200** (unitCode `H87`)  
+  Still to come under the contract.
+- `OutstandingReason` = **Later releases under the framework contract.**  
+  Why.
+- `AccountingCostCode` = **PWD-PARKS-26**  
+  The department's programme.
+- `AccountingCost` = **Parks renewal programme 2026**  
+  The cost centre in words.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
+- `DocumentReference/ID` = **PWD-2026-PARKS**  
+  The contract.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -659,9 +703,29 @@ Inside `DespatchLine`:
   <cbc:UUID>76a93c5b-0305-5616-966b-a321c5c91535</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>14:40:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0211</cbc:ID>
   </cac:OrderReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PARKS-26</cbc:ID>
+  </cac:ProjectReference>
+  <cac:Signature>
+    <cbc:ID>CL-SIG-26-DA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Castrano Logistics</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.castrano.example</cbc:WebsiteURI>
@@ -1046,10 +1110,19 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>The first call-off under the contract: forty benches for the harbour park.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">40</cbc:DeliveredQuantity>
+    <cbc:OutstandingQuantity unitCode="H87">200</cbc:OutstandingQuantity>
+    <cbc:OutstandingReason>Later releases under the framework contract.</cbc:OutstandingReason>
+    <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

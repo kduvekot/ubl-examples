@@ -26,6 +26,41 @@ The farm delivers a trailer of seed cotton at the gin and confirms what it deliv
   The day the trailers were weighed at the gin.
 - `IssueTime` = **14:59:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A first delivery note.
+- `Note` = **Three trailer loads, weighed at the gin.**  
+  What was delivered.
+- `AccountingCostCode` = **200**  
+  The gin's cost centre for seed cotton.
+- `AccountingCost` = **Seed cotton purchases**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  One line.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **SCG-SEASON-2026/03**  
+  The call-off under the season agreement.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **SCG-WB-26-0311**  
+  The weighbridge ticket.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LCF-SIG-26-DN**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lisavu Cotton Farm**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Despatch Supplier Party
 
@@ -237,6 +272,17 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at DespatchSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Shipment
+
+Inside `Shipment`:
+
+- `ID` = **LCF-SH-26-03**  
+  The farm's three trailer loads.
+- `GrossWeightMeasure` = **20400** (unitCode `KGM`)  
+  The cotton and the empty trailers' tare of 2,400 kg, as weighed.
+- `Delivery/ActualDeliveryDate` = **2026-02-05**  
+  At the gin.
+
 ### Despatch Line
 
 Inside `DespatchLine`:
@@ -273,6 +319,28 @@ Inside `DespatchLine`:
   <cbc:UUID>975a163a-1aaf-5b83-ac7f-ec67ac956a54</cbc:UUID>
   <cbc:IssueDate>2026-02-05</cbc:IssueDate>
   <cbc:IssueTime>14:59:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:Note>Three trailer loads, weighed at the gin.</cbc:Note>
+  <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:OrderReference>
+    <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
+  </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCG-WB-26-0311</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LCF-SIG-26-DN</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lisavu Cotton Farm</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lisavufarm.example</cbc:WebsiteURI>
@@ -458,6 +526,13 @@ Inside `DespatchLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>LCF-SH-26-03</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">20400</cbc:GrossWeightMeasure>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    </cac:Delivery>
+  </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DeliveredQuantity unitCode="KGM">18000</cbc:DeliveredQuantity>

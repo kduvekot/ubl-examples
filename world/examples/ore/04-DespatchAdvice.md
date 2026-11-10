@@ -26,6 +26,14 @@ The mine announces what was loaded into which wagons, so the factory can plan th
   The day the train was loaded and weighed.
 - `IssueTime` = **15:37:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `DocumentStatusCode` = **NoStatus**  
+  A new despatch advice, not a correction.
+- `DespatchAdviceTypeCode` = **Delivery**  
+  Advice of goods despatched for delivery.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Order Reference
 
@@ -373,6 +381,10 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **One train: 30 wagons of about 60 tonnes.**  
+  The line as the order put it.
+- `LineStatusCode` = **NoStatus**  
+  Despatched as ordered.
 - `DeliveredQuantity` = **1788.4** (unitCode `TNE`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -407,6 +419,10 @@ Inside `DespatchLine`:
   <cbc:UUID>e3281a6d-51f4-5981-b7f0-b43b6a9cf2da</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>15:37:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>
@@ -714,6 +730,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>One train: 30 wagons of about 60 tonnes.</cbc:Note>
+    <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="TNE">1788.4</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
