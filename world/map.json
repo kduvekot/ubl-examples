@@ -371,13 +371,12 @@
  ],
  "platforms": [
   {
-   "name": "Kelpstone field",
    "at": [
     33,
     3
    ],
    "party": "42-xb",
-   "note": "The gas field's production platform, offshore."
+   "note": "The gas field's production platform, offshore: it has no name or address in the documents, only its place in the world's map grid and its WGS 84 coordinates."
   }
  ]
 }

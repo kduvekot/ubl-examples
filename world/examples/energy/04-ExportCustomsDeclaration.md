@@ -198,6 +198,22 @@ Inside `CustomsDeclaration`:
   The month's flow through the pipeline.
 - `Shipment/ShipmentStage/TransportMeans/TransportMeansTypeCode` = **Pipeline**  
   The gas leaves by pipeline.
+- `Shipment/OriginAddress/ID` = **33/03** (schemeID `urn:ubl-examples:world:grid`)  
+  Where the gas is produced: the platform of the offshore field. Identified by its square of the world's map grid (column/row), as offshore installations are identified by grid references.
+- `Shipment/OriginAddress/LocationCoordinate/CoordinateSystemCode` = **WGS84**  
+  The World Geodetic System 1984, as used by satellite navigation.
+- `Shipment/OriginAddress/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Shipment/OriginAddress/LocationCoordinate/LatitudeMinutesMeasure` = **49.80** (unitCode `D61`)  
+  The minutes of the latitude.
+- `Shipment/OriginAddress/LocationCoordinate/LatitudeDirectionCode` = **South**  
+  South of the equator.
+- `Shipment/OriginAddress/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Shipment/OriginAddress/LocationCoordinate/LongitudeMinutesMeasure` = **16.20** (unitCode `D61`)  
+  The minutes of the longitude.
+- `Shipment/OriginAddress/LocationCoordinate/LongitudeDirectionCode` = **West**  
+  West of the Greenwich meridian.
 - `ConsigneeParty/WebsiteURI` = **https://www.montebrio.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **3510** (listID `ISIC Rev.4`)  
@@ -523,6 +539,18 @@ Inside `CustomsDeclaration`:
           <cbc:TransportMeansTypeCode>Pipeline</cbc:TransportMeansTypeCode>
         </cac:TransportMeans>
       </cac:ShipmentStage>
+      <cac:OriginAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:grid">33/03</cbc:ID>
+        <cac:LocationCoordinate>
+          <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+          <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">49.80</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+          <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">16.20</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+        </cac:LocationCoordinate>
+      </cac:OriginAddress>
     </cac:Shipment>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.montebrio.example</cbc:WebsiteURI>

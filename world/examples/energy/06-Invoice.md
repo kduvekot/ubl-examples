@@ -440,6 +440,22 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Item/OriginAddress/ID` = **33/03** (schemeID `urn:ubl-examples:world:grid`)  
+  Where the gas comes from: the field's platform. Identified by its square of the world's map grid (column/row), as offshore installations are identified by grid references.
+- `Item/OriginAddress/LocationCoordinate/CoordinateSystemCode` = **WGS84**  
+  The World Geodetic System 1984, as used by satellite navigation.
+- `Item/OriginAddress/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Item/OriginAddress/LocationCoordinate/LatitudeMinutesMeasure` = **49.80** (unitCode `D61`)  
+  The minutes of the latitude.
+- `Item/OriginAddress/LocationCoordinate/LatitudeDirectionCode` = **South**  
+  South of the equator.
+- `Item/OriginAddress/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Item/OriginAddress/LocationCoordinate/LongitudeMinutesMeasure` = **16.20** (unitCode `D61`)  
+  The minutes of the longitude.
+- `Item/OriginAddress/LocationCoordinate/LongitudeDirectionCode` = **West**  
+  West of the Greenwich meridian.
 - `Price/PriceAmount` = **3600** (currencyID `XUF`)  
   The seller's price of 36.0 XBL, converted to the buyer's currency at the world's reference rate, as the contract provides.
 - `Price/BaseQuantity` = **1** (unitCode `MWH`)  
@@ -804,6 +820,18 @@ Inside `InvoiceLine`:
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:OriginAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:grid">33/03</cbc:ID>
+        <cac:LocationCoordinate>
+          <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+          <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">49.80</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+          <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">16.20</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+        </cac:LocationCoordinate>
+      </cac:OriginAddress>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">3600</cbc:PriceAmount>

@@ -10,7 +10,7 @@ import uuid
 from decimal import Decimal
 
 import examples_kit as kit
-from build_examples import ITEM, PARTY, WORLD, V, address, amount, item, money, party, price, qty
+from build_examples import ITEM, PARTY, WORLD, V, address, amount, coordinate, item, money, party, price, qty
 
 
 def rate(a, b):
@@ -8365,6 +8365,19 @@ TO_LUME = {"SourceCurrencyCode": V("XUF", "The invoice's currency, ferra."),
            "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume.")}
 
 
+PLATFORM = next(pf for pf in WORLD["platforms"] if pf["party"] == "42-xb")
+
+
+def platform_location(why):
+    """The offshore platform: no name, no street; only its grid reference on the world's map grid and its WGS 84
+    coordinates, as an offshore installation is identified."""
+    i, j = PLATFORM["at"]
+    return {"ID": V(f"{i:02d}/{j:02d}", why + " Identified by its square of the world's map grid (column/row), "
+                                             "as offshore installations are identified by grid references.",
+                    schemeID="urn:ubl-examples:world:grid"),
+            "LocationCoordinate": coordinate(PLATFORM["at"])}
+
+
 def pipeline_stage(why):
     return {"ID": V("1", "The only stage."),
             "TransportModeCode": V("7", "UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline.",
@@ -8459,6 +8472,8 @@ def energy(n, doc):
         out = kit.export_declaration(f, n, doc, 1, "The monthly declaration of the gas exported in March.",
                                      "The value of the gas at the contract price, in lume.")
         out["CustomsDeclaration"]["Shipment"]["ShipmentStage"] = pipeline_stage("The gas leaves by pipeline.")
+        out["CustomsDeclaration"]["Shipment"]["OriginAddress"] = platform_location("Where the gas is produced: the "
+                                                                                   "platform of the offshore field.")
         return out
     if d == "ImportCustomsDeclaration":
         out = kit.import_declaration(f, n, doc, 1, "The monthly declaration of the gas received in March.",
@@ -8477,6 +8492,8 @@ def energy(n, doc):
                                             ": fed into the grid at the city gate.")}],
                           key=key, extra=MARCH, currency="XUF")
         out["Note"] = V("Priced in ferra as the supply contract says: the buyer's own currency.", "Why ferra.")
+        ln = out["InvoiceLine"][0] if isinstance(out["InvoiceLine"], list) else out["InvoiceLine"]
+        ln["Item"]["OriginAddress"] = platform_location("Where the gas comes from: the field's platform.")
         return out
     if d == "Reminder":
         inv = f.numbers["gas-invoice-amount"]
