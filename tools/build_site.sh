@@ -41,6 +41,7 @@ CODE_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16
 nav() { # root-prefix, current-page
   section=$2
   [ "$section" = coverage-details.html ] && section=coverage.html  # sub-page of Coverage
+  case "$section" in world-*.html) section=world.html ;; esac       # party pages belong to World
   printf '<header class="site-header"><div class="bar">'
   printf '<a class="brand" href="%sindex.html">%s<span>UBL Example Documents</span></a>' "$1" "$LOGO"
   printf '<input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label>'
@@ -75,7 +76,13 @@ page analysis/element-coverage.md coverage.html "Element coverage" 2
 page analysis/element-coverage-details.md coverage-details.html "Element coverage: details" 3
 
 cp site/site.css "$OUT/site.css"
-cp site/world.html "$OUT/world.html"
+# The world: the map with its data, and a page per party
+python3 tools/build_world.py "$OUT" "$OUT/.world-md"
+for md in "$OUT"/.world-md/*.md; do
+  name=$(basename "$md" .md)
+  page "$md" "$name.html" "$(sed -n '1s/^# //p' "$md")"
+done
+rm -rf "$OUT/.world-md"
 # Landing page: header, footer and key figures filled in
 nav "" index.html > "$OUT/.nav"
 footer > "$OUT/.footer"

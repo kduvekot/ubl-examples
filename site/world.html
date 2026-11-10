@@ -45,7 +45,8 @@ body { margin: 0; background: var(--ui-bg); color: var(--ui-text); font: 14px/1.
 .layers button[aria-pressed="false"] { opacity: .45; }
 .layers button:focus-visible, .zoom button:focus-visible, .party:focus-visible { outline: 2px solid var(--c-logistics); outline-offset: 2px; }
 .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
-.zoom { margin-left: auto; display: flex; gap: 6px; }
+.zoom { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+.compass { font: 700 13px/1 var(--font-text); color: var(--ui-muted); min-width: 1.6em; text-align: center; }
 .main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 340px; min-height: 0; }
 .mapwrap { position: relative; min-width: 0; min-height: 0; background: #2b5d8f; }
 canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
@@ -62,6 +63,9 @@ canvas.dragging { cursor: grabbing; }
 .card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; }
 .card dt { color: var(--ui-muted); }
 .card dd { margin: 0; }
+.card .more { margin: 12px 0 0; }
+.card .more a { color: var(--c-logistics); font-weight: 600; text-decoration: none; }
+.card .more a:hover { text-decoration: underline; }
 .card code { font-size: 12px; background: #0f1320; padding: 1px 5px; border-radius: 3px; }
 .list { padding: 8px 0 16px; }
 .list h3 { font: 700 14px/1 var(--font-pixel); margin: 14px 16px 6px; color: var(--ui-muted); letter-spacing: .05em; text-transform: uppercase; }
@@ -95,6 +99,9 @@ canvas.dragging { cursor: grabbing; }
     <button id="layer-proc" aria-pressed="true" data-layer="proc"><span class="dot" style="background:var(--c-procurement)"></span>Procurement</button>
   </div>
   <div class="zoom">
+    <button id="rot-left" aria-label="Rotate left (Q)" title="Rotate left (Q)">⟲</button>
+    <span class="compass" aria-label="View from" title="View direction"><span id="compass">N</span></span>
+    <button id="rot-right" aria-label="Rotate right (E)" title="Rotate right (E)">⟳</button>
     <button id="zoom-out" aria-label="Zoom out">−</button>
     <button id="zoom-in" aria-label="Zoom in">+</button>
     <button id="zoom-fit">Fit</button>
@@ -104,7 +111,7 @@ canvas.dragging { cursor: grabbing; }
 <div class="main">
   <div class="mapwrap">
     <canvas id="map" aria-label="Isometric map of the UBL example world with three countries and their parties"></canvas>
-    <div class="hint">Drag to move · scroll or pinch to zoom · click a building</div>
+    <div class="hint">Drag to move · scroll or pinch to zoom · ⟲ ⟳ or Q / E to rotate · click a building</div>
   </div>
   <aside class="panel">
     <section class="card" id="card" aria-live="polite"></section>
@@ -119,134 +126,14 @@ canvas.dragging { cursor: grabbing; }
 // ---------------------------------------------------------------- world data
 const W = 64, H = 48;               // tiles
 const TW = 32, TH = 16;             // tile size in pixels (isometric)
-const COUNTRIES = {
-  XA: { name: "Country A", note: "Mainland, inland. Raw materials and manufacturing." },
-  XB: { name: "Country B", note: "Mainland, coast. Distribution, retail, seaport and airport hub." },
-  XC: { name: "Country C", note: "Island. The overseas buyer, reached by sea and air." },
-};
+// Countries and parties come from world/world.json; the build puts them here.
+const WORLD = /*WORLD_JSON*/ null;
+const COUNTRIES = WORLD.countries;
 const CAT = { commerce: "--c-commerce", logistics: "--c-logistics", government: "--c-government", finance: "--c-finance", procurement: "--c-procurement" };
 const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov", finance: "fin", procurement: "proc" };
 
 // Parties: number from the 26+C set (27-32 proposed), tile position, country.
-const P = [
-  // Country A
-  { n: "4", name: "Raw Material Supplier", cat: "commerce", c: "XA", at: [9, 10], h: 2, kind: "mine",
-    what: "Mines the ore at the start of the chain and sells it to the manufacturer.",
-    docs: "Order, DespatchAdvice, Invoice", roles: "AccountingSupplierParty, ConsignorParty" },
-  { n: "5", name: "Manufacturer", cat: "commerce", c: "XA", at: [14, 19], h: 3, kind: "factory",
-    what: "Turns raw material into finished goods; buys from #4, sells to #6 abroad and tenders in public procurement.",
-    docs: "Order, OrderResponse, Invoice, Tender, CertificateOfOrigin", roles: "SellerSupplierParty, AccountingSupplierParty, ExporterParty, EconomicOperatorParty" },
-  { n: "8", name: "Seller's Warehouse (3PL)", cat: "commerce", c: "XA", at: [16, 23], h: 2, kind: "warehouse",
-    what: "Picks, packs and hands the goods to the carrier for the manufacturer; knows nothing about prices.",
-    docs: "DespatchAdvice, InventoryReport", roles: "DespatchParty, ConsignorParty" },
-  { n: "7", name: "Waste Processor", cat: "commerce", c: "XA", at: [10, 25], h: 2, kind: "waste",
-    what: "Takes production waste from the manufacturer and invoices the removal.",
-    docs: "WasteNotification, WasteMovement, Invoice", roles: "RecoveryFacilityParty, DisposalFacilityParty" },
-  { n: "14", name: "Rail Carrier", cat: "logistics", c: "XA", at: [10, 16], h: 2, kind: "depot",
-    what: "Runs the ore trains from the mine to the factory and container trains to the border.",
-    docs: "Waybill, TransportExecutionPlan, TransportationStatus", roles: "CarrierParty, TransportServiceProviderParty" },
-  { n: "13", name: "Road Carrier", cat: "logistics", c: "XA", at: [17, 26], h: 1, kind: "depot",
-    what: "Trucks the goods across the land border to the distributor; last-mile delivery.",
-    docs: "Waybill, TransportationStatus, FreightInvoice", roles: "CarrierParty" },
-  { n: "15", name: "Inland Waterway Carrier", cat: "logistics", c: "XA", at: [18, 21], h: 1, kind: "quay",
-    what: "Moves bulk on the river from Country A down to the coast of Country B.",
-    docs: "Waybill, TransportExecutionPlan", roles: "CarrierParty, PerformingCarrierParty" },
-  { n: "18", name: "Rail Hub / Intermodal Terminal", cat: "logistics", c: "XA", at: [19, 16], h: 2, kind: "terminal",
-    what: "Transfers containers between rail and road at the border; manages tracks and slots.",
-    docs: "TransportationStatus, CommonTransportationReport", roles: "TerminalOperatorParty, AuthorityParty" },
-  { n: "23", name: "Seller's Bank", cat: "finance", c: "XA", at: [12, 21], h: 3, kind: "bank",
-    what: "Holds the manufacturer's account and receives the payments from abroad.",
-    docs: "Invoice (PayeeFinancialAccount), RemittanceAdvice", roles: "PayeeParty (account holder)" },
-  { n: "20", name: "Chamber of Commerce (XA)", cat: "government", c: "XA", at: [13, 23], h: 2, kind: "office",
-    what: "Certifies the origin of the exported goods and issues ATA carnets.",
-    docs: "CertificateOfOrigin, GoodsItemPassport", roles: "IssuerParty, EndorserParty, ExportingGuarantorParty" },
-  { n: "19", name: "Customs (XA)", cat: "government", c: "XA", at: [20, 22], h: 1, kind: "customs",
-    what: "Export customs at the land border crossing.",
-    docs: "ExportCustomsDeclaration, GoodsItemPassport", roles: "CustomsParty, ExportingCustomsParty" },
-  { n: "31", name: "Identifier Issuing Agency", cat: "government", c: "XA", at: [11, 22], h: 2, kind: "office", proposed: true,
-    what: "Issues item and property identifiers used across the world (a fictional numbering organisation).",
-    docs: "Catalogue, Item identifiers in every document", roles: "IssuerParty (ItemIdentification, PropertyIdentification)" },
-  // Country B
-  { n: "19", name: "Customs (XB)", cat: "government", c: "XB", at: [23, 22], h: 1, kind: "customs",
-    what: "Import customs at the land border crossing and at the seaport.",
-    docs: "ImportCustomsDeclaration, TransitCustomsDeclaration", roles: "CustomsParty, ImportingCustomsParty" },
-  { n: "6", name: "Distributor", cat: "commerce", c: "XB", at: [28, 26], h: 3, kind: "warehouse",
-    what: "Buys finished goods from #5, stocks them in its distribution centre, publishes the catalogue and sells to #26 and overseas to #1.",
-    docs: "Catalogue, Order, DespatchAdvice, Invoice, ReceiptAdvice", roles: "SellerSupplierParty, BuyerCustomerParty, ProviderParty" },
-  { n: "26", name: "Retailer", cat: "commerce", c: "XB", at: [33, 30], h: 2, kind: "shop",
-    what: "Buys from the distributor, sells to consumers; shares forecasts and promotions.",
-    docs: "Order, Forecast, RetailEvent, PurchaseReceipt", roles: "BuyerCustomerParty, RetailerCustomerParty" },
-  { n: "C", name: "Consumer", cat: "commerce", c: "XB", at: [35, 32], h: 1, kind: "house",
-    what: "A private person buying in the shop; receives a purchase receipt.",
-    docs: "PurchaseReceipt", roles: "AccountingCustomerParty (PurchaseReceipt)" },
-  { n: "2", name: "Contracting Authority", cat: "procurement", c: "XB", at: [31, 27], h: 4, kind: "townhall",
-    what: "A public body that buys under procurement law: publishes notices, receives and evaluates tenders.",
-    docs: "ContractNotice, CallForTenders, ContractAwardNotice", roles: "ContractingParty, TenderRecipientParty, TenderEvaluationParty" },
-  { n: "27", name: "Consortium Partner", cat: "procurement", c: "XB", at: [26, 31], h: 2, kind: "office", proposed: true,
-    what: "Tenders together with the manufacturer as consortium partner or subcontractor.",
-    docs: "Tender, TendererQualification", roles: "SubcontractorParty, AdditionalQualifyingParty" },
-  { n: "28", name: "Review Body", cat: "procurement", c: "XB", at: [33, 26], h: 3, kind: "office", proposed: true,
-    what: "Independent body that handles appeals and mediation in public procurement.",
-    docs: "ContractNotice, ContractAwardNotice (AppealTerms)", roles: "AppealReceiverParty, MediationParty" },
-  { n: "21", name: "Government Information Service", cat: "government", c: "XB", at: [30, 25], h: 3, kind: "office",
-    what: "Publishes procurement notices and keeps the business registry.",
-    docs: "PriorInformationNotice, BusinessInformation", roles: "ReceiverParty (notices), EvidenceIssuingParty" },
-  { n: "32", name: "Digital Agreement Governor", cat: "government", c: "XB", at: [29, 29], h: 2, kind: "office", proposed: true,
-    what: "Governs the multilateral digital agreement under which the parties exchange UBL documents.",
-    docs: "DigitalAgreement, DigitalCapability", roles: "GovernorParty" },
-  { n: "24", name: "Factor", cat: "finance", c: "XB", at: [31, 31], h: 3, kind: "bank",
-    what: "Buys the distributor's receivables and becomes the payee on its invoices.",
-    docs: "Invoice, Statement", roles: "PayeeParty" },
-  { n: "25", name: "Guarantor", cat: "finance", c: "XB", at: [32, 33], h: 2, kind: "bank",
-    what: "Issues guarantees, such as the bid bond for a tender.",
-    docs: "GuaranteeCertificate", roles: "GuarantorParty" },
-  { n: "29", name: "Insurer", cat: "finance", c: "XB", at: [34, 28], h: 3, kind: "bank", proposed: true,
-    what: "Insures the cargo on its way overseas.",
-    docs: "BillOfLading, Waybill (InsurancePolicy)", roles: "InsurerParty" },
-  { n: "10", name: "Freight Forwarder", cat: "logistics", c: "XB", at: [37, 25], h: 2, kind: "office",
-    what: "Books the transport, consolidates shipments and prepares the export documents; also arranges cargo insurance.",
-    docs: "ForwardingInstructions, PackingList, Manifest", roles: "FreightForwarderParty, LogisticsOperatorParty, BrokerParty" },
-  { n: "16", name: "Seaport (XB)", cat: "logistics", c: "XB", at: [39, 22], h: 2, kind: "port",
-    what: "Port of loading: berths, container yard and vessel traffic.",
-    docs: "CommonTransportationReport, TransportationStatus", roles: "TerminalOperatorParty, AuthorityParty" },
-  { n: "11", name: "Ocean Carrier", cat: "logistics", c: "XB", at: [38, 19], h: 2, kind: "office",
-    what: "Sails the container ship to the island and issues the negotiable bill of lading.",
-    docs: "BillOfLading, Waybill, CommonTransportationReport", roles: "CarrierParty, ReporterParty" },
-  { n: "17", name: "Airport (XB)", cat: "logistics", c: "XB", at: [33, 19], h: 1, kind: "airport",
-    what: "Air cargo terminal for urgent shipments overseas.",
-    docs: "TransportationStatus", roles: "TerminalOperatorParty" },
-  // Country C (island)
-  { n: "16", name: "Seaport (XC)", cat: "logistics", c: "XC", at: [46, 22], h: 2, kind: "port",
-    what: "Port of discharge on the island.",
-    docs: "CommonTransportationReport", roles: "TerminalOperatorParty, AuthorityParty" },
-  { n: "17", name: "Airport (XC)", cat: "logistics", c: "XC", at: [52, 15], h: 1, kind: "airport",
-    what: "The island's airport, where the air cargo arrives.",
-    docs: "TransportationStatus", roles: "TerminalOperatorParty" },
-  { n: "12", name: "Air Carrier", cat: "logistics", c: "XC", at: [54, 17], h: 2, kind: "office",
-    what: "The island's airline; flies urgent cargo and uses road feeder services on the mainland.",
-    docs: "Waybill (air waybill), TransportationStatus", roles: "CarrierParty, SubstituteCarrierParty via #13" },
-  { n: "19", name: "Customs (XC)", cat: "government", c: "XC", at: [47, 24], h: 1, kind: "customs",
-    what: "Import customs on the island.",
-    docs: "ImportCustomsDeclaration", roles: "CustomsParty, ImportingCustomsParty" },
-  { n: "3", name: "Customs Declarant / Broker", cat: "logistics", c: "XC", at: [49, 21], h: 2, kind: "office",
-    what: "Licensed agent that files the import declaration for the buyer; also acts as tax representative.",
-    docs: "ImportCustomsDeclaration, Invoice (tax representative)", roles: "CustomsAgentParty, TaxRepresentativeParty" },
-  { n: "9", name: "Buyer's Warehouse (3PL)", cat: "commerce", c: "XC", at: [50, 26], h: 2, kind: "warehouse",
-    what: "Receives the goods for the buyer and confirms what arrived.",
-    docs: "ReceiptAdvice, InventoryReport", roles: "DeliveryParty, ConsigneeParty" },
-  { n: "1", name: "Commercial Buyer", cat: "commerce", c: "XC", at: [53, 24], h: 3, kind: "office",
-    what: "Needs the goods: orders from the distributor overseas and pays the invoice.",
-    docs: "Order, OrderChange, ReceiptAdvice, RemittanceAdvice", roles: "BuyerCustomerParty, AccountingCustomerParty, ImporterParty" },
-  { n: "22", name: "Buyer's Bank", cat: "finance", c: "XC", at: [55, 26], h: 3, kind: "bank",
-    what: "Holds the buyer's account and sends the payment abroad.",
-    docs: "RemittanceAdvice (PaymentMeans)", roles: "PayerFinancialAccount holder" },
-  { n: "20", name: "Chamber of Commerce (XC)", cat: "government", c: "XC", at: [54, 21], h: 2, kind: "office",
-    what: "Guarantees ATA carnets on the import side.",
-    docs: "GoodsItemPassport", roles: "ImportingGuarantorParty" },
-  { n: "30", name: "Maritime Administration", cat: "government", c: "XC", at: [56, 23], h: 2, kind: "office", proposed: true,
-    what: "The island's flag state administration; issues ship security certificates.",
-    docs: "CommonTransportationReport (ISPSRequirements)", roles: "ISSCIssuerParty, LegalAuthorityParty" },
-];
+const P = WORLD.parties;
 
 // Routes in tile coordinates. Each has a mode, a layer and a vehicle.
 const ROUTES = [
@@ -302,10 +189,21 @@ for (const tw of TOWNS) for (let i = -5; i <= 5; i++) for (let j = -5; j <= 5; j
   if (Math.hypot(i, j) < tw.r && hash(x * 7, y * 3) > .38) { t.t = "grass"; t.house = 1 + Math.floor(hash(x, y * 5) * 3); }
 }
 
+// middle of each country's land, for its name on the map
+const CENTRE = (() => { const sum = {}; for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j];
+  if (!t.land || !t.country) continue; const a = sum[t.country] ||= [0, 0, 0]; a[0] += i; a[1] += j; a[2]++; }
+  return Object.fromEntries(Object.entries(sum).map(([c, [x, y, n]]) => [c, [Math.round(x / n), Math.round(y / n) + 3]])); })();
+
 // ---------------------------------------------------------------- drawing helpers
 const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const iso = (i, j) => [(i - j) * TW / 2, (i + j) * TH / 2];
-const OX = H * TW / 2 + 40, OY = 60;                 // offset of tile (0,0) on the world canvas
+// Rotation in 90-degree steps: the data keeps its original tile coordinates,
+// drawing converts them. rot 0..3; R: original -> rotated, RI: rotated -> original.
+let rot = 0;
+const RW = () => rot % 2 ? H : W, RH = () => rot % 2 ? W : H;
+const R = (i, j) => [[i, j], [H - 1 - j, i], [W - 1 - i, H - 1 - j], [j, W - 1 - i]][rot];
+const RI = (i, j) => [[i, j], [j, H - 1 - i], [W - 1 - i, H - 1 - j], [W - 1 - j, i]][rot];
+let OX = H * TW / 2 + 40; const OY = 60;           // offset of rotated tile (0,0) on the world canvas
 const WORLD_W = (W + H) * TW / 2 + 80, WORLD_H = (W + H) * TH / 2 + 140;
 const shade = (hex, f) => { const v = parseInt(hex.slice(1), 16); let r = v >> 16, g = (v >> 8) & 255, b = v & 255;
   const m = c => Math.max(0, Math.min(255, Math.round(f > 0 ? c + (255 - c) * f : c * (1 + f)))); return `rgb(${m(r)},${m(g)},${m(b)})`; };
@@ -325,8 +223,9 @@ const COLORS = { sea: "#2f6aa3", sea2: "#3a7bb6", grass: "#5f9e47", grass2: "#6a
   river: "#3f86c4", road: "#7b7b78", rail: "#6b5848", sand: "#d8c98a" };
 function drawWorld() {
   const g = world.getContext("2d"); g.clearRect(0, 0, WORLD_W, WORLD_H); g.imageSmoothingEnabled = false;
-  for (let s = 0; s < W + H; s++) for (let i = 0; i < W; i++) { const j = s - i; if (j < 0 || j >= H) continue;
-    const t = tiles[i][j]; const [x0, y0] = iso(i, j); const x = x0 + OX, y = y0 + OY;
+  OX = RH() * TW / 2 + 40;
+  for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
+    const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x0, y0] = iso(ri, rj); const x = x0 + OX, y = y0 + OY;
     if (!t.land) { const shallow = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b]?.land);
       diamond(g, x, y, shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea)); continue; }
     const coast = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b] && !tiles[i+a][j+b].land);
@@ -347,9 +246,10 @@ function drawWorld() {
   }
   // country borders: dashed line along tile edges where the country changes on land
   g.strokeStyle = "#d94a4a"; g.lineWidth = 2; g.setLineDash([5, 4]);
-  for (let i = 0; i < W - 1; i++) for (let j = 0; j < H; j++) { const a = tiles[i][j], b = tiles[i + 1][j];
+  const T = (ri, rj) => { const [i, j] = RI(ri, rj); return tiles[i][j]; };
+  for (let i = 0; i < RW() - 1; i++) for (let j = 0; j < RH(); j++) { const a = T(i, j), b = T(i + 1, j);
     if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); g.beginPath(); g.moveTo(x + OX, y + OY - TH / 2 + TH); g.lineTo(x + OX + TW / 2, y + OY); g.stroke(); } }
-  for (let i = 0; i < W; i++) for (let j = 0; j < H - 1; j++) { const a = tiles[i][j], b = tiles[i][j + 1];
+  for (let i = 0; i < RW(); i++) for (let j = 0; j < RH() - 1; j++) { const a = T(i, j), b = T(i, j + 1);
     if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); g.beginPath(); g.moveTo(x + OX, y + OY + TH / 2); g.lineTo(x + OX - TW / 2, y + OY); g.stroke(); } }
   g.setLineDash([]);
 }
@@ -384,17 +284,22 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function resize() { dpr = Math.min(2, window.devicePixelRatio || 1); const r = cv.getBoundingClientRect();
   cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); if (!view.fitted) fit(); }
 // bounding box of all land, in world pixels
-const LAND = (() => { let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
-  for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (tiles[i][j].land) { const [x, y] = iso(i, j);
-    x0 = Math.min(x0, x + OX - TW / 2); x1 = Math.max(x1, x + OX + TW / 2); y0 = Math.min(y0, y + OY - 40); y1 = Math.max(y1, y + OY + TH); }
-  return { x0, y0, x1, y1 }; })();
+let LAND;
+function computeLand() { let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (tiles[i][j].land) { const [x, y] = tileWorld(i, j);
+    x0 = Math.min(x0, x - TW / 2); x1 = Math.max(x1, x + TW / 2); y0 = Math.min(y0, y - 40); y1 = Math.max(y1, y + TH); }
+  LAND = { x0, y0, x1, y1 }; }
 function fit() { const r = cv.getBoundingClientRect(), pad = 16, w = LAND.x1 - LAND.x0, h = LAND.y1 - LAND.y0;
   view.s = Math.max(.35, Math.min(2.5, Math.min((r.width - 2 * pad) / w, (r.height - 2 * pad) / h)));
   view.x = (r.width - w * view.s) / 2 - LAND.x0 * view.s; view.y = (r.height - h * view.s) / 2 - LAND.y0 * view.s; view.fitted = true; }
 const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
-const tileWorld = (i, j) => { const [x, y] = iso(i, j); return [x + OX, y + OY]; };
+// world pixel position of an original tile, in the current rotation
+const tileWorld = (i, j) => { const [x, y] = iso(...R(i, j)); return [x + OX, y + OY]; };
 function pathLen(pts) { let L = 0; const seg = []; for (let k = 0; k < pts.length - 1; k++) { const [a, b] = [tileWorld(...pts[k]), tileWorld(...pts[k + 1])]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); seg.push([a, b, l]); L += l; } return { seg, L }; }
-for (const r of ROUTES) Object.assign(r, pathLen(r.pts));
+const measureRoutes = () => { for (const r of ROUTES) Object.assign(r, pathLen(r.pts)); };
+function rotate(step) { rot = (rot + step + 4) % 4; drawWorld(); computeLand(); measureRoutes(); fit(); redraw();
+  document.getElementById("compass").textContent = ["N", "E", "S", "W"][rot]; }
+OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();
 function along(r, f) { let d = f * r.L; for (const [a, b, l] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0])]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], 0]; }
 
 function drawVehicle(g, r, t) {
@@ -429,7 +334,7 @@ function frame(t) {
   if (!reduced) for (const ro of ROUTES) if (layers[ro.layer]) drawVehicle(ctx, ro, t);
   // country names
   ctx.textAlign = "center";
-  for (const [code, pos] of [["XA", [11, 30]], ["XB", [33, 38]], ["XC", [55, 31]]]) { const [x, y] = toScreen(...tileWorld(...pos));
+  for (const [code, pos] of Object.entries(CENTRE)) { const [x, y] = toScreen(...tileWorld(...pos));
     ctx.font = `700 ${Math.round(14 + 5 * view.s)}px Inter, system-ui, sans-serif`; ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.strokeStyle = "rgba(0,0,0,.55)"; ctx.lineWidth = 3;
     const label = `${COUNTRIES[code].name} · ${code}`; ctx.strokeText(label, x, y); ctx.fillText(label, x, y); }
   ctx.textAlign = "left";
@@ -458,9 +363,11 @@ function showCard(p) {
   const col = css(CAT[p.cat]);
   card.innerHTML = `<div class="num">PARTY #${p.n}${p.proposed ? " · PROPOSED" : ""}</div><h2 style="color:${col}">${p.name}</h2>
     <div class="tags"><span class="tag">${COUNTRIES[p.c].name} (${p.c})</span><span class="tag">${p.cat}</span></div>
-    <p>${p.what}</p><dl><dt>Documents</dt><dd>${p.docs}</dd><dt>UBL roles</dt><dd><code>${p.roles.split(", ").join("</code> <code>")}</code></dd></dl>`;
+    <p>${p.what}</p><dl><dt>Documents</dt><dd>${p.docs}</dd><dt>UBL roles</dt><dd><code>${p.roles.split(", ").join("</code> <code>")}</code></dd></dl>
+    <p class="more"><a href="world-${p.id}.html">How UBL helps ${p.name.replace(/ \(X.\)$/, "")} →</a></p>`;
 }
 function select(p, center) { selected = p; showCard(p);
+  history.replaceState(null, "", p ? "#" + p.id : location.pathname);
   for (const b of list.querySelectorAll(".party")) b.setAttribute("aria-current", b._p === p ? "true" : "false");
   if (p && center) { const r = cv.getBoundingClientRect(); const [wx, wy] = tileWorld(...p.at); view.s = Math.max(view.s, 1.4); view.x = r.width / 2 - wx * view.s; view.y = r.height / 2 - wy * view.s; }
   redraw(); }
@@ -478,6 +385,11 @@ const zoomAt = (f, cx, cy) => { const ns = Math.max(.35, Math.min(3, view.s * f)
 document.getElementById("zoom-in").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(1.25, r.width / 2, r.height / 2); };
 document.getElementById("zoom-out").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(.8, r.width / 2, r.height / 2); };
 document.getElementById("zoom-fit").onclick = () => { fit(); redraw(); };
+document.getElementById("rot-left").onclick = () => rotate(-1);
+document.getElementById("rot-right").onclick = () => rotate(1);
+window.addEventListener("keydown", e => { if (e.target.closest("input, textarea")) return;
+  if (e.key === "q" || e.key === "Q") rotate(-1); else if (e.key === "e" || e.key === "E") rotate(1);
+  else if (e.key === "+" || e.key === "=") document.getElementById("zoom-in").click(); else if (e.key === "-") document.getElementById("zoom-out").click(); });
 cv.addEventListener("wheel", e => { e.preventDefault(); const r = cv.getBoundingClientRect(); zoomAt(e.deltaY < 0 ? 1.12 : .89, e.clientX - r.left, e.clientY - r.top); }, { passive: false });
 const pointers = new Map(); let moved = 0, pinch = 0;
 cv.addEventListener("pointerdown", e => { cv.setPointerCapture(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]); moved = 0; cv.classList.add("dragging"); });
@@ -494,6 +406,8 @@ cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
 window.addEventListener("resize", () => { view.fitted = false; resize(); redraw(); });
 document.fonts?.ready.then(() => { drawWorld(); redraw(); });
 drawWorld(); resize(); showCard(null);
+const fromHash = () => { const p = P.find(p => "#" + p.id === location.hash); if (p) select(p, true); };
+fromHash(); window.addEventListener("hashchange", fromHash);
 if (reduced) frame(0); else requestAnimationFrame(frame);
 })();
 </script>
