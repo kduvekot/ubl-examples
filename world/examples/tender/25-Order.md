@@ -232,6 +232,8 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `ReleaseID` = **1**  
+  The first release under the contract: 40 of the 240 benches.
 - `DeliveryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeport Public Works Department**  
@@ -688,6 +690,7 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cbc:ReleaseID>1</cbc:ReleaseID>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>

@@ -499,6 +499,15 @@
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
           <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+          <cbc:TradeServiceCode>TWL-ISL</cbc:TradeServiceCode>
+          <cac:Stowage>
+            <cbc:LocationID>140282</cbc:LocationID>
+            <cbc:Location>On deck, aft of the bridge</cbc:Location>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID>Slot</cbc:AttributeID>
+              <cbc:Measure unitCode="MTR">12.2</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:Stowage>
           <cac:MaritimeTransport>
             <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
@@ -563,6 +572,8 @@
       </cac:MainCarriageShipmentStage>
       <cac:PreCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
+        <cbc:ShipmentStageTypeCode>PreCarriage</cbc:ShipmentStageTypeCode>
+        <cbc:ShipmentStageType>Carriage before the main carriage</cbc:ShipmentStageType>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
         <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
         <cbc:CabotageIndicator>true</cbc:CabotageIndicator>
@@ -599,6 +610,11 @@
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
         </cac:DropoffTransportEvent>
+        <cac:FreightAllowanceCharge>
+          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReason>Pre-carriage by road</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">310.00</cbc:Amount>
+        </cac:FreightAllowanceCharge>
       </cac:PreCarriageShipmentStage>
       <cac:OnCarriageShipmentStage>
         <cbc:ID>3</cbc:ID>
@@ -636,6 +652,16 @@
             <cbc:SealIssuerTypeCode>Carrier</cbc:SealIssuerTypeCode>
             <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
           </cac:TransportEquipmentSeal>
+          <cac:SupplierParty>
+            <cac:Party>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+              </cac:PartyName>
+            </cac:Party>
+          </cac:SupplierParty>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-001</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
@@ -836,9 +862,33 @@
             <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-025</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
+          <cac:AttachedTransportEquipment>
+            <cbc:ID>UR TR 3381</cbc:ID>
+            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
+          </cac:AttachedTransportEquipment>
+          <cac:Package>
+            <cbc:ID>LD-26-025</cbc:ID>
+            <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+            <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+            <cac:ContainingTransportEquipment>
+              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+            </cac:ContainingTransportEquipment>
+          </cac:Package>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
+            <cac:GoodsItemContainer>
+              <cbc:ID>TWLU4120872</cbc:ID>
+              <cbc:Quantity unitCode="C62">25</cbc:Quantity>
+            </cac:GoodsItemContainer>
+            <cac:ContainedGoodsItem>
+              <cbc:ID>1.1</cbc:ID>
+              <cbc:Description>Park benches</cbc:Description>
+            </cac:ContainedGoodsItem>
+            <cac:ContainedGoodsItem>
+              <cbc:ID>1.2</cbc:ID>
+              <cbc:Description>Spare side frames</cbc:Description>
+            </cac:ContainedGoodsItem>
           </cac:GoodsItem>
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0510</cbc:ID>
@@ -896,6 +946,35 @@
           </cac:Country>
         </cac:Address>
       </cac:LastExitPortLocation>
+      <cac:DocumentReference>
+        <cbc:ID>LD-PL-26-0134</cbc:ID>
+      </cac:DocumentReference>
+      <cac:InsurancePolicy>
+        <cbc:ID>WS-CP-26-4471</cbc:ID>
+        <cbc:InsuranceTypeCode>AllRisks</cbc:InsuranceTypeCode>
+        <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
+        <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
+        <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+        <cac:PolicyHolderParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Lumeway Distribution</cbc:Name>
+          </cac:PartyName>
+        </cac:PolicyHolderParty>
+        <cac:BeneficiaryParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Velumi Trading</cbc:Name>
+          </cac:PartyName>
+        </cac:BeneficiaryParty>
+        <cac:PolicyDocumentReference>
+          <cbc:ID>WS-CERT-26-0884</cbc:ID>
+        </cac:PolicyDocumentReference>
+      </cac:InsurancePolicy>
     </cac:Consignment>
     <cac:InsurancePolicy>
       <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>

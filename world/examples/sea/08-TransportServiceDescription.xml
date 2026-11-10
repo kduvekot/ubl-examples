@@ -185,6 +185,70 @@
   </cac:TransportServiceProviderParty>
   <cac:TransportationService>
     <cbc:TransportServiceCode>OceanContainer</cbc:TransportServiceCode>
+    <cbc:TariffClassCode>FAK</cbc:TariffClassCode>
+    <cbc:Priority>Standard</cbc:Priority>
+    <cbc:FreightRateClassCode>BOX</cbc:FreightRateClassCode>
+    <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, two days at sea.</cbc:TransportationServiceDescription>
+    <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
+    <cbc:NominationDate>2026-05-09</cbc:NominationDate>
+    <cbc:NominationTime>10:00:00</cbc:NominationTime>
     <cbc:Name>Weekly service Lumeport–Selanu</cbc:Name>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cac:TransportEquipment>
+      <cbc:ID>42G1</cbc:ID>
+      <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+    </cac:TransportEquipment>
+    <cac:SupportedTransportEquipment>
+      <cbc:ID>22G1</cbc:ID>
+      <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+    </cac:SupportedTransportEquipment>
+    <cac:SupportedTransportEquipment>
+      <cbc:ID>42G1</cbc:ID>
+      <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+    </cac:SupportedTransportEquipment>
+    <cac:UnsupportedTransportEquipment>
+      <cbc:ID>45R1</cbc:ID>
+      <cbc:SizeTypeCode>45R1</cbc:SizeTypeCode>
+    </cac:UnsupportedTransportEquipment>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:SupportedCommodityClassification>
+      <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
+    </cac:SupportedCommodityClassification>
+    <cac:UnsupportedCommodityClassification>
+      <cbc:CargoTypeCode>BULK</cbc:CargoTypeCode>
+    </cac:UnsupportedCommodityClassification>
+    <cac:TotalCapacityDimension>
+      <cbc:AttributeID>TEU</cbc:AttributeID>
+      <cbc:Measure unitCode="C62">1000</cbc:Measure>
+    </cac:TotalCapacityDimension>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+    </cac:ShipmentStage>
+    <cac:TransportEvent>
+      <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+      <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+    </cac:TransportEvent>
+    <cac:ResponsibleTransportServiceProviderParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:ResponsibleTransportServiceProviderParty>
+    <cac:EnvironmentalEmission>
+      <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+      <cbc:ValueMeasure unitCode="KGM">380</cbc:ValueMeasure>
+    </cac:EnvironmentalEmission>
+    <cac:EstimatedDurationPeriod>
+      <cbc:DurationMeasure unitCode="DAY">2</cbc:DurationMeasure>
+    </cac:EstimatedDurationPeriod>
+    <cac:ScheduledServiceFrequency>
+      <cbc:WeekDayCode>5</cbc:WeekDayCode>
+    </cac:ScheduledServiceFrequency>
   </cac:TransportationService>
 </TransportServiceDescription>

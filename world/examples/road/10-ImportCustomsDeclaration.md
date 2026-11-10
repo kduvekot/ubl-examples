@@ -509,6 +509,10 @@ Inside `Shipment`:
   The scale of the score.
 - `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `GoodsItem/DespatchLineReference/LineID` = **1**  
+  The despatch advice line of these goods.
+- `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+  The despatch advice.
 - `GoodsItem/ID` = **2**  
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
@@ -537,6 +541,10 @@ Inside `Shipment`:
   The national tariff code below the HS subheading, as the customs of the maker's country uses it.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **7325.99** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item bench-casting of Valdara Industries (world/items.json).
+- `GoodsItem/DespatchLineReference/LineID` = **2**  
+  The despatch advice line of these goods.
+- `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+  The despatch advice.
 
 ### Additional Document Reference
 
@@ -975,6 +983,12 @@ Inside `AdditionalDocumentReference`:
           </cac:ProductDocumentationDocumentReference>
         </cac:CircularityProfile>
       </cac:Item>
+      <cac:DespatchLineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>CL-DA-26-0153</cbc:ID>
+        </cac:DocumentReference>
+      </cac:DespatchLineReference>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
@@ -1001,6 +1015,12 @@ Inside `AdditionalDocumentReference`:
           <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
       </cac:Item>
+      <cac:DespatchLineReference>
+        <cbc:LineID>2</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>CL-DA-26-0153</cbc:ID>
+        </cac:DocumentReference>
+      </cac:DespatchLineReference>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>

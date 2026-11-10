@@ -251,6 +251,8 @@ Inside `Shipment`:
   Two full containers.
 - `Consignment/TotalTransportHandlingUnitQuantity` = **2** (unitCode `C62`)  
   Two containers.
+- `Consignment/LoadingSequenceID` = **7**  
+  The consignment's turn in the loading of the train.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -537,6 +539,12 @@ Inside `Shipment`:
   Who moves the empty box.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HaulageTradingTerms/Reference` = **FRC-HT-2026**  
   The carrier's haulage terms.
+- `Consignment/TransportHandlingUnit/TransportEquipment/FreightAllowanceCharge/ChargeIndicator` = **true**  
+  The freight for this box.
+- `Consignment/TransportHandlingUnit/TransportEquipment/FreightAllowanceCharge/AllowanceChargeReason` = **Rail freight per container**  
+  In words.
+- `Consignment/TransportHandlingUnit/TransportEquipment/FreightAllowanceCharge/Amount` = **54600** (currencyID `XUF`)  
+  The price of one container slot (world/items.json).
 - `Consignment/TransportHandlingUnit/TransportEquipment/Delivery/LatestDeliveryDate` = **2026-04-16**  
   At the latest.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Delivery/DeliveryLocation/Name` = **Rail siding of Lumeway Distribution, Marrowdale**  
@@ -553,6 +561,20 @@ Inside `Shipment`:
   Ten to seven.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ShipmentDocumentReference/ID` = **FRC-WB-26-0334**  
   The rail consignment note.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ContainedInTransportEquipment/ID` = **XU-FRC 4521 0042**  
+  The container wagon the box rides on.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ContainedInTransportEquipment/TransportEquipmentTypeCode` = **RR** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code RR: rail car.
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **VI-TD-26-0331**  
+  The transit declaration the box travels under.
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyName/Name` = **Customs Administration of Urvania**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/EnergyConsumptionAllocation/EnergySourceTypeCode` = **Electricity**  
+  The train runs on electricity.
+- `Consignment/TransportHandlingUnit/EnergyConsumptionAllocation/AllocatedEnergyMeasure` = **610** (unitCode `KWH`)  
+  This box's share of the train's energy, by weight.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRCU1044187** (schemeID `ISO6346`)  
   The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
@@ -575,6 +597,16 @@ Inside `Shipment`:
   The seal is in place.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
   And put on by the shipper when it packed the container.
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **VI-TD-26-0331**  
+  The transit declaration the box travels under.
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyName/Name` = **Customs Administration of Urvania**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/EnergyConsumptionAllocation/EnergySourceTypeCode` = **Electricity**  
+  The train runs on electricity.
+- `Consignment/TransportHandlingUnit/EnergyConsumptionAllocation/AllocatedEnergyMeasure` = **610** (unitCode `KWH`)  
+  This box's share of the train's energy, by weight.
 - `Consignment/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2e**  
   Greenhouse gases of the carriage, as CO2 equivalent.
 - `Consignment/EnvironmentalEmission/ValueMeasure` = **410** (unitCode `KGM`)  
@@ -585,6 +617,8 @@ Inside `Shipment`:
   From.
 - `Consignment/EnvironmentalEmission/EmissionCalculationMethod/MeasurementToLocation/Name` = **Marrowdale**  
   To.
+- `Consignment/EnvironmentalEmission/EmissionCalculationMethod/EmissionCalculationLocation/Name` = **Ferrano Rail Cargo, energy office**  
+  Where the figure was calculated.
 
 ### Document Reference
 
@@ -804,6 +838,7 @@ Inside `DocumentReference`:
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="C62">2</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -1077,6 +1112,11 @@ Inside `DocumentReference`:
             <cbc:Information>Carrier haulage: the rail carrier brings the box to the warehouse and back.</cbc:Information>
             <cbc:Reference>FRC-HT-2026</cbc:Reference>
           </cac:HaulageTradingTerms>
+          <cac:FreightAllowanceCharge>
+            <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReason>Rail freight per container</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="XUF">54600</cbc:Amount>
+          </cac:FreightAllowanceCharge>
           <cac:Delivery>
             <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
             <cac:DeliveryLocation>
@@ -1097,7 +1137,26 @@ Inside `DocumentReference`:
           <cac:ShipmentDocumentReference>
             <cbc:ID>FRC-WB-26-0334</cbc:ID>
           </cac:ShipmentDocumentReference>
+          <cac:ContainedInTransportEquipment>
+            <cbc:ID>XU-FRC 4521 0042</cbc:ID>
+            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">RR</cbc:TransportEquipmentTypeCode>
+          </cac:ContainedInTransportEquipment>
         </cac:TransportEquipment>
+        <cac:CustomsDeclaration>
+          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+        </cac:CustomsDeclaration>
+        <cac:EnergyConsumptionAllocation>
+          <cbc:EnergySourceTypeCode>Electricity</cbc:EnergySourceTypeCode>
+          <cbc:AllocatedEnergyMeasure unitCode="KWH">610</cbc:AllocatedEnergyMeasure>
+        </cac:EnergyConsumptionAllocation>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
@@ -1115,6 +1174,21 @@ Inside `DocumentReference`:
             <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
           </cac:TransportEquipmentSeal>
         </cac:TransportEquipment>
+        <cac:CustomsDeclaration>
+          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+        </cac:CustomsDeclaration>
+        <cac:EnergyConsumptionAllocation>
+          <cbc:EnergySourceTypeCode>Electricity</cbc:EnergySourceTypeCode>
+          <cbc:AllocatedEnergyMeasure unitCode="KWH">610</cbc:AllocatedEnergyMeasure>
+        </cac:EnergyConsumptionAllocation>
       </cac:TransportHandlingUnit>
       <cac:EnvironmentalEmission>
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
@@ -1127,6 +1201,9 @@ Inside `DocumentReference`:
           <cac:MeasurementToLocation>
             <cbc:Name>Marrowdale</cbc:Name>
           </cac:MeasurementToLocation>
+          <cac:EmissionCalculationLocation>
+            <cbc:Name>Ferrano Rail Cargo, energy office</cbc:Name>
+          </cac:EmissionCalculationLocation>
         </cac:EmissionCalculationMethod>
       </cac:EnvironmentalEmission>
     </cac:Consignment>

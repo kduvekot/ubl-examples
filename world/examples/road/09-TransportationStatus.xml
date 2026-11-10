@@ -198,6 +198,9 @@
     <cbc:TransportEventTypeCode>BorderCrossing</cbc:TransportEventTypeCode>
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+    <cac:ReportedShipment>
+      <cbc:ID>CL-SH-26-0154</cbc:ID>
+    </cac:ReportedShipment>
     <cac:CurrentStatus>
       <cbc:ConditionCode>OnTime</cbc:ConditionCode>
       <cbc:ReferenceDate>2026-03-25</cbc:ReferenceDate>
@@ -210,6 +213,16 @@
       <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
       <cbc:Percent>70</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
+      <cac:DocumentationAttachment>
+        <cac:ExternalReference>
+          <cbc:URI>https://www.trasvia.example/tracking/TH-26-04471/seal.jpg</cbc:URI>
+          <cbc:MimeCode>image/jpeg</cbc:MimeCode>
+        </cac:ExternalReference>
+      </cac:DocumentationAttachment>
+      <cac:SubStatus>
+        <cbc:ConditionCode>Released</cbc:ConditionCode>
+        <cbc:Description>Import declaration accepted by Bayvarra's customs.</cbc:Description>
+      </cac:SubStatus>
       <cac:Condition>
         <cbc:AttributeID>Seal</cbc:AttributeID>
         <cbc:Description>Intact, as checked by customs.</cbc:Description>
@@ -230,6 +243,18 @@
     <cac:Location>
       <cbc:Name>Land border crossing Urvania–Bayvarra</cbc:Name>
     </cac:Location>
+    <cac:Signature>
+      <cbc:ID>XB-CUS-SIG-0884</cbc:ID>
+      <cbc:ValidationDate>2026-03-24</cbc:ValidationDate>
+      <cac:SignatoryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410137</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
+        </cac:PartyName>
+      </cac:SignatoryParty>
+    </cac:Signature>
     <cac:Period>
       <cbc:StartTime>07:30:00</cbc:StartTime>
       <cbc:EndTime>08:55:00</cbc:EndTime>

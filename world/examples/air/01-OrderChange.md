@@ -214,6 +214,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `DeliveryParty/WebsiteURI` = **https://www.nalevi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Nalevi Warehousing (world/parties.json).
 - `DeliveryParty/IndustryClassificationCode` = **5210** (listID `ISIC Rev.4`)  
@@ -282,6 +286,14 @@ Inside `Delivery`:
   The network in which the address is registered: the world's own exchange network.
 - `DeliveryParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41722** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Nalevi Warehousing (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `NotifyParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `NotifyParty/PartyName/Name` = **Nalevi Warehousing**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DeliveryTerms/ID` = **CPT** (schemeID `INCOTERMS`)  
+  Incoterms 2020: carriage paid to, for this delivery only.
+- `DeliveryTerms/SpecialTerms` = **The rest of the order stays CIF by sea.**  
+  Why the delivery has its own terms.
 
 ### Delivery Terms
 
@@ -503,6 +515,14 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:CarrierParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Kelaro Air Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:CarrierParty>
     <cac:DeliveryParty>
       <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>
@@ -565,6 +585,18 @@ Inside `OrderLine`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41722</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:DeliveryParty>
+    <cac:NotifyParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Nalevi Warehousing</cbc:Name>
+      </cac:PartyName>
+    </cac:NotifyParty>
+    <cac:DeliveryTerms>
+      <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
+      <cbc:SpecialTerms>The rest of the order stays CIF by sea.</cbc:SpecialTerms>
+    </cac:DeliveryTerms>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>

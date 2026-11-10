@@ -155,7 +155,12 @@
       </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
+      <cac:DischargeTransportEvent>
+        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>11:20:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+      </cac:DischargeTransportEvent>
       <cac:TerminalOperatorParty>
         <cbc:WebsiteURI>https://www.port-selanu.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5222</cbc:IndustryClassificationCode>
@@ -232,7 +237,40 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
+      <cac:DetentionTransportEvent>
+        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
+        <cbc:Description>Wooden pallets must carry the heat-treatment mark.</cbc:Description>
+      </cac:DetentionTransportEvent>
+      <cac:ActualArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:30:00</cbc:OccurrenceTime>
+      </cac:ActualArrivalTransportEvent>
+      <cac:ReportingPerson>
+        <cbc:FirstName>Ama</cbc:FirstName>
+        <cbc:FamilyName>Kelune</cbc:FamilyName>
+        <cbc:JobTitle>Duty officer</cbc:JobTitle>
+      </cac:ReportingPerson>
     </cac:MainCarriageShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+        <cac:QuarantineTransportEvent>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+        </cac:QuarantineTransportEvent>
+        <cac:TransportEvent>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>11:40:00</cbc:OccurrenceTime>
+        </cac:TransportEvent>
+        <cac:ServiceAllowanceCharge>
+          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReason>Terminal handling at Selanu</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">185.00</cbc:Amount>
+        </cac:ServiceAllowanceCharge>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>

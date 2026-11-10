@@ -185,6 +185,7 @@
   </cac:ReceiverParty>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode>RailContainer</cbc:TransportServiceCode>
     </cac:TransportationService>
@@ -196,5 +197,12 @@
         <cbc:Name>Ferrano Rail Cargo</cbc:Name>
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
+    <cac:ReferencedConsignment>
+      <cbc:ID>VI-CS-26-0327</cbc:ID>
+    </cac:ReferencedConsignment>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:TransportationSegment>
 </GoodsItemItinerary>

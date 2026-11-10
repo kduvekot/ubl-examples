@@ -483,6 +483,10 @@ Inside `Shipment`:
   What the bags are made of.
 - `GoodsItem/ShipmentDocumentReference/ID` = **FB-TEP-26-0886**  
   The transport plan of the sailing.
+- `GoodsItem/EnergyConsumptionAllocation/EnergySourceTypeCode` = **Diesel**  
+  The barge's engine fuel.
+- `GoodsItem/EnergyConsumptionAllocation/AllocatedEnergyMeasure` = **5400** (unitCode `KWH`)  
+  The goods' share of the voyage's energy, as fuel energy.
 
 ### Document Reference
 
@@ -900,6 +904,10 @@ Inside `DocumentReference`:
       <cac:ShipmentDocumentReference>
         <cbc:ID>FB-TEP-26-0886</cbc:ID>
       </cac:ShipmentDocumentReference>
+      <cac:EnergyConsumptionAllocation>
+        <cbc:EnergySourceTypeCode>Diesel</cbc:EnergySourceTypeCode>
+        <cbc:AllocatedEnergyMeasure unitCode="KWH">5400</cbc:AllocatedEnergyMeasure>
+      </cac:EnergyConsumptionAllocation>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>

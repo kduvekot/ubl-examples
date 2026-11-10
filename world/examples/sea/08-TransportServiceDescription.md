@@ -238,8 +238,72 @@ Inside `TransportationService`:
 
 - `TransportServiceCode` = **OceanContainer**  
   The carrier's code for its container liner service.
+- `TariffClassCode` = **FAK**  
+  Freight all kinds: one rate whatever the goods.
+- `Priority` = **Standard**  
+  The normal service.
+- `FreightRateClassCode` = **BOX**  
+  The rate is per container.
+- `TransportationServiceDescription` = **A weekly feeder sailing from Lumeport to Selanu, two days at sea.**  
+  The service in words.
+- `TransportationServiceDetailsURI` = **https://www.tidewell.example/services/island**  
+  Where the schedule is.
+- `NominationDate` = **2026-05-09**  
+  The day the service is offered for this shipment.
+- `NominationTime` = **10:00:00**  
+  In the morning.
 - `Name` = **Weekly service Lumeport–Selanu**  
   The name of the service.
+- `SequenceNumeric` = **1**  
+  The first of the services offered.
+- `TransportEquipment/ID` = **42G1**  
+  The equipment offered for this shipment.
+- `TransportEquipment/SizeTypeCode` = **42G1**  
+  A 40-foot dry container.
+- `SupportedTransportEquipment/ID` = **22G1**  
+  20-foot dry container.
+- `SupportedTransportEquipment/SizeTypeCode` = **22G1**  
+  ISO 6346 size and type.
+- `SupportedTransportEquipment/ID` = **42G1**  
+  40-foot dry container.
+- `SupportedTransportEquipment/SizeTypeCode` = **42G1**  
+  ISO 6346 size and type.
+- `UnsupportedTransportEquipment/ID` = **45R1**  
+  40-foot reefer: the island port has no reefer plugs.
+- `UnsupportedTransportEquipment/SizeTypeCode` = **45R1**  
+  ISO 6346 size and type.
+- `CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
+  The benches.
+- `SupportedCommodityClassification/CargoTypeCode` = **GEN**  
+  General cargo in containers.
+- `UnsupportedCommodityClassification/CargoTypeCode` = **BULK**  
+  No loose bulk on this service.
+- `TotalCapacityDimension/AttributeID` = **TEU**  
+  The ship's capacity in twenty-foot units.
+- `TotalCapacityDimension/Measure` = **1000** (unitCode `C62`)  
+  One thousand.
+- `ShipmentStage/ID` = **1**  
+  Lumeport to Selanu.
+- `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport.
+- `TransportEvent/OccurrenceDate` = **2026-05-14**  
+  The next departure from Lumeport.
+- `TransportEvent/OccurrenceTime` = **18:00:00**  
+  The local time.
+- `TransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `ResponsibleTransportServiceProviderParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ResponsibleTransportServiceProviderParty/PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2e**  
+  Greenhouse gases.
+- `EnvironmentalEmission/ValueMeasure` = **380** (unitCode `KGM`)  
+  Per 40-foot container on the crossing.
+- `EstimatedDurationPeriod/DurationMeasure` = **2** (unitCode `DAY`)  
+  Two days at sea.
+- `ScheduledServiceFrequency/WeekDayCode` = **5**  
+  Every Friday (ISO 8601: 5 is Friday).
 
 ## The document
 
@@ -431,7 +495,71 @@ Inside `TransportationService`:
   </cac:TransportServiceProviderParty>
   <cac:TransportationService>
     <cbc:TransportServiceCode>OceanContainer</cbc:TransportServiceCode>
+    <cbc:TariffClassCode>FAK</cbc:TariffClassCode>
+    <cbc:Priority>Standard</cbc:Priority>
+    <cbc:FreightRateClassCode>BOX</cbc:FreightRateClassCode>
+    <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, two days at sea.</cbc:TransportationServiceDescription>
+    <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
+    <cbc:NominationDate>2026-05-09</cbc:NominationDate>
+    <cbc:NominationTime>10:00:00</cbc:NominationTime>
     <cbc:Name>Weekly service Lumeport–Selanu</cbc:Name>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cac:TransportEquipment>
+      <cbc:ID>42G1</cbc:ID>
+      <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+    </cac:TransportEquipment>
+    <cac:SupportedTransportEquipment>
+      <cbc:ID>22G1</cbc:ID>
+      <cbc:SizeTypeCode>22G1</cbc:SizeTypeCode>
+    </cac:SupportedTransportEquipment>
+    <cac:SupportedTransportEquipment>
+      <cbc:ID>42G1</cbc:ID>
+      <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
+    </cac:SupportedTransportEquipment>
+    <cac:UnsupportedTransportEquipment>
+      <cbc:ID>45R1</cbc:ID>
+      <cbc:SizeTypeCode>45R1</cbc:SizeTypeCode>
+    </cac:UnsupportedTransportEquipment>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:SupportedCommodityClassification>
+      <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
+    </cac:SupportedCommodityClassification>
+    <cac:UnsupportedCommodityClassification>
+      <cbc:CargoTypeCode>BULK</cbc:CargoTypeCode>
+    </cac:UnsupportedCommodityClassification>
+    <cac:TotalCapacityDimension>
+      <cbc:AttributeID>TEU</cbc:AttributeID>
+      <cbc:Measure unitCode="C62">1000</cbc:Measure>
+    </cac:TotalCapacityDimension>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+    </cac:ShipmentStage>
+    <cac:TransportEvent>
+      <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+      <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+    </cac:TransportEvent>
+    <cac:ResponsibleTransportServiceProviderParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:ResponsibleTransportServiceProviderParty>
+    <cac:EnvironmentalEmission>
+      <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+      <cbc:ValueMeasure unitCode="KGM">380</cbc:ValueMeasure>
+    </cac:EnvironmentalEmission>
+    <cac:EstimatedDurationPeriod>
+      <cbc:DurationMeasure unitCode="DAY">2</cbc:DurationMeasure>
+    </cac:EstimatedDurationPeriod>
+    <cac:ScheduledServiceFrequency>
+      <cbc:WeekDayCode>5</cbc:WeekDayCode>
+    </cac:ScheduledServiceFrequency>
   </cac:TransportationService>
 </TransportServiceDescription>
 ```

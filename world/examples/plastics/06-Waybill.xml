@@ -404,6 +404,10 @@
       <cac:ShipmentDocumentReference>
         <cbc:ID>FB-TEP-26-0886</cbc:ID>
       </cac:ShipmentDocumentReference>
+      <cac:EnergyConsumptionAllocation>
+        <cbc:EnergySourceTypeCode>Diesel</cbc:EnergySourceTypeCode>
+        <cbc:AllocatedEnergyMeasure unitCode="KWH">5400</cbc:AllocatedEnergyMeasure>
+      </cac:EnergyConsumptionAllocation>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>

@@ -584,6 +584,16 @@ Inside `Shipment`:
   The direction of the journey, as the carrier codes its services.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **SEA**  
   The carrier's code for the kind of means: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TradeServiceCode` = **TWL-ISL**  
+  The carrier's code for its island service.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/LocationID` = **140282**  
+  Bay 14, row 02, tier 82.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/Location` = **On deck, aft of the bridge**  
+  In words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/MeasurementDimension/AttributeID` = **Slot**  
+  The slot length.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/MeasurementDimension/Measure` = **12.2** (unitCode `MTR`)  
+  A 40-foot slot.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
@@ -642,6 +652,10 @@ Inside `Shipment`:
   The country the place is in.
 - `Consignment/PreCarriageShipmentStage/ID` = **1**  
   By truck from Marrowdale to the port.
+- `Consignment/PreCarriageShipmentStage/ShipmentStageTypeCode` = **PreCarriage**  
+  The kind of stage.
+- `Consignment/PreCarriageShipmentStage/ShipmentStageType` = **Carriage before the main carriage**  
+  In words.
 - `Consignment/PreCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   Road transport.
 - `Consignment/PreCarriageShipmentStage/PreCarriageIndicator` = **true**  
@@ -674,6 +688,12 @@ Inside `Shipment`:
   The container was dropped at the container quay.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **10:15:00**  
   The local time.
+- `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/ChargeIndicator` = **true**  
+  The truck to the port.
+- `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/AllowanceChargeReason` = **Pre-carriage by road**  
+  In words.
+- `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/Amount` = **310.00** (currencyID `XBL`)  
+  What the forwarder pays the trucking company, out of its own price to the shipper.
 - `Consignment/OnCarriageShipmentStage/ID` = **3**  
   By truck from the port of Selanu to the 3PL.
 - `Consignment/OnCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -714,6 +734,10 @@ Inside `Shipment`:
   Issued by the ocean carrier.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
   Put on by the shipper.
+- `Consignment/TransportHandlingUnit/TransportEquipment/SupplierParty/Party/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/TransportEquipment/SupplierParty/Party/PartyName/Name` = **Tidewell Ocean Lines**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **LD-26-001**  
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
@@ -1014,9 +1038,33 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-025**  
   The pallet's barcode, scanned at each handover.
+- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **UR TR 3381**  
+  The trailer the container rode on to the port.
+- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/TransportEquipmentTypeCode` = **TE** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code TE: trailer.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **LD-26-025**  
+  The pallet of boxed castings, packed last at the doors.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Package/Quantity` = **12** (unitCode `H87`)  
+  Twelve boxes.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Package/PackagingTypeCode` = **BX**  
+  UN/ECE Recommendation 21 code BX: box.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ContainingTransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
+  The container.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ID` = **1**  
   The goods in the container, as one item for the carrier.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/Description` = **Park benches and spare side frames**  
+  In words.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/ID` = **TWLU4120872**  
+  The container the goods are in.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **25** (unitCode `C62`)  
+  25 pallets in it.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/ID` = **1.1**  
+  The benches.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/Description` = **Park benches**  
+  In words.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/ID` = **1.2**  
+  The side frames.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/Description` = **Spare side frames**  
   In words.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ID` = **VGM-26-0510**  
   The shipper's weight declaration.
@@ -1058,6 +1106,28 @@ Inside `Shipment`:
   The last port in Bayvarra.
 - `Consignment/LastExitPortLocation/Address/Country/IdentificationCode` = **XB**  
   The country the place is in.
+- `Consignment/DocumentReference/ID` = **LD-PL-26-0134**  
+  The packing list of the container.
+- `Consignment/InsurancePolicy/ID` = **WS-CP-26-4471**  
+  The cargo policy of the insurer.
+- `Consignment/InsurancePolicy/InsuranceTypeCode` = **AllRisks**  
+  Cover against all risks.
+- `Consignment/InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
+  110 % of the CIF value.
+- `Consignment/InsurancePolicy/DeductibleAmount` = **250.00** (currencyID `XBL`)  
+  The part of a claim the insured bears.
+- `Consignment/InsurancePolicy/InsurancePremiumAmount` = **140.00** (currencyID `XBL`)  
+  The premium.
+- `Consignment/InsurancePolicy/PolicyHolderParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/InsurancePolicy/PolicyHolderParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/InsurancePolicy/BeneficiaryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/InsurancePolicy/BeneficiaryParty/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/InsurancePolicy/PolicyDocumentReference/ID` = **WS-CERT-26-0884**  
+  The insurance certificate that goes with the documents.
 - `InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
   The insured value, 110 % of the CIF value.
 - `InsurancePolicy/InsurerParty/WebsiteURI` = **https://www.wavesure.example**  
@@ -1655,6 +1725,15 @@ Inside `Shipment`:
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
           <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+          <cbc:TradeServiceCode>TWL-ISL</cbc:TradeServiceCode>
+          <cac:Stowage>
+            <cbc:LocationID>140282</cbc:LocationID>
+            <cbc:Location>On deck, aft of the bridge</cbc:Location>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID>Slot</cbc:AttributeID>
+              <cbc:Measure unitCode="MTR">12.2</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:Stowage>
           <cac:MaritimeTransport>
             <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
@@ -1719,6 +1798,8 @@ Inside `Shipment`:
       </cac:MainCarriageShipmentStage>
       <cac:PreCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
+        <cbc:ShipmentStageTypeCode>PreCarriage</cbc:ShipmentStageTypeCode>
+        <cbc:ShipmentStageType>Carriage before the main carriage</cbc:ShipmentStageType>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
         <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
         <cbc:CabotageIndicator>true</cbc:CabotageIndicator>
@@ -1755,6 +1836,11 @@ Inside `Shipment`:
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
         </cac:DropoffTransportEvent>
+        <cac:FreightAllowanceCharge>
+          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReason>Pre-carriage by road</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">310.00</cbc:Amount>
+        </cac:FreightAllowanceCharge>
       </cac:PreCarriageShipmentStage>
       <cac:OnCarriageShipmentStage>
         <cbc:ID>3</cbc:ID>
@@ -1792,6 +1878,16 @@ Inside `Shipment`:
             <cbc:SealIssuerTypeCode>Carrier</cbc:SealIssuerTypeCode>
             <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
           </cac:TransportEquipmentSeal>
+          <cac:SupplierParty>
+            <cac:Party>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+              </cac:PartyName>
+            </cac:Party>
+          </cac:SupplierParty>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-001</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
@@ -1992,9 +2088,33 @@ Inside `Shipment`:
             <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-025</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
+          <cac:AttachedTransportEquipment>
+            <cbc:ID>UR TR 3381</cbc:ID>
+            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
+          </cac:AttachedTransportEquipment>
+          <cac:Package>
+            <cbc:ID>LD-26-025</cbc:ID>
+            <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+            <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+            <cac:ContainingTransportEquipment>
+              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+            </cac:ContainingTransportEquipment>
+          </cac:Package>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
+            <cac:GoodsItemContainer>
+              <cbc:ID>TWLU4120872</cbc:ID>
+              <cbc:Quantity unitCode="C62">25</cbc:Quantity>
+            </cac:GoodsItemContainer>
+            <cac:ContainedGoodsItem>
+              <cbc:ID>1.1</cbc:ID>
+              <cbc:Description>Park benches</cbc:Description>
+            </cac:ContainedGoodsItem>
+            <cac:ContainedGoodsItem>
+              <cbc:ID>1.2</cbc:ID>
+              <cbc:Description>Spare side frames</cbc:Description>
+            </cac:ContainedGoodsItem>
           </cac:GoodsItem>
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0510</cbc:ID>
@@ -2052,6 +2172,35 @@ Inside `Shipment`:
           </cac:Country>
         </cac:Address>
       </cac:LastExitPortLocation>
+      <cac:DocumentReference>
+        <cbc:ID>LD-PL-26-0134</cbc:ID>
+      </cac:DocumentReference>
+      <cac:InsurancePolicy>
+        <cbc:ID>WS-CP-26-4471</cbc:ID>
+        <cbc:InsuranceTypeCode>AllRisks</cbc:InsuranceTypeCode>
+        <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
+        <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
+        <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+        <cac:PolicyHolderParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Lumeway Distribution</cbc:Name>
+          </cac:PartyName>
+        </cac:PolicyHolderParty>
+        <cac:BeneficiaryParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Velumi Trading</cbc:Name>
+          </cac:PartyName>
+        </cac:BeneficiaryParty>
+        <cac:PolicyDocumentReference>
+          <cbc:ID>WS-CERT-26-0884</cbc:ID>
+        </cac:PolicyDocumentReference>
+      </cac:InsurancePolicy>
     </cac:Consignment>
     <cac:InsurancePolicy>
       <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>

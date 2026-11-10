@@ -134,8 +134,20 @@ Inside `CustomsDeclaration`:
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight leaving the country.
+- `Shipment/InsuranceValueAmount` = **59155.80** (currencyID `XBL`)  
+  The cargo insurance the seller took out under CIF.
+- `Shipment/DeclaredCustomsValueAmount` = **50688.00** (currencyID `XBL`)  
+  The export value: the goods on board, FOB.
+- `Shipment/DeclaredStatisticsValueAmount` = **50688.00** (currencyID `XBL`)  
+  The same value for the trade statistics.
+- `Shipment/FreeOnBoardValueAmount` = **50688.00** (currencyID `XBL`)  
+  On board in Lumeport.
 - `Shipment/Consignment/ID` = **LD-CS-26-0133**  
   The consignment carried.
+- `Shipment/Consignment/OfficeOfExitLocation/Name` = **Customs office, port of Lumeport**  
+  Where the goods leave Bayvarra: the same port.
+- `Shipment/Consignment/OfficeOfExportLocation/Name` = **Customs office, port of Lumeport**  
+  Where the export is declared.
 - `Shipment/GoodsItem/ID` = **1**  
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Park bench Serra 180**  
@@ -476,6 +488,12 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `Shipment/ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Shipment/FreightAllowanceCharge/ChargeIndicator` = **true**  
+  The sea freight, paid by the seller.
+- `Shipment/FreightAllowanceCharge/AllowanceChargeReason` = **Ocean freight to Selanu**  
+  Stated because it is part of the CIF price, not of the export value.
+- `Shipment/FreightAllowanceCharge/Amount` = **2950.00** (currencyID `XBL`)  
+  Freight and bunker surcharge.
 - `ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -713,8 +731,18 @@ Inside `CustomsDeclaration`:
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+      <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">50688.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">50688.00</cbc:DeclaredStatisticsValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">50688.00</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>
+        <cac:OfficeOfExitLocation>
+          <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+        </cac:OfficeOfExitLocation>
+        <cac:OfficeOfExportLocation>
+          <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+        </cac:OfficeOfExportLocation>
       </cac:Consignment>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
@@ -1024,6 +1052,11 @@ Inside `CustomsDeclaration`:
           </cac:ElectronicAddress>
         </cac:CustomsAgentParty>
       </cac:ShipmentStage>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Ocean freight to Selanu</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
+      </cac:FreightAllowanceCharge>
     </cac:Shipment>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>

@@ -602,6 +602,22 @@ Inside `Shipment`:
   The scale of the score.
 - `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `GoodsItem/FreightAllowanceCharge/ChargeIndicator` = **true**  
+  The share of the sea freight in the customs value.
+- `GoodsItem/FreightAllowanceCharge/AllowanceChargeReason` = **Ocean freight, share of the benches**  
+  Part of the CIF value.
+- `GoodsItem/FreightAllowanceCharge/Amount` = **1162.121** (currencyID `XLC`)  
+  The benches' share of the 2,950 lume freight by value (49,920 of 50,688 lume), in coral at 0.4.
+- `GoodsItem/InvoiceLine/ID` = **1**  
+  The line of the seller's invoice for these goods.
+- `GoodsItem/InvoiceLine/InvoicedQuantity` = **96** (unitCode `H87`)  
+  The benches invoiced.
+- `GoodsItem/InvoiceLine/Item/Name` = **Park bench Serra 180**  
+  Named only: described in full above.
+- `GoodsItem/InsurancePolicy/ID` = **WS-CP-26-4471**  
+  The cargo policy covering the goods.
+- `GoodsItem/InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
+  As on the insurance certificate.
 - `GoodsItem/ID` = **2**  
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
@@ -1236,6 +1252,22 @@ Inside `AdditionalDocumentReference`:
           </cac:ProductDocumentationDocumentReference>
         </cac:CircularityProfile>
       </cac:Item>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Ocean freight, share of the benches</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XLC">1162.121</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="H87">96</cbc:InvoicedQuantity>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+        </cac:Item>
+      </cac:InvoiceLine>
+      <cac:InsurancePolicy>
+        <cbc:ID>WS-CP-26-4471</cbc:ID>
+        <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
+      </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>

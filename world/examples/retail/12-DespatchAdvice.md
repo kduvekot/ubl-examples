@@ -366,6 +366,160 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `TransportHandlingUnit/ID` = **LD-RT-001**  
+  The number on the pallet label.
+- `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 001 of 006**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `TransportHandlingUnit/TraceID` = **LD-RT-001**  
+  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1**  
+  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `H87`)  
+  Four benches on the pallet.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
+  The order line the benches belong to.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
+  The item, named only: it is described in full on despatch line 1.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's item number.
+- `TransportHandlingUnit/TransportMeans/RegistrationNationalityID` = **XU**  
+  The country the means of transport is registered in.
+- `TransportHandlingUnit/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `TransportHandlingUnit/TransportMeans/TransportMeansTypeCode` = **TE**  
+  The carrier's code for the kind of means: tractor unit 07 with curtain-side trailer; the fleet of Trasvia Haulage (world/parties.json).
+- `TransportHandlingUnit/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 KT**  
+  The registration plate of the truck; the fleet of Trasvia Haulage (world/parties.json).
+- `TransportHandlingUnit/TransportMeans/RoadTransport/TrailerLicensePlateID` = **UR TR 3381**  
+  The trailer's own plate.
+- `TransportHandlingUnit/TransportMeans/OwnerParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `TransportHandlingUnit/TransportMeans/OwnerParty/PartyName/Name` = **Trasvia Haulage**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `TransportHandlingUnit/TransportMeans/MeasurementDimension/AttributeID` = **Loading length**  
+  The length of the loading floor.
+- `TransportHandlingUnit/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
+  Room for 33 pallets.
+- `TransportHandlingUnit/GoodsItem/ID` = **1**  
+  The goods on the pallet, as one goods item.
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **LD-TR-26-0227**  
+  The transport booking the pallet travels under.
+- `TransportHandlingUnit/ID` = **LD-RT-002**  
+  The number on the pallet label.
+- `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 002 of 006**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `TransportHandlingUnit/TraceID` = **LD-RT-002**  
+  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **2**  
+  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `H87`)  
+  Four benches on the pallet.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
+  The order line the benches belong to.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
+  The item, named only: it is described in full on despatch line 1.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's item number.
+- `TransportHandlingUnit/ID` = **LD-RT-003**  
+  The number on the pallet label.
+- `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 003 of 006**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `TransportHandlingUnit/TraceID` = **LD-RT-003**  
+  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **3**  
+  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `H87`)  
+  Four benches on the pallet.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
+  The order line the benches belong to.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
+  The item, named only: it is described in full on despatch line 1.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's item number.
+- `TransportHandlingUnit/ID` = **LD-RT-004**  
+  The number on the pallet label.
+- `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 004 of 006**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `TransportHandlingUnit/TraceID` = **LD-RT-004**  
+  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **4**  
+  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `H87`)  
+  Four benches on the pallet.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
+  The order line the benches belong to.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
+  The item, named only: it is described in full on despatch line 1.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's item number.
+- `TransportHandlingUnit/ID` = **LD-RT-005**  
+  The number on the pallet label.
+- `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 005 of 006**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `TransportHandlingUnit/TraceID` = **LD-RT-005**  
+  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **5**  
+  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `H87`)  
+  Four benches on the pallet.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
+  The order line the benches belong to.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
+  The item, named only: it is described in full on despatch line 1.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's item number.
+- `TransportHandlingUnit/ID` = **LD-RT-006**  
+  The number on the pallet label.
+- `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+  One kind of goods on the pallet.
+- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 006 of 006**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `TransportHandlingUnit/TraceID` = **LD-RT-006**  
+  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **6**  
+  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `H87`)  
+  Four benches on the pallet.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
+  The order line the benches belong to.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
+  The item, named only: it is described in full on despatch line 1.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's item number.
 
 ### Despatch Line
 
@@ -901,6 +1055,159 @@ Inside `DespatchLine`:
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-001</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-001</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
+          <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+        </cac:RoadTransport>
+        <cac:OwnerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Trasvia Haulage</cbc:Name>
+          </cac:PartyName>
+        </cac:OwnerParty>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Loading length</cbc:AttributeID>
+          <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:TransportMeans>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+      </cac:GoodsItem>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>LD-TR-26-0227</cbc:ID>
+      </cac:ShipmentDocumentReference>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-002</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-002</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-003</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-003</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>3</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-004</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-004</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>4</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-005</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-005</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>5</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-006</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-006</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>6</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

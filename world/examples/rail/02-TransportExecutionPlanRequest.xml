@@ -307,5 +307,21 @@
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
     </cac:ConsignorParty>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cac:RequestedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+      </cac:RequestedDepartureTransportEvent>
+      <cac:RequestedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+      </cac:RequestedArrivalTransportEvent>
+      <cac:RequestedWaypointTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cac:Location>
+          <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+        </cac:Location>
+      </cac:RequestedWaypointTransportEvent>
+    </cac:MainCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlanRequest>

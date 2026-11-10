@@ -425,6 +425,12 @@
           </cac:ProductDocumentationDocumentReference>
         </cac:CircularityProfile>
       </cac:Item>
+      <cac:DespatchLineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>CL-DA-26-0153</cbc:ID>
+        </cac:DocumentReference>
+      </cac:DespatchLineReference>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
@@ -451,6 +457,12 @@
           <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
       </cac:Item>
+      <cac:DespatchLineReference>
+        <cbc:LineID>2</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>CL-DA-26-0153</cbc:ID>
+        </cac:DocumentReference>
+      </cac:DespatchLineReference>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>

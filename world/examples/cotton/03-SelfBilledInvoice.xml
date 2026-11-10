@@ -247,6 +247,14 @@
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KGM">18000</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">4068.000</cbc:LineExtensionAmount>
+    <cac:Delivery>
+      <cac:DeliveryNoteLineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>LCF-DN-26-0192</cbc:ID>
+        </cac:DocumentReference>
+      </cac:DeliveryNoteLineReference>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
       <cbc:Name>Seed cotton</cbc:Name>

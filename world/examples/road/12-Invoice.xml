@@ -215,6 +215,10 @@
     <cac:Shipment>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0152</cbc:ID>
+        <cac:ActualDeliveryTransportEvent>
+          <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>09:40:00</cbc:OccurrenceTime>
+        </cac:ActualDeliveryTransportEvent>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -224,6 +228,15 @@
           </cac:PartyName>
         </cac:CarrierParty>
       </cac:Consignment>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+        <cac:ReceiptLineReference>
+          <cbc:LineID>1</cbc:LineID>
+          <cac:DocumentReference>
+            <cbc:ID>LD-RA-26-0162</cbc:ID>
+          </cac:DocumentReference>
+        </cac:ReceiptLineReference>
+      </cac:GoodsItem>
     </cac:Shipment>
   </cac:Delivery>
   <cac:PaymentMeans>

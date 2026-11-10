@@ -225,12 +225,20 @@ Inside `TransportationSegment`:
 
 - `SequenceNumeric` = **1**  
   One segment: by rail from the hub to the distributor's siding.
+- `TransportExecutionPlanReferenceID` = **FRC-TEP-26-0328**  
+  The plan the segment is carried out under.
 - `TransportationService/TransportServiceCode` = **RailContainer**  
   The rail carrier's own code for its container train service.
 - `TransportServiceProviderParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 - `TransportServiceProviderParty/PartyName/Name` = **Ferrano Rail Cargo**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
+- `ReferencedConsignment/ID` = **VI-CS-26-0327**  
+  The consignment on the segment.
+- `ShipmentStage/ID` = **1**  
+  The rail stage.
+- `ShipmentStage/TransportModeCode` = **2** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Rail transport.
 
 ## The document
 
@@ -422,6 +430,7 @@ Inside `TransportationSegment`:
   </cac:ReceiverParty>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode>RailContainer</cbc:TransportServiceCode>
     </cac:TransportationService>
@@ -433,6 +442,13 @@ Inside `TransportationSegment`:
         <cbc:Name>Ferrano Rail Cargo</cbc:Name>
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
+    <cac:ReferencedConsignment>
+      <cbc:ID>VI-CS-26-0327</cbc:ID>
+    </cac:ReferencedConsignment>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:TransportationSegment>
 </GoodsItemItinerary>
 ```

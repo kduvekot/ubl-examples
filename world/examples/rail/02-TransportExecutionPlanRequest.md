@@ -360,6 +360,18 @@ Inside `Consignment`:
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 - `ConsignorParty/PartyName/Name` = **Valdara Industries**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
+- `MainCarriageShipmentStage/ID` = **1**  
+  The rail carriage asked for.
+- `MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The morning train from the hub.
+- `MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **07:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
+  Arriving the next day.
+- `MainCarriageShipmentStage/RequestedWaypointTransportEvent/OccurrenceDate` = **2026-04-14**  
+  Via the border station, where the transit is checked.
+- `MainCarriageShipmentStage/RequestedWaypointTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
+  The waypoint.
 
 ## The document
 
@@ -673,6 +685,22 @@ Inside `Consignment`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
     </cac:ConsignorParty>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cac:RequestedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+      </cac:RequestedDepartureTransportEvent>
+      <cac:RequestedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+      </cac:RequestedArrivalTransportEvent>
+      <cac:RequestedWaypointTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cac:Location>
+          <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+        </cac:Location>
+      </cac:RequestedWaypointTransportEvent>
+    </cac:MainCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlanRequest>
 ```

@@ -315,6 +315,10 @@ Inside `InvoiceLine`:
   The weighed seed cotton of three trailer loads.
 - `LineExtensionAmount` = **4068.000** (currencyID `XLC`)  
   Quantity times price, rounded to the minor unit.
+- `Delivery/DeliveryNoteLineReference/LineID` = **1**  
+  The line of the delivery note the invoice line bills.
+- `Delivery/DeliveryNoteLineReference/DocumentReference/ID` = **LCF-DN-26-0192**  
+  The farm's delivery note.
 - `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.**  
   The seller's description; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/Name` = **Seed cotton**  
@@ -590,6 +594,14 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KGM">18000</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">4068.000</cbc:LineExtensionAmount>
+    <cac:Delivery>
+      <cac:DeliveryNoteLineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>LCF-DN-26-0192</cbc:ID>
+        </cac:DocumentReference>
+      </cac:DeliveryNoteLineReference>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
       <cbc:Name>Seed cotton</cbc:Name>

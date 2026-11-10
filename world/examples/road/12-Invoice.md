@@ -260,10 +260,20 @@ Inside `Delivery`:
 
 - `Shipment/Consignment/ID` = **LD-CS-26-0152**  
   The consignment carried, as the distributor numbered it when booking the truck.
+- `Shipment/Consignment/ActualDeliveryTransportEvent/OccurrenceDate` = **2026-03-25**  
+  Delivered at dock 4: the carriage invoiced is complete.
+- `Shipment/Consignment/ActualDeliveryTransportEvent/OccurrenceTime` = **09:40:00**  
+  The local time.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Shipment/GoodsItem/ID` = **1**  
+  The benches carried.
+- `Shipment/GoodsItem/ReceiptLineReference/LineID` = **1**  
+  The line of the consignee's receipt advice.
+- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/ID` = **LD-RA-26-0162**  
+  The receipt advice: proof of delivery.
 
 ### Payment Means
 
@@ -583,6 +593,10 @@ Inside `InvoiceLine`:
     <cac:Shipment>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0152</cbc:ID>
+        <cac:ActualDeliveryTransportEvent>
+          <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>09:40:00</cbc:OccurrenceTime>
+        </cac:ActualDeliveryTransportEvent>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -592,6 +606,15 @@ Inside `InvoiceLine`:
           </cac:PartyName>
         </cac:CarrierParty>
       </cac:Consignment>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+        <cac:ReceiptLineReference>
+          <cbc:LineID>1</cbc:LineID>
+          <cac:DocumentReference>
+            <cbc:ID>LD-RA-26-0162</cbc:ID>
+          </cac:DocumentReference>
+        </cac:ReceiptLineReference>
+      </cac:GoodsItem>
     </cac:Shipment>
   </cac:Delivery>
   <cac:PaymentMeans>

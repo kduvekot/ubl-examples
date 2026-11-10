@@ -246,6 +246,8 @@ Inside `TransportEvent`:
   What happened, in words.
 - `CompletionIndicator` = **true**  
   Whether the event has taken place (true) or is still to come (false).
+- `ReportedShipment/ID` = **CL-SH-26-0154**  
+  The shipment the event concerns.
 - `CurrentStatus/ConditionCode` = **OnTime**  
   The carriage runs to plan.
 - `CurrentStatus/ReferenceDate` = **2026-03-25**  
@@ -268,6 +270,14 @@ Inside `TransportEvent`:
   The share of the route driven.
 - `CurrentStatus/ReliabilityPercent` = **90**  
   How sure the carrier is of the arrival time.
+- `CurrentStatus/DocumentationAttachment/ExternalReference/URI` = **https://www.trasvia.example/tracking/TH-26-04471/seal.jpg**  
+  A photograph of the seal.
+- `CurrentStatus/DocumentationAttachment/ExternalReference/MimeCode` = **image/jpeg**  
+  A photograph.
+- `CurrentStatus/SubStatus/ConditionCode` = **Released**  
+  The customs part of the status.
+- `CurrentStatus/SubStatus/Description` = **Import declaration accepted by Bayvarra's customs.**  
+  In words.
 - `CurrentStatus/Condition/AttributeID` = **Seal**  
   The condition checked.
 - `CurrentStatus/Condition/Description` = **Intact, as checked by customs.**  
@@ -282,6 +292,14 @@ Inside `TransportEvent`:
   The planners' number.
 - `Location/Name` = **Land border crossing Urvania–Bayvarra**  
   The road border crossing between the customs posts of both countries.
+- `Signature/ID` = **XB-CUS-SIG-0884**  
+  The border customs' release stamp, as an electronic signature.
+- `Signature/ValidationDate` = **2026-03-24**  
+  Signed at the border.
+- `Signature/SignatoryParty/PartyIdentification/ID` = **20410137** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Signature/SignatoryParty/PartyName/Name` = **Customs and Border Service of Bayvarra**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Period/StartTime` = **07:30:00**  
   The truck joined the queue at the border.
 - `Period/EndTime` = **08:55:00**  
@@ -508,6 +526,9 @@ Inside `ReceiverParty`:
     <cbc:TransportEventTypeCode>BorderCrossing</cbc:TransportEventTypeCode>
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+    <cac:ReportedShipment>
+      <cbc:ID>CL-SH-26-0154</cbc:ID>
+    </cac:ReportedShipment>
     <cac:CurrentStatus>
       <cbc:ConditionCode>OnTime</cbc:ConditionCode>
       <cbc:ReferenceDate>2026-03-25</cbc:ReferenceDate>
@@ -520,6 +541,16 @@ Inside `ReceiverParty`:
       <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
       <cbc:Percent>70</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
+      <cac:DocumentationAttachment>
+        <cac:ExternalReference>
+          <cbc:URI>https://www.trasvia.example/tracking/TH-26-04471/seal.jpg</cbc:URI>
+          <cbc:MimeCode>image/jpeg</cbc:MimeCode>
+        </cac:ExternalReference>
+      </cac:DocumentationAttachment>
+      <cac:SubStatus>
+        <cbc:ConditionCode>Released</cbc:ConditionCode>
+        <cbc:Description>Import declaration accepted by Bayvarra's customs.</cbc:Description>
+      </cac:SubStatus>
       <cac:Condition>
         <cbc:AttributeID>Seal</cbc:AttributeID>
         <cbc:Description>Intact, as checked by customs.</cbc:Description>
@@ -540,6 +571,18 @@ Inside `ReceiverParty`:
     <cac:Location>
       <cbc:Name>Land border crossing Urvania–Bayvarra</cbc:Name>
     </cac:Location>
+    <cac:Signature>
+      <cbc:ID>XB-CUS-SIG-0884</cbc:ID>
+      <cbc:ValidationDate>2026-03-24</cbc:ValidationDate>
+      <cac:SignatoryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410137</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
+        </cac:PartyName>
+      </cac:SignatoryParty>
+    </cac:Signature>
     <cac:Period>
       <cbc:StartTime>07:30:00</cbc:StartTime>
       <cbc:EndTime>08:55:00</cbc:EndTime>

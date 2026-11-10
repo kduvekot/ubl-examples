@@ -167,6 +167,14 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:CarrierParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Kelaro Air Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:CarrierParty>
     <cac:DeliveryParty>
       <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>
@@ -229,6 +237,18 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41722</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:DeliveryParty>
+    <cac:NotifyParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Nalevi Warehousing</cbc:Name>
+      </cac:PartyName>
+    </cac:NotifyParty>
+    <cac:DeliveryTerms>
+      <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
+      <cbc:SpecialTerms>The rest of the order stays CIF by sea.</cbc:SpecialTerms>
+    </cac:DeliveryTerms>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>

@@ -228,7 +228,21 @@ Inside `Shipment`:
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of the eight boxed frames.
 - `Consignment/ID` = **LD-CS-26-0324**  
-  The consignment.
+  The distributor's consignment number.
+- `Consignment/NetNetWeightMeasure` = **76** (unitCode `KGM`)  
+  The castings alone.
+- `Consignment/NetVolumeMeasure` = **0.42** (unitCode `MTQ`)  
+  The frames' own volume.
+- `Consignment/TotalGoodsItemQuantity` = **1** (unitCode `C62`)  
+  One kind of goods.
+- `Consignment/DeclaredForCarriageValueAmount` = **512.00** (currencyID `XBL`)  
+  Declared to the airline so its liability covers the value of the frames.
+- `Consignment/DeclaredStatisticsValueAmount` = **512.00** (currencyID `XBL`)  
+  The value for the export statistics.
+- `Consignment/SplitConsignmentIndicator` = **false**  
+  All eight boxes on one flight.
+- `Consignment/ConsignmentQuantity` = **1** (unitCode `C62`)  
+  One consignment.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -299,6 +313,72 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/FreightForwarderParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/FreightForwarderParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportEvent/OccurrenceDate` = **2026-05-13**  
+  Latest acceptance at the cargo terminal for the morning flight.
+- `Consignment/TransportEvent/OccurrenceTime` = **19:00:00**  
+  The local time.
+- `Consignment/TransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `Consignment/TransportHandlingUnit/ID` = **LD-AIR-SKID-1**  
+  The skid the boxes are strapped to.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **SI**  
+  UN/ECE Recommendation 21 code SI: skid.
+- `Consignment/TransportHandlingUnit/ReferencedShipment/ID` = **LD-SH-26-0323**  
+  The distributor's shipment on the skid.
+- `Consignment/TransportHandlingUnit/Package/ID` = **LD-AIR-BOX**  
+  The boxes, numbered 1 to 8 on their labels.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **8** (unitCode `H87`)  
+  Eight boxes.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX**  
+  UN/ECE Recommendation 21 code BX: box.
+- `Consignment/TransportHandlingUnit/Package/TraceID` = **LD-AIR-0001..0008**  
+  The barcodes on the boxes.
+- `Consignment/TransportHandlingUnit/Package/ContainedPackage/ID` = **LD-AIR-BAG**  
+  Inside each box, the frame in a plastic bag.
+- `Consignment/TransportHandlingUnit/Package/ContainedPackage/Quantity` = **8** (unitCode `H87`)  
+  One bag per box.
+- `Consignment/TransportHandlingUnit/Package/ContainedPackage/PackagingTypeCode` = **BG**  
+  UN/ECE Recommendation 21 code BG: bag.
+- `Consignment/TransportHandlingUnit/Package/GoodsItem/ID` = **1**  
+  The side frames.
+- `Consignment/TransportHandlingUnit/Package/GoodsItem/Description` = **Bench side frame castings**  
+  In words.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **Length**  
+  Of one box.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **800** (unitCode `MMT`)  
+  In millimetres.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **Width**  
+  Of one box.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **300** (unitCode `MMT`)  
+  In millimetres.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **Height**  
+  Of one box.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **300** (unitCode `MMT`)  
+  In millimetres.
+- `Consignment/TransportHandlingUnit/Package/DeliveryUnit/BatchQuantity` = **8** (unitCode `H87`)  
+  All eight delivered together.
+- `Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/StartDate` = **2026-05-14**  
+  Wanted at the 3PL on day 3.
+- `Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/EndDate` = **2026-05-14**  
+  The same day.
+- `Consignment/TransportHandlingUnit/Package/Pickup/ID` = **BF-PU-26-0611**  
+  The forwarder's pick-up order.
+- `Consignment/TransportHandlingUnit/Package/Pickup/EarliestPickupDate` = **2026-05-12**  
+  Ready the day of the instructions.
+- `Consignment/TransportHandlingUnit/Package/Pickup/PickupParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/Package/Pickup/PickupParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/TransportHandlingUnit/Package/Despatch/RequestedDespatchDate` = **2026-05-13**  
+  To make the next morning's flight.
+- `Consignment/TransportHandlingUnit/Package/Status/ConditionCode` = **Ready**  
+  Packed and labelled.
+- `Consignment/TransportHandlingUnit/Package/Status/Description` = **Waiting at the distributor's dispatch area.**  
+  Where they are.
 
 ## The document
 
@@ -483,6 +563,13 @@ Inside `Shipment`:
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+      <cbc:TotalGoodsItemQuantity unitCode="C62">1</cbc:TotalGoodsItemQuantity>
+      <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
+      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
+      <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
+      <cbc:ConsignmentQuantity unitCode="C62">1</cbc:ConsignmentQuantity>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -548,6 +635,81 @@ Inside `Shipment`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:FreightForwarderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Bayforth Forwarding</cbc:Name>
+        </cac:PartyName>
+      </cac:FreightForwarderParty>
+      <cac:TransportEvent>
+        <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>19:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:TransportEvent>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>LD-AIR-SKID-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>SI</cbc:TransportHandlingUnitTypeCode>
+        <cac:ReferencedShipment>
+          <cbc:ID>LD-SH-26-0323</cbc:ID>
+        </cac:ReferencedShipment>
+        <cac:Package>
+          <cbc:ID>LD-AIR-BOX</cbc:ID>
+          <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+          <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+          <cbc:TraceID>LD-AIR-0001..0008</cbc:TraceID>
+          <cac:ContainedPackage>
+            <cbc:ID>LD-AIR-BAG</cbc:ID>
+            <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+            <cbc:PackagingTypeCode>BG</cbc:PackagingTypeCode>
+          </cac:ContainedPackage>
+          <cac:GoodsItem>
+            <cbc:ID>1</cbc:ID>
+            <cbc:Description>Bench side frame castings</cbc:Description>
+          </cac:GoodsItem>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Length</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">800</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Width</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Height</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:DeliveryUnit>
+            <cbc:BatchQuantity unitCode="H87">8</cbc:BatchQuantity>
+          </cac:DeliveryUnit>
+          <cac:Delivery>
+            <cac:RequestedDeliveryPeriod>
+              <cbc:StartDate>2026-05-14</cbc:StartDate>
+              <cbc:EndDate>2026-05-14</cbc:EndDate>
+            </cac:RequestedDeliveryPeriod>
+          </cac:Delivery>
+          <cac:Pickup>
+            <cbc:ID>BF-PU-26-0611</cbc:ID>
+            <cbc:EarliestPickupDate>2026-05-12</cbc:EarliestPickupDate>
+            <cac:PickupParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Bayforth Forwarding</cbc:Name>
+              </cac:PartyName>
+            </cac:PickupParty>
+          </cac:Pickup>
+          <cac:Despatch>
+            <cbc:RequestedDespatchDate>2026-05-13</cbc:RequestedDespatchDate>
+          </cac:Despatch>
+          <cac:Status>
+            <cbc:ConditionCode>Ready</cbc:ConditionCode>
+            <cbc:Description>Waiting at the distributor's dispatch area.</cbc:Description>
+          </cac:Status>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
     </cac:Consignment>
   </cac:Shipment>
 </ForwardingInstructions>

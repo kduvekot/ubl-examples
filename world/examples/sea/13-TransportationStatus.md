@@ -119,8 +119,8 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `CarrierParty/ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `MainCarriageShipmentStage/ID` = **1**  
-  The sea leg.
+- `MainCarriageShipmentStage/ID` = **2**  
+  The sea leg, stage 2 as on the bill of lading.
 - `MainCarriageShipmentStage/TerminalOperatorParty/WebsiteURI` = **https://www.port-lumeport.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Port of Lumeport (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/IndustryClassificationCode` = **5222** (listID `ISIC Rev.4`)  
@@ -219,6 +219,16 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XB:20411781** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Port of Lumeport (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The ship sailed.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **18:10:00**  
+  The local time.
+- `MainCarriageShipmentStage/SecurityOfficerPerson/FirstName` = **Tamsin**  
+  The port facility security officer who cleared the loading.
+- `MainCarriageShipmentStage/SecurityOfficerPerson/FamilyName` = **Orrel**  
+  The family name.
+- `MainCarriageShipmentStage/SecurityOfficerPerson/JobTitle` = **Port facility security officer**  
+  The person's position.
 
 ### Transport Event
 
@@ -430,7 +440,7 @@ Inside `ReceiverParty`:
       </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
       <cac:TerminalOperatorParty>
         <cbc:WebsiteURI>https://www.port-lumeport.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5222</cbc:IndustryClassificationCode>
@@ -514,6 +524,15 @@ Inside `ReceiverParty`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411781</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
+      <cac:ActualDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>18:10:00</cbc:OccurrenceTime>
+      </cac:ActualDepartureTransportEvent>
+      <cac:SecurityOfficerPerson>
+        <cbc:FirstName>Tamsin</cbc:FirstName>
+        <cbc:FamilyName>Orrel</cbc:FamilyName>
+        <cbc:JobTitle>Port facility security officer</cbc:JobTitle>
+      </cac:SecurityOfficerPerson>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>
   <cac:TransportEvent>

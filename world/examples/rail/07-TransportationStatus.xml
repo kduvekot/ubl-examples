@@ -86,6 +86,20 @@
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
+      <cac:OptionalTakeoverTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>17:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:OptionalTakeoverTransportEvent>
+      <cac:ActualPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+      </cac:ActualPickupTransportEvent>
+      <cac:DeliveryTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:DeliveryTransportEvent>
       <cac:TerminalOperatorParty>
         <cbc:WebsiteURI>https://www.ferranohub.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5221</cbc:IndustryClassificationCode>
@@ -164,6 +178,11 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105096</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
+      <cac:TransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>05:40:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+      </cac:TransportEvent>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>
   <cac:TransportEvent>

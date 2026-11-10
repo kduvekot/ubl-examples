@@ -310,6 +310,159 @@
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-001</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-001</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
+          <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+        </cac:RoadTransport>
+        <cac:OwnerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Trasvia Haulage</cbc:Name>
+          </cac:PartyName>
+        </cac:OwnerParty>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID>Loading length</cbc:AttributeID>
+          <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:TransportMeans>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+      </cac:GoodsItem>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>LD-TR-26-0227</cbc:ID>
+      </cac:ShipmentDocumentReference>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-002</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-002</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-003</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-003</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>3</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-004</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-004</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>4</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-005</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-005</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>5</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-006</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
+      <cbc:TraceID>LD-RT-006</cbc:TraceID>
+      <cac:HandlingUnitDespatchLine>
+        <cbc:ID>6</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:OrderLineReference>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>LD-10442</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:HandlingUnitDespatchLine>
+    </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

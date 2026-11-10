@@ -225,8 +225,22 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment packed.
+- `ShippingPriorityLevelCode` = **Standard**  
+  No priority: the next sailing will do.
+- `HandlingInstructions` = **Castings pallet at the doors.**  
+  How the container is stowed.
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of the goods.
+- `NetWeightMeasure` = **3762** (unitCode `KGM`)  
+  The goods without packaging.
+- `NetVolumeMeasure` = **38.9** (unitCode `MTQ`)  
+  The volume of the goods themselves.
+- `TotalTransportHandlingUnitQuantity` = **25** (unitCode `C62`)  
+  25 pallets in the container.
+- `SpecialInstructions` = **Photograph the load before closing the doors.**  
+  For any damage claim.
+- `DeliveryInstructions` = **Deliver to the buyer's 3PL, Nalevi Warehousing, Selanu.**  
+  Where the goods end up.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The consignment.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
@@ -736,7 +750,14 @@ Inside `Shipment`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ShippingPriorityLevelCode>Standard</cbc:ShippingPriorityLevelCode>
+    <cbc:HandlingInstructions>Castings pallet at the doors.</cbc:HandlingInstructions>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
+    <cbc:NetVolumeMeasure unitCode="MTQ">38.9</cbc:NetVolumeMeasure>
+    <cbc:TotalTransportHandlingUnitQuantity unitCode="C62">25</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:SpecialInstructions>Photograph the load before closing the doors.</cbc:SpecialInstructions>
+    <cbc:DeliveryInstructions>Deliver to the buyer's 3PL, Nalevi Warehousing, Selanu.</cbc:DeliveryInstructions>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cac:ConsigneeParty>

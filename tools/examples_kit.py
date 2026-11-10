@@ -766,6 +766,14 @@ def place(code, why, name=None):
             "Address": {"Country": {"IdentificationCode": V(c, "The country the place is in.")}}}
 
 
+def maker(iid):
+    """The item as its maker sells it: a resold item's physical facts are the maker's."""
+    it = ITEM[iid]
+    while it.get("resale_of"):
+        it = ITEM[it["resale_of"]]
+    return it
+
+
 def fleet(pid, fid):
     return next(x for x in PARTY[pid]["fleet"] if x["id"] == fid)
 

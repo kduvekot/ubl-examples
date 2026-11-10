@@ -111,6 +111,22 @@ Inside `Consignment`:
   The party's electronic address in that network: its country code and registry number; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/ID` = **1**  
   The main carriage, by rail.
+- `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/OccurrenceDate` = **2026-04-14**  
+  If the morning train is full, the boxes go on the evening train.
+- `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/OccurrenceTime` = **17:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `MainCarriageShipmentStage/ActualPickupTransportEvent/OccurrenceDate` = **2026-04-13**  
+  The boxes were collected from the warehouse.
+- `MainCarriageShipmentStage/ActualPickupTransportEvent/OccurrenceTime` = **15:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/DeliveryTransportEvent/OccurrenceDate` = **2026-04-15**  
+  Planned placement at the siding.
+- `MainCarriageShipmentStage/DeliveryTransportEvent/OccurrenceTime` = **11:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/DeliveryTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
 - `MainCarriageShipmentStage/TerminalOperatorParty/WebsiteURI` = **https://www.ferranohub.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/IndustryClassificationCode` = **5221** (listID `ISIC Rev.4`)  
@@ -195,6 +211,12 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105096** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Ferrano Intermodal Hub (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `MainCarriageShipmentStage/TransportEvent/OccurrenceDate` = **2026-04-14**  
+  Both boxes lifted onto the train.
+- `MainCarriageShipmentStage/TransportEvent/OccurrenceTime` = **05:40:00**  
+  The local time.
+- `MainCarriageShipmentStage/TransportEvent/CompletionIndicator` = **true**  
+  Whether the event has taken place (true) or is still to come (false).
 
 ### Transport Event
 
@@ -316,6 +338,20 @@ Inside `ReceiverParty`:
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
+      <cac:OptionalTakeoverTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>17:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:OptionalTakeoverTransportEvent>
+      <cac:ActualPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+      </cac:ActualPickupTransportEvent>
+      <cac:DeliveryTransportEvent>
+        <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:DeliveryTransportEvent>
       <cac:TerminalOperatorParty>
         <cbc:WebsiteURI>https://www.ferranohub.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5221</cbc:IndustryClassificationCode>
@@ -394,6 +430,11 @@ Inside `ReceiverParty`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105096</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
+      <cac:TransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>05:40:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+      </cac:TransportEvent>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>
   <cac:TransportEvent>

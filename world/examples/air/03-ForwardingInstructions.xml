@@ -178,6 +178,13 @@
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+      <cbc:TotalGoodsItemQuantity unitCode="C62">1</cbc:TotalGoodsItemQuantity>
+      <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
+      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
+      <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
+      <cbc:ConsignmentQuantity unitCode="C62">1</cbc:ConsignmentQuantity>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -243,6 +250,81 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:FreightForwarderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Bayforth Forwarding</cbc:Name>
+        </cac:PartyName>
+      </cac:FreightForwarderParty>
+      <cac:TransportEvent>
+        <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>19:00:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      </cac:TransportEvent>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>LD-AIR-SKID-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode>SI</cbc:TransportHandlingUnitTypeCode>
+        <cac:ReferencedShipment>
+          <cbc:ID>LD-SH-26-0323</cbc:ID>
+        </cac:ReferencedShipment>
+        <cac:Package>
+          <cbc:ID>LD-AIR-BOX</cbc:ID>
+          <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+          <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+          <cbc:TraceID>LD-AIR-0001..0008</cbc:TraceID>
+          <cac:ContainedPackage>
+            <cbc:ID>LD-AIR-BAG</cbc:ID>
+            <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+            <cbc:PackagingTypeCode>BG</cbc:PackagingTypeCode>
+          </cac:ContainedPackage>
+          <cac:GoodsItem>
+            <cbc:ID>1</cbc:ID>
+            <cbc:Description>Bench side frame castings</cbc:Description>
+          </cac:GoodsItem>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Length</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">800</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Width</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID>Height</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:DeliveryUnit>
+            <cbc:BatchQuantity unitCode="H87">8</cbc:BatchQuantity>
+          </cac:DeliveryUnit>
+          <cac:Delivery>
+            <cac:RequestedDeliveryPeriod>
+              <cbc:StartDate>2026-05-14</cbc:StartDate>
+              <cbc:EndDate>2026-05-14</cbc:EndDate>
+            </cac:RequestedDeliveryPeriod>
+          </cac:Delivery>
+          <cac:Pickup>
+            <cbc:ID>BF-PU-26-0611</cbc:ID>
+            <cbc:EarliestPickupDate>2026-05-12</cbc:EarliestPickupDate>
+            <cac:PickupParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Bayforth Forwarding</cbc:Name>
+              </cac:PartyName>
+            </cac:PickupParty>
+          </cac:Pickup>
+          <cac:Despatch>
+            <cbc:RequestedDespatchDate>2026-05-13</cbc:RequestedDespatchDate>
+          </cac:Despatch>
+          <cac:Status>
+            <cbc:ConditionCode>Ready</cbc:ConditionCode>
+            <cbc:Description>Waiting at the distributor's dispatch area.</cbc:Description>
+          </cac:Status>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
     </cac:Consignment>
   </cac:Shipment>
 </ForwardingInstructions>

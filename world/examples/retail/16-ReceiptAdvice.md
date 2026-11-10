@@ -269,6 +269,35 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at DespatchSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Shipment
+
+Inside `Shipment`:
+
+- `ID` = **LD-SH-26-0230**  
+  The shipment received.
+- `TransportHandlingUnit/ID` = **LD-RT-003**  
+  The pallet with the damaged carton.
+- `TransportHandlingUnit/DamageRemarks` = **One carton torn, the bench's armrest bent.**  
+  What the goods-in found.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/ID` = **1**  
+  The receipt of the pallet.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/ReceivedQuantity` = **3** (unitCode `H87`)  
+  Three benches accepted from this pallet.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/RejectedQuantity` = **1** (unitCode `H87`)  
+  One refused.
+- `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/RejectReason` = **Damaged in transit.**  
+  Why.
+- `TransportHandlingUnit/Status/ConditionCode` = **Damaged**  
+  The pallet's condition on arrival.
+- `TransportHandlingUnit/Status/Description` = **Three benches accepted, one refused.**  
+  What was done.
+- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/URI` = **https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg**  
+  The photograph taken at goods-in.
+- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/MimeCode` = **image/jpeg**  
+  A photograph.
+- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/FileName` = **pallet-3.jpg**  
+  The file name.
+
 ### Receipt Line
 
 Inside `ReceiptLine`:
@@ -701,6 +730,30 @@ Inside `ReceiptLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>LD-SH-26-0230</cbc:ID>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-003</cbc:ID>
+      <cbc:DamageRemarks>One carton torn, the bench's armrest bent.</cbc:DamageRemarks>
+      <cac:ReceivedHandlingUnitReceiptLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ReceivedQuantity unitCode="H87">3</cbc:ReceivedQuantity>
+        <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+        <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
+      </cac:ReceivedHandlingUnitReceiptLine>
+      <cac:Status>
+        <cbc:ConditionCode>Damaged</cbc:ConditionCode>
+        <cbc:Description>Three benches accepted, one refused.</cbc:Description>
+      </cac:Status>
+      <cac:DamageDocumentationAttachment>
+        <cac:ExternalReference>
+          <cbc:URI>https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg</cbc:URI>
+          <cbc:MimeCode>image/jpeg</cbc:MimeCode>
+          <cbc:FileName>pallet-3.jpg</cbc:FileName>
+        </cac:ExternalReference>
+      </cac:DamageDocumentationAttachment>
+    </cac:TransportHandlingUnit>
+  </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:ReceivedQuantity unitCode="H87">23</cbc:ReceivedQuantity>

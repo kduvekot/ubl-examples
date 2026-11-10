@@ -189,8 +189,14 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `CarrierParty/ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `MainCarriageShipmentStage/ID` = **1**  
-  The sea leg.
+- `MainCarriageShipmentStage/ID` = **2**  
+  The sea leg, stage 2 as on the bill of lading.
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-05-18**  
+  The container came off the ship.
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **11:20:00**  
+  The local time.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **true**  
+  Whether the event has taken place (true) or is still to come (false).
 - `MainCarriageShipmentStage/TerminalOperatorParty/WebsiteURI` = **https://www.port-selanu.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Port of Selanu (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/IndustryClassificationCode` = **5222** (listID `ISIC Rev.4`)  
@@ -279,6 +285,40 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41037** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Port of Selanu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `MainCarriageShipmentStage/DetentionTransportEvent/OccurrenceDate` = **2026-05-18**  
+  Held by customs for a check of the pallets.
+- `MainCarriageShipmentStage/DetentionTransportEvent/OccurrenceTime` = **12:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/DetentionTransportEvent/Description` = **Wooden pallets must carry the heat-treatment mark.**  
+  What happened, in words.
+- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-05-18**  
+  The ship berthed at Selanu.
+- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **06:30:00**  
+  The local time.
+- `MainCarriageShipmentStage/ReportingPerson/FirstName` = **Ama**  
+  The terminal's duty officer who reports.
+- `MainCarriageShipmentStage/ReportingPerson/FamilyName` = **Kelune**  
+  The family name.
+- `MainCarriageShipmentStage/ReportingPerson/JobTitle` = **Duty officer**  
+  The person's position.
+- `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
+  The container.
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceDate` = **2026-05-18**  
+  Released from the quarantine check: all pallets heat-treated.
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **15:00:00**  
+  The local time.
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/CompletionIndicator` = **true**  
+  Whether the event has taken place (true) or is still to come (false).
+- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceDate` = **2026-05-18**  
+  Stacked in the import yard.
+- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime` = **11:40:00**  
+  The local time.
+- `TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/ChargeIndicator` = **true**  
+  A service charge.
+- `TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/AllowanceChargeReason` = **Terminal handling at Selanu**  
+  For unloading the box.
+- `TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/Amount` = **185.00** (currencyID `XBL`)  
+  As in the carrier's tariff.
 
 ### Transport Event
 
@@ -555,7 +595,12 @@ Inside `ReceiverParty`:
       </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
+      <cac:DischargeTransportEvent>
+        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>11:20:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+      </cac:DischargeTransportEvent>
       <cac:TerminalOperatorParty>
         <cbc:WebsiteURI>https://www.port-selanu.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5222</cbc:IndustryClassificationCode>
@@ -632,7 +677,40 @@ Inside `ReceiverParty`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
+      <cac:DetentionTransportEvent>
+        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
+        <cbc:Description>Wooden pallets must carry the heat-treatment mark.</cbc:Description>
+      </cac:DetentionTransportEvent>
+      <cac:ActualArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:30:00</cbc:OccurrenceTime>
+      </cac:ActualArrivalTransportEvent>
+      <cac:ReportingPerson>
+        <cbc:FirstName>Ama</cbc:FirstName>
+        <cbc:FamilyName>Kelune</cbc:FamilyName>
+        <cbc:JobTitle>Duty officer</cbc:JobTitle>
+      </cac:ReportingPerson>
     </cac:MainCarriageShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
+        <cac:QuarantineTransportEvent>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+        </cac:QuarantineTransportEvent>
+        <cac:TransportEvent>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>11:40:00</cbc:OccurrenceTime>
+        </cac:TransportEvent>
+        <cac:ServiceAllowanceCharge>
+          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReason>Terminal handling at Selanu</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">185.00</cbc:Amount>
+        </cac:ServiceAllowanceCharge>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
