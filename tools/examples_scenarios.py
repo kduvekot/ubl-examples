@@ -2045,8 +2045,13 @@ def tender(n, doc):
                                   "CalculationRate": V("100", "1 lume = 100 ferra, the reference rate."),
                                   "MathematicOperatorCode": V("Multiply", "Lume times the rate gives ferra."),
                                   "Date": V(f.date(78), "The rate of the tax point.")}
-        out["TaxTotal"] = [out["TaxTotal"], {"TaxAmount": amount(0, "XUF", "The same tax in ferra, for the seller's "
-                                                                           "tax return: none on an export.")}]
+        base_xbl = Decimal(out["LegalMonetaryTotal"]["TaxExclusiveAmount"].value)
+        out["TaxTotal"] = [out["TaxTotal"], {
+            "TaxAmount": amount(0, "XUF", "The same tax in ferra, for the seller's tax return: none on an export."),
+            "TaxSubtotal": {"TaxableAmount": amount(base_xbl * 100, "XUF", "The taxable amount in ferra."),
+                            "TaxAmount": amount(0, "XUF", "No tax: an export."),
+                            "TransactionCurrencyTaxAmount": amount(0, "XBL", "The tax in the invoice currency."),
+                            "TaxCategory": out["TaxTotal"]["TaxSubtotal"][0]["TaxCategory"]}}]
         out["Annotation"] = {"SubjectCode": V("Contract", "The annotation is about the contract."),
                              "Subject": V("Releases under the framework contract", "Its subject."),
                              "AnnotationContent": V("First release: 40 benches; 200 remain.", "A remark for the "
@@ -2144,6 +2149,58 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
 KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
 
 
+def energy_tax(f, out, key):
+    """Urvania's energy tax on the electricity bill: per kWh in two tiers, and value added tax on the price plus the
+    energy tax (world/countries.json)."""
+    exc = next(x for x in WORLD["countries"]["XU"]["tax"]["schemes"] if x["id"] == "EXC")
+    vat = WORLD["countries"]["XU"]["tax"]["schemes"][0]
+    kwh = sum(Decimal(str(r["qty"])) for r in BILLS["33-xu"])
+    lines = Decimal(out["LegalMonetaryTotal"]["LineExtensionAmount"].value)
+    t1 = min(kwh, Decimal(exc["tiers"][0]["up_to"]))
+    tiers = [(t1, Decimal(exc["tiers"][0]["per_unit"]), "The first 50,000 kWh of the month"),
+             (kwh - t1, Decimal(exc["tiers"][1]["per_unit"]), "Above 50,000 kWh: the industrial rate")]
+    excise = sum(money(q * r, "XUF") for q, r, _ in tiers)
+    vat_base = lines + excise
+    vat_amt = money(vat_base * Decimal(vat["rates"]["standard"]) / 100, "XUF")
+    subs = []
+    for q, r, what in tiers:
+        subs.append({"TaxableAmount": amount(q * r, "XUF", "The tax base of the tier, in ferra."),
+                     "TaxAmount": amount(q * r, "XUF", f"{q} kWh at {r} ferra."),
+                     "CalculationSequenceNumeric": V("1", "The energy tax is calculated first."),
+                     "BaseUnitMeasure": V("1", "The tax is per kilowatt hour.", unitCode="KWH"),
+                     "PerUnitAmount": amount(r, "XUF", "The tax per kWh in this tier."),
+                     "TierRange": V(what, "The tier of the monthly consumption."),
+                     "TaxCategory": {"ID": V("S", "The energy tax applies."),
+                                     "Name": V("Energy tax", "The tax in words."),
+                                     "BaseUnitMeasure": V("1", "Per kilowatt hour.", unitCode="KWH"),
+                                     "PerUnitAmount": amount(r, "XUF", "The rate per kWh."),
+                                     "TierRange": V(what, "The tier."),
+                                     "TaxScheme": {"ID": V("EXC", "UN/EDIFACT 5153 code EXC: excise duty, the energy "
+                                                                  "tax.")}},
+                     "TaxDueCountry": {"IdentificationCode": V("XU", "Due in Urvania.")}})
+    subs.append({"TaxableAmount": amount(vat_base, "XUF", "The price plus the energy tax: value added tax is charged "
+                                                         "on both."),
+                 "TaxAmount": amount(vat_amt, "XUF", f"{vat['rates']['standard']} % of that base."),
+                 "TaxInclusiveAmount": amount(vat_base + vat_amt, "XUF", "The base with the tax."),
+                 "CalculationSequenceNumeric": V("2", "Calculated after the energy tax."),
+                 "Percent": V(str(vat["rates"]["standard"]), "The standard rate."),
+                 "TaxCategory": out["TaxTotal"]["TaxSubtotal"][0]["TaxCategory"]})
+    out["TaxTotal"] = {"TaxAmount": amount(excise + vat_amt, "XUF", "Energy tax and value added tax together."),
+                       "TaxEvidenceIndicator": V("true", "This tax total is the evidence for the customer's "
+                                                         "deduction of value added tax."),
+                       "TaxIncludedIndicator": V("false", "The line prices do not include the taxes."),
+                       "TaxSubtotal": subs}
+    lmt = out["LegalMonetaryTotal"]
+    lmt["TaxExclusiveAmount"] = amount(lines, "XUF", "The line amounts, without any tax.")
+    lmt["TaxInclusiveAmount"] = amount(lines + excise + vat_amt, "XUF", "With the energy tax and the value added tax.")
+    lmt["PayableAmount"] = amount(lines + excise + vat_amt, "XUF", "What the manufacturer pays.")
+    f.numbers[f"invoice-{key}-amount"] = lines + excise + vat_amt
+    out["PaymentTerms"]["SettlementDiscountAmount"] = amount((lines + excise + vat_amt) * Decimal("0.02"), "XUF",
+                                                             "The 2 % discount on the amount payable, if paid in "
+                                                             "time.")
+    return out
+
+
 def bill_key(doc):
     sup = doc["from"] if doc["doc"] != "RemittanceAdvice" else doc["to"]
     cust = doc["to"] if doc["doc"] != "RemittanceAdvice" else doc["from"]
@@ -2168,6 +2225,8 @@ def utilities(n, doc):
         key = bill_key(doc)
         out = kit.invoice(f, n, doc, 1, 21, "The monthly bill, issued on the first day of the next month.", {},
                           BILLS[key], key=f"invoice-{key}", extra=MARCH)
+        if key == "33-xu":
+            energy_tax(f, out, key)
         if key == "34-xb:c-xb":                 # the household pays by direct debit under a mandate
             m = PARTY["c-xb"]["identity"]["mandate"]
             out["PaymentMeans"] = {
@@ -2322,7 +2381,44 @@ def wood(n, doc):
 
 
 # ---------------------------------------------------------------- the furniture flow (Bayvarra)
-SETS = [{"item": "garden-set", "ordered": 20, "why": "The first delivery of the store's own garden furniture line."}]
+SET_PARTS = [("BF-GS-01-B", "Garden bench Marrow, 1400 mm", 1, "380.00"),
+             ("BF-GS-01-C", "Garden chair Marrow", 2, "115.00")]
+
+
+def set_parts(sets, kind):
+    """The parts of the garden set, as sub-lines: a bench and two chairs per set; their prices add up to the set's."""
+    out = []
+    for k, (sid, name, per, price_) in enumerate(SET_PARTS, 1):
+        q = sets * per
+        x = {"ID": V(f"1.{k}", "A part of the set."),
+             "LineExtensionAmount": amount(Decimal(price_) * q, "XBL", f"{q} at {price_} lume: the parts add up to "
+                                                                      "the set's price."),
+             "Price": {"PriceAmount": price(price_, "XBL", "The part's share of the set price.")},
+             "Item": {"Name": V(name, "The part."), "SellersItemIdentification": {"ID": V(sid, "The maker's number "
+                                                                                              "for the part.")}}}
+        x["Quantity" if kind == "order" else "InvoicedQuantity"] = qty(q, "H87", f"{per} per set.")
+        out.append(x)
+    return out
+
+
+SETS = [{"item": "garden-set", "ordered": 20, "why": "The first delivery of the store's own garden furniture line.",
+         "line_extra": {
+             "Note": V("The store's own line: bench and two chairs per set.", "What the line is."),
+             "MinimumQuantity": qty(10, "SET", "The store accepts a first part of at least ten sets."),
+             "MaximumQuantity": qty(20, "SET", "And no more than ordered."),
+             "BackOrderAllowedIndicator": V("true", "What cannot be delivered now may follow."),
+             "MinimumBackorderQuantity": qty(5, "SET", "But only in lots of at least five."),
+             "MaximumBackorderQuantity": qty(10, "SET", "And at most ten on back order."),
+             "InspectionMethodCode": V("Visual", "The goods-in checks each set by eye."),
+             "AccountingCostCode": V("6120", "The garden department's cost centre."),
+             "AccountingCost": V("Garden department", "In words."),
+             "WarrantyValidityPeriod": {"DurationMeasure": V("2", "Two years on the joints.", unitCode="ANN")},
+             "WarrantyParty": party("37-xb", short=True),
+             "PricingReference": {"OriginalItemLocationQuantity": {"Price": {
+                 "PriceAmount": price("610.00", "XBL", "The price of the quotation, which the order accepts.")}}},
+             "SubLineItem": set_parts(20, "order")},
+         "orderline_extra": {"Note": V("Price as quoted.", "Why no price question."),
+                             "QuotationLineReference": {"LineID": V("1", "The quotation line accepted.")}}}]
 DESKS = [{"item": "office-desk", "ordered": 6, "why": "Six desks for the new planning office."},
          {"item": "installation", "ordered": 14, "why": "Two installers for seven hours."}]
 FURNITURE = kit.Flow("furniture", "2026-03-02", SETS)
@@ -2387,7 +2483,8 @@ def furniture(n, doc):
     if doc["doc"] == "Invoice" and doc["to"] == "26-xb":
         return kit.invoice(f, n, doc, 20, 30, "Issued on delivery.", {"OrderReference": ref(f, "order", "The store's "
                                                                                                        "order.")},
-                           [{"item": "garden-set", "qty": 20, "invoice_why": "The sets delivered."}])
+                           [{"item": "garden-set", "qty": 20, "invoice_why": "The sets delivered.",
+                             "line_extra": {"SubInvoiceLine": set_parts(20, "invoice")}}])
     if doc["doc"] == "InstructionForReturns":
         return {**collab(f, doc, "returns", 56, "The furniture maker takes back the sets that do not sell."),
                 "InstructionForReturnsLine": {"ID": V("1", "The only line."),

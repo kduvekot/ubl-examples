@@ -298,12 +298,34 @@ Inside `AnticipatedMonetaryTotal`:
 
 Inside `OrderLine`:
 
+- `Note` = **Price as quoted.**  
+  Why no price question.
 - `LineItem/ID` = **1**  
   The line number.
+- `LineItem/Note` = **The store's own line: bench and two chairs per set.**  
+  What the line is.
 - `LineItem/Quantity` = **20** (unitCode `SET`)  
   The first delivery of the store's own garden furniture line.
 - `LineItem/LineExtensionAmount` = **12200.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `LineItem/MinimumQuantity` = **10** (unitCode `SET`)  
+  The store accepts a first part of at least ten sets.
+- `LineItem/MaximumQuantity` = **20** (unitCode `SET`)  
+  And no more than ordered.
+- `LineItem/MinimumBackorderQuantity` = **5** (unitCode `SET`)  
+  But only in lots of at least five.
+- `LineItem/MaximumBackorderQuantity` = **10** (unitCode `SET`)  
+  And at most ten on back order.
+- `LineItem/InspectionMethodCode` = **Visual**  
+  The goods-in checks each set by eye.
+- `LineItem/BackOrderAllowedIndicator` = **true**  
+  What cannot be delivered now may follow.
+- `LineItem/AccountingCostCode` = **6120**  
+  The garden department's cost centre.
+- `LineItem/AccountingCost` = **Garden department**  
+  In words.
+- `LineItem/PricingReference/OriginalItemLocationQuantity/Price/PriceAmount` = **610** (currencyID `XBL`)  
+  The price of the quotation, which the order accepts.
 - `LineItem/Price/PriceAmount` = **610** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `SET`)  
@@ -330,6 +352,38 @@ Inside `OrderLine`:
   Which dimension.
 - `LineItem/Item/Dimension/Measure` = **1400** (unitCode `MMT`)  
   Its size.
+- `LineItem/SubLineItem/ID` = **1.1**  
+  A part of the set.
+- `LineItem/SubLineItem/Quantity` = **20** (unitCode `H87`)  
+  1 per set.
+- `LineItem/SubLineItem/LineExtensionAmount` = **7600.00** (currencyID `XBL`)  
+  20 at 380.00 lume: the parts add up to the set's price.
+- `LineItem/SubLineItem/Price/PriceAmount` = **380** (currencyID `XBL`)  
+  The part's share of the set price.
+- `LineItem/SubLineItem/Item/Name` = **Garden bench Marrow, 1400 mm**  
+  The part.
+- `LineItem/SubLineItem/Item/SellersItemIdentification/ID` = **BF-GS-01-B**  
+  The maker's number for the part.
+- `LineItem/SubLineItem/ID` = **1.2**  
+  A part of the set.
+- `LineItem/SubLineItem/Quantity` = **40** (unitCode `H87`)  
+  2 per set.
+- `LineItem/SubLineItem/LineExtensionAmount` = **4600.00** (currencyID `XBL`)  
+  40 at 115.00 lume: the parts add up to the set's price.
+- `LineItem/SubLineItem/Price/PriceAmount` = **115** (currencyID `XBL`)  
+  The part's share of the set price.
+- `LineItem/SubLineItem/Item/Name` = **Garden chair Marrow**  
+  The part.
+- `LineItem/SubLineItem/Item/SellersItemIdentification/ID` = **BF-GS-01-C**  
+  The maker's number for the part.
+- `LineItem/WarrantyValidityPeriod/DurationMeasure` = **2** (unitCode `ANN`)  
+  Two years on the joints.
+- `LineItem/WarrantyParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/WarrantyParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `QuotationLineReference/LineID` = **1**  
+  The quotation line accepted.
 
 ## The document
 
@@ -567,10 +621,27 @@ Inside `OrderLine`:
     <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
+    <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:Note>The store's own line: bench and two chairs per set.</cbc:Note>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
+      <cbc:MinimumQuantity unitCode="SET">10</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="SET">20</cbc:MaximumQuantity>
+      <cbc:MinimumBackorderQuantity unitCode="SET">5</cbc:MinimumBackorderQuantity>
+      <cbc:MaximumBackorderQuantity unitCode="SET">10</cbc:MaximumBackorderQuantity>
+      <cbc:InspectionMethodCode>Visual</cbc:InspectionMethodCode>
+      <cbc:BackOrderAllowedIndicator>true</cbc:BackOrderAllowedIndicator>
+      <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+      <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+      <cac:PricingReference>
+        <cac:OriginalItemLocationQuantity>
+          <cac:Price>
+            <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
+          </cac:Price>
+        </cac:OriginalItemLocationQuantity>
+      </cac:PricingReference>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
@@ -600,7 +671,49 @@ Inside `OrderLine`:
           <cbc:Measure unitCode="MMT">1400</cbc:Measure>
         </cac:Dimension>
       </cac:Item>
+      <cac:SubLineItem>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Quantity unitCode="H87">20</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+        </cac:Price>
+        <cac:Item>
+          <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>BF-GS-01-B</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:SubLineItem>
+      <cac:SubLineItem>
+        <cbc:ID>1.2</cbc:ID>
+        <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+        </cac:Price>
+        <cac:Item>
+          <cbc:Name>Garden chair Marrow</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>BF-GS-01-C</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:SubLineItem>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">2</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
     </cac:LineItem>
+    <cac:QuotationLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:QuotationLineReference>
   </cac:OrderLine>
 </Order>
 ```

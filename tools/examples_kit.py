@@ -292,6 +292,9 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
                          if flow.numbers.get("catalogue-from") == seller else None)}}
             for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
+    for (d, *_), line in zip(rows, out["OrderLine"]):       # what the scenario adds to a line
+        deep_merge(line["LineItem"], d.get("line_extra"))
+        deep_merge(line, d.get("orderline_extra"))
     return merge_extra(out, extra)
 
 

@@ -26,7 +26,7 @@ The manufacturer pays both electricity bills in one transfer.
   Paid within ten days, to take the cash discount of the invoice's terms.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the currency of the invoice paid; it has no minor unit.
-- `TotalPaymentAmount` = **13850011** (currencyID `XUF`)  
+- `TotalPaymentAmount` = **14189687** (currencyID `XUF`)  
   The amount transferred: the payable amount less the 2 % discount for payment within the discount period.
 
 ### Accounting Customer Party
@@ -302,9 +302,9 @@ Inside `RemittanceAdviceLine`:
   One invoice paid.
 - `Note` = **2 % discount taken: paid within the discount period of the invoice's terms.**  
   Why less is paid than invoiced.
-- `DebitLineAmount` = **14132664** (currencyID `XUF`)  
+- `DebitLineAmount` = **14479272** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
-- `CreditLineAmount` = **282653** (currencyID `XUF`)  
+- `CreditLineAmount` = **289585** (currencyID `XUF`)  
   The settlement discount taken, a credit against the invoice.
 - `BalanceAmount` = **0** (currencyID `XUF`)  
   Nothing remains open on the invoice after this payment.
@@ -330,7 +330,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
   <cbc:IssueDate>2026-04-10</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XUF">13850011</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">14189687</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -573,8 +573,8 @@ Inside `RemittanceAdviceLine`:
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>
-    <cbc:DebitLineAmount currencyID="XUF">14132664</cbc:DebitLineAmount>
-    <cbc:CreditLineAmount currencyID="XUF">282653</cbc:CreditLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">14479272</cbc:DebitLineAmount>
+    <cbc:CreditLineAmount currencyID="XUF">289585</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>

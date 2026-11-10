@@ -447,6 +447,20 @@ Inside `TaxTotal`:
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `TaxAmount` = **0** (currencyID `XUF`)  
   The same tax in ferra, for the seller's tax return: none on an export.
+- `TaxSubtotal/TaxableAmount` = **1996000** (currencyID `XUF`)  
+  The taxable amount in ferra.
+- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
+  No tax: an export.
+- `TaxSubtotal/TransactionCurrencyTaxAmount` = **0.00** (currencyID `XBL`)  
+  The tax in the invoice currency.
+- `TaxSubtotal/TaxCategory/ID` = **G**  
+  Goods exported from Urvania: no value added tax is charged on an export (category G, free export item).
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
 
 ### Legal Monetary Total
 
@@ -1029,6 +1043,19 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">1996000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+      <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>

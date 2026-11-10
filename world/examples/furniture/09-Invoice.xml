@@ -326,5 +326,33 @@
       <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:SubInvoiceLine>
+      <cbc:ID>1.1</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">20</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-GS-01-B</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      </cac:Price>
+    </cac:SubInvoiceLine>
+    <cac:SubInvoiceLine>
+      <cbc:ID>1.2</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">40</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Garden chair Marrow</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-GS-01-C</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      </cac:Price>
+    </cac:SubInvoiceLine>
   </cac:InvoiceLine>
 </Invoice>

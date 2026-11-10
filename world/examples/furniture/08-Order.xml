@@ -231,10 +231,27 @@
     <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
+    <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:Note>The store's own line: bench and two chairs per set.</cbc:Note>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
+      <cbc:MinimumQuantity unitCode="SET">10</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="SET">20</cbc:MaximumQuantity>
+      <cbc:MinimumBackorderQuantity unitCode="SET">5</cbc:MinimumBackorderQuantity>
+      <cbc:MaximumBackorderQuantity unitCode="SET">10</cbc:MaximumBackorderQuantity>
+      <cbc:InspectionMethodCode>Visual</cbc:InspectionMethodCode>
+      <cbc:BackOrderAllowedIndicator>true</cbc:BackOrderAllowedIndicator>
+      <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+      <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+      <cac:PricingReference>
+        <cac:OriginalItemLocationQuantity>
+          <cac:Price>
+            <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
+          </cac:Price>
+        </cac:OriginalItemLocationQuantity>
+      </cac:PricingReference>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
@@ -264,6 +281,48 @@
           <cbc:Measure unitCode="MMT">1400</cbc:Measure>
         </cac:Dimension>
       </cac:Item>
+      <cac:SubLineItem>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Quantity unitCode="H87">20</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+        </cac:Price>
+        <cac:Item>
+          <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>BF-GS-01-B</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:SubLineItem>
+      <cac:SubLineItem>
+        <cbc:ID>1.2</cbc:ID>
+        <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+        </cac:Price>
+        <cac:Item>
+          <cbc:Name>Garden chair Marrow</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>BF-GS-01-C</cbc:ID>
+          </cac:SellersItemIdentification>
+        </cac:Item>
+      </cac:SubLineItem>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">2</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
     </cac:LineItem>
+    <cac:QuotationLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:QuotationLineReference>
   </cac:OrderLine>
 </Order>

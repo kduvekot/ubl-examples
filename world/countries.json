@@ -27,6 +27,22 @@
        "reduced": 9
       },
       "exports": "not charged; the export is shown with its exemption reason"
+     },
+     {
+      "id": "EXC",
+      "name": "Energy tax",
+      "levied_on": "electricity, per kWh delivered in the month",
+      "tiers": [
+       {
+        "up_to": 50000,
+        "per_unit": "1.2"
+       },
+       {
+        "up_to": null,
+        "per_unit": "0.6"
+       }
+      ],
+      "note": "An excise in ferra per kWh, lower above 50,000 kWh a month for industry; value added tax is charged on the price plus the energy tax."
      }
     ]
    },

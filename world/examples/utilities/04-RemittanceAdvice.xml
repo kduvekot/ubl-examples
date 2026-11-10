@@ -8,7 +8,7 @@
   <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
   <cbc:IssueDate>2026-04-10</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XUF">13850011</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">14189687</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -251,8 +251,8 @@
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>
-    <cbc:DebitLineAmount currencyID="XUF">14132664</cbc:DebitLineAmount>
-    <cbc:CreditLineAmount currencyID="XUF">282653</cbc:CreditLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">14479272</cbc:DebitLineAmount>
+    <cbc:CreditLineAmount currencyID="XUF">289585</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>

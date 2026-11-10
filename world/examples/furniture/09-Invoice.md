@@ -418,6 +418,30 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `SET`)  
   The price is per one unit.
+- `SubInvoiceLine/ID` = **1.1**  
+  A part of the set.
+- `SubInvoiceLine/InvoicedQuantity` = **20** (unitCode `H87`)  
+  1 per set.
+- `SubInvoiceLine/LineExtensionAmount` = **7600.00** (currencyID `XBL`)  
+  20 at 380.00 lume: the parts add up to the set's price.
+- `SubInvoiceLine/Item/Name` = **Garden bench Marrow, 1400 mm**  
+  The part.
+- `SubInvoiceLine/Item/SellersItemIdentification/ID` = **BF-GS-01-B**  
+  The maker's number for the part.
+- `SubInvoiceLine/Price/PriceAmount` = **380** (currencyID `XBL`)  
+  The part's share of the set price.
+- `SubInvoiceLine/ID` = **1.2**  
+  A part of the set.
+- `SubInvoiceLine/InvoicedQuantity` = **40** (unitCode `H87`)  
+  2 per set.
+- `SubInvoiceLine/LineExtensionAmount` = **4600.00** (currencyID `XBL`)  
+  40 at 115.00 lume: the parts add up to the set's price.
+- `SubInvoiceLine/Item/Name` = **Garden chair Marrow**  
+  The part.
+- `SubInvoiceLine/Item/SellersItemIdentification/ID` = **BF-GS-01-C**  
+  The maker's number for the part.
+- `SubInvoiceLine/Price/PriceAmount` = **115** (currencyID `XBL`)  
+  The part's share of the set price.
 
 ## The document
 
@@ -750,6 +774,34 @@ Inside `InvoiceLine`:
       <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:SubInvoiceLine>
+      <cbc:ID>1.1</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">20</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-GS-01-B</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      </cac:Price>
+    </cac:SubInvoiceLine>
+    <cac:SubInvoiceLine>
+      <cbc:ID>1.2</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">40</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Garden chair Marrow</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-GS-01-C</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      </cac:Price>
+    </cac:SubInvoiceLine>
   </cac:InvoiceLine>
 </Invoice>
 ```

@@ -333,8 +333,8 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **282653** (currencyID `XUF`)  
-  The discount on the amount payable, if paid in time.
+- `SettlementDiscountAmount` = **289585** (currencyID `XUF`)  
+  The 2 % discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.ferranoenergy.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-04-23**  
@@ -354,12 +354,74 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **2355444** (currencyID `XUF`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **11777220** (currencyID `XUF`)  
-  The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **2355444** (currencyID `XUF`)  
-  20 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxAmount` = **2702052** (currencyID `XUF`)  
+  Energy tax and value added tax together.
+- `TaxEvidenceIndicator` = **true**  
+  This tax total is the evidence for the customer's deduction of value added tax.
+- `TaxIncludedIndicator` = **false**  
+  The line prices do not include the taxes.
+- `TaxSubtotal/TaxableAmount` = **60000** (currencyID `XUF`)  
+  The tax base of the tier, in ferra.
+- `TaxSubtotal/TaxAmount` = **60000** (currencyID `XUF`)  
+  50000 kWh at 1.2 ferra.
+- `TaxSubtotal/CalculationSequenceNumeric` = **1**  
+  The energy tax is calculated first.
+- `TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  The tax is per kilowatt hour.
+- `TaxSubtotal/PerUnitAmount` = **1** (currencyID `XUF`)  
+  The tax per kWh in this tier.
+- `TaxSubtotal/TierRange` = **The first 50,000 kWh of the month**  
+  The tier of the monthly consumption.
+- `TaxSubtotal/TaxCategory/ID` = **S**  
+  The energy tax applies.
+- `TaxSubtotal/TaxCategory/Name` = **Energy tax**  
+  The tax in words.
+- `TaxSubtotal/TaxCategory/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  Per kilowatt hour.
+- `TaxSubtotal/TaxCategory/PerUnitAmount` = **1** (currencyID `XUF`)  
+  The rate per kWh.
+- `TaxSubtotal/TaxCategory/TierRange` = **The first 50,000 kWh of the month**  
+  The tier.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC**  
+  UN/EDIFACT 5153 code EXC: excise duty, the energy tax.
+- `TaxSubtotal/TaxDueCountry/IdentificationCode` = **XU**  
+  Due in Urvania.
+- `TaxSubtotal/TaxableAmount` = **228840** (currencyID `XUF`)  
+  The tax base of the tier, in ferra.
+- `TaxSubtotal/TaxAmount` = **228840** (currencyID `XUF`)  
+  381400 kWh at 0.6 ferra.
+- `TaxSubtotal/CalculationSequenceNumeric` = **1**  
+  The energy tax is calculated first.
+- `TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  The tax is per kilowatt hour.
+- `TaxSubtotal/PerUnitAmount` = **1** (currencyID `XUF`)  
+  The tax per kWh in this tier.
+- `TaxSubtotal/TierRange` = **Above 50,000 kWh: the industrial rate**  
+  The tier of the monthly consumption.
+- `TaxSubtotal/TaxCategory/ID` = **S**  
+  The energy tax applies.
+- `TaxSubtotal/TaxCategory/Name` = **Energy tax**  
+  The tax in words.
+- `TaxSubtotal/TaxCategory/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  Per kilowatt hour.
+- `TaxSubtotal/TaxCategory/PerUnitAmount` = **1** (currencyID `XUF`)  
+  The rate per kWh.
+- `TaxSubtotal/TaxCategory/TierRange` = **Above 50,000 kWh: the industrial rate**  
+  The tier.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC**  
+  UN/EDIFACT 5153 code EXC: excise duty, the energy tax.
+- `TaxSubtotal/TaxDueCountry/IdentificationCode` = **XU**  
+  Due in Urvania.
+- `TaxSubtotal/TaxableAmount` = **12066060** (currencyID `XUF`)  
+  The price plus the energy tax: value added tax is charged on both.
+- `TaxSubtotal/TaxAmount` = **2413212** (currencyID `XUF`)  
+  20 % of that base.
+- `TaxSubtotal/TaxInclusiveAmount` = **14479272** (currencyID `XUF`)  
+  The base with the tax.
+- `TaxSubtotal/CalculationSequenceNumeric` = **2**  
+  Calculated after the energy tax.
+- `TaxSubtotal/Percent` = **20**  
+  The standard rate.
 - `TaxSubtotal/TaxCategory/ID` = **S**  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `TaxSubtotal/TaxCategory/Percent` = **20**  
@@ -374,11 +436,11 @@ Inside `LegalMonetaryTotal`:
 - `LineExtensionAmount` = **11777220** (currencyID `XUF`)  
   The sum of the line amounts.
 - `TaxExclusiveAmount` = **11777220** (currencyID `XUF`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **14132664** (currencyID `XUF`)  
-  The total without tax plus the tax.
-- `PayableAmount` = **14132664** (currencyID `XUF`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  The line amounts, without any tax.
+- `TaxInclusiveAmount` = **14479272** (currencyID `XUF`)  
+  With the energy tax and the value added tax.
+- `PayableAmount` = **14479272** (currencyID `XUF`)  
+  What the manufacturer pays.
 
 ### Invoice Line
 
@@ -721,7 +783,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">282653</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">289585</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranoenergy.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -735,10 +797,57 @@ Inside `InvoiceLine`:
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2355444</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">2702052</cbc:TaxAmount>
+    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">11777220</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">2355444</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">60000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
+      <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
+      <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+      <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Name>Energy tax</cbc:Name>
+        <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+        <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+        <cac:TaxScheme>
+          <cbc:ID>EXC</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+      <cac:TaxDueCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:TaxDueCountry>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">228840</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">228840</cbc:TaxAmount>
+      <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
+      <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+      <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Name>Energy tax</cbc:Name>
+        <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+        <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cac:TaxScheme>
+          <cbc:ID>EXC</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+      <cac:TaxDueCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:TaxDueCountry>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">12066060</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+      <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
+      <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
+      <cbc:Percent>20</cbc:Percent>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -751,8 +860,8 @@ Inside `InvoiceLine`:
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XUF">11777220</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XUF">11777220</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">14132664</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">14132664</cbc:PayableAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">14479272</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

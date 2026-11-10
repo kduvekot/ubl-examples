@@ -265,7 +265,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">282653</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">289585</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranoenergy.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -279,10 +279,57 @@
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2355444</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">2702052</cbc:TaxAmount>
+    <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+    <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">11777220</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">2355444</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">60000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
+      <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
+      <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+      <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Name>Energy tax</cbc:Name>
+        <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+        <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+        <cac:TaxScheme>
+          <cbc:ID>EXC</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+      <cac:TaxDueCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:TaxDueCountry>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">228840</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">228840</cbc:TaxAmount>
+      <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
+      <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+      <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Name>Energy tax</cbc:Name>
+        <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
+        <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cac:TaxScheme>
+          <cbc:ID>EXC</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+      <cac:TaxDueCountry>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:TaxDueCountry>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">12066060</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+      <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
+      <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
+      <cbc:Percent>20</cbc:Percent>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -295,8 +342,8 @@
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XUF">11777220</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XUF">11777220</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">14132664</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">14132664</cbc:PayableAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">14479272</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
