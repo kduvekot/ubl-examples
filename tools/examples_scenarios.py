@@ -5622,3 +5622,197 @@ def mast(n, doc):
 
 SCENARIOS["mast"] = _with_enrichment("mast", mast)
 FLOWS["mast"] = MAST
+
+
+# ---------------------------------------------------------------- foreign-currency debit and credit notes
+def sea_with_debit(n, doc):
+    if doc["doc"] != "DebitNote":
+        return sea(n, doc)
+    f = SEA
+    no = f.number("debit-note", doc["from"], "DebitNote")
+    fee, storage = Decimal("38.500"), Decimal("12.750")
+    total = fee + storage
+    rule = ("O", 0, None, "Lisavu has no sales tax: no tax applies (category O).", None)
+    xbl = money(total / Decimal("0.4"), "XBL")
+    line = {"ID": V("1", "The inspection."), "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:{no}:1")), "Its "
+                                                                                                          "UUID."),
+            "Note": V("Customs inspection of the container at Selanu.", "What is charged."),
+            "DebitedQuantity": qty(1, "E48", "One inspection."),
+            "LineExtensionAmount": amount(total, "XLC", "Inspection and storage, as customs charged them."),
+            "TaxInclusiveLineExtensionAmount": amount(total, "XLC", "No tax on the island."),
+            "TaxPointDate": V(f.date(16), "The day customs charged the fee."),
+            **kit.cost_centre("1-xl", "The buyer's cost centre that paid customs."),
+            "PaymentPurposeCode": V("GOVT", "ISO 20022 purpose code GOVT: a payment to the government, recharged."),
+            "FreeOfChargeIndicator": V("false", "Charged."),
+            "InvoicePeriod": {"StartDate": V(f.date(14), "The container was held"), "EndDate": V(f.date(15),
+                                                                                                "for a day.")},
+            "OrderLineReference": {"LineID": V("1", "The benches' order line.")},
+            "DespatchLineReference": {"LineID": V("1", "The despatch line."),
+                                      "DocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
+            "ReceiptLineReference": {"LineID": V("1", "The receipt line."),
+                                     "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice.")}},
+            "WorkReportLineReference": {"LineID": V("1", "The inspection report's line."),
+                                        "DocumentReference": {"ID": V("XL-CUS-INSP-26-0517", "Customs' inspection "
+                                                                                             "report.")}},
+            "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The goods' invoice.")}},
+            "DocumentReference": {"ID": V("XL-CUS-RCPT-26-0517", "Customs' receipt for the fee.")},
+            "PricingReference": {"AlternativeConditionPrice": {"PriceAmount": price(total, "XLC", "The fee as "
+                                                                                                  "customs set it.")}},
+            "OriginatorParty": party("19-xl", short=True),
+            "CollectedForParty": party("19-xl", short=True),
+            "PaymentTerms": {"Note": V("Pay within 30 days.", "When.")},
+            "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax.")},
+            "AllowanceCharge": {"ChargeIndicator": V("true", "The storage, a charge on the line."),
+                                "AllowanceChargeReason": V("Storage while held", "In words."),
+                                "Amount": amount(storage, "XLC", "One day's storage."),
+                                "BaseAmount": amount(fee, "XLC", "The inspection fee.")},
+            "DeliveryTerms": {"ID": V("CIF", "As the goods were sold.", schemeID="INCOTERMS")},
+            "ItemPriceExtension": {"Amount": amount(total, "XLC", "The line's price.")},
+            "SubDebitNoteLine": [{"ID": V("1.1", "The inspection fee."),
+                                  "LineExtensionAmount": amount(fee, "XLC", "Customs' fee."),
+                                  "Item": {"Name": V("Customs inspection fee", "What.")}},
+                                 {"ID": V("1.2", "The storage."),
+                                  "LineExtensionAmount": amount(storage, "XLC", "One day."),
+                                  "Item": {"Name": V("Storage at the port", "What.")}}],
+            "Item": {"Name": V("Customs inspection of container " + CONTAINER, "What is debited.")},
+            "Price": {"PriceAmount": price(fee, "XLC", "The fee.")}}
+    to_xbl = {"SourceCurrencyCode": V("XLC", "The debit note's currency."),
+              "TargetCurrencyCode": V("XBL", "The distributor's currency."),
+              "CalculationRate": V("2.5", "1 coral = 2.5 lume, the reference rate."),
+              "MathematicOperatorCode": V("Multiply", "Coral times the rate gives lume."),
+              "Date": V(f.date(18), "The rate of the issue date.")}
+    out = {"ID": V(no, "The buyer's debit note number."), "IssueDate": V(f.date(18), "After customs charged the "
+                                                                                     "inspection."),
+           "DebitNoteTypeCode": V("383", "UN/EDIFACT 1001 code 383: debit note."),
+           "DueDate": V(f.date(48), "Thirty days."),
+           "Note": V("The illegible mark is the packer's responsibility under the agreement.", "Why the seller "
+                                                                                               "pays."),
+           "TaxPointDate": V(f.date(16), "The day the fee was charged."),
+           "DocumentCurrencyCode": kit.currency_line("XLC", "the buyer's currency, in which customs charged"),
+           "TaxCurrencyCode": V("XLC", "No tax, but stated in the island's currency."),
+           "PricingCurrencyCode": V("XLC", "The fee is priced in coral."),
+           "PaymentCurrencyCode": V("XBL", "The distributor pays in lume."),
+           "PaymentAlternativeCurrencyCode": V("XLC", "The amount in coral, for comparison."),
+           **kit.cost_centre("1-xl", "The buyer's cost centre."),
+           "LineCountNumeric": V("1", "One line."),
+           "InvoicePeriod": {"StartDate": V(f.date(14), "Held from discharge"), "EndDate": V(f.date(15), "to "
+                                                                                                       "release.")},
+           "DiscrepancyResponse": {"ResponseCode": V("Packaging", "A packaging fault."),
+                                   "Description": V("Heat-treatment mark illegible on pallet LD-26-007.", "The "
+                                                                                                          "fault.")},
+           "OrderReference": {"ID": V(f.numbers["order"], "The order.")},
+           "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")},
+           "DeliveryNoteDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading, the note the goods "
+                                                                      "came with.")},
+           "WorkReportDocumentReference": {"ID": V("XL-CUS-INSP-26-0517", "Customs' inspection report.")},
+           "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice.")},
+           "StatementDocumentReference": {"ID": V(f.numbers["statement"], "The factor's statement, which this "
+                                                                          "debit does not touch.")},
+           "OriginatorDocumentReference": {"ID": V("VT-CLAIM-26-0021", "The buyer's claim.")},
+           "ContractDocumentReference": {"ID": V(f.numbers["agreement"], "The digital agreement.")},
+           "ProjectReference": {"ID": V("Harbour parks Selanu", "The buyer's project."),
+                                "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:project:harbour-parks")), "Its "
+                                                                                                           "UUID."),
+                                "IssueDate": V(f.date(3), "Started with the order."),
+                                "WorkPhaseReference": {"ID": V("PH-1", "Benches for the harbour park."),
+                                                       "WorkPhaseCode": V("Supply", "The supply phase.")}},
+           "BuyerAssignedReference": {"BuyerReferenceCode": V("LD-AP-CLAIMS", "The distributor's claims desk.")},
+           "PurchaseReference": {"ID": V(CONTAINER, "The container the charge is about.")},
+           "Annotation": {"AnnotationContent": V("The distributor may claim it from the packer.", "A remark.")},
+           "Signature": seal("1-xl", "VT-SIG-26-DN"),
+           "PayeeParty": party("1-xl", short=True),
+           "BuyerCustomerParty": {"Party": party("6-xb", short=True)},
+           "SellerSupplierParty": {"Party": party("1-xl", short=True)},
+           "Delivery": {"ActualDeliveryDate": V(f.date(17), "The goods' arrival at the 3PL.")},
+           "DeliveryTerms": {"ID": V("CIF", "As sold.", schemeID="INCOTERMS")},
+           "PaymentMeans": kit.payment_means(f, "1-xl", "6-xb", "1-xl", 18, 30, no, "The buyer's account."),
+           "PaymentTerms": {"Note": V("30 days net.", "The terms.")},
+           "TaxExchangeRate": {**to_xbl, "TargetCurrencyCode": V("XLC", "No conversion: the tax currency is "
+                                                                        "coral."),
+                               "CalculationRate": V("1", "The same currency.")},
+           "PricingExchangeRate": {**to_xbl, "TargetCurrencyCode": V("XLC", "Priced in coral."),
+                                   "CalculationRate": V("1", "The same currency.")},
+           "PaymentExchangeRate": to_xbl,
+           "PaymentAlternativeExchangeRate": {**to_xbl, "TargetCurrencyCode": V("XLC", "The coral equivalent."),
+                                              "CalculationRate": V("1", "The same.")},
+           "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax on the island."),
+                        "TaxSubtotal": {"TaxableAmount": amount(total, "XLC", "The debit."),
+                                        "TaxAmount": amount(0, "XLC", "None."),
+                                        "TaxCategory": kit.tax_category(rule)}},
+           "LegalMonetaryTotal": {"LineExtensionAmount": amount(total, "XLC", "The line."),
+                                  "TaxExclusiveAmount": amount(total, "XLC", "No tax."),
+                                  "PayableAmount": amount(total, "XLC", f"Payable; {xbl} lume at the rate."),
+                                  "PayableAlternativeAmount": amount(xbl, "XBL", "The same in lume.")},
+           "DebitNoteLine": line}
+    return out
+
+
+def tender_with_credit(n, doc):
+    if doc["doc"] != "CreditNote":
+        return tender(n, doc)
+    f = TENDER
+    rows_spec = [{"item": "bench-serra", "qty": 1, "why": "The bench damaged during installation.",
+                  "unit_price": str(kit.unit_price("bench-serra", "XBL")), "unit_price_why": "The contract price in "
+                                                                                             "lume.",
+                  "line_extra": {"WorkReportLineReference": {"LineID": V("1", "The installation report's line.")},
+                                 "InvoicePeriod": {"StartDate": V(f.date(80), "During installation.")},
+                                 "TaxPointDate": V(f.date(82), "The day of the credit."),
+                                 "FreeOfChargeIndicator": V("false", "A credit, not a free item."),
+                                 "DocumentReference": {"ID": V("PWD-DMG-26-0081", "The department's damage "
+                                                                                  "report.")},
+                                 "PricingReference": {"AlternativeConditionPrice": {
+                                     "PriceAmount": price("49900", "XUF", "The contract price in ferra.")}},
+                                 "PurchaseReference": {"ID": V("PARK-HB-B17", "The bench's place in the "
+                                                                              "harbour park.")},
+                                 "OriginatorParty": party("2-xb", short=True),
+                                 "BeneficiaryParty": party("2-xb", short=True),
+                                 "PaymentTerms": {"Note": V("Set off against the next release's invoice.",
+                                                            "How the credit is settled.")},
+                                 "SubCreditNoteLine": {"ID": V("1.1", "The frame."),
+                                                       "LineExtensionAmount": amount(Decimal("180.00"), "XBL",
+                                                                                     "The frame's share."),
+                                                       "Item": {"Name": V("Side frames of the bench", "The "
+                                                                                                      "damaged "
+                                                                                                      "part.")}}}},
+                 {"item": "bench-installation", "qty": 1, "why": "Its installation, credited too.",
+                  "unit_price": "18.00", "unit_price_why": "The installation price in lume.",
+                  "line_extra": {"WithholdingTaxTotal": {"TaxAmount": amount(Decimal("1.80"), "XBL",
+                                                                             "The withholding reversed.")},
+                                 "CollectedForParty": party("10-xb", short=True)}}]
+    out = kit.credit_note(f, n, doc, 82, "Issued when the replacement was agreed.", rows_spec,
+                          {"BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
+                                                                                     "invoice credited.")}}})
+    out.update({"DocumentCurrencyCode": kit.currency_line("XBL", "the currency of the invoice credited"),
+                "TaxPointDate": V(f.date(82), "Urvania's VAT: the credit's date."),
+                "TaxCurrencyCode": V("XUF", "The manufacturer reports its VAT in ferra."),
+                "PricingCurrencyCode": V("XUF", "The contract prices are in ferra."),
+                "PaymentCurrencyCode": V("XBL", "Settled in lume."),
+                "PaymentAlternativeCurrencyCode": V("XUF", "Shown in ferra too."),
+                "InvoicePeriod": {"StartDate": V(f.date(78), "The release."), "EndDate": V(f.date(82), "To the "
+                                                                                                      "credit.")},
+                "DeliveryNoteDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the "
+                                                                                 "bench.")},
+                "WorkReportDocumentReference": {"ID": V("VI-WR-26-0080", "The installation report.")},
+                "PurchaseReference": {"ID": V("PARK-HB", "The harbour park.")},
+                "TaxRepresentativeParty": party("10-xb", short=True),
+                "TaxExchangeRate": {"SourceCurrencyCode": V("XBL", "The credit's currency."),
+                                    "TargetCurrencyCode": V("XUF", "The tax currency."),
+                                    "CalculationRate": V("100", "1 lume = 100 ferra.")},
+                "PricingExchangeRate": PRICING_RATE,
+                "PaymentExchangeRate": {"SourceCurrencyCode": V("XBL", "The credit's currency."),
+                                        "TargetCurrencyCode": V("XBL", "Paid in the same."),
+                                        "CalculationRate": V("1", "No conversion.")},
+                "PaymentAlternativeExchangeRate": {"SourceCurrencyCode": V("XBL", "The credit's currency."),
+                                                   "TargetCurrencyCode": V("XUF", "In ferra."),
+                                                   "CalculationRate": V("100", "The reference rate.")},
+                "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance."),
+                                    "AllowanceChargeReason": V("Goodwill", "For the inconvenience."),
+                                    "Amount": amount(0, "XBL", "None in money: the bench is replaced.")},
+                "WithholdingTaxTotal": {"TaxAmount": amount(Decimal("1.80"), "XBL", "The withholding on the "
+                                                                                   "credited installation, "
+                                                                                   "reversed.")}})
+    return out
+
+
+SCENARIOS["sea"] = _with_enrichment("sea", sea_with_debit)
+SCENARIOS["tender"] = _with_enrichment("tender", tender_with_credit)

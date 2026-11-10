@@ -3082,6 +3082,28 @@
     "SellerSupplierParty": "27-xb",
     "BuyerCustomerParty": "35-xl"
    }
+  },
+  {
+   "flow": "sea",
+   "doc": "DebitNote",
+   "from": "1-xl",
+   "to": "6-xb",
+   "why": "One pallet's heat-treatment mark was illegible, so customs inspected the container; the buyer debits the distributor in coral for the inspection and storage, a packaging fault on the seller's side.",
+   "parties": {
+    "AccountingCustomerParty": "1-xl",
+    "AccountingSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "CreditNote",
+   "from": "5-xu",
+   "to": "2-xb",
+   "why": "One bench was damaged during installation and is replaced free of charge; the manufacturer credits it and its installation.",
+   "parties": {
+    "AccountingSupplierParty": "5-xu",
+    "AccountingCustomerParty": "2-xb"
+   }
   }
  ]
 }

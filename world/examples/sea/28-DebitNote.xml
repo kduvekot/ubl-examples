@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>VT-DOC-26-0153</cbc:ID>
+  <cbc:UUID>4ac9595a-73a2-5f50-8296-73f9fae827e7</cbc:UUID>
+  <cbc:IssueDate>2026-05-22</cbc:IssueDate>
+  <cbc:IssueTime>10:30:00</cbc:IssueTime>
+  <cbc:DueDate>2026-06-21</cbc:DueDate>
+  <cbc:Note>The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
+  <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
+  <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
+  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode>XLC</cbc:TaxCurrencyCode>
+  <cbc:PricingCurrencyCode>XLC</cbc:PricingCurrencyCode>
+  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
+  <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-05-18</cbc:StartDate>
+    <cbc:EndDate>2026-05-19</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:DiscrepancyResponse>
+    <cbc:ResponseCode>Packaging</cbc:ResponseCode>
+    <cbc:Description>Heat-treatment mark illegible on pallet LD-26-007.</cbc:Description>
+  </cac:DiscrepancyResponse>
+  <cac:OrderReference>
+    <cbc:ID>VT-PO-26-0127</cbc:ID>
+  </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>LD-DA-26-0145</cbc:ID>
+  </cac:DespatchDocumentReference>
+  <cac:DeliveryNoteDocumentReference>
+    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+  </cac:DeliveryNoteDocumentReference>
+  <cac:WorkReportDocumentReference>
+    <cbc:ID>XL-CUS-INSP-26-0517</cbc:ID>
+  </cac:WorkReportDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>NW-RA-26-0146</cbc:ID>
+  </cac:ReceiptDocumentReference>
+  <cac:StatementDocumentReference>
+    <cbc:ID>HF-ST-26-0150</cbc:ID>
+  </cac:StatementDocumentReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>VT-CLAIM-26-0021</cbc:ID>
+  </cac:OriginatorDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>LD-DAG-26-0125</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>Harbour parks Selanu</cbc:ID>
+    <cbc:UUID>46229671-46ba-571a-9284-46d0fb2b78c1</cbc:UUID>
+    <cbc:IssueDate>2026-05-07</cbc:IssueDate>
+    <cac:WorkPhaseReference>
+      <cbc:ID>PH-1</cbc:ID>
+      <cbc:WorkPhaseCode>Supply</cbc:WorkPhaseCode>
+    </cac:WorkPhaseReference>
+  </cac:ProjectReference>
+  <cac:BuyerAssignedReference>
+    <cbc:BuyerReferenceCode>LD-AP-CLAIMS</cbc:BuyerReferenceCode>
+  </cac:BuyerAssignedReference>
+  <cac:PurchaseReference>
+    <cbc:ID>TWLU4120872</cbc:ID>
+  </cac:PurchaseReference>
+  <cac:Annotation>
+    <cbc:AnnotationContent>The distributor may claim it from the packer.</cbc:AnnotationContent>
+  </cac:Annotation>
+  <cac:Signature>
+    <cbc:ID>VT-SIG-26-DN</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Distribution Drive</cbc:StreetName>
+        <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
+        <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+        <cbc:BuildingNumber>43</cbc:BuildingNumber>
+        <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71214</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
+        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
+        <cbc:CompanyID>20410274</cbc:CompanyID>
+        <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Marrowdale</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customer service</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-041859</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:StreetName>Reef Street</cbc:StreetName>
+        <cbc:BuildingNumber>16</cbc:BuildingNumber>
+        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
+        <cbc:CompanyID>IC41859</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XL:ICR</cbc:ID>
+          <cbc:Name>Island companies register</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
+        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Velumi Trading</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-05-21</cbc:ActualDeliveryDate>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
+  </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-06-21</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF75VTDOC260153</cbc:InstructionNote>
+    <cbc:PaymentID>RF75VTDOC260153</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XL13BSEL0003665515</cbc:ID>
+      <cbc:Name>Velumi Trading Ltd</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice VT-DOC-26-0153</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BSEL-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BSEL</cbc:ID>
+          <cbc:Name>Bank of Selanu</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Reef Street</cbc:StreetName>
+            <cbc:BuildingNumber>23</cbc:BuildingNumber>
+            <cbc:CityName>Selanu</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>30 days net.</cbc:Note>
+  </cac:PaymentTerms>
+  <cac:TaxExchangeRate>
+    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>1</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-05-22</cbc:Date>
+  </cac:TaxExchangeRate>
+  <cac:PricingExchangeRate>
+    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>1</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-05-22</cbc:Date>
+  </cac:PricingExchangeRate>
+  <cac:PaymentExchangeRate>
+    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>2.5</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-05-22</cbc:Date>
+  </cac:PaymentExchangeRate>
+  <cac:PaymentAlternativeExchangeRate>
+    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>1</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-05-22</cbc:Date>
+  </cac:PaymentAlternativeExchangeRate>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XLC">51.250</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:Name>No general sales tax</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XLC">51.250</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">51.250</cbc:TaxExclusiveAmount>
+    <cbc:PayableAmount currencyID="XLC">51.250</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XBL">128.13</cbc:PayableAlternativeAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:DebitNoteLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:UUID>5c8d9fe8-7400-5393-836e-91e7de617c83</cbc:UUID>
+    <cbc:Note>Customs inspection of the container at Selanu.</cbc:Note>
+    <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">51.250</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">51.250</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
+    <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode>GOVT</cbc:PaymentPurposeCode>
+    <cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-05-18</cbc:StartDate>
+      <cbc:EndDate>2026-05-19</cbc:EndDate>
+    </cac:InvoicePeriod>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0145</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
+    <cac:ReceiptLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>NW-RA-26-0146</cbc:ID>
+      </cac:DocumentReference>
+    </cac:ReceiptLineReference>
+    <cac:WorkReportLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>XL-CUS-INSP-26-0517</cbc:ID>
+      </cac:DocumentReference>
+    </cac:WorkReportLineReference>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0147</cbc:ID>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>XL-CUS-RCPT-26-0517</cbc:ID>
+    </cac:DocumentReference>
+    <cac:PricingReference>
+      <cac:AlternativeConditionPrice>
+        <cbc:PriceAmount currencyID="XLC">51.25</cbc:PriceAmount>
+      </cac:AlternativeConditionPrice>
+    </cac:PricingReference>
+    <cac:OriginatorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Island Customs Service</cbc:Name>
+      </cac:PartyName>
+    </cac:OriginatorParty>
+    <cac:CollectedForParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Island Customs Service</cbc:Name>
+      </cac:PartyName>
+    </cac:CollectedForParty>
+    <cac:PaymentTerms>
+      <cbc:Note>Pay within 30 days.</cbc:Note>
+    </cac:PaymentTerms>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Storage while held</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XLC">12.750</cbc:Amount>
+      <cbc:BaseAmount currencyID="XLC">38.500</cbc:BaseAmount>
+    </cac:AllowanceCharge>
+    <cac:Item>
+      <cbc:Name>Customs inspection of container TWLU4120872</cbc:Name>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XLC">38.5</cbc:PriceAmount>
+    </cac:Price>
+    <cac:DeliveryTerms>
+      <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
+    </cac:DeliveryTerms>
+    <cac:SubDebitNoteLine>
+      <cbc:ID>1.1</cbc:ID>
+      <cbc:LineExtensionAmount currencyID="XLC">38.500</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Customs inspection fee</cbc:Name>
+      </cac:Item>
+    </cac:SubDebitNoteLine>
+    <cac:SubDebitNoteLine>
+      <cbc:ID>1.2</cbc:ID>
+      <cbc:LineExtensionAmount currencyID="XLC">12.750</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Storage at the port</cbc:Name>
+      </cac:Item>
+    </cac:SubDebitNoteLine>
+    <cac:ItemPriceExtension>
+      <cbc:Amount currencyID="XLC">51.250</cbc:Amount>
+    </cac:ItemPriceExtension>
+  </cac:DebitNoteLine>
+</DebitNote>
