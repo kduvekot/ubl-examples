@@ -26,6 +26,12 @@ The mill tells the ginnery how many bales it expects to buy this season.
   Sent at the start of the ginning season.
 - `IssueTime` = **09:00:00**  
   The time is stated, because a revision refers to the forecast by its issue date and time.
+- `Note` = **Depends on clothing orders from the store.**  
+  What the forecast rests on.
+- `VersionID` = **1**  
+  The first forecast of the season.
+- `BasedOnConsensusIndicator` = **true**  
+  Agreed with the ginnery at the season meeting.
 - `ForecastPurposeCode` = **Order**  
   A forecast of what the mill will order, so the ginnery can plan.
 
@@ -37,6 +43,24 @@ Inside `ForecastPeriod`:
   The season's shipping period.
 - `EndDate` = **2026-06-02**  
   Its end.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **SCG-SEASON-2026**  
+  The season agreement.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LT-SIG-26-0202**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -302,11 +326,28 @@ Inside `ForecastLine`:
   <cbc:UUID>bd5b89e4-c754-5b5a-b7b9-a43a6223c50d</cbc:UUID>
   <cbc:IssueDate>2026-02-02</cbc:IssueDate>
   <cbc:IssueTime>09:00:00</cbc:IssueTime>
+  <cbc:Note>Depends on clothing orders from the store.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:BasedOnConsensusIndicator>true</cbc:BasedOnConsensusIndicator>
   <cbc:ForecastPurposeCode>Order</cbc:ForecastPurposeCode>
   <cac:ForecastPeriod>
     <cbc:StartDate>2026-02-16</cbc:StartDate>
     <cbc:EndDate>2026-06-02</cbc:EndDate>
   </cac:ForecastPeriod>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCG-SEASON-2026</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LT-SIG-26-0202</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>

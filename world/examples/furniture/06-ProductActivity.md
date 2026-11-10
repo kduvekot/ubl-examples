@@ -26,6 +26,10 @@ Weekly sales and stock movements of the line.
   The store's report of the first four weeks.
 - `IssueTime` = **16:35:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Sales were slow after the promotion ended.**  
+  The store's remark.
+- `DocumentCurrencyCode` = **XBL**  
+  The lume, the store's currency; it has two decimals.
 
 ### Activity Period
 
@@ -35,6 +39,24 @@ Inside `ActivityPeriod`:
   The four weeks reported.
 - `EndDate` = **2026-04-20**  
   Their end.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BF-DOC-26-0569**  
+  The request the figures answer.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0420A**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -250,10 +272,32 @@ Inside `SupplyChainActivityDataLine`:
   The only line.
 - `SupplyChainActivityTypeCode` = **Sales**  
   The activity reported: sales to consumers.
+- `BuyerCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BuyerCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ActivityPeriod/StartDate` = **2026-03-23**  
+  The four weeks.
+- `ActivityPeriod/EndDate` = **2026-04-20**  
+  Their end.
 - `ActivityOriginLocation/Name` = **Brightmarket Stores, garden department, Lumeport**  
   Where the sales took place.
+- `ActivityFinalLocation/Name` = **Customers' gardens in Lumeport**  
+  Where the sets end up.
 - `SalesItem/Quantity` = **3** (unitCode `SET`)  
   Three sets sold in four weeks.
+- `SalesItem/ActivityProperty/Name` = **Weather**  
+  What the store notes.
+- `SalesItem/ActivityProperty/Value` = **Rain three weeks out of four.**  
+  Why sales were slow.
+- `SalesItem/TaxExclusivePrice/PriceAmount` = **899** (currencyID `XBL`)  
+  The shelf price, before sales tax.
+- `SalesItem/TaxInclusivePrice/PriceAmount` = **957.44** (currencyID `XBL`)  
+  With Coastal State's 6.5 % sales tax.
 - `SalesItem/Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/Name` = **Garden bench set Marrow**  
@@ -288,10 +332,26 @@ Inside `SupplyChainActivityDataLine`:
   <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>16:35:00</cbc:IssueTime>
+  <cbc:Note>Sales were slow after the promotion ended.</cbc:Note>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:ActivityPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
     <cbc:EndDate>2026-04-20</cbc:EndDate>
   </cac:ActivityPeriod>
+  <cac:DocumentReference>
+    <cbc:ID>BF-DOC-26-0569</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0420A</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -471,11 +531,48 @@ Inside `SupplyChainActivityDataLine`:
   <cac:SupplyChainActivityDataLine>
     <cbc:ID>1</cbc:ID>
     <cbc:SupplyChainActivityTypeCode>Sales</cbc:SupplyChainActivityTypeCode>
+    <cac:BuyerCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brightmarket Stores</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:BuyerCustomerParty>
+    <cac:SellerSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:SellerSupplierParty>
+    <cac:ActivityPeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-04-20</cbc:EndDate>
+    </cac:ActivityPeriod>
     <cac:ActivityOriginLocation>
       <cbc:Name>Brightmarket Stores, garden department, Lumeport</cbc:Name>
     </cac:ActivityOriginLocation>
+    <cac:ActivityFinalLocation>
+      <cbc:Name>Customers' gardens in Lumeport</cbc:Name>
+    </cac:ActivityFinalLocation>
     <cac:SalesItem>
       <cbc:Quantity unitCode="SET">3</cbc:Quantity>
+      <cac:ActivityProperty>
+        <cbc:Name>Weather</cbc:Name>
+        <cbc:Value>Rain three weeks out of four.</cbc:Value>
+      </cac:ActivityProperty>
+      <cac:TaxExclusivePrice>
+        <cbc:PriceAmount currencyID="XBL">899</cbc:PriceAmount>
+      </cac:TaxExclusivePrice>
+      <cac:TaxInclusivePrice>
+        <cbc:PriceAmount currencyID="XBL">957.44</cbc:PriceAmount>
+      </cac:TaxInclusivePrice>
       <cac:Item>
         <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
         <cbc:Name>Garden bench set Marrow</cbc:Name>

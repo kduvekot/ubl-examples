@@ -8,10 +8,25 @@
   <cbc:UUID>54a44709-e8a8-5aed-918e-7a7a369c2ad5</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>17:49:00</cbc:IssueTime>
+  <cbc:Note>Please review the line with us.</cbc:Note>
   <cac:ExceptionObservationPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
     <cbc:EndDate>2026-04-20</cbc:EndDate>
   </cac:ExceptionObservationPeriod>
+  <cac:DocumentReference>
+    <cbc:ID>BS-DOC-26-0571</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-26-0421</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -210,8 +225,29 @@
   </cac:SellerSupplierParty>
   <cac:ExceptionNotificationLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Three sets sold against five expected.</cbc:Note>
+    <cbc:Description>Sales below the agreed threshold.</cbc:Description>
+    <cbc:ExceptionStatusCode>Open</cbc:ExceptionStatusCode>
+    <cbc:CollaborationPriorityCode>High</cbc:CollaborationPriorityCode>
+    <cbc:ResolutionCode>Review</cbc:ResolutionCode>
     <cbc:ComparedValueMeasure unitCode="SET">5</cbc:ComparedValueMeasure>
     <cbc:SourceValueMeasure unitCode="SET">3</cbc:SourceValueMeasure>
+    <cbc:VarianceQuantity unitCode="SET">-2</cbc:VarianceQuantity>
+    <cbc:SupplyChainActivityTypeCode>Sales</cbc:SupplyChainActivityTypeCode>
+    <cbc:PerformanceMetricTypeCode>SalesUnits</cbc:PerformanceMetricTypeCode>
+    <cac:DocumentReference>
+      <cbc:ID>BS-DOC-26-0572</cbc:ID>
+    </cac:DocumentReference>
+    <cac:ForecastException>
+      <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
+      <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+      <cbc:IssueDate>2026-03-16</cbc:IssueDate>
+      <cbc:IssueTime>10:00:00</cbc:IssueTime>
+      <cbc:DataSourceCode>Seller</cbc:DataSourceCode>
+      <cbc:ComparisonDataCode>Actual</cbc:ComparisonDataCode>
+      <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
+      <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
+    </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>

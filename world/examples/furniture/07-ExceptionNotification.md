@@ -26,6 +26,8 @@ Sales of the bench set run far below forecast: past the agreed threshold, so the
   The furniture maker sees the sales below the agreed threshold.
 - `IssueTime` = **17:49:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Please review the line with us.**  
+  What the maker proposes.
 
 ### Exception Observation Period
 
@@ -35,6 +37,24 @@ Inside `ExceptionObservationPeriod`:
   The four weeks observed.
 - `EndDate` = **2026-04-20**  
   Their end.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BS-DOC-26-0571**  
+  The criteria that were met.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-26-0421**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -266,10 +286,44 @@ Inside `ExceptionNotificationLine`:
 
 - `ID` = **1**  
   The only exception.
+- `Note` = **Three sets sold against five expected.**  
+  The exception.
+- `Description` = **Sales below the agreed threshold.**  
+  In words.
+- `ExceptionStatusCode` = **Open**  
+  Not yet resolved.
+- `CollaborationPriorityCode` = **High**  
+  As agreed.
+- `ResolutionCode` = **Review**  
+  A review of the line.
 - `ComparedValueMeasure` = **5** (unitCode `SET`)  
   The agreed threshold: five sets in four weeks.
 - `SourceValueMeasure` = **3** (unitCode `SET`)  
   The sales the store reported: three sets.
+- `VarianceQuantity` = **-2** (unitCode `SET`)  
+  Two sets fewer than the threshold.
+- `SupplyChainActivityTypeCode` = **Sales**  
+  Measured on sales.
+- `PerformanceMetricTypeCode` = **SalesUnits**  
+  In sets.
+- `DocumentReference/ID` = **BS-DOC-26-0572**  
+  The product activity reported.
+- `ForecastException/ForecastPurposeCode` = **Sales**  
+  The sales forecast compared.
+- `ForecastException/ForecastTypeCode` = **Total**  
+  In total.
+- `ForecastException/IssueDate` = **2026-03-16**  
+  The forecast of the first delivery.
+- `ForecastException/IssueTime` = **10:00:00**  
+  Its time.
+- `ForecastException/DataSourceCode` = **Seller**  
+  The maker's forecast.
+- `ForecastException/ComparisonDataCode` = **Actual**  
+  Compared with actual sales.
+- `ForecastException/ComparisonForecastIssueTime` = **18:00:00**  
+  Their time.
+- `ForecastException/ComparisonForecastIssueDate` = **2026-04-20**  
+  The figures of day 49.
 - `SupplyItem/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `SupplyItem/Name` = **Garden bench set Marrow**  
@@ -304,10 +358,25 @@ Inside `ExceptionNotificationLine`:
   <cbc:UUID>54a44709-e8a8-5aed-918e-7a7a369c2ad5</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>17:49:00</cbc:IssueTime>
+  <cbc:Note>Please review the line with us.</cbc:Note>
   <cac:ExceptionObservationPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
     <cbc:EndDate>2026-04-20</cbc:EndDate>
   </cac:ExceptionObservationPeriod>
+  <cac:DocumentReference>
+    <cbc:ID>BS-DOC-26-0571</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-26-0421</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -506,8 +575,29 @@ Inside `ExceptionNotificationLine`:
   </cac:SellerSupplierParty>
   <cac:ExceptionNotificationLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Three sets sold against five expected.</cbc:Note>
+    <cbc:Description>Sales below the agreed threshold.</cbc:Description>
+    <cbc:ExceptionStatusCode>Open</cbc:ExceptionStatusCode>
+    <cbc:CollaborationPriorityCode>High</cbc:CollaborationPriorityCode>
+    <cbc:ResolutionCode>Review</cbc:ResolutionCode>
     <cbc:ComparedValueMeasure unitCode="SET">5</cbc:ComparedValueMeasure>
     <cbc:SourceValueMeasure unitCode="SET">3</cbc:SourceValueMeasure>
+    <cbc:VarianceQuantity unitCode="SET">-2</cbc:VarianceQuantity>
+    <cbc:SupplyChainActivityTypeCode>Sales</cbc:SupplyChainActivityTypeCode>
+    <cbc:PerformanceMetricTypeCode>SalesUnits</cbc:PerformanceMetricTypeCode>
+    <cac:DocumentReference>
+      <cbc:ID>BS-DOC-26-0572</cbc:ID>
+    </cac:DocumentReference>
+    <cac:ForecastException>
+      <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
+      <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+      <cbc:IssueDate>2026-03-16</cbc:IssueDate>
+      <cbc:IssueTime>10:00:00</cbc:IssueTime>
+      <cbc:DataSourceCode>Seller</cbc:DataSourceCode>
+      <cbc:ComparisonDataCode>Actual</cbc:ComparisonDataCode>
+      <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
+      <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
+    </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>

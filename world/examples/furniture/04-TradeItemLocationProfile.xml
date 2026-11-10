@@ -8,10 +8,26 @@
   <cbc:UUID>befc4246-c9bd-5950-8153-a96b42c6db87</cbc:UUID>
   <cbc:IssueDate>2026-03-14</cbc:IssueDate>
   <cbc:IssueTime>08:23:00</cbc:IssueTime>
+  <cbc:Note>The store holds stock; the maker replenishes.</cbc:Note>
+  <cbc:ProfileStatusCode>Active</cbc:ProfileStatusCode>
   <cac:Period>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:Period>
+  <cac:DocumentReference>
+    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0314</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -209,6 +225,13 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:ItemManagementProfile>
+    <cbc:FrozenPeriodDaysNumeric>7</cbc:FrozenPeriodDaysNumeric>
+    <cbc:MinimumInventoryQuantity unitCode="SET">4</cbc:MinimumInventoryQuantity>
+    <cbc:MultipleOrderQuantity unitCode="SET">2</cbc:MultipleOrderQuantity>
+    <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
+    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
+    <cbc:TargetInventoryQuantity unitCode="SET">10</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
       <cbc:StartDate>2026-03-16</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>
@@ -235,5 +258,9 @@
         <cbc:Measure unitCode="MMT">1400</cbc:Measure>
       </cac:Dimension>
     </cac:Item>
+    <cac:ItemLocationQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="SET">2</cbc:MinimumQuantity>
+    </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
 </TradeItemLocationProfile>

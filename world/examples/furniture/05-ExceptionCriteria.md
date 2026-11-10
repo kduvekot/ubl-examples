@@ -26,6 +26,10 @@ Both agree when a deviation is worth a message: thresholds for forecast variance
   Agreed together with the replenishment policy.
 - `IssueTime` = **09:21:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Both sides are told when a criterion is met.**  
+  How the criteria are used.
+- `VersionID` = **1**  
+  The first version.
 
 ### Validity Period
 
@@ -35,6 +39,24 @@ Inside `ValidityPeriod`:
   Valid for the season.
 - `EndDate` = **2026-08-29**  
   Its end.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BS-DOC-26-0570**  
+  The replenishment policy they go with.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0314C**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -266,10 +288,26 @@ Inside `ExceptionCriteriaLine`:
 
 - `ID` = **1**  
   The only criterion.
+- `Note` = **Slow sales.**  
+  What the criterion catches.
 - `ThresholdValueComparisonCode` = **LessThan**  
   An exception is raised when actual sales fall below the threshold.
 - `ThresholdQuantity` = **5** (unitCode `SET`)  
   Fewer than five sets sold in four weeks is worth a message.
+- `ExceptionStatusCode` = **Active**  
+  In force.
+- `CollaborationPriorityCode` = **High**  
+  Answered within two days.
+- `ExceptionResolutionCode` = **Review**  
+  The partners review the line together.
+- `SupplyChainActivityTypeCode` = **Sales**  
+  Measured on sales.
+- `PerformanceMetricTypeCode` = **SalesUnits**  
+  In sets.
+- `EffectivePeriod/StartDate` = **2026-03-23**  
+  From the first four weeks on the shelf.
+- `EffectivePeriod/EndDate` = **2026-08-29**  
+  To the end of the season.
 - `SupplyItem/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `SupplyItem/Name` = **Garden bench set Marrow**  
@@ -290,6 +328,28 @@ Inside `ExceptionCriteriaLine`:
   Which dimension.
 - `SupplyItem/Dimension/Measure` = **1400** (unitCode `MMT`)  
   Its size.
+- `ID` = **2**  
+  The forecast criterion.
+- `Note` = **Forecast far from the store's own plan.**  
+  What it catches.
+- `ThresholdValueComparisonCode` = **GreaterThan**  
+  When the difference is larger.
+- `ThresholdQuantity` = **30** (unitCode `P1`)  
+  More than 30 % difference.
+- `SupplyItem/Name` = **Garden bench set Marrow**  
+  The store's own line.
+- `SupplyItem/SellersItemIdentification/ID` = **BF-GS-01**  
+  The maker's number.
+- `ForecastExceptionCriterionLine/ForecastPurposeCode` = **Sales**  
+  A sales forecast.
+- `ForecastExceptionCriterionLine/ForecastTypeCode` = **Total**  
+  In total.
+- `ForecastExceptionCriterionLine/ComparisonDataSourceCode` = **Buyer**  
+  Compared with the store's plan.
+- `ForecastExceptionCriterionLine/DataSourceCode` = **Seller**  
+  The maker's forecast.
+- `ForecastExceptionCriterionLine/TimeDeltaDaysQuantity` = **28** (unitCode `DAY`)  
+  Over four weeks.
 
 ## The document
 
@@ -304,10 +364,26 @@ Inside `ExceptionCriteriaLine`:
   <cbc:UUID>1e9835ca-6098-5efa-a740-4d690200ec9c</cbc:UUID>
   <cbc:IssueDate>2026-03-14</cbc:IssueDate>
   <cbc:IssueTime>09:21:00</cbc:IssueTime>
+  <cbc:Note>Both sides are told when a criterion is met.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:ValidityPeriod>
+  <cac:DocumentReference>
+    <cbc:ID>BS-DOC-26-0570</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0314C</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -506,8 +582,18 @@ Inside `ExceptionCriteriaLine`:
   </cac:SellerSupplierParty>
   <cac:ExceptionCriteriaLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Slow sales.</cbc:Note>
     <cbc:ThresholdValueComparisonCode>LessThan</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="SET">5</cbc:ThresholdQuantity>
+    <cbc:ExceptionStatusCode>Active</cbc:ExceptionStatusCode>
+    <cbc:CollaborationPriorityCode>High</cbc:CollaborationPriorityCode>
+    <cbc:ExceptionResolutionCode>Review</cbc:ExceptionResolutionCode>
+    <cbc:SupplyChainActivityTypeCode>Sales</cbc:SupplyChainActivityTypeCode>
+    <cbc:PerformanceMetricTypeCode>SalesUnits</cbc:PerformanceMetricTypeCode>
+    <cac:EffectivePeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-08-29</cbc:EndDate>
+    </cac:EffectivePeriod>
     <cac:SupplyItem>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>
@@ -530,6 +616,25 @@ Inside `ExceptionCriteriaLine`:
         <cbc:Measure unitCode="MMT">1400</cbc:Measure>
       </cac:Dimension>
     </cac:SupplyItem>
+  </cac:ExceptionCriteriaLine>
+  <cac:ExceptionCriteriaLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Forecast far from the store's own plan.</cbc:Note>
+    <cbc:ThresholdValueComparisonCode>GreaterThan</cbc:ThresholdValueComparisonCode>
+    <cbc:ThresholdQuantity unitCode="P1">30</cbc:ThresholdQuantity>
+    <cac:SupplyItem>
+      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-GS-01</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:SupplyItem>
+    <cac:ForecastExceptionCriterionLine>
+      <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
+      <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+      <cbc:ComparisonDataSourceCode>Buyer</cbc:ComparisonDataSourceCode>
+      <cbc:DataSourceCode>Seller</cbc:DataSourceCode>
+      <cbc:TimeDeltaDaysQuantity unitCode="DAY">28</cbc:TimeDeltaDaysQuantity>
+    </cac:ForecastExceptionCriterionLine>
   </cac:ExceptionCriteriaLine>
 </ExceptionCriteria>
 ```

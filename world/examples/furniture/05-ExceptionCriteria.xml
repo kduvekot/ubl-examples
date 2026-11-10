@@ -8,10 +8,26 @@
   <cbc:UUID>1e9835ca-6098-5efa-a740-4d690200ec9c</cbc:UUID>
   <cbc:IssueDate>2026-03-14</cbc:IssueDate>
   <cbc:IssueTime>09:21:00</cbc:IssueTime>
+  <cbc:Note>Both sides are told when a criterion is met.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:ValidityPeriod>
+  <cac:DocumentReference>
+    <cbc:ID>BS-DOC-26-0570</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0314C</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -210,8 +226,18 @@
   </cac:SellerSupplierParty>
   <cac:ExceptionCriteriaLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Slow sales.</cbc:Note>
     <cbc:ThresholdValueComparisonCode>LessThan</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="SET">5</cbc:ThresholdQuantity>
+    <cbc:ExceptionStatusCode>Active</cbc:ExceptionStatusCode>
+    <cbc:CollaborationPriorityCode>High</cbc:CollaborationPriorityCode>
+    <cbc:ExceptionResolutionCode>Review</cbc:ExceptionResolutionCode>
+    <cbc:SupplyChainActivityTypeCode>Sales</cbc:SupplyChainActivityTypeCode>
+    <cbc:PerformanceMetricTypeCode>SalesUnits</cbc:PerformanceMetricTypeCode>
+    <cac:EffectivePeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-08-29</cbc:EndDate>
+    </cac:EffectivePeriod>
     <cac:SupplyItem>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>
@@ -234,5 +260,24 @@
         <cbc:Measure unitCode="MMT">1400</cbc:Measure>
       </cac:Dimension>
     </cac:SupplyItem>
+  </cac:ExceptionCriteriaLine>
+  <cac:ExceptionCriteriaLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Forecast far from the store's own plan.</cbc:Note>
+    <cbc:ThresholdValueComparisonCode>GreaterThan</cbc:ThresholdValueComparisonCode>
+    <cbc:ThresholdQuantity unitCode="P1">30</cbc:ThresholdQuantity>
+    <cac:SupplyItem>
+      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-GS-01</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:SupplyItem>
+    <cac:ForecastExceptionCriterionLine>
+      <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
+      <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+      <cbc:ComparisonDataSourceCode>Buyer</cbc:ComparisonDataSourceCode>
+      <cbc:DataSourceCode>Seller</cbc:DataSourceCode>
+      <cbc:TimeDeltaDaysQuantity unitCode="DAY">28</cbc:TimeDeltaDaysQuantity>
+    </cac:ForecastExceptionCriterionLine>
   </cac:ExceptionCriteriaLine>
 </ExceptionCriteria>

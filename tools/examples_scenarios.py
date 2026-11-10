@@ -3975,3 +3975,139 @@ FLOWS = {"ore": ORE, "road": ROAD, "rail": RAIL, "plastics": PLASTICS, "retail":
          "cotton": COTTON, "tender": TENDER, "carnet": CARNET, "waste": WASTE, "utilities": UTILITIES, "wood": WOOD,
          "furniture": FURNITURE, "packaging": PACKAGING}
 SCENARIOS = {k: _with_enrichment(k, v) for k, v in SCENARIOS.items()}
+
+
+def seal(pid, no, why="The sender's electronic seal."):
+    return {"ID": V(no, why), "SignatoryParty": party(pid, short=True)}
+
+
+SETS_ITEM = {"Name": V("Garden bench set Marrow", "The store's own line."),
+             "SellersItemIdentification": {"ID": V("BF-GS-01", "The maker's number.")}}
+
+
+@enrich("furniture", "ItemInformationRequest")
+def _(f, n, doc, out):
+    return {"Note": V("Weekly figures, please, for the whole season.", "What the maker asks."),
+            "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation of the line.")},
+            "Signature": seal(doc["from"], "BF-SIG-26-0312"),
+            "ItemInformationRequestLine": {"TimeFrequencyCode": V("Weekly", "Figures per week."),
+                                           "SupplyChainActivityTypeCode": V("Sales", "Sales to consumers."),
+                                           "ForecastTypeCode": V("Total", "Total quantities."),
+                                           "PerformanceMetricTypeCode": V("SalesUnits", "Measured in sets sold.")}}
+
+
+@enrich("furniture", "TradeItemLocationProfile")
+def _(f, n, doc, out):
+    return {"Note": V("The store holds stock; the maker replenishes.", "Who does what."),
+            "ProfileStatusCode": V("Active", "In force."),
+            "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation the line is bought under.")},
+            "Signature": seal(doc["from"], "BM-SIG-26-0314"),
+            "ItemManagementProfile": {
+                "FrozenPeriodDaysNumeric": V("7", "Orders for the coming week no longer change."),
+                "MinimumInventoryQuantity": qty(4, "SET", "Never fewer than four sets in the shop."),
+                "MultipleOrderQuantity": qty(2, "SET", "Ordered in multiples of two: one van row."),
+                "OrderIntervalDaysNumeric": V("14", "An order every two weeks."),
+                "ReplenishmentOwnerDescription": V("The store orders; the maker proposes.", "Who replenishes."),
+                "TargetServicePercent": V("95", "Sets on the shelf on 95 % of the days."),
+                "TargetInventoryQuantity": qty(10, "SET", "The stock the store aims at."),
+                "ItemLocationQuantity": {"LeadTimeMeasure": V("5", "Five days from order to shelf.", unitCode="DAY"),
+                                         "MinimumQuantity": qty(2, "SET", "The smallest order.")}}}
+
+
+@enrich("furniture", "ExceptionCriteria")
+def _(f, n, doc, out):
+    return {"Note": V("Both sides are told when a criterion is met.", "How the criteria are used."),
+            "VersionID": V("1", "The first version."),
+            "DocumentReference": {"ID": V(f.numbers["location-profile"], "The replenishment policy they go "
+                                                                         "with.")},
+            "Signature": seal(doc["from"], "BM-SIG-26-0314C"),
+            "ExceptionCriteriaLine": [
+                {**out["ExceptionCriteriaLine"],
+                 "Note": V("Slow sales.", "What the criterion catches."),
+                 "ExceptionStatusCode": V("Active", "In force."),
+                 "CollaborationPriorityCode": V("High", "Answered within two days."),
+                 "ExceptionResolutionCode": V("Review", "The partners review the line together."),
+                 "SupplyChainActivityTypeCode": V("Sales", "Measured on sales."),
+                 "PerformanceMetricTypeCode": V("SalesUnits", "In sets."),
+                 "EffectivePeriod": {"StartDate": V(f.date(21), "From the first four weeks on the shelf."),
+                                     "EndDate": V(f.date(180), "To the end of the season.")}},
+                {"ID": V("2", "The forecast criterion."),
+                 "Note": V("Forecast far from the store's own plan.", "What it catches."),
+                 "ThresholdValueComparisonCode": V("GreaterThan", "When the difference is larger."),
+                 "ThresholdQuantity": qty(30, "P1", "More than 30 % difference."),
+                 "SupplyItem": SETS_ITEM,
+                 "ForecastExceptionCriterionLine": {"ForecastPurposeCode": V("Sales", "A sales forecast."),
+                                                    "ForecastTypeCode": V("Total", "In total."),
+                                                    "ComparisonDataSourceCode": V("Buyer", "Compared with the "
+                                                                                           "store's plan."),
+                                                    "DataSourceCode": V("Seller", "The maker's forecast."),
+                                                    "TimeDeltaDaysQuantity": qty(28, "DAY", "Over four weeks.")}}]}
+
+
+@enrich("furniture", "ProductActivity")
+def _(f, n, doc, out):
+    return {"Note": V("Sales were slow after the promotion ended.", "The store's remark."),
+            "DocumentCurrencyCode": kit.currency_line("XBL", "the store's currency"),
+            "DocumentReference": {"ID": V(f.numbers["info-request"], "The request the figures answer.")},
+            "Signature": seal(doc["from"], "BM-SIG-26-0420A"),
+            "SupplyChainActivityDataLine": {
+                "BuyerCustomerParty": {"Party": party("26-xb", short=True)},
+                "SellerSupplierParty": {"Party": party("37-xb", short=True)},
+                "ActivityPeriod": {"StartDate": V(f.date(21), "The four weeks."), "EndDate": V(f.date(49), "Their "
+                                                                                                          "end.")},
+                "ActivityFinalLocation": {"Name": V("Customers' gardens in Lumeport", "Where the sets end up.")},
+                "SalesItem": {"ActivityProperty": {"Name": V("Weather", "What the store notes."),
+                                                   "Value": V("Rain three weeks out of four.", "Why sales were "
+                                                                                               "slow.")},
+                              "TaxExclusivePrice": {"PriceAmount": price("899.00", "XBL", "The shelf price, "
+                                                                                          "before sales tax.")},
+                              "TaxInclusivePrice": {"PriceAmount": price("957.44", "XBL", "With Coastal State's "
+                                                                                          "6.5 % sales tax.")}}}}
+
+
+@enrich("furniture", "ExceptionNotification")
+def _(f, n, doc, out):
+    return {"Note": V("Please review the line with us.", "What the maker proposes."),
+            "DocumentReference": {"ID": V(f.numbers["exception-criteria"], "The criteria that were met.")},
+            "Signature": seal(doc["from"], "BF-SIG-26-0421"),
+            "ExceptionNotificationLine": {
+                "Note": V("Three sets sold against five expected.", "The exception."),
+                "Description": V("Sales below the agreed threshold.", "In words."),
+                "ExceptionStatusCode": V("Open", "Not yet resolved."),
+                "CollaborationPriorityCode": V("High", "As agreed."),
+                "ResolutionCode": V("Review", "A review of the line."),
+                "VarianceQuantity": qty(-2, "SET", "Two sets fewer than the threshold."),
+                "SupplyChainActivityTypeCode": V("Sales", "Measured on sales."),
+                "PerformanceMetricTypeCode": V("SalesUnits", "In sets."),
+                "DocumentReference": {"ID": V(f.numbers["activity"], "The product activity reported.")},
+                "ForecastException": {"ForecastPurposeCode": V("Sales", "The sales forecast compared."),
+                                      "ForecastTypeCode": V("Total", "In total."),
+                                      "IssueDate": V(f.date(14), "The forecast of the first delivery."),
+                                      "IssueTime": V("10:00:00", "Its time."),
+                                      "DataSourceCode": V("Seller", "The maker's forecast."),
+                                      "ComparisonDataCode": V("Actual", "Compared with actual sales."),
+                                      "ComparisonForecastIssueDate": V(f.date(49), "The figures of day 49."),
+                                      "ComparisonForecastIssueTime": V("18:00:00", "Their time.")}}}
+
+
+@enrich("cotton", "Forecast")
+def _(f, n, doc, out):
+    return {"Note": V("Depends on clothing orders from the store.", "What the forecast rests on."),
+            "VersionID": V("1", "The first forecast of the season."),
+            "BasedOnConsensusIndicator": V("true", "Agreed with the ginnery at the season meeting."),
+            "AdditionalDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement.")},
+            "Signature": seal(doc["from"], "LT-SIG-26-0202")}
+
+
+@enrich("cotton", "ForecastRevision")
+def _(f, n, doc, out):
+    return {"Note": V("Demand for clothing has risen.", "Why the forecast is revised."),
+            "RevisionStatusCode": V("Revised", "A revised forecast."),
+            "PurposeCode": V("Order", "Of what the mill will order."),
+            "OriginalDocumentReference": {"ID": V(f.numbers["forecast"], "The forecast revised.")},
+            "Signature": seal(doc["from"], "LT-SIG-26-0222"),
+            "ForecastRevisionLine": {"Note": V("Twenty per cent more.", "The change."),
+                                     "Description": V("More bales from the second half of the season.", "In words."),
+                                     "AdjustmentReasonCode": V("Demand", "Higher demand."),
+                                     "ForecastPeriod": {"StartDate": V(f.date(60), "From mid-season."),
+                                                        "EndDate": V(f.date(120), "To the end.")}}}

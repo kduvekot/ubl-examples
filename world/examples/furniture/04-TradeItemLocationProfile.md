@@ -26,6 +26,10 @@ The store sets the replenishment policy per item and store.
   The store sets its replenishment policy for the line.
 - `IssueTime` = **08:23:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **The store holds stock; the maker replenishes.**  
+  Who does what.
+- `ProfileStatusCode` = **Active**  
+  In force.
 
 ### Period
 
@@ -35,6 +39,24 @@ Inside `Period`:
   The policy holds for the season.
 - `EndDate` = **2026-08-29**  
   Its end.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BF-DOC-26-0568**  
+  The quotation the line is bought under.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-0314**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -264,6 +286,20 @@ Inside `SellerSupplierParty`:
 
 Inside `ItemManagementProfile`:
 
+- `FrozenPeriodDaysNumeric` = **7**  
+  Orders for the coming week no longer change.
+- `MinimumInventoryQuantity` = **4** (unitCode `SET`)  
+  Never fewer than four sets in the shop.
+- `MultipleOrderQuantity` = **2** (unitCode `SET`)  
+  Ordered in multiples of two: one van row.
+- `OrderIntervalDaysNumeric` = **14**  
+  An order every two weeks.
+- `ReplenishmentOwnerDescription` = **The store orders; the maker proposes.**  
+  Who replenishes.
+- `TargetServicePercent` = **95**  
+  Sets on the shelf on 95 % of the days.
+- `TargetInventoryQuantity` = **10** (unitCode `SET`)  
+  The stock the store aims at.
 - `EffectivePeriod/StartDate` = **2026-03-16**  
   From the first delivery.
 - `EffectivePeriod/EndDate` = **2026-08-29**  
@@ -288,6 +324,10 @@ Inside `ItemManagementProfile`:
   Which dimension.
 - `Item/Dimension/Measure` = **1400** (unitCode `MMT`)  
   Its size.
+- `ItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
+  Five days from order to shelf.
+- `ItemLocationQuantity/MinimumQuantity` = **2** (unitCode `SET`)  
+  The smallest order.
 
 ## The document
 
@@ -302,10 +342,26 @@ Inside `ItemManagementProfile`:
   <cbc:UUID>befc4246-c9bd-5950-8153-a96b42c6db87</cbc:UUID>
   <cbc:IssueDate>2026-03-14</cbc:IssueDate>
   <cbc:IssueTime>08:23:00</cbc:IssueTime>
+  <cbc:Note>The store holds stock; the maker replenishes.</cbc:Note>
+  <cbc:ProfileStatusCode>Active</cbc:ProfileStatusCode>
   <cac:Period>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:Period>
+  <cac:DocumentReference>
+    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-0314</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -503,6 +559,13 @@ Inside `ItemManagementProfile`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:ItemManagementProfile>
+    <cbc:FrozenPeriodDaysNumeric>7</cbc:FrozenPeriodDaysNumeric>
+    <cbc:MinimumInventoryQuantity unitCode="SET">4</cbc:MinimumInventoryQuantity>
+    <cbc:MultipleOrderQuantity unitCode="SET">2</cbc:MultipleOrderQuantity>
+    <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
+    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
+    <cbc:TargetInventoryQuantity unitCode="SET">10</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
       <cbc:StartDate>2026-03-16</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>
@@ -529,6 +592,10 @@ Inside `ItemManagementProfile`:
         <cbc:Measure unitCode="MMT">1400</cbc:Measure>
       </cac:Dimension>
     </cac:Item>
+    <cac:ItemLocationQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="SET">2</cbc:MinimumQuantity>
+    </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
 </TradeItemLocationProfile>
 ```

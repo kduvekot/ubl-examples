@@ -26,8 +26,14 @@ Demand for clothing is up; the mill revises its forecast upwards.
   Demand for clothing has risen.
 - `IssueTime` = **13:06:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Demand for clothing has risen.**  
+  Why the forecast is revised.
 - `SequenceNumberID` = **1**  
   The first revision of the forecast.
+- `RevisionStatusCode` = **Revised**  
+  A revised forecast.
+- `PurposeCode` = **Order**  
+  Of what the mill will order.
 
 ### Forecast Period
 
@@ -37,6 +43,24 @@ Inside `ForecastPeriod`:
   The same period.
 - `EndDate` = **2026-06-02**  
   Its end.
+
+### Original Document Reference
+
+Inside `OriginalDocumentReference`:
+
+- `ID` = **LTM-FC-26-0191**  
+  The forecast revised.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LT-SIG-26-0222**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -234,12 +258,22 @@ Inside `ForecastRevisionLine`:
 
 - `ID` = **1**  
   The only line.
+- `Note` = **Twenty per cent more.**  
+  The change.
+- `Description` = **More bales from the second half of the season.**  
+  In words.
 - `RevisedForecastLineID` = **1**  
   The forecast line revised.
 - `SourceForecastIssueDate` = **2026-02-02**  
   The issue date of the forecast revised.
 - `SourceForecastIssueTime` = **09:00:00**  
   Its issue time.
+- `AdjustmentReasonCode` = **Demand**  
+  Higher demand.
+- `ForecastPeriod/StartDate` = **2026-04-03**  
+  From mid-season.
+- `ForecastPeriod/EndDate` = **2026-06-02**  
+  To the end.
 - `SalesItem/Quantity` = **30000** (unitCode `KGM`)  
   Raised to five containers.
 - `SalesItem/Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.**  
@@ -306,11 +340,28 @@ Inside `ForecastRevisionLine`:
   <cbc:UUID>06d8f4b1-252c-5260-8d1e-247296f49e60</cbc:UUID>
   <cbc:IssueDate>2026-02-22</cbc:IssueDate>
   <cbc:IssueTime>13:06:00</cbc:IssueTime>
+  <cbc:Note>Demand for clothing has risen.</cbc:Note>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
+  <cbc:RevisionStatusCode>Revised</cbc:RevisionStatusCode>
+  <cbc:PurposeCode>Order</cbc:PurposeCode>
   <cac:ForecastPeriod>
     <cbc:StartDate>2026-02-16</cbc:StartDate>
     <cbc:EndDate>2026-06-02</cbc:EndDate>
   </cac:ForecastPeriod>
+  <cac:OriginalDocumentReference>
+    <cbc:ID>LTM-FC-26-0191</cbc:ID>
+  </cac:OriginalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LT-SIG-26-0222</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>
@@ -482,9 +533,16 @@ Inside `ForecastRevisionLine`:
   </cac:SellerSupplierParty>
   <cac:ForecastRevisionLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Twenty per cent more.</cbc:Note>
+    <cbc:Description>More bales from the second half of the season.</cbc:Description>
     <cbc:RevisedForecastLineID>1</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-02-02</cbc:SourceForecastIssueDate>
     <cbc:SourceForecastIssueTime>09:00:00</cbc:SourceForecastIssueTime>
+    <cbc:AdjustmentReasonCode>Demand</cbc:AdjustmentReasonCode>
+    <cac:ForecastPeriod>
+      <cbc:StartDate>2026-04-03</cbc:StartDate>
+      <cbc:EndDate>2026-06-02</cbc:EndDate>
+    </cac:ForecastPeriod>
     <cac:SalesItem>
       <cbc:Quantity unitCode="KGM">30000</cbc:Quantity>
       <cac:Item>

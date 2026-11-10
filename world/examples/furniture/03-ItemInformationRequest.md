@@ -26,6 +26,8 @@ To plan production, the furniture maker asks the store for sales and stock data 
   Asked before the first production run.
 - `IssueTime` = **12:44:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Weekly figures, please, for the whole season.**  
+  What the maker asks.
 
 ### Period
 
@@ -35,6 +37,24 @@ Inside `Period`:
   The season the information is wanted for.
 - `EndDate` = **2026-05-11**  
   Its end.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BF-DOC-26-0568**  
+  The quotation of the line.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-26-0312**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
@@ -264,6 +284,14 @@ Inside `SellerSupplierParty`:
 
 Inside `ItemInformationRequestLine`:
 
+- `TimeFrequencyCode` = **Weekly**  
+  Figures per week.
+- `SupplyChainActivityTypeCode` = **Sales**  
+  Sales to consumers.
+- `ForecastTypeCode` = **Total**  
+  Total quantities.
+- `PerformanceMetricTypeCode` = **SalesUnits**  
+  Measured in sets sold.
 - `Period/StartDate` = **2026-03-16**  
   Sales data for the season.
 - `Period/EndDate` = **2026-05-11**  
@@ -304,10 +332,25 @@ Inside `ItemInformationRequestLine`:
   <cbc:UUID>4b68042b-1268-52c4-acf1-bb66f788d32b</cbc:UUID>
   <cbc:IssueDate>2026-03-12</cbc:IssueDate>
   <cbc:IssueTime>12:44:00</cbc:IssueTime>
+  <cbc:Note>Weekly figures, please, for the whole season.</cbc:Note>
   <cac:Period>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
     <cbc:EndDate>2026-05-11</cbc:EndDate>
   </cac:Period>
+  <cac:DocumentReference>
+    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-26-0312</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -505,6 +548,10 @@ Inside `ItemInformationRequestLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:ItemInformationRequestLine>
+    <cbc:TimeFrequencyCode>Weekly</cbc:TimeFrequencyCode>
+    <cbc:SupplyChainActivityTypeCode>Sales</cbc:SupplyChainActivityTypeCode>
+    <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+    <cbc:PerformanceMetricTypeCode>SalesUnits</cbc:PerformanceMetricTypeCode>
     <cac:Period>
       <cbc:StartDate>2026-03-16</cbc:StartDate>
       <cbc:EndDate>2026-05-11</cbc:EndDate>
