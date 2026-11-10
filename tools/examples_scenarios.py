@@ -1846,11 +1846,33 @@ def waste(n, doc):
 
 # ---------------------------------------------------------------- the utilities flow (one utility per country)
 UTILITIES = kit.Flow("utilities", "2026-04-01")
-BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The factory's metered consumption in March."},
+MARCH = {"InvoicePeriod": {"StartDate": V("2026-03-01", "The month billed: March."),
+                           "EndDate": V("2026-03-31", "Its last day."),
+                           "DescriptionCode": V("Month", "A monthly bill."),
+                           "Description": V("March 2026", "The period in words.")}}
+
+
+def levy(m3, who):
+    return {"item": "sewage-levy", "qty": m3, "invoice_why": f"The {who}'s water use, on which the city charges its "
+                                                            "levy.",
+            "line_extra": {**MARCH, "CollectedForParty": party("2-xb", short=True),
+                           "Note": V("Collected for the city of Lumeport and paid on to it.", "Why the water company "
+                                                                                              "bills it.")}}
+
+
+BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The factory's metered consumption in March.",
+                    "line_extra": MARCH},
                    {"item": "electricity", "qty": 18600, "invoice_why": "The warehouse's metered consumption in March; "
-                                                                        "the manufacturer pays for its building."}],
-         "34-xb:26-xb": [{"item": "water", "qty": 86, "invoice_why": "The shop's metered consumption in March."}],
-         "34-xb:c-xb": [{"item": "water", "qty": 14, "invoice_why": "The household's metered consumption in March."}],
+                                                                        "the manufacturer pays for its building.",
+                    "line_extra": {**MARCH, "AccountingCostCode": V("7100", "The manufacturer books the warehouse's "
+                                                                            "power on its transport cost centre."),
+                                   "AccountingCost": V("Warehouse, Castrano Logistics", "In words."),
+                                   "Delivery": {"DeliveryLocation": {"Description": V(
+                                       "Castrano Logistics warehouse, Ferrano", "Where the power was used.")}}}}],
+         "34-xb:26-xb": [{"item": "water", "qty": 86, "invoice_why": "The shop's metered consumption in March.",
+                          "line_extra": MARCH}, levy(86, "shop")],
+         "34-xb:c-xb": [{"item": "water", "qty": 14, "invoice_why": "The household's metered consumption in March.",
+                         "line_extra": MARCH}, levy(14, "household")],
          "35-xl": [{"item": "telecom-line", "qty": 6, "invoice_why": "Six business lines for the month."},
                    {"item": "telecom-data", "qty": 35, "invoice_why": "Mobile data beyond the subscriptions."}]}
 KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
@@ -1878,26 +1900,77 @@ def utilities(n, doc):
                                                                 "statement adds the consumption behind the bill.")}}
     if doc["doc"] == "Invoice":
         key = bill_key(doc)
-        return kit.invoice(f, n, doc, 1, 21, "The monthly bill, issued on the first day of the next month.", {},
-                           BILLS[key], key=f"invoice-{key}")
+        out = kit.invoice(f, n, doc, 1, 21, "The monthly bill, issued on the first day of the next month.", {},
+                          BILLS[key], key=f"invoice-{key}", extra=MARCH)
+        if key == "34-xb:c-xb":                 # the household pays by direct debit under a mandate
+            m = PARTY["c-xb"]["identity"]["mandate"]
+            out["PaymentMeans"] = {
+                "ID": V("1", "The only way to pay."),
+                "PaymentMeansCode": V("49", "UN/EDIFACT 4461 code 49: direct debit.", listID="UN/EDIFACT EDED 4461"),
+                "PaymentDueDate": V(f.date(22), "The day the amount will be collected."),
+                "PaymentID": V(kit.rf_reference(f.numbers[f"invoice-{key}"]), "The reference on the household's bank "
+                                                                              "statement."),
+                "PaymentMandate": {
+                    "ID": V(m["id"], "The mandate the household signed for the water company."),
+                    "MandateTypeCode": V("Recurrent", "A mandate for repeated collections."),
+                    "MaximumPaidAmount": amount(m["max"], "XBL", "The most the company may collect at a time."),
+                    "SignatureID": V(f"SIG-{m['id']}", "The reference of the signature on the mandate."),
+                    "PayerParty": party("c-xb", short=True),
+                    "PayerFinancialAccount": kit.account("c-xb", "The household's account the bill is collected "
+                                                                 "from."),
+                    "ValidityPeriod": {"StartDate": V(m["signed"], "Signed when the household moved in.")},
+                    "PaymentReversalPeriod": {"DurationMeasure": V("8", "The household can reverse a collection "
+                                                                        "within eight weeks.", unitCode="WEE")},
+                    "Clause": {"ID": V("CSW-DD-T3", "The clause of the mandate on notice."),
+                               "Content": V("The company announces each collection at least five days before.",
+                                            "What the clause says.")}},
+                "PayeeFinancialAccount": kit.account("34-xb", "The water company's account the collection goes to.")}
+            out["PaymentTerms"]["Note"] = V("Collected by direct debit 21 days after the invoice date.",
+                                            "How the household pays.")
+        return out
     if doc["doc"] == "RemittanceAdvice":
+        if bill_key(doc) == "33-xu":
+            return kit.remittance(f, n, doc, 9, "Paid within ten days, to take the cash discount of the invoice's "
+                                                "terms.", key="invoice-33-xu", discount="2")
         return kit.remittance(f, n, doc, 18, "Paid before the due date.", key=f"invoice-{bill_key(doc)}")
     if doc["doc"] == "Reminder":
         key, cur = bill_key(doc), "XBL"
         due = f.numbers[f"invoice-{key}-amount"]
         return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
                 "IssueDate": V(f.date(30), "Sent a week after the due date passed without payment."),
+                "ReminderTypeCode": V("Payment", "A reminder of a payment overdue."),
+                "ReminderSequenceNumeric": V("1", "The first reminder."),
+                "Note": V("The direct debit was returned by your bank: insufficient funds.", "Why the bill is "
+                                                                                              "unpaid."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the unpaid bill"),
+                "ReminderPeriod": {"StartDate": V(f.date(22), "Overdue from the failed collection."),
+                                   "EndDate": V(f.date(30), "Until the reminder.")},
                 "PaymentMeans": {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer, how the household "
                                                              "is asked to pay.", listID="UN/EDIFACT EDED 4461"),
                                  "PayeeFinancialAccount": kit.account(doc["from"], "The utility's account, where the "
                                                                                    "overdue amount is to be paid.")},
-                "LegalMonetaryTotal": {"PayableAmount": amount(due, cur, "The amount still due: the whole bill.")},
-                "ReminderLine": {"ID": V("1", "The unpaid bill."),
+                "LegalMonetaryTotal": {"LineExtensionAmount": amount(due + Decimal("5.00"), cur, "The bill and the "
+                                                                                                 "reminder fee."),
+                                       "PayableAmount": amount(due + Decimal("5.00"), cur, "The amount now due: the "
+                                                                                          "whole bill and the fee.")},
+                "ReminderLine": [{"ID": V("1", "The unpaid bill."),
                                  "DebitLineAmount": amount(due, cur, "The amount of the unpaid invoice."),
+                                 "BalanceBroughtForwardIndicator": V("false", "Not a balance carried over: one "
+                                                                              "bill."),
+                                 "PaymentPurposeCode": V("WTER", "ISO 20022 purpose code WTER: water bill."),
+                                 "ReminderPeriod": {"StartDate": V(f.date(22), "Overdue since the collection "
+                                                                               "failed.")},
                                  "BillingReference": {"InvoiceDocumentReference": {
                                      "ID": V(f.numbers[f"invoice-{key}"], "The invoice not paid."),
-                                     "IssueDate": V(f.numbers[f"invoice-{key}-date"], "Its issue date.")}}}}
+                                     "IssueDate": V(f.numbers[f"invoice-{key}-date"], "Its issue date.")}}},
+                                 {"ID": V("2", "The reminder fee."),
+                                  "DebitLineAmount": amount(Decimal("5.00"), cur, "The fee for a returned direct "
+                                                                                  "debit, as the terms set."),
+                                  "Amount": amount(Decimal("5.00"), cur, "The fee charged."),
+                                  "PenaltySurchargePercent": V("0", "No surcharge yet: the first reminder."),
+                                  "AccountingCostCode": V("8320", "The water company books the fee as other "
+                                                                  "income."),
+                                  "AccountingCost": V("Reminder fees", "In words.")}]}
     raise SystemExit(f"utilities scenario: no document {n} {doc['doc']}")
 
 

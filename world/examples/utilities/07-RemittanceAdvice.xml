@@ -8,7 +8,7 @@
   <cbc:UUID>3fcf184b-537e-5b27-9779-6c4b95b64a32</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XBL">202.10</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">238.22</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -249,7 +249,7 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">202.10</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">238.22</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF03CSWCINV260317</cbc:InvoicingPartyReference>

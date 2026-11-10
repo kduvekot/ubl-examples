@@ -37,6 +37,19 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
 
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2026-03-01**  
+  The month billed: March.
+- `EndDate` = **2026-03-31**  
+  Its last day.
+- `DescriptionCode` = **Month**  
+  A monthly bill.
+- `Description` = **March 2026**  
+  The period in words.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -372,6 +385,12 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+    <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+    <cbc:Description>March 2026</cbc:Description>
+  </cac:InvoicePeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>

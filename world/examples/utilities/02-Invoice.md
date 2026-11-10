@@ -39,6 +39,19 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
 
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2026-03-01**  
+  The month billed: March.
+- `EndDate` = **2026-03-31**  
+  Its last day.
+- `DescriptionCode` = **Month**  
+  A monthly bill.
+- `Description` = **March 2026**  
+  The period in words.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -375,6 +388,14 @@ Inside `InvoiceLine`:
   The factory's metered consumption in March.
 - `LineExtensionAmount` = **11269440** (currencyID `XUF`)  
   412800 × 27.3, rounded to the minor unit of the currency.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  The month billed: March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **Month**  
+  A monthly bill.
+- `InvoicePeriod/Description` = **March 2026**  
+  The period in words.
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
   The seller's description; item electricity of Ferrano Energy (world/items.json).
 - `Item/Name` = **Electricity**  
@@ -397,6 +418,20 @@ Inside `InvoiceLine`:
   The warehouse's metered consumption in March; the manufacturer pays for its building.
 - `LineExtensionAmount` = **507780** (currencyID `XUF`)  
   18600 × 27.3, rounded to the minor unit of the currency.
+- `AccountingCostCode` = **7100**  
+  The manufacturer books the warehouse's power on its transport cost centre.
+- `AccountingCost` = **Warehouse, Castrano Logistics**  
+  In words.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  The month billed: March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **Month**  
+  A monthly bill.
+- `InvoicePeriod/Description` = **March 2026**  
+  The period in words.
+- `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Ferrano**  
+  Where the power was used.
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
   The seller's description; item electricity of Ferrano Energy (world/items.json).
 - `Item/Name` = **Electricity**  
@@ -433,6 +468,12 @@ Inside `InvoiceLine`:
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+    <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+    <cbc:Description>March 2026</cbc:Description>
+  </cac:InvoicePeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.ferranoenergy.example</cbc:WebsiteURI>
@@ -714,6 +755,12 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name>Electricity</cbc:Name>
@@ -737,6 +784,19 @@ Inside `InvoiceLine`:
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
+    <cbc:AccountingCostCode>7100</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Warehouse, Castrano Logistics</cbc:AccountingCost>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:Description>Castrano Logistics warehouse, Ferrano</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name>Electricity</cbc:Name>

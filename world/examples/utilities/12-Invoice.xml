@@ -13,6 +13,12 @@
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+    <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+    <cbc:Description>March 2026</cbc:Description>
+  </cac:InvoicePeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>

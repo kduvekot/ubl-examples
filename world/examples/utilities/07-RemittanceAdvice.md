@@ -26,7 +26,7 @@ The shop pays its water bill and says which invoice the transfer settles.
   Paid before the due date.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the invoice paid; it has two decimals.
-- `TotalPaymentAmount` = **202.10** (currencyID `XBL`)  
+- `TotalPaymentAmount` = **238.22** (currencyID `XBL`)  
   The amount transferred: the payable amount of the invoice.
 
 ### Accounting Customer Party
@@ -310,7 +310,7 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `DebitLineAmount` = **202.10** (currencyID `XBL`)  
+- `DebitLineAmount` = **238.22** (currencyID `XBL`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
   Nothing remains open on the invoice after this payment.
@@ -336,7 +336,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>3fcf184b-537e-5b27-9779-6c4b95b64a32</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XBL">202.10</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">238.22</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -577,7 +577,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">202.10</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">238.22</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF03CSWCINV260317</cbc:InvoicingPartyReference>

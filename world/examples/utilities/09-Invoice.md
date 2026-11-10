@@ -30,8 +30,21 @@ The household's water bill, exempt from sales tax like every water bill.
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency; it has two decimals.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
+
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2026-03-01**  
+  The month billed: March.
+- `EndDate` = **2026-03-31**  
+  Its last day.
+- `DescriptionCode` = **Month**  
+  A monthly bill.
+- `Description` = **March 2026**  
+  The period in words.
 
 ### Accounting Supplier Party
 
@@ -166,23 +179,15 @@ Inside `AccountingCustomerParty`:
 Inside `PaymentMeans`:
 
 - `ID` = **1**  
-  The first, and only, way to pay.
-- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
-- `PaymentMeansDescription` = **Credit transfer**  
-  In words.
+  The only way to pay.
+- `PaymentMeansCode` = **49** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 49: direct debit.
 - `PaymentDueDate` = **2026-04-23**  
-  When the transfer must be credited.
-- `PaymentChannelCode` = **IBAN**  
-  Paid to an account identified in the format of ISO 13616.
-- `PaymentRailID` = **LUMEPAY**  
-  The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF46CSWCINV260319**  
-  What the payer writes in the transfer.
+  The day the amount will be collected.
 - `PaymentID` = **RF46CSWCINV260319**  
-  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+  The reference on the household's bank statement.
 - `PayeeFinancialAccount/ID` = **XB52BLUM0004189160** (schemeID `urn:ubl-examples:world:account`)  
-  The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+  The water company's account the collection goes to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Coastal State Water Company Ltd**  
   The account holder, as the bank knows it.
 - `PayeeFinancialAccount/AccountTypeCode` = **Current**  
@@ -191,8 +196,6 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL**  
   The account is kept in the currency of the bank's country.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice CSWC-INV-26-0319**  
-  What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
   The branch that keeps the account.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
@@ -211,6 +214,52 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
+- `PaymentMandate/ID` = **CSW-DD-2024-08812**  
+  The mandate the household signed for the water company.
+- `PaymentMandate/MandateTypeCode` = **Recurrent**  
+  A mandate for repeated collections.
+- `PaymentMandate/MaximumPaidAmount` = **150.00** (currencyID `XBL`)  
+  The most the company may collect at a time.
+- `PaymentMandate/SignatureID` = **SIG-CSW-DD-2024-08812**  
+  The reference of the signature on the mandate.
+- `PaymentMandate/PayerParty/PartyName/Name` = **Robin Ashdale**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PaymentMandate/PayerFinancialAccount/ID` = **XB95BLUM0007251840** (schemeID `urn:ubl-examples:world:account`)  
+  The household's account the bill is collected from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PaymentMandate/PayerFinancialAccount/Name` = **Robin Ashdale**  
+  The account holder, as the bank knows it.
+- `PaymentMandate/PayerFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `PaymentMandate/PayerFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `PaymentMandate/PayerFinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `PaymentMandate/PayerFinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
+- `PaymentMandate/ValidityPeriod/StartDate` = **2024-09-02**  
+  Signed when the household moved in.
+- `PaymentMandate/PaymentReversalPeriod/DurationMeasure` = **8** (unitCode `WEE`)  
+  The household can reverse a collection within eight weeks.
+- `PaymentMandate/Clause/ID` = **CSW-DD-T3**  
+  The clause of the mandate on notice.
+- `PaymentMandate/Clause/Content` = **The company announces each collection at least five days before.**  
+  What the clause says.
 
 ### Payment Terms
 
@@ -220,11 +269,11 @@ Inside `PaymentTerms`:
   The standard terms of Bayvarra.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **30 days net; 1.5 % surcharge per month late.**  
-  Bayvarran practice: a surcharge per month of late payment, no discount.
+- `Note` = **Collected by direct debit 21 days after the invoice date.**  
+  How the household pays.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **0.49** (currencyID `XBL`)  
+- `PenaltyAmount` = **0.58** (currencyID `XBL`)  
   The surcharge for the first month late.
 - `PaymentTermsDetailsURI` = **https://www.coastalwater.example/terms**  
   The seller's general terms of payment.
@@ -253,18 +302,30 @@ Inside `TaxTotal`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `TaxSubtotal/TaxableAmount` = **5.88** (currencyID `XBL`)  
+  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **O**  
+  A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O).
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Levy collected for a public body**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **32.90** (currencyID `XBL`)  
+- `LineExtensionAmount` = **38.78** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **32.90** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **38.78** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **32.90** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **38.78** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **32.90** (currencyID `XBL`)  
+- `PayableAmount` = **38.78** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -277,6 +338,14 @@ Inside `InvoiceLine`:
   The household's metered consumption in March.
 - `LineExtensionAmount` = **32.90** (currencyID `XBL`)  
   14 × 2.35, rounded to the minor unit of the currency.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  The month billed: March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **Month**  
+  A monthly bill.
+- `InvoicePeriod/Description` = **March 2026**  
+  The period in words.
 - `Item/Description` = **Drinking water supply, per cubic metre.**  
   The seller's description; item water of Coastal State Water Company (world/items.json).
 - `Item/Name` = **Drinking water**  
@@ -292,6 +361,44 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Price/PriceAmount` = **2.35** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `MTQ`)  
+  The price is per one unit.
+- `ID` = **2**  
+  The line number.
+- `Note` = **Collected for the city of Lumeport and paid on to it.**  
+  Why the water company bills it.
+- `InvoicedQuantity` = **14** (unitCode `MTQ`)  
+  The household's water use, on which the city charges its levy.
+- `LineExtensionAmount` = **5.88** (currencyID `XBL`)  
+  14 × 0.42, rounded to the minor unit of the currency.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  The month billed: March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **Month**  
+  A monthly bill.
+- `InvoicePeriod/Description` = **March 2026**  
+  The period in words.
+- `CollectedForParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `CollectedForParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/Description` = **The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.**  
+  The seller's description; item sewage-levy of Coastal State Water Company (world/items.json).
+- `Item/Name` = **Sewage levy of the city of Lumeport**  
+  The item's short name; item sewage-levy of Coastal State Water Company (world/items.json).
+- `Item/SellersItemIdentification/ID` = **CSW-LEVY**  
+  The seller's own item number; item sewage-levy of Coastal State Water Company (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **O**  
+  A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O).
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Levy collected for a public body**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Price/PriceAmount` = **0.42** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `MTQ`)  
   The price is per one unit.
@@ -311,7 +418,13 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+    <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+    <cbc:Description>March 2026</cbc:Description>
+  </cac:InvoicePeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -423,12 +536,8 @@ Inside `InvoiceLine`:
   </cac:AccountingCustomerParty>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">49</cbc:PaymentMeansCode>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
-    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF46CSWCINV260319</cbc:InstructionNote>
     <cbc:PaymentID>RF46CSWCINV260319</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB52BLUM0004189160</cbc:ID>
@@ -436,7 +545,6 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice CSWC-INV-26-0319</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BLUM-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -457,13 +565,60 @@ Inside `InvoiceLine`:
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
+    <cac:PaymentMandate>
+      <cbc:ID>CSW-DD-2024-08812</cbc:ID>
+      <cbc:MandateTypeCode>Recurrent</cbc:MandateTypeCode>
+      <cbc:MaximumPaidAmount currencyID="XBL">150.00</cbc:MaximumPaidAmount>
+      <cbc:SignatureID>SIG-CSW-DD-2024-08812</cbc:SignatureID>
+      <cac:PayerParty>
+        <cac:PartyName>
+          <cbc:Name>Robin Ashdale</cbc:Name>
+        </cac:PartyName>
+      </cac:PayerParty>
+      <cac:PayerFinancialAccount>
+        <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
+        <cbc:Name>Robin Ashdale</cbc:Name>
+        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cac:FinancialInstitutionBranch>
+          <cbc:ID>BLUM-001</cbc:ID>
+          <cbc:Name>Main branch</cbc:Name>
+          <cac:FinancialInstitution>
+            <cbc:ID>BLUM</cbc:ID>
+            <cbc:Name>Bank of Lumeport</cbc:Name>
+            <cac:Address>
+              <cbc:StreetName>Exchange Street</cbc:StreetName>
+              <cbc:BuildingNumber>48</cbc:BuildingNumber>
+              <cbc:CityName>Lumeport</cbc:CityName>
+              <cac:Country>
+                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:FinancialInstitution>
+        </cac:FinancialInstitutionBranch>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PayerFinancialAccount>
+      <cac:ValidityPeriod>
+        <cbc:StartDate>2024-09-02</cbc:StartDate>
+      </cac:ValidityPeriod>
+      <cac:PaymentReversalPeriod>
+        <cbc:DurationMeasure unitCode="WEE">8</cbc:DurationMeasure>
+      </cac:PaymentReversalPeriod>
+      <cac:Clause>
+        <cbc:ID>CSW-DD-T3</cbc:ID>
+        <cbc:Content>The company announces each collection at least five days before.</cbc:Content>
+      </cac:Clause>
+    </cac:PaymentMandate>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:ID>XB-STD</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:Note>Collected by direct debit 21 days after the invoice date.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">0.49</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">0.58</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.coastalwater.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -485,17 +640,35 @@ Inside `InvoiceLine`:
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">5.88</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">32.90</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">32.90</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">32.90</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">32.90</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">38.78</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">38.78</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">38.78</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">38.78</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">32.90</cbc:LineExtensionAmount>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
     <cac:Item>
       <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
       <cbc:Name>Drinking water</cbc:Name>
@@ -513,6 +686,45 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">5.88</cbc:LineExtensionAmount>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:CollectedForParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:CollectedForParty>
+    <cac:Item>
+      <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
+      <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>CSW-LEVY</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

@@ -1006,6 +1006,20 @@
    },
    "sellers_id": "BF-ROAD",
    "description": "Truck load within Bayvarra, price per kilometre driven loaded."
+  },
+  {
+   "id": "sewage-levy",
+   "seller": "34-xb",
+   "name": "Sewage levy of the city of Lumeport",
+   "kind": "service",
+   "unit": "MTQ",
+   "price": {
+    "amount": 0.42,
+    "currency": "XBL"
+   },
+   "sellers_id": "CSW-LEVY",
+   "levy": "2-xb",
+   "description": "The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city."
   }
  ]
 }

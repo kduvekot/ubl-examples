@@ -916,6 +916,15 @@
     "person_name": {
      "first": "Robin",
      "family": "Ashdale"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB95BLUM0007251840"
+    },
+    "mandate": {
+     "id": "CSW-DD-2024-08812",
+     "signed": "2024-09-02",
+     "max": "150.00"
     }
    }
   },

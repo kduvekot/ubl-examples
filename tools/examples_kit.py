@@ -72,6 +72,10 @@ def tax_rule(seller, buyer, iid):
     s, b, it = PARTY[seller], PARTY[buyer], ITEM[iid]
     c = WORLD["countries"][s["c"]]
     scheme = c["tax"]["schemes"][0]
+    if it.get("levy"):
+        return ("O", 0, scheme, f"A public levy the seller collects for {PARTY[it['levy']]['identity']['name']}: not a "
+                                "supply, so outside the scope of the sales tax (category O).", "Levy collected for a "
+                                                                                               "public body")
     if s["c"] == "XU":
         if b["c"] == "XU":
             return ("S", c["tax"]["schemes"][0]["rates"]["standard"], scheme,
@@ -451,6 +455,8 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "Item": item(d["item"], tax_category(rule)),
             "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
+    for (d, *_), line in zip(rows, out["InvoiceLine"]):     # what the scenario adds to a line
+        deep_merge(line, d.get("line_extra"))
     if rows_spec is None and "OrderReference" in refs:      # the lines of the deal are the lines of the order
         for i, line in enumerate(out["InvoiceLine"], 1):
             line["OrderLineReference"] = {"LineID": V(str(i), "The order line this invoice line bills.")}
@@ -467,14 +473,17 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
     return merge_extra(out, extra)
 
 
-def remittance(flow, n, doc, day, why, key="invoice"):
+def remittance(flow, n, doc, day, why, key="invoice", discount=None):
     payer, payee = doc["from"], doc["to"]
-    cur, paid = flow.numbers[f"{key}-currency"], flow.numbers[f"{key}-amount"]
+    cur, total = flow.numbers[f"{key}-currency"], flow.numbers[f"{key}-amount"]
+    paid = money(total * (1 - Decimal(discount) / 100), cur) if discount else total
     return {
         "ID": V(flow.number("remittance", payer, "RemittanceAdvice"), "The payer's remittance number."),
         "IssueDate": V(flow.date(day), why),
         "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice paid"),
-        "TotalPaymentAmount": amount(paid, cur, "The amount transferred: the payable amount of the invoice."),
+        "TotalPaymentAmount": amount(paid, cur, f"The amount transferred: the payable amount less the {discount} % "
+                                                f"discount for payment within the discount period." if discount else
+                                     "The amount transferred: the payable amount of the invoice."),
         "PaymentMeans": {
             "PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.", listID="UN/EDIFACT EDED 4461"),
             "InstructionID": V(f"{initials(payer)}-PAY-26-{flow.base:04d}", "The payer's own number for the payment "
@@ -489,9 +498,13 @@ def remittance(flow, n, doc, day, why, key="invoice"):
             "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked "
                                                                           "to quote."),
             "BalanceAmount": amount(0, cur, "Nothing remains open on the invoice after this payment."),
-            "DebitLineAmount": amount(paid, cur, "The amount of the invoice this payment settles: the whole payable "
-                                                 "amount. Paid invoices are debits on a remittance advice, as in the "
-                                                 "OASIS example UBL-RemittanceAdvice-2.0-Example."),
+            "DebitLineAmount": amount(total, cur, "The amount of the invoice this payment settles: the whole payable "
+                                                  "amount. Paid invoices are debits on a remittance advice, as in the "
+                                                  "OASIS example UBL-RemittanceAdvice-2.0-Example."),
+            **({"CreditLineAmount": amount(total - paid, cur, "The settlement discount taken, a credit against the "
+                                                              "invoice."),
+                "Note": V(f"{discount} % discount taken: paid within the discount period of the invoice's terms.",
+                          "Why less is paid than invoiced.")} if discount else {}),
             "BillingReference": {"InvoiceDocumentReference": {
                 "ID": V(flow.numbers[key], "The invoice this payment settles."),
                 "IssueDate": V(flow.numbers[f"{key}-date"], "Its issue date, so the reference is unambiguous.")}}},

@@ -24,8 +24,23 @@ The household has not paid by the due date; the utility reminds it of the amount
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-01**  
   Sent a week after the due date passed without payment.
+- `ReminderTypeCode` = **Payment**  
+  A reminder of a payment overdue.
+- `ReminderSequenceNumeric` = **1**  
+  The first reminder.
+- `Note` = **The direct debit was returned by your bank: insufficient funds.**  
+  Why the bill is unpaid.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the unpaid bill; it has two decimals.
+
+### Reminder Period
+
+Inside `ReminderPeriod`:
+
+- `StartDate` = **2026-04-23**  
+  Overdue from the failed collection.
+- `EndDate` = **2026-05-01**  
+  Until the reminder.
 
 ### Accounting Supplier Party
 
@@ -194,8 +209,10 @@ Inside `PaymentMeans`:
 
 Inside `LegalMonetaryTotal`:
 
-- `PayableAmount` = **32.90** (currencyID `XBL`)  
-  The amount still due: the whole bill.
+- `LineExtensionAmount` = **43.78** (currencyID `XBL`)  
+  The bill and the reminder fee.
+- `PayableAmount` = **43.78** (currencyID `XBL`)  
+  The amount now due: the whole bill and the fee.
 
 ### Reminder Line
 
@@ -203,12 +220,30 @@ Inside `ReminderLine`:
 
 - `ID` = **1**  
   The unpaid bill.
-- `DebitLineAmount` = **32.90** (currencyID `XBL`)  
+- `BalanceBroughtForwardIndicator` = **false**  
+  Not a balance carried over: one bill.
+- `DebitLineAmount` = **38.78** (currencyID `XBL`)  
   The amount of the unpaid invoice.
+- `PaymentPurposeCode` = **WTER**  
+  ISO 20022 purpose code WTER: water bill.
+- `ReminderPeriod/StartDate` = **2026-04-23**  
+  Overdue since the collection failed.
 - `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0319**  
   The invoice not paid.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
   Its issue date.
+- `ID` = **2**  
+  The reminder fee.
+- `DebitLineAmount` = **5.00** (currencyID `XBL`)  
+  The fee for a returned direct debit, as the terms set.
+- `AccountingCostCode` = **8320**  
+  The water company books the fee as other income.
+- `AccountingCost` = **Reminder fees**  
+  In words.
+- `PenaltySurchargePercent` = **0**  
+  No surcharge yet: the first reminder.
+- `Amount` = **5.00** (currencyID `XBL`)  
+  The fee charged.
 
 ## The document
 
@@ -222,7 +257,14 @@ Inside `ReminderLine`:
   <cbc:ID>CSWC-DOC-26-0321</cbc:ID>
   <cbc:UUID>ff7b6a47-db42-5844-b098-ee8d7f1a7e38</cbc:UUID>
   <cbc:IssueDate>2026-05-01</cbc:IssueDate>
+  <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
+  <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
+  <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:ReminderPeriod>
+    <cbc:StartDate>2026-04-23</cbc:StartDate>
+    <cbc:EndDate>2026-05-01</cbc:EndDate>
+  </cac:ReminderPeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
@@ -362,17 +404,31 @@ Inside `ReminderLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="XBL">32.90</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">43.78</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">43.78</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">32.90</cbc:DebitLineAmount>
+    <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
+    <cbc:DebitLineAmount currencyID="XBL">38.78</cbc:DebitLineAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
+    <cac:ReminderPeriod>
+      <cbc:StartDate>2026-04-23</cbc:StartDate>
+    </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>CSWC-INV-26-0319</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+  </cac:ReminderLine>
+  <cac:ReminderLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
+    <cbc:AccountingCostCode>8320</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Reminder fees</cbc:AccountingCost>
+    <cbc:PenaltySurchargePercent>0</cbc:PenaltySurchargePercent>
+    <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
   </cac:ReminderLine>
 </Reminder>
 ```
