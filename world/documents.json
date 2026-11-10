@@ -3072,6 +3072,17 @@
    }
   },
   {
+   "flow": "packaging",
+   "doc": "PurchaseReceipt",
+   "from": "26-xb",
+   "to": "1-xl",
+   "why": "The island trader's buyer, in Lumeport for the trade fair, buys shirts for the stand team and pays in coral with the island card: the till converts at the counter.",
+   "parties": {
+    "AccountingSupplierParty": "26-xb",
+    "AccountingCustomerParty": "1-xl"
+   }
+  },
+  {
    "flow": "mast",
    "doc": "Order",
    "from": "35-xl",

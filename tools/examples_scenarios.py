@@ -8169,6 +8169,8 @@ def _(f, n, doc, out):
 
 @enrich("packaging", "PurchaseReceipt")
 def _(f, n, doc, out):
+    if doc["to"] != "c-xb":
+        return {}
     ln = out["PurchaseReceiptLine"][0] if isinstance(out["PurchaseReceiptLine"], list) else \
         out["PurchaseReceiptLine"]
     gross = Decimal(ln["LineExtensionAmount"].value)
@@ -8243,3 +8245,67 @@ def utilities_complete(n, doc):
 
 
 SCENARIOS["utilities"] = _with_enrichment("utilities", utilities_complete)
+
+
+def packaging_complete(n, doc):
+    f = PACKAGING
+    if doc["doc"] == "PurchaseReceipt" and doc["to"] == "1-xl":
+        r = kit.rate("XBL", "XLC")
+        shelf = Decimal(str(ITEM["shirt-r"]["price"]["amount"]))
+        qn = 3
+        base_xbl = shelf * qn
+        tax_xbl = money(base_xbl * STT_RETAIL, "XBL")
+        unit_xlc = money(shelf * r, "XLC")
+        base = money(base_xbl * r, "XLC")
+        tax = money(tax_xbl * r, "XLC")
+        total = base + tax
+        rule = kit.tax_rule("26-xb", "c-xb", "shirt-r")
+        out = {"ID": V(f.number("receipt-visitor", doc["from"], "PurchaseReceipt"), "The till's receipt number."),
+               "IssueDate": V(f.date(26), "During the trade fair in Lumeport."),
+               "Note": V("Paid in coral: the card's currency was chosen at the till.", "Printed on the receipt."),
+               "DocumentCurrencyCode": kit.currency_line("XLC", "the currency the customer chose to pay in"),
+               "PricingExchangeRate": {"SourceCurrencyCode": V("XBL", "The shelf prices are in lume."),
+                                       "TargetCurrencyCode": V("XLC", "The receipt is in coral."),
+                                       "CalculationRate": V(str(r), "The world's reference rate, which the till "
+                                                                    "applies."),
+                                       "MathematicOperatorCode": V("Multiply", "Lume times the rate gives coral."),
+                                       "Date": V(f.date(26), "The day of the sale.")},
+               "TaxExchangeRate": {"SourceCurrencyCode": V("XLC", "The receipt's currency."),
+                                   "TargetCurrencyCode": V("XBL", "The sales tax is owed to the state in lume."),
+                                   "CalculationRate": V(str(kit.rate("XLC", "XBL")), "The reference rate."),
+                                   "MathematicOperatorCode": V("Multiply", "Coral times the rate gives lume."),
+                                   "Date": V(f.date(26), "The day of the sale.")},
+               "TaxTotal": [{"TaxAmount": amount(tax, "XLC", "The state sales tax, in coral."),
+                             "TaxSubtotal": {"TaxableAmount": amount(base, "XLC", "The shirts."),
+                                             "TaxAmount": amount(tax, "XLC", "6.5 % of the lume price, converted."),
+                                             "TaxCategory": kit.tax_category(rule)}},
+                            {"TaxAmount": amount(tax_xbl, "XBL", "The same tax in lume, as the store owes it to "
+                                                                 "the state."),
+                             "TaxSubtotal": {"TaxableAmount": amount(base_xbl, "XBL", "Three shirts at the shelf "
+                                                                                      "price."),
+                                             "TaxAmount": amount(tax_xbl, "XBL", "6.5 %."),
+                                             "TaxCategory": kit.tax_category(rule)}}],
+               "LegalMonetaryTotal": {"LineExtensionAmount": amount(base, "XLC", "The shirts, in coral."),
+                                      "TaxExclusiveAmount": amount(base, "XLC", "Before tax."),
+                                      "TaxInclusiveAmount": amount(total, "XLC", "With tax."),
+                                      "PayableAmount": amount(total, "XLC", "Paid by card: no rounding.")},
+               "PurchaseReceiptLine": {"ID": V("1", "The line."), "Quantity": qty(qn, "H87", "Three shirts."),
+                                       "LineExtensionAmount": amount(base, "XLC", "Three at the converted price."),
+                                       "Item": item("shirt-r"),
+                                       "Price": {"PriceAmount": price(str(unit_xlc), "XLC", "The shelf price of "
+                                                                                            f"{shelf} lume, in "
+                                                                                            "coral."),
+                                                 "BaseQuantity": qty(1, "H87", "Per shirt.")}},
+               "PaymentMeans": {"PaymentMeansCode": V("54", "UN/EDIFACT 4461 code 54: credit card.",
+                                                      listID="UN/EDIFACT EDED 4461"),
+                                "CardAccount": {"PrimaryAccountNumberID": V("************2286", "Masked."),
+                                                "NetworkID": V("CORALCARD", "The island's card scheme."),
+                                                "HolderName": V("VELUMI TRADING", "A company card.")}},
+               "Payment": {"PaidAmount": amount(total, "XLC", "Charged to the card in coral."),
+                           "PaidDate": V(f.date(26), "At the till.")}}
+        till(out, f, 26, "12:20:00", "C1", "Joss")
+        return out
+    return packaging(n, doc)
+
+
+SCENARIOS["packaging"] = _with_enrichment("packaging", packaging_complete)
