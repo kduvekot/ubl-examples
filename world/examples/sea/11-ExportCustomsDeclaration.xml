@@ -602,6 +602,10 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:PreviousCustomsDeclaration>
+      <cbc:ID>LD-IM-26-0161</cbc:ID>
+      <cbc:FunctionCode>Import</cbc:FunctionCode>
+    </cac:PreviousCustomsDeclaration>
     <cac:AdditionalDocumentReference>
       <cbc:ID>VT-PO-26-0127</cbc:ID>
     </cac:AdditionalDocumentReference>

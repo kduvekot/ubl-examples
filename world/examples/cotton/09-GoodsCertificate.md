@@ -480,6 +480,8 @@ Inside `GoodsProcessing`:
   A party referred to from another party's details: its identifier and name are enough.
 - `ProcessingParty/PartyName/Name` = **Selanu Cotton Ginnery**  
   A party referred to from another party's details: its identifier and name are enough.
+- `CriterionItem/TypeCode` = **Processing**  
+  A criterion on how the goods were processed.
 - `CriterionItem/CriterionDescription` = **Seed removed; lint only.**  
   What processing the rule requires.
 - `CriterionItem/DeclaredPropertyItem/Name` = **Cotton lint**  
@@ -930,6 +932,7 @@ Inside `Signature`:
       </cac:PartyName>
     </cac:ProcessingParty>
     <cac:CriterionItem>
+      <cbc:TypeCode>Processing</cbc:TypeCode>
       <cbc:CriterionDescription>Seed removed; lint only.</cbc:CriterionDescription>
       <cac:DeclaredPropertyItem>
         <cbc:Name>Cotton lint</cbc:Name>

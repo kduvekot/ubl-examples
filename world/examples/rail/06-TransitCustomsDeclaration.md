@@ -781,6 +781,15 @@ Inside `Shipment`:
 - `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 
+### Previous Customs Declaration
+
+Inside `PreviousCustomsDeclaration`:
+
+- `ID` = **VI-CD-26-0330E**  
+  The export declaration lodged in Urvania at the office of departure (not shown in this flow), which the transit continues.
+- `FunctionCode` = **Export**  
+  The kind of the previous declaration.
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -1451,6 +1460,10 @@ Inside `Signature`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>VI-CD-26-0330E</cbc:ID>
+    <cbc:FunctionCode>Export</cbc:FunctionCode>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
   </cac:AdditionalDocumentReference>

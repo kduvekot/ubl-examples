@@ -610,4 +610,35 @@
       </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>
+  <cac:InsuranceEndorsement>
+    <cbc:DocumentID>WS-CP-26-4471-E1</cbc:DocumentID>
+    <cbc:ApprovalStatus>Endorsed</cbc:ApprovalStatus>
+    <cbc:Remarks>The goods described in this certificate are insured door to door.</cbc:Remarks>
+    <cac:EndorserParty>
+      <cbc:RoleCode>Insurer</cbc:RoleCode>
+      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+      <cac:SignatoryContact>
+        <cbc:Name>Cargo claims desk</cbc:Name>
+      </cac:SignatoryContact>
+    </cac:EndorserParty>
+    <cac:Signature>
+      <cbc:ID>WS-SIG-26-E1</cbc:ID>
+      <cac:SignatoryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+        </cac:PartyName>
+      </cac:SignatoryParty>
+    </cac:Signature>
+  </cac:InsuranceEndorsement>
 </CertificateOfOrigin>

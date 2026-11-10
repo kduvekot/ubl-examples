@@ -306,6 +306,9 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+  </cac:TaxTotal>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>

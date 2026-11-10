@@ -574,6 +574,21 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceTime` = **10:00:00**  
   The local time.
 
+### Exchange Rate
+
+Inside `ExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The currency of the freight charges.
+- `TargetCurrencyCode` = **XLC**  
+  The island's currency: its customs adds the freight to the customs value in coral.
+- `CalculationRate` = **0.4**  
+  The world's reference rate.
+- `MathematicOperatorCode` = **Multiply**  
+  Lume times the rate gives coral.
+- `Date` = **2026-05-20**  
+  The rate of the day the waybill is issued.
+
 ### Document Distribution
 
 Inside `DocumentDistribution`:
@@ -1085,6 +1100,13 @@ Inside `Signature`:
       </cac:MainCarriageShipmentStage>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:ExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-05-20</cbc:Date>
+  </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>

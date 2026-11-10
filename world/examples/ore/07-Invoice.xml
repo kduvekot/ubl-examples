@@ -388,6 +388,10 @@
     </cac:Price>
     <cac:ItemPriceExtension>
       <cbc:Amount currencyID="XUF">14414504</cbc:Amount>
+      <cbc:TaxInclusiveAmount currencyID="XUF">17297405</cbc:TaxInclusiveAmount>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
+      </cac:TaxTotal>
     </cac:ItemPriceExtension>
   </cac:InvoiceLine>
 </Invoice>

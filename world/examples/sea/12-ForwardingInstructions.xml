@@ -16,6 +16,7 @@
   <cbc:ShippingOrderID>LD-SH-26-0132</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
+  <cbc:DeclaredCarriageValueAmount currencyID="XBL">50688.00</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

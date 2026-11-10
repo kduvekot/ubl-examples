@@ -249,6 +249,13 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Transport Execution Plan Document Reference
+
+Inside `TransportExecutionPlanDocumentReference`:
+
+- `ID` = **BF-TEP-26-0227**  
+  The forwarder's confirmation of the booking requested by the distributor: its transport execution plan (not shown in this flow).
+
 ### Consignment
 
 Inside `Consignment`:
@@ -483,6 +490,9 @@ Inside `RequestedStatusPeriod`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:TransportExecutionPlanDocumentReference>
+    <cbc:ID>BF-TEP-26-0227</cbc:ID>
+  </cac:TransportExecutionPlanDocumentReference>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
   </cac:Consignment>

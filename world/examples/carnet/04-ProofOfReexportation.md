@@ -288,6 +288,8 @@ Inside `ReexportationEvidence`:
 
 Inside `GoodsItemPassportAttachment`:
 
+- `EmbeddedDocument` = **Re-exportation counterfoil of carnet FCC-DOC-26-0724, stamped by the Island Customs Service: all items re-exported.**  
+  The counterfoil, as clear text.
 - `ExternalReference/URI` = **https://www.ferrano-chamber.example/ata/carnet-scan.pdf**  
   A scan of the stamped counterfoil.
 - `ExternalReference/MimeCode` = **application/pdf**  
@@ -545,6 +547,7 @@ Inside `Signature`:
     <cbc:Description>Re-importation counterfoil of the carnet, stamped by Urvania's customs: the samples left the island and came home.</cbc:Description>
   </cac:ReexportationEvidence>
   <cac:GoodsItemPassportAttachment>
+    <cbc:EmbeddedDocument>Re-exportation counterfoil of carnet FCC-DOC-26-0724, stamped by the Island Customs Service: all items re-exported.</cbc:EmbeddedDocument>
     <cac:ExternalReference>
       <cbc:URI>https://www.ferrano-chamber.example/ata/carnet-scan.pdf</cbc:URI>
       <cbc:MimeCode>application/pdf</cbc:MimeCode>

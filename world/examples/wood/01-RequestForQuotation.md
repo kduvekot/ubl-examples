@@ -318,6 +318,8 @@ Inside `Contract`:
 
 Inside `RequestForQuotationLine`:
 
+- `ID` = **1**  
+  The line's number in the request.
 - `UUID` = **69477890-8e3a-52ba-acae-4da29ea0b964**  
   The line's UUID.
 - `Note` = **Kiln-dried hardwood, planed on four sides.**  
@@ -694,6 +696,7 @@ Inside `RequestForQuotationLine`:
     <cbc:ID>VI-PUR-TERMS-2026</cbc:ID>
   </cac:Contract>
   <cac:RequestForQuotationLine>
+    <cbc:ID>1</cbc:ID>
     <cbc:UUID>69477890-8e3a-52ba-acae-4da29ea0b964</cbc:UUID>
     <cbc:Note>Kiln-dried hardwood, planed on four sides.</cbc:Note>
     <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>

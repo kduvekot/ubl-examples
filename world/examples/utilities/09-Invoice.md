@@ -273,6 +273,8 @@ Inside `PaymentMeans`:
   The mandate the household signed for the water company.
 - `PaymentMandate/MandateTypeCode` = **Recurrent**  
   A mandate for repeated collections.
+- `PaymentMandate/MaximumPaymentInstructionsNumeric` = **12**  
+  At most one collection a month.
 - `PaymentMandate/MaximumPaidAmount` = **150.00** (currencyID `XBL`)  
   The most the company may collect at a time.
 - `PaymentMandate/SignatureID` = **SIG-CSW-DD-2024-08812**  
@@ -694,6 +696,7 @@ Inside `InvoiceLine`:
     <cac:PaymentMandate>
       <cbc:ID>CSW-DD-2024-08812</cbc:ID>
       <cbc:MandateTypeCode>Recurrent</cbc:MandateTypeCode>
+      <cbc:MaximumPaymentInstructionsNumeric>12</cbc:MaximumPaymentInstructionsNumeric>
       <cbc:MaximumPaidAmount currencyID="XBL">150.00</cbc:MaximumPaidAmount>
       <cbc:SignatureID>SIG-CSW-DD-2024-08812</cbc:SignatureID>
       <cac:PayerParty>

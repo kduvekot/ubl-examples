@@ -489,6 +489,10 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ItemPriceExtension/Amount` = **14414504** (currencyID `XUF`)  
   Price times quantity, before the allowance.
+- `ItemPriceExtension/TaxInclusiveAmount` = **17297405** (currencyID `XUF`)  
+  The price extension with 20 % value added tax.
+- `ItemPriceExtension/TaxTotal/TaxAmount` = **2882901** (currencyID `XUF`)  
+  The tax on the price extension, before the line's allowance.
 
 ## The document
 
@@ -883,6 +887,10 @@ Inside `InvoiceLine`:
     </cac:Price>
     <cac:ItemPriceExtension>
       <cbc:Amount currencyID="XUF">14414504</cbc:Amount>
+      <cbc:TaxInclusiveAmount currencyID="XUF">17297405</cbc:TaxInclusiveAmount>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
+      </cac:TaxTotal>
     </cac:ItemPriceExtension>
   </cac:InvoiceLine>
 </Invoice>

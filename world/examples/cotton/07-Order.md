@@ -269,6 +269,8 @@ Inside `TaxTotal`:
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
+- `TaxSubtotal/TaxCategory/TaxScheme/TaxTypeCode` = **Consumption**  
+  The import consumption tax is a tax on consumption.
 
 ### Anticipated Monetary Total
 
@@ -559,6 +561,7 @@ Inside `OrderLine`:
         <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
+          <cbc:TaxTypeCode>Consumption</cbc:TaxTypeCode>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>

@@ -188,6 +188,9 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:TransportExecutionPlanDocumentReference>
+    <cbc:ID>BF-TEP-26-0227</cbc:ID>
+  </cac:TransportExecutionPlanDocumentReference>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
   </cac:Consignment>

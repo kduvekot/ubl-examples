@@ -404,6 +404,7 @@
       </cac:PartyName>
     </cac:ProcessingParty>
     <cac:CriterionItem>
+      <cbc:TypeCode>Processing</cbc:TypeCode>
       <cbc:CriterionDescription>Seed removed; lint only.</cbc:CriterionDescription>
       <cac:DeclaredPropertyItem>
         <cbc:Name>Cotton lint</cbc:Name>

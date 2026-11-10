@@ -474,6 +474,8 @@ Inside `CreditNoteLine`:
 
 - `ID` = **1**  
   The line number.
+- `UUID` = **f3bbed93-36d7-5427-b9e9-07555e85d5fe**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `Note` = **Bench refused: armrest bent, carton torn.**  
   Why the line is credited.
 - `CreditedQuantity` = **1** (unitCode `H87`)  
@@ -1112,6 +1114,7 @@ Inside `CreditNoteLine`:
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:UUID>f3bbed93-36d7-5427-b9e9-07555e85d5fe</cbc:UUID>
     <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>

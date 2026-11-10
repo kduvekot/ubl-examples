@@ -351,6 +351,14 @@ Inside `PricingExchangeRate`:
   Ferra times the rate gives lume.
 - `Date` = **2026-01-02**  
   The rate of the first working day of the year, as the contract says.
+- `ForeignExchangeContract/ID` = **BL-FX-26-0091**  
+  The department's forward contract with the Bank of Lumeport, which fixes the rate for the year.
+- `ForeignExchangeContract/IssueDate` = **2026-01-02**  
+  Concluded on the rate date.
+- `ForeignExchangeContract/ContractTypeCode` = **Forward**  
+  A currency forward.
+- `ForeignExchangeContract/ContractType` = **Forward purchase of ferra**  
+  In words.
 
 ### Payment Exchange Rate
 
@@ -988,6 +996,12 @@ Inside `CreditNoteLine`:
     <cbc:CalculationRate>0.01</cbc:CalculationRate>
     <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-01-02</cbc:Date>
+    <cac:ForeignExchangeContract>
+      <cbc:ID>BL-FX-26-0091</cbc:ID>
+      <cbc:IssueDate>2026-01-02</cbc:IssueDate>
+      <cbc:ContractTypeCode>Forward</cbc:ContractTypeCode>
+      <cbc:ContractType>Forward purchase of ferra</cbc:ContractType>
+    </cac:ForeignExchangeContract>
   </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>

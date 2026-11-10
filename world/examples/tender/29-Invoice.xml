@@ -357,6 +357,12 @@
     <cbc:CalculationRate>0.01</cbc:CalculationRate>
     <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-01-02</cbc:Date>
+    <cac:ForeignExchangeContract>
+      <cbc:ID>BL-FX-26-0091</cbc:ID>
+      <cbc:IssueDate>2026-01-02</cbc:IssueDate>
+      <cbc:ContractTypeCode>Forward</cbc:ContractTypeCode>
+      <cbc:ContractType>Forward purchase of ferra</cbc:ContractType>
+    </cac:ForeignExchangeContract>
   </cac:PricingExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>

@@ -6799,3 +6799,157 @@ def _(f, n, doc, out):
                                                                             {"ID": V("LOT-2", "Lot 2.")}],
             "TenderResult": {**out["TenderResult"], **tender_result(f)}}
 
+
+
+# --- Coverage completion, batch A: elements that add detail without changing any amount ------------------------
+
+
+def line_uuid(f, doc_key, line_id):
+    """A line's UUID, derived from the document and the line, so it is stable from build to build."""
+    return V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:{f.id}:{doc_key}:line:{line_id}")),
+             "A universally unique identifier of the line, derived from the document and the line number.")
+
+
+def lines_of(out, key):
+    v = out.get(key)
+    return v if isinstance(v, list) else [v] if v else []
+
+
+@enrich("air", "Waybill")
+def _(f, n, doc, out):
+    return {"ExchangeRate": {"SourceCurrencyCode": V("XBL", "The currency of the freight charges."),
+                             "TargetCurrencyCode": V("XLC", "The island's currency: its customs adds the freight to "
+                                                            "the customs value in coral."),
+                             "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The world's reference rate."),
+                             "MathematicOperatorCode": V("Multiply", "Lume times the rate gives coral."),
+                             "Date": V(f.date(9), "The rate of the day the waybill is issued.")}}
+
+
+@enrich("carnet", "ProofOfReexportation")
+def _(f, n, doc, out):
+    att = out.get("GoodsItemPassportAttachment") or {}
+    att["EmbeddedDocument"] = V(f"Re-exportation counterfoil of carnet {f.numbers['carnet']}, stamped by the Island "
+                                "Customs Service: all items re-exported.", "The counterfoil, as clear text.")
+    return {"GoodsItemPassportAttachment": att}
+
+
+@enrich("cotton", "Order")
+def _(f, n, doc, out):
+    for tt in lines_of(out, "TaxTotal"):
+        for st in lines_of(tt, "TaxSubtotal"):
+            st["TaxCategory"]["TaxScheme"]["TaxTypeCode"] = V("Consumption", "The import consumption tax is a tax "
+                                                                             "on consumption.")
+    return {}
+
+
+@enrich("cotton", "GoodsCertificate")
+def _(f, n, doc, out):
+    gp = out.get("GoodsProcessing")
+    if isinstance(gp, dict) and isinstance(gp.get("CriterionItem"), dict):
+        gp["CriterionItem"]["TypeCode"] = V("Processing", "A criterion on how the goods were processed.")
+    return {}
+
+
+@enrich("rail", "TransitCustomsDeclaration")
+def _(f, n, doc, out):
+    return {"PreviousCustomsDeclaration": {
+        "ID": V("VI-CD-26-0330E", "The export declaration lodged in Urvania at the office of departure (not shown in "
+                                  "this flow), which the transit continues."),
+        "FunctionCode": V("Export", "The kind of the previous declaration.")}}
+
+
+@enrich("sea", "ExportCustomsDeclaration")
+def _(f, n, doc, out):
+    cd = out.get("CustomsDeclaration")
+    if isinstance(cd, dict):
+        cd["PreviousCustomsDeclaration"] = {
+            "ID": V(FLOWS["road"].numbers.get("import", "LD-IM-26-0161"), "The import declaration under which the "
+                                                                          "benches entered Bayvarra from Urvania "
+                                                                          "(flow road): the goods now leave again."),
+            "FunctionCode": V("Import", "The kind of the previous declaration.")}
+    return {}
+
+
+@enrich("retail", "TransportationStatusRequest")
+def _(f, n, doc, out):
+    return {"TransportExecutionPlanDocumentReference": {
+        "ID": V("BF-TEP-26-0227", "The forwarder's confirmation of the booking requested by the distributor: its "
+                                  "transport execution plan (not shown in this flow).")}}
+
+
+@enrich("retail", "CreditNote")
+def _(f, n, doc, out):
+    for ln in lines_of(out, "CreditNoteLine"):
+        ln["UUID"] = line_uuid(f, f"credit-{n}", ln["ID"].value)
+    return {}
+
+
+@enrich("road", "CertificateOfOrigin")
+def _(f, n, doc, out):
+    return {"InsuranceEndorsement": {
+        "DocumentID": V("WS-CP-26-4471-E1", "The insurer's endorsement of the cargo policy for this consignment."),
+        "ApprovalStatus": V("Endorsed", "The insurer confirms the cover."),
+        "Remarks": V("The goods described in this certificate are insured door to door.", "What it confirms."),
+        "EndorserParty": {"RoleCode": V("Insurer", "It endorses as insurer."),
+                          "SequenceNumeric": V("2", "After the chamber; the embassy legalises separately."),
+                          "Party": party("29-xb", short=True),
+                          "SignatoryContact": {"Name": V("Cargo claims desk", "Who signs for the insurer.")}},
+        "Signature": seal("29-xb", "WS-SIG-26-E1", "The insurer's seal on the endorsement.")}}
+
+
+@enrich("sea", "ForwardingInstructions")
+def _(f, n, doc, out):
+    if doc["from"] != "10-xb":
+        return {}
+    return {"DeclaredCarriageValueAmount": amount(Decimal("50688.00"), "XBL", "The value the shipper declares for "
+                                                                              "carriage: the goods' value, so the "
+                                                                              "carrier's liability covers it.")}
+
+
+@enrich("tender", "Order")
+def _(f, n, doc, out):
+    return {"PricingExchangeRate": {**PRICING_RATE, "ForeignExchangeContract": {
+        "ID": V("BL-FX-26-0091", "The department's forward contract with the Bank of Lumeport, which fixes the rate "
+                                 "for the year."),
+        "IssueDate": V("2026-01-02", "Concluded on the rate date."),
+        "ContractTypeCode": V("Forward", "A currency forward."),
+        "ContractType": V("Forward purchase of ferra", "In words.")}}}
+
+
+@enrich("utilities", "RemittanceAdvice")
+def _(f, n, doc, out):
+    if doc["from"] != "5-xu":
+        return {}
+    a = f.numbers["invoice-33-xu-amount"]
+    vat = (a - a / Decimal("1.2")).quantize(Decimal(1))
+    return {"TaxTotal": {"TaxAmount": amount(vat, "XUF", "The value added tax included in the payment, which the "
+                                                        "manufacturer deducts in its own return (20 % of the price "
+                                                        "before tax).")}}
+
+
+@enrich("utilities", "Invoice")
+def _(f, n, doc, out):
+    pm = out.get("PaymentMeans")
+    if isinstance(pm, dict) and isinstance(pm.get("PaymentMandate"), dict):
+        pm["PaymentMandate"]["MaximumPaymentInstructionsNumeric"] = V("12", "At most one collection a month.")
+    return {}
+
+
+@enrich("wood", "RequestForQuotation")
+def _(f, n, doc, out):
+    for i, ln in enumerate(lines_of(out, "RequestForQuotationLine"), 1):
+        ln["ID"] = V(str(i), "The line's number in the request.")
+    return {}
+
+
+@enrich("ore", "Invoice")
+def _(f, n, doc, out):
+    for ln in lines_of(out, "InvoiceLine"):
+        ext = ln.get("ItemPriceExtension")
+        if isinstance(ext, dict):
+            base = Decimal(ext["Amount"].value)
+            tax = (base * Decimal("0.20")).quantize(Decimal(1))
+            ext["TaxInclusiveAmount"] = amount(base + tax, "XUF", "The price extension with 20 % value added tax.")
+            ext["TaxTotal"] = {"TaxAmount": amount(tax, "XUF", "The tax on the price extension, before the line's "
+                                                              "allowance.")}
+    return {}

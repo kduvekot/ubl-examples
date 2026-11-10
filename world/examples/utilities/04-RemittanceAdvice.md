@@ -374,6 +374,13 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
 
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **2413212** (currencyID `XUF`)  
+  The value added tax included in the payment, which the manufacturer deducts in its own return (20 % of the price before tax).
+
 ### Remittance Advice Line
 
 Inside `RemittanceAdviceLine`:
@@ -726,6 +733,9 @@ Inside `RemittanceAdviceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+  </cac:TaxTotal>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>

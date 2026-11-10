@@ -686,6 +686,10 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `PreviousCustomsDeclaration/ID` = **LD-IM-26-0161**  
+  The import declaration under which the benches entered Bayvarra from Urvania (flow road): the goods now leave again.
+- `PreviousCustomsDeclaration/FunctionCode` = **Import**  
+  The kind of the previous declaration.
 - `AdditionalDocumentReference/ID` = **VT-PO-26-0127**  
   The order behind the export.
 
@@ -1307,6 +1311,10 @@ Inside `Signature`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:PreviousCustomsDeclaration>
+      <cbc:ID>LD-IM-26-0161</cbc:ID>
+      <cbc:FunctionCode>Import</cbc:FunctionCode>
+    </cac:PreviousCustomsDeclaration>
     <cac:AdditionalDocumentReference>
       <cbc:ID>VT-PO-26-0127</cbc:ID>
     </cac:AdditionalDocumentReference>
