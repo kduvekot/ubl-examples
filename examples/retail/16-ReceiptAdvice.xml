@@ -218,6 +218,30 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>LD-SH-26-0230</cbc:ID>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>LD-RT-003</cbc:ID>
+      <cbc:DamageRemarks>One carton torn, the bench's armrest bent.</cbc:DamageRemarks>
+      <cac:ReceivedHandlingUnitReceiptLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ReceivedQuantity unitCode="H87">3</cbc:ReceivedQuantity>
+        <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+        <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
+      </cac:ReceivedHandlingUnitReceiptLine>
+      <cac:Status>
+        <cbc:ConditionCode>Damaged</cbc:ConditionCode>
+        <cbc:Description>Three benches accepted, one refused.</cbc:Description>
+      </cac:Status>
+      <cac:DamageDocumentationAttachment>
+        <cac:ExternalReference>
+          <cbc:URI>https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg</cbc:URI>
+          <cbc:MimeCode>image/jpeg</cbc:MimeCode>
+          <cbc:FileName>pallet-3.jpg</cbc:FileName>
+        </cac:ExternalReference>
+      </cac:DamageDocumentationAttachment>
+    </cac:TransportHandlingUnit>
+  </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:ReceivedQuantity unitCode="H87">23</cbc:ReceivedQuantity>

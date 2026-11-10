@@ -515,6 +515,22 @@
           </cac:ProductDocumentationDocumentReference>
         </cac:CircularityProfile>
       </cac:Item>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Ocean freight, share of the benches</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XLC">1162.121</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="H87">96</cbc:InvoicedQuantity>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+        </cac:Item>
+      </cac:InvoiceLine>
+      <cac:InsurancePolicy>
+        <cbc:ID>WS-CP-26-4471</cbc:ID>
+        <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
+      </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>

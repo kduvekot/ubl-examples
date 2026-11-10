@@ -206,6 +206,7 @@
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="C62">2</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -479,6 +480,11 @@
             <cbc:Information>Carrier haulage: the rail carrier brings the box to the warehouse and back.</cbc:Information>
             <cbc:Reference>FRC-HT-2026</cbc:Reference>
           </cac:HaulageTradingTerms>
+          <cac:FreightAllowanceCharge>
+            <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReason>Rail freight per container</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="XUF">54600</cbc:Amount>
+          </cac:FreightAllowanceCharge>
           <cac:Delivery>
             <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
             <cac:DeliveryLocation>
@@ -499,7 +505,26 @@
           <cac:ShipmentDocumentReference>
             <cbc:ID>FRC-WB-26-0334</cbc:ID>
           </cac:ShipmentDocumentReference>
+          <cac:ContainedInTransportEquipment>
+            <cbc:ID>XU-FRC 4521 0042</cbc:ID>
+            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">RR</cbc:TransportEquipmentTypeCode>
+          </cac:ContainedInTransportEquipment>
         </cac:TransportEquipment>
+        <cac:CustomsDeclaration>
+          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+        </cac:CustomsDeclaration>
+        <cac:EnergyConsumptionAllocation>
+          <cbc:EnergySourceTypeCode>Electricity</cbc:EnergySourceTypeCode>
+          <cbc:AllocatedEnergyMeasure unitCode="KWH">610</cbc:AllocatedEnergyMeasure>
+        </cac:EnergyConsumptionAllocation>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
@@ -517,6 +542,21 @@
             <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
           </cac:TransportEquipmentSeal>
         </cac:TransportEquipment>
+        <cac:CustomsDeclaration>
+          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+        </cac:CustomsDeclaration>
+        <cac:EnergyConsumptionAllocation>
+          <cbc:EnergySourceTypeCode>Electricity</cbc:EnergySourceTypeCode>
+          <cbc:AllocatedEnergyMeasure unitCode="KWH">610</cbc:AllocatedEnergyMeasure>
+        </cac:EnergyConsumptionAllocation>
       </cac:TransportHandlingUnit>
       <cac:EnvironmentalEmission>
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
@@ -529,6 +569,9 @@
           <cac:MeasurementToLocation>
             <cbc:Name>Marrowdale</cbc:Name>
           </cac:MeasurementToLocation>
+          <cac:EmissionCalculationLocation>
+            <cbc:Name>Ferrano Rail Cargo, energy office</cbc:Name>
+          </cac:EmissionCalculationLocation>
         </cac:EmissionCalculationMethod>
       </cac:EnvironmentalEmission>
     </cac:Consignment>

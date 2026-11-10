@@ -426,9 +426,102 @@ its identifier and name are repeated.</li>
 <li><code>TransportServiceCode</code> =
 <strong>OceanContainer</strong><br />
 The carrier's code for its container liner service.</li>
+<li><code>TariffClassCode</code> = <strong>FAK</strong><br />
+Freight all kinds: one rate whatever the goods.</li>
+<li><code>Priority</code> = <strong>Standard</strong><br />
+The normal service.</li>
+<li><code>FreightRateClassCode</code> = <strong>BOX</strong><br />
+The rate is per container.</li>
+<li><code>TransportationServiceDescription</code> = <strong>A weekly
+feeder sailing from Lumeport to Selanu, two days at sea.</strong><br />
+The service in words.</li>
+<li><code>TransportationServiceDetailsURI</code> = <strong><a
+href="https://www.tidewell.example/services/island">https://www.tidewell.example/services/island</a></strong><br />
+Where the schedule is.</li>
+<li><code>NominationDate</code> = <strong>2026-05-09</strong><br />
+The day the service is offered for this shipment.</li>
+<li><code>NominationTime</code> = <strong>10:00:00</strong><br />
+In the morning.</li>
 <li><code>Name</code> = <strong>Weekly service
 Lumeport–Selanu</strong><br />
 The name of the service.</li>
+<li><code>SequenceNumeric</code> = <strong>1</strong><br />
+The first of the services offered.</li>
+<li><code>TransportEquipment/ID</code> = <strong>42G1</strong><br />
+The equipment offered for this shipment.</li>
+<li><code>TransportEquipment/SizeTypeCode</code> =
+<strong>42G1</strong><br />
+A 40-foot dry container.</li>
+<li><code>SupportedTransportEquipment/ID</code> =
+<strong>22G1</strong><br />
+20-foot dry container.</li>
+<li><code>SupportedTransportEquipment/SizeTypeCode</code> =
+<strong>22G1</strong><br />
+ISO 6346 size and type.</li>
+<li><code>SupportedTransportEquipment/ID</code> =
+<strong>42G1</strong><br />
+40-foot dry container.</li>
+<li><code>SupportedTransportEquipment/SizeTypeCode</code> =
+<strong>42G1</strong><br />
+ISO 6346 size and type.</li>
+<li><code>UnsupportedTransportEquipment/ID</code> =
+<strong>45R1</strong><br />
+40-foot reefer: the island port has no reefer plugs.</li>
+<li><code>UnsupportedTransportEquipment/SizeTypeCode</code> =
+<strong>45R1</strong><br />
+ISO 6346 size and type.</li>
+<li><code>CommodityClassification/ItemClassificationCode</code> =
+<strong>9401.79</strong> (listID <code>HS</code>)<br />
+The benches.</li>
+<li><code>SupportedCommodityClassification/CargoTypeCode</code> =
+<strong>GEN</strong><br />
+General cargo in containers.</li>
+<li><code>UnsupportedCommodityClassification/CargoTypeCode</code> =
+<strong>BULK</strong><br />
+No loose bulk on this service.</li>
+<li><code>TotalCapacityDimension/AttributeID</code> =
+<strong>TEU</strong><br />
+The ship's capacity in twenty-foot units.</li>
+<li><code>TotalCapacityDimension/Measure</code> = <strong>1000</strong>
+(unitCode <code>C62</code>)<br />
+One thousand.</li>
+<li><code>ShipmentStage/ID</code> = <strong>1</strong><br />
+Lumeport to Selanu.</li>
+<li><code>ShipmentStage/TransportModeCode</code> = <strong>1</strong>
+(listID
+<code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
+Maritime transport.</li>
+<li><code>TransportEvent/OccurrenceDate</code> =
+<strong>2026-05-14</strong><br />
+The next departure from Lumeport.</li>
+<li><code>TransportEvent/OccurrenceTime</code> =
+<strong>18:00:00</strong><br />
+The local time.</li>
+<li><code>TransportEvent/CompletionIndicator</code> =
+<strong>false</strong><br />
+Whether the event has taken place (true) or is still to come
+(false).</li>
+<li><code>ResponsibleTransportServiceProviderParty/PartyIdentification/ID</code>
+= <strong>20411918</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>ResponsibleTransportServiceProviderParty/PartyName/Name</code>
+= <strong>Tidewell Ocean Lines</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>EnvironmentalEmission/EnvironmentalEmissionTypeCode</code> =
+<strong>CO2e</strong><br />
+Greenhouse gases.</li>
+<li><code>EnvironmentalEmission/ValueMeasure</code> =
+<strong>380</strong> (unitCode <code>KGM</code>)<br />
+Per 40-foot container on the crossing.</li>
+<li><code>EstimatedDurationPeriod/DurationMeasure</code> =
+<strong>2</strong> (unitCode <code>DAY</code>)<br />
+Two days at sea.</li>
+<li><code>ScheduledServiceFrequency/WeekDayCode</code> =
+<strong>5</strong><br />
+Every Friday (ISO 8601: 5 is Friday).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -619,11 +712,75 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportServiceProviderParty</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportationService</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceCode</span>&gt;OceanContainer&lt;/<span class="kw">cbc:TransportServiceCode</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Weekly service Lumeport–Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportationService</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportServiceDescription</span>&gt;</span></code></pre></div>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TariffClassCode</span>&gt;FAK&lt;/<span class="kw">cbc:TariffClassCode</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Priority</span>&gt;Standard&lt;/<span class="kw">cbc:Priority</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FreightRateClassCode</span>&gt;BOX&lt;/<span class="kw">cbc:FreightRateClassCode</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportationServiceDescription</span>&gt;A weekly feeder sailing from Lumeport to Selanu, two days at sea.&lt;/<span class="kw">cbc:TransportationServiceDescription</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportationServiceDetailsURI</span>&gt;https://www.tidewell.example/services/island&lt;/<span class="kw">cbc:TransportationServiceDetailsURI</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:NominationDate</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:NominationTime</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Weekly service Lumeport–Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TransportEquipment</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;42G1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SizeTypeCode</span>&gt;42G1&lt;/<span class="kw">cbc:SizeTypeCode</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupportedTransportEquipment</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;22G1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SizeTypeCode</span>&gt;22G1&lt;/<span class="kw">cbc:SizeTypeCode</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupportedTransportEquipment</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupportedTransportEquipment</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;42G1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SizeTypeCode</span>&gt;42G1&lt;/<span class="kw">cbc:SizeTypeCode</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupportedTransportEquipment</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:UnsupportedTransportEquipment</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;45R1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SizeTypeCode</span>&gt;45R1&lt;/<span class="kw">cbc:SizeTypeCode</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:UnsupportedTransportEquipment</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;9401.79&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupportedCommodityClassification</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CargoTypeCode</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupportedCommodityClassification</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:UnsupportedCommodityClassification</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CargoTypeCode</span>&gt;BULK&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:UnsupportedCommodityClassification</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TotalCapacityDimension</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AttributeID</span>&gt;TEU&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;1000&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TotalCapacityDimension</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;1&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TransportEvent</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;18:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TransportEvent</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ResponsibleTransportServiceProviderParty</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411918&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Tidewell Ocean Lines&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ResponsibleTransportServiceProviderParty</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;CO2e&lt;/<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;380&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EstimatedDurationPeriod</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;2&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EstimatedDurationPeriod</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ScheduledServiceFrequency</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WeekDayCode</span>&gt;5&lt;/<span class="kw">cbc:WeekDayCode</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ScheduledServiceFrequency</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportationService</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportServiceDescription</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>3653693</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>441976b</code></p></div></footer>
 </body>
 </html>
