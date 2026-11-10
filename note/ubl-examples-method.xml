@@ -544,6 +544,21 @@
       the ordered quantity, and its reason says so.
     </para>
   </section>
+  <section id="S-04-rationale-a-party-is-described-once-per-document">
+    <title>A party is described once per document</title>
+    <para>
+      A party often plays several roles in one document: the buyer of an
+      order is usually also its delivery party. Its full details
+      (address, tax number, legal registration, contact, electronic
+      address) are given once, at its first place in the document. Every
+      later mention of the same party holds only its identifier and its
+      name: enough to identify it, and never empty, as UBL requires
+      (rule IND5). The same applies to a bank named more than once. The
+      identifier is the party's number in its country's company
+      register, given as <literal>PartyIdentification</literal> with the
+      register as its scheme.
+    </para>
+  </section>
   <section id="S-04-rationale-only-what-ubl-25-endorses">
     <title>Only what UBL 2.5 endorses</title>
     <para>
