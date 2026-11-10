@@ -452,6 +452,8 @@ Inside `InvoiceLine`:
   The factory's metered consumption in March.
 - `LineExtensionAmount` = **11269440** (currencyID `XUF`)  
   412800 × 27.3, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **ELEC**  
+  ISO 20022 purpose code ELEC: electricity bill.
 - `InvoicePeriod/StartDate` = **2026-03-01**  
   The month billed: March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
@@ -486,6 +488,8 @@ Inside `InvoiceLine`:
   The manufacturer books the warehouse's power on its transport cost centre.
 - `AccountingCost` = **Warehouse, Castrano Logistics**  
   In words.
+- `PaymentPurposeCode` = **ELEC**  
+  ISO 20022 purpose code ELEC: electricity bill.
 - `InvoicePeriod/StartDate` = **2026-03-01**  
   The month billed: March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
@@ -494,6 +498,10 @@ Inside `InvoiceLine`:
   A monthly bill.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
+- `OriginatorParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorParty/PartyName/Name` = **Castrano Logistics**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Ferrano**  
   Where the power was used.
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
@@ -867,6 +875,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>ELEC</cbc:PaymentPurposeCode>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -898,12 +907,21 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
     <cbc:AccountingCostCode>7100</cbc:AccountingCostCode>
     <cbc:AccountingCost>Warehouse, Castrano Logistics</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode>ELEC</cbc:PaymentPurposeCode>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
       <cbc:DescriptionCode>Month</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
+    <cac:OriginatorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Castrano Logistics</cbc:Name>
+      </cac:PartyName>
+    </cac:OriginatorParty>
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:Description>Castrano Logistics warehouse, Ferrano</cbc:Description>

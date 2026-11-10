@@ -9,13 +9,28 @@
   <cbc:IssueDate>2026-02-07</cbc:IssueDate>
   <cbc:DueDate>2026-03-24</cbc:DueDate>
   <cbc:InvoiceTypeCode>389</cbc:InvoiceTypeCode>
+  <cbc:Note>Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-02-03</cbc:StartDate>
+    <cbc:EndDate>2026-02-05</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:ContractDocumentReference>
+    <cbc:ID>SCG-SEASON-2026</cbc:ID>
+  </cac:ContractDocumentReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LCF-DN-26-0192</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:DeliveryNoteDocumentReference>
+    <cbc:ID>LCF-DN-26-0192</cbc:ID>
+  </cac:DeliveryNoteDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>SCG-WB-26-0311</cbc:ID>
+  </cac:ReceiptDocumentReference>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -201,6 +216,23 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lisavu Cotton Farm</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Selanu Cotton Ginnery, weighbridge</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

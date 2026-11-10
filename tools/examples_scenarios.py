@@ -21,7 +21,12 @@ def rate(a, b):
 ORE = kit.Flow("ore", "2026-03-02", [
     {"item": "ore-lump", "ordered": 1800, "delivered": "1788.4",
      "why": "One train: 30 wagons of about 60 tonnes.",
-     "invoice_why": "The weighed quantity from the despatch advice, not the ordered quantity."}])
+     "invoice_why": "The weighed quantity from the despatch advice, not the ordered quantity.",
+     "line_allowance": {"percent": "1.5", "code": "95", "code_why": "UN/EDIFACT 5189 code 95: discount.",
+                        "reason": "Moisture deduction",
+                        "why": "The sample at loading showed 7.5 % moisture, above the 6 % of the contract: the "
+                               "contract deducts 1.5 % of the value."},
+     "line_tax": True}])
 
 
 def ore(n, doc):
@@ -1952,6 +1957,20 @@ def cotton(n, doc):
                                             "provides.", farm_rows,
                               {"DespatchDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery "
                                                                                             "note.")}})
+        out.update({
+            "Note": V("Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.",
+                      "The statement the self-billing agreement requires on every invoice."),
+            "InvoicePeriod": {"StartDate": V(f.date(1), "The week of the deliveries."),
+                              "EndDate": V(f.date(3), "The last trailer.")},
+            "ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement between farm and ginnery, "
+                                                                     "which allows the self-billing.")},
+            "DeliveryNoteDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery note.")},
+            "ReceiptDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket of the gin.")},
+            "Delivery": {"ActualDeliveryDate": V(f.date(3), "The trailers were weighed at the gin."),
+                         "DeliveryLocation": {"Name": V("Selanu Cotton Ginnery, weighbridge", "Where.")}},
+            "DeliveryTerms": {"ID": V("DAP", "Delivered at the gin: the farm brings the cotton with its own "
+                                             "tractor.", schemeID="INCOTERMS")},
+            "PayeeParty": party("38-xl", short=True)})
         lines = out["InvoiceLine"] if isinstance(out["InvoiceLine"], list) else [out["InvoiceLine"]]
         lines[0]["Delivery"] = {"DeliveryNoteLineReference": {
             "LineID": V("1", "The line of the delivery note the invoice line bills."),
@@ -1964,7 +1983,24 @@ def cotton(n, doc):
                                                    "per kilogram.", "why": "The part of the delivery classed lower."}],
                                {"BillingReference": {"SelfBilledInvoiceDocumentReference": {
                                    "ID": V(f.numbers["self-billed-3"], "The self-billed invoice this corrects."),
-                                   "IssueDate": V(f.numbers["self-billed-3-date"], "Its issue date.")}}}, credit=True)
+                                   "IssueDate": V(f.numbers["self-billed-3-date"], "Its issue date.")}},
+                                "Note": V("Self-billed credit note under the season agreement.", "As required on "
+                                                                                                 "every self-billed "
+                                                                                                 "document."),
+                                "DiscrepancyResponse": {"ReferenceID": V("1", "The line of the self-billed "
+                                                                              "invoice."),
+                                                        "ResponseCode": V("Grade", "The classing found a lower "
+                                                                                   "grade."),
+                                                        "Description": V("2,500 kg classed Strict Low Middling "
+                                                                         "instead of Middling.", "In words.")},
+                                "ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement: it "
+                                                                                         "sets the price per "
+                                                                                         "grade.")},
+                                "AdditionalDocumentReference": {"ID": V(f.numbers["goods-certificate"]
+                                                                        if "goods-certificate" in f.numbers else
+                                                                        "XL-CLS-2026-0042", "The classing "
+                                                                                            "certificate.")}},
+                               credit=True)
     if doc["doc"] == "RemittanceAdvice" and doc["from"] == "39-xl":
         inv, cn = f.numbers["self-billed-3-amount"], f.numbers["self-billed-4-amount"]
         return {"ID": V(f.number("remittance-farm", doc["from"], "RemittanceAdvice"), "The ginnery's remittance number."),
@@ -2347,7 +2383,12 @@ def utilities(n, doc):
         key = bill_key(doc)
         out = kit.invoice(f, n, doc, 1, 21, "The monthly bill, issued on the first day of the next month.", {},
                           BILLS[key], key=f"invoice-{key}", extra=MARCH)
+        purpose = {"33-xu": ("ELEC", "electricity bill"), "35-xl": ("PHON", "telephone bill")}.get(
+            key, ("WTER", "water bill"))
+        for line in out["InvoiceLine"]:
+            line["PaymentPurposeCode"] = V(purpose[0], f"ISO 20022 purpose code {purpose[0]}: {purpose[1]}.")
         if key == "33-xu":
+            out["InvoiceLine"][1]["OriginatorParty"] = party("8-xu", short=True)
             energy_tax(f, out, key)
         if key == "34-xb:c-xb":                 # the household pays by direct debit under a mandate
             m = PARTY["c-xb"]["identity"]["mandate"]
@@ -2970,6 +3011,11 @@ def furniture(n, doc):
         amt = rows[0][2]
         out = {**head(f, "debit-note", doc, 63, "After the returned sets were collected."),
                 "DebitNoteTypeCode": V("383", "UN/EDIFACT 1001 code 383: debit note."),
+                "DefaultLanguageCode": V("en", "The language of the texts."),
+                "LineCountNumeric": V("1", "One line."),
+                "OrderReference": {"ID": V(f.numbers["order"], "The order of the sets that went back.")},
+                "PaymentTerms": {"Note": V("30 days net.", "The store's terms."),
+                                 "PaymentDueDate": V(f.date(93), "The due date.")},
                 "DueDate": V(f.date(93), "Thirty days, the store's terms."),
                 "Note": V("The furniture maker asked for the sets back; the store charges the transport.", "Why."),
                 "DocumentCurrencyCode": kit.currency_line("XBL", "the currency of the trade"),

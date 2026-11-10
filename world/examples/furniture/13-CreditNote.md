@@ -38,6 +38,8 @@ The returned bench sets are credited.
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of lines.
+- `DefaultLanguageCode` = **en**  
+  The language of the texts.
 
 ### Order Reference
 
@@ -337,6 +339,13 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
 
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **Settled against the next payment to the seller, unless refunded.**  
+  How a credit note is settled in the world.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -431,6 +440,7 @@ Inside `CreditNoteLine`:
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
@@ -680,6 +690,9 @@ Inside `CreditNoteLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

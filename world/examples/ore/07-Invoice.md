@@ -356,7 +356,7 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **345948** (currencyID `XUF`)  
+- `SettlementDiscountAmount` = **340759** (currencyID `XUF`)  
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.serravona.example/terms**  
   The seller's general terms of payment.
@@ -377,11 +377,11 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **2882901** (currencyID `XUF`)  
+- `TaxAmount` = **2839657** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **14414504** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **14198286** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **2882901** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **2839657** (currencyID `XUF`)  
   20 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S**  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
@@ -394,13 +394,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **14414504** (currencyID `XUF`)  
+- `LineExtensionAmount` = **14198286** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **14414504** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **14198286** (currencyID `XUF`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **17297405** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **17037943** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **17297405** (currencyID `XUF`)  
+- `PayableAmount` = **17037943** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -411,10 +411,26 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **1788.4** (unitCode `TNE`)  
   The weighed quantity from the despatch advice, not the ordered quantity.
-- `LineExtensionAmount` = **14414504** (currencyID `XUF`)  
-  1788.4 × 8060, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **14198286** (currencyID `XUF`)  
+  1788.4 × 8060 = 14414504, less the 1.5 % moisture deduction.
+- `TaxInclusiveLineExtensionAmount` = **17037943** (currencyID `XUF`)  
+  The line with its tax.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
+- `AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance on the line.
+- `AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
+  UN/EDIFACT 5189 code 95: discount.
+- `AllowanceCharge/AllowanceChargeReason` = **Moisture deduction**  
+  The sample at loading showed 7.5 % moisture, above the 6 % of the contract: the contract deducts 1.5 % of the value.
+- `AllowanceCharge/MultiplierFactorNumeric` = **0.015**  
+  The rate.
+- `AllowanceCharge/Amount` = **216218** (currencyID `XUF`)  
+  The deduction on the line.
+- `AllowanceCharge/BaseAmount` = **14414504** (currencyID `XUF`)  
+  The line at the full price.
+- `TaxTotal/TaxAmount` = **2839657** (currencyID `XUF`)  
+  20 % of the line amount, for the buyer's booking per line.
 - `Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
   The seller's description; item ore-lump of Serravona Mining (world/items.json).
 - `Item/Name` = **Iron ore, lump**  
@@ -441,6 +457,8 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `TNE`)  
   The price is per one unit.
+- `ItemPriceExtension/Amount` = **14414504** (currencyID `XUF`)  
+  Price times quantity, before the allowance.
 
 ## The document
 
@@ -727,7 +745,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">345948</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">340759</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.serravona.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-10</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -741,10 +759,10 @@ Inside `InvoiceLine`:
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">2839657</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">14414504</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">14198286</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">2839657</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -755,18 +773,30 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">14414504</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">14414504</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">17297405</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">17297405</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">14198286</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">14198286</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">17037943</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">17037943</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="TNE">1788.4</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">14414504</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">14198286</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">17037943</cbc:TaxInclusiveLineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Moisture deduction</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.015</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="XUF">216218</cbc:Amount>
+      <cbc:BaseAmount currencyID="XUF">14414504</cbc:BaseAmount>
+    </cac:AllowanceCharge>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XUF">2839657</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
       <cbc:Name>Iron ore, lump</cbc:Name>
@@ -798,6 +828,9 @@ Inside `InvoiceLine`:
       <cbc:PriceAmount currencyID="XUF">8060</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="TNE">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:ItemPriceExtension>
+      <cbc:Amount currencyID="XUF">14414504</cbc:Amount>
+    </cac:ItemPriceExtension>
   </cac:InvoiceLine>
 </Invoice>
 ```

@@ -429,6 +429,12 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
     else:
         rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * unit_price(d["item"], cur), cur),
                  tax_rule(seller, buyer, d["item"])) for d in rows_spec]
+    gross = {}                                       # a line allowance lowers the line amount before the totals
+    for k, (d, q, amt, rule) in enumerate(rows):
+        la = d.get("line_allowance")
+        if la:
+            gross[k] = amt
+            rows[k] = (d, q, amt - money(amt * Decimal(la["percent"]) / 100, cur), rule)
     base = sum(r[2] for r in rows)
     charge_rows = [({"item": c["like"]}, None, money(Decimal(str(c["amount"])), cur), tax_rule(seller, buyer, c["like"]))
                    for c in (charges or [])]
@@ -460,7 +466,26 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "Item": item(d["item"], tax_category(rule)),
             "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
-    for (d, *_), line in zip(rows, out["InvoiceLine"]):     # what the scenario adds to a line
+    for k, ((d, q, amt, rule), line) in enumerate(zip(rows, out["InvoiceLine"])):
+        la = d.get("line_allowance")
+        if la:
+            line["LineExtensionAmount"] = amount(amt, cur, f"{q} × {unit_price(d['item'], cur)} = {gross[k]}, less the "
+                                                           f"{la['percent']} % {la['reason'].lower()}.")
+            line["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
+                                       "AllowanceChargeReasonCode": V(la["code"], la["code_why"],
+                                                                      listID="UN/EDIFACT EDED 5189"),
+                                       "AllowanceChargeReason": V(la["reason"], la["why"]),
+                                       "MultiplierFactorNumeric": V(str(Decimal(la["percent"]) / 100), "The rate."),
+                                       "Amount": amount(gross[k] - amt, cur, "The deduction on the line."),
+                                       "BaseAmount": amount(gross[k], cur, "The line at the full price.")}
+            line["ItemPriceExtension"] = {"Amount": amount(gross[k], cur, "Price times quantity, before the "
+                                                                          "allowance.")}
+        if d.get("line_tax"):
+            pct = Decimal(str(rule[1]))
+            tax_l = money(amt * pct / 100, cur)
+            line["TaxInclusiveLineExtensionAmount"] = amount(amt + tax_l, cur, "The line with its tax.")
+            line["TaxTotal"] = {"TaxAmount": amount(tax_l, cur, f"{pct} % of the line amount, for the buyer's "
+                                                                "booking per line.")}
         deep_merge(line, d.get("line_extra"))
     if rows_spec is None and "OrderReference" in refs:      # the lines of the deal are the lines of the order
         for i, line in enumerate(out["InvoiceLine"], 1):
@@ -674,6 +699,10 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs):
             "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice credited"),
             **cost_centre(buyer, "The buyer's cost centre, as on the invoice credited."),
             "LineCountNumeric": V(str(len(rows)), "The number of lines."),
+            "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][0], "The language of the "
+                                                                                              "texts."),
+            "PaymentTerms": {"Note": V("Settled against the next payment to the seller, unless refunded.",
+                                       "How a credit note is settled in the world.")},
             **refs,
             "TaxTotal": total,
             "LegalMonetaryTotal": monetary_total(base, tax, cur),
@@ -837,6 +866,8 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
            "DocumentCurrencyCode": currency_line(cur, "the supplier's currency"),
            **cost_centre(customer, "The customer's own cost centre: it books what it billed itself."),
            "LineCountNumeric": V(str(len(rows)), "The number of lines."),
+           "DefaultLanguageCode": V(WORLD["countries"][PARTY[supplier]["c"]]["languages"][0], "The language of the "
+                                                                                               "texts."),
            **refs,
            "TaxTotal": total,
            "LegalMonetaryTotal": monetary_total(base, tax, cur),

@@ -330,6 +330,8 @@ Inside `InvoiceLine`:
   Six business lines for the month.
 - `LineExtensionAmount` = **127.080** (currencyID `XLC`)  
   6 × 21.18, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **PHON**  
+  ISO 20022 purpose code PHON: telephone bill.
 - `Item/Description` = **Business telephone and data line, monthly subscription.**  
   The seller's description; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/Name` = **Business telephone line**  
@@ -352,6 +354,8 @@ Inside `InvoiceLine`:
   Mobile data beyond the subscriptions.
 - `LineExtensionAmount` = **14.840** (currencyID `XLC`)  
   35 × 0.424, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **PHON**  
+  ISO 20022 purpose code PHON: telephone bill.
 - `Item/Description` = **Mobile data beyond the subscription, per gigabyte.**  
   The seller's description; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/Name` = **Mobile data**  
@@ -618,6 +622,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>PHON</cbc:PaymentPurposeCode>
     <cac:Item>
       <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
       <cbc:Name>Business telephone line</cbc:Name>
@@ -641,6 +646,7 @@ Inside `InvoiceLine`:
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>PHON</cbc:PaymentPurposeCode>
     <cac:Item>
       <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
       <cbc:Name>Mobile data</cbc:Name>

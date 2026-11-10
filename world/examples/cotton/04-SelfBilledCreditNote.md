@@ -26,6 +26,8 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   Issued after classing showed part of the delivery a grade lower.
 - `CreditNoteTypeCode` = **261**  
   UN/EDIFACT 1001 code 261: self-billed credit note.
+- `Note` = **Self-billed credit note under the season agreement.**  
+  As required on every self-billed document.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the supplier's currency; it has three decimals.
 - `AccountingCostCode` = **200**  
@@ -34,6 +36,19 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of lines.
+- `DefaultLanguageCode` = **en**  
+  The language of the texts.
+
+### Discrepancy Response
+
+Inside `DiscrepancyResponse`:
+
+- `ReferenceID` = **1**  
+  The line of the self-billed invoice.
+- `ResponseCode` = **Grade**  
+  The classing found a lower grade.
+- `Description` = **2,500 kg classed Strict Low Middling instead of Middling.**  
+  In words.
 
 ### Billing Reference
 
@@ -43,6 +58,20 @@ Inside `BillingReference`:
   The self-billed invoice this corrects.
 - `SelfBilledInvoiceDocumentReference/IssueDate` = **2026-02-07**  
   Its issue date.
+
+### Contract Document Reference
+
+Inside `ContractDocumentReference`:
+
+- `ID` = **SCG-SEASON-2026**  
+  The season agreement: it sets the price per grade.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **XL-CLS-2026-0042**  
+  The classing certificate.
 
 ### Accounting Customer Party
 
@@ -330,16 +359,29 @@ Inside `CreditNoteLine`:
   <cbc:UUID>3fe47b86-e662-5cb9-93d0-9366b17fb485</cbc:UUID>
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
+  <cbc:Note>Self-billed credit note under the season agreement.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:DiscrepancyResponse>
+    <cbc:ReferenceID>1</cbc:ReferenceID>
+    <cbc:ResponseCode>Grade</cbc:ResponseCode>
+    <cbc:Description>2,500 kg classed Strict Low Middling instead of Middling.</cbc:Description>
+  </cac:DiscrepancyResponse>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
       <cbc:ID>SCG-SBI-26-0193</cbc:ID>
       <cbc:IssueDate>2026-02-07</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>SCG-SEASON-2026</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>

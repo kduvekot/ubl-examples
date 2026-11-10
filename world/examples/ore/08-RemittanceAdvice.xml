@@ -8,7 +8,7 @@
   <cbc:UUID>c1cdbf15-9eb1-59b6-abc7-b3a50c56fdb2</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XUF">17297405</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">17037943</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -265,7 +265,7 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XUF">17297405</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">17037943</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF73SMINV260312</cbc:InvoicingPartyReference>

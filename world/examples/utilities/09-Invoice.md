@@ -340,6 +340,8 @@ Inside `InvoiceLine`:
   The household's metered consumption in March.
 - `LineExtensionAmount` = **32.90** (currencyID `XBL`)  
   14 × 2.35, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **WTER**  
+  ISO 20022 purpose code WTER: water bill.
 - `InvoicePeriod/StartDate` = **2026-03-01**  
   The month billed: March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
@@ -374,6 +376,8 @@ Inside `InvoiceLine`:
   The household's water use, on which the city charges its levy.
 - `LineExtensionAmount` = **5.88** (currencyID `XBL`)  
   14 × 0.42, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **WTER**  
+  ISO 20022 purpose code WTER: water bill.
 - `InvoicePeriod/StartDate` = **2026-03-01**  
   The month billed: March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
@@ -666,6 +670,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">32.90</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -697,6 +702,7 @@ Inside `InvoiceLine`:
     <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">5.88</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>

@@ -308,6 +308,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -339,6 +340,7 @@
     <cbc:Note>Collected for the city of Lumeport and paid on to it.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>WTER</cbc:PaymentPurposeCode>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>

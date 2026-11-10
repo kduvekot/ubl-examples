@@ -28,6 +28,8 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The supplier's usual term, which the customer applies to itself.
 - `InvoiceTypeCode` = **389**  
   UN/EDIFACT 1001 code 389: self-billed invoice.
+- `Note` = **Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.**  
+  The statement the self-billing agreement requires on every invoice.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the supplier's currency; it has three decimals.
 - `AccountingCostCode` = **200**  
@@ -36,6 +38,24 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of lines.
+- `DefaultLanguageCode` = **en**  
+  The language of the texts.
+
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2026-02-03**  
+  The week of the deliveries.
+- `EndDate` = **2026-02-05**  
+  The last trailer.
+
+### Contract Document Reference
+
+Inside `ContractDocumentReference`:
+
+- `ID` = **SCG-SEASON-2026**  
+  The season agreement between farm and ginnery, which allows the self-billing.
 
 ### Despatch Document Reference
 
@@ -43,6 +63,20 @@ Inside `DespatchDocumentReference`:
 
 - `ID` = **LCF-DN-26-0192**  
   The farm's delivery note.
+
+### Delivery Note Document Reference
+
+Inside `DeliveryNoteDocumentReference`:
+
+- `ID` = **LCF-DN-26-0192**  
+  The farm's delivery note.
+
+### Receipt Document Reference
+
+Inside `ReceiptDocumentReference`:
+
+- `ID` = **SCG-WB-26-0311**  
+  The weighbridge ticket of the gin.
 
 ### Accounting Customer Party
 
@@ -254,6 +288,31 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Payee Party
+
+Inside `PayeeParty`:
+
+- `PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lisavu Cotton Farm**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-02-05**  
+  The trailers were weighed at the gin.
+- `DeliveryLocation/Name` = **Selanu Cotton Ginnery, weighbridge**  
+  Where.
+
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **DAP** (schemeID `INCOTERMS`)  
+  Delivered at the gin: the farm brings the cotton with its own tractor.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -407,13 +466,28 @@ Inside `InvoiceLine`:
   <cbc:IssueDate>2026-02-07</cbc:IssueDate>
   <cbc:DueDate>2026-03-24</cbc:DueDate>
   <cbc:InvoiceTypeCode>389</cbc:InvoiceTypeCode>
+  <cbc:Note>Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-02-03</cbc:StartDate>
+    <cbc:EndDate>2026-02-05</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:ContractDocumentReference>
+    <cbc:ID>SCG-SEASON-2026</cbc:ID>
+  </cac:ContractDocumentReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LCF-DN-26-0192</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:DeliveryNoteDocumentReference>
+    <cbc:ID>LCF-DN-26-0192</cbc:ID>
+  </cac:DeliveryNoteDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>SCG-WB-26-0311</cbc:ID>
+  </cac:ReceiptDocumentReference>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -599,6 +673,23 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lisavu Cotton Farm</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Selanu Cotton Ginnery, weighbridge</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

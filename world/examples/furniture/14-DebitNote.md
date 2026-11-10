@@ -36,6 +36,17 @@ The store charges the furniture maker for transporting the returned sets back.
   The store books the income on its garden department.
 - `AccountingCost` = **Garden department**  
   The cost centre in words.
+- `LineCountNumeric` = **1**  
+  One line.
+- `DefaultLanguageCode` = **en**  
+  The language of the texts.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **BS-PO-26-0574**  
+  The order of the sets that went back.
 
 ### Billing Reference
 
@@ -308,6 +319,15 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
 
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **30 days net.**  
+  The store's terms.
+- `PaymentDueDate` = **2026-06-03**  
+  The due date.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -387,6 +407,11 @@ Inside `DebitNoteLine`:
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:OrderReference>
+    <cbc:ID>BS-PO-26-0574</cbc:ID>
+  </cac:OrderReference>
   <cac:BillingReference>
     <cac:CreditNoteDocumentReference>
       <cbc:ID>BF-CN-26-0579</cbc:ID>
@@ -612,6 +637,10 @@ Inside `DebitNoteLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>30 days net.</cbc:Note>
+    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

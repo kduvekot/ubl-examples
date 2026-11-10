@@ -26,7 +26,7 @@ The manufacturer tells the mine which invoices the transfer pays. Both companies
   The day the payment is made, one day before the due date.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the currency of the invoice paid; it has no minor unit.
-- `TotalPaymentAmount` = **17297405** (currencyID `XUF`)  
+- `TotalPaymentAmount` = **17037943** (currencyID `XUF`)  
   The amount transferred: the payable amount of the invoice.
 
 ### Accounting Customer Party
@@ -322,7 +322,7 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `DebitLineAmount` = **17297405** (currencyID `XUF`)  
+- `DebitLineAmount` = **17037943** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0** (currencyID `XUF`)  
   Nothing remains open on the invoice after this payment.
@@ -348,7 +348,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>c1cdbf15-9eb1-59b6-abc7-b3a50c56fdb2</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XUF">17297405</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">17037943</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -605,7 +605,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XUF">17297405</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">17037943</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF73SMINV260312</cbc:InvoicingPartyReference>

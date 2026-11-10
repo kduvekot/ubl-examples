@@ -34,6 +34,8 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of lines.
+- `DefaultLanguageCode` = **en**  
+  The language of the texts.
 
 ### Discrepancy Response
 
@@ -407,6 +409,13 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **Settled against the next payment to the seller, unless refunded.**  
+  How a credit note is settled in the world.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -693,6 +702,7 @@ Inside `CreditNoteLine`:
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>
     <cbc:ReferenceID>1</cbc:ReferenceID>
     <cbc:ResponseCode>CN</cbc:ResponseCode>
@@ -1002,6 +1012,9 @@ Inside `CreditNoteLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:PaymentTerms>
+    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

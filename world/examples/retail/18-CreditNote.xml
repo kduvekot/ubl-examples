@@ -12,6 +12,7 @@
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>
     <cbc:ReferenceID>1</cbc:ReferenceID>
     <cbc:ResponseCode>CN</cbc:ResponseCode>
@@ -321,6 +322,9 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:PaymentTerms>
+    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

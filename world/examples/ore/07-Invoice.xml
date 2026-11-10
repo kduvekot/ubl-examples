@@ -280,7 +280,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">345948</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">340759</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.serravona.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-10</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -294,10 +294,10 @@
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">2839657</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">14414504</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">14198286</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">2839657</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -308,18 +308,30 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">14414504</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">14414504</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">17297405</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">17297405</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">14198286</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">14198286</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">17037943</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">17037943</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="TNE">1788.4</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">14414504</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">14198286</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">17037943</cbc:TaxInclusiveLineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Moisture deduction</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.015</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="XUF">216218</cbc:Amount>
+      <cbc:BaseAmount currencyID="XUF">14414504</cbc:BaseAmount>
+    </cac:AllowanceCharge>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XUF">2839657</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
       <cbc:Name>Iron ore, lump</cbc:Name>
@@ -351,5 +363,8 @@
       <cbc:PriceAmount currencyID="XUF">8060</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="TNE">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:ItemPriceExtension>
+      <cbc:Amount currencyID="XUF">14414504</cbc:Amount>
+    </cac:ItemPriceExtension>
   </cac:InvoiceLine>
 </Invoice>
