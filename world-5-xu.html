@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Valdara Industries · UBL Example Documents</title>
-<link rel="stylesheet" href="site.css?v=5478ada644">
+<link rel="stylesheet" href="site.css?v=cfc6fda70b">
 </head>
 <body>
-<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="examples.html">Examples</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
 <h1 id="valdara-industries">Valdara Industries</h1>
@@ -154,7 +154,8 @@ books the ore train with the rail carrier.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
 to <a href="world-4-xu.html">Serravona Mining</a>: Monthly ore call-off.
 Delivery terms FCA mine: the buyer books the train, so the order names
-the rail carrier that will collect.</p>
+the rail carrier that will collect. <a
+href="example-ore-01-Order.html">See the example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p>
 <p>Also mentions: <a href="world-14-xu.html">Ferrano Rail Cargo</a> as
@@ -164,7 +165,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUT
 Execution Plan Request</strong></a> to <a
 href="world-14-xu.html">Ferrano Rail Cargo</a>: The manufacturer, as
 transport user, asks the rail carrier for wagons and a slot to move the
-ore from the mine to its siding.</p>
+ore from the mine to its siding. <a
+href="example-ore-02-TransportExecutionPlanRequest.html">See the example
+document</a>.</p>
 <p>In it as <code>SenderParty</code>, <code>TransportUserParty</code>,
 <code>Consignment/ConsigneeParty</code>.</p>
 <p>Also mentions: <a href="world-4-xu.html">Serravona Mining</a> as
@@ -173,7 +176,9 @@ ore from the mine to its siding.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> to <a href="world-4-xu.html">Serravona Mining</a>:
 The manufacturer tells the mine which invoices the transfer pays. Both
-companies bank at the same domestic bank.</p>
+companies bank at the same domestic bank. <a
+href="example-ore-08-RemittanceAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
@@ -186,7 +191,9 @@ companies bank at the same domestic bank.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
 Execution Plan</strong></a> from <a href="world-14-xu.html">Ferrano Rail
 Cargo</a>: The rail carrier confirms the train, the wagons and the
-schedule; this is the agreed transport plan.</p>
+schedule; this is the agreed transport plan. <a
+href="example-ore-03-TransportExecutionPlan.html">See the example
+document</a>.</p>
 <p>In it as <code>ReceiverParty</code>, <code>TransportUserParty</code>,
 <code>Consignment/ConsigneeParty</code>.</p>
 <p>Also mentions: <a href="world-4-xu.html">Serravona Mining</a> as
@@ -195,7 +202,8 @@ schedule; this is the agreed transport plan.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
 Advice</strong></a> from <a href="world-4-xu.html">Serravona Mining</a>:
 The mine announces what was loaded into which wagons, so the factory can
-plan the unloading.</p>
+plan the unloading. <a href="example-ore-04-DespatchAdvice.html">See the
+example document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-14-xu.html">Ferrano Rail Cargo</a> as
@@ -205,7 +213,8 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA">
 from <a href="world-14-xu.html">Ferrano Rail Cargo</a>: The rail
 consignment note goes to the party that contracted the carriage, the
 manufacturer; the mine is named as consignor because the ore is loaded
-there.</p>
+there. <a href="example-ore-05-Waybill.html">See the example
+document</a>.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>Shipment/Consignment/ConsigneeParty</code>.</p>
 <p>Also mentions: <a href="world-4-xu.html">Serravona Mining</a> as
@@ -214,7 +223,8 @@ there.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-14-xu.html">Ferrano Rail Cargo</a>: Under FCA the
 buyer pays the carriage: the rail carrier invoices the ore freight to
-the manufacturer, per tonne.</p>
+the manufacturer, per tonne. <a href="example-ore-06-Invoice.html">See
+the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -223,7 +233,8 @@ the manufacturer, per tonne.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-4-xu.html">Serravona Mining</a>: The mine invoices
 the ore; transport is not on this invoice because under FCA the buyer
-pays it. Payment goes to the mine's account at the seller's bank.</p>
+pays it. Payment goes to the mine's account at the seller's bank. <a
+href="example-ore-07-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -819,6 +830,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>545bb13</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>309cf4f</code></p></div></footer>
 </body>
 </html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example documents · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=cfc6fda70b">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html">World</a></li><li><a href="examples.html" aria-current="page">Examples</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="example-documents">Example documents</h1>
+<p>Real UBL 2.5 documents from the example world. Every document is
+valid against the UBL 2.5 schemas of the endorsed document types and
+against the world's code lists, and every value in it comes with the
+reason why it is that value. The documents are generated from the
+world's layers, so the parties, items, currencies and taxes in them
+agree with the rest of the world.</p>
+<p>These examples are kept apart from the examples of the OASIS UBL
+Technical Committee, whose history is in this repository's
+<code>xml/</code> folder.</p>
+<h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
+mine to the factory (domestic, Urvania)</h2>
+<p>The manufacturer buys ore free carrier (FCA) at the mine: the buyer
+arranges and pays the main transport, so the manufacturer, not the mine,
+books the ore train with the rail carrier.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Document</th>
+<th>From</th>
+<th>To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="example-ore-01-Order.html">Order</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+<td><a href="world-4-xu.html">Serravona Mining</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a
+href="example-ore-02-TransportExecutionPlanRequest.html">Transport
+Execution Plan Request</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+<td><a href="world-14-xu.html">Ferrano Rail Cargo</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="example-ore-03-TransportExecutionPlan.html">Transport
+Execution Plan</a></td>
+<td><a href="world-14-xu.html">Ferrano Rail Cargo</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="example-ore-04-DespatchAdvice.html">Despatch
+Advice</a></td>
+<td><a href="world-4-xu.html">Serravona Mining</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="example-ore-05-Waybill.html">Waybill</a></td>
+<td><a href="world-14-xu.html">Ferrano Rail Cargo</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="example-ore-06-Invoice.html">Invoice</a></td>
+<td><a href="world-14-xu.html">Ferrano Rail Cargo</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="example-ore-07-Invoice.html">Invoice</a></td>
+<td><a href="world-4-xu.html">Serravona Mining</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="example-ore-08-RemittanceAdvice.html">Remittance
+Advice</a></td>
+<td><a href="world-5-xu.html">Valdara Industries</a></td>
+<td><a href="world-4-xu.html">Serravona Mining</a></td>
+</tr>
+</tbody>
+</table>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>309cf4f</code></p></div></footer>
+</body>
+</html>

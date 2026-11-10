@@ -476,12 +476,94 @@
 <section id="S-04-rationale-choosing-and-documenting-values">
   <title>Choosing and documenting values</title>
   <para>
-    <emphasis>To be written.</emphasis> This section will describe what
-    the recorded reason for a value contains, where values come from
-    (the world data, UBL code lists, safe example identifiers, derived
-    values) and how the reasons are kept general rather than tied to one
-    country or process.
+    Every value in an example document comes with the reason why it is
+    that value. The reason is recorded where the value is made, and a
+    document with a value without a reason is not built.
   </para>
+  <section id="S-04-rationale-where-values-come-from">
+    <title>Where values come from</title>
+    <para>
+      A value in an example comes from one of these sources, and its
+      reason says which:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          <emphasis role="strong">The world's layers.</emphasis> Party
+          names, addresses, identifiers and accounts come from the
+          identity of the party; items, their identifiers, customs
+          tariff codes and prices from the items layer; currencies and
+          tax rates from the countries layer. These values are the same
+          in every document that uses them.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">The structure of the flow.</emphasis>
+          Which party sends the document, which receives it, and which
+          other parties it names, at which place, come from the flow of
+          documents, so the parties always sit where the business puts
+          them.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">The scenario of the flow.</emphasis>
+          Document numbers, dates, quantities and the references between
+          documents are what a flow adds; each carries its own reason,
+          in business terms.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Code lists.</emphasis> Coded values
+          come from the UBL default code lists or the world's own lists,
+          and the reason names the list and the meaning of the code.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Calculation.</emphasis> Amounts are
+          calculated from quantities and prices and rounded to the minor
+          unit of the currency; the reason states the calculation. Every
+          sum is stated in the document, as UBL requires, and never left
+          to the receiver.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  <section id="S-04-rationale-what-a-reason-contains">
+    <title>What a reason contains</title>
+    <para>
+      A reason says why the value fits the element: what the element
+      means in UBL, in this document, and what in the business situation
+      makes this the value. It refers to the UBL definition and to the
+      world's data first; a country rule or a specific process appears
+      only as an illustration. For example, the quantity on an invoice
+      for bulk ore is the weighed quantity from the despatch advice, not
+      the ordered quantity, and its reason says so.
+    </para>
+  </section>
+  <section id="S-04-rationale-only-what-ubl-25-endorses">
+    <title>Only what UBL 2.5 endorses</title>
+    <para>
+      The documents use only endorsed document types and elements, and
+      they are validated against the schemas of the endorsed document
+      types. Where UBL 2.5 replaced an element, the examples use the
+      replacement: a party's electronic address, for instance, is
+      carried in <literal>ElectronicAddress</literal>, because
+      <literal>Party/EndpointID</literal> is deprecated.
+    </para>
+  </section>
+  <section id="S-04-rationale-kept-apart-from-the-tc-examples">
+    <title>Kept apart from the TC examples</title>
+    <para>
+      The generated examples are kept in
+      <literal>world/examples/</literal>, apart from the examples of the
+      OASIS UBL Technical Committee in <literal>xml/</literal>, whose
+      history is the base of this repository.
+    </para>
+  </section>
 </section>
 
   <!-- Generated from note/src/05-validation.md by tools/md2docbook.sh; edit the Markdown, not this file. -->
@@ -597,14 +679,47 @@
       the countries layer.
     </para>
   </section>
+  <section id="S-05-validation-the-example-documents">
+    <title>The example documents</title>
+    <para>
+      Every example document is validated in the two phases UBL
+      prescribes:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          <emphasis role="strong">Phase 1:</emphasis> against the UBL
+          2.5 runtime schema of its document type, from the endorsed
+          set.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Phase 2:</emphasis> its coded values
+          against the code lists, using UBL's context/value associations
+          (CVA). It runs twice. First UBL's own phase 2, unchanged, with
+          the UBL default code lists: it must object to exactly the
+          world's country and currency codes and to nothing else. Then
+          the same associations with the world's code lists in place of
+          the defaults: here every value, and the list identifier where
+          a document gives one, must pass.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      The committed examples must also be up to date: they are generated
+      again from the world's layers and compared, so a change in the
+      world cannot leave an example behind.
+    </para>
+  </section>
   <section id="S-05-validation-still-to-come">
     <title>Still to come</title>
     <para>
       Later layers add their own checks: document lines with items and
       quantities, amounts and taxes that add up, dates in a believable
       order, references between documents, and quantities that agree
-      from order to invoice. Finally, every example document is
-      validated against the UBL schemas and the world's code lists.
+      from order to invoice. These apply to the example documents as
+      they are generated for every flow.
     </para>
   </section>
 </section>
