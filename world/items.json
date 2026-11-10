@@ -8,7 +8,7 @@
    "kind": "goods",
    "unit": "TNE",
    "price": {
-    "amount": 62.0,
+    "amount": 8060,
     "currency": "XUF"
    },
    "sellers_id": "SM-ORE-L",
@@ -29,7 +29,7 @@
    "kind": "goods",
    "unit": "H87",
    "price": {
-    "amount": 385.0,
+    "amount": 49900,
     "currency": "XUF"
    },
    "sellers_id": "VI-B180",
@@ -66,7 +66,7 @@
    "kind": "goods",
    "unit": "H87",
    "price": {
-    "amount": 46.0,
+    "amount": 5980,
     "currency": "XUF"
    },
    "sellers_id": "VI-C180",
@@ -88,7 +88,7 @@
    "kind": "goods",
    "unit": "TNE",
    "price": {
-    "amount": 640.0,
+    "amount": 83200,
     "currency": "XUF"
    },
    "sellers_id": "RR-PE-R1",
@@ -110,7 +110,7 @@
    "kind": "service",
    "unit": "TNE",
    "price": {
-    "amount": 95.0,
+    "amount": 12350,
     "currency": "XUF"
    },
    "sellers_id": "RR-SVC-01",
@@ -123,7 +123,7 @@
    "kind": "service",
    "unit": "KMT",
    "price": {
-    "amount": 1.85,
+    "amount": 240.5,
     "currency": "XUF"
    },
    "sellers_id": "TH-FTL",
@@ -136,7 +136,7 @@
    "kind": "service",
    "unit": "TNE",
    "price": {
-    "amount": 7.4,
+    "amount": 962,
     "currency": "XUF"
    },
    "sellers_id": "FRC-ORE",
@@ -149,7 +149,7 @@
    "kind": "service",
    "unit": "E48",
    "price": {
-    "amount": 420.0,
+    "amount": 54600,
     "currency": "XUF"
    },
    "sellers_id": "FRC-CTR",
@@ -162,7 +162,7 @@
    "kind": "service",
    "unit": "TNE",
    "price": {
-    "amount": 11.5,
+    "amount": 1495,
     "currency": "XUF"
    },
    "sellers_id": "FB-BULK",
@@ -175,7 +175,7 @@
    "kind": "service",
    "unit": "KWH",
    "price": {
-    "amount": 0.21,
+    "amount": 27.3,
     "currency": "XUF"
    },
    "sellers_id": "FE-KWH",
@@ -492,7 +492,7 @@
    "kind": "goods",
    "unit": "KGM",
    "price": {
-    "amount": 48,
+    "amount": 0.226,
     "currency": "XLC"
    },
    "sellers_id": "LCF-SC",
@@ -513,7 +513,7 @@
    "kind": "goods",
    "unit": "KGM",
    "price": {
-    "amount": 210,
+    "amount": 0.988,
     "currency": "XLC"
    },
    "sellers_id": "SCG-LINT",
@@ -535,7 +535,7 @@
    "kind": "service",
    "unit": "MON",
    "price": {
-    "amount": 4500,
+    "amount": 21.18,
     "currency": "XLC"
    },
    "sellers_id": "ST-BL",
@@ -548,7 +548,7 @@
    "kind": "service",
    "unit": "E34",
    "price": {
-    "amount": 90,
+    "amount": 0.424,
     "currency": "XLC"
    },
    "sellers_id": "ST-GB",

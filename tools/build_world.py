@@ -70,7 +70,9 @@ ITEMS = {i["id"]: i for i in world["items"]}
 
 def money(pr):
     cur = next(c["currency"] for c in world["countries"].values() if c["currency"]["code"] == pr["currency"])
-    return f"{pr['amount']:,.{cur['minor_units']}f} {pr['currency']}"
+    # a unit price keeps its own decimals when it is finer than the currency (27.3 ferra per kWh)
+    own = len(f"{pr['amount']}".rstrip("0").split(".")[1]) if "." in f"{pr['amount']}" else 0
+    return f"{pr['amount']:,.{max(cur['minor_units'], own)}f} {pr['currency']}"
 
 def sells(p):
     mine = [i for i in world["items"] if i["seller"] == p["id"]]

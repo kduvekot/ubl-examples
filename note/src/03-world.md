@@ -44,7 +44,13 @@ the ferra of Urvania (`XUF`), the lume of Bayvarra (`XBL`) and the coral of
 Lisavu (`XLC`). The convention limits the names: ISO 4217 already uses
 `XUA` and `XBA` to `XBD`, so Urvania's currency cannot start with an A and
 Bayvarra's not with A to D. Each code is checked against the current
-ISO 4217 list, so that none is a real code. Neither the countries nor
+ISO 4217 list, so that none is a real code.
+
+The three currencies also differ in their minor unit, because currencies
+do: the ferra has none (amounts are whole ferra, as with the Japanese yen),
+the lume has two decimals, and the coral three (as with the Bahraini or
+Kuwaiti dinar). An example that only ever shows two decimals hides a case
+that software must handle. Neither the countries nor
 the currencies are in the UBL default code lists. UBL lets trading partners
 use their own code lists in the second phase of validation, so the world
 has its own: copies of the UBL 2.5 default lists, unchanged, with the
@@ -78,8 +84,9 @@ the world, not a GTIN), a Harmonized System customs tariff code, the country
 of origin, dimensions, net and gross weight, and the packaging. Services
 have a unit and a price. Units of measure and packaging types are UN/ECE
 Recommendation 20 and 21 codes from the UBL default code lists. Prices are
-in the seller's currency, with no more decimals than the currency has; the
-coral of Lisavu has none.
+in the seller's currency. A unit price may be finer than the currency, as
+an electricity tariff of 27.3 ferra per kilowatt hour is, but every amount
+to pay is rounded to the currency's minor unit.
 
 Items connect the chains. The park bench is made with slats from the
 sawmill and film from the packaging maker; the distributor resells the

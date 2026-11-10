@@ -50,8 +50,8 @@ that party keeps its account.
 ## The items
 
 Units and packaging types must be codes of the UBL default lists; world
-item numbers carry a valid check digit and are unique; prices are positive,
-in the seller's currency and with the right number of decimals; gross
+item numbers carry a valid check digit and are unique; prices are positive
+and in the seller's currency; gross
 weight is at least net weight. Every party that bills or offers in a
 document has items to put on its lines, and every party with items bills
 or offers them. The exchange rates between the currencies agree with each

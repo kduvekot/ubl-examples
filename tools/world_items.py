@@ -12,8 +12,10 @@ Checks:
     lists (UN/ECE Recommendations 20 and 21);
   * the world item number of goods, issued by the identifier issuing agency,
     has a valid check digit and is unique;
-  * prices are positive, in the seller's currency, with no more decimals than
-    the currency has; gross weight is at least net weight;
+  * prices are positive and in the seller's currency; a unit price may have
+    more decimals than the currency (up to 4), because only amounts to pay
+    are rounded to the currency's minor unit; gross weight is at least net
+    weight;
   * customs tariff codes have the form of an HS subheading (6 digits);
   * a resold item points to an item of another seller, and a component of a
     bill of materials to an existing item; and the reseller or maker orders
@@ -34,6 +36,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 import world_data  # noqa: E402
 
+UNIT_PRICE_DECIMALS = 4   # a unit price may have more decimals than its currency
 ISSUER = "31-xu"   # the identifier issuing agency
 SELLING = {"Invoice": "AccountingSupplierParty", "CreditNote": "AccountingSupplierParty",
            "SelfBilledInvoice": "AccountingSupplierParty", "SelfBilledCreditNote": "AccountingSupplierParty",
@@ -78,8 +81,10 @@ def check(world):
             problems.append(f"{where}: price in {pr['currency']}, but the seller's currency is {cur['code']}")
         if pr["amount"] <= 0:
             problems.append(f"{where}: price must be positive")
-        if round(pr["amount"], cur["minor_units"]) != pr["amount"]:
-            problems.append(f"{where}: {pr['amount']} has more decimals than {cur['code']} allows ({cur['minor_units']})")
+        # a unit price may be finer than the currency (29.80 yen per kWh is normal); amounts to pay are
+        # rounded to the currency's minor units, which the amounts layer checks
+        if round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
+            problems.append(f"{where}: unit price {pr['amount']} has more than {UNIT_PRICE_DECIMALS} decimals")
         if it["kind"] == "goods" and not it.get("resale_of"):
             n = it.get("standard_id")
             if not n or not valid_item_number(n):
