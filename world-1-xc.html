@@ -3,23 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#1 Commercial Buyer · UBL Example Documents</title>
+<title>Velumi Trading · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="1-commercial-buyer">#1 Commercial Buyer</h1>
-<p><em>Country C (XC) · Commerce</em></p>
+<h1 id="velumi-trading">Velumi Trading</h1>
+<p><em>#1 Commercial Buyer · Country C (XC) · Commerce</em></p>
 <p>Needs the goods: orders from the distributor overseas and pays the
 invoice.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Velumi Trading</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>IC41859</code> (Island companies register)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>16 Reef Street<br>Selanu<br>Country C</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XC:IC41859</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Purchasing, <code>purchasing@velumi.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XC40BSEL0003665515</code> at <a href="world-22-xc.html">Bank
+of Selanu</a></td>
+</tr>
+<tr>
+<td>In Country C</td>
+<td>Currency: Coral (<code>XCW</code>). Taxes: An island without a
+general sales tax or VAT: the state is financed by customs duty and an
+import consumption tax, both collected by customs at import. Domestic
+sales carry no tax, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>The commercial buyer orders overseas and pays across borders. UBL
 lets it order from the distributor's catalogue, follow the goods through
 despatch and transport, match the invoice to the order and the receipt,
 and send a remittance advice with its payment.</p>
-<p>In this world it sends 3 and receives 6 documents, and is named in 13
+<p>In this world it sends 3 and receives 7 documents, and is named in 14
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-country-b--island-country-c">Overseas
@@ -34,174 +71,177 @@ the goods and its 3PL receives them.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-to <a href="world-6-xb.html">#6 Distributor</a>: Delivery terms CIF port
-of the island: the order names the buyer's 3PL as delivery party;
-freight and insurance are the seller's business.</p>
+to <a href="world-6-xb.html">Lumeway Distribution</a>: Delivery terms
+CIF port of the island: the order names the buyer's 3PL as delivery
+party; freight and insurance are the seller's business.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>AccountingCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a> as <code>Delivery/DeliveryParty</code>.</p></li>
+<p>Also mentions: <a href="world-9-xc.html">Nalevi Warehousing</a> as
+<code>Delivery/DeliveryParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> to <a href="world-24-xb.html">#24 Factor</a>: The
-buyer pays the factor from its account at the buyer's bank and says
-which invoices it settles.</p>
+Advice</strong></a> to <a href="world-24-xb.html">Harbourline
+Factoring</a>: The buyer pays the factor from its account at the buyer's
+bank and says which invoices it settles.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
-<code>AccountingSupplierParty</code>; <a href="world-22-xc.html">#22
-Buyer's Bank</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<code>AccountingSupplierParty</code>; <a href="world-22-xc.html">Bank of
+Selanu</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA"><strong>Catalogue</strong></a>
-from <a href="world-6-xb.html">#6 Distributor</a>: The export catalogue
-for the island customer.</p>
+from <a href="world-6-xb.html">Lumeway Distribution</a>: The export
+catalogue for the island customer.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
-<p>Also mentions: <a href="world-31-xa.html">#31 Identifier Issuing
+<p>Also mentions: <a href="world-31-xa.html">Codana Identification
 Agency</a> as
 <code>CatalogueLine/Item/StandardItemIdentification/IssuerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DIGITAL-AGREEMENT-SCHEMA"><strong>Digital
-Agreement</strong></a> from <a href="world-6-xb.html">#6
-Distributor</a>: Before trading, the two parties join the multilateral
+Agreement</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: Before trading, the two parties join the multilateral
 digital agreement that fixes which UBL processes they use.</p>
 <p>In it as <code>ParticipantParty</code>.</p>
-<p>Also mentions: <a href="world-32-xb.html">#32 Digital Agreement
-Governor</a> as <code>GovernorParty</code>.</p></li>
+<p>Also mentions: <a href="world-32-xb.html">Lumeport Trade Accord
+Council</a> as <code>GovernorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DIGITAL-CAPABILITY-SCHEMA"><strong>Digital
-Capability</strong></a> from <a href="world-32-xb.html">#32 Digital
-Agreement Governor</a>: The agreement's governor tells the buyer which
+Capability</strong></a> from <a href="world-32-xb.html">Lumeport Trade
+Accord Council</a>: The agreement's governor tells the buyer which
 documents the distributor can send and receive.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>BusinessParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
-Response</strong></a> from <a href="world-6-xb.html">#6 Distributor</a>:
-The distributor accepts and confirms the sailing it plans to use.</p>
+Response</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor accepts and confirms the sailing it
+plans to use.</p>
 <p>In it as <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-6-xb.html">#6 Distributor</a>: Goods, sea freight
-and insurance (CIF) in one invoice; the receivable is sold to the
-factor, who is the payee.</p>
+from <a href="world-6-xb.html">Lumeway Distribution</a>: Goods, sea
+freight and insurance (CIF) in one invoice; the receivable is sold to
+the factor, who is the payee.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-24-xb.html">#24 Factor</a> as
-<code>PayeeParty</code>; <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a> as <code>Delivery/DeliveryParty</code>.</p></li>
+<p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
+as <code>PayeeParty</code>; <a href="world-9-xc.html">Nalevi
+Warehousing</a> as <code>Delivery/DeliveryParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-STATEMENT-SCHEMA"><strong>Statement</strong></a>
-from <a href="world-24-xb.html">#24 Factor</a>: The factor, who now owns
-the receivables, sends the statement of account on behalf of the
-distributor.</p>
+from <a href="world-24-xb.html">Harbourline Factoring</a>: The factor,
+who now owns the receivables, sends the statement of account on behalf
+of the distributor.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>AccountingSupplierParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
-Instructions</strong></a> from <a href="world-6-xb.html">#6
-Distributor</a> to <a href="world-10-xb.html">#10 Freight Forwarder</a>:
+Instructions</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
 The distributor instructs its forwarder: book the sea freight to the
 island and insure the cargo (CIF obliges the seller to insure).</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p>
-<p>Also mentions: <a href="world-29-xb.html">#29 Insurer</a> as
+<p>Also mentions: <a href="world-29-xb.html">Wavesure Cargo
+Insurance</a> as
 <code>Shipment/InsurancePolicy/InsurerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PACKING-LIST-SCHEMA"><strong>Packing
-List</strong></a> from <a href="world-6-xb.html">#6 Distributor</a> to
-<a href="world-10-xb.html">#10 Freight Forwarder</a>: How the goods are
-packed in the container, for the forwarder's booking and the export
-declaration.</p>
+List</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
+How the goods are packed in the container, for the forwarder's booking
+and the export declaration.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> from <a href="world-10-xb.html">#10
-Freight Forwarder</a> to <a href="world-19-xb.html">#19 Customs
-(XB)</a>: The forwarder, as customs agent, declares the export for the
-distributor at the seaport.</p>
+Customs Declaration</strong></a> from <a
+href="world-10-xb.html">Bayforth Forwarding</a> to <a
+href="world-19-xb.html">Customs and Border Service of Country B</a>: The
+forwarder, as customs agent, declares the export for the distributor at
+the seaport.</p>
 <p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
 who receives the goods).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>ExporterParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
-Instructions</strong></a> from <a href="world-10-xb.html">#10 Freight
-Forwarder</a> to <a href="world-11-xb.html">#11 Ocean Carrier</a>: The
-forwarder, now acting as shipper, books the container with the ocean
+Instructions</strong></a> from <a href="world-10-xb.html">Bayforth
+Forwarding</a> to <a href="world-11-xb.html">Tidewell Ocean Lines</a>:
+The forwarder, now acting as shipper, books the container with the ocean
 carrier.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA"><strong>Bill
-of Lading</strong></a> from <a href="world-11-xb.html">#11 Ocean
-Carrier</a> to <a href="world-10-xb.html">#10 Freight Forwarder</a>: The
+of Lading</strong></a> from <a href="world-11-xb.html">Tidewell Ocean
+Lines</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
 negotiable bill of lading, issued to the forwarder that gave the
 instructions; it names the insurer of the cargo and the buyer's 3PL as
 party to notify on arrival.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
-<code>ConsignorParty</code>; <a href="world-9-xc.html">#9 Buyer's
-Warehouse (3PL)</a> as <code>Shipment/Consignment/NotifyParty</code>; <a
-href="world-29-xb.html">#29 Insurer</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<code>ConsignorParty</code>; <a href="world-9-xc.html">Nalevi
+Warehousing</a> as <code>Shipment/Consignment/NotifyParty</code>; <a
+href="world-29-xb.html">Wavesure Cargo Insurance</a> as
 <code>Shipment/InsurancePolicy/InsurerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-MANIFEST-SCHEMA"><strong>Manifest</strong></a>
-from <a href="world-11-xb.html">#11 Ocean Carrier</a> to <a
-href="world-19-xc.html">#19 Customs (XC)</a>: Before arrival the carrier
-lists the cargo on board for the island's customs.</p>
+from <a href="world-11-xb.html">Tidewell Ocean Lines</a> to <a
+href="world-19-xc.html">Island Customs Service</a>: Before arrival the
+carrier lists the cargo on board for the island's customs.</p>
 <p>In it as <code>ConsigneeParty</code> (The Party who receives the
 goods).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
-Status</strong></a> from <a href="world-16-xc.html">#16 Seaport (XC)</a>
-to <a href="world-10-xb.html">#10 Freight Forwarder</a>: The port of
+Status</strong></a> from <a href="world-16-xc.html">Port of Selanu</a>
+to <a href="world-10-xb.html">Bayforth Forwarding</a>: The port of
 discharge reports the container discharged and available.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p>
-<p>Also mentions: <a href="world-11-xb.html">#11 Ocean Carrier</a> as
+<p>Also mentions: <a href="world-11-xb.html">Tidewell Ocean Lines</a> as
 <code>Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
-Customs Declaration</strong></a> from <a href="world-3-xc.html">#3
-Customs Declarant / Broker</a> to <a href="world-19-xc.html">#19 Customs
-(XC)</a>: Under CIF the buyer clears the import; its licensed customs
+Customs Declaration</strong></a> from <a href="world-3-xc.html">Tevaro
+Customs Brokers</a> to <a href="world-19-xc.html">Island Customs
+Service</a>: Under CIF the buyer clears the import; its licensed customs
 broker files the declaration on its behalf.</p>
 <p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code> (The
 Party who makes the import declaration, or on whose behalf the import
 declaration is made, and who is the owner of the goods or has similar
 right of disposal over them at the time when the declaration is
 accepted) (The Party who receives the goods).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
-<code>ConsignorParty</code>; <a href="world-10-xb.html">#10 Freight
-Forwarder</a> as <code>FreightForwarderParty</code>.</p></li>
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<code>ConsignorParty</code>; <a href="world-10-xb.html">Bayforth
+Forwarding</a> as <code>FreightForwarderParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-6-xb.html">#6 Distributor</a> to
-<a href="world-9-xc.html">#9 Buyer's Warehouse (3PL)</a>: The
-distributor announces the shipment to the delivery party named in the
-order, the buyer's 3PL.</p>
+Advice</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a> to <a href="world-9-xc.html">Nalevi Warehousing</a>:
+The distributor announces the shipment to the delivery party named in
+the order, the buyer's 3PL.</p>
 <p>In it as <code>BuyerCustomerParty</code> (The buyer).</p>
-<p>Also mentions: <a href="world-11-xb.html">#11 Ocean Carrier</a> as
+<p>Also mentions: <a href="world-11-xb.html">Tidewell Ocean Lines</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
-Advice</strong></a> from <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a> to <a href="world-6-xb.html">#6 Distributor</a>: The buyer's
-3PL confirms what arrived, for the buyer.</p>
+Advice</strong></a> from <a href="world-9-xc.html">Nalevi
+Warehousing</a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
+The buyer's 3PL confirms what arrived, for the buyer.</p>
 <p>In it as <code>BuyerCustomerParty</code> (The buyer).</p></li>
 </ul>
 <h2
@@ -215,44 +255,62 @@ service (the road carrier) trucks the cargo to the airport.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA"><strong>Order
-Change</strong></a> to <a href="world-6-xb.html">#6 Distributor</a>:
-Part of the quantity is needed urgently: delivery by air, CPT island
-airport, at an extra charge.</p>
+Change</strong></a> to <a href="world-6-xb.html">Lumeway
+Distribution</a>: Part of the quantity is needed urgently: delivery by
+air, CPT island airport, at an extra charge.</p>
 <p>In it as <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a> as <code>Delivery/DeliveryParty</code>.</p></li>
+<p>Also mentions: <a href="world-9-xc.html">Nalevi Warehousing</a> as
+<code>Delivery/DeliveryParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
+Response</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor accepts the change: the urgent part
+goes by air at an extra charge, the rest stays on the ship.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
-Instructions</strong></a> from <a href="world-6-xb.html">#6
-Distributor</a> to <a href="world-10-xb.html">#10 Freight Forwarder</a>:
+Instructions</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
 The distributor asks its forwarder to book air freight for the urgent
 part.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-12-xc.html">#12 Air Carrier</a> to <a
-href="world-10-xb.html">#10 Freight Forwarder</a>: The air waybill; the
+from <a href="world-12-xc.html">Kelaro Air Cargo</a> to <a
+href="world-10-xb.html">Bayforth Forwarding</a>: The air waybill; the
 airline's road feeder service, run by the road carrier, is named as
 substitute carrier for the truck leg to the airport.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
-<code>ConsignorParty</code>; <a href="world-13-xa.html">#13 Road
-Carrier</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<code>ConsignorParty</code>; <a href="world-13-xa.html">Trasvia
+Haulage</a> as
 <code>Shipment/Consignment/SubstituteCarrierParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a> to <a href="world-9-xc.html">Nalevi Warehousing</a>:
+The distributor announces the air part to the buyer's 3PL, with the
+airline as carrier.</p>
+<p>In it as <code>BuyerCustomerParty</code> (The buyer).</p>
+<p>Also mentions: <a href="world-12-xc.html">Kelaro Air Cargo</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
-Status</strong></a> from <a href="world-17-xc.html">#17 Airport (XC)</a>
-to <a href="world-10-xb.html">#10 Freight Forwarder</a>: The island's
-air cargo terminal reports the cargo arrived and ready for customs
-clearance.</p>
+Status</strong></a> from <a href="world-17-xc.html">Selanu Airport
+Cargo</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
+island's air cargo terminal reports the cargo arrived and ready for
+customs clearance.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p>
-<p>Also mentions: <a href="world-12-xc.html">#12 Air Carrier</a> as
+<p>Also mentions: <a href="world-12-xc.html">Kelaro Air Cargo</a> as
 <code>Consignment/CarrierParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
@@ -264,10 +322,10 @@ receives the goods).</p>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-6-xb.html">#6 Distributor</a>, Country B</li>
-<li><a href="world-32-xb.html">#32 Digital Agreement Governor</a>,
+<li><a href="world-6-xb.html">Lumeway Distribution</a>, Country B</li>
+<li><a href="world-32-xb.html">Lumeport Trade Accord Council</a>,
 Country B</li>
-<li><a href="world-24-xb.html">#24 Factor</a>, Country B</li>
+<li><a href="world-24-xb.html">Harbourline Factoring</a>, Country B</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#1-xc">See Commercial Buyer on the map</a> ·
@@ -280,6 +338,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

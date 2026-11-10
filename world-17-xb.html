@@ -3,16 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#17 Airport (XB) · UBL Example Documents</title>
+<title>Lumeport Airport Cargo Terminal · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="17-airport-xb">#17 Airport (XB)</h1>
-<p><em>Country B (XB) · Logistics</em></p>
+<h1 id="lumeport-airport-cargo-terminal">Lumeport Airport Cargo
+Terminal</h1>
+<p><em>#17 Airport (XB) · Country B (XB) · Logistics</em></p>
 <p>Air cargo terminal for urgent shipments overseas.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Lumeport Airport Cargo Terminal</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>20412055</code> (Federal business register of Country B)</td>
+</tr>
+<tr>
+<td>Tax number</td>
+<td><code>CS-1236165</code> (State sales tax, <code>STT</code>)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>25 Airport Road<br>Lumeport Coastal State 38528<br>Country B</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XB:20412055</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Cargo acceptance, <code>cargo@lumeport-cargo.example</code></td>
+</tr>
+<tr>
+<td>In Country B</td>
+<td>Currency: Bel (<code>XBW</code>). Taxes: A federal country: its
+states levy a retail sales tax, charged once, on the sale to the final
+consumer. Sales to businesses that resell, exports and sales to public
+bodies are exempt, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>The airport handles urgent cargo. UBL status messages let it report
 acceptance, loading and departure, with the air waybill reference the
@@ -30,7 +67,7 @@ service (the road carrier) trucks the cargo to the airport.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
-Status</strong></a> to <a href="world-12-xc.html">#12 Air Carrier</a>:
+Status</strong></a> to <a href="world-12-xc.html">Kelaro Air Cargo</a>:
 The air cargo terminal reports the cargo accepted and built up for the
 flight.</p>
 <p>In it as <code>SenderParty</code>,
@@ -43,7 +80,7 @@ flight.</p>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-12-xc.html">#12 Air Carrier</a>, Country C</li>
+<li><a href="world-12-xc.html">Kelaro Air Cargo</a>, Country C</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#17-xb">See Airport (XB) on the map</a> · Country
@@ -56,6 +93,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

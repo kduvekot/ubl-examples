@@ -3,17 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#29 Insurer · UBL Example Documents</title>
+<title>Wavesure Cargo Insurance · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="29-insurer">#29 Insurer</h1>
-<p><em>Country B (XB) · Finance</em> · <em>proposed addition to the 26+C
-set</em></p>
+<h1 id="wavesure-cargo-insurance">Wavesure Cargo Insurance</h1>
+<p><em>#29 Insurer · Country B (XB) · Finance</em> · <em>proposed
+addition to the 26+C set</em></p>
 <p>Insures the cargo on its way overseas.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Wavesure Cargo Insurance</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>20411507</code> (Federal business register of Country B)</td>
+</tr>
+<tr>
+<td>Tax number</td>
+<td><code>CS-1234521</code> (State sales tax, <code>STT</code>)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>55 Beacon Avenue<br>Lumeport Coastal State 38524<br>Country B</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XB:20411507</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Cargo claims, <code>cargo@wavesure.example</code></td>
+</tr>
+<tr>
+<td>In Country B</td>
+<td>Currency: Bel (<code>XBW</code>). Taxes: A federal country: its
+states levy a retail sales tax, charged once, on the sale to the final
+consumer. Sales to businesses that resell, exports and sales to public
+bodies are exempt, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>An insurer covers the cargo while it travels. UBL transport documents
 can carry the insurance policy with the insurer, the policy holder and
@@ -34,27 +70,27 @@ the goods and its 3PL receives them.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
-Instructions</strong></a> from <a href="world-6-xb.html">#6
-Distributor</a> to <a href="world-10-xb.html">#10 Freight Forwarder</a>:
+Instructions</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
 The distributor instructs its forwarder: book the sea freight to the
 island and insure the cargo (CIF obliges the seller to insure).</p>
 <p>In it as <code>Shipment/InsurancePolicy/InsurerParty</code> (The
 Party providing the insurance under this Insurance Policy).</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA"><strong>Bill
-of Lading</strong></a> from <a href="world-11-xb.html">#11 Ocean
-Carrier</a> to <a href="world-10-xb.html">#10 Freight Forwarder</a>: The
+of Lading</strong></a> from <a href="world-11-xb.html">Tidewell Ocean
+Lines</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
 negotiable bill of lading, issued to the forwarder that gave the
 instructions; it names the insurer of the cargo and the buyer's 3PL as
 party to notify on arrival.</p>
 <p>In it as <code>Shipment/InsurancePolicy/InsurerParty</code> (The
 Party providing the insurance under this Insurance Policy).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
-<code>ConsignorParty</code>; <a href="world-1-xc.html">#1 Commercial
-Buyer</a> as <code>Shipment/Consignment/ConsigneeParty</code>; <a
-href="world-9-xc.html">#9 Buyer's Warehouse (3PL)</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<code>ConsignorParty</code>; <a href="world-1-xc.html">Velumi
+Trading</a> as <code>Shipment/Consignment/ConsigneeParty</code>; <a
+href="world-9-xc.html">Nalevi Warehousing</a> as
 <code>Shipment/Consignment/NotifyParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
@@ -71,6 +107,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

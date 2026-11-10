@@ -3,16 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#16 Seaport (XB) · UBL Example Documents</title>
+<title>Port of Lumeport · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="16-seaport-xb">#16 Seaport (XB)</h1>
-<p><em>Country B (XB) · Logistics</em></p>
+<h1 id="port-of-lumeport">Port of Lumeport</h1>
+<p><em>#16 Seaport (XB) · Country B (XB) · Logistics</em></p>
 <p>Port of loading: berths, container yard and vessel traffic.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Port of Lumeport</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>20411781</code> (Federal business register of Country B)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>11 Harbour Road<br>Lumeport Coastal State 38526<br>Country B</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XB:20411781</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Port control, <code>port@port-lumeport.example</code></td>
+</tr>
+<tr>
+<td>In Country B</td>
+<td>Currency: Bel (<code>XBW</code>). Taxes: A federal country: its
+states levy a retail sales tax, charged once, on the sale to the final
+consumer. Sales to businesses that resell, exports and sales to public
+bodies are exempt, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>The seaport loads the ship. UBL transport reports and status messages
 tell the port which containers are coming, and tell carriers and
@@ -32,12 +64,12 @@ the goods and its 3PL receives them.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
-Status</strong></a> to <a href="world-10-xb.html">#10 Freight
-Forwarder</a>: The port of loading reports the container loaded on
+Status</strong></a> to <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The port of loading reports the container loaded on
 board.</p>
 <p>In it as <code>SenderParty</code>,
 <code>Consignment/MainCarriageShipmentStage/TerminalOperatorParty</code>.</p>
-<p>Also mentions: <a href="world-11-xb.html">#11 Ocean Carrier</a> as
+<p>Also mentions: <a href="world-11-xb.html">Tidewell Ocean Lines</a> as
 <code>Consignment/CarrierParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
@@ -47,7 +79,7 @@ board.</p>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-10-xb.html">#10 Freight Forwarder</a>, Country B</li>
+<li><a href="world-10-xb.html">Bayforth Forwarding</a>, Country B</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#16-xb">See Seaport (XB) on the map</a> · Country
@@ -60,6 +92,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

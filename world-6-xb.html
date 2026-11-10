@@ -3,24 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#6 Distributor · UBL Example Documents</title>
+<title>Lumeway Distribution · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="6-distributor">#6 Distributor</h1>
-<p><em>Country B (XB) · Commerce</em></p>
+<h1 id="lumeway-distribution">Lumeway Distribution</h1>
+<p><em>#6 Distributor · Country B (XB) · Commerce</em></p>
 <p>Buys finished goods from #5, stocks them in its distribution centre,
 publishes the catalogue and sells to #26 and overseas to #1.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Lumeway Distribution</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>20410274</code> (Federal business register of Country B)</td>
+</tr>
+<tr>
+<td>Tax number</td>
+<td><code>US-1230822</code> (State sales tax, <code>STT</code>)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>43 Distribution Drive<br>Marrowdale Upland State 71214<br>Country
+B</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XB:20410274</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Customer service, <code>customer@lumeway.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XB18BLUM0001466206</code> at <a href="world-25-xb.html">Bank
+of Lumeport</a></td>
+</tr>
+<tr>
+<td>In Country B</td>
+<td>Currency: Bel (<code>XBW</code>). Taxes: A federal country: its
+states levy a retail sales tax, charged once, on the sale to the final
+consumer. Sales to businesses that resell, exports and sales to public
+bodies are exempt, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>The distributor publishes the catalogue its customers order from,
 buys from manufacturers and sells at home and overseas. UBL links all of
 it: catalogue items appear unchanged in orders, orders are referenced by
 despatch advices and invoices, and receipt advices confirm what actually
 arrived.</p>
-<p>In this world it sends 19 and receives 18 documents, and is named in
+<p>In this world it sends 22 and receives 22 documents, and is named in
 18 documents between other parties. They are listed per flow below.</p>
 <h2
 id="finished-goods-by-truck-across-the-land-border-country-a--country-b">Finished
@@ -35,130 +77,132 @@ import.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-to <a href="world-5-xa.html">#5 Manufacturer</a>: Delivery terms FCA
+to <a href="world-5-xa.html">Valdara Industries</a>: Delivery terms FCA
 seller's warehouse: the order names the warehouse where the goods are
 collected and the road carrier the distributor has booked to collect
 them.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p>
-<p>Also mentions: <a href="world-8-xa.html">#8 Seller's Warehouse
-(3PL)</a> as <code>Delivery/Despatch/DespatchParty</code>; <a
-href="world-13-xa.html">#13 Road Carrier</a> as
+<p>Also mentions: <a href="world-8-xa.html">Castrano Logistics</a> as
+<code>Delivery/Despatch/DespatchParty</code>; <a
+href="world-13-xa.html">Trasvia Haulage</a> as
 <code>Delivery/Despatch/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
-Execution Plan Request</strong></a> to <a href="world-13-xa.html">#13
-Road Carrier</a>: The distributor, as transport user, books the truck:
-collection at the seller's 3PL, delivery at its own distribution centre,
-across the border.</p>
+Execution Plan Request</strong></a> to <a
+href="world-13-xa.html">Trasvia Haulage</a>: The distributor, as
+transport user, books the truck: collection at the seller's 3PL,
+delivery at its own distribution centre, across the border.</p>
 <p>In it as <code>SenderParty</code>, <code>TransportUserParty</code>,
 <code>Consignment/ConsigneeParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
 <code>Consignment/ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
-Customs Declaration</strong></a> to <a href="world-19-xb.html">#19
-Customs (XB)</a>: The distributor, as importer, declares the goods in
-Country B and claims the preferential duty rate with the certificate of
-origin.</p>
+Customs Declaration</strong></a> to <a href="world-19-xb.html">Customs
+and Border Service of Country B</a>: The distributor, as importer,
+declares the goods in Country B and claims the preferential duty rate
+with the certificate of origin.</p>
 <p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
 <code>ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
-Advice</strong></a> to <a href="world-8-xa.html">#8 Seller's Warehouse
-(3PL)</a>: The distributor confirms what arrived to the party that
-despatched it, the 3PL, naming the manufacturer as seller.</p>
+Advice</strong></a> to <a href="world-8-xa.html">Castrano Logistics</a>:
+The distributor confirms what arrived to the party that despatched it,
+the 3PL, naming the manufacturer as seller.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
 <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> to <a href="world-5-xa.html">#5 Manufacturer</a>:
+Advice</strong></a> to <a href="world-5-xa.html">Valdara Industries</a>:
 The distributor announces the cross-border payment and which invoices it
 settles.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">#23 Seller's Bank</a> as
+<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
-Response</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a>: The manufacturer accepts the order and confirms the
+Response</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a>: The manufacturer accepts the order and confirms the
 collection date at its warehouse.</p>
 <p>In it as <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-8-xa.html">#8 Seller's Warehouse
-(3PL)</a>: The 3PL picks and loads the goods for the manufacturer and
-announces the despatch; it knows the goods and the truck but not the
+Advice</strong></a> from <a href="world-8-xa.html">Castrano
+Logistics</a>: The 3PL picks and loads the goods for the manufacturer
+and announces the despatch; it knows the goods and the truck but not the
 prices.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
-<code>SellerSupplierParty</code>; <a href="world-13-xa.html">#13 Road
-Carrier</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
+<code>SellerSupplierParty</code>; <a href="world-13-xa.html">Trasvia
+Haulage</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-ORIGIN-SCHEMA"><strong>Certificate
-of Origin</strong></a> from <a href="world-20-xa.html">#20 Chamber of
-Commerce (XA)</a>: The chamber endorses the certificate and makes it
+of Origin</strong></a> from <a href="world-20-xa.html">Ferrano Chamber
+of Commerce</a>: The chamber endorses the certificate and makes it
 available to the importer, who needs it for the import declaration.</p>
 <p>In it as <code>ImporterParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
 <code>ExporterParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-13-xa.html">#13 Road Carrier</a>: The road
+from <a href="world-13-xa.html">Trasvia Haulage</a>: The road
 consignment note goes to the party that booked the truck, the
 distributor; it names the manufacturer as consignor.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>Shipment/Consignment/ConsigneeParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
 <code>ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
-Status</strong></a> from <a href="world-13-xa.html">#13 Road
-Carrier</a>: The carrier reports that the truck has cleared the border
-and gives the expected arrival time.</p>
+Status</strong></a> from <a href="world-13-xa.html">Trasvia Haulage</a>:
+The carrier reports that the truck has cleared the border and gives the
+expected arrival time.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FREIGHT-INVOICE-SCHEMA"><strong>Freight
-Invoice</strong></a> from <a href="world-13-xa.html">#13 Road
-Carrier</a>: The carrier invoices the transport to the party that booked
-it; under FCA that is the buyer, not the seller.</p>
-<p>In it as <code>AccountingCustomerParty</code>.</p></li>
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-13-xa.html">Trasvia Haulage</a>: The carrier
+invoices the transport to the party that booked it; under FCA that is
+the buyer, not the seller. A transport service is invoiced with the
+ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-5-xa.html">#5 Manufacturer</a>: The manufacturer
+from <a href="world-5-xa.html">Valdara Industries</a>: The manufacturer
 invoices the goods only (no freight under FCA) and asks for payment to
 its account at the seller's bank.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">#23 Seller's Bank</a> as
+<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a> to <a href="world-19-xa.html">#19 Customs (XA)</a>:
-Goods leave Country A: the manufacturer, as exporter, declares them to
-the customs office at the land border.</p>
+Customs Declaration</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a> to <a href="world-19-xa.html">Customs Administration of
+Country A</a>: Goods leave Country A: the manufacturer, as exporter,
+declares them to the customs office at the land border.</p>
 <p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
 who receives the goods).</p>
-<p>Also mentions: <a href="world-13-xa.html">#13 Road Carrier</a> as
+<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
 <code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-ORIGIN-SCHEMA"><strong>Certificate
-of Origin</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a> to <a href="world-20-xa.html">#20 Chamber of Commerce
-(XA)</a>: The goods qualify for preferential duty in Country B; the
+of Origin</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a> to <a href="world-20-xa.html">Ferrano Chamber of
+Commerce</a>: The goods qualify for preferential duty in Country B; the
 manufacturer applies to its chamber of commerce for a certificate of
 origin.</p>
 <p>In it as <code>ImporterParty</code> (The Party who imports the goods,
@@ -176,7 +220,7 @@ destination. The intermodal hub loads the containers on the train.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-to <a href="world-5-xa.html">#5 Manufacturer</a>: Delivery terms DAP
+to <a href="world-5-xa.html">Valdara Industries</a>: Delivery terms DAP
 distributor's siding: no carrier in the order, because the seller
 chooses and pays the transport.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
@@ -186,45 +230,47 @@ chooses and pays the transport.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-5-xa.html">#5 Manufacturer</a>: Under DAP the price
-includes the transport, so the invoice covers goods and freight.</p>
+from <a href="world-5-xa.html">Valdara Industries</a>: Under DAP the
+price includes the transport, so the invoice covers goods and
+freight.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">#23 Seller's Bank</a> as
+<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
-Execution Plan Request</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a> to <a href="world-14-xa.html">#14 Rail Carrier</a>:
-Under DAP the manufacturer is the transport user; it books a container
-train to the distributor's siding.</p>
+Execution Plan Request</strong></a> from <a
+href="world-5-xa.html">Valdara Industries</a> to <a
+href="world-14-xa.html">Ferrano Rail Cargo</a>: Under DAP the
+manufacturer is the transport user; it books a container train to the
+distributor's siding.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> from <a href="world-14-xa.html">#14 Rail
-Carrier</a> to <a href="world-5-xa.html">#5 Manufacturer</a>: The rail
+Execution Plan</strong></a> from <a href="world-14-xa.html">Ferrano Rail
+Cargo</a> to <a href="world-5-xa.html">Valdara Industries</a>: The rail
 carrier confirms the train and the slot at the intermodal hub.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA"><strong>Transit
-Customs Declaration</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a> to <a href="world-19-xa.html">#19 Customs (XA)</a>: The
-goods travel under customs transit from Country A to the destination in
-Country B; the manufacturer, as holder of the procedure, lodges the
-declaration at the office of departure.</p>
+Customs Declaration</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a> to <a href="world-19-xa.html">Customs Administration of
+Country A</a>: The goods travel under customs transit from Country A to
+the destination in Country B; the manufacturer, as holder of the
+procedure, lodges the declaration at the office of departure.</p>
 <p>In it as <code>ConsigneeParty</code> (The Party who receives the
 goods).</p>
-<p>Also mentions: <a href="world-14-xa.html">#14 Rail Carrier</a> as
+<p>Also mentions: <a href="world-14-xa.html">Ferrano Rail Cargo</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-14-xa.html">#14 Rail Carrier</a> to <a
-href="world-5-xa.html">#5 Manufacturer</a>: The rail consignment note
+from <a href="world-14-xa.html">Ferrano Rail Cargo</a> to <a
+href="world-5-xa.html">Valdara Industries</a>: The rail consignment note
 goes to the transport user, now the seller.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
@@ -238,33 +284,55 @@ pays the freight; the risk passes when the barge is loaded.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-to <a href="world-5-xa.html">#5 Manufacturer</a>: Delivery terms CPT
+to <a href="world-5-xa.html">Valdara Industries</a>: Delivery terms CPT
 river quay: the seller books the barge, the buyer collects at the
 quay.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p></li>
 </ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a>: The manufacturer announces the lot loaded on the barge,
+so the distributor can arrange collection at the quay.</p>
+<p>In it as <code>DeliveryCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-15-xa.html">Fiumella Barges</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-5-xa.html">Valdara Industries</a>: Under CPT the
+seller has paid the barge, so the price includes carriage to the
+quay.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
-Execution Plan Request</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a> to <a href="world-15-xa.html">#15 Inland Waterway
-Carrier</a>: The manufacturer, as transport user under CPT, asks the
-inland waterway carrier for barge capacity.</p>
+Execution Plan Request</strong></a> from <a
+href="world-5-xa.html">Valdara Industries</a> to <a
+href="world-15-xa.html">Fiumella Barges</a>: The manufacturer, as
+transport user under CPT, asks the inland waterway carrier for barge
+capacity.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> from <a href="world-15-xa.html">#15 Inland
-Waterway Carrier</a> to <a href="world-5-xa.html">#5 Manufacturer</a>:
-The barge operator confirms the vessel and the sailing.</p>
+Execution Plan</strong></a> from <a href="world-15-xa.html">Fiumella
+Barges</a> to <a href="world-5-xa.html">Valdara Industries</a>: The
+barge operator confirms the vessel and the sailing.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-15-xa.html">#15 Inland Waterway Carrier</a> to <a
-href="world-5-xa.html">#5 Manufacturer</a>: The inland waterway
+from <a href="world-15-xa.html">Fiumella Barges</a> to <a
+href="world-5-xa.html">Valdara Industries</a>: The inland waterway
 consignment note, issued to the shipper.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
@@ -281,86 +349,101 @@ stock levels so the distributor can plan replenishment.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA"><strong>Catalogue</strong></a>
-to <a href="world-26-xb.html">#26 Retailer</a>: The distributor's
+to <a href="world-26-xb.html">Brightmarket Stores</a>: The distributor's
 catalogue of items and prices; items carry the identifiers of the
 identifier issuing agency.</p>
 <p>In it as <code>ProviderParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-31-xa.html">#31 Identifier Issuing
+<p>Also mentions: <a href="world-31-xa.html">Codana Identification
 Agency</a> as
 <code>CatalogueLine/Item/StandardItemIdentification/IssuerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
-Execution Plan Request</strong></a> to <a href="world-13-xa.html">#13
-Road Carrier</a>: Because it sold DDP, the distributor books the
-outgoing truck from its distribution centre to the shop.</p>
+Execution Plan Request</strong></a> to <a
+href="world-13-xa.html">Trasvia Haulage</a>: Because it sold DDP, the
+distributor books the outgoing truck from its distribution centre to the
+shop.</p>
 <p>In it as <code>SenderParty</code>, <code>TransportUserParty</code>,
 <code>Consignment/ConsignorParty</code>.</p>
-<p>Also mentions: <a href="world-26-xb.html">#26 Retailer</a> as
+<p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> to <a href="world-26-xb.html">#26 Retailer</a>: The
-distributor announces the delivery and the truck that brings it.</p>
+Advice</strong></a> to <a href="world-26-xb.html">Brightmarket
+Stores</a>: The distributor announces the delivery and the truck that
+brings it.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-13-xa.html">#13 Road Carrier</a> as
+<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-to <a href="world-26-xb.html">#26 Retailer</a>: The distributor has sold
-its receivables to the factor, so the invoice names the factor as
-payee.</p>
+to <a href="world-26-xb.html">Brightmarket Stores</a>: The distributor
+has sold its receivables to the factor, so the invoice names the factor
+as payee.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-24-xb.html">#24 Factor</a> as
-<code>PayeeParty</code>.</p></li>
+<p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
+as <code>PayeeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
+Note</strong></a> to <a href="world-26-xb.html">Brightmarket Stores</a>:
+The shop reported a damaged carton in its receipt advice; the
+distributor credits it. The factor stays the payee, because it owns the
+receivable being reduced.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
+as <code>PayeeParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORECAST-SCHEMA"><strong>Forecast</strong></a>
-from <a href="world-26-xb.html">#26 Retailer</a>: The retailer forecasts
-its sales for the coming weeks.</p>
+from <a href="world-26-xb.html">Brightmarket Stores</a>: The retailer
+forecasts its sales for the coming weeks.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RETAIL-EVENT-SCHEMA"><strong>Retail
-Event</strong></a> from <a href="world-26-xb.html">#26 Retailer</a>: A
-promotion next month will lift demand; the distributor needs to know
-before it orders from the manufacturer.</p>
+Event</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: A promotion next month will lift demand; the distributor
+needs to know before it orders from the manufacturer.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVENTORY-REPORT-SCHEMA"><strong>Inventory
-Report</strong></a> from <a href="world-26-xb.html">#26 Retailer</a>:
-The retailer reports its stock per item, so the distributor can
-replenish.</p>
+Report</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: The retailer reports its stock per item, so the distributor
+can replenish.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-from <a href="world-26-xb.html">#26 Retailer</a>: Delivery terms DDP
-retailer's shop: the order names only where to deliver; transport is the
-distributor's business.</p>
+from <a href="world-26-xb.html">Brightmarket Stores</a>: Delivery terms
+DDP retailer's shop: the order names only where to deliver; transport is
+the distributor's business.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-13-xa.html">#13 Road Carrier</a>: The outgoing
+from <a href="world-13-xa.html">Trasvia Haulage</a>: The outgoing
 consignment note goes to the distributor, who contracted the carriage;
 the retailer is only the consignee.</p>
 <p>In it as <code>ReceiverParty</code>, <code>ConsignorParty</code>.</p>
-<p>Also mentions: <a href="world-26-xb.html">#26 Retailer</a> as
+<p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FREIGHT-INVOICE-SCHEMA"><strong>Freight
-Invoice</strong></a> from <a href="world-13-xa.html">#13 Road
-Carrier</a>: Under DDP the seller pays the transport, so the carrier
-invoices the distributor.</p>
-<p>In it as <code>AccountingCustomerParty</code>.</p></li>
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-13-xa.html">Trasvia Haulage</a>: Under DDP the
+seller pays the transport, so the carrier invoices the distributor. A
+transport service is invoiced with the ordinary Invoice; the Freight
+Invoice is deprecated in UBL 2.5.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
-Advice</strong></a> from <a href="world-26-xb.html">#26 Retailer</a>:
-The shop confirms the delivery and reports a damaged carton.</p>
+Advice</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: The shop confirms the delivery and reports a damaged
+carton.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
 </ul>
@@ -377,169 +460,181 @@ the goods and its 3PL receives them.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA"><strong>Catalogue</strong></a>
-to <a href="world-1-xc.html">#1 Commercial Buyer</a>: The export
-catalogue for the island customer.</p>
+to <a href="world-1-xc.html">Velumi Trading</a>: The export catalogue
+for the island customer.</p>
 <p>In it as <code>ProviderParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-31-xa.html">#31 Identifier Issuing
+<p>Also mentions: <a href="world-31-xa.html">Codana Identification
 Agency</a> as
 <code>CatalogueLine/Item/StandardItemIdentification/IssuerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DIGITAL-AGREEMENT-SCHEMA"><strong>Digital
-Agreement</strong></a> to <a href="world-1-xc.html">#1 Commercial
-Buyer</a>: Before trading, the two parties join the multilateral digital
-agreement that fixes which UBL processes they use.</p>
+Agreement</strong></a> to <a href="world-1-xc.html">Velumi Trading</a>:
+Before trading, the two parties join the multilateral digital agreement
+that fixes which UBL processes they use.</p>
 <p>In it as <code>ParticipantParty</code>.</p>
-<p>Also mentions: <a href="world-32-xb.html">#32 Digital Agreement
-Governor</a> as <code>GovernorParty</code>.</p></li>
+<p>Also mentions: <a href="world-32-xb.html">Lumeport Trade Accord
+Council</a> as <code>GovernorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
-Response</strong></a> to <a href="world-1-xc.html">#1 Commercial
-Buyer</a>: The distributor accepts and confirms the sailing it plans to
-use.</p>
+Response</strong></a> to <a href="world-1-xc.html">Velumi Trading</a>:
+The distributor accepts and confirms the sailing it plans to use.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
-Instructions</strong></a> to <a href="world-10-xb.html">#10 Freight
-Forwarder</a>: The distributor instructs its forwarder: book the sea
+Instructions</strong></a> to <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The distributor instructs its forwarder: book the sea
 freight to the island and insure the cargo (CIF obliges the seller to
 insure).</p>
 <p>In it as <code>ConsignorParty</code>.</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>; <a
-href="world-29-xb.html">#29 Insurer</a> as
+href="world-29-xb.html">Wavesure Cargo Insurance</a> as
 <code>Shipment/InsurancePolicy/InsurerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PACKING-LIST-SCHEMA"><strong>Packing
-List</strong></a> to <a href="world-10-xb.html">#10 Freight
-Forwarder</a>: How the goods are packed in the container, for the
-forwarder's booking and the export declaration.</p>
+List</strong></a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
+How the goods are packed in the container, for the forwarder's booking
+and the export declaration.</p>
 <p>In it as <code>ConsignorParty</code>.</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> to <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a>: The distributor announces the shipment to the delivery party
-named in the order, the buyer's 3PL.</p>
+Advice</strong></a> to <a href="world-9-xc.html">Nalevi Warehousing</a>:
+The distributor announces the shipment to the delivery party named in
+the order, the buyer's 3PL.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
-<code>BuyerCustomerParty</code>; <a href="world-11-xb.html">#11 Ocean
-Carrier</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
+<code>BuyerCustomerParty</code>; <a href="world-11-xb.html">Tidewell
+Ocean Lines</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-to <a href="world-1-xc.html">#1 Commercial Buyer</a>: Goods, sea freight
-and insurance (CIF) in one invoice; the receivable is sold to the
-factor, who is the payee.</p>
+to <a href="world-1-xc.html">Velumi Trading</a>: Goods, sea freight and
+insurance (CIF) in one invoice; the receivable is sold to the factor,
+who is the payee.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-24-xb.html">#24 Factor</a> as
-<code>PayeeParty</code>; <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a> as <code>Delivery/DeliveryParty</code>.</p></li>
+<p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
+as <code>PayeeParty</code>; <a href="world-9-xc.html">Nalevi
+Warehousing</a> as <code>Delivery/DeliveryParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-from <a href="world-1-xc.html">#1 Commercial Buyer</a>: Delivery terms
-CIF port of the island: the order names the buyer's 3PL as delivery
-party; freight and insurance are the seller's business.</p>
+from <a href="world-1-xc.html">Velumi Trading</a>: Delivery terms CIF
+port of the island: the order names the buyer's 3PL as delivery party;
+freight and insurance are the seller's business.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a> as <code>Delivery/DeliveryParty</code>.</p></li>
+<p>Also mentions: <a href="world-9-xc.html">Nalevi Warehousing</a> as
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-10-xb.html">Bayforth Forwarding</a>: The forwarder
+invoices what it arranged for the distributor: sea freight, export
+clearance and the cargo insurance premium (CIF obliges the seller to
+insure).</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-11-xb.html">Tidewell Ocean Lines</a> as
+<code>Delivery/Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
-Advice</strong></a> from <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a>: The buyer's 3PL confirms what arrived, for the buyer.</p>
+Advice</strong></a> from <a href="world-9-xc.html">Nalevi
+Warehousing</a>: The buyer's 3PL confirms what arrived, for the
+buyer.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>BuyerCustomerParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DIGITAL-CAPABILITY-SCHEMA"><strong>Digital
-Capability</strong></a> from <a href="world-32-xb.html">#32 Digital
-Agreement Governor</a> to <a href="world-1-xc.html">#1 Commercial
-Buyer</a>: The agreement's governor tells the buyer which documents the
-distributor can send and receive.</p>
+Capability</strong></a> from <a href="world-32-xb.html">Lumeport Trade
+Accord Council</a> to <a href="world-1-xc.html">Velumi Trading</a>: The
+agreement's governor tells the buyer which documents the distributor can
+send and receive.</p>
 <p>In it as <code>BusinessParty</code> (The Party who owns these Digital
 Capabilities).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> from <a href="world-10-xb.html">#10
-Freight Forwarder</a> to <a href="world-19-xb.html">#19 Customs
-(XB)</a>: The forwarder, as customs agent, declares the export for the
-distributor at the seaport.</p>
+Customs Declaration</strong></a> from <a
+href="world-10-xb.html">Bayforth Forwarding</a> to <a
+href="world-19-xb.html">Customs and Border Service of Country B</a>: The
+forwarder, as customs agent, declares the export for the distributor at
+the seaport.</p>
 <p>In it as <code>ExporterParty</code> (The Party who exports the goods
 or has similar right of disposal over them at the time of export).</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>CustomsDeclaration/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
-Instructions</strong></a> from <a href="world-10-xb.html">#10 Freight
-Forwarder</a> to <a href="world-11-xb.html">#11 Ocean Carrier</a>: The
-forwarder, now acting as shipper, books the container with the ocean
+Instructions</strong></a> from <a href="world-10-xb.html">Bayforth
+Forwarding</a> to <a href="world-11-xb.html">Tidewell Ocean Lines</a>:
+The forwarder, now acting as shipper, books the container with the ocean
 carrier.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA"><strong>Bill
-of Lading</strong></a> from <a href="world-11-xb.html">#11 Ocean
-Carrier</a> to <a href="world-10-xb.html">#10 Freight Forwarder</a>: The
+of Lading</strong></a> from <a href="world-11-xb.html">Tidewell Ocean
+Lines</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
 negotiable bill of lading, issued to the forwarder that gave the
 instructions; it names the insurer of the cargo and the buyer's 3PL as
 party to notify on arrival.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>; <a
-href="world-9-xc.html">#9 Buyer's Warehouse (3PL)</a> as
+href="world-9-xc.html">Nalevi Warehousing</a> as
 <code>Shipment/Consignment/NotifyParty</code>; <a
-href="world-29-xb.html">#29 Insurer</a> as
+href="world-29-xb.html">Wavesure Cargo Insurance</a> as
 <code>Shipment/InsurancePolicy/InsurerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-MANIFEST-SCHEMA"><strong>Manifest</strong></a>
-from <a href="world-11-xb.html">#11 Ocean Carrier</a> to <a
-href="world-19-xc.html">#19 Customs (XC)</a>: Before arrival the carrier
-lists the cargo on board for the island's customs.</p>
+from <a href="world-11-xb.html">Tidewell Ocean Lines</a> to <a
+href="world-19-xc.html">Island Customs Service</a>: Before arrival the
+carrier lists the cargo on board for the island's customs.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
-Customs Declaration</strong></a> from <a href="world-3-xc.html">#3
-Customs Declarant / Broker</a> to <a href="world-19-xc.html">#19 Customs
-(XC)</a>: Under CIF the buyer clears the import; its licensed customs
+Customs Declaration</strong></a> from <a href="world-3-xc.html">Tevaro
+Customs Brokers</a> to <a href="world-19-xc.html">Island Customs
+Service</a>: Under CIF the buyer clears the import; its licensed customs
 broker files the declaration on its behalf.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
-<code>ImporterParty</code>; <a href="world-1-xc.html">#1 Commercial
-Buyer</a> as <code>ConsigneeParty</code>; <a href="world-10-xb.html">#10
-Freight Forwarder</a> as <code>FreightForwarderParty</code>.</p></li>
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
+<code>ImporterParty</code>; <a href="world-1-xc.html">Velumi Trading</a>
+as <code>ConsigneeParty</code>; <a href="world-10-xb.html">Bayforth
+Forwarding</a> as <code>FreightForwarderParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-STATEMENT-SCHEMA"><strong>Statement</strong></a>
-from <a href="world-24-xb.html">#24 Factor</a> to <a
-href="world-1-xc.html">#1 Commercial Buyer</a>: The factor, who now owns
-the receivables, sends the statement of account on behalf of the
+from <a href="world-24-xb.html">Harbourline Factoring</a> to <a
+href="world-1-xc.html">Velumi Trading</a>: The factor, who now owns the
+receivables, sends the statement of account on behalf of the
 distributor.</p>
 <p>In it as <code>AccountingSupplierParty</code> (The accounting
 supplier party).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> from <a href="world-1-xc.html">#1 Commercial
-Buyer</a> to <a href="world-24-xb.html">#24 Factor</a>: The buyer pays
-the factor from its account at the buyer's bank and says which invoices
-it settles.</p>
+Advice</strong></a> from <a href="world-1-xc.html">Velumi Trading</a> to
+<a href="world-24-xb.html">Harbourline Factoring</a>: The buyer pays the
+factor from its account at the buyer's bank and says which invoices it
+settles.</p>
 <p>In it as <code>AccountingSupplierParty</code> (The accounting
 supplier party).</p>
-<p>Also mentions: <a href="world-22-xc.html">#22 Buyer's Bank</a> as
+<p>Also mentions: <a href="world-22-xc.html">Bank of Selanu</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <h2
@@ -552,38 +647,63 @@ service (the road carrier) trucks the cargo to the airport.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
+Response</strong></a> to <a href="world-1-xc.html">Velumi Trading</a>:
+The distributor accepts the change: the urgent part goes by air at an
+extra charge, the rest stays on the ship.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
-Instructions</strong></a> to <a href="world-10-xb.html">#10 Freight
-Forwarder</a>: The distributor asks its forwarder to book air freight
+Instructions</strong></a> to <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The distributor asks its forwarder to book air freight
 for the urgent part.</p>
 <p>In it as <code>ConsignorParty</code>.</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> to <a href="world-9-xc.html">Nalevi Warehousing</a>:
+The distributor announces the air part to the buyer's 3PL, with the
+airline as carrier.</p>
+<p>In it as <code>DespatchSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
+<code>BuyerCustomerParty</code>; <a href="world-12-xc.html">Kelaro Air
+Cargo</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA"><strong>Order
-Change</strong></a> from <a href="world-1-xc.html">#1 Commercial
-Buyer</a>: Part of the quantity is needed urgently: delivery by air, CPT
-island airport, at an extra charge.</p>
+Change</strong></a> from <a href="world-1-xc.html">Velumi Trading</a>:
+Part of the quantity is needed urgently: delivery by air, CPT island
+airport, at an extra charge.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-9-xc.html">#9 Buyer's Warehouse
-(3PL)</a> as <code>Delivery/DeliveryParty</code>.</p></li>
+<p>Also mentions: <a href="world-9-xc.html">Nalevi Warehousing</a> as
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-10-xb.html">Bayforth Forwarding</a>: The forwarder
+invoices the air freight, including the road feeder leg, to the
+distributor, who sold carriage paid to the island airport.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-12-xc.html">Kelaro Air Cargo</a> as
+<code>Delivery/Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-12-xc.html">#12 Air Carrier</a> to <a
-href="world-10-xb.html">#10 Freight Forwarder</a>: The air waybill; the
+from <a href="world-12-xc.html">Kelaro Air Cargo</a> to <a
+href="world-10-xb.html">Bayforth Forwarding</a>: The air waybill; the
 airline's road feeder service, run by the road carrier, is named as
 substitute carrier for the truck leg to the airport.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>; <a
-href="world-13-xa.html">#13 Road Carrier</a> as
+href="world-13-xa.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/SubstituteCarrierParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
@@ -601,18 +721,17 @@ href="world-13-xa.html">#13 Road Carrier</a> as
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
-<li><a href="world-13-xa.html">#13 Road Carrier</a>, Country A</li>
-<li><a href="world-8-xa.html">#8 Seller's Warehouse (3PL)</a>, Country
+<li><a href="world-5-xa.html">Valdara Industries</a>, Country A</li>
+<li><a href="world-13-xa.html">Trasvia Haulage</a>, Country A</li>
+<li><a href="world-8-xa.html">Castrano Logistics</a>, Country A</li>
+<li><a href="world-20-xa.html">Ferrano Chamber of Commerce</a>, Country
 A</li>
-<li><a href="world-20-xa.html">#20 Chamber of Commerce (XA)</a>, Country
-A</li>
-<li><a href="world-19-xb.html">#19 Customs (XB)</a>, Country B</li>
-<li><a href="world-26-xb.html">#26 Retailer</a>, Country B</li>
-<li><a href="world-1-xc.html">#1 Commercial Buyer</a>, Country C</li>
-<li><a href="world-10-xb.html">#10 Freight Forwarder</a>, Country B</li>
-<li><a href="world-9-xc.html">#9 Buyer's Warehouse (3PL)</a>, Country
-C</li>
+<li><a href="world-19-xb.html">Customs and Border Service of Country
+B</a>, Country B</li>
+<li><a href="world-26-xb.html">Brightmarket Stores</a>, Country B</li>
+<li><a href="world-1-xc.html">Velumi Trading</a>, Country C</li>
+<li><a href="world-10-xb.html">Bayforth Forwarding</a>, Country B</li>
+<li><a href="world-9-xc.html">Nalevi Warehousing</a>, Country C</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#6-xb">See Distributor on the map</a> · Country B:
@@ -625,6 +744,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

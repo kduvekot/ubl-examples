@@ -3,113 +3,214 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#2 Contracting Authority · UBL Example Documents</title>
+<title>Lumeport Public Works Department · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="2-contracting-authority">#2 Contracting Authority</h1>
-<p><em>Country B (XB) · Public procurement</em></p>
+<h1 id="lumeport-public-works-department">Lumeport Public Works
+Department</h1>
+<p><em>#2 Contracting Authority · Country B (XB) · Public
+procurement</em></p>
 <p>A public body that buys under procurement law: publishes notices,
 receives and evaluates tenders.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Lumeport Public Works Department</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>20410548</code> (Federal business register of Country B)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>6 Civic Square<br>Lumeport Coastal State 38517<br>Country B</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XB:20410548</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Procurement office,
+<code>procurement@publicworks-lumeport.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XB07BLUM0001780393</code> at <a href="world-25-xb.html">Bank
+of Lumeport</a></td>
+</tr>
+<tr>
+<td>In Country B</td>
+<td>Currency: Bel (<code>XBW</code>). Taxes: A federal country: its
+states levy a retail sales tax, charged once, on the sale to the final
+consumer. Sales to businesses that resell, exports and sales to public
+bodies are exempt, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>A contracting authority has to buy in a transparent and comparable
 way. UBL tendering documents take it from the prior information notice
 to the contract award, so tenders arrive in a structured form that can
 be checked and evaluated consistently.</p>
-<p>In this world it sends 4 and receives 4 documents, and is named in 0
+<p>In this world it sends 7 and receives 6 documents, and is named in 1
 documents between other parties. They are listed per flow below.</p>
 <h2 id="a-public-tender-country-b">A public tender (Country B)</h2>
 <p>The contracting authority buys equipment under procurement law. The
 notices are published through the government information service; the
 manufacturer tenders together with a consortium partner, backed by a bid
-bond.</p>
+bond. After the award the authority places orders under the contract and
+the manufacturer delivers and invoices.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRIOR-INFORMATION-NOTICE-SCHEMA"><strong>Prior
-Information Notice</strong></a> to <a href="world-21-xb.html">#21
-Government Information Service</a>: The authority announces the planned
-purchase early, through the publication service.</p>
+Information Notice</strong></a> to <a href="world-21-xb.html">Country B
+Information Service</a>: The authority announces the planned purchase
+early, through the publication service.</p>
 <p>In it as <code>ContractingParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-NOTICE-SCHEMA"><strong>Contract
-Notice</strong></a> to <a href="world-21-xb.html">#21 Government
-Information Service</a>: The call for competition is published; it names
-the review body for appeals and mediation.</p>
+Notice</strong></a> to <a href="world-21-xb.html">Country B Information
+Service</a>: The call for competition is published; it names the review
+body for appeals and mediation.</p>
 <p>In it as <code>ContractingParty</code>.</p>
-<p>Also mentions: <a href="world-28-xb.html">#28 Review Body</a> as
+<p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
+Country B</a> as
 <code>TenderingTerms/AppealTerms/AppealReceiverParty</code>; <a
-href="world-28-xb.html">#28 Review Body</a> as
+href="world-28-xb.html">Procurement Review Board of Country B</a> as
 <code>TenderingTerms/AppealTerms/MediationParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CALL-FOR-TENDERS-SCHEMA"><strong>Call
-For Tenders</strong></a> to <a href="world-5-xa.html">#5
-Manufacturer</a>: The manufacturer retrieves the procurement
+For Tenders</strong></a> to <a href="world-5-xa.html">Valdara
+Industries</a>: The manufacturer retrieves the procurement
 documents.</p>
 <p>In it as <code>ContractingParty</code>.</p>
-<p>Also mentions: <a href="world-28-xb.html">#28 Review Body</a> as
+<p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
+Country B</a> as
 <code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-AWARD-NOTICE-SCHEMA"><strong>Contract
-Award Notice</strong></a> to <a href="world-21-xb.html">#21 Government
+Award Notice</strong></a> to <a href="world-21-xb.html">Country B
 Information Service</a>: The award is published; the review body is
 named for appeals.</p>
 <p>In it as <code>ContractingParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
-<code>TenderResult/WinningParty</code>; <a href="world-28-xb.html">#28
-Review Body</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
+<code>TenderResult/WinningParty</code>; <a
+href="world-28-xb.html">Procurement Review Board of Country B</a> as
 <code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-AWARDED-NOTIFICATION-SCHEMA"><strong>Awarded
+Notification</strong></a> to <a href="world-5-xa.html">Valdara
+Industries</a>: The winner is told directly that its tender won.</p>
+<p>In it as <code>SenderParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-5-xa.html">Valdara Industries</a>: The first call-off
+under the awarded contract. Delivery terms DAP the authority's site: the
+manufacturer delivers, by the road carrier it chooses.</p>
+<p>In it as <code>BuyerCustomerParty</code>,
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> to <a href="world-19-xb.html">Customs
+and Border Service of Country B</a>: Under DAP the buyer clears the
+import, so the contracting authority declares the goods in Country
+B.</p>
+<p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
+<code>ConsignorParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BUSINESS-INFORMATION-SCHEMA"><strong>Business
-Information</strong></a> from <a href="world-21-xb.html">#21 Government
+Information</strong></a> from <a href="world-21-xb.html">Country B
 Information Service</a>: The authority checks the tenderer's
 registration with the business registry.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
 <code>BusinessParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDERER-QUALIFICATION-SCHEMA"><strong>Tenderer
-Qualification</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a>: The manufacturer declares its qualifications and those
+Qualification</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a>: The manufacturer declares its qualifications and those
 of its consortium partner.</p>
 <p>In it as <code>ContractingParty</code>.</p>
-<p>Also mentions: <a href="world-27-xb.html">#27 Consortium Partner</a>
-as
+<p>Also mentions: <a href="world-27-xb.html">Saltmere Engineering</a> as
 <code>TendererPartyQualification/AdditionalQualifyingParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GUARANTEE-CERTIFICATE-SCHEMA"><strong>Guarantee
-Certificate</strong></a> from <a href="world-25-xb.html">#25
-Guarantor</a>: The guarantor notifies the authority of the bid bond
+Certificate</strong></a> from <a href="world-25-xb.html">Bank of
+Lumeport</a>: The guarantor notifies the authority of the bid bond
 deposited for the manufacturer's tender.</p>
 <p>In it as <code>BeneficiaryParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
 <code>InterestedParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-SCHEMA"><strong>Tender</strong></a>
-from <a href="world-5-xa.html">#5 Manufacturer</a>: The tender, with the
-consortium partner as subcontractor.</p>
+from <a href="world-5-xa.html">Valdara Industries</a>: The tender, with
+the consortium partner as subcontractor.</p>
 <p>In it as <code>ContractingParty</code>.</p>
-<p>Also mentions: <a href="world-27-xb.html">#27 Consortium Partner</a>
-as <code>SubcontractorParty</code>.</p></li>
+<p>Also mentions: <a href="world-27-xb.html">Saltmere Engineering</a> as
+<code>SubcontractorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-8-xa.html">Castrano
+Logistics</a>: The manufacturer's 3PL despatches the call-off and names
+the carrier.</p>
+<p>In it as <code>DeliveryCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
+<code>SellerSupplierParty</code>; <a href="world-13-xa.html">Trasvia
+Haulage</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-5-xa.html">Valdara Industries</a>: The manufacturer
+invoices the public buyer under the contract; payment to its account at
+the seller's bank.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
+Customs Declaration</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a> to <a href="world-19-xa.html">Customs Administration of
+Country A</a>: The call-off leaves Country A; the manufacturer declares
+the export.</p>
+<p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
+who receives the goods).</p>
+<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
+<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ContractingParty</code> <code>ReceiverParty</code>
-<code>BeneficiaryParty</code></p>
+<code>BeneficiaryParty</code> <code>SenderParty</code>
+<code>BuyerCustomerParty</code> <code>DeliveryParty</code>
+<code>DeliveryCustomerParty</code> <code>ConsigneeParty</code>
+<code>ImporterParty</code> <code>AccountingCustomerParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-21-xb.html">#21 Government Information Service</a>,
+<li><a href="world-21-xb.html">Country B Information Service</a>,
 Country B</li>
-<li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
-<li><a href="world-25-xb.html">#25 Guarantor</a>, Country B</li>
+<li><a href="world-5-xa.html">Valdara Industries</a>, Country A</li>
+<li><a href="world-25-xb.html">Bank of Lumeport</a>, Country B</li>
+<li><a href="world-8-xa.html">Castrano Logistics</a>, Country A</li>
+<li><a href="world-19-xb.html">Customs and Border Service of Country
+B</a>, Country B</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#2-xb">See Contracting Authority on the map</a> ·
@@ -123,6 +224,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

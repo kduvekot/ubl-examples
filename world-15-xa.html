@@ -3,23 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#15 Inland Waterway Carrier · UBL Example Documents</title>
+<title>Fiumella Barges · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="15-inland-waterway-carrier">#15 Inland Waterway Carrier</h1>
-<p><em>Country A (XA) · Logistics</em></p>
+<h1 id="fiumella-barges">Fiumella Barges</h1>
+<p><em>#15 Inland Waterway Carrier · Country A (XA) · Logistics</em></p>
 <p>Moves bulk on the river from Country A down to the coast of Country
 B.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Fiumella Barges</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>XA-R-104959</code> (Commercial register of Country A)</td>
+</tr>
+<tr>
+<td>Tax number</td>
+<td><code>XA007347248</code> (Value added tax, <code>VAT</code>)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>Banchina del Fiume 52<br>4170 Ferrano<br>Country A</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XA:XA-R-104959</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Chartering desk, <code>chartering@fiumella.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XA94CREV0000733103</code> at <a
+href="world-23-xa.html">Crevalto Bank</a></td>
+</tr>
+<tr>
+<td>In Country A</td>
+<td>Currency: Aster (<code>XAW</code>). Taxes: Value added tax in the
+style of the EU VAT: charged at every stage, deducted by businesses, not
+charged on exports.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>Inland waterway transport moves large volumes slowly. UBL transport
 execution plans and waybills carry the barge, the loading and discharge
 quays and the cargo per hold, so shippers and terminals can plan around
 long transit times.</p>
-<p>In this world it sends 2 and receives 1 documents, and is named in 0
+<p>In this world it sends 2 and receives 1 documents, and is named in 1
 documents between other parties. They are listed per flow below.</p>
 <h2 id="bulk-by-river-barge-country-a--country-b">Bulk by river barge
 (Country A → Country B)</h2>
@@ -30,32 +70,44 @@ pays the freight; the risk passes when the barge is loaded.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> to <a href="world-5-xa.html">#5
-Manufacturer</a>: The barge operator confirms the vessel and the
+Execution Plan</strong></a> to <a href="world-5-xa.html">Valdara
+Industries</a>: The barge operator confirms the vessel and the
 sailing.</p>
 <p>In it as <code>SenderParty</code>,
 <code>TransportServiceProviderParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-to <a href="world-5-xa.html">#5 Manufacturer</a>: The inland waterway
+to <a href="world-5-xa.html">Valdara Industries</a>: The inland waterway
 consignment note, issued to the shipper.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
-Execution Plan Request</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a>: The manufacturer, as transport user under CPT, asks
-the inland waterway carrier for barge capacity.</p>
+Execution Plan Request</strong></a> from <a
+href="world-5-xa.html">Valdara Industries</a>: The manufacturer, as
+transport user under CPT, asks the inland waterway carrier for barge
+capacity.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>TransportServiceProviderParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Consignment/ConsigneeParty</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
+The manufacturer announces the lot loaded on the barge, so the
+distributor can arrange collection at the quay.</p>
+<p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
+who provides the transport of goods between named points).</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
@@ -65,7 +117,7 @@ the inland waterway carrier for barge capacity.</p>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
+<li><a href="world-5-xa.html">Valdara Industries</a>, Country A</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#15-xa">See Inland Waterway Carrier on the map</a>
@@ -78,6 +130,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

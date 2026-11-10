@@ -3,17 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#7 Waste Processor · UBL Example Documents</title>
+<title>Rinova Recovery · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="7-waste-processor">#7 Waste Processor</h1>
-<p><em>Country A (XA) · Commerce</em></p>
+<h1 id="rinova-recovery">Rinova Recovery</h1>
+<p><em>#7 Waste Processor · Country A (XA) · Commerce</em></p>
 <p>Takes production waste from the manufacturer and invoices the
 removal.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Rinova Recovery</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>XA-R-104548</code> (Commercial register of Country A)</td>
+</tr>
+<tr>
+<td>Tax number</td>
+<td><code>XA007318479</code> (Value added tax, <code>VAT</code>)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>Via del Riciclo 31<br>4140 Ferrano<br>Country A</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XA:XA-R-104548</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Customer service, <code>customer@rinova.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XA08CREV0000418916</code> at <a
+href="world-23-xa.html">Crevalto Bank</a></td>
+</tr>
+<tr>
+<td>In Country A</td>
+<td>Currency: Aster (<code>XAW</code>). Taxes: Value added tax in the
+style of the EU VAT: charged at every stage, deducted by businesses, not
+charged on exports.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>Waste movements must be announced and tracked before the waste leaves
 the site. UBL's waste notification and waste movement documents describe
@@ -32,19 +72,19 @@ material and invoices the service.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-MOVEMENT-SCHEMA"><strong>Waste
-Movement</strong></a> to <a href="world-19-xa.html">#19 Customs
-(XA)</a>: The recovery facility reports each movement received to the
-competent authority.</p>
+Movement</strong></a> to <a href="world-19-xa.html">Customs
+Administration of Country A</a>: The recovery facility reports each
+movement received to the competent authority.</p>
 <p>In it as <code>SenderParty</code>,
 <code>RecoveryFacilityParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">#5 Manufacturer</a> as
-<code>NotifierParty</code>; <a href="world-5-xa.html">#5
-Manufacturer</a> as <code>WasteProducerParty</code>; <a
-href="world-13-xa.html">#13 Road Carrier</a> as
+<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
+<code>NotifierParty</code>; <a href="world-5-xa.html">Valdara
+Industries</a> as <code>WasteProducerParty</code>; <a
+href="world-13-xa.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-to <a href="world-5-xa.html">#5 Manufacturer</a>: The waste processor
+to <a href="world-5-xa.html">Valdara Industries</a>: The waste processor
 invoices collection and recovery.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
 </ul>
@@ -52,13 +92,13 @@ invoices collection and recovery.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-NOTIFICATION-SCHEMA"><strong>Waste
-Notification</strong></a> from <a href="world-5-xa.html">#5
-Manufacturer</a> to <a href="world-19-xa.html">#19 Customs (XA)</a>: The
-manufacturer, as producer and notifier, notifies the planned movements
-to the competent authority.</p>
+Notification</strong></a> from <a href="world-5-xa.html">Valdara
+Industries</a> to <a href="world-19-xa.html">Customs Administration of
+Country A</a>: The manufacturer, as producer and notifier, notifies the
+planned movements to the competent authority.</p>
 <p>In it as <code>RecoveryFacilityParty</code> (The Party recovering the
 waste material).</p>
-<p>Also mentions: <a href="world-13-xa.html">#13 Road Carrier</a> as
+<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
@@ -69,8 +109,9 @@ waste material).</p>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-19-xa.html">#19 Customs (XA)</a>, Country A</li>
-<li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
+<li><a href="world-19-xa.html">Customs Administration of Country A</a>,
+Country A</li>
+<li><a href="world-5-xa.html">Valdara Industries</a>, Country A</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#7-xa">See Waste Processor on the map</a> ·
@@ -83,6 +124,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>

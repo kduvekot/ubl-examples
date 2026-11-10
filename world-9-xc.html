@@ -3,21 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#9 Buyer's Warehouse (3PL) · UBL Example Documents</title>
+<title>Nalevi Warehousing · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="9-buyers-warehouse-3pl">#9 Buyer's Warehouse (3PL)</h1>
-<p><em>Country C (XC) · Commerce</em></p>
+<h1 id="nalevi-warehousing">Nalevi Warehousing</h1>
+<p><em>#9 Buyer's Warehouse (3PL) · Country C (XC) · Commerce</em></p>
 <p>Receives the goods for the buyer and confirms what arrived.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Nalevi Warehousing</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>IC41722</code> (Island companies register)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>9 Lagoon Road<br>Selanu<br>Country C</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XC:IC41722</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Goods inwards, <code>goods@nalevi.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XC76BSEL0003560786</code> at <a href="world-22-xc.html">Bank
+of Selanu</a></td>
+</tr>
+<tr>
+<td>In Country C</td>
+<td>Currency: Coral (<code>XCW</code>). Taxes: An island without a
+general sales tax or VAT: the state is financed by customs duty and an
+import consumption tax, both collected by customs at import. Domestic
+sales carry no tax, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>The buyer's warehouse receives the goods. Its UBL receipt advice
 confirms what arrived, per line and per package, which lets the buyer
 approve the invoice for exactly what was delivered.</p>
-<p>In this world it sends 1 and receives 1 documents, and is named in 4
+<p>In this world it sends 1 and receives 2 documents, and is named in 4
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-country-b--island-country-c">Overseas
@@ -32,59 +69,61 @@ the goods and its 3PL receives them.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
-Advice</strong></a> to <a href="world-6-xb.html">#6 Distributor</a>: The
-buyer's 3PL confirms what arrived, for the buyer.</p>
+Advice</strong></a> to <a href="world-6-xb.html">Lumeway
+Distribution</a>: The buyer's 3PL confirms what arrived, for the
+buyer.</p>
 <p>In it as <code>DeliveryCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
 <code>BuyerCustomerParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-6-xb.html">#6 Distributor</a>:
-The distributor announces the shipment to the delivery party named in
-the order, the buyer's 3PL.</p>
+Advice</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor announces the shipment to the delivery
+party named in the order, the buyer's 3PL.</p>
 <p>In it as <code>DeliveryCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-1-xc.html">#1 Commercial Buyer</a> as
-<code>BuyerCustomerParty</code>; <a href="world-11-xb.html">#11 Ocean
-Carrier</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
+<code>BuyerCustomerParty</code>; <a href="world-11-xb.html">Tidewell
+Ocean Lines</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-from <a href="world-1-xc.html">#1 Commercial Buyer</a> to <a
-href="world-6-xb.html">#6 Distributor</a>: Delivery terms CIF port of
-the island: the order names the buyer's 3PL as delivery party; freight
-and insurance are the seller's business.</p>
+from <a href="world-1-xc.html">Velumi Trading</a> to <a
+href="world-6-xb.html">Lumeway Distribution</a>: Delivery terms CIF port
+of the island: the order names the buyer's 3PL as delivery party;
+freight and insurance are the seller's business.</p>
 <p>In it as <code>Delivery/DeliveryParty</code> (The Party who receives
 the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA"><strong>Bill
-of Lading</strong></a> from <a href="world-11-xb.html">#11 Ocean
-Carrier</a> to <a href="world-10-xb.html">#10 Freight Forwarder</a>: The
+of Lading</strong></a> from <a href="world-11-xb.html">Tidewell Ocean
+Lines</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
 negotiable bill of lading, issued to the forwarder that gave the
 instructions; it names the insurer of the cargo and the buyer's 3PL as
 party to notify on arrival.</p>
 <p>In it as <code>Shipment/Consignment/NotifyParty</code> (The Party who
 is notified upon arrival of Goods and when special occurrences (usually
 pre-defined) take place during a transportation service).</p>
-<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
-<code>ConsignorParty</code>; <a href="world-1-xc.html">#1 Commercial
-Buyer</a> as <code>Shipment/Consignment/ConsigneeParty</code>; <a
-href="world-29-xb.html">#29 Insurer</a> as
+<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<code>ConsignorParty</code>; <a href="world-1-xc.html">Velumi
+Trading</a> as <code>Shipment/Consignment/ConsigneeParty</code>; <a
+href="world-29-xb.html">Wavesure Cargo Insurance</a> as
 <code>Shipment/InsurancePolicy/InsurerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-6-xb.html">#6 Distributor</a> to <a
-href="world-1-xc.html">#1 Commercial Buyer</a>: Goods, sea freight and
+from <a href="world-6-xb.html">Lumeway Distribution</a> to <a
+href="world-1-xc.html">Velumi Trading</a>: Goods, sea freight and
 insurance (CIF) in one invoice; the receivable is sold to the factor,
 who is the payee.</p>
 <p>In it as <code>Delivery/DeliveryParty</code> (The Party who receives
 the goods).</p>
-<p>Also mentions: <a href="world-24-xb.html">#24 Factor</a> as
-<code>PayeeParty</code>.</p></li>
+<p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
+as <code>PayeeParty</code>.</p></li>
 </ul>
 <h2
 id="an-urgent-part-of-the-order-by-air-country-b--island-country-c">An
@@ -93,14 +132,26 @@ urgent part of the order by air (Country B → island Country C)</h2>
 changes the order: that part goes by air, carriage paid to (CPT) the
 island's airport. The forwarder books the airline, whose road feeder
 service (the road carrier) trucks the cargo to the airport.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor announces the air part to the buyer's
+3PL, with the airline as carrier.</p>
+<p>In it as <code>DeliveryCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-1-xc.html">Velumi Trading</a> as
+<code>BuyerCustomerParty</code>; <a href="world-12-xc.html">Kelaro Air
+Cargo</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
+</ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA"><strong>Order
-Change</strong></a> from <a href="world-1-xc.html">#1 Commercial
-Buyer</a> to <a href="world-6-xb.html">#6 Distributor</a>: Part of the
-quantity is needed urgently: delivery by air, CPT island airport, at an
-extra charge.</p>
+Change</strong></a> from <a href="world-1-xc.html">Velumi Trading</a> to
+<a href="world-6-xb.html">Lumeway Distribution</a>: Part of the quantity
+is needed urgently: delivery by air, CPT island airport, at an extra
+charge.</p>
 <p>In it as <code>Delivery/DeliveryParty</code> (The Party who receives
 the goods).</p></li>
 </ul>
@@ -112,7 +163,7 @@ the goods).</p></li>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-6-xb.html">#6 Distributor</a>, Country B</li>
+<li><a href="world-6-xb.html">Lumeway Distribution</a>, Country B</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#9-xc">See Buyer's Warehouse (3PL) on the map</a>
@@ -125,6 +176,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>8c33c1e</code></p></div></footer>
 </body>
 </html>
