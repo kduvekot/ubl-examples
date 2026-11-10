@@ -32,8 +32,10 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   The day the withholding becomes due.
 - `CreditNoteTypeCode` = **261**  
   UN/EDIFACT 1001 code 261: self-billed credit note.
-- `Note` = **Self-billed credit note under the season agreement.**  
-  As required on every self-billed document.
+- `Note` = **Lakau-votee tetela tamasu tilala kimii mitavema.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): As required on every self-billed document.
+- `Note` = **Self-billed credit note under the season agreement.** (languageID `en`)  
+  The same note in English, the working language between the countries: As required on every self-billed document.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the supplier's currency; it has three decimals.
 - `TaxCurrencyCode` = **XLC**  
@@ -200,12 +202,10 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
@@ -277,12 +277,10 @@ Inside `AccountingSupplierParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The trading name; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
@@ -634,7 +632,8 @@ Inside `CreditNoteLine`:
   <cbc:DueDate>2026-02-16</cbc:DueDate>
   <cbc:TaxPointDate>2026-02-14</cbc:TaxPointDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
-  <cbc:Note>Self-billed credit note under the season agreement.</cbc:Note>
+  <cbc:Note languageID="qal">Lakau-votee tetela tamasu tilala kimii mitavema.</cbc:Note>
+  <cbc:Note languageID="en">Self-billed credit note under the season agreement.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XLC</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
@@ -724,9 +723,8 @@ Inside `CreditNoteLine`:
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -790,9 +788,8 @@ Inside `CreditNoteLine`:
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

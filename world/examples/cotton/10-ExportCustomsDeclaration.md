@@ -30,8 +30,10 @@ The island's export: the ginnery declares the bales to customs.
   A permanent export: the goods are sold abroad.
 - `ExportReasonCode` = **Sale**  
   The reason: a sale to a buyer abroad.
-- `Note` = **Declared electronically before the goods leave.**  
-  How it was declared.
+- `Note` = **Fevelo vueseso lasati liape matiko.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): How it was declared.
+- `Note` = **Declared electronically before the goods leave.** (languageID `en`)  
+  The same note in English, the working language between the countries: How it was declared.
 - `VersionID` = **1**  
   The first version.
 
@@ -49,12 +51,10 @@ Inside `ExporterParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -306,12 +306,10 @@ Inside `CustomsDeclaration`:
   The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CustomsParty/PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
-- `CustomsParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `CustomsParty/Language/Name` = **English**  
-  The language's name.
-- `CustomsParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `CustomsParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `CustomsParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `CustomsParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `CustomsParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -391,7 +389,8 @@ Inside `Signature`:
   <cbc:IssueTime>14:43:00</cbc:IssueTime>
   <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
   <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
-  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:Note languageID="qal">Fevelo vueseso lasati liape matiko.</cbc:Note>
+  <cbc:Note languageID="en">Declared electronically before the goods leave.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -406,9 +405,8 @@ Inside `Signature`:
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -653,9 +651,8 @@ Inside `Signature`:
         <cbc:Name>Island Customs Service</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

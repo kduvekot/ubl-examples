@@ -14,7 +14,8 @@
   <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
   <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
   <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
-  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:Note languageID="qal">Konete tofami tepaa momai liape-tefata.</cbc:Note>
+  <cbc:Note languageID="en">Counted and checked at goods-in.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -47,9 +48,8 @@
         <cbc:Name>Nalevi Warehousing</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -208,9 +208,8 @@
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

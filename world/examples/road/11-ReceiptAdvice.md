@@ -172,12 +172,10 @@ Inside `DespatchSupplierParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Castrano Logistics (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Castrano Logistics**  
   The trading name; identity of Castrano Logistics (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -282,12 +280,10 @@ Inside `SellerSupplierParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -790,9 +786,8 @@ Inside `ReceiptLine`:
         <cbc:Name>Castrano Logistics</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -896,9 +891,8 @@ Inside `ReceiptLine`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

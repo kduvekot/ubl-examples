@@ -9,7 +9,8 @@
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>10:30:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-21</cbc:DueDate>
-  <cbc:Note>The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
+  <cbc:Note languageID="qal">Lapetato vivuse mafute sopule nalahiki tilala mitavema.</cbc:Note>
+  <cbc:Note languageID="en">The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
   <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
@@ -187,9 +188,8 @@
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

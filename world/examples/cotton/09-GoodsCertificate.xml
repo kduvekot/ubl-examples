@@ -10,7 +10,8 @@
   <cbc:IssueTime>11:39:00</cbc:IssueTime>
   <cbc:TypeCode>Phytosanitary</cbc:TypeCode>
   <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
-  <cbc:Note>Inspected at the ginnery's warehouse.</cbc:Note>
+  <cbc:Note languageID="qal">Helatasa momai kelalahu filumuve.</cbc:Note>
+  <cbc:Note languageID="en">Inspected at the ginnery's warehouse.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-02-28</cbc:StartDate>
@@ -34,9 +35,8 @@
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -215,9 +215,8 @@
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

@@ -26,8 +26,10 @@ The power station pays the invoice and the surcharge, in ferra.
   Paid three days after the reminder.
 - `IssueTime` = **16:36:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **The March gas invoice, with the surcharge of the reminder.**  
-  What it settles.
+- `Note` = **Vevoe March gribrior dravue, masnao vevoe gucuduesk stesdrior vevoe trorroscaar.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What it settles.
+- `Note` = **The March gas invoice, with the surcharge of the reminder.** (languageID `en`)  
+  The same note in English, the working language between the countries: What it settles.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the currency of the invoice paid; it has no minor unit.
 - `TotalDebitAmount` = **134467200** (currencyID `XUF`)  
@@ -53,12 +55,10 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Montebrio Power (world/parties.json).
 - `Party/PartyName/Name` = **Montebrio Power**  
   The trading name; identity of Montebrio Power (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -372,7 +372,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-06</cbc:IssueDate>
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
-  <cbc:Note>The March gas invoice, with the surcharge of the reminder.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe March gribrior dravue, masnao vevoe gucuduesk stesdrior vevoe trorroscaar.</cbc:Note>
+  <cbc:Note languageID="en">The March gas invoice, with the surcharge of the reminder.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">134467200</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
@@ -392,9 +393,8 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Montebrio Power</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

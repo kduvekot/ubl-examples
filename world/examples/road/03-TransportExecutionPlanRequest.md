@@ -156,12 +156,10 @@ Inside `ReceiverParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Trasvia Haulage**  
   The trading name; identity of Trasvia Haulage (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -423,12 +421,10 @@ Inside `Consignment`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `ConsignorParty/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `ConsignorParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `ConsignorParty/Language/Name` = **English**  
-  The language's name.
-- `ConsignorParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `ConsignorParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `ConsignorParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `ConsignorParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `ConsignorParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -653,9 +649,8 @@ Inside `Consignment`:
       <cbc:Name>Trasvia Haulage</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -866,9 +861,8 @@ Inside `Consignment`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

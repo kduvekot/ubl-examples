@@ -9,7 +9,8 @@
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00</cbc:IssueTime>
   <cbc:SubmissionDueDate>2026-02-21</cbc:SubmissionDueDate>
-  <cbc:Note>Slats to our drawing VI-DS-SL1800.</cbc:Note>
+  <cbc:Note languageID="qau">Bilfie nupoi dresuor tarcuov VI-DS-SL1800.</cbc:Note>
+  <cbc:Note languageID="en">Slats to our drawing VI-DS-SL1800.</cbc:Note>
   <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:RequestedValidityPeriod>
@@ -130,9 +131,8 @@
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

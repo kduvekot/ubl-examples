@@ -9,7 +9,8 @@
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Telephone</cbc:UtilityStatementTypeCode>
-  <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
+  <cbc:Note languageID="qal">Mikake votetaka hanano mofilufo kisala vepili vafosu.</cbc:Note>
+  <cbc:Note languageID="en">This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
@@ -31,9 +32,8 @@
       <cbc:Name>Selanu Telecom</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -98,9 +98,8 @@
       <cbc:Name>Velumi Trading</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

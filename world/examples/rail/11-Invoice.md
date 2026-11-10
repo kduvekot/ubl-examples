@@ -30,8 +30,10 @@ Under DAP the price includes the transport, so the invoice covers goods and frei
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
-- `Note` = **Delivered at place: the price includes the carriage to the siding.**  
-  Why the invoice has no separate freight line.
+- `Note` = **Lulstingrae nasgei terbiar: vevoe cosciar brunvengior vevoe scinbrodreov nupoi vevoe breruor.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): Why the invoice has no separate freight line.
+- `Note` = **Delivered at place: the price includes the carriage to the siding.** (languageID `en`)  
+  The same note in English, the working language between the countries: Why the invoice has no separate freight line.
 - `TaxPointDate` = **2026-04-17**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF**  
@@ -45,7 +47,7 @@ Under DAP the price includes the transport, so the invoice covers goods and frei
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en**  
-  The language the texts of the invoice are in: the seller's country's language.
+  The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language.
 
 ### Order Reference
 
@@ -68,12 +70,10 @@ Inside `AccountingSupplierParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -660,7 +660,8 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>11:14:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-17</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:Note>Delivered at place: the price includes the carriage to the siding.</cbc:Note>
+  <cbc:Note languageID="qau">Lulstingrae nasgei terbiar: vevoe cosciar brunvengior vevoe scinbrodreov nupoi vevoe breruor.</cbc:Note>
+  <cbc:Note languageID="en">Delivered at place: the price includes the carriage to the siding.</cbc:Note>
   <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
@@ -685,9 +686,8 @@ Inside `InvoiceLine`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

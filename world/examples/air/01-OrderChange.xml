@@ -10,7 +10,8 @@
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>07:50:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Note>Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
+  <cbc:Note languageID="qal">Saluva kutava feteke paavo ninote tilifo; tetuko mutaki luela mafute letelilo.</cbc:Note>
+  <cbc:Note languageID="en">Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
@@ -36,9 +37,8 @@
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -240,9 +240,8 @@
         <cbc:Name>Nalevi Warehousing</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

@@ -26,8 +26,10 @@ The buyer answers: accepted and scheduled for payment.
   Answered the next day.
 - `IssueTime` = **13:49:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **Approved; the balance will be paid to the factor.**  
-  The answer.
+- `Note` = **Hekii; likolo vonema lakaho nopeto vevisi vofefe.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): The answer.
+- `Note` = **Approved; the balance will be paid to the factor.** (languageID `en`)  
+  The same note in English, the working language between the countries: The answer.
 - `VersionID` = **1**  
   The first answer.
 
@@ -56,12 +58,10 @@ Inside `SenderParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -275,7 +275,8 @@ Inside `DocumentResponse`:
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>13:49:00</cbc:IssueTime>
-  <cbc:Note>Approved; the balance will be paid to the factor.</cbc:Note>
+  <cbc:Note languageID="qal">Hekii; likolo vonema lakaho nopeto vevisi vofefe.</cbc:Note>
+  <cbc:Note languageID="en">Approved; the balance will be paid to the factor.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>VT-SIG-26-ISP</cbc:ID>
@@ -301,9 +302,8 @@ Inside `DocumentResponse`:
       <cbc:Name>Velumi Trading</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

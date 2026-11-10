@@ -38,8 +38,10 @@ The buyer's 3PL confirms what arrived, for the buyer.
   In words.
 - `RejectActionCode` = **Credit**  
   A credit is asked for the refused goods.
-- `Note` = **Counted and checked at goods-in.**  
-  How the goods were received.
+- `Note` = **Konete tofami tepaa momai liape-tefata.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): How the goods were received.
+- `Note` = **Counted and checked at goods-in.** (languageID `en`)  
+  The same note in English, the working language between the countries: How the goods were received.
 - `LineCountNumeric` = **2**  
   The number of lines.
 
@@ -87,12 +89,10 @@ Inside `DeliveryCustomerParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Nalevi Warehousing**  
   The trading name; identity of Nalevi Warehousing (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
@@ -275,12 +275,10 @@ Inside `BuyerCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Party/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
@@ -641,7 +639,8 @@ Inside `ReceiptLine`:
   <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
   <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
   <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
-  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:Note languageID="qal">Konete tofami tepaa momai liape-tefata.</cbc:Note>
+  <cbc:Note languageID="en">Counted and checked at goods-in.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -674,9 +673,8 @@ Inside `ReceiptLine`:
         <cbc:Name>Nalevi Warehousing</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -835,9 +833,8 @@ Inside `ReceiptLine`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

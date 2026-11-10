@@ -13,7 +13,8 @@
   <cbc:IssueTime>11:35:00</cbc:IssueTime>
   <cbc:Name>Rail consignment note under the CIM uniform rules</cbc:Name>
   <cbc:Description>The ore train from the mine siding to the factory.</cbc:Description>
-  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:Note languageID="qau">Gatia dilobaa: labidria, dertrolvae, musgaor.</cbc:Note>
+  <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>VI-CS-26-0306</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CIM</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
@@ -32,9 +33,8 @@
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -115,9 +115,8 @@
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -223,9 +222,8 @@
       <cbc:Name>Serravona Mining</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

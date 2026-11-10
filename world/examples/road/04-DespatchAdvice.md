@@ -30,8 +30,10 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
   A new despatch advice, not a correction.
 - `DespatchAdviceTypeCode` = **Delivery**  
   Advice of goods despatched for delivery.
-- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
-  What the receiver should do.
+- `Note` = **Vestrie grurtrie vevoe cisoov vilscior pimao perpoor grolcuor vutraov sascue vilscior vevoe dralnonscuov vafior.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do.
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.** (languageID `en`)  
+  The same note in English, the working language between the countries: What the receiver should do.
 - `LineCountNumeric` = **2**  
   The number of lines.
 
@@ -54,12 +56,10 @@ Inside `DespatchSupplierParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Castrano Logistics (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Castrano Logistics**  
   The trading name; identity of Castrano Logistics (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -273,12 +273,10 @@ Inside `SellerSupplierParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -400,12 +398,10 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The trading name; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/CarrierParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Consignment/CarrierParty/Language/Name` = **English**  
-  The language's name.
-- `Consignment/CarrierParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Consignment/CarrierParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/CarrierParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -929,7 +925,8 @@ Inside `DespatchLine`:
   <cbc:IssueTime>15:15:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note languageID="qau">Vestrie grurtrie vevoe cisoov vilscior pimao perpoor grolcuor vutraov sascue vilscior vevoe dralnonscuov vafior.</cbc:Note>
+  <cbc:Note languageID="en">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
@@ -945,9 +942,8 @@ Inside `DespatchLine`:
         <cbc:Name>Castrano Logistics</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -1143,9 +1139,8 @@ Inside `DespatchLine`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -1257,9 +1252,8 @@ Inside `DespatchLine`:
           <cbc:Name>Trasvia Haulage</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

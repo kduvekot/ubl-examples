@@ -61,12 +61,10 @@ Inside `ProviderParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -619,9 +617,8 @@ Inside `CatalogueLine`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

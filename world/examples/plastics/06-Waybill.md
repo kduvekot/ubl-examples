@@ -36,8 +36,10 @@ The inland waterway consignment note, issued to the shipper.
   The kind of transport document.
 - `Description` = **The barge from the quay next to the recovery plant down the river to the packaging maker.**  
   The carriage in words.
-- `Note` = **Three originals: consignor, consignee, carrier.**  
-  As the convention prescribes.
+- `Note` = **Gatia dilobaa: labidria, dertrolvae, musgaor.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): As the convention prescribes.
+- `Note` = **Three originals: consignor, consignee, carrier.** (languageID `en`)  
+  The same note in English, the working language between the countries: As the convention prescribes.
 - `ShippingOrderID` = **RR-CS-26-0885**  
   The shipper's booking the carriage fulfils.
 - `WaybillTypeCode` = **CMNI**  
@@ -68,12 +70,10 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Fiumella Barges (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Fiumella Barges**  
   The trading name; identity of Fiumella Barges (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -163,12 +163,10 @@ Inside `ReceiverParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery (world/parties.json).
 - `PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -640,7 +638,8 @@ Inside `Signature`:
   <cbc:IssueTime>09:38:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
-  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:Note languageID="qau">Gatia dilobaa: labidria, dertrolvae, musgaor.</cbc:Note>
+  <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>RR-CS-26-0885</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMNI</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
@@ -659,9 +658,8 @@ Inside `Signature`:
       <cbc:Name>Fiumella Barges</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -742,9 +740,8 @@ Inside `Signature`:
       <cbc:Name>Rinova Recovery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

@@ -152,12 +152,10 @@ Inside `AuthorityParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Maritime Administration of Lisavu**  
   The trading name; identity of Maritime Administration of Lisavu (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -250,12 +248,10 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Island companies register; identity of Port of Selanu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ShipmentStage/TerminalOperatorParty/PartyName/Name` = **Port of Selanu**  
   The trading name; identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `ShipmentStage/TerminalOperatorParty/Language/Name` = **English**  
-  The language's name.
-- `ShipmentStage/TerminalOperatorParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `ShipmentStage/TerminalOperatorParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `ShipmentStage/TerminalOperatorParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -901,9 +897,8 @@ Inside `Signature`:
       <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -984,9 +979,8 @@ Inside `Signature`:
           <cbc:Name>Port of Selanu</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qal</cbc:ID>
+          <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

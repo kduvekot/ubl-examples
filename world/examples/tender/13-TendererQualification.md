@@ -28,8 +28,10 @@ The manufacturer declares its qualifications and those of its consortium partner
   Submitted with the tender.
 - `IssueTime` = **08:52:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **The manufacturer with Saltmere as subcontractor for the installation.**  
-  Who.
+- `Note` = **Vevoe cosbrancoar masnao Saltmere stassceov litrencaar scatear vevoe vurrergaor.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): Who.
+- `Note` = **The manufacturer with Saltmere as subcontractor for the installation.** (languageID `en`)  
+  The same note in English, the working language between the countries: Who.
 - `VersionID` = **1**  
   The first version.
 - `PreviousVersionID` = **0**  
@@ -118,12 +120,10 @@ Inside `TendererPartyQualification`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `MainQualifyingParty/Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `MainQualifyingParty/Party/Language/Name` = **English**  
-  The language's name.
-- `MainQualifyingParty/Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `MainQualifyingParty/Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `MainQualifyingParty/Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `MainQualifyingParty/Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `MainQualifyingParty/Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -456,7 +456,8 @@ Inside `AdditionalDocumentReference`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>08:52:00</cbc:IssueTime>
-  <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe cosbrancoar masnao Saltmere stassceov litrencaar scatear vevoe vurrergaor.</cbc:Note>
+  <cbc:Note languageID="en">The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cac:Signature>
@@ -542,9 +543,8 @@ Inside `AdditionalDocumentReference`:
           <cbc:Name>Valdara Industries</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

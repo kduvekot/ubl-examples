@@ -49,10 +49,10 @@ The authority announces the planned purchase early, through the publication serv
 
 Inside `AdditionalNoticeLanguage`:
 
-- `ID` = **fr**  
-  Also published in French, for tenderers from outside the trade accord.
-- `LocaleCode` = **FR**  
-  As an ISO 639 code.
+- `ID` = **qau**  
+  Also published in Urvanian, for tenderers from Urvania (a code from ISO 639's local-use range: the world's languages are invented).
+- `Name` = **Urvanian**  
+  The language's name.
 
 ### Document Reference
 
@@ -805,8 +805,8 @@ Inside `ProcurementProjectLot`:
   <cbc:NoticeTypeCode>PIN</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode>EN</cbc:NoticeLanguageCode>
   <cac:AdditionalNoticeLanguage>
-    <cbc:ID>fr</cbc:ID>
-    <cbc:LocaleCode>FR</cbc:LocaleCode>
+    <cbc:ID>qau</cbc:ID>
+    <cbc:Name>Urvanian</cbc:Name>
   </cac:AdditionalNoticeLanguage>
   <cac:DocumentReference>
     <cbc:ID>PWD-PARKS-PLAN-26</cbc:ID>

@@ -10,7 +10,8 @@
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
-  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:Note languageID="qal">Keavate tafese lesama kanela temati kalale.</cbc:Note>
+  <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
@@ -29,9 +30,8 @@
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -185,9 +185,8 @@
           <cbc:Name>Port of Selanu</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qal</cbc:ID>
+          <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

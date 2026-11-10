@@ -26,8 +26,10 @@ The manufacturer pays across the border.
   The manufacturer pays across the border.
 - `IssueTime` = **14:22:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **Payment of the invoice below.**  
-  What the advice is for.
+- `Note` = **Tipeor stesdrior vevoe dravue denue.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What the advice is for.
+- `Note` = **Payment of the invoice below.** (languageID `en`)  
+  The same note in English, the working language between the countries: What the advice is for.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the invoice paid; it has two decimals.
 - `TotalDebitAmount` = **34800.00** (currencyID `XBL`)  
@@ -59,12 +61,10 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -388,7 +388,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>e5f65c03-a244-5c3b-a933-778dccb8be58</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>14:22:00</cbc:IssueTime>
-  <cbc:Note>Payment of the invoice below.</cbc:Note>
+  <cbc:Note languageID="qau">Tipeor stesdrior vevoe dravue denue.</cbc:Note>
+  <cbc:Note languageID="en">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">34800.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
@@ -411,9 +412,8 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

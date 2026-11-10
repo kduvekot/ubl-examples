@@ -39,7 +39,7 @@ The water bill for the shop. Water is exempt from the state sales tax, and the i
 - `LineCountNumeric` = **2**  
   The number of lines: one invoice line for the water and one collection line for the city's levy; the totals include both.
 - `DefaultLanguageCode` = **en**  
-  The language the texts of the invoice are in: the seller's country's language.
+  The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language.
 
 ### Invoice Period
 

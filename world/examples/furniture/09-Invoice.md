@@ -39,7 +39,7 @@ Furniture sold for resale: exempt from the state sales tax, which the store char
 - `LineCountNumeric` = **2**  
   The number of lines, the free line included.
 - `DefaultLanguageCode` = **en**  
-  The language the texts of the invoice are in: the seller's country's language.
+  The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language.
 
 ### Order Reference
 

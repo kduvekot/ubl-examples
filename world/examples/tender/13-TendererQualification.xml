@@ -9,7 +9,8 @@
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>08:52:00</cbc:IssueTime>
-  <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe cosbrancoar masnao Saltmere stassceov litrencaar scatear vevoe vurrergaor.</cbc:Note>
+  <cbc:Note languageID="en">The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cac:Signature>
@@ -95,9 +96,8 @@
           <cbc:Name>Valdara Industries</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

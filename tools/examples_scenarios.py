@@ -6213,8 +6213,10 @@ def notice_head(f, kind, code):
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules the notice follows."),
             "NoticeTypeCode": V(code, "The kind of notice."),
             "NoticeLanguageCode": V("EN", "In English, as an ISO 639 code."),
-            "AdditionalNoticeLanguage": {"ID": V("fr", "Also published in French, for tenderers from outside the trade accord."),
-                                         "LocaleCode": V("FR", "As an ISO 639 code.")},
+            "AdditionalNoticeLanguage": {"ID": V("qau", "Also published in Urvanian, for tenderers from Urvania "
+                                                "(a code from ISO 639's local-use range: the world's languages are "
+                                                "invented)."),
+                                         "Name": V("Urvanian", "The language's name.")},
             "Signature": seal(PWD, f"PWD-SIG-{kind}"),
             "OriginatorCustomerParty": {"Party": party("2-xb", short=True)},
             "BeneficiaryParty": party("2-xb", short=True)}
@@ -6715,7 +6717,8 @@ def _(f, n, doc, out):
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules of the register."),
             "NoticeTypeCode": V("BusinessRegistration", "A notice of registration information."),
             "NoticeLanguageCode": V("EN", "In English."),
-            "AdditionalNoticeLanguage": {"ID": V("fr", "Also in French."), "LocaleCode": V("FR", "As a code.")},
+            "AdditionalNoticeLanguage": {"ID": V("qau", "Also in Urvanian, for operators from Urvania."),
+                                         "Name": V("Urvanian", "The language's name.")},
             "Signature": seal(INFO, "BIS-SIG-BI"),
             "BrochureDocumentReference": {"ID": V("VI-BROCHURE-26", "The manufacturer's brochure, kept on the "
                                                                     "register.")},

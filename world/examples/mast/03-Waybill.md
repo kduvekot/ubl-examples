@@ -36,8 +36,10 @@ The air waybill for cargo aircraft only, with the dangerous goods on it.
   The kind of transport document.
 - `Description` = **A cargo-aircraft-only flight to the island.**  
   The carriage in words.
-- `Note` = **Three originals: consignor, consignee, carrier.**  
-  As the convention prescribes.
+- `Note` = **Tasela kukohane: titoluva, hivokefi, topatu.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): As the convention prescribes.
+- `Note` = **Three originals: consignor, consignee, carrier.** (languageID `en`)  
+  The same note in English, the working language between the countries: As the convention prescribes.
 - `ShippingOrderID` = **SE-CS-26-0716**  
   The shipper's booking the carriage fulfils.
 - `WaybillTypeCode` = **AWB**  
@@ -68,12 +70,10 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Kelaro Air Cargo**  
   The trading name; identity of Kelaro Air Cargo (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -357,12 +357,10 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Selanu Telecom**  
   The trading name; identity of Selanu Telecom (world/parties.json).
-- `Consignment/ConsigneeParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Consignment/ConsigneeParty/Language/Name` = **English**  
-  The language's name.
-- `Consignment/ConsigneeParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Consignment/ConsigneeParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/ConsigneeParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Consignment/ConsigneeParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -646,7 +644,8 @@ Inside `Signature`:
   <cbc:IssueTime>17:15:00</cbc:IssueTime>
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>A cargo-aircraft-only flight to the island.</cbc:Description>
-  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:Note languageID="qal">Tasela kukohane: titoluva, hivokefi, topatu.</cbc:Note>
+  <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>SE-CS-26-0716</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>AWB</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
@@ -665,9 +664,8 @@ Inside `Signature`:
       <cbc:Name>Kelaro Air Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -911,9 +909,8 @@ Inside `Signature`:
           <cbc:Name>Selanu Telecom</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qal</cbc:ID>
+          <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

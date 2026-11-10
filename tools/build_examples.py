@@ -24,7 +24,9 @@ Usage: python3 tools/build_examples.py [flow...]            (write; default: eve
        python3 tools/build_examples.py --check [flow...]    (are the committed examples up to date?)
 """
 import datetime
+import json
 import os
+import re
 import sys
 import uuid
 import zlib
@@ -107,9 +109,19 @@ def party(pid, short=False):
         out["TradePartyName"] = {"Name": V(idn["trade_name"], f"The name the shops trade under, shorter than the company's "
                                                              f"name; {src}.")}
     if idn.get("language"):
-        out["Language"] = {"ID": V("en", "English, the language the party does business in."),
-                           "Name": V("English", "The language's name."),
-                           "LocaleCode": V(idn["language"], "The language as a code of UBL's language code list (ISO 639).")}
+        code = WORLD["countries"][p["c"]]["languages"][0]
+        if code == "en":
+            out["Language"] = {"ID": V("en", "English, the language the party does business in."),
+                               "Name": V("English", "The language's name."),
+                               "LocaleCode": V(idn["language"], "The language as a code of UBL's language code list "
+                                                                "(ISO 639).")}
+        else:
+            lang = WORLD["languages"][code]
+            out["Language"] = {"ID": V(code, f"{lang['name']}, the language of {c['name']} and of the party; the code is "
+                                             "from the range ISO 639 reserves for local use (qaa–qtz), as the world's "
+                                             "languages are invented (world/countries.json)."),
+                               "Name": V(lang["name"], f"The language's name in English; in the language itself: "
+                                                       f"{lang['own_name']}.")}
     out["PostalAddress"] = address(pid)
     if idn.get("site"):
         out["PhysicalLocation"] = location(pid)
@@ -915,6 +927,78 @@ def page(n, doc, root, reasons, flow):
     return "\n".join(lines)
 
 
+MISSING_WORDS = set()
+
+
+def translate(text, code):
+    """A text in Urvanian (qau) or Lisavan (qal): the world's invented languages, word by word from their fixed
+    vocabularies (world/countries.json). Names, numbers and codes stay as they are; Lisavan has no articles."""
+    lex = WORLD["languages"][code].get("lexicon", {})
+    out, start = [], True
+    for tok in re.findall(r"[A-Za-z][A-Za-z'’]*|\S|\s+", text):
+        if not tok[0].isalpha():
+            out.append(tok)
+            if tok in ".:;!?":
+                start = True
+            continue
+        low = tok.lower()
+        proper = (tok[0].isupper() and not start) or tok in proper_names()
+        start = False
+        if proper:
+            out.append(tok)
+            continue
+        if code == "qal" and low in ("the", "a", "an"):
+            if out and out[-1].isspace():
+                out.pop()
+            if not out:
+                start = True
+            continue
+        if low not in lex:
+            MISSING_WORDS.add(low)
+            out.append(tok)
+            continue
+        w = lex[low]
+        out.append(w[0].upper() + w[1:] if tok[0].isupper() else w)
+    t = "".join(out).strip()
+    return t[0].upper() + t[1:] if t else t
+
+
+def proper_names():
+    """Words of names, which a translation keeps: parties, places, countries, currencies, languages."""
+    global PROPER
+    if PROPER is None:
+        names = [p["identity"]["name"] for p in WORLD["parties"]] + [t["name"] for t in WORLD["towns"]] + \
+                [t["name"] for t in WORLD.get("localities", [])] + \
+                [c["name"] for c in WORLD["countries"].values()] + \
+                [c["currency"]["name"] for c in WORLD["countries"].values()] + \
+                [x["name"] for x in WORLD["languages"].values()]
+        PROPER = {w for n in names for w in re.findall(r"[A-Z][A-Za-z'’]*", n)}
+    return PROPER
+
+
+PROPER = None
+
+
+def bilingual_notes(doc, content):
+    """Documents from Urvania and the island give their notes in the country's language and in English, the working
+    language between the countries: one cbc:Note per language, each with its languageID."""
+    code = WORLD["countries"][PARTY[doc["from"]]["c"]]["languages"][0]
+    if code == "en" or "Note" not in content:
+        return
+    notes = content["Note"] if isinstance(content["Note"], list) else [content["Note"]]
+    name = WORLD["languages"][code]["name"]
+    out = []
+    for v in notes:
+        if not isinstance(v, V):
+            out.append(v)
+            continue
+        out.append(V(translate(v.value, code), f"The note in {name}, the sender's language (world/countries.json): "
+                                               f"{v.why}", languageID=code))
+        out.append(V(v.value, f"The same note in English, the working language between the countries: {v.why}",
+                     languageID="en"))
+    content["Note"] = out
+
+
 def xmlname(n, doc):
     return f"{n:02d}-{doc['doc']}.xml"
 
@@ -930,6 +1014,7 @@ def main(flow_id, check=False):
     for n, doc in enumerate(docs, 1):
         content = scenario(n, doc)
         content = place_parties(doc, content)
+        bilingual_notes(doc, content)
         for path, value in doc.get("values", {}).items():   # the world's manifest values must be what the scenario says
             node = content
             for step in path.split("/")[:-1]:
@@ -992,4 +1077,8 @@ if __name__ == "__main__":
     import build_examples        # run through the module, so the scenarios share its classes
     args = [a for a in sys.argv[1:] if a != "--check"]
     ok = all([build_examples.main(f, check="--check" in sys.argv) for f in (args or FLOWS_WITH_EXAMPLES)])
+    if build_examples.MISSING_WORDS:
+        print("words missing from the vocabularies of the world's languages (world/countries.json):",
+              json.dumps(sorted(build_examples.MISSING_WORDS)), file=sys.stderr)
+        ok = False
     sys.exit(0 if ok else 1)

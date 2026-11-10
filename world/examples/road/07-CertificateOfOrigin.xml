@@ -9,7 +9,8 @@
   <cbc:IssueDate>2026-03-22</cbc:IssueDate>
   <cbc:IssueTime>08:41:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note>Preferential origin under the trade accord.</cbc:Note>
+  <cbc:Note languageID="qau">Metitrear gelfaar tefaor vevoe telpuo tolpaar.</cbc:Note>
+  <cbc:Note languageID="en">Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>FCC-SIG-CO-07</cbc:ID>
@@ -35,9 +36,8 @@
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -235,9 +235,8 @@
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

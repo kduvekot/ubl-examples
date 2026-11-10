@@ -34,8 +34,10 @@ The rail carrier confirms the train, the wagons and the schedule; this is the ag
   Confirmed without changes.
 - `DocumentStatusReasonDescription` = **Capacity available on the requested day.**  
   Why it is confirmed.
-- `Note` = **The ore train from the mine siding to the factory.**  
-  The transport agreed.
+- `Note` = **Vevoe tarbrue singria facao vevoe tirmaov breruor nupoi vevoe drerpear.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): The transport agreed.
+- `Note` = **The ore train from the mine siding to the factory.** (languageID `en`)  
+  The same note in English, the working language between the countries: The transport agreed.
 - `TransportUserRemarks` = **Please confirm by return.**  
   The user's remark from the request.
 - `TransportServiceProviderRemarks` = **Collection as requested; notice two hours before arrival.**  
@@ -53,12 +55,10 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Rail Cargo**  
   The trading name; identity of Ferrano Rail Cargo (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -148,12 +148,10 @@ Inside `ReceiverParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -513,12 +511,10 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Serravona Mining (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ConsignorParty/PartyName/Name` = **Serravona Mining**  
   The trading name; identity of Serravona Mining (world/parties.json).
-- `ConsignorParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `ConsignorParty/Language/Name` = **English**  
-  The language's name.
-- `ConsignorParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `ConsignorParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `ConsignorParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `ConsignorParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `ConsignorParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -637,7 +633,8 @@ Inside `Consignment`:
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode>AsRequested</cbc:DocumentStatusReasonCode>
   <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
-  <cbc:Note>The ore train from the mine siding to the factory.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe tarbrue singria facao vevoe tirmaov breruor nupoi vevoe drerpear.</cbc:Note>
+  <cbc:Note languageID="en">The ore train from the mine siding to the factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
   <cac:SenderParty>
@@ -650,9 +647,8 @@ Inside `Consignment`:
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -733,9 +729,8 @@ Inside `Consignment`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -1012,9 +1007,8 @@ Inside `Consignment`:
         <cbc:Name>Serravona Mining</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

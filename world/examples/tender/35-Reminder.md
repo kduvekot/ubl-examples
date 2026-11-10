@@ -30,8 +30,10 @@ The invoice is past due; the manufacturer reminds the department of the balance 
   A reminder of a payment overdue.
 - `ReminderSequenceNumeric` = **1**  
   The first reminder.
-- `Note` = **The balance of the first release is overdue; Urvania's statutory interest applies.**  
-  What it says.
+- `Note` = **Vevoe trirmao stesdrior vevoe silciesk pulpaar grasgaar dulmoar; Sirtrasvior brisolroa sonpemior brascoi.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What it says.
+- `Note` = **The balance of the first release is overdue; Urvania's statutory interest applies.** (languageID `en`)  
+  The same note in English, the working language between the countries: What it says.
 - `TaxPointDate` = **2026-05-05**  
   The interest's tax point.
 - `DocumentCurrencyCode` = **XBL**  
@@ -79,12 +81,10 @@ Inside `AccountingSupplierParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -516,7 +516,8 @@ Inside `ReminderLine`:
   <cbc:IssueTime>15:23:00</cbc:IssueTime>
   <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
-  <cbc:Note>The balance of the first release is overdue; Urvania's statutory interest applies.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe trirmao stesdrior vevoe silciesk pulpaar grasgaar dulmoar; Sirtrasvior brisolroa sonpemior brascoi.</cbc:Note>
+  <cbc:Note languageID="en">The balance of the first release is overdue; Urvania's statutory interest applies.</cbc:Note>
   <cbc:TaxPointDate>2026-05-05</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
@@ -552,9 +553,8 @@ Inside `ReminderLine`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

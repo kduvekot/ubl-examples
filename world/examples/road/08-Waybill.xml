@@ -13,7 +13,8 @@
   <cbc:IssueTime>08:16:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Description>
-  <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:Note languageID="qau">Gatia dilobaa: labidria, dertrolvae, musgaor.</cbc:Note>
+  <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMR</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
@@ -32,9 +33,8 @@
       <cbc:Name>Trasvia Haulage</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -216,9 +216,8 @@
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

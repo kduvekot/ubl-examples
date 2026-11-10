@@ -39,7 +39,7 @@ The distributor has sold its receivables to the factor, so the invoice names the
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en**  
-  The language the texts of the invoice are in: the seller's country's language.
+  The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language.
 
 ### Order Reference
 

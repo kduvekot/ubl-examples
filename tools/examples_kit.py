@@ -485,8 +485,10 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         **cost_centre(buyer, "The buyer's cost centre, quoted in its order, so the invoice is booked without "
                             "asking."),
         "LineCountNumeric": V(str(len(rows)), "The number of invoice lines, as a check on the transfer."),
-        "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][0], "The language the texts "
-                                 "of the invoice are in: the seller's country's language."),
+        "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][-1], "The language of the "
+                                 "texts that carry no language identifier: English, the working language between "
+                                 "the countries; a seller from Urvania or the island also gives its notes in its "
+                                 "own language."),
         **refs,
         **({"PaymentCurrencyCode": V(cur, "Payment is asked in the invoice currency, also from abroad.")}
            if cross_border(seller, buyer) else {}),
@@ -882,7 +884,7 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs, currency=None):
             "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice credited"),
             **cost_centre(buyer, "The buyer's cost centre, as on the invoice credited."),
             "LineCountNumeric": V(str(len(rows)), "The number of lines."),
-            "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][0], "The language of the "
+            "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][-1], "The language of the "
                                                                                               "texts."),
             "PaymentTerms": {"Note": V("Settled against the next payment to the seller, unless refunded.",
                                        "How a credit note is settled in the world.")},
@@ -1087,7 +1089,7 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
            "DocumentCurrencyCode": currency_line(cur, "the supplier's currency"),
            **cost_centre(customer, "The customer's own cost centre: it books what it billed itself."),
            "LineCountNumeric": V(str(len(rows)), "The number of lines."),
-           "DefaultLanguageCode": V(WORLD["countries"][PARTY[supplier]["c"]]["languages"][0], "The language of the "
+           "DefaultLanguageCode": V(WORLD["countries"][PARTY[supplier]["c"]]["languages"][-1], "The language of the "
                                                                                                "texts."),
            **refs,
            "TaxTotal": total,

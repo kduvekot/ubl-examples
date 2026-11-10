@@ -30,8 +30,10 @@ The chamber issues the carnet to the manufacturer, who holds it while the sample
   The carnet is valid.
 - `Status` = **Issued**  
   In words.
-- `Note` = **Samples for the Selanu trade fair; to come back within six months.**  
-  What it is for.
+- `Note` = **Rasraar scatear vevoe Selanu telpuo sosfiesk; nupoi brordreesk gresgriov bruceo tulmui scilsoa.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What it is for.
+- `Note` = **Samples for the Selanu trade fair; to come back within six months.** (languageID `en`)  
+  The same note in English, the working language between the countries: What it is for.
 - `VersionID` = **1**  
   The first version.
 - `ExportReasonCode` = **Exhibition**  
@@ -58,12 +60,10 @@ Inside `IssuerParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -145,12 +145,10 @@ Inside `HolderParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -326,12 +324,10 @@ Inside `ImportingGuarantorParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Selanu Chamber of Commerce**  
   The trading name; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -393,12 +389,10 @@ Inside `ExportingCustomsParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Customs Administration of Urvania**  
   The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Postal**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -480,12 +474,10 @@ Inside `ImportingCustomsParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -896,7 +888,8 @@ Inside `Signature`:
   <cbc:IssueTime>15:04:00</cbc:IssueTime>
   <cbc:StatusCode>Valid</cbc:StatusCode>
   <cbc:Status>Issued</cbc:Status>
-  <cbc:Note>Samples for the Selanu trade fair; to come back within six months.</cbc:Note>
+  <cbc:Note languageID="qau">Rasraar scatear vevoe Selanu telpuo sosfiesk; nupoi brordreesk gresgriov bruceo tulmui scilsoa.</cbc:Note>
+  <cbc:Note languageID="en">Samples for the Selanu trade fair; to come back within six months.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ExportReasonCode>Exhibition</cbc:ExportReasonCode>
   <cbc:ExportReason>Exhibition at the Selanu trade fair</cbc:ExportReason>
@@ -913,9 +906,8 @@ Inside `Signature`:
       <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -992,9 +984,8 @@ Inside `Signature`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -1155,9 +1146,8 @@ Inside `Signature`:
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -1214,9 +1204,8 @@ Inside `Signature`:
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
@@ -1291,9 +1280,8 @@ Inside `Signature`:
       <cbc:Name>Island Customs Service</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

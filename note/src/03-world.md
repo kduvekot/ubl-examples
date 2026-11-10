@@ -56,6 +56,19 @@ use their own code lists in the second phase of validation, so the world
 has its own: copies of the UBL 2.5 default lists, unchanged, with the
 world's codes added and their own identification.
 
+The countries also speak differently. Bayvarra speaks English, the working
+language between the three countries. Urvania speaks Urvanian, with a
+Romance sound like its place names; the island is officially bilingual, as
+many Pacific islands are, in Lisavan and English, Lisavan having a
+Polynesian sound like the island's names. Both languages are invented, and
+their codes come from the range ISO 639 reserves for local use, `qaa` to
+`qtz`: `qau` for Urvanian and `qal` for Lisavan. A sender from Urvania or the
+island gives its notes in its own language and in English, each with its
+`languageID`; the texts are made word by word from a fixed invented
+vocabulary, the English text being the reference. Real Polynesian languages
+are deliberately not used, and the invented words are checked against
+common words of real languages.
+
 Each country also has its own payment practice, which every invoice of a
 seller there follows. Urvania gives 2 % discount for payment within ten
 days and charges statutory interest on late payment; Bayvarra charges a

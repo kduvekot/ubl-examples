@@ -30,8 +30,10 @@ The port of discharge reports the container discharged and available.
   The kind of report.
 - `Description` = **Container TWLU4120872 discharged and available for customs clearance.**  
   In words.
-- `Note` = **Automatic report from the sender's tracking system.**  
-  How it was made.
+- `Note` = **Keavate tafese lesama kanela temati kalale.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): How it was made.
+- `Note` = **Automatic report from the sender's tracking system.** (languageID `en`)  
+  The same note in English, the working language between the countries: How it was made.
 - `ShippingOrderID` = **LD-CS-26-0133**  
   The shipper's booking it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
@@ -55,12 +57,10 @@ Inside `Consignment`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `ConsigneeParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `ConsigneeParty/Language/Name` = **English**  
-  The language's name.
-- `ConsigneeParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `ConsigneeParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `ConsigneeParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -233,12 +233,10 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Island companies register; identity of Port of Selanu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyName/Name` = **Port of Selanu**  
   The trading name; identity of Port of Selanu (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **English**  
-  The language's name.
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -520,7 +518,8 @@ Inside `StatusPeriod`:
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
-  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:Note languageID="qal">Keavate tafese lesama kanela temati kalale.</cbc:Note>
+  <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
@@ -539,9 +538,8 @@ Inside `StatusPeriod`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -695,9 +693,8 @@ Inside `StatusPeriod`:
           <cbc:Name>Port of Selanu</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qal</cbc:ID>
+          <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

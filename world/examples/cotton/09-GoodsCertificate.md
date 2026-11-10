@@ -30,8 +30,10 @@ The island's chamber of commerce certifies the bales for export, at the ginnery'
   A plant health certificate for the cotton.
 - `Description` = **The ginned cotton is free of the pests named by Bayvarra's plant health rules.**  
   What it certifies.
-- `Note` = **Inspected at the ginnery's warehouse.**  
-  Where.
+- `Note` = **Helatasa momai kelalahu filumuve.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): Where.
+- `Note` = **Inspected at the ginnery's warehouse.** (languageID `en`)  
+  The same note in English, the working language between the countries: Where.
 - `VersionID` = **1**  
   The first version.
 
@@ -65,12 +67,10 @@ Inside `ExporterParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -277,12 +277,10 @@ Inside `IssuerParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Selanu Chamber of Commerce**  
   The trading name; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -538,7 +536,8 @@ Inside `Signature`:
   <cbc:IssueTime>11:39:00</cbc:IssueTime>
   <cbc:TypeCode>Phytosanitary</cbc:TypeCode>
   <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
-  <cbc:Note>Inspected at the ginnery's warehouse.</cbc:Note>
+  <cbc:Note languageID="qal">Helatasa momai kelalahu filumuve.</cbc:Note>
+  <cbc:Note languageID="en">Inspected at the ginnery's warehouse.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-02-28</cbc:StartDate>
@@ -562,9 +561,8 @@ Inside `Signature`:
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -743,9 +741,8 @@ Inside `Signature`:
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

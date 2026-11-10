@@ -30,8 +30,10 @@ The granulate leaves Urvania; the waste processor declares the export.
   A permanent export: the goods are sold abroad.
 - `ExportReasonCode` = **Sale**  
   The reason: a sale to a buyer abroad.
-- `Note` = **Declared electronically before the goods leave.**  
-  How it was declared.
+- `Note` = **Grolsofeov polfellae vigaor vevoe cisoov cagroesk.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): How it was declared.
+- `Note` = **Declared electronically before the goods leave.** (languageID `en`)  
+  The same note in English, the working language between the countries: How it was declared.
 - `VersionID` = **1**  
   The first version.
 
@@ -49,12 +51,10 @@ Inside `ExporterParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery (world/parties.json).
 - `PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -170,12 +170,10 @@ Inside `CustomsDeclaration`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Fiumella Barges (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Fiumella Barges**  
   The trading name; identity of Fiumella Barges (world/parties.json).
-- `Shipment/Consignment/CarrierParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Shipment/Consignment/CarrierParty/Language/Name` = **English**  
-  The language's name.
-- `Shipment/Consignment/CarrierParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Shipment/Consignment/CarrierParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Shipment/Consignment/CarrierParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Shipment/Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Shipment/Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -432,12 +430,10 @@ Inside `CustomsDeclaration`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CustomsParty/PartyName/Name` = **Customs Administration of Urvania**  
   The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `CustomsParty/Language/Name` = **English**  
-  The language's name.
-- `CustomsParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `CustomsParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `CustomsParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `CustomsParty/PostalAddress/AddressTypeCode` = **Postal**  
   The kind of address.
 - `CustomsParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -537,7 +533,8 @@ Inside `Signature`:
   <cbc:IssueTime>16:08:00</cbc:IssueTime>
   <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
   <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
-  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:Note languageID="qau">Grolsofeov polfellae vigaor vevoe cisoov cagroesk.</cbc:Note>
+  <cbc:Note languageID="en">Declared electronically before the goods leave.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
@@ -552,9 +549,8 @@ Inside `Signature`:
       <cbc:Name>Rinova Recovery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -661,9 +657,8 @@ Inside `Signature`:
             <cbc:Name>Fiumella Barges</cbc:Name>
           </cac:PartyName>
           <cac:Language>
-            <cbc:ID>en</cbc:ID>
-            <cbc:Name>English</cbc:Name>
-            <cbc:LocaleCode>EN</cbc:LocaleCode>
+            <cbc:ID>qau</cbc:ID>
+            <cbc:Name>Urvanian</cbc:Name>
           </cac:Language>
           <cac:PostalAddress>
             <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -910,9 +905,8 @@ Inside `Signature`:
         <cbc:Name>Customs Administration of Urvania</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>

@@ -32,8 +32,10 @@ The goods travel under customs transit from Urvania to the destination in Bayvar
   Goods not yet released, carried across the border under customs control.
 - `NatureOfTransactionCode` = **Purchase**  
   The goods were bought.
-- `Note` = **Seals XU-VI-30411 and XU-VI-30412 to remain intact.**  
-  The transit condition.
+- `Note` = **Bufiar XU-VI-30411 perpoor XU-VI-30412 nupoi volpia cesroo.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): The transit condition.
+- `Note` = **Seals XU-VI-30411 and XU-VI-30412 to remain intact.** (languageID `en`)  
+  The same note in English, the working language between the countries: The transit condition.
 - `VersionID` = **1**  
   The first version.
 
@@ -88,12 +90,10 @@ Inside `TransitExporterParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -334,12 +334,10 @@ Inside `CustomsParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Customs Administration of Urvania**  
   The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Postal**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -438,12 +436,10 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Ferrano Rail Cargo**  
   The trading name; identity of Ferrano Rail Cargo (world/parties.json).
-- `Consignment/CarrierParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Consignment/CarrierParty/Language/Name` = **English**  
-  The language's name.
-- `Consignment/CarrierParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Consignment/CarrierParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/CarrierParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -824,7 +820,8 @@ Inside `Signature`:
   <cbc:TypeCode>Transit</cbc:TypeCode>
   <cbc:SubTypeCode>External</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
-  <cbc:Note>Seals XU-VI-30411 and XU-VI-30412 to remain intact.</cbc:Note>
+  <cbc:Note languageID="qau">Bufiar XU-VI-30411 perpoor XU-VI-30412 nupoi volpia cesroo.</cbc:Note>
+  <cbc:Note languageID="en">Seals XU-VI-30411 and XU-VI-30412 to remain intact.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-14</cbc:StartDate>
@@ -857,9 +854,8 @@ Inside `Signature`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -1070,9 +1066,8 @@ Inside `Signature`:
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
@@ -1161,9 +1156,8 @@ Inside `Signature`:
           <cbc:Name>Ferrano Rail Cargo</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

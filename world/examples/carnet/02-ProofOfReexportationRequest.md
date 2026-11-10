@@ -26,8 +26,10 @@ The island's chamber has no re-export stamp for the samples and asks for proof t
   Two months after the fair the samples' re-export is not recorded.
 - `IssueTime` = **08:50:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **The island's customs found no re-export stamp.**  
-  Why the chamber asks.
+- `Note` = **Lutea viope falolu lelaha kefila-hafaso nimale.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): Why the chamber asks.
+- `Note` = **The island's customs found no re-export stamp.** (languageID `en`)  
+  The same note in English, the working language between the countries: Why the chamber asks.
 - `VersionID` = **1**  
   The first request.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
@@ -45,12 +47,10 @@ Inside `ImportingGuarantorParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Selanu Chamber of Commerce**  
   The trading name; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -112,12 +112,10 @@ Inside `ExportingGuarantorParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -195,12 +193,10 @@ Inside `ImportingCustomsParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
@@ -283,7 +279,8 @@ Inside `Signature`:
   <cbc:UUID>3377b749-219b-5bbb-a9d2-7d1101bcbe28</cbc:UUID>
   <cbc:IssueDate>2026-07-24</cbc:IssueDate>
   <cbc:IssueTime>08:50:00</cbc:IssueTime>
-  <cbc:Note>The island's customs found no re-export stamp.</cbc:Note>
+  <cbc:Note languageID="qal">Lutea viope falolu lelaha kefila-hafaso nimale.</cbc:Note>
+  <cbc:Note languageID="en">The island's customs found no re-export stamp.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cbc:GoodsItemPassportCounterfoilID>IMP-1</cbc:GoodsItemPassportCounterfoilID>
@@ -296,9 +293,8 @@ Inside `Signature`:
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -355,9 +351,8 @@ Inside `Signature`:
       <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -430,9 +425,8 @@ Inside `Signature`:
       <cbc:Name>Island Customs Service</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

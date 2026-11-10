@@ -162,12 +162,10 @@ Inside `CustomsDeclaration`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The trading name; identity of Trasvia Haulage (world/parties.json).
-- `Shipment/Consignment/CarrierParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Shipment/Consignment/CarrierParty/Language/Name` = **English**  
-  The language's name.
-- `Shipment/Consignment/CarrierParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Shipment/Consignment/CarrierParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Shipment/Consignment/CarrierParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Shipment/Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Shipment/Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -388,12 +386,10 @@ Inside `CustomsDeclaration`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `ConsigneeParty/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `ConsigneeParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `ConsigneeParty/Language/Name` = **English**  
-  The language's name.
-- `ConsigneeParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `ConsigneeParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `ConsigneeParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -707,9 +703,8 @@ Inside `Signature`:
             <cbc:Name>Trasvia Haulage</cbc:Name>
           </cac:PartyName>
           <cac:Language>
-            <cbc:ID>en</cbc:ID>
-            <cbc:Name>English</cbc:Name>
-            <cbc:LocaleCode>EN</cbc:LocaleCode>
+            <cbc:ID>qau</cbc:ID>
+            <cbc:Name>Urvanian</cbc:Name>
           </cac:Language>
           <cac:PostalAddress>
             <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -926,9 +921,8 @@ Inside `Signature`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

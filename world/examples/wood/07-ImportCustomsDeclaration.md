@@ -32,8 +32,10 @@ The manufacturer declares the import into Urvania, where import VAT is due.
   For release into free circulation.
 - `NatureOfTransactionCode` = **Purchase**  
   The goods were bought.
-- `Note` = **Duties paid by the importer's account at customs.**  
-  How duties are settled.
+- `Note` = **Nirguo dretoe dratree vevoe pesburior segrior nasgei verliov.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): How duties are settled.
+- `Note` = **Duties paid by the importer's account at customs.** (languageID `en`)  
+  The same note in English, the working language between the countries: How duties are settled.
 - `VersionID` = **1**  
   The first version.
 
@@ -74,12 +76,10 @@ Inside `ImporterParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -301,12 +301,10 @@ Inside `CustomsParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Customs Administration of Urvania**  
   The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Postal**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -550,7 +548,8 @@ Inside `Signature`:
   <cbc:TypeCode>Import</cbc:TypeCode>
   <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
-  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note languageID="qau">Nirguo dretoe dratree vevoe pesburior segrior nasgei verliov.</cbc:Note>
+  <cbc:Note languageID="en">Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-02-27</cbc:StartDate>
@@ -577,9 +576,8 @@ Inside `Signature`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -777,9 +775,8 @@ Inside `Signature`:
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>

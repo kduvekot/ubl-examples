@@ -28,8 +28,10 @@ The chamber endorses the certificate and makes it available to the importer, who
   The time the sender's system issued the document, in the sender's local time.
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the certificate is for.
-- `Note` = **Preferential origin under the trade accord.**  
-  What the certificate is for.
+- `Note` = **Metitrear gelfaar tefaor vevoe telpuo tolpaar.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What the certificate is for.
+- `Note` = **Preferential origin under the trade accord.** (languageID `en`)  
+  The same note in English, the working language between the countries: What the certificate is for.
 - `VersionID` = **1**  
   The first version.
 
@@ -58,12 +60,10 @@ Inside `ExporterParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -290,12 +290,10 @@ Inside `EndorserParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -753,7 +751,8 @@ Inside `InsuranceEndorsement`:
   <cbc:IssueDate>2026-03-22</cbc:IssueDate>
   <cbc:IssueTime>08:41:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note>Preferential origin under the trade accord.</cbc:Note>
+  <cbc:Note languageID="qau">Metitrear gelfaar tefaor vevoe telpuo tolpaar.</cbc:Note>
+  <cbc:Note languageID="en">Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>FCC-SIG-CO-07</cbc:ID>
@@ -779,9 +778,8 @@ Inside `InsuranceEndorsement`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -979,9 +977,8 @@ Inside `InsuranceEndorsement`:
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

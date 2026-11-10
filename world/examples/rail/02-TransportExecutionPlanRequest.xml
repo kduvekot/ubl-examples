@@ -10,7 +10,8 @@
   <cbc:IssueDate>2026-04-07</cbc:IssueDate>
   <cbc:IssueTime>10:32:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
-  <cbc:Note>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Note>
+  <cbc:Note languageID="qau">Musgaor nunvia: vevoe tedrei vorsopui bibui benviov vevoe scelfoi nelveor nupoi vevoe sacoar.</cbc:Note>
+  <cbc:Note languageID="en">Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -25,9 +26,8 @@
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -133,9 +133,8 @@
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

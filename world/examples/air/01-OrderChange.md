@@ -30,8 +30,10 @@ Part of the quantity is needed urgently: delivery by air, CPT island airport, at
   First thing in the morning, when the shortage was noticed.
 - `SequenceNumberID` = **1**  
   The first change to the order.
-- `Note` = **Add eight side frames by air; the rest of the order is unchanged.**  
-  The change in words.
+- `Note` = **Saluva kutava feteke paavo ninote tilifo; tetuko mutaki luela mafute letelilo.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): The change in words.
+- `Note` = **Add eight side frames by air; the rest of the order is unchanged.** (languageID `en`)  
+  The same note in English, the working language between the countries: The change in words.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals.
 - `CustomerReference` = **Harbour parks Selanu**  
@@ -71,12 +73,10 @@ Inside `BuyerCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Party/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
@@ -297,12 +297,10 @@ Inside `Delivery`:
   The party's preferred identifier: its number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `DeliveryParty/PartyName/Name` = **Nalevi Warehousing**  
   The trading name; identity of Nalevi Warehousing (world/parties.json).
-- `DeliveryParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `DeliveryParty/Language/Name` = **English**  
-  The language's name.
-- `DeliveryParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `DeliveryParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `DeliveryParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `DeliveryParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `DeliveryParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -470,7 +468,8 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>07:50:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Note>Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
+  <cbc:Note languageID="qal">Saluva kutava feteke paavo ninote tilifo; tetuko mutaki luela mafute letelilo.</cbc:Note>
+  <cbc:Note languageID="en">Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
@@ -496,9 +495,8 @@ Inside `OrderLine`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -700,9 +698,8 @@ Inside `OrderLine`:
         <cbc:Name>Nalevi Warehousing</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

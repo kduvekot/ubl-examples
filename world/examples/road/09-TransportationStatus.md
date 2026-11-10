@@ -30,8 +30,10 @@ The carrier reports that the truck has cleared the border and gives the expected
   The kind of report.
 - `Description` = **Border crossing passed; customs cleared on both sides.**  
   In words.
-- `Note` = **Automatic report from the sender's tracking system.**  
-  How it was made.
+- `Note` = **Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): How it was made.
+- `Note` = **Automatic report from the sender's tracking system.** (languageID `en`)  
+  The same note in English, the working language between the countries: How it was made.
 - `ShippingOrderID` = **LD-CS-26-0152**  
   The shipper's booking it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
@@ -165,12 +167,10 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The trading name; identity of Trasvia Haulage (world/parties.json).
-- `CarrierParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `CarrierParty/Language/Name` = **English**  
-  The language's name.
-- `CarrierParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `CarrierParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `CarrierParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -426,7 +426,8 @@ Inside `StatusPeriod`:
   <cbc:IssueTime>09:10:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
-  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:Note languageID="qau">Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.</cbc:Note>
+  <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode>Progress</cbc:TransportationStatusTypeCode>
@@ -538,9 +539,8 @@ Inside `StatusPeriod`:
         <cbc:Name>Trasvia Haulage</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

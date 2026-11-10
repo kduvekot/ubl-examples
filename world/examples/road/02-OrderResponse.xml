@@ -9,7 +9,8 @@
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:IssueTime>17:42:00</cbc:IssueTime>
   <cbc:OrderResponseCode>CA</cbc:OrderResponseCode>
-  <cbc:Note>Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.</cbc:Note>
+  <cbc:Note languageID="qau">Stanbii 2: vevoe 2025 cegae scilceor grasgaar vildrardai dratree vevoe 2026 sesdaa masnao mosaesk trigropiar golbreor, nasgei vevoe vosscuor cosciar.</cbc:Note>
+  <cbc:Note languageID="en">Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.</cbc:Note>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>
@@ -27,9 +28,8 @@
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

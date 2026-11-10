@@ -28,8 +28,10 @@ One pallet's heat-treatment mark was illegible, so customs inspected the contain
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-21**  
   Thirty days.
-- `Note` = **The illegible mark is the packer's responsibility under the agreement.**  
-  Why the seller pays.
+- `Note` = **Lapetato vivuse mafute sopule nalahiki tilala mitavema.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): Why the seller pays.
+- `Note` = **The illegible mark is the packer's responsibility under the agreement.** (languageID `en`)  
+  The same note in English, the working language between the countries: Why the seller pays.
 - `DebitNoteTypeCode` = **383**  
   UN/EDIFACT 1001 code 383: debit note.
 - `TaxPointDate` = **2026-05-20**  
@@ -295,12 +297,10 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Party/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
@@ -683,7 +683,8 @@ Inside `DebitNoteLine`:
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>10:30:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-21</cbc:DueDate>
-  <cbc:Note>The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
+  <cbc:Note languageID="qal">Lapetato vivuse mafute sopule nalahiki tilala mitavema.</cbc:Note>
+  <cbc:Note languageID="en">The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
   <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
@@ -861,9 +862,8 @@ Inside `DebitNoteLine`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

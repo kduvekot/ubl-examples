@@ -412,12 +412,10 @@ Inside `Shipment`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Consignment/ConsigneeParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Consignment/ConsigneeParty/Language/Name` = **English**  
-  The language's name.
-- `Consignment/ConsigneeParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Consignment/ConsigneeParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/ConsigneeParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Consignment/ConsigneeParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -484,12 +482,10 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/NotifyParty/PartyName/Name` = **Nalevi Warehousing**  
   The trading name; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/NotifyParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Consignment/NotifyParty/Language/Name` = **English**  
-  The language's name.
-- `Consignment/NotifyParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Consignment/NotifyParty/Language/ID` = **qal**  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/NotifyParty/Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
 - `Consignment/NotifyParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Consignment/NotifyParty/PostalAddress/AddressFormatCode` = **XL**  
@@ -1629,9 +1625,8 @@ Inside `Signature`:
           <cbc:Name>Velumi Trading</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qal</cbc:ID>
+          <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -1693,9 +1688,8 @@ Inside `Signature`:
           <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qal</cbc:ID>
+          <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

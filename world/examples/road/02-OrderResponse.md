@@ -28,8 +28,10 @@ The manufacturer accepts the order and confirms the collection date at its wareh
   The time the sender's system issued the document, in the sender's local time.
 - `OrderResponseCode` = **CA**  
   UN/EDIFACT 4343 code CA: conditionally accepted, with the substitution of line 2.
-- `Note` = **Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.**  
-  The condition in words.
+- `Note` = **Stanbii 2: vevoe 2025 cegae scilceor grasgaar vildrardai dratree vevoe 2026 sesdaa masnao mosaesk trigropiar golbreor, nasgei vevoe vosscuor cosciar.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): The condition in words.
+- `Note` = **Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.** (languageID `en`)  
+  The same note in English, the working language between the countries: The condition in words.
 
 ### Order Reference
 
@@ -52,12 +54,10 @@ Inside `SellerSupplierParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
@@ -384,7 +384,8 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:IssueTime>17:42:00</cbc:IssueTime>
   <cbc:OrderResponseCode>CA</cbc:OrderResponseCode>
-  <cbc:Note>Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.</cbc:Note>
+  <cbc:Note languageID="qau">Stanbii 2: vevoe 2025 cegae scilceor grasgaar vildrardai dratree vevoe 2026 sesdaa masnao mosaesk trigropiar golbreor, nasgei vevoe vosscuor cosciar.</cbc:Note>
+  <cbc:Note languageID="en">Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.</cbc:Note>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>
@@ -402,9 +403,8 @@ Inside `OrderLine`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

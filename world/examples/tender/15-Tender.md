@@ -32,8 +32,10 @@ The tender, with the consortium partner as subcontractor.
   The time the sender's system issued the document, in the sender's local time.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The contract tendered for.
-- `Note` = **Tender for both lots.**  
-  What is offered.
+- `Note` = **Scancoov scatear trodria nurdraor.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What is offered.
+- `Note` = **Tender for both lots.** (languageID `en`)  
+  The same note in English, the working language between the countries: What is offered.
 
 ### Validity Period
 
@@ -81,12 +83,10 @@ Inside `TendererParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -538,7 +538,8 @@ Inside `TenderedProject`:
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>09:13:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:Note>Tender for both lots.</cbc:Note>
+  <cbc:Note languageID="qau">Scancoov scatear trodria nurdraor.</cbc:Note>
+  <cbc:Note languageID="en">Tender for both lots.</cbc:Note>
   <cac:ValidityPeriod>
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
@@ -572,9 +573,8 @@ Inside `TenderedProject`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

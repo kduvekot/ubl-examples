@@ -30,8 +30,10 @@ The intermodal terminal reports to the rail carrier that the containers are load
   The kind of report.
 - `Description` = **Two containers loaded on the container train.**  
   In words.
-- `Note` = **Automatic report from the sender's tracking system.**  
-  How it was made.
+- `Note` = **Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): How it was made.
+- `Note` = **Automatic report from the sender's tracking system.** (languageID `en`)  
+  The same note in English, the working language between the countries: How it was made.
 - `ShippingOrderID` = **VI-CS-26-0327**  
   The shipper's booking it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
@@ -53,12 +55,10 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CarrierParty/PartyName/Name` = **Ferrano Rail Cargo**  
   The trading name; identity of Ferrano Rail Cargo (world/parties.json).
-- `CarrierParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `CarrierParty/Language/Name` = **English**  
-  The language's name.
-- `CarrierParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `CarrierParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `CarrierParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -159,12 +159,10 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyName/Name` = **Ferrano Intermodal Hub**  
   The trading name; identity of Ferrano Intermodal Hub (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **English**  
-  The language's name.
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -331,7 +329,8 @@ Inside `StatusPeriod`:
   <cbc:IssueTime>13:11:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
-  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:Note languageID="qau">Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.</cbc:Note>
+  <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
@@ -347,9 +346,8 @@ Inside `StatusPeriod`:
         <cbc:Name>Ferrano Rail Cargo</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -443,9 +441,8 @@ Inside `StatusPeriod`:
           <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

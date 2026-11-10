@@ -540,12 +540,10 @@ Inside `CatalogueLine`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Codana Identification Agency (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
   The trading name; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Language/ID` = **en**  
-  English, the language the party does business in.
-- `Item/StandardItemIdentification/IssuerParty/Language/Name` = **English**  
-  The language's name.
-- `Item/StandardItemIdentification/IssuerParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Item/StandardItemIdentification/IssuerParty/Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Item/StandardItemIdentification/IssuerParty/Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressFormatCode` = **XU**  
@@ -1358,9 +1356,8 @@ Inside `CatalogueLine`:
             <cbc:Name>Codana Identification Agency</cbc:Name>
           </cac:PartyName>
           <cac:Language>
-            <cbc:ID>en</cbc:ID>
-            <cbc:Name>English</cbc:Name>
-            <cbc:LocaleCode>EN</cbc:LocaleCode>
+            <cbc:ID>qau</cbc:ID>
+            <cbc:Name>Urvanian</cbc:Name>
           </cac:Language>
           <cac:PostalAddress>
             <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

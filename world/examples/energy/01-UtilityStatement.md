@@ -28,8 +28,10 @@ The grid operator reads the factory's gas meter and sends the retail company the
   The time the sender's system issued the document, in the sender's local time.
 - `UtilityStatementTypeCode` = **Gas**  
   The kind of supply.
-- `Note` = **Metered consumption for the retail company's billing; the grid operator owns and reads the meter.**  
-  What the statement is.
+- `Note` = **Turvaa lurlimoa scatear vevoe scurcea vongolsei drobruo; vevoe vistui borbrennoe gragrea perpoor lerbrao vevoe drasuo.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What the statement is.
+- `Note` = **Metered consumption for the retail company's billing; the grid operator owns and reads the meter.** (languageID `en`)  
+  The same note in English, the working language between the countries: What the statement is.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, Urvania's currency; it has no minor unit.
 
@@ -52,12 +54,10 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Grid (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Grid**  
   The trading name; identity of Ferrano Grid (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -149,12 +149,10 @@ Inside `ReceiverParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Energy (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Energy**  
   The trading name; identity of Ferrano Energy (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -257,12 +255,10 @@ Inside `SubscriberParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -483,7 +479,8 @@ Inside `SubscriberConsumption`:
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:42:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Gas</cbc:UtilityStatementTypeCode>
-  <cbc:Note>Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>
+  <cbc:Note languageID="qau">Turvaa lurlimoa scatear vevoe scurcea vongolsei drobruo; vevoe vistui borbrennoe gragrea perpoor lerbrao vevoe drasuo.</cbc:Note>
+  <cbc:Note languageID="en">Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>FG-INV-26-0150</cbc:ID>
@@ -498,9 +495,8 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Ferrano Grid</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -580,9 +576,8 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Ferrano Energy</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -675,9 +670,8 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

@@ -26,8 +26,10 @@ The hub, as network manager, reports the train's position and timetable.
   Answered at once.
 - `IssueTime` = **06:45:00**  
   A quarter of an hour later.
-- `Note` = **Left on time.**  
-  The answer.
+- `Note` = **Lestei vilscior tesrei.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): The answer.
+- `Note` = **Left on time.** (languageID `en`)  
+  The same note in English, the working language between the countries: The answer.
 - `StatusAvailableIndicator` = **true**  
   A status is available.
 
@@ -54,12 +56,10 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Intermodal Hub**  
   The trading name; identity of Ferrano Intermodal Hub (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -147,12 +147,10 @@ Inside `ReceiverParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Rail Cargo**  
   The trading name; identity of Ferrano Rail Cargo (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Language/ID` = **qau**  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/Name` = **Urvanian**  
+  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
@@ -305,7 +303,8 @@ Inside `TransportSchedule`:
   <cbc:UUID>78d6602f-27f8-5e6a-b8c0-36b493a71754</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:45:00</cbc:IssueTime>
-  <cbc:Note>Left on time.</cbc:Note>
+  <cbc:Note languageID="qau">Lestei vilscior tesrei.</cbc:Note>
+  <cbc:Note languageID="en">Left on time.</cbc:Note>
   <cbc:StatusAvailableIndicator>true</cbc:StatusAvailableIndicator>
   <cac:Signature>
     <cbc:ID>FIH-SIG-TPS</cbc:ID>
@@ -328,9 +327,8 @@ Inside `TransportSchedule`:
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -408,9 +406,8 @@ Inside `TransportSchedule`:
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
