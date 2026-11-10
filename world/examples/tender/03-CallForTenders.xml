@@ -468,6 +468,7 @@
       </cac:TechnicalCommitteePerson>
       <cac:Prize>
         <cbc:RankCode>None</cbc:RankCode>
+        <cbc:ValueAmount currencyID="XBL">0.00</cbc:ValueAmount>
         <cbc:Description>Not a contest.</cbc:Description>
       </cac:Prize>
     </cac:AwardingTerms>

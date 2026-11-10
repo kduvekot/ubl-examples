@@ -64,6 +64,22 @@ Inside `Signature`:
 
 Inside `EconomicOperatorParty`:
 
+- `QualifyingParty/ParticipationPercent` = **60**  
+  The sawmill's share in the planned consortium.
+- `QualifyingParty/OperatingYearsQuantity` = **22** (unitCode `ANN`)  
+  Years in business.
+- `QualifyingParty/EmployeeQuantity` = **85** (unitCode `C62`)  
+  Its staff.
+- `QualifyingParty/TendererRoleCode` = **Lead**  
+  It would lead the consortium.
+- `QualifyingParty/Party/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `QualifyingParty/Party/PartyName/Name` = **Marrowdale Sawmill**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EconomicOperatorRole/RoleCode` = **Lead**  
+  The lead of a consortium still to be formed.
+- `EconomicOperatorRole/RoleDescription` = **Supplies the slats; a bench maker would build the benches.**  
+  In words.
 - `Party/WebsiteURI` = **https://www.marrowdalesawmill.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Marrowdale Sawmill (world/parties.json).
 - `Party/IndustryClassificationCode` = **1610** (listID `ISIC Rev.4`)  
@@ -311,6 +327,24 @@ Inside `ProcurementProjectLotReference`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:EconomicOperatorParty>
+    <cac:QualifyingParty>
+      <cbc:ParticipationPercent>60</cbc:ParticipationPercent>
+      <cbc:OperatingYearsQuantity unitCode="ANN">22</cbc:OperatingYearsQuantity>
+      <cbc:EmployeeQuantity unitCode="C62">85</cbc:EmployeeQuantity>
+      <cbc:TendererRoleCode>Lead</cbc:TendererRoleCode>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Marrowdale Sawmill</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:QualifyingParty>
+    <cac:EconomicOperatorRole>
+      <cbc:RoleCode>Lead</cbc:RoleCode>
+      <cbc:RoleDescription>Supplies the slats; a bench maker would build the benches.</cbc:RoleDescription>
+    </cac:EconomicOperatorRole>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>

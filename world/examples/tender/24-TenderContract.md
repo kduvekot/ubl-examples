@@ -553,6 +553,8 @@ Inside `TenderingTerms`:
   The person's position.
 - `AwardingTerms/Prize/RankCode` = **None**  
   No prizes in a tender.
+- `AwardingTerms/Prize/ValueAmount` = **0.00** (currencyID `XBL`)  
+  No prize money.
 - `AwardingTerms/Prize/Description` = **Not a contest.**  
   Why.
 - `AdditionalInformationParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -1182,6 +1184,7 @@ Inside `TenderResult`:
       </cac:TechnicalCommitteePerson>
       <cac:Prize>
         <cbc:RankCode>None</cbc:RankCode>
+        <cbc:ValueAmount currencyID="XBL">0.00</cbc:ValueAmount>
         <cbc:Description>Not a contest.</cbc:Description>
       </cac:Prize>
     </cac:AwardingTerms>

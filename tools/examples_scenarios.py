@@ -6113,7 +6113,8 @@ def tendering_terms(f):
                                                       "WeightNumeric": V("20", "Half of quality.")}}],
                 "TechnicalCommitteePerson": kit.person("Mara", "Delling", "The head of parks on the committee.",
                                                        job="Head of parks"),
-                "Prize": {"RankCode": V("None", "No prizes in a tender."), "Description": V("Not a contest.",
+                "Prize": {"RankCode": V("None", "No prizes in a tender."),
+                          "ValueAmount": amount(0, "XBL", "No prize money."), "Description": V("Not a contest.",
                                                                                            "Why.")}},
             "AdditionalInformationParty": party(PWD, short=True),
             "DocumentProviderParty": party(PWD, short=True),
@@ -6203,7 +6204,13 @@ def _(f, n, doc, out):
             "PlannedDate": V(f.date(14), "The contract notice is planned for then."),
             "DocumentReference": {"ID": V("PWD-PARKS-PLAN-26", "The parks plan.")},
             "ContractingParty": contracting_party_details(),
-            "ProcurementProject": procurement_project(f)}
+            "TenderingTerms": tendering_terms(f),
+            "TenderingProcess": {"ProcedureCode": V("Open", "An open procedure is planned."),
+                                 "Description": V("Planned as an open procedure in two lots.", "What is planned.")},
+            "ProcurementProject": procurement_project(f),
+            "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1, planned."), "ProcurementProject": project_brief("LOT-1")},
+                                      {"ID": V("LOT-2", "Lot 2, planned."),
+                                       "ProcurementProject": project_brief("LOT-2")}]}
 
 
 @enrich("tender", "ContractNotice")
@@ -6593,6 +6600,15 @@ def _(f, n, doc, out):
             "DocumentReference": {"ID": V(f.numbers.get("notice", f"{FOLDER}-CN"), "The contract notice it "
                                                                                    "answers.")},
             "Signature": seal(SAWMILL, "HS-SIG-EOI"),
+            "EconomicOperatorParty": {
+                "QualifyingParty": {"ParticipationPercent": V("60", "The sawmill's share in the planned consortium."),
+                                    "OperatingYearsQuantity": qty(22, "ANN", "Years in business."),
+                                    "EmployeeQuantity": qty(85, "C62", "Its staff."),
+                                    "TendererRoleCode": V("Lead", "It would lead the consortium."),
+                                    "Party": party(SAWMILL, short=True)},
+                "EconomicOperatorRole": {"RoleCode": V("Lead", "The lead of a consortium still to be formed."),
+                                         "RoleDescription": V("Supplies the slats; a bench maker would build "
+                                                              "the benches.", "In words.")}},
             "ProcurementProject": project_brief("LOT-1"), "ProcurementProjectLotReference": lot_ref("LOT-1")}
 
 
@@ -6782,3 +6798,4 @@ def _(f, n, doc, out):
             "ProcurementProject": project_brief(), "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
                                                                             {"ID": V("LOT-2", "Lot 2.")}],
             "TenderResult": {**out["TenderResult"], **tender_result(f)}}
+
