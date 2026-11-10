@@ -1847,6 +1847,19 @@
   },
   {
    "flow": "tender",
+   "doc": "Catalogue",
+   "from": "5-xu",
+   "to": "2-xb",
+   "why": "The framework contract is ordered from a catalogue: the manufacturer publishes the awarded items and prices, each line pointing to the call for tenders.",
+   "parties": {
+    "ProviderParty": "5-xu",
+    "ReceiverParty": "2-xb",
+    "SellerSupplierParty": "5-xu",
+    "ContractorCustomerParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
    "doc": "Order",
    "from": "2-xb",
    "to": "5-xu",
@@ -1858,6 +1871,28 @@
    },
    "values": {
     "DeliveryTerms/ID": "DAP"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "OrderChange",
+   "from": "2-xb",
+   "to": "5-xu",
+   "why": "The department wants the benches of this release in the harbour park's moss green, at the special colour charge the manufacturer quoted.",
+   "parties": {
+    "BuyerCustomerParty": "2-xb",
+    "SellerSupplierParty": "5-xu"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "OrderResponse",
+   "from": "5-xu",
+   "to": "2-xb",
+   "why": "The manufacturer accepts the change and confirms the charge.",
+   "parties": {
+    "SellerSupplierParty": "5-xu",
+    "BuyerCustomerParty": "2-xb"
    }
   },
   {
@@ -3103,6 +3138,39 @@
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "DebitNote",
+   "from": "2-xb",
+   "to": "5-xu",
+   "why": "The installation finished three days late; under the contract's penalty clause the department charges the manufacturer for the late days, one of them waived.",
+   "parties": {
+    "AccountingCustomerParty": "2-xb",
+    "AccountingSupplierParty": "5-xu"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "Reminder",
+   "from": "5-xu",
+   "to": "2-xb",
+   "why": "The invoice is past due; the manufacturer reminds the department of the balance and charges Urvania's statutory interest.",
+   "parties": {
+    "AccountingSupplierParty": "5-xu",
+    "AccountingCustomerParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "RemittanceAdvice",
+   "from": "2-xb",
+   "to": "5-xu",
+   "why": "The department pays the balance with the interest, less the credit and the penalty, and says what the payment settles.",
+   "parties": {
+    "AccountingCustomerParty": "2-xb",
+    "AccountingSupplierParty": "5-xu"
    }
   }
  ]

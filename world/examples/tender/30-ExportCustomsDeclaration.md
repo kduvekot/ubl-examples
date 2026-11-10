@@ -1,10 +1,10 @@
 # Export Customs Declaration: Valdara Industries to Customs Administration of Urvania
 
-*Example 27 of the flow "A public tender (Bayvarra)" · [Export Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA)*
+*Example 30 of the flow "A public tender (Bayvarra)" · [Export Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
 The call-off leaves Urvania; the manufacturer declares the export.
 
-[The XML file](27-ExportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](30-ExportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The call-off leaves Urvania; the manufacturer declares the export.
   The business process the document belongs to: the flow "A public tender (Bayvarra)".
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-EX-26-0215**  
+- `ID` = **VI-EX-26-0218**  
   The exporter's reference.
-- `UUID` = **50fa98a8-ede0-548d-bf67-6e9e4318b625**  
+- `UUID` = **780521a7-44ae-5ddb-a7d2-add468fea007**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-30**  
   Declared when the goods leave for the border.
-- `IssueTime` = **08:06:00**  
+- `IssueTime` = **13:40:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `ExportTypeCode` = **Permanent**  
   A permanent export: the goods are sold abroad.
@@ -162,7 +162,7 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **VI-CD-26-0216**  
+- `ID` = **VI-CD-26-0219**  
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **Original**  
   An original declaration, not an amendment.
@@ -172,11 +172,11 @@ Inside `CustomsDeclaration`:
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XU**  
   The customs territory the goods leave.
-- `Shipment/ID` = **CL-SH-26-0213**  
+- `Shipment/ID` = **CL-SH-26-0216**  
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **1660** (unitCode `KGM`)  
   The gross weight leaving the country.
-- `Shipment/Consignment/ID` = **CL-CS-26-0214**  
+- `Shipment/Consignment/ID` = **CL-CS-26-0217**  
   The consignment carried.
 - `Shipment/Consignment/CarrierParty/WebsiteURI` = **https://www.trasvia.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Trasvia Haulage (world/parties.json).
@@ -674,7 +674,7 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105507** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `AdditionalDocumentReference/ID` = **LPWD-PO-26-0211**  
+- `AdditionalDocumentReference/ID` = **LPWD-PO-26-0212**  
   The order behind the export.
 
 ### Signature
@@ -697,10 +697,10 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-EX-26-0215</cbc:ID>
-  <cbc:UUID>50fa98a8-ede0-548d-bf67-6e9e4318b625</cbc:UUID>
+  <cbc:ID>VI-EX-26-0218</cbc:ID>
+  <cbc:UUID>780521a7-44ae-5ddb-a7d2-add468fea007</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
-  <cbc:IssueTime>08:06:00</cbc:IssueTime>
+  <cbc:IssueTime>13:40:00</cbc:IssueTime>
   <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
   <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
   <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
@@ -817,7 +817,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>VI-CD-26-0216</cbc:ID>
+    <cbc:ID>VI-CD-26-0219</cbc:ID>
     <cbc:FunctionCode>Original</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-03-30</cbc:StartDate>
@@ -829,10 +829,10 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0213</cbc:ID>
+      <cbc:ID>CL-SH-26-0216</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
       <cac:Consignment>
-        <cbc:ID>CL-CS-26-0214</cbc:ID>
+        <cbc:ID>CL-CS-26-0217</cbc:ID>
         <cac:CarrierParty>
           <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
           <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>
@@ -1284,7 +1284,7 @@ Inside `Signature`:
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>LPWD-PO-26-0211</cbc:ID>
+      <cbc:ID>LPWD-PO-26-0212</cbc:ID>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

@@ -1,10 +1,10 @@
 # Order: Lumeport Public Works Department to Valdara Industries
 
-*Example 25 of the flow "A public tender (Bayvarra)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
+*Example 26 of the flow "A public tender (Bayvarra)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
 The first call-off under the awarded contract. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.
 
-[The XML file](25-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](26-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,15 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The business process the document belongs to: the flow "A public tender (Bayvarra)".
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-PO-26-0211**  
+- `ID` = **LPWD-PO-26-0212**  
   The buyer's order number.
-- `UUID` = **0dfaecd7-ab70-522e-912d-0e639d70be1e**  
+- `SalesOrderID` = **VI-SO-26-0058**  
+  The manufacturer's sales order for the framework contract, given when the contract was signed.
+- `UUID` = **9865133f-cea3-538c-ba26-54de8100727c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   The first call-off under the awarded contract.
-- `IssueTime` = **10:18:00**  
+- `IssueTime` = **14:40:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
@@ -32,6 +34,8 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The lume, the buyer's currency, agreed in the contract; it has two decimals.
 - `PricingCurrencyCode` = **XUF**  
   The contract prices are the manufacturer's, in ferra.
+- `TaxCurrencyCode` = **XUF**  
+  The manufacturer accounts its value added tax in ferra.
 - `AccountingCostCode` = **PWD-PARKS-26**  
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Parks renewal programme 2026**  
@@ -312,6 +316,21 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Description` = **Public works depot, Lumeport**  
   Where the delivery terms place the handover of the goods.
 
+### Tax Exchange Rate
+
+Inside `TaxExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The document currency.
+- `TargetCurrencyCode` = **XUF**  
+  The tax currency.
+- `CalculationRate` = **100**  
+  1 lume = 100 ferra, the reference rate.
+- `MathematicOperatorCode` = **Multiply**  
+  Lume times the rate gives ferra.
+- `Date` = **2026-03-23**  
+  The rate of the document's date.
+
 ### Pricing Exchange Rate
 
 Inside `PricingExchangeRate`:
@@ -334,6 +353,21 @@ Inside `PricingExchangeRate`:
   A currency forward.
 - `ForeignExchangeContract/ContractType` = **Forward purchase of ferra**  
   In words.
+
+### Payment Exchange Rate
+
+Inside `PaymentExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The document currency.
+- `TargetCurrencyCode` = **XUF**  
+  The currency the manufacturer is paid in.
+- `CalculationRate` = **100**  
+  1 lume = 100 ferra, the reference rate.
+- `MathematicOperatorCode` = **Multiply**  
+  Lume times the rate gives ferra.
+- `Date` = **2026-03-23**  
+  The rate of the document's date.
 
 ### Tax Total
 
@@ -429,6 +463,8 @@ Inside `OrderLine`:
   The barcode the number is printed in on the label.
 - `LineItem/Item/StandardItemIdentification/IssuerScopeID` = **771**  
   The range of item numbers the agency gives out in the maker's country.
+- `LineItem/Item/CatalogueDocumentReference/ID` = **VI-CAT-26-0211**  
+  The catalogue the item was ordered from.
 - `LineItem/Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet with drawings and assembly instructions.
 - `LineItem/Item/OriginCountry/IdentificationCode` = **XU**  
@@ -597,13 +633,15 @@ Inside `OrderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-PO-26-0211</cbc:ID>
-  <cbc:UUID>0dfaecd7-ab70-522e-912d-0e639d70be1e</cbc:UUID>
+  <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+  <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
+  <cbc:UUID>9865133f-cea3-538c-ba26-54de8100727c</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>10:18:00</cbc:IssueTime>
+  <cbc:IssueTime>14:40:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
+  <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -842,6 +880,13 @@ Inside `OrderLine`:
       <cbc:Description>Public works depot, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:TaxExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-23</cbc:Date>
+  </cac:TaxExchangeRate>
   <cac:PricingExchangeRate>
     <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
@@ -855,6 +900,13 @@ Inside `OrderLine`:
       <cbc:ContractType>Forward purchase of ferra</cbc:ContractType>
     </cac:ForeignExchangeContract>
   </cac:PricingExchangeRate>
+  <cac:PaymentExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-23</cbc:Date>
+  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -918,6 +970,9 @@ Inside `OrderLine`:
           <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
           <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
+        <cac:CatalogueDocumentReference>
+          <cbc:ID>VI-CAT-26-0211</cbc:ID>
+        </cac:CatalogueDocumentReference>
         <cac:ItemSpecificationDocumentReference>
           <cbc:ID>VI-DS-B180</cbc:ID>
         </cac:ItemSpecificationDocumentReference>

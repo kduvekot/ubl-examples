@@ -1,10 +1,10 @@
-# Credit Note: Valdara Industries to Lumeport Public Works Department
+# Invoice: Valdara Industries to Lumeport Public Works Department
 
-*Example 30 of the flow "A public tender (Bayvarra)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
+*Example 32 of the flow "A public tender (Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-One bench was damaged during installation and is replaced free of charge; the manufacturer credits it and its installation.
+The manufacturer invoices the public buyer under the contract; payment to its account at the seller's bank.
 
-[The XML file](30-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](32-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,73 +18,99 @@ One bench was damaged during installation and is replaced free of charge; the ma
   The business process the document belongs to: the flow "A public tender (Bayvarra)".
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-CN-26-0219**  
-  The seller's credit note number.
-- `UUID` = **6efad09d-cbc9-5d13-aa83-2f8a3e16685c**  
+- `ID` = **VI-INV-26-0221**  
+  The seller's invoice number.
+- `UUID` = **24e1d166-df64-5739-a3d9-ff76dde6a054**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-04**  
-  Issued when the replacement was agreed.
-- `IssueTime` = **13:40:00**  
+- `IssueDate` = **2026-03-31**  
+  Issued on delivery.
+- `IssueTime` = **09:28:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `TaxPointDate` = **2026-04-04**  
-  Urvania's VAT: the credit's date.
-- `CreditNoteTypeCode` = **381**  
-  UN/EDIFACT 1001 code 381: credit note.
+- `DueDate` = **2026-04-30**  
+  30 days after the issue date, the agreed payment term.
+- `InvoiceTypeCode` = **380**  
+  UN/EDIFACT 1001 code 380: commercial invoice.
+- `Note` = **Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.**  
+  Why it is named.
+- `TaxPointDate` = **2026-03-31**  
+  Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XBL**  
-  The lume, the currency of the invoice credited; it has two decimals.
+  The lume, the buyer's currency, agreed in the contract; it has two decimals.
 - `TaxCurrencyCode` = **XUF**  
-  The manufacturer reports its VAT in ferra.
+  The seller reports its value added tax in ferra.
 - `PricingCurrencyCode` = **XUF**  
   The contract prices are in ferra.
-- `PaymentCurrencyCode` = **XBL**  
-  Settled in lume.
-- `PaymentAlternativeCurrencyCode` = **XUF**  
-  Shown in ferra too.
+- `PaymentCurrencyCode` = **XUF**  
+  The manufacturer is paid in ferra, the contract currency, to its account in Urvania over the trade accord's link.
 - `AccountingCostCode` = **PWD-PARKS-26**  
-  The buyer's cost centre, as on the invoice credited.
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Parks renewal programme 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
-  The number of lines.
+  The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en**  
-  The language of the texts.
+  The language the texts of the invoice are in: the seller's country's language.
 
-### Invoice Period
+### Order Reference
 
-Inside `InvoicePeriod`:
+Inside `OrderReference`:
 
-- `StartDate` = **2026-03-31**  
-  The release.
-- `EndDate` = **2026-04-04**  
-  To the credit.
+- `ID` = **LPWD-PO-26-0212**  
+  The authority's call-off order.
 
-### Billing Reference
+### Originator Document Reference
 
-Inside `BillingReference`:
+Inside `OriginatorDocumentReference`:
 
-- `InvoiceDocumentReference/ID` = **VI-INV-26-0218**  
-  The invoice credited.
+- `ID` = **PWD-2026-PARKS**  
+  The procurement procedure.
 
-### Delivery Note Document Reference
+### Contract Document Reference
 
-Inside `DeliveryNoteDocumentReference`:
+Inside `ContractDocumentReference`:
 
-- `ID` = **CL-DA-26-0212**  
-  The despatch advice of the bench.
+- `ID` = **PWD-2026-PARKS**  
+  The awarded contract.
 
-### Work Report Document Reference
+### Project Reference
 
-Inside `WorkReportDocumentReference`:
+Inside `ProjectReference`:
 
-- `ID` = **VI-WR-26-0080**  
-  The installation report.
+- `ID` = **PWD-PARKS-26**  
+  The programme the department books it on.
 
-### Purchase Reference
+### Buyer Assigned Reference
 
-Inside `PurchaseReference`:
+Inside `BuyerAssignedReference`:
 
-- `ID` = **PARK-HB**  
-  The harbour park.
+- `BuyerReferenceCode` = **PWD-PARKS-26-AP**  
+  The buyer's routing code for its invoices: the accounts-payable desk of the cost centre.
+- `BuyerReference` = **Accounts payable, public works**  
+  The desk in words.
+
+### Annotation
+
+Inside `Annotation`:
+
+- `SubjectCode` = **Contract**  
+  The annotation is about the contract.
+- `Subject` = **Releases under the framework contract**  
+  Its subject.
+- `AnnotationContent` = **First release: 40 benches; 200 remain.**  
+  A remark for the department's accounts.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-26-0078**  
+  The seller's electronic signature on the invoice, which Bayvarra's public bodies ask for.
+- `SignatureMethod` = **XAdES-BES**  
+  The kind of signature.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Supplier Party
 
@@ -318,6 +344,24 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Buyer Customer Party
+
+Inside `BuyerCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Party/PartyName/Name` = **Lumeport Public Works Department**  
+  The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+
+### Seller Supplier Party
+
+Inside `SellerSupplierParty`:
+
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Party/PartyName/Name` = **Valdara Industries**  
+  The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+
 ### Tax Representative Party
 
 Inside `TaxRepresentativeParty`:
@@ -327,23 +371,127 @@ Inside `TaxRepresentativeParty`:
 - `PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The first, and only, way to pay.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-04-30**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF48VIINV260221**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF48VIINV260221**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
+- `PayeeFinancialAccount/ID` = **XU20CREV0000209458** (schemeID `urn:ubl-examples:world:account`)  
+  The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PayeeFinancialAccount/Name` = **Valdara Industries SUA**  
+  The account holder, as the bank knows it.
+- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XUF**  
+  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/PaymentNote` = **Invoice VI-INV-26-0221**  
+  What the payer is asked to quote with the transfer, so the payment is matched.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **CREV-001**  
+  The branch that keeps the account.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **CREV**  
+  The bank code, the part of every account number that names the bank; identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Crevalto Bank**  
+  The bank; identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Piazza della Banca**  
+  The bank's head office; identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **8**  
+  Its building number; identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ferrano**  
+  Its town; identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU**  
+  The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU**  
+  Its country.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
+  The country where the account is kept.
+
 ### Payment Terms
 
 Inside `PaymentTerms`:
 
-- `Note` = **Settled against the next payment to the seller, unless refunded.**  
-  How a credit note is settled in the world.
+- `ID` = **XU-STD**  
+  The standard terms of Urvania.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 2 % discount when paid within 10 days.**  
+  Urvanian practice: a cash discount for early payment, statutory interest on late payment.
+- `SettlementDiscountPercent` = **2**  
+  The cash discount for early payment.
+- `SettlementDiscountAmount` = **417.60** (currencyID `XBL`)  
+  The discount on the amount payable, if paid in time.
+- `PaymentTermsDetailsURI` = **https://www.valdara.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-04-30**  
+  The day the amount is due.
+- `SettlementPeriod/StartDate` = **2026-03-31**  
+  From the invoice date.
+- `SettlementPeriod/EndDate` = **2026-04-10**  
+  For 10 days.
+- `PenaltyInterestRate/InterestRatePercent` = **8**  
+  The interest on late payment.
+- `PenaltyInterestRate/TimeBasisCode` = **Year**  
+  A yearly rate.
+- `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
+  Simple interest, per day late.
+
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge, not an allowance: it adds to the amount.
+- `AllowanceChargeReason` = **Special colour**  
+  The benches in moss green, RAL 6005, as the order change asked.
+- `Amount` = **200.00** (currencyID `XBL`)  
+  The charge the manufacturer quoted and confirmed: 5 lume a bench.
+- `TaxCategory/ID` = **G**  
+  Goods exported from Urvania: no value added tax is charged on an export (category G, free export item).
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **XU-EXP**  
+  The world's code for the exemption reason (world/countries.json).
+- `TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxCategory/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
 
 ### Tax Exchange Rate
 
 Inside `TaxExchangeRate`:
 
 - `SourceCurrencyCode` = **XBL**  
-  The credit's currency.
+  The invoice currency.
 - `TargetCurrencyCode` = **XUF**  
-  The tax currency.
+  The seller's tax currency.
 - `CalculationRate` = **100**  
-  1 lume = 100 ferra.
+  1 lume = 100 ferra, the reference rate.
+- `MathematicOperatorCode` = **Multiply**  
+  Lume times the rate gives ferra.
+- `Date` = **2026-03-31**  
+  The rate of the tax point.
 
 ### Pricing Exchange Rate
 
@@ -373,43 +521,25 @@ Inside `PricingExchangeRate`:
 Inside `PaymentExchangeRate`:
 
 - `SourceCurrencyCode` = **XBL**  
-  The credit's currency.
-- `TargetCurrencyCode` = **XBL**  
-  Paid in the same.
-- `CalculationRate` = **1**  
-  No conversion.
-
-### Payment Alternative Exchange Rate
-
-Inside `PaymentAlternativeExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL**  
-  The credit's currency.
+  The document currency.
 - `TargetCurrencyCode` = **XUF**  
-  In ferra.
+  The currency the manufacturer is paid in.
 - `CalculationRate` = **100**  
-  The reference rate.
-
-### Allowance Charge
-
-Inside `AllowanceCharge`:
-
-- `ChargeIndicator` = **false**  
-  An allowance.
-- `AllowanceChargeReason` = **Goodwill**  
-  For the inconvenience.
-- `Amount` = **0.00** (currencyID `XBL`)  
-  None in money: the bench is replaced.
+  1 lume = 100 ferra, the reference rate.
+- `MathematicOperatorCode` = **Multiply**  
+  Lume times the rate gives ferra.
+- `Date` = **2026-03-31**  
+  The rate of the document's date.
 
 ### Tax Total
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **0** (currencyID `XUF`)  
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **499** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **20160.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G**  
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item).
@@ -421,9 +551,9 @@ Inside `TaxTotal`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
-- `TaxSubtotal/TaxableAmount` = **18** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **720.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O**  
   A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O).
@@ -435,61 +565,73 @@ Inside `TaxTotal`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `TaxAmount` = **0** (currencyID `XUF`)  
+  The same tax in ferra, for the seller's tax return: none on an export.
+- `TaxSubtotal/TaxableAmount` = **2088000** (currencyID `XUF`)  
+  The taxable amount in ferra.
+- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
+  No tax: an export.
+- `TaxSubtotal/TransactionCurrencyTaxAmount` = **0.00** (currencyID `XBL`)  
+  The tax in the invoice currency.
+- `TaxSubtotal/TaxCategory/ID` = **G**  
+  Goods exported from Urvania: no value added tax is charged on an export (category G, free export item).
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XU-EXP**  
+  The world's code for the exemption reason (world/countries.json).
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
 
 ### Withholding Tax Total
 
 Inside `WithholdingTaxTotal`:
 
-- `TaxAmount` = **1.80** (currencyID `XBL`)  
-  The withholding on the credited installation, reversed.
+- `TaxAmount` = **72.00** (currencyID `XBL`)  
+  10 % of the installation.
+- `TaxSubtotal/TaxableAmount` = **720.00** (currencyID `XBL`)  
+  The installation, the only service.
+- `TaxSubtotal/TaxAmount` = **72.00** (currencyID `XBL`)  
+  Withheld.
+- `TaxSubtotal/TaxCategory/ID` = **S**  
+  The withholding applies.
+- `TaxSubtotal/TaxCategory/Percent` = **10**  
+  services by businesses not established in Bayvarra, paid by a public body
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH**  
+  UN/EDIFACT 5153 code OTH: other taxes, the withholding tax.
+- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Withholding tax on services of non-residents**  
+  The tax in words.
 
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **517** (currencyID `XUF`)  
+- `LineExtensionAmount` = **20680.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **517** (currencyID `XUF`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **517** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **20880.00** (currencyID `XBL`)  
+  The line amounts plus the charges, without tax.
+- `TaxInclusiveAmount` = **20880.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **517** (currencyID `XUF`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `ChargeTotalAmount` = **200.00** (currencyID `XBL`)  
+  The sum of the charges at document level.
+- `WithholdingTaxTotalAmount` = **72.00** (currencyID `XBL`)  
+  The public body withholds 10 % of the price and pays it to the state for the supplier; a non-resident supplier appoints a tax representative in Bayvarra.
+- `PayableAmount` = **20808.00** (currencyID `XBL`)  
+  What the department pays the manufacturer: the total less the tax it withholds.
 
-### Credit Note Line
+### Invoice Line
 
-Inside `CreditNoteLine`:
+Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `CreditedQuantity` = **1** (unitCode `H87`)  
-  The bench damaged during installation.
-- `LineExtensionAmount` = **499** (currencyID `XUF`)  
-  Quantity times price, rounded to the minor unit.
-- `TaxPointDate` = **2026-04-04**  
-  The day of the credit.
-- `FreeOfChargeIndicator` = **false**  
-  A credit, not a free item.
-- `InvoicePeriod/StartDate` = **2026-04-02**  
-  During installation.
-- `WorkReportLineReference/LineID` = **1**  
-  The installation report's line.
-- `DocumentReference/ID` = **PWD-DMG-26-0081**  
-  The department's damage report.
-- `PricingReference/AlternativeConditionPrice/PriceAmount` = **49900** (currencyID `XUF`)  
-  The contract price in ferra.
-- `PurchaseReference/ID` = **PARK-HB-B17**  
-  The bench's place in the harbour park.
-- `OriginatorParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `OriginatorParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PaymentTerms/Note` = **Set off against the next release's invoice.**  
-  How the credit is settled.
+- `InvoicedQuantity` = **40** (unitCode `H87`)  
+  The benches of the first release.
+- `LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
+  40 × 499.00, rounded to the minor unit of the currency.
+- `OrderLineReference/LineID` = **1**  
+  The call-off line.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -694,28 +836,34 @@ Inside `CreditNoteLine`:
   The scale of the score.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
-- `Price/PriceAmount` = **499** (currencyID `XUF`)  
-  The contract price in lume.
+- `Price/PriceAmount` = **499** (currencyID `XBL`)  
+  The seller's price of 49900 XUF, converted to the buyer's currency at the world's reference rate, as the contract provides.
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
-- `SubCreditNoteLine/ID` = **1.1**  
-  The frame.
-- `SubCreditNoteLine/LineExtensionAmount` = **180.00** (currencyID `XBL`)  
-  The frame's share.
-- `SubCreditNoteLine/Item/Name` = **Side frames of the bench**  
-  The damaged part.
+- `Price/PricingExchangeRate/SourceCurrencyCode` = **XUF**  
+  The currency of the seller's price list.
+- `Price/PricingExchangeRate/SourceCurrencyBaseRate` = **1**  
+  The rate is for one unit of the seller's currency.
+- `Price/PricingExchangeRate/TargetCurrencyCode` = **XBL**  
+  The currency of the order.
+- `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
+  Given in single units of the order's currency.
+- `Price/PricingExchangeRate/ExchangeMarketID` = **World reference rate**  
+  The rate the world's central banks publish (world/countries.json).
+- `Price/PricingExchangeRate/CalculationRate` = **0.01**  
+  The world's reference rate (world/countries.json).
+- `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply**  
+  The seller's price times the rate gives the order price.
+- `Price/PricingExchangeRate/Date` = **2026-01-02**  
+  The reference rate of the first working day of the year, fixed in the contract.
 - `ID` = **2**  
   The line number.
-- `CreditedQuantity` = **1** (unitCode `H87`)  
-  Its installation, credited too.
-- `LineExtensionAmount` = **18** (currencyID `XUF`)  
-  Quantity times price, rounded to the minor unit.
-- `CollectedForParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `CollectedForParty/PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `WithholdingTaxTotal/TaxAmount` = **1.80** (currencyID `XBL`)  
-  The withholding reversed.
+- `InvoicedQuantity` = **40** (unitCode `H87`)  
+  Each bench anchored by the manufacturer's installers, as the contract provides.
+- `LineExtensionAmount` = **720.00** (currencyID `XBL`)  
+  40 × 18.00, rounded to the minor unit of the currency.
+- `WithholdingTaxTotal/TaxAmount` = **72.00** (currencyID `XBL`)  
+  Withheld on this line.
 - `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.**  
   The seller's description; item bench-installation of Valdara Industries (world/items.json).
 - `Item/Name` = **Installation of a park bench**  
@@ -734,53 +882,85 @@ Inside `CreditNoteLine`:
   Whether the category applies to goods or services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
-- `Price/PriceAmount` = **18** (currencyID `XUF`)  
-  The installation price in lume.
+- `Price/PriceAmount` = **18** (currencyID `XBL`)  
+  The seller's price of 1800 XUF, converted to the buyer's currency at the world's reference rate, as the contract provides.
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
+- `Price/PricingExchangeRate/SourceCurrencyCode` = **XUF**  
+  The currency of the seller's price list.
+- `Price/PricingExchangeRate/SourceCurrencyBaseRate` = **1**  
+  The rate is for one unit of the seller's currency.
+- `Price/PricingExchangeRate/TargetCurrencyCode` = **XBL**  
+  The currency of the order.
+- `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
+  Given in single units of the order's currency.
+- `Price/PricingExchangeRate/ExchangeMarketID` = **World reference rate**  
+  The rate the world's central banks publish (world/countries.json).
+- `Price/PricingExchangeRate/CalculationRate` = **0.01**  
+  The world's reference rate (world/countries.json).
+- `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply**  
+  The seller's price times the rate gives the order price.
+- `Price/PricingExchangeRate/Date` = **2026-01-02**  
+  The reference rate of the first working day of the year, fixed in the contract.
 
 ## The document
 
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
-<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CN-26-0219</cbc:ID>
-  <cbc:UUID>6efad09d-cbc9-5d13-aa83-2f8a3e16685c</cbc:UUID>
-  <cbc:IssueDate>2026-04-04</cbc:IssueDate>
-  <cbc:IssueTime>13:40:00</cbc:IssueTime>
-  <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>
-  <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
+  <cbc:ID>VI-INV-26-0221</cbc:ID>
+  <cbc:UUID>24e1d166-df64-5739-a3d9-ff76dde6a054</cbc:UUID>
+  <cbc:IssueDate>2026-03-31</cbc:IssueDate>
+  <cbc:IssueTime>09:28:00</cbc:IssueTime>
+  <cbc:DueDate>2026-04-30</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.</cbc:Note>
+  <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
-  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode>XUF</cbc:PaymentAlternativeCurrencyCode>
+  <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
-  <cac:InvoicePeriod>
-    <cbc:StartDate>2026-03-31</cbc:StartDate>
-    <cbc:EndDate>2026-04-04</cbc:EndDate>
-  </cac:InvoicePeriod>
-  <cac:BillingReference>
-    <cac:InvoiceDocumentReference>
-      <cbc:ID>VI-INV-26-0218</cbc:ID>
-    </cac:InvoiceDocumentReference>
-  </cac:BillingReference>
-  <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>CL-DA-26-0212</cbc:ID>
-  </cac:DeliveryNoteDocumentReference>
-  <cac:WorkReportDocumentReference>
-    <cbc:ID>VI-WR-26-0080</cbc:ID>
-  </cac:WorkReportDocumentReference>
-  <cac:PurchaseReference>
-    <cbc:ID>PARK-HB</cbc:ID>
-  </cac:PurchaseReference>
+  <cac:OrderReference>
+    <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+  </cac:OrderReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:OriginatorDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PARKS-26</cbc:ID>
+  </cac:ProjectReference>
+  <cac:BuyerAssignedReference>
+    <cbc:BuyerReferenceCode>PWD-PARKS-26-AP</cbc:BuyerReferenceCode>
+    <cbc:BuyerReference>Accounts payable, public works</cbc:BuyerReference>
+  </cac:BuyerAssignedReference>
+  <cac:Annotation>
+    <cbc:SubjectCode>Contract</cbc:SubjectCode>
+    <cbc:Subject>Releases under the framework contract</cbc:Subject>
+    <cbc:AnnotationContent>First release: 40 benches; 200 remain.</cbc:AnnotationContent>
+  </cac:Annotation>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-26-0078</cbc:ID>
+    <cbc:SignatureMethod>XAdES-BES</cbc:SignatureMethod>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -990,6 +1170,26 @@ Inside `CreditNoteLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
   <cac:TaxRepresentativeParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -998,13 +1198,88 @@ Inside `CreditNoteLine`:
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
   </cac:TaxRepresentativeParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-30</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF48VIINV260221</cbc:InstructionNote>
+    <cbc:PaymentID>RF48VIINV260221</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XU20CREV0000209458</cbc:ID>
+      <cbc:Name>Valdara Industries SUA</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice VI-INV-26-0221</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>CREV-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>CREV</cbc:ID>
+          <cbc:Name>Crevalto Bank</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
+            <cbc:BuildingNumber>8</cbc:BuildingNumber>
+            <cbc:CityName>Ferrano</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XBL">417.60</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-30</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-03-31</cbc:StartDate>
+      <cbc:EndDate>2026-04-10</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">200.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>G</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxExchangeRate>
     <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-31</cbc:Date>
   </cac:TaxExchangeRate>
   <cac:PricingExchangeRate>
     <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
@@ -1021,24 +1296,16 @@ Inside `CreditNoteLine`:
   </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-  </cac:PaymentExchangeRate>
-  <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>100</cbc:CalculationRate>
-  </cac:PaymentAlternativeExchangeRate>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReason>Goodwill</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">0.00</cbc:Amount>
-  </cac:AllowanceCharge>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-31</cbc:Date>
+  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">499</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XBL">20160.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -1050,8 +1317,8 @@ Inside `CreditNoteLine`:
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">18</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XBL">720.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -1063,57 +1330,53 @@ Inside `CreditNoteLine`:
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">2088000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+      <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
   <cac:WithholdingTaxTotal>
-    <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">720.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>OTH</cbc:ID>
+          <cbc:Name>Withholding tax on services of non-residents</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">517</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">517</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">517</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">517</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20680.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">20880.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">20880.00</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">200.00</cbc:ChargeTotalAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XBL">72.00</cbc:WithholdingTaxTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">20808.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
-  <cac:CreditNoteLine>
+  <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">499</cbc:LineExtensionAmount>
-    <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>
-    <cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-04-02</cbc:StartDate>
-    </cac:InvoicePeriod>
-    <cac:WorkReportLineReference>
+    <cbc:InvoicedQuantity unitCode="H87">40</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
-    </cac:WorkReportLineReference>
-    <cac:DocumentReference>
-      <cbc:ID>PWD-DMG-26-0081</cbc:ID>
-    </cac:DocumentReference>
-    <cac:PricingReference>
-      <cac:AlternativeConditionPrice>
-        <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
-      </cac:AlternativeConditionPrice>
-    </cac:PricingReference>
-    <cac:PurchaseReference>
-      <cbc:ID>PARK-HB-B17</cbc:ID>
-    </cac:PurchaseReference>
-    <cac:OriginatorParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:OriginatorParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
-    <cac:PaymentTerms>
-      <cbc:Note>Set off against the next release's invoice.</cbc:Note>
-    </cac:PaymentTerms>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1291,31 +1554,26 @@ Inside `CreditNoteLine`:
       </cac:CircularityProfile>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XUF">499</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cac:PricingExchangeRate>
+        <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
+        <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
+        <cbc:ExchangeMarketID>World reference rate</cbc:ExchangeMarketID>
+        <cbc:CalculationRate>0.01</cbc:CalculationRate>
+        <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+        <cbc:Date>2026-01-02</cbc:Date>
+      </cac:PricingExchangeRate>
     </cac:Price>
-    <cac:SubCreditNoteLine>
-      <cbc:ID>1.1</cbc:ID>
-      <cbc:LineExtensionAmount currencyID="XBL">180.00</cbc:LineExtensionAmount>
-      <cac:Item>
-        <cbc:Name>Side frames of the bench</cbc:Name>
-      </cac:Item>
-    </cac:SubCreditNoteLine>
-  </cac:CreditNoteLine>
-  <cac:CreditNoteLine>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">18</cbc:LineExtensionAmount>
-    <cac:CollectedForParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Bayforth Forwarding</cbc:Name>
-      </cac:PartyName>
-    </cac:CollectedForParty>
+    <cbc:InvoicedQuantity unitCode="H87">40</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">720.00</cbc:LineExtensionAmount>
     <cac:WithholdingTaxTotal>
-      <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
     </cac:WithholdingTaxTotal>
     <cac:Item>
       <cbc:Description>Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
@@ -1335,9 +1593,19 @@ Inside `CreditNoteLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XUF">18</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cac:PricingExchangeRate>
+        <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
+        <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
+        <cbc:ExchangeMarketID>World reference rate</cbc:ExchangeMarketID>
+        <cbc:CalculationRate>0.01</cbc:CalculationRate>
+        <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+        <cbc:Date>2026-01-02</cbc:Date>
+      </cac:PricingExchangeRate>
     </cac:Price>
-  </cac:CreditNoteLine>
-</CreditNote>
+  </cac:InvoiceLine>
+</Invoice>
 ```

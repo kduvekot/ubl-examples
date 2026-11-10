@@ -4,13 +4,15 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-PO-26-0211</cbc:ID>
-  <cbc:UUID>0dfaecd7-ab70-522e-912d-0e639d70be1e</cbc:UUID>
+  <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+  <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
+  <cbc:UUID>9865133f-cea3-538c-ba26-54de8100727c</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>10:18:00</cbc:IssueTime>
+  <cbc:IssueTime>14:40:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
+  <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -249,6 +251,13 @@
       <cbc:Description>Public works depot, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:TaxExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-23</cbc:Date>
+  </cac:TaxExchangeRate>
   <cac:PricingExchangeRate>
     <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
@@ -262,6 +271,13 @@
       <cbc:ContractType>Forward purchase of ferra</cbc:ContractType>
     </cac:ForeignExchangeContract>
   </cac:PricingExchangeRate>
+  <cac:PaymentExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-23</cbc:Date>
+  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -325,6 +341,9 @@
           <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
           <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
+        <cac:CatalogueDocumentReference>
+          <cbc:ID>VI-CAT-26-0211</cbc:ID>
+        </cac:CatalogueDocumentReference>
         <cac:ItemSpecificationDocumentReference>
           <cbc:ID>VI-DS-B180</cbc:ID>
         </cac:ItemSpecificationDocumentReference>

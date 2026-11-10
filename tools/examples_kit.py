@@ -869,9 +869,9 @@ def transportation_status(flow, n, doc, day, event_why, description, location, e
 
 
 # ---------------------------------------------------------------- credit, retail and collaboration
-def credit_note(flow, n, doc, day, why, rows_spec, refs):
+def credit_note(flow, n, doc, day, why, rows_spec, refs, currency=None):
     seller, buyer = doc["from"], doc["to"]
-    cur = currency_of(seller)
+    cur = currency or currency_of(seller)
     rows, gross = line_allowances(spec_rows(rows_spec, seller, buyer, cur), cur)
     base = sum(r[2] for r in rows)
     tax, total = tax_total(rows, cur)

@@ -1,0 +1,627 @@
+# Debit Note: Lumeport Public Works Department to Valdara Industries
+
+*Example 34 of the flow "A public tender (Bayvarra)" · [Debit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA)*
+
+The installation finished three days late; under the contract's penalty clause the department charges the manufacturer for the late days, one of them waived.
+
+[The XML file](34-DebitNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+
+## Values and their reasons
+
+### The document itself
+
+- `UBLVersionID` = **2.5**  
+  The documents of the world use UBL 2.5.
+- `CustomizationID` = **urn:ubl-examples:world**  
+  The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:tender**  
+  The business process the document belongs to: the flow "A public tender (Bayvarra)".
+- `ProfileExecutionID` = **TENDER-2026-01**  
+  This run of the process: the same in every document of the flow.
+- `ID` = **LPWD-DOC-26-0223**  
+  The department's debit note number.
+- `UUID` = **2608ae3d-d6a3-51ef-b877-96493b7bb966**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `IssueDate` = **2026-04-06**  
+  After the installation was accepted.
+- `IssueTime` = **15:41:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Penalty for late installation under the contract's clause PEN-1.**  
+  What it is.
+- `DocumentCurrencyCode` = **XBL**  
+  The lume, the currency of the invoice; it has two decimals.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **LPWD-PO-26-0212**  
+  The call-off.
+
+### Billing Reference
+
+Inside `BillingReference`:
+
+- `InvoiceDocumentReference/ID` = **VI-INV-26-0221**  
+  The invoice of the release.
+
+### Contract Document Reference
+
+Inside `ContractDocumentReference`:
+
+- `ID` = **PWD-2026-PARKS**  
+  The contract with the penalty clause.
+
+### Accounting Supplier Party
+
+Inside `AccountingSupplierParty`:
+
+- `Party/WebsiteURI` = **https://www.valdara.example**  
+  The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
+- `Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json).
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **XU-TR-104274** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
+  A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
+- `Party/PartyName/Name` = **Valdara Industries**  
+  The trading name; identity of Valdara Industries (world/parties.json).
+- `Party/Language/ID` = **en**  
+  English, the language the party does business in.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **EN**  
+  The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
+- `Party/PostalAddress/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Party/PostalAddress/StreetName` = **Via delle Officine**  
+  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/BuildingNumber` = **17**  
+  Building number of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ferrano**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **4120**  
+  Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Party/PostalAddress/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `Party/PartyTaxScheme/RegistrationName` = **Valdara Industries SUA**  
+  The name under which the party is registered for value added tax; identity of Valdara Industries (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **XU007299291**  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json).
+- `Party/PartyTaxScheme/TaxLevelCode` = **National**  
+  The level of government that levies the tax: Urvania's value added tax is levied by the country.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF**  
+  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
+  The country whose tax this is.
+- `Party/PartyLegalEntity/RegistrationName` = **Valdara Industries SUA**  
+  The name under which the party is registered, with its legal form; identity of Valdara Industries (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **XU-R-104274**  
+  Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json).
+- `Party/PartyLegalEntity/RegistrationDate` = **1962-04-12**  
+  The day the company was entered in the register; identity of Valdara Industries (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **SUA**  
+  The legal form, as abbreviated in Urvania (world/countries.json).
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)**  
+  The legal form, in words.
+- `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
+  The size class of the company (micro, small, medium or large); identity of Valdara Industries (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CorporateStockAmount` = **250000000** (currencyID `XUF`)  
+  The share capital, in ferra; identity of Valdara Industries (world/parties.json).
+- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
+  All shares are paid up.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
+  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
+  The country of registration.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
+  The identifier of the register in the world (world/countries.json).
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
+  The register the company is entered in.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
+  A register of businesses, not a register of charities or associations.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
+  The register covers the whole country.
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+  The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
+  What is listed.
+- `Party/PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
+  The regulated market where the shares are listed.
+- `Party/PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
+  The market's code.
+- `Party/Contact/Name` = **Order desk**  
+  The desk that handles this document; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/Department` = **Sales**  
+  The department the desk belongs to; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/Telephone` = **+999 1 4120 4274**  
+  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/ElectronicMail` = **order@valdara.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
+  When the desk can be reached; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/OtherCommunication/ChannelCode` = **AL**  
+  UN/EDIFACT 3155 code AL: cellular phone.
+- `Party/Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
+  The sales desk's mobile number, also under the reserved +999.
+- `Party/ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
+  The service contract between the two.
+- `Party/ServiceProviderParty/ServiceTypeCode` = **Logistics**  
+  The kind of service, as a code.
+- `Party/ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
+  What the service provider does for the party; identity of Valdara Industries (world/parties.json).
+- `Party/ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/ServiceProviderParty/SellerContact/Name` = **Key account desk**  
+  The provider's contact for this customer.
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Accounting Customer Party
+
+Inside `AccountingCustomerParty`:
+
+- `Party/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **XB-TR-410548** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
+  A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyName/Name` = **Lumeport Public Works Department**  
+  The trading name; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Language/ID` = **en**  
+  English, the language the party does business in.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **EN**  
+  The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/ID` = **LUM-ADR-000417**  
+  The address's number in the city's address register; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
+- `Party/PostalAddress/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Party/PostalAddress/StreetName` = **Civic Square**  
+  Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/BuildingNumber` = **6**  
+  Building number of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/InhouseMail` = **Room 2.14**  
+  The internal mail code of the procurement office. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/Department` = **Procurement office**  
+  The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/MarkAttention` = **Head of procurement**  
+  For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/CitySubdivisionName` = **Old town**  
+  The quarter of Lumeport the party is in. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **38517**  
+  Postal code in Bayvarra's format (5 digits). identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/CountrySubentity` = **Coastal State**  
+  The state, part of an address in federal Bayvarra. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/CountrySubentityCode` = **CO**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Party/PostalAddress/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+- `Party/PartyTaxScheme/RegistrationName` = **Lumeport Public Works Department**  
+  The name under which the party is registered for state sales tax; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **CO-0900002**  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyTaxScheme/TaxLevelCode` = **State**  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `Party/PartyTaxScheme/ExemptionReasonCode` = **XB-PUBLIC**  
+  The exemption as a code of the world's exemption list (world/countries.json): sale to a public body.
+- `Party/PartyTaxScheme/ExemptionReason` = **Public bodies are exempt from the state sales tax**  
+  Why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
+  Where the party is registered for the tax.
+- `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
+  Its state.
+- `Party/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB**  
+  Its country.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
+  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
+  The state whose sales tax the party is registered for.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
+  The country whose tax this is.
+- `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
+  The name under which the party is registered, with its legal form; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20410548**  
+  Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
+  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
+  The country of registration.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
+  The identifier of the register in the world (world/countries.json).
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
+  The register the company is entered in.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
+  A register of businesses, not a register of charities or associations.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
+  The register covers the whole country.
+- `Party/Contact/Name` = **Procurement office**  
+  The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Contact/JobTitle` = **Procurement officer**  
+  The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Contact/Department` = **Procurement**  
+  The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 3851 0548**  
+  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
+  When the desk can be reached; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Tax Representative Party
+
+Inside `TaxRepresentativeParty`:
+
+- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **false**  
+  An allowance on the penalty.
+- `AllowanceChargeReason` = **One day waived**  
+  The first day was lost to a storm, as both agree.
+- `Amount` = **3.60** (currencyID `XBL`)  
+  One day of the penalty.
+
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax on a contractual penalty.
+
+### Withholding Tax Total
+
+Inside `WithholdingTaxTotal`:
+
+- `TaxAmount` = **0.72** (currencyID `XBL`)  
+  The penalty lowers the price of the installation, so the department withholds 10 % less: this part is reversed.
+
+### Legal Monetary Total
+
+Inside `LegalMonetaryTotal`:
+
+- `LineExtensionAmount` = **10.80** (currencyID `XBL`)  
+  Three days of penalty.
+- `TaxExclusiveAmount` = **7.20** (currencyID `XBL`)  
+  The penalty charged.
+- `AllowanceTotalAmount` = **3.60** (currencyID `XBL`)  
+  One day waived.
+- `WithholdingTaxTotalAmount` = **0.72** (currencyID `XBL`)  
+  The withholding reversed.
+- `PayableAmount` = **6.48** (currencyID `XBL`)  
+  What the manufacturer owes: the penalty less the withholding the department no longer pays.
+
+### Debit Note Line
+
+Inside `DebitNoteLine`:
+
+- `ID` = **1**  
+  The penalty.
+- `Note` = **3 days at 0.5 % of the installation price of the release.**  
+  How it is computed.
+- `DebitedQuantity` = **3** (unitCode `DAY`)  
+  Days late.
+- `LineExtensionAmount` = **10.80** (currencyID `XBL`)  
+  0.5 % of 720.00 a day.
+- `WithholdingTaxTotal/TaxAmount` = **1.08** (currencyID `XBL`)  
+  The withholding on the line before the waiver.
+- `Item/Name` = **Penalty for late installation**  
+  What is charged.
+
+## The document
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>LPWD-DOC-26-0223</cbc:ID>
+  <cbc:UUID>2608ae3d-d6a3-51ef-b877-96493b7bb966</cbc:UUID>
+  <cbc:IssueDate>2026-04-06</cbc:IssueDate>
+  <cbc:IssueTime>15:41:00</cbc:IssueTime>
+  <cbc:Note>Penalty for late installation under the contract's clause PEN-1.</cbc:Note>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:OrderReference>
+    <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+  </cac:OrderReference>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>VI-INV-26-0221</cbc:ID>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:BuildingNumber>17</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU007299291</cbc:CompanyID>
+        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+        <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XU:CR</cbc:ID>
+          <cbc:Name>Commercial register of Urvania</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+        <cac:SecurityListing>
+          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
+          <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+          <cbc:MarketCode>FSE</cbc:MarketCode>
+        </cac:SecurityListing>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+        <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cac:OtherCommunication>
+          <cbc:ChannelCode>AL</cbc:ChannelCode>
+          <cbc:Value>+999 1 7000 4274</cbc:Value>
+        </cac:OtherCommunication>
+      </cac:Contact>
+      <cac:ServiceProviderParty>
+        <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+        <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
+        <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Castrano Logistics</cbc:Name>
+          </cac:PartyName>
+        </cac:Party>
+        <cac:SellerContact>
+          <cbc:Name>Key account desk</cbc:Name>
+        </cac:SellerContact>
+      </cac:ServiceProviderParty>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410548</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID>LUM-ADR-000417</cbc:ID>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Civic Square</cbc:StreetName>
+        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+        <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
+        <cbc:Department>Procurement office</cbc:Department>
+        <cbc:MarkAttention>Head of procurement</cbc:MarkAttention>
+        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38517</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
+        <cbc:CompanyID>CO-0900002</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode>XB-PUBLIC</cbc:ExemptionReasonCode>
+        <cbc:ExemptionReason>Public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
+        <cbc:CompanyID>20410548</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Procurement office</cbc:Name>
+        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
+        <cbc:Department>Procurement</cbc:Department>
+        <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
+        <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:TaxRepresentativeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:TaxRepresentativeParty>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>One day waived</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">3.60</cbc:Amount>
+  </cac:AllowanceCharge>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+  </cac:TaxTotal>
+  <cac:WithholdingTaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.72</cbc:TaxAmount>
+  </cac:WithholdingTaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">10.80</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">7.20</cbc:TaxExclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">3.60</cbc:AllowanceTotalAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XBL">0.72</cbc:WithholdingTaxTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">6.48</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:DebitNoteLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Note>3 days at 0.5 % of the installation price of the release.</cbc:Note>
+    <cbc:DebitedQuantity unitCode="DAY">3</cbc:DebitedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">10.80</cbc:LineExtensionAmount>
+    <cac:WithholdingTaxTotal>
+      <cbc:TaxAmount currencyID="XBL">1.08</cbc:TaxAmount>
+    </cac:WithholdingTaxTotal>
+    <cac:Item>
+      <cbc:Name>Penalty for late installation</cbc:Name>
+    </cac:Item>
+  </cac:DebitNoteLine>
+</DebitNote>
+```

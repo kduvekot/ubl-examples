@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-IM-26-0217</cbc:ID>
-  <cbc:UUID>af0fa2f7-eb6c-535d-8166-d10b11a1a8b2</cbc:UUID>
+  <cbc:ID>LPWD-IM-26-0220</cbc:ID>
+  <cbc:UUID>9512bc8d-ad4b-596c-8121-05e7cc1d6a81</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
-  <cbc:IssueTime>16:15:00</cbc:IssueTime>
+  <cbc:IssueTime>11:14:00</cbc:IssueTime>
   <cbc:TypeCode>Import</cbc:TypeCode>
   <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
@@ -309,7 +309,7 @@
     </cac:PartyName>
   </cac:NotifierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0213</cbc:ID>
+    <cbc:ID>CL-SH-26-0216</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -488,7 +488,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-CD-26-0216</cbc:ID>
+    <cbc:ID>VI-CD-26-0219</cbc:ID>
   </cac:PreviousCustomsDeclaration>
   <cac:Signature>
     <cbc:ID>LPWD-SIG-IM-tender</cbc:ID>

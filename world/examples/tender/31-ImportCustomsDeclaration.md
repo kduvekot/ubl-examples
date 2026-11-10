@@ -1,10 +1,10 @@
 # Import Customs Declaration: Lumeport Public Works Department to Customs and Border Service of Bayvarra
 
-*Example 28 of the flow "A public tender (Bayvarra)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
+*Example 31 of the flow "A public tender (Bayvarra)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
 Under DAP the buyer clears the import, so the contracting authority declares the goods in Bayvarra.
 
-[The XML file](28-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](31-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ Under DAP the buyer clears the import, so the contracting authority declares the
   The business process the document belongs to: the flow "A public tender (Bayvarra)".
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-IM-26-0217**  
+- `ID` = **LPWD-IM-26-0220**  
   The importer's declaration number.
-- `UUID` = **af0fa2f7-eb6c-535d-8166-d10b11a1a8b2**  
+- `UUID` = **9512bc8d-ad4b-596c-8121-05e7cc1d6a81**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-31**  
   Under DAP the buyer clears the import: the authority declares the benches.
-- `IssueTime` = **16:15:00**  
+- `IssueTime` = **11:14:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `TypeCode` = **Import**  
   An import declaration.
@@ -387,7 +387,7 @@ Inside `NotifierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **CL-SH-26-0213**  
+- `ID` = **CL-SH-26-0216**  
   The shipment declared.
 - `GrossWeightMeasure` = **1660** (unitCode `KGM`)  
   The gross weight arriving.
@@ -602,7 +602,7 @@ Inside `Shipment`:
 
 Inside `PreviousCustomsDeclaration`:
 
-- `ID` = **VI-CD-26-0216**  
+- `ID` = **VI-CD-26-0219**  
   The export declaration in the country of departure.
 
 ### Signature
@@ -625,10 +625,10 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-IM-26-0217</cbc:ID>
-  <cbc:UUID>af0fa2f7-eb6c-535d-8166-d10b11a1a8b2</cbc:UUID>
+  <cbc:ID>LPWD-IM-26-0220</cbc:ID>
+  <cbc:UUID>9512bc8d-ad4b-596c-8121-05e7cc1d6a81</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
-  <cbc:IssueTime>16:15:00</cbc:IssueTime>
+  <cbc:IssueTime>11:14:00</cbc:IssueTime>
   <cbc:TypeCode>Import</cbc:TypeCode>
   <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
@@ -930,7 +930,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:NotifierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0213</cbc:ID>
+    <cbc:ID>CL-SH-26-0216</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -1109,7 +1109,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-CD-26-0216</cbc:ID>
+    <cbc:ID>VI-CD-26-0219</cbc:ID>
   </cac:PreviousCustomsDeclaration>
   <cac:Signature>
     <cbc:ID>LPWD-SIG-IM-tender</cbc:ID>

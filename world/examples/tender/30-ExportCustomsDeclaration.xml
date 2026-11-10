@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-EX-26-0215</cbc:ID>
-  <cbc:UUID>50fa98a8-ede0-548d-bf67-6e9e4318b625</cbc:UUID>
+  <cbc:ID>VI-EX-26-0218</cbc:ID>
+  <cbc:UUID>780521a7-44ae-5ddb-a7d2-add468fea007</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
-  <cbc:IssueTime>08:06:00</cbc:IssueTime>
+  <cbc:IssueTime>13:40:00</cbc:IssueTime>
   <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
   <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
   <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
@@ -124,7 +124,7 @@
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>VI-CD-26-0216</cbc:ID>
+    <cbc:ID>VI-CD-26-0219</cbc:ID>
     <cbc:FunctionCode>Original</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-03-30</cbc:StartDate>
@@ -136,10 +136,10 @@
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0213</cbc:ID>
+      <cbc:ID>CL-SH-26-0216</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
       <cac:Consignment>
-        <cbc:ID>CL-CS-26-0214</cbc:ID>
+        <cbc:ID>CL-CS-26-0217</cbc:ID>
         <cac:CarrierParty>
           <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
           <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>
@@ -591,7 +591,7 @@
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>LPWD-PO-26-0211</cbc:ID>
+      <cbc:ID>LPWD-PO-26-0212</cbc:ID>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

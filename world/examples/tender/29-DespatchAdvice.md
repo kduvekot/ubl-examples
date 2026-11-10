@@ -1,10 +1,10 @@
 # Despatch Advice: Castrano Logistics to Lumeport Public Works Department
 
-*Example 26 of the flow "A public tender (Bayvarra)" · [Despatch Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA)*
+*Example 29 of the flow "A public tender (Bayvarra)" · [Despatch Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA)*
 
 The manufacturer's 3PL despatches the call-off and names the carrier.
 
-[The XML file](26-DespatchAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](29-DespatchAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
   The business process the document belongs to: the flow "A public tender (Bayvarra)".
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **CL-DA-26-0212**  
+- `ID` = **CL-DA-26-0215**  
   The despatching party's number.
-- `UUID` = **76a93c5b-0305-5616-966b-a321c5c91535**  
+- `UUID` = **3a152d4a-6fec-5156-a6be-f2f8f81077e0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-30**  
   The day the call-off left the 3PL.
-- `IssueTime` = **14:40:00**  
+- `IssueTime` = **17:37:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DocumentStatusCode` = **NoStatus**  
   A new despatch advice, not a correction.
@@ -43,7 +43,7 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
 
 Inside `OrderReference`:
 
-- `ID` = **LPWD-PO-26-0211**  
+- `ID` = **LPWD-PO-26-0212**  
   The order this despatch fulfils.
 
 ### Project Reference
@@ -408,11 +408,11 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **CL-SH-26-0213**  
+- `ID` = **CL-SH-26-0216**  
   The despatching party's shipment number.
 - `GrossWeightMeasure` = **1660** (unitCode `KGM`)  
   The gross weight loaded.
-- `Consignment/ID` = **CL-CS-26-0214**  
+- `Consignment/ID` = **CL-CS-26-0217**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/CarrierParty/WebsiteURI` = **https://www.trasvia.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Trasvia Haulage (world/parties.json).
@@ -521,8 +521,8 @@ Inside `DespatchLine`:
   The line number.
 - `UUID` = **bf5c479c-ae74-54ad-8a20-aa2eeba424e0**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **The first call-off under the contract: forty benches for the harbour park.**  
-  The line as the order put it.
+- `Note` = **Forty benches in moss green, RAL 6005, as the order change asked.**  
+  The line as despatched.
 - `LineStatusCode` = **NoStatus**  
   Despatched as ordered.
 - `DeliveredQuantity` = **40** (unitCode `H87`)  
@@ -739,7 +739,7 @@ Inside `DespatchLine`:
   The scale of the score.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
-- `Shipment/ID` = **CL-SH-26-0213**  
+- `Shipment/ID` = **CL-SH-26-0216**  
   The shipment the line travels in.
 - `SubDespatchLine/ID` = **1.1**  
   The ground anchor sets that come with the benches.
@@ -773,10 +773,10 @@ Inside `DespatchLine`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CL-DA-26-0212</cbc:ID>
-  <cbc:UUID>76a93c5b-0305-5616-966b-a321c5c91535</cbc:UUID>
+  <cbc:ID>CL-DA-26-0215</cbc:ID>
+  <cbc:UUID>3a152d4a-6fec-5156-a6be-f2f8f81077e0</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
-  <cbc:IssueTime>14:40:00</cbc:IssueTime>
+  <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
@@ -784,7 +784,7 @@ Inside `DespatchLine`:
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0211</cbc:ID>
+    <cbc:ID>LPWD-PO-26-0212</cbc:ID>
   </cac:OrderReference>
   <cac:ProjectReference>
     <cbc:ID>PWD-PARKS-26</cbc:ID>
@@ -1113,10 +1113,10 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0213</cbc:ID>
+    <cbc:ID>CL-SH-26-0216</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>CL-CS-26-0214</cbc:ID>
+      <cbc:ID>CL-CS-26-0217</cbc:ID>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>
@@ -1213,7 +1213,7 @@ Inside `DespatchLine`:
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>bf5c479c-ae74-54ad-8a20-aa2eeba424e0</cbc:UUID>
-    <cbc:Note>The first call-off under the contract: forty benches for the harbour park.</cbc:Note>
+    <cbc:Note>Forty benches in moss green, RAL 6005, as the order change asked.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="H87">40</cbc:DeliveredQuantity>
     <cbc:OutstandingQuantity unitCode="H87">200</cbc:OutstandingQuantity>
@@ -1403,7 +1403,7 @@ Inside `DespatchLine`:
       </cac:CircularityProfile>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0213</cbc:ID>
+      <cbc:ID>CL-SH-26-0216</cbc:ID>
     </cac:Shipment>
     <cac:SubDespatchLine>
       <cbc:ID>1.1</cbc:ID>
