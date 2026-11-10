@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>#15 Inland Waterway Carrier · UBL Example Documents</title>
-<link rel="stylesheet" href="site.css?v=9b8c04bfa8">
+<link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
@@ -19,32 +19,65 @@ B.</p>
 execution plans and waybills carry the barge, the loading and discharge
 quays and the cargo per hold, so shippers and terminals can plan around
 long transit times.</p>
-<h2 id="documents-it-exchanges">Documents it exchanges</h2>
+<p>In this world it sends 2 and receives 1 documents, and is named in 0
+documents between other parties. They are listed per flow below.</p>
+<h2 id="bulk-by-river-barge-country-a--country-b">Bulk by river barge
+(Country A → Country B)</h2>
+<p>Bulk lots go down the river. The distributor buys carriage paid to
+(CPT) the river quay in Country B: the manufacturer books the barge and
+pays the freight; the risk passes when the barge is loaded.</p>
+<p><strong>Sends</strong></p>
 <ul>
-<li>Waybill</li>
-<li>TransportExecutionPlan</li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
+Execution Plan</strong></a> to <a href="world-5-xa.html">#5
+Manufacturer</a>: The barge operator confirms the vessel and the
+sailing.</p>
+<p>In it as <code>SenderParty</code>,
+<code>TransportServiceProviderParty</code>.</p>
+<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<code>Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
+to <a href="world-5-xa.html">#5 Manufacturer</a>: The inland waterway
+consignment note, issued to the shipper.</p>
+<p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
+<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 </ul>
-<h2 id="ubl-roles">UBL roles</h2>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
+Execution Plan Request</strong></a> from <a href="world-5-xa.html">#5
+Manufacturer</a>: The manufacturer, as transport user under CPT, asks
+the inland waterway carrier for barge capacity.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>TransportServiceProviderParty</code>.</p>
+<p>Also mentions: <a href="world-6-xb.html">#6 Distributor</a> as
+<code>Consignment/ConsigneeParty</code>.</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<ul>
-<li><code>CarrierParty</code></li>
-<li><code>PerformingCarrierParty</code></li>
-</ul>
+<p><code>ReceiverParty</code> <code>TransportServiceProviderParty</code>
+<code>SenderParty</code> <code>CarrierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
+<p>The parties it exchanges documents with:</p>
 <ul>
 <li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
-<li><a href="world-6-xb.html">#6 Distributor</a>, Country B</li>
-<li><a href="world-18-xa.html">#18 Rail Hub / Intermodal Terminal</a>,
-Country A</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#15-xa">See Inland Waterway Carrier on the map</a>
 · Country A: Mainland, inland. Raw materials and manufacturing.</p>
-<p><em>Example documents for this party will follow as the example world
-is built.</em></p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ea4efa9</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>#4 Raw Material Supplier · UBL Example Documents</title>
-<link rel="stylesheet" href="site.css?v=9b8c04bfa8">
+<link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
@@ -20,32 +20,105 @@ customers. With UBL, its orders, despatch advices and invoices carry the
 same quantities, lot numbers and weights from the first document to the
 last, so the buyer can match them without retyping weighbridge
 tickets.</p>
-<h2 id="documents-it-exchanges">Documents it exchanges</h2>
+<p>In this world it sends 2 and receives 2 documents, and is named in 3
+documents between other parties. They are listed per flow below.</p>
+<h2 id="ore-from-the-mine-to-the-factory-domestic-country-a">Ore from
+the mine to the factory (domestic, Country A)</h2>
+<p>The manufacturer buys ore free carrier (FCA) at the mine: the buyer
+arranges and pays the main transport, so the manufacturer, not the mine,
+books the ore train with the rail carrier.</p>
+<p><strong>Sends</strong></p>
 <ul>
-<li>Order</li>
-<li>DespatchAdvice</li>
-<li>Invoice</li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> to <a href="world-5-xa.html">#5 Manufacturer</a>:
+The mine announces what was loaded into which wagons, so the factory can
+plan the unloading.</p>
+<p>In it as <code>DespatchSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-14-xa.html">#14 Rail Carrier</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-5-xa.html">#5 Manufacturer</a>: The mine invoices the
+ore; transport is not on this invoice because under FCA the buyer pays
+it. Payment goes to the mine's account at the seller's bank.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-23-xa.html">#23 Seller's Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
-<h2 id="ubl-roles">UBL roles</h2>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-5-xa.html">#5 Manufacturer</a>: Monthly ore
+call-off. Delivery terms FCA mine: the buyer books the train, so the
+order names the rail carrier that will collect.</p>
+<p>In it as <code>SellerSupplierParty</code>,
+<code>Delivery/Despatch/DespatchParty</code>.</p>
+<p>Also mentions: <a href="world-14-xa.html">#14 Rail Carrier</a> as
+<code>Delivery/Despatch/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> from <a href="world-5-xa.html">#5 Manufacturer</a>:
+The manufacturer tells the mine which invoices the transfer pays. Both
+companies bank at the same domestic bank.</p>
+<p>In it as <code>AccountingSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-23-xa.html">#23 Seller's Bank</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-23-xa.html">#23 Seller's Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
+Execution Plan Request</strong></a> from <a href="world-5-xa.html">#5
+Manufacturer</a> to <a href="world-14-xa.html">#14 Rail Carrier</a>: The
+manufacturer, as transport user, asks the rail carrier for wagons and a
+slot to move the ore from the mine to its siding.</p>
+<p>In it as <code>Consignment/ConsignorParty</code> (The Party who is
+reponsible for sending the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
+Execution Plan</strong></a> from <a href="world-14-xa.html">#14 Rail
+Carrier</a> to <a href="world-5-xa.html">#5 Manufacturer</a>: The rail
+carrier confirms the train, the wagons and the schedule; this is the
+agreed transport plan.</p>
+<p>In it as <code>Consignment/ConsignorParty</code> (The Party who is
+reponsible for sending the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
+from <a href="world-14-xa.html">#14 Rail Carrier</a> to <a
+href="world-5-xa.html">#5 Manufacturer</a>: The rail consignment note
+goes to the party that contracted the carriage, the manufacturer; the
+mine is named as consignor because the ore is loaded there.</p>
+<p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
+sending the goods).</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<ul>
-<li><code>AccountingSupplierParty</code></li>
-<li><code>ConsignorParty</code></li>
-</ul>
+<p><code>SellerSupplierParty</code> <code>DespatchParty</code>
+<code>ConsignorParty</code> <code>DespatchSupplierParty</code>
+<code>AccountingSupplierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
+<p>The parties it exchanges documents with:</p>
 <ul>
 <li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
-<li><a href="world-14-xa.html">#14 Rail Carrier</a>, Country A</li>
-<li><a href="world-23-xa.html">#23 Seller's Bank</a>, Country A</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#4-xa">See Raw Material Supplier on the map</a> ·
 Country A: Mainland, inland. Raw materials and manufacturing.</p>
-<p><em>Example documents for this party will follow as the example world
-is built.</em></p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ea4efa9</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
 </body>
 </html>

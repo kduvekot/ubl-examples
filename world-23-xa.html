@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>#23 Seller's Bank · UBL Example Documents</title>
-<link rel="stylesheet" href="site.css?v=9b8c04bfa8">
+<link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
@@ -19,31 +19,103 @@ abroad.</p>
 invoices carry the payee account and a payment reference, and remittance
 advices repeat that reference, incoming payments can be matched to the
 right invoices automatically.</p>
-<h2 id="documents-it-exchanges">Documents it exchanges</h2>
+<p>In this world it sends 0 and receives 0 documents, and is named in 5
+documents between other parties. They are listed per flow below.</p>
+<h2 id="ore-from-the-mine-to-the-factory-domestic-country-a">Ore from
+the mine to the factory (domestic, Country A)</h2>
+<p>The manufacturer buys ore free carrier (FCA) at the mine: the buyer
+arranges and pays the main transport, so the manufacturer, not the mine,
+books the ore train with the rail carrier.</p>
+<p><strong>Is named in documents between others</strong></p>
 <ul>
-<li>Invoice (PayeeFinancialAccount)</li>
-<li>RemittanceAdvice</li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-4-xa.html">#4 Raw Material Supplier</a> to <a
+href="world-5-xa.html">#5 Manufacturer</a>: The mine invoices the ore;
+transport is not on this invoice because under FCA the buyer pays it.
+Payment goes to the mine's account at the seller's bank.</p>
+<p>In it as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> from <a href="world-5-xa.html">#5 Manufacturer</a>
+to <a href="world-4-xa.html">#4 Raw Material Supplier</a>: The
+manufacturer tells the mine which invoices the transfer pays. Both
+companies bank at the same domestic bank.</p>
+<p>In it as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>,
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if applicable))
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
 </ul>
-<h2 id="ubl-roles">UBL roles</h2>
+<h2
+id="finished-goods-by-truck-across-the-land-border-country-a--country-b">Finished
+goods by truck across the land border (Country A → Country B)</h2>
+<p>The distributor buys free carrier (FCA) at the manufacturer's
+warehouse. Because the buyer arranges the transport, the distributor
+books the road carrier itself and tells the seller in the order which
+truck company will pick the goods up and where. The seller's 3PL hands
+the goods over; the seller clears them for export, the distributor for
+import.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-5-xa.html">#5 Manufacturer</a> to <a
+href="world-6-xb.html">#6 Distributor</a>: The manufacturer invoices the
+goods only (no freight under FCA) and asks for payment to its account at
+the seller's bank.</p>
+<p>In it as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> from <a href="world-6-xb.html">#6 Distributor</a> to
+<a href="world-5-xa.html">#5 Manufacturer</a>: The distributor announces
+the cross-border payment and which invoices it settles.</p>
+<p>In it as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+</ul>
+<h2
+id="containers-by-rail-under-transit-country-a--country-b">Containers by
+rail under transit (Country A → Country B)</h2>
+<p>For full container loads the manufacturer sells delivered at place
+(DAP) the distributor's rail siding. Now the seller arranges and pays
+the transport: it books the container train and moves the goods under a
+transit declaration, so that import formalities happen at the
+destination. The intermodal hub loads the containers on the train.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-5-xa.html">#5 Manufacturer</a> to <a
+href="world-6-xb.html">#6 Distributor</a>: Under DAP the price includes
+the transport, so the invoice covers goods and freight.</p>
+<p>In it as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<ul>
-<li><code>PayeeParty (account holder)</code></li>
-</ul>
-<h2 id="trading-partners-in-the-world">Trading partners in the
-world</h2>
-<ul>
-<li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
-<li><a href="world-22-xc.html">#22 Buyer's Bank</a>, Country C</li>
-<li><a href="world-4-xa.html">#4 Raw Material Supplier</a>, Country
-A</li>
-</ul>
+<p><code>FinancialInstitution</code></p>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#23-xa">See Seller's Bank on the map</a> · Country
 A: Mainland, inland. Raw materials and manufacturing.</p>
-<p><em>Example documents for this party will follow as the example world
-is built.</em></p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ea4efa9</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
 </body>
 </html>

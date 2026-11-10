@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>#31 Identifier Issuing Agency · UBL Example Documents</title>
-<link rel="stylesheet" href="site.css?v=9b8c04bfa8">
+<link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
@@ -21,31 +21,63 @@ identifier issuing agency gives those items and properties stable
 identifiers, which UBL documents carry in their identification elements,
 so a catalogue line, an order line and an invoice line point to exactly
 the same thing.</p>
-<h2 id="documents-it-exchanges">Documents it exchanges</h2>
+<p>In this world it sends 0 and receives 0 documents, and is named in 2
+documents between other parties. They are listed per flow below.</p>
+<h2
+id="distributor-to-retailer-delivered-duty-paid-domestic-country-b">Distributor
+to retailer, delivered duty paid (domestic, Country B)</h2>
+<p>The retailer buys delivered duty paid (DDP) at its shop: the
+distributor arranges the transport and bears all costs, so the
+distributor, not the retailer, books the truck and receives the
+transport documents. The retailer shares forecasts, promotions and its
+stock levels so the distributor can plan replenishment.</p>
+<p><strong>Is named in documents between others</strong></p>
 <ul>
-<li>Catalogue</li>
-<li>Item identifiers in every document</li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA"><strong>Catalogue</strong></a>
+from <a href="world-6-xb.html">#6 Distributor</a> to <a
+href="world-26-xb.html">#26 Retailer</a>: The distributor's catalogue of
+items and prices; items carry the identifiers of the identifier issuing
+agency.</p>
+<p>In it as
+<code>CatalogueLine/Item/StandardItemIdentification/IssuerParty</code>
+(The Party who issues this Item Identification).</p></li>
 </ul>
-<h2 id="ubl-roles">UBL roles</h2>
+<h2
+id="overseas-by-container-ship-cost-insurance-and-freight-country-b--island-country-c">Overseas
+by container ship, cost insurance and freight (Country B → island
+Country C)</h2>
+<p>The commercial buyer on the island buys cost, insurance and freight
+(CIF) to the port of discharge. The distributor therefore pays the sea
+freight and the cargo insurance; it hands both to its freight forwarder.
+The buyer takes over at the port of discharge: its customs broker clears
+the goods and its 3PL receives them.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA"><strong>Catalogue</strong></a>
+from <a href="world-6-xb.html">#6 Distributor</a> to <a
+href="world-1-xc.html">#1 Commercial Buyer</a>: The export catalogue for
+the island customer.</p>
+<p>In it as
+<code>CatalogueLine/Item/StandardItemIdentification/IssuerParty</code>
+(The Party who issues this Item Identification).</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<ul>
-<li><code>IssuerParty (ItemIdentification</code></li>
-<li><code>PropertyIdentification)</code></li>
-</ul>
-<h2 id="trading-partners-in-the-world">Trading partners in the
-world</h2>
-<ul>
-<li><a href="world-6-xb.html">#6 Distributor</a>, Country B</li>
-<li><a href="world-5-xa.html">#5 Manufacturer</a>, Country A</li>
-</ul>
+<p><code>IssuerParty</code></p>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#31-xa">See Identifier Issuing Agency on the
 map</a> · Country A: Mainland, inland. Raw materials and
 manufacturing.</p>
-<p><em>Example documents for this party will follow as the example world
-is built.</em></p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ea4efa9</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d514228</code></p></div></footer>
 </body>
 </html>
