@@ -54,13 +54,66 @@ charged on exports.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="what-it-sells">What it sells</h2>
+<p>Its items, as they appear on its quotations, catalogues and invoices.
+Units of measure and packaging types are UN/ECE Recommendation 20 and 21
+codes from the UBL code lists; customs tariff codes are Harmonized
+System subheadings.</p>
+<h3 id="recycled-pe-granulate">Recycled PE granulate</h3>
+<p>Polyethylene granulate recovered from production waste, density below
+0.94, in jumbo bags of 1 tonne.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>RR-PE-R1</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>640.00 XUF per <code>TNE</code> (tonne (metric ton))</td>
+</tr>
+<tr>
+<td>World item number</td>
+<td><code>771030000048</code> (issued by <a
+href="world-31-xu.html">Codana Identification Agency</a>)</td>
+</tr>
+<tr>
+<td>Customs tariff (HS)</td>
+<td><code>3901.10</code>; origin Urvania</td>
+</tr>
+<tr>
+<td>Weight per unit</td>
+<td>1000 kg net, 1004 kg gross</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td><code>JB</code> (Bag, jumbo), 1 per package</td>
+</tr>
+</tbody>
+</table>
+<h3 id="collection-and-recovery-of-production-waste">Collection and
+recovery of production waste</h3>
+<p>Collection at the factory and recovery of sorted production waste,
+per tonne collected.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>RR-SVC-01</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>95.00 XUF per <code>TNE</code> (tonne (metric ton))</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>Waste movements must be announced and tracked before the waste leaves
 the site. UBL's waste notification and waste movement documents describe
 the waste, its producer and the facility that recovers or disposes of
 it, and the same parties then appear on the invoice for the removal
 service.</p>
-<p>In this world it sends 7 and receives 4 documents, and is named in 2
+<p>In this world it sends 7 and receives 5 documents, and is named in 2
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="recycled-plastic-granulate-by-river-barge-urvania--bayvarra">Recycled
@@ -142,6 +195,15 @@ consignment note, issued to the shipper.</p>
 <p>Also mentions: <a href="world-41-xb.html">Rivermouth Packaging</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-15-xu.html">Fiumella Barges</a>: Under CPT the
+seller pays the carriage: the barge operator invoices the river freight
+to the waste processor.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> from <a href="world-41-xb.html">Rivermouth
 Packaging</a>: The packaging maker pays from Bayvarra to the waste
@@ -208,6 +270,7 @@ waste material).</p>
 <code>AccountingSupplierParty</code> <code>SellerSupplierParty</code>
 <code>TransportUserParty</code> <code>ConsignorParty</code>
 <code>ReceiverParty</code> <code>ExporterParty</code>
+<code>AccountingCustomerParty</code> <code>BuyerCustomerParty</code>
 <code>DespatchSupplierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
@@ -230,6 +293,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>57b389a</code></p></div></footer>
 </body>
 </html>

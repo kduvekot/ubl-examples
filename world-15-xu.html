@@ -54,12 +54,31 @@ charged on exports.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="what-it-sells">What it sells</h2>
+<p>Its items, as they appear on its quotations, catalogues and invoices.
+Units of measure and packaging types are UN/ECE Recommendation 20 and 21
+codes from the UBL code lists; customs tariff codes are Harmonized
+System subheadings.</p>
+<h3 id="river-freight-bulk">River freight, bulk</h3>
+<p>Bulk cargo down the river to the coast of Bayvarra, per tonne.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>FB-BULK</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>11.50 XUF per <code>TNE</code> (tonne (metric ton))</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>Inland waterway transport moves large volumes slowly. UBL transport
 execution plans and waybills carry the barge, the loading and discharge
 quays and the cargo per hold, so shippers and terminals can plan around
 long transit times.</p>
-<p>In this world it sends 2 and receives 1 documents, and is named in 2
+<p>In this world it sends 3 and receives 1 documents, and is named in 2
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="recycled-plastic-granulate-by-river-barge-urvania--bayvarra">Recycled
@@ -88,6 +107,15 @@ consignment note, issued to the shipper.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
 <p>Also mentions: <a href="world-41-xb.html">Rivermouth Packaging</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-7-xu.html">Rinova Recovery</a>: Under CPT the seller
+pays the carriage: the barge operator invoices the river freight to the
+waste processor.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -126,7 +154,9 @@ who provides the transport of goods between named points).</p></li>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ReceiverParty</code> <code>TransportServiceProviderParty</code>
-<code>SenderParty</code> <code>CarrierParty</code></p>
+<code>SenderParty</code> <code>CarrierParty</code>
+<code>AccountingSupplierParty</code>
+<code>SellerSupplierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -144,6 +174,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>57b389a</code></p></div></footer>
 </body>
 </html>

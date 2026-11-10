@@ -249,6 +249,17 @@
         </row>
         <row>
           <entry>
+            Items
+          </entry>
+          <entry>
+            <literal>world/items.json</literal>
+          </entry>
+          <entry>
+            what the parties sell: goods and services, with prices
+          </entry>
+        </row>
+        <row>
+          <entry>
             UBL model
           </entry>
           <entry>
@@ -369,6 +380,29 @@
       follow the structure of ISO 13616 with its check digits, using the
       world's country codes, but they are not called IBANs, because the
       world's countries are not registered IBAN countries.
+    </para>
+  </section>
+  <section id="S-03-world-items">
+    <title>Items</title>
+    <para>
+      Every party that sells has items. Goods carry what the documents
+      along their way need: a seller's item identifier, a world item
+      number issued by the identifier issuing agency (twelve digits with
+      a check digit, a scheme of the world, not a GTIN), a Harmonized
+      System customs tariff code, the country of origin, dimensions, net
+      and gross weight, and the packaging. Services have a unit and a
+      price. Units of measure and packaging types are UN/ECE
+      Recommendation 20 and 21 codes from the UBL default code lists.
+      Prices are in the seller's currency, with no more decimals than
+      the currency has; the coral of Lisavu has none.
+    </para>
+    <para>
+      Items connect the chains. The park bench is made with slats from
+      the sawmill and film from the packaging maker; the distributor
+      resells the bench, and its own item points to the manufacturer's,
+      so the maker's identifiers travel along. A component or a resold
+      item is only possible if the maker or reseller orders it from that
+      seller somewhere in the flows.
     </para>
   </section>
   <section id="S-03-world-flows-of-documents">
@@ -531,6 +565,18 @@
       account.
     </para>
   </section>
+  <section id="S-05-validation-the-items">
+    <title>The items</title>
+    <para>
+      Units and packaging types must be codes of the UBL default lists;
+      world item numbers carry a valid check digit and are unique;
+      prices are positive, in the seller's currency and with the right
+      number of decimals; gross weight is at least net weight. Every
+      party that bills or offers in a document has items to put on its
+      lines, and every party with items bills or offers them. The
+      exchange rates between the currencies agree with each other.
+    </para>
+  </section>
   <section id="S-05-validation-the-map-and-the-code-lists">
     <title>The map and the code lists</title>
     <para>
@@ -544,11 +590,11 @@
   <section id="S-05-validation-still-to-come">
     <title>Still to come</title>
     <para>
-      Later layers add their own checks: items and prices, amounts and
-      taxes that add up, dates in a believable order, references between
-      documents, and quantities that agree from order to invoice.
-      Finally, every example document is validated against the UBL
-      schemas and the world's code lists.
+      Later layers add their own checks: document lines with items and
+      quantities, amounts and taxes that add up, dates in a believable
+      order, references between documents, and quantities that agree
+      from order to invoice. Finally, every example document is
+      validated against the UBL schemas and the world's code lists.
     </para>
   </section>
 </section>

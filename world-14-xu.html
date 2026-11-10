@@ -54,12 +54,47 @@ charged on exports.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="what-it-sells">What it sells</h2>
+<p>Its items, as they appear on its quotations, catalogues and invoices.
+Units of measure and packaging types are UN/ECE Recommendation 20 and 21
+codes from the UBL code lists; customs tariff codes are Harmonized
+System subheadings.</p>
+<h3 id="rail-freight-ore-in-bulk-wagons">Rail freight, ore in bulk
+wagons</h3>
+<p>Ore from the mine siding to the factory siding, per tonne.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>FRC-ORE</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>7.40 XUF per <code>TNE</code> (tonne (metric ton))</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rail-freight-container-slot">Rail freight, container slot</h3>
+<p>One container slot on the container train to the distributor's
+siding.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>FRC-CTR</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>420.00 XUF per <code>E48</code> (service unit)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>A rail carrier plans capacity on a fixed timetable. UBL transport
 documents let its customers request and confirm transport plans and
 receive status updates per train and wagon, with the same consignment
 references the forwarder and the receiving terminal use.</p>
-<p>In this world it sends 4 and receives 3 documents, and is named in 3
+<p>In this world it sends 6 and receives 3 documents, and is named in 3
 documents between other parties. They are listed per flow below.</p>
 <h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
 mine to the factory (domestic, Urvania)</h2>
@@ -86,6 +121,15 @@ there.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
 <p>Also mentions: <a href="world-4-xu.html">Serravona Mining</a> as
 <code>ConsignorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-5-xu.html">Valdara Industries</a>: Under FCA the buyer
+pays the carriage: the rail carrier invoices the ore freight to the
+manufacturer, per tonne.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -144,6 +188,15 @@ consignment note goes to the transport user, now the seller.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-5-xu.html">Valdara Industries</a>: Under DAP the
+seller pays the carriage: the rail carrier invoices the container slots
+to the manufacturer.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -182,7 +235,9 @@ who provides the transport of goods between named points).</p>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>CarrierParty</code> <code>ReceiverParty</code>
-<code>TransportServiceProviderParty</code> <code>SenderParty</code></p>
+<code>TransportServiceProviderParty</code> <code>SenderParty</code>
+<code>AccountingSupplierParty</code>
+<code>SellerSupplierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -201,6 +256,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>57b389a</code></p></div></footer>
 </body>
 </html>
