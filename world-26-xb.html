@@ -74,7 +74,7 @@ System subheadings.</p>
 </tr>
 <tr>
 <td>Resale of</td>
-<td>Cotton shirt by <a href="world-40-xb.html">Lumeport Textile
+<td>Cotton shirt made by <a href="world-40-xb.html">Lumeport Textile
 Mill</a>: world item number <code>772030000090</code>, maker's ID
 <code>LT-SH-01</code></td>
 </tr>
@@ -94,9 +94,31 @@ Mill</a>: world item number <code>772030000090</code>, maker's ID
 </tr>
 <tr>
 <td>Resale of</td>
-<td>Garden bench set Marrow by <a href="world-37-xb.html">Brackenmere
-Furniture</a>: world item number <code>772020000079</code>, maker's ID
-<code>BF-GS-01</code></td>
+<td>Garden bench set Marrow made by <a
+href="world-37-xb.html">Brackenmere Furniture</a>: world item number
+<code>772020000079</code>, maker's ID <code>BF-GS-01</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="park-bench-serra-180">Park bench Serra 180</h3>
+<p>The Serra park bench in the store's garden department; the state
+sales tax is added at the till.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>BM-551210</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>749.00 XBL per <code>H87</code> (piece)</td>
+</tr>
+<tr>
+<td>Resale of</td>
+<td>Park bench Serra 180 made by <a href="world-5-xu.html">Valdara
+Industries</a>, bought from <a href="world-6-xb.html">Lumeway
+Distribution</a>: world item number <code>771020000027</code>, maker's
+ID <code>VI-B180</code></td>
 </tr>
 </tbody>
 </table>
@@ -120,41 +142,50 @@ stock levels so the distributor can plan replenishment.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORECAST-SCHEMA"><strong>Forecast</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: The retailer
-forecasts its sales for the coming weeks.</p>
+forecasts its sales for the coming weeks. <a
+href="example-retail-02-Forecast.html">See the example document</a>.</p>
 <p>In it as <code>SenderParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RETAIL-EVENT-SCHEMA"><strong>Retail
 Event</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: A promotion next month will lift demand; the
-distributor needs to know before it orders from the manufacturer.</p>
+distributor needs to know before it orders from the manufacturer. <a
+href="example-retail-03-RetailEvent.html">See the example
+document</a>.</p>
 <p>In it as <code>SenderParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVENTORY-REPORT-SCHEMA"><strong>Inventory
 Report</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: The retailer reports its stock per item, so the
-distributor can replenish.</p>
+distributor can replenish. <a
+href="example-retail-04-InventoryReport.html">See the example
+document</a>.</p>
 <p>In it as <code>RetailerCustomerParty</code>,
 <code>InventoryReportingParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: Delivery terms
 DDP retailer's shop: the order names only where to deliver; transport is
-the distributor's business.</p>
+the distributor's business. <a href="example-retail-05-Order.html">See
+the example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
 Advice</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: The shop confirms the delivery and reports a damaged
-carton.</p>
+carton. <a href="example-retail-10-ReceiptAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
 Receipt</strong></a> to <a href="world-c-xb.html">Robin Ashdale</a>: A
-consumer buys in the shop and gets a receipt.</p>
+consumer buys in the shop and gets a receipt. <a
+href="example-retail-13-PurchaseReceipt.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
@@ -163,7 +194,9 @@ consumer buys in the shop and gets a receipt.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA"><strong>Catalogue</strong></a>
 from <a href="world-6-xb.html">Lumeway Distribution</a>: The
 distributor's catalogue of items and prices; items carry the identifiers
-of the identifier issuing agency.</p>
+of the identifier issuing agency. <a
+href="example-retail-01-Catalogue.html">See the example
+document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
 <p>Also mentions: <a href="world-31-xu.html">Codana Identification
 Agency</a> as
@@ -172,7 +205,8 @@ Agency</a> as
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The distributor announces the delivery and the truck
-that brings it.</p>
+that brings it. <a href="example-retail-07-DespatchAdvice.html">See the
+example document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
@@ -181,7 +215,8 @@ that brings it.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-6-xb.html">Lumeway Distribution</a>: The distributor
 has sold its receivables to the factor, so the invoice names the factor
-as payee.</p>
+as payee. <a href="example-retail-11-Invoice.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
@@ -191,7 +226,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHE
 Note</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The shop reported a damaged carton in its receipt
 advice; the distributor credits it. The factor stays the payee, because
-it owns the receivable being reduced.</p>
+it owns the receivable being reduced. <a
+href="example-retail-12-CreditNote.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
@@ -205,7 +242,8 @@ Execution Plan Request</strong></a> from <a
 href="world-6-xb.html">Lumeway Distribution</a> to <a
 href="world-13-xu.html">Trasvia Haulage</a>: Because it sold DDP, the
 distributor books the outgoing truck from its distribution centre to the
-shop.</p>
+shop. <a href="example-retail-06-TransportExecutionPlanRequest.html">See
+the example document</a>.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p></li>
 <li><p><a
@@ -213,7 +251,8 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA">
 from <a href="world-13-xu.html">Trasvia Haulage</a> to <a
 href="world-6-xb.html">Lumeway Distribution</a>: The outgoing
 consignment note goes to the distributor, who contracted the carriage;
-the retailer is only the consignee.</p>
+the retailer is only the consignee. <a
+href="example-retail-08-Waybill.html">See the example document</a>.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
 </ul>
@@ -419,6 +458,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>82783f8</code></p></div></footer>
 </body>
 </html>

@@ -191,7 +191,8 @@ stock levels so the distributor can plan replenishment.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: The outgoing
 consignment note goes to the distributor, who contracted the carriage;
-the retailer is only the consignee.</p>
+the retailer is only the consignee. <a
+href="example-retail-08-Waybill.html">See the example document</a>.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
 <p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
@@ -200,7 +201,8 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA">
 to <a href="world-6-xb.html">Lumeway Distribution</a>: Under DDP the
 seller pays the transport, so the carrier invoices the distributor. A
 transport service is invoiced with the ordinary Invoice; the Freight
-Invoice is deprecated in UBL 2.5.</p>
+Invoice is deprecated in UBL 2.5. <a
+href="example-retail-09-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>,
 <code>Delivery/Shipment/Consignment/CarrierParty</code>.</p></li>
@@ -212,7 +214,9 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUT
 Execution Plan Request</strong></a> from <a
 href="world-6-xb.html">Lumeway Distribution</a>: Because it sold DDP,
 the distributor books the outgoing truck from its distribution centre to
-the shop.</p>
+the shop. <a
+href="example-retail-06-TransportExecutionPlanRequest.html">See the
+example document</a>.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>TransportServiceProviderParty</code>.</p>
 <p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
@@ -224,7 +228,9 @@ the shop.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-26-xb.html">Brightmarket Stores</a>:
-The distributor announces the delivery and the truck that brings it.</p>
+The distributor announces the delivery and the truck that brings it. <a
+href="example-retail-07-DespatchAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
 who provides the transport of goods between named points).</p></li>
 </ul>
@@ -403,6 +409,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>197bf6e</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>82783f8</code></p></div></footer>
 </body>
 </html>
