@@ -79,6 +79,8 @@ Inside `ReceiverParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Distribution Drive**  
@@ -131,6 +133,8 @@ Inside `ReceiverParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -186,6 +190,8 @@ Inside `ProviderParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Market Street**  
@@ -234,6 +240,8 @@ Inside `ProviderParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Brightmarket Stores (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -347,8 +355,18 @@ Inside `RequestedClassificationScheme`:
 
 - `ID` = **HS**  
   Items classified by the Harmonized System.
+- `UUID` = **1afc0bc8-8a3e-5d36-b5be-437211032bac**  
+  Its UUID.
+- `LastRevisionDate` = **2022-01-01**  
+  The edition in force.
+- `LastRevisionTime` = **00:00:00**  
+  From midnight.
+- `Note` = **Six-digit subheadings.**  
+  The level wanted.
 - `Name` = **Harmonized System**  
   In words.
+- `Description` = **The international goods classification.**  
+  What it is.
 - `AgencyID` = **WCO**  
   The World Customs Organization.
 - `AgencyName` = **World Customs Organization**  
@@ -357,6 +375,8 @@ Inside `RequestedClassificationScheme`:
   The edition.
 - `URI` = **https://www.wcoomd.org**  
   Where it is published.
+- `SchemeURI` = **https://www.wcoomd.org/hs**  
+  Where the scheme is.
 - `LanguageID` = **en**  
   In English.
 - `ClassificationCategory/Name` = **Seats**  
@@ -437,6 +457,7 @@ Inside `CatalogueRequestLine`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -475,6 +496,7 @@ Inside `CatalogueRequestLine`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -526,6 +548,7 @@ Inside `CatalogueRequestLine`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Market Street</cbc:StreetName>
       <cbc:BuildingNumber>50</cbc:BuildingNumber>
@@ -562,6 +585,7 @@ Inside `CatalogueRequestLine`:
       <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -647,11 +671,17 @@ Inside `CatalogueRequestLine`:
   </cac:RequestedLanguage>
   <cac:RequestedClassificationScheme>
     <cbc:ID>HS</cbc:ID>
+    <cbc:UUID>1afc0bc8-8a3e-5d36-b5be-437211032bac</cbc:UUID>
+    <cbc:LastRevisionDate>2022-01-01</cbc:LastRevisionDate>
+    <cbc:LastRevisionTime>00:00:00</cbc:LastRevisionTime>
+    <cbc:Note>Six-digit subheadings.</cbc:Note>
     <cbc:Name>Harmonized System</cbc:Name>
+    <cbc:Description>The international goods classification.</cbc:Description>
     <cbc:AgencyID>WCO</cbc:AgencyID>
     <cbc:AgencyName>World Customs Organization</cbc:AgencyName>
     <cbc:VersionID>2022</cbc:VersionID>
     <cbc:URI>https://www.wcoomd.org</cbc:URI>
+    <cbc:SchemeURI>https://www.wcoomd.org/hs</cbc:SchemeURI>
     <cbc:LanguageID>en</cbc:LanguageID>
     <cac:ClassificationCategory>
       <cbc:Name>Seats</cbc:Name>

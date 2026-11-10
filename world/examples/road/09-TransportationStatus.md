@@ -69,6 +69,8 @@ Inside `Consignment`:
   The language's name.
 - `ConsigneeParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `ConsigneeParty/PostalAddress/StreetName` = **Distribution Drive**  
@@ -121,6 +123,8 @@ Inside `Consignment`:
   The legal form, in words.
 - `ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `ConsigneeParty/PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -167,6 +171,8 @@ Inside `Consignment`:
   The language's name.
 - `CarrierParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti**  
@@ -209,6 +215,8 @@ Inside `Consignment`:
   The legal form, in words.
 - `CarrierParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Trasvia Haulage (world/parties.json).
+- `CarrierParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `CarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -300,6 +308,16 @@ Inside `TransportEvent`:
   The condition checked.
 - `CurrentStatus/Condition/Description` = **Intact, as checked by customs.**  
   Its state.
+- `CurrentStatus/Condition/AttributeID` = **Trailer temperature**  
+  Recorded by the trailer's sensor.
+- `CurrentStatus/Condition/Measure` = **14** (unitCode `CEL`)  
+  The temperature in the trailer.
+- `CurrentStatus/Condition/Description` = **No protection needed for steel benches.**  
+  Why it is only noted.
+- `CurrentStatus/Condition/MinimumMeasure` = **4** (unitCode `CEL`)  
+  The lowest during the night.
+- `CurrentStatus/Condition/MaximumMeasure` = **18** (unitCode `CEL`)  
+  The highest in the afternoon.
 - `ResponsibleParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ResponsibleParty/PartyName/Name` = **Trasvia Haulage**  
@@ -438,6 +456,7 @@ Inside `StatusPeriod`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
         <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -476,6 +495,7 @@ Inside `StatusPeriod`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -523,6 +543,7 @@ Inside `StatusPeriod`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
         <cbc:BuildingNumber>45</cbc:BuildingNumber>
@@ -556,6 +577,7 @@ Inside `StatusPeriod`:
         <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
@@ -633,6 +655,13 @@ Inside `StatusPeriod`:
       <cac:Condition>
         <cbc:AttributeID>Seal</cbc:AttributeID>
         <cbc:Description>Intact, as checked by customs.</cbc:Description>
+      </cac:Condition>
+      <cac:Condition>
+        <cbc:AttributeID>Trailer temperature</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">14</cbc:Measure>
+        <cbc:Description>No protection needed for steel benches.</cbc:Description>
+        <cbc:MinimumMeasure unitCode="CEL">4</cbc:MinimumMeasure>
+        <cbc:MaximumMeasure unitCode="CEL">18</cbc:MaximumMeasure>
       </cac:Condition>
     </cac:CurrentStatus>
     <cac:ResponsibleParty>

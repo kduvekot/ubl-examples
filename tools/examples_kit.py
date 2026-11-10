@@ -724,8 +724,11 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
            "CarrierAssignedID": V(f"{initials(carrier)}-{kind}-26-{flow.base:04d}", "The carrier's own number for "
                                                                                     "the carriage."),
            "VersionID": V("1", "The original, not a corrected version."),
+           "StatusCode": V("Issued", "The note is issued and in force."),
            "IssueDate": V(flow.date(day), why),
            "Name": V(kind_name, "The kind of transport document."),
+           "ShippingOrderID": V(flow.numbers.get("consignment", number), "The shipper's booking the carriage "
+                                                                         "fulfils."),
            "Description": V(leg["why"], "The carriage in words."),
            "Note": V("Three originals: consignor, consignee, carrier.", "As the convention prescribes."),
            "WaybillTypeCode": V(kind, "The convention the document follows."),

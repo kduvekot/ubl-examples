@@ -55,6 +55,8 @@ Inside `ExporterParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `PostalAddress/StreetName` = **Gin Yard Road**  
@@ -81,6 +83,8 @@ Inside `ExporterParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Selanu Cotton Ginnery (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -216,6 +220,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `ConsigneeParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `ConsigneeParty/PostalAddress/StreetName` = **Mill Street**  
@@ -264,6 +270,8 @@ Inside `CustomsDeclaration`:
   The legal form, in words.
 - `ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Lumeport Textile Mill (world/parties.json).
+- `ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -304,6 +312,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `CustomsParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `CustomsParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `CustomsParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `CustomsParty/PostalAddress/StreetName` = **Wharf Road**  
@@ -322,6 +332,8 @@ Inside `CustomsDeclaration`:
   The name under which the party is registered, with its legal form; identity of Island Customs Service (world/parties.json).
 - `CustomsParty/PartyLegalEntity/CompanyID` = **IC41448**  
   Number in the Island companies register; identity of Island Customs Service (world/parties.json).
+- `CustomsParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `CustomsParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `CustomsParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -399,6 +411,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Gin Yard Road</cbc:StreetName>
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
@@ -416,6 +429,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
@@ -562,6 +576,7 @@ Inside `Signature`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Mill Street</cbc:StreetName>
         <cbc:BuildingNumber>21</cbc:BuildingNumber>
@@ -598,6 +613,7 @@ Inside `Signature`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -642,6 +658,7 @@ Inside `Signature`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Wharf Road</cbc:StreetName>
         <cbc:BuildingNumber>53</cbc:BuildingNumber>
@@ -655,6 +672,7 @@ Inside `Signature`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
         <cbc:CompanyID>IC41448</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>

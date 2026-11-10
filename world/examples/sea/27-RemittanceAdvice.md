@@ -65,6 +65,8 @@ Inside `AccountingCustomerParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `Party/PostalAddress/StreetName` = **Reef Street**  
@@ -91,6 +93,8 @@ Inside `AccountingCustomerParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Velumi Trading (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -140,6 +144,8 @@ Inside `AccountingSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Distribution Drive**  
@@ -192,6 +198,8 @@ Inside `AccountingSupplierParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -243,6 +251,8 @@ Inside `PayeeParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Exchange Street**  
@@ -291,6 +301,8 @@ Inside `PayeeParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Harbourline Factoring (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -409,6 +421,18 @@ Inside `RemittanceAdviceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `AccountingCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
   A party referred to from another party's details: its identifier and name are enough.
+- `BuyerCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BuyerCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PayeeParty/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PayeeParty/PartyName/Name` = **Harbourline Factoring**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
@@ -419,6 +443,12 @@ Inside `RemittanceAdviceLine`:
   Its issue date.
 - `DocumentReference/DocumentTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
+- `ExchangeRate/SourceCurrencyCode` = **XBL**  
+  The invoice currency.
+- `ExchangeRate/TargetCurrencyCode` = **XLC**  
+  The buyer's currency it paid from.
+- `ExchangeRate/CalculationRate` = **0.4**  
+  The rate the buyer's bank applied.
 - `ID` = **2**  
   The credit note deducted.
 - `CreditLineAmount` = **64.00** (currencyID `XBL`)  
@@ -469,6 +499,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
@@ -486,6 +517,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -536,6 +568,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
         <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -574,6 +607,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -622,6 +656,7 @@ Inside `RemittanceAdviceLine`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Exchange Street</cbc:StreetName>
       <cbc:BuildingNumber>41</cbc:BuildingNumber>
@@ -658,6 +693,7 @@ Inside `RemittanceAdviceLine`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -771,6 +807,34 @@ Inside `RemittanceAdviceLine`:
         </cac:PartyName>
       </cac:Party>
     </cac:AccountingCustomerParty>
+    <cac:BuyerCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:BuyerCustomerParty>
+    <cac:SellerSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:SellerSupplierParty>
+    <cac:PayeeParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Harbourline Factoring</cbc:Name>
+      </cac:PartyName>
+    </cac:PayeeParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>LD-INV-26-0147</cbc:ID>
@@ -782,6 +846,11 @@ Inside `RemittanceAdviceLine`:
       <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
     </cac:DocumentReference>
+    <cac:ExchangeRate>
+      <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+      <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+      <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    </cac:ExchangeRate>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>

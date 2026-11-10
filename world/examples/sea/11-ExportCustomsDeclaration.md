@@ -55,6 +55,8 @@ Inside `ExporterParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Distribution Drive**  
@@ -107,6 +109,8 @@ Inside `ExporterParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -436,6 +440,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `Shipment/ShipmentStage/CustomsAgentParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Shipment/ShipmentStage/CustomsAgentParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Shipment/ShipmentStage/CustomsAgentParty/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Shipment/ShipmentStage/CustomsAgentParty/PostalAddress/StreetName` = **Dockside Way**  
@@ -484,6 +490,8 @@ Inside `CustomsDeclaration`:
   The legal form, in words.
 - `Shipment/ShipmentStage/CustomsAgentParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Bayforth Forwarding (world/parties.json).
+- `Shipment/ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Shipment/ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `Shipment/ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -540,6 +548,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `ConsigneeParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `ConsigneeParty/PostalAddress/StreetName` = **Reef Street**  
@@ -566,6 +576,8 @@ Inside `CustomsDeclaration`:
   The legal form, in words.
 - `ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Velumi Trading (world/parties.json).
+- `ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -610,6 +622,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `CustomsParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `CustomsParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `CustomsParty/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `CustomsParty/PostalAddress/StreetName` = **Border Crossing Road**  
@@ -634,6 +648,8 @@ Inside `CustomsDeclaration`:
   The name under which the party is registered, with its legal form; identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `CustomsParty/PartyLegalEntity/CompanyID` = **20410137**  
   Number in the Federal business register of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json).
+- `CustomsParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `CustomsParty/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
 - `CustomsParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -711,6 +727,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -749,6 +766,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -1050,6 +1068,7 @@ Inside `Signature`:
             <cbc:LocaleCode>EN</cbc:LocaleCode>
           </cac:Language>
           <cac:PostalAddress>
+            <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
             <cbc:StreetName>Dockside Way</cbc:StreetName>
             <cbc:BuildingNumber>4</cbc:BuildingNumber>
@@ -1086,6 +1105,7 @@ Inside `Signature`:
             <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
             <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
             <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+            <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
             <cac:RegistrationAddress>
               <cbc:CityName>Lumeport</cbc:CityName>
               <cac:Country>
@@ -1152,6 +1172,7 @@ Inside `Signature`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
@@ -1169,6 +1190,7 @@ Inside `Signature`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -1221,6 +1243,7 @@ Inside `Signature`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Border Crossing Road</cbc:StreetName>
         <cbc:BuildingNumber>36</cbc:BuildingNumber>
@@ -1237,6 +1260,7 @@ Inside `Signature`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
         <cbc:CompanyID>20410137</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>

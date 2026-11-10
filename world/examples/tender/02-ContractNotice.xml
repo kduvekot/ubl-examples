@@ -27,6 +27,8 @@
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID>LUM-ADR-000417</cbc:ID>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Civic Square</cbc:StreetName>
         <cbc:BuildingNumber>6</cbc:BuildingNumber>
@@ -63,6 +65,7 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>20410548</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -108,6 +111,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Civic Square</cbc:StreetName>
       <cbc:BuildingNumber>27</cbc:BuildingNumber>
@@ -125,6 +129,7 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayvarra Information Service</cbc:RegistrationName>
       <cbc:CompanyID>20410959</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -171,6 +176,7 @@
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
           <cbc:StreetName>Justice Row</cbc:StreetName>
           <cbc:BuildingNumber>20</cbc:BuildingNumber>
@@ -188,6 +194,7 @@
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Procurement Review Board of Bayvarra</cbc:RegistrationName>
           <cbc:CompanyID>20410822</cbc:CompanyID>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>

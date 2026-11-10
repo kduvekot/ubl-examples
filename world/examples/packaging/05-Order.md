@@ -59,6 +59,8 @@ Inside `BuyerCustomerParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Market Street**  
@@ -107,6 +109,8 @@ Inside `BuyerCustomerParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Brightmarket Stores (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -170,6 +174,8 @@ Inside `SellerSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Mill Street**  
@@ -218,6 +224,8 @@ Inside `SellerSupplierParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Lumeport Textile Mill (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -372,6 +380,7 @@ Inside `OrderLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
         <cbc:BuildingNumber>50</cbc:BuildingNumber>
@@ -408,6 +417,7 @@ Inside `OrderLine`:
         <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -469,6 +479,7 @@ Inside `OrderLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Mill Street</cbc:StreetName>
         <cbc:BuildingNumber>21</cbc:BuildingNumber>
@@ -505,6 +516,7 @@ Inside `OrderLine`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>

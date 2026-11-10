@@ -14,6 +14,27 @@
   <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
   <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:PurchaseReference>
+    <cbc:ID>BM-LOYAL-0088127</cbc:ID>
+    <cbc:Description>Loyalty card</cbc:Description>
+  </cac:PurchaseReference>
+  <cac:SalesDocumentReference>
+    <cbc:ID>BM-DEL-26-0518-07</cbc:ID>
+  </cac:SalesDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-WARRANTY-B180</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-POS-G2</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -34,6 +55,7 @@
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
         <cbc:BuildingNumber>50</cbc:BuildingNumber>
@@ -70,6 +92,7 @@
         <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -118,6 +141,7 @@
         <cbc:Name>Robin Ashdale</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>
@@ -154,6 +178,7 @@
   </cac:PointOfSaleContact>
   <cac:Delivery>
     <cac:DeliveryAddress>
+      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Gull Lane</cbc:StreetName>
       <cbc:BuildingNumber>57</cbc:BuildingNumber>
@@ -230,8 +255,21 @@
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Promotion price.</cbc:Note>
     <cbc:Quantity unitCode="H87">1</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">717.92</cbc:TaxInclusiveLineExtensionAmount>
+    <cac:PurchaseLinePeriod>
+      <cbc:StartDate>2026-05-15</cbc:StartDate>
+      <cbc:EndDate>2031-05-15</cbc:EndDate>
+    </cac:PurchaseLinePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>VI-SF-02170</cbc:ID>
+      <cbc:Description>Frame serial number</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>The Serra park bench in the store's garden department; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

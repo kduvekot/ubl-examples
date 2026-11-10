@@ -80,6 +80,8 @@ Inside `ImporterParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `PostalAddress/StreetName` = **Reef Street**  
@@ -106,6 +108,8 @@ Inside `ImporterParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Velumi Trading (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -138,11 +142,21 @@ Inside `ImporterParty`:
   The number of the power of attorney the buyer gave its customs broker.
 - `PowerOfAttorney/IssueDate` = **2026-01-05**  
   Given at the start of the year, for all of the year's imports.
+- `PowerOfAttorney/IssueTime` = **11:00:00**  
+  Signed in the morning.
 - `PowerOfAttorney/Description` = **Lodging import declarations and paying duties and taxes on behalf of Velumi Trading.**  
   What the broker may do for the buyer.
+- `PowerOfAttorney/NotaryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PowerOfAttorney/NotaryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `PowerOfAttorney/AgentParty/PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `PowerOfAttorney/AgentParty/PartyName/Name` = **Tevaro Customs Brokers**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PowerOfAttorney/WitnessParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PowerOfAttorney/WitnessParty/PartyName/Name` = **Nalevi Warehousing**  
   A party referred to from another party's details: its identifier and name are enough.
 - `PowerOfAttorney/MandateDocumentReference/ID` = **MAND-2026-014**  
   The signed mandate kept by the broker.
@@ -171,6 +185,8 @@ Inside `ConsignorParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Distribution Drive**  
@@ -223,6 +239,8 @@ Inside `ConsignorParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -283,6 +301,8 @@ Inside `FreightForwarderParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Dockside Way**  
@@ -331,6 +351,8 @@ Inside `FreightForwarderParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Bayforth Forwarding (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -376,6 +398,8 @@ Inside `CustomsParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `PostalAddress/StreetName` = **Wharf Road**  
@@ -394,6 +418,8 @@ Inside `CustomsParty`:
   The name under which the party is registered, with its legal form; identity of Island Customs Service (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **IC41448**  
   Number in the Island companies register; identity of Island Customs Service (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -720,6 +746,8 @@ Inside `Shipment`:
   The language's name.
 - `ShipmentStage/CustomsAgentParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `ShipmentStage/CustomsAgentParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ShipmentStage/CustomsAgentParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `ShipmentStage/CustomsAgentParty/PostalAddress/StreetName` = **Wharf Road**  
@@ -746,6 +774,8 @@ Inside `Shipment`:
   The legal form, in words.
 - `ShipmentStage/CustomsAgentParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Tevaro Customs Brokers (world/parties.json).
+- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -848,6 +878,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
@@ -865,6 +896,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
@@ -901,7 +933,16 @@ Inside `Signature`:
     <cac:PowerOfAttorney>
       <cbc:ID>POA-TT-2026-014</cbc:ID>
       <cbc:IssueDate>2026-01-05</cbc:IssueDate>
+      <cbc:IssueTime>11:00:00</cbc:IssueTime>
       <cbc:Description>Lodging import declarations and paying duties and taxes on behalf of Velumi Trading.</cbc:Description>
+      <cac:NotaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+        </cac:PartyName>
+      </cac:NotaryParty>
       <cac:AgentParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
@@ -910,6 +951,14 @@ Inside `Signature`:
           <cbc:Name>Tevaro Customs Brokers</cbc:Name>
         </cac:PartyName>
       </cac:AgentParty>
+      <cac:WitnessParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
+        </cac:PartyName>
+      </cac:WitnessParty>
       <cac:MandateDocumentReference>
         <cbc:ID>MAND-2026-014</cbc:ID>
       </cac:MandateDocumentReference>
@@ -937,6 +986,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -975,6 +1025,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -1030,6 +1081,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
@@ -1066,6 +1118,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -1110,6 +1163,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>53</cbc:BuildingNumber>
@@ -1123,6 +1177,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
       <cbc:CompanyID>IC41448</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
@@ -1421,6 +1476,7 @@ Inside `Signature`:
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
           <cbc:StreetName>Wharf Road</cbc:StreetName>
           <cbc:BuildingNumber>60</cbc:BuildingNumber>
@@ -1438,6 +1494,7 @@ Inside `Signature`:
           <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
           <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>

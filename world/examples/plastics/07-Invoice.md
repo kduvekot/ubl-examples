@@ -68,6 +68,8 @@ Inside `AccountingSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `Party/PostalAddress/StreetName` = **Banchina del Fiume**  
@@ -110,6 +112,8 @@ Inside `AccountingSupplierParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Fiumella Barges (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -159,6 +163,8 @@ Inside `AccountingCustomerParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `Party/PostalAddress/StreetName` = **Via del Riciclo**  
@@ -201,6 +207,8 @@ Inside `AccountingCustomerParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Rinova Recovery (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -437,6 +445,7 @@ Inside `InvoiceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
         <cbc:BuildingNumber>52</cbc:BuildingNumber>
@@ -470,6 +479,7 @@ Inside `InvoiceLine`:
         <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
@@ -520,6 +530,7 @@ Inside `InvoiceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
@@ -553,6 +564,7 @@ Inside `InvoiceLine`:
         <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>

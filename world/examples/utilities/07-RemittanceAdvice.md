@@ -45,6 +45,40 @@ The shop pays its water bill and says which invoice the transfer settles.
 - `LineCountNumeric` = **1**  
   The invoice paid.
 
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2026-03-01**  
+  The month paid for.
+- `EndDate` = **2026-03-31**  
+  Its end.
+
+### Billing Reference
+
+Inside `BillingReference`:
+
+- `InvoiceDocumentReference/ID` = **CSWC-INV-26-0317**  
+  The invoice this payment settles.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BS-BANK-26-04**  
+  The payer's bank statement line.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BS-SIG-RA**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Accounting Customer Party
 
 Inside `AccountingCustomerParty`:
@@ -67,6 +101,8 @@ Inside `AccountingCustomerParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Market Street**  
@@ -115,6 +151,8 @@ Inside `AccountingCustomerParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Brightmarket Stores (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -176,6 +214,8 @@ Inside `AccountingSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Reservoir Road**  
@@ -224,6 +264,8 @@ Inside `AccountingSupplierParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Coastal State Water Company (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -342,6 +384,10 @@ Inside `RemittanceAdviceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `AccountingCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
   A party referred to from another party's details: its identifier and name are enough.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its end.
 - `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0317**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
@@ -375,6 +421,29 @@ Inside `RemittanceAdviceLine`:
   <cbc:PayerReference>BS-0313</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF03CSWCINV260317</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BS-BANK-26-04</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BS-SIG-RA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -395,6 +464,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
         <cbc:BuildingNumber>50</cbc:BuildingNumber>
@@ -431,6 +501,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -489,6 +560,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Reservoir Road</cbc:StreetName>
         <cbc:BuildingNumber>51</cbc:BuildingNumber>
@@ -525,6 +597,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -639,6 +712,10 @@ Inside `RemittanceAdviceLine`:
         </cac:PartyName>
       </cac:Party>
     </cac:AccountingCustomerParty>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+    </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>CSWC-INV-26-0317</cbc:ID>

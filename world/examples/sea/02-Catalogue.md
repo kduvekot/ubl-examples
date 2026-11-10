@@ -58,6 +58,8 @@ Inside `ProviderParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Distribution Drive**  
@@ -110,6 +112,8 @@ Inside `ProviderParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -163,6 +167,8 @@ Inside `ReceiverParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `PostalAddress/StreetName` = **Reef Street**  
@@ -189,6 +195,8 @@ Inside `ReceiverParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Velumi Trading (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -349,6 +357,8 @@ Inside `CatalogueLine`:
   The language's name.
 - `Item/StandardItemIdentification/IssuerParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Via dei Codici**  
@@ -391,6 +401,8 @@ Inside `CatalogueLine`:
   The legal form, in words.
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -702,6 +714,7 @@ Inside `CatalogueLine`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -740,6 +753,7 @@ Inside `CatalogueLine`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -790,6 +804,7 @@ Inside `CatalogueLine`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
@@ -807,6 +822,7 @@ Inside `CatalogueLine`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
@@ -949,6 +965,7 @@ Inside `CatalogueLine`:
             <cbc:LocaleCode>EN</cbc:LocaleCode>
           </cac:Language>
           <cac:PostalAddress>
+            <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
             <cbc:StreetName>Via dei Codici</cbc:StreetName>
             <cbc:BuildingNumber>29</cbc:BuildingNumber>
@@ -982,6 +999,7 @@ Inside `CatalogueLine`:
             <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
             <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
             <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+            <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
             <cac:RegistrationAddress>
               <cbc:CityName>Ferrano</cbc:CityName>
               <cac:Country>

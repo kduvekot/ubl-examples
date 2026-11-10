@@ -107,7 +107,12 @@
      "form": "SUA",
      "founded": "1962-04-12",
      "size": "Large",
-     "capital": 250000000
+     "capital": 250000000,
+     "listing": {
+      "market": "Ferrano Stock Exchange",
+      "code": "FSE",
+      "id": "XU0001042505"
+     }
     },
     "service_provider": {
      "party": "8-xu",
@@ -965,7 +970,8 @@
      "MarkAttention": "Head of procurement",
      "InhouseMail": "Room 2.14",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "CO",
+     "ID": "LUM-ADR-000417"
     },
     "account": {
      "bank": "25-xb",
@@ -2472,7 +2478,8 @@
      "form": "SP",
      "founded": "2009-08-17",
      "size": "Micro",
-     "sole_proprietor": true
+     "sole_proprietor": true,
+     "registration_expires": "2026-12-31"
     },
     "address_lines": [
      "Lisavu Cotton Farm",

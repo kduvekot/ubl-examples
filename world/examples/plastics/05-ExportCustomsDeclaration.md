@@ -55,6 +55,8 @@ Inside `ExporterParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Via del Riciclo**  
@@ -97,6 +99,8 @@ Inside `ExporterParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Rinova Recovery (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -170,6 +174,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `Shipment/Consignment/CarrierParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Shipment/Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Shipment/Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `Shipment/Consignment/CarrierParty/PostalAddress/StreetName` = **Banchina del Fiume**  
@@ -212,6 +218,8 @@ Inside `CustomsDeclaration`:
   The legal form, in words.
 - `Shipment/Consignment/CarrierParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Fiumella Barges (world/parties.json).
+- `Shipment/Consignment/CarrierParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Shipment/Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `Shipment/Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -304,6 +312,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `ConsigneeParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `ConsigneeParty/PostalAddress/StreetName` = **Estuary Road**  
@@ -352,6 +362,8 @@ Inside `CustomsDeclaration`:
   The legal form, in words.
 - `ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Rivermouth Packaging (world/parties.json).
+- `ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -392,6 +404,8 @@ Inside `CustomsDeclaration`:
   The language's name.
 - `CustomsParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `CustomsParty/PostalAddress/AddressTypeCode` = **Postal**  
+  The kind of address.
 - `CustomsParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `CustomsParty/PostalAddress/Postbox` = **PB 18**  
@@ -428,6 +442,8 @@ Inside `CustomsDeclaration`:
   The name under which the party is registered, with its legal form; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/PartyLegalEntity/CompanyID` = **XU-R-105507**  
   Number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json).
+- `CustomsParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `CustomsParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `CustomsParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -507,6 +523,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
@@ -540,6 +557,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -613,6 +631,7 @@ Inside `Signature`:
             <cbc:LocaleCode>EN</cbc:LocaleCode>
           </cac:Language>
           <cac:PostalAddress>
+            <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
             <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
             <cbc:BuildingNumber>52</cbc:BuildingNumber>
@@ -646,6 +665,7 @@ Inside `Signature`:
             <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
             <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
             <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+            <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
             <cac:RegistrationAddress>
               <cbc:CityName>Ferrano</cbc:CityName>
               <cac:Country>
@@ -746,6 +766,7 @@ Inside `Signature`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Estuary Road</cbc:StreetName>
         <cbc:BuildingNumber>28</cbc:BuildingNumber>
@@ -782,6 +803,7 @@ Inside `Signature`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -826,6 +848,7 @@ Inside `Signature`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:Postbox>PB 18</cbc:Postbox>
         <cbc:StreetName>Valico di Confine</cbc:StreetName>
@@ -856,6 +879,7 @@ Inside `Signature`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
         <cbc:CompanyID>XU-R-105507</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>

@@ -26,6 +26,8 @@ The inland waterway consignment note, issued to the shipper.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `VersionID` = **1**  
   The original, not a corrected version.
+- `StatusCode` = **Issued**  
+  The note is issued and in force.
 - `IssueDate` = **2026-04-19**  
   Issued when the barge is loaded.
 - `IssueTime` = **09:38:00**  
@@ -36,6 +38,8 @@ The inland waterway consignment note, issued to the shipper.
   The carriage in words.
 - `Note` = **Three originals: consignor, consignee, carrier.**  
   As the convention prescribes.
+- `ShippingOrderID` = **RR-CS-26-0885**  
+  The shipper's booking the carriage fulfils.
 - `WaybillTypeCode` = **CMNI**  
   The convention the document follows.
 - `ConsolidatedIndicator` = **false**  
@@ -70,6 +74,8 @@ Inside `SenderParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Banchina del Fiume**  
@@ -112,6 +118,8 @@ Inside `SenderParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Fiumella Barges (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -161,6 +169,8 @@ Inside `ReceiverParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Via del Riciclo**  
@@ -203,6 +213,8 @@ Inside `ReceiverParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Rinova Recovery (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -288,6 +300,8 @@ Inside `Shipment`:
   The language's name.
 - `Consignment/ConsigneeParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Consignment/ConsigneeParty/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Consignment/ConsigneeParty/PostalAddress/StreetName` = **Estuary Road**  
@@ -336,6 +350,8 @@ Inside `Shipment`:
   The legal form, in words.
 - `Consignment/ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Rivermouth Packaging (world/parties.json).
+- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -466,6 +482,8 @@ Inside `Shipment`:
   The order line.
 - `GoodsItem/OrderLineReference/OrderReference/ID` = **RP-PO-26-0882**  
   The buyer's order.
+- `GoodsItem/OriginAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `GoodsItem/OriginAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `GoodsItem/OriginAddress/StreetName` = **Via del Riciclo**  
@@ -579,11 +597,13 @@ Inside `Signature`:
   <cbc:CarrierAssignedID>FB-CMNI-26-0882</cbc:CarrierAssignedID>
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
+  <cbc:StatusCode>Issued</cbc:StatusCode>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>09:38:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
   <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:ShippingOrderID>RR-CS-26-0885</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMNI</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
@@ -606,6 +626,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
       <cbc:BuildingNumber>52</cbc:BuildingNumber>
@@ -639,6 +660,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -687,6 +709,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
@@ -720,6 +743,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -801,6 +825,7 @@ Inside `Signature`:
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
           <cbc:StreetName>Estuary Road</cbc:StreetName>
           <cbc:BuildingNumber>28</cbc:BuildingNumber>
@@ -837,6 +862,7 @@ Inside `Signature`:
           <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
           <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>
@@ -951,6 +977,7 @@ Inside `Signature`:
         </cac:OrderReference>
       </cac:OrderLineReference>
       <cac:OriginAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>

@@ -26,6 +26,8 @@ The road consignment note goes to the party that booked the truck, the distribut
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `VersionID` = **1**  
   The original, not a corrected version.
+- `StatusCode` = **Issued**  
+  The note is issued and in force.
 - `IssueDate` = **2026-03-23**  
   Issued when the carrier collects the goods at the warehouse.
 - `IssueTime` = **08:16:00**  
@@ -36,6 +38,8 @@ The road consignment note goes to the party that booked the truck, the distribut
   The carriage in words.
 - `Note` = **Three originals: consignor, consignee, carrier.**  
   As the convention prescribes.
+- `ShippingOrderID` = **LD-CS-26-0152**  
+  The shipper's booking the carriage fulfils.
 - `WaybillTypeCode` = **CMR**  
   The convention the document follows.
 - `ConsolidatedIndicator` = **false**  
@@ -70,6 +74,8 @@ Inside `SenderParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Via dei Trasporti**  
@@ -112,6 +118,8 @@ Inside `SenderParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Trasvia Haulage (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -171,6 +179,8 @@ Inside `ReceiverParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Distribution Drive**  
@@ -223,6 +233,8 @@ Inside `ReceiverParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -276,6 +288,8 @@ Inside `ConsignorParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Via delle Officine**  
@@ -318,6 +332,8 @@ Inside `ConsignorParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Valdara Industries (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **250000000** (currencyID `XUF`)  
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -334,6 +350,12 @@ Inside `ConsignorParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+  The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
+  The regulated market where the shares are listed.
+- `PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
+  The market's code.
 - `Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
 - `Contact/JobTitle` = **Customer service officer**  
@@ -350,12 +372,18 @@ Inside `ConsignorParty`:
   UN/EDIFACT 3155 code AL: cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
   The sales desk's mobile number, also under the reserved +999.
+- `ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
+  The service contract between the two.
+- `ServiceProviderParty/ServiceTypeCode` = **Logistics**  
+  The kind of service, as a code.
 - `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
   A party referred to from another party's details: its identifier and name are enough.
+- `ServiceProviderParty/SellerContact/Name` = **Key account desk**  
+  The provider's contact for this customer.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -1998,6 +2026,8 @@ Inside `Shipment`:
   From nine.
 - `Delivery/EstimatedDeliveryPeriod/EndTime` = **11:00:00**  
   Until eleven.
+- `ReturnAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ReturnAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `ReturnAddress/StreetName` = **Via del Magazzino**  
@@ -2016,6 +2046,8 @@ Inside `Shipment`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
 - `ReturnAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
+- `OriginAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `OriginAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `OriginAddress/StreetName` = **Via del Magazzino**  
@@ -2088,11 +2120,13 @@ Inside `Signature`:
   <cbc:CarrierAssignedID>TH-CMR-26-0149</cbc:CarrierAssignedID>
   <cbc:UUID>4891662e-273a-5190-9aa7-edb87e35d8b5</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
+  <cbc:StatusCode>Issued</cbc:StatusCode>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>08:16:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Description>
   <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMR</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
@@ -2115,6 +2149,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
       <cbc:BuildingNumber>45</cbc:BuildingNumber>
@@ -2148,6 +2183,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -2207,6 +2243,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -2245,6 +2282,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -2295,6 +2333,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
@@ -2328,6 +2367,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -2346,6 +2386,11 @@ Inside `Signature`:
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
+      <cac:SecurityListing>
+        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+        <cbc:MarketCode>FSE</cbc:MarketCode>
+      </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
@@ -2360,6 +2405,8 @@ Inside `Signature`:
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
+      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
         <cac:PartyIdentification>
@@ -2369,6 +2416,9 @@ Inside `Signature`:
           <cbc:Name>Castrano Logistics</cbc:Name>
         </cac:PartyName>
       </cac:Party>
+      <cac:SellerContact>
+        <cbc:Name>Key account desk</cbc:Name>
+      </cac:SellerContact>
     </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -3673,6 +3723,7 @@ Inside `Signature`:
       </cac:EstimatedDeliveryPeriod>
     </cac:Delivery>
     <cac:ReturnAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
@@ -3686,6 +3737,7 @@ Inside `Signature`:
       </cac:Country>
     </cac:ReturnAddress>
     <cac:OriginAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>

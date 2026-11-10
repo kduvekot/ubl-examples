@@ -51,6 +51,8 @@ Inside `ImportingGuarantorParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `PostalAddress/StreetName` = **Reef Street**  
@@ -69,6 +71,8 @@ Inside `ImportingGuarantorParty`:
   The name under which the party is registered, with its legal form; identity of Selanu Chamber of Commerce (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **IC42133**  
   Number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -114,6 +118,8 @@ Inside `ExportingGuarantorParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Piazza del Mercato**  
@@ -148,6 +154,8 @@ Inside `ExportingGuarantorParty`:
   The name under which the party is registered, with its legal form; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **XU-R-105370**  
   Number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -193,6 +201,8 @@ Inside `ImportingCustomsParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `PostalAddress/StreetName` = **Wharf Road**  
@@ -211,6 +221,8 @@ Inside `ImportingCustomsParty`:
   The name under which the party is registered, with its legal form; identity of Island Customs Service (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **IC41448**  
   Number in the Island companies register; identity of Island Customs Service (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -289,6 +301,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
@@ -302,6 +315,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
       <cbc:CompanyID>IC42133</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
@@ -346,6 +360,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
@@ -375,6 +390,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-105370</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -419,6 +435,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>53</cbc:BuildingNumber>
@@ -432,6 +449,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
       <cbc:CompanyID>IC41448</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>

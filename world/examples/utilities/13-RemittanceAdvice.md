@@ -45,6 +45,40 @@ The buyer pays the telecom bill from its account at the island's bank.
 - `LineCountNumeric` = **1**  
   The invoice paid.
 
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2026-03-01**  
+  The month paid for.
+- `EndDate` = **2026-03-31**  
+  Its end.
+
+### Billing Reference
+
+Inside `BillingReference`:
+
+- `InvoiceDocumentReference/ID` = **ST-INV-26-0322**  
+  The invoice this payment settles.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **VT-BANK-26-04**  
+  The payer's bank statement line.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VT-SIG-RA**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Accounting Customer Party
 
 Inside `AccountingCustomerParty`:
@@ -65,6 +99,8 @@ Inside `AccountingCustomerParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `Party/PostalAddress/StreetName` = **Reef Street**  
@@ -91,6 +127,8 @@ Inside `AccountingCustomerParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Velumi Trading (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -138,6 +176,8 @@ Inside `AccountingSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `Party/PostalAddress/StreetName` = **Mast Hill Road**  
@@ -164,6 +204,8 @@ Inside `AccountingSupplierParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Selanu Telecom (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -282,6 +324,10 @@ Inside `RemittanceAdviceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `AccountingCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
   A party referred to from another party's details: its identifier and name are enough.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its end.
 - `BillingReference/InvoiceDocumentReference/ID` = **ST-INV-26-0322**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
@@ -315,6 +361,29 @@ Inside `RemittanceAdviceLine`:
   <cbc:PayerReference>VT-0313</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF53STINV260322</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>ST-INV-26-0322</cbc:ID>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VT-BANK-26-04</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>VT-SIG-RA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -334,6 +403,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
@@ -351,6 +421,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -398,6 +469,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Mast Hill Road</cbc:StreetName>
         <cbc:BuildingNumber>58</cbc:BuildingNumber>
@@ -415,6 +487,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -529,6 +602,10 @@ Inside `RemittanceAdviceLine`:
         </cac:PartyName>
       </cac:Party>
     </cac:AccountingCustomerParty>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+    </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>ST-INV-26-0322</cbc:ID>

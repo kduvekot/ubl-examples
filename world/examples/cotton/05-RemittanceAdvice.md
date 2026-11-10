@@ -51,6 +51,8 @@ Inside `AccountingCustomerParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `Party/PostalAddress/StreetName` = **Gin Yard Road**  
@@ -77,6 +79,8 @@ Inside `AccountingCustomerParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -124,6 +128,8 @@ Inside `AccountingSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `Party/PostalAddress/StreetName` = **Plantation Road**  
@@ -186,6 +192,8 @@ Inside `AccountingSupplierParty`:
   Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationDate` = **2009-08-17**  
   The day the company was entered in the register; identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
+  The island renews a farm's registration every year: it runs until this date.
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **SP**  
   The legal form, as abbreviated in Lisavu (world/countries.json).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Sole proprietorship**  
@@ -194,6 +202,8 @@ Inside `AccountingSupplierParty`:
   The farm belongs to one farmer, who runs it in their own name; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/EntitySizeCode` = **Micro**  
   The size class of the company (micro, small, medium or large); identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -337,6 +347,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
@@ -354,6 +365,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -401,6 +413,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Plantation Road</cbc:StreetName>
         <cbc:BuildingNumber>35</cbc:BuildingNumber>
@@ -448,10 +461,12 @@ Inside `RemittanceAdviceLine`:
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
         <cbc:CompanyID>IC42544</cbc:CompanyID>
         <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
+        <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode>SP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Sole proprietorship</cbc:CompanyLegalForm>
         <cbc:SoleProprietorshipIndicator>true</cbc:SoleProprietorshipIndicator>
         <cbc:EntitySizeCode>Micro</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>

@@ -61,6 +61,8 @@ Inside `Consignment`:
   The language's name.
 - `ConsigneeParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `ConsigneeParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `ConsigneeParty/PostalAddress/StreetName` = **Reef Street**  
@@ -87,6 +89,8 @@ Inside `Consignment`:
   The legal form, in words.
 - `ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Velumi Trading (world/parties.json).
+- `ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -129,6 +133,8 @@ Inside `Consignment`:
   The language's name.
 - `CarrierParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `CarrierParty/PostalAddress/StreetName` = **Airfield Road**  
@@ -155,6 +161,8 @@ Inside `Consignment`:
   The legal form, in words.
 - `CarrierParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Kelaro Air Cargo (world/parties.json).
+- `CarrierParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `CarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -199,6 +207,8 @@ Inside `Consignment`:
   The language's name.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Airfield Road**  
@@ -225,6 +235,8 @@ Inside `Consignment`:
   The legal form, in words.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Selanu Airport Cargo (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -310,6 +322,8 @@ Inside `ReceiverParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Dockside Way**  
@@ -358,6 +372,8 @@ Inside `ReceiverParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Bayforth Forwarding (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -442,6 +458,7 @@ Inside `StatusPeriod`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
@@ -459,6 +476,7 @@ Inside `StatusPeriod`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -504,6 +522,7 @@ Inside `StatusPeriod`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Airfield Road</cbc:StreetName>
         <cbc:BuildingNumber>46</cbc:BuildingNumber>
@@ -521,6 +540,7 @@ Inside `StatusPeriod`:
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -568,6 +588,7 @@ Inside `StatusPeriod`:
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
           <cbc:StreetName>Airfield Road</cbc:StreetName>
           <cbc:BuildingNumber>39</cbc:BuildingNumber>
@@ -585,6 +606,7 @@ Inside `StatusPeriod`:
           <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
           <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
@@ -661,6 +683,7 @@ Inside `StatusPeriod`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
@@ -697,6 +720,7 @@ Inside `StatusPeriod`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>

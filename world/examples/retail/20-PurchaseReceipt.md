@@ -39,6 +39,40 @@ A consumer buys in the shop and gets a receipt.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the shop; it has two decimals.
 
+### Purchase Reference
+
+Inside `PurchaseReference`:
+
+- `ID` = **BM-LOYAL-0088127**  
+  The customer's loyalty card.
+- `Description` = **Loyalty card**  
+  What the number is.
+
+### Sales Document Reference
+
+Inside `SalesDocumentReference`:
+
+- `ID` = **BM-DEL-26-0518-07**  
+  The home delivery order.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **VI-WARRANTY-B180**  
+  The maker's warranty card.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-POS-G2**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -61,6 +95,8 @@ Inside `AccountingSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Market Street**  
@@ -109,6 +145,8 @@ Inside `AccountingSupplierParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Brightmarket Stores (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -158,6 +196,8 @@ Inside `AccountingCustomerParty`:
 
 - `Party/PartyName/Name` = **Robin Ashdale**  
   The trading name; identity of Robin Ashdale (world/parties.json).
+- `Party/PostalAddress/AddressTypeCode` = **Residential**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Gull Lane**  
@@ -221,6 +261,8 @@ Inside `PointOfSaleContact`:
 
 Inside `Delivery`:
 
+- `DeliveryAddress/AddressTypeCode` = **Residential**  
+  The kind of address.
 - `DeliveryAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `DeliveryAddress/StreetName` = **Gull Lane**  
@@ -340,10 +382,24 @@ Inside `PurchaseReceiptLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **Promotion price.**  
+  As printed.
 - `Quantity` = **1** (unitCode `H87`)  
   One bench.
 - `LineExtensionAmount` = **674.10** (currencyID `XBL`)  
   Quantity times the price paid, before the sales tax.
+- `TaxInclusiveLineExtensionAmount` = **717.92** (currencyID `XBL`)  
+  With the 6.5 % sales tax.
+- `PurchaseLinePeriod/StartDate` = **2026-05-15**  
+  The warranty runs from the purchase
+- `PurchaseLinePeriod/EndDate` = **2031-05-15**  
+  for five years.
+- `PurchaseReference/ID` = **VI-SF-02170**  
+  The serial number of the bench's frame, for the warranty.
+- `PurchaseReference/Description` = **Frame serial number**  
+  What the number is.
+- `TaxTotal/TaxAmount` = **43.82** (currencyID `XBL`)  
+  The sales tax of the line.
 - `Item/Description` = **The Serra park bench in the store's garden department; the state sales tax is added at the till.**  
   The seller's description; item bench-serra-r of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -586,6 +642,27 @@ Inside `PurchaseReceiptLine`:
   <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
   <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:PurchaseReference>
+    <cbc:ID>BM-LOYAL-0088127</cbc:ID>
+    <cbc:Description>Loyalty card</cbc:Description>
+  </cac:PurchaseReference>
+  <cac:SalesDocumentReference>
+    <cbc:ID>BM-DEL-26-0518-07</cbc:ID>
+  </cac:SalesDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-WARRANTY-B180</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-POS-G2</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -606,6 +683,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
         <cbc:BuildingNumber>50</cbc:BuildingNumber>
@@ -642,6 +720,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -690,6 +769,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:Name>Robin Ashdale</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>
@@ -726,6 +806,7 @@ Inside `PurchaseReceiptLine`:
   </cac:PointOfSaleContact>
   <cac:Delivery>
     <cac:DeliveryAddress>
+      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Gull Lane</cbc:StreetName>
       <cbc:BuildingNumber>57</cbc:BuildingNumber>
@@ -802,8 +883,21 @@ Inside `PurchaseReceiptLine`:
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Promotion price.</cbc:Note>
     <cbc:Quantity unitCode="H87">1</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">717.92</cbc:TaxInclusiveLineExtensionAmount>
+    <cac:PurchaseLinePeriod>
+      <cbc:StartDate>2026-05-15</cbc:StartDate>
+      <cbc:EndDate>2031-05-15</cbc:EndDate>
+    </cac:PurchaseLinePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>VI-SF-02170</cbc:ID>
+      <cbc:Description>Frame serial number</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>The Serra park bench in the store's garden department; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

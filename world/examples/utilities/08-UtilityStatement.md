@@ -80,6 +80,8 @@ Inside `SenderParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Reservoir Road**  
@@ -128,6 +130,8 @@ Inside `SenderParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Coastal State Water Company (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -163,6 +167,8 @@ Inside `ReceiverParty`:
 
 - `PartyName/Name` = **Robin Ashdale**  
   The trading name; identity of Robin Ashdale (world/parties.json).
+- `PostalAddress/AddressTypeCode` = **Residential**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Gull Lane**  
@@ -239,6 +245,8 @@ Inside `SubscriberConsumption`:
   As a code.
 - `UtilityConsumptionPoint/TotalDeliveredQuantity` = **14** (unitCode `MTQ`)  
   Delivered in March.
+- `UtilityConsumptionPoint/Address/AddressTypeCode` = **Residential**  
+  The kind of address.
 - `UtilityConsumptionPoint/Address/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `UtilityConsumptionPoint/Address/StreetName` = **Gull Lane**  
@@ -540,6 +548,7 @@ Inside `SubscriberConsumption`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Reservoir Road</cbc:StreetName>
       <cbc:BuildingNumber>51</cbc:BuildingNumber>
@@ -576,6 +585,7 @@ Inside `SubscriberConsumption`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -611,6 +621,7 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Robin Ashdale</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Gull Lane</cbc:StreetName>
       <cbc:BuildingNumber>57</cbc:BuildingNumber>
@@ -662,6 +673,7 @@ Inside `SubscriberConsumption`:
       <cbc:SubscriberTypeCode>HH</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="MTQ">14</cbc:TotalDeliveredQuantity>
       <cac:Address>
+        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>

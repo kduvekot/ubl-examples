@@ -5184,3 +5184,133 @@ def _(f, n, doc, out):
             "Contract": {"ID": V(SEA.numbers["agreement"], "The digital agreement.")},
             "Signature": seal(doc["from"], "LD-SIG-26-FC"),
             "DespatchSupplierParty": {"Party": party("6-xb", short=True)}}
+
+
+@enrich("plastics", "ImportCustomsDeclaration")
+def _(f, n, doc, out):
+    return {"Shipment": {"GoodsItem": [{**out["Shipment"]["GoodsItem"][0], "BondedWarehouseLocation": {
+        **out["Shipment"]["GoodsItem"][0]["BondedWarehouseLocation"],
+        "CountrySubentity": V("Coastal State", "The state the store is in."),
+        "CountrySubentityCode": V("CO", "As a code of Bayvarra's address scheme."),
+        "LocationTypeCode": V("BondedStore", "A customs bonded store."),
+        "ValidityPeriod": {"StartDate": V("2025-01-01", "The store's licence runs"),
+                           "EndDate": V("2027-12-31", "until the end of 2027.")},
+        "Storage": {"ID": V("RQ-BOND-03", "Hall 3 of the bonded store."), "Name": V("Hall 3", "Its name."),
+                    "GateID": V("Gate B", "The gate the barge's bags go through."),
+                    "AirFlowPercent": V("0", "No forced ventilation."),
+                    "HumidityPercent": V("60", "The hall's humidity limit; granulate must stay dry."),
+                    "AnimalFoodApprovedIndicator": V("false", "Not approved for animal feed."),
+                    "HumanFoodApprovedIndicator": V("false", "Not approved for food."),
+                    "DangerousGoodsApprovedIndicator": V("false", "Not approved for dangerous goods."),
+                    "RefrigeratedIndicator": V("false", "Not refrigerated."),
+                    "PowerIndicator": V("true", "Power for the forklifts and lighting."),
+                    "MinimumTemperature": {"AttributeID": V("Hall", "The temperature of the hall."),
+                                           "Measure": V("5", "At least 5 °C.", unitCode="CEL"),
+                                           "MeasureCode": V("Min", "The lowest."),
+                                           "Description": V("Kept frost-free.", "Why.")},
+                    "MaximumTemperature": {"AttributeID": V("Hall", "The temperature of the hall."),
+                                           "Measure": V("35", "At most 35 °C.", unitCode="CEL")},
+                    "Certificate": {"ID": V("XB-BOND-LIC-0388", "The bonded store's licence."),
+                                    "CertificateTypeCode": V("BondedStore", "A licence of customs."),
+                                    "CertificateType": V("Bonded store licence", "In words.")}}}}] +
+        out["Shipment"]["GoodsItem"][1:]}}
+
+
+@enrich("road", "Order")
+def _(f, n, doc, out):
+    return {"Delivery": {"Despatch": {"DespatchAddress": {"MarkCare": V("Valdara Industries c/o Castrano Logistics",
+                                                                        "The goods are the manufacturer's, kept by "
+                                                                        "its 3PL.")}}}}
+
+
+@enrich("road", "TransportationStatus")
+def _(f, n, doc, out):
+    st = out["TransportEvent"]["CurrentStatus"]
+    st["Condition"] = [st["Condition"], {"AttributeID": V("Trailer temperature", "Recorded by the trailer's "
+                                                                                 "sensor."),
+                                         "Measure": V("14", "The temperature in the trailer.", unitCode="CEL"),
+                                         "MinimumMeasure": V("4", "The lowest during the night.", unitCode="CEL"),
+                                         "MaximumMeasure": V("18", "The highest in the afternoon.", unitCode="CEL"),
+                                         "Description": V("No protection needed for steel benches.", "Why it is "
+                                                                                                    "only noted.")}]
+    return {}
+
+
+@enrich("retail", "RetailEvent")
+def _(f, n, doc, out):
+    spec = out["PromotionalEvent"]["PromotionalSpecification"]
+    spec["EventTactic"] = {"Comment": V("Benches at the entrance, with a price board.", "What the store does."),
+                           "Quantity": qty(12, "H87", "Twelve benches on display."),
+                           "EventTacticEnumeration": {"ConsumerIncentiveTacticTypeCode": V("TPR", "A temporary price "
+                                                                                                  "reduction."),
+                                                      "DisplayTacticTypeCode": V("EndCap", "A display at the "
+                                                                                           "entrance."),
+                                                      "FeatureTacticTypeCode": V("Flyer", "In the store's flyer."),
+                                                      "TradeItemPackingLabelingTypeCode": V("Sticker", "A price "
+                                                                                                       "sticker on "
+                                                                                                       "each bench.")},
+                           "Period": {"StartDate": V(f.date(21), "During the promotion."),
+                                      "EndDate": V(f.date(34), "Its end.")}}
+    return {}
+
+
+@enrich("retail", "CatalogueRequest")
+def _(f, n, doc, out):
+    return {"RequestedClassificationScheme": {"UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:ubl-examples:world:"
+                                                                                           "HS2022")), "Its UUID."),
+                                              "LastRevisionDate": V("2022-01-01", "The edition in force."),
+                                              "LastRevisionTime": V("00:00:00", "From midnight."),
+                                              "Note": V("Six-digit subheadings.", "The level wanted."),
+                                              "Description": V("The international goods classification.", "What "
+                                                                                                          "it is."),
+                                              "SchemeURI": V("https://www.wcoomd.org/hs", "Where the scheme is.")}}
+
+
+@enrich("sea", "ImportCustomsDeclaration")
+def _(f, n, doc, out):
+    return {"ImporterParty": {"PowerOfAttorney": {"IssueTime": V("11:00:00", "Signed in the morning."),
+                                                  "NotaryParty": party("20-xl", short=True),
+                                                  "WitnessParty": party("9-xl", short=True)}}}
+
+
+@enrich("utilities", "RemittanceAdvice")
+def _(f, n, doc, out):
+    return {"InvoicePeriod": {"StartDate": V("2026-03-01", "The month paid for."), "EndDate": V("2026-03-31", "Its "
+                                                                                                             "end.")},
+            "BillingReference": {"InvoiceDocumentReference": {"ID": out["RemittanceAdviceLine"]["BillingReference"]
+                                                              ["InvoiceDocumentReference"]["ID"]}},
+            "AdditionalDocumentReference": {"ID": V(f"{kit.initials(doc['from'])}-BANK-26-04", "The payer's bank "
+                                                                                              "statement line.")},
+            "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-RA"),
+            "RemittanceAdviceLine": {"InvoicePeriod": {"StartDate": V("2026-03-01", "March."),
+                                                       "EndDate": V("2026-03-31", "Its end.")}}}
+
+
+@enrich("sea", "RemittanceAdvice")
+def _(f, n, doc, out):
+    lines = out["RemittanceAdviceLine"]
+    lines[0].update({"BuyerCustomerParty": {"Party": party("1-xl", short=True)},
+                     "SellerSupplierParty": {"Party": party("6-xb", short=True)},
+                     "PayeeParty": party("24-xb", short=True),
+                     "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The invoice currency."),
+                                      "TargetCurrencyCode": V("XLC", "The buyer's currency it paid from."),
+                                      "CalculationRate": V("0.4", "The rate the buyer's bank applied.")}})
+    return {}
+
+
+@enrich("retail", "PurchaseReceipt")
+def _(f, n, doc, out):
+    line = out["PurchaseReceiptLine"][0]
+    line.update({"Note": V("Promotion price.", "As printed."),
+                 "TaxInclusiveLineExtensionAmount": amount(Decimal("717.92"), "XBL", "With the 6.5 % sales tax."),
+                 "TaxTotal": {"TaxAmount": amount(Decimal("43.82"), "XBL", "The sales tax of the line.")},
+                 "PurchaseLinePeriod": {"StartDate": V(f.date(25), "The warranty runs from the purchase"),
+                                        "EndDate": V("2031-05-15", "for five years.")},
+                 "PurchaseReference": {"ID": V(f"VI-SF-{f.base * 10:05d}", "The serial number of the bench's frame, "
+                                                                             "for the warranty."),
+                                       "Description": V("Frame serial number", "What the number is.")}})
+    return {"PurchaseReference": {"ID": V("BM-LOYAL-0088127", "The customer's loyalty card."),
+                                  "Description": V("Loyalty card", "What the number is.")},
+            "SalesDocumentReference": {"ID": V("BM-DEL-26-0518-07", "The home delivery order.")},
+            "AdditionalDocumentReference": {"ID": V("VI-WARRANTY-B180", "The maker's warranty card.")},
+            "Signature": seal("26-xb", "BM-SIG-POS-G2")}

@@ -47,6 +47,10 @@ Inside `ContractingParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/ID` = **LUM-ADR-000417**  
+  The address's number in the city's address register; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `Party/PostalAddress/StreetName` = **Civic Square**  
@@ -95,6 +99,8 @@ Inside `ContractingParty`:
   The name under which the party is registered, with its legal form; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20410548**  
   Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -140,6 +146,8 @@ Inside `ReceiverParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Civic Square**  
@@ -166,6 +174,8 @@ Inside `ReceiverParty`:
   The name under which the party is registered, with its legal form; identity of Bayvarra Information Service (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410959**  
   Number in the Federal business register of Bayvarra; identity of Bayvarra Information Service (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -211,6 +221,8 @@ Inside `TenderingTerms`:
   The language's name.
 - `AppealTerms/AppealReceiverParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `AppealTerms/AppealReceiverParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `AppealTerms/AppealReceiverParty/PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `AppealTerms/AppealReceiverParty/PostalAddress/StreetName` = **Justice Row**  
@@ -237,6 +249,8 @@ Inside `TenderingTerms`:
   The name under which the party is registered, with its legal form; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyID` = **20410822**  
   Number in the Federal business register of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json).
+- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -313,6 +327,8 @@ Inside `ProcurementProject`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID>LUM-ADR-000417</cbc:ID>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Civic Square</cbc:StreetName>
         <cbc:BuildingNumber>6</cbc:BuildingNumber>
@@ -349,6 +365,7 @@ Inside `ProcurementProject`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>20410548</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -394,6 +411,7 @@ Inside `ProcurementProject`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Civic Square</cbc:StreetName>
       <cbc:BuildingNumber>27</cbc:BuildingNumber>
@@ -411,6 +429,7 @@ Inside `ProcurementProject`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayvarra Information Service</cbc:RegistrationName>
       <cbc:CompanyID>20410959</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -457,6 +476,7 @@ Inside `ProcurementProject`:
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
           <cbc:StreetName>Justice Row</cbc:StreetName>
           <cbc:BuildingNumber>20</cbc:BuildingNumber>
@@ -474,6 +494,7 @@ Inside `ProcurementProject`:
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Procurement Review Board of Bayvarra</cbc:RegistrationName>
           <cbc:CompanyID>20410822</cbc:CompanyID>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>

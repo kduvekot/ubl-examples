@@ -68,6 +68,8 @@ Inside `AccountingSupplierParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `Party/PostalAddress/StreetName` = **Viale della Stazione**  
@@ -110,6 +112,8 @@ Inside `AccountingSupplierParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Ferrano Rail Cargo (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -159,6 +163,8 @@ Inside `AccountingCustomerParty`:
   The language's name.
 - `Party/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `Party/PostalAddress/StreetName` = **Via delle Officine**  
@@ -201,6 +207,8 @@ Inside `AccountingCustomerParty`:
   The legal form, in words.
 - `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Valdara Industries (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `Party/PartyLegalEntity/CorporateStockAmount` = **250000000** (currencyID `XUF`)  
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -217,6 +225,12 @@ Inside `AccountingCustomerParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+  The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `Party/PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
+  The regulated market where the shares are listed.
+- `Party/PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
+  The market's code.
 - `Party/Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -233,12 +247,18 @@ Inside `AccountingCustomerParty`:
   UN/EDIFACT 3155 code AL: cellular phone.
 - `Party/Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
   The sales desk's mobile number, also under the reserved +999.
+- `Party/ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
+  The service contract between the two.
+- `Party/ServiceProviderParty/ServiceTypeCode` = **Logistics**  
+  The kind of service, as a code.
 - `Party/ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `Party/ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
   A party referred to from another party's details: its identifier and name are enough.
+- `Party/ServiceProviderParty/SellerContact/Name` = **Key account desk**  
+  The provider's contact for this customer.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -441,6 +461,7 @@ Inside `InvoiceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Viale della Stazione</cbc:StreetName>
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
@@ -474,6 +495,7 @@ Inside `InvoiceLine`:
         <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Serravona</cbc:CityName>
           <cac:Country>
@@ -524,6 +546,7 @@ Inside `InvoiceLine`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
@@ -557,6 +580,7 @@ Inside `InvoiceLine`:
         <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -575,6 +599,11 @@ Inside `InvoiceLine`:
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
+        <cac:SecurityListing>
+          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+          <cbc:MarketCode>FSE</cbc:MarketCode>
+        </cac:SecurityListing>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
@@ -589,6 +618,8 @@ Inside `InvoiceLine`:
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
+        <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+        <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
         <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
         <cac:Party>
           <cac:PartyIdentification>
@@ -598,6 +629,9 @@ Inside `InvoiceLine`:
             <cbc:Name>Castrano Logistics</cbc:Name>
           </cac:PartyName>
         </cac:Party>
+        <cac:SellerContact>
+          <cbc:Name>Key account desk</cbc:Name>
+        </cac:SellerContact>
       </cac:ServiceProviderParty>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

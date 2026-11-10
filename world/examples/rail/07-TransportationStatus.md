@@ -59,6 +59,8 @@ Inside `Consignment`:
   The language's name.
 - `CarrierParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `CarrierParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `CarrierParty/PostalAddress/StreetName` = **Viale della Stazione**  
@@ -101,6 +103,8 @@ Inside `Consignment`:
   The legal form, in words.
 - `CarrierParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Ferrano Rail Cargo (world/parties.json).
+- `CarrierParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona**  
   The registered office, as entered in the register.
 - `CarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -161,6 +165,8 @@ Inside `Consignment`:
   The language's name.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Via del Terminal**  
@@ -203,6 +209,8 @@ Inside `Consignment`:
   The legal form, in words.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Ferrano Intermodal Hub (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -344,6 +352,7 @@ Inside `StatusPeriod`:
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Viale della Stazione</cbc:StreetName>
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
@@ -377,6 +386,7 @@ Inside `StatusPeriod`:
         <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Serravona</cbc:CityName>
           <cac:Country>
@@ -438,6 +448,7 @@ Inside `StatusPeriod`:
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
           <cbc:StreetName>Via del Terminal</cbc:StreetName>
           <cbc:BuildingNumber>59</cbc:BuildingNumber>
@@ -471,6 +482,7 @@ Inside `StatusPeriod`:
           <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
           <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Ferrano</cbc:CityName>
             <cac:Country>

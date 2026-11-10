@@ -78,6 +78,10 @@ Inside `ImporterParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/ID` = **LUM-ADR-000417**  
+  The address's number in the city's address register; identity of Lumeport Public Works Department (world/parties.json).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Civic Square**  
@@ -126,6 +130,8 @@ Inside `ImporterParty`:
   The name under which the party is registered, with its legal form; identity of Lumeport Public Works Department (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410548**  
   Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -175,6 +181,8 @@ Inside `ConsignorParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Via delle Officine**  
@@ -217,6 +225,8 @@ Inside `ConsignorParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Valdara Industries (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **250000000** (currencyID `XUF`)  
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -233,6 +243,12 @@ Inside `ConsignorParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+  The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
+  The regulated market where the shares are listed.
+- `PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
+  The market's code.
 - `Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
 - `Contact/JobTitle` = **Customer service officer**  
@@ -249,12 +265,18 @@ Inside `ConsignorParty`:
   UN/EDIFACT 3155 code AL: cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
   The sales desk's mobile number, also under the reserved +999.
+- `ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
+  The service contract between the two.
+- `ServiceProviderParty/ServiceTypeCode` = **Logistics**  
+  The kind of service, as a code.
 - `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
   A party referred to from another party's details: its identifier and name are enough.
+- `ServiceProviderParty/SellerContact/Name` = **Key account desk**  
+  The provider's contact for this customer.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -285,6 +307,8 @@ Inside `CustomsParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Border Crossing Road**  
@@ -309,6 +333,8 @@ Inside `CustomsParty`:
   The name under which the party is registered, with its legal form; identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410137**  
   Number in the Federal business register of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -619,6 +645,8 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:ID>LUM-ADR-000417</cbc:ID>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Civic Square</cbc:StreetName>
       <cbc:BuildingNumber>6</cbc:BuildingNumber>
@@ -655,6 +683,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
       <cbc:CompanyID>20410548</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -703,6 +732,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
@@ -736,6 +766,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -754,6 +785,11 @@ Inside `Signature`:
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
+      <cac:SecurityListing>
+        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+        <cbc:MarketCode>FSE</cbc:MarketCode>
+      </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
@@ -768,6 +804,8 @@ Inside `Signature`:
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
+      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
         <cac:PartyIdentification>
@@ -777,6 +815,9 @@ Inside `Signature`:
           <cbc:Name>Castrano Logistics</cbc:Name>
         </cac:PartyName>
       </cac:Party>
+      <cac:SellerContact>
+        <cbc:Name>Key account desk</cbc:Name>
+      </cac:SellerContact>
     </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -805,6 +846,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Border Crossing Road</cbc:StreetName>
       <cbc:BuildingNumber>36</cbc:BuildingNumber>
@@ -821,6 +863,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
       <cbc:CompanyID>20410137</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>

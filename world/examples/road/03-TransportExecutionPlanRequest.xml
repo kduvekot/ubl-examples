@@ -30,6 +30,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -68,6 +69,7 @@
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -115,6 +117,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
       <cbc:BuildingNumber>45</cbc:BuildingNumber>
@@ -148,6 +151,7 @@
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -232,6 +236,7 @@
   <cac:FromLocation>
     <cbc:Name>Castrano Logistics</cbc:Name>
     <cac:Address>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
@@ -248,6 +253,7 @@
   <cac:ToLocation>
     <cbc:Name>Lumeway Distribution</cbc:Name>
     <cac:Address>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -324,6 +330,7 @@
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
         <cbc:StreetName>Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
@@ -357,6 +364,7 @@
         <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
@@ -375,6 +383,11 @@
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
+        <cac:SecurityListing>
+          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+          <cbc:MarketCode>FSE</cbc:MarketCode>
+        </cac:SecurityListing>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
@@ -389,6 +402,8 @@
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
+        <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+        <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
         <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
         <cac:Party>
           <cac:PartyIdentification>
@@ -398,6 +413,9 @@
             <cbc:Name>Castrano Logistics</cbc:Name>
           </cac:PartyName>
         </cac:Party>
+        <cac:SellerContact>
+          <cbc:Name>Key account desk</cbc:Name>
+        </cac:SellerContact>
       </cac:ServiceProviderParty>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

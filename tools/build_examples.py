@@ -169,8 +169,12 @@ def party(pid, short=False):
                          "FamilyName": V(idn["person_name"]["family"], f"The consumer's family name; {src}.")}
     if idn.get("service_provider"):
         sp = idn["service_provider"]
-        out["ServiceProviderParty"] = {"ServiceType": V(sp["type"], f"What the service provider does for the party; "
+        out["ServiceProviderParty"] = {"ID": V(f"{pid}-SP-{sp['party']}", "The service contract between the two."),
+                                       "ServiceTypeCode": V("Logistics", "The kind of service, as a code."),
+                                       "ServiceType": V(sp["type"], f"What the service provider does for the party; "
                                                                     f"{src}."),
+                                       "SellerContact": {"Name": V("Key account desk", "The provider's contact for "
+                                                                                       "this customer.")},
                                        "Party": party(sp["party"], short=True)}
     if idn.get("authorization"):
         au = idn["authorization"]
@@ -217,6 +221,12 @@ def legal_entity(pid):
     if le.get("sole_proprietor"):
         out["SoleProprietorshipIndicator"] = V("true", f"The farm belongs to one farmer, who runs it in their own name; "
                                                        f"{src}.")
+    if le.get("registration_expires"):
+        out["RegistrationExpirationDate"] = V(le["registration_expires"], "The island renews a farm's registration "
+                                                                          "every year: it runs until this date.")
+    if not idn.get("person"):
+        out["CompanyLiquidationStatusCode"] = V("Active", "The register shows the company as active, not in "
+                                                          "liquidation.")
     if le.get("size"):
         out["EntitySizeCode"] = V(le["size"], f"The size class of the company (micro, small, medium or large); {src}.")
     if le.get("capital"):
@@ -268,6 +278,10 @@ def address(pid):
            "District": "The district of the island, used to find a farm off the main roads.",
            "Description": "How to find the farm, which has no house number on a street."}
     out = {}
+    if a.get("ID"):
+        out["ID"] = V(a["ID"], f"The address's number in the city's address register; {src}.")
+    out["AddressTypeCode"] = V("Postal" if a.get("Postbox") else "Residential" if idn.get("person") else "Business",
+                               "The kind of address.")
     for k in ("Postbox", "Floor", "Room", "StreetName", "AdditionalStreetName", "BlockName", "BuildingName",
               "BuildingNumber", "Description", "InhouseMail", "Department", "MarkAttention", "PlotIdentification",
               "CitySubdivisionName", "CityName", "PostalZone", "CountrySubentity", "CountrySubentityCode", "Region",

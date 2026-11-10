@@ -32,6 +32,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
@@ -61,6 +62,7 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-105370</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -109,6 +111,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
@@ -142,6 +145,7 @@
       <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -160,6 +164,11 @@
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
+      <cac:SecurityListing>
+        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+        <cbc:MarketCode>FSE</cbc:MarketCode>
+      </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
@@ -174,6 +183,8 @@
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
+      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
         <cac:PartyIdentification>
@@ -183,6 +194,9 @@
           <cbc:Name>Castrano Logistics</cbc:Name>
         </cac:PartyName>
       </cac:Party>
+      <cac:SellerContact>
+        <cbc:Name>Key account desk</cbc:Name>
+      </cac:SellerContact>
     </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -259,6 +273,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
@@ -272,6 +287,7 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
       <cbc:CompanyID>IC42133</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
@@ -316,6 +332,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
       <cbc:StreetName>Valico di Confine</cbc:StreetName>
@@ -346,6 +363,7 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-105507</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -391,6 +409,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>53</cbc:BuildingNumber>
@@ -404,6 +423,7 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
       <cbc:CompanyID>IC41448</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>

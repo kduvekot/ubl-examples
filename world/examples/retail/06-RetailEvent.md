@@ -88,6 +88,8 @@ Inside `SenderParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Market Street**  
@@ -136,6 +138,8 @@ Inside `SenderParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Brightmarket Stores (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -199,6 +203,8 @@ Inside `ReceiverParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Distribution Drive**  
@@ -251,6 +257,8 @@ Inside `ReceiverParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Medium**  
   The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -347,6 +355,22 @@ Inside `PromotionalEvent`:
   The item promoted.
 - `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LD-10442**  
   The distributor's number.
+- `PromotionalSpecification/EventTactic/Comment` = **Benches at the entrance, with a price board.**  
+  What the store does.
+- `PromotionalSpecification/EventTactic/Quantity` = **12** (unitCode `H87`)  
+  Twelve benches on display.
+- `PromotionalSpecification/EventTactic/EventTacticEnumeration/ConsumerIncentiveTacticTypeCode` = **TPR**  
+  A temporary price reduction.
+- `PromotionalSpecification/EventTactic/EventTacticEnumeration/DisplayTacticTypeCode` = **EndCap**  
+  A display at the entrance.
+- `PromotionalSpecification/EventTactic/EventTacticEnumeration/FeatureTacticTypeCode` = **Flyer**  
+  In the store's flyer.
+- `PromotionalSpecification/EventTactic/EventTacticEnumeration/TradeItemPackingLabelingTypeCode` = **Sticker**  
+  A price sticker on each bench.
+- `PromotionalSpecification/EventTactic/Period/StartDate` = **2026-05-11**  
+  During the promotion.
+- `PromotionalSpecification/EventTactic/Period/EndDate` = **2026-05-24**  
+  Its end.
 
 ### Miscellaneous Event
 
@@ -417,6 +441,7 @@ Inside `MiscellaneousEvent`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Market Street</cbc:StreetName>
       <cbc:BuildingNumber>50</cbc:BuildingNumber>
@@ -453,6 +478,7 @@ Inside `MiscellaneousEvent`:
       <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -512,6 +538,7 @@ Inside `MiscellaneousEvent`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -550,6 +577,7 @@ Inside `MiscellaneousEvent`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -638,6 +666,20 @@ Inside `MiscellaneousEvent`:
           </cac:SupplyItem>
         </cac:EventLineItem>
       </cac:PromotionalEventLineItem>
+      <cac:EventTactic>
+        <cbc:Comment>Benches at the entrance, with a price board.</cbc:Comment>
+        <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+        <cac:EventTacticEnumeration>
+          <cbc:ConsumerIncentiveTacticTypeCode>TPR</cbc:ConsumerIncentiveTacticTypeCode>
+          <cbc:DisplayTacticTypeCode>EndCap</cbc:DisplayTacticTypeCode>
+          <cbc:FeatureTacticTypeCode>Flyer</cbc:FeatureTacticTypeCode>
+          <cbc:TradeItemPackingLabelingTypeCode>Sticker</cbc:TradeItemPackingLabelingTypeCode>
+        </cac:EventTacticEnumeration>
+        <cac:Period>
+          <cbc:StartDate>2026-05-11</cbc:StartDate>
+          <cbc:EndDate>2026-05-24</cbc:EndDate>
+        </cac:Period>
+      </cac:EventTactic>
     </cac:PromotionalSpecification>
   </cac:PromotionalEvent>
   <cac:MiscellaneousEvent>

@@ -57,6 +57,8 @@ Inside `ReporterParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Harbour Road**  
@@ -105,6 +107,8 @@ Inside `ReporterParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Large**  
   The size class of the company (micro, small, medium or large); identity of Tidewell Ocean Lines (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **40000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
@@ -154,6 +158,8 @@ Inside `AuthorityParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `PostalAddress/StreetName` = **Wharf Road**  
@@ -172,6 +178,8 @@ Inside `AuthorityParty`:
   The name under which the party is registered, with its legal form; identity of Maritime Administration of Lisavu (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **IC42270**  
   Number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -248,6 +256,8 @@ Inside `Shipment`:
   The language's name.
 - `ShipmentStage/TerminalOperatorParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Wharf Road**  
@@ -294,6 +304,8 @@ Inside `Shipment`:
   The legal form, in words.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
@@ -424,6 +436,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
@@ -460,6 +473,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">40000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -506,6 +520,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
       <cbc:StreetName>Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>37</cbc:BuildingNumber>
@@ -519,6 +534,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Maritime Administration of Lisavu</cbc:RegistrationName>
       <cbc:CompanyID>IC42270</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
@@ -587,6 +603,7 @@ Inside `Signature`:
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
           <cbc:StreetName>Wharf Road</cbc:StreetName>
           <cbc:BuildingNumber>32</cbc:BuildingNumber>
@@ -618,6 +635,7 @@ Inside `Signature`:
           <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
           <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>

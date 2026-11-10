@@ -45,6 +45,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Reservoir Road</cbc:StreetName>
       <cbc:BuildingNumber>51</cbc:BuildingNumber>
@@ -81,6 +82,7 @@
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -116,6 +118,7 @@
       <cbc:Name>Robin Ashdale</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Gull Lane</cbc:StreetName>
       <cbc:BuildingNumber>57</cbc:BuildingNumber>
@@ -167,6 +170,7 @@
       <cbc:SubscriberTypeCode>HH</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="MTQ">14</cbc:TotalDeliveredQuantity>
       <cac:Address>
+        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>

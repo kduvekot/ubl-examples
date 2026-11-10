@@ -80,6 +80,8 @@ Inside `ImporterParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Estuary Road**  
@@ -128,6 +130,8 @@ Inside `ImporterParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Rivermouth Packaging (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -177,6 +181,8 @@ Inside `ConsignorParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/StreetName` = **Via del Riciclo**  
@@ -219,6 +225,8 @@ Inside `ConsignorParty`:
   The legal form, in words.
 - `PartyLegalEntity/EntitySizeCode` = **Small**  
   The size class of the company (micro, small, medium or large); identity of Rinova Recovery (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
@@ -283,6 +291,8 @@ Inside `CustomsParty`:
   The language's name.
 - `Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
+- `PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
 - `PostalAddress/AddressFormatCode` = **XB**  
   The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
 - `PostalAddress/StreetName` = **Border Crossing Road**  
@@ -307,6 +317,8 @@ Inside `CustomsParty`:
   The name under which the party is registered, with its legal form; identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410137**  
   Number in the Federal business register of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json).
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
@@ -413,8 +425,56 @@ Inside `Shipment`:
   The environmental claim certified.
 - `GoodsItem/Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
   What the certificate states.
+- `GoodsItem/BondedWarehouseLocation/CountrySubentity` = **Coastal State**  
+  The state the store is in.
+- `GoodsItem/BondedWarehouseLocation/CountrySubentityCode` = **CO**  
+  As a code of Bayvarra's address scheme.
+- `GoodsItem/BondedWarehouseLocation/LocationTypeCode` = **BondedStore**  
+  A customs bonded store.
 - `GoodsItem/BondedWarehouseLocation/Name` = **Bonded store at the river quay, Lumeport**  
   Where the bags wait until released.
+- `GoodsItem/BondedWarehouseLocation/ValidityPeriod/StartDate` = **2025-01-01**  
+  The store's licence runs
+- `GoodsItem/BondedWarehouseLocation/ValidityPeriod/EndDate` = **2027-12-31**  
+  until the end of 2027.
+- `GoodsItem/BondedWarehouseLocation/Storage/ID` = **RQ-BOND-03**  
+  Hall 3 of the bonded store.
+- `GoodsItem/BondedWarehouseLocation/Storage/Name` = **Hall 3**  
+  Its name.
+- `GoodsItem/BondedWarehouseLocation/Storage/GateID` = **Gate B**  
+  The gate the barge's bags go through.
+- `GoodsItem/BondedWarehouseLocation/Storage/AirFlowPercent` = **0**  
+  No forced ventilation.
+- `GoodsItem/BondedWarehouseLocation/Storage/HumidityPercent` = **60**  
+  The hall's humidity limit; granulate must stay dry.
+- `GoodsItem/BondedWarehouseLocation/Storage/AnimalFoodApprovedIndicator` = **false**  
+  Not approved for animal feed.
+- `GoodsItem/BondedWarehouseLocation/Storage/HumanFoodApprovedIndicator` = **false**  
+  Not approved for food.
+- `GoodsItem/BondedWarehouseLocation/Storage/DangerousGoodsApprovedIndicator` = **false**  
+  Not approved for dangerous goods.
+- `GoodsItem/BondedWarehouseLocation/Storage/RefrigeratedIndicator` = **false**  
+  Not refrigerated.
+- `GoodsItem/BondedWarehouseLocation/Storage/PowerIndicator` = **true**  
+  Power for the forklifts and lighting.
+- `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/AttributeID` = **Hall**  
+  The temperature of the hall.
+- `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
+  At least 5 °C.
+- `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/MeasureCode` = **Min**  
+  The lowest.
+- `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/Description` = **Kept frost-free.**  
+  Why.
+- `GoodsItem/BondedWarehouseLocation/Storage/MaximumTemperature/AttributeID` = **Hall**  
+  The temperature of the hall.
+- `GoodsItem/BondedWarehouseLocation/Storage/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
+  At most 35 °C.
+- `GoodsItem/BondedWarehouseLocation/Storage/Certificate/ID` = **XB-BOND-LIC-0388**  
+  The bonded store's licence.
+- `GoodsItem/BondedWarehouseLocation/Storage/Certificate/CertificateTypeCode` = **BondedStore**  
+  A licence of customs.
+- `GoodsItem/BondedWarehouseLocation/Storage/Certificate/CertificateType` = **Bonded store licence**  
+  In words.
 - `GoodsItem/AdditionalDocumentReference/ID` = **FB-WB-26-0890**  
   The barge's consignment note.
 
@@ -484,6 +544,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Estuary Road</cbc:StreetName>
       <cbc:BuildingNumber>28</cbc:BuildingNumber>
@@ -520,6 +581,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -568,6 +630,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
@@ -601,6 +664,7 @@ Inside `Signature`:
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -664,6 +728,7 @@ Inside `Signature`:
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Border Crossing Road</cbc:StreetName>
       <cbc:BuildingNumber>36</cbc:BuildingNumber>
@@ -680,6 +745,7 @@ Inside `Signature`:
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
       <cbc:CompanyID>20410137</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
@@ -769,7 +835,41 @@ Inside `Signature`:
         </cac:EnvironmentalCertificate>
       </cac:Item>
       <cac:BondedWarehouseLocation>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:LocationTypeCode>BondedStore</cbc:LocationTypeCode>
         <cbc:Name>Bonded store at the river quay, Lumeport</cbc:Name>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2025-01-01</cbc:StartDate>
+          <cbc:EndDate>2027-12-31</cbc:EndDate>
+        </cac:ValidityPeriod>
+        <cac:Storage>
+          <cbc:ID>RQ-BOND-03</cbc:ID>
+          <cbc:Name>Hall 3</cbc:Name>
+          <cbc:GateID>Gate B</cbc:GateID>
+          <cbc:AirFlowPercent>0</cbc:AirFlowPercent>
+          <cbc:HumidityPercent>60</cbc:HumidityPercent>
+          <cbc:AnimalFoodApprovedIndicator>false</cbc:AnimalFoodApprovedIndicator>
+          <cbc:HumanFoodApprovedIndicator>false</cbc:HumanFoodApprovedIndicator>
+          <cbc:DangerousGoodsApprovedIndicator>false</cbc:DangerousGoodsApprovedIndicator>
+          <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+          <cbc:PowerIndicator>true</cbc:PowerIndicator>
+          <cac:MinimumTemperature>
+            <cbc:AttributeID>Hall</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">5</cbc:Measure>
+            <cbc:MeasureCode>Min</cbc:MeasureCode>
+            <cbc:Description>Kept frost-free.</cbc:Description>
+          </cac:MinimumTemperature>
+          <cac:MaximumTemperature>
+            <cbc:AttributeID>Hall</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">35</cbc:Measure>
+          </cac:MaximumTemperature>
+          <cac:Certificate>
+            <cbc:ID>XB-BOND-LIC-0388</cbc:ID>
+            <cbc:CertificateTypeCode>BondedStore</cbc:CertificateTypeCode>
+            <cbc:CertificateType>Bonded store licence</cbc:CertificateType>
+          </cac:Certificate>
+        </cac:Storage>
       </cac:BondedWarehouseLocation>
       <cac:AdditionalDocumentReference>
         <cbc:ID>FB-WB-26-0890</cbc:ID>
