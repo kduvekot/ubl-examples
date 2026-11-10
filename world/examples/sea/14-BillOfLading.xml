@@ -576,35 +576,23 @@
         <cbc:ShipmentStageType>Carriage before the main carriage</cbc:ShipmentStageType>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
         <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
-        <cbc:CabotageIndicator>true</cbc:CabotageIndicator>
+        <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
         <cac:CarrierParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
-            <cbc:Name>Trasvia Haulage</cbc:Name>
+            <cbc:Name>Bayforth Forwarding</cbc:Name>
           </cac:PartyName>
         </cac:CarrierParty>
         <cac:TransportMeans>
-          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
-          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
-            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
-            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+            <cbc:LicensePlateID>BV LP 2205</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID>BV CH 0412</cbc:TrailerLicensePlateID>
           </cac:RoadTransport>
-          <cac:OwnerParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Trasvia Haulage</cbc:Name>
-            </cac:PartyName>
-          </cac:OwnerParty>
-          <cac:MeasurementDimension>
-            <cbc:AttributeID>Loading length</cbc:AttributeID>
-            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
-          </cac:MeasurementDimension>
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
@@ -863,7 +851,7 @@
             <cbc:TraceID>LD-26-025</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:AttachedTransportEquipment>
-            <cbc:ID>UR TR 3381</cbc:ID>
+            <cbc:ID>BV CH 0412</cbc:ID>
             <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
           </cac:AttachedTransportEquipment>
           <cac:Package>

@@ -660,30 +660,22 @@ Inside `Shipment`:
   Road transport.
 - `Consignment/PreCarriageShipmentStage/PreCarriageIndicator` = **true**  
   Before the main carriage.
-- `Consignment/PreCarriageShipmentStage/CabotageIndicator` = **true**  
-  An Urvanian truck carrying within Bayvarra: cabotage, allowed under the trade accord for a return trip.
-- `Consignment/PreCarriageShipmentStage/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Consignment/PreCarriageShipmentStage/CabotageIndicator` = **false**  
+  A Bayvarran truck within Bayvarra: no cabotage.
+- `Consignment/PreCarriageShipmentStage/CarrierParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/PreCarriageShipmentStage/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
+- `Consignment/PreCarriageShipmentStage/CarrierParty/PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB**  
   The country the means of transport is registered in.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
   The same, in words.
 - `Consignment/PreCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **TE**  
-  The carrier's code for the kind of means: tractor unit 07 with curtain-side trailer; the fleet of Trasvia Haulage (world/parties.json).
-- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 KT**  
-  The registration plate of the truck; the fleet of Trasvia Haulage (world/parties.json).
-- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **UR TR 3381**  
+  The carrier's code for the kind of means: container chassis truck; the fleet of Bayforth Forwarding (world/parties.json).
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **BV LP 2205**  
+  The registration plate of the truck; the fleet of Bayforth Forwarding (world/parties.json).
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV CH 0412**  
   The trailer's own plate.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/OwnerParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/OwnerParty/PartyName/Name` = **Trasvia Haulage**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **Loading length**  
-  The length of the loading floor.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
-  Room for 33 pallets.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceDate` = **2026-05-13**  
   The container was dropped at the container quay.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **10:15:00**  
@@ -693,7 +685,7 @@ Inside `Shipment`:
 - `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/AllowanceChargeReason` = **Pre-carriage by road**  
   In words.
 - `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/Amount` = **310.00** (currencyID `XBL`)  
-  What the forwarder pays the trucking company, out of its own price to the shipper.
+  The forwarder's own truck; part of its price to the shipper.
 - `Consignment/OnCarriageShipmentStage/ID` = **3**  
   By truck from the port of Selanu to the 3PL.
 - `Consignment/OnCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -1038,8 +1030,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-025**  
   The pallet's barcode, scanned at each handover.
-- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **UR TR 3381**  
-  The trailer the container rode on to the port.
+- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **BV CH 0412**  
+  The forwarder's chassis the container rode on to the port.
 - `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/TransportEquipmentTypeCode` = **TE** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code TE: trailer.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **LD-26-025**  
@@ -1802,35 +1794,23 @@ Inside `Shipment`:
         <cbc:ShipmentStageType>Carriage before the main carriage</cbc:ShipmentStageType>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
         <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
-        <cbc:CabotageIndicator>true</cbc:CabotageIndicator>
+        <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
         <cac:CarrierParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
-            <cbc:Name>Trasvia Haulage</cbc:Name>
+            <cbc:Name>Bayforth Forwarding</cbc:Name>
           </cac:PartyName>
         </cac:CarrierParty>
         <cac:TransportMeans>
-          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
-          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
-            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
-            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+            <cbc:LicensePlateID>BV LP 2205</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID>BV CH 0412</cbc:TrailerLicensePlateID>
           </cac:RoadTransport>
-          <cac:OwnerParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Trasvia Haulage</cbc:Name>
-            </cac:PartyName>
-          </cac:OwnerParty>
-          <cac:MeasurementDimension>
-            <cbc:AttributeID>Loading length</cbc:AttributeID>
-            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
-          </cac:MeasurementDimension>
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
@@ -2089,7 +2069,7 @@ Inside `Shipment`:
             <cbc:TraceID>LD-26-025</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:AttachedTransportEquipment>
-            <cbc:ID>UR TR 3381</cbc:ID>
+            <cbc:ID>BV CH 0412</cbc:ID>
             <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
           </cac:AttachedTransportEquipment>
           <cac:Package>

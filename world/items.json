@@ -993,6 +993,19 @@
    },
    "sellers_id": "BM-SVC-RT",
    "description": "Transport of returned goods back to the supplier, per delivery."
+  },
+  {
+   "id": "road-transport-b",
+   "seller": "10-xb",
+   "name": "Road transport in Bayvarra",
+   "kind": "service",
+   "unit": "KMT",
+   "price": {
+    "amount": 2.85,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-ROAD",
+   "description": "Truck load within Bayvarra, price per kilometre driven loaded."
   }
  ]
 }

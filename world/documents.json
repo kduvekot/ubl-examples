@@ -4,52 +4,212 @@
   {
    "id": "ore",
    "title": "Ore from the mine to the factory (domestic, Urvania)",
-   "text": "The manufacturer buys ore free carrier (FCA) at the mine: the buyer arranges and pays the main transport, so the manufacturer, not the mine, books the ore train with the rail carrier."
+   "text": "The manufacturer buys ore free carrier (FCA) at the mine: the buyer arranges and pays the main transport, so the manufacturer, not the mine, books the ore train with the rail carrier.",
+   "legs": [
+    {
+     "mode": "rail",
+     "from": "4-xu",
+     "to": "5-xu",
+     "carrier": "14-xu",
+     "why": "The ore train from the mine siding to the factory."
+    }
+   ]
   },
   {
    "id": "road",
    "title": "Finished goods by truck across the land border (Urvania → Bayvarra)",
-   "text": "The distributor buys park benches free carrier (FCA) at the manufacturer's warehouse. Because the buyer arranges the transport, the distributor books the road carrier itself and tells the seller in the order which truck company will pick the goods up and where. The seller's 3PL hands the goods over; the seller clears them for export, the distributor for import."
+   "text": "The distributor buys park benches free carrier (FCA) at the manufacturer's warehouse. Because the buyer arranges the transport, the distributor books the road carrier itself and tells the seller in the order which truck company will pick the goods up and where. The seller's 3PL hands the goods over; the seller clears them for export, the distributor for import.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "8-xu",
+     "to": "6-xb",
+     "carrier": "13-xu",
+     "why": "The truck the distributor booked, from the 3PL's warehouse across the border."
+    }
+   ]
   },
   {
    "id": "rail",
    "title": "Containers by rail under transit (Urvania → Bayvarra)",
-   "text": "For full container loads the manufacturer sells delivered at place (DAP) the distributor's rail siding. Now the seller arranges and pays the transport: it books the container train and moves the goods under a transit declaration, so that import formalities happen at the destination. The intermodal hub loads the containers on the train."
+   "text": "For full container loads the manufacturer sells delivered at place (DAP) the distributor's rail siding. Now the seller arranges and pays the transport: it books the container train and moves the goods under a transit declaration, so that import formalities happen at the destination. The intermodal hub loads the containers on the train.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "8-xu",
+     "to": "18-xu",
+     "carrier": "14-xu",
+     "why": "Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub."
+    },
+    {
+     "mode": "rail",
+     "from": "18-xu",
+     "to": "6-xb",
+     "carrier": "14-xu",
+     "why": "The container train to the distributor's siding."
+    }
+   ]
   },
   {
    "id": "plastics",
    "title": "Recycled plastic granulate by river barge (Urvania → Bayvarra)",
-   "text": "The waste processor recovers plastic from production waste and sells it as granulate to the packaging maker on the coast of Bayvarra, carriage paid to (CPT) the river quay: the seller books the barge and pays the freight, the buyer takes the risk once the barge is loaded. The packaging maker turns it into packaging for the benches and the clothing."
+   "text": "The waste processor recovers plastic from production waste and sells it as granulate to the packaging maker on the coast of Bayvarra, carriage paid to (CPT) the river quay: the seller books the barge and pays the freight, the buyer takes the risk once the barge is loaded. The packaging maker turns it into packaging for the benches and the clothing.",
+   "legs": [
+    {
+     "mode": "river",
+     "from": "15-xu",
+     "to": "41-xb",
+     "carrier": "15-xu",
+     "why": "The barge from the quay next to the recovery plant down the river to the packaging maker."
+    }
+   ]
   },
   {
    "id": "retail",
    "title": "Distributor to retailer, delivered duty paid (domestic, Bayvarra)",
-   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment."
+   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "6-xb",
+     "to": "26-xb",
+     "carrier": "10-xb",
+     "why": "The forwarder's truck from the distribution centre to the store."
+    }
+   ]
   },
   {
    "id": "sea",
    "title": "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)",
-   "text": "The commercial buyer on the island buys cost, insurance and freight (CIF) to the port of discharge. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them."
+   "text": "The commercial buyer on the island buys cost, insurance and freight (CIF) to the port of discharge. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "6-xb",
+     "to": "16-xb",
+     "carrier": "10-xb",
+     "why": "Pre-carriage: the forwarder's truck takes the container to the port."
+    },
+    {
+     "mode": "sea",
+     "from": "16-xb",
+     "to": "16-xl",
+     "carrier": "11-xb",
+     "why": "The feeder ship to the island."
+    },
+    {
+     "mode": "road",
+     "from": "16-xl",
+     "to": "9-xl",
+     "carrier": "9-xl",
+     "why": "On-carriage: the 3PL collects the container at the port."
+    }
+   ]
   },
   {
    "id": "air",
    "title": "An urgent part of the order by air (Bayvarra → island Lisavu)",
-   "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport."
+   "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "6-xb",
+     "to": "17-xb",
+     "carrier": "10-xb",
+     "why": "The forwarder picks up the boxes and takes them to the cargo terminal."
+    },
+    {
+     "mode": "air",
+     "from": "17-xb",
+     "to": "17-xl",
+     "carrier": "12-xl",
+     "why": "The flight to the island."
+    },
+    {
+     "mode": "road",
+     "from": "17-xl",
+     "to": "9-xl",
+     "carrier": "9-xl",
+     "why": "The 3PL collects the boxes at the airport."
+    }
+   ]
   },
   {
    "id": "tender",
    "title": "A public tender (Bayvarra)",
-   "text": "The contracting authority buys park benches and street furniture for the city's parks under procurement law. The notices are published through the government information service; the manufacturer tenders together with a consortium partner, backed by a bid bond. After the award the authority places orders under the contract and the manufacturer delivers and invoices."
+   "text": "The contracting authority buys park benches and street furniture for the city's parks under procurement law. The notices are published through the government information service; the manufacturer tenders together with a consortium partner, backed by a bid bond. After the award the authority places orders under the contract and the manufacturer delivers and invoices.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "8-xu",
+     "to": "2-xb",
+     "carrier": "13-xu",
+     "why": "The call-off, from the 3PL across the border to the public works depot."
+    }
+   ]
   },
   {
    "id": "carnet",
    "title": "Samples to a trade fair on the island (temporary export)",
-   "text": "The manufacturer shows samples at a trade fair on the island and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, avoids paying duties."
+   "text": "The manufacturer shows samples at a trade fair on the island and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, avoids paying duties.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "5-xu",
+     "to": "17-xb",
+     "carrier": "13-xu",
+     "why": "The samples by truck to the airport of Lumeport."
+    },
+    {
+     "mode": "air",
+     "from": "17-xb",
+     "to": "17-xl",
+     "carrier": "12-xl",
+     "why": "Flown to the island for the fair."
+    },
+    {
+     "mode": "road",
+     "from": "17-xl",
+     "to": "20-xl",
+     "carrier": "9-xl",
+     "why": "From the airport to the fair at the chamber of commerce."
+    },
+    {
+     "mode": "road",
+     "from": "20-xl",
+     "to": "17-xl",
+     "carrier": "9-xl",
+     "why": "Back to the airport after the fair."
+    },
+    {
+     "mode": "air",
+     "from": "17-xl",
+     "to": "17-xb",
+     "carrier": "12-xl",
+     "why": "Flown back."
+    },
+    {
+     "mode": "road",
+     "from": "17-xb",
+     "to": "5-xu",
+     "carrier": "13-xu",
+     "why": "And home to the factory, through Urvania's customs."
+    }
+   ]
   },
   {
    "id": "waste",
    "title": "Production waste to recovery (domestic, Urvania)",
-   "text": "The factory's hazardous production waste may only move with a notification. In Urvania one administration acts as customs and as competent authority for waste permits. The waste processor recovers the material and invoices the service."
+   "text": "The factory's hazardous production waste may only move with a notification. In Urvania one administration acts as customs and as competent authority for waste permits. The waste processor recovers the material and invoices the service.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "5-xu",
+     "to": "7-xu",
+     "carrier": "13-xu",
+     "why": "Production waste from the factory to the recovery plant."
+    }
+   ]
   },
   {
    "id": "utilities",
@@ -59,22 +219,114 @@
   {
    "id": "wood",
    "title": "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)",
-   "text": "The sawmill in Upland State saws timber to size. The manufacturer in Urvania asks for a quotation for bench slats to its own dimensions and orders them delivered at its factory (DAP), so the sawmill arranges the truck across the border. The furniture maker buys timber at home; selling for manufacture, the sawmill charges no sales tax and says why."
+   "text": "The sawmill in Upland State saws timber to size. The manufacturer in Urvania asks for a quotation for bench slats to its own dimensions and orders them delivered at its factory (DAP), so the sawmill arranges the truck across the border. The furniture maker buys timber at home; selling for manufacture, the sawmill charges no sales tax and says why.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "36-xb",
+     "to": "5-xu",
+     "carrier": "13-xu",
+     "why": "The slats across the border to the bench factory."
+    },
+    {
+     "mode": "road",
+     "from": "36-xb",
+     "to": "37-xb",
+     "carrier": "36-xb",
+     "why": "Timber to the furniture maker, on the sawmill's own truck."
+    }
+   ]
   },
   {
    "id": "furniture",
    "title": "Furniture for the department store and for public offices (Bayvarra)",
-   "text": "The furniture maker supplies the department store with a garden furniture line made for it. They agree on the item data and the stock policy per store, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. Slow sellers are taken back. For the public works department the furniture maker also installs, and documents the work for approval."
+   "text": "The furniture maker supplies the department store with a garden furniture line made for it. They agree on the item data and the stock policy per store, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. Slow sellers are taken back. For the public works department the furniture maker also installs, and documents the work for approval.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "37-xb",
+     "to": "26-xb",
+     "carrier": "37-xb",
+     "why": "The furniture maker delivers the store with its own van."
+    },
+    {
+     "mode": "road",
+     "from": "26-xb",
+     "to": "37-xb",
+     "carrier": "26-xb",
+     "why": "The store takes the unsold sets back with its own van."
+    },
+    {
+     "mode": "road",
+     "from": "37-xb",
+     "to": "2-xb",
+     "carrier": "37-xb",
+     "why": "Furniture for the public works offices, with the installers."
+    }
+   ]
   },
   {
    "id": "cotton",
    "title": "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)",
-   "text": "The island's export. The farm delivers seed cotton to the ginnery, which weighs and grades it and pays by self-billing: it writes the invoice for the farm. The ginnery sells the bales free on board (FOB) the island port: the textile mill arranges the sea freight through its forwarder. The ginnery declares the export, weighs the container for its verified gross mass and gets a goods certificate."
+   "text": "The island's export. The farm delivers seed cotton to the ginnery, which weighs and grades it and pays by self-billing: it writes the invoice for the farm. The ginnery sells the bales free on board (FOB) the island port: the textile mill arranges the sea freight through its forwarder. The ginnery declares the export, weighs the container for its verified gross mass and gets a goods certificate.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "38-xl",
+     "to": "39-xl",
+     "carrier": "38-xl",
+     "why": "The farm's tractor and trailers bring the seed cotton to the gin."
+    },
+    {
+     "mode": "road",
+     "from": "39-xl",
+     "to": "16-xl",
+     "carrier": "9-xl",
+     "why": "The 3PL trucks the bales to the port."
+    },
+    {
+     "mode": "sea",
+     "from": "16-xl",
+     "to": "16-xb",
+     "carrier": "11-xb",
+     "why": "The ship to Bayvarra."
+    },
+    {
+     "mode": "road",
+     "from": "16-xb",
+     "to": "40-xb",
+     "carrier": "10-xb",
+     "why": "The forwarder's truck from the port to the textile mill."
+    }
+   ]
   },
   {
    "id": "packaging",
    "title": "Packaging for the benches, clothing for the store",
-   "text": "The packaging maker supplies the manufacturer in Urvania and the textile mill at home; the textile mill sells clothing to the department store, delivered duty paid (DDP) at the store."
+   "text": "The packaging maker supplies the manufacturer in Urvania and the textile mill at home; the textile mill sells clothing to the department store, delivered duty paid (DDP) at the store.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "41-xb",
+     "to": "5-xu",
+     "carrier": "13-xu",
+     "why": "Stretch film to the bench factory."
+    },
+    {
+     "mode": "road",
+     "from": "41-xb",
+     "to": "40-xb",
+     "carrier": "10-xb",
+     "why": "Garment bags to the textile mill."
+    },
+    {
+     "mode": "road",
+     "from": "40-xb",
+     "to": "26-xb",
+     "carrier": "10-xb",
+     "why": "Shirts to the store."
+    }
+   ]
   }
  ],
  "documents": [
@@ -668,13 +920,13 @@
    "flow": "retail",
    "doc": "TransportExecutionPlanRequest",
    "from": "6-xb",
-   "to": "13-xu",
+   "to": "10-xb",
    "why": "Because it sold DDP, the distributor books the outgoing truck from its distribution centre to the shop.",
    "parties": {
     "SenderParty": "6-xb",
-    "ReceiverParty": "13-xu",
+    "ReceiverParty": "10-xb",
     "TransportUserParty": "6-xb",
-    "TransportServiceProviderParty": "13-xu",
+    "TransportServiceProviderParty": "10-xb",
     "Consignment/ConsignorParty": "6-xb",
     "Consignment/ConsigneeParty": "26-xb"
    }
@@ -690,19 +942,19 @@
     "DeliveryCustomerParty": "26-xb",
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "26-xb",
-    "Shipment/Consignment/CarrierParty": "13-xu"
+    "Shipment/Consignment/CarrierParty": "10-xb"
    }
   },
   {
    "flow": "retail",
    "doc": "Waybill",
-   "from": "13-xu",
+   "from": "10-xb",
    "to": "6-xb",
    "why": "The outgoing consignment note goes to the distributor, who contracted the carriage; the retailer is only the consignee.",
    "parties": {
-    "SenderParty": "13-xu",
+    "SenderParty": "10-xb",
     "ReceiverParty": "6-xb",
-    "CarrierParty": "13-xu",
+    "CarrierParty": "10-xb",
     "ConsignorParty": "6-xb",
     "Shipment/Consignment/ConsigneeParty": "26-xb"
    }
@@ -711,25 +963,25 @@
    "flow": "retail",
    "doc": "TransportationStatusRequest",
    "from": "6-xb",
-   "to": "13-xu",
+   "to": "10-xb",
    "why": "The distributor, as transport user, asks the carrier for the truck's arrival time.",
    "parties": {
     "SenderParty": "6-xb",
-    "ReceiverParty": "13-xu"
+    "ReceiverParty": "10-xb"
    }
   },
   {
    "flow": "retail",
    "doc": "Invoice",
-   "from": "13-xu",
+   "from": "10-xb",
    "to": "6-xb",
    "why": "Under DDP the seller pays the transport, so the carrier invoices the distributor. A transport service is invoiced with the ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5.",
    "parties": {
-    "AccountingSupplierParty": "13-xu",
+    "AccountingSupplierParty": "10-xb",
     "AccountingCustomerParty": "6-xb",
-    "SellerSupplierParty": "13-xu",
+    "SellerSupplierParty": "10-xb",
     "BuyerCustomerParty": "6-xb",
-    "Delivery/Shipment/Consignment/CarrierParty": "13-xu"
+    "Delivery/Shipment/Consignment/CarrierParty": "10-xb"
    }
   },
   {
@@ -1190,7 +1442,7 @@
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
     "Shipment/Consignment/ConsigneeParty": "1-xl",
-    "Shipment/Consignment/SubstituteCarrierParty": "13-xu"
+    "Shipment/Consignment/SubstituteCarrierParty": "9-xl"
    }
   },
   {
@@ -2688,7 +2940,7 @@
     "DeliveryCustomerParty": "26-xb",
     "SellerSupplierParty": "40-xb",
     "BuyerCustomerParty": "26-xb",
-    "Shipment/Consignment/CarrierParty": "13-xu"
+    "Shipment/Consignment/CarrierParty": "10-xb"
    }
   },
   {

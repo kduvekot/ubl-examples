@@ -42,7 +42,11 @@ Structural rules (the build stops when one is broken):
   * a road across a land border passes a customs post on each side; a rail
     line across it passes a rail station; rail lines end at a party;
   * sea routes run over water from port to port, air routes from airport
-    to airport.
+    to airport;
+  * every transport leg of a flow (world/documents.json) is possible: road,
+    rail or river connects its two parties, or a sea or air route their port
+    or airport; its carrier has a means of that mode; and every carrier a
+    document of the flow names carries one of its legs.
 
 Usage: python3 tools/world_model.py [out.json]   (default: print a summary)
 """
@@ -677,11 +681,93 @@ def build(world):
                 if owner.get(end, {}).get("kind") != "airport":
                     problems.append(f"air route '{r['id']}' does not start or end at an airport ({end})")
 
+    problems += check_legs(world, T, adj, owner, neighbours)
+
     for tw in world.get("towns", []):
         tw.pop("streets", None)
 
     model = {"W": W, "H": H, "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V}
     return model, problems
+
+
+FLEET_KIND = {"road": "road", "rail": "rail", "river": "inland", "sea": "sea", "air": "air"}
+CARRIER_ROLES = ("CarrierParty", "SubstituteCarrierParty", "PerformingCarrierParty", "TransportServiceProviderParty")
+
+
+def check_legs(world, T, adj, owner, neighbours):
+    """Every transport leg of a flow (world/documents.json, "legs") must be possible in the world: a road
+    from party to party on the road network, a rail line or the river connecting them, a sea or air route
+    between their port or airport; the carrier must have a means of that mode in its fleet; and every
+    carrier a document of the flow names must carry one of its legs."""
+    problems = []
+    party = {p["id"]: p for p in world["parties"]}
+    W_, H_ = len(T), len(T[0])
+
+    def near(pid):
+        fp = set(footprint(party[pid]))
+        return fp | neighbours(fp)
+
+    def reach(starts, goals, step):
+        seen, todo = set(starts), deque(starts)
+        while todo:
+            q = todo.popleft()
+            if q in goals:
+                return True
+            for y in step(q):
+                if y not in seen:
+                    seen.add(y)
+                    todo.append(y)
+        return False
+
+    rail = {}
+    for r in world["routes"]:
+        if r["mode"] == "rail":
+            path = [tuple(q) for q in r["path"]]
+            for a, b in zip(path, path[1:]):
+                rail.setdefault(a, set()).add(b)
+                rail.setdefault(b, set()).add(a)
+    water = {(i, j) for i in range(W_) for j in range(H_) if T[i][j]["k"] == "w"}
+
+    def water_step(q):
+        return [(q[0] + di, q[1] + dj) for di, dj in DIRS if (q[0] + di, q[1] + dj) in water]
+
+    def route_between(mode, a, b):
+        for r in world["routes"]:
+            if r["mode"] != mode:
+                continue
+            ends = [tuple(r["pts"][0]), tuple(r["pts"][-1])]
+            for x, y in ((a, b), (b, a)):
+                if ends[0] in near(x) | {tuple(q) for q in neighbours(near(x))} and \
+                        ends[1] in near(y) | {tuple(q) for q in neighbours(near(y))}:
+                    return True
+        return False
+
+    for f in world["flows"]:
+        carriers = set()
+        for leg in f.get("legs", []):
+            m, a, b, c = leg["mode"], leg["from"], leg["to"], leg["carrier"]
+            carriers.add(c)
+            what = f"flow '{f['id']}': {m} leg {party[a]['identity']['name']} -> {party[b]['identity']['name']}"
+            if not any(x["kind"] == FLEET_KIND[m] for x in party[c].get("fleet", [])):
+                problems.append(f"{what}: carrier {party[c]['identity']['name']} has no {m} means in its fleet")
+            if m == "road":
+                ok = reach([q for q in near(a) if q in adj], {q for q in near(b) if q in adj}, lambda q: adj[q])
+            elif m == "rail":
+                ok = reach([q for q in near(a) if q in rail], {q for q in near(b) if q in rail}, lambda q: rail[q])
+            elif m == "river":
+                ok = reach([q for q in near(a) if q in water], {q for q in near(b) if q in water}, water_step)
+            else:
+                ok = route_between(m, a, b)
+            if not ok:
+                problems.append(f"{what}: no {m} connection between them on the map")
+        for d in world["documents"]:
+            if d["flow"] != f["id"]:
+                continue
+            for path_, pid in d["parties"].items():
+                if path_.split("/")[-1] in CARRIER_ROLES and pid not in carriers:
+                    problems.append(f"flow '{f['id']}': {d['doc']} names carrier {party[pid]['identity']['name']} "
+                                    f"({path_}), but no leg of the flow is carried by it")
+    return problems
 
 
 def main():

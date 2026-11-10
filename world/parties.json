@@ -318,6 +318,13 @@
       "XU-FRC 6610 0104"
      ],
      "ore_train": "FRC 2208"
+    },
+    {
+     "id": "FRC-T1",
+     "kind": "road",
+     "name": "Container tractor for carrier haulage",
+     "plate": "UR 4160 RC",
+     "type": "TE"
     }
    ]
   },
@@ -333,7 +340,7 @@
    ],
    "h": 1,
    "kind": "depot",
-   "what": "Trucks the goods across the land border to the distributor; last-mile delivery.",
+   "what": "Trucks the goods across the land border, both ways: benches to Bayvarra, slats and film back to Urvania.",
    "how": "Road carriers handle many short jobs with frequent changes. With UBL they receive transport instructions, report status at each stop and invoice the freight in one structured format, so every customer, large or small, can process them automatically.",
    "identity": {
     "name": "Trasvia Haulage",
@@ -848,7 +855,16 @@
      "name": "brightmarket",
      "uri": "https://social.example/brightmarket"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "V-1",
+     "kind": "road",
+     "name": "Store van",
+     "plate": "BV LP 2601",
+     "type": "VAN"
+    }
+   ]
   },
   {
    "id": "c-xb",
@@ -1266,7 +1282,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "Books the transport, consolidates shipments and prepares the export documents; also arranges cargo insurance.",
+   "what": "Books the transport, consolidates shipments and prepares the export documents; arranges cargo insurance; runs its own trucks within Bayvarra, to the port, the airport and the store.",
    "how": "A freight forwarder organises transport for others. It uses UBL forwarding instructions, packing lists and manifests to combine shipments, book carriers and arrange insurance, keeping one consignment reference across all of them.",
    "identity": {
     "name": "Bayforth Forwarding",
@@ -1303,7 +1319,27 @@
      "founded": "1996-01-01",
      "size": "Small"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "B-03",
+     "kind": "road",
+     "name": "Truck with curtain-side trailer",
+     "plate": "BV LP 2203",
+     "trailer": "BV TR 0817",
+     "type": "TE",
+     "loading_m": "13.6",
+     "pallets": 33
+    },
+    {
+     "id": "B-05",
+     "kind": "road",
+     "name": "Container chassis truck",
+     "plate": "BV LP 2205",
+     "trailer": "BV CH 0412",
+     "type": "TE"
+    }
+   ]
   },
   {
    "id": "16-xb",
@@ -1734,7 +1770,7 @@
    ],
    "h": 2,
    "kind": "warehouse",
-   "what": "Receives the goods for the buyer and confirms what arrived.",
+   "what": "Receives the goods for the buyer and confirms what arrived; collects containers and cargo at the island's port and airport with its own truck.",
    "how": "The buyer's warehouse receives the goods. Its UBL receipt advice confirms what arrived, per line and per package, which lets the buyer approve the invoice for exactly what was delivered.",
    "size": [
     2,
@@ -1770,7 +1806,16 @@
      "founded": "1996-01-01",
      "size": "Small"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "N-1",
+     "kind": "road",
+     "name": "Container truck of Nalevi Warehousing",
+     "plate": "LV SL 101",
+     "type": "TE"
+    }
+   ]
   },
   {
    "id": "1-xl",
@@ -2151,7 +2196,16 @@
      "size": "Small"
     },
     "customs_id": "XB-TR-412329"
-   }
+   },
+   "fleet": [
+    {
+     "id": "S-1",
+     "kind": "road",
+     "name": "Timber truck with crane",
+     "plate": "BV MD 3610",
+     "type": "TRUCK"
+    }
+   ]
   },
   {
    "id": "37-xb",
@@ -2202,7 +2256,16 @@
      "founded": "1996-01-01",
      "size": "Small"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "V-1",
+     "kind": "road",
+     "name": "Delivery van",
+     "plate": "BV MD 3701",
+     "type": "VAN"
+    }
+   ]
   },
   {
    "id": "40-xb",
@@ -2268,8 +2331,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    35,
-    35
+    34,
+    37
    ],
    "h": 2,
    "kind": "factory",
@@ -2371,7 +2434,16 @@
      "locode": null,
      "description": "The cotton fields"
     }
-   }
+   },
+   "fleet": [
+    {
+     "id": "F-1",
+     "kind": "road",
+     "name": "Tractor with two cotton trailers",
+     "plate": "LV FARM 7",
+     "type": "TRACTOR"
+    }
+   ]
   },
   {
    "id": "39-xl",

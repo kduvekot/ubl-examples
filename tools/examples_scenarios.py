@@ -890,7 +890,7 @@ def retail(n, doc):
                                                   "1."),
                          "SellersItemIdentification": {"ID": V(bench["sellers_id"], "The seller's item number.")}}}
         units[0].update({
-            "TransportMeans": kit.means("13-xu", "T-07"),
+            "TransportMeans": kit.means("10-xb", "B-03"),
             "GoodsItem": {"ID": V("1", "The goods on the pallet, as one goods item.")},
             "ShipmentDocumentReference": {"ID": V(f.numbers["tep-request"], "The transport booking the pallet "
                                                                             "travels under.")}})
@@ -899,10 +899,10 @@ def retail(n, doc):
     if doc["doc"] == "Waybill":
         return kit.waybill(f, n, doc, 9, "Issued when the carrier collects at the distribution centre.", w,
                            "The gross weight taken over.")
-    if doc["doc"] == "Invoice" and doc["from"] == "13-xu":
+    if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return kit.invoice(f, n, doc, 10, 30, "Issued after delivery.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
-                           [{"item": "road-transport", "qty": 38, "invoice_why": "The kilometres from Marrowdale to the "
+                           [{"item": "road-transport-b", "qty": 38, "invoice_why": "The kilometres from Marrowdale to the "
                                                                                  "store in Lumeport."}],
                            key="freight-invoice",
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
@@ -1014,7 +1014,8 @@ def sea_equipment(f, detail):
                                                  {"ID": V("1.2", "The side frames."),
                                                   "Description": V("Spare side frames", "In words.")}]},
             "SupplierParty": {"Party": party("11-xb", short=True)},
-            "AttachedTransportEquipment": {"ID": V("UR TR 3381", "The trailer the container rode on to the port."),
+            "AttachedTransportEquipment": {"ID": V("BV CH 0412", "The forwarder's chassis the container rode on to "
+                                                                 "the port."),
                                            "TransportEquipmentTypeCode": V("TE", "UN/EDIFACT 8053 code TE: "
                                                                                  "trailer.",
                                                                            listID="UN/EDIFACT EDED 8053")},
@@ -1101,16 +1102,14 @@ def sea_consignment(f, view):
             "ShipmentStageType": V("Carriage before the main carriage", "In words."),
             "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The truck to the port."),
                                        "AllowanceChargeReason": V("Pre-carriage by road", "In words."),
-                                       "Amount": amount(Decimal("310.00"), "XBL", "What the forwarder pays the "
-                                                                                  "trucking company, out of its own "
-                                                                                  "price to the shipper.")},
+                                       "Amount": amount(Decimal("310.00"), "XBL", "The forwarder's own truck; part "
+                                                                                  "of its price to the shipper.")},
             "TransportModeCode": V("3", "Road transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
                                                                  "Transport"),
             "PreCarriageIndicator": V("true", "Before the main carriage."),
-            "CabotageIndicator": V("true", "An Urvanian truck carrying within Bayvarra: cabotage, allowed under the "
-                                           "trade accord for a return trip."),
-            "CarrierParty": party("13-xu", short=True),
-            "TransportMeans": kit.means("13-xu", "T-07"),
+            "CabotageIndicator": V("false", "A Bayvarran truck within Bayvarra: no cabotage."),
+            "CarrierParty": party("10-xb", short=True),
+            "TransportMeans": kit.means("10-xb", "B-05"),
             "DropoffTransportEvent": kit.event(f, 9, "10:15:00", "The container was dropped at the container quay.")},
         "MainCarriageShipmentStage": {
             "ID": V("2", "By sea from Lumeport to Selanu."),

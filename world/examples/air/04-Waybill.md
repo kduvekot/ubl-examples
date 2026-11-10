@@ -412,100 +412,74 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `Consignment/SubstituteCarrierParty/WebsiteURI` = **https://www.trasvia.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/IndustryClassificationCode` = **4923** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Consignment/SubstituteCarrierParty/PartyName/Name` = **Trasvia Haulage**  
-  The trading name; identity of Trasvia Haulage (world/parties.json).
+- `Consignment/SubstituteCarrierParty/WebsiteURI` = **https://www.nalevi.example**  
+  The party's website, under the reserved .example domain (RFC 2606); identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/IndustryClassificationCode` = **5210** (listID `ISIC Rev.4`)  
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+  The party's preferred identifier: its number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Consignment/SubstituteCarrierParty/PartyName/Name` = **Nalevi Warehousing**  
+  The trading name; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/SubstituteCarrierParty/Language/ID` = **en**  
   English, the language the party does business in.
 - `Consignment/SubstituteCarrierParty/Language/Name` = **English**  
   The language's name.
 - `Consignment/SubstituteCarrierParty/Language/LocaleCode` = **EN**  
   The language as a code of UBL's language code list (ISO 639).
-- `Consignment/SubstituteCarrierParty/PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Consignment/SubstituteCarrierParty/PostalAddress/StreetName` = **Via dei Trasporti**  
-  Street of the postal address. identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/BuildingNumber` = **45**  
-  Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/PostalZone` = **4160**  
-  Postal code in Urvania's format (4 digits). identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/Region` = **Province of Ferrano**  
-  The province, part of an address in Urvania. identity of Trasvia Haulage (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PostalAddress/AddressFormatCode` = **XL**  
+  The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
+- `Consignment/SubstituteCarrierParty/PostalAddress/StreetName` = **Lagoon Road**  
+  Street of the postal address. identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PostalAddress/BuildingNumber` = **9**  
+  Building number of the postal address. identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PostalAddress/CityName` = **Selanu**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/SubstituteCarrierParty/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/Country/IdentificationCode` = **XU**  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
-- `Consignment/SubstituteCarrierParty/PostalAddress/Country/Name` = **Urvania**  
+- `Consignment/SubstituteCarrierParty/PostalAddress/Country/IdentificationCode` = **XL**  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Consignment/SubstituteCarrierParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `Consignment/SubstituteCarrierParty/PartyTaxScheme/RegistrationName` = **Trasvia Haulage SRU**  
-  The name under which the party is registered for value added tax; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyTaxScheme/CompanyID` = **XU007337656**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyTaxScheme/TaxLevelCode` = **National**  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country.
-- `Consignment/SubstituteCarrierParty/PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
-- `Consignment/SubstituteCarrierParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF**  
-  The tax is accounted for in the country's currency.
-- `Consignment/SubstituteCarrierParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
-  The country whose tax this is.
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationName` = **Trasvia Haulage SRU**  
-  The name under which the party is registered, with its legal form; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CompanyID` = **XU-R-104822**  
-  Number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationName` = **Nalevi Warehousing Ltd**  
+  The name under which the party is registered, with its legal form; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CompanyID` = **IC41722**  
+  Number in the Island companies register; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CompanyLegalFormCode` = **SRU**  
-  The legal form, as abbreviated in Urvania (world/countries.json).
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CompanyLegalForm` = **Società a responsabilità urvaniana (private limited company)**  
+  The day the company was entered in the register; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
+  The legal form, as abbreviated in Lisavu (world/countries.json).
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
   The legal form, in words.
 - `Consignment/SubstituteCarrierParty/PartyLegalEntity/EntitySizeCode` = **Small**  
-  The size class of the company (micro, small, medium or large); identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
+  The size class of the company (micro, small, medium or large); identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
   The country of registration.
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
   The identifier of the register in the world (world/countries.json).
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
   The register the company is entered in.
 - `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
   A register of businesses, not a register of charities or associations.
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL**  
   The register covers the whole country.
-- `Consignment/SubstituteCarrierParty/Contact/Name` = **Planning desk**  
-  The desk that handles this document; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/JobTitle` = **Operations planner**  
-  The job of the person who answers at the desk; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/Telephone` = **+999 1 4160 4822**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/ElectronicMail` = **planning@trasvia.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Trasvia Haulage (world/parties.json).
+- `Consignment/SubstituteCarrierParty/Contact/Name` = **Goods inwards**  
+  The desk that handles this document; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/Contact/JobTitle` = **Customer service officer**  
+  The job of the person who answers at the desk; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/Contact/Department` = **Sales**  
+  The department the desk belongs to; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/Contact/Telephone` = **+999 3 3000 1722**  
+  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/Contact/ElectronicMail` = **goods@nalevi.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/SubstituteCarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyAuthorization/Purpose` = **International road haulage**  
-  What the authority has authorized the party to do; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyAuthorization/ValidityPeriod/EndDate` = **2030-06-30**  
-  The authorization expires on this date.
-- `Consignment/SubstituteCarrierParty/PartyAuthorization/Certificate/ID` = **XU-HAUL-2020-0877**  
-  The number of the permit.
-- `Consignment/SubstituteCarrierParty/PartyAuthorization/Certificate/CertificateTypeCode` = **Permit**  
-  A permit issued by an authority of the party's country.
-- `Consignment/SubstituteCarrierParty/PartyAuthorization/Certificate/CertificateType` = **Operating permit**  
-  The kind of certificate, in words.
+  When the desk can be reached; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/SubstituteCarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `Consignment/SubstituteCarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/SubstituteCarrierParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41722** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Nalevi Warehousing (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `Consignment/MainCarriageShipmentStage/ID` = **1**  
   The flight.
 - `Consignment/MainCarriageShipmentStage/TransportModeCode` = **4** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -883,13 +857,13 @@ Inside `Shipment`:
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
       <cac:SubstituteCarrierParty>
-        <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>
+        <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
+        <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Trasvia Haulage</cbc:Name>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
         <cac:Language>
           <cbc:ID>en</cbc:ID>
@@ -897,78 +871,51 @@ Inside `Shipment`:
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
-          <cbc:BuildingNumber>45</cbc:BuildingNumber>
-          <cbc:CityName>Ferrano</cbc:CityName>
-          <cbc:PostalZone>4160</cbc:PostalZone>
-          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+          <cbc:StreetName>Lagoon Road</cbc:StreetName>
+          <cbc:BuildingNumber>9</cbc:BuildingNumber>
+          <cbc:CityName>Selanu</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
-            <cbc:Name>Urvania</cbc:Name>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:Name>Lisavu</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
-        <cac:PartyTaxScheme>
-          <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
-          <cbc:CompanyID>XU007337656</cbc:CompanyID>
-          <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
-          <cac:TaxScheme>
-            <cbc:ID>VAT</cbc:ID>
-            <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:TaxScheme>
-        </cac:PartyTaxScheme>
         <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
-          <cbc:CompanyID>XU-R-104822</cbc:CompanyID>
+          <cbc:RegistrationName>Nalevi Warehousing Ltd</cbc:RegistrationName>
+          <cbc:CompanyID>IC41722</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
-          <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+          <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
           <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
           <cac:RegistrationAddress>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
-            <cbc:ID>XU:CR</cbc:ID>
-            <cbc:Name>Commercial register of Urvania</cbc:Name>
+            <cbc:ID>XL:ICR</cbc:ID>
+            <cbc:Name>Island companies register</cbc:Name>
             <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+                <cbc:IdentificationCode>XL</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Planning desk</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
-          <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
-          <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
+          <cbc:Name>Goods inwards</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Department>Sales</cbc:Department>
+          <cbc:Telephone>+999 3 3000 1722</cbc:Telephone>
+          <cbc:ElectronicMail>goods@nalevi.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
-        <cac:PartyAuthorization>
-          <cbc:Purpose>International road haulage</cbc:Purpose>
-          <cac:ValidityPeriod>
-            <cbc:EndDate>2030-06-30</cbc:EndDate>
-          </cac:ValidityPeriod>
-          <cac:Certificate>
-            <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
-            <cbc:CertificateTypeCode>Permit</cbc:CertificateTypeCode>
-            <cbc:CertificateType>Operating permit</cbc:CertificateType>
-          </cac:Certificate>
-        </cac:PartyAuthorization>
         <cac:ElectronicAddress>
           <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41722</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:SubstituteCarrierParty>
       <cac:MainCarriageShipmentStage>
