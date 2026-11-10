@@ -28,8 +28,75 @@ The guarantor notifies the authority of the bid bond deposited for the manufactu
   Issued before the tender deadline.
 - `IssueTime` = **08:23:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `GuaranteeTypeCode` = **TenderGuarantee**  
+  A tender guarantee.
+- `Purpose` = **Guarantee of the tender for the bench procedure.**  
+  Its purpose.
 - `LiabilityAmount` = **2400.00** (currencyID `XBL`)  
   The bid bond: 2 % of the estimated contract value, as the procurement documents ask.
+- `ConstitutionCode` = **BankGuarantee**  
+  A bank guarantee.
+- `Note` = **Released at the award.**  
+  When it ends.
+
+### Applicable Period
+
+Inside `ApplicablePeriod`:
+
+- `StartDate` = **2026-02-21**  
+  From.
+- `EndDate` = **2026-05-27**  
+  Until 90 days after the deadline.
+
+### Applicable Regulation
+
+Inside `ApplicableRegulation`:
+
+- `Name` = **Public Procurement Act, article 61**  
+  The rule.
+- `LegalReference` = **XB-PPA-2019 art. 61**  
+  The reference.
+- `OntologyURI` = **https://law.bayvarra.example/ppa#art61**  
+  Its URI.
+
+### Guarantee Document Reference
+
+Inside `GuaranteeDocumentReference`:
+
+- `ID` = **BLUM-G-26-0221**  
+  The bank's guarantee deed.
+
+### Immobilized Security
+
+Inside `ImmobilizedSecurity`:
+
+- `ImmobilizationCertificateID` = **BLUM-IMM-26-0044**  
+  The certificate of the pledged securities.
+- `SecurityID` = **XU0001042505**  
+  The manufacturer's own shares, pledged.
+- `IssueDate` = **2026-02-21**  
+  Pledged.
+- `FaceValueAmount` = **2500.00** (currencyID `XBL`)  
+  Their face value.
+- `MarketValueAmount` = **3100.00** (currencyID `XBL`)  
+  Their market value.
+- `SharesNumberQuantity` = **250** (unitCode `C62`)  
+  250 shares.
+- `IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `IssuerParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BLUM-SIG-GC**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20411370** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Bank of Lumeport**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Guarantor Party
 
@@ -362,7 +429,50 @@ Inside `BeneficiaryParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>08:23:00</cbc:IssueTime>
+  <cbc:GuaranteeTypeCode>TenderGuarantee</cbc:GuaranteeTypeCode>
+  <cbc:Purpose>Guarantee of the tender for the bench procedure.</cbc:Purpose>
   <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
+  <cbc:ConstitutionCode>BankGuarantee</cbc:ConstitutionCode>
+  <cbc:Note>Released at the award.</cbc:Note>
+  <cac:ApplicablePeriod>
+    <cbc:StartDate>2026-02-21</cbc:StartDate>
+    <cbc:EndDate>2026-05-27</cbc:EndDate>
+  </cac:ApplicablePeriod>
+  <cac:ApplicableRegulation>
+    <cbc:Name>Public Procurement Act, article 61</cbc:Name>
+    <cbc:LegalReference>XB-PPA-2019 art. 61</cbc:LegalReference>
+    <cbc:OntologyURI>https://law.bayvarra.example/ppa#art61</cbc:OntologyURI>
+  </cac:ApplicableRegulation>
+  <cac:GuaranteeDocumentReference>
+    <cbc:ID>BLUM-G-26-0221</cbc:ID>
+  </cac:GuaranteeDocumentReference>
+  <cac:ImmobilizedSecurity>
+    <cbc:ImmobilizationCertificateID>BLUM-IMM-26-0044</cbc:ImmobilizationCertificateID>
+    <cbc:SecurityID>XU0001042505</cbc:SecurityID>
+    <cbc:IssueDate>2026-02-21</cbc:IssueDate>
+    <cbc:FaceValueAmount currencyID="XBL">2500.00</cbc:FaceValueAmount>
+    <cbc:MarketValueAmount currencyID="XBL">3100.00</cbc:MarketValueAmount>
+    <cbc:SharesNumberQuantity unitCode="C62">250</cbc:SharesNumberQuantity>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+  </cac:ImmobilizedSecurity>
+  <cac:Signature>
+    <cbc:ID>BLUM-SIG-GC</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411370</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bank of Lumeport</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:GuarantorParty>
     <cbc:WebsiteURI>https://www.bankoflumeport.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">6419</cbc:IndustryClassificationCode>

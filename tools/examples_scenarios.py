@@ -6231,3 +6231,270 @@ def _(f, n, doc, out):
             "ContractingParty": contracting_party_details(),
             "TenderingTerms": tendering_terms(f), "TenderingProcess": tendering_process(f),
             "ProcurementProject": procurement_project(f), "ProcurementProjectLot": procurement_lots(f)}
+
+
+def tender_lines(f, bench_price, install_price):
+    b = Decimal(bench_price) * TENDER_QTY
+    i = Decimal(install_price) * TENDER_QTY
+    return b, i, [
+        {"ID": V("1", "The benches."), "Note": V("Serra 180, as specified.", "What is offered."),
+         "Quantity": qty(TENDER_QTY, "H87", "240 benches."),
+         "LineExtensionAmount": amount(b, "XBL", "240 at the unit price."),
+         "TaxInclusiveLineExtensionAmount": amount(b, "XBL", "No tax for a public body."),
+         "TotalTaxAmount": amount(0, "XBL", "None."),
+         "OrderableUnit": V("Pallet of 4", "Called off in pallets."),
+         "ContentUnitQuantity": qty(4, "H87", "Four per pallet."),
+         "OrderQuantityIncrementNumeric": V("4", "In steps of four."),
+         "MinimumOrderQuantity": qty(20, "H87", "A release of at least 20."),
+         "MaximumOrderQuantity": qty(96, "H87", "At most a full truck."),
+         "WarrantyInformation": V("Five years on the frame.", "The warranty."),
+         "PackLevelCode": V("Pallet", "The pack level."),
+         "DocumentReference": {"ID": V("VI-DS-B180", "The datasheet.")},
+         "Item": {"Name": V("Park bench Serra 180", "The item offered.")},
+         "OfferedItemLocationQuantity": {"LeadTimeMeasure": V("7", "Seven days per release.", unitCode="DAY")},
+         "ReplacementRelatedItem": {"ID": V("VI-C180-2026", "Spare frames available."),
+                                    "Quantity": qty(1, "H87", "One for one.")},
+         "WarrantyParty": party("5-xu", short=True),
+         "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
+         "SubTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One set per bench."),
+                           "Item": {"Name": V("Ground anchor set", "Included.")}},
+         "CallForTendersLineReference": {"LineID": V("1", "The line of the call for tenders.")},
+         "CallForTendersDocumentReference": {"ID": V(f.numbers.get("call-for-tenders", f"{FOLDER}-CFT"),
+                                                     "The call for tenders.")}},
+        {"ID": V("2", "The installation."), "Quantity": qty(TENDER_QTY, "H87", "240 installations."),
+         "LineExtensionAmount": amount(i, "XBL", "240 at the price."),
+         "Item": {"Name": V("Installation of a park bench", "The service.")}}]
+
+
+@enrich("tender", "Tender")
+def _(f, n, doc, out):
+    winner = doc["from"] == "5-xu"
+    b, i, lines = tender_lines(f, "499.00" if winner else "515.00", "18.00" if winner else "16.00")
+    return {"TenderTypeCode": V("Combined", "Technical and financial in one."),
+            "ContractName": V("Park benches for the parks renewal programme", "The contract tendered for."),
+            "Note": V("Tender for both lots." if winner else "Tender for both lots, with a recycled-plastic "
+                                                             "variant.", "What is offered."),
+            "ValidityPeriod": {"DurationMeasure": V("90", "Valid for 90 days.", unitCode="DAY")},
+            "CallForTenderDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
+            "DocumentReference": {"ID": V("VI-DS-B180" if winner else "BF-DS-PARK", "The datasheet.")},
+            "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TENDER-{n}"),
+            "TendererQualificationDocumentReference": {"ID": V(f.numbers.get("qualification", "VI-ESPD-26"),
+                                                               "The qualification documents.")},
+            "OriginatorCustomerParty": {"Party": party(PWD, short=True)},
+            "BeneficiaryParty": party(PWD, short=True),
+            "TenderedProject": {
+                "VariantID": V("V0" if winner else "V1", "The main offer." if winner else "The variant."),
+                "FeeAmount": amount(Decimal("50.00"), "XBL", "The documentation fee paid."),
+                "FeeDescription": V("Paper copy of the documents.", "What the fee was for."),
+                "TenderEnvelopeID": V("ENV-1", "The envelope."),
+                "TenderEnvelopeTypeCode": V("Combined", "Technical and price together."),
+                "AdditionalFee": {"FeeTypeCode": V("Courier", "A courier fee."),
+                                  "FeeAmount": amount(Decimal("12.00"), "XBL", "For the signed originals."),
+                                  "FeeDescription": V("Courier of the guarantee's original.", "What.")},
+                "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")}, {"ID": V("LOT-2", "Lot 2.")}],
+                "EvidenceDocumentReference": {"ID": V("VI-REF-2025", "Reference letters.")},
+                "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax for a public body.")},
+                "LegalMonetaryTotal": {"LineExtensionAmount": amount(b + i, "XBL", "Both lots."),
+                                       "PayableAmount": amount(b + i, "XBL", "The tender's total.")},
+                "TenderLine": lines,
+                "AwardingCriterionResponse": {
+                    "ID": V("ACR-1", "The response to the quality criterion."),
+                    "AwardingCriterionID": V("AC-2", "Quality."),
+                    "AwardingCriterionDescription": V("Warranty and coating.", "The criterion."),
+                    "Description": V("Ten years on the coating.", "The offer."),
+                    "Quantity": qty(10, "ANN", "Ten years."),
+                    "Amount": amount(b + i, "XBL", "The price offered."),
+                    "SubordinateAwardingCriterionResponse": {"ID": V("ACR-1.1", "Durability."),
+                                                             "AwardingCriterionID": V("AC-2.1", "Its criterion."),
+                                                             "Description": V("Hot-dip galvanised and powder "
+                                                                              "coated.", "The offer.")}}}}
+
+
+@enrich("tender", "QualificationApplicationRequest")
+def _(f, n, doc, out):
+    prop = lambda pid, name, kind, **x: {"ID": V(pid, "The property."), "Name": V(name, "Its name."),
+                                         "Description": V(f"Answer: {name.lower()}.", "What is asked."),
+                                         "TypeCode": V(kind, "Question or requirement."), **x}
+    return {"ContractName": V("Park benches for the parks renewal programme", "The contract."),
+            "VersionID": V("1", "The first version."), "PreviousVersionID": V("0", "None."),
+            "ProcedureCode": V("Open", "An open procedure."),
+            "QualificationApplicationTypeCode": V("Regulated", "The regulated form of self-declaration."),
+            "WeightScoringMethodologyNote": V("Pass or fail; no weighting.", "How answers count."),
+            "WeightingTypeCode": V("None", "No weighting."),
+            "Note": V("Answer every criterion.", "What to do."),
+            "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
+            "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
+            "AdditionalDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
+            "Signature": seal(PWD, "PWD-SIG-QAR"),
+            "TenderingCriterion": {
+                "ID": V("CR-TURNOVER", "The turnover criterion."), "CriterionTypeCode": V("Economic", "Its kind."),
+                "Name": V("General yearly turnover", "The criterion."),
+                "Description": V("Turnover of the last three years.", "What."),
+                "WeightNumeric": V("0", "Pass or fail."), "FulfilmentIndicator": V("true", "Must be met."),
+                "FulfilmentIndicatorTypeCode": V("All", "All its properties."),
+                "EvaluationMethodTypeCode": V("PassFail", "Pass or fail."),
+                "WeightingConsiderationDescription": V("Not weighted.", "Why."),
+                "ProcurementProjectLotReference": lot_ref("LOT-1"),
+                "CommodityClassification": {"ItemClassificationCode": V("9401.79", "The benches.", listID="HS")},
+                "SubTenderingCriterion": {"ID": V("CR-TURNOVER-A", "The average."), "Name": V("Average turnover",
+                                                                                             "Name.")},
+                "Legislation": {"ID": V("XB-PPA-2019", "The act."), "Title": V("Public Procurement Act", "Title."),
+                                "Description": V("Selection criteria.", "What."),
+                                "JurisdictionLevel": V("National", "The level."), "Article": V("Art. 58", "The "
+                                                                                                         "article."),
+                                "URI": V("https://law.bayvarra.example/ppa", "Where."),
+                                "Language": {"ID": V("en", "English.")},
+                                "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
+                "TenderingCriterionPropertyGroup": {
+                    "ID": V("PG-1", "The group."), "Name": V("Turnover", "Name."), "Description": V("The figures.",
+                                                                                                  "What."),
+                    "PropertyGroupTypeCode": V("OnTrue", "Answered when the criterion applies."),
+                    "FulfilmentIndicator": V("true", "Must be met."),
+                    "FulfilmentIndicatorTypeCode": V("All", "All properties."),
+                    "TenderingCriterionProperty": [
+                        prop("P-1", "Yearly turnover", "Requirement", ValueDataTypeCode=V("Amount", "An amount."),
+                             ValueCurrencyCode=V("XBL", "In lume."),
+                             ExpectedAmount=amount(Decimal("250000"), "XBL", "At least."),
+                             MinimumAmount=amount(Decimal("250000"), "XBL", "The minimum."),
+                             MaximumAmount=amount(Decimal("99999999"), "XBL", "No real maximum."),
+                             ApplicablePeriod={"StartDate": V("2023-01-01", "The three years"),
+                                               "EndDate": V("2025-12-31", "before the tender.")},
+                             TemplateEvidence={"ID": V("EV-ACC", "Annual accounts."), "Name": V("Accounts",
+                                                                                               "Evidence.")}),
+                        prop("P-2", "Years in business", "Question", ValueDataTypeCode=V("Quantity", "A number."),
+                             ValueUnitCode=V("ANN", "Years."), MinimumQuantity=qty(3, "ANN", "At least three."),
+                             MaximumQuantity=qty(200, "ANN", "No real maximum."),
+                             ExpectedValueNumeric=V("3", "At least."), MinimumValueNumeric=V("3", "Minimum."),
+                             MaximumValueNumeric=V("200", "Maximum.")),
+                        prop("P-3", "Registered in a business register", "Question",
+                             ValueDataTypeCode=V("Indicator", "Yes or no."), ExpectedIndicator=V("true", "Yes."),
+                             ExpectedID=V("REG", "The register."), ExpectedCode=V("Registered", "The status."),
+                             ExpectedDescription=V("Entered in a national register.", "Expected."),
+                             ExpectedURI=V("https://register.bayvarra.example", "A register."),
+                             TranslationTypeCode=V("None", "No translation needed."),
+                             CertificationLevelDescription=V("A plain extract will do.", "The level."),
+                             CopyQualityTypeCode=V("Copy", "A copy is enough."))],
+                    "SubsidiaryTenderingCriterionPropertyGroup": {
+                        "ID": V("PG-1.1", "If a consortium."), "Name": V("Consortium", "Name."),
+                        "TenderingCriterionProperty": prop("P-4", "Share in the consortium", "Question",
+                                                           ValueDataTypeCode=V("Percent", "A percentage."))}}}}
+
+
+@enrich("tender", "QualificationApplicationResponse")
+def _(f, n, doc, out):
+    rv = {"ID": V("RV-1", "The answer."), "Description": V("Turnover 2025.", "What."),
+          "Response": V("As in the accounts.", "The answer in words."),
+          "ResponseAmount": amount(Decimal("410000"), "XBL", "The turnover."),
+          "ResponseBinaryObject": V(_b64.b64encode(b"Annual accounts 2025, extract.").decode(), "The extract, "
+                                                                                                "embedded.",
+                                    mimeCode="text/plain"),
+          "ResponseCode": V("Met", "The criterion is met."), "ResponseDate": V("2025-12-31", "The year's end."),
+          "ResponseID": V("BF-ACC-2025", "The accounts."), "ResponseIndicator": V("true", "Yes."),
+          "ResponseMeasure": V("12", "Months covered.", unitCode="MON"), "ResponseNumeric": V("26", "Years in "
+                                                                                                "business."),
+          "ResponseQuantity": qty(26, "ANN", "Years."), "ResponseTime": V("12:00:00", "When signed."),
+          "ResponseURI": V("https://www.brackenmere.example/accounts-2025.pdf", "Where.")}
+    return {"ContractName": V("Park benches for the parks renewal programme", "The contract."),
+            "EconomicOperatorGroupName": V("Brackenmere Furniture", "Tendering alone."),
+            "VersionID": V("1", "The first version."), "PreviousVersionID": V("0", "None."),
+            "ProcedureCode": V("Open", "The procedure."),
+            "QualificationApplicationTypeCode": V("Regulated", "The regulated form."),
+            "WeightScoringMethodologyNote": V("Pass or fail.", "As asked."),
+            "WeightingTypeCode": V("None", "No weighting."), "Note": V("All criteria answered.", "The answer."),
+            "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
+            "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
+            "TenderingCriterion": {"ID": V("CR-TURNOVER", "The criterion answered.")},
+            "TenderingCriterionResponse": {"ID": V("CRR-1", "The response."), "Name": V("Turnover", "Name."),
+                                           "Description": V("Yearly turnover of 410,000 lume.", "What."),
+                                           "ValidatedCriterionPropertyID": V("P-1", "The property answered."),
+                                           "ConfidentialityLevelCode": V("Confidential", "Not to be published."),
+                                           "ResponseValue": rv,
+                                           "ApplicablePeriod": {"StartDate": V("2025-01-01", "The year."),
+                                                                "EndDate": V("2025-12-31", "Its end.")},
+                                           "SuppliedEvidence": {"ID": V("EV-ACC-BF", "The accounts.")},
+                                           "ProcurementProjectLotReference": lot_ref("LOT-1"),
+                                           "CommodityClassification": {"ItemClassificationCode": V("9401.79", "The "
+                                                                                                   "benches.",
+                                                                                                   listID="HS")}},
+            "AdditionalDocumentReference": {"ID": V("BF-ESPD-26", "The self-declaration.")},
+            "Evidence": {"ID": V("EV-ACC-BF", "The annual accounts."), "EvidenceTypeCode": V("Accounts", "Kind."),
+                         "Name": V("Annual accounts 2025", "Name."), "Description": V("Audited.", "What."),
+                         "CandidateStatement": V("True and complete.", "The statement."),
+                         "ConfidentialityLevelCode": V("Confidential", "Not published."),
+                         "EvidenceIssuingParty": party("37-xb", short=True),
+                         "DocumentReference": {"ID": V("BF-ACC-2025", "The accounts.")},
+                         "Language": {"ID": V("en", "English.")}},
+            "Signature": seal("37-xb", "BF-SIG-QAR")}
+
+
+@enrich("tender", "TendererQualification")
+def _(f, n, doc, out):
+    return {"Note": V("The manufacturer with Saltmere as subcontractor for the installation.", "Who."),
+            "VersionID": V("1", "The first version."), "PreviousVersionID": V("0", "None."),
+            "Signature": seal("5-xu", "VI-SIG-TQ"),
+            "TendererPartyQualification": {
+                "InterestedProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")}, {"ID": V("LOT-2", "Lot 2.")}],
+                "MainQualifyingParty": {
+                    "ParticipationPercent": V("80", "The manufacturer's share."),
+                    "PersonalSituation": V("No exclusion grounds apply.", "Declared."),
+                    "OperatingYearsQuantity": qty(41, "ANN", "In business since 1985."),
+                    "EmployeeQuantity": qty(180, "C62", "Employees."),
+                    "BusinessClassificationEvidenceID": V("ISIC-3100", "Its class."),
+                    "BusinessIdentityEvidenceID": V(PARTY["5-xu"]["identity"]["registry_id"], "Its registration."),
+                    "TendererRoleCode": V("Lead", "The lead tenderer."),
+                    "BusinessClassificationScheme": {"ID": V("ISIC4", "ISIC Rev. 4."),
+                                                     "ClassificationCategory": {"CodeValue": V("3100", "Furniture.")}},
+                    "TechnicalCapability": {"ID": V("TC-1", "Production."), "Description": V("4,000 benches a year.",
+                                                                                            "Capacity."),
+                                            "ValueQuantity": qty(4000, "H87", "A year.")},
+                    "FinancialCapability": {"ID": V("FC-1", "Turnover."),
+                                            "ValueAmount": amount(Decimal("9200000"), "XBL", "Yearly turnover, in "
+                                                                                             "lume.")},
+                    "CompletedTask": {"AnnualAverageAmount": amount(Decimal("180000"), "XBL", "A year, similar "
+                                                                                              "supplies."),
+                                      "TotalTaskAmount": amount(Decimal("540000"), "XBL", "Three years."),
+                                      "PartyCapacityAmount": amount(Decimal("540000"), "XBL", "All by itself."),
+                                      "Description": V("Benches for Ferrano's parks.", "The task."),
+                                      "SuppliedEvidence": {"ID": V("EV-FER-PARKS", "Ferrano's reference letter.")},
+                                      "Period": {"StartDate": V("2023-01-01", "From."), "EndDate": V("2025-12-31",
+                                                                                                    "To.")},
+                                      "RecipientCustomerParty": {"Party": {"PartyName": {"Name": V("City of "
+                                                                                                   "Ferrano",
+                                                                                                   "The customer.")}}}},
+                    "Declaration": {"ID": V("DEC-1", "A declaration."), "Name": V("No conflict of interest",
+                                                                                 "Name."),
+                                    "DeclarationTypeCode": V("Integrity", "Its kind."),
+                                    "Description": V("No ties with the department's officers.", "What."),
+                                    "SuppliedEvidence": {"ID": V("EV-DEC-1", "The signed declaration.")}},
+                    "EconomicOperatorRole": {"RoleCode": V("Lead", "The lead."), "RoleDescription": V("Leads.",
+                                                                                                    "Role.")}},
+                "AdditionalQualifyingParty": {"ParticipationPercent": V("20", "Saltmere's share."),
+                                              "TendererRoleCode": V("Subcontractor", "For the installation.")}},
+            "Evidence": {"ID": V("EV-FER-PARKS", "The reference."), "Name": V("Ferrano reference", "Name.")},
+            "AdditionalDocumentReference": {"ID": V("VI-ESPD-26", "The self-declaration.")}}
+
+
+@enrich("tender", "GuaranteeCertificate")
+def _(f, n, doc, out):
+    return {"GuaranteeTypeCode": V("TenderGuarantee", "A tender guarantee."),
+            "Purpose": V("Guarantee of the tender for the bench procedure.", "Its purpose."),
+            "ConstitutionCode": V("BankGuarantee", "A bank guarantee."),
+            "Note": V("Released at the award.", "When it ends."),
+            "ApplicablePeriod": {"StartDate": V(f.date(40), "From."), "EndDate": V(f.date(135), "Until 90 days "
+                                                                                                "after the "
+                                                                                                "deadline.")},
+            "ApplicableRegulation": {"Name": V("Public Procurement Act, article 61", "The rule."),
+                                     "LegalReference": V("XB-PPA-2019 art. 61", "The reference."),
+                                     "OntologyURI": V("https://law.bayvarra.example/ppa#art61", "Its URI.")},
+            "GuaranteeDocumentReference": {"ID": V("BLUM-G-26-0221", "The bank's guarantee deed.")},
+            "ImmobilizedSecurity": {"ImmobilizationCertificateID": V("BLUM-IMM-26-0044", "The certificate of the "
+                                                                                         "pledged securities."),
+                                    "SecurityID": PARTY["5-xu"]["identity"]["legal"]["listing"] and
+                                    V(PARTY["5-xu"]["identity"]["legal"]["listing"]["id"], "The manufacturer's own "
+                                                                                           "shares, pledged."),
+                                    "IssueDate": V(f.date(40), "Pledged."),
+                                    "FaceValueAmount": amount(Decimal("2500.00"), "XBL", "Their face value."),
+                                    "MarketValueAmount": amount(Decimal("3100.00"), "XBL", "Their market value."),
+                                    "SharesNumberQuantity": qty(250, "C62", "250 shares."),
+                                    "IssuerParty": party("5-xu", short=True)},
+            "Signature": seal("25-xb", "BLUM-SIG-GC")}

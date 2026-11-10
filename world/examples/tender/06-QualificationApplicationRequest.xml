@@ -7,8 +7,16 @@
   <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
   <cbc:UUID>3c06617e-8a80-509a-b64c-e7ad1ca81e2a</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-02-13</cbc:IssueDate>
   <cbc:IssueTime>08:25:00</cbc:IssueTime>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cbc:ProcedureCode>Open</cbc:ProcedureCode>
+  <cbc:QualificationApplicationTypeCode>Regulated</cbc:QualificationApplicationTypeCode>
+  <cbc:WeightScoringMethodologyNote>Pass or fail; no weighting.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightingTypeCode>None</cbc:WeightingTypeCode>
+  <cbc:Note>Answer every criterion.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -181,4 +189,127 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:ProcurementProject>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TURNOVER</cbc:ID>
+    <cbc:CriterionTypeCode>Economic</cbc:CriterionTypeCode>
+    <cbc:Name>General yearly turnover</cbc:Name>
+    <cbc:Description>Turnover of the last three years.</cbc:Description>
+    <cbc:WeightNumeric>0</cbc:WeightNumeric>
+    <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
+    <cbc:FulfilmentIndicatorTypeCode>All</cbc:FulfilmentIndicatorTypeCode>
+    <cbc:EvaluationMethodTypeCode>PassFail</cbc:EvaluationMethodTypeCode>
+    <cbc:WeightingConsiderationDescription>Not weighted.</cbc:WeightingConsiderationDescription>
+    <cac:ProcurementProjectLotReference>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:ProcurementProjectLotReference>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:SubTenderingCriterion>
+      <cbc:ID>CR-TURNOVER-A</cbc:ID>
+      <cbc:Name>Average turnover</cbc:Name>
+    </cac:SubTenderingCriterion>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Selection criteria.</cbc:Description>
+      <cbc:JurisdictionLevel>National</cbc:JurisdictionLevel>
+      <cbc:Article>Art. 58</cbc:Article>
+      <cbc:URI>https://law.bayvarra.example/ppa</cbc:URI>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+      </cac:Language>
+      <cac:JurisdictionRegionAddress>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:JurisdictionRegionAddress>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-1</cbc:ID>
+      <cbc:Name>Turnover</cbc:Name>
+      <cbc:Description>The figures.</cbc:Description>
+      <cbc:PropertyGroupTypeCode>OnTrue</cbc:PropertyGroupTypeCode>
+      <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
+      <cbc:FulfilmentIndicatorTypeCode>All</cbc:FulfilmentIndicatorTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-1</cbc:ID>
+        <cbc:Name>Yearly turnover</cbc:Name>
+        <cbc:Description>Answer: yearly turnover.</cbc:Description>
+        <cbc:TypeCode>Requirement</cbc:TypeCode>
+        <cbc:ValueDataTypeCode>Amount</cbc:ValueDataTypeCode>
+        <cbc:ValueCurrencyCode>XBL</cbc:ValueCurrencyCode>
+        <cbc:ExpectedAmount currencyID="XBL">250000.00</cbc:ExpectedAmount>
+        <cbc:MaximumAmount currencyID="XBL">99999999.00</cbc:MaximumAmount>
+        <cbc:MinimumAmount currencyID="XBL">250000.00</cbc:MinimumAmount>
+        <cac:ApplicablePeriod>
+          <cbc:StartDate>2023-01-01</cbc:StartDate>
+          <cbc:EndDate>2025-12-31</cbc:EndDate>
+        </cac:ApplicablePeriod>
+        <cac:TemplateEvidence>
+          <cbc:ID>EV-ACC</cbc:ID>
+          <cbc:Name>Accounts</cbc:Name>
+        </cac:TemplateEvidence>
+      </cac:TenderingCriterionProperty>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-2</cbc:ID>
+        <cbc:Name>Years in business</cbc:Name>
+        <cbc:Description>Answer: years in business.</cbc:Description>
+        <cbc:TypeCode>Question</cbc:TypeCode>
+        <cbc:ValueDataTypeCode>Quantity</cbc:ValueDataTypeCode>
+        <cbc:ValueUnitCode>ANN</cbc:ValueUnitCode>
+        <cbc:ExpectedValueNumeric>3</cbc:ExpectedValueNumeric>
+        <cbc:MaximumValueNumeric>200</cbc:MaximumValueNumeric>
+        <cbc:MinimumValueNumeric>3</cbc:MinimumValueNumeric>
+        <cbc:MaximumQuantity unitCode="ANN">200</cbc:MaximumQuantity>
+        <cbc:MinimumQuantity unitCode="ANN">3</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-3</cbc:ID>
+        <cbc:Name>Registered in a business register</cbc:Name>
+        <cbc:Description>Answer: registered in a business register.</cbc:Description>
+        <cbc:TypeCode>Question</cbc:TypeCode>
+        <cbc:ValueDataTypeCode>Indicator</cbc:ValueDataTypeCode>
+        <cbc:ExpectedID>REG</cbc:ExpectedID>
+        <cbc:ExpectedIndicator>true</cbc:ExpectedIndicator>
+        <cbc:ExpectedCode>Registered</cbc:ExpectedCode>
+        <cbc:ExpectedDescription>Entered in a national register.</cbc:ExpectedDescription>
+        <cbc:ExpectedURI>https://register.bayvarra.example</cbc:ExpectedURI>
+        <cbc:TranslationTypeCode>None</cbc:TranslationTypeCode>
+        <cbc:CertificationLevelDescription>A plain extract will do.</cbc:CertificationLevelDescription>
+        <cbc:CopyQualityTypeCode>Copy</cbc:CopyQualityTypeCode>
+      </cac:TenderingCriterionProperty>
+      <cac:SubsidiaryTenderingCriterionPropertyGroup>
+        <cbc:ID>PG-1.1</cbc:ID>
+        <cbc:Name>Consortium</cbc:Name>
+        <cac:TenderingCriterionProperty>
+          <cbc:ID>P-4</cbc:ID>
+          <cbc:Name>Share in the consortium</cbc:Name>
+          <cbc:Description>Answer: share in the consortium.</cbc:Description>
+          <cbc:TypeCode>Question</cbc:TypeCode>
+          <cbc:ValueDataTypeCode>Percent</cbc:ValueDataTypeCode>
+        </cac:TenderingCriterionProperty>
+      </cac:SubsidiaryTenderingCriterionPropertyGroup>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-QAR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </QualificationApplicationRequest>

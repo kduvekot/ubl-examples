@@ -24,10 +24,26 @@ The authority sends the furniture maker the self-declaration it must fill in: ex
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The contract.
 - `IssueDate` = **2026-02-13**  
   Sent with the procurement documents.
 - `IssueTime` = **08:25:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `VersionID` = **1**  
+  The first version.
+- `PreviousVersionID` = **0**  
+  None.
+- `ProcedureCode` = **Open**  
+  An open procedure.
+- `QualificationApplicationTypeCode` = **Regulated**  
+  The regulated form of self-declaration.
+- `WeightScoringMethodologyNote` = **Pass or fail; no weighting.**  
+  How answers count.
+- `WeightingTypeCode` = **None**  
+  No weighting.
+- `Note` = **Answer every criterion.**  
+  What to do.
 
 ### Contracting Party
 
@@ -227,6 +243,185 @@ Inside `EconomicOperatorParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Procurement Project
+
+Inside `ProcurementProject`:
+
+- `ID` = **PWD-2026-PARKS**  
+  The procedure.
+
+### Procurement Project Lot
+
+Inside `ProcurementProjectLot`:
+
+- `ID` = **LOT-1**  
+  Lot 1.
+
+### Tendering Criterion
+
+Inside `TenderingCriterion`:
+
+- `ID` = **CR-TURNOVER**  
+  The turnover criterion.
+- `CriterionTypeCode` = **Economic**  
+  Its kind.
+- `Name` = **General yearly turnover**  
+  The criterion.
+- `Description` = **Turnover of the last three years.**  
+  What.
+- `WeightNumeric` = **0**  
+  Pass or fail.
+- `FulfilmentIndicator` = **true**  
+  Must be met.
+- `FulfilmentIndicatorTypeCode` = **All**  
+  All its properties.
+- `EvaluationMethodTypeCode` = **PassFail**  
+  Pass or fail.
+- `WeightingConsiderationDescription` = **Not weighted.**  
+  Why.
+- `ProcurementProjectLotReference/ID` = **LOT-1**  
+  Lot 1 of the procedure.
+- `CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
+  The benches.
+- `SubTenderingCriterion/ID` = **CR-TURNOVER-A**  
+  The average.
+- `SubTenderingCriterion/Name` = **Average turnover**  
+  Name.
+- `Legislation/ID` = **XB-PPA-2019**  
+  The act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Title.
+- `Legislation/Description` = **Selection criteria.**  
+  What.
+- `Legislation/JurisdictionLevel` = **National**  
+  The level.
+- `Legislation/Article` = **Art. 58**  
+  The article.
+- `Legislation/URI` = **https://law.bayvarra.example/ppa**  
+  Where.
+- `Legislation/Language/ID` = **en**  
+  English.
+- `Legislation/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
+  Bayvarra.
+- `TenderingCriterionPropertyGroup/ID` = **PG-1**  
+  The group.
+- `TenderingCriterionPropertyGroup/Name` = **Turnover**  
+  Name.
+- `TenderingCriterionPropertyGroup/Description` = **The figures.**  
+  What.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **OnTrue**  
+  Answered when the criterion applies.
+- `TenderingCriterionPropertyGroup/FulfilmentIndicator` = **true**  
+  Must be met.
+- `TenderingCriterionPropertyGroup/FulfilmentIndicatorTypeCode` = **All**  
+  All properties.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-1**  
+  The property.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Yearly turnover**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: yearly turnover.**  
+  What is asked.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **Requirement**  
+  Question or requirement.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **Amount**  
+  An amount.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueCurrencyCode` = **XBL**  
+  In lume.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedAmount` = **250000.00** (currencyID `XBL`)  
+  At least.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumAmount` = **99999999.00** (currencyID `XBL`)  
+  No real maximum.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumAmount` = **250000.00** (currencyID `XBL`)  
+  The minimum.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/StartDate` = **2023-01-01**  
+  The three years
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/EndDate` = **2025-12-31**  
+  before the tender.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TemplateEvidence/ID` = **EV-ACC**  
+  Annual accounts.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TemplateEvidence/Name` = **Accounts**  
+  Evidence.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-2**  
+  The property.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Years in business**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: years in business.**  
+  What is asked.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **Question**  
+  Question or requirement.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **Quantity**  
+  A number.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueUnitCode` = **ANN**  
+  Years.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedValueNumeric` = **3**  
+  At least.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumValueNumeric` = **200**  
+  Maximum.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumValueNumeric` = **3**  
+  Minimum.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumQuantity` = **200** (unitCode `ANN`)  
+  No real maximum.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumQuantity` = **3** (unitCode `ANN`)  
+  At least three.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-3**  
+  The property.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Registered in a business register**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: registered in a business register.**  
+  What is asked.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **Question**  
+  Question or requirement.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **Indicator**  
+  Yes or no.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedID` = **REG**  
+  The register.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedIndicator` = **true**  
+  Yes.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedCode` = **Registered**  
+  The status.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedDescription` = **Entered in a national register.**  
+  Expected.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedURI` = **https://register.bayvarra.example**  
+  A register.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TranslationTypeCode` = **None**  
+  No translation needed.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/CertificationLevelDescription` = **A plain extract will do.**  
+  The level.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/CopyQualityTypeCode` = **Copy**  
+  A copy is enough.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/ID` = **PG-1.1**  
+  If a consortium.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/Name` = **Consortium**  
+  Name.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-4**  
+  The property.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Share in the consortium**  
+  Its name.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: share in the consortium.**  
+  What is asked.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **Question**  
+  Question or requirement.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **Percent**  
+  A percentage.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **PWD-2026-PARKS-CFT**  
+  The call for tenders.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-QAR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -239,8 +434,16 @@ Inside `EconomicOperatorParty`:
   <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
   <cbc:UUID>3c06617e-8a80-509a-b64c-e7ad1ca81e2a</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-02-13</cbc:IssueDate>
   <cbc:IssueTime>08:25:00</cbc:IssueTime>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cbc:ProcedureCode>Open</cbc:ProcedureCode>
+  <cbc:QualificationApplicationTypeCode>Regulated</cbc:QualificationApplicationTypeCode>
+  <cbc:WeightScoringMethodologyNote>Pass or fail; no weighting.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightingTypeCode>None</cbc:WeightingTypeCode>
+  <cbc:Note>Answer every criterion.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -413,5 +616,128 @@ Inside `EconomicOperatorParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:ProcurementProject>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TURNOVER</cbc:ID>
+    <cbc:CriterionTypeCode>Economic</cbc:CriterionTypeCode>
+    <cbc:Name>General yearly turnover</cbc:Name>
+    <cbc:Description>Turnover of the last three years.</cbc:Description>
+    <cbc:WeightNumeric>0</cbc:WeightNumeric>
+    <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
+    <cbc:FulfilmentIndicatorTypeCode>All</cbc:FulfilmentIndicatorTypeCode>
+    <cbc:EvaluationMethodTypeCode>PassFail</cbc:EvaluationMethodTypeCode>
+    <cbc:WeightingConsiderationDescription>Not weighted.</cbc:WeightingConsiderationDescription>
+    <cac:ProcurementProjectLotReference>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:ProcurementProjectLotReference>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
+    <cac:SubTenderingCriterion>
+      <cbc:ID>CR-TURNOVER-A</cbc:ID>
+      <cbc:Name>Average turnover</cbc:Name>
+    </cac:SubTenderingCriterion>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Selection criteria.</cbc:Description>
+      <cbc:JurisdictionLevel>National</cbc:JurisdictionLevel>
+      <cbc:Article>Art. 58</cbc:Article>
+      <cbc:URI>https://law.bayvarra.example/ppa</cbc:URI>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+      </cac:Language>
+      <cac:JurisdictionRegionAddress>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:JurisdictionRegionAddress>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-1</cbc:ID>
+      <cbc:Name>Turnover</cbc:Name>
+      <cbc:Description>The figures.</cbc:Description>
+      <cbc:PropertyGroupTypeCode>OnTrue</cbc:PropertyGroupTypeCode>
+      <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
+      <cbc:FulfilmentIndicatorTypeCode>All</cbc:FulfilmentIndicatorTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-1</cbc:ID>
+        <cbc:Name>Yearly turnover</cbc:Name>
+        <cbc:Description>Answer: yearly turnover.</cbc:Description>
+        <cbc:TypeCode>Requirement</cbc:TypeCode>
+        <cbc:ValueDataTypeCode>Amount</cbc:ValueDataTypeCode>
+        <cbc:ValueCurrencyCode>XBL</cbc:ValueCurrencyCode>
+        <cbc:ExpectedAmount currencyID="XBL">250000.00</cbc:ExpectedAmount>
+        <cbc:MaximumAmount currencyID="XBL">99999999.00</cbc:MaximumAmount>
+        <cbc:MinimumAmount currencyID="XBL">250000.00</cbc:MinimumAmount>
+        <cac:ApplicablePeriod>
+          <cbc:StartDate>2023-01-01</cbc:StartDate>
+          <cbc:EndDate>2025-12-31</cbc:EndDate>
+        </cac:ApplicablePeriod>
+        <cac:TemplateEvidence>
+          <cbc:ID>EV-ACC</cbc:ID>
+          <cbc:Name>Accounts</cbc:Name>
+        </cac:TemplateEvidence>
+      </cac:TenderingCriterionProperty>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-2</cbc:ID>
+        <cbc:Name>Years in business</cbc:Name>
+        <cbc:Description>Answer: years in business.</cbc:Description>
+        <cbc:TypeCode>Question</cbc:TypeCode>
+        <cbc:ValueDataTypeCode>Quantity</cbc:ValueDataTypeCode>
+        <cbc:ValueUnitCode>ANN</cbc:ValueUnitCode>
+        <cbc:ExpectedValueNumeric>3</cbc:ExpectedValueNumeric>
+        <cbc:MaximumValueNumeric>200</cbc:MaximumValueNumeric>
+        <cbc:MinimumValueNumeric>3</cbc:MinimumValueNumeric>
+        <cbc:MaximumQuantity unitCode="ANN">200</cbc:MaximumQuantity>
+        <cbc:MinimumQuantity unitCode="ANN">3</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-3</cbc:ID>
+        <cbc:Name>Registered in a business register</cbc:Name>
+        <cbc:Description>Answer: registered in a business register.</cbc:Description>
+        <cbc:TypeCode>Question</cbc:TypeCode>
+        <cbc:ValueDataTypeCode>Indicator</cbc:ValueDataTypeCode>
+        <cbc:ExpectedID>REG</cbc:ExpectedID>
+        <cbc:ExpectedIndicator>true</cbc:ExpectedIndicator>
+        <cbc:ExpectedCode>Registered</cbc:ExpectedCode>
+        <cbc:ExpectedDescription>Entered in a national register.</cbc:ExpectedDescription>
+        <cbc:ExpectedURI>https://register.bayvarra.example</cbc:ExpectedURI>
+        <cbc:TranslationTypeCode>None</cbc:TranslationTypeCode>
+        <cbc:CertificationLevelDescription>A plain extract will do.</cbc:CertificationLevelDescription>
+        <cbc:CopyQualityTypeCode>Copy</cbc:CopyQualityTypeCode>
+      </cac:TenderingCriterionProperty>
+      <cac:SubsidiaryTenderingCriterionPropertyGroup>
+        <cbc:ID>PG-1.1</cbc:ID>
+        <cbc:Name>Consortium</cbc:Name>
+        <cac:TenderingCriterionProperty>
+          <cbc:ID>P-4</cbc:ID>
+          <cbc:Name>Share in the consortium</cbc:Name>
+          <cbc:Description>Answer: share in the consortium.</cbc:Description>
+          <cbc:TypeCode>Question</cbc:TypeCode>
+          <cbc:ValueDataTypeCode>Percent</cbc:ValueDataTypeCode>
+        </cac:TenderingCriterionProperty>
+      </cac:SubsidiaryTenderingCriterionPropertyGroup>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-QAR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </QualificationApplicationRequest>
 ```

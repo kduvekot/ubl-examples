@@ -24,10 +24,28 @@ The furniture maker declares it meets the selection criteria.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The contract.
 - `IssueDate` = **2026-02-19**  
   Returned before the tender deadline.
 - `IssueTime` = **10:47:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `EconomicOperatorGroupName` = **Brackenmere Furniture**  
+  Tendering alone.
+- `VersionID` = **1**  
+  The first version.
+- `PreviousVersionID` = **0**  
+  None.
+- `ProcedureCode` = **Open**  
+  The procedure.
+- `QualificationApplicationTypeCode` = **Regulated**  
+  The regulated form.
+- `WeightScoringMethodologyNote` = **Pass or fail.**  
+  As asked.
+- `WeightingTypeCode` = **None**  
+  No weighting.
+- `Note` = **All criteria answered.**  
+  The answer.
 
 ### Contracting Party
 
@@ -227,14 +245,122 @@ Inside `EconomicOperatorParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Procurement Project
+
+Inside `ProcurementProject`:
+
+- `ID` = **PWD-2026-PARKS**  
+  The procedure.
+
+### Procurement Project Lot
+
+Inside `ProcurementProjectLot`:
+
+- `ID` = **LOT-1**  
+  Lot 1.
+
+### Tendering Criterion
+
+Inside `TenderingCriterion`:
+
+- `ID` = **CR-TURNOVER**  
+  The criterion answered.
+
 ### Tendering Criterion Response
 
 Inside `TenderingCriterionResponse`:
 
-- `ID` = **SEL-1**  
-  The response to the authority's first selection criterion.
-- `Description` = **Annual turnover in furniture above 500,000 lume in each of the last three years.**  
-  What the furniture maker declares for this criterion.
+- `ID` = **CRR-1**  
+  The response.
+- `Name` = **Turnover**  
+  Name.
+- `Description` = **Yearly turnover of 410,000 lume.**  
+  What.
+- `ValidatedCriterionPropertyID` = **P-1**  
+  The property answered.
+- `ConfidentialityLevelCode` = **Confidential**  
+  Not to be published.
+- `ResponseValue/ID` = **RV-1**  
+  The answer.
+- `ResponseValue/Description` = **Turnover 2025.**  
+  What.
+- `ResponseValue/Response` = **As in the accounts.**  
+  The answer in words.
+- `ResponseValue/ResponseAmount` = **410000.00** (currencyID `XBL`)  
+  The turnover.
+- `ResponseValue/ResponseBinaryObject` = **QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu** (mimeCode `text/plain`)  
+  The extract, embedded.
+- `ResponseValue/ResponseCode` = **Met**  
+  The criterion is met.
+- `ResponseValue/ResponseDate` = **2025-12-31**  
+  The year's end.
+- `ResponseValue/ResponseID` = **BF-ACC-2025**  
+  The accounts.
+- `ResponseValue/ResponseIndicator` = **true**  
+  Yes.
+- `ResponseValue/ResponseMeasure` = **12** (unitCode `MON`)  
+  Months covered.
+- `ResponseValue/ResponseNumeric` = **26**  
+  Years in business.
+- `ResponseValue/ResponseQuantity` = **26** (unitCode `ANN`)  
+  Years.
+- `ResponseValue/ResponseTime` = **12:00:00**  
+  When signed.
+- `ResponseValue/ResponseURI` = **https://www.brackenmere.example/accounts-2025.pdf**  
+  Where.
+- `ApplicablePeriod/StartDate` = **2025-01-01**  
+  The year.
+- `ApplicablePeriod/EndDate` = **2025-12-31**  
+  Its end.
+- `SuppliedEvidence/ID` = **EV-ACC-BF**  
+  The accounts.
+- `ProcurementProjectLotReference/ID` = **LOT-1**  
+  Lot 1 of the procedure.
+- `CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
+  The benches.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BF-ESPD-26**  
+  The self-declaration.
+
+### Evidence
+
+Inside `Evidence`:
+
+- `ID` = **EV-ACC-BF**  
+  The annual accounts.
+- `EvidenceTypeCode` = **Accounts**  
+  Kind.
+- `Name` = **Annual accounts 2025**  
+  Name.
+- `Description` = **Audited.**  
+  What.
+- `CandidateStatement` = **True and complete.**  
+  The statement.
+- `ConfidentialityLevelCode` = **Confidential**  
+  Not published.
+- `EvidenceIssuingParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EvidenceIssuingParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DocumentReference/ID` = **BF-ACC-2025**  
+  The accounts.
+- `Language/ID` = **en**  
+  English.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-QAR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -248,8 +374,17 @@ Inside `TenderingCriterionResponse`:
   <cbc:ID>BF-DOC-26-0193</cbc:ID>
   <cbc:UUID>27b07b57-4421-5730-8be4-08222db0cc1c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>10:47:00</cbc:IssueTime>
+  <cbc:EconomicOperatorGroupName>Brackenmere Furniture</cbc:EconomicOperatorGroupName>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cbc:ProcedureCode>Open</cbc:ProcedureCode>
+  <cbc:QualificationApplicationTypeCode>Regulated</cbc:QualificationApplicationTypeCode>
+  <cbc:WeightScoringMethodologyNote>Pass or fail.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightingTypeCode>None</cbc:WeightingTypeCode>
+  <cbc:Note>All criteria answered.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -422,9 +557,86 @@ Inside `TenderingCriterionResponse`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:ProcurementProject>
+    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TURNOVER</cbc:ID>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterionResponse>
-    <cbc:ID>SEL-1</cbc:ID>
-    <cbc:Description>Annual turnover in furniture above 500,000 lume in each of the last three years.</cbc:Description>
+    <cbc:ID>CRR-1</cbc:ID>
+    <cbc:Name>Turnover</cbc:Name>
+    <cbc:Description>Yearly turnover of 410,000 lume.</cbc:Description>
+    <cbc:ValidatedCriterionPropertyID>P-1</cbc:ValidatedCriterionPropertyID>
+    <cbc:ConfidentialityLevelCode>Confidential</cbc:ConfidentialityLevelCode>
+    <cac:ResponseValue>
+      <cbc:ID>RV-1</cbc:ID>
+      <cbc:Description>Turnover 2025.</cbc:Description>
+      <cbc:Response>As in the accounts.</cbc:Response>
+      <cbc:ResponseAmount currencyID="XBL">410000.00</cbc:ResponseAmount>
+      <cbc:ResponseBinaryObject mimeCode="text/plain">QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu</cbc:ResponseBinaryObject>
+      <cbc:ResponseCode>Met</cbc:ResponseCode>
+      <cbc:ResponseDate>2025-12-31</cbc:ResponseDate>
+      <cbc:ResponseID>BF-ACC-2025</cbc:ResponseID>
+      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
+      <cbc:ResponseMeasure unitCode="MON">12</cbc:ResponseMeasure>
+      <cbc:ResponseNumeric>26</cbc:ResponseNumeric>
+      <cbc:ResponseQuantity unitCode="ANN">26</cbc:ResponseQuantity>
+      <cbc:ResponseTime>12:00:00</cbc:ResponseTime>
+      <cbc:ResponseURI>https://www.brackenmere.example/accounts-2025.pdf</cbc:ResponseURI>
+    </cac:ResponseValue>
+    <cac:ApplicablePeriod>
+      <cbc:StartDate>2025-01-01</cbc:StartDate>
+      <cbc:EndDate>2025-12-31</cbc:EndDate>
+    </cac:ApplicablePeriod>
+    <cac:SuppliedEvidence>
+      <cbc:ID>EV-ACC-BF</cbc:ID>
+    </cac:SuppliedEvidence>
+    <cac:ProcurementProjectLotReference>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:ProcurementProjectLotReference>
+    <cac:CommodityClassification>
+      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+    </cac:CommodityClassification>
   </cac:TenderingCriterionResponse>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-ESPD-26</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Evidence>
+    <cbc:ID>EV-ACC-BF</cbc:ID>
+    <cbc:EvidenceTypeCode>Accounts</cbc:EvidenceTypeCode>
+    <cbc:Name>Annual accounts 2025</cbc:Name>
+    <cbc:Description>Audited.</cbc:Description>
+    <cbc:CandidateStatement>True and complete.</cbc:CandidateStatement>
+    <cbc:ConfidentialityLevelCode>Confidential</cbc:ConfidentialityLevelCode>
+    <cac:EvidenceIssuingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:EvidenceIssuingParty>
+    <cac:DocumentReference>
+      <cbc:ID>BF-ACC-2025</cbc:ID>
+    </cac:DocumentReference>
+    <cac:Language>
+      <cbc:ID>en</cbc:ID>
+    </cac:Language>
+  </cac:Evidence>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-QAR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </QualificationApplicationResponse>
 ```

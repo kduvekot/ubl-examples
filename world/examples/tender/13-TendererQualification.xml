@@ -9,8 +9,79 @@
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>08:52:00</cbc:IssueTime>
+  <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-TQ</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:TendererPartyQualification>
+    <cac:InterestedProcurementProjectLot>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:InterestedProcurementProjectLot>
+    <cac:InterestedProcurementProjectLot>
+      <cbc:ID>LOT-2</cbc:ID>
+    </cac:InterestedProcurementProjectLot>
     <cac:MainQualifyingParty>
+      <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
+      <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
+      <cbc:OperatingYearsQuantity unitCode="ANN">41</cbc:OperatingYearsQuantity>
+      <cbc:EmployeeQuantity unitCode="C62">180</cbc:EmployeeQuantity>
+      <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
+      <cbc:BusinessIdentityEvidenceID>XU-R-104274</cbc:BusinessIdentityEvidenceID>
+      <cbc:TendererRoleCode>Lead</cbc:TendererRoleCode>
+      <cac:BusinessClassificationScheme>
+        <cbc:ID>ISIC4</cbc:ID>
+        <cac:ClassificationCategory>
+          <cbc:CodeValue>3100</cbc:CodeValue>
+        </cac:ClassificationCategory>
+      </cac:BusinessClassificationScheme>
+      <cac:TechnicalCapability>
+        <cbc:ID>TC-1</cbc:ID>
+        <cbc:Description>4,000 benches a year.</cbc:Description>
+        <cbc:ValueQuantity unitCode="H87">4000</cbc:ValueQuantity>
+      </cac:TechnicalCapability>
+      <cac:FinancialCapability>
+        <cbc:ID>FC-1</cbc:ID>
+        <cbc:ValueAmount currencyID="XBL">9200000.00</cbc:ValueAmount>
+      </cac:FinancialCapability>
+      <cac:CompletedTask>
+        <cbc:AnnualAverageAmount currencyID="XBL">180000.00</cbc:AnnualAverageAmount>
+        <cbc:TotalTaskAmount currencyID="XBL">540000.00</cbc:TotalTaskAmount>
+        <cbc:PartyCapacityAmount currencyID="XBL">540000.00</cbc:PartyCapacityAmount>
+        <cbc:Description>Benches for Ferrano's parks.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-FER-PARKS</cbc:ID>
+        </cac:SuppliedEvidence>
+        <cac:Period>
+          <cbc:StartDate>2023-01-01</cbc:StartDate>
+          <cbc:EndDate>2025-12-31</cbc:EndDate>
+        </cac:Period>
+        <cac:RecipientCustomerParty>
+          <cac:Party>
+            <cac:PartyName>
+              <cbc:Name>City of Ferrano</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+        </cac:RecipientCustomerParty>
+      </cac:CompletedTask>
+      <cac:Declaration>
+        <cbc:ID>DEC-1</cbc:ID>
+        <cbc:Name>No conflict of interest</cbc:Name>
+        <cbc:DeclarationTypeCode>Integrity</cbc:DeclarationTypeCode>
+        <cbc:Description>No ties with the department's officers.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-DEC-1</cbc:ID>
+        </cac:SuppliedEvidence>
+      </cac:Declaration>
       <cac:Party>
         <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -121,8 +192,14 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:Party>
+      <cac:EconomicOperatorRole>
+        <cbc:RoleCode>Lead</cbc:RoleCode>
+        <cbc:RoleDescription>Leads.</cbc:RoleDescription>
+      </cac:EconomicOperatorRole>
     </cac:MainQualifyingParty>
     <cac:AdditionalQualifyingParty>
+      <cbc:ParticipationPercent>20</cbc:ParticipationPercent>
+      <cbc:TendererRoleCode>Subcontractor</cbc:TendererRoleCode>
       <cac:Party>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
@@ -290,4 +367,11 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:Evidence>
+    <cbc:ID>EV-FER-PARKS</cbc:ID>
+    <cbc:Name>Ferrano reference</cbc:Name>
+  </cac:Evidence>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-ESPD-26</cbc:ID>
+  </cac:AdditionalDocumentReference>
 </TendererQualification>

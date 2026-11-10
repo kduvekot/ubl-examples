@@ -22,12 +22,50 @@ The furniture maker submits its corrected tender.
   The furniture maker's number for this tender.
 - `UUID` = **249604e4-e246-5420-b1d3-0a791c02cd40**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `TenderTypeCode` = **Combined**  
+  Technical and financial in one.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-24**  
   The corrected tender, submitted the day after the withdrawal.
 - `IssueTime` = **12:10:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ContractName` = **Park benches for the parks renewal programme**  
+  The contract tendered for.
+- `Note` = **Tender for both lots, with a recycled-plastic variant.**  
+  What is offered.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `DurationMeasure` = **90** (unitCode `DAY`)  
+  Valid for 90 days.
+
+### Call For Tender Document Reference
+
+Inside `CallForTenderDocumentReference`:
+
+- `ID` = **PWD-2026-PARKS-CFT**  
+  The call for tenders.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **BF-DS-PARK**  
+  The datasheet.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-TENDER-19**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Tenderer Party
 
@@ -125,6 +163,13 @@ Inside `TendererParty`:
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Tenderer Qualification Document Reference
+
+Inside `TendererQualificationDocumentReference`:
+
+- `ID` = **VI-DOC-26-0199**  
+  The qualification documents.
 
 ### Contracting Party
 
@@ -227,12 +272,134 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Tendered Project
 
 Inside `TenderedProject`:
 
-- `LegalMonetaryTotal/PayableAmount` = **115200.00** (currencyID `XBL`)  
-  240 wooden benches at 480.00 lume, the corrected price.
+- `VariantID` = **V1**  
+  The variant.
+- `FeeAmount` = **50.00** (currencyID `XBL`)  
+  The documentation fee paid.
+- `FeeDescription` = **Paper copy of the documents.**  
+  What the fee was for.
+- `TenderEnvelopeID` = **ENV-1**  
+  The envelope.
+- `TenderEnvelopeTypeCode` = **Combined**  
+  Technical and price together.
+- `AdditionalFee/FeeTypeCode` = **Courier**  
+  A courier fee.
+- `AdditionalFee/FeeAmount` = **12.00** (currencyID `XBL`)  
+  For the signed originals.
+- `AdditionalFee/FeeDescription` = **Courier of the guarantee's original.**  
+  What.
+- `ProcurementProjectLot/ID` = **LOT-1**  
+  Lot 1.
+- `ProcurementProjectLot/ID` = **LOT-2**  
+  Lot 2.
+- `EvidenceDocumentReference/ID` = **VI-REF-2025**  
+  Reference letters.
+- `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax for a public body.
+- `LegalMonetaryTotal/LineExtensionAmount` = **127440.00** (currencyID `XBL`)  
+  Both lots.
+- `LegalMonetaryTotal/PayableAmount` = **127440.00** (currencyID `XBL`)  
+  The tender's total.
+- `TenderLine/ID` = **1**  
+  The benches.
+- `TenderLine/Note` = **Serra 180, as specified.**  
+  What is offered.
+- `TenderLine/Quantity` = **240** (unitCode `H87`)  
+  240 benches.
+- `TenderLine/LineExtensionAmount` = **123600.00** (currencyID `XBL`)  
+  240 at the unit price.
+- `TenderLine/TaxInclusiveLineExtensionAmount` = **123600.00** (currencyID `XBL`)  
+  No tax for a public body.
+- `TenderLine/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
+  None.
+- `TenderLine/OrderableUnit` = **Pallet of 4**  
+  Called off in pallets.
+- `TenderLine/ContentUnitQuantity` = **4** (unitCode `H87`)  
+  Four per pallet.
+- `TenderLine/OrderQuantityIncrementNumeric` = **4**  
+  In steps of four.
+- `TenderLine/MinimumOrderQuantity` = **20** (unitCode `H87`)  
+  A release of at least 20.
+- `TenderLine/MaximumOrderQuantity` = **96** (unitCode `H87`)  
+  At most a full truck.
+- `TenderLine/WarrantyInformation` = **Five years on the frame.**  
+  The warranty.
+- `TenderLine/PackLevelCode` = **Pallet**  
+  The pack level.
+- `TenderLine/DocumentReference/ID` = **VI-DS-B180**  
+  The datasheet.
+- `TenderLine/Item/Name` = **Park bench Serra 180**  
+  The item offered.
+- `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  
+  Seven days per release.
+- `TenderLine/ReplacementRelatedItem/ID` = **VI-C180-2026**  
+  Spare frames available.
+- `TenderLine/ReplacementRelatedItem/Quantity` = **1** (unitCode `H87`)  
+  One for one.
+- `TenderLine/WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `TenderLine/WarrantyParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `TenderLine/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
+  Five years.
+- `TenderLine/SubTenderLine/ID` = **1.1**  
+  The anchors.
+- `TenderLine/SubTenderLine/Quantity` = **240** (unitCode `SET`)  
+  One set per bench.
+- `TenderLine/SubTenderLine/Item/Name` = **Ground anchor set**  
+  Included.
+- `TenderLine/CallForTendersLineReference/LineID` = **1**  
+  The line of the call for tenders.
+- `TenderLine/CallForTendersDocumentReference/ID` = **PWD-2026-PARKS-CFT**  
+  The call for tenders.
+- `TenderLine/ID` = **2**  
+  The installation.
+- `TenderLine/Quantity` = **240** (unitCode `H87`)  
+  240 installations.
+- `TenderLine/LineExtensionAmount` = **3840.00** (currencyID `XBL`)  
+  240 at the price.
+- `TenderLine/Item/Name` = **Installation of a park bench**  
+  The service.
+- `AwardingCriterionResponse/ID` = **ACR-1**  
+  The response to the quality criterion.
+- `AwardingCriterionResponse/AwardingCriterionID` = **AC-2**  
+  Quality.
+- `AwardingCriterionResponse/AwardingCriterionDescription` = **Warranty and coating.**  
+  The criterion.
+- `AwardingCriterionResponse/Description` = **Ten years on the coating.**  
+  The offer.
+- `AwardingCriterionResponse/Quantity` = **10** (unitCode `ANN`)  
+  Ten years.
+- `AwardingCriterionResponse/Amount` = **127440.00** (currencyID `XBL`)  
+  The price offered.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-1.1**  
+  Durability.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/AwardingCriterionID` = **AC-2.1**  
+  Its criterion.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description` = **Hot-dip galvanised and powder coated.**  
+  The offer.
 
 ## The document
 
@@ -245,9 +412,32 @@ Inside `TenderedProject`:
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0205</cbc:ID>
   <cbc:UUID>249604e4-e246-5420-b1d3-0a791c02cd40</cbc:UUID>
+  <cbc:TenderTypeCode>Combined</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>12:10:00</cbc:IssueTime>
+  <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
+  <cbc:Note>Tender for both lots, with a recycled-plastic variant.</cbc:Note>
+  <cac:ValidityPeriod>
+    <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CallForTenderDocumentReference>
+    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+  </cac:CallForTenderDocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BF-DS-PARK</cbc:ID>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-TENDER-19</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:TendererParty>
     <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -330,6 +520,9 @@ Inside `TenderedProject`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:TendererParty>
+  <cac:TendererQualificationDocumentReference>
+    <cbc:ID>VI-DOC-26-0199</cbc:ID>
+  </cac:TendererQualificationDocumentReference>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -418,10 +611,124 @@ Inside `TenderedProject`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:TenderedProject>
+    <cbc:VariantID>V1</cbc:VariantID>
+    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
+    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
+    <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
+    <cbc:TenderEnvelopeTypeCode>Combined</cbc:TenderEnvelopeTypeCode>
+    <cac:AdditionalFee>
+      <cbc:FeeTypeCode>Courier</cbc:FeeTypeCode>
+      <cbc:FeeAmount currencyID="XBL">12.00</cbc:FeeAmount>
+      <cbc:FeeDescription>Courier of the guarantee's original.</cbc:FeeDescription>
+    </cac:AdditionalFee>
+    <cac:ProcurementProjectLot>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:ProcurementProjectLot>
+    <cac:ProcurementProjectLot>
+      <cbc:ID>LOT-2</cbc:ID>
+    </cac:ProcurementProjectLot>
+    <cac:EvidenceDocumentReference>
+      <cbc:ID>VI-REF-2025</cbc:ID>
+    </cac:EvidenceDocumentReference>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:LegalMonetaryTotal>
-      <cbc:PayableAmount currencyID="XBL">115200.00</cbc:PayableAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">127440.00</cbc:LineExtensionAmount>
+      <cbc:PayableAmount currencyID="XBL">127440.00</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>
+    <cac:TenderLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Note>Serra 180, as specified.</cbc:Note>
+      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">123600.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">123600.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
+      <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
+      <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
+      <cbc:MinimumOrderQuantity unitCode="H87">20</cbc:MinimumOrderQuantity>
+      <cbc:MaximumOrderQuantity unitCode="H87">96</cbc:MaximumOrderQuantity>
+      <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
+      <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
+      <cac:DocumentReference>
+        <cbc:ID>VI-DS-B180</cbc:ID>
+      </cac:DocumentReference>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+      </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+      </cac:OfferedItemLocationQuantity>
+      <cac:ReplacementRelatedItem>
+        <cbc:ID>VI-C180-2026</cbc:ID>
+        <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      </cac:ReplacementRelatedItem>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:SubTenderLine>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Quantity unitCode="SET">240</cbc:Quantity>
+        <cac:Item>
+          <cbc:Name>Ground anchor set</cbc:Name>
+        </cac:Item>
+      </cac:SubTenderLine>
+      <cac:CallForTendersLineReference>
+        <cbc:LineID>1</cbc:LineID>
+      </cac:CallForTendersLineReference>
+      <cac:CallForTendersDocumentReference>
+        <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+      </cac:CallForTendersDocumentReference>
+    </cac:TenderLine>
+    <cac:TenderLine>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">3840.00</cbc:LineExtensionAmount>
+      <cac:Item>
+        <cbc:Name>Installation of a park bench</cbc:Name>
+      </cac:Item>
+    </cac:TenderLine>
+    <cac:AwardingCriterionResponse>
+      <cbc:ID>ACR-1</cbc:ID>
+      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
+      <cbc:Description>Ten years on the coating.</cbc:Description>
+      <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
+      <cbc:Amount currencyID="XBL">127440.00</cbc:Amount>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-1.1</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
+        <cbc:Description>Hot-dip galvanised and powder coated.</cbc:Description>
+      </cac:SubordinateAwardingCriterionResponse>
+    </cac:AwardingCriterionResponse>
   </cac:TenderedProject>
 </Tender>
 ```

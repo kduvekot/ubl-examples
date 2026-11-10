@@ -28,11 +28,86 @@ The manufacturer declares its qualifications and those of its consortium partner
   Submitted with the tender.
 - `IssueTime` = **08:52:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **The manufacturer with Saltmere as subcontractor for the installation.**  
+  Who.
+- `VersionID` = **1**  
+  The first version.
+- `PreviousVersionID` = **0**  
+  None.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-TQ**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Tenderer Party Qualification
 
 Inside `TendererPartyQualification`:
 
+- `InterestedProcurementProjectLot/ID` = **LOT-1**  
+  Lot 1.
+- `InterestedProcurementProjectLot/ID` = **LOT-2**  
+  Lot 2.
+- `MainQualifyingParty/ParticipationPercent` = **80**  
+  The manufacturer's share.
+- `MainQualifyingParty/PersonalSituation` = **No exclusion grounds apply.**  
+  Declared.
+- `MainQualifyingParty/OperatingYearsQuantity` = **41** (unitCode `ANN`)  
+  In business since 1985.
+- `MainQualifyingParty/EmployeeQuantity` = **180** (unitCode `C62`)  
+  Employees.
+- `MainQualifyingParty/BusinessClassificationEvidenceID` = **ISIC-3100**  
+  Its class.
+- `MainQualifyingParty/BusinessIdentityEvidenceID` = **XU-R-104274**  
+  Its registration.
+- `MainQualifyingParty/TendererRoleCode` = **Lead**  
+  The lead tenderer.
+- `MainQualifyingParty/BusinessClassificationScheme/ID` = **ISIC4**  
+  ISIC Rev. 4.
+- `MainQualifyingParty/BusinessClassificationScheme/ClassificationCategory/CodeValue` = **3100**  
+  Furniture.
+- `MainQualifyingParty/TechnicalCapability/ID` = **TC-1**  
+  Production.
+- `MainQualifyingParty/TechnicalCapability/Description` = **4,000 benches a year.**  
+  Capacity.
+- `MainQualifyingParty/TechnicalCapability/ValueQuantity` = **4000** (unitCode `H87`)  
+  A year.
+- `MainQualifyingParty/FinancialCapability/ID` = **FC-1**  
+  Turnover.
+- `MainQualifyingParty/FinancialCapability/ValueAmount` = **9200000.00** (currencyID `XBL`)  
+  Yearly turnover, in lume.
+- `MainQualifyingParty/CompletedTask/AnnualAverageAmount` = **180000.00** (currencyID `XBL`)  
+  A year, similar supplies.
+- `MainQualifyingParty/CompletedTask/TotalTaskAmount` = **540000.00** (currencyID `XBL`)  
+  Three years.
+- `MainQualifyingParty/CompletedTask/PartyCapacityAmount` = **540000.00** (currencyID `XBL`)  
+  All by itself.
+- `MainQualifyingParty/CompletedTask/Description` = **Benches for Ferrano's parks.**  
+  The task.
+- `MainQualifyingParty/CompletedTask/SuppliedEvidence/ID` = **EV-FER-PARKS**  
+  Ferrano's reference letter.
+- `MainQualifyingParty/CompletedTask/Period/StartDate` = **2023-01-01**  
+  From.
+- `MainQualifyingParty/CompletedTask/Period/EndDate` = **2025-12-31**  
+  To.
+- `MainQualifyingParty/CompletedTask/RecipientCustomerParty/Party/PartyName/Name` = **City of Ferrano**  
+  The customer.
+- `MainQualifyingParty/Declaration/ID` = **DEC-1**  
+  A declaration.
+- `MainQualifyingParty/Declaration/Name` = **No conflict of interest**  
+  Name.
+- `MainQualifyingParty/Declaration/DeclarationTypeCode` = **Integrity**  
+  Its kind.
+- `MainQualifyingParty/Declaration/Description` = **No ties with the department's officers.**  
+  What.
+- `MainQualifyingParty/Declaration/SuppliedEvidence/ID` = **EV-DEC-1**  
+  The signed declaration.
 - `MainQualifyingParty/Party/WebsiteURI` = **https://www.valdara.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
@@ -149,6 +224,14 @@ Inside `TendererPartyQualification`:
   The network in which the address is registered: the world's own exchange network.
 - `MainQualifyingParty/Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `MainQualifyingParty/EconomicOperatorRole/RoleCode` = **Lead**  
+  The lead.
+- `MainQualifyingParty/EconomicOperatorRole/RoleDescription` = **Leads.**  
+  Role.
+- `AdditionalQualifyingParty/ParticipationPercent` = **20**  
+  Saltmere's share.
+- `AdditionalQualifyingParty/TendererRoleCode` = **Subcontractor**  
+  For the installation.
 - `AdditionalQualifyingParty/Party/IndustryClassificationCode` = **4290** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Saltmere Engineering (world/parties.json).
 - `AdditionalQualifyingParty/Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -333,6 +416,22 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Evidence
+
+Inside `Evidence`:
+
+- `ID` = **EV-FER-PARKS**  
+  The reference.
+- `Name` = **Ferrano reference**  
+  Name.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **VI-ESPD-26**  
+  The self-declaration.
+
 ## The document
 
 ```xml
@@ -347,8 +446,79 @@ Inside `ContractingParty`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>08:52:00</cbc:IssueTime>
+  <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-TQ</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:TendererPartyQualification>
+    <cac:InterestedProcurementProjectLot>
+      <cbc:ID>LOT-1</cbc:ID>
+    </cac:InterestedProcurementProjectLot>
+    <cac:InterestedProcurementProjectLot>
+      <cbc:ID>LOT-2</cbc:ID>
+    </cac:InterestedProcurementProjectLot>
     <cac:MainQualifyingParty>
+      <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
+      <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
+      <cbc:OperatingYearsQuantity unitCode="ANN">41</cbc:OperatingYearsQuantity>
+      <cbc:EmployeeQuantity unitCode="C62">180</cbc:EmployeeQuantity>
+      <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
+      <cbc:BusinessIdentityEvidenceID>XU-R-104274</cbc:BusinessIdentityEvidenceID>
+      <cbc:TendererRoleCode>Lead</cbc:TendererRoleCode>
+      <cac:BusinessClassificationScheme>
+        <cbc:ID>ISIC4</cbc:ID>
+        <cac:ClassificationCategory>
+          <cbc:CodeValue>3100</cbc:CodeValue>
+        </cac:ClassificationCategory>
+      </cac:BusinessClassificationScheme>
+      <cac:TechnicalCapability>
+        <cbc:ID>TC-1</cbc:ID>
+        <cbc:Description>4,000 benches a year.</cbc:Description>
+        <cbc:ValueQuantity unitCode="H87">4000</cbc:ValueQuantity>
+      </cac:TechnicalCapability>
+      <cac:FinancialCapability>
+        <cbc:ID>FC-1</cbc:ID>
+        <cbc:ValueAmount currencyID="XBL">9200000.00</cbc:ValueAmount>
+      </cac:FinancialCapability>
+      <cac:CompletedTask>
+        <cbc:AnnualAverageAmount currencyID="XBL">180000.00</cbc:AnnualAverageAmount>
+        <cbc:TotalTaskAmount currencyID="XBL">540000.00</cbc:TotalTaskAmount>
+        <cbc:PartyCapacityAmount currencyID="XBL">540000.00</cbc:PartyCapacityAmount>
+        <cbc:Description>Benches for Ferrano's parks.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-FER-PARKS</cbc:ID>
+        </cac:SuppliedEvidence>
+        <cac:Period>
+          <cbc:StartDate>2023-01-01</cbc:StartDate>
+          <cbc:EndDate>2025-12-31</cbc:EndDate>
+        </cac:Period>
+        <cac:RecipientCustomerParty>
+          <cac:Party>
+            <cac:PartyName>
+              <cbc:Name>City of Ferrano</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+        </cac:RecipientCustomerParty>
+      </cac:CompletedTask>
+      <cac:Declaration>
+        <cbc:ID>DEC-1</cbc:ID>
+        <cbc:Name>No conflict of interest</cbc:Name>
+        <cbc:DeclarationTypeCode>Integrity</cbc:DeclarationTypeCode>
+        <cbc:Description>No ties with the department's officers.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-DEC-1</cbc:ID>
+        </cac:SuppliedEvidence>
+      </cac:Declaration>
       <cac:Party>
         <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -459,8 +629,14 @@ Inside `ContractingParty`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:Party>
+      <cac:EconomicOperatorRole>
+        <cbc:RoleCode>Lead</cbc:RoleCode>
+        <cbc:RoleDescription>Leads.</cbc:RoleDescription>
+      </cac:EconomicOperatorRole>
     </cac:MainQualifyingParty>
     <cac:AdditionalQualifyingParty>
+      <cbc:ParticipationPercent>20</cbc:ParticipationPercent>
+      <cbc:TendererRoleCode>Subcontractor</cbc:TendererRoleCode>
       <cac:Party>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
@@ -628,5 +804,12 @@ Inside `ContractingParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:Evidence>
+    <cbc:ID>EV-FER-PARKS</cbc:ID>
+    <cbc:Name>Ferrano reference</cbc:Name>
+  </cac:Evidence>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-ESPD-26</cbc:ID>
+  </cac:AdditionalDocumentReference>
 </TendererQualification>
 ```
