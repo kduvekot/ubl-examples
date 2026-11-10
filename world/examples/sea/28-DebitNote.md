@@ -609,6 +609,10 @@ Inside `DebitNoteLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `OriginatorParty/PartyName/Name` = **Island Customs Service**  
   A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyName/Name` = **Island Customs Service**  
@@ -1080,6 +1084,14 @@ Inside `DebitNoteLine`:
         <cbc:Name>Island Customs Service</cbc:Name>
       </cac:PartyName>
     </cac:OriginatorParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>

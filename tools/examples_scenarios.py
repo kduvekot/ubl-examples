@@ -6953,3 +6953,265 @@ def _(f, n, doc, out):
             ext["TaxTotal"] = {"TaxAmount": amount(tax, "XUF", "The tax on the price extension, before the line's "
                                                               "allowance.")}
     return {}
+
+
+# --- Coverage completion, batch B: who the goods are for, line references and transport plans ------------------
+# The island trader buys the benches for the Port of Selanu, which furnishes its harbour park with them
+# ("Harbour parks Selanu", the buyer's project): the port originated the purchase and benefits from it.
+HARBOUR = "16-xl"
+
+
+def for_harbour(why="The Port of Selanu, for whose harbour park the trader buys the benches."):
+    return {"OriginatorCustomerParty": {"Party": party(HARBOUR, short=True)},
+            "BeneficiaryParty": party(HARBOUR, short=True)}
+
+
+def find_dicts(x, key):
+    """Every dict below x that has the key."""
+    if isinstance(x, dict):
+        if key in x:
+            yield x
+        for v in x.values():
+            if not isinstance(v, V):
+                yield from find_dicts(v, key)
+    elif isinstance(x, list):
+        for v in x:
+            yield from find_dicts(v, key)
+
+
+@enrich("sea", "Order")
+def _(f, n, doc, out):
+    for i, ol in enumerate(lines_of(out, "OrderLine"), 1):
+        li = ol["LineItem"]
+        li["UUID"] = line_uuid(f, "order", i)
+        li["OriginatorParty"] = party(HARBOUR, short=True)
+        li["BeneficiaryParty"] = party(HARBOUR, short=True)
+    out["OrderLine"][0]["LineItem"]["OrderedShipment"] = {
+        "Shipment": {"ID": V("VT-SH-PLAN-1", "The shipment the buyer plans for this line: one container."),
+                     "ShippingPriorityLevelCode": V("Normal", "No urgency for the sea part.")},
+        "Package": {"ID": V("PAL", "Packed on pallets."), "Quantity": qty(24, "C62", "24 pallets of four "
+                                                                                       "benches."),
+                    "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}}
+    return for_harbour()
+
+
+@enrich("sea", "OrderResponse")
+def _(f, n, doc, out):
+    return {**for_harbour(), "OriginatorDocumentReference": {"ID": V("PS-REQ-26-0031", "The Port of Selanu's "
+                                                                                       "request to the trader, "
+                                                                                       "which the order "
+                                                                                       "follows.")}}
+
+
+@enrich("sea", "DespatchAdvice")
+def _(f, n, doc, out):
+    return for_harbour()
+
+
+@enrich("sea", "Invoice")
+def _(f, n, doc, out):
+    if doc["from"] != "6-xb":
+        return {}
+    for ln in lines_of(out, "InvoiceLine"):
+        ln["BeneficiaryParty"] = party(HARBOUR, short=True)
+    terms = out["PaymentTerms"]
+    terms[1]["ValidityPeriod"] = {"StartDate": V(f.date(14), "The terms apply from the invoice date"),
+                                  "EndDate": V(f.date(59), "until the balance is due.")}
+    terms[1]["ExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The invoice currency."),
+                                "TargetCurrencyCode": V("XLC", "The buyer's currency, in which it shows the "
+                                                               "balance too."),
+                                "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The reference rate."),
+                                "MathematicOperatorCode": V("Multiply", "Lume times the rate."),
+                                "Date": V(f.date(14), "Of the invoice date.")}
+    pm = out["PaymentMeans"]
+    pm["CreditAccount"] = {"AccountID": V("HF-CL-VT-001", "The credit line the factor granted the buyer, against "
+                                                          "which the receivable is held.")}
+    return for_harbour()
+
+
+@enrich("sea", "Statement")
+def _(f, n, doc, out):
+    for ln in lines_of(out, "StatementLine"):
+        ln["UUID"] = line_uuid(f, "statement", ln["ID"].value)
+        ln["OriginatorCustomerParty"] = {"Party": party(HARBOUR, short=True)}
+        ln["BeneficiaryParty"] = party(HARBOUR, short=True)
+    return {**for_harbour(), "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax in the account: the goods were "
+                                                                        "exported.")}}
+
+
+@enrich("sea", "RemittanceAdvice")
+def _(f, n, doc, out):
+    for ln in lines_of(out, "RemittanceAdviceLine"):
+        ln["UUID"] = line_uuid(f, "remittance", ln["ID"].value)
+        ln["OriginatorCustomerParty"] = {"Party": party(HARBOUR, short=True)}
+        ln["BeneficiaryParty"] = party(HARBOUR, short=True)
+    return {}
+
+
+@enrich("sea", "DebitNote")
+def _(f, n, doc, out):
+    for ln in lines_of(out, "DebitNoteLine"):
+        ln["BeneficiaryParty"] = party("1-xl", short=True)
+    return {}
+
+
+@enrich("furniture", "Order")
+def _(f, n, doc, out):
+    if n != 8:
+        return {}
+    li = out["OrderLine"][0]["LineItem"]
+    ext = Decimal(li["LineExtensionAmount"].value)
+    li["UUID"] = line_uuid(f, "order", 1)
+    li["ItemPriceExtension"] = {"Amount": amount(ext, "XBL", "The price times the quantity, before any allowance.")}
+    li["TaxTotal"] = {"TaxAmount": amount(0, "XBL", "No sales tax: the store buys for resale.")}
+    li["LineReference"] = {"LineID": V("1", "The line of the quotation the order line takes up."),
+                           "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation.")}}
+    return {}
+
+
+@enrich("furniture", "OrderCancellation")
+def _(f, n, doc, out):
+    return {"OriginatorCustomerParty": {"Party": party("26-xb", short=True)},
+            "BeneficiaryParty": party("26-xb", short=True)}
+
+
+@enrich("furniture", "RequestForQuotation")
+def _(f, n, doc, out):
+    return {"BeneficiaryParty": party("26-xb", short=True)}
+
+
+@enrich("furniture", "Invoice")
+def _(f, n, doc, out):
+    if n == 17:
+        out["InvoiceLine"][1]["BillingReference"] = {
+            "AdditionalDocumentReference": {"ID": V(f.numbers["work-report"], "The approved work report the "
+                                                                               "installation is billed on.")}}
+    return {}
+
+
+@enrich("road", "OrderResponse")
+def _(f, n, doc, out):
+    for i, ol in enumerate(lines_of(out, "OrderLine"), 1):
+        olr = ol.get("OrderLineReference")
+        if isinstance(olr, dict):
+            olr["UUID"] = line_uuid(FLOWS["road"], "order", i)
+            olr["LineStatusCode"] = V("NoStatus" if i == 1 else "Revised", "The line as ordered." if i == 1 else
+                                      "The line is answered with a substitute.")
+        ol["DocumentReference"] = {"ID": V("VI-DS-B180" if i == 1 else "VI-DS-C180-2026", "The datasheet of the "
+                                                                                          "item confirmed.")}
+    return {}
+
+
+@enrich("retail", "Invoice")
+def _(f, n, doc, out):
+    if doc["from"] != "6-xb":
+        return {}
+    ln = out["InvoiceLine"][0] if isinstance(out["InvoiceLine"], list) else out["InvoiceLine"]
+    ln.update({
+        "UUID": line_uuid(f, "invoice", 1),
+        "TaxPointDate": V(f.date(18), "The day the goods were delivered."),
+        "DespatchLineReference": {"LineID": V("1", "The despatch line."),
+                                  "DocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
+        "ReceiptLineReference": {"LineID": V("1", "The receipt line, with the damaged carton."),
+                                 "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice.")}},
+        "DocumentReference": {"ID": V("LD-DS-B180", "The distributor's datasheet for the bench.")},
+        "PricingReference": {"OriginalItemLocationQuantity": {
+            "LeadTimeMeasure": V("5", "As in the catalogue.", unitCode="DAY")}},
+        "DeliveryTerms": {"ID": V("DDP", "Delivered duty paid, the store's shop, as for the whole order.",
+                                  schemeID="INCOTERMS")},
+        "PaymentTerms": {"Note": V("The promotion stock is paid with the invoice, 30 days net.", "The line's "
+                                                                                                   "terms.")}})
+    return {}
+
+
+@enrich("retail", "ReceiptAdvice")
+def _(f, n, doc, out):
+    for ln in lines_of(out, "ReceiptLine"):
+        ln["UUID"] = line_uuid(f, "receipt", ln["ID"].value)
+        ln["DocumentReference"] = {"ID": V("BS-PHOTO-26-0118", "The photograph of the damaged carton.")}
+    return {}
+
+
+@enrich("sea", "BillOfLading")
+def _(f, n, doc, out):
+    for gic in find_dicts(out, "GoodsItemContainer"):
+        gic["GoodsItemContainer"]["TransportEquipment"] = {"ID": V(CONTAINER, "The container itself, as "
+                                                                              "equipment.")}
+    for ip in find_dicts(out, "InsurancePolicy"):
+        pol = ip["InsurancePolicy"]
+        pol["BrokerParty"] = party("10-xb", short=True)
+        pol["ExcessAmount"] = amount(Decimal("250.00"), "XBL", "The excess per claim, as in the policy.")
+    return {}
+
+
+@enrich("sea", "Manifest")
+def _(f, n, doc, out):
+    for p in lines_of(out, "CrewPerson") + lines_of(out, "PassengerPerson"):
+        p["GenderCode"] = V("0", "ISO 5218 code 0: not known; the manifest does not record it.")
+    return {}
+
+
+@enrich("retail", "Catalogue")
+def _(f, n, doc, out):
+    for d in find_dicts(out, "DependentPriceReference"):
+        d["DependentPriceReference"]["LocationAddress"] = {
+            "CountrySubentity": V("Coastal State", "The price applies to deliveries in the store's state."),
+            "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}
+    for cl in lines_of(out, "CatalogueLine"):
+        it = cl.get("Item")
+        if isinstance(it, dict):
+            it["ItemTypeCode"] = V("Product", "A physical product, not a service.")
+    return {}
+
+
+@enrich("retail", "CatalogueRequest")
+def _(f, n, doc, out):
+    for d in find_dicts(out, "ClassificationCategory"):
+        cc = d["ClassificationCategory"]
+        if isinstance(cc, dict):
+            cc["Description"] = V("Outdoor furniture and its spare parts.", "What the category holds.")
+            cc["CategorizesClassificationCategory"] = {"Name": V("Spare parts", "A subcategory the store wants "
+                                                                                 "too."),
+                                                        "CodeValue": V("FUR-OUT-SP", "Its code.")}
+    return {}
+
+
+@enrich("ore", "TransportExecutionPlanRequest")
+def _(f, n, doc, out):
+    return {"DocumentStatusReasonCode": V("Update", "The request updates the season's standing plan."),
+            "DocumentStatusReasonDescription": V("This week's quantity of ore differs from the standing plan.",
+                                                 "Why it is sent."),
+            "TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan for the ore "
+                                                                                   "season, agreed in January "
+                                                                                   "(not shown).")},
+            "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The rail carrier's published "
+                                                                                   "service description (not "
+                                                                                   "shown).")},
+            "AdditionalDocumentReference": {"ID": V("SM-ASSAY-26-11", "The assay of the ore lot.")},
+            "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TEPR"),
+            "AtLocation": {"Name": V("Serravona mine siding", "Where the wagons are loaded.")},
+            "AdditionalTransportationService": {"TransportServiceCode": V("Weighing", "The wagons are weighed at "
+                                                                                     "the siding."),
+                                                "TariffClassCode": V("B", "The carrier's tariff class.")},
+            "TransportExecutionTerms": {"TransportUserSpecialTerms": V("Wagons sheeted against dust.", "A term "
+                                                                                                   "asked.")}}
+
+
+@enrich("ore", "TransportExecutionPlan")
+def _(f, n, doc, out):
+    for d in find_dicts(out, "NotificationRequirement"):
+        for nr in lines_of(d, "NotificationRequirement"):
+            nr["NotificationPeriod"] = {"StartDate": V(f.date(2), "Notices are given from the day of the plan"),
+                                        "EndDate": V(f.date(6), "until the ore is delivered.")}
+    return {"TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan this plan "
+                                                                                   "updates (not shown).")},
+            "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The service description it "
+                                                                                   "follows.")},
+            "AdditionalDocumentReference": {"ID": V("FRC-WAGON-LIST-11", "The list of wagons.")},
+            "TransportExecutionTerms": {
+                "DeliveryTerms": {"ID": V("FCA", "The buyer's terms with the mine, for the carrier's information.",
+                                          schemeID="INCOTERMS")},
+                "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2", "Greenhouse gases as CO2 "
+                                                                                    "equivalent."),
+                                          "ValueMeasure": V("1.9", "Estimated for the trip, electric traction.",
+                                                            unitCode="TNE")}}}

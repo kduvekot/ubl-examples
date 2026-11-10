@@ -278,6 +278,11 @@
     <cac:ClassificationCategory>
       <cbc:Name>Seats</cbc:Name>
       <cbc:CodeValue>9401</cbc:CodeValue>
+      <cbc:Description>Outdoor furniture and its spare parts.</cbc:Description>
+      <cac:CategorizesClassificationCategory>
+        <cbc:Name>Spare parts</cbc:Name>
+        <cbc:CodeValue>FUR-OUT-SP</cbc:CodeValue>
+      </cac:CategorizesClassificationCategory>
     </cac:ClassificationCategory>
   </cac:RequestedClassificationScheme>
   <cac:CatalogueRequestLine>

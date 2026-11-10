@@ -242,6 +242,7 @@
     <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:UUID>4278e92c-6141-5575-b08f-555e19cf4b75</cbc:UUID>
       <cbc:Note>The store's own line: bench and two chairs per set.</cbc:Note>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
@@ -328,6 +329,18 @@
           <cbc:Name>Brackenmere Furniture</cbc:Name>
         </cac:PartyName>
       </cac:WarrantyParty>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      </cac:TaxTotal>
+      <cac:ItemPriceExtension>
+        <cbc:Amount currencyID="XBL">12200.00</cbc:Amount>
+      </cac:ItemPriceExtension>
+      <cac:LineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>BF-DOC-26-0568</cbc:ID>
+        </cac:DocumentReference>
+      </cac:LineReference>
     </cac:LineItem>
     <cac:QuotationLineReference>
       <cbc:LineID>1</cbc:LineID>

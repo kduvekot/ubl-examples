@@ -802,7 +802,8 @@
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB18BLUM0001466206"
+     "number": "XB18BLUM0001466206",
+     "alias": "Lumeway receivables"
     },
     "industry": "4649",
     "website": "https://www.lumeway.example",
@@ -989,7 +990,9 @@
     "cost_centre": {
      "code": "PWD-PARKS-26",
      "name": "Parks renewal programme 2026"
-    }
+    },
+    "tax_exemption_kind": "Sale to a public body",
+    "tax_registration_office": "Lumeport"
    }
   },
   {

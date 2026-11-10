@@ -332,6 +332,7 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:UUID>add4d37b-e76e-51a8-90dd-0ac065146ca3</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">43778.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
@@ -376,6 +377,24 @@
         </cac:PartyName>
       </cac:Party>
     </cac:SellerSupplierParty>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:PayeeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
@@ -403,7 +422,26 @@
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:UUID>87f012c8-f767-5ff8-9aa8-8bc8a6a1076a</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">64.00</cbc:CreditLineAmount>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
         <cbc:ID>LD-CN-26-0151</cbc:ID>

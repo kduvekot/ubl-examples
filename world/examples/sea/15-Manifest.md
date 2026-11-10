@@ -407,12 +407,16 @@ Inside `CrewPerson`:
   The master of the ship.
 - `FamilyName` = **Halvard**  
   The family name.
+- `GenderCode` = **0**  
+  ISO 5218 code 0: not known; the manifest does not record it.
 - `RoleCode` = **Master**  
   The person's role on board.
 - `FirstName` = **Elsbeth**  
   The chief officer.
 - `FamilyName` = **Marrin**  
   The family name.
+- `GenderCode` = **0**  
+  ISO 5218 code 0: not known; the manifest does not record it.
 - `RoleCode` = **ChiefOfficer**  
   The person's role on board.
 
@@ -424,6 +428,8 @@ Inside `PassengerPerson`:
   The one passenger: a supercargo travelling with the cargo.
 - `FamilyName` = **Tavari**  
   The family name.
+- `GenderCode` = **0**  
+  ISO 5218 code 0: not known; the manifest does not record it.
 - `RoleCode` = **Passenger**  
   The person's role on board.
 
@@ -871,16 +877,19 @@ Inside `Signature`:
   <cac:CrewPerson>
     <cbc:FirstName>Corin</cbc:FirstName>
     <cbc:FamilyName>Halvard</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>Master</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:CrewPerson>
     <cbc:FirstName>Elsbeth</cbc:FirstName>
     <cbc:FamilyName>Marrin</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:PassengerPerson>
     <cbc:FirstName>Ines</cbc:FirstName>
     <cbc:FamilyName>Tavari</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>Passenger</cbc:RoleCode>
   </cac:PassengerPerson>
   <cac:Shipment>

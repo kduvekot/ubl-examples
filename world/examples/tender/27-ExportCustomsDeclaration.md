@@ -540,8 +540,16 @@ Inside `CustomsDeclaration`:
   Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PartyTaxScheme/TaxLevelCode` = **State**  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `ConsigneeParty/PartyTaxScheme/ExemptionReasonCode` = **XB-PUBLIC**  
+  The exemption as a code of the world's exemption list (world/countries.json): sale to a public body.
 - `ConsigneeParty/PartyTaxScheme/ExemptionReason` = **Public bodies are exempt from the state sales tax**  
   Why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
+- `ConsigneeParty/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
+  Where the party is registered for the tax.
+- `ConsigneeParty/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
+  Its state.
+- `ConsigneeParty/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB**  
+  Its country.
 - `ConsigneeParty/PartyTaxScheme/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of Bayvarra's state sales tax.
 - `ConsigneeParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
@@ -1144,7 +1152,15 @@ Inside `Signature`:
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode>XB-PUBLIC</cbc:ExemptionReasonCode>
         <cbc:ExemptionReason>Public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
           <cbc:CurrencyCode>XBL</cbc:CurrencyCode>

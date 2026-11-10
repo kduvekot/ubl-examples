@@ -30,6 +30,10 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   The time the sender's system issued the document, in the sender's local time.
 - `DocumentStatusCode` = **NoStatus**  
   A new request, without a status yet.
+- `DocumentStatusReasonCode` = **Update**  
+  The request updates the season's standing plan.
+- `DocumentStatusReasonDescription` = **This week's quantity of ore differs from the standing plan.**  
+  Why it is sent.
 - `Note` = **The ore train from the mine siding to the factory.**  
   The transport asked for.
 - `TransportUserRemarks` = **Please confirm by return.**  
@@ -278,6 +282,38 @@ Inside `BillToParty`:
 - `PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
 
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-TEPR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Transport Execution Plan Document Reference
+
+Inside `TransportExecutionPlanDocumentReference`:
+
+- `ID` = **FRC-TEP-26-0001**  
+  The standing plan for the ore season, agreed in January (not shown).
+
+### Transport Service Description Document Reference
+
+Inside `TransportServiceDescriptionDocumentReference`:
+
+- `ID` = **FRC-TSD-26**  
+  The rail carrier's published service description (not shown).
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **SM-ASSAY-26-11**  
+  The assay of the ore lot.
+
 ### Transport Contract
 
 Inside `TransportContract`:
@@ -300,6 +336,15 @@ Inside `MainTransportationService`:
   The main service: rail.
 - `Name` = **Container train**  
   In words.
+
+### Additional Transportation Service
+
+Inside `AdditionalTransportationService`:
+
+- `TransportServiceCode` = **Weighing**  
+  The wagons are weighed at the siding.
+- `TariffClassCode` = **B**  
+  The carrier's tariff class.
 
 ### Service Start Time Period
 
@@ -368,6 +413,20 @@ Inside `ToLocation`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
 - `Address/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
+
+### At Location
+
+Inside `AtLocation`:
+
+- `Name` = **Serravona mine siding**  
+  Where the wagons are loaded.
+
+### Transport Execution Terms
+
+Inside `TransportExecutionTerms`:
+
+- `TransportUserSpecialTerms` = **Wagons sheeted against dust.**  
+  A term asked.
 
 ### Consignment
 
@@ -511,6 +570,8 @@ Inside `Consignment`:
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cbc:IssueTime>09:24:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:DocumentStatusReasonCode>Update</cbc:DocumentStatusReasonCode>
+  <cbc:DocumentStatusReasonDescription>This week's quantity of ore differs from the standing plan.</cbc:DocumentStatusReasonDescription>
   <cbc:Note>The ore train from the mine siding to the factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
@@ -728,6 +789,26 @@ Inside `Consignment`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
   </cac:BillToParty>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-TEPR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:TransportExecutionPlanDocumentReference>
+    <cbc:ID>FRC-TEP-26-0001</cbc:ID>
+  </cac:TransportExecutionPlanDocumentReference>
+  <cac:TransportServiceDescriptionDocumentReference>
+    <cbc:ID>FRC-TSD-26</cbc:ID>
+  </cac:TransportServiceDescriptionDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SM-ASSAY-26-11</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>
   </cac:TransportContract>
@@ -738,6 +819,10 @@ Inside `Consignment`:
     <cbc:TransportServiceCode>RAIL</cbc:TransportServiceCode>
     <cbc:Name>Container train</cbc:Name>
   </cac:MainTransportationService>
+  <cac:AdditionalTransportationService>
+    <cbc:TransportServiceCode>Weighing</cbc:TransportServiceCode>
+    <cbc:TariffClassCode>B</cbc:TariffClassCode>
+  </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-03-10</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
@@ -778,6 +863,12 @@ Inside `Consignment`:
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
+  <cac:AtLocation>
+    <cbc:Name>Serravona mine siding</cbc:Name>
+  </cac:AtLocation>
+  <cac:TransportExecutionTerms>
+    <cbc:TransportUserSpecialTerms>Wagons sheeted against dust.</cbc:TransportUserSpecialTerms>
+  </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>

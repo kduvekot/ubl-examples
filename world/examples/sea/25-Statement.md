@@ -274,6 +274,24 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Payee Party
 
 Inside `PayeeParty`:
@@ -439,6 +457,13 @@ Inside `PaymentTerms`:
 - `PaymentDueDate` = **2026-06-28**  
   The due date.
 
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax in the account: the goods were exported.
+
 ### Statement Line
 
 Inside `StatementLine`:
@@ -447,6 +472,8 @@ Inside `StatementLine`:
   The open invoice.
 - `Note` = **The invoice, bought by the factor.**  
   What the line shows.
+- `UUID` = **56439119-78e3-59ec-bc7d-84c3d3a46f09**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `BalanceBroughtForwardIndicator` = **false**  
   A new item, not a balance carried over.
 - `DebitLineAmount` = **53778.00** (currencyID `XBL`)  
@@ -464,6 +491,14 @@ Inside `StatementLine`:
 - `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorCustomerParty/Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorCustomerParty/Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
   A party referred to from another party's details: its identifier and name are enough.
 - `AccountingCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -493,12 +528,22 @@ Inside `StatementLine`:
   The deposit.
 - `Note` = **Paid to the distributor before the invoice was assigned.**  
   Why it is a credit.
+- `UUID` = **16aec267-0a53-5561-ad4f-79c534c1d918**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `CreditLineAmount` = **10000.00** (currencyID `XBL`)  
   The deposit.
 - `BalanceAmount` = **43778.00** (currencyID `XBL`)  
   Open after the deposit: what the buyer still owes.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Paid by credit transfer.
+- `OriginatorCustomerParty/Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorCustomerParty/Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `InvoicePeriod/StartDate` = **2026-05-08**  
   The order's deposit period.
 - `InvoicePeriod/EndDate` = **2026-05-09**  
@@ -729,6 +774,24 @@ Inside `StatementLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:PayeeParty>
     <cbc:WebsiteURI>https://www.harbourline.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">6499</cbc:IndustryClassificationCode>
@@ -860,9 +923,13 @@ Inside `StatementLine`:
     <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
   </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+  </cac:TaxTotal>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The invoice, bought by the factor.</cbc:Note>
+    <cbc:UUID>56439119-78e3-59ec-bc7d-84c3d3a46f09</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
     <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">53778.00</cbc:BalanceAmount>
@@ -890,6 +957,24 @@ Inside `StatementLine`:
         </cac:PartyName>
       </cac:Party>
     </cac:SellerSupplierParty>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:AccountingCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -936,11 +1021,30 @@ Inside `StatementLine`:
   <cac:StatementLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Paid to the distributor before the invoice was assigned.</cbc:Note>
+    <cbc:UUID>16aec267-0a53-5561-ad4f-79c534c1d918</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">10000.00</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XBL">43778.00</cbc:BalanceAmount>
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-05-08</cbc:StartDate>
       <cbc:EndDate>2026-05-09</cbc:EndDate>

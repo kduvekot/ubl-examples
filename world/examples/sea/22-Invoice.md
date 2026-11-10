@@ -359,6 +359,24 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Delivery
 
 Inside `Delivery`:
@@ -509,6 +527,8 @@ Inside `PaymentMeans`:
   Its country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
+- `CreditAccount/AccountID` = **HF-CL-VT-001**  
+  The credit line the factor granted the buyer, against which the receivable is held.
 - `TradeFinancing/ID` = **HF-FA-2026-007/18**  
   The financing of this receivable under the factoring agreement.
 - `TradeFinancing/FinancingInstrumentCode` = **Factoring**  
@@ -620,6 +640,20 @@ Inside `PaymentTerms`:
   From the day after the due date.
 - `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
   Per month.
+- `ExchangeRate/SourceCurrencyCode` = **XBL**  
+  The invoice currency.
+- `ExchangeRate/TargetCurrencyCode` = **XLC**  
+  The buyer's currency, in which it shows the balance too.
+- `ExchangeRate/CalculationRate` = **0.4**  
+  The reference rate.
+- `ExchangeRate/MathematicOperatorCode` = **Multiply**  
+  Lume times the rate.
+- `ExchangeRate/Date` = **2026-05-18**  
+  Of the invoice date.
+- `ValidityPeriod/StartDate` = **2026-05-18**  
+  The terms apply from the invoice date
+- `ValidityPeriod/EndDate` = **2026-07-02**  
+  until the balance is due.
 
 ### Prepaid Payment
 
@@ -740,6 +774,10 @@ Inside `InvoiceLine`:
   96 × 520.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -970,6 +1008,10 @@ Inside `InvoiceLine`:
   12 × 64.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **2**  
   The order line this invoice line bills.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
@@ -1301,6 +1343,24 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:Delivery>
     <cac:DeliveryParty>
       <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
@@ -1424,6 +1484,9 @@ Inside `InvoiceLine`:
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
+    <cac:CreditAccount>
+      <cbc:AccountID>HF-CL-VT-001</cbc:AccountID>
+    </cac:CreditAccount>
     <cac:TradeFinancing>
       <cbc:ID>HF-FA-2026-007/18</cbc:ID>
       <cbc:FinancingInstrumentCode>Factoring</cbc:FinancingInstrumentCode>
@@ -1527,6 +1590,17 @@ Inside `InvoiceLine`:
       <cbc:StartDate>2026-06-29</cbc:StartDate>
       <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
+    <cac:ExchangeRate>
+      <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+      <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+      <cbc:CalculationRate>0.4</cbc:CalculationRate>
+      <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+      <cbc:Date>2026-05-18</cbc:Date>
+    </cac:ExchangeRate>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-05-18</cbc:StartDate>
+      <cbc:EndDate>2026-07-02</cbc:EndDate>
+    </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
     <cbc:ID>VT-DEP-26-0412</cbc:ID>
@@ -1602,6 +1676,14 @@ Inside `InvoiceLine`:
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1809,6 +1891,14 @@ Inside `InvoiceLine`:
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

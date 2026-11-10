@@ -264,7 +264,12 @@
     </cac:LineItem>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
+      <cbc:UUID>da67b26b-2501-5b9b-9b6f-d03d5ce50a97</cbc:UUID>
+      <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     </cac:OrderLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-B180</cbc:ID>
+    </cac:DocumentReference>
   </cac:OrderLine>
   <cac:OrderLine>
     <cbc:SubstitutionStatusCode>Substitution</cbc:SubstitutionStatusCode>
@@ -309,6 +314,11 @@
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
       <cbc:SalesOrderLineID>2</cbc:SalesOrderLineID>
+      <cbc:UUID>058a35ee-7283-5e0f-831e-dc6fe709773f</cbc:UUID>
+      <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
     </cac:OrderLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-C180-2026</cbc:ID>
+    </cac:DocumentReference>
   </cac:OrderLine>
 </OrderResponse>

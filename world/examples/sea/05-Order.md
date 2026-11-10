@@ -227,6 +227,24 @@ Inside `SellerSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Accounting Customer Party
 
 Inside `AccountingCustomerParty`:
@@ -360,10 +378,30 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
+- `LineItem/UUID` = **b79591a7-1ff5-5442-b47e-328e3c23e0c7**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Quantity` = **96** (unitCode `H87`)  
   One 40-foot container: 24 pallets of 4 benches.
 - `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `LineItem/OriginatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/OriginatorParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/OrderedShipment/Shipment/ID` = **VT-SH-PLAN-1**  
+  The shipment the buyer plans for this line: one container.
+- `LineItem/OrderedShipment/Shipment/ShippingPriorityLevelCode` = **Normal**  
+  No urgency for the sea part.
+- `LineItem/OrderedShipment/Package/ID` = **PAL**  
+  Packed on pallets.
+- `LineItem/OrderedShipment/Package/Quantity` = **24** (unitCode `C62`)  
+  24 pallets of four benches.
+- `LineItem/OrderedShipment/Package/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
 - `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
@@ -578,10 +616,20 @@ Inside `OrderLine`:
   The repair and maintenance manual.
 - `LineItem/ID` = **2**  
   The line number.
+- `LineItem/UUID` = **6c15f781-fb79-59c5-b7b2-bbd9c564ae2b**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Quantity` = **12** (unitCode `H87`)  
   Spare side frames for the buyer's own service stock.
 - `LineItem/LineExtensionAmount` = **768.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `LineItem/OriginatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/OriginatorParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
@@ -793,6 +841,24 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -901,8 +967,36 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:UUID>b79591a7-1ff5-5442-b47e-328e3c23e0c7</cbc:UUID>
       <cbc:Quantity unitCode="H87">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cac:OriginatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginatorParty>
+      <cac:BeneficiaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:BeneficiaryParty>
+      <cac:OrderedShipment>
+        <cac:Shipment>
+          <cbc:ID>VT-SH-PLAN-1</cbc:ID>
+          <cbc:ShippingPriorityLevelCode>Normal</cbc:ShippingPriorityLevelCode>
+        </cac:Shipment>
+        <cac:Package>
+          <cbc:ID>PAL</cbc:ID>
+          <cbc:Quantity unitCode="C62">24</cbc:Quantity>
+          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        </cac:Package>
+      </cac:OrderedShipment>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
@@ -1100,8 +1194,25 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
+      <cbc:UUID>6c15f781-fb79-59c5-b7b2-bbd9c564ae2b</cbc:UUID>
       <cbc:Quantity unitCode="H87">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+      <cac:OriginatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginatorParty>
+      <cac:BeneficiaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:BeneficiaryParty>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>

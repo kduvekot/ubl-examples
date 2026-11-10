@@ -1088,6 +1088,8 @@ Inside `Shipment`:
   The container the goods are in.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **25** (unitCode `C62`)  
   25 pallets in it.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **TWLU4120872**  
+  The container itself, as equipment.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/ID` = **1.1**  
   The benches.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/Description` = **Park benches**  
@@ -1146,8 +1148,14 @@ Inside `Shipment`:
   110 % of the CIF value.
 - `Consignment/InsurancePolicy/DeductibleAmount` = **250.00** (currencyID `XBL`)  
   The part of a claim the insured bears.
+- `Consignment/InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
+  The excess per claim, as in the policy.
 - `Consignment/InsurancePolicy/InsurancePremiumAmount` = **140.00** (currencyID `XBL`)  
   The premium.
+- `Consignment/InsurancePolicy/BrokerParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/InsurancePolicy/BrokerParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/InsurancePolicy/PolicyHolderParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/InsurancePolicy/PolicyHolderParty/PartyName/Name` = **Lumeway Distribution**  
@@ -1160,6 +1168,8 @@ Inside `Shipment`:
   The insurance certificate that goes with the documents.
 - `InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
   The insured value, 110 % of the CIF value.
+- `InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
+  The excess per claim, as in the policy.
 - `InsurancePolicy/InsurerParty/WebsiteURI` = **https://www.wavesure.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/IndustryClassificationCode` = **6512** (listID `ISIC Rev.4`)  
@@ -1254,6 +1264,10 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `InsurancePolicy/InsurerParty/ElectronicAddress/ElectronicAddressID` = **XB:20411507** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Wavesure Cargo Insurance (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `InsurancePolicy/BrokerParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `InsurancePolicy/BrokerParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Document Reference
 
@@ -2191,6 +2205,9 @@ Inside `Signature`:
             <cac:GoodsItemContainer>
               <cbc:ID>TWLU4120872</cbc:ID>
               <cbc:Quantity unitCode="C62">25</cbc:Quantity>
+              <cac:TransportEquipment>
+                <cbc:ID>TWLU4120872</cbc:ID>
+              </cac:TransportEquipment>
             </cac:GoodsItemContainer>
             <cac:ContainedGoodsItem>
               <cbc:ID>1.1</cbc:ID>
@@ -2265,7 +2282,16 @@ Inside `Signature`:
         <cbc:InsuranceTypeCode>AllRisks</cbc:InsuranceTypeCode>
         <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
+        <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
         <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+        <cac:BrokerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Bayforth Forwarding</cbc:Name>
+          </cac:PartyName>
+        </cac:BrokerParty>
         <cac:PolicyHolderParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -2289,6 +2315,7 @@ Inside `Signature`:
     </cac:Consignment>
     <cac:InsurancePolicy>
       <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
+      <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
       <cac:InsurerParty>
         <cbc:WebsiteURI>https://www.wavesure.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">6512</cbc:IndustryClassificationCode>
@@ -2372,6 +2399,14 @@ Inside `Signature`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411507</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:InsurerParty>
+      <cac:BrokerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Bayforth Forwarding</cbc:Name>
+        </cac:PartyName>
+      </cac:BrokerParty>
     </cac:InsurancePolicy>
   </cac:Shipment>
   <cac:DocumentReference>

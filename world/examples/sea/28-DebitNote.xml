@@ -429,6 +429,14 @@
         <cbc:Name>Island Customs Service</cbc:Name>
       </cac:PartyName>
     </cac:OriginatorParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Velumi Trading</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>

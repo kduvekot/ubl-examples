@@ -302,6 +302,27 @@ Inside `TransportExecutionPlanRequestDocumentReference`:
 - `ID` = **VI-TR-26-0305**  
   The request this plan answers.
 
+### Transport Execution Plan Document Reference
+
+Inside `TransportExecutionPlanDocumentReference`:
+
+- `ID` = **FRC-TEP-26-0001**  
+  The standing plan this plan updates (not shown).
+
+### Transport Service Description Document Reference
+
+Inside `TransportServiceDescriptionDocumentReference`:
+
+- `ID` = **FRC-TSD-26**  
+  The service description it follows.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **FRC-WAGON-LIST-11**  
+  The list of wagons.
+
 ### Transport Contract
 
 Inside `TransportContract`:
@@ -439,6 +460,8 @@ Inside `TransportExecutionTerms`:
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
   When the freight is paid.
+- `DeliveryTerms/ID` = **FCA** (schemeID `INCOTERMS`)  
+  The buyer's terms with the mine, for the carrier's information.
 - `BonusPaymentTerms/Note` = **None.**  
   No bonus for early delivery: the slot is fixed.
 - `CommissionPaymentTerms/Note` = **No commission: booked directly with the carrier.**  
@@ -447,6 +470,10 @@ Inside `TransportExecutionTerms`:
   The penalty for late delivery.
 - `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
   Per day late.
+- `EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2**  
+  Greenhouse gases as CO2 equivalent.
+- `EnvironmentalEmission/ValueMeasure` = **1.9** (unitCode `TNE`)  
+  Estimated for the trip, electric traction.
 - `NotificationRequirement/NotificationTypeCode` = **PreArrival**  
   Notice before arrival.
 - `NotificationRequirement/PostEventNotificationDurationMeasure` = **1** (unitCode `HUR`)  
@@ -457,6 +484,10 @@ Inside `TransportExecutionTerms`:
   A party referred to from another party's details: its identifier and name are enough.
 - `NotificationRequirement/NotifyParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
+- `NotificationRequirement/NotificationPeriod/StartDate` = **2026-03-04**  
+  Notices are given from the day of the plan
+- `NotificationRequirement/NotificationPeriod/EndDate` = **2026-03-08**  
+  until the ore is delivered.
 - `NotificationRequirement/NotificationLocation/Name` = **Valdara Industries**  
   Where the notice is for.
 - `ServiceChargePaymentTerms/Note` = **Waiting time 40 per hour beyond two hours.**  
@@ -838,6 +869,15 @@ Inside `Consignment`:
   <cac:TransportExecutionPlanRequestDocumentReference>
     <cbc:ID>VI-TR-26-0305</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
+  <cac:TransportExecutionPlanDocumentReference>
+    <cbc:ID>FRC-TEP-26-0001</cbc:ID>
+  </cac:TransportExecutionPlanDocumentReference>
+  <cac:TransportServiceDescriptionDocumentReference>
+    <cbc:ID>FRC-TSD-26</cbc:ID>
+  </cac:TransportServiceDescriptionDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FRC-WAGON-LIST-11</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>
     <cbc:ContractType>Framework transport agreement</cbc:ContractType>
@@ -910,6 +950,9 @@ Inside `Consignment`:
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
     </cac:PaymentTerms>
+    <cac:DeliveryTerms>
+      <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
+    </cac:DeliveryTerms>
     <cac:BonusPaymentTerms>
       <cbc:Note>None.</cbc:Note>
     </cac:BonusPaymentTerms>
@@ -920,6 +963,10 @@ Inside `Consignment`:
       <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
       <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>
     </cac:PenaltyPaymentTerms>
+    <cac:EnvironmentalEmission>
+      <cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+      <cbc:ValueMeasure unitCode="TNE">1.9</cbc:ValueMeasure>
+    </cac:EnvironmentalEmission>
     <cac:NotificationRequirement>
       <cbc:NotificationTypeCode>PreArrival</cbc:NotificationTypeCode>
       <cbc:PostEventNotificationDurationMeasure unitCode="HUR">1</cbc:PostEventNotificationDurationMeasure>
@@ -932,6 +979,10 @@ Inside `Consignment`:
           <cbc:Name>Valdara Industries</cbc:Name>
         </cac:PartyName>
       </cac:NotifyParty>
+      <cac:NotificationPeriod>
+        <cbc:StartDate>2026-03-04</cbc:StartDate>
+        <cbc:EndDate>2026-03-08</cbc:EndDate>
+      </cac:NotificationPeriod>
       <cac:NotificationLocation>
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:NotificationLocation>

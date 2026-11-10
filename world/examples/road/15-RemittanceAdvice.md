@@ -291,6 +291,8 @@ Inside `PaymentMeans`:
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Lumeway Distribution Ltd**  
   The account holder, as the bank knows it.
+- `PayerFinancialAccount/AliasName` = **Lumeway receivables**  
+  The short name the holder gave the account, shown in its bank's app.
 - `PayerFinancialAccount/AccountTypeCode` = **Current**  
   A current account, for payments in and out.
 - `PayerFinancialAccount/AccountFormatCode` = **ISO13616**  
@@ -619,6 +621,7 @@ Inside `RemittanceAdviceLine`:
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
+      <cbc:AliasName>Lumeway receivables</cbc:AliasName>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XBL</cbc:CurrencyCode>

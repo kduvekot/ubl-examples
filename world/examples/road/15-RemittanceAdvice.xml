@@ -229,6 +229,7 @@
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
+      <cbc:AliasName>Lumeway receivables</cbc:AliasName>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XBL</cbc:CurrencyCode>

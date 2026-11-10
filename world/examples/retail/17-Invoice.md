@@ -556,10 +556,28 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
+- `UUID` = **09323e18-1b75-5598-8829-c136e146de6a**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `InvoicedQuantity` = **24** (unitCode `H87`)  
   The benches despatched.
 - `LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   24 × 520.0, rounded to the minor unit of the currency.
+- `TaxPointDate` = **2026-05-08**  
+  The day the goods were delivered.
+- `DespatchLineReference/LineID` = **1**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
+  The despatch advice.
+- `ReceiptLineReference/LineID` = **1**  
+  The receipt line, with the damaged carton.
+- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0234**  
+  The receipt advice.
+- `DocumentReference/ID` = **LD-DS-B180**  
+  The distributor's datasheet for the bench.
+- `PricingReference/OriginalItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
+  As in the catalogue.
+- `PaymentTerms/Note` = **The promotion stock is paid with the invoice, 30 days net.**  
+  The line's terms.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -782,6 +800,8 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
+- `DeliveryTerms/ID` = **DDP** (schemeID `INCOTERMS`)  
+  Delivered duty paid, the store's shop, as for the whole order.
 
 ## The document
 
@@ -1207,8 +1227,33 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:UUID>09323e18-1b75-5598-8829-c136e146de6a</cbc:UUID>
     <cbc:InvoicedQuantity unitCode="H87">24</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
+    <cbc:TaxPointDate>2026-05-08</cbc:TaxPointDate>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0229</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
+    <cac:ReceiptLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>BS-RA-26-0234</cbc:ID>
+      </cac:DocumentReference>
+    </cac:ReceiptLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>LD-DS-B180</cbc:ID>
+    </cac:DocumentReference>
+    <cac:PricingReference>
+      <cac:OriginalItemLocationQuantity>
+        <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
+      </cac:OriginalItemLocationQuantity>
+    </cac:PricingReference>
+    <cac:PaymentTerms>
+      <cbc:Note>The promotion stock is paid with the invoice, 30 days net.</cbc:Note>
+    </cac:PaymentTerms>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1408,6 +1453,9 @@ Inside `InvoiceLine`:
       <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:DeliveryTerms>
+      <cbc:ID schemeID="INCOTERMS">DDP</cbc:ID>
+    </cac:DeliveryTerms>
   </cac:InvoiceLine>
 </Invoice>
 ```

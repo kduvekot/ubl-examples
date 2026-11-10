@@ -500,6 +500,8 @@ Inside `CatalogueLine`:
   The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/ItemTypeCode` = **Product**  
+  A physical product, not a service.
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Keyword` = **park bench**  
@@ -872,6 +874,10 @@ Inside `CatalogueLine`:
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `RequiredItemLocationQuantity/DependentPriceReference/Percent` = **12.31**  
   The spare frame costs this share of the bench's price, as the distributor's price rule sets it.
+- `RequiredItemLocationQuantity/DependentPriceReference/LocationAddress/CountrySubentity` = **Coastal State**  
+  The price applies to deliveries in the store's state.
+- `RequiredItemLocationQuantity/DependentPriceReference/LocationAddress/Country/IdentificationCode` = **XB**  
+  Bayvarra.
 - `RequiredItemLocationQuantity/DependentPriceReference/DependentLineReference/LineID` = **1**  
   The catalogue line of the bench.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
@@ -880,6 +886,8 @@ Inside `CatalogueLine`:
   The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Bench side frame casting**  
   The item's short name; item bench-casting-b of Lumeway Distribution (world/items.json).
+- `Item/ItemTypeCode` = **Product**  
+  A physical product, not a service.
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180 side frame**  
@@ -1317,6 +1325,7 @@ Inside `CatalogueLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
       <cbc:Keyword>street furniture</cbc:Keyword>
@@ -1672,6 +1681,12 @@ Inside `CatalogueLine`:
       </cac:ApplicableTaxCategory>
       <cac:DependentPriceReference>
         <cbc:Percent>12.31</cbc:Percent>
+        <cac:LocationAddress>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:LocationAddress>
         <cac:DependentLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:DependentLineReference>
@@ -1681,6 +1696,7 @@ Inside `CatalogueLine`:
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Bench side frame casting</cbc:Name>
+      <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>

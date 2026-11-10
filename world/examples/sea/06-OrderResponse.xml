@@ -21,6 +21,9 @@
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PS-REQ-26-0031</cbc:ID>
+  </cac:OriginatorDocumentReference>
   <cac:Contract>
     <cbc:ID>LD-DAG-26-0125</cbc:ID>
     <cbc:ContractType>Digital trade agreement</cbc:ContractType>
@@ -186,6 +189,24 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -231,6 +252,7 @@
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
+      <cbc:AliasName>Lumeway receivables</cbc:AliasName>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XBL</cbc:CurrencyCode>

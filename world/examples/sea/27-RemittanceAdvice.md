@@ -413,6 +413,8 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
+- `UUID` = **add4d37b-e76e-51a8-90dd-0ac065146ca3**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **43778.00** (currencyID `XBL`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
@@ -437,6 +439,14 @@ Inside `RemittanceAdviceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorCustomerParty/Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorCustomerParty/Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `PayeeParty/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `PayeeParty/PartyName/Name` = **Harbourline Factoring**  
@@ -459,8 +469,18 @@ Inside `RemittanceAdviceLine`:
   The rate the buyer's bank applied.
 - `ID` = **2**  
   The credit note deducted.
+- `UUID` = **87f012c8-f767-5ff8-9aa8-8bc8a6a1076a**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `CreditLineAmount` = **64.00** (currencyID `XBL`)  
   The amount of the credit note, set off against the payment.
+- `OriginatorCustomerParty/Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorCustomerParty/Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/CreditNoteDocumentReference/ID` = **LD-CN-26-0151**  
   The credit note deducted.
 - `BillingReference/CreditNoteDocumentReference/IssueDate` = **2026-06-15**  
@@ -803,6 +823,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:UUID>add4d37b-e76e-51a8-90dd-0ac065146ca3</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">43778.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
@@ -847,6 +868,24 @@ Inside `RemittanceAdviceLine`:
         </cac:PartyName>
       </cac:Party>
     </cac:SellerSupplierParty>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:PayeeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
@@ -874,7 +913,26 @@ Inside `RemittanceAdviceLine`:
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:UUID>87f012c8-f767-5ff8-9aa8-8bc8a6a1076a</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">64.00</cbc:CreditLineAmount>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
         <cbc:ID>LD-CN-26-0151</cbc:ID>

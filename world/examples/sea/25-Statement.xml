@@ -214,6 +214,24 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:PayeeParty>
     <cbc:WebsiteURI>https://www.harbourline.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">6499</cbc:IndustryClassificationCode>
@@ -345,9 +363,13 @@
     <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
   </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+  </cac:TaxTotal>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The invoice, bought by the factor.</cbc:Note>
+    <cbc:UUID>56439119-78e3-59ec-bc7d-84c3d3a46f09</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
     <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">53778.00</cbc:BalanceAmount>
@@ -375,6 +397,24 @@
         </cac:PartyName>
       </cac:Party>
     </cac:SellerSupplierParty>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:AccountingCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -421,11 +461,30 @@
   <cac:StatementLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Paid to the distributor before the invoice was assigned.</cbc:Note>
+    <cbc:UUID>16aec267-0a53-5561-ad4f-79c534c1d918</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">10000.00</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XBL">43778.00</cbc:BalanceAmount>
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
+    <cac:OriginatorCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-05-08</cbc:StartDate>
       <cbc:EndDate>2026-05-09</cbc:EndDate>

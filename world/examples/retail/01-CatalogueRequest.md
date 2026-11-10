@@ -387,6 +387,12 @@ Inside `RequestedClassificationScheme`:
   The heading the benches fall in.
 - `ClassificationCategory/CodeValue` = **9401**  
   HS heading 94.01.
+- `ClassificationCategory/Description` = **Outdoor furniture and its spare parts.**  
+  What the category holds.
+- `ClassificationCategory/CategorizesClassificationCategory/Name` = **Spare parts**  
+  A subcategory the store wants too.
+- `ClassificationCategory/CategorizesClassificationCategory/CodeValue` = **FUR-OUT-SP**  
+  Its code.
 
 ### Catalogue Request Line
 
@@ -692,6 +698,11 @@ Inside `CatalogueRequestLine`:
     <cac:ClassificationCategory>
       <cbc:Name>Seats</cbc:Name>
       <cbc:CodeValue>9401</cbc:CodeValue>
+      <cbc:Description>Outdoor furniture and its spare parts.</cbc:Description>
+      <cac:CategorizesClassificationCategory>
+        <cbc:Name>Spare parts</cbc:Name>
+        <cbc:CodeValue>FUR-OUT-SP</cbc:CodeValue>
+      </cac:CategorizesClassificationCategory>
     </cac:ClassificationCategory>
   </cac:RequestedClassificationScheme>
   <cac:CatalogueRequestLine>

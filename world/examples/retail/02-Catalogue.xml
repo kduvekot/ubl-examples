@@ -401,6 +401,7 @@
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
       <cbc:Keyword>street furniture</cbc:Keyword>
@@ -756,6 +757,12 @@
       </cac:ApplicableTaxCategory>
       <cac:DependentPriceReference>
         <cbc:Percent>12.31</cbc:Percent>
+        <cac:LocationAddress>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:LocationAddress>
         <cac:DependentLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:DependentLineReference>
@@ -765,6 +772,7 @@
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Bench side frame casting</cbc:Name>
+      <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>

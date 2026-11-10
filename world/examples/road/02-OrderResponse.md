@@ -315,6 +315,12 @@ Inside `OrderLine`:
   The seller's number.
 - `OrderLineReference/LineID` = **1**  
   The order line.
+- `OrderLineReference/UUID` = **da67b26b-2501-5b9b-9b6f-d03d5ce50a97**  
+  A universally unique identifier of the line, derived from the document and the line number.
+- `OrderLineReference/LineStatusCode` = **NoStatus**  
+  The line as ordered.
+- `DocumentReference/ID` = **VI-DS-B180**  
+  The datasheet of the item confirmed.
 - `SubstitutionStatusCode` = **Substitution**  
   The line is delivered with a substitute item.
 - `Note` = **Same fit and price; the old casting is no longer made.**  
@@ -357,6 +363,12 @@ Inside `OrderLine`:
   The order line.
 - `OrderLineReference/SalesOrderLineID` = **2**  
   The seller's line.
+- `OrderLineReference/UUID` = **058a35ee-7283-5e0f-831e-dc6fe709773f**  
+  A universally unique identifier of the line, derived from the document and the line number.
+- `OrderLineReference/LineStatusCode` = **Revised**  
+  The line is answered with a substitute.
+- `DocumentReference/ID` = **VI-DS-C180-2026**  
+  The datasheet of the item confirmed.
 
 ## The document
 
@@ -627,7 +639,12 @@ Inside `OrderLine`:
     </cac:LineItem>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
+      <cbc:UUID>da67b26b-2501-5b9b-9b6f-d03d5ce50a97</cbc:UUID>
+      <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
     </cac:OrderLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-B180</cbc:ID>
+    </cac:DocumentReference>
   </cac:OrderLine>
   <cac:OrderLine>
     <cbc:SubstitutionStatusCode>Substitution</cbc:SubstitutionStatusCode>
@@ -672,7 +689,12 @@ Inside `OrderLine`:
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
       <cbc:SalesOrderLineID>2</cbc:SalesOrderLineID>
+      <cbc:UUID>058a35ee-7283-5e0f-831e-dc6fe709773f</cbc:UUID>
+      <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
     </cac:OrderLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-C180-2026</cbc:ID>
+    </cac:DocumentReference>
   </cac:OrderLine>
 </OrderResponse>
 ```

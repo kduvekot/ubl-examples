@@ -318,6 +318,8 @@ Inside `OrderLine`:
   Why no price question.
 - `LineItem/ID` = **1**  
   The line number.
+- `LineItem/UUID` = **4278e92c-6141-5575-b08f-555e19cf4b75**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Note` = **The store's own line: bench and two chairs per set.**  
   What the line is.
 - `LineItem/Quantity` = **20** (unitCode `SET`)  
@@ -398,6 +400,14 @@ Inside `OrderLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/WarrantyParty/PartyName/Name` = **Brackenmere Furniture**  
   A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  No sales tax: the store buys for resale.
+- `LineItem/ItemPriceExtension/Amount` = **12200.00** (currencyID `XBL`)  
+  The price times the quantity, before any allowance.
+- `LineItem/LineReference/LineID` = **1**  
+  The line of the quotation the order line takes up.
+- `LineItem/LineReference/DocumentReference/ID` = **BF-DOC-26-0568**  
+  The quotation.
 - `QuotationLineReference/LineID` = **1**  
   The quotation line accepted.
 
@@ -648,6 +658,7 @@ Inside `OrderLine`:
     <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:UUID>4278e92c-6141-5575-b08f-555e19cf4b75</cbc:UUID>
       <cbc:Note>The store's own line: bench and two chairs per set.</cbc:Note>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
@@ -734,6 +745,18 @@ Inside `OrderLine`:
           <cbc:Name>Brackenmere Furniture</cbc:Name>
         </cac:PartyName>
       </cac:WarrantyParty>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      </cac:TaxTotal>
+      <cac:ItemPriceExtension>
+        <cbc:Amount currencyID="XBL">12200.00</cbc:Amount>
+      </cac:ItemPriceExtension>
+      <cac:LineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:DocumentReference>
+          <cbc:ID>BF-DOC-26-0568</cbc:ID>
+        </cac:DocumentReference>
+      </cac:LineReference>
     </cac:LineItem>
     <cac:QuotationLineReference>
       <cbc:LineID>1</cbc:LineID>

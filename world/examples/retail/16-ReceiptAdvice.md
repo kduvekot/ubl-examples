@@ -358,6 +358,8 @@ Inside `ReceiptLine`:
 
 - `ID` = **1**  
   The line number.
+- `UUID` = **c9e54602-8f02-5581-88af-5ca8d0131f08**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `Note` = **One bench arrived in a damaged carton and was refused.**  
   The line in words.
 - `ReceivedQuantity` = **23** (unitCode `H87`)  
@@ -386,6 +388,8 @@ Inside `ReceiptLine`:
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
   The despatch advice.
+- `DocumentReference/ID` = **BS-PHOTO-26-0118**  
+  The photograph of the damaged carton.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -876,6 +880,7 @@ Inside `ReceiptLine`:
   </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:UUID>c9e54602-8f02-5581-88af-5ca8d0131f08</cbc:UUID>
     <cbc:Note>One bench arrived in a damaged carton and was refused.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">23</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
@@ -896,6 +901,9 @@ Inside `ReceiptLine`:
         <cbc:ID>LD-DA-26-0229</cbc:ID>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>BS-PHOTO-26-0118</cbc:ID>
+    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

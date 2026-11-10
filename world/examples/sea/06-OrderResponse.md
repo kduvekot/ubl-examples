@@ -54,6 +54,13 @@ Inside `OrderReference`:
 - `ID` = **VT-PO-26-0127**  
   The order this response answers.
 
+### Originator Document Reference
+
+Inside `OriginatorDocumentReference`:
+
+- `ID` = **PS-REQ-26-0031**  
+  The Port of Selanu's request to the trader, which the order follows.
+
 ### Contract
 
 Inside `Contract`:
@@ -251,6 +258,24 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -308,6 +333,8 @@ Inside `PaymentMeans`:
   The distributor's account for the deposit. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Lumeway Distribution Ltd**  
   The account holder, as the bank knows it.
+- `PayeeFinancialAccount/AliasName` = **Lumeway receivables**  
+  The short name the holder gave the account, shown in its bank's app.
 - `PayeeFinancialAccount/AccountTypeCode` = **Current**  
   A current account, for payments in and out.
 - `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
@@ -513,6 +540,9 @@ Inside `OrderLine`:
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PS-REQ-26-0031</cbc:ID>
+  </cac:OriginatorDocumentReference>
   <cac:Contract>
     <cbc:ID>LD-DAG-26-0125</cbc:ID>
     <cbc:ContractType>Digital trade agreement</cbc:ContractType>
@@ -678,6 +708,24 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -723,6 +771,7 @@ Inside `OrderLine`:
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
+      <cbc:AliasName>Lumeway receivables</cbc:AliasName>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XBL</cbc:CurrencyCode>

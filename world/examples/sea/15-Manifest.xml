@@ -319,16 +319,19 @@
   <cac:CrewPerson>
     <cbc:FirstName>Corin</cbc:FirstName>
     <cbc:FamilyName>Halvard</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>Master</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:CrewPerson>
     <cbc:FirstName>Elsbeth</cbc:FirstName>
     <cbc:FamilyName>Marrin</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:PassengerPerson>
     <cbc:FirstName>Ines</cbc:FirstName>
     <cbc:FamilyName>Tavari</cbc:FamilyName>
+    <cbc:GenderCode>0</cbc:GenderCode>
     <cbc:RoleCode>Passenger</cbc:RoleCode>
   </cac:PassengerPerson>
   <cac:Shipment>

@@ -244,6 +244,15 @@
   <cac:TransportExecutionPlanRequestDocumentReference>
     <cbc:ID>VI-TR-26-0305</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
+  <cac:TransportExecutionPlanDocumentReference>
+    <cbc:ID>FRC-TEP-26-0001</cbc:ID>
+  </cac:TransportExecutionPlanDocumentReference>
+  <cac:TransportServiceDescriptionDocumentReference>
+    <cbc:ID>FRC-TSD-26</cbc:ID>
+  </cac:TransportServiceDescriptionDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FRC-WAGON-LIST-11</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>
     <cbc:ContractType>Framework transport agreement</cbc:ContractType>
@@ -316,6 +325,9 @@
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
     </cac:PaymentTerms>
+    <cac:DeliveryTerms>
+      <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
+    </cac:DeliveryTerms>
     <cac:BonusPaymentTerms>
       <cbc:Note>None.</cbc:Note>
     </cac:BonusPaymentTerms>
@@ -326,6 +338,10 @@
       <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
       <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>
     </cac:PenaltyPaymentTerms>
+    <cac:EnvironmentalEmission>
+      <cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+      <cbc:ValueMeasure unitCode="TNE">1.9</cbc:ValueMeasure>
+    </cac:EnvironmentalEmission>
     <cac:NotificationRequirement>
       <cbc:NotificationTypeCode>PreArrival</cbc:NotificationTypeCode>
       <cbc:PostEventNotificationDurationMeasure unitCode="HUR">1</cbc:PostEventNotificationDurationMeasure>
@@ -338,6 +354,10 @@
           <cbc:Name>Valdara Industries</cbc:Name>
         </cac:PartyName>
       </cac:NotifyParty>
+      <cac:NotificationPeriod>
+        <cbc:StartDate>2026-03-04</cbc:StartDate>
+        <cbc:EndDate>2026-03-08</cbc:EndDate>
+      </cac:NotificationPeriod>
       <cac:NotificationLocation>
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:NotificationLocation>

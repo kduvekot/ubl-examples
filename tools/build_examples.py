@@ -132,6 +132,16 @@ def party(pid, short=False):
                                  f"{'states' if scheme.get('levied_by') == 'state' else 'country'}.")}
         if idn.get("tax_exemption"):
             tax["ExemptionReason"] = V(idn["tax_exemption"], f"Why purchases by this party carry no sales tax; {src}.")
+            code = next((v for k, v in c["tax"].get("exemption_codes", {}).items()
+                         if idn.get("tax_exemption_kind") == k), None)
+            if code:
+                tax["ExemptionReasonCode"] = V(code, f"The exemption as a code of the world's exemption list "
+                                                     f"(world/countries.json): {idn['tax_exemption_kind'].lower()}.")
+            if idn.get("tax_registration_office"):
+                tax["RegistrationAddress"] = {"CityName": V(idn["tax_registration_office"], "Where the party is "
+                                                                                            "registered for the tax."),
+                                              "CountrySubentity": V(idn["address"]["CountrySubentity"], "Its state."),
+                                              "Country": {"IdentificationCode": V(p["c"], "Its country.")}}
         juris = {"Country": {"IdentificationCode": V(p["c"], "The country whose tax this is.")}}
         if scheme.get("levied_by") == "state":
             juris = {"CountrySubentity": V(idn["address"]["CountrySubentity"], "The state whose sales tax the party is "
@@ -408,6 +418,8 @@ def account(pid, why, note=None):
                                   "world's country code; it is not called an IBAN, because the world's countries are "
                                   "not registered IBAN countries.", schemeID="urn:ubl-examples:world:account"),
            "Name": V(legal_name(pid), "The account holder, as the bank knows it."),
+           **({"AliasName": V(acc["alias"], "The short name the holder gave the account, shown in its bank's "
+                                             "app.")} if acc.get("alias") else {}),
            "AccountTypeCode": V("Current", "A current account, for payments in and out."),
            "AccountFormatCode": V("ISO13616", "The account number has the structure of ISO 13616."),
            "CurrencyCode": V(WORLD["countries"][bank["c"]]["currency"]["code"], "The account is kept in the currency of "

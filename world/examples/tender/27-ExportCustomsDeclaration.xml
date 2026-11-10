@@ -459,7 +459,15 @@
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode>XB-PUBLIC</cbc:ExemptionReasonCode>
         <cbc:ExemptionReason>Public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
           <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
