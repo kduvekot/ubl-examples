@@ -389,34 +389,285 @@ def account(pid, why, note=None):
     return out
 
 
-def item(iid, tax=None):
-    """The content of a cac:Item element, from the items layer."""
+def buyer_item_id(iid, buyer):
+    """The buyer's own number for an item: its own item when it resells it, or the number it keeps for it."""
+    it = ITEM[iid]
+    own = next((i for i in WORLD["items"] if i["seller"] == buyer and i.get("resale_of") == iid), None)
+    if own:
+        return own["sellers_id"], f"The buyer's own item number: it resells this item as its item {own['id']}."
+    if buyer in it.get("buyer_ids", {}):
+        return it["buyer_ids"][buyer], "The number the buyer keeps for this item in its own system (world/items.json)."
+    return None, None
+
+
+def item_property(pr, src):
+    """A cac:AdditionalItemProperty from a property of the items layer: [name, value], or a dict with the details."""
+    if isinstance(pr, list):
+        return {"Name": V(pr[0], "A property buyers ask about."), "Value": V(pr[1], f"Its value; {src}.")}
+    out = {"Name": V(pr["name"], pr.get("why", "A property buyers ask about."))}
+    if pr.get("id"):
+        out["ID"] = V(pr["id"], "The maker's identifier for the property.")
+    if pr.get("name_code"):
+        out["NameCode"] = V(pr["name_code"], "The property's name as a code, as the property standard lists it.")
+    if pr.get("test"):
+        out["TestMethod"] = V(pr["test"], "How the value is tested.")
+    if pr.get("value"):
+        out["Value"] = V(pr["value"], f"Its value; {src}.")
+    if pr.get("value_qty"):
+        out["ValueQuantity"] = V(pr["value_qty"][0], f"Its measured value; {src}.", unitCode=pr["value_qty"][1])
+    if pr.get("qualifier"):
+        out["ValueQualifier"] = [V(q, "What the value stands for.") for q in pr["qualifier"]]
+    if pr.get("importance"):
+        out["ImportanceCode"] = V(pr["importance"], "How much the property matters in describing the item.")
+    if pr.get("list"):
+        out["ListValue"] = [V(v, "One of the values the property can take.") for v in pr["list"]]
+    if pr.get("usable"):
+        n_, unit, why = pr["usable"]
+        out["UsabilityPeriod"] = {"DurationMeasure": V(n_, why, unitCode=unit)}
+    if pr.get("group"):
+        gid, gname, gimp = pr["group"]
+        out["ItemPropertyGroup"] = {"ID": V(gid, "The group of properties this one belongs to."),
+                                    "Name": V(gname, "The group's name."),
+                                    "ImportanceCode": V(gimp, "How much the group matters.")}
+    if pr.get("range_dim"):
+        a_, v, lo, hi, u = pr["range_dim"]
+        out["RangeDimension"] = {"AttributeID": V(a_, "The dimension the tolerance is for."),
+                                 "Measure": V(v, "Its nominal size.", unitCode=u),
+                                 "MinimumMeasure": V(lo, "The smallest size accepted.", unitCode=u),
+                                 "MaximumMeasure": V(hi, "The largest size accepted.", unitCode=u)}
+    if pr.get("range"):
+        out["ItemPropertyRange"] = {"MinimumValue": V(pr["range"][0], "The lowest value accepted."),
+                                    "MaximumValue": V(pr["range"][1], "The highest value accepted.")}
+    if pr.get("standard"):
+        sid, scope, issuer = pr["standard"]
+        out["StandardPropertyIdentification"] = {"ID": V(sid, "The property's number in the property standard of the "
+                                                               "identification agency."),
+                                                 "IssuerScopeID": V(scope, "The part of the agency's standards it is "
+                                                                           "taken from."),
+                                                 "IssuerParty": party(issuer, short=True)}
+    if pr.get("sub"):
+        out["SubItemProperty"] = [item_property(x, src) for x in pr["sub"]]
+    return out
+
+
+def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref=None):
+    """The content of a cac:Item element, from the items layer. `catalogue` is (catalogue number, line) for a
+    catalogue line; `catalogue_ref` the catalogue an order line was ordered from."""
     it = ITEM[iid]
     src = f"item {it['id']} of {PARTY[it['seller']]['identity']['name']} (world/items.json)"
     out = {"Description": V(it["description"], f"The seller's description; {src}."),
-           "Name": V(it["name"], f"The item's short name; {src}."),
-           "SellersItemIdentification": {"ID": V(it["sellers_id"], f"The seller's own item number; {src}.")}}
+           "Name": V(it["name"], f"The item's short name; {src}.")}
+    maker = it
+    while maker.get("resale_of"):
+        maker = ITEM[maker["resale_of"]]
+    msrc = f"item {maker['id']} of {PARTY[maker['seller']]['identity']['name']} (world/items.json)"
+    if maker.get("pack"):
+        out["PackQuantity"] = V(maker["pack"]["quantity"], "One pack of this item.", unitCode="H87")
+        out["PackSizeNumeric"] = V(maker["pack"]["size"], f"The units in one pack: {maker['pack']['size']} "
+                                                          f"{'kg in a bale' if maker['unit'] == 'KGM' else 'in a bundle'}; "
+                                                          f"{msrc}.")
+    if maker.get("keywords"):
+        out["Keyword"] = [V(k, "A word buyers search the item by.") for k in maker["keywords"]]
+    if maker.get("brand"):
+        out["BrandName"] = V(maker["brand"], f"The brand the maker sells the item under; {msrc}.")
+    if maker.get("model"):
+        out["ModelName"] = V(maker["model"], f"The model; {msrc}.")
+    if maker.get("additional_info"):
+        out["AdditionalInformation"] = V(maker["additional_info"], f"What comes with the item; {msrc}.")
+    if catalogue:
+        out["CatalogueIndicator"] = V("true", "The item is described as it appears in the seller's catalogue.")
+    if maker.get("warranty"):
+        out["WarrantyInformation"] = V(maker["warranty"], f"The maker's warranty; {msrc}.")
+    bid, bwhy = buyer_item_id(iid, buyer) if buyer else (None, None)
+    if bid:
+        out["BuyersItemIdentification"] = {"ID": V(bid, bwhy)}
+    out["SellersItemIdentification"] = {"ID": V(it["sellers_id"], f"The seller's own item number; {src}.")}
+    variant = maker.get("variant", {})
+    if variant.get("extended"):
+        out["SellersItemIdentification"]["ExtendedID"] = V(variant["extended"], "The variant of the item: the "
+                                                                                "frame colour, added to the item number.")
+    if variant.get("attribute"):
+        a_, code, desc = variant["attribute"]
+        out["SellersItemIdentification"]["PhysicalAttribute"] = {
+            "AttributeID": V(a_, "The attribute the variant differs in."),
+            "PositionCode": V("FRM", "The part of the item the attribute is on: the frame."),
+            "DescriptionCode": V(code, "The variant's code for it."),
+            "Description": V(desc, "The variant in words.")}
+    if variant.get("measure"):
+        a_, v, u = variant["measure"]
+        out["SellersItemIdentification"]["MeasurementDimension"] = {
+            "AttributeID": V(a_, "The seller numbers its slats by length: this number is for one length."),
+            "Measure": V(v, "The length the number stands for.", unitCode=u)}
+    if catalogue:
+        out["CatalogueItemIdentification"] = {"ID": V(f"{catalogue[0]}-{catalogue[1]}", "The item's place in the "
+                                                      "catalogue: the catalogue number and the line.")}
     if it.get("resale_of"):        # a resold item carries the maker's identifiers, customs code and origin
-        orig = ITEM[it["resale_of"]]
-        while orig.get("resale_of"):
-            orig = ITEM[orig["resale_of"]]
-        maker = PARTY[orig["seller"]]["identity"]["name"]
-        out["ManufacturersItemIdentification"] = {"ID": V(orig["sellers_id"], f"The item number of the maker, {maker}: "
-                                                          f"the reseller's item is resale of item {orig['id']} "
-                                                          "(world/items.json).")}
-        it = {**it, "standard_id": orig.get("standard_id"), "hs": orig.get("hs"), "origin": orig.get("origin")}
-        src = f"item {orig['id']} of {maker}, which this item resells (world/items.json)"
-    if it.get("standard_id"):
-        out["StandardItemIdentification"] = {"ID": V(it["standard_id"], "The world item number issued by the identifier "
-                                                     "issuing agency, twelve digits with a check digit; a scheme of the "
-                                                     f"world, not a GTIN; {src}.", schemeID="urn:ubl-examples:world:item")}
-    if it.get("hs"):
-        out["CommodityClassification"] = {"ItemClassificationCode": V(it["hs"], "Harmonized System subheading of the "
-                                                                      f"World Customs Organization; {src}.", listID="HS")}
+        out["ManufacturersItemIdentification"] = {"ID": V(maker["sellers_id"], f"The item number of the maker, "
+                                                          f"{PARTY[maker['seller']]['identity']['name']}: the "
+                                                          f"reseller's item is resale of item {maker['id']}.")}
+    if maker.get("standard_id"):
+        out["StandardItemIdentification"] = {"ID": V(maker["standard_id"], "The world item number issued by the "
+                                                     "identifier issuing agency, twelve digits with a check digit; a "
+                                                     f"scheme of the world, not a GTIN; {msrc}.",
+                                                     schemeID="urn:ubl-examples:world:item")}
+        if maker.get("barcode"):
+            out["StandardItemIdentification"]["BarcodeSymbologyID"] = V(maker["barcode"], "The barcode the number "
+                                                                        "is printed in on the label.")
+            out["StandardItemIdentification"]["IssuerScopeID"] = V(maker["standard_id"][:3], "The range of item "
+                                                                   "numbers the agency gives out in the maker's "
+                                                                   "country.")
+    if maker.get("pack_standard_id"):
+        out["AdditionalItemIdentification"] = {"ID": V(maker["pack_standard_id"], "The world item number of the "
+                                                       f"pack of {maker['pack']['size']}, the unit the item is traded "
+                                                       "in; the item number above is for one piece.",
+                                                       schemeID="urn:ubl-examples:world:item")}
+    if catalogue_ref:
+        out["CatalogueDocumentReference"] = {"ID": V(catalogue_ref, "The catalogue the item was ordered from.")}
+    if maker.get("spec_doc"):
+        out["ItemSpecificationDocumentReference"] = {"ID": V(maker["spec_doc"], "The maker's datasheet with drawings "
+                                                                                "and assembly instructions.")}
+    if it.get("lifecycle"):
+        out["LifecycleStageCode"] = V(it["lifecycle"][0], "The stage of the product's life the item belongs to.")
+        out["LifecycleStageDescription"] = V(it["lifecycle"][1], "The stage in words.")
+    if maker.get("hs"):
+        cc = {"ItemClassificationCode": V(maker["hs"], "Harmonized System subheading of the World Customs "
+                                                       f"Organization; {msrc}.", listID="HS")}
+        if maker.get("national_tariff"):
+            cc["CommodityCode"] = V(maker["national_tariff"], "The national tariff code below the HS subheading, as the "
+                                                              "customs of the maker's country uses it.")
+        out["CommodityClassification"] = cc
     if tax:
         out["ClassifiedTaxCategory"] = tax
-    if it.get("origin"):
-        out["OriginCountry"] = {"IdentificationCode": V(it["origin"], f"Where the item was produced; {src}.")}
+    props = []
+    for pr in maker.get("properties", []):
+        props.append(item_property(pr, msrc))
+    for name, value, unit in maker.get("quantity_properties", []):
+        props.append({"Name": V(name, "A measured property of the item."),
+                      "ValueQuantity": V(value, f"Its measured value; {msrc}.", unitCode=unit)})
+    if props:
+        out["AdditionalItemProperty"] = props
+    if it.get("resale_of"):
+        out["ManufacturerParty"] = party(maker["seller"], short=True)
+        if catalogue:
+            out["InformationContentProviderParty"] = party(maker["seller"], short=True)
+    if it.get("conditions"):
+        tc = it["conditions"]
+        out["TransactionConditions"] = {"ID": V(tc["id"], "The seller's number for these conditions of sale."),
+                                        "ActionCode": V(tc["action"], "To whom the conditions apply."),
+                                        "Description": V(tc["description"], "The conditions in words."),
+                                        "DocumentReference": {"ID": V(tc["doc"], "The seller's general terms of "
+                                                                                 "trade.")}}
+    if maker.get("origin_region"):
+        out["OriginAddress"] = {"Region": V(maker["origin_region"], "Where on the island the cotton was grown."),
+                                "Country": {"IdentificationCode": V(maker["origin"], "The country of origin.")}}
+    if instance:
+        out["ItemInstance"] = instance
+    if maker.get("certificate"):
+        ce = maker["certificate"]
+        cert = {"ID": V(ce["id"], "The number of the certificate."),
+                "CertificateTypeCode": V(ce["type"].replace(" ", ""), "The kind of certificate, as a code."),
+                "CertificateType": V(ce["type"], "The kind of certificate, in words."),
+                "Remarks": V(ce["remarks"], "What the certificate states about the goods.")}
+        if ce.get("issuer"):
+            cert["IssuerParty"] = party(ce["issuer"], short=True)
+        if ce.get("valid_until"):
+            cert["CertificateValidityPeriod"] = {"EndDate": V(ce["valid_until"], "The certificate is valid until then.")}
+        if ce.get("reference_id"):
+            cert["CertificateReferenceID"] = V(ce["reference_id"], "The certificate's number in the issuer's public "
+                                                                   "register.")
+        if ce.get("category"):
+            cert["ApplicableCategoryCode"] = V(ce["category"][0], "The category of goods the certificate covers.")
+            cert["ApplicableCategory"] = V(ce["category"][1], "The category in words.")
+        if ce.get("uri"):
+            cert["CertificateURI"] = V(ce["uri"], "Where the certificate can be checked.")
+        if ce.get("document"):
+            cert["DocumentReference"] = {"ID": V(ce["document"], "The audit report the certificate is based on.")}
+        if ce.get("signature"):
+            sg = ce["signature"]
+            cert["Signature"] = {"ID": V(sg["id"], "The signature's identifier."),
+                                 "Note": V(sg["note"], "Who signed."),
+                                 "ValidationDate": V(sg["date"], "The day the signature was placed."),
+                                 "SignatoryParty": party(sg["signatory"], short=True)}
+        out["Certificate"] = cert
+    if maker.get("env_certificate"):
+        ce = maker["env_certificate"]
+        out["EnvironmentalCertificate"] = {"ID": V(ce["id"], "The number of the environmental certificate."),
+                                           "CertificateTypeCode": V(ce["type"].replace(" ", ""), "The kind of claim, as "
+                                                                                                 "a code."),
+                                           "CertificateType": V(ce["type"], "The environmental claim certified."),
+                                           "Remarks": V(ce["remarks"], "What the certificate states.")}
+    if maker.get("dimensions"):
+        dims = []
+        for dm in maker["dimensions"]:
+            a_, v, u = dm[:3]
+            x = {"AttributeID": V(a_, "Which dimension."), "Measure": V(v, "Its size.", unitCode=u)}
+            if len(dm) > 3:
+                x["Description"] = V(dm[3], "Where it is measured.")
+            if len(dm) > 4:
+                x["MinimumMeasure"] = V(dm[4], "The lowest it can be set to.", unitCode=u)
+                x["MaximumMeasure"] = V(dm[5], "The highest it can be set to.", unitCode=u)
+            dims.append(x)
+        out["Dimension"] = dims
+    if maker.get("circularity"):
+        ci = maker["circularity"]
+        circ = {}
+        if ci.get("type"):
+            circ["CircularityTypeCode"] = V(ci["type"], "The circular strategy behind the item.")
+        if ci.get("recycled"):
+            circ["RecycledContentPercent"] = V(ci["recycled"], "The share of recycled material: the film is made from "
+                                                               "the recycled granulate.")
+        if ci.get("recyclable"):
+            circ["RecyclabilityPercent"] = V(ci["recyclable"], "The share that can be recycled again.")
+        if ci.get("maintenance"):
+            circ["MaintenanceFrequencyCode"] = V(ci["maintenance"], "How often the item needs maintenance.")
+            circ["MaintenanceFrequencyDescription"] = V(ci["maintenance_description"], "What the maintenance is.")
+        if ci.get("resources"):
+            circ["ResourceConsumption"] = [{"ResourceTypeCode": V(r, "A material the item is made of."),
+                                            "ConsumptionMeasure": V(q, "How much of it one item uses.", unitCode=u),
+                                            "ResourceOriginDescription": V(o, "Where the material comes from.")}
+                                           for r, q, u, o in ci["resources"]]
+        if ci.get("repairability"):
+            circ["RepairabilityScore"] = {"ScoreNumeric": V(ci["repairability"], "Side frames and slats can be "
+                                                            "replaced one by one, which is why the spare side frame "
+                                                            "exists."),
+                                          "ScoringSystemCode": V(ci["repairability_system"], "The scale of the score.")}
+        if ci.get("waste"):
+            wt, wd, wq, wu = ci["waste"]
+            circ["WasteGenerated"] = {"WasteTypeCode": V(wt, "The kind of waste the item leaves."),
+                                      "WasteTypeDescription": V(wd, "The waste in words."),
+                                      "WasteMeasure": V(wq, "How much of it per item.", unitCode=wu),
+                                      "MeasurementPeriod": {"StartDate": V("2025-01-01", "Measured over the "
+                                                                                       "deliveries of 2025."),
+                                                            "EndDate": V("2025-12-31", "Its last day.")}}
+        if ci.get("product_doc"):
+            circ["ProductDocumentationDocumentReference"] = {"ID": V(ci["product_doc"], "The repair and maintenance "
+                                                                                        "manual.")}
+        if ci.get("end_of_life"):
+            circ["EndOfLifeTreatment"] = {"TreatmentPathwayCode": V(ci["end_of_life"], "What happens to the item "
+                                                                                       "after use.")}
+        out["CircularityProfile"] = circ
+    if maker.get("emission"):
+        em = maker["emission"]
+        out["EnvironmentalEmission"] = {
+            "EnvironmentalEmissionTypeCode": V(em["type"], "The emission reported: greenhouse gases as CO2 equivalent."),
+            "ValueMeasure": V(em["value"], "The emission of one item.", unitCode=em["unit"]),
+            "ValueFactorNumeric": V(em["factor"], "The share of the footprint the steel frame accounts for."),
+            "ValueBaseMeasure": V(em["base"][0], "The emission is per one bench.", unitCode=em["base"][1]),
+            "Description": V(em["description"], "What the figure includes."),
+            "EmissionStandardReference": V(em["standard"], "The standard the footprint is calculated by."),
+            "LifecycleStageCode": V(em["stage"], "The part of the bench's life the figure covers."),
+            "LifecycleStageDescription": V(em["stage_desc"], "That part in words."),
+            "EmissionCalculationMethod": {"CalculationMethodCode": V(em["method"]["code"], "Calculated, not measured."),
+                                          "FullnessIndicationCode": V(em["method"]["fullness"], "How much of the "
+                                                                      "chain is included."),
+                                          "EmissionFactorSource": V(em["method"]["source"], "Where the factors come "
+                                                                                            "from."),
+                                          "EmissionFactorDocumentReference": {"ID": V(em["method"]["doc"], "The "
+                                                                              "report with the emission factors.")}},
+            "MeasurementPeriod": {"StartDate": V(em["period"][0], "The year the figures are from."),
+                                  "EndDate": V(em["period"][1], "Its last day.")}}
+    if it.get("origin") or maker.get("origin"):
+        out["OriginCountry"] = {"IdentificationCode": V(maker["origin"], f"Where the item was produced; {msrc}.")}
     return out
 
 

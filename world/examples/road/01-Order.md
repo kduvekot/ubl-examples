@@ -479,14 +479,188 @@ Inside `OrderLine`:
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
+  What comes with the item; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/Keyword` = **park bench**  
+  A word buyers search the item by.
+- `LineItem/Item/Keyword` = **street furniture**  
+  A word buyers search the item by.
+- `LineItem/Item/BrandName` = **Valdara**  
+  The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/ModelName` = **Serra 180**  
+  The model; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
+  The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/BuyersItemIdentification/ID` = **LD-10442**  
+  The buyer's own item number: it resells this item as its item bench-serra-b.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-B180**  
   The seller's own item number; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The variant of the item: the frame colour, added to the item number.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **Colour**  
+  The attribute the variant differs in.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM**  
+  The part of the item the attribute is on: the frame.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY**  
+  The variant's code for it.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+  The variant in words.
 - `LineItem/Item/StandardItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
   The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
+  The barcode the number is printed in on the label.
+- `LineItem/Item/StandardItemIdentification/IssuerScopeID` = **771**  
+  The range of item numbers the agency gives out in the maker's country.
+- `LineItem/Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
+  The maker's datasheet with drawings and assembly instructions.
 - `LineItem/Item/OriginCountry/IdentificationCode` = **XU**  
   Where the item was produced; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/CommodityClassification/CommodityCode` = **9401.79.10**  
+  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
 - `LineItem/Item/CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Frame material**  
+  A property buyers ask about.
+- `LineItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
+  Its value; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Slat wood**  
+  A property buyers ask about.
+- `LineItem/Item/AdditionalItemProperty/Value` = **Kiln-dried hardwood**  
+  Its value; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Seats**  
+  A property buyers ask about.
+- `LineItem/Item/AdditionalItemProperty/Value` = **3**  
+  Its value; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/ID` = **COL**  
+  The maker's identifier for the property.
+- `LineItem/Item/AdditionalItemProperty/Name` = **Frame colour**  
+  The colours the frame is offered in.
+- `LineItem/Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
+  How much the property matters in describing the item.
+- `LineItem/Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
+  One of the values the property can take.
+- `LineItem/Item/AdditionalItemProperty/ListValue` = **Moss green**  
+  One of the values the property can take.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
+  The group of properties this one belongs to.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
+  The group's name.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Optional**  
+  How much the group matters.
+- `LineItem/Item/AdditionalItemProperty/ID` = **LOAD**  
+  The maker's identifier for the property.
+- `LineItem/Item/AdditionalItemProperty/Name` = **Load capacity**  
+  A property buyers ask about.
+- `LineItem/Item/AdditionalItemProperty/NameCode` = **LOAD**  
+  The property's name as a code, as the property standard lists it.
+- `LineItem/Item/AdditionalItemProperty/TestMethod` = **Static load on the seat for one hour, three seats loaded evenly, no lasting deformation**  
+  How the value is tested.
+- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **450** (unitCode `KGM`)  
+  Its measured value; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/ValueQualifier` = **Distributed over the seat**  
+  What the value stands for.
+- `LineItem/Item/AdditionalItemProperty/ImportanceCode` = **Mandatory**  
+  How much the property matters in describing the item.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **SAF**  
+  The group of properties this one belongs to.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Safety**  
+  The group's name.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Mandatory**  
+  How much the group matters.
+- `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450**  
+  The property's number in the property standard of the identification agency.
+- `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana street furniture properties**  
+  The part of the agency's standards it is taken from.
+- `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/Item/Dimension/AttributeID` = **Length**  
+  Which dimension.
+- `LineItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
+  Its size.
+- `LineItem/Item/Dimension/Description` = **Over the armrests**  
+  Where it is measured.
+- `LineItem/Item/Dimension/AttributeID` = **Depth**  
+  Which dimension.
+- `LineItem/Item/Dimension/Measure` = **620** (unitCode `MMT`)  
+  Its size.
+- `LineItem/Item/Dimension/AttributeID` = **Height**  
+  Which dimension.
+- `LineItem/Item/Dimension/Measure` = **780** (unitCode `MMT`)  
+  Its size.
+- `LineItem/Item/Dimension/Description` = **Seat back at its highest point**  
+  Where it is measured.
+- `LineItem/Item/Dimension/AttributeID` = **Seat height**  
+  Which dimension.
+- `LineItem/Item/Dimension/Measure` = **450** (unitCode `MMT`)  
+  Its size.
+- `LineItem/Item/Dimension/Description` = **Above the ground when anchored**  
+  Where it is measured.
+- `LineItem/Item/Dimension/MinimumMeasure` = **440** (unitCode `MMT`)  
+  The lowest it can be set to.
+- `LineItem/Item/Dimension/MaximumMeasure` = **460** (unitCode `MMT`)  
+  The highest it can be set to.
+- `LineItem/Item/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2e**  
+  The emission reported: greenhouse gases as CO2 equivalent.
+- `LineItem/Item/EnvironmentalEmission/ValueMeasure` = **96** (unitCode `KGM`)  
+  The emission of one item.
+- `LineItem/Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
+  The share of the footprint the steel frame accounts for.
+- `LineItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+  The emission is per one bench.
+- `LineItem/Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
+  The standard the footprint is calculated by.
+- `LineItem/Item/EnvironmentalEmission/LifecycleStageCode` = **Manufacturing**  
+  The part of the bench's life the figure covers.
+- `LineItem/Item/EnvironmentalEmission/LifecycleStageDescription` = **From the ore at the mine to the bench leaving the factory gate.**  
+  That part in words.
+- `LineItem/Item/EnvironmentalEmission/Description` = **Mining, steel making, casting, galvanising, sawing and the transport between them.**  
+  What the figure includes.
+- `LineItem/Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **Calculated**  
+  Calculated, not measured.
+- `LineItem/Item/EnvironmentalEmission/EmissionCalculationMethod/FullnessIndicationCode` = **Cradle to gate**  
+  How much of the chain is included.
+- `LineItem/Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorSource` = **The steelworks' and sawmill's measured energy use of 2025**  
+  Where the factors come from.
+- `LineItem/Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorDocumentReference/ID` = **VI-LCA-2025**  
+  The report with the emission factors.
+- `LineItem/Item/EnvironmentalEmission/MeasurementPeriod/StartDate` = **2025-01-01**  
+  The year the figures are from.
+- `LineItem/Item/EnvironmentalEmission/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
+- `LineItem/Item/CircularityProfile/MaintenanceFrequencyCode` = **Yearly**  
+  How often the item needs maintenance.
+- `LineItem/Item/CircularityProfile/MaintenanceFrequencyDescription` = **Tighten the slat bolts and touch up the coating once a year.**  
+  What the maintenance is.
+- `LineItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Steel**  
+  A material the item is made of.
+- `LineItem/Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **34** (unitCode `KGM`)  
+  How much of it one item uses.
+- `LineItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
+  Where the material comes from.
+- `LineItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Hardwood**  
+  A material the item is made of.
+- `LineItem/Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
+  How much of it one item uses.
+- `LineItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
+  Where the material comes from.
+- `LineItem/Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **Packaging**  
+  The kind of waste the item leaves.
+- `LineItem/Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
+  The waste in words.
+- `LineItem/Item/CircularityProfile/WasteGenerated/WasteMeasure` = **0.4** (unitCode `KGM`)  
+  How much of it per item.
+- `LineItem/Item/CircularityProfile/WasteGenerated/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the deliveries of 2025.
+- `LineItem/Item/CircularityProfile/WasteGenerated/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
+- `LineItem/Item/CircularityProfile/RepairabilityScore/ScoreNumeric` = **8**  
+  Side frames and slats can be replaced one by one, which is why the spare side frame exists.
+- `LineItem/Item/CircularityProfile/RepairabilityScore/ScoringSystemCode` = **Repairability index, 0–10**  
+  The scale of the score.
+- `LineItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
+  The repair and maintenance manual.
 - `LineItem/ID` = **2**  
   The line number.
 - `LineItem/Quantity` = **12** (unitCode `H87`)  
@@ -501,12 +675,20 @@ Inside `OrderLine`:
   The seller's description; item bench-casting of Valdara Industries (world/items.json).
 - `LineItem/Item/Name` = **Bench side frame casting**  
   The item's short name; item bench-casting of Valdara Industries (world/items.json).
+- `LineItem/Item/BrandName` = **Valdara**  
+  The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
+- `LineItem/Item/ModelName` = **Serra 180 side frame**  
+  The model; item bench-casting of Valdara Industries (world/items.json).
+- `LineItem/Item/BuyersItemIdentification/ID` = **LD-10443**  
+  The buyer's own item number: it resells this item as its item bench-casting-b.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
   The seller's own item number; item bench-casting of Valdara Industries (world/items.json).
 - `LineItem/Item/StandardItemIdentification/ID` = **771020000034** (schemeID `urn:ubl-examples:world:item`)  
   The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-casting of Valdara Industries (world/items.json).
 - `LineItem/Item/OriginCountry/IdentificationCode` = **XU**  
   Where the item was produced; item bench-casting of Valdara Industries (world/items.json).
+- `LineItem/Item/CommodityClassification/CommodityCode` = **7325.99.90**  
+  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
 - `LineItem/Item/CommodityClassification/ItemClassificationCode` = **7325.99** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item bench-casting of Valdara Industries (world/items.json).
 
@@ -937,18 +1119,163 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+        <cbc:Keyword>park bench</cbc:Keyword>
+        <cbc:Keyword>street furniture</cbc:Keyword>
+        <cbc:BrandName>Valdara</cbc:BrandName>
+        <cbc:ModelName>Serra 180</cbc:ModelName>
+        <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+        </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>VI-B180</cbc:ID>
+          <cbc:ExtendedID>GRY</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID>Colour</cbc:AttributeID>
+            <cbc:PositionCode>FRM</cbc:PositionCode>
+            <cbc:DescriptionCode>GRY</cbc:DescriptionCode>
+            <cbc:Description>Frame in Ferro grey</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+          <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+          <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
+        <cac:ItemSpecificationDocumentReference>
+          <cbc:ID>VI-DS-B180</cbc:ID>
+        </cac:ItemSpecificationDocumentReference>
         <cac:OriginCountry>
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
+          <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Frame material</cbc:Name>
+          <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Slat wood</cbc:Name>
+          <cbc:Value>Kiln-dried hardwood</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Seats</cbc:Name>
+          <cbc:Value>3</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:ID>COL</cbc:ID>
+          <cbc:Name>Frame colour</cbc:Name>
+          <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+          <cbc:ListValue>Ferro grey</cbc:ListValue>
+          <cbc:ListValue>Moss green</cbc:ListValue>
+          <cac:ItemPropertyGroup>
+            <cbc:ID>APP</cbc:ID>
+            <cbc:Name>Appearance</cbc:Name>
+            <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+          </cac:ItemPropertyGroup>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:ID>LOAD</cbc:ID>
+          <cbc:Name>Load capacity</cbc:Name>
+          <cbc:NameCode>LOAD</cbc:NameCode>
+          <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
+          <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
+          <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
+          <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          <cac:ItemPropertyGroup>
+            <cbc:ID>SAF</cbc:ID>
+            <cbc:Name>Safety</cbc:Name>
+            <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          </cac:ItemPropertyGroup>
+          <cac:StandardPropertyIdentification>
+            <cbc:ID>UR-SF-0450</cbc:ID>
+            <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Codana Identification Agency</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:StandardPropertyIdentification>
+        </cac:AdditionalItemProperty>
+        <cac:Dimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+          <cbc:Description>Over the armrests</cbc:Description>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Depth</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">620</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">780</cbc:Measure>
+          <cbc:Description>Seat back at its highest point</cbc:Description>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Seat height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">450</cbc:Measure>
+          <cbc:Description>Above the ground when anchored</cbc:Description>
+          <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>
+          <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
+        </cac:Dimension>
+        <cac:EnvironmentalEmission>
+          <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+          <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
+          <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
+          <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+          <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
+          <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
+          <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
+          <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
+          <cac:EmissionCalculationMethod>
+            <cbc:CalculationMethodCode>Calculated</cbc:CalculationMethodCode>
+            <cbc:FullnessIndicationCode>Cradle to gate</cbc:FullnessIndicationCode>
+            <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
+            <cac:EmissionFactorDocumentReference>
+              <cbc:ID>VI-LCA-2025</cbc:ID>
+            </cac:EmissionFactorDocumentReference>
+          </cac:EmissionCalculationMethod>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
+        </cac:EnvironmentalEmission>
+        <cac:CircularityProfile>
+          <cbc:MaintenanceFrequencyCode>Yearly</cbc:MaintenanceFrequencyCode>
+          <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
+          <cac:ResourceConsumption>
+            <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
+            <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
+            <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+          </cac:ResourceConsumption>
+          <cac:ResourceConsumption>
+            <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
+            <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
+            <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+          </cac:ResourceConsumption>
+          <cac:WasteGenerated>
+            <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
+            <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
+            <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
+            <cac:MeasurementPeriod>
+              <cbc:StartDate>2025-01-01</cbc:StartDate>
+              <cbc:EndDate>2025-12-31</cbc:EndDate>
+            </cac:MeasurementPeriod>
+          </cac:WasteGenerated>
+          <cac:RepairabilityScore>
+            <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
+            <cbc:ScoringSystemCode>Repairability index, 0–10</cbc:ScoringSystemCode>
+          </cac:RepairabilityScore>
+          <cac:ProductDocumentationDocumentReference>
+            <cbc:ID>VI-RM-B180</cbc:ID>
+          </cac:ProductDocumentationDocumentReference>
+        </cac:CircularityProfile>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -964,6 +1291,11 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
         <cbc:Name>Bench side frame casting</cbc:Name>
+        <cbc:BrandName>Valdara</cbc:BrandName>
+        <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>LD-10443</cbc:ID>
+        </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>VI-C180</cbc:ID>
         </cac:SellersItemIdentification>
@@ -974,6 +1306,7 @@ Inside `OrderLine`:
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
+          <cbc:CommodityCode>7325.99.90</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
       </cac:Item>

@@ -343,6 +343,8 @@ Inside `InvoiceLine`:
   The seller's description; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/Name` = **Cotton shirt**  
   The item's short name; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/BrandName` = **Lumeport**  
+  The brand the maker sells the item under; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LT-SH-01**  
   The seller's own item number; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/StandardItemIdentification/ID` = **772030000090** (schemeID `urn:ubl-examples:world:item`)  
@@ -359,6 +361,14 @@ Inside `InvoiceLine`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Item/AdditionalItemProperty/Name` = **Material**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **100 % cotton grown on Lisavu**  
+  Its value; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Sizes**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **S to XL**  
+  Its value; item shirt of Lumeport Textile Mill (world/items.json).
 - `Price/PriceAmount` = **14.5** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
@@ -641,6 +651,7 @@ Inside `InvoiceLine`:
     <cac:Item>
       <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
+      <cbc:BrandName>Lumeport</cbc:BrandName>
       <cac:SellersItemIdentification>
         <cbc:ID>LT-SH-01</cbc:ID>
       </cac:SellersItemIdentification>
@@ -661,6 +672,14 @@ Inside `InvoiceLine`:
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Material</cbc:Name>
+        <cbc:Value>100 % cotton grown on Lisavu</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sizes</cbc:Name>
+        <cbc:Value>S to XL</cbc:Value>
+      </cac:AdditionalItemProperty>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">14.5</cbc:PriceAmount>

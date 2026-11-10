@@ -263,6 +263,18 @@ Inside `CataloguePricingUpdateLine`:
   The new price of the side frame, down from 64.00.
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `H87`)  
   Per piece.
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **6-XB-PL-2026-2**  
+  The new price list.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **Active**  
+  It is in force from today.
+- `RequiredItemLocationQuantity/Price/PriceList/ValidityPeriod/StartDate` = **2026-05-20**  
+  From the update.
+- `RequiredItemLocationQuantity/Price/PriceList/ValidityPeriod/EndDate` = **2026-07-19**  
+  Until the catalogue ends.
+- `RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/ID` = **6-XB-PL-2026**  
+  The price list of the spring catalogue it replaces.
+- `RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/StatusCode` = **Replaced**  
+  No longer in force.
 
 ## The document
 
@@ -476,6 +488,18 @@ Inside `CataloguePricingUpdateLine`:
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">58</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cac:PriceList>
+          <cbc:ID>6-XB-PL-2026-2</cbc:ID>
+          <cbc:StatusCode>Active</cbc:StatusCode>
+          <cac:ValidityPeriod>
+            <cbc:StartDate>2026-05-20</cbc:StartDate>
+            <cbc:EndDate>2026-07-19</cbc:EndDate>
+          </cac:ValidityPeriod>
+          <cac:PreviousPriceList>
+            <cbc:ID>6-XB-PL-2026</cbc:ID>
+            <cbc:StatusCode>Replaced</cbc:StatusCode>
+          </cac:PreviousPriceList>
+        </cac:PriceList>
       </cac:Price>
     </cac:RequiredItemLocationQuantity>
   </cac:CataloguePricingUpdateLine>

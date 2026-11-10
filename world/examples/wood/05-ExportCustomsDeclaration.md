@@ -232,16 +232,114 @@ Inside `CustomsDeclaration`:
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
   The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/PackQuantity` = **1** (unitCode `H87`)  
+  One pack of this item.
+- `Shipment/GoodsItem/Item/PackSizeNumeric` = **50**  
+  The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Hardwood bench slat 1800**  
   The item's short name; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `Shipment/GoodsItem/Item/SellersItemIdentification/ID` = **MS-SL-1800**  
   The seller's own item number; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/SellersItemIdentification/MeasurementDimension/AttributeID` = **Length**  
+  The seller numbers its slats by length: this number is for one length.
+- `Shipment/GoodsItem/Item/SellersItemIdentification/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
+  The length the number stands for.
 - `Shipment/GoodsItem/Item/StandardItemIdentification/ID` = **772010000058** (schemeID `urn:ubl-examples:world:item`)  
   The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/AdditionalItemIdentification/ID` = **772010000065** (schemeID `urn:ubl-examples:world:item`)  
+  The world item number of the pack of 50, the unit the item is traded in; the item number above is for one piece.
 - `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XB**  
   Where the item was produced; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **IX**  
+  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification.
+- `Shipment/GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN**  
+  The kind of cargo as the parties code it: bulk, or general cargo in packages.
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **4407.99** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ID` = **MC**  
+  The maker's identifier for the property.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Moisture content**  
+  A property buyers ask about.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/NameCode` = **MC**  
+  The property's name as a code, as the property standard lists it.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/TestMethod` = **Oven-dry method on samples from each kiln charge**  
+  How the value is tested.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **12** (unitCode `P1`)  
+  Its measured value; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQualifier` = **Average of the kiln charge**  
+  What the value stands for.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **Mandatory**  
+  How much the property matters in describing the item.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **QUA**  
+  The group of properties this one belongs to.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Wood quality**  
+  The group's name.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Mandatory**  
+  How much the group matters.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyRange/MinimumValue` = **10**  
+  The lowest value accepted.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyRange/MaximumValue` = **14**  
+  The highest value accepted.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-WD-0012**  
+  The property's number in the property standard of the identification agency.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana timber properties**  
+  The part of the agency's standards it is taken from.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/SubItemProperty/Name` = **Moisture at the core**  
+  Measured at the centre of the slat.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/SubItemProperty/ValueQuantity` = **13** (unitCode `P1`)  
+  Its measured value; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Thickness tolerance**  
+  How far a slat may be off its thickness.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/RangeDimension/AttributeID` = **Thickness**  
+  The dimension the tolerance is for.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/RangeDimension/Measure` = **38** (unitCode `MMT`)  
+  Its nominal size.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/RangeDimension/MinimumMeasure` = **37.5** (unitCode `MMT`)  
+  The smallest size accepted.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/RangeDimension/MaximumMeasure` = **38.5** (unitCode `MMT`)  
+  The largest size accepted.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Surface**  
+  A property buyers ask about.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/Value` = **Planed on four sides**  
+  Its value; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/UsabilityPeriod/DurationMeasure` = **12** (unitCode `MON`)  
+  Oiled within twelve months of planing, before the surface greys
+- `Shipment/GoodsItem/Item/Certificate/ID` = **XB-FOR-2025-118**  
+  The number of the certificate.
+- `Shipment/GoodsItem/Item/Certificate/CertificateTypeCode` = **Sustainableforestry**  
+  The kind of certificate, as a code.
+- `Shipment/GoodsItem/Item/Certificate/CertificateType` = **Sustainable forestry**  
+  The kind of certificate, in words.
+- `Shipment/GoodsItem/Item/Certificate/CertificateReferenceID` = **XB-FOR-REG-0118**  
+  The certificate's number in the issuer's public register.
+- `Shipment/GoodsItem/Item/Certificate/ApplicableCategoryCode` = **HW**  
+  The category of goods the certificate covers.
+- `Shipment/GoodsItem/Item/Certificate/ApplicableCategory` = **Hardwood sawn timber**  
+  The category in words.
+- `Shipment/GoodsItem/Item/Certificate/CertificateURI` = **https://forestry.xb.example/certificates/XB-FOR-2025-118**  
+  Where the certificate can be checked.
+- `Shipment/GoodsItem/Item/Certificate/Remarks` = **The timber comes from forests in Upland State managed for regrowth.**  
+  What the certificate states about the goods.
+- `Shipment/GoodsItem/Item/Certificate/CertificateValidityPeriod/EndDate` = **2027-12-31**  
+  The certificate is valid until then.
+- `Shipment/GoodsItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-118**  
+  The audit report the certificate is based on.
+- `Shipment/GoodsItem/Item/Dimension/AttributeID` = **Length**  
+  Which dimension.
+- `Shipment/GoodsItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
+  Its size.
+- `Shipment/GoodsItem/Item/Dimension/AttributeID` = **Width**  
+  Which dimension.
+- `Shipment/GoodsItem/Item/Dimension/Measure` = **95** (unitCode `MMT`)  
+  Its size.
+- `Shipment/GoodsItem/Item/Dimension/AttributeID` = **Thickness**  
+  Which dimension.
+- `Shipment/GoodsItem/Item/Dimension/Measure` = **38** (unitCode `MMT`)  
+  Its size.
 - `ConsigneeParty/WebsiteURI` = **https://www.valdara.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
@@ -604,19 +702,108 @@ Inside `CustomsDeclaration`:
         <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+          <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+          <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
           <cbc:Name>Hardwood bench slat 1800</cbc:Name>
           <cac:SellersItemIdentification>
             <cbc:ID>MS-SL-1800</cbc:ID>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID>Length</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+            </cac:MeasurementDimension>
           </cac:SellersItemIdentification>
           <cac:StandardItemIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:item">772010000058</cbc:ID>
           </cac:StandardItemIdentification>
+          <cac:AdditionalItemIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:item">772010000065</cbc:ID>
+          </cac:AdditionalItemIdentification>
           <cac:OriginCountry>
             <cbc:IdentificationCode>XB</cbc:IdentificationCode>
           </cac:OriginCountry>
           <cac:CommodityClassification>
+            <cbc:NatureCode>IX</cbc:NatureCode>
+            <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
             <cbc:ItemClassificationCode listID="HS">4407.99</cbc:ItemClassificationCode>
           </cac:CommodityClassification>
+          <cac:AdditionalItemProperty>
+            <cbc:ID>MC</cbc:ID>
+            <cbc:Name>Moisture content</cbc:Name>
+            <cbc:NameCode>MC</cbc:NameCode>
+            <cbc:TestMethod>Oven-dry method on samples from each kiln charge</cbc:TestMethod>
+            <cbc:ValueQuantity unitCode="P1">12</cbc:ValueQuantity>
+            <cbc:ValueQualifier>Average of the kiln charge</cbc:ValueQualifier>
+            <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+            <cac:ItemPropertyGroup>
+              <cbc:ID>QUA</cbc:ID>
+              <cbc:Name>Wood quality</cbc:Name>
+              <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+            </cac:ItemPropertyGroup>
+            <cac:ItemPropertyRange>
+              <cbc:MinimumValue>10</cbc:MinimumValue>
+              <cbc:MaximumValue>14</cbc:MaximumValue>
+            </cac:ItemPropertyRange>
+            <cac:StandardPropertyIdentification>
+              <cbc:ID>UR-WD-0012</cbc:ID>
+              <cbc:IssuerScopeID>Codana timber properties</cbc:IssuerScopeID>
+              <cac:IssuerParty>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name>Codana Identification Agency</cbc:Name>
+                </cac:PartyName>
+              </cac:IssuerParty>
+            </cac:StandardPropertyIdentification>
+            <cac:SubItemProperty>
+              <cbc:Name>Moisture at the core</cbc:Name>
+              <cbc:ValueQuantity unitCode="P1">13</cbc:ValueQuantity>
+            </cac:SubItemProperty>
+          </cac:AdditionalItemProperty>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Thickness tolerance</cbc:Name>
+            <cac:RangeDimension>
+              <cbc:AttributeID>Thickness</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">38</cbc:Measure>
+              <cbc:MinimumMeasure unitCode="MMT">37.5</cbc:MinimumMeasure>
+              <cbc:MaximumMeasure unitCode="MMT">38.5</cbc:MaximumMeasure>
+            </cac:RangeDimension>
+          </cac:AdditionalItemProperty>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Surface</cbc:Name>
+            <cbc:Value>Planed on four sides</cbc:Value>
+            <cac:UsabilityPeriod>
+              <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
+            </cac:UsabilityPeriod>
+          </cac:AdditionalItemProperty>
+          <cac:Certificate>
+            <cbc:ID>XB-FOR-2025-118</cbc:ID>
+            <cbc:CertificateTypeCode>Sustainableforestry</cbc:CertificateTypeCode>
+            <cbc:CertificateType>Sustainable forestry</cbc:CertificateType>
+            <cbc:CertificateReferenceID>XB-FOR-REG-0118</cbc:CertificateReferenceID>
+            <cbc:ApplicableCategoryCode>HW</cbc:ApplicableCategoryCode>
+            <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>
+            <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-118</cbc:CertificateURI>
+            <cbc:Remarks>The timber comes from forests in Upland State managed for regrowth.</cbc:Remarks>
+            <cac:CertificateValidityPeriod>
+              <cbc:EndDate>2027-12-31</cbc:EndDate>
+            </cac:CertificateValidityPeriod>
+            <cac:DocumentReference>
+              <cbc:ID>XB-FOR-AUD-2025-118</cbc:ID>
+            </cac:DocumentReference>
+          </cac:Certificate>
+          <cac:Dimension>
+            <cbc:AttributeID>Length</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+          </cac:Dimension>
+          <cac:Dimension>
+            <cbc:AttributeID>Width</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">95</cbc:Measure>
+          </cac:Dimension>
+          <cac:Dimension>
+            <cbc:AttributeID>Thickness</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">38</cbc:Measure>
+          </cac:Dimension>
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>

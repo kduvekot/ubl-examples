@@ -225,20 +225,108 @@ Inside `CatalogueLine`:
 
 - `ID` = **1**  
   The line number.
+- `RequiredItemLocationQuantity/LeadTimeMeasure` = **3** (unitCode `DAY`)  
+  The days between order and despatch.
+- `RequiredItemLocationQuantity/MinimumQuantity` = **4** (unitCode `H87`)  
+  The smallest quantity the seller accepts on an order.
+- `RequiredItemLocationQuantity/MaximumQuantity` = **192** (unitCode `H87`)  
+  The most one order can take from stock: two containers.
+- `RequiredItemLocationQuantity/TradingRestrictions` = **Not sold to consumers.**  
+  The bench is sold through retailers.
+- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB**  
+  The catalogue is offered for buyers in the seller's country.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
+- `RequiredItemLocationQuantity/Price/PriceTypeCode` = **TRD**  
+  The seller's code for its trade price.
+- `RequiredItemLocationQuantity/Price/PriceType` = **Trade price**  
+  A price for resellers, before sales tax.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-04**  
+  The price applies from the catalogue's issue date.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-10-31**  
+  And until the catalogue ends.
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **6-XB-PL-2026**  
+  The seller's price list this price is taken from.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **Active**  
+  The price list is in force.
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **208** (currencyID `XLC`)  
+  The same price in the buyer's currency, at the world's reference rate on the catalogue's issue day; for information only.
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/BaseQuantity` = **1** (unitCode `H87`)  
+  Per one unit.
+- `RequiredItemLocationQuantity/DeliveryUnit/BatchQuantity` = **4** (unitCode `H87`)  
+  The benches are delivered per pallet of four.
+- `RequiredItemLocationQuantity/DeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `H87`)  
+  One bench is one consumer unit.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **G**  
+  An export from Bayvarra: the state sales tax is not charged (category G).
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `RequiredItemLocationQuantity/Package/ID` = **PAL-4**  
+  The pallet the price is for.
+- `RequiredItemLocationQuantity/Package/Quantity` = **4** (unitCode `H87`)  
+  Four benches to a pallet.
+- `RequiredItemLocationQuantity/Package/PackagingTypeCode` = **PX**  
+  UN/ECE Recommendation 21 code PX: pallet.
+- `RequiredItemLocationQuantity/AllowanceCharge/ChargeIndicator` = **false**  
+  A discount.
+- `RequiredItemLocationQuantity/AllowanceCharge/AllowanceChargeReasonCode` = **78** (listID `UN/EDIFACT EDED 5189`)  
+  UN/EDIFACT 5189 code 78: volume discount.
+- `RequiredItemLocationQuantity/AllowanceCharge/AllowanceChargeReason` = **Full container**  
+  The discount for a full container.
+- `RequiredItemLocationQuantity/AllowanceCharge/MultiplierFactorNumeric` = **0.03**  
+  Three percent off.
+- `RequiredItemLocationQuantity/AllowanceCharge/Amount` = **15.60** (currencyID `XBL`)  
+  The discount per bench.
+- `RequiredItemLocationQuantity/AllowanceCharge/BaseAmount` = **520.00** (currencyID `XBL`)  
+  The catalogue price the discount is taken from.
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/StartDate` = **2026-05-11**  
+  The first deliveries from the season's stock.
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/EndDate` = **2026-10-31**  
+  The last.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/CatalogueIndicator` = **true**  
+  The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
+  What comes with the item; item bench-serra of Valdara Industries (world/items.json).
+- `Item/Keyword` = **park bench**  
+  A word buyers search the item by.
+- `Item/Keyword` = **street furniture**  
+  A word buyers search the item by.
+- `Item/BrandName` = **Valdara**  
+  The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
+- `Item/ModelName` = **Serra 180**  
+  The model; item bench-serra of Valdara Industries (world/items.json).
+- `Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
+  The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The variant of the item: the frame colour, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **Colour**  
+  The attribute the variant differs in.
+- `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM**  
+  The part of the item the attribute is on: the frame.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY**  
+  The variant's code for it.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+  The variant in words.
 - `Item/ManufacturersItemIdentification/ID` = **VI-B180**  
-  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra (world/items.json).
+  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
 - `Item/StandardItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-serra of Valdara Industries, which this item resells (world/items.json).
+  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
+  The barcode the number is printed in on the label.
+- `Item/StandardItemIdentification/IssuerScopeID` = **771**  
+  The range of item numbers the agency gives out in the maker's country.
 - `Item/StandardItemIdentification/IssuerParty/IndustryClassificationCode` = **8299** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -321,34 +409,250 @@ Inside `CatalogueLine`:
   The network in which the address is registered: the world's own exchange network.
 - `Item/StandardItemIdentification/IssuerParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Codana Identification Agency (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Item/CatalogueItemIdentification/ID` = **LD-CAT-26-0124-1**  
+  The item's place in the catalogue: the catalogue number and the line.
+- `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
+  The maker's datasheet with drawings and assembly instructions.
 - `Item/OriginCountry/IdentificationCode` = **XU**  
-  Where the item was produced; item bench-serra of Valdara Industries, which this item resells (world/items.json).
+  Where the item was produced; item bench-serra of Valdara Industries (world/items.json).
+- `Item/CommodityClassification/CommodityCode` = **9401.79.10**  
+  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
 - `Item/CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item bench-serra of Valdara Industries, which this item resells (world/items.json).
+  Harmonized System subheading of the World Customs Organization; item bench-serra of Valdara Industries (world/items.json).
+- `Item/TransactionConditions/ID` = **LD-TC-01**  
+  The seller's number for these conditions of sale.
+- `Item/TransactionConditions/ActionCode` = **Trade**  
+  To whom the conditions apply.
+- `Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
+  The conditions in words.
+- `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
+  The seller's general terms of trade.
+- `Item/AdditionalItemProperty/Name` = **Frame material**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
+  Its value; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Slat wood**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **Kiln-dried hardwood**  
+  Its value; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Seats**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **3**  
+  Its value; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemProperty/ID` = **COL**  
+  The maker's identifier for the property.
+- `Item/AdditionalItemProperty/Name` = **Frame colour**  
+  The colours the frame is offered in.
+- `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
+  How much the property matters in describing the item.
+- `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
+  One of the values the property can take.
+- `Item/AdditionalItemProperty/ListValue` = **Moss green**  
+  One of the values the property can take.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
+  The group of properties this one belongs to.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
+  The group's name.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Optional**  
+  How much the group matters.
+- `Item/AdditionalItemProperty/ID` = **LOAD**  
+  The maker's identifier for the property.
+- `Item/AdditionalItemProperty/Name` = **Load capacity**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/NameCode` = **LOAD**  
+  The property's name as a code, as the property standard lists it.
+- `Item/AdditionalItemProperty/TestMethod` = **Static load on the seat for one hour, three seats loaded evenly, no lasting deformation**  
+  How the value is tested.
+- `Item/AdditionalItemProperty/ValueQuantity` = **450** (unitCode `KGM`)  
+  Its measured value; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemProperty/ValueQualifier` = **Distributed over the seat**  
+  What the value stands for.
+- `Item/AdditionalItemProperty/ImportanceCode` = **Mandatory**  
+  How much the property matters in describing the item.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **SAF**  
+  The group of properties this one belongs to.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Safety**  
+  The group's name.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Mandatory**  
+  How much the group matters.
+- `Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450**  
+  The property's number in the property standard of the identification agency.
+- `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana street furniture properties**  
+  The part of the agency's standards it is taken from.
+- `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/InformationContentProviderParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/InformationContentProviderParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/Dimension/AttributeID` = **Length**  
+  Which dimension.
+- `Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/Description` = **Over the armrests**  
+  Where it is measured.
+- `Item/Dimension/AttributeID` = **Depth**  
+  Which dimension.
+- `Item/Dimension/Measure` = **620** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/AttributeID` = **Height**  
+  Which dimension.
+- `Item/Dimension/Measure` = **780** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/Description` = **Seat back at its highest point**  
+  Where it is measured.
+- `Item/Dimension/AttributeID` = **Seat height**  
+  Which dimension.
+- `Item/Dimension/Measure` = **450** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/Description` = **Above the ground when anchored**  
+  Where it is measured.
+- `Item/Dimension/MinimumMeasure` = **440** (unitCode `MMT`)  
+  The lowest it can be set to.
+- `Item/Dimension/MaximumMeasure` = **460** (unitCode `MMT`)  
+  The highest it can be set to.
+- `Item/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2e**  
+  The emission reported: greenhouse gases as CO2 equivalent.
+- `Item/EnvironmentalEmission/ValueMeasure` = **96** (unitCode `KGM`)  
+  The emission of one item.
+- `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
+  The share of the footprint the steel frame accounts for.
+- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+  The emission is per one bench.
+- `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
+  The standard the footprint is calculated by.
+- `Item/EnvironmentalEmission/LifecycleStageCode` = **Manufacturing**  
+  The part of the bench's life the figure covers.
+- `Item/EnvironmentalEmission/LifecycleStageDescription` = **From the ore at the mine to the bench leaving the factory gate.**  
+  That part in words.
+- `Item/EnvironmentalEmission/Description` = **Mining, steel making, casting, galvanising, sawing and the transport between them.**  
+  What the figure includes.
+- `Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **Calculated**  
+  Calculated, not measured.
+- `Item/EnvironmentalEmission/EmissionCalculationMethod/FullnessIndicationCode` = **Cradle to gate**  
+  How much of the chain is included.
+- `Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorSource` = **The steelworks' and sawmill's measured energy use of 2025**  
+  Where the factors come from.
+- `Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorDocumentReference/ID` = **VI-LCA-2025**  
+  The report with the emission factors.
+- `Item/EnvironmentalEmission/MeasurementPeriod/StartDate` = **2025-01-01**  
+  The year the figures are from.
+- `Item/EnvironmentalEmission/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
+- `Item/CircularityProfile/MaintenanceFrequencyCode` = **Yearly**  
+  How often the item needs maintenance.
+- `Item/CircularityProfile/MaintenanceFrequencyDescription` = **Tighten the slat bolts and touch up the coating once a year.**  
+  What the maintenance is.
+- `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Steel**  
+  A material the item is made of.
+- `Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **34** (unitCode `KGM`)  
+  How much of it one item uses.
+- `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
+  Where the material comes from.
+- `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Hardwood**  
+  A material the item is made of.
+- `Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
+  How much of it one item uses.
+- `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
+  Where the material comes from.
+- `Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **Packaging**  
+  The kind of waste the item leaves.
+- `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
+  The waste in words.
+- `Item/CircularityProfile/WasteGenerated/WasteMeasure` = **0.4** (unitCode `KGM`)  
+  How much of it per item.
+- `Item/CircularityProfile/WasteGenerated/MeasurementPeriod/StartDate` = **2025-01-01**  
+  Measured over the deliveries of 2025.
+- `Item/CircularityProfile/WasteGenerated/MeasurementPeriod/EndDate` = **2025-12-31**  
+  Its last day.
+- `Item/CircularityProfile/RepairabilityScore/ScoreNumeric` = **8**  
+  Side frames and slats can be replaced one by one, which is why the spare side frame exists.
+- `Item/CircularityProfile/RepairabilityScore/ScoringSystemCode` = **Repairability index, 0–10**  
+  The scale of the score.
+- `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
+  The repair and maintenance manual.
 - `ID` = **2**  
   The line number.
+- `RequiredItemLocationQuantity/LeadTimeMeasure` = **2** (unitCode `DAY`)  
+  The days between order and despatch.
+- `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `H87`)  
+  The smallest quantity the seller accepts on an order.
+- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB**  
+  The catalogue is offered for buyers in the seller's country.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
+- `RequiredItemLocationQuantity/Price/PriceTypeCode` = **TRD**  
+  The seller's code for its trade price.
+- `RequiredItemLocationQuantity/Price/PriceType` = **Trade price**  
+  A price for resellers, before sales tax.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-04**  
+  The price applies from the catalogue's issue date.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-10-31**  
+  And until the catalogue ends.
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **6-XB-PL-2026**  
+  The seller's price list this price is taken from.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **Active**  
+  The price list is in force.
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **25.6** (currencyID `XLC`)  
+  The same price in the buyer's currency, at the world's reference rate on the catalogue's issue day; for information only.
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/BaseQuantity` = **1** (unitCode `H87`)  
+  Per one unit.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **G**  
+  An export from Bayvarra: the state sales tax is not charged (category G).
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `RequiredItemLocationQuantity/DependentPriceReference/Percent` = **12.31**  
+  The spare frame costs this share of the bench's price, as the distributor's price rule sets it.
+- `RequiredItemLocationQuantity/DependentPriceReference/DependentLineReference/LineID` = **1**  
+  The catalogue line of the bench.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
+- `Item/CatalogueIndicator` = **true**  
+  The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Bench side frame casting**  
   The item's short name; item bench-casting-b of Lumeway Distribution (world/items.json).
+- `Item/BrandName` = **Valdara**  
+  The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
+- `Item/ModelName` = **Serra 180 side frame**  
+  The model; item bench-casting of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LD-10443**  
   The seller's own item number; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
-  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-casting (world/items.json).
+  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-casting.
 - `Item/StandardItemIdentification/ID` = **771020000034** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-casting of Valdara Industries, which this item resells (world/items.json).
+  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-casting of Valdara Industries (world/items.json).
 - `Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at CatalogueLine/Item/StandardItemIdentification/IssuerParty, where its full details are given; only its identifier and name are repeated.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
   The same party as at CatalogueLine/Item/StandardItemIdentification/IssuerParty, where its full details are given; only its identifier and name are repeated.
+- `Item/CatalogueItemIdentification/ID` = **LD-CAT-26-0124-2**  
+  The item's place in the catalogue: the catalogue number and the line.
 - `Item/OriginCountry/IdentificationCode` = **XU**  
-  Where the item was produced; item bench-casting of Valdara Industries, which this item resells (world/items.json).
+  Where the item was produced; item bench-casting of Valdara Industries (world/items.json).
+- `Item/CommodityClassification/CommodityCode` = **7325.99.90**  
+  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
 - `Item/CommodityClassification/ItemClassificationCode` = **7325.99** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item bench-casting of Valdara Industries, which this item resells (world/items.json).
+  Harmonized System subheading of the World Customs Organization; item bench-casting of Valdara Industries (world/items.json).
+- `Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/InformationContentProviderParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/InformationContentProviderParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -530,22 +834,90 @@ Inside `CatalogueLine`:
   <cac:CatalogueLine>
     <cbc:ID>1</cbc:ID>
     <cac:RequiredItemLocationQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="H87">4</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="H87">192</cbc:MaximumQuantity>
+      <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
+      <cac:ApplicableTerritoryAddress>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
+        <cbc:PriceType>Trade price</cbc:PriceType>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2026-05-04</cbc:StartDate>
+          <cbc:EndDate>2026-10-31</cbc:EndDate>
+        </cac:ValidityPeriod>
+        <cac:PriceList>
+          <cbc:ID>6-XB-PL-2026</cbc:ID>
+          <cbc:StatusCode>Active</cbc:StatusCode>
+        </cac:PriceList>
+        <cac:AlternativeCurrencyPrice>
+          <cbc:PriceAmount currencyID="XLC">208</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        </cac:AlternativeCurrencyPrice>
       </cac:Price>
+      <cac:DeliveryUnit>
+        <cbc:BatchQuantity unitCode="H87">4</cbc:BatchQuantity>
+        <cbc:ConsumerUnitQuantity unitCode="H87">1</cbc:ConsumerUnitQuantity>
+      </cac:DeliveryUnit>
+      <cac:ApplicableTaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ApplicableTaxCategory>
+      <cac:Package>
+        <cbc:ID>PAL-4</cbc:ID>
+        <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+        <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+      </cac:Package>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">78</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Full container</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XBL">15.60</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
+      </cac:AllowanceCharge>
+      <cac:ApplicableDeliveryPeriod>
+        <cbc:StartDate>2026-05-11</cbc:StartDate>
+        <cbc:EndDate>2026-10-31</cbc:EndDate>
+      </cac:ApplicableDeliveryPeriod>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+      <cbc:Keyword>park bench</cbc:Keyword>
+      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:BrandName>Valdara</cbc:BrandName>
+      <cbc:ModelName>Serra 180</cbc:ModelName>
+      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID>Colour</cbc:AttributeID>
+          <cbc:PositionCode>FRM</cbc:PositionCode>
+          <cbc:DescriptionCode>GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+        <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
         <cac:IssuerParty>
           <cbc:IndustryClassificationCode listID="ISIC Rev.4">8299</cbc:IndustryClassificationCode>
           <cac:PartyIdentification>
@@ -624,25 +996,217 @@ Inside `CatalogueLine`:
           </cac:ElectronicAddress>
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
+      <cac:CatalogueItemIdentification>
+        <cbc:ID>LD-CAT-26-0124-1</cbc:ID>
+      </cac:CatalogueItemIdentification>
+      <cac:ItemSpecificationDocumentReference>
+        <cbc:ID>VI-DS-B180</cbc:ID>
+      </cac:ItemSpecificationDocumentReference>
       <cac:OriginCountry>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
+        <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
+      <cac:TransactionConditions>
+        <cbc:ID>LD-TC-01</cbc:ID>
+        <cbc:ActionCode>Trade</cbc:ActionCode>
+        <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
+        <cac:DocumentReference>
+          <cbc:ID>LD-GTC-2026</cbc:ID>
+        </cac:DocumentReference>
+      </cac:TransactionConditions>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Frame material</cbc:Name>
+        <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Slat wood</cbc:Name>
+        <cbc:Value>Kiln-dried hardwood</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Seats</cbc:Name>
+        <cbc:Value>3</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:ID>COL</cbc:ID>
+        <cbc:Name>Frame colour</cbc:Name>
+        <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+        <cbc:ListValue>Ferro grey</cbc:ListValue>
+        <cbc:ListValue>Moss green</cbc:ListValue>
+        <cac:ItemPropertyGroup>
+          <cbc:ID>APP</cbc:ID>
+          <cbc:Name>Appearance</cbc:Name>
+          <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:ID>LOAD</cbc:ID>
+        <cbc:Name>Load capacity</cbc:Name>
+        <cbc:NameCode>LOAD</cbc:NameCode>
+        <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
+        <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
+        <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
+        <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+        <cac:ItemPropertyGroup>
+          <cbc:ID>SAF</cbc:ID>
+          <cbc:Name>Safety</cbc:Name>
+          <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+        </cac:ItemPropertyGroup>
+        <cac:StandardPropertyIdentification>
+          <cbc:ID>UR-SF-0450</cbc:ID>
+          <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Codana Identification Agency</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+        </cac:StandardPropertyIdentification>
+      </cac:AdditionalItemProperty>
+      <cac:ManufacturerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:ManufacturerParty>
+      <cac:InformationContentProviderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:InformationContentProviderParty>
+      <cac:Dimension>
+        <cbc:AttributeID>Length</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Description>Over the armrests</cbc:Description>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID>Depth</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">620</cbc:Measure>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">780</cbc:Measure>
+        <cbc:Description>Seat back at its highest point</cbc:Description>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID>Seat height</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">450</cbc:Measure>
+        <cbc:Description>Above the ground when anchored</cbc:Description>
+        <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>
+        <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
+      </cac:Dimension>
+      <cac:EnvironmentalEmission>
+        <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+        <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
+        <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
+        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
+        <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
+        <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
+        <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
+        <cac:EmissionCalculationMethod>
+          <cbc:CalculationMethodCode>Calculated</cbc:CalculationMethodCode>
+          <cbc:FullnessIndicationCode>Cradle to gate</cbc:FullnessIndicationCode>
+          <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
+          <cac:EmissionFactorDocumentReference>
+            <cbc:ID>VI-LCA-2025</cbc:ID>
+          </cac:EmissionFactorDocumentReference>
+        </cac:EmissionCalculationMethod>
+        <cac:MeasurementPeriod>
+          <cbc:StartDate>2025-01-01</cbc:StartDate>
+          <cbc:EndDate>2025-12-31</cbc:EndDate>
+        </cac:MeasurementPeriod>
+      </cac:EnvironmentalEmission>
+      <cac:CircularityProfile>
+        <cbc:MaintenanceFrequencyCode>Yearly</cbc:MaintenanceFrequencyCode>
+        <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
+        <cac:ResourceConsumption>
+          <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
+          <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
+          <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
+        </cac:ResourceConsumption>
+        <cac:ResourceConsumption>
+          <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
+          <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
+          <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
+        </cac:ResourceConsumption>
+        <cac:WasteGenerated>
+          <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
+          <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
+          <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
+        </cac:WasteGenerated>
+        <cac:RepairabilityScore>
+          <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
+          <cbc:ScoringSystemCode>Repairability index, 0–10</cbc:ScoringSystemCode>
+        </cac:RepairabilityScore>
+        <cac:ProductDocumentationDocumentReference>
+          <cbc:ID>VI-RM-B180</cbc:ID>
+        </cac:ProductDocumentationDocumentReference>
+      </cac:CircularityProfile>
     </cac:Item>
   </cac:CatalogueLine>
   <cac:CatalogueLine>
     <cbc:ID>2</cbc:ID>
     <cac:RequiredItemLocationQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">2</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="H87">1</cbc:MinimumQuantity>
+      <cac:ApplicableTerritoryAddress>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
+        <cbc:PriceType>Trade price</cbc:PriceType>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2026-05-04</cbc:StartDate>
+          <cbc:EndDate>2026-10-31</cbc:EndDate>
+        </cac:ValidityPeriod>
+        <cac:PriceList>
+          <cbc:ID>6-XB-PL-2026</cbc:ID>
+          <cbc:StatusCode>Active</cbc:StatusCode>
+        </cac:PriceList>
+        <cac:AlternativeCurrencyPrice>
+          <cbc:PriceAmount currencyID="XLC">25.6</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        </cac:AlternativeCurrencyPrice>
       </cac:Price>
+      <cac:ApplicableTaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ApplicableTaxCategory>
+      <cac:DependentPriceReference>
+        <cbc:Percent>12.31</cbc:Percent>
+        <cac:DependentLineReference>
+          <cbc:LineID>1</cbc:LineID>
+        </cac:DependentLineReference>
+      </cac:DependentPriceReference>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
+      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Bench side frame casting</cbc:Name>
+      <cbc:BrandName>Valdara</cbc:BrandName>
+      <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
         <cbc:ID>LD-10443</cbc:ID>
       </cac:SellersItemIdentification>
@@ -660,12 +1224,32 @@ Inside `CatalogueLine`:
           </cac:PartyName>
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
+      <cac:CatalogueItemIdentification>
+        <cbc:ID>LD-CAT-26-0124-2</cbc:ID>
+      </cac:CatalogueItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
+        <cbc:CommodityCode>7325.99.90</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
+      <cac:ManufacturerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:ManufacturerParty>
+      <cac:InformationContentProviderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:InformationContentProviderParty>
     </cac:Item>
   </cac:CatalogueLine>
 </Catalogue>

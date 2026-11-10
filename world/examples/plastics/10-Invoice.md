@@ -356,6 +356,22 @@ Inside `InvoiceLine`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `Item/AdditionalItemProperty/Name` = **Density**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **0.92** (unitCode `23`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Recycled content**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **100** (unitCode `P1`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
+  The number of the environmental certificate.
+- `Item/EnvironmentalCertificate/CertificateTypeCode` = **Recycledcontent**  
+  The kind of claim, as a code.
+- `Item/EnvironmentalCertificate/CertificateType` = **Recycled content**  
+  The environmental claim certified.
+- `Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
+  What the certificate states.
 - `Price/PriceAmount` = **83200** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `TNE`)  
@@ -658,6 +674,20 @@ Inside `InvoiceLine`:
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Density</cbc:Name>
+        <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Recycled content</cbc:Name>
+        <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:EnvironmentalCertificate>
+        <cbc:ID>XU-RC-2026-007</cbc:ID>
+        <cbc:CertificateTypeCode>Recycledcontent</cbc:CertificateTypeCode>
+        <cbc:CertificateType>Recycled content</cbc:CertificateType>
+        <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+      </cac:EnvironmentalCertificate>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">83200</cbc:PriceAmount>

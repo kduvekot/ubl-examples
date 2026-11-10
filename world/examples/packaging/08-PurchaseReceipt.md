@@ -213,29 +213,45 @@ Inside `PurchaseReceiptLine`:
 - `Quantity` = **2** (unitCode `H87`)  
   Two shirts.
 - `LineExtensionAmount` = **59.90** (currencyID `XBL`)  
-  Quantity times the shelf price, before the sales tax.
+  Quantity times the price paid, before the sales tax.
 - `Item/Description` = **Men's cotton shirt; the state sales tax is added at the till.**  
   The seller's description; item shirt-r of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Cotton shirt**  
   The item's short name; item shirt-r of Brightmarket Stores (world/items.json).
+- `Item/BrandName` = **Lumeport**  
+  The brand the maker sells the item under; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/SellersItemIdentification/ID` = **BM-778120**  
   The seller's own item number; item shirt-r of Brightmarket Stores (world/items.json).
 - `Item/ManufacturersItemIdentification/ID` = **LT-SH-01**  
-  The item number of the maker, Lumeport Textile Mill: the reseller's item is resale of item shirt (world/items.json).
+  The item number of the maker, Lumeport Textile Mill: the reseller's item is resale of item shirt.
 - `Item/StandardItemIdentification/ID` = **772030000090** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item shirt of Lumeport Textile Mill, which this item resells (world/items.json).
+  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/OriginCountry/IdentificationCode` = **XB**  
-  Where the item was produced; item shirt of Lumeport Textile Mill, which this item resells (world/items.json).
+  Where the item was produced; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/CommodityClassification/ItemClassificationCode` = **6205.20** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item shirt of Lumeport Textile Mill, which this item resells (world/items.json).
+  Harmonized System subheading of the World Customs Organization; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
   A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S).
 - `Item/ClassifiedTaxCategory/Percent` = **6.5**  
   The rate for this category.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Item/AdditionalItemProperty/Name` = **Material**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **100 % cotton grown on Lisavu**  
+  Its value; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Sizes**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **S to XL**  
+  Its value; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/ManufacturerParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/ManufacturerParty/PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **29.95** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
+- `Price/TaxInclusivePriceAmount` = **31.9** (currencyID `XBL`)  
+  The price the customer pays, with the 6.5 % sales tax.
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
 
@@ -403,6 +419,7 @@ Inside `PurchaseReceiptLine`:
     <cac:Item>
       <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
+      <cbc:BrandName>Lumeport</cbc:BrandName>
       <cac:SellersItemIdentification>
         <cbc:ID>BM-778120</cbc:ID>
       </cac:SellersItemIdentification>
@@ -425,9 +442,26 @@ Inside `PurchaseReceiptLine`:
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Material</cbc:Name>
+        <cbc:Value>100 % cotton grown on Lisavu</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sizes</cbc:Name>
+        <cbc:Value>S to XL</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:ManufacturerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Textile Mill</cbc:Name>
+        </cac:PartyName>
+      </cac:ManufacturerParty>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">29.95</cbc:PriceAmount>
+      <cbc:TaxInclusivePriceAmount currencyID="XBL">31.9</cbc:TaxInclusivePriceAmount>
       <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:PurchaseReceiptLine>

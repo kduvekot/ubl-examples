@@ -353,6 +353,10 @@
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">2601.11</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Iron content</cbc:Name>
+          <cbc:ValueQuantity unitCode="P1">62</cbc:ValueQuantity>
+        </cac:AdditionalItemProperty>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

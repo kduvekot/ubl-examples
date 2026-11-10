@@ -319,6 +319,10 @@ Inside `InvoiceLine`:
   The seller's description; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/Name` = **Collection and recovery of production waste**  
   The item's short name; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/LifecycleStageCode` = **End-of-life**  
+  The stage of the product's life the item belongs to.
+- `Item/LifecycleStageDescription` = **The service handles the production waste at the end of its life, before it is recycled.**  
+  The stage in words.
 - `Item/SellersItemIdentification/ID` = **RR-SVC-01**  
   The seller's own item number; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -598,6 +602,8 @@ Inside `InvoiceLine`:
     <cac:Item>
       <cbc:Description>Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
       <cbc:Name>Collection and recovery of production waste</cbc:Name>
+      <cbc:LifecycleStageCode>End-of-life</cbc:LifecycleStageCode>
+      <cbc:LifecycleStageDescription>The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-SVC-01</cbc:ID>
       </cac:SellersItemIdentification>

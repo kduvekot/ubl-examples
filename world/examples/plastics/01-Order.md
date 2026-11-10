@@ -291,6 +291,22 @@ Inside `OrderLine`:
   Where the item was produced; item granulate-pe of Rinova Recovery (world/items.json).
 - `LineItem/Item/CommodityClassification/ItemClassificationCode` = **3901.10** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item granulate-pe of Rinova Recovery (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Density**  
+  A measured property of the item.
+- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **0.92** (unitCode `23`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Recycled content**  
+  A measured property of the item.
+- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **100** (unitCode `P1`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `LineItem/Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
+  The number of the environmental certificate.
+- `LineItem/Item/EnvironmentalCertificate/CertificateTypeCode` = **Recycledcontent**  
+  The kind of claim, as a code.
+- `LineItem/Item/EnvironmentalCertificate/CertificateType` = **Recycled content**  
+  The environmental claim certified.
+- `LineItem/Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
+  What the certificate states.
 
 ## The document
 
@@ -541,6 +557,20 @@ Inside `OrderLine`:
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">3901.10</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Density</cbc:Name>
+          <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Recycled content</cbc:Name>
+          <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
+        </cac:AdditionalItemProperty>
+        <cac:EnvironmentalCertificate>
+          <cbc:ID>XU-RC-2026-007</cbc:ID>
+          <cbc:CertificateTypeCode>Recycledcontent</cbc:CertificateTypeCode>
+          <cbc:CertificateType>Recycled content</cbc:CertificateType>
+          <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+        </cac:EnvironmentalCertificate>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

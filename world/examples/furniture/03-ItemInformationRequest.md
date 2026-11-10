@@ -266,6 +266,10 @@ Inside `ItemInformationRequestLine`:
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/Name` = **Garden bench set Marrow**  
   The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/BrandName` = **Brackenmere**  
+  The brand the maker sells the item under; item garden-set of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/ModelName` = **Marrow**  
+  The model; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/SellersItemIdentification/ID` = **BF-GS-01**  
   The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/StandardItemIdentification/ID` = **772020000079** (schemeID `urn:ubl-examples:world:item`)  
@@ -274,6 +278,10 @@ Inside `ItemInformationRequestLine`:
   Where the item was produced; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/CommodityClassification/ItemClassificationCode` = **9401.69** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item garden-set of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/Dimension/AttributeID` = **Bench length**  
+  Which dimension.
+- `SalesItem/Item/Dimension/Measure` = **1400** (unitCode `MMT`)  
+  Its size.
 
 ## The document
 
@@ -494,6 +502,8 @@ Inside `ItemInformationRequestLine`:
       <cac:Item>
         <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
         <cbc:Name>Garden bench set Marrow</cbc:Name>
+        <cbc:BrandName>Brackenmere</cbc:BrandName>
+        <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-GS-01</cbc:ID>
         </cac:SellersItemIdentification>
@@ -506,6 +516,10 @@ Inside `ItemInformationRequestLine`:
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">9401.69</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:Dimension>
+          <cbc:AttributeID>Bench length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1400</cbc:Measure>
+        </cac:Dimension>
       </cac:Item>
     </cac:SalesItem>
   </cac:ItemInformationRequestLine>

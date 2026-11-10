@@ -389,6 +389,18 @@ Inside `OrderLine`:
   Where the item was produced; item film-pe of Rivermouth Packaging (world/items.json).
 - `LineItem/Item/CommodityClassification/ItemClassificationCode` = **3920.10** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item film-pe of Rivermouth Packaging (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Thickness**  
+  A measured property of the item.
+- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **23** (unitCode `4H`)  
+  Its measured value; item film-pe of Rivermouth Packaging (world/items.json).
+- `LineItem/Item/CircularityProfile/CircularityTypeCode` = **Recycled**  
+  The circular strategy behind the item.
+- `LineItem/Item/CircularityProfile/RecycledContentPercent` = **100**  
+  The share of recycled material: the film is made from the recycled granulate.
+- `LineItem/Item/CircularityProfile/RecyclabilityPercent` = **100**  
+  The share that can be recycled again.
+- `LineItem/Item/CircularityProfile/EndOfLifeTreatment/TreatmentPathwayCode` = **Mechanical recycling**  
+  What happens to the item after use.
 
 ## The document
 
@@ -736,6 +748,18 @@ Inside `OrderLine`:
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">3920.10</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Thickness</cbc:Name>
+          <cbc:ValueQuantity unitCode="4H">23</cbc:ValueQuantity>
+        </cac:AdditionalItemProperty>
+        <cac:CircularityProfile>
+          <cbc:CircularityTypeCode>Recycled</cbc:CircularityTypeCode>
+          <cbc:RecycledContentPercent>100</cbc:RecycledContentPercent>
+          <cbc:RecyclabilityPercent>100</cbc:RecyclabilityPercent>
+          <cac:EndOfLifeTreatment>
+            <cbc:TreatmentPathwayCode>Mechanical recycling</cbc:TreatmentPathwayCode>
+          </cac:EndOfLifeTreatment>
+        </cac:CircularityProfile>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

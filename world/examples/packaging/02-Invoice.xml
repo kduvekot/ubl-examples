@@ -294,6 +294,18 @@
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Thickness</cbc:Name>
+        <cbc:ValueQuantity unitCode="4H">23</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:CircularityProfile>
+        <cbc:CircularityTypeCode>Recycled</cbc:CircularityTypeCode>
+        <cbc:RecycledContentPercent>100</cbc:RecycledContentPercent>
+        <cbc:RecyclabilityPercent>100</cbc:RecyclabilityPercent>
+        <cac:EndOfLifeTreatment>
+          <cbc:TreatmentPathwayCode>Mechanical recycling</cbc:TreatmentPathwayCode>
+        </cac:EndOfLifeTreatment>
+      </cac:CircularityProfile>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">3.1</cbc:PriceAmount>

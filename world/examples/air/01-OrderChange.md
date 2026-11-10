@@ -310,16 +310,26 @@ Inside `OrderLine`:
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `LineItem/Item/Name` = **Bench side frame casting**  
   The item's short name; item bench-casting-b of Lumeway Distribution (world/items.json).
+- `LineItem/Item/BrandName` = **Valdara**  
+  The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
+- `LineItem/Item/ModelName` = **Serra 180 side frame**  
+  The model; item bench-casting of Valdara Industries (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **LD-10443**  
   The seller's own item number; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **VI-C180**  
-  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-casting (world/items.json).
+  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-casting.
 - `LineItem/Item/StandardItemIdentification/ID` = **771020000034** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-casting of Valdara Industries, which this item resells (world/items.json).
+  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-casting of Valdara Industries (world/items.json).
 - `LineItem/Item/OriginCountry/IdentificationCode` = **XU**  
-  Where the item was produced; item bench-casting of Valdara Industries, which this item resells (world/items.json).
+  Where the item was produced; item bench-casting of Valdara Industries (world/items.json).
+- `LineItem/Item/CommodityClassification/CommodityCode` = **7325.99.90**  
+  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
 - `LineItem/Item/CommodityClassification/ItemClassificationCode` = **7325.99** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item bench-casting of Valdara Industries, which this item resells (world/items.json).
+  Harmonized System subheading of the World Customs Organization; item bench-casting of Valdara Industries (world/items.json).
+- `LineItem/Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -574,6 +584,8 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
         <cbc:Name>Bench side frame casting</cbc:Name>
+        <cbc:BrandName>Valdara</cbc:BrandName>
+        <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>LD-10443</cbc:ID>
         </cac:SellersItemIdentification>
@@ -587,8 +599,17 @@ Inside `OrderLine`:
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
+          <cbc:CommodityCode>7325.99.90</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:ManufacturerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Valdara Industries</cbc:Name>
+          </cac:PartyName>
+        </cac:ManufacturerParty>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

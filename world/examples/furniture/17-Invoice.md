@@ -321,6 +321,8 @@ Inside `InvoiceLine`:
   The seller's description; item office-desk of Brackenmere Furniture (world/items.json).
 - `Item/Name` = **Office desk**  
   The item's short name; item office-desk of Brackenmere Furniture (world/items.json).
+- `Item/BrandName` = **Brackenmere**  
+  The brand the maker sells the item under; item office-desk of Brackenmere Furniture (world/items.json).
 - `Item/SellersItemIdentification/ID` = **BF-DK-16**  
   The seller's own item number; item office-desk of Brackenmere Furniture (world/items.json).
 - `Item/StandardItemIdentification/ID` = **772020000086** (schemeID `urn:ubl-examples:world:item`)  
@@ -337,6 +339,18 @@ Inside `InvoiceLine`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Item/Dimension/AttributeID` = **Length**  
+  Which dimension.
+- `Item/Dimension/Measure` = **1600** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/AttributeID` = **Width**  
+  Which dimension.
+- `Item/Dimension/Measure` = **800** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/AttributeID` = **Height**  
+  Which dimension.
+- `Item/Dimension/Measure` = **740** (unitCode `MMT`)  
+  Its size.
 - `Price/PriceAmount` = **880** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
@@ -626,6 +640,7 @@ Inside `InvoiceLine`:
     <cac:Item>
       <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
       <cbc:Name>Office desk</cbc:Name>
+      <cbc:BrandName>Brackenmere</cbc:BrandName>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-DK-16</cbc:ID>
       </cac:SellersItemIdentification>
@@ -646,6 +661,18 @@ Inside `InvoiceLine`:
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:Dimension>
+        <cbc:AttributeID>Length</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1600</cbc:Measure>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID>Width</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">800</cbc:Measure>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">740</cbc:Measure>
+      </cac:Dimension>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">880</cbc:PriceAmount>

@@ -232,6 +232,11 @@
       <cac:Item>
         <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
         <cbc:Name>Garden bench set Marrow</cbc:Name>
+        <cbc:BrandName>Brackenmere</cbc:BrandName>
+        <cbc:ModelName>Marrow</cbc:ModelName>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>BM-551004</cbc:ID>
+        </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-GS-01</cbc:ID>
         </cac:SellersItemIdentification>
@@ -244,6 +249,10 @@
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">9401.69</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:Dimension>
+          <cbc:AttributeID>Bench length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1400</cbc:Measure>
+        </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

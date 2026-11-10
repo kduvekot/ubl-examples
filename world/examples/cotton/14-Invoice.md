@@ -301,6 +301,10 @@ Inside `InvoiceLine`:
   6129 × 0.988, rounded to the minor unit of the currency.
 - `Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.**  
   The seller's description; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `Item/PackQuantity` = **1** (unitCode `H87`)  
+  One pack of this item.
+- `Item/PackSizeNumeric` = **227**  
+  The units in one pack: 227 kg in a bale; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `Item/Name` = **Cotton lint, compressed bale**  
   The item's short name; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `Item/SellersItemIdentification/ID` = **SCG-LINT**  
@@ -317,6 +321,40 @@ Inside `InvoiceLine`:
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
+- `Item/AdditionalItemProperty/Name` = **Grade**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **Middling**  
+  Its value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Staple length**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
+  Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `Item/OriginAddress/Region` = **North coast**  
+  Where on the island the cotton was grown.
+- `Item/OriginAddress/Country/IdentificationCode` = **XL**  
+  The country of origin.
+- `Item/Certificate/ID` = **XL-CLS-2026-0042**  
+  The number of the certificate.
+- `Item/Certificate/CertificateTypeCode` = **Cottonclassing**  
+  The kind of certificate, as a code.
+- `Item/Certificate/CertificateType` = **Cotton classing**  
+  The kind of certificate, in words.
+- `Item/Certificate/Remarks` = **Grade Middling, staple 1-1/8 inch, micronaire 4.2.**  
+  What the certificate states about the goods.
+- `Item/Certificate/IssuerParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/Certificate/IssuerParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/Certificate/Signature/ID` = **SCC-SIG-2026-0042**  
+  The signature's identifier.
+- `Item/Certificate/Signature/Note` = **Signed by the cotton classer of the chamber.**  
+  Who signed.
+- `Item/Certificate/Signature/ValidationDate` = **2026-02-20**  
+  The day the signature was placed.
+- `Item/Certificate/Signature/SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **0.988** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
@@ -566,6 +604,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XLC">6055.452</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
+      <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+      <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
       <cbc:Name>Cotton lint, compressed bale</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>SCG-LINT</cbc:ID>
@@ -586,6 +626,47 @@ Inside `InvoiceLine`:
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Grade</cbc:Name>
+        <cbc:Value>Middling</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Staple length</cbc:Name>
+        <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:OriginAddress>
+        <cbc:Region>North coast</cbc:Region>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:OriginAddress>
+      <cac:Certificate>
+        <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+        <cbc:CertificateTypeCode>Cottonclassing</cbc:CertificateTypeCode>
+        <cbc:CertificateType>Cotton classing</cbc:CertificateType>
+        <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
+        <cac:IssuerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+          </cac:PartyName>
+        </cac:IssuerParty>
+        <cac:Signature>
+          <cbc:ID>SCC-SIG-2026-0042</cbc:ID>
+          <cbc:Note>Signed by the cotton classer of the chamber.</cbc:Note>
+          <cbc:ValidationDate>2026-02-20</cbc:ValidationDate>
+          <cac:SignatoryParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+            </cac:PartyName>
+          </cac:SignatoryParty>
+        </cac:Signature>
+      </cac:Certificate>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.988</cbc:PriceAmount>

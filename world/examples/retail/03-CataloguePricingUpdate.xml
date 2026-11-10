@@ -207,6 +207,18 @@
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">58</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cac:PriceList>
+          <cbc:ID>6-XB-PL-2026-2</cbc:ID>
+          <cbc:StatusCode>Active</cbc:StatusCode>
+          <cac:ValidityPeriod>
+            <cbc:StartDate>2026-05-20</cbc:StartDate>
+            <cbc:EndDate>2026-07-19</cbc:EndDate>
+          </cac:ValidityPeriod>
+          <cac:PreviousPriceList>
+            <cbc:ID>6-XB-PL-2026</cbc:ID>
+            <cbc:StatusCode>Replaced</cbc:StatusCode>
+          </cac:PreviousPriceList>
+        </cac:PriceList>
       </cac:Price>
     </cac:RequiredItemLocationQuantity>
   </cac:CataloguePricingUpdateLine>

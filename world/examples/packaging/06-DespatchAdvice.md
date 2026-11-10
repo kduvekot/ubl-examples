@@ -373,6 +373,10 @@ Inside `DespatchLine`:
   The seller's description; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/Name` = **Cotton shirt**  
   The item's short name; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/BrandName` = **Lumeport**  
+  The brand the maker sells the item under; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/BuyersItemIdentification/ID` = **BM-778120**  
+  The buyer's own item number: it resells this item as its item shirt-r.
 - `Item/SellersItemIdentification/ID` = **LT-SH-01**  
   The seller's own item number; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/StandardItemIdentification/ID` = **772030000090** (schemeID `urn:ubl-examples:world:item`)  
@@ -381,6 +385,14 @@ Inside `DespatchLine`:
   Where the item was produced; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/CommodityClassification/ItemClassificationCode` = **6205.20** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Material**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **100 % cotton grown on Lisavu**  
+  Its value; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Sizes**  
+  A property buyers ask about.
+- `Item/AdditionalItemProperty/Value` = **S to XL**  
+  Its value; item shirt of Lumeport Textile Mill (world/items.json).
 
 ## The document
 
@@ -703,6 +715,10 @@ Inside `DespatchLine`:
     <cac:Item>
       <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
+      <cbc:BrandName>Lumeport</cbc:BrandName>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>BM-778120</cbc:ID>
+      </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>LT-SH-01</cbc:ID>
       </cac:SellersItemIdentification>
@@ -715,6 +731,14 @@ Inside `DespatchLine`:
       <cac:CommodityClassification>
         <cbc:ItemClassificationCode listID="HS">6205.20</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Material</cbc:Name>
+        <cbc:Value>100 % cotton grown on Lisavu</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sizes</cbc:Name>
+        <cbc:Value>S to XL</cbc:Value>
+      </cac:AdditionalItemProperty>
     </cac:Item>
   </cac:DespatchLine>
 </DespatchAdvice>

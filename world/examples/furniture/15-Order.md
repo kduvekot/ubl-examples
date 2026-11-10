@@ -273,6 +273,8 @@ Inside `OrderLine`:
   The seller's description; item office-desk of Brackenmere Furniture (world/items.json).
 - `LineItem/Item/Name` = **Office desk**  
   The item's short name; item office-desk of Brackenmere Furniture (world/items.json).
+- `LineItem/Item/BrandName` = **Brackenmere**  
+  The brand the maker sells the item under; item office-desk of Brackenmere Furniture (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **BF-DK-16**  
   The seller's own item number; item office-desk of Brackenmere Furniture (world/items.json).
 - `LineItem/Item/StandardItemIdentification/ID` = **772020000086** (schemeID `urn:ubl-examples:world:item`)  
@@ -281,6 +283,18 @@ Inside `OrderLine`:
   Where the item was produced; item office-desk of Brackenmere Furniture (world/items.json).
 - `LineItem/Item/CommodityClassification/ItemClassificationCode` = **9403.30** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item office-desk of Brackenmere Furniture (world/items.json).
+- `LineItem/Item/Dimension/AttributeID` = **Length**  
+  Which dimension.
+- `LineItem/Item/Dimension/Measure` = **1600** (unitCode `MMT`)  
+  Its size.
+- `LineItem/Item/Dimension/AttributeID` = **Width**  
+  Which dimension.
+- `LineItem/Item/Dimension/Measure` = **800** (unitCode `MMT`)  
+  Its size.
+- `LineItem/Item/Dimension/AttributeID` = **Height**  
+  Which dimension.
+- `LineItem/Item/Dimension/Measure` = **740** (unitCode `MMT`)  
+  Its size.
 - `LineItem/ID` = **2**  
   The line number.
 - `LineItem/Quantity` = **14** (unitCode `HUR`)  
@@ -522,6 +536,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
         <cbc:Name>Office desk</cbc:Name>
+        <cbc:BrandName>Brackenmere</cbc:BrandName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-DK-16</cbc:ID>
         </cac:SellersItemIdentification>
@@ -534,6 +549,18 @@ Inside `OrderLine`:
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">9403.30</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:Dimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1600</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">800</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">740</cbc:Measure>
+        </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

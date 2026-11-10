@@ -20,7 +20,14 @@
     "type": "VO"
    },
    "net_kg": 1000,
-   "gross_kg": 1000
+   "gross_kg": 1000,
+   "quantity_properties": [
+    [
+     "Iron content",
+     "62",
+     "P1"
+    ]
+   ]
   },
   {
    "id": "bench-serra",
@@ -57,6 +64,164 @@
      "item": "film-pe",
      "qty": 0.4
     }
+   ],
+   "brand": "Valdara",
+   "model": "Serra 180",
+   "keywords": [
+    "park bench",
+    "street furniture"
+   ],
+   "warranty": "Five years on the frame against corrosion.",
+   "spec_doc": "VI-DS-B180",
+   "national_tariff": "9401.79.10",
+   "properties": [
+    [
+     "Frame material",
+     "Cast steel, hot-dip galvanised"
+    ],
+    [
+     "Slat wood",
+     "Kiln-dried hardwood"
+    ],
+    [
+     "Seats",
+     "3"
+    ],
+    {
+     "id": "COL",
+     "name": "Frame colour",
+     "list": [
+      "Ferro grey",
+      "Moss green"
+     ],
+     "importance": "Optional",
+     "group": [
+      "APP",
+      "Appearance",
+      "Optional"
+     ],
+     "why": "The colours the frame is offered in."
+    },
+    {
+     "id": "LOAD",
+     "name": "Load capacity",
+     "name_code": "LOAD",
+     "test": "Static load on the seat for one hour, three seats loaded evenly, no lasting deformation",
+     "value_qty": [
+      "450",
+      "KGM"
+     ],
+     "qualifier": [
+      "Distributed over the seat"
+     ],
+     "importance": "Mandatory",
+     "group": [
+      "SAF",
+      "Safety",
+      "Mandatory"
+     ],
+     "standard": [
+      "UR-SF-0450",
+      "Codana street furniture properties",
+      "31-xu"
+     ]
+    }
+   ],
+   "quantity_properties": [],
+   "dimensions": [
+    [
+     "Length",
+     "1800",
+     "MMT",
+     "Over the armrests"
+    ],
+    [
+     "Depth",
+     "620",
+     "MMT"
+    ],
+    [
+     "Height",
+     "780",
+     "MMT",
+     "Seat back at its highest point"
+    ],
+    [
+     "Seat height",
+     "450",
+     "MMT",
+     "Above the ground when anchored",
+     "440",
+     "460"
+    ]
+   ],
+   "lot_prefix": "VI-LOT-26",
+   "circularity": {
+    "repairability": "8",
+    "repairability_system": "Repairability index, 0–10",
+    "maintenance": "Yearly",
+    "maintenance_description": "Tighten the slat bolts and touch up the coating once a year.",
+    "resources": [
+     [
+      "Steel",
+      "34",
+      "KGM",
+      "Steel made from Serravona ore in Urvania"
+     ],
+     [
+      "Hardwood",
+      "22.5",
+      "KGM",
+      "Slats from Upland State, Bayvarra"
+     ]
+    ],
+    "product_doc": "VI-RM-B180",
+    "waste": [
+     "Packaging",
+     "Stretch film and pallet straps, per bench",
+     "0.4",
+     "KGM"
+    ]
+   },
+   "additional_info": "Supplied with four ground anchors and the bolts to fix them.",
+   "variant": {
+    "extended": "GRY",
+    "attribute": [
+     "Colour",
+     "GRY",
+     "Frame in Ferro grey"
+    ]
+   },
+   "barcode": "Code128",
+   "emission": {
+    "type": "CO2e",
+    "value": "96",
+    "unit": "KGM",
+    "base": [
+     "1",
+     "H87"
+    ],
+    "standard": "Greenhouse Gas Protocol Product Standard",
+    "stage": "Manufacturing",
+    "stage_desc": "From the ore at the mine to the bench leaving the factory gate.",
+    "method": {
+     "code": "Calculated",
+     "fullness": "Cradle to gate",
+     "source": "The steelworks' and sawmill's measured energy use of 2025",
+     "doc": "VI-LCA-2025"
+    },
+    "period": [
+     "2025-01-01",
+     "2025-12-31"
+    ],
+    "factor": "0.82",
+    "description": "Mining, steel making, casting, galvanising, sawing and the transport between them."
+   },
+   "lot_props": [
+    [
+     "Coating batch",
+     "ZN-26-114"
+    ]
    ]
   },
   {
@@ -79,7 +244,20 @@
    "package": {
     "type": "BX",
     "per_package": 1
-   }
+   },
+   "brand": "Valdara",
+   "model": "Serra 180 side frame",
+   "national_tariff": "7325.99.90",
+   "serials": "VI-SF-",
+   "trace": "VI-TR-",
+   "registration": "VI-QR-",
+   "instance_props": [
+    [
+     "Melt number",
+     "M-26-0412"
+    ]
+   ],
+   "made_time": "06:40:00"
   },
   {
    "id": "granulate-pe",
@@ -101,7 +279,32 @@
    "package": {
     "type": "JB",
     "per_package": 1
-   }
+   },
+   "quantity_properties": [
+    [
+     "Density",
+     "0.92",
+     "23"
+    ],
+    [
+     "Recycled content",
+     "100",
+     "P1"
+    ]
+   ],
+   "env_certificate": {
+    "id": "XU-RC-2026-007",
+    "type": "Recycled content",
+    "remarks": "Made entirely from sorted production waste recovered in Urvania."
+   },
+   "lot_prefix": "RR-PE-",
+   "best_before_months": 12,
+   "lot_props": [
+    [
+     "Melt flow index",
+     "0.9 g/10 min"
+    ]
+   ]
   },
   {
    "id": "waste-recovery",
@@ -114,7 +317,11 @@
     "currency": "XUF"
    },
    "sellers_id": "RR-SVC-01",
-   "description": "Collection at the factory and recovery of sorted production waste, per tonne collected."
+   "description": "Collection at the factory and recovery of sorted production waste, per tonne collected.",
+   "lifecycle": [
+    "End-of-life",
+    "The service handles the production waste at the end of its life, before it is recycled."
+   ]
   },
   {
    "id": "road-transport",
@@ -206,7 +413,119 @@
    "package": {
     "type": "BE",
     "per_package": 50
-   }
+   },
+   "lot_prefix": "MS-L26-",
+   "pack": {
+    "quantity": "1",
+    "size": "50"
+   },
+   "certificate": {
+    "id": "XB-FOR-2025-118",
+    "type": "Sustainable forestry",
+    "remarks": "The timber comes from forests in Upland State managed for regrowth.",
+    "valid_until": "2027-12-31",
+    "reference_id": "XB-FOR-REG-0118",
+    "category": [
+     "HW",
+     "Hardwood sawn timber"
+    ],
+    "uri": "https://forestry.xb.example/certificates/XB-FOR-2025-118",
+    "document": "XB-FOR-AUD-2025-118"
+   },
+   "dimensions": [
+    [
+     "Length",
+     "1800",
+     "MMT"
+    ],
+    [
+     "Width",
+     "95",
+     "MMT"
+    ],
+    [
+     "Thickness",
+     "38",
+     "MMT"
+    ]
+   ],
+   "properties": [
+    {
+     "id": "MC",
+     "name": "Moisture content",
+     "name_code": "MC",
+     "test": "Oven-dry method on samples from each kiln charge",
+     "value_qty": [
+      "12",
+      "P1"
+     ],
+     "qualifier": [
+      "Average of the kiln charge"
+     ],
+     "range": [
+      "10",
+      "14"
+     ],
+     "importance": "Mandatory",
+     "group": [
+      "QUA",
+      "Wood quality",
+      "Mandatory"
+     ],
+     "standard": [
+      "UR-WD-0012",
+      "Codana timber properties",
+      "31-xu"
+     ],
+     "sub": [
+      {
+       "name": "Moisture at the core",
+       "value_qty": [
+        "13",
+        "P1"
+       ],
+       "why": "Measured at the centre of the slat."
+      }
+     ]
+    },
+    {
+     "name": "Thickness tolerance",
+     "range_dim": [
+      "Thickness",
+      "38",
+      "37.5",
+      "38.5",
+      "MMT"
+     ],
+     "why": "How far a slat may be off its thickness."
+    },
+    {
+     "name": "Surface",
+     "value": "Planed on four sides",
+     "usable": [
+      "12",
+      "MON",
+      "Oiled within twelve months of planing, before the surface greys"
+     ]
+    }
+   ],
+   "buyer_ids": {
+    "5-xu": "VI-R-SL1800"
+   },
+   "pack_standard_id": "772010000065",
+   "variant": {
+    "measure": [
+     "Length",
+     "1800",
+     "MMT"
+    ]
+   },
+   "lot_props": [
+    [
+     "Kiln charge",
+     "K-07"
+    ]
+   ]
   },
   {
    "id": "timber-beam",
@@ -250,7 +569,16 @@
    "package": {
     "type": "CT",
     "per_package": 1
-   }
+   },
+   "brand": "Brackenmere",
+   "model": "Marrow",
+   "dimensions": [
+    [
+     "Bench length",
+     "1400",
+     "MMT"
+    ]
+   ]
   },
   {
    "id": "office-desk",
@@ -277,7 +605,25 @@
    "package": {
     "type": "CT",
     "per_package": 1
-   }
+   },
+   "brand": "Brackenmere",
+   "dimensions": [
+    [
+     "Length",
+     "1600",
+     "MMT"
+    ],
+    [
+     "Width",
+     "800",
+     "MMT"
+    ],
+    [
+     "Height",
+     "740",
+     "MMT"
+    ]
+   ]
   },
   {
    "id": "installation",
@@ -318,6 +664,17 @@
      "item": "garment-bag",
      "qty": 1
     }
+   ],
+   "brand": "Lumeport",
+   "properties": [
+    [
+     "Material",
+     "100 % cotton grown on Lisavu"
+    ],
+    [
+     "Sizes",
+     "S to XL"
+    ]
    ]
   },
   {
@@ -340,6 +697,19 @@
    "package": {
     "type": "RO",
     "per_package": 16
+   },
+   "quantity_properties": [
+    [
+     "Thickness",
+     "23",
+     "4H"
+    ]
+   ],
+   "circularity": {
+    "type": "Recycled",
+    "recycled": "100",
+    "recyclable": "100",
+    "end_of_life": "Mechanical recycling"
    }
   },
   {
@@ -441,7 +811,16 @@
    },
    "sellers_id": "LD-10442",
    "resale_of": "bench-serra",
-   "description": "The manufacturer's Serra bench, from the distributor's stock."
+   "description": "The manufacturer's Serra bench, from the distributor's stock.",
+   "conditions": {
+    "id": "LD-TC-01",
+    "action": "Trade",
+    "description": "Sold to trade customers only, per pallet of four benches.",
+    "doc": "LD-GTC-2026"
+   },
+   "min_order": 4,
+   "max_order": 192,
+   "lead_days": 3
   },
   {
    "id": "bench-casting-b",
@@ -455,7 +834,8 @@
    },
    "sellers_id": "LD-10443",
    "resale_of": "bench-casting",
-   "description": "Spare side frame for the Serra bench."
+   "description": "Spare side frame for the Serra bench.",
+   "lead_days": 2
   },
   {
    "id": "shirt-r",
@@ -526,6 +906,39 @@
    "package": {
     "type": "BL",
     "per_package": 227
+   },
+   "pack": {
+    "quantity": "1",
+    "size": "227"
+   },
+   "origin_region": "North coast",
+   "certificate": {
+    "id": "XL-CLS-2026-0042",
+    "type": "Cotton classing",
+    "remarks": "Grade Middling, staple 1-1/8 inch, micronaire 4.2.",
+    "issuer": "20-xl",
+    "signature": {
+     "id": "SCC-SIG-2026-0042",
+     "note": "Signed by the cotton classer of the chamber.",
+     "date": "2026-02-20",
+     "signatory": "20-xl"
+    }
+   },
+   "properties": [
+    [
+     "Grade",
+     "Middling"
+    ]
+   ],
+   "quantity_properties": [
+    [
+     "Staple length",
+     "28.6",
+     "MMT"
+    ]
+   ],
+   "buyer_ids": {
+    "40-xb": "LT-RAW-COT"
    }
   },
   {

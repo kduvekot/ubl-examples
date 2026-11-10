@@ -339,6 +339,10 @@ Inside `InvoiceLine`:
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `Item/Name` = **Garden bench set Marrow**  
   The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
+- `Item/BrandName` = **Brackenmere**  
+  The brand the maker sells the item under; item garden-set of Brackenmere Furniture (world/items.json).
+- `Item/ModelName` = **Marrow**  
+  The model; item garden-set of Brackenmere Furniture (world/items.json).
 - `Item/SellersItemIdentification/ID` = **BF-GS-01**  
   The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
 - `Item/StandardItemIdentification/ID` = **772020000079** (schemeID `urn:ubl-examples:world:item`)  
@@ -355,6 +359,10 @@ Inside `InvoiceLine`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Item/Dimension/AttributeID` = **Bench length**  
+  Which dimension.
+- `Item/Dimension/Measure` = **1400** (unitCode `MMT`)  
+  Its size.
 - `Price/PriceAmount` = **610** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `SET`)  
@@ -633,6 +641,8 @@ Inside `InvoiceLine`:
     <cac:Item>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:BrandName>Brackenmere</cbc:BrandName>
+      <cbc:ModelName>Marrow</cbc:ModelName>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-GS-01</cbc:ID>
       </cac:SellersItemIdentification>
@@ -653,6 +663,10 @@ Inside `InvoiceLine`:
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:Dimension>
+        <cbc:AttributeID>Bench length</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1400</cbc:Measure>
+      </cac:Dimension>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>

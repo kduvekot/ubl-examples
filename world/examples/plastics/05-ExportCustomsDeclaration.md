@@ -236,8 +236,28 @@ Inside `CustomsDeclaration`:
   The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item granulate-pe of Rinova Recovery (world/items.json).
 - `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XU**  
   Where the item was produced; item granulate-pe of Rinova Recovery (world/items.json).
+- `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **VII**  
+  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification.
+- `Shipment/GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN**  
+  The kind of cargo as the parties code it: bulk, or general cargo in packages.
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **3901.10** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item granulate-pe of Rinova Recovery (world/items.json).
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Density**  
+  A measured property of the item.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **0.92** (unitCode `23`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Recycled content**  
+  A measured property of the item.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **100** (unitCode `P1`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `Shipment/GoodsItem/Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
+  The number of the environmental certificate.
+- `Shipment/GoodsItem/Item/EnvironmentalCertificate/CertificateTypeCode` = **Recycledcontent**  
+  The kind of claim, as a code.
+- `Shipment/GoodsItem/Item/EnvironmentalCertificate/CertificateType` = **Recycled content**  
+  The environmental claim certified.
+- `Shipment/GoodsItem/Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
+  What the certificate states.
 - `ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **2220** (listID `ISIC Rev.4`)  
@@ -615,8 +635,24 @@ Inside `CustomsDeclaration`:
             <cbc:IdentificationCode>XU</cbc:IdentificationCode>
           </cac:OriginCountry>
           <cac:CommodityClassification>
+            <cbc:NatureCode>VII</cbc:NatureCode>
+            <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
             <cbc:ItemClassificationCode listID="HS">3901.10</cbc:ItemClassificationCode>
           </cac:CommodityClassification>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Density</cbc:Name>
+            <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
+          </cac:AdditionalItemProperty>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Recycled content</cbc:Name>
+            <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
+          </cac:AdditionalItemProperty>
+          <cac:EnvironmentalCertificate>
+            <cbc:ID>XU-RC-2026-007</cbc:ID>
+            <cbc:CertificateTypeCode>Recycledcontent</cbc:CertificateTypeCode>
+            <cbc:CertificateType>Recycled content</cbc:CertificateType>
+            <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+          </cac:EnvironmentalCertificate>
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>

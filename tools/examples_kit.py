@@ -203,7 +203,9 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
             "Quantity": qty(q, ITEM[d["item"]]["unit"], d.get("why", "The quantity ordered.")),
             "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
             "Price": price_block(d["item"], cur),
-            "Item": item(d["item"])}} for i, (d, q, amt, rule) in enumerate(rows, 1)],
+            "Item": item(d["item"], buyer=buyer, catalogue_ref=flow.numbers.get("catalogue")
+                         if flow.numbers.get("catalogue-from") == seller else None)}}
+            for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
     return merge_extra(out, extra)
 
@@ -218,13 +220,75 @@ def order_response(flow, n, doc, day, why, key="order"):
 def price_block(iid, currency=None):
     it = ITEM[iid]
     if currency and currency != it["price"]["currency"]:
+        r = rate(it["price"]["currency"], currency)
         return {"PriceAmount": price(unit_price(iid, currency), currency,
                                      f"The seller's price of {it['price']['amount']} {it['price']['currency']}, converted "
                                      f"to the buyer's currency at the world's reference rate, as the contract provides."),
-                "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
-    return {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"], "The seller's price per unit "
-                                                                                 "(world/items.json)."),
-            "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
+                "BaseQuantity": qty(1, it["unit"], "The price is per one unit."),
+                "PricingExchangeRate": {
+                    "SourceCurrencyCode": V(it["price"]["currency"], "The currency of the seller's price list."),
+                    "TargetCurrencyCode": V(currency, "The currency of the order."),
+                    "SourceCurrencyBaseRate": V("1", "The rate is for one unit of the seller's currency."),
+                    "TargetCurrencyBaseRate": V("1", "Given in single units of the order's currency."),
+                    "ExchangeMarketID": V("World reference rate", "The rate the world's central banks publish "
+                                                                  "(world/countries.json)."),
+                    "CalculationRate": V(f"{r.normalize():f}", "The world's reference rate (world/countries.json)."),
+                    "MathematicOperatorCode": V("Multiply", "The seller's price times the rate gives the order price."),
+                    "Date": V("2026-01-02", "The reference rate of the first working day of the year, fixed in the "
+                                            "contract.")}}
+    out = {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"], "The seller's price per unit "
+                                                                                "(world/items.json)."),
+           "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
+    if it.get("pack") and it["unit"] == "H87":
+        out["OrderableUnitFactorRate"] = V(it["pack"]["size"], f"The item is priced per piece and ordered in packs: "
+                                                               f"one pack holds {it['pack']['size']} pieces.")
+    return out
+
+
+def instances(flow, d, which, day):
+    """ItemInstance for a despatched line: the production lot of the maker, or one instance per serial number."""
+    it = ITEM[d["item"]]
+    while it.get("resale_of"):         # a resold item keeps the maker's lot and serial numbers
+        it = ITEM[it["resale_of"]]
+    made = flow.date(day - 3)
+    if it.get("serials"):
+        q = int(Decimal(str(d[which])))
+        first = flow.base * 10          # a stable range per flow: the same castings keep their numbers
+        out = []
+        for s in range(first, first + q):
+            x = {"ManufactureDate": V(made, "The day the casting was poured and inspected."),
+                 "SerialID": V(f"{it['serials']}{s:05d}", "The serial number cast into the frame; every casting is "
+                                                         "traceable to its melt.")}
+            if it.get("made_time"):
+                x["ManufactureTime"] = V(it["made_time"], "The time the melt was poured.")
+            if it.get("trace"):
+                x["ProductTraceID"] = V(f"{it['trace']}{s:05d}", "The trace code on the casting's label, for the "
+                                                               "maker's tracing system.")
+            if it.get("registration"):
+                x["RegistrationID"] = V(f"{it['registration']}{s:05d}", "The casting's entry in the maker's quality "
+                                                                      "register, with its inspection result.")
+            if it.get("instance_props"):
+                x["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this one casting."),
+                                                "Value": V(v, "Its value.")} for n_, v in it["instance_props"]]
+            out.append(x)
+        return out
+    if it.get("lot_prefix"):
+        lot = f"{it['lot_prefix']}{flow.date(day - 3).replace('-', '')[4:]}"
+        x = {"ManufactureDate": V(made, "The day the lot was produced."),
+             "LotIdentification": {"LotNumberID": V(lot, "The production lot, from the maker's prefix and the "
+                                                         "production day; a recall names the lot.")}}
+        if it.get("best_before_months"):
+            m = it["best_before_months"]
+            d0 = datetime.date.fromisoformat(made)
+            until = d0.replace(year=d0.year + (d0.month - 1 + m) // 12, month=(d0.month - 1 + m) % 12 + 1).isoformat()
+            x["BestBeforeDate"] = V(until, f"Best used within {m} months: the granulate takes up moisture in storage.")
+            x["LotIdentification"]["ExpiryDate"] = V(until, "The lot's quality data apply until then.")
+        if it.get("lot_props"):
+            x["LotIdentification"]["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this lot."),
+                                                                 "Value": V(v, "Its value for this lot.")}
+                                                                for n_, v in it["lot_props"]]
+        return [x]
+    return None
 
 
 def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None, key="order"):
@@ -242,7 +306,8 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
         "DespatchLine": [{"ID": V(str(i), "The line number."),
                           "DeliveredQuantity": qty(d[which], ITEM[d["item"]]["unit"], "What was despatched."),
                           "OrderLineReference": {"LineID": V(str(i), "The order line this line fulfils.")},
-                          "Item": item(d["item"])} for i, d in enumerate(deal, 1)],
+                          "Item": item(d["item"], buyer=doc["to"], instance=instances(flow, d, which, day))}
+                         for i, d in enumerate(deal, 1)],
     }
     flow.numbers["despatch"] = flow.numbers[f"despatch-{key}"]
     return merge_extra(out, extra)
@@ -258,7 +323,7 @@ def receipt_advice(flow, n, doc, day, why):
                              "ReceivedQuantity": qty(d.get("received", d[which]), ITEM[d["item"]]["unit"],
                                                      d.get("received_why", "Counted at the goods-in and found as "
                                                                            "announced.")),
-                             "Item": item(d["item"])} for i, d in enumerate(flow.deal, 1)]}
+                             "Item": item(d["item"], buyer=doc["from"])} for i, d in enumerate(flow.deal, 1)]}
 
 
 def gross_weight(flow, which, deal=None):
@@ -392,6 +457,25 @@ def rate(a, b):
     return Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
 
 
+HS_SECTION = {"26": "V", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
+
+
+def customs_item(iid):
+    """The item as goods declared or carried: its classification also says the nature and the kind of cargo."""
+    out = item(iid)
+    cc = out.get("CommodityClassification")
+    maker = ITEM[iid]
+    while maker.get("resale_of"):
+        maker = ITEM[maker["resale_of"]]
+    hs = maker.get("hs")
+    if cc and hs:
+        cc["NatureCode"] = V(HS_SECTION[hs[:2]], "The section of the Harmonized System the goods fall in, the "
+                                                 "highest level of the World Customs Organization's classification.")
+        cc["CargoTypeCode"] = V("BULK" if ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26" else "GEN",
+                                "The kind of cargo as the parties code it: bulk, or general cargo in packages.")
+    return out
+
+
 def goods_items(flow, currency, value_why, deal=None):
     """GoodsItem per line of the deal: customs value (converted to `currency` at the reference rate if needed),
     gross weight, quantity and the item with its customs tariff code and origin."""
@@ -408,7 +492,7 @@ def goods_items(flow, currency, value_why, deal=None):
                     "GrossWeightMeasure": qty(q * Decimal(str(it.get("gross_kg", 0))), "KGM",
                                               "The gross weight of the goods of this item."),
                     "Quantity": qty(q, it["unit"], "The quantity declared."),
-                    "Item": item(d["item"])})
+                    "Item": customs_item(d["item"])})
     return out
 
 
@@ -491,23 +575,110 @@ def line_price(d, cur):
     return price_block(d["item"])
 
 
-def catalogue(flow, n, doc, day, why, items, validity_days):
+def catalogue(flow, n, doc, day, why, items, validity_days, alternative=None):
+    flow.numbers["catalogue-from"] = doc["from"]
     return {"ID": V(flow.number("catalogue", doc["from"], "Catalogue"), "The provider's catalogue number."),
             "Name": V(f"{PARTY[doc['from']]['identity']['name']} catalogue", "The catalogue's title."),
             "IssueDate": V(flow.date(day), why),
             "ValidityPeriod": {"StartDate": V(flow.date(day), "The prices apply from the issue date."),
                                "EndDate": V(flow.date(day + validity_days), "Until the next catalogue.")},
             "CatalogueLine": [{"ID": V(str(i), "The line number."),
-                               "Item": item(iid),
-                               "RequiredItemLocationQuantity": {"Price": price_block(iid)}}
+                               "Item": item(iid, catalogue=(flow.numbers["catalogue"], i)),
+                               "RequiredItemLocationQuantity": catalogue_terms(flow, doc, day, validity_days, iid,
+                                                                               alternative)}
                               for i, iid in enumerate(items, 1)]}
 
 
-def purchase_receipt(flow, n, doc, day, why, rows_spec, cash):
+def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
+    """The terms a catalogue line is offered on: lead time, minimum quantity, where it is sold, the price and
+    the price list it belongs to."""
+    it = ITEM[iid]
+    seller = PARTY[doc["from"]]
+    p = price_block(iid)
+    p["ValidityPeriod"] = {"StartDate": V(flow.date(day), "The price applies from the catalogue's issue date."),
+                           "EndDate": V(flow.date(day + validity_days), "And until the catalogue ends.")}
+    p["PriceList"] = {"ID": V(f"{seller['identity'].get('short', doc['from']).upper()}-PL-{flow.date(day)[:4]}",
+                              "The seller's price list this price is taken from."),
+                      "StatusCode": V("Active", "The price list is in force.")}
+    out = {"LeadTimeMeasure": V(it.get("lead_days", 5), "The days between order and despatch.", unitCode="DAY"),
+           "MinimumQuantity": qty(it.get("min_order", 1), it["unit"], "The smallest quantity the seller accepts on an "
+                                                                       "order."),
+           "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V(PARTY[doc["from"]]["c"], "The catalogue "
+                                                                              "is offered for buyers in the seller's "
+                                                                              "country.")}},
+           "Price": p}
+    p["PriceTypeCode"] = V("TRD", "The seller's code for its trade price.")
+    p["PriceType"] = V("Trade price", "A price for resellers, before sales tax.")
+    if alternative:
+        p["AlternativeCurrencyPrice"] = {
+            "PriceAmount": price(unit_price(iid, alternative), alternative, "The same price in the buyer's currency, "
+                                 "at the world's reference rate on the catalogue's issue day; for information only."),
+            "BaseQuantity": qty(1, it["unit"], "Per one unit.")}
+    if it.get("max_order"):
+        out["MaximumQuantity"] = qty(it["max_order"], it["unit"], "The most one order can take from stock: two "
+                                                                   "containers.")
+    if it.get("conditions"):
+        out["TradingRestrictions"] = V("Not sold to consumers.", "The bench is sold through retailers.")
+        out["DeliveryUnit"] = {"BatchQuantity": qty(4, it["unit"], "The benches are delivered per pallet of four."),
+                               "ConsumerUnitQuantity": qty(1, it["unit"], "One bench is one consumer unit.")}
+        out["Package"] = {"ID": V("PAL-4", "The pallet the price is for."),
+                          "Quantity": qty(4, it["unit"], "Four benches to a pallet."),
+                          "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}
+        out["AllowanceCharge"] = {"ChargeIndicator": V("false", "A discount."),
+                                  "AllowanceChargeReasonCode": V("78", "UN/EDIFACT 5189 code 78: volume discount.",
+                                                                 listID="UN/EDIFACT EDED 5189"),
+                                  "AllowanceChargeReason": V("Full container", "The discount for a full container."),
+                                  "MultiplierFactorNumeric": V("0.03", "Three percent off."),
+                                  "Amount": amount(Decimal(str(it["price"]["amount"])) * Decimal("0.03"),
+                                                   it["price"]["currency"], "The discount per bench."),
+                                  "BaseAmount": amount(it["price"]["amount"], it["price"]["currency"],
+                                                       "The catalogue price the discount is taken from.")}
+        out["ApplicableDeliveryPeriod"] = {"StartDate": V(flow.date(day + 7), "The first deliveries from the "
+                                                                              "season's stock."),
+                                           "EndDate": V(flow.date(day + validity_days), "The last.")}
+    if it.get("resale_of") and ITEM[it["resale_of"]].get("serials"):     # the spare frame, priced after the bench
+        bench = next(i for i in WORLD["items"] if i["seller"] == it["seller"] and i.get("conditions"))
+        out["DependentPriceReference"] = {"Percent": V(str(round(Decimal(str(it["price"]["amount"])) * 100 /
+                                                                 Decimal(str(bench["price"]["amount"])), 2)),
+                                                       "The spare frame costs this share of the bench's price, "
+                                                       "as the distributor's price rule sets it."),
+                                          "DependentLineReference": {"LineID": V("1", "The catalogue line of the "
+                                                                                      "bench.")}}
+    out["ApplicableTaxCategory"] = tax_category(tax_rule(doc["from"], doc["to"], iid))
+    return out
+
+
+def purchase_receipt(flow, n, doc, day, why, rows_spec, cash, promotion=None):
     seller, buyer = doc["from"], doc["to"]
     cur = currency_of(seller)
-    rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])),
-                                               cur), tax_rule(seller, buyer, d["item"])) for d in rows_spec]
+    def net(iid):
+        shelf = Decimal(str(ITEM[iid]["price"]["amount"]))
+        return money(shelf * (1 - Decimal(str(promotion["percent"])) / 100), cur) if promotion else shelf
+
+    rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * net(d["item"]), cur),
+             tax_rule(seller, buyer, d["item"])) for d in rows_spec]
+
+    def line_price(iid, rule):
+        p = price_block(iid)
+        p["TaxInclusivePriceAmount"] = price(money(net(iid) * (1 + Decimal(str(rule[1])) / 100), cur), cur,
+                                             f"The price the customer pays, with the {rule[1]} % sales tax.")
+        if not promotion:
+            return p
+        shelf = Decimal(str(ITEM[iid]["price"]["amount"]))
+        p["PriceAmount"] = price(net(iid), cur, f"The shelf price of {shelf} less the promotion discount.")
+        p["PriceChangeReason"] = V(promotion["name"], "Why the price differs from the shelf price.")
+        p["AllowanceCharge"] = {
+            "ChargeIndicator": V("false", "A discount, not a charge."),
+            "AllowanceChargeReasonCode": V("75", "UN/EDIFACT 5189 code 75: promotion discount.",
+                                           listID="UN/EDIFACT EDED 5189"),
+            "AllowanceChargeReason": V(promotion["name"], "The promotion, as the till prints it."),
+            "MultiplierFactorNumeric": V(str(Decimal(str(promotion["percent"])) / 100), "The discount rate."),
+            "Amount": amount(shelf - net(iid), cur, "The discount per unit, deducted from the shelf price."),
+            "BaseAmount": amount(shelf, cur, "The shelf price the discount is taken from.")}
+        p["ValidityPeriod"] = {"StartDate": V(flow.date(promotion["from"]), "The first day of the promotion."),
+                               "EndDate": V(flow.date(promotion["to"]), "The last day of the promotion.")}
+        return p
+
     base = sum(r[2] for r in rows)
     tax, total = tax_total(rows, cur)
     return {"ID": V(flow.number(f"receipt-{n}", seller, "PurchaseReceipt"), "The till's receipt number."),
@@ -519,10 +690,10 @@ def purchase_receipt(flow, n, doc, day, why, rows_spec, cash):
             "LegalMonetaryTotal": monetary_total(base, tax, cur),
             "PurchaseReceiptLine": [{"ID": V(str(i), "The line number."),
                                      "Quantity": qty(q, ITEM[d["item"]]["unit"], d["why"]),
-                                     "LineExtensionAmount": amount(amt, cur, "Quantity times the shelf price, before "
+                                     "LineExtensionAmount": amount(amt, cur, "Quantity times the price paid, before "
                                                                              "the sales tax."),
                                      "Item": item(d["item"], tax_category(rule)),
-                                     "Price": price_block(d["item"])} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+                                     "Price": line_price(d["item"], rule)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
 
 
 

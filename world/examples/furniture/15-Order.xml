@@ -219,6 +219,7 @@
       <cac:Item>
         <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
         <cbc:Name>Office desk</cbc:Name>
+        <cbc:BrandName>Brackenmere</cbc:BrandName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-DK-16</cbc:ID>
         </cac:SellersItemIdentification>
@@ -231,6 +232,18 @@
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">9403.30</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:Dimension>
+          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1600</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">800</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">740</cbc:Measure>
+        </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

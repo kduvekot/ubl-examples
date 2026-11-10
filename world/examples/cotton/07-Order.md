@@ -253,8 +253,14 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.**  
   The seller's description; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/PackQuantity` = **1** (unitCode `H87`)  
+  One pack of this item.
+- `LineItem/Item/PackSizeNumeric` = **227**  
+  The units in one pack: 227 kg in a bale; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `LineItem/Item/Name` = **Cotton lint, compressed bale**  
   The item's short name; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/BuyersItemIdentification/ID` = **LT-RAW-COT**  
+  The number the buyer keeps for this item in its own system (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **SCG-LINT**  
   The seller's own item number; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `LineItem/Item/StandardItemIdentification/ID` = **773020000137** (schemeID `urn:ubl-examples:world:item`)  
@@ -263,6 +269,40 @@ Inside `OrderLine`:
   Where the item was produced; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `LineItem/Item/CommodityClassification/ItemClassificationCode` = **5201.00** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Grade**  
+  A property buyers ask about.
+- `LineItem/Item/AdditionalItemProperty/Value` = **Middling**  
+  Its value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Staple length**  
+  A measured property of the item.
+- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
+  Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/OriginAddress/Region` = **North coast**  
+  Where on the island the cotton was grown.
+- `LineItem/Item/OriginAddress/Country/IdentificationCode` = **XL**  
+  The country of origin.
+- `LineItem/Item/Certificate/ID` = **XL-CLS-2026-0042**  
+  The number of the certificate.
+- `LineItem/Item/Certificate/CertificateTypeCode` = **Cottonclassing**  
+  The kind of certificate, as a code.
+- `LineItem/Item/Certificate/CertificateType` = **Cotton classing**  
+  The kind of certificate, in words.
+- `LineItem/Item/Certificate/Remarks` = **Grade Middling, staple 1-1/8 inch, micronaire 4.2.**  
+  What the certificate states about the goods.
+- `LineItem/Item/Certificate/IssuerParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/Item/Certificate/IssuerParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/Item/Certificate/Signature/ID` = **SCC-SIG-2026-0042**  
+  The signature's identifier.
+- `LineItem/Item/Certificate/Signature/Note` = **Signed by the cotton classer of the chamber.**  
+  Who signed.
+- `LineItem/Item/Certificate/Signature/ValidationDate` = **2026-02-20**  
+  The day the signature was placed.
+- `LineItem/Item/Certificate/Signature/SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -472,7 +512,12 @@ Inside `OrderLine`:
       </cac:Price>
       <cac:Item>
         <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
+        <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+        <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
         <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>LT-RAW-COT</cbc:ID>
+        </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
         </cac:SellersItemIdentification>
@@ -485,6 +530,47 @@ Inside `OrderLine`:
         <cac:CommodityClassification>
           <cbc:ItemClassificationCode listID="HS">5201.00</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Grade</cbc:Name>
+          <cbc:Value>Middling</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Staple length</cbc:Name>
+          <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
+        </cac:AdditionalItemProperty>
+        <cac:OriginAddress>
+          <cbc:Region>North coast</cbc:Region>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:OriginAddress>
+        <cac:Certificate>
+          <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+          <cbc:CertificateTypeCode>Cottonclassing</cbc:CertificateTypeCode>
+          <cbc:CertificateType>Cotton classing</cbc:CertificateType>
+          <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+          <cac:Signature>
+            <cbc:ID>SCC-SIG-2026-0042</cbc:ID>
+            <cbc:Note>Signed by the cotton classer of the chamber.</cbc:Note>
+            <cbc:ValidationDate>2026-02-20</cbc:ValidationDate>
+            <cac:SignatoryParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+              </cac:PartyName>
+            </cac:SignatoryParty>
+          </cac:Signature>
+        </cac:Certificate>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

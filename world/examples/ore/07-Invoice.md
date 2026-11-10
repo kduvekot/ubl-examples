@@ -372,6 +372,10 @@ Inside `InvoiceLine`:
   The rate for this category.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `Item/AdditionalItemProperty/Name` = **Iron content**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **62** (unitCode `P1`)  
+  Its measured value; item ore-lump of Serravona Mining (world/items.json).
 - `Price/PriceAmount` = **8060** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `TNE`)  
@@ -688,6 +692,10 @@ Inside `InvoiceLine`:
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Iron content</cbc:Name>
+        <cbc:ValueQuantity unitCode="P1">62</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">8060</cbc:PriceAmount>

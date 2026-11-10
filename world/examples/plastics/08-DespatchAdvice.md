@@ -359,6 +359,34 @@ Inside `DespatchLine`:
   Where the item was produced; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/CommodityClassification/ItemClassificationCode` = **3901.10** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Density**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **0.92** (unitCode `23`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Recycled content**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **100** (unitCode `P1`)  
+  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/ItemInstance/ManufactureDate` = **2026-04-16**  
+  The day the lot was produced.
+- `Item/ItemInstance/BestBeforeDate` = **2027-04-16**  
+  Best used within 12 months: the granulate takes up moisture in storage.
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **RR-PE-0416**  
+  The production lot, from the maker's prefix and the production day; a recall names the lot.
+- `Item/ItemInstance/LotIdentification/ExpiryDate` = **2027-04-16**  
+  The lot's quality data apply until then.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Melt flow index**  
+  A fact about this lot.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **0.9 g/10 min**  
+  Its value for this lot.
+- `Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
+  The number of the environmental certificate.
+- `Item/EnvironmentalCertificate/CertificateTypeCode` = **Recycledcontent**  
+  The kind of claim, as a code.
+- `Item/EnvironmentalCertificate/CertificateType` = **Recycled content**  
+  The environmental claim certified.
+- `Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
+  What the certificate states.
 
 ## The document
 
@@ -678,6 +706,32 @@ Inside `DespatchLine`:
       <cac:CommodityClassification>
         <cbc:ItemClassificationCode listID="HS">3901.10</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Density</cbc:Name>
+        <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Recycled content</cbc:Name>
+        <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:ItemInstance>
+        <cbc:ManufactureDate>2026-04-16</cbc:ManufactureDate>
+        <cbc:BestBeforeDate>2027-04-16</cbc:BestBeforeDate>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>RR-PE-0416</cbc:LotNumberID>
+          <cbc:ExpiryDate>2027-04-16</cbc:ExpiryDate>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Melt flow index</cbc:Name>
+            <cbc:Value>0.9 g/10 min</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+      <cac:EnvironmentalCertificate>
+        <cbc:ID>XU-RC-2026-007</cbc:ID>
+        <cbc:CertificateTypeCode>Recycledcontent</cbc:CertificateTypeCode>
+        <cbc:CertificateType>Recycled content</cbc:CertificateType>
+        <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+      </cac:EnvironmentalCertificate>
     </cac:Item>
   </cac:DespatchLine>
 </DespatchAdvice>

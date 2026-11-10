@@ -351,6 +351,18 @@ Inside `InvoiceLine`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Item/AdditionalItemProperty/Name` = **Thickness**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **23** (unitCode `4H`)  
+  Its measured value; item film-pe of Rivermouth Packaging (world/items.json).
+- `Item/CircularityProfile/CircularityTypeCode` = **Recycled**  
+  The circular strategy behind the item.
+- `Item/CircularityProfile/RecycledContentPercent` = **100**  
+  The share of recycled material: the film is made from the recycled granulate.
+- `Item/CircularityProfile/RecyclabilityPercent` = **100**  
+  The share that can be recycled again.
+- `Item/CircularityProfile/EndOfLifeTreatment/TreatmentPathwayCode` = **Mechanical recycling**  
+  What happens to the item after use.
 - `Price/PriceAmount` = **3.1** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
@@ -655,6 +667,18 @@ Inside `InvoiceLine`:
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Thickness</cbc:Name>
+        <cbc:ValueQuantity unitCode="4H">23</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
+      <cac:CircularityProfile>
+        <cbc:CircularityTypeCode>Recycled</cbc:CircularityTypeCode>
+        <cbc:RecycledContentPercent>100</cbc:RecycledContentPercent>
+        <cbc:RecyclabilityPercent>100</cbc:RecyclabilityPercent>
+        <cac:EndOfLifeTreatment>
+          <cbc:TreatmentPathwayCode>Mechanical recycling</cbc:TreatmentPathwayCode>
+        </cac:EndOfLifeTreatment>
+      </cac:CircularityProfile>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">3.1</cbc:PriceAmount>

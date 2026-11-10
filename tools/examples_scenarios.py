@@ -381,7 +381,8 @@ def retail(n, doc):
                                                                                            "reported the damage.")}})
     if doc["doc"] == "PurchaseReceipt":
         return kit.purchase_receipt(f, n, doc, 25, "A consumer buys a bench during the promotion week.",
-                                    [{"item": "bench-serra-r", "qty": 1, "why": "One bench."}], cash=True)
+                                    [{"item": "bench-serra-r", "qty": 1, "why": "One bench."}], cash=True,
+                                    promotion={"name": "Spring garden promotion", "percent": 10, "from": 22, "to": 28})
     raise SystemExit(f"retail scenario: no document {n} {doc['doc']}")
 
 
@@ -414,7 +415,7 @@ def sea(n, doc):
     w = kit.gross_weight(f, "ordered")
     if doc["doc"] == "Catalogue":
         return kit.catalogue(f, n, doc, 0, "The export catalogue for the island customer.",
-                             ["bench-serra-b", "bench-casting-b"], 180)
+                             ["bench-serra-b", "bench-casting-b"], 180, alternative="XLC")
     if doc["doc"] == "DigitalAgreement":
         return {"ID": V(f.number("agreement", doc["from"], "DigitalAgreement"), "The agreement's number."),
                 "IssueDate": V(f.date(1), "Signed before the first order."),
@@ -1342,7 +1343,18 @@ def retail(n, doc):
                                                "RequiredItemLocationQuantity": {"Price": {
                                                    "PriceAmount": price("58.00", "XBL", "The new price of the side "
                                                                                         "frame, down from 64.00."),
-                                                   "BaseQuantity": qty(1, "H87", "Per piece.")}}}}
+                                                   "BaseQuantity": qty(1, "H87", "Per piece."),
+                                                   "PriceList": {
+                                                       "ID": V("6-XB-PL-2026-2", "The new price list."),
+                                                       "StatusCode": V("Active", "It is in force from today."),
+                                                       "ValidityPeriod": {"StartDate": V(f.date(30), "From the "
+                                                                                         "update."),
+                                                                          "EndDate": V(f.date(90), "Until the "
+                                                                                       "catalogue ends.")},
+                                                       "PreviousPriceList": {
+                                                           "ID": V("6-XB-PL-2026", "The price list of the spring "
+                                                                                   "catalogue it replaces."),
+                                                           "StatusCode": V("Replaced", "No longer in force.")}}}}}}
     if d == "CatalogueItemSpecificationUpdate":
         it = item("bench-serra-b")
         it["Description"] = V("Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried "

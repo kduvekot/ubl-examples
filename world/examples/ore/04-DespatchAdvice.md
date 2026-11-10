@@ -381,6 +381,10 @@ Inside `DespatchLine`:
   Where the item was produced; item ore-lump of Serravona Mining (world/items.json).
 - `Item/CommodityClassification/ItemClassificationCode` = **2601.11** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item ore-lump of Serravona Mining (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Iron content**  
+  A measured property of the item.
+- `Item/AdditionalItemProperty/ValueQuantity` = **62** (unitCode `P1`)  
+  Its measured value; item ore-lump of Serravona Mining (world/items.json).
 
 ## The document
 
@@ -717,6 +721,10 @@ Inside `DespatchLine`:
       <cac:CommodityClassification>
         <cbc:ItemClassificationCode listID="HS">2601.11</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Iron content</cbc:Name>
+        <cbc:ValueQuantity unitCode="P1">62</cbc:ValueQuantity>
+      </cac:AdditionalItemProperty>
     </cac:Item>
   </cac:DespatchLine>
 </DespatchAdvice>
