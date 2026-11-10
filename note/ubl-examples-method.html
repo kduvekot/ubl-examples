@@ -396,11 +396,18 @@ a[href]:hover { background: #ffa }
       <code class="literal">XBA</code> to <code class="literal">XBD</code>, so Urvania's
       currency cannot start with an A and Bayvarra's not with A to D.
       Each code is checked against the current ISO 4217 list, so that
-      none is a real code. Neither the countries nor the currencies are
-      in the UBL default code lists. UBL lets trading partners use their
-      own code lists in the second phase of validation, so the world has
-      its own: copies of the UBL 2.5 default lists, unchanged, with the
-      world's codes added and their own identification.
+      none is a real code.
+    </p><p>
+      The three currencies also differ in their minor unit, because
+      currencies do: the ferra has none (amounts are whole ferra, as
+      with the Japanese yen), the lume has two decimals, and the coral
+      three (as with the Bahraini or Kuwaiti dinar). An example that
+      only ever shows two decimals hides a case that software must
+      handle. Neither the countries nor the currencies are in the UBL
+      default code lists. UBL lets trading partners use their own code
+      lists in the second phase of validation, so the world has its own:
+      copies of the UBL 2.5 default lists, unchanged, with the world's
+      codes added and their own identification.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-parties"></a>3.2 Parties</h3></div></div></div><p>
       The parties are the organisations of the world, chosen so that
       every party role in every UBL document type can be filled (see the
@@ -432,8 +439,10 @@ a[href]:hover { background: #ffa }
       and gross weight, and the packaging. Services have a unit and a
       price. Units of measure and packaging types are UN/ECE
       Recommendation 20 and 21 codes from the UBL default code lists.
-      Prices are in the seller's currency, with no more decimals than
-      the currency has; the coral of Lisavu has none.
+      Prices are in the seller's currency. A unit price may be finer
+      than the currency, as an electricity tariff of 27.3 ferra per
+      kilowatt hour is, but every amount to pay is rounded to the
+      currency's minor unit.
     </p><p>
       Items connect the chains. The park bench is made with slats from
       the sawmill and film from the packaging maker; the distributor
@@ -534,11 +543,11 @@ a[href]:hover { background: #ffa }
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-05-validation-the-items"></a>5.5 The items</h3></div></div></div><p>
       Units and packaging types must be codes of the UBL default lists;
       world item numbers carry a valid check digit and are unique;
-      prices are positive, in the seller's currency and with the right
-      number of decimals; gross weight is at least net weight. Every
-      party that bills or offers in a document has items to put on its
-      lines, and every party with items bills or offers them. The
-      exchange rates between the currencies agree with each other.
+      prices are positive and in the seller's currency; gross weight is
+      at least net weight. Every party that bills or offers in a
+      document has items to put on its lines, and every party with items
+      bills or offers them. The exchange rates between the currencies
+      agree with each other.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-05-validation-the-map-and-the-code-lists"></a>5.6 The map and the code lists</h3></div></div></div><p>
       The map is checked as a structure: one connected road network per
       landmass, houses on streets, nothing built on roads or water,

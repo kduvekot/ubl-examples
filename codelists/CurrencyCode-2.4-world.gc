@@ -4745,7 +4745,7 @@
             <SimpleValue>911</SimpleValue>
          </Value>
          <Value ColumnRef="fractionaldigits">
-            <SimpleValue>2</SimpleValue>
+            <SimpleValue>0</SimpleValue>
          </Value>
          <Value ColumnRef="country">
             <SimpleValue>URVANIA</SimpleValue>
@@ -4779,7 +4779,7 @@
             <SimpleValue>913</SimpleValue>
          </Value>
          <Value ColumnRef="fractionaldigits">
-            <SimpleValue>0</SimpleValue>
+            <SimpleValue>3</SimpleValue>
          </Value>
          <Value ColumnRef="country">
             <SimpleValue>LISAVU</SimpleValue>
