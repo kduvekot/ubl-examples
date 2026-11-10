@@ -7406,6 +7406,19 @@ def _(f, n, doc, out):
 @enrich("road", "ReceiptAdvice")
 def _(f, n, doc, out):
     b, c = out["ReceiptLine"][0], out["ReceiptLine"][1]
+    if nth("road", n, doc) == 2:
+        f.numbers["receipt-1"] = f.numbers["receipt"]
+        no = f.number("receipt-2", doc["from"], "ReceiptAdvice")
+        f.numbers["receipt"] = no
+        b.update({"UUID": line_uuid(f, "receipt-2", 1), "Note": V("All 96 benches, after the recount.", "The line.")})
+        c.update({"ReceivedQuantity": qty(13, "H87", "One box more than despatched."),
+                  "OversupplyQuantity": qty(1, "H87", "The extra box, held for collection by the next truck."),
+                  "Note": V("One box more than despatched: picked twice at the 3PL.", "What was found."),
+                  "UUID": line_uuid(f, "receipt-2", 2)})
+        return {"ID": V(no, "A new number: the first receipt advice was cancelled."),
+                "IssueDate": V(f.date(10), "The morning after the delivery, after the recount."),
+                "DocumentStatusCode": V("Revised", "UBL document status code Revised: it replaces the cancelled receipt advice."),
+                "Note": V("Recounted: all benches received; one box of side frames over.", "The result.")}
     b.update({"ReceivedQuantity": qty(95, "H87", "One bench fewer than despatched."),
               "ShortQuantity": qty(1, "H87", "One bench short."),
               "ShortageActionCode": V("Replace", "The distributor asks for the missing bench with the next truck."),
@@ -8309,3 +8322,22 @@ def packaging_complete(n, doc):
 
 
 SCENARIOS["packaging"] = _with_enrichment("packaging", packaging_complete)
+
+
+
+def road_complete(n, doc):
+    f = ROAD
+    if doc["doc"] == "FulfilmentCancellation":
+        return {**head(f, "receipt-cancellation", doc, 10, "Sent with the recount, before the corrected receipt "
+                                                           "advice."),
+                "Note": V("A corrected receipt advice follows.", "What happens next."),
+                "CancellationNote": V("The recount found the bench reported short; the shortage did not exist.",
+                                      "Why the receipt advice is cancelled."),
+                "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice cancelled.")},
+                "OrderReference": {"ID": V(f.numbers["order"], "The distributor's order.")},
+                "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the "
+                                                                             "delivery.")}}
+    return road(n, doc)
+
+
+SCENARIOS["road"] = _with_enrichment("road", road_complete)

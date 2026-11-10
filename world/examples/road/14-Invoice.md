@@ -1,10 +1,10 @@
 # Invoice: Trasvia Haulage to Lumeway Distribution
 
-*Example 12 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+*Example 14 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
 The carrier invoices the transport to the party that booked it; under FCA that is the buyer, not the seller. A transport service is invoiced with the ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5.
 
-[The XML file](12-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](14-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The carrier invoices the transport to the party that booked it; under FCA that i
   The business process the document belongs to: the flow "Finished goods by truck across the land border (Urvania → Bayvarra)".
 - `ProfileExecutionID` = **ROAD-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **TH-INV-26-0163**  
+- `ID` = **TH-INV-26-0165**  
   The seller's invoice number.
-- `UUID` = **29197a8a-2a1a-57ce-9332-6da8199e7de3**  
+- `UUID` = **0ebe57d8-9974-5b0d-ae09-b3535008cb63**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
   Issued after delivery.
-- `IssueTime` = **10:46:00**  
+- `IssueTime` = **11:07:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-24**  
   30 days after the issue date, the agreed payment term.
@@ -300,7 +300,7 @@ Inside `Delivery`:
   The benches carried.
 - `Shipment/GoodsItem/ReceiptLineReference/LineID` = **1**  
   The line of the consignee's receipt advice.
-- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/ID` = **LD-RA-26-0162**  
+- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/ID` = **LD-RA-26-0164**  
   The receipt advice: proof of delivery.
 
 ### Payment Means
@@ -319,9 +319,9 @@ Inside `PaymentMeans`:
   Paid to an account identified in the format of ISO 13616.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF06THINV260163**  
+- `InstructionNote` = **Quote RF49THINV260165**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF06THINV260163**  
+- `PaymentID` = **RF49THINV260165**  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
 - `ChargeBearerCode` = **SHAR**  
   ISO 20022 SHAR: each side pays its own bank's charges.
@@ -335,7 +335,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF**  
   The account is kept in the currency of the bank's country.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice TH-INV-26-0163**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice TH-INV-26-0165**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **CREV-001**  
   The branch that keeps the account.
@@ -465,10 +465,10 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TH-INV-26-0163</cbc:ID>
-  <cbc:UUID>29197a8a-2a1a-57ce-9332-6da8199e7de3</cbc:UUID>
+  <cbc:ID>TH-INV-26-0165</cbc:ID>
+  <cbc:UUID>0ebe57d8-9974-5b0d-ae09-b3535008cb63</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
-  <cbc:IssueTime>10:46:00</cbc:IssueTime>
+  <cbc:IssueTime>11:07:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-24</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-25</cbc:TaxPointDate>
@@ -708,7 +708,7 @@ Inside `InvoiceLine`:
         <cac:ReceiptLineReference>
           <cbc:LineID>1</cbc:LineID>
           <cac:DocumentReference>
-            <cbc:ID>LD-RA-26-0162</cbc:ID>
+            <cbc:ID>LD-RA-26-0164</cbc:ID>
           </cac:DocumentReference>
         </cac:ReceiptLineReference>
       </cac:GoodsItem>
@@ -721,8 +721,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-24</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF06THINV260163</cbc:InstructionNote>
-    <cbc:PaymentID>RF06THINV260163</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF49THINV260165</cbc:InstructionNote>
+    <cbc:PaymentID>RF49THINV260165</cbc:PaymentID>
     <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU70CREV0000628374</cbc:ID>
@@ -730,7 +730,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice TH-INV-26-0163</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice TH-INV-26-0165</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>CREV-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>

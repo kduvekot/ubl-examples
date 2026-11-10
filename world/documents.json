@@ -630,6 +630,31 @@
   },
   {
    "flow": "road",
+   "doc": "FulfilmentCancellation",
+   "from": "6-xb",
+   "to": "5-xu",
+   "why": "The next morning the distributor's recount finds the 96th bench on the last pallet: the receipt advice reported a shortage that is not there, so the distributor cancels it.",
+   "parties": {
+    "BuyerCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xu",
+    "DespatchSupplierParty": "8-xu"
+   }
+  },
+  {
+   "flow": "road",
+   "doc": "ReceiptAdvice",
+   "from": "6-xb",
+   "to": "8-xu",
+   "why": "The corrected receipt advice: all 96 benches received, and one box of side frames more than despatched.",
+   "parties": {
+    "DeliveryCustomerParty": "6-xb",
+    "DespatchSupplierParty": "8-xu",
+    "BuyerCustomerParty": "6-xb",
+    "SellerSupplierParty": "5-xu"
+   }
+  },
+  {
+   "flow": "road",
    "doc": "Invoice",
    "from": "13-xu",
    "to": "6-xb",

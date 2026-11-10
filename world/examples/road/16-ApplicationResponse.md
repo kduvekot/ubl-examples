@@ -1,10 +1,10 @@
 # Application Response: Lumeway Distribution to Valdara Industries
 
-*Example 14 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Application Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-APPLICATION-RESPONSE-SCHEMA)*
+*Example 16 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Application Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-APPLICATION-RESPONSE-SCHEMA)*
 
 The distributor's system confirms the invoice was received and accepted.
 
-[The XML file](14-ApplicationResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](16-ApplicationResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The distributor's system confirms the invoice was received and accepted.
   The business process the document belongs to: the flow "Finished goods by truck across the land border (Urvania → Bayvarra)".
 - `ProfileExecutionID` = **ROAD-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0165**  
+- `ID` = **LD-DOC-26-0167**  
   The sender's number for this document.
-- `UUID` = **46d48b5d-7711-585d-83b9-04b7dbc143c2**  
+- `UUID` = **cd4b74a4-2123-5d02-8f6a-c5422a5e7d12**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
   Sent automatically when the invoice was processed.
-- `IssueTime` = **11:07:00**  
+- `IssueTime` = **12:55:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `ResponseDate` = **2026-03-25**  
   The day the invoice was processed.
@@ -292,7 +292,7 @@ Inside `DocumentResponse`:
   The invoice matched order and receipt.
 - `Response/Status/Description` = **Three-way match passed.**  
   In words.
-- `DocumentReference/ID` = **VI-INV-26-0164**  
+- `DocumentReference/ID` = **VI-INV-26-0166**  
   The invoice responded to.
 - `IssuerParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -320,10 +320,10 @@ Inside `DocumentResponse`:
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0165</cbc:ID>
-  <cbc:UUID>46d48b5d-7711-585d-83b9-04b7dbc143c2</cbc:UUID>
+  <cbc:ID>LD-DOC-26-0167</cbc:ID>
+  <cbc:UUID>cd4b74a4-2123-5d02-8f6a-c5422a5e7d12</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
-  <cbc:IssueTime>11:07:00</cbc:IssueTime>
+  <cbc:IssueTime>12:55:00</cbc:IssueTime>
   <cbc:ResponseDate>2026-03-25</cbc:ResponseDate>
   <cbc:ResponseTime>06:12:00</cbc:ResponseTime>
   <cbc:Note>Accepted for payment; line 2 matched the substituted casting.</cbc:Note>
@@ -551,7 +551,7 @@ Inside `DocumentResponse`:
       </cac:Status>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID>VI-INV-26-0164</cbc:ID>
+      <cbc:ID>VI-INV-26-0166</cbc:ID>
     </cac:DocumentReference>
     <cac:IssuerParty>
       <cac:PartyIdentification>

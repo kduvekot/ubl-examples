@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0165</cbc:ID>
-  <cbc:UUID>46d48b5d-7711-585d-83b9-04b7dbc143c2</cbc:UUID>
+  <cbc:ID>LD-DOC-26-0167</cbc:ID>
+  <cbc:UUID>cd4b74a4-2123-5d02-8f6a-c5422a5e7d12</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
-  <cbc:IssueTime>11:07:00</cbc:IssueTime>
+  <cbc:IssueTime>12:55:00</cbc:IssueTime>
   <cbc:ResponseDate>2026-03-25</cbc:ResponseDate>
   <cbc:ResponseTime>06:12:00</cbc:ResponseTime>
   <cbc:Note>Accepted for payment; line 2 matched the substituted casting.</cbc:Note>
@@ -235,7 +235,7 @@
       </cac:Status>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID>VI-INV-26-0164</cbc:ID>
+      <cbc:ID>VI-INV-26-0166</cbc:ID>
     </cac:DocumentReference>
     <cac:IssuerParty>
       <cac:PartyIdentification>

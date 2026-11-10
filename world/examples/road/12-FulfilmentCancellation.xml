@@ -1,23 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<FulfilmentCancellation xmlns="urn:oasis:names:specification:ubl:schema:xsd:FulfilmentCancellation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-RM-26-0166</cbc:ID>
-  <cbc:UUID>5d324406-618b-5169-8bce-e128a07f2637</cbc:UUID>
-  <cbc:IssueDate>2026-04-22</cbc:IssueDate>
-  <cbc:IssueTime>11:41:00</cbc:IssueTime>
-  <cbc:Note>Payment of the invoice below.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XUF">4862160</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
-  <cbc:PayerReference>LD-0149</cbc:PayerReference>
-  <cbc:InvoicingPartyReference>RF35VIINV260164</cbc:InvoicingPartyReference>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
-  <cac:AccountingCustomerParty>
+  <cbc:ID>LD-DOC-26-0163</cbc:ID>
+  <cbc:UUID>83620832-e508-5136-b6f4-e104537c3b80</cbc:UUID>
+  <cbc:IssueDate>2026-03-26</cbc:IssueDate>
+  <cbc:IssueTime>10:46:00</cbc:IssueTime>
+  <cbc:Note>A corrected receipt advice follows.</cbc:Note>
+  <cbc:CancellationNote>The recount found the bench reported short; the shortage did not exist.</cbc:CancellationNote>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>CL-DA-26-0153</cbc:ID>
+  </cac:DespatchDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>LD-RA-26-0162</cbc:ID>
+  </cac:ReceiptDocumentReference>
+  <cac:OrderReference>
+    <cbc:ID>LD-PO-26-0149</cbc:ID>
+  </cac:OrderReference>
+  <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -108,8 +110,8 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
-  </cac:AccountingCustomerParty>
-  <cac:AccountingSupplierParty>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -221,113 +223,98 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
-  </cac:AccountingSupplierParty>
-  <cac:PaymentMeans>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>LD-PAY-26-0149</cbc:InstructionID>
-    <cbc:PaymentID>RF35VIINV260164</cbc:PaymentID>
-    <cac:PayerFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
-      <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
-      <cbc:AliasName>Lumeway receivables</cbc:AliasName>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
-      <cac:FinancialInstitutionBranch>
-        <cbc:ID>BLUM-001</cbc:ID>
-        <cbc:Name>Main branch</cbc:Name>
-        <cac:FinancialInstitution>
-          <cbc:ID>BLUM</cbc:ID>
-          <cbc:Name>Bank of Lumeport</cbc:Name>
-          <cac:Address>
-            <cbc:StreetName>Exchange Street</cbc:StreetName>
-            <cbc:BuildingNumber>48</cbc:BuildingNumber>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitution>
-        <cac:Address>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:FinancialInstitutionBranch>
-      <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PayerFinancialAccount>
-    <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XU20CREV0000209458</cbc:ID>
-      <cbc:Name>Valdara Industries SUA</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
-      <cac:FinancialInstitutionBranch>
-        <cbc:ID>CREV-001</cbc:ID>
-        <cbc:Name>Main branch</cbc:Name>
-        <cac:FinancialInstitution>
-          <cbc:ID>CREV</cbc:ID>
-          <cbc:Name>Crevalto Bank</cbc:Name>
-          <cac:Address>
-            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
-            <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName>Ferrano</cbc:CityName>
+  </cac:SellerSupplierParty>
+  <cac:DespatchSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.castrano.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Castrano Logistics</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+        <cbc:BuildingNumber>24</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Castrano Logistics SRU</cbc:RegistrationName>
+        <cbc:CompanyID>XU007308887</cbc:CompanyID>
+        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>XU</cbc:IdentificationCode>
             </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitution>
-        <cac:Address>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Castrano Logistics SRU</cbc:RegistrationName>
+        <cbc:CompanyID>XU-R-104411</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode>XU</cbc:IdentificationCode>
           </cac:Country>
-        </cac:Address>
-      </cac:FinancialInstitutionBranch>
-      <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PayeeFinancialAccount>
-  </cac:PaymentMeans>
-  <cac:RemittanceAdviceLine>
-    <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XUF">4862160</cbc:DebitLineAmount>
-    <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
-    <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF35VIINV260164</cbc:InvoicingPartyReference>
-    <cac:AccountingSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingCustomerParty>
-    <cac:BillingReference>
-      <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0164</cbc:ID>
-        <cbc:IssueDate>2026-03-24</cbc:IssueDate>
-      </cac:InvoiceDocumentReference>
-    </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>VI-INV-26-0164</cbc:ID>
-      <cbc:IssueDate>2026-03-24</cbc:IssueDate>
-      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
-  </cac:RemittanceAdviceLine>
-</RemittanceAdvice>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XU:CR</cbc:ID>
+          <cbc:Name>Commercial register of Urvania</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+        <cac:ShareholderParty>
+          <cbc:ParticipationPercent>100</cbc:ParticipationPercent>
+          <cac:Party>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Valdara Industries</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+        </cac:ShareholderParty>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Warehouse office</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 1 4130 4411</cbc:Telephone>
+        <cbc:ElectronicMail>warehouse@castrano.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104411</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
+</FulfilmentCancellation>
