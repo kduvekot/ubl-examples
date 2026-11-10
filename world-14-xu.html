@@ -94,7 +94,7 @@ siding.</p>
 documents let its customers request and confirm transport plans and
 receive status updates per train and wagon, with the same consignment
 references the forwarder and the receiving terminal use.</p>
-<p>In this world it sends 6 and receives 3 documents, and is named in 3
+<p>In this world it sends 8 and receives 4 documents, and is named in 3
 documents between other parties. They are listed per flow below.</p>
 <h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
 mine to the factory (domestic, Urvania)</h2>
@@ -192,18 +192,36 @@ document</a>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-REQUEST-SCHEMA"><strong>Transport
+Progress Status Request</strong></a> to <a
+href="world-18-xu.html">Ferrano Intermodal Hub</a>: The rail carrier
+asks the hub, which manages the tracks and slots, where the container
+train stands. <a
+href="example-rail-04-TransportProgressStatusRequest.html">See the
+example document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
 to <a href="world-5-xu.html">Valdara Industries</a>: The rail
 consignment note goes to the transport user, now the seller. <a
-href="example-rail-06-Waybill.html">See the example document</a>.</p>
+href="example-rail-08-Waybill.html">See the example document</a>.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-ITEM-ITINERARY-SCHEMA"><strong>Goods
+Item Itinerary</strong></a> to <a href="world-5-xu.html">Valdara
+Industries</a>: The carrier tells the transport user the route and
+timing of the containers. <a
+href="example-rail-09-GoodsItemItinerary.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>,
+<code>TransportationSegment/TransportServiceProviderParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 to <a href="world-5-xu.html">Valdara Industries</a>: Under DAP the
 seller pays the carriage: the rail carrier invoices the container slots
-to the manufacturer. <a href="example-rail-07-Invoice.html">See the
+to the manufacturer. <a href="example-rail-10-Invoice.html">See the
 example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
@@ -225,11 +243,19 @@ example document</a>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-SCHEMA"><strong>Transport
+Progress Status</strong></a> from <a href="world-18-xu.html">Ferrano
+Intermodal Hub</a>: The hub, as network manager, reports the train's
+position and timetable. <a
+href="example-rail-05-TransportProgressStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
 Status</strong></a> from <a href="world-18-xu.html">Ferrano Intermodal
 Hub</a>: The intermodal terminal reports to the rail carrier that the
 containers are loaded on the train. <a
-href="example-rail-05-TransportationStatus.html">See the example
+href="example-rail-07-TransportationStatus.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>Consignment/CarrierParty</code>.</p></li>
@@ -243,7 +269,7 @@ Industries</a> to <a href="world-19-xu.html">Customs Administration of
 Urvania</a>: The goods travel under customs transit from Urvania to the
 destination in Bayvarra; the manufacturer, as holder of the procedure,
 lodges the declaration at the office of departure. <a
-href="example-rail-04-TransitCustomsDeclaration.html">See the example
+href="example-rail-06-TransitCustomsDeclaration.html">See the example
 document</a>.</p>
 <p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
 who provides the transport of goods between named points).</p>
@@ -274,6 +300,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>922b89a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>3ea7e29</code></p></div></footer>
 </body>
 </html>

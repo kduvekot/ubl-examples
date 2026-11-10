@@ -56,8 +56,8 @@ sales carry no tax, and the invoice says so.</td>
 lets it order from the distributor's catalogue, follow the goods through
 despatch and transport, match the invoice to the order and the receipt,
 and send a remittance advice with its payment.</p>
-<p>In this world it sends 4 and receives 9 documents, and is named in 14
-documents between other parties. They are listed per flow below.</p>
+<p>In this world it sends 5 and receives 12 documents, and is named in
+15 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
 by container ship, cost insurance and freight (Bayvarra → island
@@ -74,17 +74,24 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><s
 to <a href="world-6-xb.html">Lumeway Distribution</a>: Delivery terms
 CIF port of the island: the order names the buyer's 3PL as delivery
 party; freight and insurance are the seller's business. <a
-href="example-sea-04-Order.html">See the example document</a>.</p>
+href="example-sea-05-Order.html">See the example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>AccountingCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-9-xl.html">Nalevi Warehousing</a> as
 <code>Delivery/DeliveryParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-STATUS-RESPONSE-SCHEMA"><strong>Invoice
+Status Response</strong></a> to <a href="world-6-xb.html">Lumeway
+Distribution</a>: The buyer answers: accepted and scheduled for payment.
+<a href="example-sea-24-InvoiceStatusResponse.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> to <a href="world-24-xb.html">Harbourline
 Factoring</a>: The buyer pays the factor from its account at the buyer's
 bank and says which invoices it settles. <a
-href="example-sea-21-RemittanceAdvice.html">See the example
+href="example-sea-26-RemittanceAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
@@ -95,10 +102,17 @@ Selanu</a> as
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BUSINESS-CARD-SCHEMA"><strong>Business
+Card</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor introduces itself to the new island
+customer. <a href="example-sea-01-BusinessCard.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA"><strong>Catalogue</strong></a>
 from <a href="world-6-xb.html">Lumeway Distribution</a>: The export
 catalogue for the island customer. <a
-href="example-sea-01-Catalogue.html">See the example document</a>.</p>
+href="example-sea-02-Catalogue.html">See the example document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
 <p>Also mentions: <a href="world-31-xu.html">Codana Identification
 Agency</a> as
@@ -108,7 +122,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DIGITAL-AGREEMEN
 Agreement</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: Before trading, the two parties join the multilateral
 digital agreement that fixes which UBL processes they use. <a
-href="example-sea-02-DigitalAgreement.html">See the example
+href="example-sea-03-DigitalAgreement.html">See the example
 document</a>.</p>
 <p>In it as <code>ParticipantParty</code>.</p>
 <p>Also mentions: <a href="world-32-xb.html">Lumeport Trade Accord
@@ -118,7 +132,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DIGITAL-CAPABILI
 Capability</strong></a> from <a href="world-32-xb.html">Lumeport Trade
 Accord Council</a>: The agreement's governor tells the buyer which
 documents the distributor can send and receive. <a
-href="example-sea-03-DigitalCapability.html">See the example
+href="example-sea-04-DigitalCapability.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
@@ -127,14 +141,14 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
 Response</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The distributor accepts and confirms the sailing it
-plans to use. <a href="example-sea-05-OrderResponse.html">See the
+plans to use. <a href="example-sea-06-OrderResponse.html">See the
 example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-6-xb.html">Lumeway Distribution</a>: Goods, sea
 freight and insurance (CIF) in one invoice; the receivable is sold to
-the factor, who is the payee. <a href="example-sea-19-Invoice.html">See
+the factor, who is the payee. <a href="example-sea-22-Invoice.html">See
 the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
@@ -142,10 +156,18 @@ the example document</a>.</p>
 as <code>PayeeParty</code>; <a href="world-9-xl.html">Nalevi
 Warehousing</a> as <code>Delivery/DeliveryParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-STATUS-REQUEST-SCHEMA"><strong>Invoice
+Status Request</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor asks whether its invoice has been
+accepted for payment. <a
+href="example-sea-23-InvoiceStatusRequest.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-STATEMENT-SCHEMA"><strong>Statement</strong></a>
 from <a href="world-24-xb.html">Harbourline Factoring</a>: The factor,
 who now owns the receivables, sends the statement of account on behalf
-of the distributor. <a href="example-sea-20-Statement.html">See the
+of the distributor. <a href="example-sea-25-Statement.html">See the
 example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
@@ -159,7 +181,7 @@ Instructions</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
 The distributor instructs its forwarder: book the sea freight to the
 island and insure the cargo (CIF obliges the seller to insure). <a
-href="example-sea-06-ForwardingInstructions.html">See the example
+href="example-sea-09-ForwardingInstructions.html">See the example
 document</a>.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p>
@@ -172,7 +194,7 @@ List</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
 How the goods are packed in the container, for the forwarder's booking
 and the export declaration. <a
-href="example-sea-07-PackingList.html">See the example document</a>.</p>
+href="example-sea-10-PackingList.html">See the example document</a>.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
 <li><p><a
@@ -181,7 +203,7 @@ Customs Declaration</strong></a> from <a
 href="world-10-xb.html">Bayforth Forwarding</a> to <a
 href="world-19-xb.html">Customs and Border Service of Bayvarra</a>: The
 forwarder, as customs agent, declares the export for the distributor at
-the seaport. <a href="example-sea-08-ExportCustomsDeclaration.html">See
+the seaport. <a href="example-sea-11-ExportCustomsDeclaration.html">See
 the example document</a>.</p>
 <p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
 who receives the goods).</p>
@@ -192,7 +214,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTR
 Instructions</strong></a> from <a href="world-10-xb.html">Bayforth
 Forwarding</a> to <a href="world-11-xb.html">Tidewell Ocean Lines</a>:
 The forwarder, now acting as shipper, books the container with the ocean
-carrier. <a href="example-sea-09-ForwardingInstructions.html">See the
+carrier. <a href="example-sea-12-ForwardingInstructions.html">See the
 example document</a>.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p>
@@ -205,7 +227,7 @@ Lines</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
 negotiable bill of lading, issued to the forwarder that gave the
 instructions; it names the insurer of the cargo and the buyer's 3PL as
 party to notify on arrival. <a
-href="example-sea-11-BillOfLading.html">See the example
+href="example-sea-14-BillOfLading.html">See the example
 document</a>.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p>
@@ -219,7 +241,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-MANIFEST-SCHEMA"
 from <a href="world-11-xb.html">Tidewell Ocean Lines</a> to <a
 href="world-19-xl.html">Island Customs Service</a>: Before arrival the
 carrier lists the cargo on board for the island's customs. <a
-href="example-sea-12-Manifest.html">See the example document</a>.</p>
+href="example-sea-15-Manifest.html">See the example document</a>.</p>
 <p>In it as <code>ConsigneeParty</code> (The Party who receives the
 goods).</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
@@ -229,7 +251,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-S
 Status</strong></a> from <a href="world-16-xl.html">Port of Selanu</a>
 to <a href="world-10-xb.html">Bayforth Forwarding</a>: The port of
 discharge reports the container discharged and available. <a
-href="example-sea-14-TransportationStatus.html">See the example
+href="example-sea-17-TransportationStatus.html">See the example
 document</a>.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p>
@@ -241,7 +263,7 @@ Customs Declaration</strong></a> from <a href="world-3-xl.html">Tevaro
 Customs Brokers</a> to <a href="world-19-xl.html">Island Customs
 Service</a>: Under CIF the buyer clears the import; its licensed customs
 broker files the declaration on its behalf. <a
-href="example-sea-16-ImportCustomsDeclaration.html">See the example
+href="example-sea-19-ImportCustomsDeclaration.html">See the example
 document</a>.</p>
 <p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code> (The
 Party who makes the import declaration, or on whose behalf the import
@@ -257,7 +279,7 @@ Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-9-xl.html">Nalevi Warehousing</a>:
 The distributor announces the shipment to the delivery party named in
 the order, the buyer's 3PL. <a
-href="example-sea-17-DespatchAdvice.html">See the example
+href="example-sea-20-DespatchAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code> (The buyer).</p>
 <p>Also mentions: <a href="world-11-xb.html">Tidewell Ocean Lines</a> as
@@ -267,7 +289,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-S
 Advice</strong></a> from <a href="world-9-xl.html">Nalevi
 Warehousing</a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
 The buyer's 3PL confirms what arrived, for the buyer. <a
-href="example-sea-18-ReceiptAdvice.html">See the example
+href="example-sea-21-ReceiptAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code> (The buyer).</p></li>
 </ul>
@@ -299,6 +321,16 @@ goes by air at an extra charge, the rest stays on the ship. <a
 href="example-air-02-OrderResponse.html">See the example
 document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA"><strong>Fulfilment
+Cancellation</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The cargo missed its flight; the despatch advice is
+cancelled and a new one follows for the next flight. <a
+href="example-air-07-FulfilmentCancellation.html">See the example
+document</a>.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-9-xl.html">Nalevi Warehousing</a> as
+<code>DeliveryCustomerParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
@@ -335,12 +367,22 @@ example document</a>.</p>
 <p>Also mentions: <a href="world-12-xl.html">Kelaro Air Cargo</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a> to <a href="world-9-xl.html">Nalevi Warehousing</a>:
+The new despatch advice, for the next day's flight. <a
+href="example-air-08-DespatchAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>BuyerCustomerParty</code> (The buyer).</p>
+<p>Also mentions: <a href="world-12-xl.html">Kelaro Air Cargo</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
 Status</strong></a> from <a href="world-17-xl.html">Selanu Airport
 Cargo</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
 island's air cargo terminal reports the cargo arrived and ready for
 customs clearance. <a
-href="example-air-07-TransportationStatus.html">See the example
+href="example-air-09-TransportationStatus.html">See the example
 document</a>.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p>
@@ -399,7 +441,7 @@ document</a>.</p>
 <p><code>ReceiverParty</code> <code>ParticipantParty</code>
 <code>BuyerCustomerParty</code> <code>AccountingCustomerParty</code>
 <code>ConsigneeParty</code> <code>ImporterParty</code>
-<code>SubscriberParty</code></p>
+<code>SenderParty</code> <code>SubscriberParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -421,6 +463,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>922b89a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>3ea7e29</code></p></div></footer>
 </body>
 </html>

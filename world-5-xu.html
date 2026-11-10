@@ -141,7 +141,7 @@ sells, exports and tenders. UBL gives it one vocabulary for all of that,
 from the order it places with the mine to the certificate of origin and
 the tender it submits to a public buyer, so the same item, party and
 price data are reused instead of re-entered for every partner.</p>
-<p>In this world it sends 21 and receives 22 documents, and is named in
+<p>In this world it sends 21 and receives 27 documents, and is named in
 15 documents between other parties. They are listed per flow below.</p>
 <h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
 mine to the factory (domestic, Urvania)</h2>
@@ -307,11 +307,19 @@ document</a>.</p>
 href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Delivery/Despatch/CarrierParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-APPLICATION-RESPONSE-SCHEMA"><strong>Application
+Response</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor's system confirms the invoice was
+received and accepted. <a
+href="example-road-14-ApplicationResponse.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The distributor announces the cross-border payment and
 which invoices it settles. <a
-href="example-road-14-RemittanceAdvice.html">See the example
+href="example-road-15-RemittanceAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -410,7 +418,7 @@ Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
 Administration of Urvania</a>: The goods travel under customs transit
 from Urvania to the destination in Bayvarra; the manufacturer, as holder
 of the procedure, lodges the declaration at the office of departure. <a
-href="example-rail-04-TransitCustomsDeclaration.html">See the example
+href="example-rail-06-TransitCustomsDeclaration.html">See the example
 document</a>.</p>
 <p>In it as <code>TransitExporterParty</code>,
 <code>ConsignorParty</code>.</p>
@@ -421,7 +429,7 @@ Cargo</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: Under DAP the
 price includes the transport, so the invoice covers goods and freight.
-<a href="example-rail-08-Invoice.html">See the example document</a>.</p>
+<a href="example-rail-11-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -451,15 +459,22 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
 from <a href="world-14-xu.html">Ferrano Rail Cargo</a>: The rail
 consignment note goes to the transport user, now the seller. <a
-href="example-rail-06-Waybill.html">See the example document</a>.</p>
+href="example-rail-08-Waybill.html">See the example document</a>.</p>
 <p>In it as <code>ReceiverParty</code>, <code>ConsignorParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-ITEM-ITINERARY-SCHEMA"><strong>Goods
+Item Itinerary</strong></a> from <a href="world-14-xu.html">Ferrano Rail
+Cargo</a>: The carrier tells the transport user the route and timing of
+the containers. <a href="example-rail-09-GoodsItemItinerary.html">See
+the example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-14-xu.html">Ferrano Rail Cargo</a>: Under DAP the
 seller pays the carriage: the rail carrier invoices the container slots
-to the manufacturer. <a href="example-rail-07-Invoice.html">See the
+to the manufacturer. <a href="example-rail-10-Invoice.html">See the
 example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
@@ -480,7 +495,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDERER-QUALIFI
 Qualification</strong></a> to <a href="world-2-xb.html">Lumeport Public
 Works Department</a>: The manufacturer declares its qualifications and
 those of its consortium partner. <a
-href="example-tender-05-TendererQualification.html">See the example
+href="example-tender-13-TendererQualification.html">See the example
 document</a>.</p>
 <p>In it as
 <code>TendererPartyQualification/MainQualifyingParty</code>.</p>
@@ -490,7 +505,7 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-SCHEMA"><strong>Tender</strong></a>
 to <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
 tender, with the consortium partner as subcontractor. <a
-href="example-tender-07-Tender.html">See the example document</a>.</p>
+href="example-tender-15-Tender.html">See the example document</a>.</p>
 <p>In it as <code>TendererParty</code>.</p>
 <p>Also mentions: <a href="world-27-xb.html">Saltmere Engineering</a> as
 <code>SubcontractorParty</code>.</p></li>
@@ -499,7 +514,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-D
 Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
 Administration of Urvania</a>: The call-off leaves Urvania; the
 manufacturer declares the export. <a
-href="example-tender-12-ExportCustomsDeclaration.html">See the example
+href="example-tender-27-ExportCustomsDeclaration.html">See the example
 document</a>.</p>
 <p>In it as <code>ExporterParty</code>.</p>
 <p>Also mentions: <a href="world-2-xb.html">Lumeport Public Works
@@ -511,7 +526,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA">
 to <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
 manufacturer invoices the public buyer under the contract; payment to
 its account at the seller's bank. <a
-href="example-tender-14-Invoice.html">See the example document</a>.</p>
+href="example-tender-29-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -530,18 +545,42 @@ example document</a>.</p>
 Bayvarra</a> as
 <code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-RECEIPT-SCHEMA"><strong>Tender
+Receipt</strong></a> from <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: The authority acknowledges the manufacturer's
+tender, with the time it was registered. <a
+href="example-tender-16-TenderReceipt.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDERER-QUALIFICATION-RESPONSE-SCHEMA"><strong>Tenderer
+Qualification Response</strong></a> from <a
+href="world-2-xb.html">Lumeport Public Works Department</a>: The
+manufacturer and its consortium partner are admitted to the evaluation.
+<a href="example-tender-20-TendererQualificationResponse.html">See the
+example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-AWARDED-NOTIFICATION-SCHEMA"><strong>Awarded
 Notification</strong></a> from <a href="world-2-xb.html">Lumeport Public
 Works Department</a>: The winner is told directly that its tender won.
-<a href="example-tender-09-AwardedNotification.html">See the example
+<a href="example-tender-22-AwardedNotification.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-CONTRACT-SCHEMA"><strong>Tender
+Contract</strong></a> from <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: After the standstill period the authority and the
+manufacturer conclude the contract. <a
+href="example-tender-24-TenderContract.html">See the example
+document</a>.</p>
+<p>In it as <code>EconomicOperatorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
 from <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
 first call-off under the awarded contract. Delivery terms DAP the
 authority's site: the manufacturer delivers, by the road carrier it
-chooses. <a href="example-tender-10-Order.html">See the example
+chooses. <a href="example-tender-25-Order.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 </ul>
@@ -553,7 +592,7 @@ Information</strong></a> from <a href="world-21-xb.html">Bayvarra
 Information Service</a> to <a href="world-2-xb.html">Lumeport Public
 Works Department</a>: The authority checks the tenderer's registration
 with the business registry. <a
-href="example-tender-04-BusinessInformation.html">See the example
+href="example-tender-12-BusinessInformation.html">See the example
 document</a>.</p>
 <p>In it as <code>BusinessParty</code> (The Party who owns this Business
 Registration Information).</p></li>
@@ -563,7 +602,7 @@ Certificate</strong></a> from <a href="world-25-xb.html">Bank of
 Lumeport</a> to <a href="world-2-xb.html">Lumeport Public Works
 Department</a>: The guarantor notifies the authority of the bid bond
 deposited for the manufacturer's tender. <a
-href="example-tender-06-GuaranteeCertificate.html">See the example
+href="example-tender-14-GuaranteeCertificate.html">See the example
 document</a>.</p>
 <p>In it as <code>InterestedParty</code> (The Party who deposits the bid
 bond guarantee).</p></li>
@@ -572,7 +611,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-AWARD-N
 Award Notice</strong></a> from <a href="world-2-xb.html">Lumeport Public
 Works Department</a> to <a href="world-21-xb.html">Bayvarra Information
 Service</a>: The award is published; the review body is named for
-appeals. <a href="example-tender-08-ContractAwardNotice.html">See the
+appeals. <a href="example-tender-21-ContractAwardNotice.html">See the
 example document</a>.</p>
 <p>In it as <code>TenderResult/WinningParty</code> (A party that is
 identified as the awarded by a tender result).</p>
@@ -584,7 +623,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-
 Advice</strong></a> from <a href="world-8-xu.html">Castrano
 Logistics</a> to <a href="world-2-xb.html">Lumeport Public Works
 Department</a>: The manufacturer's 3PL despatches the call-off and names
-the carrier. <a href="example-tender-11-DespatchAdvice.html">See the
+the carrier. <a href="example-tender-26-DespatchAdvice.html">See the
 example document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code> (The seller).</p>
 <p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
@@ -595,7 +634,7 @@ Customs Declaration</strong></a> from <a href="world-2-xb.html">Lumeport
 Public Works Department</a> to <a href="world-19-xb.html">Customs and
 Border Service of Bayvarra</a>: Under DAP the buyer clears the import,
 so the contracting authority declares the goods in Bayvarra. <a
-href="example-tender-13-ImportCustomsDeclaration.html">See the example
+href="example-tender-28-ImportCustomsDeclaration.html">See the example
 document</a>.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p></li>
@@ -873,9 +912,10 @@ document</a>.</p>
 <code>TransitExporterParty</code> <code>BusinessParty</code>
 <code>MainQualifyingParty</code> <code>InterestedParty</code>
 <code>TendererParty</code> <code>WinningParty</code>
-<code>HolderParty</code> <code>NotifierParty</code>
-<code>WasteProducerParty</code> <code>SubscriberParty</code>
-<code>CustomerParty</code> <code>ImporterParty</code></p>
+<code>EconomicOperatorParty</code> <code>HolderParty</code>
+<code>NotifierParty</code> <code>WasteProducerParty</code>
+<code>SubscriberParty</code> <code>CustomerParty</code>
+<code>ImporterParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -905,6 +945,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>922b89a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>3ea7e29</code></p></div></footer>
 </body>
 </html>

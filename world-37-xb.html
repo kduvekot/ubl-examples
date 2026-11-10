@@ -148,8 +148,81 @@ href="world-31-xu.html">Codana Identification Agency</a>)</td>
 stock policies and agreed exception thresholds. UBL's retail
 collaboration documents carry them, and a Work Report documents
 installation work for the customer to approve.</p>
-<p>In this world it sends 9 and receives 7 documents, and is named in 0
-documents between other parties. They are listed per flow below.</p>
+<p>In this world it sends 14 and receives 13 documents, and is named in
+0 documents between other parties. They are listed per flow below.</p>
+<h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
+<p>The contracting authority buys park benches and street furniture for
+the city's parks under procurement law. The notices are published
+through the government information service; the manufacturer tenders
+together with a consortium partner, backed by a bid bond. After the
+award the authority places orders under the contract and the
+manufacturer delivers and invoices.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUALIFICATION-APPLICATION-RESPONSE-SCHEMA"><strong>Qualification
+Application Response</strong></a> to <a href="world-2-xb.html">Lumeport
+Public Works Department</a>: The furniture maker declares it meets the
+selection criteria. <a
+href="example-tender-07-QualificationApplicationResponse.html">See the
+example document</a>.</p>
+<p>In it as <code>EconomicOperatorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PROCUREMENT-STATUS-REQUEST-SCHEMA"><strong>Procurement
+Status Request</strong></a> to <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: The furniture maker asks whether the deadline
+still stands. <a
+href="example-tender-08-ProcurementStatusRequest.html">See the example
+document</a>.</p>
+<p>In it as <code>EconomicOperatorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-SCHEMA"><strong>Tender</strong></a>
+to <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
+furniture maker tenders wooden benches. <a
+href="example-tender-17-Tender.html">See the example document</a>.</p>
+<p>In it as <code>TendererParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-WITHDRAWAL-SCHEMA"><strong>Tender
+Withdrawal</strong></a> to <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: The furniture maker finds a price error in its
+tender and withdraws it before the deadline. <a
+href="example-tender-18-TenderWithdrawal.html">See the example
+document</a>.</p>
+<p>In it as <code>TendererParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-SCHEMA"><strong>Tender</strong></a>
+to <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
+furniture maker submits its corrected tender. <a
+href="example-tender-19-Tender.html">See the example document</a>.</p>
+<p>In it as <code>TendererParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUALIFICATION-APPLICATION-REQUEST-SCHEMA"><strong>Qualification
+Application Request</strong></a> from <a href="world-2-xb.html">Lumeport
+Public Works Department</a>: The authority sends the furniture maker the
+self-declaration it must fill in: exclusion grounds and selection
+criteria. <a
+href="example-tender-06-QualificationApplicationRequest.html">See the
+example document</a>.</p>
+<p>In it as <code>EconomicOperatorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PROCUREMENT-STATUS-SCHEMA"><strong>Procurement
+Status</strong></a> from <a href="world-2-xb.html">Lumeport Public Works
+Department</a>: The authority confirms the procedure and its deadline.
+<a href="example-tender-09-ProcurementStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>EconomicOperatorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UNAWARDED-NOTIFICATION-SCHEMA"><strong>Unawarded
+Notification</strong></a> from <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: The furniture maker is told that the contract went
+to another tenderer. <a
+href="example-tender-23-UnawardedNotification.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+</ul>
 <h2
 id="wood-slats-for-the-benches-and-timber-for-furniture-bayvarra--urvania-and-at-home">Wood:
 slats for the benches and timber for furniture (Bayvarra → Urvania, and
@@ -232,7 +305,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INSTRUCTION-FOR-
 For Returns</strong></a> to <a href="world-26-xb.html">Brightmarket
 Stores</a>: The bench set does not sell; the furniture maker asks for
 the remaining stock back to free shelf space. <a
-href="example-furniture-10-InstructionForReturns.html">See the example
+href="example-furniture-12-InstructionForReturns.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>,
 <code>ManufacturerParty</code>.</p></li>
@@ -240,7 +313,7 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
 Note</strong></a> to <a href="world-26-xb.html">Brightmarket Stores</a>:
 The returned bench sets are credited. <a
-href="example-furniture-11-CreditNote.html">See the example
+href="example-furniture-13-CreditNote.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
@@ -248,7 +321,7 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WORK-REPORT-SCHEMA"><strong>Work
 Report</strong></a> to <a href="world-2-xb.html">Lumeport Public Works
 Department</a>: The installers report the work done; the department
-approves it. <a href="example-furniture-13-WorkReport.html">See the
+approves it. <a href="example-furniture-16-WorkReport.html">See the
 example document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
@@ -256,7 +329,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA">
 to <a href="world-2-xb.html">Lumeport Public Works Department</a>:
 Furniture and installation; a sale to a public body is exempt from sales
 tax, and the invoice says so. <a
-href="example-furniture-14-Invoice.html">See the example
+href="example-furniture-17-Invoice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
@@ -306,26 +379,47 @@ example document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-26-xb.html">Brightmarket Stores</a>: A second
+delivery, placed before the slow sales were clear. <a
+href="example-furniture-10-Order.html">See the example document</a>.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CANCELLATION-SCHEMA"><strong>Order
+Cancellation</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: With sales below the threshold, the store cancels the second
+delivery. <a href="example-furniture-11-OrderCancellation.html">See the
+example document</a>.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA"><strong>Debit
+Note</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: The store charges the furniture maker for transporting the
+returned sets back. <a href="example-furniture-14-DebitNote.html">See
+the example document</a>.</p>
+<p>In it as <code>AccountingSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
 from <a href="world-2-xb.html">Lumeport Public Works Department</a>:
 Furniture for the public works offices, installed. Delivery terms DAP
-the offices. <a href="example-furniture-12-Order.html">See the example
+the offices. <a href="example-furniture-15-Order.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<p><code>BuyerCustomerParty</code> <code>AccountingCustomerParty</code>
-<code>SellerSupplierParty</code> <code>SenderParty</code>
-<code>ReceiverParty</code> <code>AccountingSupplierParty</code>
+<p><code>EconomicOperatorParty</code> <code>TendererParty</code>
+<code>ReceiverParty</code> <code>BuyerCustomerParty</code>
+<code>AccountingCustomerParty</code> <code>SellerSupplierParty</code>
+<code>SenderParty</code> <code>AccountingSupplierParty</code>
 <code>ManufacturerParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-36-xb.html">Marrowdale Sawmill</a>, Bayvarra</li>
-<li><a href="world-26-xb.html">Brightmarket Stores</a>, Bayvarra</li>
 <li><a href="world-2-xb.html">Lumeport Public Works Department</a>,
 Bayvarra</li>
+<li><a href="world-36-xb.html">Marrowdale Sawmill</a>, Bayvarra</li>
+<li><a href="world-26-xb.html">Brightmarket Stores</a>, Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#37-xb">See Furniture Maker on the map</a> ·
@@ -339,6 +433,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>922b89a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>3ea7e29</code></p></div></footer>
 </body>
 </html>

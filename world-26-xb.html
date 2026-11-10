@@ -122,12 +122,26 @@ ID <code>VI-B180</code></td>
 </tr>
 </tbody>
 </table>
+<h3 id="return-transport">Return transport</h3>
+<p>Transport of returned goods back to the supplier, per delivery.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>BM-SVC-RT</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>85.00 XBL per <code>E48</code> (service unit)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>A retailer buys from the distributor and sells to consumers. Besides
 orders and invoices, UBL lets it share forecasts, promotions and sales
 data with its supplier, and issue a structured purchase receipt to the
 consumer.</p>
-<p>In this world it sends 14 and receives 14 documents, and is named in
+<p>In this world it sends 19 and receives 18 documents, and is named in
 2 documents between other parties. They are listed per flow below.</p>
 <h2
 id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
@@ -140,10 +154,17 @@ stock levels so the distributor can plan replenishment.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-REQUEST-SCHEMA"><strong>Catalogue
+Request</strong></a> to <a href="world-6-xb.html">Lumeway
+Distribution</a>: The store asks the distributor for its spring
+catalogue. <a href="example-retail-01-CatalogueRequest.html">See the
+example document</a>.</p>
+<p>In it as <code>ProviderParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORECAST-SCHEMA"><strong>Forecast</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: The retailer
 forecasts its sales for the coming weeks. <a
-href="example-retail-02-Forecast.html">See the example document</a>.</p>
+href="example-retail-05-Forecast.html">See the example document</a>.</p>
 <p>In it as <code>SenderParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
@@ -151,7 +172,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RETAIL-EVENT-SCH
 Event</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: A promotion next month will lift demand; the
 distributor needs to know before it orders from the manufacturer. <a
-href="example-retail-03-RetailEvent.html">See the example
+href="example-retail-06-RetailEvent.html">See the example
 document</a>.</p>
 <p>In it as <code>SenderParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
@@ -160,7 +181,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVENTORY-REPORT
 Report</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: The retailer reports its stock per item, so the
 distributor can replenish. <a
-href="example-retail-04-InventoryReport.html">See the example
+href="example-retail-07-InventoryReport.html">See the example
 document</a>.</p>
 <p>In it as <code>RetailerCustomerParty</code>,
 <code>InventoryReportingParty</code>.</p></li>
@@ -168,15 +189,22 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
 to <a href="world-6-xb.html">Lumeway Distribution</a>: Delivery terms
 DDP retailer's shop: the order names only where to deliver; transport is
-the distributor's business. <a href="example-retail-05-Order.html">See
+the distributor's business. <a href="example-retail-08-Order.html">See
 the example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DOCUMENT-STATUS-REQUEST-SCHEMA"><strong>Document
+Status Request</strong></a> to <a href="world-6-xb.html">Lumeway
+Distribution</a>: The store asks where its order stands. <a
+href="example-retail-09-DocumentStatusRequest.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
 Advice</strong></a> to <a href="world-6-xb.html">Lumeway
 Distribution</a>: The shop confirms the delivery and reports a damaged
-carton. <a href="example-retail-10-ReceiptAdvice.html">See the example
+carton. <a href="example-retail-16-ReceiptAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
@@ -184,7 +212,7 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
 Receipt</strong></a> to <a href="world-c-xb.html">Robin Ashdale</a>: A
 consumer buys in the shop and gets a receipt. <a
-href="example-retail-13-PurchaseReceipt.html">See the example
+href="example-retail-20-PurchaseReceipt.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
 </ul>
@@ -195,17 +223,39 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA
 from <a href="world-6-xb.html">Lumeway Distribution</a>: The
 distributor's catalogue of items and prices; items carry the identifiers
 of the identifier issuing agency. <a
-href="example-retail-01-Catalogue.html">See the example
+href="example-retail-02-Catalogue.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
 <p>Also mentions: <a href="world-31-xu.html">Codana Identification
 Agency</a> as
 <code>CatalogueLine/Item/StandardItemIdentification/IssuerParty</code>.</p></li>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-PRICING-UPDATE-SCHEMA"><strong>Catalogue
+Pricing Update</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor lowers the price of the spare side
+frame. <a href="example-retail-03-CataloguePricingUpdate.html">See the
+example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-ITEM-SPECIFICATION-UPDATE-SCHEMA"><strong>Catalogue
+Item Specification Update</strong></a> from <a
+href="world-6-xb.html">Lumeway Distribution</a>: The bench now comes
+with slats from a different hardwood; the description is updated. <a
+href="example-retail-04-CatalogueItemSpecificationUpdate.html">See the
+example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DOCUMENT-STATUS-SCHEMA"><strong>Document
+Status</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The distributor answers: confirmed, the truck is
+booked. <a href="example-retail-10-DocumentStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The distributor announces the delivery and the truck
-that brings it. <a href="example-retail-07-DespatchAdvice.html">See the
+that brings it. <a href="example-retail-12-DespatchAdvice.html">See the
 example document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
@@ -215,7 +265,7 @@ example document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-6-xb.html">Lumeway Distribution</a>: The distributor
 has sold its receivables to the factor, so the invoice names the factor
-as payee. <a href="example-retail-11-Invoice.html">See the example
+as payee. <a href="example-retail-17-Invoice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
@@ -227,12 +277,20 @@ Note</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The shop reported a damaged carton in its receipt
 advice; the distributor credits it. The factor stays the payee, because
 it owns the receivable being reduced. <a
-href="example-retail-12-CreditNote.html">See the example
+href="example-retail-18-CreditNote.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
 as <code>PayeeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-DELETION-SCHEMA"><strong>Catalogue
+Deletion</strong></a> from <a href="world-6-xb.html">Lumeway
+Distribution</a>: The spring catalogue ends; the distributor deletes it
+before the summer catalogue. <a
+href="example-retail-19-CatalogueDeletion.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
@@ -242,7 +300,7 @@ Execution Plan Request</strong></a> from <a
 href="world-6-xb.html">Lumeway Distribution</a> to <a
 href="world-13-xu.html">Trasvia Haulage</a>: Because it sold DDP, the
 distributor books the outgoing truck from its distribution centre to the
-shop. <a href="example-retail-06-TransportExecutionPlanRequest.html">See
+shop. <a href="example-retail-11-TransportExecutionPlanRequest.html">See
 the example document</a>.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p></li>
@@ -252,7 +310,7 @@ from <a href="world-13-xu.html">Trasvia Haulage</a> to <a
 href="world-6-xb.html">Lumeway Distribution</a>: The outgoing
 consignment note goes to the distributor, who contracted the carriage;
 the retailer is only the consignee. <a
-href="example-retail-08-Waybill.html">See the example document</a>.</p>
+href="example-retail-13-Waybill.html">See the example document</a>.</p>
 <p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
 who receives the goods).</p></li>
 </ul>
@@ -355,6 +413,29 @@ with its own van. <a href="example-furniture-08-Order.html">See the
 example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-37-xb.html">Brackenmere Furniture</a>: A second
+delivery, placed before the slow sales were clear. <a
+href="example-furniture-10-Order.html">See the example document</a>.</p>
+<p>In it as <code>BuyerCustomerParty</code>,
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CANCELLATION-SCHEMA"><strong>Order
+Cancellation</strong></a> to <a href="world-37-xb.html">Brackenmere
+Furniture</a>: With sales below the threshold, the store cancels the
+second delivery. <a
+href="example-furniture-11-OrderCancellation.html">See the example
+document</a>.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA"><strong>Debit
+Note</strong></a> to <a href="world-37-xb.html">Brackenmere
+Furniture</a>: The store charges the furniture maker for transporting
+the returned sets back. <a
+href="example-furniture-14-DebitNote.html">See the example
+document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -397,14 +478,14 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INSTRUCTION-FOR-
 For Returns</strong></a> from <a href="world-37-xb.html">Brackenmere
 Furniture</a>: The bench set does not sell; the furniture maker asks for
 the remaining stock back to free shelf space. <a
-href="example-furniture-10-InstructionForReturns.html">See the example
+href="example-furniture-12-InstructionForReturns.html">See the example
 document</a>.</p>
 <p>In it as <code>RetailerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
 Note</strong></a> from <a href="world-37-xb.html">Brackenmere
 Furniture</a>: The returned bench sets are credited. <a
-href="example-furniture-11-CreditNote.html">See the example
+href="example-furniture-13-CreditNote.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p></li>
@@ -457,11 +538,11 @@ document</a>.</p>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<p><code>ReceiverParty</code> <code>SenderParty</code>
-<code>BuyerCustomerParty</code> <code>RetailerCustomerParty</code>
-<code>InventoryReportingParty</code> <code>DeliveryParty</code>
-<code>ConsigneeParty</code> <code>DeliveryCustomerParty</code>
-<code>AccountingCustomerParty</code>
+<p><code>ProviderParty</code> <code>ReceiverParty</code>
+<code>SenderParty</code> <code>BuyerCustomerParty</code>
+<code>RetailerCustomerParty</code> <code>InventoryReportingParty</code>
+<code>DeliveryParty</code> <code>ConsigneeParty</code>
+<code>DeliveryCustomerParty</code> <code>AccountingCustomerParty</code>
 <code>AccountingSupplierParty</code> <code>SubscriberParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
@@ -485,6 +566,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>922b89a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>3ea7e29</code></p></div></footer>
 </body>
 </html>

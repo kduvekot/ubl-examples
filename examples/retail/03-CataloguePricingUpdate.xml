@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CataloguePricingUpdate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CataloguePricingUpdate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>LD-DOC-26-0219</cbc:ID>
+  <cbc:IssueDate>2026-05-20</cbc:IssueDate>
+  <cac:RelatedCatalogueReference>
+    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+  </cac:RelatedCatalogueReference>
+  <cac:ProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Lumeway Distribution</cbc:RegistrationName>
+      <cbc:CompanyID>20410274</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ProviderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Brightmarket Stores</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Market Street</cbc:StreetName>
+      <cbc:BuildingNumber>50</cbc:BuildingNumber>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38515</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Brightmarket Stores</cbc:RegistrationName>
+      <cbc:CompanyID>20410411</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Buying office</cbc:Name>
+      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReceiverParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:CataloguePricingUpdateLine>
+    <cbc:ID>1</cbc:ID>
+    <cac:RequiredItemLocationQuantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">58</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      </cac:Price>
+    </cac:RequiredItemLocationQuantity>
+  </cac:CataloguePricingUpdateLine>
+</CataloguePricingUpdate>

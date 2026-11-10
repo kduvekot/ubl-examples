@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ProofOfReexportationRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>SCC-DOC-26-0726</cbc:ID>
+  <cbc:IssueDate>2026-07-24</cbc:IssueDate>
+  <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+  <cac:ImportingGuarantorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Reef Street</cbc:StreetName>
+      <cbc:BuildingNumber>30</cbc:BuildingNumber>
+      <cbc:CityName>Selanu</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
+      <cbc:CompanyID>IC42133</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Carnet office</cbc:Name>
+      <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ImportingGuarantorParty>
+  <cac:ExportingGuarantorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Piazza del Mercato</cbc:StreetName>
+      <cbc:BuildingNumber>15</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4110</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>XU007376017</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
+      <cbc:CompanyID>XU-R-105370</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Certificates office</cbc:Name>
+      <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ExportingGuarantorParty>
+  <cac:ImportingCustomsParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Island Customs Service</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Wharf Road</cbc:StreetName>
+      <cbc:BuildingNumber>53</cbc:BuildingNumber>
+      <cbc:CityName>Selanu</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
+      <cbc:CompanyID>IC41448</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Import office</cbc:Name>
+      <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ImportingCustomsParty>
+</ProofOfReexportationRequest>
