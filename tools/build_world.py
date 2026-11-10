@@ -16,9 +16,17 @@ root = os.path.join(os.path.dirname(__file__), "..")
 world = json.load(open(os.path.join(root, "world", "world.json"), encoding="utf-8"))
 parties = {p["id"]: p for p in world["parties"]}
 
+# The tile model: built and checked by tools/world_model.py (the build stops on problems)
+sys.path.insert(0, os.path.dirname(__file__))
+import world_model  # noqa: E402
+model, problems = world_model.build(world)
+if problems:
+    sys.exit("world model problems:\n  " + "\n  ".join(problems))
+
 # The map: fill in the data
 page = open(os.path.join(root, "site", "world.html"), encoding="utf-8").read()
-data = json.dumps({"countries": world["countries"], "parties": world["parties"], "routes": world["routes"]}, ensure_ascii=False)
+data = json.dumps({"countries": world["countries"], "parties": world["parties"], "routes": world["routes"],
+                   "towns": world["towns"], "model": model}, ensure_ascii=False, separators=(",", ":"))
 assert "/*WORLD_JSON*/ null" in page
 page = page.replace("/*WORLD_JSON*/ null", data.replace("</", "<\\/"))
 open(os.path.join(out, "world.html"), "w", encoding="utf-8").write(page)

@@ -1049,7 +1049,8 @@
      40,
      40
     ]
-   ]
+   ],
+   "width": 1.6
   },
   {
    "id": "sea",
@@ -1134,6 +1135,64 @@
      24
     ]
    ]
+  },
+  {
+   "id": "road-farm",
+   "mode": "road",
+   "layer": "transport",
+   "label": "Ferrano to the farms (domestic XA)",
+   "pts": [
+    [
+     14,
+     25
+    ],
+    [
+     14,
+     31
+    ]
+   ]
+  }
+ ],
+ "towns": [
+  {
+   "name": "Ferrano",
+   "c": [
+    13,
+    22
+   ],
+   "r": 4
+  },
+  {
+   "name": "Lumeport",
+   "c": [
+    31,
+    28
+   ],
+   "r": 5
+  },
+  {
+   "name": "Kaimoa",
+   "c": [
+    52,
+    23
+   ],
+   "r": 4
+  }
+ ],
+ "fields": [
+  {
+   "c": [
+    16,
+    32
+   ],
+   "r": 3
+  },
+  {
+   "c": [
+    28,
+    20
+   ],
+   "r": 3
   }
  ]
 }
