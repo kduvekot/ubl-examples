@@ -1154,6 +1154,57 @@ def sea_consignment(f, view):
     return out
 
 
+DEPOSIT = Decimal("10000.00")       # paid by the island buyer when the order was accepted
+
+
+def sea_invoice_terms(f, out):
+    """The export invoice: the deposit paid on order, the balance due 45 days after shipment, the amount in coral
+    for the buyer's information, and the delivery terms the customs need."""
+    lmt = out["LegalMonetaryTotal"]
+    total = Decimal(lmt["PayableAmount"].value)
+    balance = total - DEPOSIT
+    out["PrepaidPayment"] = {"ID": V("VT-DEP-26-0412", "The buyer's payment of the deposit."),
+                             "PaidAmount": amount(DEPOSIT, "XBL", "The deposit asked for in the order response."),
+                             "ReceivedDate": V(f.date(5), "Credited to the distributor's account."),
+                             "PaidDate": V(f.date(4), "Paid by the buyer the day after the order was accepted."),
+                             "InstructionID": V("VT-PAY-26-0077", "The buyer's payment order.")}
+    lmt["PrepaidAmount"] = amount(DEPOSIT, "XBL", "The deposit, already paid.")
+    lmt["PayableAmount"] = amount(balance, "XBL", "What is still to pay: the total less the deposit.")
+    lmt["PayableAlternativeAmount"] = amount(balance * Decimal("0.4"), "XLC", "The same in coral, for the buyer's "
+                                             "information, at the reference rate of the invoice date.")
+    out["PaymentAlternativeCurrencyCode"] = V("XLC", "The buyer's own currency, in which the amount is shown too.")
+    out["PaymentAlternativeExchangeRate"] = {
+        "SourceCurrencyCode": V("XBL", "The invoice currency."), "TargetCurrencyCode": V("XLC", "The buyer's."),
+        "CalculationRate": V("0.4", "The world's reference rate (world/countries.json)."),
+        "MathematicOperatorCode": V("Multiply", "Lume times the rate gives coral."),
+        "Date": V(f.date(10), "The rate of the invoice date.")}
+    terms = out["PaymentTerms"]
+    terms.pop("PaymentDueDate", None)
+    out["PaymentTerms"] = [
+        {"ID": V("DEPOSIT", "The deposit, the first instalment."),
+         "PrepaidPaymentReferenceID": V("VT-DEP-26-0412", "The deposit payment, already received."),
+         "PaymentPercent": V(str(round(DEPOSIT * 100 / total, 2)), "Its share of the invoice total."),
+         "Amount": amount(DEPOSIT, "XBL", "The deposit."),
+         "ReferenceEventCode": V("OrderAccepted", "Due when the order is accepted."),
+         "InstallmentDueDate": V(f.date(5), "It was due on acceptance; paid.")},
+        {**terms, "ID": V("BALANCE", "The balance, the second instalment."),
+         "PaymentPercent": V(str(round(balance * 100 / total, 2)), "Its share of the invoice total."),
+         "Amount": amount(balance, "XBL", "The balance."),
+         "ReferenceEventCode": V("Shipment", "Counted from the shipment on board."),
+         "InstallmentDueDate": V(f.date(55), "45 days after the goods were shipped."),
+         "PenaltyAmount": amount(balance * Decimal("1.5") / 100, "XBL", "The surcharge for the first month late, on "
+                                                                         "the balance."),
+         "InvoicingPartyReference": V(out["PaymentMeans"]["PaymentID"].value, "The reference to quote with the "
+                                                                              "payment.")}]
+    out["DeliveryTerms"] = {"ID": V("CIF", "Incoterms 2020: the customs of both countries need the terms on the "
+                                           "invoice.", schemeID="INCOTERMS"),
+                            "DeliveryLocation": kit.place("XLSEL", "The named port of destination.")}
+    out["Note"] = V("This receivable has been assigned to Harbourline Factoring; pay only to the account stated.",
+                    "The notice of assignment the factoring agreement requires.")
+    f.numbers["invoice-amount"] = balance
+    return out
+
+
 def sea_consignment_fi(f, doc):
     f.number("consignment", doc["from"], "Consignment")
     return sea_consignment(f, "instructions")
@@ -1395,7 +1446,7 @@ def sea(n, doc):
     if doc["doc"] == "ReceiptAdvice":
         return kit.receipt_advice(f, n, doc, 17, "The buyer's 3PL confirms what arrived.")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 10, 45, "Issued when the goods are on board.",
+        out = kit.invoice(f, n, doc, 10, 45, "Issued when the goods are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
                            charges=[{"like": "bench-serra-b", "reason": "Sea freight", "amount": SEA_FREIGHT,
                                      "why": "Under CIF the seller pays the sea freight and charges it on the invoice.",
@@ -1403,14 +1454,38 @@ def sea(n, doc):
                                     {"like": "bench-serra-b", "reason": "Cargo insurance", "amount": INSURANCE,
                                      "why": "Under CIF the seller insures the cargo and charges the insurance.",
                                      "amount_why": "The premium of the cargo insurance."}])
+        return sea_invoice_terms(f, out)
     if doc["doc"] == "Statement":
         cur, total = "XBL", f.numbers["invoice-amount"]
         return {"ID": V(f.number("statement", doc["from"], "Statement"), "The factor's statement number."),
                 "IssueDate": V(f.date(40), "The monthly statement of account."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoices"),
+                "StatementTypeCode": V("Account", "A statement of the account."),
+                "Note": V("Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring "
+                          "holds.", "Who the statement is for."),
+                "TotalDebitAmount": amount(total, cur, "The open invoice."),
+                "TotalCreditAmount": amount(0, cur, "No payments yet."),
+                "TotalBalanceAmount": amount(total, cur, "What is owed."),
+                "LineCountNumeric": V("1", "One line."),
+                "StatementPeriod": {"StartDate": V(f.date(10), "From the invoice."),
+                                    "EndDate": V(f.date(40), "To the statement date.")},
+                "PaymentMeans": kit.payment_means(f, "24-xb", "1-xl", "24-xb", 40, 15, f.numbers["invoice"],
+                                                  "The factor's account, where the invoice is to be paid."),
                 "StatementLine": {"ID": V("1", "The open invoice."),
+                                  "Note": V("Balance after the deposit of 10,000.00 lume.", "What the line shows."),
+                                  "BalanceBroughtForwardIndicator": V("false", "A new item, not a balance carried "
+                                                                               "over."),
                                   "DebitLineAmount": amount(total, cur, "The amount of the invoice, owed to the factor."),
                                   "BalanceAmount": amount(total, cur, "Still open: nothing paid yet."),
+                                  "PaymentPurposeCode": V("GDDS", "ISO 20022 purpose code GDDS: purchase of goods."),
+                                  "PaymentTerms": {"PaymentDueDate": V(f.date(55), "The due date of the balance.")},
+                                  "BuyerCustomerParty": {"Party": party("1-xl", short=True)},
+                                  "SellerSupplierParty": {"Party": party("6-xb", short=True)},
+                                  "DocumentReference": {"ID": V("HF-ASSIGN-26-0091", "The notice of assignment of "
+                                                                                     "the invoice to the factor.")},
+                                  "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The invoice currency."),
+                                                   "TargetCurrencyCode": V("XLC", "The buyer's currency."),
+                                                   "CalculationRate": V("0.4", "For the buyer's information.")},
                                   "BillingReference": {"InvoiceDocumentReference": {
                                       "ID": V(f.numbers["invoice"], "The distributor's invoice, which the factor "
                                                                     "bought."),

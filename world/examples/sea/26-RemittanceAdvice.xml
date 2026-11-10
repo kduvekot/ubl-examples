@@ -8,7 +8,7 @@
   <cbc:UUID>6b92e2fa-8820-5fb5-96a3-b2fe40d92909</cbc:UUID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XBL">53778.00</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">43778.00</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -306,7 +306,7 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">43778.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>

@@ -28,8 +28,12 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   45 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
+- `Note` = **This receivable has been assigned to Harbourline Factoring; pay only to the account stated.**  
+  The notice of assignment the factoring agreement requires.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency; it has two decimals.
+- `PaymentAlternativeCurrencyCode` = **XLC**  
+  The buyer's own currency, in which the amount is shown too.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Stock for municipal projects**  
@@ -410,6 +414,19 @@ Inside `Delivery`:
 - `DeliveryParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41722** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Nalevi Warehousing (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **CIF** (schemeID `INCOTERMS`)  
+  Incoterms 2020: the customs of both countries need the terms on the invoice.
+- `DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Port of Selanu**  
+  The named port of destination.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XL**  
+  The country the place is in.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -467,24 +484,59 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `ID` = **XB-STD**  
-  The standard terms of Bayvarra.
+- `ID` = **DEPOSIT**  
+  The deposit, the first instalment.
+- `PrepaidPaymentReferenceID` = **VT-DEP-26-0412**  
+  The deposit payment, already received.
+- `ReferenceEventCode` = **OrderAccepted**  
+  Due when the order is accepted.
+- `PaymentPercent` = **18.59**  
+  Its share of the invoice total.
+- `Amount` = **10000.00** (currencyID `XBL`)  
+  The deposit.
+- `InstallmentDueDate` = **2026-05-09**  
+  It was due on acceptance; paid.
+- `ID` = **BALANCE**  
+  The balance, the second instalment.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
 - `Note` = **30 days net; 1.5 % surcharge per month late.**  
   Bayvarran practice: a surcharge per month of late payment, no discount.
+- `ReferenceEventCode` = **Shipment**  
+  Counted from the shipment on board.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **806.67** (currencyID `XBL`)  
-  The surcharge for the first month late.
+- `PaymentPercent` = **81.41**  
+  Its share of the invoice total.
+- `Amount` = **43778.00** (currencyID `XBL`)  
+  The balance.
+- `PenaltyAmount` = **656.67** (currencyID `XBL`)  
+  The surcharge for the first month late, on the balance.
 - `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-06-28**  
-  The day the amount is due.
+- `InstallmentDueDate` = **2026-06-28**  
+  45 days after the goods were shipped.
+- `InvoicingPartyReference` = **RF20LDINV260147**  
+  The reference to quote with the payment.
 - `PenaltyPeriod/StartDate` = **2026-06-29**  
   From the day after the due date.
 - `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
   Per month.
+
+### Prepaid Payment
+
+Inside `PrepaidPayment`:
+
+- `ID` = **VT-DEP-26-0412**  
+  The buyer's payment of the deposit.
+- `PaidAmount` = **10000.00** (currencyID `XBL`)  
+  The deposit asked for in the order response.
+- `ReceivedDate` = **2026-05-09**  
+  Credited to the distributor's account.
+- `PaidDate` = **2026-05-08**  
+  Paid by the buyer the day after the order was accepted.
+- `InstructionID` = **VT-PAY-26-0077**  
+  The buyer's payment order.
 
 ### Allowance Charge
 
@@ -519,6 +571,21 @@ Inside `AllowanceCharge`:
 - `TaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 
+### Payment Alternative Exchange Rate
+
+Inside `PaymentAlternativeExchangeRate`:
+
+- `SourceCurrencyCode` = **XBL**  
+  The invoice currency.
+- `TargetCurrencyCode` = **XLC**  
+  The buyer's.
+- `CalculationRate` = **0.4**  
+  The world's reference rate (world/countries.json).
+- `MathematicOperatorCode` = **Multiply**  
+  Lume times the rate gives coral.
+- `Date` = **2026-05-14**  
+  The rate of the invoice date.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -550,8 +617,12 @@ Inside `LegalMonetaryTotal`:
   The total without tax plus the tax.
 - `ChargeTotalAmount` = **3090.00** (currencyID `XBL`)  
   The sum of the charges at document level.
-- `PayableAmount` = **53778.00** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `PrepaidAmount` = **10000.00** (currencyID `XBL`)  
+  The deposit, already paid.
+- `PayableAmount` = **43778.00** (currencyID `XBL`)  
+  What is still to pay: the total less the deposit.
+- `PayableAlternativeAmount` = **17511.200** (currencyID `XLC`)  
+  The same in coral, for the buyer's information, at the reference rate of the invoice date.
 
 ### Invoice Line
 
@@ -834,7 +905,9 @@ Inside `InvoiceLine`:
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:DueDate>2026-06-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -1163,6 +1236,18 @@ Inside `InvoiceLine`:
       </cac:ElectronicAddress>
     </cac:DeliveryParty>
   </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
@@ -1202,18 +1287,37 @@ Inside `InvoiceLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:ID>DEPOSIT</cbc:ID>
+    <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
+    <cbc:ReferenceEventCode>OrderAccepted</cbc:ReferenceEventCode>
+    <cbc:PaymentPercent>18.59</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
+    <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
+  </cac:PaymentTerms>
+  <cac:PaymentTerms>
+    <cbc:ID>BALANCE</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:ReferenceEventCode>Shipment</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">806.67</cbc:PenaltyAmount>
+    <cbc:PaymentPercent>81.41</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">43778.00</cbc:Amount>
+    <cbc:PenaltyAmount currencyID="XBL">656.67</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
+    <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-06-29</cbc:StartDate>
       <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
+  <cac:PrepaidPayment>
+    <cbc:ID>VT-DEP-26-0412</cbc:ID>
+    <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
+    <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+    <cbc:PaidDate>2026-05-08</cbc:PaidDate>
+    <cbc:InstructionID>VT-PAY-26-0077</cbc:InstructionID>
+  </cac:PrepaidPayment>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
@@ -1240,6 +1344,13 @@ Inside `InvoiceLine`:
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
+  <cac:PaymentAlternativeExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-05-14</cbc:Date>
+  </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -1260,7 +1371,9 @@ Inside `InvoiceLine`:
     <cbc:TaxExclusiveAmount currencyID="XBL">53778.00</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="XBL">53778.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">53778.00</cbc:PayableAmount>
+    <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
+    <cbc:PayableAmount currencyID="XBL">43778.00</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">17511.200</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

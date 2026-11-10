@@ -24,8 +24,29 @@ The factor, who now owns the receivables, sends the statement of account on beha
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-13**  
   The monthly statement of account.
+- `Note` = **Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.**  
+  Who the statement is for.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the invoices; it has two decimals.
+- `TotalDebitAmount` = **43778.00** (currencyID `XBL`)  
+  The open invoice.
+- `TotalCreditAmount` = **0.00** (currencyID `XBL`)  
+  No payments yet.
+- `TotalBalanceAmount` = **43778.00** (currencyID `XBL`)  
+  What is owed.
+- `LineCountNumeric` = **1**  
+  One line.
+- `StatementTypeCode` = **Account**  
+  A statement of the account.
+
+### Statement Period
+
+Inside `StatementPeriod`:
+
+- `StartDate` = **2026-05-14**  
+  From the invoice.
+- `EndDate` = **2026-06-13**  
+  To the statement date.
 
 ### Accounting Supplier Party
 
@@ -302,20 +323,97 @@ Inside `PayeeParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411233** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Harbourline Factoring (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The first, and only, way to pay.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-06-28**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF20LDINV260147**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF20LDINV260147**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
+- `PayeeFinancialAccount/ID` = **XB21BLUM0002304038** (schemeID `urn:ubl-examples:world:account`)  
+  The factor's account, where the invoice is to be paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PayeeFinancialAccount/Name` = **Harbourline Factoring Ltd**  
+  The account holder, as the bank knows it.
+- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/PaymentNote` = **Invoice LD-INV-26-0147**  
+  What the payer is asked to quote with the transfer, so the payment is matched.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
+
 ### Statement Line
 
 Inside `StatementLine`:
 
 - `ID` = **1**  
   The open invoice.
-- `DebitLineAmount` = **53778.00** (currencyID `XBL`)  
+- `Note` = **Balance after the deposit of 10,000.00 lume.**  
+  What the line shows.
+- `BalanceBroughtForwardIndicator` = **false**  
+  A new item, not a balance carried over.
+- `DebitLineAmount` = **43778.00** (currencyID `XBL`)  
   The amount of the invoice, owed to the factor.
-- `BalanceAmount` = **53778.00** (currencyID `XBL`)  
+- `BalanceAmount` = **43778.00** (currencyID `XBL`)  
   Still open: nothing paid yet.
+- `PaymentPurposeCode` = **GDDS**  
+  ISO 20022 purpose code GDDS: purchase of goods.
+- `PaymentTerms/PaymentDueDate` = **2026-06-28**  
+  The due date of the balance.
+- `BuyerCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BuyerCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
   The distributor's invoice, which the factor bought.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date.
+- `DocumentReference/ID` = **HF-ASSIGN-26-0091**  
+  The notice of assignment of the invoice to the factor.
+- `ExchangeRate/SourceCurrencyCode` = **XBL**  
+  The invoice currency.
+- `ExchangeRate/TargetCurrencyCode` = **XLC**  
+  The buyer's currency.
+- `ExchangeRate/CalculationRate` = **0.4**  
+  For the buyer's information.
 
 ## The document
 
@@ -329,7 +427,17 @@ Inside `StatementLine`:
   <cbc:ID>HF-ST-26-0150</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
+  <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XBL">43778.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
+  <cbc:TotalBalanceAmount currencyID="XBL">43778.00</cbc:TotalBalanceAmount>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:StatementTypeCode>Account</cbc:StatementTypeCode>
+  <cac:StatementPeriod>
+    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:EndDate>2026-06-13</cbc:EndDate>
+  </cac:StatementPeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -568,16 +676,88 @@ Inside `StatementLine`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411233</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:PayeeParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
+    <cbc:PaymentID>RF20LDINV260147</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
+      <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice LD-INV-26-0147</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">53778.00</cbc:BalanceAmount>
+    <cbc:Note>Balance after the deposit of 10,000.00 lume.</cbc:Note>
+    <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
+    <cbc:DebitLineAmount currencyID="XBL">43778.00</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">43778.00</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode>GDDS</cbc:PaymentPurposeCode>
+    <cac:PaymentTerms>
+      <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    </cac:PaymentTerms>
+    <cac:BuyerCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Velumi Trading</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:BuyerCustomerParty>
+    <cac:SellerSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:SellerSupplierParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>LD-INV-26-0147</cbc:ID>
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+    </cac:DocumentReference>
+    <cac:ExchangeRate>
+      <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+      <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+      <cbc:CalculationRate>0.4</cbc:CalculationRate>
+    </cac:ExchangeRate>
   </cac:StatementLine>
 </Statement>
 ```

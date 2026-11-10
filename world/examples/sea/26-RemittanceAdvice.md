@@ -26,7 +26,7 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The buyer pays the factor, before the due date.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the invoice paid; it has two decimals.
-- `TotalPaymentAmount` = **53778.00** (currencyID `XBL`)  
+- `TotalPaymentAmount` = **43778.00** (currencyID `XBL`)  
   The amount transferred: the payable amount of the invoice.
 
 ### Accounting Customer Party
@@ -377,7 +377,7 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `DebitLineAmount` = **53778.00** (currencyID `XBL`)  
+- `DebitLineAmount` = **43778.00** (currencyID `XBL`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
   Nothing remains open on the invoice after this payment.
@@ -403,7 +403,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>6b92e2fa-8820-5fb5-96a3-b2fe40d92909</cbc:UUID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XBL">53778.00</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">43778.00</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -701,7 +701,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">43778.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
