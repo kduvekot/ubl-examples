@@ -8,11 +8,13 @@
   <cbc:CarrierAssignedID>FRC-CMR-26-0325</cbc:CarrierAssignedID>
   <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
+  <cbc:StatusCode>Issued</cbc:StatusCode>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
   <cbc:Note>Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMR</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
@@ -35,6 +37,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Viale della Stazione</cbc:StreetName>
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
@@ -68,6 +71,7 @@
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Serravona</cbc:CityName>
         <cac:Country>
@@ -116,6 +120,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
@@ -149,6 +154,7 @@
       <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -167,6 +173,11 @@
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
+      <cac:SecurityListing>
+        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+        <cbc:MarketCode>FSE</cbc:MarketCode>
+      </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Order desk</cbc:Name>
@@ -181,6 +192,8 @@
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
+      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
         <cac:PartyIdentification>
@@ -190,6 +203,9 @@
           <cbc:Name>Castrano Logistics</cbc:Name>
         </cac:PartyName>
       </cac:Party>
+      <cac:SellerContact>
+        <cbc:Name>Key account desk</cbc:Name>
+      </cac:SellerContact>
     </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -241,6 +257,7 @@
           <cbc:LocaleCode>EN</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
           <cbc:StreetName>Distribution Drive</cbc:StreetName>
           <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -279,6 +296,7 @@
           <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
           <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
           <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
           <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
           <cac:RegistrationAddress>

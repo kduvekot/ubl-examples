@@ -43,6 +43,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Estuary Road</cbc:StreetName>
       <cbc:BuildingNumber>28</cbc:BuildingNumber>
@@ -79,6 +80,7 @@
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -127,6 +129,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
@@ -160,6 +163,7 @@
       <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
@@ -223,6 +227,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Border Crossing Road</cbc:StreetName>
       <cbc:BuildingNumber>36</cbc:BuildingNumber>
@@ -239,6 +244,7 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
       <cbc:CompanyID>20410137</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
@@ -328,7 +334,41 @@
         </cac:EnvironmentalCertificate>
       </cac:Item>
       <cac:BondedWarehouseLocation>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:LocationTypeCode>BondedStore</cbc:LocationTypeCode>
         <cbc:Name>Bonded store at the river quay, Lumeport</cbc:Name>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2025-01-01</cbc:StartDate>
+          <cbc:EndDate>2027-12-31</cbc:EndDate>
+        </cac:ValidityPeriod>
+        <cac:Storage>
+          <cbc:ID>RQ-BOND-03</cbc:ID>
+          <cbc:Name>Hall 3</cbc:Name>
+          <cbc:GateID>Gate B</cbc:GateID>
+          <cbc:AirFlowPercent>0</cbc:AirFlowPercent>
+          <cbc:HumidityPercent>60</cbc:HumidityPercent>
+          <cbc:AnimalFoodApprovedIndicator>false</cbc:AnimalFoodApprovedIndicator>
+          <cbc:HumanFoodApprovedIndicator>false</cbc:HumanFoodApprovedIndicator>
+          <cbc:DangerousGoodsApprovedIndicator>false</cbc:DangerousGoodsApprovedIndicator>
+          <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+          <cbc:PowerIndicator>true</cbc:PowerIndicator>
+          <cac:MinimumTemperature>
+            <cbc:AttributeID>Hall</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">5</cbc:Measure>
+            <cbc:MeasureCode>Min</cbc:MeasureCode>
+            <cbc:Description>Kept frost-free.</cbc:Description>
+          </cac:MinimumTemperature>
+          <cac:MaximumTemperature>
+            <cbc:AttributeID>Hall</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">35</cbc:Measure>
+          </cac:MaximumTemperature>
+          <cac:Certificate>
+            <cbc:ID>XB-BOND-LIC-0388</cbc:ID>
+            <cbc:CertificateTypeCode>BondedStore</cbc:CertificateTypeCode>
+            <cbc:CertificateType>Bonded store licence</cbc:CertificateType>
+          </cac:Certificate>
+        </cac:Storage>
       </cac:BondedWarehouseLocation>
       <cac:AdditionalDocumentReference>
         <cbc:ID>FB-WB-26-0890</cbc:ID>

@@ -30,6 +30,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -68,6 +69,7 @@
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -369,6 +371,7 @@
             <cbc:LocaleCode>EN</cbc:LocaleCode>
           </cac:Language>
           <cac:PostalAddress>
+            <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
             <cbc:StreetName>Dockside Way</cbc:StreetName>
             <cbc:BuildingNumber>4</cbc:BuildingNumber>
@@ -405,6 +408,7 @@
             <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
             <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
             <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+            <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
             <cac:RegistrationAddress>
               <cbc:CityName>Lumeport</cbc:CityName>
               <cac:Country>
@@ -471,6 +475,7 @@
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
@@ -488,6 +493,7 @@
         <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
@@ -540,6 +546,7 @@
         <cbc:LocaleCode>EN</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Border Crossing Road</cbc:StreetName>
         <cbc:BuildingNumber>36</cbc:BuildingNumber>
@@ -556,6 +563,7 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
         <cbc:CompanyID>20410137</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>

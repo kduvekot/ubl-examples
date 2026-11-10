@@ -47,6 +47,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
@@ -85,6 +86,7 @@
       <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -136,6 +138,7 @@
       <cbc:LocaleCode>EN</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
       <cbc:StreetName>Market Street</cbc:StreetName>
       <cbc:BuildingNumber>50</cbc:BuildingNumber>
@@ -172,6 +175,7 @@
       <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
@@ -257,11 +261,17 @@
   </cac:RequestedLanguage>
   <cac:RequestedClassificationScheme>
     <cbc:ID>HS</cbc:ID>
+    <cbc:UUID>1afc0bc8-8a3e-5d36-b5be-437211032bac</cbc:UUID>
+    <cbc:LastRevisionDate>2022-01-01</cbc:LastRevisionDate>
+    <cbc:LastRevisionTime>00:00:00</cbc:LastRevisionTime>
+    <cbc:Note>Six-digit subheadings.</cbc:Note>
     <cbc:Name>Harmonized System</cbc:Name>
+    <cbc:Description>The international goods classification.</cbc:Description>
     <cbc:AgencyID>WCO</cbc:AgencyID>
     <cbc:AgencyName>World Customs Organization</cbc:AgencyName>
     <cbc:VersionID>2022</cbc:VersionID>
     <cbc:URI>https://www.wcoomd.org</cbc:URI>
+    <cbc:SchemeURI>https://www.wcoomd.org/hs</cbc:SchemeURI>
     <cbc:LanguageID>en</cbc:LanguageID>
     <cac:ClassificationCategory>
       <cbc:Name>Seats</cbc:Name>
