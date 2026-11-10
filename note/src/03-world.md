@@ -15,29 +15,35 @@ before the next layer builds on it.
 
 ## Countries
 
-The world has three countries. Two share a land border on the mainland;
-the third is an island overseas. They differ on purpose, so that the
+The world has three countries: Urvania, Bayvarra and Lisavu, whose
+initials spell UBL. Two share a land border on the mainland; the third is
+an island overseas. They differ on purpose, so that the
 examples show how UBL carries different national arrangements in the same
 structure:
 
-- **Country A (XA)** has a value added tax in the style of the EU VAT:
+- **Urvania (XU)** has a value added tax in the style of the EU VAT:
   charged at every stage, deducted by businesses, not charged on exports.
-- **Country B (XB)** is a federal country whose states levy a retail sales
+- **Bayvarra (XB)** is a federal country whose states levy a retail sales
   tax, charged once, on the sale to the final consumer. Sales for resale,
   exports and sales to public bodies are exempt.
-- **Country C (XC)** has no general sales tax. Customs collects a customs
+- **Lisavu (XL)** has no general sales tax. Customs collects a customs
   duty and an import consumption tax when goods enter the island.
 
 The tax schemes are identified with UN/EDIFACT 5153 codes: `VAT`, `STT`
 (state or provincial sales tax), `CUD` (customs duty) and `IMP` (import
-tax). Because 5153 has no code for a national sales tax, Country B levies
+tax). Because 5153 has no code for a national sales tax, Bayvarra levies
 its sales tax at state level, which also gives the state in its addresses a
 purpose.
 
-XA, XB and XC are ISO 3166-1 user-assigned codes, which exist for exactly
-this purpose. ISO 4217 has no such range for currencies, so the world's
-currencies (`XAW`, `XBW`, `XCW`) are invented and checked against the
-current ISO 4217 list, so that none is a real code. Neither the countries nor
+XU, XB and XL are ISO 3166-1 user-assigned codes, which exist for exactly
+this purpose; each follows the initial of its country's name. ISO 4217 has
+no such range for currencies. The world's currencies follow the ISO 4217
+convention of the country code plus the initial of the currency's name:
+the ferra of Urvania (`XUF`), the lume of Bayvarra (`XBL`) and the coral of
+Lisavu (`XLC`). The convention limits the names: ISO 4217 already uses
+`XUA` and `XBA` to `XBD`, so Urvania's currency cannot start with an A and
+Bayvarra's not with A to D. Each code is checked against the current
+ISO 4217 list, so that none is a real code. Neither the countries nor
 the currencies are in the UBL default code lists. UBL lets trading partners
 use their own code lists in the second phase of validation, so the world
 has its own: copies of the UBL 2.5 default lists, unchanged, with the
@@ -64,10 +70,14 @@ countries.
 
 ## Flows of documents
 
-The parties do business in flows: an ore delivery, goods by road, rail and
-river across the land border, a retail chain, an overseas shipment by sea
-and by air, a public tender, a temporary export with an ATA carnet, and the
-removal of production waste. Each flow starts from the business: who buys
+The parties do business in flows. Each country has its own raw material
+and industry: Urvania mines ore and makes park benches, recovering its
+production waste as recycled plastic; Bayvarra saws timber, makes furniture,
+packaging and clothing, and distributes and retails; the island Lisavu grows
+and gins cotton, its export. Goods cross the land border by road, rail and
+river barge and go overseas by sea and air in both directions; there is a
+public tender, a temporary export with an ATA carnet, and a utility in each
+country. Each flow starts from the business: who buys
 from whom, on which delivery terms, and therefore who arranges and pays the
 transport. A distributor that buys free carrier (FCA) books the truck
 itself and names the carrier in its order; a retailer that buys delivered

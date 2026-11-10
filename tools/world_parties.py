@@ -30,7 +30,7 @@ import world_data  # noqa: E402
 
 
 def mod11(digits):
-    """Check digit for the XA tax number: weights 9..2 over 8 digits, modulus 11 (10 is not allowed)."""
+    """Check digit for the XU tax number: weights 9..2 over 8 digits, modulus 11 (10 is not allowed)."""
     s = sum(int(d) * w for d, w in zip(digits, range(9, 1, -1))) % 11
     return None if s == 10 else str(s)
 
@@ -48,11 +48,11 @@ def account_valid(acc):
 
 
 def tax_id_valid(country, tax_id):
-    if country == "XA":
-        return len(tax_id) == 11 and tax_id[:2] == "XA" and tax_id[2:].isdigit() and mod11(tax_id[2:10]) == tax_id[10]
+    if country == "XU":
+        return len(tax_id) == 11 and tax_id[:2] == "XU" and tax_id[2:].isdigit() and mod11(tax_id[2:10]) == tax_id[10]
     if country == "XB":
         st, _, num = tax_id.partition("-")
-        return st in ("CS", "US") and len(num) == 7 and num.isdigit()
+        return st in ("UL", "CO") and len(num) == 7 and num.isdigit()
     return False
 
 

@@ -5,7 +5,7 @@
    "id": "ore",
    "mode": "rail",
    "layer": "chain",
-   "label": "Ore by rail (domestic XA)",
+   "label": "Ore by rail (domestic XU)",
    "pts": [
     [
      9,
@@ -49,7 +49,7 @@
    "id": "road",
    "mode": "road",
    "layer": "chain",
-   "label": "Finished goods by road, across the border (XA → XB)",
+   "label": "Finished goods by road, across the border (XU → XB)",
    "pts": [
     [
      18,
@@ -105,7 +105,7 @@
    "id": "river",
    "mode": "river",
    "layer": "transport",
-   "label": "River barge (XA → XB)",
+   "label": "River barge (XU → XB)",
    "pts": [
     [
      5,
@@ -138,7 +138,7 @@
    "id": "sea",
    "mode": "sea",
    "layer": "chain",
-   "label": "Container ship overseas (XB → XC)",
+   "label": "Container ship overseas (XB → XL)",
    "pts": [
     [
      40,
@@ -154,7 +154,7 @@
    "id": "air",
    "mode": "air",
    "layer": "transport",
-   "label": "Air cargo (XB → XC)",
+   "label": "Air cargo (XB → XL)",
    "pts": [
     [
      34,
@@ -174,7 +174,7 @@
    "id": "road-c",
    "mode": "road",
    "layer": "chain",
-   "label": "Port to buyer (domestic XC)",
+   "label": "Port to buyer (domestic XL)",
    "pts": [
     [
      47,
@@ -214,7 +214,7 @@
    "id": "road-farm",
    "mode": "road",
    "layer": "transport",
-   "label": "Ferrano to the farms (domestic XA)",
+   "label": "Ferrano to the farms (domestic XU)",
    "pts": [
     [
      14,
@@ -235,7 +235,7 @@
     22
    ],
    "r": 4,
-   "country": "XA"
+   "country": "XU"
   },
   {
    "name": "Lumeport",
@@ -253,7 +253,7 @@
     23
    ],
    "r": 4,
-   "country": "XC"
+   "country": "XL"
   }
  ],
  "fields": [
@@ -279,7 +279,7 @@
     9,
     12
    ],
-   "country": "XA",
+   "country": "XU",
    "note": "The mining village at the ore mine."
   },
   {

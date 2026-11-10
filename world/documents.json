@@ -3,43 +3,43 @@
  "flows": [
   {
    "id": "ore",
-   "title": "Ore from the mine to the factory (domestic, Country A)",
+   "title": "Ore from the mine to the factory (domestic, Urvania)",
    "text": "The manufacturer buys ore free carrier (FCA) at the mine: the buyer arranges and pays the main transport, so the manufacturer, not the mine, books the ore train with the rail carrier."
   },
   {
    "id": "road",
-   "title": "Finished goods by truck across the land border (Country A → Country B)",
-   "text": "The distributor buys free carrier (FCA) at the manufacturer's warehouse. Because the buyer arranges the transport, the distributor books the road carrier itself and tells the seller in the order which truck company will pick the goods up and where. The seller's 3PL hands the goods over; the seller clears them for export, the distributor for import."
+   "title": "Finished goods by truck across the land border (Urvania → Bayvarra)",
+   "text": "The distributor buys park benches free carrier (FCA) at the manufacturer's warehouse. Because the buyer arranges the transport, the distributor books the road carrier itself and tells the seller in the order which truck company will pick the goods up and where. The seller's 3PL hands the goods over; the seller clears them for export, the distributor for import."
   },
   {
    "id": "rail",
-   "title": "Containers by rail under transit (Country A → Country B)",
+   "title": "Containers by rail under transit (Urvania → Bayvarra)",
    "text": "For full container loads the manufacturer sells delivered at place (DAP) the distributor's rail siding. Now the seller arranges and pays the transport: it books the container train and moves the goods under a transit declaration, so that import formalities happen at the destination. The intermodal hub loads the containers on the train."
   },
   {
-   "id": "barge",
-   "title": "Bulk by river barge (Country A → Country B)",
-   "text": "Bulk lots go down the river. The distributor buys carriage paid to (CPT) the river quay in Country B: the manufacturer books the barge and pays the freight; the risk passes when the barge is loaded."
+   "id": "plastics",
+   "title": "Recycled plastic granulate by river barge (Urvania → Bayvarra)",
+   "text": "The waste processor recovers plastic from production waste and sells it as granulate to the packaging maker on the coast of Bayvarra, carriage paid to (CPT) the river quay: the seller books the barge and pays the freight, the buyer takes the risk once the barge is loaded. The packaging maker turns it into packaging for the benches and the clothing."
   },
   {
    "id": "retail",
-   "title": "Distributor to retailer, delivered duty paid (domestic, Country B)",
+   "title": "Distributor to retailer, delivered duty paid (domestic, Bayvarra)",
    "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment."
   },
   {
    "id": "sea",
-   "title": "Overseas by container ship, cost insurance and freight (Country B → island Country C)",
+   "title": "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)",
    "text": "The commercial buyer on the island buys cost, insurance and freight (CIF) to the port of discharge. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them."
   },
   {
    "id": "air",
-   "title": "An urgent part of the order by air (Country B → island Country C)",
+   "title": "An urgent part of the order by air (Bayvarra → island Lisavu)",
    "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport."
   },
   {
    "id": "tender",
-   "title": "A public tender (Country B)",
-   "text": "The contracting authority buys equipment under procurement law. The notices are published through the government information service; the manufacturer tenders together with a consortium partner, backed by a bid bond. After the award the authority places orders under the contract and the manufacturer delivers and invoices."
+   "title": "A public tender (Bayvarra)",
+   "text": "The contracting authority buys park benches and street furniture for the city's parks under procurement law. The notices are published through the government information service; the manufacturer tenders together with a consortium partner, backed by a bid bond. After the award the authority places orders under the contract and the manufacturer delivers and invoices."
   },
   {
    "id": "carnet",
@@ -48,28 +48,48 @@
   },
   {
    "id": "waste",
-   "title": "Production waste to recovery (domestic, Country A)",
-   "text": "The factory's hazardous production waste may only move with a notification. In Country A one administration acts as customs and as competent authority for waste permits. The waste processor recovers the material and invoices the service."
+   "title": "Production waste to recovery (domestic, Urvania)",
+   "text": "The factory's hazardous production waste may only move with a notification. In Urvania one administration acts as customs and as competent authority for waste permits. The waste processor recovers the material and invoices the service."
   },
   {
    "id": "utilities",
    "title": "Electricity, water and telecom (one utility in each country)",
    "text": "Every business and household pays a utility. UBL bills a utility with an Invoice and supplements it with a Utility Statement: the consumption behind the bill, per connection, with meter readings (UBL 2.5, section 2.3.7.2, Utility Billing). The three utilities differ on purpose: electricity and water use the energy and water supply structure, telecom its own telecommunications structure, and the three countries tax them differently."
+  },
+  {
+   "id": "wood",
+   "title": "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)",
+   "text": "The sawmill in Upland State saws timber to size. The manufacturer in Urvania asks for a quotation for bench slats to its own dimensions and orders them delivered at its factory (DAP), so the sawmill arranges the truck across the border. The furniture maker buys timber at home; selling for manufacture, the sawmill charges no sales tax and says why."
+  },
+  {
+   "id": "furniture",
+   "title": "Furniture for the department store and for public offices (Bayvarra)",
+   "text": "The furniture maker supplies the department store with a garden furniture line made for it. They agree on the item data and the stock policy per store, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. Slow sellers are taken back. For the public works department the furniture maker also installs, and documents the work for approval."
+  },
+  {
+   "id": "cotton",
+   "title": "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)",
+   "text": "The island's export. The farm delivers seed cotton to the ginnery, which weighs and grades it and pays by self-billing: it writes the invoice for the farm. The ginnery sells the bales free on board (FOB) the island port: the textile mill arranges the sea freight through its forwarder. The ginnery declares the export, weighs the container for its verified gross mass and gets a goods certificate."
+  },
+  {
+   "id": "packaging",
+   "title": "Packaging for the benches, clothing for the store",
+   "text": "The packaging maker supplies the manufacturer in Urvania and the textile mill at home; the textile mill sells clothing to the department store, delivered duty paid (DDP) at the store."
   }
  ],
  "documents": [
   {
    "flow": "ore",
    "doc": "Order",
-   "from": "5-xa",
-   "to": "4-xa",
+   "from": "5-xu",
+   "to": "4-xu",
    "why": "Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the order names the rail carrier that will collect.",
    "parties": {
-    "BuyerCustomerParty": "5-xa",
-    "SellerSupplierParty": "4-xa",
-    "Delivery/DeliveryParty": "5-xa",
-    "Delivery/Despatch/DespatchParty": "4-xa",
-    "Delivery/Despatch/CarrierParty": "14-xa"
+    "BuyerCustomerParty": "5-xu",
+    "SellerSupplierParty": "4-xu",
+    "Delivery/DeliveryParty": "5-xu",
+    "Delivery/Despatch/DespatchParty": "4-xu",
+    "Delivery/Despatch/CarrierParty": "14-xu"
    },
    "values": {
     "DeliveryTerms/ID": "FCA"
@@ -78,100 +98,100 @@
   {
    "flow": "ore",
    "doc": "TransportExecutionPlanRequest",
-   "from": "5-xa",
-   "to": "14-xa",
+   "from": "5-xu",
+   "to": "14-xu",
    "why": "The manufacturer, as transport user, asks the rail carrier for wagons and a slot to move the ore from the mine to its siding.",
    "parties": {
-    "SenderParty": "5-xa",
-    "ReceiverParty": "14-xa",
-    "TransportUserParty": "5-xa",
-    "TransportServiceProviderParty": "14-xa",
-    "Consignment/ConsignorParty": "4-xa",
-    "Consignment/ConsigneeParty": "5-xa"
+    "SenderParty": "5-xu",
+    "ReceiverParty": "14-xu",
+    "TransportUserParty": "5-xu",
+    "TransportServiceProviderParty": "14-xu",
+    "Consignment/ConsignorParty": "4-xu",
+    "Consignment/ConsigneeParty": "5-xu"
    }
   },
   {
    "flow": "ore",
    "doc": "TransportExecutionPlan",
-   "from": "14-xa",
-   "to": "5-xa",
+   "from": "14-xu",
+   "to": "5-xu",
    "why": "The rail carrier confirms the train, the wagons and the schedule; this is the agreed transport plan.",
    "parties": {
-    "SenderParty": "14-xa",
-    "ReceiverParty": "5-xa",
-    "TransportUserParty": "5-xa",
-    "TransportServiceProviderParty": "14-xa",
-    "Consignment/ConsignorParty": "4-xa",
-    "Consignment/ConsigneeParty": "5-xa"
+    "SenderParty": "14-xu",
+    "ReceiverParty": "5-xu",
+    "TransportUserParty": "5-xu",
+    "TransportServiceProviderParty": "14-xu",
+    "Consignment/ConsignorParty": "4-xu",
+    "Consignment/ConsigneeParty": "5-xu"
    }
   },
   {
    "flow": "ore",
    "doc": "DespatchAdvice",
-   "from": "4-xa",
-   "to": "5-xa",
+   "from": "4-xu",
+   "to": "5-xu",
    "why": "The mine announces what was loaded into which wagons, so the factory can plan the unloading.",
    "parties": {
-    "DespatchSupplierParty": "4-xa",
-    "DeliveryCustomerParty": "5-xa",
-    "SellerSupplierParty": "4-xa",
-    "BuyerCustomerParty": "5-xa",
-    "Shipment/Consignment/CarrierParty": "14-xa"
+    "DespatchSupplierParty": "4-xu",
+    "DeliveryCustomerParty": "5-xu",
+    "SellerSupplierParty": "4-xu",
+    "BuyerCustomerParty": "5-xu",
+    "Shipment/Consignment/CarrierParty": "14-xu"
    }
   },
   {
    "flow": "ore",
    "doc": "Waybill",
-   "from": "14-xa",
-   "to": "5-xa",
+   "from": "14-xu",
+   "to": "5-xu",
    "why": "The rail consignment note goes to the party that contracted the carriage, the manufacturer; the mine is named as consignor because the ore is loaded there.",
    "parties": {
-    "SenderParty": "14-xa",
-    "ReceiverParty": "5-xa",
-    "CarrierParty": "14-xa",
-    "ConsignorParty": "4-xa",
-    "Shipment/Consignment/ConsigneeParty": "5-xa"
+    "SenderParty": "14-xu",
+    "ReceiverParty": "5-xu",
+    "CarrierParty": "14-xu",
+    "ConsignorParty": "4-xu",
+    "Shipment/Consignment/ConsigneeParty": "5-xu"
    }
   },
   {
    "flow": "ore",
    "doc": "Invoice",
-   "from": "4-xa",
-   "to": "5-xa",
+   "from": "4-xu",
+   "to": "5-xu",
    "why": "The mine invoices the ore; transport is not on this invoice because under FCA the buyer pays it. Payment goes to the mine's account at the seller's bank.",
    "parties": {
-    "AccountingSupplierParty": "4-xa",
-    "AccountingCustomerParty": "5-xa",
-    "SellerSupplierParty": "4-xa",
-    "BuyerCustomerParty": "5-xa",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "AccountingSupplierParty": "4-xu",
+    "AccountingCustomerParty": "5-xu",
+    "SellerSupplierParty": "4-xu",
+    "BuyerCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
    "flow": "ore",
    "doc": "RemittanceAdvice",
-   "from": "5-xa",
-   "to": "4-xa",
+   "from": "5-xu",
+   "to": "4-xu",
    "why": "The manufacturer tells the mine which invoices the transfer pays. Both companies bank at the same domestic bank.",
    "parties": {
-    "AccountingCustomerParty": "5-xa",
-    "AccountingSupplierParty": "4-xa",
-    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "AccountingCustomerParty": "5-xu",
+    "AccountingSupplierParty": "4-xu",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
    "flow": "road",
    "doc": "Order",
    "from": "6-xb",
-   "to": "5-xa",
+   "to": "5-xu",
    "why": "Delivery terms FCA seller's warehouse: the order names the warehouse where the goods are collected and the road carrier the distributor has booked to collect them.",
    "parties": {
     "BuyerCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "Delivery/DeliveryParty": "6-xb",
-    "Delivery/Despatch/DespatchParty": "8-xa",
-    "Delivery/Despatch/CarrierParty": "13-xa"
+    "Delivery/Despatch/DespatchParty": "8-xu",
+    "Delivery/Despatch/CarrierParty": "13-xu"
    },
    "values": {
     "DeliveryTerms/ID": "FCA"
@@ -180,11 +200,11 @@
   {
    "flow": "road",
    "doc": "OrderResponse",
-   "from": "5-xa",
+   "from": "5-xu",
    "to": "6-xb",
    "why": "The manufacturer accepts the order and confirms the collection date at its warehouse.",
    "parties": {
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb"
    }
   },
@@ -192,92 +212,92 @@
    "flow": "road",
    "doc": "TransportExecutionPlanRequest",
    "from": "6-xb",
-   "to": "13-xa",
+   "to": "13-xu",
    "why": "The distributor, as transport user, books the truck: collection at the seller's 3PL, delivery at its own distribution centre, across the border.",
    "parties": {
     "SenderParty": "6-xb",
-    "ReceiverParty": "13-xa",
+    "ReceiverParty": "13-xu",
     "TransportUserParty": "6-xb",
-    "TransportServiceProviderParty": "13-xa",
-    "Consignment/ConsignorParty": "5-xa",
+    "TransportServiceProviderParty": "13-xu",
+    "Consignment/ConsignorParty": "5-xu",
     "Consignment/ConsigneeParty": "6-xb"
    }
   },
   {
    "flow": "road",
    "doc": "DespatchAdvice",
-   "from": "8-xa",
+   "from": "8-xu",
    "to": "6-xb",
    "why": "The 3PL picks and loads the goods for the manufacturer and announces the despatch; it knows the goods and the truck but not the prices.",
    "parties": {
-    "DespatchSupplierParty": "8-xa",
+    "DespatchSupplierParty": "8-xu",
     "DeliveryCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb",
-    "Shipment/Consignment/CarrierParty": "13-xa"
+    "Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
    "flow": "road",
    "doc": "ExportCustomsDeclaration",
-   "from": "5-xa",
-   "to": "19-xa",
-   "why": "Goods leave Country A: the manufacturer, as exporter, declares them to the customs office at the land border.",
+   "from": "5-xu",
+   "to": "19-xu",
+   "why": "Goods leave Urvania: the manufacturer, as exporter, declares them to the customs office at the land border.",
    "parties": {
-    "ExporterParty": "5-xa",
-    "CustomsDeclaration/CustomsParty": "19-xa",
+    "ExporterParty": "5-xu",
+    "CustomsDeclaration/CustomsParty": "19-xu",
     "CustomsDeclaration/ConsigneeParty": "6-xb",
-    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "13-xa"
+    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
    "flow": "road",
    "doc": "CertificateOfOrigin",
-   "from": "5-xa",
-   "to": "20-xa",
-   "why": "The goods qualify for preferential duty in Country B; the manufacturer applies to its chamber of commerce for a certificate of origin.",
+   "from": "5-xu",
+   "to": "20-xu",
+   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin.",
    "parties": {
-    "ExporterParty": "5-xa",
+    "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
-    "EndorserParty": "20-xa"
+    "EndorserParty": "20-xu"
    }
   },
   {
    "flow": "road",
    "doc": "CertificateOfOrigin",
-   "from": "20-xa",
+   "from": "20-xu",
    "to": "6-xb",
    "why": "The chamber endorses the certificate and makes it available to the importer, who needs it for the import declaration.",
    "parties": {
-    "ExporterParty": "5-xa",
+    "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
-    "EndorserParty": "20-xa"
+    "EndorserParty": "20-xu"
    }
   },
   {
    "flow": "road",
    "doc": "Waybill",
-   "from": "13-xa",
+   "from": "13-xu",
    "to": "6-xb",
    "why": "The road consignment note goes to the party that booked the truck, the distributor; it names the manufacturer as consignor.",
    "parties": {
-    "SenderParty": "13-xa",
+    "SenderParty": "13-xu",
     "ReceiverParty": "6-xb",
-    "CarrierParty": "13-xa",
-    "ConsignorParty": "5-xa",
+    "CarrierParty": "13-xu",
+    "ConsignorParty": "5-xu",
     "Shipment/Consignment/ConsigneeParty": "6-xb"
    }
   },
   {
    "flow": "road",
    "doc": "TransportationStatus",
-   "from": "13-xa",
+   "from": "13-xu",
    "to": "6-xb",
    "why": "The carrier reports that the truck has cleared the border and gives the expected arrival time.",
    "parties": {
-    "SenderParty": "13-xa",
+    "SenderParty": "13-xu",
     "ReceiverParty": "6-xb",
-    "Consignment/CarrierParty": "13-xa",
+    "Consignment/CarrierParty": "13-xu",
     "Consignment/ConsigneeParty": "6-xb"
    }
   },
@@ -286,10 +306,10 @@
    "doc": "ImportCustomsDeclaration",
    "from": "6-xb",
    "to": "19-xb",
-   "why": "The distributor, as importer, declares the goods in Country B and claims the preferential duty rate with the certificate of origin.",
+   "why": "The distributor, as importer, declares the goods in Bayvarra and claims the preferential duty rate with the certificate of origin.",
    "parties": {
     "ImporterParty": "6-xb",
-    "ConsignorParty": "5-xa",
+    "ConsignorParty": "5-xu",
     "ConsigneeParty": "6-xb",
     "CustomsParty": "19-xb"
    }
@@ -298,65 +318,65 @@
    "flow": "road",
    "doc": "ReceiptAdvice",
    "from": "6-xb",
-   "to": "8-xa",
+   "to": "8-xu",
    "why": "The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller.",
    "parties": {
     "DeliveryCustomerParty": "6-xb",
-    "DespatchSupplierParty": "8-xa",
+    "DespatchSupplierParty": "8-xu",
     "BuyerCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa"
+    "SellerSupplierParty": "5-xu"
    }
   },
   {
    "flow": "road",
    "doc": "Invoice",
-   "from": "13-xa",
+   "from": "13-xu",
    "to": "6-xb",
    "why": "The carrier invoices the transport to the party that booked it; under FCA that is the buyer, not the seller. A transport service is invoiced with the ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5.",
    "parties": {
-    "AccountingSupplierParty": "13-xa",
+    "AccountingSupplierParty": "13-xu",
     "AccountingCustomerParty": "6-xb",
-    "SellerSupplierParty": "13-xa",
+    "SellerSupplierParty": "13-xu",
     "BuyerCustomerParty": "6-xb",
-    "Delivery/Shipment/Consignment/CarrierParty": "13-xa"
+    "Delivery/Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
    "flow": "road",
    "doc": "Invoice",
-   "from": "5-xa",
+   "from": "5-xu",
    "to": "6-xb",
    "why": "The manufacturer invoices the goods only (no freight under FCA) and asks for payment to its account at the seller's bank.",
    "parties": {
-    "AccountingSupplierParty": "5-xa",
+    "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb",
     "Delivery/DeliveryParty": "6-xb",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
    "flow": "road",
    "doc": "RemittanceAdvice",
    "from": "6-xb",
-   "to": "5-xa",
+   "to": "5-xu",
    "why": "The distributor announces the cross-border payment and which invoices it settles.",
    "parties": {
     "AccountingCustomerParty": "6-xb",
-    "AccountingSupplierParty": "5-xa",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "AccountingSupplierParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
    "flow": "rail",
    "doc": "Order",
    "from": "6-xb",
-   "to": "5-xa",
+   "to": "5-xu",
    "why": "Delivery terms DAP distributor's siding: no carrier in the order, because the seller chooses and pays the transport.",
    "parties": {
     "BuyerCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "Delivery/DeliveryParty": "6-xb"
    },
    "values": {
@@ -366,170 +386,85 @@
   {
    "flow": "rail",
    "doc": "TransportExecutionPlanRequest",
-   "from": "5-xa",
-   "to": "14-xa",
+   "from": "5-xu",
+   "to": "14-xu",
    "why": "Under DAP the manufacturer is the transport user; it books a container train to the distributor's siding.",
    "parties": {
-    "SenderParty": "5-xa",
-    "ReceiverParty": "14-xa",
-    "TransportUserParty": "5-xa",
-    "TransportServiceProviderParty": "14-xa",
-    "Consignment/ConsignorParty": "5-xa",
+    "SenderParty": "5-xu",
+    "ReceiverParty": "14-xu",
+    "TransportUserParty": "5-xu",
+    "TransportServiceProviderParty": "14-xu",
+    "Consignment/ConsignorParty": "5-xu",
     "Consignment/ConsigneeParty": "6-xb"
    }
   },
   {
    "flow": "rail",
    "doc": "TransportExecutionPlan",
-   "from": "14-xa",
-   "to": "5-xa",
+   "from": "14-xu",
+   "to": "5-xu",
    "why": "The rail carrier confirms the train and the slot at the intermodal hub.",
    "parties": {
-    "SenderParty": "14-xa",
-    "ReceiverParty": "5-xa",
-    "TransportUserParty": "5-xa",
-    "TransportServiceProviderParty": "14-xa",
+    "SenderParty": "14-xu",
+    "ReceiverParty": "5-xu",
+    "TransportUserParty": "5-xu",
+    "TransportServiceProviderParty": "14-xu",
     "Consignment/ConsigneeParty": "6-xb"
    }
   },
   {
    "flow": "rail",
    "doc": "TransitCustomsDeclaration",
-   "from": "5-xa",
-   "to": "19-xa",
-   "why": "The goods travel under customs transit from Country A to the destination in Country B; the manufacturer, as holder of the procedure, lodges the declaration at the office of departure.",
+   "from": "5-xu",
+   "to": "19-xu",
+   "why": "The goods travel under customs transit from Urvania to the destination in Bayvarra; the manufacturer, as holder of the procedure, lodges the declaration at the office of departure.",
    "parties": {
-    "TransitExporterParty": "5-xa",
-    "ConsignorParty": "5-xa",
+    "TransitExporterParty": "5-xu",
+    "ConsignorParty": "5-xu",
     "ConsigneeParty": "6-xb",
-    "CustomsParty": "19-xa",
-    "Shipment/Consignment/CarrierParty": "14-xa"
+    "CustomsParty": "19-xu",
+    "Shipment/Consignment/CarrierParty": "14-xu"
    }
   },
   {
    "flow": "rail",
    "doc": "TransportationStatus",
-   "from": "18-xa",
-   "to": "14-xa",
+   "from": "18-xu",
+   "to": "14-xu",
    "why": "The intermodal terminal reports to the rail carrier that the containers are loaded on the train.",
    "parties": {
-    "SenderParty": "18-xa",
-    "ReceiverParty": "14-xa",
-    "Consignment/CarrierParty": "14-xa",
-    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "18-xa"
+    "SenderParty": "18-xu",
+    "ReceiverParty": "14-xu",
+    "Consignment/CarrierParty": "14-xu",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "18-xu"
    }
   },
   {
    "flow": "rail",
    "doc": "Waybill",
-   "from": "14-xa",
-   "to": "5-xa",
+   "from": "14-xu",
+   "to": "5-xu",
    "why": "The rail consignment note goes to the transport user, now the seller.",
    "parties": {
-    "SenderParty": "14-xa",
-    "ReceiverParty": "5-xa",
-    "CarrierParty": "14-xa",
-    "ConsignorParty": "5-xa",
+    "SenderParty": "14-xu",
+    "ReceiverParty": "5-xu",
+    "CarrierParty": "14-xu",
+    "ConsignorParty": "5-xu",
     "Shipment/Consignment/ConsigneeParty": "6-xb"
    }
   },
   {
    "flow": "rail",
    "doc": "Invoice",
-   "from": "5-xa",
+   "from": "5-xu",
    "to": "6-xb",
    "why": "Under DAP the price includes the transport, so the invoice covers goods and freight.",
    "parties": {
-    "AccountingSupplierParty": "5-xa",
+    "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
-   }
-  },
-  {
-   "flow": "barge",
-   "doc": "Order",
-   "from": "6-xb",
-   "to": "5-xa",
-   "why": "Delivery terms CPT river quay: the seller books the barge, the buyer collects at the quay.",
-   "parties": {
-    "BuyerCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
-    "Delivery/DeliveryParty": "6-xb"
-   },
-   "values": {
-    "DeliveryTerms/ID": "CPT"
-   }
-  },
-  {
-   "flow": "barge",
-   "doc": "TransportExecutionPlanRequest",
-   "from": "5-xa",
-   "to": "15-xa",
-   "why": "The manufacturer, as transport user under CPT, asks the inland waterway carrier for barge capacity.",
-   "parties": {
-    "SenderParty": "5-xa",
-    "ReceiverParty": "15-xa",
-    "TransportUserParty": "5-xa",
-    "TransportServiceProviderParty": "15-xa",
-    "Consignment/ConsigneeParty": "6-xb"
-   }
-  },
-  {
-   "flow": "barge",
-   "doc": "TransportExecutionPlan",
-   "from": "15-xa",
-   "to": "5-xa",
-   "why": "The barge operator confirms the vessel and the sailing.",
-   "parties": {
-    "SenderParty": "15-xa",
-    "ReceiverParty": "5-xa",
-    "TransportUserParty": "5-xa",
-    "TransportServiceProviderParty": "15-xa",
-    "Consignment/ConsigneeParty": "6-xb"
-   }
-  },
-  {
-   "flow": "barge",
-   "doc": "Waybill",
-   "from": "15-xa",
-   "to": "5-xa",
-   "why": "The inland waterway consignment note, issued to the shipper.",
-   "parties": {
-    "SenderParty": "15-xa",
-    "ReceiverParty": "5-xa",
-    "CarrierParty": "15-xa",
-    "ConsignorParty": "5-xa",
-    "Shipment/Consignment/ConsigneeParty": "6-xb"
-   }
-  },
-  {
-   "flow": "barge",
-   "doc": "DespatchAdvice",
-   "from": "5-xa",
-   "to": "6-xb",
-   "why": "The manufacturer announces the lot loaded on the barge, so the distributor can arrange collection at the quay.",
-   "parties": {
-    "DespatchSupplierParty": "5-xa",
-    "DeliveryCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
-    "BuyerCustomerParty": "6-xb",
-    "Shipment/Consignment/CarrierParty": "15-xa"
-   }
-  },
-  {
-   "flow": "barge",
-   "doc": "Invoice",
-   "from": "5-xa",
-   "to": "6-xb",
-   "why": "Under CPT the seller has paid the barge, so the price includes carriage to the quay.",
-   "parties": {
-    "AccountingSupplierParty": "5-xa",
-    "AccountingCustomerParty": "6-xb",
-    "SellerSupplierParty": "5-xa",
-    "BuyerCustomerParty": "6-xb",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
@@ -542,7 +477,7 @@
     "ProviderParty": "6-xb",
     "ReceiverParty": "26-xb",
     "SellerSupplierParty": "6-xb",
-    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xa"
+    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xu"
    }
   },
   {
@@ -602,13 +537,13 @@
    "flow": "retail",
    "doc": "TransportExecutionPlanRequest",
    "from": "6-xb",
-   "to": "13-xa",
+   "to": "13-xu",
    "why": "Because it sold DDP, the distributor books the outgoing truck from its distribution centre to the shop.",
    "parties": {
     "SenderParty": "6-xb",
-    "ReceiverParty": "13-xa",
+    "ReceiverParty": "13-xu",
     "TransportUserParty": "6-xb",
-    "TransportServiceProviderParty": "13-xa",
+    "TransportServiceProviderParty": "13-xu",
     "Consignment/ConsignorParty": "6-xb",
     "Consignment/ConsigneeParty": "26-xb"
    }
@@ -624,19 +559,19 @@
     "DeliveryCustomerParty": "26-xb",
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "26-xb",
-    "Shipment/Consignment/CarrierParty": "13-xa"
+    "Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
    "flow": "retail",
    "doc": "Waybill",
-   "from": "13-xa",
+   "from": "13-xu",
    "to": "6-xb",
    "why": "The outgoing consignment note goes to the distributor, who contracted the carriage; the retailer is only the consignee.",
    "parties": {
-    "SenderParty": "13-xa",
+    "SenderParty": "13-xu",
     "ReceiverParty": "6-xb",
-    "CarrierParty": "13-xa",
+    "CarrierParty": "13-xu",
     "ConsignorParty": "6-xb",
     "Shipment/Consignment/ConsigneeParty": "26-xb"
    }
@@ -644,15 +579,15 @@
   {
    "flow": "retail",
    "doc": "Invoice",
-   "from": "13-xa",
+   "from": "13-xu",
    "to": "6-xb",
    "why": "Under DDP the seller pays the transport, so the carrier invoices the distributor. A transport service is invoiced with the ordinary Invoice; the Freight Invoice is deprecated in UBL 2.5.",
    "parties": {
-    "AccountingSupplierParty": "13-xa",
+    "AccountingSupplierParty": "13-xu",
     "AccountingCustomerParty": "6-xb",
-    "SellerSupplierParty": "13-xa",
+    "SellerSupplierParty": "13-xu",
     "BuyerCustomerParty": "6-xb",
-    "Delivery/Shipment/Consignment/CarrierParty": "13-xa"
+    "Delivery/Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
@@ -711,25 +646,25 @@
    "flow": "sea",
    "doc": "Catalogue",
    "from": "6-xb",
-   "to": "1-xc",
+   "to": "1-xl",
    "why": "The export catalogue for the island customer.",
    "parties": {
     "ProviderParty": "6-xb",
-    "ReceiverParty": "1-xc",
+    "ReceiverParty": "1-xl",
     "SellerSupplierParty": "6-xb",
-    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xa"
+    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xu"
    }
   },
   {
    "flow": "sea",
    "doc": "DigitalAgreement",
    "from": "6-xb",
-   "to": "1-xc",
+   "to": "1-xl",
    "why": "Before trading, the two parties join the multilateral digital agreement that fixes which UBL processes they use.",
    "parties": {
     "ParticipantParty": [
      "6-xb",
-     "1-xc"
+     "1-xl"
     ],
     "GovernorParty": "32-xb"
    }
@@ -738,25 +673,25 @@
    "flow": "sea",
    "doc": "DigitalCapability",
    "from": "32-xb",
-   "to": "1-xc",
+   "to": "1-xl",
    "why": "The agreement's governor tells the buyer which documents the distributor can send and receive.",
    "parties": {
     "SenderParty": "32-xb",
-    "ReceiverParty": "1-xc",
+    "ReceiverParty": "1-xl",
     "BusinessParty": "6-xb"
    }
   },
   {
    "flow": "sea",
    "doc": "Order",
-   "from": "1-xc",
+   "from": "1-xl",
    "to": "6-xb",
    "why": "Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
    "parties": {
-    "BuyerCustomerParty": "1-xc",
+    "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
-    "AccountingCustomerParty": "1-xc",
-    "Delivery/DeliveryParty": "9-xc"
+    "AccountingCustomerParty": "1-xl",
+    "Delivery/DeliveryParty": "9-xl"
    },
    "values": {
     "DeliveryTerms/ID": "CIF"
@@ -766,11 +701,11 @@
    "flow": "sea",
    "doc": "OrderResponse",
    "from": "6-xb",
-   "to": "1-xc",
+   "to": "1-xl",
    "why": "The distributor accepts and confirms the sailing it plans to use.",
    "parties": {
     "SellerSupplierParty": "6-xb",
-    "BuyerCustomerParty": "1-xc"
+    "BuyerCustomerParty": "1-xl"
    }
   },
   {
@@ -782,7 +717,7 @@
    "parties": {
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
-    "Shipment/Consignment/ConsigneeParty": "1-xc",
+    "Shipment/Consignment/ConsigneeParty": "1-xl",
     "Shipment/InsurancePolicy/InsurerParty": "29-xb"
    }
   },
@@ -795,7 +730,7 @@
    "parties": {
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
-    "Shipment/Consignment/ConsigneeParty": "1-xc"
+    "Shipment/Consignment/ConsigneeParty": "1-xl"
    }
   },
   {
@@ -807,7 +742,7 @@
    "parties": {
     "ExporterParty": "6-xb",
     "CustomsDeclaration/CustomsParty": "19-xb",
-    "CustomsDeclaration/ConsigneeParty": "1-xc",
+    "CustomsDeclaration/ConsigneeParty": "1-xl",
     "CustomsDeclaration/Shipment/ShipmentStage/CustomsAgentParty": "10-xb"
    },
    "sends_for": "ExporterParty"
@@ -822,7 +757,7 @@
     "FreightForwarderParty": "10-xb",
     "ConsignorParty": "6-xb",
     "CarrierParty": "11-xb",
-    "Shipment/Consignment/ConsigneeParty": "1-xc"
+    "Shipment/Consignment/ConsigneeParty": "1-xl"
    }
   },
   {
@@ -848,8 +783,8 @@
     "CarrierParty": "11-xb",
     "FreightForwarderParty": "10-xb",
     "ConsignorParty": "6-xb",
-    "Shipment/Consignment/ConsigneeParty": "1-xc",
-    "Shipment/Consignment/NotifyParty": "9-xc",
+    "Shipment/Consignment/ConsigneeParty": "1-xl",
+    "Shipment/Consignment/NotifyParty": "9-xl",
     "Shipment/InsurancePolicy/InsurerParty": "29-xb"
    }
   },
@@ -857,42 +792,42 @@
    "flow": "sea",
    "doc": "Manifest",
    "from": "11-xb",
-   "to": "19-xc",
+   "to": "19-xl",
    "why": "Before arrival the carrier lists the cargo on board for the island's customs.",
    "parties": {
     "SendingLogisticsOperatorParty": "11-xb",
-    "AuthorityParty": "19-xc",
+    "AuthorityParty": "19-xl",
     "ConsignorParty": "6-xb",
-    "ConsigneeParty": "1-xc"
+    "ConsigneeParty": "1-xl"
    }
   },
   {
    "flow": "sea",
    "doc": "CommonTransportationReport",
    "from": "11-xb",
-   "to": "30-xc",
+   "to": "30-xl",
    "why": "The ship flies the island's flag; before entering port the carrier reports to the maritime administration, which also issued the ship's security certificate.",
    "parties": {
     "SenderParty": "11-xb",
-    "ReceiverParty": "30-xc",
+    "ReceiverParty": "30-xl",
     "ReporterParty": "11-xb",
-    "AuthorityParty": "30-xc",
-    "Shipment/ShipmentStage/TerminalOperatorParty": "16-xc",
-    "Shipment/ShipmentStage/ISPSRequirements/ISSCIssuerParty": "30-xc"
+    "AuthorityParty": "30-xl",
+    "Shipment/ShipmentStage/TerminalOperatorParty": "16-xl",
+    "Shipment/ShipmentStage/ISPSRequirements/ISSCIssuerParty": "30-xl"
    }
   },
   {
    "flow": "sea",
    "doc": "TransportationStatus",
-   "from": "16-xc",
+   "from": "16-xl",
    "to": "10-xb",
    "why": "The port of discharge reports the container discharged and available.",
    "parties": {
-    "SenderParty": "16-xc",
+    "SenderParty": "16-xl",
     "ReceiverParty": "10-xb",
     "Consignment/CarrierParty": "11-xb",
-    "Consignment/ConsigneeParty": "1-xc",
-    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "16-xc"
+    "Consignment/ConsigneeParty": "1-xl",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "16-xl"
    }
   },
   {
@@ -912,16 +847,16 @@
   {
    "flow": "sea",
    "doc": "ImportCustomsDeclaration",
-   "from": "3-xc",
-   "to": "19-xc",
+   "from": "3-xl",
+   "to": "19-xl",
    "why": "Under CIF the buyer clears the import; its licensed customs broker files the declaration on its behalf.",
    "parties": {
-    "ImporterParty": "1-xc",
+    "ImporterParty": "1-xl",
     "ConsignorParty": "6-xb",
-    "ConsigneeParty": "1-xc",
-    "CustomsParty": "19-xc",
+    "ConsigneeParty": "1-xl",
+    "CustomsParty": "19-xl",
     "FreightForwarderParty": "10-xb",
-    "Shipment/ShipmentStage/CustomsAgentParty": "3-xc"
+    "Shipment/ShipmentStage/CustomsAgentParty": "3-xl"
    },
    "sends_for": "ImporterParty"
   },
@@ -929,12 +864,12 @@
    "flow": "sea",
    "doc": "DespatchAdvice",
    "from": "6-xb",
-   "to": "9-xc",
+   "to": "9-xl",
    "why": "The distributor announces the shipment to the delivery party named in the order, the buyer's 3PL.",
    "parties": {
     "DespatchSupplierParty": "6-xb",
-    "DeliveryCustomerParty": "9-xc",
-    "BuyerCustomerParty": "1-xc",
+    "DeliveryCustomerParty": "9-xl",
+    "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
     "Shipment/Consignment/CarrierParty": "11-xb"
    }
@@ -942,13 +877,13 @@
   {
    "flow": "sea",
    "doc": "ReceiptAdvice",
-   "from": "9-xc",
+   "from": "9-xl",
    "to": "6-xb",
    "why": "The buyer's 3PL confirms what arrived, for the buyer.",
    "parties": {
-    "DeliveryCustomerParty": "9-xc",
+    "DeliveryCustomerParty": "9-xl",
     "DespatchSupplierParty": "6-xb",
-    "BuyerCustomerParty": "1-xc",
+    "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb"
    }
   },
@@ -956,26 +891,26 @@
    "flow": "sea",
    "doc": "Invoice",
    "from": "6-xb",
-   "to": "1-xc",
+   "to": "1-xl",
    "why": "Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to the factor, who is the payee.",
    "parties": {
     "AccountingSupplierParty": "6-xb",
-    "AccountingCustomerParty": "1-xc",
+    "AccountingCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
-    "BuyerCustomerParty": "1-xc",
+    "BuyerCustomerParty": "1-xl",
     "PayeeParty": "24-xb",
-    "Delivery/DeliveryParty": "9-xc"
+    "Delivery/DeliveryParty": "9-xl"
    }
   },
   {
    "flow": "sea",
    "doc": "Statement",
    "from": "24-xb",
-   "to": "1-xc",
+   "to": "1-xl",
    "why": "The factor, who now owns the receivables, sends the statement of account on behalf of the distributor.",
    "parties": {
     "AccountingSupplierParty": "6-xb",
-    "AccountingCustomerParty": "1-xc",
+    "AccountingCustomerParty": "1-xl",
     "PayeeParty": "24-xb"
    },
    "sends_for": "AccountingSupplierParty"
@@ -983,26 +918,26 @@
   {
    "flow": "sea",
    "doc": "RemittanceAdvice",
-   "from": "1-xc",
+   "from": "1-xl",
    "to": "24-xb",
    "why": "The buyer pays the factor from its account at the buyer's bank and says which invoices it settles.",
    "parties": {
-    "AccountingCustomerParty": "1-xc",
+    "AccountingCustomerParty": "1-xl",
     "AccountingSupplierParty": "6-xb",
     "PayeeParty": "24-xb",
-    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc"
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl"
    }
   },
   {
    "flow": "air",
    "doc": "OrderChange",
-   "from": "1-xc",
+   "from": "1-xl",
    "to": "6-xb",
    "why": "Part of the quantity is needed urgently: delivery by air, CPT island airport, at an extra charge.",
    "parties": {
-    "BuyerCustomerParty": "1-xc",
+    "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
-    "Delivery/DeliveryParty": "9-xc"
+    "Delivery/DeliveryParty": "9-xl"
    },
    "values": {
     "DeliveryTerms/ID": "CPT"
@@ -1012,11 +947,11 @@
    "flow": "air",
    "doc": "OrderResponse",
    "from": "6-xb",
-   "to": "1-xc",
+   "to": "1-xl",
    "why": "The distributor accepts the change: the urgent part goes by air at an extra charge, the rest stays on the ship.",
    "parties": {
     "SellerSupplierParty": "6-xb",
-    "BuyerCustomerParty": "1-xc"
+    "BuyerCustomerParty": "1-xl"
    }
   },
   {
@@ -1028,35 +963,35 @@
    "parties": {
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
-    "Shipment/Consignment/ConsigneeParty": "1-xc"
+    "Shipment/Consignment/ConsigneeParty": "1-xl"
    }
   },
   {
    "flow": "air",
    "doc": "Waybill",
-   "from": "12-xc",
+   "from": "12-xl",
    "to": "10-xb",
    "why": "The air waybill; the airline's road feeder service, run by the road carrier, is named as substitute carrier for the truck leg to the airport.",
    "parties": {
-    "SenderParty": "12-xc",
+    "SenderParty": "12-xl",
     "ReceiverParty": "10-xb",
-    "CarrierParty": "12-xc",
+    "CarrierParty": "12-xl",
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
-    "Shipment/Consignment/ConsigneeParty": "1-xc",
-    "Shipment/Consignment/SubstituteCarrierParty": "13-xa"
+    "Shipment/Consignment/ConsigneeParty": "1-xl",
+    "Shipment/Consignment/SubstituteCarrierParty": "13-xu"
    }
   },
   {
    "flow": "air",
    "doc": "TransportationStatus",
    "from": "17-xb",
-   "to": "12-xc",
+   "to": "12-xl",
    "why": "The air cargo terminal reports the cargo accepted and built up for the flight.",
    "parties": {
     "SenderParty": "17-xb",
-    "ReceiverParty": "12-xc",
-    "Consignment/CarrierParty": "12-xc",
+    "ReceiverParty": "12-xl",
+    "Consignment/CarrierParty": "12-xl",
     "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xb"
    }
   },
@@ -1064,28 +999,28 @@
    "flow": "air",
    "doc": "DespatchAdvice",
    "from": "6-xb",
-   "to": "9-xc",
+   "to": "9-xl",
    "why": "The distributor announces the air part to the buyer's 3PL, with the airline as carrier.",
    "parties": {
     "DespatchSupplierParty": "6-xb",
-    "DeliveryCustomerParty": "9-xc",
-    "BuyerCustomerParty": "1-xc",
+    "DeliveryCustomerParty": "9-xl",
+    "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
-    "Shipment/Consignment/CarrierParty": "12-xc"
+    "Shipment/Consignment/CarrierParty": "12-xl"
    }
   },
   {
    "flow": "air",
    "doc": "TransportationStatus",
-   "from": "17-xc",
+   "from": "17-xl",
    "to": "10-xb",
    "why": "The island's air cargo terminal reports the cargo arrived and ready for customs clearance.",
    "parties": {
-    "SenderParty": "17-xc",
+    "SenderParty": "17-xl",
     "ReceiverParty": "10-xb",
-    "Consignment/CarrierParty": "12-xc",
-    "Consignment/ConsigneeParty": "1-xc",
-    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xc"
+    "Consignment/CarrierParty": "12-xl",
+    "Consignment/ConsigneeParty": "1-xl",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xl"
    }
   },
   {
@@ -1099,7 +1034,7 @@
     "AccountingCustomerParty": "6-xb",
     "SellerSupplierParty": "10-xb",
     "BuyerCustomerParty": "6-xb",
-    "Delivery/Shipment/Consignment/CarrierParty": "12-xc"
+    "Delivery/Shipment/Consignment/CarrierParty": "12-xl"
    }
   },
   {
@@ -1130,11 +1065,11 @@
    "flow": "tender",
    "doc": "CallForTenders",
    "from": "2-xb",
-   "to": "5-xa",
+   "to": "5-xu",
    "why": "The manufacturer retrieves the procurement documents.",
    "parties": {
     "ContractingParty": "2-xb",
-    "ReceiverParty": "5-xa",
+    "ReceiverParty": "5-xu",
     "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
    }
   },
@@ -1147,18 +1082,18 @@
    "parties": {
     "SenderParty": "21-xb",
     "ReceiverParty": "2-xb",
-    "BusinessParty": "5-xa"
+    "BusinessParty": "5-xu"
    }
   },
   {
    "flow": "tender",
    "doc": "TendererQualification",
-   "from": "5-xa",
+   "from": "5-xu",
    "to": "2-xb",
    "why": "The manufacturer declares its qualifications and those of its consortium partner.",
    "parties": {
     "ContractingParty": "2-xb",
-    "TendererPartyQualification/MainQualifyingParty": "5-xa",
+    "TendererPartyQualification/MainQualifyingParty": "5-xu",
     "TendererPartyQualification/AdditionalQualifyingParty": "27-xb"
    }
   },
@@ -1170,18 +1105,18 @@
    "why": "The guarantor notifies the authority of the bid bond deposited for the manufacturer's tender.",
    "parties": {
     "GuarantorParty": "25-xb",
-    "InterestedParty": "5-xa",
+    "InterestedParty": "5-xu",
     "BeneficiaryParty": "2-xb"
    }
   },
   {
    "flow": "tender",
    "doc": "Tender",
-   "from": "5-xa",
+   "from": "5-xu",
    "to": "2-xb",
    "why": "The tender, with the consortium partner as subcontractor.",
    "parties": {
-    "TendererParty": "5-xa",
+    "TendererParty": "5-xu",
     "SubcontractorParty": "27-xb",
     "ContractingParty": "2-xb"
    }
@@ -1195,7 +1130,7 @@
    "parties": {
     "ContractingParty": "2-xb",
     "ReceiverParty": "21-xb",
-    "TenderResult/WinningParty": "5-xa",
+    "TenderResult/WinningParty": "5-xu",
     "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
    }
   },
@@ -1203,22 +1138,22 @@
    "flow": "tender",
    "doc": "AwardedNotification",
    "from": "2-xb",
-   "to": "5-xa",
+   "to": "5-xu",
    "why": "The winner is told directly that its tender won.",
    "parties": {
     "SenderParty": "2-xb",
-    "ReceiverParty": "5-xa"
+    "ReceiverParty": "5-xu"
    }
   },
   {
    "flow": "tender",
    "doc": "Order",
    "from": "2-xb",
-   "to": "5-xa",
+   "to": "5-xu",
    "why": "The first call-off under the awarded contract. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.",
    "parties": {
     "BuyerCustomerParty": "2-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "Delivery/DeliveryParty": "2-xb"
    },
    "values": {
@@ -1228,28 +1163,28 @@
   {
    "flow": "tender",
    "doc": "DespatchAdvice",
-   "from": "8-xa",
+   "from": "8-xu",
    "to": "2-xb",
    "why": "The manufacturer's 3PL despatches the call-off and names the carrier.",
    "parties": {
-    "DespatchSupplierParty": "8-xa",
+    "DespatchSupplierParty": "8-xu",
     "DeliveryCustomerParty": "2-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "2-xb",
-    "Shipment/Consignment/CarrierParty": "13-xa"
+    "Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
    "flow": "tender",
    "doc": "ExportCustomsDeclaration",
-   "from": "5-xa",
-   "to": "19-xa",
-   "why": "The call-off leaves Country A; the manufacturer declares the export.",
+   "from": "5-xu",
+   "to": "19-xu",
+   "why": "The call-off leaves Urvania; the manufacturer declares the export.",
    "parties": {
-    "ExporterParty": "5-xa",
-    "CustomsDeclaration/CustomsParty": "19-xa",
+    "ExporterParty": "5-xu",
+    "CustomsDeclaration/CustomsParty": "19-xu",
     "CustomsDeclaration/ConsigneeParty": "2-xb",
-    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "13-xa"
+    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
@@ -1257,10 +1192,10 @@
    "doc": "ImportCustomsDeclaration",
    "from": "2-xb",
    "to": "19-xb",
-   "why": "Under DAP the buyer clears the import, so the contracting authority declares the goods in Country B.",
+   "why": "Under DAP the buyer clears the import, so the contracting authority declares the goods in Bayvarra.",
    "parties": {
     "ImporterParty": "2-xb",
-    "ConsignorParty": "5-xa",
+    "ConsignorParty": "5-xu",
     "ConsigneeParty": "2-xb",
     "CustomsParty": "19-xb"
    }
@@ -1268,124 +1203,124 @@
   {
    "flow": "tender",
    "doc": "Invoice",
-   "from": "5-xa",
+   "from": "5-xu",
    "to": "2-xb",
    "why": "The manufacturer invoices the public buyer under the contract; payment to its account at the seller's bank.",
    "parties": {
-    "AccountingSupplierParty": "5-xa",
+    "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb",
-    "SellerSupplierParty": "5-xa",
+    "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "2-xb",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
    "flow": "carnet",
    "doc": "GoodsItemPassport",
-   "from": "20-xa",
-   "to": "5-xa",
+   "from": "20-xu",
+   "to": "5-xu",
    "why": "The chamber issues the carnet to the manufacturer, who holds it while the samples travel.",
    "parties": {
-    "IssuerParty": "20-xa",
-    "HolderParty": "5-xa",
-    "ExportingGuarantorParty": "20-xa",
-    "ImportingGuarantorParty": "20-xc",
-    "ExportingCustomsParty": "19-xa",
-    "ImportingCustomsParty": "19-xc"
+    "IssuerParty": "20-xu",
+    "HolderParty": "5-xu",
+    "ExportingGuarantorParty": "20-xu",
+    "ImportingGuarantorParty": "20-xl",
+    "ExportingCustomsParty": "19-xu",
+    "ImportingCustomsParty": "19-xl"
    }
   },
   {
    "flow": "waste",
    "doc": "WasteNotification",
-   "from": "5-xa",
-   "to": "19-xa",
+   "from": "5-xu",
+   "to": "19-xu",
    "why": "The manufacturer, as producer and notifier, notifies the planned movements to the competent authority.",
    "parties": {
-    "SenderParty": "5-xa",
-    "ReceiverParty": "19-xa",
-    "NotifierParty": "5-xa",
-    "WasteProducerParty": "5-xa",
-    "RecoveryFacilityParty": "7-xa",
-    "CustomsParty": "19-xa",
-    "Shipment/Consignment/CarrierParty": "13-xa"
+    "SenderParty": "5-xu",
+    "ReceiverParty": "19-xu",
+    "NotifierParty": "5-xu",
+    "WasteProducerParty": "5-xu",
+    "RecoveryFacilityParty": "7-xu",
+    "CustomsParty": "19-xu",
+    "Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
    "flow": "waste",
    "doc": "WasteMovement",
-   "from": "7-xa",
-   "to": "19-xa",
+   "from": "7-xu",
+   "to": "19-xu",
    "why": "The recovery facility reports each movement received to the competent authority.",
    "parties": {
-    "SenderParty": "7-xa",
-    "ReceiverParty": "19-xa",
-    "NotifierParty": "5-xa",
-    "WasteProducerParty": "5-xa",
-    "RecoveryFacilityParty": "7-xa",
-    "Shipment/Consignment/CarrierParty": "13-xa"
+    "SenderParty": "7-xu",
+    "ReceiverParty": "19-xu",
+    "NotifierParty": "5-xu",
+    "WasteProducerParty": "5-xu",
+    "RecoveryFacilityParty": "7-xu",
+    "Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
   {
    "flow": "waste",
    "doc": "Invoice",
-   "from": "7-xa",
-   "to": "5-xa",
+   "from": "7-xu",
+   "to": "5-xu",
    "why": "The waste processor invoices collection and recovery.",
    "parties": {
-    "AccountingSupplierParty": "7-xa",
-    "AccountingCustomerParty": "5-xa"
+    "AccountingSupplierParty": "7-xu",
+    "AccountingCustomerParty": "5-xu"
    }
   },
   {
    "flow": "utilities",
    "doc": "UtilityStatement",
-   "from": "33-xa",
-   "to": "5-xa",
+   "from": "33-xu",
+   "to": "5-xu",
    "why": "The factory's monthly electricity consumption: meter readings and consumption per connection, in the energy and water supply structure.",
    "parties": {
-    "SenderParty": "33-xa",
-    "ReceiverParty": "5-xa",
-    "SubscriberParty": "5-xa"
+    "SenderParty": "33-xu",
+    "ReceiverParty": "5-xu",
+    "SubscriberParty": "5-xu"
    }
   },
   {
    "flow": "utilities",
    "doc": "Invoice",
-   "from": "33-xa",
-   "to": "5-xa",
-   "why": "The electricity bill, with Country A's VAT; it refers to the utility statement for the consumption.",
+   "from": "33-xu",
+   "to": "5-xu",
+   "why": "The electricity bill, with Urvania's VAT; it refers to the utility statement for the consumption.",
    "parties": {
-    "AccountingSupplierParty": "33-xa",
-    "AccountingCustomerParty": "5-xa",
-    "SellerSupplierParty": "33-xa",
-    "BuyerCustomerParty": "5-xa",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "AccountingSupplierParty": "33-xu",
+    "AccountingCustomerParty": "5-xu",
+    "SellerSupplierParty": "33-xu",
+    "BuyerCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
    "flow": "utilities",
    "doc": "UtilityStatement",
-   "from": "33-xa",
-   "to": "8-xa",
+   "from": "33-xu",
+   "to": "8-xu",
    "why": "The 3PL's warehouse is the manufacturer's building: the 3PL is the subscriber at the connection and receives the statement, but the manufacturer pays. The statement therefore names the manufacturer as customer, the buyer that differs from the receiver.",
    "parties": {
-    "SenderParty": "33-xa",
-    "ReceiverParty": "8-xa",
-    "SubscriberParty": "8-xa",
-    "CustomerParty": "5-xa"
+    "SenderParty": "33-xu",
+    "ReceiverParty": "8-xu",
+    "SubscriberParty": "8-xu",
+    "CustomerParty": "5-xu"
    }
   },
   {
    "flow": "utilities",
    "doc": "RemittanceAdvice",
-   "from": "5-xa",
-   "to": "33-xa",
+   "from": "5-xu",
+   "to": "33-xu",
    "why": "The manufacturer pays both electricity bills in one transfer.",
    "parties": {
-    "AccountingCustomerParty": "5-xa",
-    "AccountingSupplierParty": "33-xa",
-    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xa"
+    "AccountingCustomerParty": "5-xu",
+    "AccountingSupplierParty": "33-xu",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
@@ -1466,40 +1401,829 @@
   {
    "flow": "utilities",
    "doc": "UtilityStatement",
-   "from": "35-xc",
-   "to": "1-xc",
+   "from": "35-xl",
+   "to": "1-xl",
    "why": "Calls, data and subscriptions per telephone line of the buyer, in the telecommunications supply structure.",
    "parties": {
-    "SenderParty": "35-xc",
-    "ReceiverParty": "1-xc",
-    "SubscriberParty": "1-xc"
+    "SenderParty": "35-xl",
+    "ReceiverParty": "1-xl",
+    "SubscriberParty": "1-xl"
    }
   },
   {
    "flow": "utilities",
    "doc": "Invoice",
-   "from": "35-xc",
-   "to": "1-xc",
+   "from": "35-xl",
+   "to": "1-xl",
    "why": "The telecom bill. The island has no sales tax or VAT, and the invoice says that no tax applies rather than leaving it out.",
    "parties": {
-    "AccountingSupplierParty": "35-xc",
-    "AccountingCustomerParty": "1-xc",
-    "SellerSupplierParty": "35-xc",
-    "BuyerCustomerParty": "1-xc",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc"
+    "AccountingSupplierParty": "35-xl",
+    "AccountingCustomerParty": "1-xl",
+    "SellerSupplierParty": "35-xl",
+    "BuyerCustomerParty": "1-xl",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl"
    }
   },
   {
    "flow": "utilities",
    "doc": "RemittanceAdvice",
-   "from": "1-xc",
-   "to": "35-xc",
+   "from": "1-xl",
+   "to": "35-xl",
    "why": "The buyer pays the telecom bill from its account at the island's bank.",
    "parties": {
-    "AccountingCustomerParty": "1-xc",
-    "AccountingSupplierParty": "35-xc",
-    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xc"
+    "AccountingCustomerParty": "1-xl",
+    "AccountingSupplierParty": "35-xl",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "Order",
+   "from": "41-xb",
+   "to": "7-xu",
+   "why": "A bulk lot of recycled granulate. Delivery terms CPT river quay: the seller books the barge.",
+   "parties": {
+    "BuyerCustomerParty": "41-xb",
+    "SellerSupplierParty": "7-xu",
+    "Delivery/DeliveryParty": "41-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "OrderResponse",
+   "from": "7-xu",
+   "to": "41-xb",
+   "why": "The waste processor confirms the lot and the loading date.",
+   "parties": {
+    "SellerSupplierParty": "7-xu",
+    "BuyerCustomerParty": "41-xb"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "TransportExecutionPlanRequest",
+   "from": "7-xu",
+   "to": "15-xu",
+   "why": "Under CPT the waste processor is the transport user; it asks the barge operator for capacity down the river.",
+   "parties": {
+    "SenderParty": "7-xu",
+    "ReceiverParty": "15-xu",
+    "TransportUserParty": "7-xu",
+    "TransportServiceProviderParty": "15-xu",
+    "Consignment/ConsignorParty": "7-xu",
+    "Consignment/ConsigneeParty": "41-xb"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "TransportExecutionPlan",
+   "from": "15-xu",
+   "to": "7-xu",
+   "why": "The barge operator confirms the vessel and the sailing.",
+   "parties": {
+    "SenderParty": "15-xu",
+    "ReceiverParty": "7-xu",
+    "TransportUserParty": "7-xu",
+    "TransportServiceProviderParty": "15-xu",
+    "Consignment/ConsigneeParty": "41-xb"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "ExportCustomsDeclaration",
+   "from": "7-xu",
+   "to": "19-xu",
+   "why": "The granulate leaves Urvania; the waste processor declares the export.",
+   "parties": {
+    "ExporterParty": "7-xu",
+    "CustomsDeclaration/CustomsParty": "19-xu",
+    "CustomsDeclaration/ConsigneeParty": "41-xb",
+    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "15-xu"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "Waybill",
+   "from": "15-xu",
+   "to": "7-xu",
+   "why": "The inland waterway consignment note, issued to the shipper.",
+   "parties": {
+    "SenderParty": "15-xu",
+    "ReceiverParty": "7-xu",
+    "CarrierParty": "15-xu",
+    "ConsignorParty": "7-xu",
+    "Shipment/Consignment/ConsigneeParty": "41-xb"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "DespatchAdvice",
+   "from": "7-xu",
+   "to": "41-xb",
+   "why": "The waste processor announces the lot loaded on the barge.",
+   "parties": {
+    "DespatchSupplierParty": "7-xu",
+    "DeliveryCustomerParty": "41-xb",
+    "SellerSupplierParty": "7-xu",
+    "BuyerCustomerParty": "41-xb",
+    "Shipment/Consignment/CarrierParty": "15-xu"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "ImportCustomsDeclaration",
+   "from": "41-xb",
+   "to": "19-xb",
+   "why": "The packaging maker declares the import in Bayvarra.",
+   "parties": {
+    "ImporterParty": "41-xb",
+    "ConsignorParty": "7-xu",
+    "ConsigneeParty": "41-xb",
+    "CustomsParty": "19-xb"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "Invoice",
+   "from": "7-xu",
+   "to": "41-xb",
+   "why": "Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with the exemption stated.",
+   "parties": {
+    "AccountingSupplierParty": "7-xu",
+    "AccountingCustomerParty": "41-xb",
+    "SellerSupplierParty": "7-xu",
+    "BuyerCustomerParty": "41-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "RemittanceAdvice",
+   "from": "41-xb",
+   "to": "7-xu",
+   "why": "The packaging maker pays from Bayvarra to the waste processor's account in Urvania.",
+   "parties": {
+    "AccountingCustomerParty": "41-xb",
+    "AccountingSupplierParty": "7-xu",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "RequestForQuotation",
+   "from": "5-xu",
+   "to": "36-xb",
+   "why": "Slats to the manufacturer's own dimensions and wood species: it asks the sawmill to quote before ordering.",
+   "parties": {
+    "BuyerCustomerParty": "5-xu",
+    "SellerSupplierParty": "36-xb"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "Quotation",
+   "from": "36-xb",
+   "to": "5-xu",
+   "why": "The sawmill quotes per thousand slats, delivered at the factory.",
+   "parties": {
+    "SellerSupplierParty": "36-xb",
+    "BuyerCustomerParty": "5-xu"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "Order",
+   "from": "5-xu",
+   "to": "36-xb",
+   "why": "The manufacturer accepts the quotation and orders. Delivery terms DAP factory: the sawmill delivers and the manufacturer clears the import.",
+   "parties": {
+    "BuyerCustomerParty": "5-xu",
+    "SellerSupplierParty": "36-xb",
+    "Delivery/DeliveryParty": "5-xu"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DAP"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "TransportExecutionPlanRequest",
+   "from": "36-xb",
+   "to": "13-xu",
+   "why": "Under DAP the sawmill is the transport user; it books the road carrier across the border.",
+   "parties": {
+    "SenderParty": "36-xb",
+    "ReceiverParty": "13-xu",
+    "TransportUserParty": "36-xb",
+    "TransportServiceProviderParty": "13-xu",
+    "Consignment/ConsignorParty": "36-xb",
+    "Consignment/ConsigneeParty": "5-xu"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "ExportCustomsDeclaration",
+   "from": "36-xb",
+   "to": "19-xb",
+   "why": "The slats leave Bayvarra; the sawmill declares the export at the land border.",
+   "parties": {
+    "ExporterParty": "36-xb",
+    "CustomsDeclaration/CustomsParty": "19-xb",
+    "CustomsDeclaration/ConsigneeParty": "5-xu",
+    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "13-xu"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "DespatchAdvice",
+   "from": "36-xb",
+   "to": "5-xu",
+   "why": "The sawmill announces the slats per lot, so the factory can trace the wood of every bench.",
+   "parties": {
+    "DespatchSupplierParty": "36-xb",
+    "DeliveryCustomerParty": "5-xu",
+    "SellerSupplierParty": "36-xb",
+    "BuyerCustomerParty": "5-xu",
+    "Shipment/Consignment/CarrierParty": "13-xu"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "ImportCustomsDeclaration",
+   "from": "5-xu",
+   "to": "19-xu",
+   "why": "The manufacturer declares the import into Urvania, where import VAT is due.",
+   "parties": {
+    "ImporterParty": "5-xu",
+    "ConsignorParty": "36-xb",
+    "ConsigneeParty": "5-xu",
+    "CustomsParty": "19-xu"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "Invoice",
+   "from": "36-xb",
+   "to": "5-xu",
+   "why": "Slats and delivery. An export from Bayvarra: no sales tax, with the exemption stated.",
+   "parties": {
+    "AccountingSupplierParty": "36-xb",
+    "AccountingCustomerParty": "5-xu",
+    "SellerSupplierParty": "36-xb",
+    "BuyerCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "RemittanceAdvice",
+   "from": "5-xu",
+   "to": "36-xb",
+   "why": "The manufacturer pays across the border.",
+   "parties": {
+    "AccountingCustomerParty": "5-xu",
+    "AccountingSupplierParty": "36-xb",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "Order",
+   "from": "37-xb",
+   "to": "36-xb",
+   "why": "Timber for furniture, collected with the furniture maker's own van at the sawmill. Delivery terms EXW sawmill.",
+   "parties": {
+    "BuyerCustomerParty": "37-xb",
+    "SellerSupplierParty": "36-xb",
+    "Delivery/Despatch/DespatchParty": "36-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "EXW"
+   }
+  },
+  {
+   "flow": "wood",
+   "doc": "Invoice",
+   "from": "36-xb",
+   "to": "37-xb",
+   "why": "Timber sold for manufacture: exempt from the state sales tax, and the invoice says so.",
+   "parties": {
+    "AccountingSupplierParty": "36-xb",
+    "AccountingCustomerParty": "37-xb",
+    "SellerSupplierParty": "36-xb",
+    "BuyerCustomerParty": "37-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "RequestForQuotation",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "The store wants its own garden furniture line and asks for a quotation.",
+   "parties": {
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "Quotation",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "The furniture maker quotes the line.",
+   "parties": {
+    "SellerSupplierParty": "37-xb",
+    "BuyerCustomerParty": "26-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "ItemInformationRequest",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "To plan production, the furniture maker asks the store for sales and stock data of the line.",
+   "parties": {
+    "SenderParty": "37-xb",
+    "ReceiverParty": "26-xb",
+    "SellerSupplierParty": "37-xb",
+    "BuyerCustomerParty": "26-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "TradeItemLocationProfile",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "The store sets the replenishment policy per item and store.",
+   "parties": {
+    "SenderParty": "26-xb",
+    "ReceiverParty": "37-xb",
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "ExceptionCriteria",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "Both agree when a deviation is worth a message: thresholds for forecast variance and sales.",
+   "parties": {
+    "SenderParty": "26-xb",
+    "ReceiverParty": "37-xb",
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "ProductActivity",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "Weekly sales and stock movements of the line.",
+   "parties": {
+    "SenderParty": "26-xb",
+    "ReceiverParty": "37-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "ExceptionNotification",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "Sales of the bench set run far below forecast: past the agreed threshold, so the furniture maker notifies the store.",
+   "parties": {
+    "SenderParty": "37-xb",
+    "ReceiverParty": "26-xb",
+    "SellerSupplierParty": "37-xb",
+    "BuyerCustomerParty": "26-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "Order",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "The store orders the line. Delivery terms DAP store: the furniture maker delivers with its own van.",
+   "parties": {
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb",
+    "Delivery/DeliveryParty": "26-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DAP"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "Invoice",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "Furniture sold for resale: exempt from the state sales tax, which the store charges its consumers.",
+   "parties": {
+    "AccountingSupplierParty": "37-xb",
+    "AccountingCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb",
+    "BuyerCustomerParty": "26-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "InstructionForReturns",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "The bench set does not sell; the furniture maker asks for the remaining stock back to free shelf space.",
+   "parties": {
+    "SellerSupplierParty": "37-xb",
+    "RetailerCustomerParty": "26-xb",
+    "ManufacturerParty": "37-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "CreditNote",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "The returned bench sets are credited.",
+   "parties": {
+    "AccountingSupplierParty": "37-xb",
+    "AccountingCustomerParty": "26-xb",
+    "SellerSupplierParty": "37-xb",
+    "BuyerCustomerParty": "26-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "Order",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "Furniture for the public works offices, installed. Delivery terms DAP the offices.",
+   "parties": {
+    "BuyerCustomerParty": "2-xb",
+    "SellerSupplierParty": "37-xb",
+    "Delivery/DeliveryParty": "2-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DAP"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "WorkReport",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The installers report the work done; the department approves it.",
+   "parties": {
+    "SellerSupplierParty": "37-xb",
+    "BuyerCustomerParty": "2-xb",
+    "ApproverParty": "2-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "Invoice",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "Furniture and installation; a sale to a public body is exempt from sales tax, and the invoice says so.",
+   "parties": {
+    "AccountingSupplierParty": "37-xb",
+    "AccountingCustomerParty": "2-xb",
+    "SellerSupplierParty": "37-xb",
+    "BuyerCustomerParty": "2-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "Forecast",
+   "from": "40-xb",
+   "to": "39-xl",
+   "why": "The mill tells the ginnery how many bales it expects to buy this season.",
+   "parties": {
+    "SenderParty": "40-xb",
+    "ReceiverParty": "39-xl",
+    "BuyerCustomerParty": "40-xb",
+    "SellerSupplierParty": "39-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "DeliveryNote",
+   "from": "38-xl",
+   "to": "39-xl",
+   "why": "The farm delivers a trailer of seed cotton at the gin and confirms what it delivered.",
+   "parties": {
+    "DespatchSupplierParty": "38-xl",
+    "DeliveryCustomerParty": "39-xl",
+    "SellerSupplierParty": "38-xl",
+    "BuyerCustomerParty": "39-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "SelfBilledInvoice",
+   "from": "39-xl",
+   "to": "38-xl",
+   "why": "Under the self-billing agreement the ginnery writes the farm's invoice from the weight and grade it measured. No tax on the island, stated as such.",
+   "parties": {
+    "AccountingCustomerParty": "39-xl",
+    "AccountingSupplierParty": "38-xl",
+    "BuyerCustomerParty": "39-xl",
+    "SellerSupplierParty": "38-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "SelfBilledCreditNote",
+   "from": "39-xl",
+   "to": "38-xl",
+   "why": "Classing after ginning puts part of the delivery a grade lower; the ginnery credits the difference on the farm's behalf.",
+   "parties": {
+    "AccountingCustomerParty": "39-xl",
+    "AccountingSupplierParty": "38-xl",
+    "BuyerCustomerParty": "39-xl",
+    "SellerSupplierParty": "38-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "RemittanceAdvice",
+   "from": "39-xl",
+   "to": "38-xl",
+   "why": "The ginnery pays the farm the net amount.",
+   "parties": {
+    "AccountingCustomerParty": "39-xl",
+    "AccountingSupplierParty": "38-xl",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "ForecastRevision",
+   "from": "40-xb",
+   "to": "39-xl",
+   "why": "Demand for clothing is up; the mill revises its forecast upwards.",
+   "parties": {
+    "SenderParty": "40-xb",
+    "ReceiverParty": "39-xl",
+    "BuyerCustomerParty": "40-xb",
+    "SellerSupplierParty": "39-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "Order",
+   "from": "40-xb",
+   "to": "39-xl",
+   "why": "Bales of grade cotton. Delivery terms FOB the island port: the mill arranges the sea freight.",
+   "parties": {
+    "BuyerCustomerParty": "40-xb",
+    "SellerSupplierParty": "39-xl",
+    "Delivery/DeliveryParty": "40-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "FOB"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "ForwardingInstructions",
+   "from": "40-xb",
+   "to": "10-xb",
+   "why": "Under FOB the buyer books the main carriage: the mill instructs its forwarder.",
+   "parties": {
+    "ConsignorParty": "39-xl",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "40-xb"
+   },
+   "sends_for": "ConsignorParty",
+   "note": "The mill instructs on behalf of the consignor's goods it has bought; it appears as consignee."
+  },
+  {
+   "flow": "cotton",
+   "doc": "GoodsCertificate",
+   "from": "20-xl",
+   "to": "39-xl",
+   "why": "The island's chamber of commerce certifies the bales for export, at the ginnery's application.",
+   "parties": {
+    "IssuerParty": "20-xl",
+    "ApplicantParty": "39-xl",
+    "ExporterParty": "39-xl",
+    "ImporterParty": "40-xb"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "ExportCustomsDeclaration",
+   "from": "39-xl",
+   "to": "19-xl",
+   "why": "The island's export: the ginnery declares the bales to customs.",
+   "parties": {
+    "ExporterParty": "39-xl",
+    "CustomsDeclaration/CustomsParty": "19-xl",
+    "CustomsDeclaration/ConsigneeParty": "40-xb"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "WeightStatement",
+   "from": "39-xl",
+   "to": "11-xb",
+   "why": "Before loading, the shipper declares the verified gross mass of the container, weighed on the port's weighbridge.",
+   "parties": {
+    "SenderParty": "39-xl",
+    "ReceiverParty": "11-xb",
+    "ShipperParty": "39-xl",
+    "WeighingParty": "16-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "BillOfLading",
+   "from": "11-xb",
+   "to": "10-xb",
+   "why": "The bill of lading goes to the forwarder that booked the freight for the mill; the ginnery is the shipper.",
+   "parties": {
+    "CarrierParty": "11-xb",
+    "FreightForwarderParty": "10-xb",
+    "ConsignorParty": "39-xl",
+    "Shipment/Consignment/ConsigneeParty": "40-xb"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "ImportCustomsDeclaration",
+   "from": "40-xb",
+   "to": "19-xb",
+   "why": "The mill declares the bales in Bayvarra.",
+   "parties": {
+    "ImporterParty": "40-xb",
+    "ConsignorParty": "39-xl",
+    "ConsigneeParty": "40-xb",
+    "CustomsParty": "19-xb"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "Invoice",
+   "from": "39-xl",
+   "to": "40-xb",
+   "why": "The bales, free on board. No tax applies on the island, and the invoice says so.",
+   "parties": {
+    "AccountingSupplierParty": "39-xl",
+    "AccountingCustomerParty": "40-xb",
+    "SellerSupplierParty": "39-xl",
+    "BuyerCustomerParty": "40-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "Invoice",
+   "from": "10-xb",
+   "to": "40-xb",
+   "why": "The forwarder invoices the sea freight it booked for the mill.",
+   "parties": {
+    "AccountingSupplierParty": "10-xb",
+    "AccountingCustomerParty": "40-xb",
+    "SellerSupplierParty": "10-xb",
+    "BuyerCustomerParty": "40-xb",
+    "Delivery/Shipment/Consignment/CarrierParty": "11-xb"
+   }
+  },
+  {
+   "flow": "cotton",
+   "doc": "RemittanceAdvice",
+   "from": "40-xb",
+   "to": "39-xl",
+   "why": "The mill pays the island's ginnery: money flows to the island for once.",
+   "parties": {
+    "AccountingCustomerParty": "40-xb",
+    "AccountingSupplierParty": "39-xl",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "Order",
+   "from": "5-xu",
+   "to": "41-xb",
+   "why": "Bench packaging, collected by the road carrier the manufacturer books. Delivery terms FCA packaging maker.",
+   "parties": {
+    "BuyerCustomerParty": "5-xu",
+    "SellerSupplierParty": "41-xb",
+    "Delivery/Despatch/DespatchParty": "41-xb",
+    "Delivery/Despatch/CarrierParty": "13-xu"
+   },
+   "values": {
+    "DeliveryTerms/ID": "FCA"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "Invoice",
+   "from": "41-xb",
+   "to": "5-xu",
+   "why": "Packaging exported to Urvania: no sales tax in Bayvarra, stated.",
+   "parties": {
+    "AccountingSupplierParty": "41-xb",
+    "AccountingCustomerParty": "5-xu",
+    "SellerSupplierParty": "41-xb",
+    "BuyerCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "Order",
+   "from": "40-xb",
+   "to": "41-xb",
+   "why": "Garment bags for the clothing. Delivery terms DAP mill.",
+   "parties": {
+    "BuyerCustomerParty": "40-xb",
+    "SellerSupplierParty": "41-xb",
+    "Delivery/DeliveryParty": "40-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DAP"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "Invoice",
+   "from": "41-xb",
+   "to": "40-xb",
+   "why": "Packaging for manufacture, exempt from sales tax.",
+   "parties": {
+    "AccountingSupplierParty": "41-xb",
+    "AccountingCustomerParty": "40-xb",
+    "SellerSupplierParty": "41-xb",
+    "BuyerCustomerParty": "40-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "Order",
+   "from": "26-xb",
+   "to": "40-xb",
+   "why": "Clothing for the store. Delivery terms DDP store: the mill delivers.",
+   "parties": {
+    "BuyerCustomerParty": "26-xb",
+    "SellerSupplierParty": "40-xb",
+    "Delivery/DeliveryParty": "26-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DDP"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "DespatchAdvice",
+   "from": "40-xb",
+   "to": "26-xb",
+   "why": "The mill announces the delivery with the road carrier it booked.",
+   "parties": {
+    "DespatchSupplierParty": "40-xb",
+    "DeliveryCustomerParty": "26-xb",
+    "SellerSupplierParty": "40-xb",
+    "BuyerCustomerParty": "26-xb",
+    "Shipment/Consignment/CarrierParty": "13-xu"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "Invoice",
+   "from": "40-xb",
+   "to": "26-xb",
+   "why": "Clothing for resale: exempt from sales tax, which the store charges its customers.",
+   "parties": {
+    "AccountingSupplierParty": "40-xb",
+    "AccountingCustomerParty": "26-xb",
+    "SellerSupplierParty": "40-xb",
+    "BuyerCustomerParty": "26-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "packaging",
+   "doc": "PurchaseReceipt",
+   "from": "26-xb",
+   "to": "c-xb",
+   "why": "The consumer buys a shirt; the receipt shows the state sales tax, the only point where Bayvarra's tax is charged.",
+   "parties": {
+    "AccountingSupplierParty": "26-xb",
+    "AccountingCustomerParty": "c-xb"
    }
   }
  ]

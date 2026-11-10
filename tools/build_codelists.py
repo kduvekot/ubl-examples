@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Make the code lists of the UBL example world.
 
-The world's countries (XA, XB, XC) are ISO 3166-1 user-assigned codes and its
+The world's countries (XU, XB, XL) are ISO 3166-1 user-assigned codes and its
 currencies are invented, so they are not in the UBL 2.5 default code lists.
 UBL's two-phase validation lets trading partners use their own code lists
 (UBL 2.5 Appendix F). This script makes them by copying the UBL 2.5 default

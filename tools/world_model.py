@@ -6,7 +6,7 @@ script decides the structure; the map (site/world.html) only draws it.
 
 For every tile the model records:
   k   terrain: s sea, w river water, g grass, f forest, r rocks, d field
-  c   country (XA, XB, XC) or null
+  c   country (XU, XB, XL) or null
   h   height of the tile's lowest corner (corner heights are in model "v")
   n   a stable noise value 0..1, for variation in the drawing
   rd  road connections, a 4-bit mask: 1 = +i, 2 = +j, 4 = -i, 8 = -j
@@ -123,9 +123,9 @@ def build(world):
             isle = ((i - 52.5) / 8.2) ** 2 + ((j - 21.5) / 11.5) ** 2 < 1 - (n - .5) * .5
             t = {"k": "s", "c": None, "h": 0, "n": round(n, 3)}
             if main or isle:
-                t["c"] = "XC" if isle else ("XA" if i < border(j) else "XB")
+                t["c"] = "XL" if isle else ("XU" if i < border(j) else "XB")
                 t["k"] = "g"
-                if t["c"] == "XA" and j < 15 and i < 17 and n > .42:
+                if t["c"] == "XU" and j < 15 and i < 17 and n > .42:
                     t["k"], t["h"] = "r", 1 + (n > .58)
                 elif n > .62:
                     t["k"] = "f"
@@ -207,7 +207,7 @@ def build(world):
             if t["k"] == "w":
                 t["br"] = 1
             elif t["k"] == "s":
-                t["k"], t["c"] = "g", t["c"] or ("XC" if q[0] >= 42 else ("XA" if q[0] < border(q[1]) else "XB"))
+                t["k"], t["c"] = "g", t["c"] or ("XL" if q[0] >= 42 else ("XU" if q[0] < border(q[1]) else "XB"))
             road.add(q)
             if k:
                 link(path[k - 1], q)

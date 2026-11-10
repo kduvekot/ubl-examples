@@ -1,19 +1,20 @@
 {
- "description": "The countries of the UBL example world, with their currencies, tax schemes and identifier and address schemes. XA, XB and XC are ISO 3166-1 user-assigned codes; tools/build_codelists.py adds them and the world currencies to copies of the UBL 2.5 default code lists (world/codelists). Tax scheme identifiers are UN/EDIFACT 5153 codes (VAT, STT state/provincial sales tax, CUD customs duty, IMP import tax).",
+ "description": "The countries of the UBL example world, with their currencies, tax schemes and identifier and address schemes. XU, XB and XL are ISO 3166-1 user-assigned codes; tools/build_codelists.py adds them and the world currencies to copies of the UBL 2.5 default code lists (world/codelists). Tax scheme identifiers are UN/EDIFACT 5153 codes (VAT, STT state/provincial sales tax, CUD customs duty, IMP import tax).",
  "countries": {
-  "XA": {
-   "name": "Country A",
+  "XU": {
+   "name": "Urvania",
    "note": "Mainland, inland. Raw materials and manufacturing.",
-   "alpha3": "XAA",
+   "alpha3": "XUR",
    "numeric": "901",
    "languages": [
     "en"
    ],
    "currency": {
-    "code": "XAW",
+    "code": "XUF",
     "numeric": "911",
-    "name": "Aster",
-    "minor_units": 2
+    "name": "Ferra",
+    "minor_units": 2,
+    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list."
    },
    "tax": {
     "summary": "Value added tax in the style of the EU VAT: charged at every stage, deducted by businesses, not charged on exports.",
@@ -30,12 +31,12 @@
     ]
    },
    "registry": {
-    "name": "Commercial register of Country A",
-    "id_format": "XA-R- and 6 digits",
-    "example": "XA-R-104233"
+    "name": "Commercial register of Urvania",
+    "id_format": "XU-R- and 6 digits",
+    "example": "XU-R-104233"
    },
    "tax_id": {
-    "format": "XA and 9 digits, the last a check digit (weights 9..2, modulus 11)"
+    "format": "XU and 9 digits, the last a check digit (weights 9..2, modulus 11)"
    },
    "address": {
     "lines": [
@@ -47,18 +48,19 @@
    }
   },
   "XB": {
-   "name": "Country B",
+   "name": "Bayvarra",
    "note": "Mainland, coast. Distribution, retail, seaport and airport hub.",
-   "alpha3": "XBB",
+   "alpha3": "XBY",
    "numeric": "902",
    "languages": [
     "en"
    ],
    "currency": {
-    "code": "XBW",
+    "code": "XBL",
     "numeric": "912",
-    "name": "Bel",
-    "minor_units": 2
+    "name": "Lume",
+    "minor_units": 2,
+    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list."
    },
    "tax": {
     "summary": "A federal country: its states levy a retail sales tax, charged once, on the sale to the final consumer. Sales to businesses that resell, exports and sales to public bodies are exempt, and the invoice says so.",
@@ -80,12 +82,12 @@
     ]
    },
    "registry": {
-    "name": "Federal business register of Country B",
+    "name": "Federal business register of Bayvarra",
     "id_format": "8 digits",
     "example": "20417733"
    },
    "tax_id": {
-    "format": "state code, hyphen, 7 digits (sales tax permit of the state)"
+    "format": "state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)"
    },
    "address": {
     "lines": [
@@ -94,8 +96,8 @@
     ],
     "postal_zone": "5 digits",
     "subdivisions": {
-     "US": "Upland State",
-     "CS": "Coastal State"
+     "UL": "Upland State",
+     "CO": "Coastal State"
     }
    },
    "subdivision_rule": {
@@ -105,19 +107,20 @@
     "note": "The state border runs north-south at map column 29: the border region and the distributor are in Upland State, Lumeport and the coast in Coastal State."
    }
   },
-  "XC": {
-   "name": "Country C",
+  "XL": {
+   "name": "Lisavu",
    "note": "Island. The overseas buyer, reached by sea and air.",
-   "alpha3": "XCC",
+   "alpha3": "XLS",
    "numeric": "903",
    "languages": [
     "en"
    ],
    "currency": {
-    "code": "XCW",
+    "code": "XLC",
     "numeric": "913",
     "name": "Coral",
-    "minor_units": 0
+    "minor_units": 0,
+    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list."
    },
    "tax": {
     "summary": "An island without a general sales tax or VAT: the state is financed by customs duty and an import consumption tax, both collected by customs at import. Domestic sales carry no tax, and the invoice says so.",

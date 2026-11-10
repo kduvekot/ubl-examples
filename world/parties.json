@@ -2,11 +2,11 @@
  "description": "The parties of the UBL example world: their place on the map, what they do and their identity.",
  "parties": [
   {
-   "id": "4-xa",
+   "id": "4-xu",
    "n": "4",
    "name": "Raw Material Supplier",
    "cat": "commerce",
-   "c": "XA",
+   "c": "XU",
    "at": [
     9,
     10
@@ -18,13 +18,13 @@
    "identity": {
     "name": "Serravona Mining",
     "kind": "company",
-    "registry_id": "XA-R-104137",
-    "endpoint": "XA:XA-R-104137",
+    "registry_id": "XU-R-104137",
+    "endpoint": "XU:XU-R-104137",
     "contact": {
      "name": "Sales office",
      "email": "sales@serravona.example"
     },
-    "tax_id": "XA007289704",
+    "tax_id": "XU007289704",
     "address": {
      "StreetName": "Strada della Miniera",
      "BuildingNumber": "10",
@@ -32,24 +32,24 @@
      "PostalZone": "4110"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA19CREV0000104729"
+     "bank": "23-xu",
+     "number": "XU56CREV0000104729"
     }
    }
   },
   {
-   "id": "5-xa",
+   "id": "5-xu",
    "n": "5",
    "name": "Manufacturer",
    "cat": "commerce",
-   "c": "XA",
+   "c": "XU",
    "at": [
     14,
     18
    ],
    "h": 3,
    "kind": "factory",
-   "what": "Turns raw material into finished goods; buys from #4, sells to #6 abroad and tenders in public procurement.",
+   "what": "Makes park benches and street furniture: frames from steel made from the mine's ore, slats from the sawmill in Bayvarra, packed in recycled packaging from Bayvarra. Sells to the distributor abroad and tenders in public procurement.",
    "how": "The manufacturer sits in the middle of the chain: it buys, produces, sells, exports and tenders. UBL gives it one vocabulary for all of that, from the order it places with the mine to the certificate of origin and the tender it submits to a public buyer, so the same item, party and price data are reused instead of re-entered for every partner.",
    "size": [
     2,
@@ -58,13 +58,13 @@
    "identity": {
     "name": "Valdara Industries",
     "kind": "company",
-    "registry_id": "XA-R-104274",
-    "endpoint": "XA:XA-R-104274",
+    "registry_id": "XU-R-104274",
+    "endpoint": "XU:XU-R-104274",
     "contact": {
      "name": "Order desk",
      "email": "order@valdara.example"
     },
-    "tax_id": "XA007299291",
+    "tax_id": "XU007299291",
     "address": {
      "StreetName": "Via delle Officine",
      "BuildingNumber": "17",
@@ -72,17 +72,17 @@
      "PostalZone": "4120"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA80CREV0000209458"
+     "bank": "23-xu",
+     "number": "XU20CREV0000209458"
     }
    }
   },
   {
-   "id": "8-xa",
+   "id": "8-xu",
    "n": "8",
    "name": "Seller's Warehouse (3PL)",
    "cat": "commerce",
-   "c": "XA",
+   "c": "XU",
    "at": [
     16,
     22
@@ -98,13 +98,13 @@
    "identity": {
     "name": "Castrano Logistics",
     "kind": "company",
-    "registry_id": "XA-R-104411",
-    "endpoint": "XA:XA-R-104411",
+    "registry_id": "XU-R-104411",
+    "endpoint": "XU:XU-R-104411",
     "contact": {
      "name": "Warehouse office",
      "email": "warehouse@castrano.example"
     },
-    "tax_id": "XA007308887",
+    "tax_id": "XU007308887",
     "address": {
      "StreetName": "Via del Magazzino",
      "BuildingNumber": "24",
@@ -112,17 +112,17 @@
      "PostalZone": "4130"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA44CREV0000314187"
+     "bank": "23-xu",
+     "number": "XU81CREV0000314187"
     }
    }
   },
   {
-   "id": "7-xa",
+   "id": "7-xu",
    "n": "7",
    "name": "Waste Processor",
    "cat": "commerce",
-   "c": "XA",
+   "c": "XU",
    "at": [
     11,
     24
@@ -134,13 +134,13 @@
    "identity": {
     "name": "Rinova Recovery",
     "kind": "company",
-    "registry_id": "XA-R-104548",
-    "endpoint": "XA:XA-R-104548",
+    "registry_id": "XU-R-104548",
+    "endpoint": "XU:XU-R-104548",
     "contact": {
      "name": "Customer service",
      "email": "customer@rinova.example"
     },
-    "tax_id": "XA007318479",
+    "tax_id": "XU007318479",
     "address": {
      "StreetName": "Via del Riciclo",
      "BuildingNumber": "31",
@@ -148,17 +148,17 @@
      "PostalZone": "4140"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA08CREV0000418916"
+     "bank": "23-xu",
+     "number": "XU45CREV0000418916"
     }
    }
   },
   {
-   "id": "14-xa",
+   "id": "14-xu",
    "n": "14",
    "name": "Rail Carrier",
    "cat": "logistics",
-   "c": "XA",
+   "c": "XU",
    "at": [
     8,
     15
@@ -170,13 +170,13 @@
    "identity": {
     "name": "Ferrano Rail Cargo",
     "kind": "company",
-    "registry_id": "XA-R-104685",
-    "endpoint": "XA:XA-R-104685",
+    "registry_id": "XU-R-104685",
+    "endpoint": "XU:XU-R-104685",
     "contact": {
      "name": "Freight desk",
      "email": "freight@ferranorail.example"
     },
-    "tax_id": "XA007328060",
+    "tax_id": "XU007328060",
     "address": {
      "StreetName": "Viale della Stazione",
      "BuildingNumber": "38",
@@ -184,17 +184,17 @@
      "PostalZone": "4150"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA69CREV0000523645"
+     "bank": "23-xu",
+     "number": "XU09CREV0000523645"
     }
    }
   },
   {
-   "id": "13-xa",
+   "id": "13-xu",
    "n": "13",
    "name": "Road Carrier",
    "cat": "logistics",
-   "c": "XA",
+   "c": "XU",
    "at": [
     17,
     25
@@ -206,13 +206,13 @@
    "identity": {
     "name": "Trasvia Haulage",
     "kind": "company",
-    "registry_id": "XA-R-104822",
-    "endpoint": "XA:XA-R-104822",
+    "registry_id": "XU-R-104822",
+    "endpoint": "XU:XU-R-104822",
     "contact": {
      "name": "Planning desk",
      "email": "planning@trasvia.example"
     },
-    "tax_id": "XA007337656",
+    "tax_id": "XU007337656",
     "address": {
      "StreetName": "Via dei Trasporti",
      "BuildingNumber": "45",
@@ -220,35 +220,35 @@
      "PostalZone": "4160"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA33CREV0000628374"
+     "bank": "23-xu",
+     "number": "XU70CREV0000628374"
     }
    }
   },
   {
-   "id": "15-xa",
+   "id": "15-xu",
    "n": "15",
    "name": "Inland Waterway Carrier",
    "cat": "logistics",
-   "c": "XA",
+   "c": "XU",
    "at": [
     12,
     26
    ],
    "h": 1,
    "kind": "quay",
-   "what": "Moves bulk on the river from Country A down to the coast of Country B.",
+   "what": "Moves bulk on the river from Urvania down to the coast of Bayvarra.",
    "how": "Inland waterway transport moves large volumes slowly. UBL transport execution plans and waybills carry the barge, the loading and discharge quays and the cargo per hold, so shippers and terminals can plan around long transit times.",
    "identity": {
     "name": "Fiumella Barges",
     "kind": "company",
-    "registry_id": "XA-R-104959",
-    "endpoint": "XA:XA-R-104959",
+    "registry_id": "XU-R-104959",
+    "endpoint": "XU:XU-R-104959",
     "contact": {
      "name": "Chartering desk",
      "email": "chartering@fiumella.example"
     },
-    "tax_id": "XA007347248",
+    "tax_id": "XU007347248",
     "address": {
      "StreetName": "Banchina del Fiume",
      "BuildingNumber": "52",
@@ -256,17 +256,17 @@
      "PostalZone": "4170"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA94CREV0000733103"
+     "bank": "23-xu",
+     "number": "XU34CREV0000733103"
     }
    }
   },
   {
-   "id": "18-xa",
+   "id": "18-xu",
    "n": "18",
    "name": "Rail Hub / Intermodal Terminal",
    "cat": "logistics",
-   "c": "XA",
+   "c": "XU",
    "at": [
     19,
     18
@@ -283,13 +283,13 @@
    "identity": {
     "name": "Ferrano Intermodal Hub",
     "kind": "company",
-    "registry_id": "XA-R-105096",
-    "endpoint": "XA:XA-R-105096",
+    "registry_id": "XU-R-105096",
+    "endpoint": "XU:XU-R-105096",
     "contact": {
      "name": "Terminal control",
      "email": "terminal@ferranohub.example"
     },
-    "tax_id": "XA007356833",
+    "tax_id": "XU007356833",
     "address": {
      "StreetName": "Via del Terminal",
      "BuildingNumber": "59",
@@ -299,11 +299,11 @@
    }
   },
   {
-   "id": "23-xa",
+   "id": "23-xu",
    "n": "23",
    "name": "Seller's Bank",
    "cat": "finance",
-   "c": "XA",
+   "c": "XU",
    "at": [
     12,
     21
@@ -315,13 +315,13 @@
    "identity": {
     "name": "Crevalto Bank",
     "kind": "bank",
-    "registry_id": "XA-R-105233",
-    "endpoint": "XA:XA-R-105233",
+    "registry_id": "XU-R-105233",
+    "endpoint": "XU:XU-R-105233",
     "contact": {
      "name": "Trade services",
      "email": "trade@crevalto.example"
     },
-    "tax_id": "XA007366425",
+    "tax_id": "XU007366425",
     "address": {
      "StreetName": "Piazza della Banca",
      "BuildingNumber": "8",
@@ -332,11 +332,11 @@
    }
   },
   {
-   "id": "20-xa",
+   "id": "20-xu",
    "n": "20",
-   "name": "Chamber of Commerce (XA)",
+   "name": "Chamber of Commerce (XU)",
    "cat": "government",
-   "c": "XA",
+   "c": "XU",
    "at": [
     13,
     22
@@ -348,13 +348,13 @@
    "identity": {
     "name": "Ferrano Chamber of Commerce",
     "kind": "public",
-    "registry_id": "XA-R-105370",
-    "endpoint": "XA:XA-R-105370",
+    "registry_id": "XU-R-105370",
+    "endpoint": "XU:XU-R-105370",
     "contact": {
      "name": "Certificates office",
      "email": "certificates@camera-ferrano.example"
     },
-    "tax_id": "XA007376017",
+    "tax_id": "XU007376017",
     "address": {
      "StreetName": "Piazza del Mercato",
      "BuildingNumber": "15",
@@ -364,11 +364,11 @@
    }
   },
   {
-   "id": "19-xa",
+   "id": "19-xu",
    "n": "19",
-   "name": "Customs (XA)",
+   "name": "Customs (XU)",
    "cat": "government",
-   "c": "XA",
+   "c": "XU",
    "at": [
     20,
     22
@@ -379,15 +379,15 @@
    "how": "Export customs needs to know what leaves the country, for whom and how. UBL customs declarations reuse the parties, goods and transport details already present in the commercial and transport documents, so the declarant does not have to collect them again.",
    "on": "road",
    "identity": {
-    "name": "Customs Administration of Country A",
+    "name": "Customs Administration of Urvania",
     "kind": "public",
-    "registry_id": "XA-R-105507",
-    "endpoint": "XA:XA-R-105507",
+    "registry_id": "XU-R-105507",
+    "endpoint": "XU:XU-R-105507",
     "contact": {
      "name": "Border office",
-     "email": "border@customs-xa.example"
+     "email": "border@customs-xu.example"
     },
-    "tax_id": "XA007385602",
+    "tax_id": "XU007385602",
     "address": {
      "StreetName": "Valico di Confine",
      "BuildingNumber": "22",
@@ -397,11 +397,11 @@
    }
   },
   {
-   "id": "31-xa",
+   "id": "31-xu",
    "n": "31",
    "name": "Identifier Issuing Agency",
    "cat": "government",
-   "c": "XA",
+   "c": "XU",
    "at": [
     11,
     22
@@ -414,13 +414,13 @@
    "identity": {
     "name": "Codana Identification Agency",
     "kind": "company",
-    "registry_id": "XA-R-105644",
-    "endpoint": "XA:XA-R-105644",
+    "registry_id": "XU-R-105644",
+    "endpoint": "XU:XU-R-105644",
     "contact": {
      "name": "Member services",
      "email": "member@codana.example"
     },
-    "tax_id": "XA007395206",
+    "tax_id": "XU007395206",
     "address": {
      "StreetName": "Via dei Codici",
      "BuildingNumber": "29",
@@ -445,7 +445,7 @@
    "how": "Import customs checks goods arriving over the land border and through the seaport. UBL import and transit declarations carry the same consignment and goods data as the export declaration on the other side, which makes it possible to compare them.",
    "on": "road",
    "identity": {
-    "name": "Customs and Border Service of Country B",
+    "name": "Customs and Border Service of Bayvarra",
     "kind": "public",
     "registry_id": "20410137",
     "endpoint": "XB:20410137",
@@ -489,7 +489,7 @@
      "name": "Customer service",
      "email": "customer@lumeway.example"
     },
-    "tax_id": "US-1230822",
+    "tax_id": "UL-1230822",
     "address": {
      "StreetName": "Distribution Drive",
      "BuildingNumber": "43",
@@ -526,7 +526,7 @@
      "name": "Buying office",
      "email": "buying@brightmarket.example"
     },
-    "tax_id": "CS-1231233",
+    "tax_id": "CO-1231233",
     "address": {
      "StreetName": "Market Street",
      "BuildingNumber": "50",
@@ -627,7 +627,7 @@
      "name": "Bids office",
      "email": "bids@saltmere.example"
     },
-    "tax_id": "US-1232055",
+    "tax_id": "UL-1232055",
     "address": {
      "StreetName": "Foundry Road",
      "BuildingNumber": "13",
@@ -657,7 +657,7 @@
    "what": "Independent body that handles appeals and mediation in public procurement.",
    "how": "A review body handles appeals against procurement decisions. The tendering documents name it, with the deadlines for an appeal, so every tenderer knows where and when to go.",
    "identity": {
-    "name": "Procurement Review Board of Country B",
+    "name": "Procurement Review Board of Bayvarra",
     "kind": "public",
     "registry_id": "20410822",
     "endpoint": "XB:20410822",
@@ -689,7 +689,7 @@
    "what": "Publishes procurement notices and keeps the business registry.",
    "how": "A government information service publishes procurement notices and keeps the business registry. UBL notices reach it in one structured format, and business information documents let it share registry data that tenderers can reuse as evidence.",
    "identity": {
-    "name": "Country B Information Service",
+    "name": "Bayvarra Information Service",
     "kind": "public",
     "registry_id": "20410959",
     "endpoint": "XB:20410959",
@@ -762,7 +762,7 @@
      "name": "Client accounts",
      "email": "client@harbourline.example"
     },
-    "tax_id": "CS-1233699",
+    "tax_id": "CO-1233699",
     "address": {
      "StreetName": "Exchange Street",
      "BuildingNumber": "41",
@@ -788,7 +788,7 @@
    ],
    "h": 2,
    "kind": "bank",
-   "what": "Country B's bank: holds the accounts of the distributor, its customers and the public buyer, and issues guarantees, such as the bid bond for a tender.",
+   "what": "Bayvarra's bank: holds the accounts of the distributor, its customers and the public buyer, and issues guarantees, such as the bid bond for a tender.",
    "how": "A guarantor stands surety, for example for a bid bond in a tender. UBL's guarantee certificate names the guarantee, the tenderer and the contracting authority, so the authority can check it is valid.",
    "identity": {
     "name": "Bank of Lumeport",
@@ -833,7 +833,7 @@
      "name": "Cargo claims",
      "email": "cargo@wavesure.example"
     },
-    "tax_id": "CS-1234521",
+    "tax_id": "CO-1234521",
     "address": {
      "StreetName": "Beacon Avenue",
      "BuildingNumber": "55",
@@ -866,7 +866,7 @@
      "name": "Export desk",
      "email": "export@bayforth.example"
     },
-    "tax_id": "CS-1234932",
+    "tax_id": "CO-1234932",
     "address": {
      "StreetName": "Dockside Way",
      "BuildingNumber": "4",
@@ -943,7 +943,7 @@
      "name": "Bookings",
      "email": "bookings@tidewell.example"
     },
-    "tax_id": "CS-1235754",
+    "tax_id": "CO-1235754",
     "address": {
      "StreetName": "Harbour Road",
      "BuildingNumber": "18",
@@ -980,7 +980,7 @@
      "name": "Cargo acceptance",
      "email": "cargo@lumeport-cargo.example"
     },
-    "tax_id": "CS-1236165",
+    "tax_id": "CO-1236165",
     "address": {
      "StreetName": "Airport Road",
      "BuildingNumber": "25",
@@ -991,11 +991,11 @@
    }
   },
   {
-   "id": "16-xc",
+   "id": "16-xl",
    "n": "16",
-   "name": "Seaport (XC)",
+   "name": "Seaport (XL)",
    "cat": "logistics",
-   "c": "XC",
+   "c": "XL",
    "at": [
     46,
     22
@@ -1016,7 +1016,7 @@
     "name": "Port of Selanu",
     "kind": "public",
     "registry_id": "IC41037",
-    "endpoint": "XC:IC41037",
+    "endpoint": "XL:IC41037",
     "contact": {
      "name": "Port control",
      "email": "port@port-selanu.example"
@@ -1029,11 +1029,11 @@
    }
   },
   {
-   "id": "17-xc",
+   "id": "17-xl",
    "n": "17",
-   "name": "Airport (XC)",
+   "name": "Airport (XL)",
    "cat": "logistics",
-   "c": "XC",
+   "c": "XL",
    "at": [
     52,
     15
@@ -1050,7 +1050,7 @@
     "name": "Selanu Airport Cargo",
     "kind": "company",
     "registry_id": "IC41174",
-    "endpoint": "XC:IC41174",
+    "endpoint": "XL:IC41174",
     "contact": {
      "name": "Import desk",
      "email": "import@selanu-cargo.example"
@@ -1063,11 +1063,11 @@
    }
   },
   {
-   "id": "12-xc",
+   "id": "12-xl",
    "n": "12",
    "name": "Air Carrier",
    "cat": "logistics",
-   "c": "XC",
+   "c": "XL",
    "at": [
     54,
     17
@@ -1080,7 +1080,7 @@
     "name": "Kelaro Air Cargo",
     "kind": "company",
     "registry_id": "IC41311",
-    "endpoint": "XC:IC41311",
+    "endpoint": "XL:IC41311",
     "contact": {
      "name": "Cargo sales",
      "email": "cargo@kelaro.example"
@@ -1093,11 +1093,11 @@
    }
   },
   {
-   "id": "19-xc",
+   "id": "19-xl",
    "n": "19",
-   "name": "Customs (XC)",
+   "name": "Customs (XL)",
    "cat": "government",
-   "c": "XC",
+   "c": "XL",
    "at": [
     47,
     24
@@ -1111,10 +1111,10 @@
     "name": "Island Customs Service",
     "kind": "public",
     "registry_id": "IC41448",
-    "endpoint": "XC:IC41448",
+    "endpoint": "XL:IC41448",
     "contact": {
      "name": "Import office",
-     "email": "import@customs-xc.example"
+     "email": "import@customs-xl.example"
     },
     "address": {
      "StreetName": "Wharf Road",
@@ -1124,11 +1124,11 @@
    }
   },
   {
-   "id": "3-xc",
+   "id": "3-xl",
    "n": "3",
    "name": "Customs Declarant / Broker",
    "cat": "logistics",
-   "c": "XC",
+   "c": "XL",
    "at": [
     49,
     21
@@ -1141,7 +1141,7 @@
     "name": "Tevaro Customs Brokers",
     "kind": "company",
     "registry_id": "IC41585",
-    "endpoint": "XC:IC41585",
+    "endpoint": "XL:IC41585",
     "contact": {
      "name": "Declarations",
      "email": "declarations@tevaro.example"
@@ -1152,17 +1152,17 @@
      "CityName": "Selanu"
     },
     "account": {
-     "bank": "22-xc",
-     "number": "XC15BSEL0003456057"
+     "bank": "22-xl",
+     "number": "XL85BSEL0003456057"
     }
    }
   },
   {
-   "id": "9-xc",
+   "id": "9-xl",
    "n": "9",
    "name": "Buyer's Warehouse (3PL)",
    "cat": "commerce",
-   "c": "XC",
+   "c": "XL",
    "at": [
     50,
     26
@@ -1179,7 +1179,7 @@
     "name": "Nalevi Warehousing",
     "kind": "company",
     "registry_id": "IC41722",
-    "endpoint": "XC:IC41722",
+    "endpoint": "XL:IC41722",
     "contact": {
      "name": "Goods inwards",
      "email": "goods@nalevi.example"
@@ -1190,17 +1190,17 @@
      "CityName": "Selanu"
     },
     "account": {
-     "bank": "22-xc",
-     "number": "XC76BSEL0003560786"
+     "bank": "22-xl",
+     "number": "XL49BSEL0003560786"
     }
    }
   },
   {
-   "id": "1-xc",
+   "id": "1-xl",
    "n": "1",
    "name": "Commercial Buyer",
    "cat": "commerce",
-   "c": "XC",
+   "c": "XL",
    "at": [
     53,
     25
@@ -1213,7 +1213,7 @@
     "name": "Velumi Trading",
     "kind": "company",
     "registry_id": "IC41859",
-    "endpoint": "XC:IC41859",
+    "endpoint": "XL:IC41859",
     "contact": {
      "name": "Purchasing",
      "email": "purchasing@velumi.example"
@@ -1224,17 +1224,17 @@
      "CityName": "Selanu"
     },
     "account": {
-     "bank": "22-xc",
-     "number": "XC40BSEL0003665515"
+     "bank": "22-xl",
+     "number": "XL13BSEL0003665515"
     }
    }
   },
   {
-   "id": "22-xc",
+   "id": "22-xl",
    "n": "22",
    "name": "Buyer's Bank",
    "cat": "finance",
-   "c": "XC",
+   "c": "XL",
    "at": [
     55,
     27
@@ -1247,7 +1247,7 @@
     "name": "Bank of Selanu",
     "kind": "bank",
     "registry_id": "IC41996",
-    "endpoint": "XC:IC41996",
+    "endpoint": "XL:IC41996",
     "contact": {
      "name": "Payments",
      "email": "payments@bankofselanu.example"
@@ -1261,11 +1261,11 @@
    }
   },
   {
-   "id": "20-xc",
+   "id": "20-xl",
    "n": "20",
-   "name": "Chamber of Commerce (XC)",
+   "name": "Chamber of Commerce (XL)",
    "cat": "government",
-   "c": "XC",
+   "c": "XL",
    "at": [
     54,
     22
@@ -1278,7 +1278,7 @@
     "name": "Selanu Chamber of Commerce",
     "kind": "public",
     "registry_id": "IC42133",
-    "endpoint": "XC:IC42133",
+    "endpoint": "XL:IC42133",
     "contact": {
      "name": "Carnet office",
      "email": "carnet@chamber-selanu.example"
@@ -1291,11 +1291,11 @@
    }
   },
   {
-   "id": "30-xc",
+   "id": "30-xl",
    "n": "30",
    "name": "Maritime Administration",
    "cat": "government",
-   "c": "XC",
+   "c": "XL",
    "at": [
     56,
     24
@@ -1306,13 +1306,13 @@
    "what": "The island's flag state administration; issues ship security certificates.",
    "how": "The island's maritime administration issues ship security certificates. UBL transport reports to the port carry the certificate and its issuer, so the port can check them before the ship arrives.",
    "identity": {
-    "name": "Maritime Administration of Country C",
+    "name": "Maritime Administration of Lisavu",
     "kind": "public",
     "registry_id": "IC42270",
-    "endpoint": "XC:IC42270",
+    "endpoint": "XL:IC42270",
     "contact": {
      "name": "Ship registry",
-     "email": "ship@maritime-xc.example"
+     "email": "ship@maritime-xl.example"
     },
     "address": {
      "StreetName": "Wharf Road",
@@ -1322,11 +1322,11 @@
    }
   },
   {
-   "id": "33-xa",
+   "id": "33-xu",
    "n": "33",
    "name": "Electricity Utility",
    "cat": "commerce",
-   "c": "XA",
+   "c": "XU",
    "at": [
     18,
     13
@@ -1338,18 +1338,18 @@
    "h": 2,
    "kind": "power",
    "proposed": true,
-   "what": "Generates and supplies electricity in Country A; its biggest customer is the factory.",
+   "what": "Generates and supplies electricity in Urvania; its biggest customer is the factory.",
    "how": "A utility bills thousands of connections every month. UBL separates the bill (the Invoice) from the consumption behind it (the Utility Statement with meter readings per connection), so a customer with many sites can check each one automatically and a household gets the same structured bill as a factory.",
    "identity": {
     "name": "Ferrano Energy",
     "kind": "company",
-    "registry_id": "XA-R-105781",
-    "endpoint": "XA:XA-R-105781",
+    "registry_id": "XU-R-105781",
+    "endpoint": "XU:XU-R-105781",
     "contact": {
      "name": "Customer service",
      "email": "customer@ferranoenergy.example"
     },
-    "tax_id": "XA007404785",
+    "tax_id": "XU007404785",
     "address": {
      "StreetName": "Via della Centrale",
      "BuildingNumber": "44",
@@ -1357,8 +1357,8 @@
      "PostalZone": "4130"
     },
     "account": {
-     "bank": "23-xa",
-     "number": "XA09CREV0004084431"
+     "bank": "23-xu",
+     "number": "XU46CREV0004084431"
     }
    }
   },
@@ -1386,7 +1386,7 @@
      "name": "Customer service",
      "email": "customer@coastalwater.example"
     },
-    "tax_id": "CS-1236576",
+    "tax_id": "CO-1236576",
     "address": {
      "StreetName": "Reservoir Road",
      "BuildingNumber": "51",
@@ -1401,11 +1401,11 @@
    }
   },
   {
-   "id": "35-xc",
+   "id": "35-xl",
    "n": "35",
    "name": "Telecom Utility",
    "cat": "commerce",
-   "c": "XC",
+   "c": "XL",
    "at": [
     57,
     28
@@ -1419,7 +1419,7 @@
     "name": "Selanu Telecom",
     "kind": "company",
     "registry_id": "IC42407",
-    "endpoint": "XC:IC42407",
+    "endpoint": "XL:IC42407",
     "contact": {
      "name": "Business accounts",
      "email": "business@selanutelecom.example"
@@ -1430,8 +1430,238 @@
      "CityName": "Selanu"
     },
     "account": {
-     "bank": "22-xc",
-     "number": "XC18BSEL0004293889"
+     "bank": "22-xl",
+     "number": "XL88BSEL0004293889"
+    }
+   }
+  },
+  {
+   "id": "36-xb",
+   "n": "36",
+   "name": "Sawmill",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    24,
+    36
+   ],
+   "size": [
+    2,
+    1
+   ],
+   "h": 2,
+   "kind": "sawmill",
+   "proposed": true,
+   "what": "Fells timber in the forests of Upland State and saws it into planks, slats and beams; sells slats for the benches across the border and timber to the furniture maker.",
+   "how": "Wood is sold by dimensions and volume, in lots. UBL carries the measurements and the lot of every item in quotations, orders and despatch advices, so a buyer that orders slats to size gets exactly what it ordered and can trace each lot.",
+   "identity": {
+    "name": "Marrowdale Sawmill",
+    "kind": "company",
+    "registry_id": "20412329",
+    "endpoint": "XB:20412329",
+    "contact": {
+     "name": "Sales office",
+     "email": "sales@marrowdalesawmill.example"
+    },
+    "tax_id": "UL-1236987",
+    "address": {
+     "StreetName": "Timber Lane",
+     "BuildingNumber": "7",
+     "CityName": "Marrowdale",
+     "CountrySubentity": "Upland State",
+     "PostalZone": "71202"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB77BLUM0004398618"
+    }
+   }
+  },
+  {
+   "id": "37-xb",
+   "n": "37",
+   "name": "Furniture Maker",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    24,
+    31
+   ],
+   "h": 2,
+   "kind": "warehouse",
+   "proposed": true,
+   "what": "Makes wooden furniture from the sawmill's timber; supplies the department store and furnishes public offices, installation included.",
+   "how": "A supplier to a retailer shares more than orders: sales per store, stock policies and agreed exception thresholds. UBL's retail collaboration documents carry them, and a Work Report documents installation work for the customer to approve.",
+   "identity": {
+    "name": "Brackenmere Furniture",
+    "kind": "company",
+    "registry_id": "20412466",
+    "endpoint": "XB:20412466",
+    "contact": {
+     "name": "Trade sales",
+     "email": "trade@brackenmere.example"
+    },
+    "tax_id": "UL-1237398",
+    "address": {
+     "StreetName": "Joiners Row",
+     "BuildingNumber": "14",
+     "CityName": "Marrowdale",
+     "CountrySubentity": "Upland State",
+     "PostalZone": "71203"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB41BLUM0004503347"
+    }
+   }
+  },
+  {
+   "id": "40-xb",
+   "n": "40",
+   "name": "Textile Mill",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    37,
+    27
+   ],
+   "size": [
+    2,
+    1
+   ],
+   "h": 2,
+   "kind": "factory",
+   "proposed": true,
+   "what": "Spins and weaves the island's cotton into fabric and makes clothing for the department store.",
+   "how": "Its raw material comes from overseas on a schedule. UBL forecasts and their revisions tell the ginnery what to expect, and the bill of lading, customs documents and invoice of every shipment arrive in one structure.",
+   "identity": {
+    "name": "Lumeport Textile Mill",
+    "kind": "company",
+    "registry_id": "20412603",
+    "endpoint": "XB:20412603",
+    "contact": {
+     "name": "Purchasing",
+     "email": "purchasing@lumeporttextile.example"
+    },
+    "tax_id": "CO-1237809",
+    "address": {
+     "StreetName": "Mill Street",
+     "BuildingNumber": "21",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38504"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB05BLUM0004608076"
+    }
+   }
+  },
+  {
+   "id": "41-xb",
+   "n": "41",
+   "name": "Packaging Maker",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    35,
+    35
+   ],
+   "h": 2,
+   "kind": "factory",
+   "proposed": true,
+   "what": "Makes packaging from recycled plastic granulate that arrives by barge from Urvania; packs the benches and the clothing.",
+   "how": "Recycled raw material comes in bulk lots by river; packaging goes out in many small orders. UBL handles both with the same order, despatch and invoice structure, across the border and at home.",
+   "identity": {
+    "name": "Rivermouth Packaging",
+    "kind": "company",
+    "registry_id": "20412740",
+    "endpoint": "XB:20412740",
+    "contact": {
+     "name": "Order desk",
+     "email": "order@rivermouth.example"
+    },
+    "tax_id": "CO-1238220",
+    "address": {
+     "StreetName": "Estuary Road",
+     "BuildingNumber": "28",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38505"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB66BLUM0004712805"
+    }
+   }
+  },
+  {
+   "id": "38-xl",
+   "n": "38",
+   "name": "Cotton Farm",
+   "cat": "commerce",
+   "c": "XL",
+   "at": [
+    47,
+    18
+   ],
+   "h": 1,
+   "kind": "farm",
+   "proposed": true,
+   "what": "Grows cotton on the island and delivers the seed cotton to the ginnery after the harvest.",
+   "how": "A farm does not write invoices: the ginnery weighs and grades the cotton and bills itself on the farm's behalf. UBL's self-billed invoice and credit note are made for exactly this, and the farm receives a structured statement of what it was paid for.",
+   "identity": {
+    "name": "Lisavu Cotton Farm",
+    "kind": "company",
+    "registry_id": "IC42544",
+    "endpoint": "XL:IC42544",
+    "contact": {
+     "name": "Farm office",
+     "email": "farm@lisavufarm.example"
+    },
+    "address": {
+     "StreetName": "Plantation Road",
+     "BuildingNumber": "35",
+     "CityName": "Selanu"
+    },
+    "account": {
+     "bank": "22-xl",
+     "number": "XL05BSEL0004817534"
+    }
+   }
+  },
+  {
+   "id": "39-xl",
+   "n": "39",
+   "name": "Cotton Ginnery",
+   "cat": "commerce",
+   "c": "XL",
+   "at": [
+    47,
+    28
+   ],
+   "h": 2,
+   "kind": "ginnery",
+   "proposed": true,
+   "what": "Gins the farms' seed cotton into bales and exports them to the textile mill on the mainland: the island's export.",
+   "how": "The ginnery buys from many farms and sells overseas. UBL covers both sides: self-billing towards the farms, and towards the mill an export with weight statement, goods certificate, customs declaration and invoice.",
+   "identity": {
+    "name": "Selanu Cotton Ginnery",
+    "kind": "company",
+    "registry_id": "IC42681",
+    "endpoint": "XL:IC42681",
+    "contact": {
+     "name": "Cotton sales",
+     "email": "cotton@selanuginnery.example"
+    },
+    "address": {
+     "StreetName": "Gin Yard Road",
+     "BuildingNumber": "42",
+     "CityName": "Selanu"
+    },
+    "account": {
+     "bank": "22-xl",
+     "number": "XL66BSEL0004922263"
     }
    }
   }
