@@ -1,0 +1,156 @@
+{
+ "description": "The countries of the UBL example world, with their currencies, tax schemes and identifier and address schemes. XA, XB and XC are ISO 3166-1 user-assigned codes; tools/build_codelists.py adds them and the world currencies to copies of the UBL 2.5 default code lists (world/codelists). Tax scheme identifiers are UN/EDIFACT 5153 codes (VAT, STT state/provincial sales tax, CUD customs duty, IMP import tax).",
+ "countries": {
+  "XA": {
+   "name": "Country A",
+   "note": "Mainland, inland. Raw materials and manufacturing.",
+   "alpha3": "XAA",
+   "numeric": "901",
+   "languages": [
+    "en"
+   ],
+   "currency": {
+    "code": "XAW",
+    "numeric": "911",
+    "name": "Aster",
+    "minor_units": 2
+   },
+   "tax": {
+    "summary": "Value added tax in the style of the EU VAT: charged at every stage, deducted by businesses, not charged on exports.",
+    "schemes": [
+     {
+      "id": "VAT",
+      "name": "Value added tax",
+      "rates": {
+       "standard": 20,
+       "reduced": 9
+      },
+      "exports": "not charged; the export is shown with its exemption reason"
+     }
+    ]
+   },
+   "registry": {
+    "name": "Commercial register of Country A",
+    "id_format": "XA-R- and 6 digits",
+    "example": "XA-R-104233"
+   },
+   "tax_id": {
+    "format": "XA and 9 digits, the last a check digit (weights 9..2, modulus 11)"
+   },
+   "address": {
+    "lines": [
+     "StreetName BuildingNumber",
+     "PostalZone CityName"
+    ],
+    "postal_zone": "4 digits",
+    "subdivisions": null
+   }
+  },
+  "XB": {
+   "name": "Country B",
+   "note": "Mainland, coast. Distribution, retail, seaport and airport hub.",
+   "alpha3": "XBB",
+   "numeric": "902",
+   "languages": [
+    "en"
+   ],
+   "currency": {
+    "code": "XBW",
+    "numeric": "912",
+    "name": "Bel",
+    "minor_units": 2
+   },
+   "tax": {
+    "summary": "A federal country: its states levy a retail sales tax, charged once, on the sale to the final consumer. Sales to businesses that resell, exports and sales to public bodies are exempt, and the invoice says so.",
+    "schemes": [
+     {
+      "id": "STT",
+      "name": "State sales tax",
+      "levied_by": "state",
+      "rates_by_state": {
+       "Coastal State": 6.5,
+       "Upland State": 5.0
+      },
+      "exempt": [
+       "sale for resale",
+       "export",
+       "sale to a public body"
+      ]
+     }
+    ]
+   },
+   "registry": {
+    "name": "Federal business register of Country B",
+    "id_format": "8 digits",
+    "example": "20417733"
+   },
+   "tax_id": {
+    "format": "state code, hyphen, 7 digits (sales tax permit of the state)"
+   },
+   "address": {
+    "lines": [
+     "BuildingNumber StreetName",
+     "CityName CountrySubentity PostalZone"
+    ],
+    "postal_zone": "5 digits",
+    "subdivisions": {
+     "US": "Upland State",
+     "CS": "Coastal State"
+    }
+   },
+   "subdivision_rule": {
+    "column": 29,
+    "west": "Upland State",
+    "east": "Coastal State",
+    "note": "The state border runs north-south at map column 29: the border region and the distributor are in Upland State, Lumeport and the coast in Coastal State."
+   }
+  },
+  "XC": {
+   "name": "Country C",
+   "note": "Island. The overseas buyer, reached by sea and air.",
+   "alpha3": "XCC",
+   "numeric": "903",
+   "languages": [
+    "en"
+   ],
+   "currency": {
+    "code": "XCW",
+    "numeric": "913",
+    "name": "Coral",
+    "minor_units": 0
+   },
+   "tax": {
+    "summary": "An island without a general sales tax or VAT: the state is financed by customs duty and an import consumption tax, both collected by customs at import. Domestic sales carry no tax, and the invoice says so.",
+    "schemes": [
+     {
+      "id": "CUD",
+      "name": "Customs duty",
+      "levied_on": "import, customs value"
+     },
+     {
+      "id": "IMP",
+      "name": "Import consumption tax",
+      "rate": 10,
+      "levied_on": "import, customs value plus duty"
+     }
+    ]
+   },
+   "registry": {
+    "name": "Island companies register",
+    "id_format": "IC and 5 digits",
+    "example": "IC40912"
+   },
+   "tax_id": {
+    "format": "the companies register number; there is no separate tax number"
+   },
+   "address": {
+    "lines": [
+     "BuildingNumber StreetName",
+     "CityName"
+    ],
+    "postal_zone": null,
+    "subdivisions": null
+   }
+  }
+ }
+}

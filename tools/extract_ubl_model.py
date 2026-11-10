@@ -4,9 +4,11 @@
 Reads the UBL 2.5 entity model (mod/UBL-Entities-2.5.gc, the source of the
 schemas) and writes world/ubl-model.json:
 
-  * every aggregate (ABIE) with its basic properties and its associations
+  * every aggregate (ABIE) with its basic properties (name, cardinality) and its associations
     (ASBIEs: name, target aggregate, cardinality, definition), so that a
     path such as Order/Delivery/Despatch/DespatchParty can be checked;
+  * which aggregates, associations and basic properties are deprecated (their
+    definition starts with "(Deprecated)"); the world uses none of them;
   * per document type: its definition, its document-level party elements,
     and which of these elements sends the document and which receives it.
 
@@ -32,6 +34,7 @@ MODEL_SHA256 = "c7df070e1a2927792a8a85103665924973d2559552ea87aa495ea7248fe988d1
 # oasis-tcs/ubl branch ubl-2.5-os; the role table last changed on 2025-08-06
 ROLES = ("https://raw.githubusercontent.com/oasis-tcs/ubl/345386aa0504488aebdbec1c7d629ce9b7d08826/"
          "UBL-Party-summary-information.xml")
+DEPRECATED = "(Deprecated)"   # how the model marks what is no longer endorsed
 OUT = os.path.join(os.path.dirname(__file__), "..", "world", "ubl-model.json")
 
 # Documents without SenderParty and ReceiverParty: (senders, receivers, basis, evidence).
@@ -201,12 +204,14 @@ def main():
     for r in rows:
         if r["ComponentType"] == "ABIE":
             current = r["ComponentName"]
-            abies[current] = {"definition": r["Definition"], "bbies": [], "asbies": []}
+            abies[current] = {"definition": r["Definition"], "bbies": [], "asbies": [],
+                              "deprecated": r["Definition"].startswith(DEPRECATED)}
             by_den[r["DictionaryEntryName"].rsplit(". Details", 1)[0]] = current
             if not r["ModelName"].startswith("UBL-CommonLibrary"):
                 docs.append(current)
         elif r["ComponentType"] == "BBIE":
-            abies[current]["bbies"].append(r["ComponentName"])
+            abies[current]["bbies"].append([r["ComponentName"], r["Cardinality"],
+                                            r["Definition"].startswith(DEPRECATED)])
         else:
             abies[current]["asbies"].append([r["ComponentName"], r.get("AssociatedObjectClassQualifier", ""),
                                              r["AssociatedObjectClass"], r["Cardinality"], r["Definition"]])
@@ -255,7 +260,7 @@ def main():
         else:
             problems.append(f"{d}: no sender and receiver known")
             continue
-        out[d] = {"definition": abies[d]["definition"], "parties": parties, "senders": senders,
+        out[d] = {"definition": abies[d]["definition"], "deprecated": abies[d]["deprecated"], "parties": parties, "senders": senders,
                   "receivers": receivers, "basis": basis, "evidence": evidence}
     for d in DIRECTION:
         if d not in docs:
@@ -263,7 +268,8 @@ def main():
     if problems:
         raise SystemExit("\n".join(problems))
     result = {"source": MODEL, "sha256": MODEL_SHA256, "roles": ROLES, "documents": out,
-              "abies": {k: {"bbies": v["bbies"], "asbies": v["asbies"]} for k, v in abies.items()}}
+              "abies": {k: {"deprecated": v["deprecated"], "bbies": v["bbies"], "asbies": v["asbies"]}
+                        for k, v in abies.items()}}
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")

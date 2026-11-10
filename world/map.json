@@ -1,0 +1,295 @@
+{
+ "description": "The map of the UBL example world: routes, towns and fields. tools/world_model.py builds the tile model from it and from the parties. Localities are small places without houses on the map; they give the parties outside the towns a place in their address.",
+ "routes": [
+  {
+   "id": "ore",
+   "mode": "rail",
+   "layer": "chain",
+   "label": "Ore by rail (domestic XA)",
+   "pts": [
+    [
+     9,
+     11
+    ],
+    [
+     9,
+     18
+    ],
+    [
+     13,
+     18
+    ]
+   ]
+  },
+  {
+   "id": "rail-x",
+   "mode": "rail",
+   "layer": "transport",
+   "label": "Containers to the border hub",
+   "pts": [
+    [
+     16,
+     18
+    ],
+    [
+     26,
+     18
+    ],
+    [
+     30,
+     22
+    ],
+    [
+     30,
+     26
+    ]
+   ]
+  },
+  {
+   "id": "road",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Finished goods by road, across the border (XA → XB)",
+   "pts": [
+    [
+     18,
+     22
+    ],
+    [
+     27,
+     22
+    ],
+    [
+     27,
+     26
+    ]
+   ]
+  },
+  {
+   "id": "road-b",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Distributor to retailer (domestic XB)",
+   "pts": [
+    [
+     28,
+     28
+    ],
+    [
+     28,
+     30
+    ],
+    [
+     32,
+     30
+    ]
+   ]
+  },
+  {
+   "id": "road-port",
+   "mode": "road",
+   "layer": "transport",
+   "label": "Distributor to the seaport",
+   "pts": [
+    [
+     27,
+     23
+    ],
+    [
+     38,
+     23
+    ]
+   ]
+  },
+  {
+   "id": "river",
+   "mode": "river",
+   "layer": "transport",
+   "label": "River barge (XA → XB)",
+   "pts": [
+    [
+     5,
+     15
+    ],
+    [
+     7,
+     25
+    ],
+    [
+     16,
+     29
+    ],
+    [
+     26,
+     35
+    ],
+    [
+     34,
+     38
+    ],
+    [
+     40,
+     40
+    ]
+   ],
+   "width": 1.6
+  },
+  {
+   "id": "sea",
+   "mode": "sea",
+   "layer": "chain",
+   "label": "Container ship overseas (XB → XC)",
+   "pts": [
+    [
+     40,
+     22
+    ],
+    [
+     45,
+     22
+    ]
+   ]
+  },
+  {
+   "id": "air",
+   "mode": "air",
+   "layer": "transport",
+   "label": "Air cargo (XB → XC)",
+   "pts": [
+    [
+     34,
+     19
+    ],
+    [
+     43,
+     13
+    ],
+    [
+     53,
+     15
+    ]
+   ]
+  },
+  {
+   "id": "road-c",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Port to buyer (domestic XC)",
+   "pts": [
+    [
+     47,
+     22
+    ],
+    [
+     47,
+     25
+    ],
+    [
+     52,
+     25
+    ]
+   ]
+  },
+  {
+   "id": "waste",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Production waste",
+   "pts": [
+    [
+     14,
+     20
+    ],
+    [
+     14,
+     24
+    ],
+    [
+     12,
+     24
+    ]
+   ]
+  },
+  {
+   "id": "road-farm",
+   "mode": "road",
+   "layer": "transport",
+   "label": "Ferrano to the farms (domestic XA)",
+   "pts": [
+    [
+     14,
+     25
+    ],
+    [
+     14,
+     31
+    ]
+   ]
+  }
+ ],
+ "towns": [
+  {
+   "name": "Ferrano",
+   "c": [
+    13,
+    22
+   ],
+   "r": 4,
+   "country": "XA"
+  },
+  {
+   "name": "Lumeport",
+   "c": [
+    31,
+    28
+   ],
+   "r": 5,
+   "country": "XB"
+  },
+  {
+   "name": "Selanu",
+   "c": [
+    52,
+    23
+   ],
+   "r": 4,
+   "country": "XC"
+  }
+ ],
+ "fields": [
+  {
+   "c": [
+    16,
+    32
+   ],
+   "r": 3
+  },
+  {
+   "c": [
+    28,
+    20
+   ],
+   "r": 3
+  }
+ ],
+ "localities": [
+  {
+   "name": "Serravona",
+   "c": [
+    9,
+    12
+   ],
+   "country": "XA",
+   "note": "The mining village at the ore mine."
+  },
+  {
+   "name": "Marrowdale",
+   "c": [
+    26,
+    26
+   ],
+   "country": "XB",
+   "note": "An inland town in Upland State, near the border."
+  }
+ ]
+}

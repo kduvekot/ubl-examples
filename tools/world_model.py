@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the tile model of the UBL world from world/world.json, and check it.
+"""Build the tile model of the UBL world from the world layers (map, parties), and check it.
 
 The world is a finished snapshot: everything is built, nothing grows. This
 script decides the structure; the map (site/world.html) only draws it.
@@ -672,7 +672,9 @@ def build(world):
 
 
 def main():
-    world = json.load(open(os.path.join(ROOT, "world", "world.json"), encoding="utf-8"))
+    sys.path.insert(0, os.path.dirname(__file__))
+    import world_data
+    world = world_data.load()
     model, problems = build(world)
     for line in problems:
         print("problem:", line, file=sys.stderr)

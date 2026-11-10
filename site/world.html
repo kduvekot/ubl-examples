@@ -127,7 +127,7 @@ canvas.dragging { cursor: grabbing; }
 // ---------------------------------------------------------------- world data
 const W = 64, H = 48;               // tiles
 const TW = 32, TH = 16;             // tile size in pixels (isometric)
-// Countries and parties come from world/world.json; the build puts them here.
+// Countries, parties, routes and towns come from the world layers (world/*.json); the build puts them here.
 const WORLD = /*WORLD_JSON*/ null;
 const COUNTRIES = WORLD.countries;
 const CAT = { commerce: "--c-commerce", logistics: "--c-logistics", government: "--c-government", finance: "--c-finance", procurement: "--c-procurement" };
@@ -140,7 +140,7 @@ const P = WORLD.parties;
 const ROUTES = WORLD.routes;
 
 // ---------------------------------------------------------------- the world model
-// Built by tools/world_model.py from world/world.json and checked there; the map only draws it.
+// Built by tools/world_model.py from the world layers and checked there; the map only draws it.
 const hash = (x, y) => { let h = (x * 374761393 + y * 668265263) | 0; h = (h ^ (h >>> 13)) * 1274126177; return ((h ^ (h >>> 16)) >>> 0) / 4294967295; };
 const DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
 const KIND = { s: "sea", w: "river", g: "grass", f: "forest", r: "rock", d: "field" };
@@ -596,10 +596,10 @@ function showCard(p) {
     <p>Ore is mined and processed in <b>Country A</b>, crosses the land border by road, rail and river to the distributor in <b>Country B</b>, and goes overseas by ship and plane to the buyer on the island <b>Country C</b>. Every country has its own customs, chamber and banks.</p>
     <p>Click a building or choose a party below to see its role and the UBL documents it sends and receives.</p>`; return; }
   const col = css(CAT[p.cat]);
-  card.innerHTML = `<div class="num">PARTY #${p.n}${p.proposed ? " · PROPOSED" : ""}</div><h2 style="color:${col}">${p.name}</h2>
+  card.innerHTML = `<div class="num">PARTY #${p.n} · ${p.name.toUpperCase()}${p.proposed ? " · PROPOSED" : ""}</div><h2 style="color:${col}">${p.label}</h2>
     <div class="tags"><span class="tag">${COUNTRIES[p.c].name} (${p.c})</span><span class="tag">${p.cat}</span></div>
     <p>${p.what}</p><dl><dt>Sends</dt><dd>${p.sends}</dd><dt>Receives</dt><dd>${p.receives}</dd><dt>UBL roles</dt><dd><code>${p.roles.split(", ").join("</code> <code>")}</code></dd></dl>
-    <p class="more"><a href="world-${p.id}.html">How UBL helps ${p.name.replace(/ \(X.\)$/, "")} →</a></p>`;
+    <p class="more"><a href="world-${p.id}.html">How UBL helps ${p.label} →</a></p>`;
 }
 function select(p, center) { selected = p; showCard(p);
   history.replaceState(null, "", p ? "#" + p.id : location.pathname);

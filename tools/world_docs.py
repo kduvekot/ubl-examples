@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The documents of the UBL example world, checked against the UBL 2.5 model.
 
-world/world.json lists the flows of the world (an ore delivery, a public
+world/documents.json lists the flows of the world (an ore delivery, a public
 tender, ...) and in each flow the documents that are exchanged: the document
 type, who sends it, who receives it, why, and every party it mentions at its
 place in the UBL structure (for example Order/Delivery/Despatch/CarrierParty).
@@ -14,6 +14,11 @@ which receives it. This module checks every document against the model:
   * the sender fills a sender element of the document and the receiver a
     receiver element, or the document says on whose behalf they act;
   * every mandatory party element at document level is filled;
+  * no document type, association or property is deprecated: the world
+    uses only what UBL 2.5 endorses;
+  * a bank named in a document is the bank of that account holder;
+  * values that UBL requires to be manifest are stated (rule IND6), such as
+    the delivery terms of an order;
   * every party of the world sends, receives or is mentioned in a document.
 
 Usage: python3 tools/world_docs.py      (prints the problems, exit 1 if any)
@@ -52,6 +57,34 @@ def resolve(model, doc, path):
     return last
 
 
+DEPRECATED = "(Deprecated)"
+
+
+def walk(model, doc, path):
+    """Problems with a path below a document: a step that does not exist or is deprecated.
+    The last step may be a basic property (for a value)."""
+    a, steps = doc, path.split("/")
+    for i, step in enumerate(steps):
+        hit = [x for x in model["abies"][a]["asbies"] if x[0] == step]
+        if not hit:
+            bbie = [b for b in model["abies"][a]["bbies"] if b[0] == step]
+            if bbie and i == len(steps) - 1:
+                return [f"{doc}/{path}: {step} is deprecated"] if bbie[0][2] else []
+            return [f"{doc}/{path} does not exist in UBL 2.5"]
+        if hit[0][3].startswith(DEPRECATED) or model["abies"][hit[0][1]]["deprecated"]:
+            return [f"{doc}/{path}: {step} is deprecated"]
+        a = hit[0][1]
+    return []
+
+
+# Values that must be stated in a document type, because leaving them out would
+# carry meaning, which UBL forbids (rule IND6, "Manifest Values" in section 2.2.2).
+MANIFEST = {
+    # who arranges and pays the transport follows from the delivery terms, never from a missing carrier
+    "Order": ["DeliveryTerms/ID"],
+}
+
+
 def ids(value):
     return value if isinstance(value, list) else [value]
 
@@ -59,6 +92,27 @@ def ids(value):
 def fills(doc, party):
     """Paths in a document that the party fills."""
     return [k for k, v in doc["parties"].items() if party in ids(v)]
+
+
+def bank_problems(world, d):
+    """A bank named in a document must be the bank where the account holder keeps its account:
+    the payee's account (PayeeParty, else AccountingSupplierParty) and the payer's (AccountingCustomerParty)."""
+    out = []
+    party = {p["id"]: p for p in world["parties"]}
+    holder = {"PayeeFinancialAccount": d["parties"].get("PayeeParty", d["parties"].get("AccountingSupplierParty")),
+              "PayerFinancialAccount": d["parties"].get("AccountingCustomerParty")}
+    for path, bank in d["parties"].items():
+        steps = path.split("/")
+        if steps[-1] != "FinancialInstitution":
+            continue
+        account = next((s for s in steps if s in holder), None)
+        who = holder.get(account)
+        acc = party.get(who, {}).get("identity", {}).get("account") if who else None
+        if not acc:
+            out.append(f"{path}: {who} has no account in the world")
+        elif acc["bank"] != bank:
+            out.append(f"{path}: {who} keeps its account at {acc['bank']}, not at {bank}")
+    return out
 
 
 def check(world, model):
@@ -74,11 +128,14 @@ def check(world, model):
         if spec is None:
             problems.append(f"{where}: not a UBL 2.5 document type")
             continue
+        if spec["deprecated"]:
+            problems.append(f"{where}: {d['doc']} is deprecated in UBL 2.5; use an endorsed document type")
         if d["from"] == d["to"]:
             problems.append(f"{where}: sender and receiver are the same party")
         for path, value in d["parties"].items():
-            if resolve(model, d["doc"], path) is None:
-                problems.append(f"{where}: {d['doc']}/{path} does not exist in UBL 2.5")
+            problems += [f"{where}: {x}" for x in walk(model, d["doc"], path)]
+            if resolve(model, d["doc"], path) is None and not walk(model, d["doc"], path):
+                problems.append(f"{where}: {d['doc']}/{path} is not an association")
             for v in ids(value):
                 if v not in parties:
                     problems.append(f"{where}: unknown party {v} at {path}")
@@ -99,10 +156,16 @@ def check(world, model):
                     problems.append(f"{where}: the {side} acts for another party but is not in the document")
             elif not set(fills(d, party)) & set(elements):
                 problems.append(f"{where}: the {side} {party} must fill {' or '.join(elements)}")
+        for path in d.get("values", {}):
+            problems += [f"{where}: {x}" for x in walk(model, d["doc"], path)]
+        for path in MANIFEST.get(d["doc"], []):
+            if path not in d.get("values", {}):
+                problems.append(f"{where}: {path} must be stated (IND6: an absence carries no meaning)")
         for p in spec["parties"]:
             if p["cardinality"].startswith("1") and p["element"] not in d["parties"]:
                 problems.append(f"{where}: mandatory {p['element']} is not filled")
         used.update((d["from"], d["to"]))
+        problems += [f"{where}: {x}" for x in bank_problems(world, d)]
     for f in world["flows"]:
         if not any(d["flow"] == f["id"] for d in world["documents"]):
             problems.append(f"flow {f['id']}: has no documents")
@@ -140,7 +203,8 @@ def definition(model, d, path):
 
 
 if __name__ == "__main__":
-    w = json.load(open(os.path.join(ROOT, "world", "world.json"), encoding="utf-8"))
+    import world_data
+    w = world_data.load()
     probs = check(w, load_model())
     print("\n".join(probs) or f"{len(w['documents'])} documents in {len(w['flows'])} flows: no problems")
     sys.exit(1 if probs else 0)

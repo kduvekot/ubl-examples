@@ -1,0 +1,1325 @@
+{
+ "description": "The parties of the UBL example world: their place on the map, what they do and their identity.",
+ "parties": [
+  {
+   "id": "4-xa",
+   "n": "4",
+   "name": "Raw Material Supplier",
+   "cat": "commerce",
+   "c": "XA",
+   "at": [
+    9,
+    10
+   ],
+   "h": 2,
+   "kind": "mine",
+   "what": "Mines the ore at the start of the chain and sells it to the manufacturer.",
+   "how": "A mine sells a few products in large volumes to a small number of customers. With UBL, its orders, despatch advices and invoices carry the same quantities, lot numbers and weights from the first document to the last, so the buyer can match them without retyping weighbridge tickets.",
+   "identity": {
+    "name": "Serravona Mining",
+    "kind": "company",
+    "registry_id": "XA-R-104137",
+    "endpoint": "XA:XA-R-104137",
+    "contact": {
+     "name": "Sales office",
+     "email": "sales@serravona.example"
+    },
+    "tax_id": "XA007289704",
+    "address": {
+     "StreetName": "Strada della Miniera",
+     "BuildingNumber": "10",
+     "CityName": "Serravona",
+     "PostalZone": "4110"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA19CREV0000104729"
+    }
+   }
+  },
+  {
+   "id": "5-xa",
+   "n": "5",
+   "name": "Manufacturer",
+   "cat": "commerce",
+   "c": "XA",
+   "at": [
+    14,
+    18
+   ],
+   "h": 3,
+   "kind": "factory",
+   "what": "Turns raw material into finished goods; buys from #4, sells to #6 abroad and tenders in public procurement.",
+   "how": "The manufacturer sits in the middle of the chain: it buys, produces, sells, exports and tenders. UBL gives it one vocabulary for all of that, from the order it places with the mine to the certificate of origin and the tender it submits to a public buyer, so the same item, party and price data are reused instead of re-entered for every partner.",
+   "size": [
+    2,
+    2
+   ],
+   "identity": {
+    "name": "Valdara Industries",
+    "kind": "company",
+    "registry_id": "XA-R-104274",
+    "endpoint": "XA:XA-R-104274",
+    "contact": {
+     "name": "Order desk",
+     "email": "order@valdara.example"
+    },
+    "tax_id": "XA007299291",
+    "address": {
+     "StreetName": "Via delle Officine",
+     "BuildingNumber": "17",
+     "CityName": "Ferrano",
+     "PostalZone": "4120"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA80CREV0000209458"
+    }
+   }
+  },
+  {
+   "id": "8-xa",
+   "n": "8",
+   "name": "Seller's Warehouse (3PL)",
+   "cat": "commerce",
+   "c": "XA",
+   "at": [
+    16,
+    22
+   ],
+   "h": 2,
+   "kind": "warehouse",
+   "what": "Picks, packs and hands the goods to the carrier for the manufacturer; knows nothing about prices.",
+   "how": "A third-party warehouse acts on instructions from its client but never sees the commercial terms. UBL separates the two: the warehouse sends despatch advices and inventory reports with exactly the logistic details (packages, weights, serial numbers) while prices stay in the documents between seller and buyer.",
+   "size": [
+    2,
+    1
+   ],
+   "identity": {
+    "name": "Castrano Logistics",
+    "kind": "company",
+    "registry_id": "XA-R-104411",
+    "endpoint": "XA:XA-R-104411",
+    "contact": {
+     "name": "Warehouse office",
+     "email": "warehouse@castrano.example"
+    },
+    "tax_id": "XA007308887",
+    "address": {
+     "StreetName": "Via del Magazzino",
+     "BuildingNumber": "24",
+     "CityName": "Ferrano",
+     "PostalZone": "4130"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA44CREV0000314187"
+    }
+   }
+  },
+  {
+   "id": "7-xa",
+   "n": "7",
+   "name": "Waste Processor",
+   "cat": "commerce",
+   "c": "XA",
+   "at": [
+    11,
+    24
+   ],
+   "h": 2,
+   "kind": "waste",
+   "what": "Takes production waste from the manufacturer and invoices the removal.",
+   "how": "Waste movements must be announced and tracked before the waste leaves the site. UBL's waste notification and waste movement documents describe the waste, its producer and the facility that recovers or disposes of it, and the same parties then appear on the invoice for the removal service.",
+   "identity": {
+    "name": "Rinova Recovery",
+    "kind": "company",
+    "registry_id": "XA-R-104548",
+    "endpoint": "XA:XA-R-104548",
+    "contact": {
+     "name": "Customer service",
+     "email": "customer@rinova.example"
+    },
+    "tax_id": "XA007318479",
+    "address": {
+     "StreetName": "Via del Riciclo",
+     "BuildingNumber": "31",
+     "CityName": "Ferrano",
+     "PostalZone": "4140"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA08CREV0000418916"
+    }
+   }
+  },
+  {
+   "id": "14-xa",
+   "n": "14",
+   "name": "Rail Carrier",
+   "cat": "logistics",
+   "c": "XA",
+   "at": [
+    8,
+    15
+   ],
+   "h": 2,
+   "kind": "depot",
+   "what": "Runs the ore trains from the mine to the factory and container trains to the border.",
+   "how": "A rail carrier plans capacity on a fixed timetable. UBL transport documents let its customers request and confirm transport plans and receive status updates per train and wagon, with the same consignment references the forwarder and the receiving terminal use.",
+   "identity": {
+    "name": "Ferrano Rail Cargo",
+    "kind": "company",
+    "registry_id": "XA-R-104685",
+    "endpoint": "XA:XA-R-104685",
+    "contact": {
+     "name": "Freight desk",
+     "email": "freight@ferranorail.example"
+    },
+    "tax_id": "XA007328060",
+    "address": {
+     "StreetName": "Viale della Stazione",
+     "BuildingNumber": "38",
+     "CityName": "Serravona",
+     "PostalZone": "4150"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA69CREV0000523645"
+    }
+   }
+  },
+  {
+   "id": "13-xa",
+   "n": "13",
+   "name": "Road Carrier",
+   "cat": "logistics",
+   "c": "XA",
+   "at": [
+    17,
+    25
+   ],
+   "h": 1,
+   "kind": "depot",
+   "what": "Trucks the goods across the land border to the distributor; last-mile delivery.",
+   "how": "Road carriers handle many short jobs with frequent changes. With UBL they receive transport instructions, report status at each stop and invoice the freight in one structured format, so every customer, large or small, can process them automatically.",
+   "identity": {
+    "name": "Trasvia Haulage",
+    "kind": "company",
+    "registry_id": "XA-R-104822",
+    "endpoint": "XA:XA-R-104822",
+    "contact": {
+     "name": "Planning desk",
+     "email": "planning@trasvia.example"
+    },
+    "tax_id": "XA007337656",
+    "address": {
+     "StreetName": "Via dei Trasporti",
+     "BuildingNumber": "45",
+     "CityName": "Ferrano",
+     "PostalZone": "4160"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA33CREV0000628374"
+    }
+   }
+  },
+  {
+   "id": "15-xa",
+   "n": "15",
+   "name": "Inland Waterway Carrier",
+   "cat": "logistics",
+   "c": "XA",
+   "at": [
+    12,
+    26
+   ],
+   "h": 1,
+   "kind": "quay",
+   "what": "Moves bulk on the river from Country A down to the coast of Country B.",
+   "how": "Inland waterway transport moves large volumes slowly. UBL transport execution plans and waybills carry the barge, the loading and discharge quays and the cargo per hold, so shippers and terminals can plan around long transit times.",
+   "identity": {
+    "name": "Fiumella Barges",
+    "kind": "company",
+    "registry_id": "XA-R-104959",
+    "endpoint": "XA:XA-R-104959",
+    "contact": {
+     "name": "Chartering desk",
+     "email": "chartering@fiumella.example"
+    },
+    "tax_id": "XA007347248",
+    "address": {
+     "StreetName": "Banchina del Fiume",
+     "BuildingNumber": "52",
+     "CityName": "Ferrano",
+     "PostalZone": "4170"
+    },
+    "account": {
+     "bank": "23-xa",
+     "number": "XA94CREV0000733103"
+    }
+   }
+  },
+  {
+   "id": "18-xa",
+   "n": "18",
+   "name": "Rail Hub / Intermodal Terminal",
+   "cat": "logistics",
+   "c": "XA",
+   "at": [
+    19,
+    18
+   ],
+   "h": 2,
+   "kind": "terminal",
+   "what": "Transfers containers between rail and road at the border; manages tracks and slots.",
+   "how": "An intermodal terminal is where rail and road meet. UBL status messages and transport reports let it tell carriers and forwarders when a container arrived, was transferred or left, using the same equipment and consignment identifiers on both sides of the transfer.",
+   "size": [
+    2,
+    1
+   ],
+   "on": "rail",
+   "identity": {
+    "name": "Ferrano Intermodal Hub",
+    "kind": "company",
+    "registry_id": "XA-R-105096",
+    "endpoint": "XA:XA-R-105096",
+    "contact": {
+     "name": "Terminal control",
+     "email": "terminal@ferranohub.example"
+    },
+    "tax_id": "XA007356833",
+    "address": {
+     "StreetName": "Via del Terminal",
+     "BuildingNumber": "59",
+     "CityName": "Ferrano",
+     "PostalZone": "4180"
+    }
+   }
+  },
+  {
+   "id": "23-xa",
+   "n": "23",
+   "name": "Seller's Bank",
+   "cat": "finance",
+   "c": "XA",
+   "at": [
+    12,
+    21
+   ],
+   "h": 3,
+   "kind": "bank",
+   "what": "Holds the manufacturer's account and receives the payments from abroad.",
+   "how": "The seller's bank receives payments from many countries. Because UBL invoices carry the payee account and a payment reference, and remittance advices repeat that reference, incoming payments can be matched to the right invoices automatically.",
+   "identity": {
+    "name": "Crevalto Bank",
+    "kind": "bank",
+    "registry_id": "XA-R-105233",
+    "endpoint": "XA:XA-R-105233",
+    "contact": {
+     "name": "Trade services",
+     "email": "trade@crevalto.example"
+    },
+    "tax_id": "XA007366425",
+    "address": {
+     "StreetName": "Piazza della Banca",
+     "BuildingNumber": "8",
+     "CityName": "Ferrano",
+     "PostalZone": "4100"
+    },
+    "bank_code": "CREV"
+   }
+  },
+  {
+   "id": "20-xa",
+   "n": "20",
+   "name": "Chamber of Commerce (XA)",
+   "cat": "government",
+   "c": "XA",
+   "at": [
+    13,
+    22
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Certifies the origin of the exported goods and issues ATA carnets.",
+   "how": "A chamber of commerce certifies that goods come from where the exporter says. UBL certificate-of-origin and goods-item-passport documents carry the application, the endorsements and the goods in a form customs on the other side can read and verify.",
+   "identity": {
+    "name": "Ferrano Chamber of Commerce",
+    "kind": "public",
+    "registry_id": "XA-R-105370",
+    "endpoint": "XA:XA-R-105370",
+    "contact": {
+     "name": "Certificates office",
+     "email": "certificates@camera-ferrano.example"
+    },
+    "tax_id": "XA007376017",
+    "address": {
+     "StreetName": "Piazza del Mercato",
+     "BuildingNumber": "15",
+     "CityName": "Ferrano",
+     "PostalZone": "4110"
+    }
+   }
+  },
+  {
+   "id": "19-xa",
+   "n": "19",
+   "name": "Customs (XA)",
+   "cat": "government",
+   "c": "XA",
+   "at": [
+    20,
+    22
+   ],
+   "h": 1,
+   "kind": "customs",
+   "what": "Export customs at the land border crossing.",
+   "how": "Export customs needs to know what leaves the country, for whom and how. UBL customs declarations reuse the parties, goods and transport details already present in the commercial and transport documents, so the declarant does not have to collect them again.",
+   "on": "road",
+   "identity": {
+    "name": "Customs Administration of Country A",
+    "kind": "public",
+    "registry_id": "XA-R-105507",
+    "endpoint": "XA:XA-R-105507",
+    "contact": {
+     "name": "Border office",
+     "email": "border@customs-xa.example"
+    },
+    "tax_id": "XA007385602",
+    "address": {
+     "StreetName": "Valico di Confine",
+     "BuildingNumber": "22",
+     "CityName": "Ferrano",
+     "PostalZone": "4120"
+    }
+   }
+  },
+  {
+   "id": "31-xa",
+   "n": "31",
+   "name": "Identifier Issuing Agency",
+   "cat": "government",
+   "c": "XA",
+   "at": [
+    11,
+    22
+   ],
+   "h": 2,
+   "kind": "office",
+   "proposed": true,
+   "what": "Issues item and property identifiers used across the world (a fictional numbering organisation).",
+   "how": "Everyone in the world refers to the same products and properties. An identifier issuing agency gives those items and properties stable identifiers, which UBL documents carry in their identification elements, so a catalogue line, an order line and an invoice line point to exactly the same thing.",
+   "identity": {
+    "name": "Codana Identification Agency",
+    "kind": "company",
+    "registry_id": "XA-R-105644",
+    "endpoint": "XA:XA-R-105644",
+    "contact": {
+     "name": "Member services",
+     "email": "member@codana.example"
+    },
+    "tax_id": "XA007395206",
+    "address": {
+     "StreetName": "Via dei Codici",
+     "BuildingNumber": "29",
+     "CityName": "Ferrano",
+     "PostalZone": "4130"
+    }
+   }
+  },
+  {
+   "id": "19-xb",
+   "n": "19",
+   "name": "Customs (XB)",
+   "cat": "government",
+   "c": "XB",
+   "at": [
+    23,
+    22
+   ],
+   "h": 1,
+   "kind": "customs",
+   "what": "Import customs at the land border crossing and at the seaport.",
+   "how": "Import customs checks goods arriving over the land border and through the seaport. UBL import and transit declarations carry the same consignment and goods data as the export declaration on the other side, which makes it possible to compare them.",
+   "on": "road",
+   "identity": {
+    "name": "Customs and Border Service of Country B",
+    "kind": "public",
+    "registry_id": "20410137",
+    "endpoint": "XB:20410137",
+    "contact": {
+     "name": "Border office",
+     "email": "border@customs-xb.example"
+    },
+    "address": {
+     "StreetName": "Border Crossing Road",
+     "BuildingNumber": "36",
+     "CityName": "Marrowdale",
+     "CountrySubentity": "Upland State",
+     "PostalZone": "71213"
+    }
+   }
+  },
+  {
+   "id": "6-xb",
+   "n": "6",
+   "name": "Distributor",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    28,
+    26
+   ],
+   "h": 3,
+   "kind": "warehouse",
+   "what": "Buys finished goods from #5, stocks them in its distribution centre, publishes the catalogue and sells to #26 and overseas to #1.",
+   "how": "The distributor publishes the catalogue its customers order from, buys from manufacturers and sells at home and overseas. UBL links all of it: catalogue items appear unchanged in orders, orders are referenced by despatch advices and invoices, and receipt advices confirm what actually arrived.",
+   "size": [
+    2,
+    2
+   ],
+   "identity": {
+    "name": "Lumeway Distribution",
+    "kind": "company",
+    "registry_id": "20410274",
+    "endpoint": "XB:20410274",
+    "contact": {
+     "name": "Customer service",
+     "email": "customer@lumeway.example"
+    },
+    "tax_id": "US-1230822",
+    "address": {
+     "StreetName": "Distribution Drive",
+     "BuildingNumber": "43",
+     "CityName": "Marrowdale",
+     "CountrySubentity": "Upland State",
+     "PostalZone": "71214"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB18BLUM0001466206"
+    }
+   }
+  },
+  {
+   "id": "26-xb",
+   "n": "26",
+   "name": "Retailer",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    33,
+    30
+   ],
+   "h": 2,
+   "kind": "shop",
+   "what": "Buys from the distributor, sells to consumers; shares forecasts and promotions.",
+   "how": "A retailer buys from the distributor and sells to consumers. Besides orders and invoices, UBL lets it share forecasts, promotions and sales data with its supplier, and issue a structured purchase receipt to the consumer.",
+   "identity": {
+    "name": "Brightmarket Stores",
+    "kind": "company",
+    "registry_id": "20410411",
+    "endpoint": "XB:20410411",
+    "contact": {
+     "name": "Buying office",
+     "email": "buying@brightmarket.example"
+    },
+    "tax_id": "CS-1231233",
+    "address": {
+     "StreetName": "Market Street",
+     "BuildingNumber": "50",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38515"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB79BLUM0001570935"
+    }
+   }
+  },
+  {
+   "id": "c-xb",
+   "n": "C",
+   "name": "Consumer",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    35,
+    31
+   ],
+   "h": 1,
+   "kind": "house",
+   "what": "A private person buying in the shop; receives a purchase receipt.",
+   "how": "A consumer rarely deals with UBL directly, but a structured purchase receipt means the receipt can be stored, searched or used for a warranty claim without a paper slip.",
+   "identity": {
+    "name": "Robin Ashdale",
+    "kind": "person",
+    "person": true,
+    "address": {
+     "StreetName": "Gull Lane",
+     "BuildingNumber": "57",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38516"
+    }
+   }
+  },
+  {
+   "id": "2-xb",
+   "n": "2",
+   "name": "Contracting Authority",
+   "cat": "procurement",
+   "c": "XB",
+   "at": [
+    32,
+    27
+   ],
+   "h": 4,
+   "kind": "townhall",
+   "what": "A public body that buys under procurement law: publishes notices, receives and evaluates tenders.",
+   "how": "A contracting authority has to buy in a transparent and comparable way. UBL tendering documents take it from the prior information notice to the contract award, so tenders arrive in a structured form that can be checked and evaluated consistently.",
+   "identity": {
+    "name": "Lumeport Public Works Department",
+    "kind": "public",
+    "registry_id": "20410548",
+    "endpoint": "XB:20410548",
+    "contact": {
+     "name": "Procurement office",
+     "email": "procurement@publicworks-lumeport.example"
+    },
+    "address": {
+     "StreetName": "Civic Square",
+     "BuildingNumber": "6",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38517"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB07BLUM0001780393"
+    }
+   }
+  },
+  {
+   "id": "27-xb",
+   "n": "27",
+   "name": "Consortium Partner",
+   "cat": "procurement",
+   "c": "XB",
+   "at": [
+    26,
+    30
+   ],
+   "h": 2,
+   "kind": "office",
+   "proposed": true,
+   "what": "Tenders together with the manufacturer as consortium partner or subcontractor.",
+   "how": "A consortium partner tenders together with a main tenderer. UBL tenders and qualification documents name each partner and its qualifications separately, so the authority can see who contributes what.",
+   "identity": {
+    "name": "Saltmere Engineering",
+    "kind": "company",
+    "registry_id": "20410685",
+    "endpoint": "XB:20410685",
+    "contact": {
+     "name": "Bids office",
+     "email": "bids@saltmere.example"
+    },
+    "tax_id": "US-1232055",
+    "address": {
+     "StreetName": "Foundry Road",
+     "BuildingNumber": "13",
+     "CityName": "Marrowdale",
+     "CountrySubentity": "Upland State",
+     "PostalZone": "71218"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB68BLUM0001885122"
+    }
+   }
+  },
+  {
+   "id": "28-xb",
+   "n": "28",
+   "name": "Review Body",
+   "cat": "procurement",
+   "c": "XB",
+   "at": [
+    34,
+    26
+   ],
+   "h": 3,
+   "kind": "office",
+   "proposed": true,
+   "what": "Independent body that handles appeals and mediation in public procurement.",
+   "how": "A review body handles appeals against procurement decisions. The tendering documents name it, with the deadlines for an appeal, so every tenderer knows where and when to go.",
+   "identity": {
+    "name": "Procurement Review Board of Country B",
+    "kind": "public",
+    "registry_id": "20410822",
+    "endpoint": "XB:20410822",
+    "contact": {
+     "name": "Registry",
+     "email": "registry@review-xb.example"
+    },
+    "address": {
+     "StreetName": "Justice Row",
+     "BuildingNumber": "20",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38519"
+    }
+   }
+  },
+  {
+   "id": "21-xb",
+   "n": "21",
+   "name": "Government Information Service",
+   "cat": "government",
+   "c": "XB",
+   "at": [
+    31,
+    25
+   ],
+   "h": 3,
+   "kind": "office",
+   "what": "Publishes procurement notices and keeps the business registry.",
+   "how": "A government information service publishes procurement notices and keeps the business registry. UBL notices reach it in one structured format, and business information documents let it share registry data that tenderers can reuse as evidence.",
+   "identity": {
+    "name": "Country B Information Service",
+    "kind": "public",
+    "registry_id": "20410959",
+    "endpoint": "XB:20410959",
+    "contact": {
+     "name": "Publications and register",
+     "email": "publications@info-xb.example"
+    },
+    "address": {
+     "StreetName": "Civic Square",
+     "BuildingNumber": "27",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38520"
+    }
+   }
+  },
+  {
+   "id": "32-xb",
+   "n": "32",
+   "name": "Digital Agreement Governor",
+   "cat": "government",
+   "c": "XB",
+   "at": [
+    30,
+    29
+   ],
+   "h": 2,
+   "kind": "office",
+   "proposed": true,
+   "what": "Governs the multilateral digital agreement under which the parties exchange UBL documents.",
+   "how": "A digital agreement sets out which documents the participants exchange and under which rules. UBL's digital agreement and digital capability documents describe that framework, and its governor keeps it up to date for all participants.",
+   "identity": {
+    "name": "Lumeport Trade Accord Council",
+    "kind": "public",
+    "registry_id": "20411096",
+    "endpoint": "XB:20411096",
+    "contact": {
+     "name": "Secretariat",
+     "email": "secretariat@tradeaccord.example"
+    },
+    "address": {
+     "StreetName": "Exchange Street",
+     "BuildingNumber": "34",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38521"
+    }
+   }
+  },
+  {
+   "id": "24-xb",
+   "n": "24",
+   "name": "Factor",
+   "cat": "finance",
+   "c": "XB",
+   "at": [
+    31,
+    31
+   ],
+   "h": 3,
+   "kind": "bank",
+   "what": "Buys the distributor's receivables and becomes the payee on its invoices.",
+   "how": "A factor buys the distributor's invoices and collects the payment. UBL invoices can name the factor as payee, with its account, so the buyer pays the right party without a separate letter.",
+   "identity": {
+    "name": "Harbourline Factoring",
+    "kind": "company",
+    "registry_id": "20411233",
+    "endpoint": "XB:20411233",
+    "contact": {
+     "name": "Client accounts",
+     "email": "client@harbourline.example"
+    },
+    "tax_id": "CS-1233699",
+    "address": {
+     "StreetName": "Exchange Street",
+     "BuildingNumber": "41",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38522"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB21BLUM0002304038"
+    }
+   }
+  },
+  {
+   "id": "25-xb",
+   "n": "25",
+   "name": "Bank / Guarantor",
+   "cat": "finance",
+   "c": "XB",
+   "at": [
+    33,
+    32
+   ],
+   "h": 2,
+   "kind": "bank",
+   "what": "Country B's bank: holds the accounts of the distributor, its customers and the public buyer, and issues guarantees, such as the bid bond for a tender.",
+   "how": "A guarantor stands surety, for example for a bid bond in a tender. UBL's guarantee certificate names the guarantee, the tenderer and the contracting authority, so the authority can check it is valid.",
+   "identity": {
+    "name": "Bank of Lumeport",
+    "kind": "bank",
+    "registry_id": "20411370",
+    "endpoint": "XB:20411370",
+    "contact": {
+     "name": "Trade services",
+     "email": "trade@bankoflumeport.example"
+    },
+    "address": {
+     "StreetName": "Exchange Street",
+     "BuildingNumber": "48",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38523"
+    },
+    "bank_code": "BLUM"
+   }
+  },
+  {
+   "id": "29-xb",
+   "n": "29",
+   "name": "Insurer",
+   "cat": "finance",
+   "c": "XB",
+   "at": [
+    34,
+    29
+   ],
+   "h": 3,
+   "kind": "bank",
+   "proposed": true,
+   "what": "Insures the cargo on its way overseas.",
+   "how": "An insurer covers the cargo while it travels. UBL transport documents can carry the insurance policy with the insurer, the policy holder and the insured value, so every party in the transport chain knows the goods are covered.",
+   "identity": {
+    "name": "Wavesure Cargo Insurance",
+    "kind": "company",
+    "registry_id": "20411507",
+    "endpoint": "XB:20411507",
+    "contact": {
+     "name": "Cargo claims",
+     "email": "cargo@wavesure.example"
+    },
+    "tax_id": "CS-1234521",
+    "address": {
+     "StreetName": "Beacon Avenue",
+     "BuildingNumber": "55",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38524"
+    }
+   }
+  },
+  {
+   "id": "10-xb",
+   "n": "10",
+   "name": "Freight Forwarder",
+   "cat": "logistics",
+   "c": "XB",
+   "at": [
+    36,
+    25
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Books the transport, consolidates shipments and prepares the export documents; also arranges cargo insurance.",
+   "how": "A freight forwarder organises transport for others. It uses UBL forwarding instructions, packing lists and manifests to combine shipments, book carriers and arrange insurance, keeping one consignment reference across all of them.",
+   "identity": {
+    "name": "Bayforth Forwarding",
+    "kind": "company",
+    "registry_id": "20411644",
+    "endpoint": "XB:20411644",
+    "contact": {
+     "name": "Export desk",
+     "email": "export@bayforth.example"
+    },
+    "tax_id": "CS-1234932",
+    "address": {
+     "StreetName": "Dockside Way",
+     "BuildingNumber": "4",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38525"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB10BLUM0002618225"
+    }
+   }
+  },
+  {
+   "id": "16-xb",
+   "n": "16",
+   "name": "Seaport (XB)",
+   "cat": "logistics",
+   "c": "XB",
+   "at": [
+    39,
+    22
+   ],
+   "h": 2,
+   "kind": "port",
+   "what": "Port of loading: berths, container yard and vessel traffic.",
+   "how": "The seaport loads the ship. UBL transport reports and status messages tell the port which containers are coming, and tell carriers and authorities what was loaded, on which vessel and when.",
+   "size": [
+    1,
+    2
+   ],
+   "water": [
+    1,
+    0
+   ],
+   "identity": {
+    "name": "Port of Lumeport",
+    "kind": "public",
+    "registry_id": "20411781",
+    "endpoint": "XB:20411781",
+    "contact": {
+     "name": "Port control",
+     "email": "port@port-lumeport.example"
+    },
+    "address": {
+     "StreetName": "Harbour Road",
+     "BuildingNumber": "11",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38526"
+    }
+   }
+  },
+  {
+   "id": "11-xb",
+   "n": "11",
+   "name": "Ocean Carrier",
+   "cat": "logistics",
+   "c": "XB",
+   "at": [
+    36,
+    21
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Sails the container ship to the island and issues the negotiable bill of lading.",
+   "how": "The ocean carrier issues the bill of lading, the document that represents the goods at sea. With UBL that document, the vessel reports and the status updates share the same consignment and container references as the forwarder's booking.",
+   "identity": {
+    "name": "Tidewell Ocean Lines",
+    "kind": "company",
+    "registry_id": "20411918",
+    "endpoint": "XB:20411918",
+    "contact": {
+     "name": "Bookings",
+     "email": "bookings@tidewell.example"
+    },
+    "tax_id": "CS-1235754",
+    "address": {
+     "StreetName": "Harbour Road",
+     "BuildingNumber": "18",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38527"
+    }
+   }
+  },
+  {
+   "id": "17-xb",
+   "n": "17",
+   "name": "Airport (XB)",
+   "cat": "logistics",
+   "c": "XB",
+   "at": [
+    33,
+    19
+   ],
+   "h": 1,
+   "kind": "airport",
+   "what": "Air cargo terminal for urgent shipments overseas.",
+   "how": "The airport handles urgent cargo. UBL status messages let it report acceptance, loading and departure, with the air waybill reference the carrier and forwarder use.",
+   "size": [
+    3,
+    2
+   ],
+   "identity": {
+    "name": "Lumeport Airport Cargo Terminal",
+    "kind": "company",
+    "registry_id": "20412055",
+    "endpoint": "XB:20412055",
+    "contact": {
+     "name": "Cargo acceptance",
+     "email": "cargo@lumeport-cargo.example"
+    },
+    "tax_id": "CS-1236165",
+    "address": {
+     "StreetName": "Airport Road",
+     "BuildingNumber": "25",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38528"
+    }
+   }
+  },
+  {
+   "id": "16-xc",
+   "n": "16",
+   "name": "Seaport (XC)",
+   "cat": "logistics",
+   "c": "XC",
+   "at": [
+    46,
+    22
+   ],
+   "h": 2,
+   "kind": "port",
+   "what": "Port of discharge on the island.",
+   "how": "The island's seaport discharges the ship. It receives the same UBL transport report the loading port sent, so it can plan berths and inform customs before the vessel arrives.",
+   "size": [
+    1,
+    2
+   ],
+   "water": [
+    -1,
+    0
+   ],
+   "identity": {
+    "name": "Port of Selanu",
+    "kind": "public",
+    "registry_id": "IC41037",
+    "endpoint": "XC:IC41037",
+    "contact": {
+     "name": "Port control",
+     "email": "port@port-selanu.example"
+    },
+    "address": {
+     "StreetName": "Wharf Road",
+     "BuildingNumber": "32",
+     "CityName": "Selanu"
+    }
+   }
+  },
+  {
+   "id": "17-xc",
+   "n": "17",
+   "name": "Airport (XC)",
+   "cat": "logistics",
+   "c": "XC",
+   "at": [
+    52,
+    15
+   ],
+   "h": 1,
+   "kind": "airport",
+   "what": "The island's airport, where the air cargo arrives.",
+   "how": "The island's airport receives the air cargo and reports its arrival to the carrier and the consignee in UBL status messages.",
+   "size": [
+    3,
+    2
+   ],
+   "identity": {
+    "name": "Selanu Airport Cargo",
+    "kind": "company",
+    "registry_id": "IC41174",
+    "endpoint": "XC:IC41174",
+    "contact": {
+     "name": "Import desk",
+     "email": "import@selanu-cargo.example"
+    },
+    "address": {
+     "StreetName": "Airfield Road",
+     "BuildingNumber": "39",
+     "CityName": "Selanu"
+    }
+   }
+  },
+  {
+   "id": "12-xc",
+   "n": "12",
+   "name": "Air Carrier",
+   "cat": "logistics",
+   "c": "XC",
+   "at": [
+    54,
+    17
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "The island's airline; flies urgent cargo and uses road feeder services on the mainland.",
+   "how": "The air carrier flies urgent shipments and uses road feeder services on the mainland. UBL waybills can name the road carrier as substitute carrier, so the whole route, by truck and by plane, stays under one transport document.",
+   "identity": {
+    "name": "Kelaro Air Cargo",
+    "kind": "company",
+    "registry_id": "IC41311",
+    "endpoint": "XC:IC41311",
+    "contact": {
+     "name": "Cargo sales",
+     "email": "cargo@kelaro.example"
+    },
+    "address": {
+     "StreetName": "Airfield Road",
+     "BuildingNumber": "46",
+     "CityName": "Selanu"
+    }
+   }
+  },
+  {
+   "id": "19-xc",
+   "n": "19",
+   "name": "Customs (XC)",
+   "cat": "government",
+   "c": "XC",
+   "at": [
+    47,
+    24
+   ],
+   "h": 1,
+   "kind": "customs",
+   "what": "Import customs on the island.",
+   "how": "Import customs on the island receives a declaration that reuses the data of the export side and the transport documents, which speeds up clearance at the port.",
+   "on": "road",
+   "identity": {
+    "name": "Island Customs Service",
+    "kind": "public",
+    "registry_id": "IC41448",
+    "endpoint": "XC:IC41448",
+    "contact": {
+     "name": "Import office",
+     "email": "import@customs-xc.example"
+    },
+    "address": {
+     "StreetName": "Wharf Road",
+     "BuildingNumber": "53",
+     "CityName": "Selanu"
+    }
+   }
+  },
+  {
+   "id": "3-xc",
+   "n": "3",
+   "name": "Customs Declarant / Broker",
+   "cat": "logistics",
+   "c": "XC",
+   "at": [
+    49,
+    21
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Licensed agent that files the import declaration for the buyer; also acts as tax representative.",
+   "how": "A customs declarant files declarations for importers and can act as their tax representative. UBL gives it the commercial, transport and customs data in one vocabulary, so it can assemble the declaration from documents it already receives.",
+   "identity": {
+    "name": "Tevaro Customs Brokers",
+    "kind": "company",
+    "registry_id": "IC41585",
+    "endpoint": "XC:IC41585",
+    "contact": {
+     "name": "Declarations",
+     "email": "declarations@tevaro.example"
+    },
+    "address": {
+     "StreetName": "Wharf Road",
+     "BuildingNumber": "60",
+     "CityName": "Selanu"
+    },
+    "account": {
+     "bank": "22-xc",
+     "number": "XC15BSEL0003456057"
+    }
+   }
+  },
+  {
+   "id": "9-xc",
+   "n": "9",
+   "name": "Buyer's Warehouse (3PL)",
+   "cat": "commerce",
+   "c": "XC",
+   "at": [
+    50,
+    26
+   ],
+   "h": 2,
+   "kind": "warehouse",
+   "what": "Receives the goods for the buyer and confirms what arrived.",
+   "how": "The buyer's warehouse receives the goods. Its UBL receipt advice confirms what arrived, per line and per package, which lets the buyer approve the invoice for exactly what was delivered.",
+   "size": [
+    2,
+    1
+   ],
+   "identity": {
+    "name": "Nalevi Warehousing",
+    "kind": "company",
+    "registry_id": "IC41722",
+    "endpoint": "XC:IC41722",
+    "contact": {
+     "name": "Goods inwards",
+     "email": "goods@nalevi.example"
+    },
+    "address": {
+     "StreetName": "Lagoon Road",
+     "BuildingNumber": "9",
+     "CityName": "Selanu"
+    },
+    "account": {
+     "bank": "22-xc",
+     "number": "XC76BSEL0003560786"
+    }
+   }
+  },
+  {
+   "id": "1-xc",
+   "n": "1",
+   "name": "Commercial Buyer",
+   "cat": "commerce",
+   "c": "XC",
+   "at": [
+    53,
+    25
+   ],
+   "h": 3,
+   "kind": "office",
+   "what": "Needs the goods: orders from the distributor overseas and pays the invoice.",
+   "how": "The commercial buyer orders overseas and pays across borders. UBL lets it order from the distributor's catalogue, follow the goods through despatch and transport, match the invoice to the order and the receipt, and send a remittance advice with its payment.",
+   "identity": {
+    "name": "Velumi Trading",
+    "kind": "company",
+    "registry_id": "IC41859",
+    "endpoint": "XC:IC41859",
+    "contact": {
+     "name": "Purchasing",
+     "email": "purchasing@velumi.example"
+    },
+    "address": {
+     "StreetName": "Reef Street",
+     "BuildingNumber": "16",
+     "CityName": "Selanu"
+    },
+    "account": {
+     "bank": "22-xc",
+     "number": "XC40BSEL0003665515"
+    }
+   }
+  },
+  {
+   "id": "22-xc",
+   "n": "22",
+   "name": "Buyer's Bank",
+   "cat": "finance",
+   "c": "XC",
+   "at": [
+    55,
+    27
+   ],
+   "h": 3,
+   "kind": "bank",
+   "what": "Holds the buyer's account and sends the payment abroad.",
+   "how": "The buyer's bank sends the payment abroad. The payment reference and payee account come straight from the UBL invoice, so the payment arrives with the information the seller's bank needs to match it.",
+   "identity": {
+    "name": "Bank of Selanu",
+    "kind": "bank",
+    "registry_id": "IC41996",
+    "endpoint": "XC:IC41996",
+    "contact": {
+     "name": "Payments",
+     "email": "payments@bankofselanu.example"
+    },
+    "address": {
+     "StreetName": "Reef Street",
+     "BuildingNumber": "23",
+     "CityName": "Selanu"
+    },
+    "bank_code": "BSEL"
+   }
+  },
+  {
+   "id": "20-xc",
+   "n": "20",
+   "name": "Chamber of Commerce (XC)",
+   "cat": "government",
+   "c": "XC",
+   "at": [
+    54,
+    22
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Guarantees ATA carnets on the import side.",
+   "how": "The chamber of commerce on the island guarantees goods-item passports for goods that enter temporarily, so customs can accept them without duties.",
+   "identity": {
+    "name": "Selanu Chamber of Commerce",
+    "kind": "public",
+    "registry_id": "IC42133",
+    "endpoint": "XC:IC42133",
+    "contact": {
+     "name": "Carnet office",
+     "email": "carnet@chamber-selanu.example"
+    },
+    "address": {
+     "StreetName": "Reef Street",
+     "BuildingNumber": "30",
+     "CityName": "Selanu"
+    }
+   }
+  },
+  {
+   "id": "30-xc",
+   "n": "30",
+   "name": "Maritime Administration",
+   "cat": "government",
+   "c": "XC",
+   "at": [
+    56,
+    24
+   ],
+   "h": 2,
+   "kind": "office",
+   "proposed": true,
+   "what": "The island's flag state administration; issues ship security certificates.",
+   "how": "The island's maritime administration issues ship security certificates. UBL transport reports to the port carry the certificate and its issuer, so the port can check them before the ship arrives.",
+   "identity": {
+    "name": "Maritime Administration of Country C",
+    "kind": "public",
+    "registry_id": "IC42270",
+    "endpoint": "XC:IC42270",
+    "contact": {
+     "name": "Ship registry",
+     "email": "ship@maritime-xc.example"
+    },
+    "address": {
+     "StreetName": "Wharf Road",
+     "BuildingNumber": "37",
+     "CityName": "Selanu"
+    }
+   }
+  }
+ ]
+}

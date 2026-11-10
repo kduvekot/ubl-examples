@@ -22,5 +22,45 @@
         <ulink url="https://sipico.github.io/global-test-data/">https://sipico.github.io/global-test-data/</ulink>.
       </para>
     </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">ISO 3166-1:</emphasis> <emphasis>Codes
+        for the representation of names of countries and their
+        subdivisions — Part 1: Country code</emphasis>, including the
+        user-assigned codes AA, QM–QZ, XA–XZ and ZZ,
+        <ulink url="https://www.iso.org/iso-3166-country-codes.html">https://www.iso.org/iso-3166-country-codes.html</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">ISO 4217:</emphasis> <emphasis>Codes for
+        the representation of currencies</emphasis>; current list
+        published by the maintenance agency,
+        <ulink url="https://www.six-group.com/en/products-services/financial-information/data-standards.html">https://www.six-group.com/en/products-services/financial-information/data-standards.html</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">UN/EDIFACT 5153:</emphasis>
+        <emphasis>Duty or tax or fee type name code</emphasis>,
+        <ulink url="https://unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred5153.htm">https://unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred5153.htm</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">RFC 2606:</emphasis> <emphasis>Reserved
+        Top Level DNS Names</emphasis> (the <literal>.example</literal>
+        domain),
+        <ulink url="https://www.rfc-editor.org/rfc/rfc2606">https://www.rfc-editor.org/rfc/rfc2606</ulink>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">ISO 13616:</emphasis>
+        <emphasis>Financial services — International bank account number
+        (IBAN)</emphasis>, whose structure and check digits the world's
+        account numbers follow.
+      </para>
+    </listitem>
   </itemizedlist>
 </section>

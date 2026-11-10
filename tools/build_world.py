@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the UBL world pages from world/world.json.
+"""Build the UBL world pages from the world layers (tools/world_data.py).
 
   * <out>/world.html          the map (site/world.html with the data filled in)
   * <md-dir>/world-<id>.md    one Markdown page per party; tools/build_site.sh
@@ -13,7 +13,9 @@ import sys
 
 out, mddir = sys.argv[1], sys.argv[2]
 root = os.path.join(os.path.dirname(__file__), "..")
-world = json.load(open(os.path.join(root, "world", "world.json"), encoding="utf-8"))
+sys.path.insert(0, os.path.dirname(__file__))
+import world_data  # noqa: E402
+world = world_data.load()
 parties = {p["id"]: p for p in world["parties"]}
 
 # The tile model: built and checked by tools/world_model.py (the build stops on problems)
@@ -36,6 +38,7 @@ for p in world["parties"]:
     p["sends"] = uniq(d["doc"] for d in v["sends"])
     p["receives"] = uniq(d["doc"] for d in v["receives"])
     p["roles"] = ", ".join(v["elements"])
+    p["label"] = p["identity"]["name"]
 
 # The map: fill in the data
 page = open(os.path.join(root, "site", "world.html"), encoding="utf-8").read()
@@ -49,7 +52,42 @@ CATEGORY = {"commerce": "Commerce", "logistics": "Logistics", "government": "Gov
             "finance": "Finance", "procurement": "Public procurement"}
 
 def label(p):
-    return f"#{p['n']} {p['name']}"
+    return p["identity"]["name"]
+
+def address_lines(p):
+    """The postal address in the format of the party's country (world/countries.json)."""
+    a = p["identity"]["address"]
+    fmt = world["countries"][p["c"]]["address"]["lines"]
+    out = []
+    for line in fmt:
+        words = [a.get(k, "") for k in line.split()]
+        out.append(" ".join(w for w in words if w))
+    return out + [world["countries"][p["c"]]["name"]]
+
+def identity(p):
+    idn, c = p["identity"], world["countries"][p["c"]]
+    rows = [("Name", idn["name"])]
+    if idn.get("registry_id"):
+        rows.append(("Registry number", f"`{idn['registry_id']}` ({c['registry']['name']})"))
+    if idn.get("tax_id"):
+        scheme = c["tax"]["schemes"][0]
+        rows.append(("Tax number", f"`{idn['tax_id']}` ({scheme['name']}, `{scheme['id']}`)"))
+    rows.append(("Address", "<br>".join(address_lines(p))))
+    if idn.get("endpoint"):
+        rows.append(("Electronic address", f"`{idn['endpoint']}`"))
+    if idn.get("contact"):
+        rows.append(("Contact", f"{idn['contact']['name']}, `{idn['contact']['email']}`"))
+    if idn.get("account"):
+        acc = idn["account"]
+        rows.append(("Account", f"`{acc['number']}` at {link(acc['bank'])}"))
+    if idn.get("bank_code"):
+        rows.append(("Bank code", f"`{idn['bank_code']}`"))
+    held = [q for q in world["parties"] if q.get("identity", {}).get("account", {}).get("bank") == p["id"]]
+    if held:
+        rows.append(("Holds the accounts of", ", ".join(link(q["id"]) for q in held)))
+    cur = c["currency"]
+    rows.append((f"In {c['name']}", f"Currency: {cur['name']} (`{cur['code']}`). Taxes: {c['tax']['summary']}"))
+    return ["## Identity", "", "| | |", "|---|---|"] + [f"| {k} | {v} |" for k, v in rows] + [""]
 
 def link(pid):
     return f"[{label(parties[pid])}](world-{pid}.html)"
@@ -113,10 +151,10 @@ for p in world["parties"]:
     c = world["countries"][p["c"]]
     v = view[p["id"]]
     lines = [f"# {label(p)}", ""]
-    meta = f"*{c['name']} ({p['c']}) · {CATEGORY[p['cat']]}*"
+    meta = f"*#{p['n']} {p['name']} · {c['name']} ({p['c']}) · {CATEGORY[p['cat']]}*"
     if p.get("proposed"):
         meta += " · *proposed addition to the 26+C set*"
-    lines += [meta, "", p["what"], "", "## How UBL helps", "", p["how"], ""]
+    lines += [meta, "", p["what"], ""] + identity(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
     lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
               f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]
