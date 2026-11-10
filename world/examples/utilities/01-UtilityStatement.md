@@ -77,13 +77,13 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Via della Centrale**  
+- `PostalAddress/StreetName` = **Corso della Repubblica**  
   Street of the postal address. identity of Ferrano Energy (world/parties.json).
-- `PostalAddress/BuildingNumber` = **44**  
+- `PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
-- `PostalAddress/CityName` = **Serravona**  
+- `PostalAddress/CityName` = **Ferrano**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Energy (world/parties.json).
-- `PostalAddress/PostalZone` = **4130**  
+- `PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Energy (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
   The province, part of an address in Urvania. identity of Ferrano Energy (world/parties.json).
@@ -123,7 +123,7 @@ Inside `SenderParty`:
   The share capital, in ferra; identity of Ferrano Energy (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Serravona**  
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
   The country of registration.
@@ -595,10 +595,10 @@ Inside `SubscriberConsumption`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via della Centrale</cbc:StreetName>
-      <cbc:BuildingNumber>44</cbc:BuildingNumber>
-      <cbc:CityName>Serravona</cbc:CityName>
-      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+      <cbc:BuildingNumber>9</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
@@ -631,7 +631,7 @@ Inside `SubscriberConsumption`:
       <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode>XU</cbc:IdentificationCode>
         </cac:Country>

@@ -362,6 +362,27 @@
      "why": "The 3PL trucks them to the telecom company."
     }
    ]
+  },
+  {
+   "id": "energy",
+   "title": "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)",
+   "text": "Urvania's energy market is unbundled, as the EU's is: a power station produces electricity, a grid operator runs the networks and reads the meters, and a retail company buys the energy and bills the customers. The gas comes from an offshore field off Bayvarra's north coast, by pipeline across the border. The documents show the grid operator's metering with the correction a gas meter needs, the wholesale and network invoices, the customs declarations of a pipeline, and a reminder across currencies when the power station pays late.",
+   "legs": [
+    {
+     "mode": "pipeline",
+     "from": "42-xb",
+     "to": "43-xu",
+     "carrier": "42-xb",
+     "why": "The gas producer's pipeline delivers the gas from its plant across the border to the power station."
+    },
+    {
+     "mode": "pipeline",
+     "from": "42-xb",
+     "to": "44-xu",
+     "carrier": "42-xb",
+     "why": "A branch of the pipeline feeds the grid operator's city gate station, for the retail company's customers."
+    }
+   ]
   }
  ],
  "documents": [
@@ -3229,6 +3250,119 @@
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "UtilityStatement",
+   "from": "44-xu",
+   "to": "33-xu",
+   "why": "The grid operator reads the factory's gas meter and sends the retail company the consumption: the volume at line pressure, converted to standard cubic metres and to energy.",
+   "parties": {
+    "SenderParty": "44-xu",
+    "ReceiverParty": "33-xu",
+    "CustomerParty": "33-xu",
+    "SubscriberParty": "5-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "Invoice",
+   "from": "44-xu",
+   "to": "33-xu",
+   "why": "The grid operator charges the retail company for the use of the networks at the factory's and the warehouse's connections.",
+   "parties": {
+    "AccountingSupplierParty": "44-xu",
+    "AccountingCustomerParty": "33-xu",
+    "SellerSupplierParty": "44-xu",
+    "BuyerCustomerParty": "33-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "Invoice",
+   "from": "43-xu",
+   "to": "33-xu",
+   "why": "The power station invoices the electricity it fed in for the retail company in March.",
+   "parties": {
+    "AccountingSupplierParty": "43-xu",
+    "AccountingCustomerParty": "33-xu",
+    "SellerSupplierParty": "43-xu",
+    "BuyerCustomerParty": "33-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "ExportCustomsDeclaration",
+   "from": "42-xb",
+   "to": "19-xb",
+   "why": "The gas producer declares March's gas leaving Bayvarra by pipeline, in one monthly declaration.",
+   "parties": {
+    "ExporterParty": "42-xb",
+    "CustomsDeclaration/CustomsParty": "19-xb",
+    "CustomsDeclaration/ConsigneeParty": "43-xu",
+    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "42-xb"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "ImportCustomsDeclaration",
+   "from": "43-xu",
+   "to": "19-xu",
+   "why": "The power station declares the gas it received in March into Urvania.",
+   "parties": {
+    "ImporterParty": "43-xu",
+    "ConsignorParty": "42-xb",
+    "ConsigneeParty": "43-xu",
+    "CustomsParty": "19-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "Invoice",
+   "from": "42-xb",
+   "to": "43-xu",
+   "why": "The gas producer invoices March's gas to the power station, in ferra as the supply contract says: an export, so no Bayvarran sales tax.",
+   "parties": {
+    "AccountingSupplierParty": "42-xb",
+    "AccountingCustomerParty": "43-xu",
+    "SellerSupplierParty": "42-xb",
+    "BuyerCustomerParty": "43-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "Invoice",
+   "from": "42-xb",
+   "to": "33-xu",
+   "why": "The gas producer invoices the gas it fed into the grid for the retail company's customers.",
+   "parties": {
+    "AccountingSupplierParty": "42-xb",
+    "AccountingCustomerParty": "33-xu",
+    "SellerSupplierParty": "42-xb",
+    "BuyerCustomerParty": "33-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "Reminder",
+   "from": "42-xb",
+   "to": "43-xu",
+   "why": "The power station has not paid by the due date. The gas producer reminds it in lume, its own currency: the reminder shows the ferra invoice at the exchange rate and adds Bayvarra's surcharge for the month late.",
+   "parties": {
+    "AccountingSupplierParty": "42-xb",
+    "AccountingCustomerParty": "43-xu"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "RemittanceAdvice",
+   "from": "43-xu",
+   "to": "42-xb",
+   "why": "The power station pays the invoice and the surcharge, in ferra.",
+   "parties": {
+    "AccountingCustomerParty": "43-xu",
+    "AccountingSupplierParty": "42-xb"
    }
   }
  ]

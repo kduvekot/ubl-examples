@@ -1,0 +1,824 @@
+# Invoice: Kelpstone Gas to Montebrio Power
+
+*Example 6 of the flow "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+
+The gas producer invoices March's gas to the power station, in ferra as the supply contract says: an export, so no Bayvarran sales tax.
+
+[The XML file](06-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+
+## Values and their reasons
+
+### The document itself
+
+- `UBLVersionID` = **2.5**  
+  The documents of the world use UBL 2.5.
+- `CustomizationID` = **urn:ubl-examples:world**  
+  The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:energy**  
+  The business process the document belongs to: the flow "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)".
+- `ProfileExecutionID` = **ENERGY-2026-01**  
+  This run of the process: the same in every document of the flow.
+- `ID` = **KG-INV-26-0157**  
+  The seller's invoice number.
+- `UUID` = **d1b42d64-46c6-52ed-9dc0-4b66beba491f**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `IssueDate` = **2026-04-03**  
+  The month's gas.
+- `IssueTime` = **11:25:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `DueDate` = **2026-05-03**  
+  30 days after the issue date, the agreed payment term.
+- `InvoiceTypeCode` = **380**  
+  UN/EDIFACT 1001 code 380: commercial invoice.
+- `Note` = **Priced in ferra as the supply contract says: the buyer's own currency.**  
+  Why ferra.
+- `DocumentCurrencyCode` = **XUF**  
+  The ferra, the buyer's currency, agreed in the contract; it has no minor unit.
+- `PaymentCurrencyCode` = **XUF**  
+  Payment is asked in the invoice currency, also from abroad.
+- `LineCountNumeric` = **1**  
+  The number of invoice lines, as a check on the transfer.
+- `DefaultLanguageCode` = **en**  
+  The language the texts of the invoice are in: the seller's country's language.
+
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2026-03-01**  
+  The month billed: March.
+- `EndDate` = **2026-03-31**  
+  Its last day.
+- `DescriptionCode` = **Month**  
+  A monthly bill.
+- `Description` = **March 2026**  
+  The period in words.
+
+### Accounting Supplier Party
+
+Inside `AccountingSupplierParty`:
+
+- `Party/WebsiteURI` = **https://www.kelpstone.example**  
+  The party's website, under the reserved .example domain (RFC 2606); identity of Kelpstone Gas (world/parties.json).
+- `Party/IndustryClassificationCode` = **0620** (listID `ISIC Rev.4`)  
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **XB-TR-412877** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
+  A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyName/Name` = **Kelpstone Gas**  
+  The trading name; identity of Kelpstone Gas (world/parties.json).
+- `Party/Language/ID` = **en**  
+  English, the language the party does business in.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **EN**  
+  The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
+- `Party/PostalAddress/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+- `Party/PostalAddress/StreetName` = **Shoreline Road**  
+  Street of the postal address. identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/BuildingNumber` = **2**  
+  Building number of the postal address. identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/CityName` = **Gullhaven**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **38540**  
+  Postal code in Bayvarra's format (5 digits). identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/CountrySubentity` = **Coastal State**  
+  The state, part of an address in federal Bayvarra. identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/CountrySubentityCode` = **CO**  
+  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Party/PostalAddress/Country/IdentificationCode` = **XB**  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+- `Party/PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.**  
+  Where the party actually operates, apart from its postal address.
+- `Party/PhysicalLocation/InformationURI` = **https://www.kelpstone.example**  
+  Where to find more about the place.
+- `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **WGS84**  
+  The World Geodetic System 1984, as used by satellite navigation.
+- `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **52.80** (unitCode `D61`)  
+  The minutes of the latitude.
+- `Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South**  
+  South of the equator.
+- `Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **18.00** (unitCode `D61`)  
+  The minutes of the longitude.
+- `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West**  
+  West of the Greenwich meridian.
+- `Party/PartyTaxScheme/RegistrationName` = **Kelpstone Gas Ltd**  
+  The name under which the party is registered for state sales tax; identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **CO-1238631**  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyTaxScheme/TaxLevelCode` = **State**  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
+  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
+  The state whose sales tax the party is registered for.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
+  The country whose tax this is.
+- `Party/PartyLegalEntity/RegistrationName` = **Kelpstone Gas Ltd**  
+  The name under which the party is registered, with its legal form; identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20412877**  
+  Number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyLegalEntity/RegistrationDate` = **2011-04-01**  
+  The day the company was entered in the register; identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
+  The legal form, as abbreviated in Bayvarra (world/countries.json).
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
+  The legal form, in words.
+- `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
+  The size class of the company (micro, small, medium or large); identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CorporateStockAmount` = **120000000** (currencyID `XBL`)  
+  The share capital, in lume; identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
+  All shares are paid up.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Gullhaven**  
+  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
+  The country of registration.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
+  The identifier of the register in the world (world/countries.json).
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
+  The register the company is entered in.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
+  A register of businesses, not a register of charities or associations.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
+  The register covers the whole country.
+- `Party/Contact/Name` = **Gas sales**  
+  The desk that handles this document; identity of Kelpstone Gas (world/parties.json).
+- `Party/Contact/JobTitle` = **Gas sales manager**  
+  The job of the person who answers at the desk; identity of Kelpstone Gas (world/parties.json).
+- `Party/Contact/Department` = **Commercial**  
+  The department the desk belongs to; identity of Kelpstone Gas (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 3852 2877**  
+  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Kelpstone Gas (world/parties.json).
+- `Party/Contact/ElectronicMail` = **gas@kelpstone.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelpstone Gas (world/parties.json).
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
+  When the desk can be reached; identity of Kelpstone Gas (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412877** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Kelpstone Gas (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Accounting Customer Party
+
+Inside `AccountingCustomerParty`:
+
+- `Party/WebsiteURI` = **https://www.montebrio.example**  
+  The party's website, under the reserved .example domain (RFC 2606); identity of Montebrio Power (world/parties.json).
+- `Party/IndustryClassificationCode` = **3510** (listID `ISIC Rev.4`)  
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Montebrio Power (world/parties.json).
+- `Party/PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **XU-TR-105918** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
+  A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Montebrio Power (world/parties.json).
+- `Party/PartyName/Name` = **Montebrio Power**  
+  The trading name; identity of Montebrio Power (world/parties.json).
+- `Party/Language/ID` = **en**  
+  English, the language the party does business in.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **EN**  
+  The language as a code of UBL's language code list (ISO 639).
+- `Party/PostalAddress/AddressTypeCode` = **Business**  
+  The kind of address.
+- `Party/PostalAddress/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+- `Party/PostalAddress/StreetName` = **Via della Centrale**  
+  Street of the postal address. identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/BuildingNumber` = **44**  
+  Building number of the postal address. identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/CityName` = **Serravona**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **4130**  
+  Postal code in Urvania's format (4 digits). identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/TimezoneOffset` = **-1**  
+  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Party/PostalAddress/Country/IdentificationCode` = **XU**  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `Party/PartyTaxScheme/RegistrationName` = **Montebrio Power SUA**  
+  The name under which the party is registered for value added tax; identity of Montebrio Power (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **XU007414377**  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Montebrio Power (world/parties.json).
+- `Party/PartyTaxScheme/TaxLevelCode` = **National**  
+  The level of government that levies the tax: Urvania's value added tax is levied by the country.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF**  
+  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
+  The country whose tax this is.
+- `Party/PartyLegalEntity/RegistrationName` = **Montebrio Power SUA**  
+  The name under which the party is registered, with its legal form; identity of Montebrio Power (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **XU-R-105918**  
+  Number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json).
+- `Party/PartyLegalEntity/RegistrationDate` = **1974-06-01**  
+  The day the company was entered in the register; identity of Montebrio Power (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **SUA**  
+  The legal form, as abbreviated in Urvania (world/countries.json).
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)**  
+  The legal form, in words.
+- `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
+  The size class of the company (micro, small, medium or large); identity of Montebrio Power (world/parties.json).
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
+  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CorporateStockAmount` = **400000000** (currencyID `XUF`)  
+  The share capital, in ferra; identity of Montebrio Power (world/parties.json).
+- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
+  All shares are paid up.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona**  
+  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
+  The country of registration.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
+  The identifier of the register in the world (world/countries.json).
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
+  The register the company is entered in.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
+  A register of businesses, not a register of charities or associations.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
+  The register covers the whole country.
+- `Party/Contact/Name` = **Energy trading**  
+  The desk that handles this document; identity of Montebrio Power (world/parties.json).
+- `Party/Contact/JobTitle` = **Energy trader**  
+  The job of the person who answers at the desk; identity of Montebrio Power (world/parties.json).
+- `Party/Contact/Department` = **Trading**  
+  The department the desk belongs to; identity of Montebrio Power (world/parties.json).
+- `Party/Contact/Telephone` = **+999 1 4130 5918**  
+  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Montebrio Power (world/parties.json).
+- `Party/Contact/ElectronicMail` = **trading@montebrio.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Montebrio Power (world/parties.json).
+- `Party/Contact/Note` = **Weekdays 07:00–19:00**  
+  When the desk can be reached; identity of Montebrio Power (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105918** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and registry number; identity of Montebrio Power (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Buyer Customer Party
+
+Inside `BuyerCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Party/PartyName/Name` = **Montebrio Power**  
+  The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+
+### Seller Supplier Party
+
+Inside `SellerSupplierParty`:
+
+- `Party/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Party/PartyName/Name` = **Kelpstone Gas**  
+  The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The first, and only, way to pay.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-05-03**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF41KGINV260157**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF41KGINV260157**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
+- `PayeeFinancialAccount/ID` = **XB30BLUM0004817534** (schemeID `urn:ubl-examples:world:account`)  
+  The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PayeeFinancialAccount/Name` = **Kelpstone Gas Ltd**  
+  The account holder, as the bank knows it.
+- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
+  A current account, for payments in and out.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
+  The account number has the structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XBL**  
+  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/PaymentNote` = **Invoice KG-INV-26-0157**  
+  What the payer is asked to quote with the transfer, so the payment is matched.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
+  The branch that keeps the account.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
+  The branch's name.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUM**  
+  The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  The bank's head office; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Its building number; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  Its town; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
+  The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The branch is at the bank's head office.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
+  Its country.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
+  The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XB-STD**  
+  The standard terms of Bayvarra.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 1.5 % surcharge per month late.**  
+  Bayvarran practice: a surcharge per month of late payment, no discount.
+- `PenaltySurchargePercent` = **1.5**  
+  The surcharge per month of late payment.
+- `PenaltyAmount` = **1987200** (currencyID `XUF`)  
+  The surcharge for the first month late.
+- `PaymentTermsDetailsURI` = **https://www.kelpstone.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-05-03**  
+  The day the amount is due.
+- `PenaltyPeriod/StartDate` = **2026-05-04**  
+  From the day after the due date.
+- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
+  Per month.
+
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0** (currencyID `XUF`)  
+  The sum of the tax of all categories.
+- `TaxSubtotal/TaxableAmount` = **132480000** (currencyID `XUF`)  
+  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **G**  
+  An export from Bayvarra: the state sales tax is not charged (category G).
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+
+### Legal Monetary Total
+
+Inside `LegalMonetaryTotal`:
+
+- `LineExtensionAmount` = **132480000** (currencyID `XUF`)  
+  The sum of the line amounts.
+- `TaxExclusiveAmount` = **132480000** (currencyID `XUF`)  
+  The total without tax: the line amounts, no allowances or charges.
+- `TaxInclusiveAmount` = **132480000** (currencyID `XUF`)  
+  The total without tax plus the tax.
+- `PayableAmount` = **132480000** (currencyID `XUF`)  
+  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+
+### Invoice Line
+
+Inside `InvoiceLine`:
+
+- `ID` = **1**  
+  The line number.
+- `InvoicedQuantity` = **36800** (unitCode `MWH`)  
+  Measured at the border station in March: delivered to the power station.
+- `LineExtensionAmount` = **132480000** (currencyID `XUF`)  
+  36800 × 3600, rounded to the minor unit of the currency.
+- `Item/Description` = **Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.**  
+  The seller's description; item natural-gas of Kelpstone Gas (world/items.json).
+- `Item/Name` = **Natural gas**  
+  The item's short name; item natural-gas of Kelpstone Gas (world/items.json).
+- `Item/SellersItemIdentification/ID` = **KG-NG**  
+  The seller's own item number; item natural-gas of Kelpstone Gas (world/items.json).
+- `Item/StandardItemIdentification/ID` = **772060000015** (schemeID `urn:ubl-examples:world:item`)  
+  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item natural-gas of Kelpstone Gas (world/items.json).
+- `Item/OriginCountry/IdentificationCode` = **XB**  
+  Where the item was produced; item natural-gas of Kelpstone Gas (world/items.json).
+- `Item/CommodityClassification/ItemClassificationCode` = **2711.21** (listID `HS`)  
+  Harmonized System subheading of the World Customs Organization; item natural-gas of Kelpstone Gas (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **G**  
+  An export from Bayvarra: the state sales tax is not charged (category G).
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XB-EXP**  
+  The world's code for the exemption reason (world/countries.json).
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
+  Whether the category applies to goods or services.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `Price/PriceAmount` = **3600** (currencyID `XUF`)  
+  The seller's price of 36.0 XBL, converted to the buyer's currency at the world's reference rate, as the contract provides.
+- `Price/BaseQuantity` = **1** (unitCode `MWH`)  
+  The price is per one unit.
+- `Price/PricingExchangeRate/SourceCurrencyCode` = **XBL**  
+  The currency of the seller's price list.
+- `Price/PricingExchangeRate/SourceCurrencyBaseRate` = **1**  
+  The rate is for one unit of the seller's currency.
+- `Price/PricingExchangeRate/TargetCurrencyCode` = **XUF**  
+  The currency of the order.
+- `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
+  Given in single units of the order's currency.
+- `Price/PricingExchangeRate/ExchangeMarketID` = **World reference rate**  
+  The rate the world's central banks publish (world/countries.json).
+- `Price/PricingExchangeRate/CalculationRate` = **100**  
+  The world's reference rate (world/countries.json).
+- `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply**  
+  The seller's price times the rate gives the order price.
+- `Price/PricingExchangeRate/Date` = **2026-01-02**  
+  The reference rate of the first working day of the year, fixed in the contract.
+
+## The document
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:energy</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>KG-INV-26-0157</cbc:ID>
+  <cbc:UUID>d1b42d64-46c6-52ed-9dc0-4b66beba491f</cbc:UUID>
+  <cbc:IssueDate>2026-04-03</cbc:IssueDate>
+  <cbc:IssueTime>11:25:00</cbc:IssueTime>
+  <cbc:DueDate>2026-05-03</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>Priced in ferra as the supply contract says: the buyer's own currency.</cbc:Note>
+  <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-03-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+    <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+    <cbc:Description>March 2026</cbc:Description>
+  </cac:InvoicePeriod>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.kelpstone.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0620</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412877</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Kelpstone Gas</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Shoreline Road</cbc:StreetName>
+        <cbc:BuildingNumber>2</cbc:BuildingNumber>
+        <cbc:CityName>Gullhaven</cbc:CityName>
+        <cbc:PostalZone>38540</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PhysicalLocation>
+        <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.</cbc:Description>
+        <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
+        <cac:LocationCoordinate>
+          <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+          <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">52.80</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+          <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">18.00</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+        </cac:LocationCoordinate>
+      </cac:PhysicalLocation>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+        <cbc:CompanyID>CO-1238631</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+        <cbc:CompanyID>20412877</cbc:CompanyID>
+        <cbc:RegistrationDate>2011-04-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CorporateStockAmount currencyID="XBL">120000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Gullhaven</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Gas sales</cbc:Name>
+        <cbc:JobTitle>Gas sales manager</cbc:JobTitle>
+        <cbc:Department>Commercial</cbc:Department>
+        <cbc:Telephone>+999 2 3852 2877</cbc:Telephone>
+        <cbc:ElectronicMail>gas@kelpstone.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412877</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.montebrio.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3510</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-105918</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Montebrio Power</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via della Centrale</cbc:StreetName>
+        <cbc:BuildingNumber>44</cbc:BuildingNumber>
+        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Montebrio Power SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU007414377</cbc:CompanyID>
+        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Montebrio Power SUA</cbc:RegistrationName>
+        <cbc:CompanyID>XU-R-105918</cbc:CompanyID>
+        <cbc:RegistrationDate>1974-06-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CorporateStockAmount currencyID="XUF">400000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Serravona</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XU:CR</cbc:ID>
+          <cbc:Name>Commercial register of Urvania</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Energy trading</cbc:Name>
+        <cbc:JobTitle>Energy trader</cbc:JobTitle>
+        <cbc:Department>Trading</cbc:Department>
+        <cbc:Telephone>+999 1 4130 5918</cbc:Telephone>
+        <cbc:ElectronicMail>trading@montebrio.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105918</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Montebrio Power</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Kelpstone Gas</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF41KGINV260157</cbc:InstructionNote>
+    <cbc:PaymentID>RF41KGINV260157</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB30BLUM0004817534</cbc:ID>
+      <cbc:Name>Kelpstone Gas Ltd</cbc:Name>
+      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice KG-INV-26-0157</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>BLUM-001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XUF">1987200</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.kelpstone.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-05-04</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">132480000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XUF">132480000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">132480000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">132480000</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">132480000</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="MWH">36800</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">132480000</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.</cbc:Description>
+      <cbc:Name>Natural gas</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>KG-NG</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:item">772060000015</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:OriginCountry>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="HS">2711.21</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XB-EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">3600</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MWH">1</cbc:BaseQuantity>
+      <cac:PricingExchangeRate>
+        <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
+        <cbc:TargetCurrencyCode>XUF</cbc:TargetCurrencyCode>
+        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
+        <cbc:ExchangeMarketID>World reference rate</cbc:ExchangeMarketID>
+        <cbc:CalculationRate>100</cbc:CalculationRate>
+        <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+        <cbc:Date>2026-01-02</cbc:Date>
+      </cac:PricingExchangeRate>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>
+```

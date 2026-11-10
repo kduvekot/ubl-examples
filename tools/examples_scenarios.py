@@ -2517,7 +2517,12 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
                                                                             "power on its transport cost centre."),
                                    "AccountingCost": V("Warehouse, Castrano Logistics", "In words."),
                                    "Delivery": {"DeliveryLocation": {"Description": V(
-                                       "Castrano Logistics warehouse, Ferrano", "Where the power was used.")}}}}],
+                                       "Castrano Logistics warehouse, Ferrano", "Where the power was used.")}}}},
+                   {"item": "gas", "qty": 61200, "invoice_why": "The gas of the coating ovens in March, as the grid "
+                                                               "operator metered and converted it.",
+                    "line_extra": {**MARCH, "Note": V("1,350 m³ at 4 bar, converted to 61,200 kWh by the grid "
+                                                      "operator's metering report.", "How the quantity is "
+                                                                                     "found.")}}],
          "34-xb:26-xb": [{"item": "water", "qty": 86, "invoice_why": "The shop's metered consumption in March.",
                           "line_extra": MARCH}, levy(86, "shop")],
          "34-xb:c-xb": [{"item": "water", "qty": 14, "invoice_why": "The household's metered consumption in March.",
@@ -2526,7 +2531,8 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
                    {"item": "telecom-data", "qty": 35, "invoice_why": "Mobile data beyond the subscriptions."}]}
 KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
 METERS = {"33-xu": ["FE-C-0047120", ("FE-M-881204", "Factory, main connection"),
-                    ("FE-M-881377", "Warehouse of Castrano Logistics")],
+                    ("FE-M-881377", "Warehouse of Castrano Logistics"), ("FG-G-20417", "Factory, gas of the coating "
+                                                                                       "line")],
           "34-xb:26-xb": ["CSW-C-260118", ("CSW-W-55102", "Shop, Lumeport"), None],
           "34-xb:c-xb": ["CSW-C-311790", ("CSW-W-71844", "Gull Lane 57"), None],
           "35-xl": ["ST-C-1077", ("ST-L-BUS6", "Six business lines"), ("ST-D-0042", "Mobile data pool")]}
@@ -2537,7 +2543,7 @@ def energy_tax(f, out, key):
     energy tax (world/countries.json)."""
     exc = next(x for x in WORLD["countries"]["XU"]["tax"]["schemes"] if x["id"] == "EXC")
     vat = WORLD["countries"]["XU"]["tax"]["schemes"][0]
-    kwh = sum(Decimal(str(r["qty"])) for r in BILLS["33-xu"])
+    kwh = sum(Decimal(str(r["qty"])) for r in BILLS["33-xu"] if r["item"] == "electricity")   # no energy tax on gas
     lines = Decimal(out["LegalMonetaryTotal"]["LineExtensionAmount"].value)
     t1 = min(kwh, Decimal(exc["tiers"][0]["up_to"]))
     tiers = [(t1, Decimal(exc["tiers"][0]["per_unit"]), "The first 50,000 kWh of the month"),
@@ -8341,3 +8347,209 @@ def road_complete(n, doc):
 
 
 SCENARIOS["road"] = _with_enrichment("road", road_complete)
+
+
+# ================================================================ the energy flow: an unbundled market in Urvania
+# Kelpstone Gas produces gas offshore of Bayvarra and pipes it to Montebrio Power, the gas-fired power station, and
+# to the city gate of Ferrano Grid, the grid operator; Ferrano Energy, the retail company, buys electricity from the
+# power station and gas from the producer, pays the grid operator for the networks and bills its customers, among
+# them Valdara's factory, whose coating ovens burn gas. The gas contracts are in ferra, the buyers' currency.
+GAS_TO_POWER, GAS_TO_RETAIL, POWER_MWH = 36800, 2400, 18400
+FACTORY_GAS = {"meter": "FG-G-20417", "m3": Decimal("1350"), "gauge_bar": Decimal("4.0"),
+               "factor": Decimal("4.9477"), "cv": Decimal("9.163"), "kwh": 61200}
+ENERGY = kit.Flow("energy", "2026-04-01", [{"item": "natural-gas", "ordered": GAS_TO_POWER + GAS_TO_RETAIL,
+                                            "why": "March's gas through the border station."}])
+TO_LUME = {"SourceCurrencyCode": V("XUF", "The invoice's currency, ferra."),
+           "TargetCurrencyCode": V("XBL", "The reminder's currency, lume."),
+           "CalculationRate": V("0.01", "100 ferra = 1 lume, the reference rate."),
+           "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume.")}
+
+
+def pipeline_stage(why):
+    return {"ID": V("1", "The only stage."),
+            "TransportModeCode": V("7", "UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline.",
+                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+            "TransportMeans": {"TransportMeansTypeCode": V("Pipeline", why),
+                               "JourneyID": V("KG-P1-2603", "The month's flow through the pipeline.")}}
+
+
+def energy(n, doc):
+    f, d = ENERGY, doc["doc"]
+    if d == "UtilityStatement":
+        g = FACTORY_GAS
+        vn = (g["m3"] * g["factor"]).quantize(Decimal(1))
+        return {"ID": V(f.number("metering", doc["from"], "UtilityStatement"), "The grid operator's metering report."),
+                "IssueDate": V(f.date(1), "Sent on the first working day after the month."),
+                "UtilityStatementTypeCode": V("Gas", "The kind of supply."),
+                "ParentDocumentReference": {"ID": V(f.number("network-invoice", "44-xu", "Invoice"), "The network "
+                                                    "invoice this statement supplements: the metering behind the "
+                                                    "network charge for gas.")},
+                "Note": V("Metered consumption for the retail company's billing; the grid operator owns and reads "
+                          "the meter.", "What the statement is."),
+                "DocumentCurrencyCode": kit.currency_line("XUF", "Urvania's currency"),
+                "SubscriberConsumption": {
+                    "ConsumptionID": V("FG-CP-4120-G1-2603", "The consumption of the factory's gas point in March."),
+                    "SpecificationTypeCode": V("Detailed", "With the volume conversion."),
+                    "Note": V("Gas for the coating ovens of the factory.", "The point."),
+                    "TotalMeteredQuantity": qty(g["m3"], "MTQ", "Cubic metres through the meter at line pressure."),
+                    "UtilityConsumptionPoint": {
+                        "ID": V("FG-CP-4120-G1", "The factory's gas connection."),
+                        "Description": V("Valdara Industries, gas connection of the coating line", "Where."),
+                        "SubscriberID": V("FE-C-0047121", "The factory's gas contract with the retail company."),
+                        "SubscriberType": V("Industrial", "The kind of customer."),
+                        "SubscriberTypeCode": V("IND", "As a code."),
+                        "TotalDeliveredQuantity": qty(g["kwh"], "KWH", "Delivered in March, as energy."),
+                        "Address": address("5-xu"),
+                        "UtilityMeter": {"MeterNumber": V(g["meter"], "The gas meter."),
+                                         "MeterName": V("Rotary gas meter, coating line", "Its name."),
+                                         "MeterConstant": V("1", "Read directly."),
+                                         "MeterConstantCode": V("Direct", "No multiplier."),
+                                         "TotalDeliveredQuantity": qty(g["m3"], "MTQ", "Through the meter."),
+                                         "MeterReading": {
+                                             "ID": V(f"{g['meter']}-2603", "The reading of March."),
+                                             "PreviousMeterReadingDate": V("2026-02-28", "The previous reading."),
+                                             "PreviousMeterQuantity": qty(28410, "MTQ", "The register then."),
+                                             "LatestMeterReadingDate": V("2026-03-31", "This reading."),
+                                             "LatestMeterQuantity": qty(29760, "MTQ", "The register now."),
+                                             "LatestMeterReadingMethod": V("Remote reading", "How it was taken."),
+                                             "LatestMeterReadingMethodCode": V("REMOTE", "As a code."),
+                                             "DeliveredQuantity": qty(g["m3"], "MTQ", "The difference.")}}},
+                    "Consumption": {
+                        "UtilityStatementTypeCode": V("Gas", "The kind of supply."),
+                        "MainPeriod": {"StartDate": V("2026-03-01", "March."), "EndDate": V("2026-03-31", "Its end.")},
+                        "EnergyWaterSupply": {
+                            "ConsumptionReport": {"ID": V("FG-CP-4120-G1-2603", "The report."),
+                                                  "ConsumptionType": V("Monthly consumption", "What it is."),
+                                                  "TotalConsumedQuantity": qty(g["kwh"], "KWH", "Energy in March."),
+                                                  "Period": {"StartDate": V("2026-03-01", "March."),
+                                                             "EndDate": V("2026-03-31", "Its end.")}},
+                            "EnergyWaterConsumptionCorrection": {
+                                "CorrectionType": V("Volume conversion", "The metered volume is converted to "
+                                                                         "standard conditions and to energy."),
+                                "CorrectionTypeCode": V("CONV", "As a code."),
+                                "MeterNumber": V(g["meter"], "The meter."),
+                                "GasPressureQuantity": qty(g["gauge_bar"], "BAR", "The meter runs at 4 bar above "
+                                                                                 "the atmosphere: the gas is "
+                                                                                 "compressed, so the volume is "
+                                                                                 "corrected for the pressure."),
+                                "Description": V(f"{g['m3']} m³ at line pressure × {g['factor']} (pressure) = {vn} "
+                                                 f"m³ at standard conditions, × {g['cv']} kWh/m³ (calorific value "
+                                                 f"of March) = {g['kwh']} kWh.", "The conversion."),
+                                "ConsumptionEnergyQuantity": qty(g["kwh"], "KWH", "The energy, which the retail "
+                                                                                  "company bills.")}},
+                        "LegalMonetaryTotal": {"LineExtensionAmount": amount(0, "XUF", "The statement carries no "
+                                                                                       "amounts: the retail "
+                                                                                       "company prices the energy."),
+                                               "PayableAmount": amount(0, "XUF", "Nothing to pay on it.")}}}}
+    if d == "Invoice" and doc["from"] == "44-xu":
+        return kit.invoice(f, n, doc, 2, 30, "The month's network charges.", {},
+                           [{"item": "network-electricity", "qty": 412800, "invoice_why": "The factory's electricity "
+                                                                                          "connection, March."},
+                            {"item": "network-electricity", "qty": 18600, "invoice_why": "The warehouse's electricity "
+                                                                                         "connection, March."},
+                            {"item": "network-gas", "qty": FACTORY_GAS["kwh"], "invoice_why": "The factory's gas "
+                                                                                              "connection, March."}],
+                           key="network-invoice", extra=MARCH)
+    if d == "Invoice" and doc["from"] == "43-xu":
+        return kit.invoice(f, n, doc, 2, 30, "The month's electricity.", {},
+                           [{"item": "power-wholesale", "qty": POWER_MWH, "invoice_why": "Fed into the grid for the "
+                                                                                         "retail company in March."}],
+                           key="power-invoice", extra=MARCH)
+    if d == "ExportCustomsDeclaration":
+        out = kit.export_declaration(f, n, doc, 1, "The monthly declaration of the gas exported in March.",
+                                     "The value of the gas at the contract price, in lume.")
+        out["CustomsDeclaration"]["Shipment"]["ShipmentStage"] = pipeline_stage("The gas leaves by pipeline.")
+        return out
+    if d == "ImportCustomsDeclaration":
+        out = kit.import_declaration(f, n, doc, 1, "The monthly declaration of the gas received in March.",
+                                     "The customs value in ferra.",
+                                     deal=[{"item": "natural-gas", "ordered": GAS_TO_POWER,
+                                            "why": "The power station's gas."}])
+        out["Shipment"]["ShipmentStage"] = pipeline_stage("The gas arrives by pipeline.")
+        return out
+    if d == "Invoice" and doc["from"] == "42-xb":
+        to_power = doc["to"] == "43-xu"
+        key = "gas-invoice" if to_power else "gas-invoice-retail"
+        out = kit.invoice(f, n, doc, 2, 30, "The month's gas.", {},
+                          [{"item": "natural-gas", "qty": GAS_TO_POWER if to_power else GAS_TO_RETAIL,
+                            "invoice_why": "Measured at the border station in March" +
+                                           (": delivered to the power station." if to_power else
+                                            ": fed into the grid at the city gate.")}],
+                          key=key, extra=MARCH, currency="XUF")
+        out["Note"] = V("Priced in ferra as the supply contract says: the buyer's own currency.", "Why ferra.")
+        return out
+    if d == "Reminder":
+        inv = f.numbers["gas-invoice-amount"]
+        due = f.date(32)
+        lume = money(inv * Decimal("0.01"), "XBL")
+        pct = Decimal(WORLD["countries"]["XB"]["payment"]["penalty_surcharge"]["percent"])
+        sur = money(lume * pct / 100, "XBL")
+        f.numbers["surcharge"] = sur
+        return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
+                "IssueDate": V(f.date(63), "A month after the due date."),
+                "ReminderTypeCode": V("Payment", "A reminder of a payment overdue."),
+                "ReminderSequenceNumeric": V("1", "The first reminder."),
+                "Note": V("The invoice for March's gas is a month overdue: Bayvarra's surcharge of 1.5 % a month "
+                          "applies.", "What it says."),
+                "DocumentCurrencyCode": kit.currency_line("XBL", "the creditor's own currency"),
+                "ReminderPeriod": {"StartDate": V(f.date(33), "Overdue from the day after the due date"),
+                                   "EndDate": V(f.date(63), "to the reminder.")},
+                "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
+                                 "PayeeFinancialAccount": kit.account("42-xb", "The gas producer's account.")},
+                "PaymentTerms": {"Note": V("Please pay the invoice in ferra and the surcharge with it.", "What is "
+                                                                                                        "asked."),
+                                 "PaymentDueDate": V(f.date(70), "A week after the reminder.")},
+                "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax on a surcharge for late payment.")},
+                "LegalMonetaryTotal": {"LineExtensionAmount": amount(lume + sur, "XBL", "The invoice in lume and "
+                                                                                        "the surcharge."),
+                                       "PayableAmount": amount(lume + sur, "XBL", "Now due, in lume at the rate.")},
+                "ReminderLine": [
+                    {"ID": V("1", "The unpaid invoice."), "UUID": line_uuid(f, "reminder", 1),
+                     "Note": V(f"Invoice of {inv} ferra, due {due}.", "What it is."),
+                     "DebitLineAmount": amount(lume, "XBL", f"{inv} ferra in lume."),
+                     "PaymentPurposeCode": V("SUPP", "ISO 20022 purpose code SUPP: payment to a supplier."),
+                     "ReminderPeriod": {"StartDate": V(f.date(33), "Overdue since.")},
+                     "ExchangeRate": {**TO_LUME, "Date": V(f.date(63), "The rate of the reminder's date.")},
+                     "BillingReference": {"InvoiceDocumentReference": {
+                         "ID": V(f.numbers["gas-invoice"], "The invoice not paid."),
+                         "IssueDate": V(f.numbers["gas-invoice-date"], "Its issue date.")}}},
+                    {"ID": V("2", "The surcharge."), "UUID": line_uuid(f, "reminder", 2),
+                     "Note": V("One month late at 1.5 %.", "What it is."),
+                     "DebitLineAmount": amount(sur, "XBL", "1.5 % of the invoice in lume."),
+                     "PenaltySurchargePercent": V(str(pct), "Bayvarra's surcharge per month late."),
+                     "Amount": amount(sur, "XBL", "The surcharge.")}]}
+    if d == "RemittanceAdvice":
+        inv, sur = f.numbers["gas-invoice-amount"], f.numbers["surcharge"]
+        sur_xuf = money(sur * 100, "XUF")
+        return {"ID": V(f.number("remittance", doc["from"], "RemittanceAdvice"), "The power station's number."),
+                "IssueDate": V(f.date(66), "Paid three days after the reminder."),
+                "Note": V("The March gas invoice, with the surcharge of the reminder.", "What it settles."),
+                "DocumentCurrencyCode": kit.currency_line("XUF", "the currency of the invoice paid"),
+                "TotalDebitAmount": amount(inv + sur_xuf, "XUF", "The invoice and the surcharge."),
+                "TotalCreditAmount": amount(0, "XUF", "No credits."),
+                "TotalPaymentAmount": amount(inv + sur_xuf, "XUF", "Transferred in ferra over the trade accord's "
+                                                                   "link."),
+                "LineCountNumeric": V("2", "The invoice and the surcharge."),
+                "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
+                                 "PaymentID": V(kit.rf_reference(f.numbers["gas-invoice"]), "The invoice's creditor "
+                                                                                           "reference."),
+                                 "PayerFinancialAccount": kit.account("43-xu", "The power station's account."),
+                                 "PayeeFinancialAccount": kit.account("42-xb", "The gas producer's account.")},
+                "RemittanceAdviceLine": [
+                    {"ID": V("1", "The invoice."), "DebitLineAmount": amount(inv, "XUF", "Its amount."),
+                     "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["gas-invoice"],
+                                                                               "The invoice.")}}},
+                    {"ID": V("2", "The surcharge."), "DebitLineAmount": amount(sur_xuf, "XUF", f"{sur} lume in "
+                                                                                               "ferra."),
+                     "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The reminder's currency."),
+                                      "TargetCurrencyCode": V("XUF", "The payment's."),
+                                      "CalculationRate": V("100", "1 lume = 100 ferra."),
+                                      "MathematicOperatorCode": V("Multiply", "Lume times the rate."),
+                                      "Date": V(f.date(66), "The payment date.")},
+                     "BillingReference": {"ReminderDocumentReference": {"ID": V(f.numbers["reminder"],
+                                                                                "The reminder.")}}}]}
+    raise SystemExit(f"energy scenario: no document {n} {doc['doc']}")
+
+
+FLOWS["energy"] = ENERGY
+SCENARIOS["energy"] = _with_enrichment("energy", energy)

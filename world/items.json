@@ -1142,6 +1142,76 @@
     "erg": "132",
     "tunnel": "D/E"
    }
+  },
+  {
+   "id": "natural-gas",
+   "seller": "42-xb",
+   "name": "Natural gas",
+   "kind": "goods",
+   "unit": "MWH",
+   "price": {
+    "amount": 36.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "KG-NG",
+   "standard_id": "772060000015",
+   "hs": "2711.21",
+   "origin": "XB",
+   "description": "Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.",
+   "net_kg": 75,
+   "gross_kg": 75
+  },
+  {
+   "id": "power-wholesale",
+   "seller": "43-xu",
+   "name": "Electricity, wholesale",
+   "kind": "service",
+   "unit": "MWH",
+   "price": {
+    "amount": 9800,
+    "currency": "XUF"
+   },
+   "sellers_id": "MB-MWH",
+   "description": "Electricity fed into the grid at the power station, sold by the megawatt hour."
+  },
+  {
+   "id": "network-electricity",
+   "seller": "44-xu",
+   "name": "Electricity network use",
+   "kind": "service",
+   "unit": "KWH",
+   "price": {
+    "amount": 6.2,
+    "currency": "XUF"
+   },
+   "sellers_id": "FG-NET-E",
+   "description": "Use of the electricity distribution network, per kilowatt hour taken at the connection."
+  },
+  {
+   "id": "network-gas",
+   "seller": "44-xu",
+   "name": "Gas network use",
+   "kind": "service",
+   "unit": "KWH",
+   "price": {
+    "amount": 1.9,
+    "currency": "XUF"
+   },
+   "sellers_id": "FG-NET-G",
+   "description": "Use of the gas distribution network, per kilowatt hour of gas taken at the connection."
+  },
+  {
+   "id": "gas",
+   "seller": "33-xu",
+   "name": "Natural gas supply",
+   "kind": "service",
+   "unit": "KWH",
+   "price": {
+    "amount": 8.4,
+    "currency": "XUF"
+   },
+   "sellers_id": "FE-GAS",
+   "description": "Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included."
   }
  ]
 }

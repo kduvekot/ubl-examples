@@ -225,6 +225,74 @@
      31
     ]
    ]
+  },
+  {
+   "id": "gas",
+   "mode": "pipeline",
+   "layer": "chain",
+   "label": "Gas pipeline, offshore field to the power station (XB → XU)",
+   "pts": [
+    [
+     30,
+     7
+    ],
+    [
+     30,
+     11
+    ],
+    [
+     21,
+     11
+    ],
+    [
+     20,
+     13
+    ]
+   ]
+  },
+  {
+   "id": "gas-grid",
+   "mode": "pipeline",
+   "layer": "chain",
+   "label": "Gas pipeline to the grid operator's city gate (XB → XU)",
+   "pts": [
+    [
+     30,
+     7
+    ],
+    [
+     30,
+     11
+    ],
+    [
+     17,
+     11
+    ],
+    [
+     17,
+     16
+    ]
+   ]
+  },
+  {
+   "id": "gas-field",
+   "mode": "pipeline",
+   "layer": "chain",
+   "label": "Subsea pipeline from the offshore platform",
+   "pts": [
+    [
+     33,
+     3
+    ],
+    [
+     31,
+     6
+    ],
+    [
+     30,
+     7
+    ]
+   ]
   }
  ],
  "towns": [
@@ -290,6 +358,26 @@
    ],
    "country": "XB",
    "note": "An inland town in Upland State, near the border."
+  },
+  {
+   "name": "Gullhaven",
+   "c": [
+    31,
+    10
+   ],
+   "country": "XB",
+   "note": "A fishing village on Bayvarra's north coast, by the gas plant."
+  }
+ ],
+ "platforms": [
+  {
+   "name": "Kelpstone field",
+   "at": [
+    33,
+    3
+   ],
+   "party": "42-xb",
+   "note": "The gas field's production platform, offshore."
   }
  ]
 }

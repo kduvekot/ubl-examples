@@ -2043,22 +2043,18 @@
   {
    "id": "33-xu",
    "n": "33",
-   "name": "Electricity Utility",
+   "name": "Energy Retailer",
    "cat": "commerce",
    "c": "XU",
    "at": [
     18,
-    13
-   ],
-   "size": [
-    2,
-    2
+    20
    ],
    "h": 2,
-   "kind": "power",
+   "kind": "office",
    "proposed": true,
-   "what": "Generates and supplies electricity in Urvania; its biggest customer is the factory.",
-   "how": "A utility bills thousands of connections every month. UBL separates the bill (the Invoice) from the consumption behind it (the Utility Statement with meter readings per connection), so a customer with many sites can check each one automatically and a household gets the same structured bill as a factory.",
+   "what": "Sells electricity and gas to Urvania's homes and businesses: buys electricity from the power station and gas from the gas producer, pays the grid operator for the networks, and bills the customers.",
+   "how": "In an unbundled market the retailer bills, but the grid operator owns and reads the meters. UBL keeps the two apart: the grid operator's Utility Statement carries the readings to the retailer, and the retailer's Invoice and Utility Statement carry them on to the customer.",
    "identity": {
     "name": "Ferrano Energy",
     "kind": "company",
@@ -2074,10 +2070,10 @@
     },
     "tax_id": "XU007404785",
     "address": {
-     "StreetName": "Via della Centrale",
-     "BuildingNumber": "44",
-     "CityName": "Serravona",
-     "PostalZone": "4130",
+     "StreetName": "Corso della Repubblica",
+     "BuildingNumber": "9",
+     "CityName": "Ferrano",
+     "PostalZone": "4150",
      "Region": "Province of Ferrano"
     },
     "account": {
@@ -2561,6 +2557,181 @@
     "cost_centre": {
      "code": "200",
      "name": "Seed cotton purchases"
+    }
+   }
+  },
+  {
+   "id": "42-xb",
+   "n": "42",
+   "name": "Gas Producer",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    30,
+    8
+   ],
+   "size": [
+    2,
+    1
+   ],
+   "h": 2,
+   "kind": "gasplant",
+   "proposed": true,
+   "what": "Produces natural gas from an offshore field off Bayvarra's north coast; treats it at its plant on the shore and sends it by pipeline to the power station and the grid of Urvania.",
+   "how": "Gas is sold by energy, measured at the border, and crosses it by pipeline every day. UBL carries the monthly sale as an Invoice in energy units, the export and import by fixed installation (transport mode 7) in the customs declarations, and a Reminder when the buyer pays late.",
+   "fleet": [
+    {
+     "id": "KG-P1",
+     "kind": "pipeline",
+     "name": "Kelpstone–Ferrano gas pipeline",
+     "config": "Buried steel pipeline, 400 mm, 70 bar"
+    }
+   ],
+   "identity": {
+    "name": "Kelpstone Gas",
+    "kind": "company",
+    "registry_id": "20412877",
+    "endpoint": "XB:20412877",
+    "contact": {
+     "name": "Gas sales",
+     "email": "gas@kelpstone.example",
+     "telephone": "+999 2 3852 2877",
+     "department": "Commercial",
+     "hours": "Weekdays 08:00–17:00",
+     "job_title": "Gas sales manager"
+    },
+    "tax_id": "CO-1238631",
+    "address": {
+     "StreetName": "Shoreline Road",
+     "BuildingNumber": "2",
+     "CityName": "Gullhaven",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38540",
+     "CountrySubentityCode": "CO"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB30BLUM0004817534"
+    },
+    "industry": "0620",
+    "website": "https://www.kelpstone.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "2011-04-01",
+     "size": "Large",
+     "capital": 120000000
+    },
+    "customs_id": "XB-TR-412877",
+    "site": {
+     "description": "Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out."
+    }
+   }
+  },
+  {
+   "id": "43-xu",
+   "n": "43",
+   "name": "Power Station",
+   "cat": "commerce",
+   "c": "XU",
+   "at": [
+    18,
+    13
+   ],
+   "size": [
+    2,
+    2
+   ],
+   "h": 2,
+   "kind": "power",
+   "proposed": true,
+   "what": "A gas-fired power station near Serravona: burns gas from Bayvarra's offshore field and sells the electricity to the retail company through the grid.",
+   "how": "A producer sells energy in bulk, by the month, to a few buyers. UBL's Invoice carries the quantities in megawatt hours and the price per unit, and the Utility Statement of the grid operator shows what was fed in.",
+   "identity": {
+    "name": "Montebrio Power",
+    "kind": "company",
+    "registry_id": "XU-R-105918",
+    "endpoint": "XU:XU-R-105918",
+    "contact": {
+     "name": "Energy trading",
+     "email": "trading@montebrio.example",
+     "telephone": "+999 1 4130 5918",
+     "department": "Trading",
+     "hours": "Weekdays 07:00–19:00",
+     "job_title": "Energy trader"
+    },
+    "tax_id": "XU007414377",
+    "address": {
+     "StreetName": "Via della Centrale",
+     "BuildingNumber": "44",
+     "CityName": "Serravona",
+     "PostalZone": "4130",
+     "Region": "Province of Ferrano"
+    },
+    "account": {
+     "bank": "23-xu",
+     "number": "XU86CREV0005021992"
+    },
+    "industry": "3510",
+    "website": "https://www.montebrio.example",
+    "language": "EN",
+    "legal": {
+     "form": "SUA",
+     "founded": "1974-06-01",
+     "size": "Large",
+     "capital": 400000000
+    },
+    "customs_id": "XU-TR-105918"
+   }
+  },
+  {
+   "id": "44-xu",
+   "n": "44",
+   "name": "Grid Operator",
+   "cat": "commerce",
+   "c": "XU",
+   "at": [
+    16,
+    16
+   ],
+   "h": 2,
+   "kind": "grid",
+   "proposed": true,
+   "what": "Runs the electricity and gas networks of the Ferrano region: connects the power station and the gas pipeline, owns the meters, reads them and charges the retail company for the use of the networks.",
+   "how": "The grid operator measures what every customer takes, whoever sells to them. UBL's Utility Statement carries its readings to the retail company, with the corrections a gas meter needs, and its Invoice charges the network per connection.",
+   "identity": {
+    "name": "Ferrano Grid",
+    "kind": "company",
+    "registry_id": "XU-R-106055",
+    "endpoint": "XU:XU-R-106055",
+    "contact": {
+     "name": "Metering office",
+     "email": "metering@ferranogrid.example",
+     "telephone": "+999 1 4140 6055",
+     "department": "Metering",
+     "hours": "Weekdays 08:00–17:00",
+     "job_title": "Metering officer"
+    },
+    "tax_id": "XU007423962",
+    "address": {
+     "StreetName": "Via della Rete",
+     "BuildingNumber": "3",
+     "CityName": "Ferrano",
+     "PostalZone": "4140",
+     "Region": "Province of Ferrano"
+    },
+    "account": {
+     "bank": "23-xu",
+     "number": "XU50CREV0005126721"
+    },
+    "industry": "3513",
+    "website": "https://www.ferranogrid.example",
+    "language": "EN",
+    "legal": {
+     "form": "SUA",
+     "founded": "2007-01-01",
+     "size": "Medium",
+     "capital": 80000000
     }
    }
   }

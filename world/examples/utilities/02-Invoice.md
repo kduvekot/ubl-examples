@@ -38,7 +38,7 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Raw materials and parts**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **3**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en**  
   The language the texts of the invoice are in: the seller's country's language.
@@ -98,13 +98,13 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via della Centrale**  
+- `Party/PostalAddress/StreetName` = **Corso della Repubblica**  
   Street of the postal address. identity of Ferrano Energy (world/parties.json).
-- `Party/PostalAddress/BuildingNumber` = **44**  
+- `Party/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
-- `Party/PostalAddress/CityName` = **Serravona**  
+- `Party/PostalAddress/CityName` = **Ferrano**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Energy (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **4130**  
+- `Party/PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
   The province, part of an address in Urvania. identity of Ferrano Energy (world/parties.json).
@@ -144,7 +144,7 @@ Inside `AccountingSupplierParty`:
   The share capital, in ferra; identity of Ferrano Energy (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona**  
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
   The country of registration.
@@ -381,7 +381,7 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **289585** (currencyID `XUF`)  
+- `SettlementDiscountAmount` = **301923** (currencyID `XUF`)  
   The 2 % discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.ferranoenergy.example/terms**  
   The seller's general terms of payment.
@@ -460,7 +460,7 @@ Inside `TaxTotal`:
   UN/EDIFACT 5153 code EXC: excise duty, the energy tax.
 - `TaxSubtotal/TaxDueCountry/IdentificationCode` = **XU**  
   Due in Urvania.
-- `TaxAmount` = **2413212** (currencyID `XUF`)  
+- `TaxAmount` = **2516028** (currencyID `XUF`)  
   The value added tax, on the price plus the energy tax.
 - `CalculationSequenceNumeric` = **2**  
   Calculated on the price and the energy tax.
@@ -470,11 +470,11 @@ Inside `TaxTotal`:
   This tax total is the evidence for the manufacturer's deduction of value added tax.
 - `TaxIncludedIndicator` = **false**  
   The line prices do not include it.
-- `TaxSubtotal/TaxableAmount` = **12066060** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **12580140** (currencyID `XUF`)  
   The price plus the energy tax: value added tax is charged on both.
-- `TaxSubtotal/TaxAmount` = **2413212** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **2516028** (currencyID `XUF`)  
   20 % of that base.
-- `TaxSubtotal/TaxInclusiveAmount` = **14479272** (currencyID `XUF`)  
+- `TaxSubtotal/TaxInclusiveAmount` = **15096168** (currencyID `XUF`)  
   The base with the tax.
 - `TaxSubtotal/CalculationSequenceNumeric` = **2**  
   Calculated after the energy tax.
@@ -491,13 +491,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **11777220** (currencyID `XUF`)  
+- `LineExtensionAmount` = **12291300** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **11777220** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **12291300** (currencyID `XUF`)  
   The line amounts, without any tax.
-- `TaxInclusiveAmount` = **14479272** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **15096168** (currencyID `XUF`)  
   With the energy tax and the value added tax.
-- `PayableAmount` = **14479272** (currencyID `XUF`)  
+- `PayableAmount` = **15096168** (currencyID `XUF`)  
   What the manufacturer pays.
 
 ### Invoice Line
@@ -590,6 +590,46 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KWH`)  
   The price is per one unit.
+- `ID` = **3**  
+  The line number.
+- `Note` = **1,350 m³ at 4 bar, converted to 61,200 kWh by the grid operator's metering report.**  
+  How the quantity is found.
+- `InvoicedQuantity` = **61200** (unitCode `KWH`)  
+  The gas of the coating ovens in March, as the grid operator metered and converted it.
+- `LineExtensionAmount` = **514080** (currencyID `XUF`)  
+  61200 × 8.4, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **ELEC**  
+  ISO 20022 purpose code ELEC: electricity bill.
+- `InvoicePeriod/StartDate` = **2026-03-01**  
+  The month billed: March.
+- `InvoicePeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **Month**  
+  A monthly bill.
+- `InvoicePeriod/Description` = **March 2026**  
+  The period in words.
+- `PurchaseReference/ID` = **FG-G-20417**  
+  The meter or subscription the line is for.
+- `PurchaseReference/Description` = **Factory, gas of the coating line**  
+  Where it is.
+- `Item/Description` = **Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.**  
+  The seller's description; item gas of Ferrano Energy (world/items.json).
+- `Item/Name` = **Natural gas supply**  
+  The item's short name; item gas of Ferrano Energy (world/items.json).
+- `Item/SellersItemIdentification/ID` = **FE-GAS**  
+  The seller's own item number; item gas of Ferrano Energy (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **S**  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
+- `Item/ClassifiedTaxCategory/Percent` = **20**  
+  The rate for this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `Price/PriceAmount` = **8.4** (currencyID `XUF`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `KWH`)  
+  The price is per one unit.
 
 ## The document
 
@@ -610,7 +650,7 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -649,10 +689,10 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Centrale</cbc:StreetName>
-        <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
@@ -685,7 +725,7 @@ Inside `InvoiceLine`:
         <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode>XU</cbc:IdentificationCode>
           </cac:Country>
@@ -896,7 +936,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">289585</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">301923</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranoenergy.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -957,15 +997,15 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">2516028</cbc:TaxAmount>
     <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
     <cbc:RoundingAmount currencyID="XUF">0</cbc:RoundingAmount>
     <cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
     <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">12066060</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
-      <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
+      <cbc:TaxableAmount currencyID="XUF">12580140</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">2516028</cbc:TaxAmount>
+      <cbc:TaxInclusiveAmount currencyID="XUF">15096168</cbc:TaxInclusiveAmount>
       <cbc:CalculationSequenceNumeric>2</cbc:CalculationSequenceNumeric>
       <cbc:Percent>20</cbc:Percent>
       <cac:TaxCategory>
@@ -978,10 +1018,10 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">11777220</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">11777220</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">14479272</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">14479272</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">12291300</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">12291300</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">15096168</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">15096168</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -1065,6 +1105,42 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>1,350 m³ at 4 bar, converted to 61,200 kWh by the grid operator's metering report.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">514080</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode>ELEC</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+      <cbc:DescriptionCode>Month</cbc:DescriptionCode>
+      <cbc:Description>March 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FG-G-20417</cbc:ID>
+      <cbc:Description>Factory, gas of the coating line</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:Item>
+      <cbc:Description>Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
+      <cbc:Name>Natural gas supply</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FE-GAS</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">8.4</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

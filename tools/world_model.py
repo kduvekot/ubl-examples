@@ -58,7 +58,7 @@ from collections import deque
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 W, H = 64, 48
-TALL = {"telecom", "power"}                       # kinds with a mast or a cooling tower
+TALL = {"telecom", "power", "gasplant"}           # kinds with a mast, a cooling tower or a flare stack
 TALL_CLEARANCE = 4                                # tiles they keep from an airport and its approach zones
 DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]        # bit 0..3 of the road mask
 
@@ -690,7 +690,7 @@ def build(world):
     return model, problems
 
 
-FLEET_KIND = {"road": "road", "rail": "rail", "river": "inland", "sea": "sea", "air": "air"}
+FLEET_KIND = {"road": "road", "rail": "rail", "river": "inland", "sea": "sea", "air": "air", "pipeline": "pipeline"}
 CARRIER_ROLES = ("CarrierParty", "SubstituteCarrierParty", "PerformingCarrierParty", "TransportServiceProviderParty")
 
 

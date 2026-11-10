@@ -30,11 +30,11 @@ The manufacturer pays both electricity bills in one transfer.
   What the advice is for.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the currency of the invoice paid; it has no minor unit.
-- `TotalDebitAmount` = **14479272** (currencyID `XUF`)  
+- `TotalDebitAmount` = **15096168** (currencyID `XUF`)  
   The invoices paid.
-- `TotalCreditAmount` = **289585** (currencyID `XUF`)  
+- `TotalCreditAmount` = **301923** (currencyID `XUF`)  
   Credits taken: the settlement discount.
-- `TotalPaymentAmount` = **14189687** (currencyID `XUF`)  
+- `TotalPaymentAmount` = **14794245** (currencyID `XUF`)  
   The amount transferred: the payable amount less the 2 % discount for payment within the discount period.
 - `PaymentOrderReference` = **VI-PAY-26-0313**  
   The payment order the payer gave its bank.
@@ -224,13 +224,13 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via della Centrale**  
+- `Party/PostalAddress/StreetName` = **Corso della Repubblica**  
   Street of the postal address. identity of Ferrano Energy (world/parties.json).
-- `Party/PostalAddress/BuildingNumber` = **44**  
+- `Party/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
-- `Party/PostalAddress/CityName` = **Serravona**  
+- `Party/PostalAddress/CityName` = **Ferrano**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Energy (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **4130**  
+- `Party/PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
   The province, part of an address in Urvania. identity of Ferrano Energy (world/parties.json).
@@ -270,7 +270,7 @@ Inside `AccountingSupplierParty`:
   The share capital, in ferra; identity of Ferrano Energy (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona**  
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
   The country of registration.
@@ -378,7 +378,7 @@ Inside `PaymentMeans`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **2413212** (currencyID `XUF`)  
+- `TaxAmount` = **2516028** (currencyID `XUF`)  
   The value added tax included in the payment, which the manufacturer deducts in its own return (20 % of the price before tax).
 
 ### Remittance Advice Line
@@ -389,9 +389,9 @@ Inside `RemittanceAdviceLine`:
   One invoice paid.
 - `Note` = **2 % discount taken: paid within the discount period of the invoice's terms.**  
   Why less is paid than invoiced.
-- `DebitLineAmount` = **14479272** (currencyID `XUF`)  
+- `DebitLineAmount` = **15096168** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
-- `CreditLineAmount` = **289585** (currencyID `XUF`)  
+- `CreditLineAmount` = **301923** (currencyID `XUF`)  
   The settlement discount taken, a credit against the invoice.
 - `BalanceAmount` = **0** (currencyID `XUF`)  
   Nothing remains open on the invoice after this payment.
@@ -437,9 +437,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:IssueTime>13:33:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XUF">14479272</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XUF">289585</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XUF">14189687</cbc:TotalPaymentAmount>
+  <cbc:TotalDebitAmount currencyID="XUF">15096168</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XUF">301923</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">14794245</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VI-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:PayerReference>VI-0313</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>
@@ -598,10 +598,10 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Centrale</cbc:StreetName>
-        <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
@@ -634,7 +634,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode>XU</cbc:IdentificationCode>
           </cac:Country>
@@ -734,13 +734,13 @@ Inside `RemittanceAdviceLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2413212</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">2516028</cbc:TaxAmount>
   </cac:TaxTotal>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>
-    <cbc:DebitLineAmount currencyID="XUF">14479272</cbc:DebitLineAmount>
-    <cbc:CreditLineAmount currencyID="XUF">289585</cbc:CreditLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">15096168</cbc:DebitLineAmount>
+    <cbc:CreditLineAmount currencyID="XUF">301923</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>

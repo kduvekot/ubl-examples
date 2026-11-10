@@ -787,7 +787,7 @@ def rate(a, b):
     return Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
 
 
-HS_SECTION = {"26": "V", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
+HS_SECTION = {"26": "V", "27": "V", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
 
 
 def customs_item(iid):
@@ -801,8 +801,9 @@ def customs_item(iid):
     if cc and hs:
         cc["NatureCode"] = V(HS_SECTION[hs[:2]], "The section of the Harmonized System the goods fall in, the "
                                                  "highest level of the World Customs Organization's classification.")
-        cc["CargoTypeCode"] = V("BULK" if ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26" else "GEN",
-                                "The kind of cargo as the parties code it: bulk, or general cargo in packages.")
+        cc["CargoTypeCode"] = V("BULK" if (ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26") or hs[:4] == "2711"
+                                else "GEN", "The kind of cargo as the parties code it: bulk, or general cargo in "
+                                            "packages.")
     return out
 
 

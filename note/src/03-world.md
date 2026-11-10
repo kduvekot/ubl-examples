@@ -77,6 +77,14 @@ ledger. Lumeport's water company also collects the city's sewage levy, as
 a line collected on behalf of the city, and runs the city's district
 heating.
 
+Urvania's energy market is unbundled, as the EU's is: a gas-fired power
+station produces electricity, a grid operator runs the electricity and gas
+networks and reads the meters, and a retail company buys the energy and
+bills the customers. The gas comes from an offshore field off Bayvarra's
+north coast and crosses the border by pipeline. In Bayvarra and on the
+island one company still does everything, so the three countries show
+three arrangements.
+
 ## Parties
 
 The parties are the organisations of the world, chosen so that every party
@@ -133,8 +141,9 @@ production waste as recycled plastic; Bayvarra saws timber, makes furniture,
 packaging and clothing, and distributes and retails; the island Lisavu grows
 and gins cotton, its export. Goods cross the land border by road, rail and
 river barge and go overseas by sea and air in both directions; there is a
-public tender, a temporary export with an ATA carnet, and a utility in each
-country. Each flow starts from the business: who buys
+public tender, a temporary export with an ATA carnet, a utility in each
+country, and gas by pipeline from Bayvarra's offshore field to Urvania's
+power station and grid. Each flow starts from the business: who buys
 from whom, on which delivery terms, and therefore who arranges and pays the
 transport. A distributor that buys free carrier (FCA) books the truck
 itself and names the carrier in its order; a retailer that buys delivered
@@ -152,9 +161,10 @@ A flow also lists its transport legs: the mode, from which party to which,
 and the carrier. The goods only move where the world allows it. A road leg
 needs a road from party to party, so a truck cannot drive to the island; a
 rail leg needs a rail line between them, a barge needs the river at both
-ends, a ship a sea route from port to port and an aircraft an air route
-from airport to airport. The carrier must have a vehicle, train, vessel or
-aircraft of that mode in its fleet, and every carrier a document of the
+ends, gas a pipeline from party to party, a ship a sea route from port to
+port and an aircraft an air route from airport to airport. The carrier must
+have a vehicle, train, vessel, aircraft or pipeline of that mode in its
+fleet, and every carrier a document of the
 flow names must carry one of its legs. Domestic jobs go to a carrier of
 that country: a truck of one country driving within another would be
 cabotage, which only happens where a document says so.
