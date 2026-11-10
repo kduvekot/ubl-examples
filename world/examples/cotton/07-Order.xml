@@ -9,6 +9,7 @@
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>11:08:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
+  <cbc:RequestedInvoiceCurrencyCode>XLC</cbc:RequestedInvoiceCurrencyCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
@@ -166,6 +167,14 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:FreightForwarderParty>
   <cac:Delivery>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
@@ -182,6 +191,9 @@
       <cbc:Description>Port of Selanu</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+  </cac:DestinationCountry>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

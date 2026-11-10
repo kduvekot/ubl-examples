@@ -1020,6 +1020,19 @@
    "sellers_id": "CSW-LEVY",
    "levy": "2-xb",
    "description": "The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city."
+  },
+  {
+   "id": "bench-installation",
+   "seller": "5-xu",
+   "name": "Installation of a park bench",
+   "kind": "service",
+   "unit": "H87",
+   "price": {
+    "amount": 1800,
+    "currency": "XUF"
+   },
+   "sellers_id": "VI-INST-B",
+   "description": "Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers."
   }
  ]
 }

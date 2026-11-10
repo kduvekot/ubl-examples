@@ -9,9 +9,34 @@
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>10:46:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
+  <cbc:Note>Accepted: the frames fly on the morning flight; the forwarder is booked.</cbc:Note>
+  <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
+  <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cac:ValidityPeriod>
+    <cbc:EndDate>2026-05-13</cbc:EndDate>
+  </cac:ValidityPeriod>
   <cac:OrderReference>
-    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:OrderChangeDocumentReference>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
+  </cac:OrderChangeDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-QUOTE-AIR-26-0611</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-0512</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -169,4 +194,27 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:FreightForwarderParty>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+      <cac:DeliveryTerms>
+        <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
+      </cac:DeliveryTerms>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10443</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
 </OrderResponse>

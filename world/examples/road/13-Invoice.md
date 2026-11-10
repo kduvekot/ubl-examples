@@ -378,6 +378,21 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
   Simple interest, per day late.
 
+### Payment Exchange Rate
+
+Inside `PaymentExchangeRate`:
+
+- `SourceCurrencyCode` = **XUF**  
+  The invoice currency.
+- `TargetCurrencyCode` = **XBL**  
+  The buyer's currency, from which it pays.
+- `CalculationRate` = **0.01**  
+  The world's reference rate, for the buyer's information: its bank converts at the day's rate.
+- `MathematicOperatorCode` = **Multiply**  
+  Ferra times the rate gives lume.
+- `Date` = **2026-03-24**  
+  The invoice date.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -971,6 +986,13 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:PaymentExchangeRate>
+    <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.01</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-03-24</cbc:Date>
+  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>

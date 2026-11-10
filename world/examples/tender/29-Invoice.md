@@ -30,6 +30,8 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
+- `Note` = **Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.**  
+  Why it is named.
 - `TaxPointDate` = **2026-03-31**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XBL**  
@@ -44,7 +46,7 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Parks renewal programme 2026**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en**  
   The language the texts of the invoice are in: the seller's country's language.
@@ -328,6 +330,15 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Valdara Industries**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Tax Representative Party
+
+Inside `TaxRepresentativeParty`:
+
+- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -393,7 +404,7 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **399.20** (currencyID `XBL`)  
+- `SettlementDiscountAmount` = **413.60** (currencyID `XBL`)  
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.valdara.example/terms**  
   The seller's general terms of payment.
@@ -460,9 +471,23 @@ Inside `TaxTotal`:
   Why no tax is charged, stated rather than left out (UBL rule IND6).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `TaxSubtotal/TaxableAmount` = **720.00** (currencyID `XBL`)  
+  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **O**  
+  A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O).
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **XU-SVC-ABROAD**  
+  The world's code for the exemption reason (world/countries.json).
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `TaxAmount` = **0** (currencyID `XUF`)  
   The same tax in ferra, for the seller's tax return: none on an export.
-- `TaxSubtotal/TaxableAmount` = **1996000** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **2068000** (currencyID `XUF`)  
   The taxable amount in ferra.
 - `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
   No tax: an export.
@@ -479,18 +504,39 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of the seller's tax: value added tax.
 
+### Withholding Tax Total
+
+Inside `WithholdingTaxTotal`:
+
+- `TaxAmount` = **72.00** (currencyID `XBL`)  
+  10 % of the installation.
+- `TaxSubtotal/TaxableAmount` = **720.00** (currencyID `XBL`)  
+  The installation, the only service.
+- `TaxSubtotal/TaxAmount` = **72.00** (currencyID `XBL`)  
+  Withheld.
+- `TaxSubtotal/TaxCategory/ID` = **S**  
+  The withholding applies.
+- `TaxSubtotal/TaxCategory/Percent` = **10**  
+  services by businesses not established in Bayvarra, paid by a public body
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH**  
+  UN/EDIFACT 5153 code OTH: other taxes, the withholding tax.
+- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Withholding tax on services of non-residents**  
+  The tax in words.
+
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **20680.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **19960.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **20680.00** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **19960.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **20680.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **19960.00** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `WithholdingTaxTotalAmount` = **72.00** (currencyID `XBL`)  
+  The public body withholds 10 % of the price and pays it to the state for the supplier; a non-resident supplier appoints a tax representative in Bayvarra.
+- `PayableAmount` = **20608.00** (currencyID `XBL`)  
+  What the department pays the manufacturer: the total less the tax it withholds.
 
 ### Invoice Line
 
@@ -499,11 +545,11 @@ Inside `InvoiceLine`:
 - `ID` = **1**  
   The line number.
 - `InvoicedQuantity` = **40** (unitCode `H87`)  
-  The quantity delivered.
+  The benches of the first release.
 - `LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
   40 × 499.00, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
-  The order line this invoice line bills.
+  The call-off line.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -720,6 +766,52 @@ Inside `InvoiceLine`:
   The seller's price times the rate gives the order price.
 - `Price/PricingExchangeRate/Date` = **2026-01-02**  
   The reference rate of the first working day of the year, fixed in the contract.
+- `ID` = **2**  
+  The line number.
+- `InvoicedQuantity` = **40** (unitCode `H87`)  
+  Each bench anchored by the manufacturer's installers, as the contract provides.
+- `LineExtensionAmount` = **720.00** (currencyID `XBL`)  
+  40 × 18.00, rounded to the minor unit of the currency.
+- `WithholdingTaxTotal/TaxAmount` = **72.00** (currencyID `XBL`)  
+  Withheld on this line.
+- `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.**  
+  The seller's description; item bench-installation of Valdara Industries (world/items.json).
+- `Item/Name` = **Installation of a park bench**  
+  The item's short name; item bench-installation of Valdara Industries (world/items.json).
+- `Item/SellersItemIdentification/ID` = **VI-INST-B**  
+  The seller's own item number; item bench-installation of Valdara Industries (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **O**  
+  A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O).
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **XU-SVC-ABROAD**  
+  The world's code for the exemption reason (world/countries.json).
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
+  Why no tax is charged, stated rather than left out (UBL rule IND6).
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Services**  
+  Whether the category applies to goods or services.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
+- `Price/PriceAmount` = **18** (currencyID `XBL`)  
+  The seller's price of 1800 XUF, converted to the buyer's currency at the world's reference rate, as the contract provides.
+- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+  The price is per one unit.
+- `Price/PricingExchangeRate/SourceCurrencyCode` = **XUF**  
+  The currency of the seller's price list.
+- `Price/PricingExchangeRate/SourceCurrencyBaseRate` = **1**  
+  The rate is for one unit of the seller's currency.
+- `Price/PricingExchangeRate/TargetCurrencyCode` = **XBL**  
+  The currency of the order.
+- `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
+  Given in single units of the order's currency.
+- `Price/PricingExchangeRate/ExchangeMarketID` = **World reference rate**  
+  The rate the world's central banks publish (world/countries.json).
+- `Price/PricingExchangeRate/CalculationRate` = **0.01**  
+  The world's reference rate (world/countries.json).
+- `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply**  
+  The seller's price times the rate gives the order price.
+- `Price/PricingExchangeRate/Date` = **2026-01-02**  
+  The reference rate of the first working day of the year, fixed in the contract.
 
 ## The document
 
@@ -736,6 +828,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.</cbc:Note>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
@@ -743,7 +836,7 @@ Inside `InvoiceLine`:
   <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0211</cbc:ID>
@@ -983,6 +1076,14 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:TaxRepresentativeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:TaxRepresentativeParty>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
@@ -1026,7 +1127,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XBL">399.20</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XBL">413.60</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-30</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -1068,11 +1169,24 @@ Inside `InvoiceLine`:
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">720.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-SVC-ABROAD</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">1996000</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XUF">2068000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
       <cac:TaxCategory>
@@ -1086,11 +1200,27 @@ Inside `InvoiceLine`:
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
+  <cac:WithholdingTaxTotal>
+    <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">720.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>OTH</cbc:ID>
+          <cbc:Name>Withholding tax on services of non-residents</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">19960.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">19960.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">19960.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20680.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">20680.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">20680.00</cbc:TaxInclusiveAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XBL">72.00</cbc:WithholdingTaxTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">20608.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -1269,6 +1399,45 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cac:PricingExchangeRate>
+        <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
+        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
+        <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
+        <cbc:ExchangeMarketID>World reference rate</cbc:ExchangeMarketID>
+        <cbc:CalculationRate>0.01</cbc:CalculationRate>
+        <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+        <cbc:Date>2026-01-02</cbc:Date>
+      </cac:PricingExchangeRate>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="H87">40</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">720.00</cbc:LineExtensionAmount>
+    <cac:WithholdingTaxTotal>
+      <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
+    </cac:WithholdingTaxTotal>
+    <cac:Item>
+      <cbc:Description>Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
+      <cbc:Name>Installation of a park bench</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>VI-INST-B</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>O</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode>XU-SVC-ABROAD</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
       <cac:PricingExchangeRate>
         <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>

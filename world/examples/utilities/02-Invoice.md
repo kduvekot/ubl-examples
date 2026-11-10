@@ -56,6 +56,17 @@ Inside `InvoicePeriod`:
 - `Description` = **March 2026**  
   The period in words.
 
+### Billing Reference
+
+Inside `BillingReference`:
+
+- `InvoiceDocumentReference/ID` = **FE-INV-26-0211**  
+  February's bill, with an estimated reading of the warehouse meter.
+- `InvoiceDocumentReference/IssueDate` = **2026-03-01**  
+  Its issue date.
+- `BillingReferenceLine/ID` = **2**  
+  Its warehouse line, which this month's actual reading settles.
+
 ### Purchase Reference
 
 Inside `PurchaseReference`:
@@ -571,6 +582,15 @@ Inside `InvoiceLine`:
     <cbc:DescriptionCode>Month</cbc:DescriptionCode>
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>FE-INV-26-0211</cbc:ID>
+      <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+    </cac:InvoiceDocumentReference>
+    <cac:BillingReferenceLine>
+      <cbc:ID>2</cbc:ID>
+    </cac:BillingReferenceLine>
+  </cac:BillingReference>
   <cac:PurchaseReference>
     <cbc:ID>FE-C-0047120</cbc:ID>
     <cbc:Description>Supply contract</cbc:Description>

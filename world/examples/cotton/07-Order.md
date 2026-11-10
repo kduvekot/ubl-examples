@@ -28,6 +28,8 @@ Bales of grade cotton. Delivery terms FOB the island port: the mill arranges the
   The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
+- `RequestedInvoiceCurrencyCode` = **XLC**  
+  The mill asks to be invoiced in coral, the ginnery's currency, and pays the exchange itself.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the seller's currency, in which the seller's prices are; it has three decimals.
 - `AccountingCostCode` = **2200**  
@@ -209,6 +211,15 @@ Inside `SellerSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Freight Forwarder Party
+
+Inside `FreightForwarderParty`:
+
+- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Delivery
 
 Inside `Delivery`:
@@ -226,6 +237,13 @@ Inside `DeliveryTerms`:
   Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk passes when the bales are on board.
 - `DeliveryLocation/Description` = **Port of Selanu**  
   Where the delivery terms place the handover of the goods.
+
+### Destination Country
+
+Inside `DestinationCountry`:
+
+- `IdentificationCode` = **XB**  
+  The bales go to Bayvarra.
 
 ### Tax Total
 
@@ -334,6 +352,7 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>11:08:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
+  <cbc:RequestedInvoiceCurrencyCode>XLC</cbc:RequestedInvoiceCurrencyCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
@@ -491,6 +510,14 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:FreightForwarderParty>
   <cac:Delivery>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
@@ -507,6 +534,9 @@ Inside `OrderLine`:
       <cbc:Description>Port of Selanu</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+  </cac:DestinationCountry>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

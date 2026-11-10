@@ -18,6 +18,9 @@
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
+  <cac:DeliveryNoteDocumentReference>
+    <cbc:ID>BF-DN-26-0320</cbc:ID>
+  </cac:DeliveryNoteDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>

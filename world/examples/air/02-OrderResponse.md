@@ -28,13 +28,55 @@ The distributor accepts the change: the urgent part goes by air at an extra char
   The time the sender's system issued the document, in the sender's local time.
 - `OrderResponseCode` = **AP**  
   UN/EDIFACT 4343 code AP: accepted, the order is accepted as it stands.
+- `Note` = **Accepted: the frames fly on the morning flight; the forwarder is booked.**  
+  In words.
+- `NetNetWeightMeasure` = **76** (unitCode `KGM`)  
+  The frames alone.
+- `NetVolumeMeasure` = **0.42** (unitCode `MTQ`)  
+  Their own volume.
+- `AccountingCostCode` = **500**  
+  The buyer's cost centre, from the change.
+- `AccountingCost` = **Stock for municipal projects**  
+  The cost centre in words.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `EndDate` = **2026-05-13**  
+  The flight booking holds for a day.
 
 ### Order Reference
 
 Inside `OrderReference`:
 
+- `ID` = **VT-PO-26-0127**  
+  The order that was changed.
+
+### Order Change Document Reference
+
+Inside `OrderChangeDocumentReference`:
+
 - `ID` = **VT-OC-26-0320**  
   The order change this response answers.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BF-QUOTE-AIR-26-0611**  
+  The forwarder's quotation for the flight.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-0512**  
+  The distributor's seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Seller Supplier Party
 
@@ -216,6 +258,30 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Freight Forwarder Party
+
+Inside `FreightForwarderParty`:
+
+- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Order Line
+
+Inside `OrderLine`:
+
+- `LineItem/ID` = **1**  
+  The added line.
+- `LineItem/Quantity` = **8** (unitCode `H87`)  
+  Confirmed.
+- `LineItem/DeliveryTerms/ID` = **CPT** (schemeID `INCOTERMS`)  
+  Carriage paid to the airport of Selanu, for this line.
+- `LineItem/Item/Name` = **Bench side frame casting**  
+  Named only.
+- `LineItem/Item/SellersItemIdentification/ID` = **LD-10443**  
+  The seller's number.
+
 ## The document
 
 ```xml
@@ -230,9 +296,34 @@ Inside `BuyerCustomerParty`:
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>10:46:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
+  <cbc:Note>Accepted: the frames fly on the morning flight; the forwarder is booked.</cbc:Note>
+  <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
+  <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cac:ValidityPeriod>
+    <cbc:EndDate>2026-05-13</cbc:EndDate>
+  </cac:ValidityPeriod>
   <cac:OrderReference>
-    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:OrderChangeDocumentReference>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
+  </cac:OrderChangeDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-QUOTE-AIR-26-0611</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-0512</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -390,5 +481,28 @@ Inside `BuyerCustomerParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:FreightForwarderParty>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+      <cac:DeliveryTerms>
+        <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
+      </cac:DeliveryTerms>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10443</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
 </OrderResponse>
 ```

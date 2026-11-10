@@ -65,6 +65,9 @@ the structure of ISO 11649, made from the invoice number, so the payee can
 match it, and runs over the domestic clearing or, between the countries,
 the trade accord's payment link. Urvania also levies an energy tax per
 kilowatt hour, in two tiers, on which value added tax is then charged.
+A public body in Bayvarra withholds 10 % of the price of a service from a
+business not established there and pays it to the state; such a supplier
+names a tax representative in Bayvarra.
 
 ## Parties
 

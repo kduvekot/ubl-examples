@@ -48,6 +48,13 @@ Inside `OrderReference`:
 - `ID` = **BS-PO-26-0574**  
   The store's order.
 
+### Delivery Note Document Reference
+
+Inside `DeliveryNoteDocumentReference`:
+
+- `ID` = **BF-DN-26-0320**  
+  The delivery note the store signed when the van unloaded.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -474,6 +481,9 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
+  <cac:DeliveryNoteDocumentReference>
+    <cbc:ID>BF-DN-26-0320</cbc:ID>
+  </cac:DeliveryNoteDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>

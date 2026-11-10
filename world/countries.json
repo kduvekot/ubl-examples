@@ -135,7 +135,12 @@
      "Sale for resale or manufacture": "XB-RESALE",
      "Levy collected for a public body": "XB-LEVY"
     },
-    "exemption_codes_note": "The world's own codes for the exemption reasons; the EU's VATEX list does not apply in the world."
+    "exemption_codes_note": "The world's own codes for the exemption reasons; the EU's VATEX list does not apply in the world.",
+    "withholding": {
+     "percent": "10",
+     "on": "services by businesses not established in Bayvarra, paid by a public body",
+     "note": "The public body withholds 10 % of the price and pays it to the state for the supplier; a non-resident supplier appoints a tax representative in Bayvarra."
+    }
    },
    "registry": {
     "name": "Federal business register of Bayvarra",

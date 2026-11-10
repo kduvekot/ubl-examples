@@ -451,7 +451,14 @@ def road(n, doc):
         return kit.invoice(f, n, doc, 8, 30, "Issued when the goods have left the warehouse.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the "
-                                                                                         "goods invoiced.")}})
+                                                                                         "goods invoiced.")},
+                            "PaymentExchangeRate": {
+                                "SourceCurrencyCode": V("XUF", "The invoice currency."),
+                                "TargetCurrencyCode": V("XBL", "The buyer's currency, from which it pays."),
+                                "CalculationRate": V("0.01", "The world's reference rate, for the buyer's "
+                                                             "information: its bank converts at the day's rate."),
+                                "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume."),
+                                "Date": V(f.date(8), "The invoice date.")}})
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 37, "The day the payment is made across the border, before the due date.")
     raise SystemExit(f"road scenario: no document {n} {doc['doc']}")
@@ -1939,7 +1946,29 @@ def air(n, doc):
                                                                  "extends.")}}
     if doc["doc"] == "OrderResponse":
         out = kit.order_response(f, n, doc, 1, "The distributor accepts the change.")
-        out["OrderReference"] = {"ID": V(f.numbers["order-change"], "The order change this response answers.")}
+        out["OrderReference"] = {"ID": V(SEA.numbers["order"], "The order that was changed.")}
+        out.update({
+            "OrderChangeDocumentReference": {"ID": V(f.numbers["order-change"], "The order change this response "
+                                                                                "answers.")},
+            "Note": V("Accepted: the frames fly on the morning flight; the forwarder is booked.", "In words."),
+            "ValidityPeriod": {"EndDate": V(f.date(2), "The flight booking holds for a day.")},
+            "NetNetWeightMeasure": qty(Decimal(8) * Decimal(str(kit.maker("bench-casting-b")["net_kg"])), "KGM",
+                                       "The frames alone."),
+            "NetVolumeMeasure": V("0.42", "Their own volume.", unitCode="MTQ"),
+            **kit.cost_centre("1-xl", "The buyer's cost centre, from the change."),
+            "AdditionalDocumentReference": {"ID": V("BF-QUOTE-AIR-26-0611", "The forwarder's quotation for the "
+                                                                            "flight.")},
+            "FreightForwarderParty": party("10-xb", short=True),
+            "Signature": {"ID": V("LD-SIG-26-0512", "The distributor's seal."),
+                          "SignatoryParty": party("6-xb", short=True)},
+            "OrderLine": {"LineItem": {
+                "ID": V("1", "The added line."),
+                "Quantity": qty(8, "H87", "Confirmed."),
+                "DeliveryTerms": {"ID": V("CPT", "Carriage paid to the airport of Selanu, for this line.",
+                                          schemeID="INCOTERMS")},
+                "Item": {"Name": V(ITEM["bench-casting-b"]["name"], "Named only."),
+                         "SellersItemIdentification": {"ID": V(ITEM["bench-casting-b"]["sellers_id"], "The seller's "
+                                                                                                      "number.")}}}}})
         return out
     if doc["doc"] == "ForwardingInstructions":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
@@ -2167,7 +2196,12 @@ def cotton(n, doc):
     if doc["doc"] == "Order":
         return kit.order(f, n, doc, 22, "The mill orders the first container of the season.",
                          "Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk "
-                         "passes when the bales are on board.", "Port of Selanu")
+                         "passes when the bales are on board.", "Port of Selanu",
+                         {"FreightForwarderParty": party("10-xb", short=True),
+                          "DestinationCountry": {"IdentificationCode": V("XB", "The bales go to Bayvarra.")},
+                          "RequestedInvoiceCurrencyCode": V("XLC", "The mill asks to be invoiced in coral, the "
+                                                                   "ginnery's currency, and pays the exchange "
+                                                                   "itself.")})
     if doc["doc"] == "ForwardingInstructions":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The mill's instruction "
                                                                                        "number."),
@@ -2248,6 +2282,33 @@ PRICING_RATE = {"SourceCurrencyCode": V("XUF", "The currency of the contract pri
 TENDER_QTY = 240
 
 
+def withholding(f, out):
+    """Bayvarra's withholding on services of non-resident businesses to public bodies (world/countries.json): the
+    department keeps 10 % of the installation and pays it to the state; the supplier's tax representative."""
+    wh = WORLD["countries"]["XB"]["tax"]["withholding"]
+    line = out["InvoiceLine"][1]
+    base = Decimal(line["LineExtensionAmount"].value)
+    tax = money(base * Decimal(wh["percent"]) / 100, "XBL")
+    cat = {"ID": V("S", "The withholding applies."), "Percent": V(wh["percent"], wh["on"]),
+           "TaxScheme": {"ID": V("OTH", "UN/EDIFACT 5153 code OTH: other taxes, the withholding tax."),
+                         "Name": V("Withholding tax on services of non-residents", "The tax in words.")}}
+    total = {"TaxAmount": amount(tax, "XBL", f"{wh['percent']} % of the installation."),
+             "TaxSubtotal": {"TaxableAmount": amount(base, "XBL", "The installation, the only service."),
+                             "TaxAmount": amount(tax, "XBL", "Withheld."), "TaxCategory": cat}}
+    out["WithholdingTaxTotal"] = total
+    line["WithholdingTaxTotal"] = {"TaxAmount": amount(tax, "XBL", "Withheld on this line.")}
+    lmt = out["LegalMonetaryTotal"]
+    lmt["WithholdingTaxTotalAmount"] = amount(tax, "XBL", wh["note"])
+    payable = Decimal(lmt["PayableAmount"].value) - tax
+    lmt["PayableAmount"] = amount(payable, "XBL", "What the department pays the manufacturer: the total less the tax "
+                                                  "it withholds.")
+    out["TaxRepresentativeParty"] = party("10-xb", short=True)
+    out["Note"] = V("Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.", "Why it is "
+                                                                                                      "named.")
+    f.numbers["invoice-amount"] = payable
+    return out
+
+
 def tender(n, doc):
     f = TENDER
     folder = {"ContractFolderID": V(FOLDER, "The authority's file number for this procurement, the same on every "
@@ -2326,7 +2387,13 @@ def tender(n, doc):
                            "ContractDocumentReference": {"ID": V(FOLDER, "The awarded contract.")},
                            "ProjectReference": {"ID": V("PWD-PARKS-26", "The programme the department books it on.")},
                            "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure.")}},
+                          [{"item": "bench-serra", "qty": 40, "invoice_why": "The benches of the first release.",
+                            "line_extra": {"OrderLineReference": {"LineID": V("1", "The call-off line.")}}},
+                           {"item": "bench-installation", "qty": 40, "invoice_why": "Each bench anchored by the "
+                                                                                    "manufacturer's installers, as "
+                                                                                    "the contract provides."}],
                           currency="XBL")
+        withholding(f, out)
         out["PricingCurrencyCode"] = V("XUF", "The contract prices are in ferra.")
         out["PricingExchangeRate"] = PRICING_RATE
         out["TaxCurrencyCode"] = V("XUF", "The seller reports its value added tax in ferra.")
@@ -2532,6 +2599,11 @@ def utilities(n, doc):
                                              "Description": V(meter[1], "Where it is.")}
         if key == "33-xu":
             out["InvoiceLine"][1]["OriginatorParty"] = party("8-xu", short=True)
+            out["BillingReference"] = {"InvoiceDocumentReference": {
+                "ID": V("FE-INV-26-0211", "February's bill, with an estimated reading of the warehouse meter."),
+                "IssueDate": V("2026-03-01", "Its issue date.")},
+                "BillingReferenceLine": {"ID": V("2", "Its warehouse line, which this month's actual reading "
+                                                      "settles.")}}
             energy_tax(f, out, key)
         if key == "34-xb:c-xb":                 # the household pays by direct debit under a mandate
             m = PARTY["c-xb"]["identity"]["mandate"]
@@ -2812,7 +2884,11 @@ def furniture(n, doc):
                          {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
     if doc["doc"] == "Invoice" and doc["to"] == "26-xb":
         return kit.invoice(f, n, doc, 20, 30, "Issued on delivery.", {"OrderReference": ref(f, "order", "The store's "
-                                                                                                       "order.")},
+                                                                                                       "order."),
+                                                                      "DeliveryNoteDocumentReference": {
+                                                                          "ID": V("BF-DN-26-0320", "The delivery "
+                                                                                  "note the store signed when the "
+                                                                                  "van unloaded.")}},
                            [{"item": "garden-set", "qty": 20, "invoice_why": "The sets delivered.",
                              "line_extra": {"SubInvoiceLine": set_parts(20, "invoice")}}])
     if doc["doc"] == "InstructionForReturns":
