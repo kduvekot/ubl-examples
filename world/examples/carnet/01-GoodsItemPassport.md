@@ -26,6 +26,18 @@ The chamber issues the carnet to the manufacturer, who holds it while the sample
   Issued before the samples leave for the fair.
 - `IssueTime` = **15:04:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `StatusCode` = **Valid**  
+  The carnet is valid.
+- `Status` = **Issued**  
+  In words.
+- `Note` = **Samples for the Selanu trade fair; to come back within six months.**  
+  What it is for.
+- `VersionID` = **1**  
+  The first version.
+- `ExportReasonCode` = **Exhibition**  
+  Temporary export for a fair.
+- `ExportReason` = **Exhibition at the Selanu trade fair**  
+  In words.
 
 ### Validity Period
 
@@ -680,8 +692,120 @@ Inside `GoodsItemPassportCounterfoil`:
 
 - `ID` = **EXP-1**  
   The exportation counterfoil, stamped by Urvania's customs when the samples leave.
+- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+  The carnet.
+- `FinalReexportationDate` = **2026-11-21**  
+  The samples must be back by then.
+- `Note` = **Stamped by customs.**  
+  How it is used.
+- `CustomsOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
+  The customs office that stamps it.
+- `GoodsItem/ID` = **1**  
+  The two sample benches.
+- `GoodsItem/Quantity` = **2** (unitCode `H87`)  
+  Two.
+- `ExportationDocumentReference/ID` = **EXP-1-STAMP**  
+  The export stamp.
+- `VoucherDocumentReference/ID` = **V-EXP-1**  
+  The voucher that customs keeps.
 - `ID` = **IMP-1**  
   The importation counterfoil, stamped by Lisavu's customs when they arrive.
+- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+  The carnet.
+- `Note` = **Stamped by customs.**  
+  How it is used.
+- `CustomsOfficeLocation/Name` = **Customs office, Selanu airport**  
+  The customs office that stamps it.
+- `GoodsItem/ID` = **1**  
+  The two sample benches.
+- `GoodsItem/Quantity` = **2** (unitCode `H87`)  
+  Two.
+- `ImportationDocumentReference/ID` = **IMP-1-STAMP**  
+  The import stamp on the island.
+- `VoucherDocumentReference/ID` = **V-IMP-1**  
+  The voucher that customs keeps.
+- `ID` = **REEXP-1**  
+  The re-exportation counterfoil, to be stamped when they leave the island.
+- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+  The carnet.
+- `Note` = **Stamped by customs.**  
+  How it is used.
+- `CustomsOfficeLocation/Name` = **Customs office, Selanu airport**  
+  The customs office that stamps it.
+- `GoodsItem/ID` = **1**  
+  The two sample benches.
+- `GoodsItem/Quantity` = **2** (unitCode `H87`)  
+  Two.
+- `ReexportationDocumentReference/ID` = **REEXP-1-STAMP**  
+  The re-export stamp.
+- `VoucherDocumentReference/ID` = **V-REEXP-1**  
+  The voucher that customs keeps.
+- `ID` = **REIMP-1**  
+  The re-importation counterfoil, stamped when they come home.
+- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+  The carnet.
+- `Note` = **Stamped by customs.**  
+  How it is used.
+- `CustomsOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
+  The customs office that stamps it.
+- `GoodsItem/ID` = **1**  
+  The two sample benches.
+- `GoodsItem/Quantity` = **2** (unitCode `H87`)  
+  Two.
+- `ReimportationDocumentReference/ID` = **REIMP-1-STAMP**  
+  The re-import stamp.
+- `VoucherDocumentReference/ID` = **V-REIMP-1**  
+  The voucher that customs keeps.
+
+### Issuer Endorsement
+
+Inside `IssuerEndorsement`:
+
+- `DocumentID` = **FCC-DOC-26-0724**  
+  The carnet.
+- `ApprovalStatus` = **Issued**  
+  The chamber issued it.
+- `EndorserParty/RoleCode` = **Issuer**  
+  The issuing chamber.
+- `EndorserParty/SequenceNumeric` = **1**  
+  The first endorsement.
+- `EndorserParty/Party/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EndorserParty/SignatoryContact/Name` = **Carnet desk**  
+  The chamber's desk.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **SCC-FAIR-26-INV**  
+  The fair's invitation to exhibit.
+
+### Document Distribution
+
+Inside `DocumentDistribution`:
+
+- `ID` = **1**  
+  The holder's carnet.
+- `DistributionTypeCode` = **Paper**  
+  On paper.
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FCC-SIG-26-ATA**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -696,6 +820,12 @@ Inside `GoodsItemPassportCounterfoil`:
   <cbc:UUID>eba67af9-0d62-5339-b7c5-75faae5007fc</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
   <cbc:IssueTime>15:04:00</cbc:IssueTime>
+  <cbc:StatusCode>Valid</cbc:StatusCode>
+  <cbc:Status>Issued</cbc:Status>
+  <cbc:Note>Samples for the Selanu trade fair; to come back within six months.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:ExportReasonCode>Exhibition</cbc:ExportReasonCode>
+  <cbc:ExportReason>Exhibition at the Selanu trade fair</cbc:ExportReason>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-05-25</cbc:StartDate>
     <cbc:EndDate>2027-05-25</cbc:EndDate>
@@ -1265,9 +1395,121 @@ Inside `GoodsItemPassportCounterfoil`:
   </cac:Shipment>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>EXP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:FinalReexportationDate>2026-11-21</cbc:FinalReexportationDate>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ExportationDocumentReference>
+      <cbc:ID>EXP-1-STAMP</cbc:ID>
+    </cac:ExportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-EXP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ImportationDocumentReference>
+      <cbc:ID>IMP-1-STAMP</cbc:ID>
+    </cac:ImportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-IMP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>REEXP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ReexportationDocumentReference>
+      <cbc:ID>REEXP-1-STAMP</cbc:ID>
+    </cac:ReexportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-REEXP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>REIMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ReimportationDocumentReference>
+      <cbc:ID>REIMP-1-STAMP</cbc:ID>
+    </cac:ReimportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-REIMP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:IssuerEndorsement>
+    <cbc:DocumentID>FCC-DOC-26-0724</cbc:DocumentID>
+    <cbc:ApprovalStatus>Issued</cbc:ApprovalStatus>
+    <cac:EndorserParty>
+      <cbc:RoleCode>Issuer</cbc:RoleCode>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+      <cac:SignatoryContact>
+        <cbc:Name>Carnet desk</cbc:Name>
+      </cac:SignatoryContact>
+    </cac:EndorserParty>
+  </cac:IssuerEndorsement>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCC-FAIR-26-INV</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>FCC-SIG-26-ATA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </GoodsItemPassport>
 ```

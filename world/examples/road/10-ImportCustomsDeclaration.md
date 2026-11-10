@@ -26,6 +26,39 @@ The distributor, as importer, declares the goods in Bayvarra and claims the pref
   Declared when the goods arrive in Bayvarra.
 - `IssueTime` = **09:54:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `TypeCode` = **Import**  
+  An import declaration.
+- `SubTypeCode` = **FreeCirculation**  
+  For release into free circulation.
+- `NatureOfTransactionCode` = **Purchase**  
+  The goods were bought.
+- `Note` = **Duties paid by the importer's account at customs.**  
+  How duties are settled.
+- `VersionID` = **1**  
+  The first version.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-03-24**  
+  From the declaration.
+- `DurationMeasure` = **30** (unitCode `DAY`)  
+  Valid for clearance within 30 days.
+
+### Customs Exit Office Location
+
+Inside `CustomsExitOfficeLocation`:
+
+- `Name` = **Customs post at the land border, Urvanian side**  
+  Where the goods leave the country.
+
+### Jurisdiction Region Address
+
+Inside `JurisdictionRegionAddress`:
+
+- `Country/IdentificationCode` = **XB**  
+  The customs territory of import.
 
 ### Importer Party
 
@@ -315,6 +348,15 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Notifier Party
+
+Inside `NotifierParty`:
+
+- `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -554,12 +596,30 @@ Inside `Shipment`:
 - `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
   The despatch advice.
 
+### Previous Customs Declaration
+
+Inside `PreviousCustomsDeclaration`:
+
+- `ID` = **VI-CD-26-0156**  
+  The export declaration in the country of departure.
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **FCC-CO-26-0157**  
   The certificate of origin, to claim the preferential duty rate.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-IM-road**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -574,6 +634,23 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>d05f73ca-d179-5742-b609-b8871aacb98b</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>09:54:00</cbc:IssueTime>
+  <cbc:TypeCode>Import</cbc:TypeCode>
+  <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
+  <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
+  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-03-24</cbc:StartDate>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CustomsExitOfficeLocation>
+    <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+  </cac:CustomsExitOfficeLocation>
+  <cac:JurisdictionRegionAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -828,6 +905,14 @@ Inside `AdditionalDocumentReference`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0154</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
@@ -1035,8 +1120,22 @@ Inside `AdditionalDocumentReference`:
       </cac:DespatchLineReference>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>VI-CD-26-0156</cbc:ID>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FCC-CO-26-0157</cbc:ID>
   </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-IM-road</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ImportCustomsDeclaration>
 ```

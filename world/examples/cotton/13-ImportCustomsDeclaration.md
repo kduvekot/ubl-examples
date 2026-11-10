@@ -26,6 +26,39 @@ The mill declares the bales in Bayvarra.
   The mill declares the bales in Bayvarra.
 - `IssueTime` = **09:37:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `TypeCode` = **Import**  
+  An import declaration.
+- `SubTypeCode` = **FreeCirculation**  
+  For release into free circulation.
+- `NatureOfTransactionCode` = **Purchase**  
+  The goods were bought.
+- `Note` = **Duties paid by the importer's account at customs.**  
+  How duties are settled.
+- `VersionID` = **1**  
+  The first version.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-03-06**  
+  From the declaration.
+- `DurationMeasure` = **30** (unitCode `DAY`)  
+  Valid for clearance within 30 days.
+
+### Customs Exit Office Location
+
+Inside `CustomsExitOfficeLocation`:
+
+- `Name` = **Customs office, port of Selanu**  
+  Where the goods leave the country.
+
+### Jurisdiction Region Address
+
+Inside `JurisdictionRegionAddress`:
+
+- `Country/IdentificationCode` = **XB**  
+  The customs territory of import.
 
 ### Importer Party
 
@@ -277,6 +310,15 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Notifier Party
+
+Inside `NotifierParty`:
+
+- `PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -350,12 +392,30 @@ Inside `Shipment`:
 - `GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
 
+### Previous Customs Declaration
+
+Inside `PreviousCustomsDeclaration`:
+
+- `ID` = **SCG-CD-26-0203**  
+  The export declaration in the country of departure.
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **TOL-BL-26-0205**  
   The bill of lading.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LTM-SIG-IM-cotton**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -370,6 +430,23 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>fe5926c9-1714-5ac7-a08f-f5b1b1c97285</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
   <cbc:IssueTime>09:37:00</cbc:IssueTime>
+  <cbc:TypeCode>Import</cbc:TypeCode>
+  <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
+  <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
+  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-03-06</cbc:StartDate>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CustomsExitOfficeLocation>
+    <cbc:Name>Customs office, port of Selanu</cbc:Name>
+  </cac:CustomsExitOfficeLocation>
+  <cac:JurisdictionRegionAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>
@@ -587,6 +664,14 @@ Inside `AdditionalDocumentReference`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Textile Mill</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0199</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
@@ -659,8 +744,22 @@ Inside `AdditionalDocumentReference`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>SCG-CD-26-0203</cbc:ID>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0205</cbc:ID>
   </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>LTM-SIG-IM-cotton</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ImportCustomsDeclaration>
 ```

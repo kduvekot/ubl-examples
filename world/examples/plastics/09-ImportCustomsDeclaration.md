@@ -26,6 +26,39 @@ The packaging maker declares the import in Bayvarra.
   Declared when the barge arrives at the coast.
 - `IssueTime` = **10:35:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `TypeCode` = **Import**  
+  An import declaration.
+- `SubTypeCode` = **FreeCirculation**  
+  For release into free circulation.
+- `NatureOfTransactionCode` = **Purchase**  
+  The goods were bought.
+- `Note` = **Duties paid by the importer's account at customs.**  
+  How duties are settled.
+- `VersionID` = **1**  
+  The first version.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-04-22**  
+  From the declaration.
+- `DurationMeasure` = **30** (unitCode `DAY`)  
+  Valid for clearance within 30 days.
+
+### Customs Exit Office Location
+
+Inside `CustomsExitOfficeLocation`:
+
+- `Name` = **Customs post at the river border**  
+  Where the goods leave the country.
+
+### Jurisdiction Region Address
+
+Inside `JurisdictionRegionAddress`:
+
+- `Country/IdentificationCode` = **XB**  
+  The customs territory of import.
 
 ### Importer Party
 
@@ -303,6 +336,15 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Notifier Party
+
+Inside `NotifierParty`:
+
+- `PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Rivermouth Packaging**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -376,6 +418,24 @@ Inside `Shipment`:
 - `GoodsItem/AdditionalDocumentReference/ID` = **FB-WB-26-0890**  
   The barge's consignment note.
 
+### Previous Customs Declaration
+
+Inside `PreviousCustomsDeclaration`:
+
+- `ID` = **RR-CD-26-0888**  
+  The export declaration in the country of departure.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **RP-SIG-IM-plastics**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Rivermouth Packaging**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -389,6 +449,23 @@ Inside `Shipment`:
   <cbc:UUID>3ab58340-2ba7-5229-ab1a-e01715bcc1ef</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>10:35:00</cbc:IssueTime>
+  <cbc:TypeCode>Import</cbc:TypeCode>
+  <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
+  <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
+  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-22</cbc:StartDate>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CustomsExitOfficeLocation>
+    <cbc:Name>Customs post at the river border</cbc:Name>
+  </cac:CustomsExitOfficeLocation>
+  <cac:JurisdictionRegionAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
@@ -633,6 +710,14 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rivermouth Packaging</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>RR-SH-26-0889</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
@@ -691,5 +776,19 @@ Inside `Shipment`:
       </cac:AdditionalDocumentReference>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>RR-CD-26-0888</cbc:ID>
+  </cac:PreviousCustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>RP-SIG-IM-plastics</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rivermouth Packaging</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ImportCustomsDeclaration>
 ```

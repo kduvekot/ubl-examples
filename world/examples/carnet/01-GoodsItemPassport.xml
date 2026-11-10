@@ -8,6 +8,12 @@
   <cbc:UUID>eba67af9-0d62-5339-b7c5-75faae5007fc</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
   <cbc:IssueTime>15:04:00</cbc:IssueTime>
+  <cbc:StatusCode>Valid</cbc:StatusCode>
+  <cbc:Status>Issued</cbc:Status>
+  <cbc:Note>Samples for the Selanu trade fair; to come back within six months.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:ExportReasonCode>Exhibition</cbc:ExportReasonCode>
+  <cbc:ExportReason>Exhibition at the Selanu trade fair</cbc:ExportReason>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-05-25</cbc:StartDate>
     <cbc:EndDate>2027-05-25</cbc:EndDate>
@@ -577,8 +583,120 @@
   </cac:Shipment>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>EXP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:FinalReexportationDate>2026-11-21</cbc:FinalReexportationDate>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ExportationDocumentReference>
+      <cbc:ID>EXP-1-STAMP</cbc:ID>
+    </cac:ExportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-EXP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ImportationDocumentReference>
+      <cbc:ID>IMP-1-STAMP</cbc:ID>
+    </cac:ImportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-IMP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>REEXP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ReexportationDocumentReference>
+      <cbc:ID>REEXP-1-STAMP</cbc:ID>
+    </cac:ReexportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-REEXP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>REIMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ReimportationDocumentReference>
+      <cbc:ID>REIMP-1-STAMP</cbc:ID>
+    </cac:ReimportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-REIMP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:IssuerEndorsement>
+    <cbc:DocumentID>FCC-DOC-26-0724</cbc:DocumentID>
+    <cbc:ApprovalStatus>Issued</cbc:ApprovalStatus>
+    <cac:EndorserParty>
+      <cbc:RoleCode>Issuer</cbc:RoleCode>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+      <cac:SignatoryContact>
+        <cbc:Name>Carnet desk</cbc:Name>
+      </cac:SignatoryContact>
+    </cac:EndorserParty>
+  </cac:IssuerEndorsement>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCC-FAIR-26-INV</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>FCC-SIG-26-ATA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </GoodsItemPassport>

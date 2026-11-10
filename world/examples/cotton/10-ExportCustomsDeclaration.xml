@@ -8,6 +8,10 @@
   <cbc:UUID>b7da114f-e3d0-5a1a-8bbe-d9316a49600a</cbc:UUID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
   <cbc:IssueTime>14:43:00</cbc:IssueTime>
+  <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -75,6 +79,16 @@
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>SCG-CD-26-0203</cbc:ID>
+    <cbc:FunctionCode>Original</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>SCG-SH-26-0199</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
@@ -150,6 +164,17 @@
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs office, port of Selanu</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>
@@ -291,5 +316,19 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>LTM-PO-26-0197</cbc:ID>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>SCG-SIG-EX-cotton</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ExportCustomsDeclaration>

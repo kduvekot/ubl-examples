@@ -26,6 +26,14 @@ The granulate leaves Urvania; the waste processor declares the export.
   Declared the day the barge is loaded.
 - `IssueTime` = **16:08:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ExportTypeCode` = **Permanent**  
+  A permanent export: the goods are sold abroad.
+- `ExportReasonCode` = **Sale**  
+  The reason: a sale to a buyer abroad.
+- `Note` = **Declared electronically before the goods leave.**  
+  How it was declared.
+- `VersionID` = **1**  
+  The first version.
 
 ### Exporter Party
 
@@ -134,6 +142,14 @@ Inside `CustomsDeclaration`:
 
 - `ID` = **RR-CD-26-0888**  
   The declaration as lodged with the customs of the exporting country.
+- `FunctionCode` = **Original**  
+  An original declaration, not an amendment.
+- `ValidityPeriod/StartDate` = **2026-04-19**  
+  From the declaration.
+- `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
+  The goods must leave within 90 days.
+- `ApplicableTerritoryAddress/Country/IdentificationCode` = **XU**  
+  The customs territory the goods leave.
 - `Shipment/ID` = **RR-SH-26-0889**  
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
@@ -266,6 +282,12 @@ Inside `CustomsDeclaration`:
   The environmental claim certified.
 - `Shipment/GoodsItem/Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
   What the certificate states.
+- `CustomsExitOfficeLocation/Name` = **Customs post at the river border**  
+  Where the goods leave the country.
+- `ConsignorParty/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ConsignorParty/PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **2220** (listID `ISIC Rev.4`)  
@@ -436,6 +458,19 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105507** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `AdditionalDocumentReference/ID` = **RP-PO-26-0882**  
+  The order behind the export.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **RR-SIG-EX-plastics**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -450,6 +485,10 @@ Inside `CustomsDeclaration`:
   <cbc:UUID>9d7cd654-55a1-5b6b-af72-1c8f54670605</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>16:08:00</cbc:IssueTime>
+  <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
@@ -544,6 +583,16 @@ Inside `CustomsDeclaration`:
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>RR-CD-26-0888</cbc:ID>
+    <cbc:FunctionCode>Original</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-04-19</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>RR-SH-26-0889</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
@@ -668,6 +717,17 @@ Inside `CustomsDeclaration`:
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs post at the river border</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rinova Recovery</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
@@ -827,6 +887,20 @@ Inside `CustomsDeclaration`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>RP-PO-26-0882</cbc:ID>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>RR-SIG-EX-plastics</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rinova Recovery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ExportCustomsDeclaration>
 ```

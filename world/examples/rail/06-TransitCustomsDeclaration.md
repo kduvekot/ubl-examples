@@ -26,6 +26,53 @@ The goods travel under customs transit from Urvania to the destination in Bayvar
   Lodged at the office of departure before the train leaves.
 - `IssueTime` = **17:29:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `TypeCode` = **Transit**  
+  A transit declaration.
+- `SubTypeCode` = **External**  
+  Goods not yet released, carried across the border under customs control.
+- `NatureOfTransactionCode` = **Purchase**  
+  The goods were bought.
+- `Note` = **Seals XU-VI-30411 and XU-VI-30412 to remain intact.**  
+  The transit condition.
+- `VersionID` = **1**  
+  The first version.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-04-14**  
+  From departure.
+- `EndDate` = **2026-04-17**  
+  The goods must reach the office of destination within three days.
+
+### Export Customs Exit Office Location
+
+Inside `ExportCustomsExitOfficeLocation`:
+
+- `Name` = **Customs post at the rail border station, Urvanian side**  
+  Where the goods leave Urvania.
+
+### Transit Customs Exit Office Location
+
+Inside `TransitCustomsExitOfficeLocation`:
+
+- `Name` = **Customs post at the rail border station, Bayvarran side**  
+  Where the transit is checked.
+
+### Import Customs Exit Office Location
+
+Inside `ImportCustomsExitOfficeLocation`:
+
+- `Name` = **Customs office Marrowdale**  
+  Where the transit ends.
+
+### Jurisdiction Region Address
+
+Inside `JurisdictionRegionAddress`:
+
+- `Country/IdentificationCode` = **XU**  
+  Declared under Urvania's customs.
 
 ### Transit Exporter Party
 
@@ -246,6 +293,15 @@ Inside `ConsigneeParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Freight Forwarder Party
+
+Inside `FreightForwarderParty`:
+
+- `PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Customs Party
 
 Inside `CustomsParty`:
@@ -328,6 +384,15 @@ Inside `CustomsParty`:
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105507** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Notifier Party
+
+Inside `NotifierParty`:
+
+- `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Shipment
 
@@ -678,6 +743,24 @@ Inside `Shipment`:
 - `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **FRC-TEP-26-0328**  
+  The transport plan.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-TD**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -691,6 +774,29 @@ Inside `Shipment`:
   <cbc:UUID>39a0d3b7-c2fe-5e50-8ee2-54287be65033</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>17:29:00</cbc:IssueTime>
+  <cbc:TypeCode>Transit</cbc:TypeCode>
+  <cbc:SubTypeCode>External</cbc:SubTypeCode>
+  <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
+  <cbc:Note>Seals XU-VI-30411 and XU-VI-30412 to remain intact.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-14</cbc:StartDate>
+    <cbc:EndDate>2026-04-17</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:ExportCustomsExitOfficeLocation>
+    <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
+  </cac:ExportCustomsExitOfficeLocation>
+  <cac:TransitCustomsExitOfficeLocation>
+    <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
+  </cac:TransitCustomsExitOfficeLocation>
+  <cac:ImportCustomsExitOfficeLocation>
+    <cbc:Name>Customs office Marrowdale</cbc:Name>
+  </cac:ImportCustomsExitOfficeLocation>
+  <cac:JurisdictionRegionAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:JurisdictionRegionAddress>
   <cac:TransitExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -885,6 +991,14 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ConsigneeParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+    </cac:PartyName>
+  </cac:FreightForwarderParty>
   <cac:CustomsParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -960,6 +1074,14 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Valdara Industries</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0332</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
@@ -1264,5 +1386,19 @@ Inside `Shipment`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-TD</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </TransitCustomsDeclaration>
 ```

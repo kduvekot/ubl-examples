@@ -26,6 +26,14 @@ The island's export: the ginnery declares the bales to customs.
   The island's export: declared before loading.
 - `IssueTime` = **14:43:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ExportTypeCode` = **Permanent**  
+  A permanent export: the goods are sold abroad.
+- `ExportReasonCode` = **Sale**  
+  The reason: a sale to a buyer abroad.
+- `Note` = **Declared electronically before the goods leave.**  
+  How it was declared.
+- `VersionID` = **1**  
+  The first version.
 
 ### Exporter Party
 
@@ -108,6 +116,14 @@ Inside `CustomsDeclaration`:
 
 - `ID` = **SCG-CD-26-0203**  
   The declaration as lodged with the customs of the exporting country.
+- `FunctionCode` = **Original**  
+  An original declaration, not an amendment.
+- `ValidityPeriod/StartDate` = **2026-03-01**  
+  From the declaration.
+- `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
+  The goods must leave within 90 days.
+- `ApplicableTerritoryAddress/Country/IdentificationCode` = **XL**  
+  The customs territory the goods leave.
 - `Shipment/ID` = **SCG-SH-26-0199**  
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
@@ -177,6 +193,12 @@ Inside `CustomsDeclaration`:
 - `Shipment/GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Shipment/GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `CustomsExitOfficeLocation/Name` = **Customs office, port of Selanu**  
+  Where the goods leave the country.
+- `ConsignorParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ConsignorParty/PartyName/Name` = **Selanu Cotton Ginnery**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ConsigneeParty/WebsiteURI` = **https://www.lumeporttextile.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeport Textile Mill (world/parties.json).
@@ -328,6 +350,19 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `AdditionalDocumentReference/ID` = **LTM-PO-26-0197**  
+  The order behind the export.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **SCG-SIG-EX-cotton**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -342,6 +377,10 @@ Inside `CustomsDeclaration`:
   <cbc:UUID>b7da114f-e3d0-5a1a-8bbe-d9316a49600a</cbc:UUID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
   <cbc:IssueTime>14:43:00</cbc:IssueTime>
+  <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -409,6 +448,16 @@ Inside `CustomsDeclaration`:
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>SCG-CD-26-0203</cbc:ID>
+    <cbc:FunctionCode>Original</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>SCG-SH-26-0199</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
@@ -484,6 +533,17 @@ Inside `CustomsDeclaration`:
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs office, port of Selanu</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>
@@ -625,6 +685,20 @@ Inside `CustomsDeclaration`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>LTM-PO-26-0197</cbc:ID>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>SCG-SIG-EX-cotton</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ExportCustomsDeclaration>
 ```

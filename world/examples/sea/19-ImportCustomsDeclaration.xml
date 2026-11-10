@@ -8,6 +8,23 @@
   <cbc:UUID>d81b799d-e60d-59b3-a10e-91af358a3d84</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
   <cbc:IssueTime>09:07:00</cbc:IssueTime>
+  <cbc:TypeCode>Import</cbc:TypeCode>
+  <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
+  <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
+  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-05-19</cbc:StartDate>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CustomsExitOfficeLocation>
+    <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+  </cac:CustomsExitOfficeLocation>
+  <cac:JurisdictionRegionAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -331,6 +348,14 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
@@ -640,7 +665,21 @@
       </cac:CustomsAgentParty>
     </cac:ShipmentStage>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>BF-CD-26-0136</cbc:ID>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
   </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>TCB-SIG-IM-sea</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ImportCustomsDeclaration>

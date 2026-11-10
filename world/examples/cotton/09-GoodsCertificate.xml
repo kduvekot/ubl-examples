@@ -8,6 +8,19 @@
   <cbc:UUID>9d4c84eb-3f06-549a-83fe-14010b43c0bb</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
   <cbc:IssueTime>11:39:00</cbc:IssueTime>
+  <cbc:TypeCode>Phytosanitary</cbc:TypeCode>
+  <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
+  <cbc:Note>Inspected at the ginnery's warehouse.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-02-28</cbc:StartDate>
+    <cbc:EndDate>2026-03-14</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:ApplicableTerritoryAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:ApplicableTerritoryAddress>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -157,6 +170,38 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ImporterParty>
+  <cac:WarehouseParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+    </cac:PartyName>
+  </cac:WarehouseParty>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsignorParty>
+  <cac:ConsigneeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Textile Mill</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsigneeParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:FreightForwarderParty>
   <cac:IssuerParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -214,6 +259,14 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:IssuerParty>
+  <cac:LegalAuthorityParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Island Customs Service</cbc:Name>
+    </cac:PartyName>
+  </cac:LegalAuthorityParty>
   <cac:ApplicantParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
@@ -293,4 +346,86 @@
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:Attestation>
+    <cbc:ID>SCC-ATT-26-0042</cbc:ID>
+    <cbc:Name>Freedom from pests</cbc:Name>
+    <cbc:Description>Sampled and found free of boll weevil and pink bollworm.</cbc:Description>
+    <cbc:Note>10 bales sampled out of 80.</cbc:Note>
+    <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
+    <cac:ValidityPeriod>
+      <cbc:EndDate>2026-03-14</cbc:EndDate>
+    </cac:ValidityPeriod>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+    <cac:AttestationLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TypeCode>Pest</cbc:TypeCode>
+      <cbc:Description>Boll weevil: none found.</cbc:Description>
+      <cac:CriterionItem>
+        <cbc:ID>XB-PH-07</cbc:ID>
+        <cbc:CriterionDescription>No live insects in a sample of 10 bales.</cbc:CriterionDescription>
+        <cac:DeclaredPropertyItem>
+          <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+        </cac:DeclaredPropertyItem>
+      </cac:CriterionItem>
+      <cac:SubAttestationLine>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Description>Pink bollworm: none found.</cbc:Description>
+      </cac:SubAttestationLine>
+    </cac:AttestationLine>
+  </cac:Attestation>
+  <cac:GoodsProcessing>
+    <cbc:ID>SCG-PROC-26</cbc:ID>
+    <cbc:TypeCode>Ginning</cbc:TypeCode>
+    <cbc:Description>Ginned, cleaned and pressed into bales.</cbc:Description>
+    <cbc:Note>At the Selanu cotton ginnery.</cbc:Note>
+    <cac:Period>
+      <cbc:StartDate>2026-02-07</cbc:StartDate>
+      <cbc:EndDate>2026-02-22</cbc:EndDate>
+    </cac:Period>
+    <cac:ProcessingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:ProcessingParty>
+    <cac:CriterionItem>
+      <cbc:CriterionDescription>Seed removed; lint only.</cbc:CriterionDescription>
+      <cac:DeclaredPropertyItem>
+        <cbc:Name>Cotton lint</cbc:Name>
+      </cac:DeclaredPropertyItem>
+    </cac:CriterionItem>
+    <cac:SubGoodsProcessing>
+      <cbc:TypeCode>Pressing</cbc:TypeCode>
+      <cbc:Description>Bales of about 227 kg.</cbc:Description>
+    </cac:SubGoodsProcessing>
+  </cac:GoodsProcessing>
+  <cac:OriginalDocumentReference>
+    <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+  </cac:OriginalDocumentReference>
+  <cac:PreviousDocumentReference>
+    <cbc:ID>SCC-PH-25-0198</cbc:ID>
+  </cac:PreviousDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LTM-PO-26-0197</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>SCC-SIG-26-PH</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </GoodsCertificate>

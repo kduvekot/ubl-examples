@@ -26,6 +26,39 @@ Under DAP the buyer clears the import, so the contracting authority declares the
   Under DAP the buyer clears the import: the authority declares the benches.
 - `IssueTime` = **16:15:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `TypeCode` = **Import**  
+  An import declaration.
+- `SubTypeCode` = **FreeCirculation**  
+  For release into free circulation.
+- `NatureOfTransactionCode` = **Purchase**  
+  The goods were bought.
+- `Note` = **Duties paid by the importer's account at customs.**  
+  How duties are settled.
+- `VersionID` = **1**  
+  The first version.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-03-31**  
+  From the declaration.
+- `DurationMeasure` = **30** (unitCode `DAY`)  
+  Valid for clearance within 30 days.
+
+### Customs Exit Office Location
+
+Inside `CustomsExitOfficeLocation`:
+
+- `Name` = **Customs post at the land border, Urvanian side**  
+  Where the goods leave the country.
+
+### Jurisdiction Region Address
+
+Inside `JurisdictionRegionAddress`:
+
+- `Country/IdentificationCode` = **XB**  
+  The customs territory of import.
 
 ### Importer Party
 
@@ -305,6 +338,15 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Notifier Party
+
+Inside `NotifierParty`:
+
+- `PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -512,6 +554,24 @@ Inside `Shipment`:
 - `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 
+### Previous Customs Declaration
+
+Inside `PreviousCustomsDeclaration`:
+
+- `ID` = **VI-CD-26-0216**  
+  The export declaration in the country of departure.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LPWD-SIG-IM-tender**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -525,6 +585,23 @@ Inside `Shipment`:
   <cbc:UUID>af0fa2f7-eb6c-535d-8166-d10b11a1a8b2</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
   <cbc:IssueTime>16:15:00</cbc:IssueTime>
+  <cbc:TypeCode>Import</cbc:TypeCode>
+  <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
+  <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
+  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-03-31</cbc:StartDate>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CustomsExitOfficeLocation>
+    <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+  </cac:CustomsExitOfficeLocation>
+  <cac:JurisdictionRegionAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -774,6 +851,14 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Public Works Department</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0213</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
@@ -945,5 +1030,19 @@ Inside `Shipment`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>VI-CD-26-0216</cbc:ID>
+  </cac:PreviousCustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>LPWD-SIG-IM-tender</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ImportCustomsDeclaration>
 ```

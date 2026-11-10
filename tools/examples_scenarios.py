@@ -4406,3 +4406,262 @@ def _(f, n, doc, out):
                          "GrossWeightMeasure": qty(SEED_KG + 2400, "KGM", "The cotton and the empty trailers' "
                                                                           "tare of 2,400 kg, as weighed."),
                          "Delivery": {"ActualDeliveryDate": V(f.date(3), "At the gin.")}}}
+
+
+CUSTOMS_POSTS = {"XU": "Customs post at the land border, Urvanian side", "XB": "Customs post at the land border, "
+                                                                               "Bayvarran side",
+                 "XL": "Customs office, port of Selanu"}
+
+
+def exit_office(f, country):
+    if f.id in ("sea", "cotton"):
+        name = "Customs office, port of Lumeport" if country == "XB" else "Customs office, port of Selanu"
+    elif f.id == "plastics":
+        name = "Customs post at the river border"
+    else:
+        name = CUSTOMS_POSTS[country]
+    return {"Name": V(name, "Where the goods leave the country.")}
+
+
+def export_extras(f, n, doc, out):
+    exporter = doc["parties"]["ExporterParty"]
+    c = PARTY[exporter]["c"]
+    f.numbers.setdefault("export-declaration", out["CustomsDeclaration"]["ID"].value)
+    x = {"ExportTypeCode": V("Permanent", "A permanent export: the goods are sold abroad."),
+         "ExportReasonCode": V("Sale", "The reason: a sale to a buyer abroad."),
+         "Note": V("Declared electronically before the goods leave.", "How it was declared."),
+         "VersionID": V("1", "The first version."),
+         "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-EX-{f.id}"),
+         "CustomsDeclaration": {
+             "FunctionCode": V("Original", "An original declaration, not an amendment."),
+             "ValidityPeriod": {"StartDate": V(out["IssueDate"].value, "From the declaration."),
+                                "DurationMeasure": V("90", "The goods must leave within 90 days.", unitCode="DAY")},
+             "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V(c, "The customs territory the "
+                                                                                   "goods leave.")}},
+             "CustomsExitOfficeLocation": exit_office(f, c),
+             "ConsignorParty": party(exporter, short=True),
+             "AdditionalDocumentReference": {"ID": V(f.numbers.get("order", ""), "The order behind the export.")}}}
+    if f.id == "sea":
+        x["CustomsDeclaration"]["FreightForwarderParty"] = party("10-xb", short=True)
+    return x
+
+
+def import_extras(f, n, doc, out):
+    importer = doc["parties"]["ImporterParty"]
+    c = PARTY[importer]["c"]
+    origin = PARTY[doc["parties"]["ConsignorParty"]]["c"]
+    x = {"TypeCode": V("Import", "An import declaration."),
+         "SubTypeCode": V("FreeCirculation", "For release into free circulation."),
+         "NatureOfTransactionCode": V("Purchase", "The goods were bought."),
+         "Note": V("Duties paid by the importer's account at customs.", "How duties are settled."),
+         "VersionID": V("1", "The first version."),
+         "ValidityPeriod": {"StartDate": V(out["IssueDate"].value, "From the declaration."),
+                            "DurationMeasure": V("30", "Valid for clearance within 30 days.", unitCode="DAY")},
+         "CustomsExitOfficeLocation": exit_office(f, origin),
+         "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(c, "The customs territory of import.")}},
+         "NotifierParty": party(doc["from"], short=True),
+         "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-IM-{f.id}")}
+    if "export-declaration" in f.numbers:
+        x["PreviousCustomsDeclaration"] = {"ID": V(f.numbers["export-declaration"], "The export declaration in the "
+                                                                                     "country of departure.")}
+    return x
+
+
+for _fid in ("road", "sea", "tender", "plastics", "wood", "cotton"):
+    enrich(_fid, "ExportCustomsDeclaration")(export_extras)
+    enrich(_fid, "ImportCustomsDeclaration")(import_extras)
+
+
+@enrich("rail", "TransitCustomsDeclaration")
+def _(f, n, doc, out):
+    return {"TypeCode": V("Transit", "A transit declaration."),
+            "SubTypeCode": V("External", "Goods not yet released, carried across the border under customs control."),
+            "NatureOfTransactionCode": V("Purchase", "The goods were bought."),
+            "Note": V("Seals XU-VI-30411 and XU-VI-30412 to remain intact.", "The transit condition."),
+            "VersionID": V("1", "The first version."),
+            "ValidityPeriod": {"StartDate": V(f.date(8), "From departure."),
+                               "EndDate": V(f.date(11), "The goods must reach the office of destination within "
+                                                        "three days.")},
+            "ExportCustomsExitOfficeLocation": {"Name": V("Customs post at the rail border station, Urvanian side",
+                                                          "Where the goods leave Urvania.")},
+            "TransitCustomsExitOfficeLocation": {"Name": V("Customs post at the rail border station, Bayvarran side",
+                                                           "Where the transit is checked.")},
+            "ImportCustomsExitOfficeLocation": {"Name": V("Customs office Marrowdale", "Where the transit ends.")},
+            "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V("XU", "Declared under Urvania's "
+                                                                                    "customs.")}},
+            "FreightForwarderParty": party("14-xu", short=True),
+            "NotifierParty": party("5-xu", short=True),
+            "AdditionalDocumentReference": {"ID": V(f.numbers["tep"], "The transport plan.")},
+            "Signature": seal(doc["from"], "VI-SIG-TD")}
+
+
+@enrich("road", "CertificateOfOrigin")
+def _(f, n, doc, out):
+    x = {"Note": V("Preferential origin under the trade accord.", "What the certificate is for."),
+         "VersionID": V("1", "The first version."),
+         "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-CO-{n:02d}"),
+         "CertificateOfOriginApplication": {
+             "PreviousJobID": V("VI-CO-25-0412", "The exporter's application of last year for the same goods."),
+             "Remarks": V("Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives "
+                          "origin.", "Why the goods are of Urvanian origin."),
+             "ExporterParty": party("5-xu", short=True),
+             "ImporterParty": party("6-xb", short=True),
+             "DocumentDistribution": {"ID": V("1", "The importer's copy."),
+                                      "DistributionTypeCode": V("Electronic", "As this document."),
+                                      "Party": party("6-xb", short=True)},
+             "SupportingDocumentReference": {"ID": V(f.numbers["invoice"] if "invoice" in f.numbers else
+                                                     f.numbers["order"], "The commercial document behind the "
+                                                                         "goods.")},
+             "Signature": seal("5-xu", "VI-SIG-COA")}}
+    if doc["from"] == "20-xu":
+        x["EmbassyEndorsement"] = {"DocumentID": V(out["ID"].value, "The certificate legalised."),
+                                   "ApprovalStatus": V("Legalised", "The trade accord council confirms the "
+                                                                    "chamber's signature."),
+                                   "Remarks": V("Signature of the Ferrano chamber confirmed.", "What was checked."),
+                                   "EndorserParty": {"RoleCode": V("Legalisation", "The council legalises."),
+                                                     "SequenceNumeric": V("2", "After the chamber."),
+                                                     "Party": party("32-xb", short=True),
+                                                     "SignatoryContact": {"Name": V("Legalisation desk", "The "
+                                                                                    "council's desk that signs.")}},
+                                   "Signature": seal("32-xb", "LTAC-SIG-26-0311")}
+        x["IssuerEndorsement"] = {"Remarks": V("Origin verified against the exporter's production records.",
+                                               "What the chamber checked."),
+                                  "Signature": seal("20-xu", "FCC-SIG-26-0309")}
+    return x
+
+
+@enrich("cotton", "GoodsCertificate")
+def _(f, n, doc, out):
+    return {"TypeCode": V("Phytosanitary", "A plant health certificate for the cotton."),
+            "Description": V("The ginned cotton is free of the pests named by Bayvarra's plant health rules.",
+                             "What it certifies."),
+            "Note": V("Inspected at the ginnery's warehouse.", "Where."), "VersionID": V("1", "The first version."),
+            "ValidityPeriod": {"StartDate": V(f.date(26), "From the inspection."),
+                               "EndDate": V(f.date(40), "For two weeks: the bales must ship by then.")},
+            "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V("XB", "For import into Bayvarra.")}},
+            "WarehouseParty": party("39-xl", short=True),
+            "ConsignorParty": party("39-xl", short=True),
+            "ConsigneeParty": party("40-xb", short=True),
+            "FreightForwarderParty": party("10-xb", short=True),
+            "LegalAuthorityParty": party("19-xl", short=True),
+            "Attestation": {"ID": V("SCC-ATT-26-0042", "The inspector's attestation."),
+                            "Name": V("Freedom from pests", "What is attested."),
+                            "Description": V("Sampled and found free of boll weevil and pink bollworm.", "In words."),
+                            "Note": V("10 bales sampled out of 80.", "The sample."),
+                            "AcceptanceIndicator": V("true", "Accepted."),
+                            "ValidityPeriod": {"EndDate": V(f.date(40), "As the certificate.")},
+                            "IssuerParty": party("20-xl", short=True),
+                            "AttestationLine": {"ID": V("1", "The pest checked."), "TypeCode": V("Pest", "A pest "
+                                                                                                        "check."),
+                                                "Description": V("Boll weevil: none found.", "The finding."),
+                                                "CriterionItem": {"ID": V("XB-PH-07", "Bayvarra's rule."),
+                                                                  "CriterionDescription": V("No live insects in a "
+                                                                                            "sample of 10 bales.",
+                                                                                            "The criterion."),
+                                                                  "DeclaredPropertyItem": {"Name": V("Cotton lint, "
+                                                                                                     "compressed "
+                                                                                                     "bale", "The "
+                                                                                                     "goods it is "
+                                                                                                     "about.")}},
+                                                "SubAttestationLine": {"ID": V("1.1", "The second pest."),
+                                                                       "Description": V("Pink bollworm: none found.",
+                                                                                        "The finding.")}}},
+            "GoodsProcessing": {"ID": V("SCG-PROC-26", "The processing on the island."),
+                                "TypeCode": V("Ginning", "The cotton was ginned."),
+                                "Description": V("Ginned, cleaned and pressed into bales.", "In words."),
+                                "Note": V("At the Selanu cotton ginnery.", "Where."),
+                                "Period": {"StartDate": V(f.date(5), "The ginning."), "EndDate": V(f.date(20), "Its "
+                                                                                                             "end.")},
+                                "ProcessingParty": party("39-xl", short=True),
+                                "CriterionItem": {"CriterionDescription": V("Seed removed; lint only.", "What "
+                                                                            "processing the rule requires."),
+                                                  "DeclaredPropertyItem": {"Name": V("Cotton lint", "The goods.")}},
+                                "SubGoodsProcessing": {"TypeCode": V("Pressing", "Pressed into bales."),
+                                                       "Description": V("Bales of about 227 kg.", "In words.")}},
+            "OriginalDocumentReference": {"ID": V("XL-CLS-2026-0042", "The classing certificate of the cotton.")},
+            "PreviousDocumentReference": {"ID": V("SCC-PH-25-0198", "Last season's certificate.")},
+            "AdditionalDocumentReference": {"ID": V(f.numbers["order"], "The mill's order.")},
+            "Signature": seal(doc["from"], "SCC-SIG-26-PH")}
+
+
+@enrich("carnet", "GoodsItemPassport")
+def _(f, n, doc, out):
+    cf = lambda cid, why, ref, ref_why, office: {
+        "ID": V(cid, why), "GoodsItemPassportID": V(out["ID"].value, "The carnet."),
+        "Note": V("Stamped by customs.", "How it is used."),
+        "CustomsOfficeLocation": {"Name": V(office, "The customs office that stamps it.")},
+        "GoodsItem": {"ID": V("1", "The two sample benches."), "Quantity": qty(2, "H87", "Two.")},
+        ref: {"ID": V(f"{cid}-STAMP", ref_why)},
+        "VoucherDocumentReference": {"ID": V(f"V-{cid}", "The voucher that customs keeps.")}}
+    return {"StatusCode": V("Valid", "The carnet is valid."), "Status": V("Issued", "In words."),
+            "Note": V("Samples for the Selanu trade fair; to come back within six months.", "What it is for."),
+            "VersionID": V("1", "The first version."),
+            "ExportReasonCode": V("Exhibition", "Temporary export for a fair."),
+            "ExportReason": V("Exhibition at the Selanu trade fair", "In words."),
+            "IssuerEndorsement": {"DocumentID": V(out["ID"].value, "The carnet."),
+                                  "ApprovalStatus": V("Issued", "The chamber issued it."),
+                                  "EndorserParty": {"RoleCode": V("Issuer", "The issuing chamber."),
+                                                    "SequenceNumeric": V("1", "The first endorsement."),
+                                                    "Party": party("20-xu", short=True),
+                                                    "SignatoryContact": {"Name": V("Carnet desk", "The chamber's "
+                                                                                                 "desk.")}}},
+            "AdditionalDocumentReference": {"ID": V("SCC-FAIR-26-INV", "The fair's invitation to exhibit.")},
+            "DocumentDistribution": {"ID": V("1", "The holder's carnet."), "DistributionTypeCode": V("Paper",
+                                                                                                    "On paper."),
+                                     "Party": party("5-xu", short=True)},
+            "Signature": seal("20-xu", "FCC-SIG-26-ATA"),
+            "GoodsItemPassportCounterfoil": [
+                {**cf("EXP-1", "The exportation counterfoil, stamped by Urvania's customs when the samples leave.",
+                      "ExportationDocumentReference", "The export stamp.", "Customs post at the land border, Urvanian "
+                                                                           "side"),
+                 "FinalReexportationDate": V(f.date(180), "The samples must be back by then.")},
+                cf("IMP-1", "The importation counterfoil, stamped by Lisavu's customs when they arrive.",
+                   "ImportationDocumentReference", "The import stamp on the island.", "Customs office, Selanu "
+                                                                                      "airport"),
+                cf("REEXP-1", "The re-exportation counterfoil, to be stamped when they leave the island.",
+                   "ReexportationDocumentReference", "The re-export stamp.", "Customs office, Selanu airport"),
+                cf("REIMP-1", "The re-importation counterfoil, stamped when they come home.",
+                   "ReimportationDocumentReference", "The re-import stamp.", "Customs post at the land border, "
+                                                                             "Urvanian side")]}
+
+
+@enrich("carnet", "ProofOfReexportationRequest")
+def _(f, n, doc, out):
+    return {"Note": V("The island's customs found no re-export stamp.", "Why the chamber asks."),
+            "VersionID": V("1", "The first request."),
+            "GoodsItemPassportCounterfoilID": V("IMP-1", "The importation counterfoil without a re-export."),
+            "AdditionalDocumentReference": {"ID": V("XL-CUS-ATA-26-0071", "The customs' notice to the chamber.")},
+            "Signature": seal(doc["from"], "SCC-SIG-26-PRQ")}
+
+
+@enrich("carnet", "ProofOfReexportationReminder")
+def _(f, n, doc, out):
+    return {"Note": V("Without proof, the import duties will be claimed from the guarantee.", "What happens "
+                                                                                             "otherwise."),
+            "VersionID": V("1", "The first reminder."),
+            "IssuerEndorsement": {"DocumentID": V(f.numbers["por-request"], "The request repeated."),
+                                  "ApprovalStatus": V("Open", "Still unanswered."),
+                                  "EndorserParty": {"RoleCode": V("Guarantor", "The importing guarantor."),
+                                                    "SequenceNumeric": V("1", "The only one."),
+                                                    "Party": party("20-xl", short=True),
+                                                    "SignatoryContact": {"Name": V("Carnet desk", "The chamber's "
+                                                                                                 "desk.")}}},
+            "PaymentTerms": {"Note": V("Duties and import consumption tax of 1,300 coral fall due if no proof "
+                                       "arrives within 30 days.", "The claim that would follow."),
+                             "Amount": amount(Decimal("1300.000"), "XLC", "The duties at stake."),
+                             "PaymentDueDate": V(f.date(120), "The day they fall due.")},
+            "AdditionalDocumentReference": {"ID": V("XL-CUS-ATA-26-0071", "The customs' notice.")},
+            "Signature": seal(doc["from"], "SCC-SIG-26-PRM")}
+
+
+@enrich("carnet", "ProofOfReexportation")
+def _(f, n, doc, out):
+    return {"Note": V("The samples came home on the date stamped.", "The proof."),
+            "VersionID": V("1", "The first version."),
+            "GoodsItemPassportAttachment": {"ExternalReference": {
+                "URI": V("https://www.ferrano-chamber.example/ata/carnet-scan.pdf", "A scan of the stamped "
+                                                                                    "counterfoil."),
+                "MimeCode": V("application/pdf", "A PDF.")}},
+            "AdditionalDocumentReference": {"ID": V("XU-CUS-REIMP-26-0044", "Urvania's customs' re-import "
+                                                                            "record.")},
+            "Signature": seal(doc["from"], "FCC-SIG-26-POR")}

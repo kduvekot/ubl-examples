@@ -26,6 +26,39 @@ Under CIF the buyer clears the import; its licensed customs broker files the dec
   The customs broker declares the import for the buyer.
 - `IssueTime` = **09:07:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `TypeCode` = **Import**  
+  An import declaration.
+- `SubTypeCode` = **FreeCirculation**  
+  For release into free circulation.
+- `NatureOfTransactionCode` = **Purchase**  
+  The goods were bought.
+- `Note` = **Duties paid by the importer's account at customs.**  
+  How duties are settled.
+- `VersionID` = **1**  
+  The first version.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-05-19**  
+  From the declaration.
+- `DurationMeasure` = **30** (unitCode `DAY`)  
+  Valid for clearance within 30 days.
+
+### Customs Exit Office Location
+
+Inside `CustomsExitOfficeLocation`:
+
+- `Name` = **Customs office, port of Lumeport**  
+  Where the goods leave the country.
+
+### Jurisdiction Region Address
+
+Inside `JurisdictionRegionAddress`:
+
+- `Country/IdentificationCode` = **XL**  
+  The customs territory of import.
 
 ### Importer Party
 
@@ -390,6 +423,15 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Notifier Party
+
+Inside `NotifierParty`:
+
+- `PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Tevaro Customs Brokers**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Shipment
 
 Inside `Shipment`:
@@ -733,12 +775,30 @@ Inside `Shipment`:
 - `ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41585** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Tevaro Customs Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Previous Customs Declaration
+
+Inside `PreviousCustomsDeclaration`:
+
+- `ID` = **BF-CD-26-0136**  
+  The export declaration in the country of departure.
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **TOL-BL-26-0139**  
   The bill of lading of the goods.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **TCB-SIG-IM-sea**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Tevaro Customs Brokers**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -753,6 +813,23 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>d81b799d-e60d-59b3-a10e-91af358a3d84</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
   <cbc:IssueTime>09:07:00</cbc:IssueTime>
+  <cbc:TypeCode>Import</cbc:TypeCode>
+  <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
+  <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
+  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-05-19</cbc:StartDate>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:ValidityPeriod>
+  <cac:CustomsExitOfficeLocation>
+    <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+  </cac:CustomsExitOfficeLocation>
+  <cac:JurisdictionRegionAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -1076,6 +1153,14 @@ Inside `AdditionalDocumentReference`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
@@ -1385,8 +1470,22 @@ Inside `AdditionalDocumentReference`:
       </cac:CustomsAgentParty>
     </cac:ShipmentStage>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>BF-CD-26-0136</cbc:ID>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
   </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>TCB-SIG-IM-sea</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ImportCustomsDeclaration>
 ```

@@ -26,6 +26,14 @@ The call-off leaves Urvania; the manufacturer declares the export.
   Declared when the goods leave for the border.
 - `IssueTime` = **08:06:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ExportTypeCode` = **Permanent**  
+  A permanent export: the goods are sold abroad.
+- `ExportReasonCode` = **Sale**  
+  The reason: a sale to a buyer abroad.
+- `Note` = **Declared electronically before the goods leave.**  
+  How it was declared.
+- `VersionID` = **1**  
+  The first version.
 
 ### Exporter Party
 
@@ -138,6 +146,14 @@ Inside `CustomsDeclaration`:
 
 - `ID` = **VI-CD-26-0216**  
   The declaration as lodged with the customs of the exporting country.
+- `FunctionCode` = **Original**  
+  An original declaration, not an amendment.
+- `ValidityPeriod/StartDate` = **2026-03-30**  
+  From the declaration.
+- `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
+  The goods must leave within 90 days.
+- `ApplicableTerritoryAddress/Country/IdentificationCode` = **XU**  
+  The customs territory the goods leave.
 - `Shipment/ID` = **CL-SH-26-0213**  
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **1660** (unitCode `KGM`)  
@@ -436,6 +452,12 @@ Inside `CustomsDeclaration`:
   The scale of the score.
 - `Shipment/GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
+  Where the goods leave the country.
+- `ConsignorParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ConsignorParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ConsigneeParty/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -604,6 +626,19 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105507** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `AdditionalDocumentReference/ID` = **LPWD-PO-26-0211**  
+  The order behind the export.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-EX-tender**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -618,6 +653,10 @@ Inside `CustomsDeclaration`:
   <cbc:UUID>50fa98a8-ede0-548d-bf67-6e9e4318b625</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>08:06:00</cbc:IssueTime>
+  <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -718,6 +757,16 @@ Inside `CustomsDeclaration`:
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>VI-CD-26-0216</cbc:ID>
+    <cbc:FunctionCode>Original</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-03-30</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>CL-SH-26-0213</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
@@ -981,6 +1030,17 @@ Inside `CustomsDeclaration`:
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
@@ -1139,6 +1199,20 @@ Inside `CustomsDeclaration`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>LPWD-PO-26-0211</cbc:ID>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-EX-tender</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ExportCustomsDeclaration>
 ```

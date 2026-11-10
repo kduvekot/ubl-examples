@@ -26,6 +26,30 @@ The island's chamber of commerce certifies the bales for export, at the ginnery'
   Issued before shipment, at the ginnery's application.
 - `IssueTime` = **11:39:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `TypeCode` = **Phytosanitary**  
+  A plant health certificate for the cotton.
+- `Description` = **The ginned cotton is free of the pests named by Bayvarra's plant health rules.**  
+  What it certifies.
+- `Note` = **Inspected at the ginnery's warehouse.**  
+  Where.
+- `VersionID` = **1**  
+  The first version.
+
+### Validity Period
+
+Inside `ValidityPeriod`:
+
+- `StartDate` = **2026-02-28**  
+  From the inspection.
+- `EndDate` = **2026-03-14**  
+  For two weeks: the bales must ship by then.
+
+### Applicable Territory Address
+
+Inside `ApplicableTerritoryAddress`:
+
+- `Country/IdentificationCode` = **XB**  
+  For import into Bayvarra.
 
 ### Exporter Party
 
@@ -199,6 +223,42 @@ Inside `ImporterParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Warehouse Party
+
+Inside `WarehouseParty`:
+
+- `PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Consignor Party
+
+Inside `ConsignorParty`:
+
+- `PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Consignee Party
+
+Inside `ConsigneeParty`:
+
+- `PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Freight Forwarder Party
+
+Inside `FreightForwarderParty`:
+
+- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Issuer Party
 
 Inside `IssuerParty`:
@@ -261,6 +321,15 @@ Inside `IssuerParty`:
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC42133** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Selanu Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Legal Authority Party
+
+Inside `LegalAuthorityParty`:
+
+- `PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Island Customs Service**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Applicant Party
 
@@ -342,6 +411,104 @@ Inside `Shipment`:
 - `GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
 
+### Attestation
+
+Inside `Attestation`:
+
+- `ID` = **SCC-ATT-26-0042**  
+  The inspector's attestation.
+- `Name` = **Freedom from pests**  
+  What is attested.
+- `Description` = **Sampled and found free of boll weevil and pink bollworm.**  
+  In words.
+- `Note` = **10 bales sampled out of 80.**  
+  The sample.
+- `AcceptanceIndicator` = **true**  
+  Accepted.
+- `ValidityPeriod/EndDate` = **2026-03-14**  
+  As the certificate.
+- `IssuerParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `IssuerParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AttestationLine/ID` = **1**  
+  The pest checked.
+- `AttestationLine/TypeCode` = **Pest**  
+  A pest check.
+- `AttestationLine/Description` = **Boll weevil: none found.**  
+  The finding.
+- `AttestationLine/CriterionItem/ID` = **XB-PH-07**  
+  Bayvarra's rule.
+- `AttestationLine/CriterionItem/CriterionDescription` = **No live insects in a sample of 10 bales.**  
+  The criterion.
+- `AttestationLine/CriterionItem/DeclaredPropertyItem/Name` = **Cotton lint, compressed bale**  
+  The goods it is about.
+- `AttestationLine/SubAttestationLine/ID` = **1.1**  
+  The second pest.
+- `AttestationLine/SubAttestationLine/Description` = **Pink bollworm: none found.**  
+  The finding.
+
+### Goods Processing
+
+Inside `GoodsProcessing`:
+
+- `ID` = **SCG-PROC-26**  
+  The processing on the island.
+- `TypeCode` = **Ginning**  
+  The cotton was ginned.
+- `Description` = **Ginned, cleaned and pressed into bales.**  
+  In words.
+- `Note` = **At the Selanu cotton ginnery.**  
+  Where.
+- `Period/StartDate` = **2026-02-07**  
+  The ginning.
+- `Period/EndDate` = **2026-02-22**  
+  Its end.
+- `ProcessingParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ProcessingParty/PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `CriterionItem/CriterionDescription` = **Seed removed; lint only.**  
+  What processing the rule requires.
+- `CriterionItem/DeclaredPropertyItem/Name` = **Cotton lint**  
+  The goods.
+- `SubGoodsProcessing/TypeCode` = **Pressing**  
+  Pressed into bales.
+- `SubGoodsProcessing/Description` = **Bales of about 227 kg.**  
+  In words.
+
+### Original Document Reference
+
+Inside `OriginalDocumentReference`:
+
+- `ID` = **XL-CLS-2026-0042**  
+  The classing certificate of the cotton.
+
+### Previous Document Reference
+
+Inside `PreviousDocumentReference`:
+
+- `ID` = **SCC-PH-25-0198**  
+  Last season's certificate.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **LTM-PO-26-0197**  
+  The mill's order.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **SCC-SIG-26-PH**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -355,6 +522,19 @@ Inside `Shipment`:
   <cbc:UUID>9d4c84eb-3f06-549a-83fe-14010b43c0bb</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
   <cbc:IssueTime>11:39:00</cbc:IssueTime>
+  <cbc:TypeCode>Phytosanitary</cbc:TypeCode>
+  <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
+  <cbc:Note>Inspected at the ginnery's warehouse.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-02-28</cbc:StartDate>
+    <cbc:EndDate>2026-03-14</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:ApplicableTerritoryAddress>
+    <cac:Country>
+      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:ApplicableTerritoryAddress>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -504,6 +684,38 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ImporterParty>
+  <cac:WarehouseParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+    </cac:PartyName>
+  </cac:WarehouseParty>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsignorParty>
+  <cac:ConsigneeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Textile Mill</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsigneeParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:FreightForwarderParty>
   <cac:IssuerParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -561,6 +773,14 @@ Inside `Shipment`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:IssuerParty>
+  <cac:LegalAuthorityParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Island Customs Service</cbc:Name>
+    </cac:PartyName>
+  </cac:LegalAuthorityParty>
   <cac:ApplicantParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
@@ -640,5 +860,87 @@ Inside `Shipment`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:Attestation>
+    <cbc:ID>SCC-ATT-26-0042</cbc:ID>
+    <cbc:Name>Freedom from pests</cbc:Name>
+    <cbc:Description>Sampled and found free of boll weevil and pink bollworm.</cbc:Description>
+    <cbc:Note>10 bales sampled out of 80.</cbc:Note>
+    <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
+    <cac:ValidityPeriod>
+      <cbc:EndDate>2026-03-14</cbc:EndDate>
+    </cac:ValidityPeriod>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+    <cac:AttestationLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TypeCode>Pest</cbc:TypeCode>
+      <cbc:Description>Boll weevil: none found.</cbc:Description>
+      <cac:CriterionItem>
+        <cbc:ID>XB-PH-07</cbc:ID>
+        <cbc:CriterionDescription>No live insects in a sample of 10 bales.</cbc:CriterionDescription>
+        <cac:DeclaredPropertyItem>
+          <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+        </cac:DeclaredPropertyItem>
+      </cac:CriterionItem>
+      <cac:SubAttestationLine>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Description>Pink bollworm: none found.</cbc:Description>
+      </cac:SubAttestationLine>
+    </cac:AttestationLine>
+  </cac:Attestation>
+  <cac:GoodsProcessing>
+    <cbc:ID>SCG-PROC-26</cbc:ID>
+    <cbc:TypeCode>Ginning</cbc:TypeCode>
+    <cbc:Description>Ginned, cleaned and pressed into bales.</cbc:Description>
+    <cbc:Note>At the Selanu cotton ginnery.</cbc:Note>
+    <cac:Period>
+      <cbc:StartDate>2026-02-07</cbc:StartDate>
+      <cbc:EndDate>2026-02-22</cbc:EndDate>
+    </cac:Period>
+    <cac:ProcessingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:ProcessingParty>
+    <cac:CriterionItem>
+      <cbc:CriterionDescription>Seed removed; lint only.</cbc:CriterionDescription>
+      <cac:DeclaredPropertyItem>
+        <cbc:Name>Cotton lint</cbc:Name>
+      </cac:DeclaredPropertyItem>
+    </cac:CriterionItem>
+    <cac:SubGoodsProcessing>
+      <cbc:TypeCode>Pressing</cbc:TypeCode>
+      <cbc:Description>Bales of about 227 kg.</cbc:Description>
+    </cac:SubGoodsProcessing>
+  </cac:GoodsProcessing>
+  <cac:OriginalDocumentReference>
+    <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+  </cac:OriginalDocumentReference>
+  <cac:PreviousDocumentReference>
+    <cbc:ID>SCC-PH-25-0198</cbc:ID>
+  </cac:PreviousDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LTM-PO-26-0197</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>SCC-SIG-26-PH</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </GoodsCertificate>
 ```

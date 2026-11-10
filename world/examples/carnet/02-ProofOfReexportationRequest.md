@@ -26,8 +26,14 @@ The island's chamber has no re-export stamp for the samples and asks for proof t
   Two months after the fair the samples' re-export is not recorded.
 - `IssueTime` = **08:50:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **The island's customs found no re-export stamp.**  
+  Why the chamber asks.
+- `VersionID` = **1**  
+  The first request.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
   The carnet the samples travelled under.
+- `GoodsItemPassportCounterfoilID` = **IMP-1**  
+  The importation counterfoil without a re-export.
 
 ### Importing Guarantor Party
 
@@ -234,6 +240,24 @@ Inside `ImportingCustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **XL-CUS-ATA-26-0071**  
+  The customs' notice to the chamber.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **SCC-SIG-26-PRQ**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -247,7 +271,10 @@ Inside `ImportingCustomsParty`:
   <cbc:UUID>3377b749-219b-5bbb-a9d2-7d1101bcbe28</cbc:UUID>
   <cbc:IssueDate>2026-07-24</cbc:IssueDate>
   <cbc:IssueTime>08:50:00</cbc:IssueTime>
+  <cbc:Note>The island's customs found no re-export stamp.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+  <cbc:GoodsItemPassportCounterfoilID>IMP-1</cbc:GoodsItemPassportCounterfoilID>
   <cac:ImportingGuarantorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -435,5 +462,19 @@ Inside `ImportingCustomsParty`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ImportingCustomsParty>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>SCC-SIG-26-PRQ</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ProofOfReexportationRequest>
 ```

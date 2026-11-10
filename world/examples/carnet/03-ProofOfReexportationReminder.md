@@ -28,6 +28,10 @@ No answer after a month: a reminder.
   The time the sender's system issued the document, in the sender's local time.
 - `ProcedureCode` = **TemporaryAdmission**  
   The procedure the samples were under on the island.
+- `Note` = **Without proof, the import duties will be claimed from the guarantee.**  
+  What happens otherwise.
+- `VersionID` = **1**  
+  The first reminder.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
   The carnet the samples travelled under.
 
@@ -243,12 +247,60 @@ Inside `ImportingCustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Issuer Endorsement
+
+Inside `IssuerEndorsement`:
+
+- `DocumentID` = **SCC-DOC-26-0726**  
+  The request repeated.
+- `ApprovalStatus` = **Open**  
+  Still unanswered.
+- `EndorserParty/RoleCode` = **Guarantor**  
+  The importing guarantor.
+- `EndorserParty/SequenceNumeric` = **1**  
+  The only one.
+- `EndorserParty/Party/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EndorserParty/Party/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EndorserParty/SignatoryContact/Name` = **Carnet desk**  
+  The chamber's desk.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **Duties and import consumption tax of 1,300 coral fall due if no proof arrives within 30 days.**  
+  The claim that would follow.
+- `Amount` = **1300.000** (currencyID `XLC`)  
+  The duties at stake.
+- `PaymentDueDate` = **2026-09-22**  
+  The day they fall due.
+
 ### Goods Item Passport Counterfoil
 
 Inside `GoodsItemPassportCounterfoil`:
 
 - `ID` = **IMP-1**  
   The importation counterfoil without a re-export stamp.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **XL-CUS-ATA-26-0071**  
+  The customs' notice.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **SCC-SIG-26-PRM**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -264,6 +316,8 @@ Inside `GoodsItemPassportCounterfoil`:
   <cbc:IssueDate>2026-08-23</cbc:IssueDate>
   <cbc:IssueTime>12:04:00</cbc:IssueTime>
   <cbc:ProcedureCode>TemporaryAdmission</cbc:ProcedureCode>
+  <cbc:Note>Without proof, the import duties will be claimed from the guarantee.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ProofOfReexportationRequestDocumentReference>
     <cbc:ID>SCC-DOC-26-0726</cbc:ID>
@@ -455,8 +509,46 @@ Inside `GoodsItemPassportCounterfoil`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ImportingCustomsParty>
+  <cac:IssuerEndorsement>
+    <cbc:DocumentID>SCC-DOC-26-0726</cbc:DocumentID>
+    <cbc:ApprovalStatus>Open</cbc:ApprovalStatus>
+    <cac:EndorserParty>
+      <cbc:RoleCode>Guarantor</cbc:RoleCode>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+      <cac:SignatoryContact>
+        <cbc:Name>Carnet desk</cbc:Name>
+      </cac:SignatoryContact>
+    </cac:EndorserParty>
+  </cac:IssuerEndorsement>
+  <cac:PaymentTerms>
+    <cbc:Note>Duties and import consumption tax of 1,300 coral fall due if no proof arrives within 30 days.</cbc:Note>
+    <cbc:Amount currencyID="XLC">1300.000</cbc:Amount>
+    <cbc:PaymentDueDate>2026-09-22</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
   </cac:GoodsItemPassportCounterfoil>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>SCC-SIG-26-PRM</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ProofOfReexportationReminder>
 ```

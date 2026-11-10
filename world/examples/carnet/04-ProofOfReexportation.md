@@ -26,6 +26,10 @@ Urvania's chamber proves the samples were re-exported: they came home through Ur
   Urvania's chamber answers with the proof.
 - `IssueTime` = **13:19:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **The samples came home on the date stamped.**  
+  The proof.
+- `VersionID` = **1**  
+  The first version.
 
 ### Exporting Customs Party
 
@@ -268,6 +272,33 @@ Inside `ReexportationEvidence`:
 - `Description` = **Re-importation counterfoil of the carnet, stamped by Urvania's customs: the samples left the island and came home.**  
   What the evidence shows.
 
+### Goods Item Passport Attachment
+
+Inside `GoodsItemPassportAttachment`:
+
+- `ExternalReference/URI` = **https://www.ferrano-chamber.example/ata/carnet-scan.pdf**  
+  A scan of the stamped counterfoil.
+- `ExternalReference/MimeCode` = **application/pdf**  
+  A PDF.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **XU-CUS-REIMP-26-0044**  
+  Urvania's customs' re-import record.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **FCC-SIG-26-POR**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -281,6 +312,8 @@ Inside `ReexportationEvidence`:
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
   <cbc:IssueTime>13:19:00</cbc:IssueTime>
+  <cbc:Note>The samples came home on the date stamped.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExportingCustomsParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -493,5 +526,25 @@ Inside `ReexportationEvidence`:
     <cbc:ID>REIMP-1</cbc:ID>
     <cbc:Description>Re-importation counterfoil of the carnet, stamped by Urvania's customs: the samples left the island and came home.</cbc:Description>
   </cac:ReexportationEvidence>
+  <cac:GoodsItemPassportAttachment>
+    <cac:ExternalReference>
+      <cbc:URI>https://www.ferrano-chamber.example/ata/carnet-scan.pdf</cbc:URI>
+      <cbc:MimeCode>application/pdf</cbc:MimeCode>
+    </cac:ExternalReference>
+  </cac:GoodsItemPassportAttachment>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>FCC-SIG-26-POR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ProofOfReexportation>
 ```

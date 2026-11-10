@@ -8,6 +8,10 @@
   <cbc:UUID>b3984f33-057a-5c43-b8c5-7988b8add6f4</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:IssueTime>09:25:00</cbc:IssueTime>
+  <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>
@@ -93,6 +97,16 @@
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>MS-CD-26-0631</cbc:ID>
+    <cbc:FunctionCode>Original</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-02-26</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>MS-SH-26-0632</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
@@ -301,6 +315,17 @@
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs post at the land border, Bayvarran side</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -459,5 +484,19 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>VI-PO-26-0627</cbc:ID>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>MS-SIG-EX-wood</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ExportCustomsDeclaration>

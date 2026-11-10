@@ -26,6 +26,14 @@ The forwarder, as customs agent, declares the export for the distributor at the 
   The forwarder, as customs agent, declares the export at the seaport.
 - `IssueTime` = **14:25:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ExportTypeCode` = **Permanent**  
+  A permanent export: the goods are sold abroad.
+- `ExportReasonCode` = **Sale**  
+  The reason: a sale to a buyer abroad.
+- `Note` = **Declared electronically before the goods leave.**  
+  How it was declared.
+- `VersionID` = **1**  
+  The first version.
 
 ### Exporter Party
 
@@ -138,6 +146,14 @@ Inside `CustomsDeclaration`:
 
 - `ID` = **BF-CD-26-0136**  
   The declaration as lodged with the customs of the exporting country.
+- `FunctionCode` = **Original**  
+  An original declaration, not an amendment.
+- `ValidityPeriod/StartDate` = **2026-05-12**  
+  From the declaration.
+- `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
+  The goods must leave within 90 days.
+- `ApplicableTerritoryAddress/Country/IdentificationCode` = **XB**  
+  The customs territory the goods leave.
 - `Shipment/ID` = **LD-SH-26-0132**  
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **0** (unitCode `KGM`)  
@@ -502,6 +518,12 @@ Inside `CustomsDeclaration`:
   Stated because it is part of the CIF price, not of the export value.
 - `Shipment/FreightAllowanceCharge/Amount` = **2950.00** (currencyID `XBL`)  
   Freight and bunker surcharge.
+- `CustomsExitOfficeLocation/Name` = **Customs office, port of Lumeport**  
+  Where the goods leave the country.
+- `ConsignorParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ConsignorParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -572,6 +594,10 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `FreightForwarderParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `FreightForwarderParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `CustomsParty/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `CustomsParty/PartyIdentification/ID` = **20410137** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -636,6 +662,19 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `AdditionalDocumentReference/ID` = **VT-PO-26-0127**  
+  The order behind the export.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-EX-sea**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Bayforth Forwarding**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -650,6 +689,10 @@ Inside `CustomsDeclaration`:
   <cbc:UUID>4b360143-92f4-557a-aac2-22d33c03e880</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>14:25:00</cbc:IssueTime>
+  <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -740,6 +783,16 @@ Inside `CustomsDeclaration`:
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>BF-CD-26-0136</cbc:ID>
+    <cbc:FunctionCode>Original</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-05-12</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
@@ -1070,6 +1123,17 @@ Inside `CustomsDeclaration`:
         <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
       </cac:FreightAllowanceCharge>
     </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -1135,6 +1199,14 @@ Inside `CustomsDeclaration`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:ConsigneeParty>
+    <cac:FreightForwarderParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:FreightForwarderParty>
     <cac:CustomsParty>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
@@ -1195,6 +1267,20 @@ Inside `CustomsDeclaration`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>VT-PO-26-0127</cbc:ID>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-EX-sea</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ExportCustomsDeclaration>
 ```

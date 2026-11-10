@@ -26,6 +26,14 @@ The slats leave Bayvarra; the sawmill declares the export at the land border.
   Declared when the truck leaves for the border.
 - `IssueTime` = **09:25:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `ExportTypeCode` = **Permanent**  
+  A permanent export: the goods are sold abroad.
+- `ExportReasonCode` = **Sale**  
+  The reason: a sale to a buyer abroad.
+- `Note` = **Declared electronically before the goods leave.**  
+  How it was declared.
+- `VersionID` = **1**  
+  The first version.
 
 ### Exporter Party
 
@@ -128,6 +136,14 @@ Inside `CustomsDeclaration`:
 
 - `ID` = **MS-CD-26-0631**  
   The declaration as lodged with the customs of the exporting country.
+- `FunctionCode` = **Original**  
+  An original declaration, not an amendment.
+- `ValidityPeriod/StartDate` = **2026-02-26**  
+  From the declaration.
+- `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
+  The goods must leave within 90 days.
+- `ApplicableTerritoryAddress/Country/IdentificationCode` = **XB**  
+  The customs territory the goods leave.
 - `Shipment/ID` = **MS-SH-26-0632**  
   The shipment declared.
 - `Shipment/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
@@ -348,6 +364,12 @@ Inside `CustomsDeclaration`:
   Which dimension.
 - `Shipment/GoodsItem/Item/Dimension/Measure` = **38** (unitCode `MMT`)  
   Its size.
+- `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Bayvarran side**  
+  Where the goods leave the country.
+- `ConsignorParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ConsignorParty/PartyName/Name` = **Marrowdale Sawmill**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ConsigneeParty/WebsiteURI` = **https://www.valdara.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
@@ -512,6 +534,19 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `AdditionalDocumentReference/ID` = **VI-PO-26-0627**  
+  The order behind the export.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **MS-SIG-EX-wood**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Marrowdale Sawmill**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -526,6 +561,10 @@ Inside `CustomsDeclaration`:
   <cbc:UUID>b3984f33-057a-5c43-b8c5-7988b8add6f4</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:IssueTime>09:25:00</cbc:IssueTime>
+  <cbc:ExportTypeCode>Permanent</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode>Sale</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>
@@ -611,6 +650,16 @@ Inside `CustomsDeclaration`:
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
     <cbc:ID>MS-CD-26-0631</cbc:ID>
+    <cbc:FunctionCode>Original</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-02-26</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>MS-SH-26-0632</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
@@ -819,6 +868,17 @@ Inside `CustomsDeclaration`:
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs post at the land border, Bayvarran side</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -977,6 +1037,20 @@ Inside `CustomsDeclaration`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>VI-PO-26-0627</cbc:ID>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>MS-SIG-EX-wood</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </ExportCustomsDeclaration>
 ```

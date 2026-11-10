@@ -28,6 +28,21 @@ The goods qualify for preferential duty in Bayvarra; the manufacturer applies to
   The time the sender's system issued the document, in the sender's local time.
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the certificate is for.
+- `Note` = **Preferential origin under the trade accord.**  
+  What the certificate is for.
+- `VersionID` = **1**  
+  The first version.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-CO-06**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Exporter Party
 
@@ -336,6 +351,10 @@ Inside `CertificateOfOriginApplication`:
   The exporter submits the application.
 - `OriginalJobID` = **LD-PO-26-0149**  
   The order the goods are for.
+- `PreviousJobID` = **VI-CO-25-0412**  
+  The exporter's application of last year for the same goods.
+- `Remarks` = **Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives origin.**  
+  Why the goods are of Urvanian origin.
 - `Shipment/ID` = **CL-SH-26-0154**  
   The shipment the certificate covers.
 - `Shipment/GoodsItem/ID` = **1**  
@@ -578,8 +597,32 @@ Inside `CertificateOfOriginApplication`:
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `IssuerParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
+- `ExporterParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ExporterParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ImporterParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ImporterParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `IssuingCountry/IdentificationCode` = **XU**  
   The goods were made in Urvania, and the certificate is issued there.
+- `DocumentDistribution/ID` = **1**  
+  The importer's copy.
+- `DocumentDistribution/DistributionTypeCode` = **Electronic**  
+  As this document.
+- `DocumentDistribution/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DocumentDistribution/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupportingDocumentReference/ID` = **LD-PO-26-0149**  
+  The commercial document behind the goods.
+- `Signature/ID` = **VI-SIG-COA**  
+  The sender's electronic seal.
+- `Signature/SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Signature/SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Issuer Endorsement
 
@@ -614,6 +657,19 @@ Inside `IssuerEndorsement`:
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>12:39:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
+  <cbc:Note>Preferential origin under the trade accord.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-CO-06</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -885,6 +941,8 @@ Inside `IssuerEndorsement`:
     <cbc:CertificateType>Preferential</cbc:CertificateType>
     <cbc:ApplicationStatusCode>Submitted</cbc:ApplicationStatusCode>
     <cbc:OriginalJobID>LD-PO-26-0149</cbc:OriginalJobID>
+    <cbc:PreviousJobID>VI-CO-25-0412</cbc:PreviousJobID>
+    <cbc:Remarks>Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives origin.</cbc:Remarks>
     <cac:Shipment>
       <cbc:ID>CL-SH-26-0154</cbc:ID>
       <cac:GoodsItem>
@@ -1110,9 +1168,51 @@ Inside `IssuerEndorsement`:
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
       </cac:PartyName>
     </cac:IssuerParty>
+    <cac:ExporterParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:ExporterParty>
+    <cac:ImporterParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:ImporterParty>
     <cac:IssuingCountry>
       <cbc:IdentificationCode>XU</cbc:IdentificationCode>
     </cac:IssuingCountry>
+    <cac:DocumentDistribution>
+      <cbc:ID>1</cbc:ID>
+      <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:DocumentDistribution>
+    <cac:SupportingDocumentReference>
+      <cbc:ID>LD-PO-26-0149</cbc:ID>
+    </cac:SupportingDocumentReference>
+    <cac:Signature>
+      <cbc:ID>VI-SIG-COA</cbc:ID>
+      <cac:SignatoryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:SignatoryParty>
+    </cac:Signature>
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
     <cbc:DocumentID>FCC-CO-26-0157</cbc:DocumentID>
