@@ -94,6 +94,16 @@ bench, and its own item points to the manufacturer's, so the maker's
 identifiers travel along. A component or a resold item is only possible
 if the maker or reseller orders it from that seller somewhere in the flows.
 
+The maker's facts travel with the item wherever it appears: brand and
+model, properties with their test method and accepted range, certificates,
+the carbon footprint and the circularity profile. What belongs to one
+delivery is added only where the goods move: a despatch advice names the
+production lot, or the serial number of every casting, which stays the same
+when a cancelled despatch advice is replaced. A catalogue line adds the
+seller's terms (lead time, minimum and maximum quantity, the price list and
+its validity), and a till receipt during a promotion shows the discount on
+the shelf price.
+
 ## Flows of documents
 
 The parties do business in flows. Each country has its own raw material
