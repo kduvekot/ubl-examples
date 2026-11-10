@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivermouth Packaging · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=5478ada644">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="rivermouth-packaging">Rivermouth Packaging</h1>
+<p><em>#41 Packaging Maker · Bayvarra (XB) · Commerce</em> ·
+<em>proposed addition to the 26+C set</em></p>
+<p>Makes packaging from recycled plastic granulate that arrives by barge
+from Urvania; packs the benches and the clothing.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Rivermouth Packaging</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>20412740</code> (Federal business register of Bayvarra)</td>
+</tr>
+<tr>
+<td>Tax number</td>
+<td><code>CO-1238220</code> (State sales tax, <code>STT</code>)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>28 Estuary Road<br>Lumeport Coastal State 38505<br>Bayvarra</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XB:20412740</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Order desk, <code>order@rivermouth.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XB66BLUM0004712805</code> at <a href="world-25-xb.html">Bank
+of Lumeport</a></td>
+</tr>
+<tr>
+<td>In Bayvarra</td>
+<td>Currency: Lume (<code>XBL</code>). Taxes: A federal country: its
+states levy a retail sales tax, charged once, on the sale to the final
+consumer. Sales to businesses that resell, exports and sales to public
+bodies are exempt, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-ubl-helps">How UBL helps</h2>
+<p>Recycled raw material comes in bulk lots by river; packaging goes out
+in many small orders. UBL handles both with the same order, despatch and
+invoice structure, across the border and at home.</p>
+<p>In this world it sends 5 and receives 5 documents, and is named in 4
+documents between other parties. They are listed per flow below.</p>
+<h2
+id="recycled-plastic-granulate-by-river-barge-urvania--bayvarra">Recycled
+plastic granulate by river barge (Urvania → Bayvarra)</h2>
+<p>The waste processor recovers plastic from production waste and sells
+it as granulate to the packaging maker on the coast of Bayvarra,
+carriage paid to (CPT) the river quay: the seller books the barge and
+pays the freight, the buyer takes the risk once the barge is loaded. The
+packaging maker turns it into packaging for the benches and the
+clothing.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-7-xu.html">Rinova Recovery</a>: A bulk lot of recycled
+granulate. Delivery terms CPT river quay: the seller books the
+barge.</p>
+<p>In it as <code>BuyerCustomerParty</code>,
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> to <a href="world-19-xb.html">Customs
+and Border Service of Bayvarra</a>: The packaging maker declares the
+import in Bayvarra.</p>
+<p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
+<p>Also mentions: <a href="world-7-xu.html">Rinova Recovery</a> as
+<code>ConsignorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> to <a href="world-7-xu.html">Rinova Recovery</a>:
+The packaging maker pays from Bayvarra to the waste processor's account
+in Urvania.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
+Response</strong></a> from <a href="world-7-xu.html">Rinova
+Recovery</a>: The waste processor confirms the lot and the loading
+date.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-7-xu.html">Rinova Recovery</a>:
+The waste processor announces the lot loaded on the barge.</p>
+<p>In it as <code>DeliveryCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-15-xu.html">Fiumella Barges</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-7-xu.html">Rinova Recovery</a>: Granulate and barge
+freight (CPT). An export from Urvania: no VAT charged, with the
+exemption stated.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
+Execution Plan Request</strong></a> from <a
+href="world-7-xu.html">Rinova Recovery</a> to <a
+href="world-15-xu.html">Fiumella Barges</a>: Under CPT the waste
+processor is the transport user; it asks the barge operator for capacity
+down the river.</p>
+<p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
+receives the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
+Execution Plan</strong></a> from <a href="world-15-xu.html">Fiumella
+Barges</a> to <a href="world-7-xu.html">Rinova Recovery</a>: The barge
+operator confirms the vessel and the sailing.</p>
+<p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
+receives the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
+Customs Declaration</strong></a> from <a href="world-7-xu.html">Rinova
+Recovery</a> to <a href="world-19-xu.html">Customs Administration of
+Urvania</a>: The granulate leaves Urvania; the waste processor declares
+the export.</p>
+<p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
+who receives the goods).</p>
+<p>Also mentions: <a href="world-15-xu.html">Fiumella Barges</a> as
+<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
+from <a href="world-15-xu.html">Fiumella Barges</a> to <a
+href="world-7-xu.html">Rinova Recovery</a>: The inland waterway
+consignment note, issued to the shipper.</p>
+<p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
+who receives the goods).</p></li>
+</ul>
+<h2 id="packaging-for-the-benches-clothing-for-the-store">Packaging for
+the benches, clothing for the store</h2>
+<p>The packaging maker supplies the manufacturer in Urvania and the
+textile mill at home; the textile mill sells clothing to the department
+store, delivered duty paid (DDP) at the store.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-5-xu.html">Valdara Industries</a>: Packaging exported
+to Urvania: no sales tax in Bayvarra, stated.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-40-xb.html">Lumeport Textile Mill</a>: Packaging for
+manufacture, exempt from sales tax.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-5-xu.html">Valdara Industries</a>: Bench packaging,
+collected by the road carrier the manufacturer books. Delivery terms FCA
+packaging maker.</p>
+<p>In it as <code>SellerSupplierParty</code>,
+<code>Delivery/Despatch/DespatchParty</code>.</p>
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
+<code>Delivery/Despatch/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-40-xb.html">Lumeport Textile Mill</a>: Garment bags
+for the clothing. Delivery terms DAP mill.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
+<p>The party elements in which this party appears:</p>
+<p><code>BuyerCustomerParty</code> <code>DeliveryParty</code>
+<code>ConsigneeParty</code> <code>DeliveryCustomerParty</code>
+<code>ImporterParty</code> <code>AccountingCustomerParty</code>
+<code>SellerSupplierParty</code> <code>DespatchParty</code>
+<code>AccountingSupplierParty</code></p>
+<h2 id="trading-partners-in-the-world">Trading partners in the
+world</h2>
+<p>The parties it exchanges documents with:</p>
+<ul>
+<li><a href="world-7-xu.html">Rinova Recovery</a>, Urvania</li>
+<li><a href="world-19-xb.html">Customs and Border Service of
+Bayvarra</a>, Bayvarra</li>
+<li><a href="world-5-xu.html">Valdara Industries</a>, Urvania</li>
+<li><a href="world-40-xb.html">Lumeport Textile Mill</a>, Bayvarra</li>
+</ul>
+<h2 id="in-the-world">In the world</h2>
+<p><a href="world.html#41-xb">See Packaging Maker on the map</a> ·
+Bayvarra: Mainland, coast. Distribution, retail, seaport and airport
+hub.</p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
+</body>
+</html>

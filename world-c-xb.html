@@ -11,7 +11,7 @@
 <div class="layout">
 <main class="prose">
 <h1 id="robin-ashdale">Robin Ashdale</h1>
-<p><em>#C Consumer · Country B (XB) · Commerce</em></p>
+<p><em>#C Consumer · Bayvarra (XB) · Commerce</em></p>
 <p>A private person buying in the shop; receives a purchase receipt.</p>
 <h2 id="identity">Identity</h2>
 <table>
@@ -22,11 +22,11 @@
 </tr>
 <tr>
 <td>Address</td>
-<td>57 Gull Lane<br>Lumeport Coastal State 38516<br>Country B</td>
+<td>57 Gull Lane<br>Lumeport Coastal State 38516<br>Bayvarra</td>
 </tr>
 <tr>
-<td>In Country B</td>
-<td>Currency: Bel (<code>XBW</code>). Taxes: A federal country: its
+<td>In Bayvarra</td>
+<td>Currency: Lume (<code>XBL</code>). Taxes: A federal country: its
 states levy a retail sales tax, charged once, on the sale to the final
 consumer. Sales to businesses that resell, exports and sales to public
 bodies are exempt, and the invoice says so.</td>
@@ -37,11 +37,11 @@ bodies are exempt, and the invoice says so.</td>
 <p>A consumer rarely deals with UBL directly, but a structured purchase
 receipt means the receipt can be stored, searched or used for a warranty
 claim without a paper slip.</p>
-<p>In this world it sends 0 and receives 4 documents, and is named in 0
+<p>In this world it sends 0 and receives 5 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
 <h2
-id="distributor-to-retailer-delivered-duty-paid-domestic-country-b">Distributor
-to retailer, delivered duty paid (domestic, Country B)</h2>
+id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
+to retailer, delivered duty paid (domestic, Bayvarra)</h2>
 <p>The retailer buys delivered duty paid (DDP) at its shop: the
 distributor arranges the transport and bears all costs, so the
 distributor, not the retailer, books the truck and receives the
@@ -89,6 +89,20 @@ amount past due, referring to the invoice.</p>
 <p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
+<h2 id="packaging-for-the-benches-clothing-for-the-store">Packaging for
+the benches, clothing for the store</h2>
+<p>The packaging maker supplies the manufacturer in Urvania and the
+textile mill at home; the textile mill sells clothing to the department
+store, delivered duty paid (DDP) at the store.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
+Receipt</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: The consumer buys a shirt; the receipt shows the state sales
+tax, the only point where Bayvarra's tax is charged.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>AccountingCustomerParty</code> <code>ReceiverParty</code>
@@ -97,12 +111,12 @@ amount past due, referring to the invoice.</p>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-26-xb.html">Brightmarket Stores</a>, Country B</li>
-<li><a href="world-34-xb.html">Coastal State Water Company</a>, Country
-B</li>
+<li><a href="world-26-xb.html">Brightmarket Stores</a>, Bayvarra</li>
+<li><a href="world-34-xb.html">Coastal State Water Company</a>,
+Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#c-xb">See Consumer on the map</a> · Country B:
+<p><a href="world.html#c-xb">See Consumer on the map</a> · Bayvarra:
 Mainland, coast. Distribution, retail, seaport and airport hub.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
@@ -112,6 +126,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
 </body>
 </html>

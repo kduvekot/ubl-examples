@@ -11,7 +11,7 @@
 <div class="layout">
 <main class="prose">
 <h1 id="brightmarket-stores">Brightmarket Stores</h1>
-<p><em>#26 Retailer · Country B (XB) · Commerce</em></p>
+<p><em>#26 Retailer · Bayvarra (XB) · Commerce</em></p>
 <p>Buys from the distributor, sells to consumers; shares forecasts and
 promotions.</p>
 <h2 id="identity">Identity</h2>
@@ -23,15 +23,15 @@ promotions.</p>
 </tr>
 <tr>
 <td>Registry number</td>
-<td><code>20410411</code> (Federal business register of Country B)</td>
+<td><code>20410411</code> (Federal business register of Bayvarra)</td>
 </tr>
 <tr>
 <td>Tax number</td>
-<td><code>CS-1231233</code> (State sales tax, <code>STT</code>)</td>
+<td><code>CO-1231233</code> (State sales tax, <code>STT</code>)</td>
 </tr>
 <tr>
 <td>Address</td>
-<td>50 Market Street<br>Lumeport Coastal State 38515<br>Country B</td>
+<td>50 Market Street<br>Lumeport Coastal State 38515<br>Bayvarra</td>
 </tr>
 <tr>
 <td>Electronic address</td>
@@ -47,8 +47,8 @@ promotions.</p>
 of Lumeport</a></td>
 </tr>
 <tr>
-<td>In Country B</td>
-<td>Currency: Bel (<code>XBW</code>). Taxes: A federal country: its
+<td>In Bayvarra</td>
+<td>Currency: Lume (<code>XBL</code>). Taxes: A federal country: its
 states levy a retail sales tax, charged once, on the sale to the final
 consumer. Sales to businesses that resell, exports and sales to public
 bodies are exempt, and the invoice says so.</td>
@@ -60,11 +60,11 @@ bodies are exempt, and the invoice says so.</td>
 orders and invoices, UBL lets it share forecasts, promotions and sales
 data with its supplier, and issue a structured purchase receipt to the
 consumer.</p>
-<p>In this world it sends 7 and receives 6 documents, and is named in 2
-documents between other parties. They are listed per flow below.</p>
+<p>In this world it sends 14 and receives 14 documents, and is named in
+2 documents between other parties. They are listed per flow below.</p>
 <h2
-id="distributor-to-retailer-delivered-duty-paid-domestic-country-b">Distributor
-to retailer, delivered duty paid (domestic, Country B)</h2>
+id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
+to retailer, delivered duty paid (domestic, Bayvarra)</h2>
 <p>The retailer buys delivered duty paid (DDP) at its shop: the
 distributor arranges the transport and bears all costs, so the
 distributor, not the retailer, books the truck and receives the
@@ -120,7 +120,7 @@ from <a href="world-6-xb.html">Lumeway Distribution</a>: The
 distributor's catalogue of items and prices; items carry the identifiers
 of the identifier issuing agency.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
-<p>Also mentions: <a href="world-31-xa.html">Codana Identification
+<p>Also mentions: <a href="world-31-xu.html">Codana Identification
 Agency</a> as
 <code>CatalogueLine/Item/StandardItemIdentification/IssuerParty</code>.</p></li>
 <li><p><a
@@ -130,7 +130,7 @@ Distribution</a>: The distributor announces the delivery and the truck
 that brings it.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
@@ -158,14 +158,14 @@ as <code>PayeeParty</code>.</p></li>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
 Execution Plan Request</strong></a> from <a
 href="world-6-xb.html">Lumeway Distribution</a> to <a
-href="world-13-xa.html">Trasvia Haulage</a>: Because it sold DDP, the
+href="world-13-xu.html">Trasvia Haulage</a>: Because it sold DDP, the
 distributor books the outgoing truck from its distribution centre to the
 shop.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
 receives the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-13-xa.html">Trasvia Haulage</a> to <a
+from <a href="world-13-xu.html">Trasvia Haulage</a> to <a
 href="world-6-xb.html">Lumeway Distribution</a>: The outgoing
 consignment note goes to the distributor, who contracted the carriage;
 the retailer is only the consignee.</p>
@@ -215,6 +215,135 @@ say nothing (IND6).</p>
 <p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
+<h2
+id="furniture-for-the-department-store-and-for-public-offices-bayvarra">Furniture
+for the department store and for public offices (Bayvarra)</h2>
+<p>The furniture maker supplies the department store with a garden
+furniture line made for it. They agree on the item data and the stock
+policy per store, the store reports what it sells, and exceptions
+against agreed thresholds are flagged automatically. Slow sellers are
+taken back. For the public works department the furniture maker also
+installs, and documents the work for approval.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REQUEST-FOR-QUOTATION-SCHEMA"><strong>Request
+For Quotation</strong></a> to <a href="world-37-xb.html">Brackenmere
+Furniture</a>: The store wants its own garden furniture line and asks
+for a quotation.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRADE-ITEM-LOCATION-PROFILE-SCHEMA"><strong>Trade
+Item Location Profile</strong></a> to <a
+href="world-37-xb.html">Brackenmere Furniture</a>: The store sets the
+replenishment policy per item and store.</p>
+<p>In it as <code>SenderParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXCEPTION-CRITERIA-SCHEMA"><strong>Exception
+Criteria</strong></a> to <a href="world-37-xb.html">Brackenmere
+Furniture</a>: Both agree when a deviation is worth a message:
+thresholds for forecast variance and sales.</p>
+<p>In it as <code>SenderParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRODUCT-ACTIVITY-SCHEMA"><strong>Product
+Activity</strong></a> to <a href="world-37-xb.html">Brackenmere
+Furniture</a>: Weekly sales and stock movements of the line.</p>
+<p>In it as <code>SenderParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-37-xb.html">Brackenmere Furniture</a>: The store
+orders the line. Delivery terms DAP store: the furniture maker delivers
+with its own van.</p>
+<p>In it as <code>BuyerCustomerParty</code>,
+<code>Delivery/DeliveryParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUOTATION-SCHEMA"><strong>Quotation</strong></a>
+from <a href="world-37-xb.html">Brackenmere Furniture</a>: The furniture
+maker quotes the line.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ITEM-INFORMATION-REQUEST-SCHEMA"><strong>Item
+Information Request</strong></a> from <a
+href="world-37-xb.html">Brackenmere Furniture</a>: To plan production,
+the furniture maker asks the store for sales and stock data of the
+line.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXCEPTION-NOTIFICATION-SCHEMA"><strong>Exception
+Notification</strong></a> from <a href="world-37-xb.html">Brackenmere
+Furniture</a>: Sales of the bench set run far below forecast: past the
+agreed threshold, so the furniture maker notifies the store.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-37-xb.html">Brackenmere Furniture</a>: Furniture
+sold for resale: exempt from the state sales tax, which the store
+charges its consumers.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INSTRUCTION-FOR-RETURNS-SCHEMA"><strong>Instruction
+For Returns</strong></a> from <a href="world-37-xb.html">Brackenmere
+Furniture</a>: The bench set does not sell; the furniture maker asks for
+the remaining stock back to free shelf space.</p>
+<p>In it as <code>RetailerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
+Note</strong></a> from <a href="world-37-xb.html">Brackenmere
+Furniture</a>: The returned bench sets are credited.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+</ul>
+<h2 id="packaging-for-the-benches-clothing-for-the-store">Packaging for
+the benches, clothing for the store</h2>
+<p>The packaging maker supplies the manufacturer in Urvania and the
+textile mill at home; the textile mill sells clothing to the department
+store, delivered duty paid (DDP) at the store.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-40-xb.html">Lumeport Textile Mill</a>: Clothing for
+the store. Delivery terms DDP store: the mill delivers.</p>
+<p>In it as <code>BuyerCustomerParty</code>,
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
+Receipt</strong></a> to <a href="world-c-xb.html">Robin Ashdale</a>: The
+consumer buys a shirt; the receipt shows the state sales tax, the only
+point where Bayvarra's tax is charged.</p>
+<p>In it as <code>AccountingSupplierParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-40-xb.html">Lumeport Textile
+Mill</a>: The mill announces the delivery with the road carrier it
+booked.</p>
+<p>In it as <code>DeliveryCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-40-xb.html">Lumeport Textile Mill</a>: Clothing for
+resale: exempt from sales tax, which the store charges its
+customers.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ReceiverParty</code> <code>SenderParty</code>
@@ -227,13 +356,15 @@ say nothing (IND6).</p>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-6-xb.html">Lumeway Distribution</a>, Country B</li>
-<li><a href="world-c-xb.html">Robin Ashdale</a>, Country B</li>
-<li><a href="world-34-xb.html">Coastal State Water Company</a>, Country
-B</li>
+<li><a href="world-6-xb.html">Lumeway Distribution</a>, Bayvarra</li>
+<li><a href="world-c-xb.html">Robin Ashdale</a>, Bayvarra</li>
+<li><a href="world-34-xb.html">Coastal State Water Company</a>,
+Bayvarra</li>
+<li><a href="world-37-xb.html">Brackenmere Furniture</a>, Bayvarra</li>
+<li><a href="world-40-xb.html">Lumeport Textile Mill</a>, Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#26-xb">See Retailer on the map</a> · Country B:
+<p><a href="world.html#26-xb">See Retailer on the map</a> · Bayvarra:
 Mainland, coast. Distribution, retail, seaport and airport hub.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
@@ -243,6 +374,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
 </body>
 </html>

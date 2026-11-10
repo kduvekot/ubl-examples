@@ -11,9 +11,11 @@
 <div class="layout">
 <main class="prose">
 <h1 id="valdara-industries">Valdara Industries</h1>
-<p><em>#5 Manufacturer · Country A (XA) · Commerce</em></p>
-<p>Turns raw material into finished goods; buys from #4, sells to #6
-abroad and tenders in public procurement.</p>
+<p><em>#5 Manufacturer · Urvania (XU) · Commerce</em></p>
+<p>Makes park benches and street furniture: frames from steel made from
+the mine's ore, slats from the sawmill in Bayvarra, packed in recycled
+packaging from Bayvarra. Sells to the distributor abroad and tenders in
+public procurement.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -23,19 +25,19 @@ abroad and tenders in public procurement.</p>
 </tr>
 <tr>
 <td>Registry number</td>
-<td><code>XA-R-104274</code> (Commercial register of Country A)</td>
+<td><code>XU-R-104274</code> (Commercial register of Urvania)</td>
 </tr>
 <tr>
 <td>Tax number</td>
-<td><code>XA007299291</code> (Value added tax, <code>VAT</code>)</td>
+<td><code>XU007299291</code> (Value added tax, <code>VAT</code>)</td>
 </tr>
 <tr>
 <td>Address</td>
-<td>Via delle Officine 17<br>4120 Ferrano<br>Country A</td>
+<td>Via delle Officine 17<br>4120 Ferrano<br>Urvania</td>
 </tr>
 <tr>
 <td>Electronic address</td>
-<td><code>XA:XA-R-104274</code></td>
+<td><code>XU:XU-R-104274</code></td>
 </tr>
 <tr>
 <td>Contact</td>
@@ -43,12 +45,12 @@ abroad and tenders in public procurement.</p>
 </tr>
 <tr>
 <td>Account</td>
-<td><code>XA80CREV0000209458</code> at <a
-href="world-23-xa.html">Crevalto Bank</a></td>
+<td><code>XU20CREV0000209458</code> at <a
+href="world-23-xu.html">Crevalto Bank</a></td>
 </tr>
 <tr>
-<td>In Country A</td>
-<td>Currency: Aster (<code>XAW</code>). Taxes: Value added tax in the
+<td>In Urvania</td>
+<td>Currency: Ferra (<code>XUF</code>). Taxes: Value added tax in the
 style of the EU VAT: charged at every stage, deducted by businesses, not
 charged on exports.</td>
 </tr>
@@ -60,10 +62,10 @@ sells, exports and tenders. UBL gives it one vocabulary for all of that,
 from the order it places with the mine to the certificate of origin and
 the tender it submits to a public buyer, so the same item, party and
 price data are reused instead of re-entered for every partner.</p>
-<p>In this world it sends 19 and receives 19 documents, and is named in
-13 documents between other parties. They are listed per flow below.</p>
-<h2 id="ore-from-the-mine-to-the-factory-domestic-country-a">Ore from
-the mine to the factory (domestic, Country A)</h2>
+<p>In this world it sends 21 and receives 20 documents, and is named in
+15 documents between other parties. They are listed per flow below.</p>
+<h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
+mine to the factory (domestic, Urvania)</h2>
 <p>The manufacturer buys ore free carrier (FCA) at the mine: the buyer
 arranges and pays the main transport, so the manufacturer, not the mine,
 books the ore train with the rail carrier.</p>
@@ -71,83 +73,83 @@ books the ore train with the rail carrier.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-to <a href="world-4-xa.html">Serravona Mining</a>: Monthly ore call-off.
+to <a href="world-4-xu.html">Serravona Mining</a>: Monthly ore call-off.
 Delivery terms FCA mine: the buyer books the train, so the order names
 the rail carrier that will collect.</p>
 <p>In it as <code>BuyerCustomerParty</code>,
 <code>Delivery/DeliveryParty</code>.</p>
-<p>Also mentions: <a href="world-14-xa.html">Ferrano Rail Cargo</a> as
+<p>Also mentions: <a href="world-14-xu.html">Ferrano Rail Cargo</a> as
 <code>Delivery/Despatch/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
 Execution Plan Request</strong></a> to <a
-href="world-14-xa.html">Ferrano Rail Cargo</a>: The manufacturer, as
+href="world-14-xu.html">Ferrano Rail Cargo</a>: The manufacturer, as
 transport user, asks the rail carrier for wagons and a slot to move the
 ore from the mine to its siding.</p>
 <p>In it as <code>SenderParty</code>, <code>TransportUserParty</code>,
 <code>Consignment/ConsigneeParty</code>.</p>
-<p>Also mentions: <a href="world-4-xa.html">Serravona Mining</a> as
+<p>Also mentions: <a href="world-4-xu.html">Serravona Mining</a> as
 <code>Consignment/ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> to <a href="world-4-xa.html">Serravona Mining</a>:
+Advice</strong></a> to <a href="world-4-xu.html">Serravona Mining</a>:
 The manufacturer tells the mine which invoices the transfer pays. Both
 companies bank at the same domestic bank.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
-<a href="world-23-xa.html">Crevalto Bank</a> as
+<a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> from <a href="world-14-xa.html">Ferrano Rail
+Execution Plan</strong></a> from <a href="world-14-xu.html">Ferrano Rail
 Cargo</a>: The rail carrier confirms the train, the wagons and the
 schedule; this is the agreed transport plan.</p>
 <p>In it as <code>ReceiverParty</code>, <code>TransportUserParty</code>,
 <code>Consignment/ConsigneeParty</code>.</p>
-<p>Also mentions: <a href="world-4-xa.html">Serravona Mining</a> as
+<p>Also mentions: <a href="world-4-xu.html">Serravona Mining</a> as
 <code>Consignment/ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-4-xa.html">Serravona Mining</a>:
+Advice</strong></a> from <a href="world-4-xu.html">Serravona Mining</a>:
 The mine announces what was loaded into which wagons, so the factory can
 plan the unloading.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-14-xa.html">Ferrano Rail Cargo</a> as
+<p>Also mentions: <a href="world-14-xu.html">Ferrano Rail Cargo</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-14-xa.html">Ferrano Rail Cargo</a>: The rail
+from <a href="world-14-xu.html">Ferrano Rail Cargo</a>: The rail
 consignment note goes to the party that contracted the carriage, the
 manufacturer; the mine is named as consignor because the ore is loaded
 there.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>Shipment/Consignment/ConsigneeParty</code>.</p>
-<p>Also mentions: <a href="world-4-xa.html">Serravona Mining</a> as
+<p>Also mentions: <a href="world-4-xu.html">Serravona Mining</a> as
 <code>ConsignorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-4-xa.html">Serravona Mining</a>: The mine invoices
+from <a href="world-4-xu.html">Serravona Mining</a>: The mine invoices
 the ore; transport is not on this invoice because under FCA the buyer
 pays it. Payment goes to the mine's account at the seller's bank.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <h2
-id="finished-goods-by-truck-across-the-land-border-country-a--country-b">Finished
-goods by truck across the land border (Country A → Country B)</h2>
-<p>The distributor buys free carrier (FCA) at the manufacturer's
-warehouse. Because the buyer arranges the transport, the distributor
-books the road carrier itself and tells the seller in the order which
-truck company will pick the goods up and where. The seller's 3PL hands
-the goods over; the seller clears them for export, the distributor for
-import.</p>
+id="finished-goods-by-truck-across-the-land-border-urvania--bayvarra">Finished
+goods by truck across the land border (Urvania → Bayvarra)</h2>
+<p>The distributor buys park benches free carrier (FCA) at the
+manufacturer's warehouse. Because the buyer arranges the transport, the
+distributor books the road carrier itself and tells the seller in the
+order which truck company will pick the goods up and where. The seller's
+3PL hands the goods over; the seller clears them for export, the
+distributor for import.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -158,19 +160,18 @@ collection date at its warehouse.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> to <a href="world-19-xa.html">Customs
-Administration of Country A</a>: Goods leave Country A: the
-manufacturer, as exporter, declares them to the customs office at the
-land border.</p>
+Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
+Administration of Urvania</a>: Goods leave Urvania: the manufacturer, as
+exporter, declares them to the customs office at the land border.</p>
 <p>In it as <code>ExporterParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>CustomsDeclaration/ConsigneeParty</code>; <a
-href="world-13-xa.html">Trasvia Haulage</a> as
+href="world-13-xu.html">Trasvia Haulage</a> as
 <code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-ORIGIN-SCHEMA"><strong>Certificate
-of Origin</strong></a> to <a href="world-20-xa.html">Ferrano Chamber of
-Commerce</a>: The goods qualify for preferential duty in Country B; the
+of Origin</strong></a> to <a href="world-20-xu.html">Ferrano Chamber of
+Commerce</a>: The goods qualify for preferential duty in Bayvarra; the
 manufacturer applies to its chamber of commerce for a certificate of
 origin.</p>
 <p>In it as <code>ExporterParty</code>.</p>
@@ -183,7 +184,7 @@ invoices the goods only (no freight under FCA) and asks for payment to
 its account at the seller's bank.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
@@ -195,9 +196,9 @@ FCA seller's warehouse: the order names the warehouse where the goods
 are collected and the road carrier the distributor has booked to collect
 them.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-8-xa.html">Castrano Logistics</a> as
+<p>Also mentions: <a href="world-8-xu.html">Castrano Logistics</a> as
 <code>Delivery/Despatch/DespatchParty</code>; <a
-href="world-13-xa.html">Trasvia Haulage</a> as
+href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Delivery/Despatch/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
@@ -205,7 +206,7 @@ Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a>: The distributor announces the cross-border payment and
 which invoices it settles.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
@@ -214,23 +215,23 @@ which invoices it settles.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
 Execution Plan Request</strong></a> from <a
 href="world-6-xb.html">Lumeway Distribution</a> to <a
-href="world-13-xa.html">Trasvia Haulage</a>: The distributor, as
+href="world-13-xu.html">Trasvia Haulage</a>: The distributor, as
 transport user, books the truck: collection at the seller's 3PL,
 delivery at its own distribution centre, across the border.</p>
 <p>In it as <code>Consignment/ConsignorParty</code> (The Party who is
 reponsible for sending the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-8-xa.html">Castrano
+Advice</strong></a> from <a href="world-8-xu.html">Castrano
 Logistics</a> to <a href="world-6-xb.html">Lumeway Distribution</a>: The
 3PL picks and loads the goods for the manufacturer and announces the
 despatch; it knows the goods and the truck but not the prices.</p>
 <p>In it as <code>SellerSupplierParty</code> (The seller).</p>
-<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-ORIGIN-SCHEMA"><strong>Certificate
-of Origin</strong></a> from <a href="world-20-xa.html">Ferrano Chamber
+of Origin</strong></a> from <a href="world-20-xu.html">Ferrano Chamber
 of Commerce</a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
 The chamber endorses the certificate and makes it available to the
 importer, who needs it for the import declaration.</p>
@@ -240,7 +241,7 @@ is the owner of the goods or has similar right of disposal over them at
 the time when the declaration is accepted).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-13-xa.html">Trasvia Haulage</a> to <a
+from <a href="world-13-xu.html">Trasvia Haulage</a> to <a
 href="world-6-xb.html">Lumeway Distribution</a>: The road consignment
 note goes to the party that booked the truck, the distributor; it names
 the manufacturer as consignor.</p>
@@ -250,22 +251,21 @@ sending the goods).</p></li>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
 Customs Declaration</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-19-xb.html">Customs and Border
-Service of Country B</a>: The distributor, as importer, declares the
-goods in Country B and claims the preferential duty rate with the
+Service of Bayvarra</a>: The distributor, as importer, declares the
+goods in Bayvarra and claims the preferential duty rate with the
 certificate of origin.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
-Distribution</a> to <a href="world-8-xa.html">Castrano Logistics</a>:
+Distribution</a> to <a href="world-8-xu.html">Castrano Logistics</a>:
 The distributor confirms what arrived to the party that despatched it,
 the 3PL, naming the manufacturer as seller.</p>
 <p>In it as <code>SellerSupplierParty</code> (The seller).</p></li>
 </ul>
-<h2
-id="containers-by-rail-under-transit-country-a--country-b">Containers by
-rail under transit (Country A → Country B)</h2>
+<h2 id="containers-by-rail-under-transit-urvania--bayvarra">Containers
+by rail under transit (Urvania → Bayvarra)</h2>
 <p>For full container loads the manufacturer sells delivered at place
 (DAP) the distributor's rail siding. Now the seller arranges and pays
 the transport: it books the container train and moves the goods under a
@@ -276,7 +276,7 @@ destination. The intermodal hub loads the containers on the train.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
 Execution Plan Request</strong></a> to <a
-href="world-14-xa.html">Ferrano Rail Cargo</a>: Under DAP the
+href="world-14-xu.html">Ferrano Rail Cargo</a>: Under DAP the
 manufacturer is the transport user; it books a container train to the
 distributor's siding.</p>
 <p>In it as <code>SenderParty</code>, <code>TransportUserParty</code>,
@@ -285,15 +285,14 @@ distributor's siding.</p>
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA"><strong>Transit
-Customs Declaration</strong></a> to <a href="world-19-xa.html">Customs
-Administration of Country A</a>: The goods travel under customs transit
-from Country A to the destination in Country B; the manufacturer, as
-holder of the procedure, lodges the declaration at the office of
-departure.</p>
+Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
+Administration of Urvania</a>: The goods travel under customs transit
+from Urvania to the destination in Bayvarra; the manufacturer, as holder
+of the procedure, lodges the declaration at the office of departure.</p>
 <p>In it as <code>TransitExporterParty</code>,
 <code>ConsignorParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
-<code>ConsigneeParty</code>; <a href="world-14-xa.html">Ferrano Rail
+<code>ConsigneeParty</code>; <a href="world-14-xu.html">Ferrano Rail
 Cargo</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
@@ -302,7 +301,7 @@ price includes the transport, so the invoice covers goods and
 freight.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
@@ -315,7 +314,7 @@ chooses and pays the transport.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> from <a href="world-14-xa.html">Ferrano Rail
+Execution Plan</strong></a> from <a href="world-14-xu.html">Ferrano Rail
 Cargo</a>: The rail carrier confirms the train and the slot at the
 intermodal hub.</p>
 <p>In it as <code>ReceiverParty</code>,
@@ -324,78 +323,19 @@ intermodal hub.</p>
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-14-xa.html">Ferrano Rail Cargo</a>: The rail
+from <a href="world-14-xu.html">Ferrano Rail Cargo</a>: The rail
 consignment note goes to the transport user, now the seller.</p>
 <p>In it as <code>ReceiverParty</code>, <code>ConsignorParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 </ul>
-<h2 id="bulk-by-river-barge-country-a--country-b">Bulk by river barge
-(Country A → Country B)</h2>
-<p>Bulk lots go down the river. The distributor buys carriage paid to
-(CPT) the river quay in Country B: the manufacturer books the barge and
-pays the freight; the risk passes when the barge is loaded.</p>
-<p><strong>Sends</strong></p>
-<ul>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
-Execution Plan Request</strong></a> to <a
-href="world-15-xa.html">Fiumella Barges</a>: The manufacturer, as
-transport user under CPT, asks the inland waterway carrier for barge
-capacity.</p>
-<p>In it as <code>SenderParty</code>,
-<code>TransportUserParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
-<code>Consignment/ConsigneeParty</code>.</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> to <a href="world-6-xb.html">Lumeway
-Distribution</a>: The manufacturer announces the lot loaded on the
-barge, so the distributor can arrange collection at the quay.</p>
-<p>In it as <code>DespatchSupplierParty</code>,
-<code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-15-xa.html">Fiumella Barges</a> as
-<code>Shipment/Consignment/CarrierParty</code>.</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-to <a href="world-6-xb.html">Lumeway Distribution</a>: Under CPT the
-seller has paid the barge, so the price includes carriage to the
-quay.</p>
-<p>In it as <code>AccountingSupplierParty</code>,
-<code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
-<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
-</ul>
-<p><strong>Receives</strong></p>
-<ul>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-from <a href="world-6-xb.html">Lumeway Distribution</a>: Delivery terms
-CPT river quay: the seller books the barge, the buyer collects at the
-quay.</p>
-<p>In it as <code>SellerSupplierParty</code>.</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> from <a href="world-15-xa.html">Fiumella
-Barges</a>: The barge operator confirms the vessel and the sailing.</p>
-<p>In it as <code>ReceiverParty</code>,
-<code>TransportUserParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
-<code>Consignment/ConsigneeParty</code>.</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-15-xa.html">Fiumella Barges</a>: The inland waterway
-consignment note, issued to the shipper.</p>
-<p>In it as <code>ReceiverParty</code>, <code>ConsignorParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
-<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
-</ul>
-<h2 id="a-public-tender-country-b">A public tender (Country B)</h2>
-<p>The contracting authority buys equipment under procurement law. The
-notices are published through the government information service; the
-manufacturer tenders together with a consortium partner, backed by a bid
-bond. After the award the authority places orders under the contract and
-the manufacturer delivers and invoices.</p>
+<h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
+<p>The contracting authority buys park benches and street furniture for
+the city's parks under procurement law. The notices are published
+through the government information service; the manufacturer tenders
+together with a consortium partner, backed by a bid bond. After the
+award the authority places orders under the contract and the
+manufacturer delivers and invoices.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -416,13 +356,13 @@ tender, with the consortium partner as subcontractor.</p>
 <code>SubcontractorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> to <a href="world-19-xa.html">Customs
-Administration of Country A</a>: The call-off leaves Country A; the
+Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
+Administration of Urvania</a>: The call-off leaves Urvania; the
 manufacturer declares the export.</p>
 <p>In it as <code>ExporterParty</code>.</p>
 <p>Also mentions: <a href="world-2-xb.html">Lumeport Public Works
 Department</a> as <code>CustomsDeclaration/ConsigneeParty</code>; <a
-href="world-13-xa.html">Trasvia Haulage</a> as
+href="world-13-xu.html">Trasvia Haulage</a> as
 <code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
@@ -431,7 +371,7 @@ manufacturer invoices the public buyer under the contract; payment to
 its account at the seller's bank.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
@@ -443,7 +383,7 @@ Works Department</a>: The manufacturer retrieves the procurement
 documents.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
 <p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
-Country B</a> as
+Bayvarra</a> as
 <code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-AWARDED-NOTIFICATION-SCHEMA"><strong>Awarded
@@ -463,7 +403,7 @@ chooses.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BUSINESS-INFORMATION-SCHEMA"><strong>Business
-Information</strong></a> from <a href="world-21-xb.html">Country B
+Information</strong></a> from <a href="world-21-xb.html">Bayvarra
 Information Service</a> to <a href="world-2-xb.html">Lumeport Public
 Works Department</a>: The authority checks the tenderer's registration
 with the business registry.</p>
@@ -480,29 +420,29 @@ bond guarantee).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-AWARD-NOTICE-SCHEMA"><strong>Contract
 Award Notice</strong></a> from <a href="world-2-xb.html">Lumeport Public
-Works Department</a> to <a href="world-21-xb.html">Country B Information
+Works Department</a> to <a href="world-21-xb.html">Bayvarra Information
 Service</a>: The award is published; the review body is named for
 appeals.</p>
 <p>In it as <code>TenderResult/WinningParty</code> (A party that is
 identified as the awarded by a tender result).</p>
 <p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
-Country B</a> as
+Bayvarra</a> as
 <code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-8-xa.html">Castrano
+Advice</strong></a> from <a href="world-8-xu.html">Castrano
 Logistics</a> to <a href="world-2-xb.html">Lumeport Public Works
 Department</a>: The manufacturer's 3PL despatches the call-off and names
 the carrier.</p>
 <p>In it as <code>SellerSupplierParty</code> (The seller).</p>
-<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
 Customs Declaration</strong></a> from <a href="world-2-xb.html">Lumeport
 Public Works Department</a> to <a href="world-19-xb.html">Customs and
-Border Service of Country B</a>: Under DAP the buyer clears the import,
-so the contracting authority declares the goods in Country B.</p>
+Border Service of Bayvarra</a>: Under DAP the buyer clears the import,
+so the contracting authority declares the goods in Bayvarra.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p></li>
 </ul>
@@ -515,40 +455,40 @@ of both countries, avoids paying duties.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-ITEM-PASSPORT-SCHEMA"><strong>Goods
-Item Passport</strong></a> from <a href="world-20-xa.html">Ferrano
+Item Passport</strong></a> from <a href="world-20-xu.html">Ferrano
 Chamber of Commerce</a>: The chamber issues the carnet to the
 manufacturer, who holds it while the samples travel.</p>
 <p>In it as <code>HolderParty</code>.</p>
-<p>Also mentions: <a href="world-20-xc.html">Selanu Chamber of
+<p>Also mentions: <a href="world-20-xl.html">Selanu Chamber of
 Commerce</a> as <code>ImportingGuarantorParty</code>; <a
-href="world-19-xa.html">Customs Administration of Country A</a> as
-<code>ExportingCustomsParty</code>; <a href="world-19-xc.html">Island
+href="world-19-xu.html">Customs Administration of Urvania</a> as
+<code>ExportingCustomsParty</code>; <a href="world-19-xl.html">Island
 Customs Service</a> as <code>ImportingCustomsParty</code>.</p></li>
 </ul>
-<h2 id="production-waste-to-recovery-domestic-country-a">Production
-waste to recovery (domestic, Country A)</h2>
+<h2 id="production-waste-to-recovery-domestic-urvania">Production waste
+to recovery (domestic, Urvania)</h2>
 <p>The factory's hazardous production waste may only move with a
-notification. In Country A one administration acts as customs and as
+notification. In Urvania one administration acts as customs and as
 competent authority for waste permits. The waste processor recovers the
 material and invoices the service.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-NOTIFICATION-SCHEMA"><strong>Waste
-Notification</strong></a> to <a href="world-19-xa.html">Customs
-Administration of Country A</a>: The manufacturer, as producer and
+Notification</strong></a> to <a href="world-19-xu.html">Customs
+Administration of Urvania</a>: The manufacturer, as producer and
 notifier, notifies the planned movements to the competent authority.</p>
 <p>In it as <code>SenderParty</code>, <code>NotifierParty</code>,
 <code>WasteProducerParty</code>.</p>
-<p>Also mentions: <a href="world-7-xa.html">Rinova Recovery</a> as
-<code>RecoveryFacilityParty</code>; <a href="world-13-xa.html">Trasvia
+<p>Also mentions: <a href="world-7-xu.html">Rinova Recovery</a> as
+<code>RecoveryFacilityParty</code>; <a href="world-13-xu.html">Trasvia
 Haulage</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-7-xa.html">Rinova Recovery</a>: The waste processor
+from <a href="world-7-xu.html">Rinova Recovery</a>: The waste processor
 invoices collection and recovery.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
 </ul>
@@ -556,14 +496,14 @@ invoices collection and recovery.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-MOVEMENT-SCHEMA"><strong>Waste
-Movement</strong></a> from <a href="world-7-xa.html">Rinova Recovery</a>
-to <a href="world-19-xa.html">Customs Administration of Country A</a>:
-The recovery facility reports each movement received to the competent
+Movement</strong></a> from <a href="world-7-xu.html">Rinova Recovery</a>
+to <a href="world-19-xu.html">Customs Administration of Urvania</a>: The
+recovery facility reports each movement received to the competent
 authority.</p>
 <p>In it as <code>NotifierParty</code>, <code>WasteProducerParty</code>
 (The Party that acts as the notifier in relation to the Waste Movements
 covered by this document) (The Party producing the waste material).</p>
-<p>Also mentions: <a href="world-13-xa.html">Trasvia Haulage</a> as
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <h2
@@ -580,19 +520,19 @@ differently.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> to <a href="world-33-xa.html">Ferrano Energy</a>:
+Advice</strong></a> to <a href="world-33-xu.html">Ferrano Energy</a>:
 The manufacturer pays both electricity bills in one transfer.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
-<a href="world-23-xa.html">Crevalto Bank</a> as
+<a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
-Statement</strong></a> from <a href="world-33-xa.html">Ferrano
+Statement</strong></a> from <a href="world-33-xu.html">Ferrano
 Energy</a>: The factory's monthly electricity consumption: meter
 readings and consumption per connection, in the energy and water supply
 structure.</p>
@@ -600,26 +540,144 @@ structure.</p>
 <code>SubscriberParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-33-xa.html">Ferrano Energy</a>: The electricity
-bill, with Country A's VAT; it refers to the utility statement for the
+from <a href="world-33-xu.html">Ferrano Energy</a>: The electricity
+bill, with Urvania's VAT; it refers to the utility statement for the
 consumption.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
-Statement</strong></a> from <a href="world-33-xa.html">Ferrano
-Energy</a> to <a href="world-8-xa.html">Castrano Logistics</a>: The
+Statement</strong></a> from <a href="world-33-xu.html">Ferrano
+Energy</a> to <a href="world-8-xu.html">Castrano Logistics</a>: The
 3PL's warehouse is the manufacturer's building: the 3PL is the
 subscriber at the connection and receives the statement, but the
 manufacturer pays. The statement therefore names the manufacturer as
 customer, the buyer that differs from the receiver.</p>
 <p>In it as <code>CustomerParty</code> (The buyer, if different from the
 receiver of the document).</p></li>
+</ul>
+<h2
+id="wood-slats-for-the-benches-and-timber-for-furniture-bayvarra--urvania-and-at-home">Wood:
+slats for the benches and timber for furniture (Bayvarra → Urvania, and
+at home)</h2>
+<p>The sawmill in Upland State saws timber to size. The manufacturer in
+Urvania asks for a quotation for bench slats to its own dimensions and
+orders them delivered at its factory (DAP), so the sawmill arranges the
+truck across the border. The furniture maker buys timber at home;
+selling for manufacture, the sawmill charges no sales tax and says
+why.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REQUEST-FOR-QUOTATION-SCHEMA"><strong>Request
+For Quotation</strong></a> to <a href="world-36-xb.html">Marrowdale
+Sawmill</a>: Slats to the manufacturer's own dimensions and wood
+species: it asks the sawmill to quote before ordering.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-36-xb.html">Marrowdale Sawmill</a>: The manufacturer
+accepts the quotation and orders. Delivery terms DAP factory: the
+sawmill delivers and the manufacturer clears the import.</p>
+<p>In it as <code>BuyerCustomerParty</code>,
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
+Administration of Urvania</a>: The manufacturer declares the import into
+Urvania, where import VAT is due.</p>
+<p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
+<p>Also mentions: <a href="world-36-xb.html">Marrowdale Sawmill</a> as
+<code>ConsignorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> to <a href="world-36-xb.html">Marrowdale
+Sawmill</a>: The manufacturer pays across the border.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUOTATION-SCHEMA"><strong>Quotation</strong></a>
+from <a href="world-36-xb.html">Marrowdale Sawmill</a>: The sawmill
+quotes per thousand slats, delivered at the factory.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-36-xb.html">Marrowdale
+Sawmill</a>: The sawmill announces the slats per lot, so the factory can
+trace the wood of every bench.</p>
+<p>In it as <code>DeliveryCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-36-xb.html">Marrowdale Sawmill</a>: Slats and
+delivery. An export from Bayvarra: no sales tax, with the exemption
+stated.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
+Execution Plan Request</strong></a> from <a
+href="world-36-xb.html">Marrowdale Sawmill</a> to <a
+href="world-13-xu.html">Trasvia Haulage</a>: Under DAP the sawmill is
+the transport user; it books the road carrier across the border.</p>
+<p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
+receives the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
+Customs Declaration</strong></a> from <a
+href="world-36-xb.html">Marrowdale Sawmill</a> to <a
+href="world-19-xb.html">Customs and Border Service of Bayvarra</a>: The
+slats leave Bayvarra; the sawmill declares the export at the land
+border.</p>
+<p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
+who receives the goods).</p>
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
+<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
+</ul>
+<h2 id="packaging-for-the-benches-clothing-for-the-store">Packaging for
+the benches, clothing for the store</h2>
+<p>The packaging maker supplies the manufacturer in Urvania and the
+textile mill at home; the textile mill sells clothing to the department
+store, delivered duty paid (DDP) at the store.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-41-xb.html">Rivermouth Packaging</a>: Bench packaging,
+collected by the road carrier the manufacturer books. Delivery terms FCA
+packaging maker.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
+<code>Delivery/Despatch/CarrierParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-41-xb.html">Rivermouth Packaging</a>: Packaging
+exported to Urvania: no sales tax in Bayvarra, stated.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
@@ -629,32 +687,33 @@ receiver of the document).</p></li>
 <code>DeliveryCustomerParty</code> <code>AccountingCustomerParty</code>
 <code>SellerSupplierParty</code> <code>ConsignorParty</code>
 <code>ExporterParty</code> <code>AccountingSupplierParty</code>
-<code>TransitExporterParty</code> <code>DespatchSupplierParty</code>
-<code>BusinessParty</code> <code>MainQualifyingParty</code>
-<code>InterestedParty</code> <code>TendererParty</code>
-<code>WinningParty</code> <code>HolderParty</code>
-<code>NotifierParty</code> <code>WasteProducerParty</code>
-<code>SubscriberParty</code> <code>CustomerParty</code></p>
+<code>TransitExporterParty</code> <code>BusinessParty</code>
+<code>MainQualifyingParty</code> <code>InterestedParty</code>
+<code>TendererParty</code> <code>WinningParty</code>
+<code>HolderParty</code> <code>NotifierParty</code>
+<code>WasteProducerParty</code> <code>SubscriberParty</code>
+<code>CustomerParty</code> <code>ImporterParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-4-xa.html">Serravona Mining</a>, Country A</li>
-<li><a href="world-14-xa.html">Ferrano Rail Cargo</a>, Country A</li>
-<li><a href="world-6-xb.html">Lumeway Distribution</a>, Country B</li>
-<li><a href="world-19-xa.html">Customs Administration of Country A</a>,
-Country A</li>
-<li><a href="world-20-xa.html">Ferrano Chamber of Commerce</a>, Country
-A</li>
-<li><a href="world-15-xa.html">Fiumella Barges</a>, Country A</li>
+<li><a href="world-4-xu.html">Serravona Mining</a>, Urvania</li>
+<li><a href="world-14-xu.html">Ferrano Rail Cargo</a>, Urvania</li>
+<li><a href="world-6-xb.html">Lumeway Distribution</a>, Bayvarra</li>
+<li><a href="world-19-xu.html">Customs Administration of Urvania</a>,
+Urvania</li>
+<li><a href="world-20-xu.html">Ferrano Chamber of Commerce</a>,
+Urvania</li>
 <li><a href="world-2-xb.html">Lumeport Public Works Department</a>,
-Country B</li>
-<li><a href="world-7-xa.html">Rinova Recovery</a>, Country A</li>
-<li><a href="world-33-xa.html">Ferrano Energy</a>, Country A</li>
+Bayvarra</li>
+<li><a href="world-7-xu.html">Rinova Recovery</a>, Urvania</li>
+<li><a href="world-33-xu.html">Ferrano Energy</a>, Urvania</li>
+<li><a href="world-36-xb.html">Marrowdale Sawmill</a>, Bayvarra</li>
+<li><a href="world-41-xb.html">Rivermouth Packaging</a>, Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#5-xa">See Manufacturer on the map</a> · Country
-A: Mainland, inland. Raw materials and manufacturing.</p>
+<p><a href="world.html#5-xu">See Manufacturer on the map</a> · Urvania:
+Mainland, inland. Raw materials and manufacturing.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
 definitions of the documents and their party elements), completed by the
@@ -663,6 +722,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <div class="layout">
 <main class="prose">
 <h1 id="serravona-mining">Serravona Mining</h1>
-<p><em>#4 Raw Material Supplier · Country A (XA) · Commerce</em></p>
+<p><em>#4 Raw Material Supplier · Urvania (XU) · Commerce</em></p>
 <p>Mines the ore at the start of the chain and sells it to the
 manufacturer.</p>
 <h2 id="identity">Identity</h2>
@@ -23,19 +23,19 @@ manufacturer.</p>
 </tr>
 <tr>
 <td>Registry number</td>
-<td><code>XA-R-104137</code> (Commercial register of Country A)</td>
+<td><code>XU-R-104137</code> (Commercial register of Urvania)</td>
 </tr>
 <tr>
 <td>Tax number</td>
-<td><code>XA007289704</code> (Value added tax, <code>VAT</code>)</td>
+<td><code>XU007289704</code> (Value added tax, <code>VAT</code>)</td>
 </tr>
 <tr>
 <td>Address</td>
-<td>Strada della Miniera 10<br>4110 Serravona<br>Country A</td>
+<td>Strada della Miniera 10<br>4110 Serravona<br>Urvania</td>
 </tr>
 <tr>
 <td>Electronic address</td>
-<td><code>XA:XA-R-104137</code></td>
+<td><code>XU:XU-R-104137</code></td>
 </tr>
 <tr>
 <td>Contact</td>
@@ -43,12 +43,12 @@ manufacturer.</p>
 </tr>
 <tr>
 <td>Account</td>
-<td><code>XA19CREV0000104729</code> at <a
-href="world-23-xa.html">Crevalto Bank</a></td>
+<td><code>XU56CREV0000104729</code> at <a
+href="world-23-xu.html">Crevalto Bank</a></td>
 </tr>
 <tr>
-<td>In Country A</td>
-<td>Currency: Aster (<code>XAW</code>). Taxes: Value added tax in the
+<td>In Urvania</td>
+<td>Currency: Ferra (<code>XUF</code>). Taxes: Value added tax in the
 style of the EU VAT: charged at every stage, deducted by businesses, not
 charged on exports.</td>
 </tr>
@@ -62,8 +62,8 @@ last, so the buyer can match them without retyping weighbridge
 tickets.</p>
 <p>In this world it sends 2 and receives 2 documents, and is named in 3
 documents between other parties. They are listed per flow below.</p>
-<h2 id="ore-from-the-mine-to-the-factory-domestic-country-a">Ore from
-the mine to the factory (domestic, Country A)</h2>
+<h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
+mine to the factory (domestic, Urvania)</h2>
 <p>The manufacturer buys ore free carrier (FCA) at the mine: the buyer
 arranges and pays the main transport, so the manufacturer, not the mine,
 books the ore train with the rail carrier.</p>
@@ -71,43 +71,43 @@ books the ore train with the rail carrier.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> to <a href="world-5-xa.html">Valdara Industries</a>:
+Advice</strong></a> to <a href="world-5-xu.html">Valdara Industries</a>:
 The mine announces what was loaded into which wagons, so the factory can
 plan the unloading.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-14-xa.html">Ferrano Rail Cargo</a> as
+<p>Also mentions: <a href="world-14-xu.html">Ferrano Rail Cargo</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-to <a href="world-5-xa.html">Valdara Industries</a>: The mine invoices
+to <a href="world-5-xu.html">Valdara Industries</a>: The mine invoices
 the ore; transport is not on this invoice because under FCA the buyer
 pays it. Payment goes to the mine's account at the seller's bank.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
-from <a href="world-5-xa.html">Valdara Industries</a>: Monthly ore
+from <a href="world-5-xu.html">Valdara Industries</a>: Monthly ore
 call-off. Delivery terms FCA mine: the buyer books the train, so the
 order names the rail carrier that will collect.</p>
 <p>In it as <code>SellerSupplierParty</code>,
 <code>Delivery/Despatch/DespatchParty</code>.</p>
-<p>Also mentions: <a href="world-14-xa.html">Ferrano Rail Cargo</a> as
+<p>Also mentions: <a href="world-14-xu.html">Ferrano Rail Cargo</a> as
 <code>Delivery/Despatch/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> from <a href="world-5-xa.html">Valdara
+Advice</strong></a> from <a href="world-5-xu.html">Valdara
 Industries</a>: The manufacturer tells the mine which invoices the
 transfer pays. Both companies bank at the same domestic bank.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-23-xa.html">Crevalto Bank</a> as
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
-<a href="world-23-xa.html">Crevalto Bank</a> as
+<a href="world-23-xu.html">Crevalto Bank</a> as
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
@@ -115,24 +115,24 @@ transfer pays. Both companies bank at the same domestic bank.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
 Execution Plan Request</strong></a> from <a
-href="world-5-xa.html">Valdara Industries</a> to <a
-href="world-14-xa.html">Ferrano Rail Cargo</a>: The manufacturer, as
+href="world-5-xu.html">Valdara Industries</a> to <a
+href="world-14-xu.html">Ferrano Rail Cargo</a>: The manufacturer, as
 transport user, asks the rail carrier for wagons and a slot to move the
 ore from the mine to its siding.</p>
 <p>In it as <code>Consignment/ConsignorParty</code> (The Party who is
 reponsible for sending the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> from <a href="world-14-xa.html">Ferrano Rail
-Cargo</a> to <a href="world-5-xa.html">Valdara Industries</a>: The rail
+Execution Plan</strong></a> from <a href="world-14-xu.html">Ferrano Rail
+Cargo</a> to <a href="world-5-xu.html">Valdara Industries</a>: The rail
 carrier confirms the train, the wagons and the schedule; this is the
 agreed transport plan.</p>
 <p>In it as <code>Consignment/ConsignorParty</code> (The Party who is
 reponsible for sending the goods).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-from <a href="world-14-xa.html">Ferrano Rail Cargo</a> to <a
-href="world-5-xa.html">Valdara Industries</a>: The rail consignment note
+from <a href="world-14-xu.html">Ferrano Rail Cargo</a> to <a
+href="world-5-xu.html">Valdara Industries</a>: The rail consignment note
 goes to the party that contracted the carriage, the manufacturer; the
 mine is named as consignor because the ore is loaded there.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
@@ -147,11 +147,11 @@ sending the goods).</p></li>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-5-xa.html">Valdara Industries</a>, Country A</li>
+<li><a href="world-5-xu.html">Valdara Industries</a>, Urvania</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#4-xa">See Raw Material Supplier on the map</a> ·
-Country A: Mainland, inland. Raw materials and manufacturing.</p>
+<p><a href="world.html#4-xu">See Raw Material Supplier on the map</a> ·
+Urvania: Mainland, inland. Raw materials and manufacturing.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
 definitions of the documents and their party elements), completed by the
@@ -160,6 +160,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
 </body>
 </html>

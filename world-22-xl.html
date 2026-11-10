@@ -11,7 +11,7 @@
 <div class="layout">
 <main class="prose">
 <h1 id="bank-of-selanu">Bank of Selanu</h1>
-<p><em>#22 Buyer's Bank · Country C (XC) · Finance</em></p>
+<p><em>#22 Buyer's Bank · Lisavu (XL) · Finance</em></p>
 <p>Holds the buyer's account and sends the payment abroad.</p>
 <h2 id="identity">Identity</h2>
 <table>
@@ -26,11 +26,11 @@
 </tr>
 <tr>
 <td>Address</td>
-<td>23 Reef Street<br>Selanu<br>Country C</td>
+<td>23 Reef Street<br>Selanu<br>Lisavu</td>
 </tr>
 <tr>
 <td>Electronic address</td>
-<td><code>XC:IC41996</code></td>
+<td><code>XL:IC41996</code></td>
 </tr>
 <tr>
 <td>Contact</td>
@@ -42,14 +42,16 @@
 </tr>
 <tr>
 <td>Holds the accounts of</td>
-<td><a href="world-3-xc.html">Tevaro Customs Brokers</a>, <a
-href="world-9-xc.html">Nalevi Warehousing</a>, <a
-href="world-1-xc.html">Velumi Trading</a>, <a
-href="world-35-xc.html">Selanu Telecom</a></td>
+<td><a href="world-3-xl.html">Tevaro Customs Brokers</a>, <a
+href="world-9-xl.html">Nalevi Warehousing</a>, <a
+href="world-1-xl.html">Velumi Trading</a>, <a
+href="world-35-xl.html">Selanu Telecom</a>, <a
+href="world-38-xl.html">Lisavu Cotton Farm</a>, <a
+href="world-39-xl.html">Selanu Cotton Ginnery</a></td>
 </tr>
 <tr>
-<td>In Country C</td>
-<td>Currency: Coral (<code>XCW</code>). Taxes: An island without a
+<td>In Lisavu</td>
+<td>Currency: Coral (<code>XLC</code>). Taxes: An island without a
 general sales tax or VAT: the state is financed by customs duty and an
 import consumption tax, both collected by customs at import. Domestic
 sales carry no tax, and the invoice says so.</td>
@@ -60,12 +62,12 @@ sales carry no tax, and the invoice says so.</td>
 <p>The buyer's bank sends the payment abroad. The payment reference and
 payee account come straight from the UBL invoice, so the payment arrives
 with the information the seller's bank needs to match it.</p>
-<p>In this world it sends 0 and receives 0 documents, and is named in 3
+<p>In this world it sends 0 and receives 0 documents, and is named in 6
 documents between other parties. They are listed per flow below.</p>
 <h2
-id="overseas-by-container-ship-cost-insurance-and-freight-country-b--island-country-c">Overseas
-by container ship, cost insurance and freight (Country B → island
-Country C)</h2>
+id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
+by container ship, cost insurance and freight (Bayvarra → island
+Lisavu)</h2>
 <p>The commercial buyer on the island buys cost, insurance and freight
 (CIF) to the port of discharge. The distributor therefore pays the sea
 freight and the cargo insurance; it hands both to its freight forwarder.
@@ -75,7 +77,7 @@ the goods and its 3PL receives them.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> from <a href="world-1-xc.html">Velumi Trading</a> to
+Advice</strong></a> from <a href="world-1-xl.html">Velumi Trading</a> to
 <a href="world-24-xb.html">Harbourline Factoring</a>: The buyer pays the
 factor from its account at the buyer's bank and says which invoices it
 settles.</p>
@@ -100,8 +102,8 @@ differently.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-35-xc.html">Selanu Telecom</a> to <a
-href="world-1-xc.html">Velumi Trading</a>: The telecom bill. The island
+from <a href="world-35-xl.html">Selanu Telecom</a> to <a
+href="world-1-xl.html">Velumi Trading</a>: The telecom bill. The island
 has no sales tax or VAT, and the invoice says that no tax applies rather
 than leaving it out.</p>
 <p>In it as
@@ -110,8 +112,8 @@ than leaving it out.</p>
 applicable)).</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
-Advice</strong></a> from <a href="world-1-xc.html">Velumi Trading</a> to
-<a href="world-35-xc.html">Selanu Telecom</a>: The buyer pays the
+Advice</strong></a> from <a href="world-1-xl.html">Velumi Trading</a> to
+<a href="world-35-xl.html">Selanu Telecom</a>: The buyer pays the
 telecom bill from its account at the island's bank.</p>
 <p>In it as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>,
@@ -120,12 +122,55 @@ telecom bill from its account at the island's bank.</p>
 (The financial institution that this branch belongs to (if
 applicable)).</p></li>
 </ul>
+<h2
+id="cotton-from-the-islands-farms-to-the-textile-mill-lisavu--bayvarra">Cotton:
+from the island's farms to the textile mill (Lisavu → Bayvarra)</h2>
+<p>The island's export. The farm delivers seed cotton to the ginnery,
+which weighs and grades it and pays by self-billing: it writes the
+invoice for the farm. The ginnery sells the bales free on board (FOB)
+the island port: the textile mill arranges the sea freight through its
+forwarder. The ginnery declares the export, weighs the container for its
+verified gross mass and gets a goods certificate.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> from <a href="world-39-xl.html">Selanu Cotton
+Ginnery</a> to <a href="world-38-xl.html">Lisavu Cotton Farm</a>: The
+ginnery pays the farm the net amount.</p>
+<p>In it as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>,
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if applicable))
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-39-xl.html">Selanu Cotton Ginnery</a> to <a
+href="world-40-xb.html">Lumeport Textile Mill</a>: The bales, free on
+board. No tax applies on the island, and the invoice says so.</p>
+<p>In it as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if
+applicable)).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> from <a href="world-40-xb.html">Lumeport Textile
+Mill</a> to <a href="world-39-xl.html">Selanu Cotton Ginnery</a>: The
+mill pays the island's ginnery: money flows to the island for once.</p>
+<p>In it as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>
+(The financial institution that this branch belongs to (if
+applicable)).</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>FinancialInstitution</code></p>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#22-xc">See Buyer's Bank on the map</a> · Country
-C: Island. The overseas buyer, reached by sea and air.</p>
+<p><a href="world.html#22-xl">See Buyer's Bank on the map</a> · Lisavu:
+Island. The overseas buyer, reached by sea and air.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
 definitions of the documents and their party elements), completed by the
@@ -134,6 +179,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
 </body>
 </html>

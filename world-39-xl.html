@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selanu Cotton Ginnery · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=5478ada644">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="selanu-cotton-ginnery">Selanu Cotton Ginnery</h1>
+<p><em>#39 Cotton Ginnery · Lisavu (XL) · Commerce</em> · <em>proposed
+addition to the 26+C set</em></p>
+<p>Gins the farms' seed cotton into bales and exports them to the
+textile mill on the mainland: the island's export.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Selanu Cotton Ginnery</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>IC42681</code> (Island companies register)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>42 Gin Yard Road<br>Selanu<br>Lisavu</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XL:IC42681</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Cotton sales, <code>cotton@selanuginnery.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XL66BSEL0004922263</code> at <a href="world-22-xl.html">Bank
+of Selanu</a></td>
+</tr>
+<tr>
+<td>In Lisavu</td>
+<td>Currency: Coral (<code>XLC</code>). Taxes: An island without a
+general sales tax or VAT: the state is financed by customs duty and an
+import consumption tax, both collected by customs at import. Domestic
+sales carry no tax, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-ubl-helps">How UBL helps</h2>
+<p>The ginnery buys from many farms and sells overseas. UBL covers both
+sides: self-billing towards the farms, and towards the mill an export
+with weight statement, goods certificate, customs declaration and
+invoice.</p>
+<p>In this world it sends 6 and receives 6 documents, and is named in 3
+documents between other parties. They are listed per flow below.</p>
+<h2
+id="cotton-from-the-islands-farms-to-the-textile-mill-lisavu--bayvarra">Cotton:
+from the island's farms to the textile mill (Lisavu → Bayvarra)</h2>
+<p>The island's export. The farm delivers seed cotton to the ginnery,
+which weighs and grades it and pays by self-billing: it writes the
+invoice for the farm. The ginnery sells the bales free on board (FOB)
+the island port: the textile mill arranges the sea freight through its
+forwarder. The ginnery declares the export, weighs the container for its
+verified gross mass and gets a goods certificate.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-SELF-BILLED-INVOICE-SCHEMA"><strong>Self
+Billed Invoice</strong></a> to <a href="world-38-xl.html">Lisavu Cotton
+Farm</a>: Under the self-billing agreement the ginnery writes the farm's
+invoice from the weight and grade it measured. No tax on the island,
+stated as such.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-SELF-BILLED-CREDIT-NOTE-SCHEMA"><strong>Self
+Billed Credit Note</strong></a> to <a href="world-38-xl.html">Lisavu
+Cotton Farm</a>: Classing after ginning puts part of the delivery a
+grade lower; the ginnery credits the difference on the farm's
+behalf.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> to <a href="world-38-xl.html">Lisavu Cotton
+Farm</a>: The ginnery pays the farm the net amount.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-22-xl.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-22-xl.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
+Customs Declaration</strong></a> to <a href="world-19-xl.html">Island
+Customs Service</a>: The island's export: the ginnery declares the bales
+to customs.</p>
+<p>In it as <code>ExporterParty</code>.</p>
+<p>Also mentions: <a href="world-40-xb.html">Lumeport Textile Mill</a>
+as <code>CustomsDeclaration/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WEIGHT-STATEMENT-SCHEMA"><strong>Weight
+Statement</strong></a> to <a href="world-11-xb.html">Tidewell Ocean
+Lines</a>: Before loading, the shipper declares the verified gross mass
+of the container, weighed on the port's weighbridge.</p>
+<p>In it as <code>SenderParty</code>, <code>ShipperParty</code>.</p>
+<p>Also mentions: <a href="world-16-xl.html">Port of Selanu</a> as
+<code>WeighingParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-40-xb.html">Lumeport Textile Mill</a>: The bales, free
+on board. No tax applies on the island, and the invoice says so.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-22-xl.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORECAST-SCHEMA"><strong>Forecast</strong></a>
+from <a href="world-40-xb.html">Lumeport Textile Mill</a>: The mill
+tells the ginnery how many bales it expects to buy this season.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DELIVERY-NOTE-SCHEMA"><strong>Delivery
+Note</strong></a> from <a href="world-38-xl.html">Lisavu Cotton
+Farm</a>: The farm delivers a trailer of seed cotton at the gin and
+confirms what it delivered.</p>
+<p>In it as <code>DeliveryCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORECAST-REVISION-SCHEMA"><strong>Forecast
+Revision</strong></a> from <a href="world-40-xb.html">Lumeport Textile
+Mill</a>: Demand for clothing is up; the mill revises its forecast
+upwards.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-40-xb.html">Lumeport Textile Mill</a>: Bales of
+grade cotton. Delivery terms FOB the island port: the mill arranges the
+sea freight.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA"><strong>Goods
+Certificate</strong></a> from <a href="world-20-xl.html">Selanu Chamber
+of Commerce</a>: The island's chamber of commerce certifies the bales
+for export, at the ginnery's application.</p>
+<p>In it as <code>ApplicantParty</code>, <code>ExporterParty</code>.</p>
+<p>Also mentions: <a href="world-40-xb.html">Lumeport Textile Mill</a>
+as <code>ImporterParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> from <a href="world-40-xb.html">Lumeport Textile
+Mill</a>: The mill pays the island's ginnery: money flows to the island
+for once.</p>
+<p>In it as <code>AccountingSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-22-xl.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
+Instructions</strong></a> from <a href="world-40-xb.html">Lumeport
+Textile Mill</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
+Under FOB the buyer books the main carriage: the mill instructs its
+forwarder.</p>
+<p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
+sending the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA"><strong>Bill
+of Lading</strong></a> from <a href="world-11-xb.html">Tidewell Ocean
+Lines</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
+bill of lading goes to the forwarder that booked the freight for the
+mill; the ginnery is the shipper.</p>
+<p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
+sending the goods).</p>
+<p>Also mentions: <a href="world-40-xb.html">Lumeport Textile Mill</a>
+as <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> from <a
+href="world-40-xb.html">Lumeport Textile Mill</a> to <a
+href="world-19-xb.html">Customs and Border Service of Bayvarra</a>: The
+mill declares the bales in Bayvarra.</p>
+<p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
+sending the goods).</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
+<p>The party elements in which this party appears:</p>
+<p><code>ReceiverParty</code> <code>SellerSupplierParty</code>
+<code>DeliveryCustomerParty</code> <code>BuyerCustomerParty</code>
+<code>AccountingCustomerParty</code> <code>ConsignorParty</code>
+<code>ApplicantParty</code> <code>ExporterParty</code>
+<code>SenderParty</code> <code>ShipperParty</code>
+<code>AccountingSupplierParty</code></p>
+<h2 id="trading-partners-in-the-world">Trading partners in the
+world</h2>
+<p>The parties it exchanges documents with:</p>
+<ul>
+<li><a href="world-40-xb.html">Lumeport Textile Mill</a>, Bayvarra</li>
+<li><a href="world-38-xl.html">Lisavu Cotton Farm</a>, Lisavu</li>
+<li><a href="world-20-xl.html">Selanu Chamber of Commerce</a>,
+Lisavu</li>
+<li><a href="world-19-xl.html">Island Customs Service</a>, Lisavu</li>
+<li><a href="world-11-xb.html">Tidewell Ocean Lines</a>, Bayvarra</li>
+</ul>
+<h2 id="in-the-world">In the world</h2>
+<p><a href="world.html#39-xl">See Cotton Ginnery on the map</a> ·
+Lisavu: Island. The overseas buyer, reached by sea and air.</p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
+</body>
+</html>

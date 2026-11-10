@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brackenmere Furniture · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=5478ada644">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="brackenmere-furniture">Brackenmere Furniture</h1>
+<p><em>#37 Furniture Maker · Bayvarra (XB) · Commerce</em> ·
+<em>proposed addition to the 26+C set</em></p>
+<p>Makes wooden furniture from the sawmill's timber; supplies the
+department store and furnishes public offices, installation
+included.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Brackenmere Furniture</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>20412466</code> (Federal business register of Bayvarra)</td>
+</tr>
+<tr>
+<td>Tax number</td>
+<td><code>UL-1237398</code> (State sales tax, <code>STT</code>)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>14 Joiners Row<br>Marrowdale Upland State 71203<br>Bayvarra</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XB:20412466</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Trade sales, <code>trade@brackenmere.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XB41BLUM0004503347</code> at <a href="world-25-xb.html">Bank
+of Lumeport</a></td>
+</tr>
+<tr>
+<td>In Bayvarra</td>
+<td>Currency: Lume (<code>XBL</code>). Taxes: A federal country: its
+states levy a retail sales tax, charged once, on the sale to the final
+consumer. Sales to businesses that resell, exports and sales to public
+bodies are exempt, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-ubl-helps">How UBL helps</h2>
+<p>A supplier to a retailer shares more than orders: sales per store,
+stock policies and agreed exception thresholds. UBL's retail
+collaboration documents carry them, and a Work Report documents
+installation work for the customer to approve.</p>
+<p>In this world it sends 9 and receives 7 documents, and is named in 0
+documents between other parties. They are listed per flow below.</p>
+<h2
+id="wood-slats-for-the-benches-and-timber-for-furniture-bayvarra--urvania-and-at-home">Wood:
+slats for the benches and timber for furniture (Bayvarra → Urvania, and
+at home)</h2>
+<p>The sawmill in Upland State saws timber to size. The manufacturer in
+Urvania asks for a quotation for bench slats to its own dimensions and
+orders them delivered at its factory (DAP), so the sawmill arranges the
+truck across the border. The furniture maker buys timber at home;
+selling for manufacture, the sawmill charges no sales tax and says
+why.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-36-xb.html">Marrowdale Sawmill</a>: Timber for
+furniture, collected with the furniture maker's own van at the sawmill.
+Delivery terms EXW sawmill.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-36-xb.html">Marrowdale Sawmill</a>: Timber sold for
+manufacture: exempt from the state sales tax, and the invoice says
+so.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<h2
+id="furniture-for-the-department-store-and-for-public-offices-bayvarra">Furniture
+for the department store and for public offices (Bayvarra)</h2>
+<p>The furniture maker supplies the department store with a garden
+furniture line made for it. They agree on the item data and the stock
+policy per store, the store reports what it sells, and exceptions
+against agreed thresholds are flagged automatically. Slow sellers are
+taken back. For the public works department the furniture maker also
+installs, and documents the work for approval.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUOTATION-SCHEMA"><strong>Quotation</strong></a>
+to <a href="world-26-xb.html">Brightmarket Stores</a>: The furniture
+maker quotes the line.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ITEM-INFORMATION-REQUEST-SCHEMA"><strong>Item
+Information Request</strong></a> to <a
+href="world-26-xb.html">Brightmarket Stores</a>: To plan production, the
+furniture maker asks the store for sales and stock data of the line.</p>
+<p>In it as <code>SenderParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXCEPTION-NOTIFICATION-SCHEMA"><strong>Exception
+Notification</strong></a> to <a href="world-26-xb.html">Brightmarket
+Stores</a>: Sales of the bench set run far below forecast: past the
+agreed threshold, so the furniture maker notifies the store.</p>
+<p>In it as <code>SenderParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-26-xb.html">Brightmarket Stores</a>: Furniture sold
+for resale: exempt from the state sales tax, which the store charges its
+consumers.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INSTRUCTION-FOR-RETURNS-SCHEMA"><strong>Instruction
+For Returns</strong></a> to <a href="world-26-xb.html">Brightmarket
+Stores</a>: The bench set does not sell; the furniture maker asks for
+the remaining stock back to free shelf space.</p>
+<p>In it as <code>SellerSupplierParty</code>,
+<code>ManufacturerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
+Note</strong></a> to <a href="world-26-xb.html">Brightmarket Stores</a>:
+The returned bench sets are credited.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WORK-REPORT-SCHEMA"><strong>Work
+Report</strong></a> to <a href="world-2-xb.html">Lumeport Public Works
+Department</a>: The installers report the work done; the department
+approves it.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-2-xb.html">Lumeport Public Works Department</a>:
+Furniture and installation; a sale to a public body is exempt from sales
+tax, and the invoice says so.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REQUEST-FOR-QUOTATION-SCHEMA"><strong>Request
+For Quotation</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: The store wants its own garden furniture line and asks for a
+quotation.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRADE-ITEM-LOCATION-PROFILE-SCHEMA"><strong>Trade
+Item Location Profile</strong></a> from <a
+href="world-26-xb.html">Brightmarket Stores</a>: The store sets the
+replenishment policy per item and store.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXCEPTION-CRITERIA-SCHEMA"><strong>Exception
+Criteria</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: Both agree when a deviation is worth a message: thresholds
+for forecast variance and sales.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRODUCT-ACTIVITY-SCHEMA"><strong>Product
+Activity</strong></a> from <a href="world-26-xb.html">Brightmarket
+Stores</a>: Weekly sales and stock movements of the line.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-26-xb.html">Brightmarket Stores</a>: The store
+orders the line. Delivery terms DAP store: the furniture maker delivers
+with its own van.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-2-xb.html">Lumeport Public Works Department</a>:
+Furniture for the public works offices, installed. Delivery terms DAP
+the offices.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
+<p>The party elements in which this party appears:</p>
+<p><code>BuyerCustomerParty</code> <code>AccountingCustomerParty</code>
+<code>SellerSupplierParty</code> <code>SenderParty</code>
+<code>ReceiverParty</code> <code>AccountingSupplierParty</code>
+<code>ManufacturerParty</code></p>
+<h2 id="trading-partners-in-the-world">Trading partners in the
+world</h2>
+<p>The parties it exchanges documents with:</p>
+<ul>
+<li><a href="world-36-xb.html">Marrowdale Sawmill</a>, Bayvarra</li>
+<li><a href="world-26-xb.html">Brightmarket Stores</a>, Bayvarra</li>
+<li><a href="world-2-xb.html">Lumeport Public Works Department</a>,
+Bayvarra</li>
+</ul>
+<h2 id="in-the-world">In the world</h2>
+<p><a href="world.html#37-xb">See Furniture Maker on the map</a> ·
+Bayvarra: Mainland, coast. Distribution, retail, seaport and airport
+hub.</p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
+</body>
+</html>

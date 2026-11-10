@@ -4736,10 +4736,10 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>XAW</SimpleValue>
+            <SimpleValue>XUF</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Aster</SimpleValue>
+            <SimpleValue>Ferra</SimpleValue>
          </Value>
          <Value ColumnRef="numericcode">
             <SimpleValue>911</SimpleValue>
@@ -4748,15 +4748,15 @@
             <SimpleValue>2</SimpleValue>
          </Value>
          <Value ColumnRef="country">
-            <SimpleValue>COUNTRY A</SimpleValue>
+            <SimpleValue>URVANIA</SimpleValue>
          </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>XBW</SimpleValue>
+            <SimpleValue>XBL</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Bel</SimpleValue>
+            <SimpleValue>Lume</SimpleValue>
          </Value>
          <Value ColumnRef="numericcode">
             <SimpleValue>912</SimpleValue>
@@ -4765,12 +4765,12 @@
             <SimpleValue>2</SimpleValue>
          </Value>
          <Value ColumnRef="country">
-            <SimpleValue>COUNTRY B</SimpleValue>
+            <SimpleValue>BAYVARRA</SimpleValue>
          </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>XCW</SimpleValue>
+            <SimpleValue>XLC</SimpleValue>
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Coral</SimpleValue>
@@ -4782,7 +4782,7 @@
             <SimpleValue>0</SimpleValue>
          </Value>
          <Value ColumnRef="country">
-            <SimpleValue>COUNTRY C</SimpleValue>
+            <SimpleValue>LISAVU</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

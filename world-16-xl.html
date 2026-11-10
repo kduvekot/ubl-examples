@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Port of Selanu · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=5478ada644">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="port-of-selanu">Port of Selanu</h1>
+<p><em>#16 Seaport (XL) · Lisavu (XL) · Logistics</em></p>
+<p>Port of discharge on the island.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Port of Selanu</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>IC41037</code> (Island companies register)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>32 Wharf Road<br>Selanu<br>Lisavu</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XL:IC41037</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Port control, <code>port@port-selanu.example</code></td>
+</tr>
+<tr>
+<td>In Lisavu</td>
+<td>Currency: Coral (<code>XLC</code>). Taxes: An island without a
+general sales tax or VAT: the state is financed by customs duty and an
+import consumption tax, both collected by customs at import. Domestic
+sales carry no tax, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-ubl-helps">How UBL helps</h2>
+<p>The island's seaport discharges the ship. It receives the same UBL
+transport report the loading port sent, so it can plan berths and inform
+customs before the vessel arrives.</p>
+<p>In this world it sends 1 and receives 0 documents, and is named in 2
+documents between other parties. They are listed per flow below.</p>
+<h2
+id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
+by container ship, cost insurance and freight (Bayvarra → island
+Lisavu)</h2>
+<p>The commercial buyer on the island buys cost, insurance and freight
+(CIF) to the port of discharge. The distributor therefore pays the sea
+freight and the cargo insurance; it hands both to its freight forwarder.
+The buyer takes over at the port of discharge: its customs broker clears
+the goods and its 3PL receives them.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
+Status</strong></a> to <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The port of discharge reports the container discharged
+and available.</p>
+<p>In it as <code>SenderParty</code>,
+<code>Consignment/MainCarriageShipmentStage/TerminalOperatorParty</code>.</p>
+<p>Also mentions: <a href="world-11-xb.html">Tidewell Ocean Lines</a> as
+<code>Consignment/CarrierParty</code>; <a href="world-1-xl.html">Velumi
+Trading</a> as <code>Consignment/ConsigneeParty</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-COMMON-TRANSPORTATION-REPORT-SCHEMA"><strong>Common
+Transportation Report</strong></a> from <a
+href="world-11-xb.html">Tidewell Ocean Lines</a> to <a
+href="world-30-xl.html">Maritime Administration of Lisavu</a>: The ship
+flies the island's flag; before entering port the carrier reports to the
+maritime administration, which also issued the ship's security
+certificate.</p>
+<p>In it as <code>Shipment/ShipmentStage/TerminalOperatorParty</code> (A
+terminal operator associated with this shipment stage).</p></li>
+</ul>
+<h2
+id="cotton-from-the-islands-farms-to-the-textile-mill-lisavu--bayvarra">Cotton:
+from the island's farms to the textile mill (Lisavu → Bayvarra)</h2>
+<p>The island's export. The farm delivers seed cotton to the ginnery,
+which weighs and grades it and pays by self-billing: it writes the
+invoice for the farm. The ginnery sells the bales free on board (FOB)
+the island port: the textile mill arranges the sea freight through its
+forwarder. The ginnery declares the export, weighs the container for its
+verified gross mass and gets a goods certificate.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WEIGHT-STATEMENT-SCHEMA"><strong>Weight
+Statement</strong></a> from <a href="world-39-xl.html">Selanu Cotton
+Ginnery</a> to <a href="world-11-xb.html">Tidewell Ocean Lines</a>:
+Before loading, the shipper declares the verified gross mass of the
+container, weighed on the port's weighbridge.</p>
+<p>In it as <code>WeighingParty</code> (The Party who executes the
+weight measure (e.g. weighing station)).</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
+<p>The party elements in which this party appears:</p>
+<p><code>TerminalOperatorParty</code> <code>SenderParty</code>
+<code>WeighingParty</code></p>
+<h2 id="trading-partners-in-the-world">Trading partners in the
+world</h2>
+<p>The parties it exchanges documents with:</p>
+<ul>
+<li><a href="world-10-xb.html">Bayforth Forwarding</a>, Bayvarra</li>
+</ul>
+<h2 id="in-the-world">In the world</h2>
+<p><a href="world.html#16-xl">See Seaport (XL) on the map</a> · Lisavu:
+Island. The overseas buyer, reached by sea and air.</p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
+</body>
+</html>

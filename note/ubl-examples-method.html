@@ -352,41 +352,49 @@ a[href]:hover { background: #ffa }
           </td><td align="left">
             UBL default code lists with the world's codes added
           </td></tr></tbody></table></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-countries"></a>3.1 Countries</h3></div></div></div><p>
-      The world has three countries. Two share a land border on the
-      mainland; the third is an island overseas. They differ on purpose,
-      so that the examples show how UBL carries different national
-      arrangements in the same structure:
+      The world has three countries: Urvania, Bayvarra and Lisavu, whose
+      initials spell UBL. Two share a land border on the mainland; the
+      third is an island overseas. They differ on purpose, so that the
+      examples show how UBL carries different national arrangements in
+      the same structure:
     </p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>
-          <span class="strong"><strong>Country A (XA)</strong></span> has a value
+          <span class="strong"><strong>Urvania (XU)</strong></span> has a value
           added tax in the style of the EU VAT: charged at every stage,
           deducted by businesses, not charged on exports.
         </p></li><li class="listitem"><p>
-          <span class="strong"><strong>Country B (XB)</strong></span> is a federal
+          <span class="strong"><strong>Bayvarra (XB)</strong></span> is a federal
           country whose states levy a retail sales tax, charged once, on
           the sale to the final consumer. Sales for resale, exports and
           sales to public bodies are exempt.
         </p></li><li class="listitem"><p>
-          <span class="strong"><strong>Country C (XC)</strong></span> has no
-          general sales tax. Customs collects a customs duty and an
-          import consumption tax when goods enter the island.
+          <span class="strong"><strong>Lisavu (XL)</strong></span> has no general
+          sales tax. Customs collects a customs duty and an import
+          consumption tax when goods enter the island.
         </p></li></ul></div><p>
       The tax schemes are identified with UN/EDIFACT 5153 codes:
       <code class="literal">VAT</code>, <code class="literal">STT</code> (state or
       provincial sales tax), <code class="literal">CUD</code> (customs duty) and
       <code class="literal">IMP</code> (import tax). Because 5153 has no code for
-      a national sales tax, Country B levies its sales tax at state
+      a national sales tax, Bayvarra levies its sales tax at state
       level, which also gives the state in its addresses a purpose.
     </p><p>
-      XA, XB and XC are ISO 3166-1 user-assigned codes, which exist for
-      exactly this purpose. ISO 4217 has no such range for currencies,
-      so the world's currencies (<code class="literal">XAW</code>,
-      <code class="literal">XBW</code>, <code class="literal">XCW</code>) are invented and
-      checked against the current ISO 4217 list, so that none is a real
-      code. Neither the countries nor the currencies are in the UBL
-      default code lists. UBL lets trading partners use their own code
-      lists in the second phase of validation, so the world has its own:
-      copies of the UBL 2.5 default lists, unchanged, with the world's
-      codes added and their own identification.
+      XU, XB and XL are ISO 3166-1 user-assigned codes, which exist for
+      exactly this purpose; each follows the initial of its country's
+      name. ISO 4217 has no such range for currencies. The world's
+      currencies follow the ISO 4217 convention of the country code plus
+      the initial of the currency's name: the ferra of Urvania
+      (<code class="literal">XUF</code>), the lume of Bayvarra
+      (<code class="literal">XBL</code>) and the coral of Lisavu
+      (<code class="literal">XLC</code>). The convention limits the names: ISO
+      4217 already uses <code class="literal">XUA</code> and
+      <code class="literal">XBA</code> to <code class="literal">XBD</code>, so Urvania's
+      currency cannot start with an A and Bayvarra's not with A to D.
+      Each code is checked against the current ISO 4217 list, so that
+      none is a real code. Neither the countries nor the currencies are
+      in the UBL default code lists. UBL lets trading partners use their
+      own code lists in the second phase of validation, so the world has
+      its own: copies of the UBL 2.5 default lists, unchanged, with the
+      world's codes added and their own identification.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-parties"></a>3.2 Parties</h3></div></div></div><p>
       The parties are the organisations of the world, chosen so that
       every party role in every UBL document type can be filled (see the
@@ -410,16 +418,20 @@ a[href]:hover { background: #ffa }
       world's country codes, but they are not called IBANs, because the
       world's countries are not registered IBAN countries.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-flows-of-documents"></a>3.3 Flows of documents</h3></div></div></div><p>
-      The parties do business in flows: an ore delivery, goods by road,
-      rail and river across the land border, a retail chain, an overseas
-      shipment by sea and by air, a public tender, a temporary export
-      with an ATA carnet, and the removal of production waste. Each flow
-      starts from the business: who buys from whom, on which delivery
-      terms, and therefore who arranges and pays the transport. A
-      distributor that buys free carrier (FCA) books the truck itself
-      and names the carrier in its order; a retailer that buys delivered
-      duty paid (DDP) leaves the transport to its supplier, who then
-      needs an outgoing waybill.
+      The parties do business in flows. Each country has its own raw
+      material and industry: Urvania mines ore and makes park benches,
+      recovering its production waste as recycled plastic; Bayvarra saws
+      timber, makes furniture, packaging and clothing, and distributes
+      and retails; the island Lisavu grows and gins cotton, its export.
+      Goods cross the land border by road, rail and river barge and go
+      overseas by sea and air in both directions; there is a public
+      tender, a temporary export with an ATA carnet, and a utility in
+      each country. Each flow starts from the business: who buys from
+      whom, on which delivery terms, and therefore who arranges and pays
+      the transport. A distributor that buys free carrier (FCA) books
+      the truck itself and names the carrier in its order; a retailer
+      that buys delivered duty paid (DDP) leaves the transport to its
+      supplier, who then needs an outgoing waybill.
     </p><p>
       Every document in a flow records:
     </p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>

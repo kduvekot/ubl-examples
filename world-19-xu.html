@@ -3,48 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Customs Administration of Country
-A · UBL Example Documents</title>
+<title>Customs Administration of Urvania · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=5478ada644">
 </head>
 <body>
 <header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
-<h1 id="customs-administration-of-country-a">Customs Administration of
-Country A</h1>
-<p><em>#19 Customs (XA) · Country A (XA) · Government</em></p>
+<h1 id="customs-administration-of-urvania">Customs Administration of
+Urvania</h1>
+<p><em>#19 Customs (XU) · Urvania (XU) · Government</em></p>
 <p>Export customs at the land border crossing.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
 <tr>
 <td>Name</td>
-<td>Customs Administration of Country A</td>
+<td>Customs Administration of Urvania</td>
 </tr>
 <tr>
 <td>Registry number</td>
-<td><code>XA-R-105507</code> (Commercial register of Country A)</td>
+<td><code>XU-R-105507</code> (Commercial register of Urvania)</td>
 </tr>
 <tr>
 <td>Tax number</td>
-<td><code>XA007385602</code> (Value added tax, <code>VAT</code>)</td>
+<td><code>XU007385602</code> (Value added tax, <code>VAT</code>)</td>
 </tr>
 <tr>
 <td>Address</td>
-<td>Valico di Confine 22<br>4120 Ferrano<br>Country A</td>
+<td>Valico di Confine 22<br>4120 Ferrano<br>Urvania</td>
 </tr>
 <tr>
 <td>Electronic address</td>
-<td><code>XA:XA-R-105507</code></td>
+<td><code>XU:XU-R-105507</code></td>
 </tr>
 <tr>
 <td>Contact</td>
-<td>Border office, <code>border@customs-xa.example</code></td>
+<td>Border office, <code>border@customs-xu.example</code></td>
 </tr>
 <tr>
-<td>In Country A</td>
-<td>Currency: Aster (<code>XAW</code>). Taxes: Value added tax in the
+<td>In Urvania</td>
+<td>Currency: Ferra (<code>XUF</code>). Taxes: Value added tax in the
 style of the EU VAT: charged at every stage, deducted by businesses, not
 charged on exports.</td>
 </tr>
@@ -55,33 +54,32 @@ charged on exports.</td>
 how. UBL customs declarations reuse the parties, goods and transport
 details already present in the commercial and transport documents, so
 the declarant does not have to collect them again.</p>
-<p>In this world it sends 0 and receives 5 documents, and is named in 1
+<p>In this world it sends 0 and receives 7 documents, and is named in 1
 documents between other parties. They are listed per flow below.</p>
 <h2
-id="finished-goods-by-truck-across-the-land-border-country-a--country-b">Finished
-goods by truck across the land border (Country A → Country B)</h2>
-<p>The distributor buys free carrier (FCA) at the manufacturer's
-warehouse. Because the buyer arranges the transport, the distributor
-books the road carrier itself and tells the seller in the order which
-truck company will pick the goods up and where. The seller's 3PL hands
-the goods over; the seller clears them for export, the distributor for
-import.</p>
+id="finished-goods-by-truck-across-the-land-border-urvania--bayvarra">Finished
+goods by truck across the land border (Urvania → Bayvarra)</h2>
+<p>The distributor buys park benches free carrier (FCA) at the
+manufacturer's warehouse. Because the buyer arranges the transport, the
+distributor books the road carrier itself and tells the seller in the
+order which truck company will pick the goods up and where. The seller's
+3PL hands the goods over; the seller clears them for export, the
+distributor for import.</p>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> from <a href="world-5-xa.html">Valdara
-Industries</a>: Goods leave Country A: the manufacturer, as exporter,
+Customs Declaration</strong></a> from <a href="world-5-xu.html">Valdara
+Industries</a>: Goods leave Urvania: the manufacturer, as exporter,
 declares them to the customs office at the land border.</p>
 <p>In it as <code>CustomsDeclaration/CustomsParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>CustomsDeclaration/ConsigneeParty</code>; <a
-href="world-13-xa.html">Trasvia Haulage</a> as
+href="world-13-xu.html">Trasvia Haulage</a> as
 <code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
-<h2
-id="containers-by-rail-under-transit-country-a--country-b">Containers by
-rail under transit (Country A → Country B)</h2>
+<h2 id="containers-by-rail-under-transit-urvania--bayvarra">Containers
+by rail under transit (Urvania → Bayvarra)</h2>
 <p>For full container loads the manufacturer sells delivered at place
 (DAP) the distributor's rail siding. Now the seller arranges and pays
 the transport: it books the container train and moves the goods under a
@@ -91,32 +89,55 @@ destination. The intermodal hub loads the containers on the train.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA"><strong>Transit
-Customs Declaration</strong></a> from <a href="world-5-xa.html">Valdara
-Industries</a>: The goods travel under customs transit from Country A to
-the destination in Country B; the manufacturer, as holder of the
+Customs Declaration</strong></a> from <a href="world-5-xu.html">Valdara
+Industries</a>: The goods travel under customs transit from Urvania to
+the destination in Bayvarra; the manufacturer, as holder of the
 procedure, lodges the declaration at the office of departure.</p>
 <p>In it as <code>CustomsParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
-<code>ConsigneeParty</code>; <a href="world-14-xa.html">Ferrano Rail
+<code>ConsigneeParty</code>; <a href="world-14-xu.html">Ferrano Rail
 Cargo</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
-<h2 id="a-public-tender-country-b">A public tender (Country B)</h2>
-<p>The contracting authority buys equipment under procurement law. The
-notices are published through the government information service; the
-manufacturer tenders together with a consortium partner, backed by a bid
-bond. After the award the authority places orders under the contract and
-the manufacturer delivers and invoices.</p>
+<h2
+id="recycled-plastic-granulate-by-river-barge-urvania--bayvarra">Recycled
+plastic granulate by river barge (Urvania → Bayvarra)</h2>
+<p>The waste processor recovers plastic from production waste and sells
+it as granulate to the packaging maker on the coast of Bayvarra,
+carriage paid to (CPT) the river quay: the seller books the barge and
+pays the freight, the buyer takes the risk once the barge is loaded. The
+packaging maker turns it into packaging for the benches and the
+clothing.</p>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> from <a href="world-5-xa.html">Valdara
-Industries</a>: The call-off leaves Country A; the manufacturer declares
+Customs Declaration</strong></a> from <a href="world-7-xu.html">Rinova
+Recovery</a>: The granulate leaves Urvania; the waste processor declares
+the export.</p>
+<p>In it as <code>CustomsDeclaration/CustomsParty</code>.</p>
+<p>Also mentions: <a href="world-41-xb.html">Rivermouth Packaging</a> as
+<code>CustomsDeclaration/ConsigneeParty</code>; <a
+href="world-15-xu.html">Fiumella Barges</a> as
+<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
+</ul>
+<h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
+<p>The contracting authority buys park benches and street furniture for
+the city's parks under procurement law. The notices are published
+through the government information service; the manufacturer tenders
+together with a consortium partner, backed by a bid bond. After the
+award the authority places orders under the contract and the
+manufacturer delivers and invoices.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
+Customs Declaration</strong></a> from <a href="world-5-xu.html">Valdara
+Industries</a>: The call-off leaves Urvania; the manufacturer declares
 the export.</p>
 <p>In it as <code>CustomsDeclaration/CustomsParty</code>.</p>
 <p>Also mentions: <a href="world-2-xb.html">Lumeport Public Works
 Department</a> as <code>CustomsDeclaration/ConsigneeParty</code>; <a
-href="world-13-xa.html">Trasvia Haulage</a> as
+href="world-13-xu.html">Trasvia Haulage</a> as
 <code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
 </ul>
 <h2 id="samples-to-a-trade-fair-on-the-island-temporary-export">Samples
@@ -128,45 +149,66 @@ of both countries, avoids paying duties.</p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-ITEM-PASSPORT-SCHEMA"><strong>Goods
-Item Passport</strong></a> from <a href="world-20-xa.html">Ferrano
-Chamber of Commerce</a> to <a href="world-5-xa.html">Valdara
+Item Passport</strong></a> from <a href="world-20-xu.html">Ferrano
+Chamber of Commerce</a> to <a href="world-5-xu.html">Valdara
 Industries</a>: The chamber issues the carnet to the manufacturer, who
 holds it while the samples travel.</p>
 <p>In it as <code>ExportingCustomsParty</code> (The Party who is
 competent of Customs in the exporting country).</p>
-<p>Also mentions: <a href="world-20-xc.html">Selanu Chamber of
+<p>Also mentions: <a href="world-20-xl.html">Selanu Chamber of
 Commerce</a> as <code>ImportingGuarantorParty</code>; <a
-href="world-19-xc.html">Island Customs Service</a> as
+href="world-19-xl.html">Island Customs Service</a> as
 <code>ImportingCustomsParty</code>.</p></li>
 </ul>
-<h2 id="production-waste-to-recovery-domestic-country-a">Production
-waste to recovery (domestic, Country A)</h2>
+<h2 id="production-waste-to-recovery-domestic-urvania">Production waste
+to recovery (domestic, Urvania)</h2>
 <p>The factory's hazardous production waste may only move with a
-notification. In Country A one administration acts as customs and as
+notification. In Urvania one administration acts as customs and as
 competent authority for waste permits. The waste processor recovers the
 material and invoices the service.</p>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-NOTIFICATION-SCHEMA"><strong>Waste
-Notification</strong></a> from <a href="world-5-xa.html">Valdara
+Notification</strong></a> from <a href="world-5-xu.html">Valdara
 Industries</a>: The manufacturer, as producer and notifier, notifies the
 planned movements to the competent authority.</p>
 <p>In it as <code>ReceiverParty</code>, <code>CustomsParty</code>.</p>
-<p>Also mentions: <a href="world-7-xa.html">Rinova Recovery</a> as
-<code>RecoveryFacilityParty</code>; <a href="world-13-xa.html">Trasvia
+<p>Also mentions: <a href="world-7-xu.html">Rinova Recovery</a> as
+<code>RecoveryFacilityParty</code>; <a href="world-13-xu.html">Trasvia
 Haulage</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-MOVEMENT-SCHEMA"><strong>Waste
-Movement</strong></a> from <a href="world-7-xa.html">Rinova
+Movement</strong></a> from <a href="world-7-xu.html">Rinova
 Recovery</a>: The recovery facility reports each movement received to
 the competent authority.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
-<p>Also mentions: <a href="world-5-xa.html">Valdara Industries</a> as
-<code>NotifierParty</code>; <a href="world-5-xa.html">Valdara
+<p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
+<code>NotifierParty</code>; <a href="world-5-xu.html">Valdara
 Industries</a> as <code>WasteProducerParty</code>; <a
-href="world-13-xa.html">Trasvia Haulage</a> as
+href="world-13-xu.html">Trasvia Haulage</a> as
 <code>Shipment/Consignment/CarrierParty</code>.</p></li>
+</ul>
+<h2
+id="wood-slats-for-the-benches-and-timber-for-furniture-bayvarra--urvania-and-at-home">Wood:
+slats for the benches and timber for furniture (Bayvarra → Urvania, and
+at home)</h2>
+<p>The sawmill in Upland State saws timber to size. The manufacturer in
+Urvania asks for a quotation for bench slats to its own dimensions and
+orders them delivered at its factory (DAP), so the sawmill arranges the
+truck across the border. The furniture maker buys timber at home;
+selling for manufacture, the sawmill charges no sales tax and says
+why.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> from <a href="world-5-xu.html">Valdara
+Industries</a>: The manufacturer declares the import into Urvania, where
+import VAT is due.</p>
+<p>In it as <code>CustomsParty</code>.</p>
+<p>Also mentions: <a href="world-36-xb.html">Marrowdale Sawmill</a> as
+<code>ConsignorParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
@@ -176,12 +218,12 @@ href="world-13-xa.html">Trasvia Haulage</a> as
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-5-xa.html">Valdara Industries</a>, Country A</li>
-<li><a href="world-7-xa.html">Rinova Recovery</a>, Country A</li>
+<li><a href="world-5-xu.html">Valdara Industries</a>, Urvania</li>
+<li><a href="world-7-xu.html">Rinova Recovery</a>, Urvania</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#19-xa">See Customs (XA) on the map</a> · Country
-A: Mainland, inland. Raw materials and manufacturing.</p>
+<p><a href="world.html#19-xu">See Customs (XU) on the map</a> · Urvania:
+Mainland, inland. Raw materials and manufacturing.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
 definitions of the documents and their party elements), completed by the
@@ -190,6 +232,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
 </body>
 </html>

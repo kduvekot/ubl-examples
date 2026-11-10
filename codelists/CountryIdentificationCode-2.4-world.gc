@@ -8510,16 +8510,16 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>XA</SimpleValue>
+            <SimpleValue>XU</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Country A</SimpleValue>
+            <SimpleValue>Urvania</SimpleValue>
          </Value>
          <Value ColumnRef="numericcode">
             <SimpleValue>901</SimpleValue>
          </Value>
          <Value ColumnRef="ref">
-            <SimpleValue>XAA</SimpleValue>
+            <SimpleValue>XUR</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -8527,27 +8527,27 @@
             <SimpleValue>XB</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Country B</SimpleValue>
+            <SimpleValue>Bayvarra</SimpleValue>
          </Value>
          <Value ColumnRef="numericcode">
             <SimpleValue>902</SimpleValue>
          </Value>
          <Value ColumnRef="ref">
-            <SimpleValue>XBB</SimpleValue>
+            <SimpleValue>XBY</SimpleValue>
          </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>XC</SimpleValue>
+            <SimpleValue>XL</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Country C</SimpleValue>
+            <SimpleValue>Lisavu</SimpleValue>
          </Value>
          <Value ColumnRef="numericcode">
             <SimpleValue>903</SimpleValue>
          </Value>
          <Value ColumnRef="ref">
-            <SimpleValue>XCC</SimpleValue>
+            <SimpleValue>XLS</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

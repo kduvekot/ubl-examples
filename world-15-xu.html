@@ -11,9 +11,9 @@
 <div class="layout">
 <main class="prose">
 <h1 id="fiumella-barges">Fiumella Barges</h1>
-<p><em>#15 Inland Waterway Carrier · Country A (XA) · Logistics</em></p>
-<p>Moves bulk on the river from Country A down to the coast of Country
-B.</p>
+<p><em>#15 Inland Waterway Carrier · Urvania (XU) · Logistics</em></p>
+<p>Moves bulk on the river from Urvania down to the coast of
+Bayvarra.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -23,19 +23,19 @@ B.</p>
 </tr>
 <tr>
 <td>Registry number</td>
-<td><code>XA-R-104959</code> (Commercial register of Country A)</td>
+<td><code>XU-R-104959</code> (Commercial register of Urvania)</td>
 </tr>
 <tr>
 <td>Tax number</td>
-<td><code>XA007347248</code> (Value added tax, <code>VAT</code>)</td>
+<td><code>XU007347248</code> (Value added tax, <code>VAT</code>)</td>
 </tr>
 <tr>
 <td>Address</td>
-<td>Banchina del Fiume 52<br>4170 Ferrano<br>Country A</td>
+<td>Banchina del Fiume 52<br>4170 Ferrano<br>Urvania</td>
 </tr>
 <tr>
 <td>Electronic address</td>
-<td><code>XA:XA-R-104959</code></td>
+<td><code>XU:XU-R-104959</code></td>
 </tr>
 <tr>
 <td>Contact</td>
@@ -43,12 +43,12 @@ B.</p>
 </tr>
 <tr>
 <td>Account</td>
-<td><code>XA94CREV0000733103</code> at <a
-href="world-23-xa.html">Crevalto Bank</a></td>
+<td><code>XU34CREV0000733103</code> at <a
+href="world-23-xu.html">Crevalto Bank</a></td>
 </tr>
 <tr>
-<td>In Country A</td>
-<td>Currency: Aster (<code>XAW</code>). Taxes: Value added tax in the
+<td>In Urvania</td>
+<td>Currency: Ferra (<code>XUF</code>). Taxes: Value added tax in the
 style of the EU VAT: charged at every stage, deducted by businesses, not
 charged on exports.</td>
 </tr>
@@ -59,30 +59,34 @@ charged on exports.</td>
 execution plans and waybills carry the barge, the loading and discharge
 quays and the cargo per hold, so shippers and terminals can plan around
 long transit times.</p>
-<p>In this world it sends 2 and receives 1 documents, and is named in 1
+<p>In this world it sends 2 and receives 1 documents, and is named in 2
 documents between other parties. They are listed per flow below.</p>
-<h2 id="bulk-by-river-barge-country-a--country-b">Bulk by river barge
-(Country A → Country B)</h2>
-<p>Bulk lots go down the river. The distributor buys carriage paid to
-(CPT) the river quay in Country B: the manufacturer books the barge and
-pays the freight; the risk passes when the barge is loaded.</p>
+<h2
+id="recycled-plastic-granulate-by-river-barge-urvania--bayvarra">Recycled
+plastic granulate by river barge (Urvania → Bayvarra)</h2>
+<p>The waste processor recovers plastic from production waste and sells
+it as granulate to the packaging maker on the coast of Bayvarra,
+carriage paid to (CPT) the river quay: the seller books the barge and
+pays the freight, the buyer takes the risk once the barge is loaded. The
+packaging maker turns it into packaging for the benches and the
+clothing.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
-Execution Plan</strong></a> to <a href="world-5-xa.html">Valdara
-Industries</a>: The barge operator confirms the vessel and the
+Execution Plan</strong></a> to <a href="world-7-xu.html">Rinova
+Recovery</a>: The barge operator confirms the vessel and the
 sailing.</p>
 <p>In it as <code>SenderParty</code>,
 <code>TransportServiceProviderParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<p>Also mentions: <a href="world-41-xb.html">Rivermouth Packaging</a> as
 <code>Consignment/ConsigneeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
-to <a href="world-5-xa.html">Valdara Industries</a>: The inland waterway
+to <a href="world-7-xu.html">Rinova Recovery</a>: The inland waterway
 consignment note, issued to the shipper.</p>
 <p>In it as <code>SenderParty</code>, <code>CarrierParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<p>Also mentions: <a href="world-41-xb.html">Rivermouth Packaging</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
@@ -90,22 +94,32 @@ consignment note, issued to the shipper.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA"><strong>Transport
 Execution Plan Request</strong></a> from <a
-href="world-5-xa.html">Valdara Industries</a>: The manufacturer, as
-transport user under CPT, asks the inland waterway carrier for barge
-capacity.</p>
+href="world-7-xu.html">Rinova Recovery</a>: Under CPT the waste
+processor is the transport user; it asks the barge operator for capacity
+down the river.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>TransportServiceProviderParty</code>.</p>
-<p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
+<p>Also mentions: <a href="world-41-xb.html">Rivermouth Packaging</a> as
 <code>Consignment/ConsigneeParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
+Customs Declaration</strong></a> from <a href="world-7-xu.html">Rinova
+Recovery</a> to <a href="world-19-xu.html">Customs Administration of
+Urvania</a>: The granulate leaves Urvania; the waste processor declares
+the export.</p>
+<p>In it as
+<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code> (The
+Party who provides the transport of goods between named points).</p>
+<p>Also mentions: <a href="world-41-xb.html">Rivermouth Packaging</a> as
+<code>CustomsDeclaration/ConsigneeParty</code>.</p></li>
+<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-5-xa.html">Valdara
-Industries</a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
-The manufacturer announces the lot loaded on the barge, so the
-distributor can arrange collection at the quay.</p>
+Advice</strong></a> from <a href="world-7-xu.html">Rinova Recovery</a>
+to <a href="world-41-xb.html">Rivermouth Packaging</a>: The waste
+processor announces the lot loaded on the barge.</p>
 <p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
 who provides the transport of goods between named points).</p></li>
 </ul>
@@ -117,11 +131,11 @@ who provides the transport of goods between named points).</p></li>
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
-<li><a href="world-5-xa.html">Valdara Industries</a>, Country A</li>
+<li><a href="world-7-xu.html">Rinova Recovery</a>, Urvania</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
-<p><a href="world.html#15-xa">See Inland Waterway Carrier on the map</a>
-· Country A: Mainland, inland. Raw materials and manufacturing.</p>
+<p><a href="world.html#15-xu">See Inland Waterway Carrier on the map</a>
+· Urvania: Mainland, inland. Raw materials and manufacturing.</p>
 <p><em>Who sends and who receives each document type follows the UBL 2.5
 semantic model (the SenderParty and ReceiverParty elements and the
 definitions of the documents and their party elements), completed by the
@@ -130,6 +144,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>802b50a</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>29b2284</code></p></div></footer>
 </body>
 </html>
