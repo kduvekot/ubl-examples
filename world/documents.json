@@ -1141,28 +1141,6 @@
   },
   {
    "flow": "air",
-   "doc": "Enquiry",
-   "from": "1-xl",
-   "to": "6-xb",
-   "why": "The buyer asks whether spare side frames are in stock and how fast they can come.",
-   "parties": {
-    "RequestorParty": "1-xl",
-    "ResponderParty": "6-xb"
-   }
-  },
-  {
-   "flow": "air",
-   "doc": "EnquiryResponse",
-   "from": "6-xb",
-   "to": "1-xl",
-   "why": "The distributor answers: eight in stock, by air within a week.",
-   "parties": {
-    "RequestorParty": "1-xl",
-    "ResponderParty": "6-xb"
-   }
-  },
-  {
-   "flow": "air",
    "doc": "OrderChange",
    "from": "1-xl",
    "to": "6-xb",

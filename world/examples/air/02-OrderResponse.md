@@ -1,10 +1,10 @@
 # Order Response: Lumeway Distribution to Velumi Trading
 
-*Example 4 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Order Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA)*
+*Example 2 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Order Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA)*
 
 The distributor accepts the change: the urgent part goes by air at an extra charge, the rest stays on the ship.
 
-[The XML file](04-OrderResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](02-OrderResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -14,7 +14,7 @@ The distributor accepts the change: the urgent part goes by air at an extra char
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LD-OR-26-0323**  
+- `ID` = **LD-OR-26-0321**  
   The seller's number for its response.
 - `IssueDate` = **2026-05-12**  
   The distributor accepts the change.
@@ -25,7 +25,7 @@ The distributor accepts the change: the urgent part goes by air at an extra char
 
 Inside `OrderReference`:
 
-- `ID` = **VT-OC-26-0322**  
+- `ID` = **VT-OC-26-0320**  
   The order change this response answers.
 
 ### Seller Supplier Party
@@ -101,11 +101,11 @@ Inside `BuyerCustomerParty`:
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-OR-26-0323</cbc:ID>
+  <cbc:ID>LD-OR-26-0321</cbc:ID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>
-    <cbc:ID>VT-OC-26-0322</cbc:ID>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
   </cac:OrderReference>
   <cac:SellerSupplierParty>
     <cac:Party>

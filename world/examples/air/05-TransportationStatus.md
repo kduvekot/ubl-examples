@@ -1,10 +1,10 @@
 # Transportation Status: Lumeport Airport Cargo Terminal to Kelaro Air Cargo
 
-*Example 7 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
+*Example 5 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
 
 The air cargo terminal reports the cargo accepted and built up for the flight.
 
-[The XML file](07-TransportationStatus.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](05-TransportationStatus.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -14,7 +14,7 @@ The air cargo terminal reports the cargo accepted and built up for the flight.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LACT-TS-26-0328**  
+- `ID` = **LACT-TS-26-0326**  
   The sender's status report number.
 - `IssueDate` = **2026-05-13**  
   Reported when the cargo is built up for the flight.
@@ -23,7 +23,7 @@ The air cargo terminal reports the cargo accepted and built up for the flight.
 
 Inside `Consignment`:
 
-- `ID` = **LD-CS-26-0326**  
+- `ID` = **LD-CS-26-0324**  
   The consignment the report is about.
 - `CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -120,10 +120,10 @@ Inside `ReceiverParty`:
 <TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LACT-TS-26-0328</cbc:ID>
+  <cbc:ID>LACT-TS-26-0326</cbc:ID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0326</cbc:ID>
+    <cbc:ID>LD-CS-26-0324</cbc:ID>
     <cac:CarrierParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

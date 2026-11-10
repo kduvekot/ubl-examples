@@ -2,10 +2,10 @@
 <TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SAC-TS-26-0332</cbc:ID>
+  <cbc:ID>SAC-TS-26-0330</cbc:ID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0326</cbc:ID>
+    <cbc:ID>LD-CS-26-0324</cbc:ID>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>

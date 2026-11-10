@@ -2,13 +2,13 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>BF-INV-26-0333</cbc:ID>
+  <cbc:ID>BF-INV-26-0331</cbc:ID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:DueDate>2026-06-14</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KAC-WB-26-0327</cbc:ID>
+    <cbc:ID>KAC-WB-26-0325</cbc:ID>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -109,7 +109,7 @@
   <cac:Delivery>
     <cac:Shipment>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0326</cbc:ID>
+        <cbc:ID>LD-CS-26-0324</cbc:ID>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

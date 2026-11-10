@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<OrderChange xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderChange-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<FulfilmentCancellation xmlns="urn:oasis:names:specification:ubl:schema:xsd:FulfilmentCancellation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VT-OC-26-0322</cbc:ID>
-  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
-  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
-  </cac:OrderReference>
+  <cbc:ID>LD-DOC-26-0328</cbc:ID>
+  <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:CancellationNote>The cargo missed its flight; it goes on the next day's flight under a new despatch advice.</cbc:CancellationNote>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>LD-DA-26-0327</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -77,8 +76,8 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:Delivery>
-    <cac:DeliveryParty>
+  <cac:DeliveryCustomerParty>
+    <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
       </cac:PartyIdentification>
@@ -105,42 +104,6 @@
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41722</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
-    </cac:DeliveryParty>
-  </cac:Delivery>
-  <cac:DeliveryTerms>
-    <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
-    <cac:DeliveryLocation>
-      <cbc:Description>Selanu airport, cargo terminal</cbc:Description>
-    </cac:DeliveryLocation>
-  </cac:DeliveryTerms>
-  <cac:OrderLine>
-    <cac:LineItem>
-      <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">8</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
-      <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
-      </cac:Price>
-      <cac:Item>
-        <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
-        <cbc:Name>Bench side frame casting</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:ManufacturersItemIdentification>
-          <cbc:ID>VI-C180</cbc:ID>
-        </cac:ManufacturersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
-        </cac:StandardItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-      </cac:Item>
-    </cac:LineItem>
-  </cac:OrderLine>
-</OrderChange>
+    </cac:Party>
+  </cac:DeliveryCustomerParty>
+</FulfilmentCancellation>

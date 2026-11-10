@@ -2,7 +2,7 @@
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>KAC-WB-26-0327</cbc:ID>
+  <cbc:ID>KAC-WB-26-0325</cbc:ID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -121,10 +121,10 @@
     </cac:PartyName>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0325</cbc:ID>
+    <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0326</cbc:ID>
+      <cbc:ID>LD-CS-26-0324</cbc:ID>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>

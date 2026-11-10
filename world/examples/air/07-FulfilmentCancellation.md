@@ -1,10 +1,10 @@
 # Fulfilment Cancellation: Lumeway Distribution to Velumi Trading
 
-*Example 9 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Fulfilment Cancellation in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA)*
+*Example 7 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Fulfilment Cancellation in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA)*
 
 The cargo missed its flight; the despatch advice is cancelled and a new one follows for the next flight.
 
-[The XML file](09-FulfilmentCancellation.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](07-FulfilmentCancellation.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -14,7 +14,7 @@ The cargo missed its flight; the despatch advice is cancelled and a new one foll
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LD-DOC-26-0330**  
+- `ID` = **LD-DOC-26-0328**  
   The sender's number for this document.
 - `IssueDate` = **2026-05-14**  
   The flight left without the cargo.
@@ -25,7 +25,7 @@ The cargo missed its flight; the despatch advice is cancelled and a new one foll
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **LD-DA-26-0329**  
+- `ID` = **LD-DA-26-0327**  
   The despatch advice cancelled.
 
 ### Buyer Customer Party
@@ -130,11 +130,11 @@ Inside `DeliveryCustomerParty`:
 <FulfilmentCancellation xmlns="urn:oasis:names:specification:ubl:schema:xsd:FulfilmentCancellation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-DOC-26-0330</cbc:ID>
+  <cbc:ID>LD-DOC-26-0328</cbc:ID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:CancellationNote>The cargo missed its flight; it goes on the next day's flight under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0329</cbc:ID>
+    <cbc:ID>LD-DA-26-0327</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>

@@ -1,10 +1,10 @@
 # Forwarding Instructions: Lumeway Distribution to Bayforth Forwarding
 
-*Example 5 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
+*Example 3 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
 
 The distributor asks its forwarder to book air freight for the urgent part.
 
-[The XML file](05-ForwardingInstructions.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](03-ForwardingInstructions.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -14,7 +14,7 @@ The distributor asks its forwarder to book air freight for the urgent part.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **LD-FI-26-0324**  
+- `ID` = **LD-FI-26-0322**  
   The instruction number.
 - `IssueDate` = **2026-05-12**  
   The distributor asks its forwarder to book air freight.
@@ -97,11 +97,11 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0325**  
+- `ID` = **LD-SH-26-0323**  
   The shipment to be booked.
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of the eight boxed frames.
-- `Consignment/ID` = **LD-CS-26-0326**  
+- `Consignment/ID` = **LD-CS-26-0324**  
   The consignment.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -135,7 +135,7 @@ Inside `Shipment`:
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>LD-FI-26-0324</cbc:ID>
+  <cbc:ID>LD-FI-26-0322</cbc:ID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
@@ -210,10 +210,10 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0325</cbc:ID>
+    <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0326</cbc:ID>
+      <cbc:ID>LD-CS-26-0324</cbc:ID>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>

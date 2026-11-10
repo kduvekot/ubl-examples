@@ -1,10 +1,10 @@
 # Invoice: Bayforth Forwarding to Lumeway Distribution
 
-*Example 12 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+*Example 10 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
 The forwarder invoices the air freight, including the road feeder leg, to the distributor, who sold carriage paid to the island airport.
 
-[The XML file](12-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](10-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -14,7 +14,7 @@ The forwarder invoices the air freight, including the road feeder leg, to the di
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **BF-INV-26-0333**  
+- `ID` = **BF-INV-26-0331**  
   The seller's invoice number.
 - `IssueDate` = **2026-05-15**  
   Issued after the flight.
@@ -29,7 +29,7 @@ The forwarder invoices the air freight, including the road feeder leg, to the di
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KAC-WB-26-0327**  
+- `ID` = **KAC-WB-26-0325**  
   The air waybill.
 
 ### Accounting Supplier Party
@@ -128,7 +128,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `Shipment/Consignment/ID` = **LD-CS-26-0326**  
+- `Shipment/Consignment/ID` = **LD-CS-26-0324**  
   The consignment flown.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -236,13 +236,13 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>BF-INV-26-0333</cbc:ID>
+  <cbc:ID>BF-INV-26-0331</cbc:ID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:DueDate>2026-06-14</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KAC-WB-26-0327</cbc:ID>
+    <cbc:ID>KAC-WB-26-0325</cbc:ID>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -343,7 +343,7 @@ Inside `InvoiceLine`:
   <cac:Delivery>
     <cac:Shipment>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0326</cbc:ID>
+        <cbc:ID>LD-CS-26-0324</cbc:ID>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

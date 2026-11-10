@@ -2,7 +2,7 @@
 
 *Example 8 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Despatch Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA)*
 
-The distributor announces the air part to the buyer's 3PL, with the airline as carrier.
+The new despatch advice, for the next day's flight.
 
 [The XML file](08-DespatchAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -15,15 +15,15 @@ The distributor announces the air part to the buyer's 3PL, with the airline as c
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
 - `ID` = **LD-DA-26-0329**  
-  The despatching party's number.
-- `IssueDate` = **2026-05-13**  
-  Sent to the buyer's 3PL when the cargo leaves.
+  A new number: the first despatch advice was cancelled.
+- `IssueDate` = **2026-05-14**  
+  Sent for the next day's flight.
 
 ### Order Reference
 
 Inside `OrderReference`:
 
-- `ID` = **VT-PO-26-0321**  
+- `ID` = **VT-PO-26-0319**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -134,11 +134,11 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0325**  
+- `ID` = **LD-SH-26-0323**  
   The despatching party's shipment number.
 - `GrossWeightMeasure` = **0** (unitCode `KGM`)  
   The gross weight of the boxed frames.
-- `Consignment/ID` = **LD-CS-26-0326**  
+- `Consignment/ID` = **LD-CS-26-0324**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -198,9 +198,9 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
   <cbc:ID>LD-DA-26-0329</cbc:ID>
-  <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0321</cbc:ID>
+    <cbc:ID>VT-PO-26-0319</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -311,10 +311,10 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0325</cbc:ID>
+    <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">0</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0326</cbc:ID>
+      <cbc:ID>LD-CS-26-0324</cbc:ID>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

@@ -1303,15 +1303,6 @@ def sea(n, doc):
 
 def air(n, doc):
     f, d = AIR, doc["doc"]
-    if d == "Enquiry":
-        return {**head(f, "enquiry", doc, 0, "The buyer asks before changing its order."),
-                "Description": V("Are eight spare side frames in stock, and how fast can they reach Selanu?",
-                                 "The question, in words.")}
-    if d == "EnquiryResponse":
-        return {**head(f, "enquiry-response", doc, 0, "Answered the same day."),
-                "Description": V("Eight in stock; by air within a week, carriage paid to Selanu airport.",
-                                 "The answer, in words."),
-                "ParentDocumentReference": {"ID": V(f.numbers["enquiry"], "The enquiry this answers.")}}
     if d == "FulfilmentCancellation":
         return {**head(f, "fulfilment-cancellation", doc, 3, "The flight left without the cargo."),
                 "CancellationNote": V("The cargo missed its flight; it goes on the next day's flight under a new "

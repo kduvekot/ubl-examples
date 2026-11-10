@@ -1,10 +1,10 @@
 # Order Change: Velumi Trading to Lumeway Distribution
 
-*Example 3 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Order Change in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA)*
+*Example 1 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Order Change in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA)*
 
 Part of the quantity is needed urgently: delivery by air, CPT island airport, at an extra charge.
 
-[The XML file](03-OrderChange.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](01-OrderChange.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -14,7 +14,7 @@ Part of the quantity is needed urgently: delivery by air, CPT island airport, at
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **VT-OC-26-0322**  
+- `ID` = **VT-OC-26-0320**  
   The number of this change.
 - `IssueDate` = **2026-05-11**  
   The buyer needs eight side frames urgently.
@@ -170,7 +170,7 @@ Inside `OrderLine`:
 <OrderChange xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderChange-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VT-OC-26-0322</cbc:ID>
+  <cbc:ID>VT-OC-26-0320</cbc:ID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

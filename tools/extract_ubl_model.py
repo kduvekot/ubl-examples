@@ -8,7 +8,9 @@ schemas) and writes world/ubl-model.json:
     (ASBIEs: name, target aggregate, cardinality, definition), so that a
     path such as Order/Delivery/Despatch/DespatchParty can be checked;
   * which aggregates, associations and basic properties are deprecated (their
-    definition starts with "(Deprecated)"); the world uses none of them;
+    definition starts with "(Deprecated)", or, for a document type, it has no
+    endorsed schema: the endorsed schemas leave out everything deprecated);
+    the world uses none of them;
   * per document type: its definition, its document-level party elements,
     and which of these elements sends the document and which receives it.
 
@@ -26,6 +28,7 @@ import hashlib
 import json
 import os
 import re
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 
@@ -35,6 +38,7 @@ MODEL_SHA256 = "c7df070e1a2927792a8a85103665924973d2559552ea87aa495ea7248fe988d1
 ROLES = ("https://raw.githubusercontent.com/oasis-tcs/ubl/345386aa0504488aebdbec1c7d629ce9b7d08826/"
          "UBL-Party-summary-information.xml")
 DEPRECATED = "(Deprecated)"   # how the model marks what is no longer endorsed
+ENDORSED = "https://docs.oasis-open.org/ubl/os-UBL-2.5/endorsed/xsdrt/maindoc/"
 OUT = os.path.join(os.path.dirname(__file__), "..", "world", "ubl-model.json")
 
 # Documents without SenderParty and ReceiverParty: (senders, receivers, basis, evidence).
@@ -236,6 +240,19 @@ def main():
             a, last = hit[0][1], hit[0]
         return last
 
+    # UBL 2.5 also deprecates document types whose definition does not say so (the specification marks
+    # Enquiry and Enquiry Response "Deprecated since UBL 2.5"); the endorsed schemas leave every deprecated
+    # document type out (UBL 2.5, 3.4 Endorsed Schemas), so a document type without one is deprecated too
+    endorsed_missing = set()
+    for d in docs:
+        req = urllib.request.Request(f"{ENDORSED}UBL-{d}-2.5.xsd", method="HEAD")
+        try:
+            urllib.request.urlopen(req, timeout=60)
+        except urllib.error.HTTPError as e:
+            if e.code != 404:
+                raise
+            endorsed_missing.add(d)
+            abies[d]["deprecated"] = True
     out = {}
     problems = []
     for d in docs:
