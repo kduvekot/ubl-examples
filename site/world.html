@@ -137,18 +137,7 @@ const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov",
 const P = WORLD.parties;
 
 // Routes in tile coordinates. Each has a mode, a layer and a vehicle.
-const ROUTES = [
-  { id: "ore", mode: "rail", layer: "chain", label: "Ore by rail (domestic XA)", pts: [[9,11],[9,14],[10,16],[12,18],[14,19]] },
-  { id: "rail-x", mode: "rail", layer: "transport", label: "Containers to the border hub", pts: [[14,19],[16,17],[19,16],[24,17],[27,20],[28,25]] },
-  { id: "road", mode: "road", layer: "chain", label: "Finished goods by road, across the border (XA → XB)", pts: [[16,23],[18,23],[20,22],[23,22],[26,24],[28,26]] },
-  { id: "road-b", mode: "road", layer: "chain", label: "Distributor to retailer (domestic XB)", pts: [[28,26],[30,28],[33,30]] },
-  { id: "road-port", mode: "road", layer: "transport", label: "Distributor to the seaport", pts: [[28,26],[32,24],[36,24],[39,22]] },
-  { id: "river", mode: "river", layer: "transport", label: "River barge (XA → XB)", pts: [[7,15],[11,18],[18,21],[22,25],[27,29],[33,34],[39,37],[42,38]] },
-  { id: "sea", mode: "sea", layer: "chain", label: "Container ship overseas (XB → XC)", pts: [[40,22],[42,21],[44,21],[45,22]] },
-  { id: "air", mode: "air", layer: "transport", label: "Air cargo (XB → XC)", pts: [[33,19],[43,13],[52,15]] },
-  { id: "road-c", mode: "road", layer: "chain", label: "Port to buyer (domestic XC)", pts: [[46,22],[48,24],[50,26],[53,24]] },
-  { id: "waste", mode: "road", layer: "chain", label: "Production waste", pts: [[14,19],[12,22],[10,25]] },
-];
+const ROUTES = WORLD.routes;
 
 // ---------------------------------------------------------------- terrain
 // Deterministic pseudo-random noise, so the world is the same on every load.
@@ -172,32 +161,39 @@ for (let i = 0; i < W; i++) { tiles[i] = []; for (let j = 0; j < H; j++) {
   tiles[i][j] = { land, country, t, n };
 }}
 // Routes on land force their tiles to land; river and sea draw water.
-// A route as a 4-connected chain of tiles (every step goes to a direct neighbour),
-// so roads, rails and rivers can be drawn as continuous lines.
-const pathTiles = pts => { const out = [pts[0].slice()];
+// Routes on the tile grid, with the same rules as tools/check_world.py:
+// roads in an L per pair of waypoints (longer leg first); rail and river one
+// step at a time (a staircase, drawn as a straight diagonal by the edge-to-edge pieces).
+const pathTiles = (pts, mode) => { const out = [pts[0].slice()];
   for (let k = 1; k < pts.length; k++) { let [i, j] = out[out.length - 1]; const [bi, bj] = pts[k];
-    while (i !== bi || j !== bj) { const di = bi - i, dj = bj - j;
-      if (Math.abs(di) >= Math.abs(dj)) i += Math.sign(di); else j += Math.sign(dj);
-      out.push([i, j]); } }
+    if (mode === "road") { const legs = Math.abs(bi - i) >= Math.abs(bj - j) ? ["i", "j"] : ["j", "i"];
+      for (const ax of legs) while (ax === "i" ? i !== bi : j !== bj) { if (ax === "i") i += Math.sign(bi - i); else j += Math.sign(bj - j); out.push([i, j]); } }
+    else while (i !== bi || j !== bj) { if (Math.abs(bi - i) >= Math.abs(bj - j)) i += Math.sign(bi - i); else j += Math.sign(bj - j); out.push([i, j]); } }
   return out; };
-const link = (t, mode, di, dj) => { (t.links ||= {})[mode] ||= new Set(); t.links[mode].add(di + "," + dj); };
-for (const r of ROUTES) {
-  if (r.mode === "sea" || r.mode === "air") { r.path = r.pts; continue; }
-  r.path = pathTiles(r.pts);
-  for (const [i, j] of r.path) { const t = tiles[i]?.[j]; if (!t) continue;
-    if (r.mode !== "river" && !t.land) { t.land = true; t.country = i < 42 ? (i < border(j) ? "XA" : "XB") : "XC"; }
-    if (t.land && (t.t === "forest" || t.t === "rock" || t.t === "field")) t.t = "grass"; }
-  for (let k = 0; k < r.path.length - 1; k++) { const [a, b] = [r.path[k], r.path[k + 1]];
-    const ta = tiles[a[0]]?.[a[1]], tb = tiles[b[0]]?.[b[1]]; if (!ta || !tb) continue;
-    if (r.mode === "river" && (!ta.land || !tb.land)) { if (ta.land) link(ta, "river", b[0] - a[0], b[1] - a[1]); if (tb.land) link(tb, "river", a[0] - b[0], a[1] - b[1]); continue; }
-    link(ta, r.mode, b[0] - a[0], b[1] - a[1]); link(tb, r.mode, a[0] - b[0], a[1] - b[1]); }
-}
+const DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+const addPiece = (t, mode, a, b) => { ((t.pieces ||= {})[mode] ||= []).push([a, b]); const L = ((t.links ||= {})[mode] ||= new Set());
+  if (a) L.add(a.join()); if (b) L.add(b.join()); };
 // Every party covers a footprint of size [a, b] tiles from its position (default 1 x 1)
 const footprint = p => { const [a, b] = p.size || [1, 1], out = []; for (let i = 0; i < a; i++) for (let j = 0; j < b; j++) out.push([p.at[0] + i, p.at[1] + j]); return out; };
 for (const p of P) for (const [i, j] of footprint(p)) { const t = tiles[i][j]; t.land = true; t.country = p.c; if (t.t !== "grass") t.t = "grass"; t.building = p; }
+// Lay every route as pieces: per tile the edge it comes from and the edge it goes to.
+// A route end next to a building connects to it.
+for (const r of ROUTES) {
+  if (r.mode === "sea" || r.mode === "air") { r.path = r.pts; continue; }
+  r.path = pathTiles(r.pts, r.mode);
+  r.path.forEach(([i, j], k) => { const t = tiles[i]?.[j]; if (!t) return;
+    if (r.mode !== "river" && !t.land) { t.land = true; t.country = t.country || (i < 42 ? (i < border(j) ? "XA" : "XB") : "XC"); }
+    if (t.land && (t.t === "forest" || t.t === "rock" || t.t === "field")) t.t = "grass";
+    const dir = q => q ? [q[0] - i, q[1] - j] : null;
+    let prev = dir(r.path[k - 1]), next = dir(r.path[k + 1]);
+    if (!prev || !next) { const end = DIRS.find(([a, b]) => { const n = tiles[i + a]?.[j + b]; return n?.building && !(n.building.on === r.mode); });
+      if (end && !(prev && prev.join() === end.join())) { if (!prev) prev = end; else next = end; } }
+    if (r.mode === "river" && !t.land) return;
+    addPiece(t, r.mode, prev, next); }); }
+
 // a port's quay side ("water": [di, dj]) is open water, so ships can moor
 for (const p of P) if (p.water) for (const [i, j] of footprint(p)) for (const k of [1, 2]) { const t = tiles[i + p.water[0] * k]?.[j + p.water[1] * k];
-  if (t && !t.building) { t.land = false; t.country = null; delete t.links; } }
+  if (t && !t.building) { t.land = false; t.country = null; delete t.links; delete t.pieces; } }
 // Town houses around a few centres (decorative)
 const TOWNS = [ { c: [13, 22], r: 3.2, name: "Ferrano" }, { c: [31, 29], r: 4, name: "Lumeport" }, { c: [53, 23], r: 3, name: "Kaimoa" } ];
 for (const tw of TOWNS) for (let i = -5; i <= 5; i++) for (let j = -5; j <= 5; j++) {
@@ -364,8 +360,9 @@ function multiTile(g, p, k, col, glass) {
       for (const [dx, dy] of [[-6, -1], [-1, 1.5], [-3, -4]]) for (let lvl = 0; lvl < 2; lvl++) block(g, cx + dx, cy - 3 + dy - lvl * 3, .16, .12, 3, cs[n++ % 5], shade(cs[n % 5], .15));
       g.strokeStyle = col; g.lineWidth = 2; g.lineCap = "butt"; g.beginPath(); g.moveTo(cx + 6, cy + 2); g.lineTo(cx + 6, cy - 26); g.moveTo(cx + 11, cy - 1); g.lineTo(cx + 11, cy - 28); g.moveTo(cx + 1, cy - 26); g.lineTo(cx + 18, cy - 30); g.stroke(); }
     return true; }
-  if (k === "terminal") {                               // platforms on the rail line, container yard, gantry spanning it
-    poly(g, q(base), "#a09a8e"); const G = footGeo(p, .22, 2); walls(g, G, "#c9c1b2"); flatRoof(g, G, "#d8d0c0");
+  if (k === "terminal") {                               // platforms on both sides of the track, containers, gantry spanning it
+    for (const [ti, tj] of footprint(p)) for (const v of [.3, -.3]) band(g, ti, tj, [-.5, v], [.5, v], .1, "#b3ab9c");
+    const G = footGeo(p, .22, 2);
     const cs = ["#c0392b", "#2e86c1", "#d4ac0d", "#27ae60"]; let n = 0;
     for (const t of footprint(p)) { const [cx, cy] = tileWorld(...t); for (const [dx, dy] of [[-8, 3], [6, -4]]) block(g, cx + dx, cy + dy - 2, .2, .12, 3, cs[n++ % 4], shade(cs[n % 4], .15)); }
     const [x0, y0] = [G.L[0], G.L[1]], [x1, y1] = [G.Rr[0], G.Rr[1]];
@@ -477,32 +474,57 @@ function fit() { const r = cv.getBoundingClientRect(), pad = 16, w = LAND.x1 - L
 const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
 // world pixel position of an original tile, in the current rotation
 const tileWorld = (i, j) => { const [x, y] = iso(...R(i, j)); return [x + OX, y + OY]; };
-function pathLen(pts) { let L = 0; const seg = []; for (let k = 0; k < pts.length - 1; k++) { const [a, b] = [tileWorld(...pts[k]), tileWorld(...pts[k + 1])]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); seg.push([a, b, l]); L += l; } return { seg, L }; }
-// Chaikin smoothing: rounded corners for roads and rails, flowing curves for the river
-const chaikin = (pts, n) => { for (let k = 0; k < n; k++) { const o = [pts[0]];
-  for (let m = 0; m < pts.length - 1; m++) { const [a, b] = [pts[m], pts[m + 1]]; o.push([a[0] * .75 + b[0] * .25, a[1] * .75 + b[1] * .25], [a[0] * .25 + b[0] * .75, a[1] * .25 + b[1] * .75]); }
-  o.push(pts[pts.length - 1]); pts = o; } return pts; };
+// world position of a point inside tile (i, j): u, v in tile units from its centre
+const tp = (i, j, u, v) => tileWorld(i + u, j + v);
+// vehicles follow the pieces: roads from tile centre to tile centre, rail and river from edge to edge
 const measureRoutes = () => { for (const r of ROUTES) {
-  const w = r.pts.map(p => tileWorld(...p));
-  r.world = r.mode === "sea" || r.mode === "air" ? w : chaikin(w, r.mode === "river" ? 3 : 2);
-  let L = 0; r.seg = []; for (let k = 0; k < r.world.length - 1; k++) { const [a, b] = [r.world[k], r.world[k + 1]]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); r.seg.push([a, b, l]); L += l; }
+  if (r.mode === "sea" || r.mode === "air") r.world = r.pts.map(p => tileWorld(...p));
+  else if (r.mode === "road") r.world = r.path.map(p => tileWorld(...p));
+  else { const P2 = r.path; r.world = [tileWorld(...P2[0])];
+    for (let k = 0; k < P2.length - 1; k++) r.world.push(tileWorld((P2[k][0] + P2[k + 1][0]) / 2, (P2[k][1] + P2[k + 1][1]) / 2));
+    r.world.push(tileWorld(...P2[P2.length - 1])); }
+  let L = 0; r.seg = []; for (let k = 0; k < r.world.length - 1; k++) { const [a, b] = [r.world[k], r.world[k + 1]]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); if (l) { r.seg.push([a, b, l]); L += l; } }
   r.L = L; } };
+// a band in tile space from point a to point b (tile units), half-width hw, as a world polygon
+function band(g, i, j, a, b, hw, fill) { const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l * hw, ny = dx / l * hw;
+  poly(g, [tp(i, j, a[0] + nx, a[1] + ny), tp(i, j, b[0] + nx, b[1] + ny), tp(i, j, b[0] - nx, b[1] - ny), tp(i, j, a[0] - nx, a[1] - ny)], fill); }
+function disk(g, i, j, c, r, fill) { const pts = []; for (let k = 0; k < 12; k++) { const a = k * Math.PI / 6; pts.push(tp(i, j, c[0] + Math.cos(a) * r, c[1] + Math.sin(a) * r)); } poly(g, pts, fill); }
+function tline(g, i, j, pts, color, width, dash) { g.strokeStyle = color; g.lineWidth = width; g.setLineDash(dash || []); g.lineCap = "butt";
+  g.beginPath(); pts.forEach((q, k) => { const [x, y] = tp(i, j, q[0], q[1]); k ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke(); g.setLineDash([]); }
+const mid = d => d ? [d[0] / 2, d[1] / 2] : [0, 0];
+// shape of a road tile from its connection mask: stub, straight, bend, tee or cross
+function roadShape(dirs) { if (dirs.length === 1) return "stub"; if (dirs.length === 2) return dirs[0][0] === -dirs[1][0] && dirs[0][1] === -dirs[1][1] ? "straight" : "bend";
+  return dirs.length === 3 ? "tee" : "cross"; }
+function drawRoadTile(g, i, j, dirs, bridge) { const hw = .21;
+  if (bridge) { for (const d of dirs) band(g, i, j, [0, 0], mid(d), hw + .09, "#5b4a36"); }
+  for (const [w, c] of [[hw + .04, "#3d3f42"], [hw, "#64676b"]]) { for (const d of dirs) band(g, i, j, [0, 0], mid(d), w, c); poly(g, [tp(i, j, -w, -w), tp(i, j, w, -w), tp(i, j, w, w), tp(i, j, -w, w)], c); }
+  const shape = roadShape(dirs), mark = "#e6dfa8", dash = [3, 3];
+  if (shape === "straight") tline(g, i, j, [mid(dirs[0]), mid(dirs[1])], mark, 1, dash);
+  else if (shape === "bend") tline(g, i, j, [mid(dirs[0]), [0, 0], mid(dirs[1])], mark, 1, dash);
+  else if (shape === "stub") tline(g, i, j, [mid(dirs[0]), [0, 0]], mark, 1, dash);
+  else for (const d of dirs) { const stop = [d[0] * (hw + .04), d[1] * (hw + .04)], perp = [-d[1], d[0]];
+    tline(g, i, j, [mid(d), [d[0] * (hw + .1), d[1] * (hw + .1)]], mark, 1, dash);
+    tline(g, i, j, [[stop[0] + perp[0] * hw, stop[1] + perp[1] * hw], [stop[0] - perp[0] * hw * .1, stop[1] - perp[1] * hw * .1]], "#f2f2f2", 1.5); } }
+function drawRailPiece(g, i, j, a, b, bridge) { const A = mid(a), B = mid(b);
+  if (bridge) band(g, i, j, A, B, .26, "#5b4a36");
+  band(g, i, j, A, B, .17, "#8d7d63");
+  const dx = B[0] - A[0], dy = B[1] - A[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
+  for (let u = .05; u < l; u += .11) { const c = [A[0] + dx / l * u, A[1] + dy / l * u]; tline(g, i, j, [[c[0] + nx * .15, c[1] + ny * .15], [c[0] - nx * .15, c[1] - ny * .15]], "#4b3a2c", 1.5); }
+  for (const o of [.07, -.07]) tline(g, i, j, [[A[0] + nx * o, A[1] + ny * o], [B[0] + nx * o, B[1] + ny * o]], "#d4d4d4", 1); }
 function drawRoutes(g) {
   measureRoutes();
-  const line = (pts, width, color, dash) => { g.lineCap = "round"; g.lineJoin = "round"; g.lineWidth = width; g.strokeStyle = color; g.setLineDash(dash || []);
-    g.beginPath(); pts.forEach((p, k) => k ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1])); g.stroke(); g.setLineDash([]); };
-  const of = mode => ROUTES.filter(r => r.mode === mode);
-  for (const r of of("river")) { line(r.world, 14, "#2f6fae"); line(r.world, 9, "#4a93d4"); line(r.world, 2, "rgba(255,255,255,.18)", [6, 10]); }
-  // bridges where a road or rail crosses the river
-  const riverTile = (wx, wy) => { for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (tiles[i][j].links?.river) { const [x, y] = tileWorld(i, j); if (Math.abs(wx - x) + 2 * Math.abs(wy - y) < 14) return true; } return false; };
-  for (const r of [...of("rail"), ...of("road")]) for (const [a, b, l] of r.seg) { const m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]; if (riverTile(...m)) line([a, b], 14, "#5b4a36"); }
-  for (const r of of("rail")) { line(r.world, 8, "#8d7d63");
-    for (const [a, b, l] of r.seg) { const ux = (b[0] - a[0]) / l, uy = (b[1] - a[1]) / l, px = -uy, py = ux;
-      g.strokeStyle = "#4b3a2c"; g.lineWidth = 1.5; g.lineCap = "butt"; for (let d = 0; d < l; d += 4) { const cx = a[0] + ux * d, cy = a[1] + uy * d; g.beginPath(); g.moveTo(cx - px * 4, cy - py * 4); g.lineTo(cx + px * 4, cy + py * 4); g.stroke(); } }
-    for (const o of [-2, 2]) { const off = r.world.map((p, k) => { const q = r.world[Math.min(k + 1, r.world.length - 1)], pr = r.world[Math.max(k - 1, 0)], dx = q[0] - pr[0], dy = q[1] - pr[1], l = Math.hypot(dx, dy) || 1; return [p[0] - dy / l * o, p[1] + dx / l * o]; });
-      line(off, 1, "#d4d4d4"); } }
-  for (const r of of("road")) { line(r.world, 11, "#4f5154"); line(r.world, 9, "#6d7074"); line(r.world, 1, "#e6dfa8", [4, 4]); }
+  const order = []; for (let s2 = 0; s2 < W + H; s2++) for (let ri = 0; ri < RW(); ri++) { const rj = s2 - ri; if (rj < 0 || rj >= RH()) continue; order.push(RI(ri, rj)); }
+  for (const [i, j] of order) { const t = tiles[i][j]; for (const [a, b] of t.pieces?.river || []) { const A = mid(a), B = mid(b);
+    disk(g, i, j, A, .37, "#4f7f45"); disk(g, i, j, B, .37, "#4f7f45"); band(g, i, j, A, B, .37, "#4f7f45"); } }
+  for (const [i, j] of order) { const t = tiles[i][j]; for (const [a, b] of t.pieces?.river || []) { const A = mid(a), B = mid(b);
+    disk(g, i, j, A, .3, "#3a7fc1"); disk(g, i, j, B, .3, "#3a7fc1"); band(g, i, j, A, B, .3, "#3a7fc1"); band(g, i, j, A, B, .08, "#5596d1"); } }
+  for (const [i, j] of order) { const t = tiles[i][j]; for (const [a, b] of t.pieces?.rail || []) drawRailPiece(g, i, j, a, b, !!t.links?.river); }
+  for (const [i, j] of order) { const t = tiles[i][j]; if (!t.links?.road) continue;
+    const dirs = [...t.links.road].map(d => d.split(",").map(Number)); drawRoadTile(g, i, j, dirs, !!t.links.river);
+    if (t.links.rail) for (const [a, b] of t.pieces.rail) { const A = mid(a), B = mid(b), dx = B[0] - A[0], dy = B[1] - A[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
+      for (const o of [.07, -.07]) tline(g, i, j, [[A[0] + nx * o, A[1] + ny * o], [B[0] + nx * o, B[1] + ny * o]], "#c9c9c9", 1); } }   // level crossing
 }
+
 function rotate(step) { rot = (rot + step + 4) % 4; drawWorld(); computeLand(); measureRoutes(); fit(); redraw();
   document.getElementById("compass").textContent = ["N", "E", "S", "W"][rot]; }
 OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();

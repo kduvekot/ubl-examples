@@ -17,6 +17,7 @@ ROOT=$(pwd)
 
 tools/fetch_oasis_stylesheets.sh .oasis
 tools/md2docbook.sh --check
+python3 tools/check_world.py
 
 rm -rf "$OUT"
 mkdir -p "$OUT/note"

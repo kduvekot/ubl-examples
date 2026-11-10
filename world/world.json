@@ -45,7 +45,7 @@
    "c": "XA",
    "at": [
     14,
-    19
+    18
    ],
    "h": 3,
    "kind": "factory",
@@ -76,7 +76,7 @@
    "c": "XA",
    "at": [
     16,
-    23
+    22
    ],
    "h": 2,
    "kind": "warehouse",
@@ -101,8 +101,8 @@
    "cat": "commerce",
    "c": "XA",
    "at": [
-    10,
-    25
+    11,
+    24
    ],
    "h": 2,
    "kind": "waste",
@@ -122,8 +122,8 @@
    "cat": "logistics",
    "c": "XA",
    "at": [
-    10,
-    16
+    8,
+    15
    ],
    "h": 2,
    "kind": "depot",
@@ -146,7 +146,7 @@
    "c": "XA",
    "at": [
     17,
-    26
+    25
    ],
    "h": 1,
    "kind": "depot",
@@ -169,8 +169,8 @@
    "cat": "logistics",
    "c": "XA",
    "at": [
-    18,
-    21
+    12,
+    26
    ],
    "h": 1,
    "kind": "quay",
@@ -192,7 +192,7 @@
    "c": "XA",
    "at": [
     19,
-    16
+    18
    ],
    "h": 2,
    "kind": "terminal",
@@ -209,7 +209,8 @@
    "size": [
     2,
     1
-   ]
+   ],
+   "on": "rail"
   },
   {
    "id": "23-xa",
@@ -241,7 +242,7 @@
    "c": "XA",
    "at": [
     13,
-    23
+    22
    ],
    "h": 2,
    "kind": "office",
@@ -276,7 +277,8 @@
     "13-xa",
     "19-xb",
     "3-xc"
-   ]
+   ],
+   "on": "road"
   },
   {
    "id": "31-xa",
@@ -321,7 +323,8 @@
     "13-xa",
     "6-xb",
     "16-xb"
-   ]
+   ],
+   "on": "road"
   },
   {
    "id": "6-xb",
@@ -381,7 +384,7 @@
    "c": "XB",
    "at": [
     35,
-    32
+    31
    ],
    "h": 1,
    "kind": "house",
@@ -400,7 +403,7 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    31,
+    32,
     27
    ],
    "h": 4,
@@ -425,7 +428,7 @@
    "c": "XB",
    "at": [
     26,
-    31
+    30
    ],
    "h": 2,
    "kind": "office",
@@ -446,7 +449,7 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    33,
+    34,
     26
    ],
    "h": 3,
@@ -468,7 +471,7 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    30,
+    31,
     25
    ],
    "h": 3,
@@ -490,7 +493,7 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    29,
+    30,
     29
    ],
    "h": 2,
@@ -534,8 +537,8 @@
    "cat": "finance",
    "c": "XB",
    "at": [
-    32,
-    33
+    33,
+    32
    ],
    "h": 2,
    "kind": "bank",
@@ -556,7 +559,7 @@
    "c": "XB",
    "at": [
     34,
-    28
+    29
    ],
    "h": 3,
    "kind": "bank",
@@ -578,7 +581,7 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    37,
+    36,
     25
    ],
    "h": 2,
@@ -635,7 +638,7 @@
    "c": "XB",
    "at": [
     38,
-    19
+    20
    ],
    "h": 2,
    "kind": "office",
@@ -775,7 +778,8 @@
     "3-xc",
     "16-xc",
     "19-xb"
-   ]
+   ],
+   "on": "road"
   },
   {
    "id": "3-xc",
@@ -833,7 +837,7 @@
    "c": "XC",
    "at": [
     53,
-    24
+    25
    ],
    "h": 3,
    "kind": "office",
@@ -857,7 +861,7 @@
    "c": "XC",
    "at": [
     55,
-    26
+    27
    ],
    "h": 3,
    "kind": "bank",
@@ -878,7 +882,7 @@
    "c": "XC",
    "at": [
     54,
-    21
+    22
    ],
    "h": 2,
    "kind": "office",
@@ -899,7 +903,7 @@
    "c": "XC",
    "at": [
     56,
-    23
+    24
    ],
    "h": 2,
    "kind": "office",
@@ -911,6 +915,224 @@
    "partners": [
     "11-xb",
     "16-xc"
+   ]
+  }
+ ],
+ "routes": [
+  {
+   "id": "ore",
+   "mode": "rail",
+   "layer": "chain",
+   "label": "Ore by rail (domestic XA)",
+   "pts": [
+    [
+     9,
+     11
+    ],
+    [
+     9,
+     18
+    ],
+    [
+     13,
+     18
+    ]
+   ]
+  },
+  {
+   "id": "rail-x",
+   "mode": "rail",
+   "layer": "transport",
+   "label": "Containers to the border hub",
+   "pts": [
+    [
+     16,
+     18
+    ],
+    [
+     26,
+     18
+    ],
+    [
+     30,
+     22
+    ],
+    [
+     30,
+     26
+    ]
+   ]
+  },
+  {
+   "id": "road",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Finished goods by road, across the border (XA → XB)",
+   "pts": [
+    [
+     18,
+     22
+    ],
+    [
+     27,
+     22
+    ],
+    [
+     27,
+     26
+    ]
+   ]
+  },
+  {
+   "id": "road-b",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Distributor to retailer (domestic XB)",
+   "pts": [
+    [
+     28,
+     28
+    ],
+    [
+     28,
+     30
+    ],
+    [
+     32,
+     30
+    ]
+   ]
+  },
+  {
+   "id": "road-port",
+   "mode": "road",
+   "layer": "transport",
+   "label": "Distributor to the seaport",
+   "pts": [
+    [
+     27,
+     23
+    ],
+    [
+     38,
+     23
+    ]
+   ]
+  },
+  {
+   "id": "river",
+   "mode": "river",
+   "layer": "transport",
+   "label": "River barge (XA → XB)",
+   "pts": [
+    [
+     5,
+     15
+    ],
+    [
+     7,
+     25
+    ],
+    [
+     16,
+     29
+    ],
+    [
+     26,
+     35
+    ],
+    [
+     34,
+     38
+    ],
+    [
+     40,
+     40
+    ]
+   ]
+  },
+  {
+   "id": "sea",
+   "mode": "sea",
+   "layer": "chain",
+   "label": "Container ship overseas (XB → XC)",
+   "pts": [
+    [
+     40,
+     22
+    ],
+    [
+     42,
+     21
+    ],
+    [
+     44,
+     21
+    ],
+    [
+     45,
+     22
+    ]
+   ]
+  },
+  {
+   "id": "air",
+   "mode": "air",
+   "layer": "transport",
+   "label": "Air cargo (XB → XC)",
+   "pts": [
+    [
+     34,
+     19
+    ],
+    [
+     43,
+     13
+    ],
+    [
+     53,
+     15
+    ]
+   ]
+  },
+  {
+   "id": "road-c",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Port to buyer (domestic XC)",
+   "pts": [
+    [
+     47,
+     22
+    ],
+    [
+     47,
+     25
+    ],
+    [
+     52,
+     25
+    ]
+   ]
+  },
+  {
+   "id": "waste",
+   "mode": "road",
+   "layer": "chain",
+   "label": "Production waste",
+   "pts": [
+    [
+     14,
+     20
+    ],
+    [
+     14,
+     24
+    ],
+    [
+     12,
+     24
+    ]
    ]
   }
  ]

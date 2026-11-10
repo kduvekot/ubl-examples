@@ -18,7 +18,7 @@ parties = {p["id"]: p for p in world["parties"]}
 
 # The map: fill in the data
 page = open(os.path.join(root, "site", "world.html"), encoding="utf-8").read()
-data = json.dumps({"countries": world["countries"], "parties": world["parties"]}, ensure_ascii=False)
+data = json.dumps({"countries": world["countries"], "parties": world["parties"], "routes": world["routes"]}, ensure_ascii=False)
 assert "/*WORLD_JSON*/ null" in page
 page = page.replace("/*WORLD_JSON*/ null", data.replace("</", "<\\/"))
 open(os.path.join(out, "world.html"), "w", encoding="utf-8").write(page)
