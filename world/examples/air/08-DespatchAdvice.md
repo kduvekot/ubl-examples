@@ -24,6 +24,8 @@ The new despatch advice, for the next day's flight.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Sent for the next day's flight.
+- `IssueTime` = **10:48:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -532,6 +534,7 @@ Inside `DespatchLine`:
   <cbc:ID>LD-DA-26-0329</cbc:ID>
   <cbc:UUID>bb530823-20b2-5c84-9178-9f8f4d49f81f</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:IssueTime>10:48:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0319</cbc:ID>
   </cac:OrderReference>

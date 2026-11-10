@@ -24,6 +24,8 @@ The distributor announces the air part to the buyer's 3PL, with the airline as c
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   Sent to the buyer's 3PL when the cargo leaves.
+- `IssueTime` = **10:07:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -532,6 +534,7 @@ Inside `DespatchLine`:
   <cbc:ID>LD-DA-26-0327</cbc:ID>
   <cbc:UUID>93132e8b-1df2-5401-9265-5f8de7ffa70a</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueTime>10:07:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0319</cbc:ID>
   </cac:OrderReference>

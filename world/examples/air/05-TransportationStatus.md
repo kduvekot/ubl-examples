@@ -24,6 +24,8 @@ The air cargo terminal reports the cargo accepted and built up for the flight.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   Reported when the cargo is built up for the flight.
+- `IssueTime` = **10:05:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignment
 
@@ -253,6 +255,7 @@ Inside `ReceiverParty`:
   <cbc:ID>LACT-TS-26-0326</cbc:ID>
   <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueTime>10:05:00</cbc:IssueTime>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
     <cac:CarrierParty>

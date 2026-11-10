@@ -24,10 +24,26 @@ The packaging maker pays from Bayvarra to the waste processor's account in Urvan
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-19**  
   The packaging maker pays across the border, before the due date.
+- `IssueTime` = **09:34:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Payment of the invoice below.**  
+  What the advice is for.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the currency of the invoice paid; it has no minor unit.
+- `TotalDebitAmount` = **9984000** (currencyID `XUF`)  
+  The invoices paid.
+- `TotalCreditAmount` = **0** (currencyID `XUF`)  
+  No credits taken.
 - `TotalPaymentAmount` = **9984000** (currencyID `XUF`)  
   The amount transferred: the payable amount of the invoice.
+- `PaymentOrderReference` = **RP-PAY-26-0882**  
+  The payment order the payer gave its bank.
+- `PayerReference` = **RP-0882**  
+  The payer's own reference for this payment run.
+- `InvoicingPartyReference` = **RF89RRINV260894**  
+  The reference the invoicing party asked to quote.
+- `LineCountNumeric` = **1**  
+  One invoice paid.
 
 ### Accounting Customer Party
 
@@ -308,10 +324,24 @@ Inside `RemittanceAdviceLine`:
   ISO 20022 purpose code SUPP: payment to a supplier.
 - `InvoicingPartyReference` = **RF89RRINV260894**  
   The reference the invoicing party asked to quote.
+- `AccountingSupplierParty/Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingSupplierParty/Party/PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyName/Name` = **Rivermouth Packaging**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **RR-INV-26-0894**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-20**  
   Its issue date, so the reference is unambiguous.
+- `DocumentReference/ID` = **RR-INV-26-0894**  
+  The invoice paid, as a document reference.
+- `DocumentReference/IssueDate` = **2026-04-20**  
+  Its issue date.
+- `DocumentReference/DocumentTypeCode` = **380**  
+  UN/EDIFACT 1001 code 380: commercial invoice.
 
 ## The document
 
@@ -325,8 +355,16 @@ Inside `RemittanceAdviceLine`:
   <cbc:ID>RP-RM-26-0895</cbc:ID>
   <cbc:UUID>7669d2e2-077d-5a02-a2ec-34db294f8a10</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
+  <cbc:IssueTime>09:34:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XUF">9984000</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">9984000</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>RP-PAY-26-0882</cbc:PaymentOrderReference>
+  <cbc:PayerReference>RP-0882</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF89RRINV260894</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
@@ -570,12 +608,37 @@ Inside `RemittanceAdviceLine`:
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF89RRINV260894</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Rinova Recovery</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Rivermouth Packaging</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>RR-INV-26-0894</cbc:ID>
         <cbc:IssueDate>2026-04-20</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>RR-INV-26-0894</cbc:ID>
+      <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

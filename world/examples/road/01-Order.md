@@ -24,6 +24,8 @@ Delivery terms FCA seller's warehouse: the order names the warehouse where the g
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-16**  
   The distributor orders for its spring stock.
+- `IssueTime` = **14:36:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XUF**  
@@ -796,6 +798,7 @@ Inside `OrderLine`:
   <cbc:ID>LD-PO-26-0149</cbc:ID>
   <cbc:UUID>11bf9fcc-6e93-50a2-b153-b55eaa5940e4</cbc:UUID>
   <cbc:IssueDate>2026-03-16</cbc:IssueDate>
+  <cbc:IssueTime>14:36:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>

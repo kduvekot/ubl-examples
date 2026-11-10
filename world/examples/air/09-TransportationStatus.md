@@ -24,6 +24,8 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Reported when the cargo has landed.
+- `IssueTime` = **17:58:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignment
 
@@ -367,6 +369,7 @@ Inside `ReceiverParty`:
   <cbc:ID>SAC-TS-26-0330</cbc:ID>
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:IssueTime>17:58:00</cbc:IssueTime>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
     <cac:ConsigneeParty>

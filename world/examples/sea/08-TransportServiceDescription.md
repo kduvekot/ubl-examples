@@ -24,6 +24,8 @@ The ocean carrier describes its weekly service to Selanu.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-09**  
   The carrier answers the next day.
+- `IssueTime` = **12:03:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -323,6 +325,7 @@ Inside `TransportationService`:
   <cbc:ID>TOL-DOC-26-0130</cbc:ID>
   <cbc:UUID>bee924a8-76e1-5c8f-be45-927bde1567a4</cbc:UUID>
   <cbc:IssueDate>2026-05-09</cbc:IssueDate>
+  <cbc:IssueTime>12:03:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>

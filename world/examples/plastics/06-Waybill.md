@@ -24,6 +24,8 @@ The inland waterway consignment note, issued to the shipper.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-19**  
   Issued when the barge is loaded.
+- `IssueTime` = **09:38:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -513,6 +515,7 @@ Inside `DocumentReference`:
   <cbc:ID>FB-WB-26-0890</cbc:ID>
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueTime>09:38:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5022</cbc:IndustryClassificationCode>

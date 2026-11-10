@@ -24,6 +24,8 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-03**  
   The day after the order: the buyer books the train it named in its order.
+- `IssueTime` = **09:24:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -379,6 +381,7 @@ Inside `Consignment`:
   <cbc:ID>VI-TR-26-0305</cbc:ID>
   <cbc:UUID>1136675e-5400-5624-8e01-dc21b86cbdfe</cbc:UUID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
+  <cbc:IssueTime>09:24:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

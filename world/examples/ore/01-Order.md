@@ -24,6 +24,8 @@ Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-02**  
   The first working day of the month: the monthly ore call-off.
+- `IssueTime` = **11:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `Note` = **Monthly call-off, one train.**  
@@ -436,6 +438,7 @@ Inside `OrderLine`:
   <cbc:ID>VI-PO-26-0304</cbc:ID>
   <cbc:UUID>f7a41c69-f150-5204-9582-ff383282ea1c</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+  <cbc:IssueTime>11:10:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:Note>Monthly call-off, one train.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>

@@ -26,6 +26,8 @@ The furniture maker is told that the contract went to another tenderer.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-09**  
   Told on the day of the award decision, as the winner is.
+- `IssueTime` = **10:15:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -235,6 +237,7 @@ Inside `TenderResult`:
   <cbc:UUID>e1de7889-b36e-5db6-b38b-dcbd566f2280</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
+  <cbc:IssueTime>10:15:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

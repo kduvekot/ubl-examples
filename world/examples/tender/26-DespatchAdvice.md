@@ -24,6 +24,8 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-30**  
   The day the call-off left the 3PL.
+- `IssueTime` = **14:40:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -656,6 +658,7 @@ Inside `DespatchLine`:
   <cbc:ID>CL-DA-26-0212</cbc:ID>
   <cbc:UUID>76a93c5b-0305-5616-966b-a321c5c91535</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
+  <cbc:IssueTime>14:40:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0211</cbc:ID>
   </cac:OrderReference>

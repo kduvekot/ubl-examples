@@ -24,6 +24,8 @@ Weekly sales and stock movements of the line.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-20**  
   The store's report of the first four weeks.
+- `IssueTime` = **16:35:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Activity Period
 
@@ -285,6 +287,7 @@ Inside `SupplyChainActivityDataLine`:
   <cbc:ID>BS-DOC-26-0572</cbc:ID>
   <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueTime>16:35:00</cbc:IssueTime>
   <cac:ActivityPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
     <cbc:EndDate>2026-04-20</cbc:EndDate>

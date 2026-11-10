@@ -7,8 +7,16 @@
   <cbc:ID>LTM-RM-26-0209</cbc:ID>
   <cbc:UUID>6c2c6741-2ec7-5783-a72f-d6c9f5c37809</cbc:UUID>
   <cbc:IssueDate>2026-03-29</cbc:IssueDate>
+  <cbc:IssueTime>12:38:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XLC">6055.452</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XLC">6055.452</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>LTM-PAY-26-0191</cbc:PaymentOrderReference>
+  <cbc:PayerReference>LTM-0191</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF30SCGINV260207</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
@@ -225,11 +233,36 @@
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF30SCGINV260207</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Textile Mill</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>SCG-INV-26-0207</cbc:ID>
         <cbc:IssueDate>2026-03-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>SCG-INV-26-0207</cbc:ID>
+      <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

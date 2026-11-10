@@ -7,6 +7,7 @@
   <cbc:ID>RR-INV-26-0894</cbc:ID>
   <cbc:UUID>462dcfae-0a9f-5692-9219-92c1bf595e5d</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueTime>11:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>

@@ -24,6 +24,8 @@ The distributor introduces itself to the new island customer.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-04**  
   Sent before the first offer to the new customer.
+- `IssueTime` = **16:39:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -226,6 +228,7 @@ Inside `BusinessParty`:
   <cbc:ID>LD-DOC-26-0123</cbc:ID>
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueTime>16:39:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

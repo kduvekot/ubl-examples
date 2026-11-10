@@ -7,6 +7,7 @@
   <cbc:ID>LD-TR-26-0227</cbc:ID>
   <cbc:UUID>3486a63d-1d8e-580d-902a-948d6ff352c9</cbc:UUID>
   <cbc:IssueDate>2026-04-25</cbc:IssueDate>
+  <cbc:IssueTime>10:28:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

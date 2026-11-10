@@ -7,6 +7,7 @@
   <cbc:ID>VI-TD-26-0331</cbc:ID>
   <cbc:UUID>39a0d3b7-c2fe-5e50-8ee2-54287be65033</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>17:29:00</cbc:IssueTime>
   <cac:TransitExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

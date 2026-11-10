@@ -24,6 +24,8 @@ Clothing for resale: exempt from sales tax, which the store charges its customer
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
   Issued on delivery.
+- `IssueTime` = **14:49:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-11**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -437,6 +439,7 @@ Inside `InvoiceLine`:
   <cbc:ID>LTM-INV-26-0529</cbc:ID>
   <cbc:UUID>69ae2c54-0b5e-552e-8c9e-299ef0cc1f8e</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
+  <cbc:IssueTime>14:49:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-11</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

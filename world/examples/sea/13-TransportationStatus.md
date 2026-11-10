@@ -24,6 +24,8 @@ The port of loading reports the container loaded on board.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Reported when the container is on board.
+- `IssueTime` = **16:05:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignment
 
@@ -363,6 +365,7 @@ Inside `ReceiverParty`:
   <cbc:ID>PL-TS-26-0138</cbc:ID>
   <cbc:UUID>2564cf59-a7e2-5a31-9b4c-e17cc91746d5</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:IssueTime>16:05:00</cbc:IssueTime>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>
     <cac:CarrierParty>

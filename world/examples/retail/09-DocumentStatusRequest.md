@@ -24,6 +24,8 @@ The store asks where its order stands.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-26**  
   Asked two days after ordering.
+- `IssueTime` = **11:52:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Requested Document Reference
 
@@ -262,6 +264,7 @@ Inside `ReceiverParty`:
   <cbc:ID>BS-DOC-26-0225</cbc:ID>
   <cbc:UUID>44994824-762c-5e0e-a7c5-0010d1f4141f</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
+  <cbc:IssueTime>11:52:00</cbc:IssueTime>
   <cac:RequestedDocumentReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:RequestedDocumentReference>

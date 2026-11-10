@@ -26,6 +26,8 @@ The distributor's catalogue of items and prices; items carry the identifiers of 
   The catalogue's title.
 - `IssueDate` = **2026-04-20**  
   The spring catalogue for the store.
+- `IssueTime` = **17:28:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Validity Period
 
@@ -703,6 +705,7 @@ Inside `CatalogueLine`:
   <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueTime>17:28:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-20</cbc:StartDate>
     <cbc:EndDate>2026-07-19</cbc:EndDate>

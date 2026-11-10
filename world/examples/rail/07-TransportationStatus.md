@@ -24,6 +24,8 @@ The intermodal terminal reports to the rail carrier that the containers are load
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Reported when the containers are on the train.
+- `IssueTime` = **13:11:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignment
 
@@ -265,6 +267,7 @@ Inside `ReceiverParty`:
   <cbc:ID>FIH-TS-26-0333</cbc:ID>
   <cbc:UUID>514b9478-0214-5ce0-9018-7c4cf752cbd3</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>13:11:00</cbc:IssueTime>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
     <cac:CarrierParty>

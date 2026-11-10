@@ -26,6 +26,8 @@ After the standstill period the authority and the manufacturer conclude the cont
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-19**  
   Concluded after the ten-day standstill period.
+- `IssueTime` = **17:24:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Contracting Party
 
@@ -247,6 +249,7 @@ Inside `TenderResult`:
   <cbc:UUID>14fc43bd-7919-515f-82c7-a02bb3605891</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-19</cbc:IssueDate>
+  <cbc:IssueTime>17:24:00</cbc:IssueTime>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

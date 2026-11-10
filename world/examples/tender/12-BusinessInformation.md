@@ -24,6 +24,8 @@ The authority checks the tenderer's registration with the business registry.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-27**  
   The authority checks the tenderer's registration before evaluation.
+- `IssueTime` = **16:26:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -308,6 +310,7 @@ Inside `BusinessParty`:
   <cbc:ID>BIS-DOC-26-0198</cbc:ID>
   <cbc:UUID>caa9a455-79a7-5aae-9576-1eb0e65da6ee</cbc:UUID>
   <cbc:IssueDate>2026-02-27</cbc:IssueDate>
+  <cbc:IssueTime>16:26:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

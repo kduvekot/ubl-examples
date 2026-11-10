@@ -7,6 +7,7 @@
   <cbc:ID>LD-DOC-26-0232</cbc:ID>
   <cbc:UUID>05570b50-9875-5f68-94e9-eb597fa0f1b7</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
+  <cbc:IssueTime>10:59:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

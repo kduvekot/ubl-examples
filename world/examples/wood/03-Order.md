@@ -24,6 +24,8 @@ The manufacturer accepts the quotation and orders. Delivery terms DAP factory: t
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-22**  
   The manufacturer accepts the quotation and orders.
+- `IssueTime` = **14:40:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -425,6 +427,7 @@ Inside `OrderLine`:
   <cbc:ID>VI-PO-26-0627</cbc:ID>
   <cbc:UUID>0a8bf098-56ca-53c4-9d5d-05c0010de461</cbc:UUID>
   <cbc:IssueDate>2026-02-22</cbc:IssueDate>
+  <cbc:IssueTime>14:40:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>

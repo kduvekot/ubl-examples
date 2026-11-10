@@ -26,6 +26,8 @@ The sawmill decides not to tender: a steel-framed bench is not its trade. It uns
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-22**  
   The sawmill decides before the deadline.
+- `IssueTime` = **14:30:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Economic Operator Party
 
@@ -230,6 +232,7 @@ Inside `ContractingParty`:
   <cbc:UUID>7aedd539-7df2-5757-a3aa-86840573505f</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-22</cbc:IssueDate>
+  <cbc:IssueTime>14:30:00</cbc:IssueTime>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>

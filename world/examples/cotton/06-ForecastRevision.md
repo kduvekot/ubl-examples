@@ -24,6 +24,8 @@ Demand for clothing is up; the mill revises its forecast upwards.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-22**  
   Demand for clothing has risen.
+- `IssueTime` = **13:06:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `SequenceNumberID` = **1**  
   The first revision of the forecast.
 
@@ -303,6 +305,7 @@ Inside `ForecastRevisionLine`:
   <cbc:ID>LTM-FR-26-0196</cbc:ID>
   <cbc:UUID>06d8f4b1-252c-5260-8d1e-247296f49e60</cbc:UUID>
   <cbc:IssueDate>2026-02-22</cbc:IssueDate>
+  <cbc:IssueTime>13:06:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cac:ForecastPeriod>
     <cbc:StartDate>2026-02-16</cbc:StartDate>

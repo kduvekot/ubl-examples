@@ -24,6 +24,8 @@ Garment bags for the clothing. Delivery terms DAP mill.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-29**  
   The textile mill orders garment bags.
+- `IssueTime` = **08:56:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -314,6 +316,7 @@ Inside `OrderLine`:
   <cbc:ID>LTM-PO-26-0523</cbc:ID>
   <cbc:UUID>180e0758-2040-5584-b52e-eddf276d1157</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
+  <cbc:IssueTime>08:56:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>

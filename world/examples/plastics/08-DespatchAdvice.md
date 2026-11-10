@@ -24,6 +24,8 @@ The waste processor announces the lot loaded on the barge.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-19**  
   The day the barge was loaded.
+- `IssueTime` = **17:57:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -406,6 +408,7 @@ Inside `DespatchLine`:
   <cbc:ID>RR-DA-26-0892</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueTime>17:57:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>

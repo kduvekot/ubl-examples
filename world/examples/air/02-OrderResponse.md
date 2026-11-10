@@ -24,6 +24,8 @@ The distributor accepts the change: the urgent part goes by air at an extra char
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
   The distributor accepts the change.
+- `IssueTime` = **10:46:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderResponseCode` = **AP**  
   UN/EDIFACT 4343 code AP: accepted, the order is accepted as it stands.
 
@@ -226,6 +228,7 @@ Inside `BuyerCustomerParty`:
   <cbc:ID>LD-OR-26-0321</cbc:ID>
   <cbc:UUID>bb1366b0-cfa6-5b51-b032-09e912dd0b93</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
+  <cbc:IssueTime>10:46:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>
     <cbc:ID>VT-OC-26-0320</cbc:ID>

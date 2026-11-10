@@ -7,6 +7,7 @@
   <cbc:ID>TCB-IM-26-0144</cbc:ID>
   <cbc:UUID>d81b799d-e60d-59b3-a10e-91af358a3d84</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
+  <cbc:IssueTime>09:07:00</cbc:IssueTime>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

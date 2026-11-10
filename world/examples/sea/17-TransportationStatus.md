@@ -24,6 +24,8 @@ The port of discharge reports the container discharged and available.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-18**  
   Reported when the container is discharged.
+- `IssueTime` = **16:36:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignment
 
@@ -453,6 +455,7 @@ Inside `ReceiverParty`:
   <cbc:ID>PS-TS-26-0142</cbc:ID>
   <cbc:UUID>1713d8c6-6d60-56cc-af96-b2eb848695b4</cbc:UUID>
   <cbc:IssueDate>2026-05-18</cbc:IssueDate>
+  <cbc:IssueTime>16:36:00</cbc:IssueTime>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>
     <cac:ConsigneeParty>

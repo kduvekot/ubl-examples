@@ -7,6 +7,7 @@
   <cbc:ID>FE-INV-26-0313</cbc:ID>
   <cbc:UUID>47af4407-c4e0-59f4-b15c-7ba55c57e130</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>13:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-02</cbc:TaxPointDate>

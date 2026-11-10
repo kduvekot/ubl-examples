@@ -24,6 +24,8 @@ The granulate leaves Urvania; the waste processor declares the export.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-19**  
   Declared the day the barge is loaded.
+- `IssueTime` = **16:08:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporter Party
 
@@ -447,6 +449,7 @@ Inside `CustomsDeclaration`:
   <cbc:ID>RR-EX-26-0887</cbc:ID>
   <cbc:UUID>9d7cd654-55a1-5b6b-af72-1c8f54670605</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueTime>16:08:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>

@@ -24,6 +24,8 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   The first call-off under the awarded contract.
+- `IssueTime` = **10:18:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -548,6 +550,7 @@ Inside `OrderLine`:
   <cbc:ID>LPWD-PO-26-0211</cbc:ID>
   <cbc:UUID>0dfaecd7-ab70-522e-912d-0e639d70be1e</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueTime>10:18:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>

@@ -24,6 +24,8 @@ The distributor answers: confirmed, the truck is booked.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-26**  
   Answered the same day.
+- `IssueTime` = **11:14:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -264,6 +266,7 @@ Inside `DocumentResponse`:
   <cbc:ID>LD-DOC-26-0226</cbc:ID>
   <cbc:UUID>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
+  <cbc:IssueTime>11:14:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

@@ -24,6 +24,8 @@ Furniture and installation; a sale to a public body is exempt from sales tax, an
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-09**  
   Issued once the work report was approved.
+- `IssueTime` = **10:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-09**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -467,6 +469,7 @@ Inside `InvoiceLine`:
   <cbc:ID>BF-INV-26-0583</cbc:ID>
   <cbc:UUID>fd8a81de-9573-5186-80c9-8de9f5f56682</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
+  <cbc:IssueTime>10:10:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-09</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

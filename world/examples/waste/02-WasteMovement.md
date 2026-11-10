@@ -24,6 +24,8 @@ The recovery facility reports each movement received to the competent authority.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Reported when the waste has been received.
+- `IssueTime` = **12:34:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -455,6 +457,7 @@ Inside `Shipment`:
   <cbc:ID>RR-DOC-26-0207</cbc:ID>
   <cbc:UUID>dbd3deda-0d71-53e4-9a07-a1f9d4add949</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>12:34:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>

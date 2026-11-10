@@ -24,6 +24,8 @@ The forwarder, as customs agent, declares the export for the distributor at the 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
   The forwarder, as customs agent, declares the export at the seaport.
+- `IssueTime` = **14:25:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporter Party
 
@@ -647,6 +649,7 @@ Inside `CustomsDeclaration`:
   <cbc:ID>BF-EX-26-0135</cbc:ID>
   <cbc:UUID>4b360143-92f4-557a-aac2-22d33c03e880</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
+  <cbc:IssueTime>14:25:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

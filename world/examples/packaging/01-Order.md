@@ -24,6 +24,8 @@ Bench packaging, collected by the road carrier the manufacturer books. Delivery 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-27**  
   The manufacturer orders pallet film.
+- `IssueTime` = **08:44:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -428,6 +430,7 @@ Inside `OrderLine`:
   <cbc:ID>VI-PO-26-0521</cbc:ID>
   <cbc:UUID>bb51160f-cb33-5e41-a695-75ac4b4523df</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>08:44:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>

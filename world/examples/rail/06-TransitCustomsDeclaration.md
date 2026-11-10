@@ -24,6 +24,8 @@ The goods travel under customs transit from Urvania to the destination in Bayvar
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Lodged at the office of departure before the train leaves.
+- `IssueTime` = **17:29:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Transit Exporter Party
 
@@ -688,6 +690,7 @@ Inside `Shipment`:
   <cbc:ID>VI-TD-26-0331</cbc:ID>
   <cbc:UUID>39a0d3b7-c2fe-5e50-8ee2-54287be65033</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>17:29:00</cbc:IssueTime>
   <cac:TransitExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

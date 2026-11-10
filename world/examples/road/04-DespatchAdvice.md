@@ -24,6 +24,8 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   The day the 3PL loaded the truck.
+- `IssueTime` = **15:15:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -870,6 +872,7 @@ Inside `DespatchLine`:
   <cbc:ID>CL-DA-26-0153</cbc:ID>
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueTime>15:15:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>

@@ -24,6 +24,8 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-02**  
   Issued when the bales are on board.
+- `IssueTime` = **11:22:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-01**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -425,6 +427,7 @@ Inside `InvoiceLine`:
   <cbc:ID>SCG-INV-26-0207</cbc:ID>
   <cbc:UUID>4f18c6ce-24a6-56a3-a394-583665232c05</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+  <cbc:IssueTime>11:22:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-01</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>

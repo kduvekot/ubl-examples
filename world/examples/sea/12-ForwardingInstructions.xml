@@ -7,6 +7,7 @@
   <cbc:ID>BF-FI-26-0137</cbc:ID>
   <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
   <cbc:IssueDate>2026-05-10</cbc:IssueDate>
+  <cbc:IssueTime>09:15:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

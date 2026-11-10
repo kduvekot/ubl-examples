@@ -27,6 +27,7 @@ import datetime
 import os
 import sys
 import uuid
+import zlib
 from decimal import ROUND_HALF_UP, Decimal
 
 from lxml import etree
@@ -834,6 +835,10 @@ def main(flow_id, check=False):
         if "ProfileExecutionID" in own:
             header["ProfileExecutionID"] = V(f"{flow_id.upper()}-2026-01", "This run of the process: the same in "
                                                                           "every document of the flow.")
+        if "IssueTime" in own and "IssueTime" not in content:
+            minutes = 8 * 60 + zlib.crc32(f"{flow_id}:{n}".encode()) % 600
+            header["IssueTime"] = V(f"{minutes // 60:02d}:{minutes % 60:02d}:00", "The time the sender's system "
+                                    "issued the document, in the sender's local time.")
         if "UUID" in own:
             header["UUID"] = V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:{flow_id}:{n}:"
                                                                   f"{doc['doc']}")),

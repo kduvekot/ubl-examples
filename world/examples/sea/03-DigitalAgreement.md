@@ -24,6 +24,8 @@ Before trading, the two parties join the multilateral digital agreement that fix
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-05**  
   Signed before the first order.
+- `IssueTime` = **12:59:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `VersionID` = **1.0**  
   The first version of the agreement.
 
@@ -298,6 +300,7 @@ Inside `DigitalProcess`:
   <cbc:ID>LD-DAG-26-0125</cbc:ID>
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+  <cbc:IssueTime>12:59:00</cbc:IssueTime>
   <cbc:VersionID>1.0</cbc:VersionID>
   <cac:GovernorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>

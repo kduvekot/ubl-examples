@@ -7,6 +7,7 @@
   <cbc:ID>MS-DA-26-0633</cbc:ID>
   <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cbc:IssueTime>08:31:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>

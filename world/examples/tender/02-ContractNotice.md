@@ -26,6 +26,8 @@ The call for competition is published; it names the review body for appeals and 
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-11**  
   The call for competition, a month after the prior information notice.
+- `IssueTime` = **08:32:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Contracting Party
 
@@ -292,6 +294,7 @@ Inside `ProcurementProject`:
   <cbc:UUID>f07df174-cb95-54b5-a27e-7135aa91aec3</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-11</cbc:IssueDate>
+  <cbc:IssueTime>08:32:00</cbc:IssueTime>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

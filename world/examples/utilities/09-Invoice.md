@@ -24,6 +24,8 @@ The household's water bill, exempt from sales tax like every water bill.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   The monthly bill, issued on the first day of the next month.
+- `IssueTime` = **15:44:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
   21 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -421,6 +423,7 @@ Inside `InvoiceLine`:
   <cbc:ID>CSWC-INV-26-0319</cbc:ID>
   <cbc:UUID>4d48b45e-73c0-5476-98a9-69e873037095</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>15:44:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

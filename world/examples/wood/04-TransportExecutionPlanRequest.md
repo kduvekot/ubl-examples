@@ -24,6 +24,8 @@ Under DAP the sawmill is the transport user; it books the road carrier across th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-23**  
   Under DAP the sawmill books the truck across the border.
+- `IssueTime` = **16:19:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -369,6 +371,7 @@ Inside `Consignment`:
   <cbc:ID>MS-TR-26-0628</cbc:ID>
   <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
+  <cbc:IssueTime>16:19:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>

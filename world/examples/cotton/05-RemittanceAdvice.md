@@ -24,9 +24,11 @@ The ginnery pays the farm the net amount.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-16**  
   The ginnery pays the farm after classing.
+- `IssueTime` = **13:28:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the island's currency; it has three decimals.
-- `TotalPaymentAmount` = **3993.000** (currencyID `XLC`)  
+- `TotalPaymentAmount` = **3173.000** (currencyID `XLC`)  
   The invoice minus the credit note.
 
 ### Accounting Customer Party
@@ -290,8 +292,8 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   The self-billed invoice.
-- `DebitLineAmount` = **4068.000** (currencyID `XLC`)  
-  The amount of the self-billed invoice.
+- `DebitLineAmount` = **3248.000** (currencyID `XLC`)  
+  The amount still due on the self-billed invoice, after the season advance.
 - `BillingReference/SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0193**  
   The self-billed invoice paid.
 - `ID` = **2**  
@@ -313,8 +315,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:ID>SCG-RM-26-0195</cbc:ID>
   <cbc:UUID>9639158a-259f-55f7-8e76-a4797f59548c</cbc:UUID>
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
+  <cbc:IssueTime>13:28:00</cbc:IssueTime>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XLC">3993.000</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">3173.000</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -537,7 +540,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XLC">4068.000</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XLC">3248.000</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledInvoiceDocumentReference>
         <cbc:ID>SCG-SBI-26-0193</cbc:ID>

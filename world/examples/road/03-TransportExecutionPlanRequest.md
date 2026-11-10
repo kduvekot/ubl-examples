@@ -24,6 +24,8 @@ The distributor, as transport user, books the truck: collection at the seller's 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-17**  
   The distributor books the truck once the order is accepted.
+- `IssueTime` = **14:16:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -411,6 +413,7 @@ Inside `Consignment`:
   <cbc:ID>LD-TR-26-0151</cbc:ID>
   <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
+  <cbc:IssueTime>14:16:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

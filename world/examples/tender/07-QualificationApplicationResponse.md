@@ -26,6 +26,8 @@ The furniture maker declares it meets the selection criteria.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-19**  
   Returned before the tender deadline.
+- `IssueTime` = **10:47:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Contracting Party
 
@@ -237,6 +239,7 @@ Inside `TenderingCriterionResponse`:
   <cbc:UUID>27b07b57-4421-5730-8be4-08222db0cc1c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
+  <cbc:IssueTime>10:47:00</cbc:IssueTime>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

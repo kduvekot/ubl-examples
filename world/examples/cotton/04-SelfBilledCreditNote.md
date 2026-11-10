@@ -24,6 +24,10 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-14**  
   Issued after classing showed part of the delivery a grade lower.
+- `IssueTime` = **15:50:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `DueDate` = **2026-02-16**  
+  Set off on the day of payment.
 - `CreditNoteTypeCode` = **261**  
   UN/EDIFACT 1001 code 261: self-billed credit note.
 - `Note` = **Self-billed credit note under the season agreement.**  
@@ -50,6 +54,13 @@ Inside `DiscrepancyResponse`:
 - `Description` = **2,500 kg classed Strict Low Middling instead of Middling.**  
   In words.
 
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **SCG-SEASON-2026/03**  
+  The call-off.
+
 ### Billing Reference
 
 Inside `BillingReference`:
@@ -58,6 +69,20 @@ Inside `BillingReference`:
   The self-billed invoice this corrects.
 - `SelfBilledInvoiceDocumentReference/IssueDate` = **2026-02-07**  
   Its issue date.
+
+### Delivery Note Document Reference
+
+Inside `DeliveryNoteDocumentReference`:
+
+- `ID` = **LCF-DN-26-0192**  
+  The delivery classed.
+
+### Receipt Document Reference
+
+Inside `ReceiptDocumentReference`:
+
+- `ID` = **SCG-WB-26-0311**  
+  The weighbridge ticket.
 
 ### Contract Document Reference
 
@@ -265,6 +290,15 @@ Inside `AccountingSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42544** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lisavu Cotton Farm (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Payee Party
+
+Inside `PayeeParty`:
+
+- `PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lisavu Cotton Farm**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -282,6 +316,34 @@ Inside `SellerSupplierParty`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-02-05**  
+  The delivery classed.
+
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **DAP** (schemeID `INCOTERMS`)  
+  As on the self-billed invoice.
+
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `PaymentMeansCode` = **97** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 97: clearing between partners; set off against the payment.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `Note` = **Set off against the payment of the self-billed invoice.**  
+  How the credit is settled.
 
 ### Tax Total
 
@@ -358,6 +420,8 @@ Inside `CreditNoteLine`:
   <cbc:ID>SCG-SBC-26-0194</cbc:ID>
   <cbc:UUID>3fe47b86-e662-5cb9-93d0-9366b17fb485</cbc:UUID>
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
+  <cbc:IssueTime>15:50:00</cbc:IssueTime>
+  <cbc:DueDate>2026-02-16</cbc:DueDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
   <cbc:Note>Self-billed credit note under the season agreement.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
@@ -370,12 +434,21 @@ Inside `CreditNoteLine`:
     <cbc:ResponseCode>Grade</cbc:ResponseCode>
     <cbc:Description>2,500 kg classed Strict Low Middling instead of Middling.</cbc:Description>
   </cac:DiscrepancyResponse>
+  <cac:OrderReference>
+    <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
+  </cac:OrderReference>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
       <cbc:ID>SCG-SBI-26-0193</cbc:ID>
       <cbc:IssueDate>2026-02-07</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
+  <cac:DeliveryNoteDocumentReference>
+    <cbc:ID>LCF-DN-26-0192</cbc:ID>
+  </cac:DeliveryNoteDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>SCG-WB-26-0311</cbc:ID>
+  </cac:ReceiptDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
@@ -547,6 +620,14 @@ Inside `CreditNoteLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lisavu Cotton Farm</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -567,6 +648,18 @@ Inside `CreditNoteLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">97</cbc:PaymentMeansCode>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Set off against the payment of the self-billed invoice.</cbc:Note>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

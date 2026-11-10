@@ -26,6 +26,8 @@ The sawmill registers its interest, to receive the documents of the procedure.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-14**  
   Sent after the contract notice was published.
+- `IssueTime` = **14:05:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Economic Operator Party
 
@@ -230,6 +232,7 @@ Inside `ContractingParty`:
   <cbc:UUID>54bd8806-86b1-56b6-9c9a-10e7f28203ee</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
+  <cbc:IssueTime>14:05:00</cbc:IssueTime>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>

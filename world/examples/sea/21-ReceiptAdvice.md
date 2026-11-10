@@ -24,6 +24,8 @@ The buyer's 3PL confirms what arrived, for the buyer.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-21**  
   The buyer's 3PL confirms what arrived.
+- `IssueTime` = **17:22:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -548,6 +550,7 @@ Inside `ReceiptLine`:
   <cbc:ID>NW-RA-26-0146</cbc:ID>
   <cbc:UUID>5c11e38e-6191-5e5e-892a-38c6eedf1df0</cbc:UUID>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
+  <cbc:IssueTime>17:22:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>

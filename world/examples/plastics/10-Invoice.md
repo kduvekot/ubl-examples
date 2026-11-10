@@ -24,6 +24,8 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-20**  
   Issued once the granulate is on board.
+- `IssueTime` = **11:20:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-20**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -452,6 +454,7 @@ Inside `InvoiceLine`:
   <cbc:ID>RR-INV-26-0894</cbc:ID>
   <cbc:UUID>462dcfae-0a9f-5692-9219-92c1bf595e5d</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueTime>11:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>

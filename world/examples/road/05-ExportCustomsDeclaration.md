@@ -24,6 +24,8 @@ Goods leave Urvania: the manufacturer, as exporter, declares them to the customs
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   Declared the day the goods leave the warehouse for the border.
+- `IssueTime` = **13:25:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporter Party
 
@@ -649,6 +651,7 @@ Inside `CustomsDeclaration`:
   <cbc:ID>VI-EX-26-0155</cbc:ID>
   <cbc:UUID>c7655336-18bc-50b3-827c-45197e0a4a54</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueTime>13:25:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

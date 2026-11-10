@@ -24,6 +24,8 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-31**  
   Issued on delivery.
+- `IssueTime` = **17:37:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-30**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -712,6 +714,7 @@ Inside `InvoiceLine`:
   <cbc:ID>VI-INV-26-0218</cbc:ID>
   <cbc:UUID>ffa69e83-7da6-53b1-a7bc-7f7c5b99375c</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
+  <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>

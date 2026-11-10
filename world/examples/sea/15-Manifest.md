@@ -24,6 +24,8 @@ Before arrival the carrier lists the cargo on board for the island's customs.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-15**  
   Sent to the island's customs before arrival.
+- `IssueTime` = **16:08:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `ManifestTypeCode` = **Cargo**  
   A cargo manifest, of what the ship carries for Selanu.
 - `AdValoremIndicator` = **false**  
@@ -489,6 +491,7 @@ Inside `Shipment`:
   <cbc:ID>TOL-MF-26-0140</cbc:ID>
   <cbc:UUID>994b537b-1dd6-518f-bd1f-69b7d6308b90</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:IssueTime>16:08:00</cbc:IssueTime>
   <cbc:ManifestTypeCode>Cargo</cbc:ManifestTypeCode>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cac:SendingLogisticsOperatorParty>

@@ -24,6 +24,8 @@ The island's chamber of commerce certifies the bales for export, at the ginnery'
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-28**  
   Issued before shipment, at the ginnery's application.
+- `IssueTime` = **11:39:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporter Party
 
@@ -352,6 +354,7 @@ Inside `Shipment`:
   <cbc:ID>SCC-GC-26-0201</cbc:ID>
   <cbc:UUID>9d4c84eb-3f06-549a-83fe-14010b43c0bb</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
+  <cbc:IssueTime>11:39:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

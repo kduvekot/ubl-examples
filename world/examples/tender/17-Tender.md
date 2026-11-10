@@ -26,6 +26,8 @@ The furniture maker tenders wooden benches.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-23**  
   Submitted before the deadline.
+- `IssueTime` = **16:37:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Tenderer Party
 
@@ -235,6 +237,7 @@ Inside `TenderedProject`:
   <cbc:UUID>21770882-3c11-5392-aed3-5bd95b4c3cc7</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
+  <cbc:IssueTime>16:37:00</cbc:IssueTime>
   <cac:TendererParty>
     <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

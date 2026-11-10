@@ -24,6 +24,8 @@ Under DAP the manufacturer is the transport user; it books a container train to 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-07**  
   Under DAP the manufacturer is the transport user and books the train.
+- `IssueTime` = **10:32:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -391,6 +393,7 @@ Inside `Consignment`:
   <cbc:ID>VI-TR-26-0326</cbc:ID>
   <cbc:UUID>163ed53d-46c6-5332-9e7b-7d0ed347699a</cbc:UUID>
   <cbc:IssueDate>2026-04-07</cbc:IssueDate>
+  <cbc:IssueTime>10:32:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

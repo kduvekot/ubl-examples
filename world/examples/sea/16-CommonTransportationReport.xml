@@ -7,6 +7,7 @@
   <cbc:ID>TOL-CTR-26-0141</cbc:ID>
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
+  <cbc:IssueTime>15:38:00</cbc:IssueTime>
   <cac:ReporterParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>

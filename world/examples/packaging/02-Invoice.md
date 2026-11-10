@@ -24,6 +24,8 @@ Packaging exported to Urvania: no sales tax in Bayvarra, stated.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-02**  
   Issued when the film was collected.
+- `IssueTime` = **14:06:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-01**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -433,6 +435,7 @@ Inside `InvoiceLine`:
   <cbc:ID>RP-INV-26-0522</cbc:ID>
   <cbc:UUID>e9a74a88-d097-5909-b84b-a70773a19f79</cbc:UUID>
   <cbc:IssueDate>2026-05-02</cbc:IssueDate>
+  <cbc:IssueTime>14:06:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-01</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

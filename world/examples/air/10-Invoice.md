@@ -24,6 +24,8 @@ The forwarder invoices the air freight, including the road feeder leg, to the di
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-15**  
   Issued after the flight.
+- `IssueTime` = **17:03:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-14**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -486,6 +488,7 @@ Inside `InvoiceLine`:
   <cbc:ID>BF-INV-26-0331</cbc:ID>
   <cbc:UUID>f51c7d81-27af-52f7-8ddf-659cbaa635ac</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
+  <cbc:IssueTime>17:03:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-14</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

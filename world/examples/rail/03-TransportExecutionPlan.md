@@ -24,6 +24,8 @@ The rail carrier confirms the train and the slot at the intermodal hub.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-08**  
   The rail carrier confirms the slots on the container train.
+- `IssueTime` = **16:46:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DocumentStatusCode` = **Confirmed**  
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed).
 
@@ -438,6 +440,7 @@ Inside `Consignment`:
   <cbc:ID>FRC-TEP-26-0328</cbc:ID>
   <cbc:UUID>eb749a49-fd81-59f8-9c7a-8cb356fa55f1</cbc:UUID>
   <cbc:IssueDate>2026-04-08</cbc:IssueDate>
+  <cbc:IssueTime>16:46:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>

@@ -24,10 +24,26 @@ The manufacturer pays across the border.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-26**  
   The manufacturer pays across the border.
+- `IssueTime` = **14:22:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Payment of the invoice below.**  
+  What the advice is for.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the invoice paid; it has two decimals.
+- `TotalDebitAmount` = **34560.00** (currencyID `XBL`)  
+  The invoices paid.
+- `TotalCreditAmount` = **0.00** (currencyID `XBL`)  
+  No credits taken.
 - `TotalPaymentAmount` = **34560.00** (currencyID `XBL`)  
   The amount transferred: the payable amount of the invoice.
+- `PaymentOrderReference` = **VI-PAY-26-0625**  
+  The payment order the payer gave its bank.
+- `PayerReference` = **VI-0625**  
+  The payer's own reference for this payment run.
+- `InvoicingPartyReference` = **RF83MSINV260635**  
+  The reference the invoicing party asked to quote.
+- `LineCountNumeric` = **1**  
+  One invoice paid.
 
 ### Accounting Customer Party
 
@@ -310,10 +326,24 @@ Inside `RemittanceAdviceLine`:
   ISO 20022 purpose code SUPP: payment to a supplier.
 - `InvoicingPartyReference` = **RF83MSINV260635**  
   The reference the invoicing party asked to quote.
+- `AccountingSupplierParty/Party/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingSupplierParty/Party/PartyName/Name` = **Marrowdale Sawmill**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **MS-INV-26-0635**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-02-26**  
   Its issue date, so the reference is unambiguous.
+- `DocumentReference/ID` = **MS-INV-26-0635**  
+  The invoice paid, as a document reference.
+- `DocumentReference/IssueDate` = **2026-02-26**  
+  Its issue date.
+- `DocumentReference/DocumentTypeCode` = **380**  
+  UN/EDIFACT 1001 code 380: commercial invoice.
 
 ## The document
 
@@ -327,8 +357,16 @@ Inside `RemittanceAdviceLine`:
   <cbc:ID>VI-RM-26-0636</cbc:ID>
   <cbc:UUID>e5f65c03-a244-5c3b-a933-778dccb8be58</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
+  <cbc:IssueTime>14:22:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XBL">34560.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">34560.00</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>VI-PAY-26-0625</cbc:PaymentOrderReference>
+  <cbc:PayerReference>VI-0625</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -577,12 +615,37 @@ Inside `RemittanceAdviceLine`:
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Marrowdale Sawmill</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>MS-INV-26-0635</cbc:ID>
         <cbc:IssueDate>2026-02-26</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>MS-INV-26-0635</cbc:ID>
+      <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

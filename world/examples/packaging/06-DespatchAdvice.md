@@ -24,6 +24,8 @@ The mill announces the delivery with the road carrier it booked.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
   The day the shirts left the mill.
+- `IssueTime` = **11:35:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -408,6 +410,7 @@ Inside `DespatchLine`:
   <cbc:ID>LTM-DA-26-0526</cbc:ID>
   <cbc:UUID>c1af718a-512a-5aed-8622-6a31ae7211c9</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
+  <cbc:IssueTime>11:35:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0525</cbc:ID>
   </cac:OrderReference>

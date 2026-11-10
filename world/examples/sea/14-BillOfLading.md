@@ -26,6 +26,8 @@ The negotiable bill of lading, issued to the forwarder that gave the instruction
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Issued when the goods are shipped on board.
+- `IssueTime` = **10:54:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `ShippingOrderID` = **BF-FI-26-0137**  
   The forwarder's booking with the carrier.
 - `ToOrderIndicator` = **true**  
@@ -1232,6 +1234,7 @@ Inside `Shipment`:
   <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
   <cbc:UUID>aa5970ad-efd9-5660-a1d7-8a2f0bf2de7b</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:IssueTime>10:54:00</cbc:IssueTime>
   <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>

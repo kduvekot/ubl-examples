@@ -24,6 +24,8 @@ The retailer forecasts its sales for the coming weeks.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   Sent after the catalogue arrived.
+- `IssueTime` = **11:55:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `ForecastPurposeCode` = **Sales**  
   A forecast of the store's sales, so the distributor can plan its stock.
 
@@ -493,6 +495,7 @@ Inside `ForecastLine`:
   <cbc:ID>BS-FC-26-0221</cbc:ID>
   <cbc:UUID>60706c39-36eb-5254-aefe-265082af3657</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueTime>11:55:00</cbc:IssueTime>
   <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
   <cac:ForecastPeriod>
     <cbc:StartDate>2026-05-04</cbc:StartDate>

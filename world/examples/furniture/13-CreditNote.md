@@ -24,6 +24,8 @@ The returned bench sets are credited.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-03**  
   Issued when the returned sets arrived back.
+- `IssueTime` = **11:55:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-13**  
   The furniture maker pays the credit back within ten days.
 - `CreditNoteTypeCode` = **381**  
@@ -433,6 +435,7 @@ Inside `CreditNoteLine`:
   <cbc:ID>BF-CN-26-0579</cbc:ID>
   <cbc:UUID>3eb03476-6b48-5174-b997-aaed7a5b8b5b</cbc:UUID>
   <cbc:IssueDate>2026-05-03</cbc:IssueDate>
+  <cbc:IssueTime>11:55:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-13</cbc:DueDate>
   <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
   <cbc:Note>The store paid the invoice; the credit is refunded.</cbc:Note>

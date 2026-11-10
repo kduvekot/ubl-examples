@@ -24,6 +24,8 @@ The air waybill; the airline's road feeder service, run by the road carrier, is 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   The air waybill, issued when the airline accepts the cargo.
+- `IssueTime` = **10:43:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -533,6 +535,7 @@ Inside `Shipment`:
   <cbc:ID>KAC-WB-26-0325</cbc:ID>
   <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueTime>10:43:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5120</cbc:IndustryClassificationCode>

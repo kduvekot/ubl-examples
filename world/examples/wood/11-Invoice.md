@@ -24,6 +24,8 @@ Timber sold for manufacture: exempt from the state sales tax, and the invoice sa
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-09**  
   Issued when the timber was collected.
+- `IssueTime` = **09:54:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-08**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -405,6 +407,7 @@ Inside `InvoiceLine`:
   <cbc:ID>MS-INV-26-0638</cbc:ID>
   <cbc:UUID>6aa25014-301c-5e58-b842-6b77c0387ed1</cbc:UUID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
+  <cbc:IssueTime>09:54:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-08</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

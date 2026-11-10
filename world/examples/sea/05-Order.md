@@ -24,6 +24,8 @@ Delivery terms CIF port of the island: the order names the buyer's 3PL as delive
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-07**  
   The island buyer orders benches for its city's parks.
+- `IssueTime` = **11:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -601,6 +603,7 @@ Inside `OrderLine`:
   <cbc:ID>VT-PO-26-0127</cbc:ID>
   <cbc:UUID>96cdcd1a-b60b-535b-b857-023213a9b16e</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
+  <cbc:IssueTime>11:10:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>

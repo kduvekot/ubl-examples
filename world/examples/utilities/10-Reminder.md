@@ -24,6 +24,8 @@ The household has not paid by the due date; the utility reminds it of the amount
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-01**  
   Sent a week after the due date passed without payment.
+- `IssueTime` = **14:29:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `ReminderTypeCode` = **Payment**  
   A reminder of a payment overdue.
 - `ReminderSequenceNumeric` = **1**  
@@ -257,6 +259,7 @@ Inside `ReminderLine`:
   <cbc:ID>CSWC-DOC-26-0321</cbc:ID>
   <cbc:UUID>ff7b6a47-db42-5844-b098-ee8d7f1a7e38</cbc:UUID>
   <cbc:IssueDate>2026-05-01</cbc:IssueDate>
+  <cbc:IssueTime>14:29:00</cbc:IssueTime>
   <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>

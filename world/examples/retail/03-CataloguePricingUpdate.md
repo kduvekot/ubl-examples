@@ -24,6 +24,8 @@ The distributor lowers the price of the spare side frame.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-20**  
   The distributor lowers a price during the season.
+- `IssueTime` = **13:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Related Catalogue Reference
 
@@ -294,6 +296,7 @@ Inside `CataloguePricingUpdateLine`:
   <cbc:ID>LD-DOC-26-0219</cbc:ID>
   <cbc:UUID>cb1037ec-e5d5-5660-b5af-c39c2b7e1438</cbc:UUID>
   <cbc:IssueDate>2026-05-20</cbc:IssueDate>
+  <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cac:RelatedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
   </cac:RelatedCatalogueReference>

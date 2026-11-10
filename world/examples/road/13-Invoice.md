@@ -24,6 +24,8 @@ The manufacturer invoices the goods only (no freight under FCA) and asks for pay
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-24**  
   Issued when the goods have left the warehouse.
+- `IssueTime` = **10:48:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -665,6 +667,7 @@ Inside `InvoiceLine`:
   <cbc:ID>VI-INV-26-0164</cbc:ID>
   <cbc:UUID>5c2aeb3c-f6ea-5197-8c3b-8b6246918f0f</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
+  <cbc:IssueTime>10:48:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-24</cbc:TaxPointDate>

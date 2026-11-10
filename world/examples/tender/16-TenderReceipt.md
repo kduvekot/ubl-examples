@@ -26,6 +26,8 @@ The authority acknowledges the manufacturer's tender, with the time it was regis
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-25**  
   Sent on receipt of the tender.
+- `IssueTime` = **17:47:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `RegisteredDate` = **2026-02-25**  
   The day the tender was registered, before the deadline.
 - `RegisteredTime` = **11:42:00**  
@@ -251,6 +253,7 @@ Inside `ReceiverParty`:
   <cbc:UUID>898bc194-d4b8-5097-a04f-94fa742d7f7e</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueTime>17:47:00</cbc:IssueTime>
   <cbc:RegisteredDate>2026-02-25</cbc:RegisteredDate>
   <cbc:RegisteredTime>11:42:00</cbc:RegisteredTime>
   <cac:TenderDocumentReference>

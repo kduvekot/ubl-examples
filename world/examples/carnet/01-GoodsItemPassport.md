@@ -24,6 +24,8 @@ The chamber issues the carnet to the manufacturer, who holds it while the sample
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-25**  
   Issued before the samples leave for the fair.
+- `IssueTime` = **15:04:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Validity Period
 
@@ -693,6 +695,7 @@ Inside `GoodsItemPassportCounterfoil`:
   <cbc:ID>FCC-DOC-26-0724</cbc:ID>
   <cbc:UUID>eba67af9-0d62-5339-b7c5-75faae5007fc</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
+  <cbc:IssueTime>15:04:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-05-25</cbc:StartDate>
     <cbc:EndDate>2027-05-25</cbc:EndDate>

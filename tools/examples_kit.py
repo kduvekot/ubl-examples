@@ -429,12 +429,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
     else:
         rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * unit_price(d["item"], cur), cur),
                  tax_rule(seller, buyer, d["item"])) for d in rows_spec]
-    gross = {}                                       # a line allowance lowers the line amount before the totals
-    for k, (d, q, amt, rule) in enumerate(rows):
-        la = d.get("line_allowance")
-        if la:
-            gross[k] = amt
-            rows[k] = (d, q, amt - money(amt * Decimal(la["percent"]) / 100, cur), rule)
+    rows, gross = line_allowances(rows, cur)
     base = sum(r[2] for r in rows)
     charge_rows = [({"item": c["like"]}, None, money(Decimal(str(c["amount"])), cur), tax_rule(seller, buyer, c["like"]))
                    for c in (charges or [])]
@@ -466,27 +461,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "Item": item(d["item"], tax_category(rule)),
             "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
-    for k, ((d, q, amt, rule), line) in enumerate(zip(rows, out["InvoiceLine"])):
-        la = d.get("line_allowance")
-        if la:
-            line["LineExtensionAmount"] = amount(amt, cur, f"{q} × {unit_price(d['item'], cur)} = {gross[k]}, less the "
-                                                           f"{la['percent']} % {la['reason'].lower()}.")
-            line["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
-                                       "AllowanceChargeReasonCode": V(la["code"], la["code_why"],
-                                                                      listID="UN/EDIFACT EDED 5189"),
-                                       "AllowanceChargeReason": V(la["reason"], la["why"]),
-                                       "MultiplierFactorNumeric": V(str(Decimal(la["percent"]) / 100), "The rate."),
-                                       "Amount": amount(gross[k] - amt, cur, "The deduction on the line."),
-                                       "BaseAmount": amount(gross[k], cur, "The line at the full price.")}
-            line["ItemPriceExtension"] = {"Amount": amount(gross[k], cur, "Price times quantity, before the "
-                                                                          "allowance.")}
-        if d.get("line_tax"):
-            pct = Decimal(str(rule[1]))
-            tax_l = money(amt * pct / 100, cur)
-            line["TaxInclusiveLineExtensionAmount"] = amount(amt + tax_l, cur, "The line with its tax.")
-            line["TaxTotal"] = {"TaxAmount": amount(tax_l, cur, f"{pct} % of the line amount, for the buyer's "
-                                                                "booking per line.")}
-        deep_merge(line, d.get("line_extra"))
+    line_features(rows, out["InvoiceLine"], cur, gross)
     if rows_spec is None and "OrderReference" in refs:      # the lines of the deal are the lines of the order
         for i, line in enumerate(out["InvoiceLine"], 1):
             line["OrderLineReference"] = {"LineID": V(str(i), "The order line this invoice line bills.")}
@@ -511,6 +486,16 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None):
         "ID": V(flow.number("remittance", payer, "RemittanceAdvice"), "The payer's remittance number."),
         "IssueDate": V(flow.date(day), why),
         "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice paid"),
+        "Note": V("Payment of the invoice below.", "What the advice is for."),
+        "TotalDebitAmount": amount(total, cur, "The invoices paid."),
+        "TotalCreditAmount": amount(total - paid, cur, "Credits taken: the settlement discount." if discount else
+                                    "No credits taken."),
+        "PaymentOrderReference": V(f"{initials(payer)}-PAY-26-{flow.base:04d}", "The payment order the payer gave "
+                                                                                "its bank."),
+        "PayerReference": V(f"{initials(payer)}-{flow.base:04d}", "The payer's own reference for this payment run."),
+        "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked to "
+                                                                      "quote."),
+        "LineCountNumeric": V("1", "One invoice paid."),
         "TotalPaymentAmount": amount(paid, cur, f"The amount transferred: the payable amount less the {discount} % "
                                                 f"discount for payment within the discount period." if discount else
                                      "The amount transferred: the payable amount of the invoice."),
@@ -528,6 +513,11 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None):
             "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked "
                                                                           "to quote."),
             "BalanceAmount": amount(0, cur, "Nothing remains open on the invoice after this payment."),
+            "AccountingSupplierParty": {"Party": party_short(payee)},
+            "AccountingCustomerParty": {"Party": party_short(payer)},
+            "DocumentReference": {"ID": V(flow.numbers[key], "The invoice paid, as a document reference."),
+                                  "DocumentTypeCode": V("380", "UN/EDIFACT 1001 code 380: commercial invoice."),
+                                  "IssueDate": V(flow.numbers[f"{key}-date"], "Its issue date.")},
             "DebitLineAmount": amount(total, cur, "The amount of the invoice this payment settles: the whole payable "
                                                   "amount. Paid invoices are debits on a remittance advice, as in the "
                                                   "OASIS example UBL-RemittanceAdvice-2.0-Example."),
@@ -690,10 +680,10 @@ def transportation_status(flow, n, doc, day, event_why, description, location, e
 def credit_note(flow, n, doc, day, why, rows_spec, refs):
     seller, buyer = doc["from"], doc["to"]
     cur = currency_of(seller)
-    rows = spec_rows(rows_spec, seller, buyer, cur)
+    rows, gross = line_allowances(spec_rows(rows_spec, seller, buyer, cur), cur)
     base = sum(r[2] for r in rows)
     tax, total = tax_total(rows, cur)
-    return {"ID": V(flow.number(f"credit-{n}", seller, "CreditNote"), "The seller's credit note number."),
+    out = {"ID": V(flow.number(f"credit-{n}", seller, "CreditNote"), "The seller's credit note number."),
             "IssueDate": V(flow.date(day), why),
             "CreditNoteTypeCode": V("381", "UN/EDIFACT 1001 code 381: credit note."),
             "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice credited"),
@@ -710,7 +700,45 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs):
                                 "CreditedQuantity": qty(q, ITEM[d["item"]]["unit"], d["why"]),
                                 "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
                                 "Item": item(d["item"], tax_category(rule)),
-                                "Price": price_block(d["item"])} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+                                "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+    line_features(rows, out["CreditNoteLine"], cur, gross)
+    return out
+
+
+def line_allowances(rows, cur):
+    """A line allowance lowers the line amount before the totals; returns the rows and the gross line amounts."""
+    gross, out = {}, list(rows)
+    for k, (d, q, amt, rule) in enumerate(out):
+        la = d.get("line_allowance")
+        if la:
+            gross[k] = amt
+            out[k] = (d, q, amt - money(amt * Decimal(la["percent"]) / 100, cur), rule)
+    return out, gross
+
+
+def line_features(rows, lines, cur, gross):
+    """What a scenario asks of a line: its allowance, its own tax total, extra elements."""
+    for k, ((d, q, amt, rule), line) in enumerate(zip(rows, lines)):
+        la = d.get("line_allowance")
+        if la:
+            line["LineExtensionAmount"] = amount(amt, cur, f"{q} × the price = {gross[k]}, less the {la['percent']} % "
+                                                           f"{la['reason'].lower()}.")
+            line["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
+                                       "AllowanceChargeReasonCode": V(la["code"], la["code_why"],
+                                                                      listID="UN/EDIFACT EDED 5189"),
+                                       "AllowanceChargeReason": V(la["reason"], la["why"]),
+                                       "MultiplierFactorNumeric": V(str(Decimal(la["percent"]) / 100), "The rate."),
+                                       "Amount": amount(gross[k] - amt, cur, "The deduction on the line."),
+                                       "BaseAmount": amount(gross[k], cur, "The line at the full price.")}
+            line["ItemPriceExtension"] = {"Amount": amount(gross[k], cur, "Price times quantity, before the "
+                                                                          "allowance.")}
+        if d.get("line_tax"):
+            pct = Decimal(str(rule[1]))
+            tax_l = money(amt * pct / 100, cur)
+            line["TaxInclusiveLineExtensionAmount"] = amount(amt + tax_l, cur, "The line with its tax.")
+            line["TaxTotal"] = {"TaxAmount": amount(tax_l, cur, f"{pct} % of the line amount, for the buyer's "
+                                                                "booking per line.")}
+        deep_merge(line, d.get("line_extra"))
 
 
 def spec_rows(rows_spec, seller, buyer, cur):

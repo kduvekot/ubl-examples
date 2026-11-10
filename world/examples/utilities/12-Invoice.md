@@ -24,6 +24,8 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   The monthly bill, issued on the first day of the next month.
+- `IssueTime` = **17:37:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
   21 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -385,6 +387,7 @@ Inside `InvoiceLine`:
   <cbc:ID>ST-INV-26-0322</cbc:ID>
   <cbc:UUID>d34bf420-eb98-5f5f-9d06-271cb4ca7e5a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>

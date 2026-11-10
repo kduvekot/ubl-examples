@@ -24,6 +24,8 @@ Under DAP the buyer clears the import, so the contracting authority declares the
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-31**  
   Under DAP the buyer clears the import: the authority declares the benches.
+- `IssueTime` = **16:15:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Importer Party
 
@@ -522,6 +524,7 @@ Inside `Shipment`:
   <cbc:ID>LPWD-IM-26-0217</cbc:ID>
   <cbc:UUID>af0fa2f7-eb6c-535d-8166-d10b11a1a8b2</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
+  <cbc:IssueTime>16:15:00</cbc:IssueTime>
   <cac:ImporterParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

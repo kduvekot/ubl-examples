@@ -26,6 +26,8 @@ The manufacturer declares its qualifications and those of its consortium partner
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-25**  
   Submitted with the tender.
+- `IssueTime` = **08:52:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Tenderer Party Qualification
 
@@ -318,6 +320,7 @@ Inside `ContractingParty`:
   <cbc:UUID>544dae4e-ce5c-5e98-a9b3-2b79b00edc95</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueTime>08:52:00</cbc:IssueTime>
   <cac:TendererPartyQualification>
     <cac:MainQualifyingParty>
       <cac:Party>

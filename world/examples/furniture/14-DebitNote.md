@@ -24,6 +24,8 @@ The store charges the furniture maker for transporting the returned sets back.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-04**  
   After the returned sets were collected.
+- `IssueTime` = **11:12:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-03**  
   Thirty days, the store's terms.
 - `Note` = **The furniture maker asked for the sets back; the store charges the transport.**  
@@ -41,6 +43,15 @@ The store charges the furniture maker for transporting the returned sets back.
 - `DefaultLanguageCode` = **en**  
   The language of the texts.
 
+### Discrepancy Response
+
+Inside `DiscrepancyResponse`:
+
+- `ResponseCode` = **ReturnCost**  
+  Why the store debits: the cost of a return the furniture maker asked for.
+- `Description` = **Return transport of six unsold garden sets.**  
+  In words.
+
 ### Order Reference
 
 Inside `OrderReference`:
@@ -54,6 +65,13 @@ Inside `BillingReference`:
 
 - `CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
   The credit note of the returned sets.
+
+### Contract Document Reference
+
+Inside `ContractDocumentReference`:
+
+- `ID` = **BF-DOC-26-0568**  
+  The quotation the line was bought under; it puts returns at the maker's cost.
 
 ### Additional Document Reference
 
@@ -268,6 +286,42 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Payee Party
+
+Inside `PayeeParty`:
+
+- `PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Buyer Customer Party
+
+Inside `BuyerCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Seller Supplier Party
+
+Inside `SellerSupplierParty`:
+
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-05-02**  
+  The sets were delivered back.
+- `DeliveryLocation/Name` = **Brackenmere Furniture, Marrowdale**  
+  Where.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -368,8 +422,26 @@ Inside `DebitNoteLine`:
   One return delivery.
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
   The store's charge for one return delivery.
+- `TaxInclusiveLineExtensionAmount` = **85.00** (currencyID `XBL`)  
+  The line with its tax.
+- `AccountingCostCode` = **6120**  
+  The store's cost centre the income is booked on.
+- `AccountingCost` = **Garden department**  
+  The cost centre in words.
+- `PaymentPurposeCode` = **TRPT**  
+  ISO 20022 purpose code TRPT: transport.
+- `DiscrepancyResponse/ResponseCode` = **ReturnCost**  
+  The return transport.
+- `BillingReference/CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
+  The credit note.
+- `BillingReference/BillingReferenceLine/ID` = **1**  
+  Its line of the returned sets.
+- `DocumentReference/ID` = **BF-DOC-26-0578**  
+  The instruction for returns.
 - `Delivery/ActualDeliveryDate` = **2026-05-02**  
   The day the sets were delivered back to the furniture maker.
+- `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  The tax of the line.
 - `Item/Description` = **Transport of returned goods back to the supplier, per delivery.**  
   The seller's description; item return-transport of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Return transport**  
@@ -401,6 +473,7 @@ Inside `DebitNoteLine`:
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
   <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueTime>11:12:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-03</cbc:DueDate>
   <cbc:Note>The furniture maker asked for the sets back; the store charges the transport.</cbc:Note>
   <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
@@ -409,6 +482,10 @@ Inside `DebitNoteLine`:
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cac:DiscrepancyResponse>
+    <cbc:ResponseCode>ReturnCost</cbc:ResponseCode>
+    <cbc:Description>Return transport of six unsold garden sets.</cbc:Description>
+  </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
@@ -417,6 +494,9 @@ Inside `DebitNoteLine`:
       <cbc:ID>BF-CN-26-0579</cbc:ID>
     </cac:CreditNoteDocumentReference>
   </cac:BillingReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-DOC-26-0578</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -600,6 +680,40 @@ Inside `DebitNoteLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Brightmarket Stores</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Brackenmere Furniture, Marrowdale</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
@@ -665,9 +779,30 @@ Inside `DebitNoteLine`:
     <cbc:Note>Collected with the store's van.</cbc:Note>
     <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">85.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode>TRPT</cbc:PaymentPurposeCode>
+    <cac:DiscrepancyResponse>
+      <cbc:ResponseCode>ReturnCost</cbc:ResponseCode>
+    </cac:DiscrepancyResponse>
+    <cac:BillingReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>BF-CN-26-0579</cbc:ID>
+      </cac:CreditNoteDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>BF-DOC-26-0578</cbc:ID>
+    </cac:DocumentReference>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
     </cac:Delivery>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>Transport of returned goods back to the supplier, per delivery.</cbc:Description>
       <cbc:Name>Return transport</cbc:Name>

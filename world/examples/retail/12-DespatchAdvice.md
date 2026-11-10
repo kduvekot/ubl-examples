@@ -24,6 +24,8 @@ The distributor announces the delivery and the truck that brings it.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-29**  
   The day the truck was loaded at the distribution centre.
+- `IssueTime` = **15:34:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -750,6 +752,7 @@ Inside `DespatchLine`:
   <cbc:ID>LD-DA-26-0229</cbc:ID>
   <cbc:UUID>4b7e9055-23cd-5fbb-b498-b08f07b17c6e</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
+  <cbc:IssueTime>15:34:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:OrderReference>

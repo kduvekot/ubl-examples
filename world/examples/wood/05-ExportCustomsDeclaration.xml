@@ -7,6 +7,7 @@
   <cbc:ID>MS-EX-26-0630</cbc:ID>
   <cbc:UUID>b3984f33-057a-5c43-b8c5-7988b8add6f4</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cbc:IssueTime>09:25:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>

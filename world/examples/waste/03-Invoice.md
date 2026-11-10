@@ -24,6 +24,8 @@ The waste processor invoices collection and recovery.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-04**  
   Issued after the waste was collected and recovered.
+- `IssueTime` = **12:44:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-04**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -407,6 +409,7 @@ Inside `InvoiceLine`:
   <cbc:ID>RR-INV-26-0208</cbc:ID>
   <cbc:UUID>24a1c5fe-6940-5f16-8f48-486333315def</cbc:UUID>
   <cbc:IssueDate>2026-04-04</cbc:IssueDate>
+  <cbc:IssueTime>12:44:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-04</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>

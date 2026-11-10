@@ -24,6 +24,8 @@ The island's export: the ginnery declares the bales to customs.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-01**  
   The island's export: declared before loading.
+- `IssueTime` = **14:43:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporter Party
 
@@ -339,6 +341,7 @@ Inside `CustomsDeclaration`:
   <cbc:ID>SCG-EX-26-0202</cbc:ID>
   <cbc:UUID>b7da114f-e3d0-5a1a-8bbe-d9316a49600a</cbc:UUID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+  <cbc:IssueTime>14:43:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

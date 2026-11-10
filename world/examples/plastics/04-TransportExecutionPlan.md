@@ -24,6 +24,8 @@ The barge operator confirms the vessel and the sailing.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-15**  
   The barge operator confirms the sailing.
+- `IssueTime` = **13:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DocumentStatusCode` = **Confirmed**  
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed).
 
@@ -422,6 +424,7 @@ Inside `Consignment`:
   <cbc:ID>FB-TEP-26-0886</cbc:ID>
   <cbc:UUID>32791589-65d7-5d36-bda8-9b68dad29bdd</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
+  <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>

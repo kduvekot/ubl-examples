@@ -24,6 +24,8 @@ The buyer answers: accepted and scheduled for payment.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-30**  
   Answered the next day.
+- `IssueTime` = **13:49:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -226,6 +228,7 @@ Inside `DocumentResponse`:
   <cbc:ID>VT-DOC-26-0149</cbc:ID>
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
+  <cbc:IssueTime>13:49:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

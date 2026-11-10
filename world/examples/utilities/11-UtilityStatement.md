@@ -24,6 +24,8 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
+- `IssueTime` = **12:03:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `UtilityStatementTypeCode` = **Telephone**  
   The kind of utility the statement is about.
 - `DocumentCurrencyCode` = **XLC**  
@@ -205,6 +207,7 @@ Inside `SubscriberParty`:
   <cbc:ID>ST-DOC-26-0323</cbc:ID>
   <cbc:UUID>07c60e96-9140-5775-a99d-f7b75b652e52</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>12:03:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Telephone</cbc:UtilityStatementTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>

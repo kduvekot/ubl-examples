@@ -24,6 +24,8 @@ No answer after a month: a reminder.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-08-23**  
   No answer after a month.
+- `IssueTime` = **12:04:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `ProcedureCode` = **TemporaryAdmission**  
   The procedure the samples were under on the island.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
@@ -260,6 +262,7 @@ Inside `GoodsItemPassportCounterfoil`:
   <cbc:ID>SCC-DOC-26-0727</cbc:ID>
   <cbc:UUID>e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4</cbc:UUID>
   <cbc:IssueDate>2026-08-23</cbc:IssueDate>
+  <cbc:IssueTime>12:04:00</cbc:IssueTime>
   <cbc:ProcedureCode>TemporaryAdmission</cbc:ProcedureCode>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ProofOfReexportationRequestDocumentReference>

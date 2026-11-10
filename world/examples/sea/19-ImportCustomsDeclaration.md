@@ -24,6 +24,8 @@ Under CIF the buyer clears the import; its licensed customs broker files the dec
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-19**  
   The customs broker declares the import for the buyer.
+- `IssueTime` = **09:07:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Importer Party
 
@@ -750,6 +752,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:ID>TCB-IM-26-0144</cbc:ID>
   <cbc:UUID>d81b799d-e60d-59b3-a10e-91af358a3d84</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
+  <cbc:IssueTime>09:07:00</cbc:IssueTime>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

@@ -26,6 +26,8 @@ The manufacturer and its consortium partner are admitted to the evaluation.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-03**  
   After the check of the qualifications.
+- `IssueTime` = **15:09:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -249,6 +251,7 @@ Inside `QualificationResolution`:
   <cbc:UUID>e88bee18-0123-544d-a805-b3c5573d165c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
+  <cbc:IssueTime>15:09:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

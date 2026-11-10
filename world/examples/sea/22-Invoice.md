@@ -24,6 +24,8 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Issued when the goods are on board.
+- `IssueTime` = **12:32:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-28**  
   45 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -905,6 +907,7 @@ Inside `InvoiceLine`:
   <cbc:ID>LD-INV-26-0147</cbc:ID>
   <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:IssueTime>12:32:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>

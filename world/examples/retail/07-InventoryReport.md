@@ -24,6 +24,8 @@ The retailer reports its stock per item, so the distributor can replenish.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-23**  
   The weekly stock report.
+- `IssueTime` = **17:43:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Retailer Customer Party
 
@@ -471,6 +473,7 @@ Inside `InventoryReportLine`:
   <cbc:ID>BS-IR-26-0223</cbc:ID>
   <cbc:UUID>fad19e90-681e-50c2-8501-5068414c15a8</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
+  <cbc:IssueTime>17:43:00</cbc:IssueTime>
   <cac:RetailerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>

@@ -24,6 +24,8 @@ The call-off leaves Urvania; the manufacturer declares the export.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-30**  
   Declared when the goods leave for the border.
+- `IssueTime` = **08:06:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporter Party
 
@@ -615,6 +617,7 @@ Inside `CustomsDeclaration`:
   <cbc:ID>VI-EX-26-0215</cbc:ID>
   <cbc:UUID>50fa98a8-ede0-548d-bf67-6e9e4318b625</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
+  <cbc:IssueTime>08:06:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

@@ -24,6 +24,8 @@ The mine announces what was loaded into which wagons, so the factory can plan th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-10**  
   The day the train was loaded and weighed.
+- `IssueTime` = **15:37:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -404,6 +406,7 @@ Inside `DespatchLine`:
   <cbc:ID>SM-DA-26-0308</cbc:ID>
   <cbc:UUID>e3281a6d-51f4-5981-b7f0-b43b6a9cf2da</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
+  <cbc:IssueTime>15:37:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>

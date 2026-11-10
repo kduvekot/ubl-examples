@@ -24,6 +24,8 @@ The distributor's system confirms the invoice was received and accepted.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
   Sent automatically when the invoice was processed.
+- `IssueTime` = **11:07:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -256,6 +258,7 @@ Inside `DocumentResponse`:
   <cbc:ID>LD-DOC-26-0165</cbc:ID>
   <cbc:UUID>46d48b5d-7711-585d-83b9-04b7dbc143c2</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
+  <cbc:IssueTime>11:07:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

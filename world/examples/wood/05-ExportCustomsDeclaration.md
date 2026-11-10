@@ -24,6 +24,8 @@ The slats leave Bayvarra; the sawmill declares the export at the land border.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-26**  
   Declared when the truck leaves for the border.
+- `IssueTime` = **09:25:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporter Party
 
@@ -523,6 +525,7 @@ Inside `CustomsDeclaration`:
   <cbc:ID>MS-EX-26-0630</cbc:ID>
   <cbc:UUID>b3984f33-057a-5c43-b8c5-7988b8add6f4</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cbc:IssueTime>09:25:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>

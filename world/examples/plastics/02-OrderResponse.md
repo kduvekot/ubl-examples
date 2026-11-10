@@ -24,6 +24,8 @@ The waste processor confirms the lot and the loading date.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   The waste processor confirms the lot.
+- `IssueTime` = **15:39:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderResponseCode` = **AP**  
   UN/EDIFACT 4343 code AP: accepted, the order is accepted as it stands.
 
@@ -244,6 +246,7 @@ Inside `BuyerCustomerParty`:
   <cbc:ID>RR-OR-26-0883</cbc:ID>
   <cbc:UUID>d96e3f6a-2649-56f7-9849-4bc3034c1d57</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>15:39:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>

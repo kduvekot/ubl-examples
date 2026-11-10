@@ -24,6 +24,8 @@ Bales of grade cotton. Delivery terms FOB the island port: the mill arranges the
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-24**  
   The mill orders the first container of the season.
+- `IssueTime` = **11:08:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XLC**  
@@ -330,6 +332,7 @@ Inside `OrderLine`:
   <cbc:ID>LTM-PO-26-0197</cbc:ID>
   <cbc:UUID>ae776d06-38fa-5aaf-bb6f-68a20f9b7dff</cbc:UUID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueTime>11:08:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>

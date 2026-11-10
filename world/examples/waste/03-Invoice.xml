@@ -7,6 +7,7 @@
   <cbc:ID>RR-INV-26-0208</cbc:ID>
   <cbc:UUID>24a1c5fe-6940-5f16-8f48-486333315def</cbc:UUID>
   <cbc:IssueDate>2026-04-04</cbc:IssueDate>
+  <cbc:IssueTime>12:44:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-04</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>

@@ -24,10 +24,26 @@ The mill pays the island's ginnery: money flows to the island for once.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-29**  
   The mill pays the ginnery: money flows to the island.
+- `IssueTime` = **12:38:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Payment of the invoice below.**  
+  What the advice is for.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the currency of the invoice paid; it has three decimals.
+- `TotalDebitAmount` = **6055.452** (currencyID `XLC`)  
+  The invoices paid.
+- `TotalCreditAmount` = **0.000** (currencyID `XLC`)  
+  No credits taken.
 - `TotalPaymentAmount` = **6055.452** (currencyID `XLC`)  
   The amount transferred: the payable amount of the invoice.
+- `PaymentOrderReference` = **LTM-PAY-26-0191**  
+  The payment order the payer gave its bank.
+- `PayerReference` = **LTM-0191**  
+  The payer's own reference for this payment run.
+- `InvoicingPartyReference` = **RF30SCGINV260207**  
+  The reference the invoicing party asked to quote.
+- `LineCountNumeric` = **1**  
+  One invoice paid.
 
 ### Accounting Customer Party
 
@@ -282,10 +298,24 @@ Inside `RemittanceAdviceLine`:
   ISO 20022 purpose code SUPP: payment to a supplier.
 - `InvoicingPartyReference` = **RF30SCGINV260207**  
   The reference the invoicing party asked to quote.
+- `AccountingSupplierParty/Party/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingSupplierParty/Party/PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyName/Name` = **Lumeport Textile Mill**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **SCG-INV-26-0207**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-02**  
   Its issue date, so the reference is unambiguous.
+- `DocumentReference/ID` = **SCG-INV-26-0207**  
+  The invoice paid, as a document reference.
+- `DocumentReference/IssueDate` = **2026-03-02**  
+  Its issue date.
+- `DocumentReference/DocumentTypeCode` = **380**  
+  UN/EDIFACT 1001 code 380: commercial invoice.
 
 ## The document
 
@@ -299,8 +329,16 @@ Inside `RemittanceAdviceLine`:
   <cbc:ID>LTM-RM-26-0209</cbc:ID>
   <cbc:UUID>6c2c6741-2ec7-5783-a72f-d6c9f5c37809</cbc:UUID>
   <cbc:IssueDate>2026-03-29</cbc:IssueDate>
+  <cbc:IssueTime>12:38:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XLC">6055.452</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XLC">6055.452</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>LTM-PAY-26-0191</cbc:PaymentOrderReference>
+  <cbc:PayerReference>LTM-0191</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF30SCGINV260207</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
@@ -517,12 +555,37 @@ Inside `RemittanceAdviceLine`:
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF30SCGINV260207</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Textile Mill</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>SCG-INV-26-0207</cbc:ID>
         <cbc:IssueDate>2026-03-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>SCG-INV-26-0207</cbc:ID>
+      <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

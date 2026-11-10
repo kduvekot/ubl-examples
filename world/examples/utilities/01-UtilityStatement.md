@@ -24,6 +24,8 @@ The factory's monthly electricity consumption: meter readings and consumption pe
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
+- `IssueTime` = **17:54:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `UtilityStatementTypeCode` = **Electricity**  
   The kind of utility the statement is about.
 - `DocumentCurrencyCode` = **XUF**  
@@ -255,6 +257,7 @@ Inside `SubscriberParty`:
   <cbc:ID>FE-DOC-26-0314</cbc:ID>
   <cbc:UUID>939b6614-b83d-522f-883a-72105c1b71f9</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>17:54:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Electricity</cbc:UtilityStatementTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>

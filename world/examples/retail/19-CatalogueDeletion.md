@@ -24,6 +24,8 @@ The spring catalogue ends; the distributor deletes it before the summer catalogu
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-19**  
   The spring catalogue is withdrawn before the summer one.
+- `IssueTime` = **13:26:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Deleted Catalogue Reference
 
@@ -271,6 +273,7 @@ Inside `SellerSupplierParty`:
   <cbc:ID>LD-DOC-26-0237</cbc:ID>
   <cbc:UUID>3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29</cbc:UUID>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
+  <cbc:IssueTime>13:26:00</cbc:IssueTime>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
   </cac:DeletedCatalogueReference>

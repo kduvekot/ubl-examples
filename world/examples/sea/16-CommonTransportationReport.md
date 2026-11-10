@@ -24,6 +24,8 @@ The ship flies the island's flag; before entering port the carrier reports to th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-16**  
   Sent before the ship enters the port of Selanu.
+- `IssueTime` = **15:38:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Reporter Party
 
@@ -326,6 +328,7 @@ Inside `Shipment`:
   <cbc:ID>TOL-CTR-26-0141</cbc:ID>
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
+  <cbc:IssueTime>15:38:00</cbc:IssueTime>
   <cac:ReporterParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>

@@ -24,6 +24,8 @@ The sawmill announces the slats per lot, so the factory can trace the wood of ev
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-26**  
   The day the truck was loaded at the sawmill.
+- `IssueTime` = **08:31:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -494,6 +496,7 @@ Inside `DespatchLine`:
   <cbc:ID>MS-DA-26-0633</cbc:ID>
   <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cbc:IssueTime>08:31:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>

@@ -24,6 +24,8 @@ Furniture for the public works offices, installed. Delivery terms DAP the office
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-01**  
   The public works department furnishes its new planning office.
+- `IssueTime` = **08:46:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -338,6 +340,7 @@ Inside `OrderLine`:
   <cbc:ID>LPWD-PO-26-0581</cbc:ID>
   <cbc:UUID>79d5286c-bb4d-5697-8d30-f0cc964b8ddf</cbc:UUID>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
+  <cbc:IssueTime>08:46:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>

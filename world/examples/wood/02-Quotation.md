@@ -24,6 +24,8 @@ The sawmill quotes per thousand slats, delivered at the factory.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-19**  
   The sawmill quotes for the slats.
+- `IssueTime` = **11:34:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Validity Period
 
@@ -383,6 +385,7 @@ Inside `QuotationLine`:
   <cbc:ID>MS-DOC-26-0626</cbc:ID>
   <cbc:UUID>01317a73-7091-58bf-ad79-782d5646840a</cbc:UUID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
+  <cbc:IssueTime>11:34:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-03-21</cbc:EndDate>
   </cac:ValidityPeriod>

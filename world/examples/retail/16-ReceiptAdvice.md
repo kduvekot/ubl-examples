@@ -24,6 +24,8 @@ The shop confirms the delivery and reports a damaged carton.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-30**  
   The day the goods were unloaded at the store.
+- `IssueTime` = **10:31:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -525,6 +527,7 @@ Inside `ReceiptLine`:
   <cbc:ID>BS-RA-26-0234</cbc:ID>
   <cbc:UUID>72e2f38d-9c14-5700-9cf7-82648d72cd8e</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+  <cbc:IssueTime>10:31:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:OrderReference>

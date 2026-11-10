@@ -24,6 +24,8 @@ A bulk lot of recycled granulate. Delivery terms CPT river quay: the seller book
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-13**  
   The packaging maker orders for the next production run.
+- `IssueTime` = **16:17:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XUF**  
@@ -334,6 +336,7 @@ Inside `OrderLine`:
   <cbc:ID>RP-PO-26-0882</cbc:ID>
   <cbc:UUID>e1c2a8ee-2c1f-527d-b914-49514b59c8d9</cbc:UUID>
   <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueTime>16:17:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>

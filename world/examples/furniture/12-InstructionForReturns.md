@@ -24,6 +24,8 @@ The bench set does not sell; the furniture maker asks for the remaining stock ba
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-27**  
   The furniture maker takes back the sets that do not sell.
+- `IssueTime` = **14:21:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Seller Supplier Party
 
@@ -281,6 +283,7 @@ Inside `InstructionForReturnsLine`:
   <cbc:ID>BF-DOC-26-0578</cbc:ID>
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>14:21:00</cbc:IssueTime>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>

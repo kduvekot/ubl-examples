@@ -24,6 +24,8 @@ The distributor, as importer, declares the goods in Bayvarra and claims the pref
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-24**  
   Declared when the goods arrive in Bayvarra.
+- `IssueTime` = **09:54:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Importer Party
 
@@ -571,6 +573,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:ID>LD-IM-26-0161</cbc:ID>
   <cbc:UUID>d05f73ca-d179-5742-b609-b8871aacb98b</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
+  <cbc:IssueTime>09:54:00</cbc:IssueTime>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

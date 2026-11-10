@@ -24,6 +24,8 @@ The chamber endorses the certificate and makes it available to the importer, who
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-22**  
   The day the chamber endorsed the certificate.
+- `IssueTime` = **08:41:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the certificate is for.
 
@@ -610,6 +612,7 @@ Inside `IssuerEndorsement`:
   <cbc:ID>FCC-CO-26-0157</cbc:ID>
   <cbc:UUID>3152b116-509a-5a0d-8b57-97a8e2b066d0</cbc:UUID>
   <cbc:IssueDate>2026-03-22</cbc:IssueDate>
+  <cbc:IssueTime>08:41:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>

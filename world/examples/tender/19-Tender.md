@@ -26,6 +26,8 @@ The furniture maker submits its corrected tender.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-24**  
   The corrected tender, submitted the day after the withdrawal.
+- `IssueTime` = **12:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Tenderer Party
 
@@ -235,6 +237,7 @@ Inside `TenderedProject`:
   <cbc:UUID>249604e4-e246-5420-b1d3-0a791c02cd40</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueTime>12:10:00</cbc:IssueTime>
   <cac:TendererParty>
     <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

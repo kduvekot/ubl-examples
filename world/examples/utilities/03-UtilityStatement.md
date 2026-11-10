@@ -24,6 +24,8 @@ The 3PL's warehouse is the manufacturer's building: the 3PL is the subscriber at
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
+- `IssueTime` = **17:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `UtilityStatementTypeCode` = **Electricity**  
   The kind of utility the statement is about.
 - `DocumentCurrencyCode` = **XUF**  
@@ -350,6 +352,7 @@ Inside `SubscriberParty`:
   <cbc:ID>FE-DOC-26-0315</cbc:ID>
   <cbc:UUID>a67867a6-9a78-55a4-b129-4e9157f53cff</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>17:10:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Electricity</cbc:UtilityStatementTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>

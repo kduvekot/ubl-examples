@@ -24,6 +24,8 @@ The cargo missed its flight; the despatch advice is cancelled and a new one foll
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   The flight left without the cargo.
+- `IssueTime` = **17:53:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `CancellationNote` = **The cargo missed its flight; it goes on the next day's flight under a new despatch advice.**  
   Why the despatch advice is cancelled.
 
@@ -299,6 +301,7 @@ Inside `DeliveryCustomerParty`:
   <cbc:ID>LD-DOC-26-0328</cbc:ID>
   <cbc:UUID>4068fe1a-3095-5164-a12c-994c102fc830</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
+  <cbc:IssueTime>17:53:00</cbc:IssueTime>
   <cbc:CancellationNote>The cargo missed its flight; it goes on the next day's flight under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0327</cbc:ID>

@@ -24,6 +24,8 @@ Under CPT the waste processor is the transport user; it asks the barge operator 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Under CPT the seller is the transport user and books the barge.
+- `IssueTime` = **09:57:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -367,6 +369,7 @@ Inside `Consignment`:
   <cbc:ID>RR-TR-26-0884</cbc:ID>
   <cbc:UUID>256f8176-ee49-5cca-9761-ba9a8673cb84</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>09:57:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>

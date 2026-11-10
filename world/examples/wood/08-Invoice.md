@@ -24,6 +24,8 @@ Slats and delivery. An export from Bayvarra: no sales tax, with the exemption st
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-26**  
   Issued when the slats leave.
+- `IssueTime` = **08:56:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-03-28**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -515,6 +517,7 @@ Inside `InvoiceLine`:
   <cbc:ID>MS-INV-26-0635</cbc:ID>
   <cbc:UUID>ae3fabe1-02f6-56f3-a403-bd58b53f0ab9</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cbc:IssueTime>08:56:00</cbc:IssueTime>
   <cbc:DueDate>2026-03-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

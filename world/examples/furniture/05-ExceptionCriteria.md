@@ -24,6 +24,8 @@ Both agree when a deviation is worth a message: thresholds for forecast variance
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-14**  
   Agreed together with the replenishment policy.
+- `IssueTime` = **09:21:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Validity Period
 
@@ -301,6 +303,7 @@ Inside `ExceptionCriteriaLine`:
   <cbc:ID>BS-DOC-26-0571</cbc:ID>
   <cbc:UUID>1e9835ca-6098-5efa-a740-4d690200ec9c</cbc:UUID>
   <cbc:IssueDate>2026-03-14</cbc:IssueDate>
+  <cbc:IssueTime>09:21:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>

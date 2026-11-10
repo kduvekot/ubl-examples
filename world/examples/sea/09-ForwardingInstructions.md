@@ -24,6 +24,8 @@ The distributor instructs its forwarder: book the sea freight to the island and 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-09**  
   The distributor instructs its forwarder once the order is accepted.
+- `IssueTime` = **16:45:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignor Party
 
@@ -438,6 +440,7 @@ Inside `Shipment`:
   <cbc:ID>LD-FI-26-0131</cbc:ID>
   <cbc:UUID>abba32c6-9aed-5cc2-bf33-cf2d04aecd2b</cbc:UUID>
   <cbc:IssueDate>2026-05-09</cbc:IssueDate>
+  <cbc:IssueTime>16:45:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

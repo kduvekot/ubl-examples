@@ -24,6 +24,8 @@ Under DDP the seller pays the transport, so the carrier invoices the distributor
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-30**  
   Issued after delivery.
+- `IssueTime` = **11:49:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-30**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -422,6 +424,7 @@ Inside `InvoiceLine`:
   <cbc:ID>BF-INV-26-0233</cbc:ID>
   <cbc:UUID>edc572c1-3523-5447-98dd-bde758d366e2</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+  <cbc:IssueTime>11:49:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

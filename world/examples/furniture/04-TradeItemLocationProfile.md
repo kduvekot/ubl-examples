@@ -24,6 +24,8 @@ The store sets the replenishment policy per item and store.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-14**  
   The store sets its replenishment policy for the line.
+- `IssueTime` = **08:23:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Period
 
@@ -299,6 +301,7 @@ Inside `ItemManagementProfile`:
   <cbc:ID>BS-DOC-26-0570</cbc:ID>
   <cbc:UUID>befc4246-c9bd-5950-8153-a96b42c6db87</cbc:UUID>
   <cbc:IssueDate>2026-03-14</cbc:IssueDate>
+  <cbc:IssueTime>08:23:00</cbc:IssueTime>
   <cac:Period>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>

@@ -24,6 +24,8 @@ A second delivery, placed before the slow sales were clear.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-16**  
   A second delivery, before the slow sales were clear.
+- `IssueTime` = **12:09:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -390,6 +392,7 @@ Inside `OrderLine`:
   <cbc:ID>BS-PO-26-0576</cbc:ID>
   <cbc:UUID>723b8ed1-619b-5c36-b65d-2cac4a35d4c0</cbc:UUID>
   <cbc:IssueDate>2026-04-16</cbc:IssueDate>
+  <cbc:IssueTime>12:09:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>

@@ -7,6 +7,7 @@
   <cbc:ID>SCG-WS-26-0204</cbc:ID>
   <cbc:UUID>c50e041b-0c85-5be7-a47a-5549a622d6dd</cbc:UUID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+  <cbc:IssueTime>13:33:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

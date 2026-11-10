@@ -7,6 +7,7 @@
   <cbc:ID>RR-TR-26-0884</cbc:ID>
   <cbc:UUID>256f8176-ee49-5cca-9761-ba9a8673cb84</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>09:57:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>

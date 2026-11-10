@@ -1041,8 +1041,25 @@ def retail(n, doc):
     if doc["doc"] == "CreditNote":
         out = kit.credit_note(f, n, doc, 12, "Issued after the receipt advice reported the refused bench.",
                                [{"item": "bench-serra-b", "qty": 1, "why": "The bench refused at delivery.",
-                                 "unit_price": "494.00", "unit_price_why": "The invoiced price less the 5 % "
-                                                                           "promotion support."}],
+                                 "line_allowance": {"percent": "5", "code": "72",
+                                                    "code_why": "UN/EDIFACT 5189 code 72: temporary special "
+                                                                "promotion.",
+                                                    "reason": "Promotion support",
+                                                    "why": "The invoice gave 5 % on all benches, so the credit "
+                                                           "is 5 % less too."},
+                                 "line_tax": True,
+                                 "line_extra": {
+                                     "AccountingCostCode": V("6120", "The store's garden department."),
+                                     "AccountingCost": V("Garden department", "In words."),
+                                     "PaymentPurposeCode": V("GDDS", "ISO 20022 purpose code GDDS: goods."),
+                                     "Delivery": {"ActualDeliveryDate": V(f.date(10), "The delivery the bench "
+                                                                                      "was refused at.")},
+                                     "DespatchLineReference": {"LineID": V("1", "The despatch line."),
+                                                               "DocumentReference": {"ID": V(f.numbers["despatch"],
+                                                                                             "The despatch "
+                                                                                             "advice.")}},
+                                     "DeliveryTerms": {"ID": V("DDP", "As on the order: delivered duty paid.",
+                                                               schemeID="INCOTERMS")}}}],
                                {"BillingReference": {"InvoiceDocumentReference": {
                                    "ID": V(f.numbers["invoice"], "The invoice this credit note corrects."),
                                    "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
@@ -1925,6 +1942,7 @@ def air(n, doc):
 COTTON = kit.Flow("cotton", "2026-02-02", [
     {"item": "cotton-bale", "ordered": 6129, "why": "27 bales of about 227 kg: one container of lint."}])
 SEED_KG = 18000
+ADVANCE = Decimal("1000.000")      # the ginnery's season advance to the farm
 
 
 def cotton(n, doc):
@@ -1970,7 +1988,37 @@ def cotton(n, doc):
                          "DeliveryLocation": {"Name": V("Selanu Cotton Ginnery, weighbridge", "Where.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the gin: the farm brings the cotton with its own "
                                              "tractor.", schemeID="INCOTERMS")},
-            "PayeeParty": party("38-xl", short=True)})
+            "PayeeParty": party("38-xl", short=True),
+            "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The third call-off under the season agreement.")},
+            "Signature": {"ID": V("SCG-SIG-26-0005", "The ginnery's seal on the self-billed invoice."),
+                          "SignatoryParty": party("39-xl", short=True)}})
+        lmt = out["LegalMonetaryTotal"]
+        lines_amt = Decimal(lmt["LineExtensionAmount"].value)
+        haul = money(Decimal(SEED_KG) * Decimal("0.010"), "XLC")
+        out["AllowanceCharge"] = {"ID": V("1", "The only charge."),
+                                  "ChargeIndicator": V("true", "A charge in the farm's favour: it adds to what the gin "
+                                                               "pays."),
+                                  "AllowanceChargeReason": V("Haulage allowance", "The gin pays the farm for bringing "
+                                                                                  "the cotton."),
+                                  "SequenceNumeric": V("1", "Applied after the lines."),
+                                  "PerUnitAmount": amount(Decimal("0.010"), "XLC", "0.010 coral per kilogram."),
+                                  "Amount": amount(haul, "XLC", "18,000 kg at 0.010 coral."),
+                                  "BaseAmount": amount(lines_amt, "XLC", "The cotton delivered."),
+                                  "AccountingCostCode": V("210", "The gin's cost centre for haulage."),
+                                  "AccountingCost": V("Seed cotton haulage", "In words."),
+                                  "TaxInclusiveAmount": amount(haul, "XLC", "No tax on the island."),
+                                  "TaxCategory": kit.tax_category(kit.tax_rule("38-xl", "39-xl", "seed-cotton"))}
+        lmt["ChargeTotalAmount"] = amount(haul, "XLC", "The haulage allowance.")
+        lmt["ChargeTotalTaxInclusiveAmount"] = amount(haul, "XLC", "The same: no tax on the island.")
+        lmt["TaxExclusiveAmount"] = amount(lines_amt + haul, "XLC", "The cotton and the haulage.")
+        lmt["TaxInclusiveAmount"] = amount(lines_amt + haul, "XLC", "No tax on the island.")
+        lmt["PrepaidAmount"] = amount(ADVANCE, "XLC", "The advance paid at the start of the season.")
+        lmt["PayableAmount"] = amount(lines_amt + haul - ADVANCE, "XLC", "What the gin still pays.")
+        out["PrepaidPayment"] = {"ID": V("SCG-ADV-26-0012", "The season advance to the farm."),
+                                 "PaidAmount": amount(ADVANCE, "XLC", "Paid before the harvest, against the first "
+                                                                      "deliveries."),
+                                 "PaidDate": V(f.date(-20), "Three weeks before the deliveries.")}
+        f.numbers["self-billed-3-amount"] = lines_amt + haul - ADVANCE
         lines = out["InvoiceLine"] if isinstance(out["InvoiceLine"], list) else [out["InvoiceLine"]]
         lines[0]["Delivery"] = {"DeliveryNoteLineReference": {
             "LineID": V("1", "The line of the delivery note the invoice line bills."),
@@ -1996,6 +2044,21 @@ def cotton(n, doc):
                                 "ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement: it "
                                                                                          "sets the price per "
                                                                                          "grade.")},
+                                "DueDate": V(f.date(14), "Set off on the day of payment."),
+                                "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off.")},
+                                "DeliveryNoteDocumentReference": {"ID": V(f.numbers["delivery"], "The delivery "
+                                                                                                 "classed.")},
+                                "ReceiptDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket.")},
+                                "Delivery": {"ActualDeliveryDate": V(f.date(3), "The delivery classed.")},
+                                "DeliveryTerms": {"ID": V("DAP", "As on the self-billed invoice.",
+                                                          schemeID="INCOTERMS")},
+                                "PayeeParty": party("38-xl", short=True),
+                                "PaymentMeans": {"PaymentMeansCode": V("97", "UN/EDIFACT 4461 code 97: clearing "
+                                                                             "between partners; set off against "
+                                                                             "the payment.",
+                                                                       listID="UN/EDIFACT EDED 4461")},
+                                "PaymentTerms": {"Note": V("Set off against the payment of the self-billed "
+                                                           "invoice.", "How the credit is settled.")},
                                 "AdditionalDocumentReference": {"ID": V(f.numbers["goods-certificate"]
                                                                         if "goods-certificate" in f.numbers else
                                                                         "XL-CLS-2026-0042", "The classing "
@@ -2013,7 +2076,8 @@ def cotton(n, doc):
                                  "PayeeFinancialAccount": kit.account("38-xl", "The farm's account.")},
                 "RemittanceAdviceLine": [
                     {"ID": V("1", "The self-billed invoice."),
-                     "DebitLineAmount": amount(inv, "XLC", "The amount of the self-billed invoice."),
+                     "DebitLineAmount": amount(inv, "XLC", "The amount still due on the self-billed invoice, "
+                                                           "after the season advance."),
                      "BillingReference": {"SelfBilledInvoiceDocumentReference": {
                          "ID": V(f.numbers["self-billed-3"], "The self-billed invoice paid.")}}},
                     {"ID": V("2", "The self-billed credit note."),
@@ -3022,6 +3086,18 @@ def furniture(n, doc):
                 **kit.cost_centre("26-xb", "The store books the income on its garden department."),
                 "AdditionalDocumentReference": {"ID": V(f.numbers["returns"], "The instruction for returns that "
                                                                               "asked for the sets.")},
+                "DiscrepancyResponse": {"ResponseCode": V("ReturnCost", "Why the store debits: the cost of a return "
+                                                                        "the furniture maker asked for."),
+                                        "Description": V("Return transport of six unsold garden sets.", "In "
+                                                                                                       "words.")},
+                "ContractDocumentReference": {"ID": V(f.numbers["quotation"], "The quotation the line was bought "
+                                                                              "under; it puts returns at the "
+                                                                              "maker's cost.")},
+                "Delivery": {"ActualDeliveryDate": V(f.date(61), "The sets were delivered back."),
+                             "DeliveryLocation": {"Name": V("Brackenmere Furniture, Marrowdale", "Where.")}},
+                "PayeeParty": party("26-xb", short=True),
+                "BuyerCustomerParty": {"Party": party("37-xb", short=True)},
+                "SellerSupplierParty": {"Party": party("26-xb", short=True)},
                 "BillingReference": {"CreditNoteDocumentReference": {"ID": V(next(v for k, v in f.numbers.items()
                                                                           if k.startswith("credit-")), "The credit note "
                                                                                                      "of the returned "
@@ -3034,6 +3110,19 @@ def furniture(n, doc):
                                   "DebitedQuantity": qty(1, "E48", "One return delivery."),
                                   "LineExtensionAmount": amount(amt, "XBL", "The store's charge for one return delivery."),
                                   "Note": V("Collected with the store's van.", "How the sets went back."),
+                                  "DiscrepancyResponse": {"ResponseCode": V("ReturnCost", "The return transport.")},
+                                  **kit.cost_centre("26-xb", "The store's cost centre the income is booked on."),
+                                  "PaymentPurposeCode": V("TRPT", "ISO 20022 purpose code TRPT: transport."),
+                                  "TaxInclusiveLineExtensionAmount": amount(amt + tax, "XBL", "The line with its "
+                                                                                              "tax."),
+                                  "TaxTotal": {"TaxAmount": amount(tax, "XBL", "The tax of the line.")},
+                                  "DocumentReference": {"ID": V(f.numbers["returns"], "The instruction for "
+                                                                                      "returns.")},
+                                  "BillingReference": {"CreditNoteDocumentReference": {"ID": V(next(
+                                      v for k, v in f.numbers.items() if k.startswith("credit-")), "The credit "
+                                                                                                  "note.")},
+                                                       "BillingReferenceLine": {"ID": V("1", "Its line of the "
+                                                                                             "returned sets.")}},
                                   "Delivery": {"ActualDeliveryDate": V(f.date(61), "The day the sets were delivered "
                                                                                    "back to the furniture maker.")},
                                   "Item": item("return-transport", kit.tax_category(rows[0][3])),

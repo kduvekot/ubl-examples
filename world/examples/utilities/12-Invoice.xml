@@ -7,6 +7,7 @@
   <cbc:ID>ST-INV-26-0322</cbc:ID>
   <cbc:UUID>d34bf420-eb98-5f5f-9d06-271cb4ca7e5a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>

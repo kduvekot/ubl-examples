@@ -24,6 +24,8 @@ The carrier invoices the transport to the party that booked it; under FCA that i
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
   Issued after delivery.
+- `IssueTime` = **10:46:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-24**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -446,6 +448,7 @@ Inside `InvoiceLine`:
   <cbc:ID>TH-INV-26-0163</cbc:ID>
   <cbc:UUID>29197a8a-2a1a-57ce-9332-6da8199e7de3</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
+  <cbc:IssueTime>10:46:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-24</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-25</cbc:TaxPointDate>

@@ -24,6 +24,8 @@ With sales below the threshold, the store cancels the second delivery.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   Cancelled the day after the exception notification.
+- `IssueTime` = **11:51:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `CancellationNote` = **Sales of the line are below the agreed threshold; the second delivery is not needed.**  
   Why the order is cancelled.
 
@@ -252,6 +254,7 @@ Inside `SellerSupplierParty`:
   <cbc:ID>BS-DOC-26-0577</cbc:ID>
   <cbc:UUID>4e4382b0-483c-570a-9560-c9d39c4a7902</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueTime>11:51:00</cbc:IssueTime>
   <cbc:CancellationNote>Sales of the line are below the agreed threshold; the second delivery is not needed.</cbc:CancellationNote>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0576</cbc:ID>

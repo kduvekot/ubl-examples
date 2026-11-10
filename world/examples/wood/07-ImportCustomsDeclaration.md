@@ -24,6 +24,8 @@ The manufacturer declares the import into Urvania, where import VAT is due.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-27**  
   The manufacturer declares the import into Urvania.
+- `IssueTime` = **11:05:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Importer Party
 
@@ -458,6 +460,7 @@ Inside `Shipment`:
   <cbc:ID>VI-IM-26-0634</cbc:ID>
   <cbc:UUID>5121b08c-34cb-5860-af6c-8ad49382d537</cbc:UUID>
   <cbc:IssueDate>2026-02-27</cbc:IssueDate>
+  <cbc:IssueTime>11:05:00</cbc:IssueTime>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

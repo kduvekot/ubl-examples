@@ -24,6 +24,8 @@ The mill declares the bales in Bayvarra.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-06**  
   The mill declares the bales in Bayvarra.
+- `IssueTime` = **09:37:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Importer Party
 
@@ -367,6 +369,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:ID>LTM-IM-26-0206</cbc:ID>
   <cbc:UUID>fe5926c9-1714-5ac7-a08f-f5b1b1c97285</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
+  <cbc:IssueTime>09:37:00</cbc:IssueTime>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>

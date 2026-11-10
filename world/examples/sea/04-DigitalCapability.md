@@ -24,6 +24,8 @@ The agreement's governor tells the buyer which documents the distributor can sen
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-05**  
   Sent when the buyer joins the agreement.
+- `IssueTime` = **09:44:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -301,6 +303,7 @@ Inside `DigitalProcess`:
   <cbc:ID>LTAC-DCP-26-0126</cbc:ID>
   <cbc:UUID>5754c138-ef9f-5b93-ae9f-9a48fe182097</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+  <cbc:IssueTime>09:44:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

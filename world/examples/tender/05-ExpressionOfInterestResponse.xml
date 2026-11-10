@@ -8,6 +8,7 @@
   <cbc:UUID>3ad290e2-059a-5871-b575-922bf8b45c86</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-15</cbc:IssueDate>
+  <cbc:IssueTime>08:35:00</cbc:IssueTime>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>

@@ -24,6 +24,8 @@ The bill of lading goes to the forwarder that booked the freight for the mill; t
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-02**  
   Issued when the bales are on board.
+- `IssueTime` = **15:19:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignor Party
 
@@ -409,6 +411,7 @@ Inside `Shipment`:
   <cbc:ID>TOL-BL-26-0205</cbc:ID>
   <cbc:UUID>3321e495-7627-5d35-94f2-0b1a66354dbc</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+  <cbc:IssueTime>15:19:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

@@ -24,6 +24,8 @@ The rail consignment note goes to the transport user, now the seller.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Issued when the carrier takes over the containers.
+- `IssueTime` = **13:10:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -645,6 +647,7 @@ Inside `DocumentReference`:
   <cbc:ID>FRC-WB-26-0334</cbc:ID>
   <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>

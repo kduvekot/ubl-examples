@@ -24,10 +24,26 @@ The distributor announces the cross-border payment and which invoices it settles
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   The day the payment is made across the border, before the due date.
+- `IssueTime` = **11:41:00**  
+  The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Payment of the invoice below.**  
+  What the advice is for.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the currency of the invoice paid; it has no minor unit.
+- `TotalDebitAmount` = **4862160** (currencyID `XUF`)  
+  The invoices paid.
+- `TotalCreditAmount` = **0** (currencyID `XUF`)  
+  No credits taken.
 - `TotalPaymentAmount` = **4862160** (currencyID `XUF`)  
   The amount transferred: the payable amount of the invoice.
+- `PaymentOrderReference` = **LD-PAY-26-0149**  
+  The payment order the payer gave its bank.
+- `PayerReference` = **LD-0149**  
+  The payer's own reference for this payment run.
+- `InvoicingPartyReference` = **RF35VIINV260164**  
+  The reference the invoicing party asked to quote.
+- `LineCountNumeric` = **1**  
+  One invoice paid.
 
 ### Accounting Customer Party
 
@@ -320,10 +336,24 @@ Inside `RemittanceAdviceLine`:
   ISO 20022 purpose code SUPP: payment to a supplier.
 - `InvoicingPartyReference` = **RF35VIINV260164**  
   The reference the invoicing party asked to quote.
+- `AccountingSupplierParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingSupplierParty/Party/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `AccountingCustomerParty/Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0164**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-24**  
   Its issue date, so the reference is unambiguous.
+- `DocumentReference/ID` = **VI-INV-26-0164**  
+  The invoice paid, as a document reference.
+- `DocumentReference/IssueDate` = **2026-03-24**  
+  Its issue date.
+- `DocumentReference/DocumentTypeCode` = **380**  
+  UN/EDIFACT 1001 code 380: commercial invoice.
 
 ## The document
 
@@ -337,8 +367,16 @@ Inside `RemittanceAdviceLine`:
   <cbc:ID>LD-RM-26-0166</cbc:ID>
   <cbc:UUID>5d324406-618b-5169-8bce-e128a07f2637</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueTime>11:41:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XUF">4862160</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
+  <cbc:PayerReference>LD-0149</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF35VIINV260164</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -592,12 +630,37 @@ Inside `RemittanceAdviceLine`:
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF35VIINV260164</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0164</cbc:ID>
         <cbc:IssueDate>2026-03-24</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>VI-INV-26-0164</cbc:ID>
+      <cbc:IssueDate>2026-03-24</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

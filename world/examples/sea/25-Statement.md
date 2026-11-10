@@ -24,6 +24,8 @@ The factor, who now owns the receivables, sends the statement of account on beha
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-13**  
   The monthly statement of account.
+- `IssueTime` = **08:43:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `Note` = **Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.**  
   Who the statement is for.
 - `DocumentCurrencyCode` = **XBL**  
@@ -427,6 +429,7 @@ Inside `StatementLine`:
   <cbc:ID>HF-ST-26-0150</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
+  <cbc:IssueTime>08:43:00</cbc:IssueTime>
   <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">43778.00</cbc:TotalDebitAmount>

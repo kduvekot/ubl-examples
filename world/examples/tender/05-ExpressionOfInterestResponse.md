@@ -26,6 +26,8 @@ The authority confirms the sawmill is registered as an interested party.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-15**  
   The authority confirms the registration the next day.
+- `IssueTime` = **08:35:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Economic Operator Party
 
@@ -230,6 +232,7 @@ Inside `ContractingParty`:
   <cbc:UUID>3ad290e2-059a-5871-b575-922bf8b45c86</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-15</cbc:IssueDate>
+  <cbc:IssueTime>08:35:00</cbc:IssueTime>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>

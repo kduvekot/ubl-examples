@@ -24,6 +24,8 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-25**  
   Under FOB the buyer instructs the forwarder for the main carriage.
+- `IssueTime` = **10:37:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignor Party
 
@@ -310,6 +312,7 @@ Inside `Shipment`:
   <cbc:ID>LTM-FI-26-0198</cbc:ID>
   <cbc:UUID>7991b479-392b-5bc2-90ba-107a0778b62f</cbc:UUID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueTime>10:37:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

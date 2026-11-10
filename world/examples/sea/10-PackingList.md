@@ -24,6 +24,8 @@ How the goods are packed in the container, for the forwarder's booking and the e
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
   Made when the container is packed.
+- `IssueTime` = **15:59:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Consignor Party
 
@@ -588,6 +590,7 @@ Inside `Shipment`:
   <cbc:ID>LD-PL-26-0134</cbc:ID>
   <cbc:UUID>51ffd2ec-220f-52f3-bbda-f00884ed47a2</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
+  <cbc:IssueTime>15:59:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

@@ -7,6 +7,7 @@
   <cbc:ID>FCC-DOC-26-0724</cbc:ID>
   <cbc:UUID>eba67af9-0d62-5339-b7c5-75faae5007fc</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
+  <cbc:IssueTime>15:04:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-05-25</cbc:StartDate>
     <cbc:EndDate>2027-05-25</cbc:EndDate>

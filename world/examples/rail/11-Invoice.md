@@ -24,6 +24,8 @@ Under DAP the price includes the transport, so the invoice covers goods and frei
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-17**  
   Issued on delivery at the distributor's siding.
+- `IssueTime` = **11:14:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-17**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -613,6 +615,7 @@ Inside `InvoiceLine`:
   <cbc:ID>VI-INV-26-0337</cbc:ID>
   <cbc:UUID>4e437657-fd23-506f-a503-988422d5e64c</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
+  <cbc:IssueTime>11:14:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-17</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Delivered at place: the price includes the carriage to the siding.</cbc:Note>

@@ -24,6 +24,8 @@ The manufacturer, as producer and notifier, notifies the planned movements to th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   Notified before the movements start.
+- `IssueTime` = **09:28:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -464,6 +466,7 @@ Inside `Shipment`:
   <cbc:ID>VI-DOC-26-0204</cbc:ID>
   <cbc:UUID>96a4f1da-8c13-5fd0-9418-114168f14a1f</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueTime>09:28:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

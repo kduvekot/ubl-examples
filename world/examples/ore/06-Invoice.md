@@ -24,6 +24,8 @@ Under FCA the buyer pays the carriage: the rail carrier invoices the ore freight
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-12**  
   Issued after the carriage was performed.
+- `IssueTime` = **14:45:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-11**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -411,6 +413,7 @@ Inside `InvoiceLine`:
   <cbc:ID>FRC-INV-26-0311</cbc:ID>
   <cbc:UUID>ce2241bc-04d9-5917-a9b7-bf084fdb91a9</cbc:UUID>
   <cbc:IssueDate>2026-03-12</cbc:IssueDate>
+  <cbc:IssueTime>14:45:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-11</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-12</cbc:TaxPointDate>

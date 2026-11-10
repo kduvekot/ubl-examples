@@ -26,6 +26,8 @@ The furniture maker finds a price error in its tender and withdraws it before th
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-24**  
   Withdrawn before the deadline, which the procedure allows.
+- `IssueTime` = **17:56:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `WithdrawOfferIndicator` = **true**  
   The whole tender is withdrawn.
 
@@ -237,6 +239,7 @@ Inside `TendererParty`:
   <cbc:UUID>ed2964ac-5041-583f-8e50-507bdb320f91</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueTime>17:56:00</cbc:IssueTime>
   <cbc:WithdrawOfferIndicator>true</cbc:WithdrawOfferIndicator>
   <cac:TenderDocumentReference>
     <cbc:ID>BF-DOC-26-0203</cbc:ID>

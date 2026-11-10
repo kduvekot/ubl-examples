@@ -24,6 +24,8 @@ Packaging for manufacture, exempt from sales tax.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-03**  
   Issued on delivery.
+- `IssueTime` = **08:11:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-02**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -411,6 +413,7 @@ Inside `InvoiceLine`:
   <cbc:ID>RP-INV-26-0524</cbc:ID>
   <cbc:UUID>fbaa64ee-50ae-575a-92d4-0d0537b86349</cbc:UUID>
   <cbc:IssueDate>2026-05-03</cbc:IssueDate>
+  <cbc:IssueTime>08:11:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-02</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

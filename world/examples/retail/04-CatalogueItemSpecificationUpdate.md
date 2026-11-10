@@ -24,6 +24,8 @@ The bench now comes with slats from a different hardwood; the description is upd
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-21**  
   The bench's slats changed wood.
+- `IssueTime` = **09:01:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Related Catalogue Reference
 
@@ -476,6 +478,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:ID>LD-DOC-26-0220</cbc:ID>
   <cbc:UUID>7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448</cbc:UUID>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
+  <cbc:IssueTime>09:01:00</cbc:IssueTime>
   <cac:RelatedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
   </cac:RelatedCatalogueReference>

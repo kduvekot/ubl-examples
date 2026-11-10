@@ -24,6 +24,8 @@ The island's chamber has no re-export stamp for the samples and asks for proof t
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-07-24**  
   Two months after the fair the samples' re-export is not recorded.
+- `IssueTime` = **08:50:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
   The carnet the samples travelled under.
 
@@ -244,6 +246,7 @@ Inside `ImportingCustomsParty`:
   <cbc:ID>SCC-DOC-26-0726</cbc:ID>
   <cbc:UUID>3377b749-219b-5bbb-a9d2-7d1101bcbe28</cbc:UUID>
   <cbc:IssueDate>2026-07-24</cbc:IssueDate>
+  <cbc:IssueTime>08:50:00</cbc:IssueTime>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ImportingGuarantorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>

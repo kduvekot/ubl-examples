@@ -24,6 +24,8 @@ Delivery terms DAP distributor's siding: no carrier in the order, because the se
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-06**  
   Full container loads for the summer season.
+- `IssueTime` = **16:18:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XUF**  
@@ -504,6 +506,7 @@ Inside `OrderLine`:
   <cbc:ID>LD-PO-26-0325</cbc:ID>
   <cbc:UUID>e3c80bc4-b2b9-5396-a910-bff342f77805</cbc:UUID>
   <cbc:IssueDate>2026-04-06</cbc:IssueDate>
+  <cbc:IssueTime>16:18:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>

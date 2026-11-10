@@ -26,6 +26,8 @@ The winner is told directly that its tender won.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-09**  
   The winner is told on the day of the award decision.
+- `IssueTime` = **13:37:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -247,6 +249,7 @@ Inside `TenderResult`:
   <cbc:UUID>1074ab0c-5e2c-5c94-90c8-208ab79e736d</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
+  <cbc:IssueTime>13:37:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

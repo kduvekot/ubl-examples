@@ -26,6 +26,8 @@ The guarantor notifies the authority of the bid bond deposited for the manufactu
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-24**  
   Issued before the tender deadline.
+- `IssueTime` = **08:23:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `LiabilityAmount` = **2400.00** (currencyID `XBL`)  
   The bid bond: 2 % of the estimated contract value, as the procurement documents ask.
 
@@ -333,6 +335,7 @@ Inside `BeneficiaryParty`:
   <cbc:UUID>1f0c3218-ba4e-54bc-868e-8554b9039fee</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueTime>08:23:00</cbc:IssueTime>
   <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
   <cac:GuarantorParty>
     <cbc:WebsiteURI>https://www.bankoflumeport.example</cbc:WebsiteURI>

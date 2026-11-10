@@ -24,6 +24,8 @@ Urvania's chamber proves the samples were re-exported: they came home through Ur
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-08-28**  
   Urvania's chamber answers with the proof.
+- `IssueTime` = **13:19:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exporting Customs Party
 
@@ -278,6 +280,7 @@ Inside `ReexportationEvidence`:
   <cbc:ID>FCC-DOC-26-0728</cbc:ID>
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
+  <cbc:IssueTime>13:19:00</cbc:IssueTime>
   <cac:ExportingCustomsParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

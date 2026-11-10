@@ -7,6 +7,7 @@
   <cbc:ID>SCC-GC-26-0201</cbc:ID>
   <cbc:UUID>9d4c84eb-3f06-549a-83fe-14010b43c0bb</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
+  <cbc:IssueTime>11:39:00</cbc:IssueTime>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

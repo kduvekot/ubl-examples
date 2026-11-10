@@ -24,6 +24,8 @@ The distributor has sold its receivables to the factor, so the invoice names the
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-30**  
   Issued on delivery.
+- `IssueTime` = **15:21:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-30**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -757,6 +759,7 @@ Inside `InvoiceLine`:
   <cbc:ID>LD-INV-26-0235</cbc:ID>
   <cbc:UUID>cae87fb6-c5ae-5ec4-95e7-3ff1a551ef34</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+  <cbc:IssueTime>15:21:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

@@ -24,6 +24,8 @@ Before loading, the shipper declares the verified gross mass of the container, w
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-01**  
   Declared before the container is loaded, as required for every packed container.
+- `IssueTime` = **13:33:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -326,6 +328,7 @@ Inside `Shipment`:
   <cbc:ID>SCG-WS-26-0204</cbc:ID>
   <cbc:UUID>c50e041b-0c85-5be7-a47a-5549a622d6dd</cbc:UUID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+  <cbc:IssueTime>13:33:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

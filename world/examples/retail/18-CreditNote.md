@@ -24,6 +24,8 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-02**  
   Issued after the receipt advice reported the refused bench.
+- `IssueTime` = **15:52:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `CreditNoteTypeCode` = **381**  
   UN/EDIFACT 1001 code 381: credit note.
 - `DocumentCurrencyCode` = **XBL**  
@@ -459,13 +461,25 @@ Inside `CreditNoteLine`:
 - `CreditedQuantity` = **1** (unitCode `H87`)  
   The bench refused at delivery.
 - `LineExtensionAmount` = **494.00** (currencyID `XBL`)  
-  Quantity times price, rounded to the minor unit.
+  1 × the price = 520.00, less the 5 % promotion support.
+- `TaxInclusiveLineExtensionAmount` = **494.00** (currencyID `XBL`)  
+  The line with its tax.
+- `AccountingCostCode` = **6120**  
+  The store's garden department.
+- `AccountingCost` = **Garden department**  
+  In words.
+- `PaymentPurposeCode` = **GDDS**  
+  ISO 20022 purpose code GDDS: goods.
 - `OrderLineReference/LineID` = **1**  
   The order line.
 - `DiscrepancyResponse/ReferenceID` = **1**  
   The invoice line.
 - `DiscrepancyResponse/ResponseCode` = **Damaged**  
   Credited because damaged.
+- `DespatchLineReference/LineID` = **1**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
+  The despatch advice.
 - `ReceiptLineReference/LineID` = **1**  
   The receipt line that reported it.
 - `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0234**  
@@ -474,6 +488,22 @@ Inside `CreditNoteLine`:
   The invoice.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
   The invoice line credited.
+- `Delivery/ActualDeliveryDate` = **2026-04-30**  
+  The delivery the bench was refused at.
+- `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the line amount, for the buyer's booking per line.
+- `AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance on the line.
+- `AllowanceCharge/AllowanceChargeReasonCode` = **72** (listID `UN/EDIFACT EDED 5189`)  
+  UN/EDIFACT 5189 code 72: temporary special promotion.
+- `AllowanceCharge/AllowanceChargeReason` = **Promotion support**  
+  The invoice gave 5 % on all benches, so the credit is 5 % less too.
+- `AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
+  The rate.
+- `AllowanceCharge/Amount` = **26.00** (currencyID `XBL`)  
+  The deduction on the line.
+- `AllowanceCharge/BaseAmount` = **520.00** (currencyID `XBL`)  
+  The line at the full price.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -684,6 +714,10 @@ Inside `CreditNoteLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `H87`)  
   The price is per one unit.
+- `DeliveryTerms/ID` = **DDP** (schemeID `INCOTERMS`)  
+  As on the order: delivered duty paid.
+- `ItemPriceExtension/Amount` = **520.00** (currencyID `XBL`)  
+  Price times quantity, before the allowance.
 
 ## The document
 
@@ -697,6 +731,7 @@ Inside `CreditNoteLine`:
   <cbc:ID>LD-CN-26-0236</cbc:ID>
   <cbc:UUID>9746d03d-d7e2-50c6-acf8-6b1c5d539f7e</cbc:UUID>
   <cbc:IssueDate>2026-05-02</cbc:IssueDate>
+  <cbc:IssueTime>15:52:00</cbc:IssueTime>
   <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
@@ -1041,6 +1076,10 @@ Inside `CreditNoteLine`:
     <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">494.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode>GDDS</cbc:PaymentPurposeCode>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -1048,6 +1087,12 @@ Inside `CreditNoteLine`:
       <cbc:ReferenceID>1</cbc:ReferenceID>
       <cbc:ResponseCode>Damaged</cbc:ResponseCode>
     </cac:DiscrepancyResponse>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0229</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
@@ -1062,6 +1107,20 @@ Inside `CreditNoteLine`:
         <cbc:ID>1</cbc:ID>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-04-30</cbc:ActualDeliveryDate>
+    </cac:Delivery>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">72</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="XBL">26.00</cbc:Amount>
+      <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
+    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1251,6 +1310,12 @@ Inside `CreditNoteLine`:
       <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
     </cac:Price>
+    <cac:DeliveryTerms>
+      <cbc:ID schemeID="INCOTERMS">DDP</cbc:ID>
+    </cac:DeliveryTerms>
+    <cac:ItemPriceExtension>
+      <cbc:Amount currencyID="XBL">520.00</cbc:Amount>
+    </cac:ItemPriceExtension>
   </cac:CreditNoteLine>
 </CreditNote>
 ```

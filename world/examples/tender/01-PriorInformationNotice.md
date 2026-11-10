@@ -26,6 +26,8 @@ The authority announces the planned purchase early, through the publication serv
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-01-12**  
   Published early in the year, before the call for competition.
+- `IssueTime` = **14:18:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Contracting Party
 
@@ -217,6 +219,7 @@ Inside `ProcurementProject`:
   <cbc:UUID>2cd5e902-d1c7-5261-84d7-8b3b9895f00a</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
+  <cbc:IssueTime>14:18:00</cbc:IssueTime>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

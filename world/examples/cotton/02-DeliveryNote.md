@@ -24,6 +24,8 @@ The farm delivers a trailer of seed cotton at the gin and confirms what it deliv
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-05**  
   The day the trailers were weighed at the gin.
+- `IssueTime` = **14:59:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Despatch Supplier Party
 
@@ -270,6 +272,7 @@ Inside `DespatchLine`:
   <cbc:ID>LCF-DN-26-0192</cbc:ID>
   <cbc:UUID>975a163a-1aaf-5b83-ac7f-ec67ac956a54</cbc:UUID>
   <cbc:IssueDate>2026-02-05</cbc:IssueDate>
+  <cbc:IssueTime>14:59:00</cbc:IssueTime>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lisavufarm.example</cbc:WebsiteURI>

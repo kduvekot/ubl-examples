@@ -24,6 +24,8 @@ The shop's water consumption, read from its meter.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
+- `IssueTime` = **11:55:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `UtilityStatementTypeCode` = **Water**  
   The kind of utility the statement is about.
 - `DocumentCurrencyCode` = **XBL**  
@@ -265,6 +267,7 @@ Inside `SubscriberParty`:
   <cbc:ID>CSWC-DOC-26-0318</cbc:ID>
   <cbc:UUID>7bdfb021-49a1-5341-b641-0343b4c0240e</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>11:55:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Water</cbc:UtilityStatementTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>

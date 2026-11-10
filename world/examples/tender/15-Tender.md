@@ -26,6 +26,8 @@ The tender, with the consortium partner as subcontractor.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-25**  
   Submitted before the deadline.
+- `IssueTime` = **09:13:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Tenderer Party
 
@@ -330,6 +332,7 @@ Inside `TenderedProject`:
   <cbc:UUID>b83ff515-965a-5df1-aaa9-14df71eabb47</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueTime>09:13:00</cbc:IssueTime>
   <cac:TendererParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

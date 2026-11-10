@@ -24,6 +24,8 @@ Sales of the bench set run far below forecast: past the agreed threshold, so the
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-21**  
   The furniture maker sees the sales below the agreed threshold.
+- `IssueTime` = **17:49:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Exception Observation Period
 
@@ -301,6 +303,7 @@ Inside `ExceptionNotificationLine`:
   <cbc:ID>BF-DOC-26-0573</cbc:ID>
   <cbc:UUID>54a44709-e8a8-5aed-918e-7a7a369c2ad5</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
+  <cbc:IssueTime>17:49:00</cbc:IssueTime>
   <cac:ExceptionObservationPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
     <cbc:EndDate>2026-04-20</cbc:EndDate>

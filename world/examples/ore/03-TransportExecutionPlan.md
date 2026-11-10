@@ -24,6 +24,8 @@ The rail carrier confirms the train, the wagons and the schedule; this is the ag
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-04**  
   The day after the request.
+- `IssueTime` = **12:50:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DocumentStatusCode` = **Confirmed**  
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed).
 
@@ -388,6 +390,7 @@ Inside `Consignment`:
   <cbc:ID>FRC-TEP-26-0307</cbc:ID>
   <cbc:UUID>c8bf0a9d-d411-54f7-aeb2-97d4e2a86a5c</cbc:UUID>
   <cbc:IssueDate>2026-03-04</cbc:IssueDate>
+  <cbc:IssueTime>12:50:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>

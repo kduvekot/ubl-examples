@@ -24,6 +24,8 @@ The distributor announces the shipment to the delivery party named in the order,
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   Sent to the delivery party named in the order when the container leaves.
+- `IssueTime` = **08:52:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -826,6 +828,7 @@ Inside `DespatchLine`:
   <cbc:ID>LD-DA-26-0145</cbc:ID>
   <cbc:UUID>70786038-c76e-51c0-a900-7b06c6127d9e</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueTime>08:52:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>

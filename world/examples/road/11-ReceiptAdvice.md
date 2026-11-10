@@ -24,6 +24,8 @@ The distributor confirms what arrived to the party that despatched it, the 3PL, 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
   The day the truck was unloaded at the distribution centre.
+- `IssueTime` = **15:40:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Order Reference
 
@@ -597,6 +599,7 @@ Inside `ReceiptLine`:
   <cbc:ID>LD-RA-26-0162</cbc:ID>
   <cbc:UUID>496ff071-d380-5baa-87d1-43a590437ea5</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
+  <cbc:IssueTime>15:40:00</cbc:IssueTime>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
   </cac:OrderReference>

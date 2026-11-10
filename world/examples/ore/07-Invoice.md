@@ -24,6 +24,8 @@ The mine invoices the ore; transport is not on this invoice because under FCA th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-11**  
   Issued the day after the goods were despatched and weighed.
+- `IssueTime` = **14:59:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-10**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -412,7 +414,7 @@ Inside `InvoiceLine`:
 - `InvoicedQuantity` = **1788.4** (unitCode `TNE`)  
   The weighed quantity from the despatch advice, not the ordered quantity.
 - `LineExtensionAmount` = **14198286** (currencyID `XUF`)  
-  1788.4 × 8060 = 14414504, less the 1.5 % moisture deduction.
+  1788.4 × the price = 14414504, less the 1.5 % moisture deduction.
 - `TaxInclusiveLineExtensionAmount` = **17037943** (currencyID `XUF`)  
   The line with its tax.
 - `OrderLineReference/LineID` = **1**  
@@ -472,6 +474,7 @@ Inside `InvoiceLine`:
   <cbc:ID>SM-INV-26-0312</cbc:ID>
   <cbc:UUID>b47d9e09-122e-55a3-a2d2-dde5a4947c4f</cbc:UUID>
   <cbc:IssueDate>2026-03-11</cbc:IssueDate>
+  <cbc:IssueTime>14:59:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-10</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-11</cbc:TaxPointDate>

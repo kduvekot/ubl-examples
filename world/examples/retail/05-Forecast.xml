@@ -7,6 +7,7 @@
   <cbc:ID>BS-FC-26-0221</cbc:ID>
   <cbc:UUID>60706c39-36eb-5254-aefe-265082af3657</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueTime>11:55:00</cbc:IssueTime>
   <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
   <cac:ForecastPeriod>
     <cbc:StartDate>2026-05-04</cbc:StartDate>

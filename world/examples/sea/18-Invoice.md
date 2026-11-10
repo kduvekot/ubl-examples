@@ -24,6 +24,8 @@ The forwarder invoices what it arranged for the distributor: sea freight, export
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-19**  
   Issued after the sailing.
+- `IssueTime` = **11:33:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-18**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
@@ -560,6 +562,7 @@ Inside `InvoiceLine`:
   <cbc:ID>BF-INV-26-0143</cbc:ID>
   <cbc:UUID>8b53f8b3-acd3-5160-a62d-977fb95b3f8f</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
+  <cbc:IssueTime>11:33:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-18</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>

@@ -7,6 +7,8 @@
   <cbc:ID>SCG-SBC-26-0194</cbc:ID>
   <cbc:UUID>3fe47b86-e662-5cb9-93d0-9366b17fb485</cbc:UUID>
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
+  <cbc:IssueTime>15:50:00</cbc:IssueTime>
+  <cbc:DueDate>2026-02-16</cbc:DueDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
   <cbc:Note>Self-billed credit note under the season agreement.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
@@ -19,12 +21,21 @@
     <cbc:ResponseCode>Grade</cbc:ResponseCode>
     <cbc:Description>2,500 kg classed Strict Low Middling instead of Middling.</cbc:Description>
   </cac:DiscrepancyResponse>
+  <cac:OrderReference>
+    <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
+  </cac:OrderReference>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
       <cbc:ID>SCG-SBI-26-0193</cbc:ID>
       <cbc:IssueDate>2026-02-07</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
+  <cac:DeliveryNoteDocumentReference>
+    <cbc:ID>LCF-DN-26-0192</cbc:ID>
+  </cac:DeliveryNoteDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>SCG-WB-26-0311</cbc:ID>
+  </cac:ReceiptDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
@@ -196,6 +207,14 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
+  <cac:PayeeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lisavu Cotton Farm</cbc:Name>
+    </cac:PartyName>
+  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -216,6 +235,18 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">97</cbc:PaymentMeansCode>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Set off against the payment of the self-billed invoice.</cbc:Note>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

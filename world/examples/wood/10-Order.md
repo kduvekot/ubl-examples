@@ -24,6 +24,8 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-08**  
   The furniture maker orders timber, collected with its own van.
+- `IssueTime` = **16:20:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -308,6 +310,7 @@ Inside `OrderLine`:
   <cbc:ID>BF-PO-26-0637</cbc:ID>
   <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
   <cbc:IssueDate>2026-03-08</cbc:IssueDate>
+  <cbc:IssueTime>16:20:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>

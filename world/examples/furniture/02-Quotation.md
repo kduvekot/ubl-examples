@@ -24,6 +24,8 @@ The furniture maker quotes the line.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-06**  
   The furniture maker quotes the line.
+- `IssueTime` = **08:58:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Validity Period
 
@@ -301,6 +303,7 @@ Inside `QuotationLine`:
   <cbc:ID>BF-DOC-26-0568</cbc:ID>
   <cbc:UUID>ec533b8c-fd3b-5c84-8198-dd0da43309d9</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
+  <cbc:IssueTime>08:58:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-05-05</cbc:EndDate>
   </cac:ValidityPeriod>

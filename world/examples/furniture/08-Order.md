@@ -24,6 +24,8 @@ The store orders the line. Delivery terms DAP store: the furniture maker deliver
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-16**  
   The store orders the first delivery of its line.
+- `IssueTime` = **11:16:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220**  
   UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
@@ -397,6 +399,7 @@ Inside `OrderLine`:
   <cbc:ID>BS-PO-26-0574</cbc:ID>
   <cbc:UUID>ac3a2b00-ef02-50c6-a666-734b5c64e958</cbc:UUID>
   <cbc:IssueDate>2026-03-16</cbc:IssueDate>
+  <cbc:IssueTime>11:16:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>

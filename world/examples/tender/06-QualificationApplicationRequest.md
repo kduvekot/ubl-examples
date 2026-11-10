@@ -26,6 +26,8 @@ The authority sends the furniture maker the self-declaration it must fill in: ex
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-13**  
   Sent with the procurement documents.
+- `IssueTime` = **08:25:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Contracting Party
 
@@ -228,6 +230,7 @@ Inside `EconomicOperatorParty`:
   <cbc:UUID>3c06617e-8a80-509a-b64c-e7ad1ca81e2a</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-13</cbc:IssueDate>
+  <cbc:IssueTime>08:25:00</cbc:IssueTime>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

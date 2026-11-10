@@ -24,6 +24,8 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-07**  
   The ginnery bills itself for the delivery, as the self-billing agreement provides.
+- `IssueTime` = **14:29:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-03-24**  
   The supplier's usual term, which the customer applies to itself.
 - `InvoiceTypeCode` = **389**  
@@ -49,6 +51,13 @@ Inside `InvoicePeriod`:
   The week of the deliveries.
 - `EndDate` = **2026-02-05**  
   The last trailer.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **SCG-SEASON-2026/03**  
+  The third call-off under the season agreement.
 
 ### Contract Document Reference
 
@@ -77,6 +86,17 @@ Inside `ReceiptDocumentReference`:
 
 - `ID` = **SCG-WB-26-0311**  
   The weighbridge ticket of the gin.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **SCG-SIG-26-0005**  
+  The ginnery's seal on the self-billed invoice.
+- `SignatoryParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Selanu Cotton Ginnery**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Customer Party
 
@@ -385,6 +405,48 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
   Simple interest, per day late.
 
+### Prepaid Payment
+
+Inside `PrepaidPayment`:
+
+- `ID` = **SCG-ADV-26-0012**  
+  The season advance to the farm.
+- `PaidAmount` = **1000.000** (currencyID `XLC`)  
+  Paid before the harvest, against the first deliveries.
+- `PaidDate` = **2026-01-13**  
+  Three weeks before the deliveries.
+
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ID` = **1**  
+  The only charge.
+- `ChargeIndicator` = **true**  
+  A charge in the farm's favour: it adds to what the gin pays.
+- `AllowanceChargeReason` = **Haulage allowance**  
+  The gin pays the farm for bringing the cotton.
+- `SequenceNumeric` = **1**  
+  Applied after the lines.
+- `Amount` = **180.000** (currencyID `XLC`)  
+  18,000 kg at 0.010 coral.
+- `TaxInclusiveAmount` = **180.000** (currencyID `XLC`)  
+  No tax on the island.
+- `BaseAmount` = **4068.000** (currencyID `XLC`)  
+  The cotton delivered.
+- `AccountingCostCode` = **210**  
+  The gin's cost centre for haulage.
+- `AccountingCost` = **Seed cotton haulage**  
+  In words.
+- `PerUnitAmount` = **0.010** (currencyID `XLC`)  
+  0.010 coral per kilogram.
+- `TaxCategory/ID` = **O**  
+  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxScheme/Name` = **No general sales tax**  
+  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -408,12 +470,18 @@ Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **4068.000** (currencyID `XLC`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **4068.000** (currencyID `XLC`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **4068.000** (currencyID `XLC`)  
-  The total without tax plus the tax.
-- `PayableAmount` = **4068.000** (currencyID `XLC`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+- `TaxExclusiveAmount` = **4248.000** (currencyID `XLC`)  
+  The cotton and the haulage.
+- `TaxInclusiveAmount` = **4248.000** (currencyID `XLC`)  
+  No tax on the island.
+- `ChargeTotalAmount` = **180.000** (currencyID `XLC`)  
+  The haulage allowance.
+- `ChargeTotalTaxInclusiveAmount` = **180.000** (currencyID `XLC`)  
+  The same: no tax on the island.
+- `PrepaidAmount` = **1000.000** (currencyID `XLC`)  
+  The advance paid at the start of the season.
+- `PayableAmount` = **3248.000** (currencyID `XLC`)  
+  What the gin still pays.
 
 ### Invoice Line
 
@@ -464,6 +532,7 @@ Inside `InvoiceLine`:
   <cbc:ID>SCG-SBI-26-0193</cbc:ID>
   <cbc:UUID>da6a76fb-cc8f-56c6-bea6-296a7804c3c9</cbc:UUID>
   <cbc:IssueDate>2026-02-07</cbc:IssueDate>
+  <cbc:IssueTime>14:29:00</cbc:IssueTime>
   <cbc:DueDate>2026-03-24</cbc:DueDate>
   <cbc:InvoiceTypeCode>389</cbc:InvoiceTypeCode>
   <cbc:Note>Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
@@ -476,6 +545,9 @@ Inside `InvoiceLine`:
     <cbc:StartDate>2026-02-03</cbc:StartDate>
     <cbc:EndDate>2026-02-05</cbc:EndDate>
   </cac:InvoicePeriod>
+  <cac:OrderReference>
+    <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
+  </cac:OrderReference>
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
@@ -488,6 +560,17 @@ Inside `InvoiceLine`:
   <cac:ReceiptDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
   </cac:ReceiptDocumentReference>
+  <cac:Signature>
+    <cbc:ID>SCG-SIG-26-0005</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -739,6 +822,30 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:PrepaidPayment>
+    <cbc:ID>SCG-ADV-26-0012</cbc:ID>
+    <cbc:PaidAmount currencyID="XLC">1000.000</cbc:PaidAmount>
+    <cbc:PaidDate>2026-01-13</cbc:PaidDate>
+  </cac:PrepaidPayment>
+  <cac:AllowanceCharge>
+    <cbc:ID>1</cbc:ID>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Haulage allowance</cbc:AllowanceChargeReason>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:Amount currencyID="XLC">180.000</cbc:Amount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">180.000</cbc:TaxInclusiveAmount>
+    <cbc:BaseAmount currencyID="XLC">4068.000</cbc:BaseAmount>
+    <cbc:AccountingCostCode>210</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Seed cotton haulage</cbc:AccountingCost>
+    <cbc:PerUnitAmount currencyID="XLC">0.010</cbc:PerUnitAmount>
+    <cac:TaxCategory>
+      <cbc:ID>O</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:Name>No general sales tax</cbc:Name>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -755,9 +862,12 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">4068.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">4068.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">4068.000</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">4068.000</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">4248.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">4248.000</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XLC">180.000</cbc:ChargeTotalAmount>
+    <cbc:ChargeTotalTaxInclusiveAmount currencyID="XLC">180.000</cbc:ChargeTotalTaxInclusiveAmount>
+    <cbc:PrepaidAmount currencyID="XLC">1000.000</cbc:PrepaidAmount>
+    <cbc:PayableAmount currencyID="XLC">3248.000</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

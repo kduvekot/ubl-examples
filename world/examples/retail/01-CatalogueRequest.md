@@ -24,6 +24,8 @@ The store asks the distributor for its spring catalogue.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-20**  
   The store asks for the spring catalogue. As UBL defines it, the party that sends a catalogue request is its ProviderParty.
+- `IssueTime` = **08:42:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Receiver Party
 
@@ -264,6 +266,7 @@ Inside `SellerSupplierParty`:
   <cbc:ID>BS-DOC-26-0217</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueTime>08:42:00</cbc:IssueTime>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

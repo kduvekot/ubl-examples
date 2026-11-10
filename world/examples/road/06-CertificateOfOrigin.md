@@ -24,6 +24,8 @@ The goods qualify for preferential duty in Bayvarra; the manufacturer applies to
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-20**  
   The day the exporter applies, before the goods leave.
+- `IssueTime` = **12:39:00**  
+  The time the sender's system issued the document, in the sender's local time.
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the certificate is for.
 
@@ -610,6 +612,7 @@ Inside `IssuerEndorsement`:
   <cbc:ID>FCC-CO-26-0157</cbc:ID>
   <cbc:UUID>a46337e2-176c-5866-9871-158007b21756</cbc:UUID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
+  <cbc:IssueTime>12:39:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>

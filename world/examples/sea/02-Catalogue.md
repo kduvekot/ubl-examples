@@ -26,6 +26,8 @@ The export catalogue for the island customer.
   The catalogue's title.
 - `IssueDate` = **2026-05-04**  
   The export catalogue for the island customer.
+- `IssueTime` = **09:17:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Validity Period
 
@@ -673,6 +675,7 @@ Inside `CatalogueLine`:
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueTime>09:17:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-05-04</cbc:StartDate>
     <cbc:EndDate>2026-10-31</cbc:EndDate>

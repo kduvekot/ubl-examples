@@ -24,6 +24,8 @@ The road consignment note goes to the party that booked the truck, the distribut
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   Issued when the carrier collects the goods at the warehouse.
+- `IssueTime` = **08:16:00**  
+  The time the sender's system issued the document, in the sender's local time.
 
 ### Sender Party
 
@@ -2022,6 +2024,7 @@ Inside `Shipment`:
   <cbc:ID>TH-WB-26-0159</cbc:ID>
   <cbc:UUID>4891662e-273a-5190-9aa7-edb87e35d8b5</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueTime>08:16:00</cbc:IssueTime>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>
