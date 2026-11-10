@@ -26,6 +26,8 @@ The cargo missed its flight; the despatch advice is cancelled and a new one foll
   The flight left without the cargo.
 - `IssueTime` = **17:53:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **A new despatch advice follows today.**  
+  What happens next.
 - `CancellationNote` = **The cargo missed its flight; it goes on the next day's flight under a new despatch advice.**  
   Why the despatch advice is cancelled.
 
@@ -35,6 +37,52 @@ Inside `DespatchDocumentReference`:
 
 - `ID` = **LD-DA-26-0327**  
   The despatch advice cancelled.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **VT-OC-26-0320**  
+  The order change of the frames.
+- `SalesOrderID` = **LD-SO-26-0123**  
+  The distributor's sales order.
+- `UUID` = **8d871217-f7db-5dad-9bd8-24d8c75c812d**  
+  Its UUID.
+- `IssueDate` = **2026-05-11**  
+  Its date.
+- `IssueTime` = **07:50:00**  
+  Its time.
+- `CustomerReference` = **Harbour parks Selanu**  
+  The buyer's project.
+- `OrderTypeCode` = **230**  
+  UN/EDIFACT 1001 code 230: order change.
+- `DocumentReference/ID` = **VT-PO-26-0127**  
+  The original sea order.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **KAC-OFFLOAD-26-0513**  
+  The airline's offload notice.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **LD-DAG-26-0125**  
+  The digital agreement.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **LD-SIG-26-FC**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Buyer Customer Party
 
@@ -289,6 +337,15 @@ Inside `DeliveryCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41722** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Nalevi Warehousing (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Despatch Supplier Party
+
+Inside `DespatchSupplierParty`:
+
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ## The document
 
 ```xml
@@ -302,10 +359,40 @@ Inside `DeliveryCustomerParty`:
   <cbc:UUID>4068fe1a-3095-5164-a12c-994c102fc830</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>17:53:00</cbc:IssueTime>
+  <cbc:Note>A new despatch advice follows today.</cbc:Note>
   <cbc:CancellationNote>The cargo missed its flight; it goes on the next day's flight under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0327</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:OrderReference>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
+    <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
+    <cbc:IssueDate>2026-05-11</cbc:IssueDate>
+    <cbc:IssueTime>07:50:00</cbc:IssueTime>
+    <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
+    <cbc:OrderTypeCode>230</cbc:OrderTypeCode>
+    <cac:DocumentReference>
+      <cbc:ID>VT-PO-26-0127</cbc:ID>
+    </cac:DocumentReference>
+  </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>KAC-OFFLOAD-26-0513</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Contract>
+    <cbc:ID>LD-DAG-26-0125</cbc:ID>
+  </cac:Contract>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-FC</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -527,5 +614,15 @@ Inside `DeliveryCustomerParty`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:DeliveryCustomerParty>
+  <cac:DespatchSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
 </FulfilmentCancellation>
 ```

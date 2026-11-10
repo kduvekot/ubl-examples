@@ -26,6 +26,8 @@ With sales below the threshold, the store cancels the second delivery.
   Cancelled the day after the exception notification.
 - `IssueTime` = **11:51:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **No cost: cancelled before production.**  
+  The consequence.
 - `CancellationNote` = **Sales of the line are below the agreed threshold; the second delivery is not needed.**  
   Why the order is cancelled.
 
@@ -35,6 +37,38 @@ Inside `OrderReference`:
 
 - `ID` = **BS-PO-26-0576**  
   The order cancelled.
+
+### Originator Document Reference
+
+Inside `OriginatorDocumentReference`:
+
+- `ID` = **BF-DOC-26-0573**  
+  The exception notification that led to it.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BS-DOC-26-0572**  
+  The sales figures.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **BF-DOC-26-0568**  
+  The quotation the line runs under; it allows cancellation before production.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-OC**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Buyer Customer Party
 
@@ -255,10 +289,31 @@ Inside `SellerSupplierParty`:
   <cbc:UUID>4e4382b0-483c-570a-9560-c9d39c4a7902</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>11:51:00</cbc:IssueTime>
+  <cbc:Note>No cost: cancelled before production.</cbc:Note>
   <cbc:CancellationNote>Sales of the line are below the agreed threshold; the second delivery is not needed.</cbc:CancellationNote>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0576</cbc:ID>
   </cac:OrderReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>BF-DOC-26-0573</cbc:ID>
+  </cac:OriginatorDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BS-DOC-26-0572</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Contract>
+    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  </cac:Contract>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-OC</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>

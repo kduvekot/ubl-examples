@@ -26,6 +26,12 @@ The furniture maker quotes the line.
   The furniture maker quotes the line.
 - `IssueTime` = **08:58:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Including the store's own label.**  
+  What is quoted.
+- `PricingCurrencyCode` = **XBL**  
+  In lume.
+- `LineCountNumeric` = **1**  
+  One line.
 
 ### Validity Period
 
@@ -40,6 +46,17 @@ Inside `RequestForQuotationDocumentReference`:
 
 - `ID` = **BS-DOC-26-0567**  
   The request this quotation answers.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BF-SIG-26-QT**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Seller Supplier Party
 
@@ -247,6 +264,24 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Beneficiary Party
+
+Inside `BeneficiaryParty`:
+
+- `PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
 ### Quoted Monetary Total
 
 Inside `QuotedMonetaryTotal`:
@@ -304,12 +339,26 @@ Inside `QuotationLine`:
   <cbc:UUID>ec533b8c-fd3b-5c84-8198-dd0da43309d9</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
   <cbc:IssueTime>08:58:00</cbc:IssueTime>
+  <cbc:Note>Including the store's own label.</cbc:Note>
+  <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-05-05</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RequestForQuotationDocumentReference>
     <cbc:ID>BS-DOC-26-0567</cbc:ID>
   </cac:RequestForQuotationDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-26-QT</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -490,6 +539,24 @@ Inside `QuotationLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
+  <cac:BeneficiaryParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Brightmarket Stores</cbc:Name>
+    </cac:PartyName>
+  </cac:BeneficiaryParty>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>

@@ -6,7 +6,40 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0582</cbc:ID>
   <cbc:UUID>e84c63f9-b6d1-5eaa-bf75-38181a29b84a</cbc:UUID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
+  <cbc:Note>Approved by the department's facilities officer.</cbc:Note>
+  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-26-WR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:WorkQuantityTotal>
+    <cbc:Quantity unitCode="HUR">14</cbc:Quantity>
+    <cbc:WorkTypeCode>Installation</cbc:WorkTypeCode>
+    <cbc:WorkTypeDescription>Installing office furniture.</cbc:WorkTypeDescription>
+  </cac:WorkQuantityTotal>
+  <cac:ReportedPeriod>
+    <cbc:StartDate>2026-04-08</cbc:StartDate>
+    <cbc:EndDate>2026-04-09</cbc:EndDate>
+  </cac:ReportedPeriod>
+  <cac:OrderReference>
+    <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+  </cac:OrderReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
+  </cac:ProjectReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-PHOTO-26-0408</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -182,8 +215,83 @@
       <cbc:Name>Lumeport Public Works Department</cbc:Name>
     </cac:PartyName>
   </cac:ApproverParty>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+  </cac:TaxTotal>
+  <cac:StatementMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">672.00</cbc:PayableAmount>
+  </cac:StatementMonetaryTotal>
   <cac:WorkReportLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:WorkItemID>INST</cbc:WorkItemID>
+    <cbc:WorkItemDescription>Six desks assembled and placed.</cbc:WorkItemDescription>
     <cbc:Quantity unitCode="HUR">14</cbc:Quantity>
+    <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">672.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:CompletionPercent>100</cbc:CompletionPercent>
+    <cac:ActivityOriginLocation>
+      <cbc:Name>Lumeport Public Works Department, Civic Square</cbc:Name>
+    </cac:ActivityOriginLocation>
+    <cac:Period>
+      <cbc:StartDate>2026-04-08</cbc:StartDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
+    </cac:Period>
+    <cac:PerformingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:PerformingParty>
+    <cac:WorkPhaseReference>
+      <cbc:ID>PH-2</cbc:ID>
+      <cbc:WorkPhaseCode>Furnish</cbc:WorkPhaseCode>
+      <cbc:WorkPhase>Furnishing the office</cbc:WorkPhase>
+      <cbc:ProgressPercent>100</cbc:ProgressPercent>
+      <cbc:StartDate>2026-04-08</cbc:StartDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
+      <cac:WorkOrderDocumentReference>
+        <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+      </cac:WorkOrderDocumentReference>
+    </cac:WorkPhaseReference>
+    <cac:DocumentReference>
+      <cbc:ID>BF-CHECK-26-0408</cbc:ID>
+    </cac:DocumentReference>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">48</cbc:PriceAmount>
+    </cac:Price>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:SubWorkReportLine>
+      <cbc:ID>1.1</cbc:ID>
+      <cbc:WorkItemID>INST-1</cbc:WorkItemID>
+      <cbc:WorkItemDescription>Installer 1: seven hours.</cbc:WorkItemDescription>
+      <cbc:Quantity unitCode="HUR">7</cbc:Quantity>
+      <cac:PerformingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:PerformingParty>
+    </cac:SubWorkReportLine>
+    <cac:SubWorkReportLine>
+      <cbc:ID>1.2</cbc:ID>
+      <cbc:WorkItemID>INST-2</cbc:WorkItemID>
+      <cbc:WorkItemDescription>Installer 2: seven hours.</cbc:WorkItemDescription>
+      <cbc:Quantity unitCode="HUR">7</cbc:Quantity>
+      <cac:PerformingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:PerformingParty>
+    </cac:SubWorkReportLine>
   </cac:WorkReportLine>
 </WorkReport>

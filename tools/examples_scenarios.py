@@ -5019,3 +5019,168 @@ def _(f, n, doc, out):
         "Contact": contact("Mobile on the road", "How to reach the employee at the fair.", "5-xu"),
         "ResidenceAddress": {"CityName": V("Ferrano", "Where the employee lives."),
                              "Country": {"IdentificationCode": V("XU", "In Urvania.")}}}}}
+
+
+@enrich("wood", "RequestForQuotation")
+def _(f, n, doc, out):
+    return {"SubmissionDueDate": V(f.date(5), "Quotations are wanted within five days."),
+            "Note": V("Slats to our drawing VI-DS-SL1800.", "What is asked."),
+            "PricingCurrencyCode": V("XBL", "Prices in lume, the sawmill's currency."),
+            "LineCountNumeric": V("1", "One line."),
+            "RequestedValidityPeriod": {"DurationMeasure": V("30", "The prices should hold for 30 days.",
+                                                             unitCode="DAY")},
+            "AdditionalDocumentReference": {"ID": V("VI-DS-SL1800", "The drawing of the slat.")},
+            "Signature": seal(doc["from"], "VI-SIG-26-RFQ"),
+            "Delivery": {"DeliveryLocation": {"Name": V("Valdara Industries, goods-in, Ferrano", "Where the slats "
+                                                                                                "are wanted.")},
+                         "RequestedDeliveryPeriod": {"StartDate": V(f.date(14), "From the third week."),
+                                                     "EndDate": V(f.date(28), "Within two weeks.")}},
+            "DeliveryTerms": {"ID": V("DAP", "Delivered at the factory.", schemeID="INCOTERMS")},
+            "DestinationCountry": {"IdentificationCode": V("XU", "Into Urvania.")},
+            "Contract": {"ID": V("VI-PUR-TERMS-2026", "The manufacturer's purchasing terms.")},
+            "RequestForQuotationLine": [{**out["RequestForQuotationLine"][0], "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:ubl-examples:world:wood:"
+                                                                                   "rfq:1")), "The line's UUID."),
+                                        "Note": V("Kiln-dried hardwood, planed on four sides.", "The requirement."),
+                                        "OptionalLineItemIndicator": V("false", "A required line."),
+                                        "PrivacyCode": V("Confidential", "The drawing is the manufacturer's own."),
+                                        "SecurityClassificationCode": V("Internal", "Not for publication."),
+                                        "DocumentReference": {"ID": V("VI-DS-SL1800", "The drawing.")}}]}
+
+
+@enrich("wood", "Quotation")
+def _(f, n, doc, out):
+    base = Decimal(out["QuotedMonetaryTotal"]["LineExtensionAmount"].value)
+    line = out["QuotationLine"][0] if isinstance(out["QuotationLine"], list) else out["QuotationLine"]
+    line.update({"ID": V("1", "The quotation line."), "Note": V("As drawn; ash or oak.", "What is quoted."),
+                 "Quantity": qty(4800, "H87", "The quantity quoted."),
+                 "LineExtensionAmount": amount(base, "XBL", "The quoted amount."),
+                 "TaxInclusiveLineExtensionAmount": amount(base, "XBL", "No tax on an export."),
+                 "TotalTaxAmount": amount(0, "XBL", "No tax on an export."),
+                 "RequestForQuotationLineID": V("1", "The line of the request."),
+                 "DocumentReference": {"ID": V("MS-SPEC-SL1800", "The sawmill's specification.")},
+                 "RequestLineReference": {"LineID": V("1", "The request line answered.")},
+                 "SellerProposedSubstituteLineItem": {"ID": V("1-S", "A substitute the sawmill proposes."),
+                                                      "Quantity": qty(4800, "H87", "The same quantity."),
+                                                      "Item": {"Name": V("Hardwood bench slat 1800 × 95 × 35",
+                                                                         "Three millimetres thinner: less waste, "
+                                                                         "five per cent cheaper.")}},
+                 "AlternativeLineItem": {"ID": V("1-A", "An alternative species."),
+                                         "Quantity": qty(4800, "H87", "The same quantity."),
+                                         "Item": {"Name": V("Oak bench slat 1800", "Oak instead of ash, at a higher "
+                                                                                   "price.")}}})
+    return {"Note": V("Valid for 30 days.", "The validity."),
+            "PricingCurrencyCode": V("XBL", "Prices in lume."), "LineCountNumeric": V("1", "One line."),
+            "AdditionalDocumentReference": {"ID": V("MS-GTC-2026", "The sawmill's terms of sale.")},
+            "Contract": {"ID": V("VI-PUR-TERMS-2026", "The buyer's purchasing terms, accepted.")},
+            "Signature": seal(doc["from"], "MS-SIG-26-QT"),
+            "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(14), "From the third week."),
+                                                    "EndDate": V(f.date(28), "Within two weeks.")}},
+            "DeliveryTerms": {"ID": V("DAP", "Delivered at the factory, as asked.", schemeID="INCOTERMS")},
+            "PaymentMeans": {"PaymentMeansCode": V("30", "By credit transfer.", listID="UN/EDIFACT EDED 4461")},
+            "TransactionConditions": {"Description": V("Quoted per thousand slats; minimum one truck.", "The "
+                                                                                                       "conditions.")},
+            "DestinationCountry": {"IdentificationCode": V("XU", "Into Urvania.")},
+            "TaxTotal": {"TaxAmount": amount(0, "XBL", "No sales tax on an export.")}}
+
+
+@enrich("furniture", "RequestForQuotation")
+def _(f, n, doc, out):
+    return {"SubmissionDueDate": V(f.date(5), "Quotations within five days."),
+            "Note": V("For the store's own garden line.", "What is asked."),
+            "PricingCurrencyCode": V("XBL", "In lume."), "LineCountNumeric": V("1", "One line."),
+            "RequestedValidityPeriod": {"DurationMeasure": V("60", "Prices for 60 days.", unitCode="DAY")},
+            "CatalogueDocumentReference": {"ID": V("BM-RANGE-26", "The store's range plan the line belongs to.")},
+            "Signature": seal(doc["from"], "BM-SIG-26-RFQ"),
+            "OriginatorCustomerParty": {"Party": party("26-xb", short=True)},
+            "Delivery": {"DeliveryLocation": {"Name": V("Brightmarket Stores, goods-in", "Where.")}},
+            "DeliveryTerms": {"ID": V("DAP", "Delivered at the store.", schemeID="INCOTERMS")},
+            "DestinationCountry": {"IdentificationCode": V("XB", "Bayvarra.")},
+            "Contract": {"ID": V("BM-OWN-BRAND-2026", "The store's own-brand terms.")},
+            "RequestForQuotationLine": [{**out["RequestForQuotationLine"][0],
+                                         "Note": V("Optional: seat cushions to match.", "An option."),
+                                        "OptionalLineItemIndicator": V("false", "The set itself is required."),
+                                        "PrivacyCode": V("Confidential", "The store's own design."),
+                                        "SecurityClassificationCode": V("Internal", "Not for publication.")}]}
+
+
+@enrich("furniture", "Quotation")
+def _(f, n, doc, out):
+    return {"Note": V("Including the store's own label.", "What is quoted."),
+            "PricingCurrencyCode": V("XBL", "In lume."), "LineCountNumeric": V("1", "One line."),
+            "Signature": seal(doc["from"], "BF-SIG-26-QT"),
+            "OriginatorCustomerParty": {"Party": party("26-xb", short=True)},
+            "BeneficiaryParty": party("26-xb", short=True)}
+
+
+@enrich("furniture", "WorkReport")
+def _(f, n, doc, out):
+    rate = Decimal(str(ITEM["installation"]["price"]["amount"]))
+    amt = rate * 14
+    half = lambda who, k: {"ID": V(f"1.{k}", "One installer's part."),
+                           "WorkItemID": V(f"INST-{k}", "The installer."),
+                           "WorkItemDescription": V(f"Installer {k}: seven hours.", "The work."),
+                           "Quantity": qty(7, "HUR", "Seven hours."),
+                           "PerformingParty": party("37-xb", short=True)}
+    return {"VersionID": V("1", "The first version."),
+            "Note": V("Approved by the department's facilities officer.", "The approval."),
+            **kit.cost_centre("2-xb", "The department's programme."),
+            "Signature": seal("2-xb", "PWD-SIG-26-WR", "The department's approval signature."),
+            "WorkQuantityTotal": {"Quantity": qty(14, "HUR", "Fourteen hours."),
+                                  "WorkTypeCode": V("Installation", "The kind of work."),
+                                  "WorkTypeDescription": V("Installing office furniture.", "In words.")},
+            "ReportedPeriod": {"StartDate": V(f.date(37), "The first day."), "EndDate": V(f.date(38), "The last.")},
+            "OrderReference": {"ID": V(f.numbers["order-desks"], "The department's order.")},
+            "ProjectReference": {"ID": V("PWD-PLAN-OFFICE-26", "The new planning office.")},
+            "AdditionalDocumentReference": {"ID": V("BF-PHOTO-26-0408", "Photographs of the finished office.")},
+            "TaxTotal": {"TaxAmount": amount(0, "XBL", "Exempt: a service to a public body.")},
+            "StatementMonetaryTotal": {"LineExtensionAmount": amount(amt, "XBL", "14 hours at 48 lume."),
+                                       "PayableAmount": amount(amt, "XBL", "What the invoice will charge.")},
+            "WorkReportLine": {"WorkItemID": V("INST", "The installation."),
+                               "WorkItemDescription": V("Six desks assembled and placed.", "The work."),
+                               "LineExtensionAmount": amount(amt, "XBL", "14 hours at the rate."),
+                               "TaxInclusiveLineExtensionAmount": amount(amt, "XBL", "Exempt."),
+                               "CompletionPercent": V("100", "Finished."),
+                               "ActivityOriginLocation": {"Name": V("Lumeport Public Works Department, Civic Square",
+                                                                    "Where.")},
+                               "Period": {"StartDate": V(f.date(37), "From."), "EndDate": V(f.date(38), "To.")},
+                               "PerformingParty": party("37-xb", short=True),
+                               "WorkPhaseReference": {"ID": V("PH-2", "The second phase of the move."),
+                                                      "WorkPhaseCode": V("Furnish", "Furnishing."),
+                                                      "WorkPhase": V("Furnishing the office", "In words."),
+                                                      "ProgressPercent": V("100", "Done."),
+                                                      "StartDate": V(f.date(37), "Started."),
+                                                      "EndDate": V(f.date(38), "Ended."),
+                                                      "WorkOrderDocumentReference": {"ID": V(f.numbers["order-desks"],
+                                                                                             "The order.")}},
+                               "DocumentReference": {"ID": V("BF-CHECK-26-0408", "The installation checklist.")},
+                               "Price": {"PriceAmount": price(rate, "XBL", "Per hour.")},
+                               "TaxTotal": {"TaxAmount": amount(0, "XBL", "Exempt.")},
+                               "SubWorkReportLine": [half("37-xb", 1), half("37-xb", 2)]}}
+
+
+@enrich("furniture", "OrderCancellation")
+def _(f, n, doc, out):
+    return {"Note": V("No cost: cancelled before production.", "The consequence."),
+            "OriginatorDocumentReference": {"ID": V(f.numbers["exception"], "The exception notification that led "
+                                                                            "to it.")},
+            "AdditionalDocumentReference": {"ID": V(f.numbers["activity"], "The sales figures.")},
+            "Contract": {"ID": V(f.numbers["quotation"], "The quotation the line runs under; it allows "
+                                                         "cancellation before production.")},
+            "Signature": seal(doc["from"], "BM-SIG-26-OC")}
+
+
+@enrich("air", "FulfilmentCancellation")
+def _(f, n, doc, out):
+    return {"Note": V("A new despatch advice follows today.", "What happens next."),
+            "OrderReference": {"ID": V(f.numbers["order-change"], "The order change of the frames."),
+                               "SalesOrderID": V(f"LD-SO-26-{SEA.base:04d}", "The distributor's sales order."),
+                               "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:ubl-examples:world:air:1:OrderChange")),
+                                         "Its UUID."),
+                               "IssueDate": V(f.date(0), "Its date."), "IssueTime": V("07:50:00", "Its time."),
+                               "CustomerReference": V("Harbour parks Selanu", "The buyer's project."),
+                               "OrderTypeCode": V("230", "UN/EDIFACT 1001 code 230: order change."),
+                               "DocumentReference": {"ID": V(SEA.numbers["order"], "The original sea order.")}},
+            "AdditionalDocumentReference": {"ID": V("KAC-OFFLOAD-26-0513", "The airline's offload notice.")},
+            "Contract": {"ID": V(SEA.numbers["agreement"], "The digital agreement.")},
+            "Signature": seal(doc["from"], "LD-SIG-26-FC"),
+            "DespatchSupplierParty": {"Party": party("6-xb", short=True)}}

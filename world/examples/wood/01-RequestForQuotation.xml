@@ -8,6 +8,27 @@
   <cbc:UUID>60bedaa8-3e5b-540b-b932-135490f03c25</cbc:UUID>
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00</cbc:IssueTime>
+  <cbc:SubmissionDueDate>2026-02-21</cbc:SubmissionDueDate>
+  <cbc:Note>Slats to our drawing VI-DS-SL1800.</cbc:Note>
+  <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:RequestedValidityPeriod>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:RequestedValidityPeriod>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-DS-SL1800</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-26-RFQ</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -193,7 +214,33 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>Valdara Industries, goods-in, Ferrano</cbc:Name>
+    </cac:DeliveryLocation>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-03-02</cbc:StartDate>
+      <cbc:EndDate>2026-03-16</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:Contract>
+    <cbc:ID>VI-PUR-TERMS-2026</cbc:ID>
+  </cac:Contract>
   <cac:RequestForQuotationLine>
+    <cbc:UUID>69477890-8e3a-52ba-acae-4da29ea0b964</cbc:UUID>
+    <cbc:Note>Kiln-dried hardwood, planed on four sides.</cbc:Note>
+    <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
+    <cbc:PrivacyCode>Confidential</cbc:PrivacyCode>
+    <cbc:SecurityClassificationCode>Internal</cbc:SecurityClassificationCode>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-SL1800</cbc:ID>
+    </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="H87">4800</cbc:Quantity>

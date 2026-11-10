@@ -26,6 +26,39 @@ Slats to the manufacturer's own dimensions and wood species: it asks the sawmill
   The manufacturer asks for slats to its own dimensions.
 - `IssueTime` = **10:00:00**  
   The time of the request; quotations refer to it.
+- `SubmissionDueDate` = **2026-02-21**  
+  Quotations are wanted within five days.
+- `Note` = **Slats to our drawing VI-DS-SL1800.**  
+  What is asked.
+- `PricingCurrencyCode` = **XBL**  
+  Prices in lume, the sawmill's currency.
+- `LineCountNumeric` = **1**  
+  One line.
+
+### Requested Validity Period
+
+Inside `RequestedValidityPeriod`:
+
+- `DurationMeasure` = **30** (unitCode `DAY`)  
+  The prices should hold for 30 days.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **VI-DS-SL1800**  
+  The drawing of the slat.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **VI-SIG-26-RFQ**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Seller Supplier Party
 
@@ -227,10 +260,54 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `DeliveryLocation/Name` = **Valdara Industries, goods-in, Ferrano**  
+  Where the slats are wanted.
+- `RequestedDeliveryPeriod/StartDate` = **2026-03-02**  
+  From the third week.
+- `RequestedDeliveryPeriod/EndDate` = **2026-03-16**  
+  Within two weeks.
+
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **DAP** (schemeID `INCOTERMS`)  
+  Delivered at the factory.
+
+### Destination Country
+
+Inside `DestinationCountry`:
+
+- `IdentificationCode` = **XU**  
+  Into Urvania.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **VI-PUR-TERMS-2026**  
+  The manufacturer's purchasing terms.
+
 ### Request For Quotation Line
 
 Inside `RequestForQuotationLine`:
 
+- `UUID` = **69477890-8e3a-52ba-acae-4da29ea0b964**  
+  The line's UUID.
+- `Note` = **Kiln-dried hardwood, planed on four sides.**  
+  The requirement.
+- `OptionalLineItemIndicator` = **false**  
+  A required line.
+- `PrivacyCode` = **Confidential**  
+  The drawing is the manufacturer's own.
+- `SecurityClassificationCode` = **Internal**  
+  Not for publication.
+- `DocumentReference/ID` = **VI-DS-SL1800**  
+  The drawing.
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **4800** (unitCode `H87`)  
@@ -355,6 +432,27 @@ Inside `RequestForQuotationLine`:
   <cbc:UUID>60bedaa8-3e5b-540b-b932-135490f03c25</cbc:UUID>
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00</cbc:IssueTime>
+  <cbc:SubmissionDueDate>2026-02-21</cbc:SubmissionDueDate>
+  <cbc:Note>Slats to our drawing VI-DS-SL1800.</cbc:Note>
+  <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:RequestedValidityPeriod>
+    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
+  </cac:RequestedValidityPeriod>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-DS-SL1800</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-26-RFQ</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -540,7 +638,33 @@ Inside `RequestForQuotationLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>Valdara Industries, goods-in, Ferrano</cbc:Name>
+    </cac:DeliveryLocation>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-03-02</cbc:StartDate>
+      <cbc:EndDate>2026-03-16</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:Contract>
+    <cbc:ID>VI-PUR-TERMS-2026</cbc:ID>
+  </cac:Contract>
   <cac:RequestForQuotationLine>
+    <cbc:UUID>69477890-8e3a-52ba-acae-4da29ea0b964</cbc:UUID>
+    <cbc:Note>Kiln-dried hardwood, planed on four sides.</cbc:Note>
+    <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
+    <cbc:PrivacyCode>Confidential</cbc:PrivacyCode>
+    <cbc:SecurityClassificationCode>Internal</cbc:SecurityClassificationCode>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-SL1800</cbc:ID>
+    </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="H87">4800</cbc:Quantity>

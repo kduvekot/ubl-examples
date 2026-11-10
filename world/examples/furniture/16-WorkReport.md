@@ -22,8 +22,68 @@ The installers report the work done; the department approves it.
   The sender's number for its work report.
 - `UUID` = **e84c63f9-b6d1-5eaa-bf75-38181a29b84a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
+- `VersionID` = **1**  
+  The first version.
 - `IssueDate` = **2026-04-09**  
   Reported when the installation was finished.
+- `Note` = **Approved by the department's facilities officer.**  
+  The approval.
+- `AccountingCostCode` = **PWD-PARKS-26**  
+  The department's programme.
+- `AccountingCost` = **Parks renewal programme 2026**  
+  The cost centre in words.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **PWD-SIG-26-WR**  
+  The department's approval signature.
+- `SignatoryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Work Quantity Total
+
+Inside `WorkQuantityTotal`:
+
+- `Quantity` = **14** (unitCode `HUR`)  
+  Fourteen hours.
+- `WorkTypeCode` = **Installation**  
+  The kind of work.
+- `WorkTypeDescription` = **Installing office furniture.**  
+  In words.
+
+### Reported Period
+
+Inside `ReportedPeriod`:
+
+- `StartDate` = **2026-04-08**  
+  The first day.
+- `EndDate` = **2026-04-09**  
+  The last.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **LPWD-PO-26-0581**  
+  The department's order.
+
+### Project Reference
+
+Inside `ProjectReference`:
+
+- `ID` = **PWD-PLAN-OFFICE-26**  
+  The new planning office.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **BF-PHOTO-26-0408**  
+  Photographs of the finished office.
 
 ### Seller Supplier Party
 
@@ -222,14 +282,94 @@ Inside `ApproverParty`:
 - `PartyName/Name` = **Lumeport Public Works Department**  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  Exempt: a service to a public body.
+
+### Statement Monetary Total
+
+Inside `StatementMonetaryTotal`:
+
+- `LineExtensionAmount` = **672.00** (currencyID `XBL`)  
+  14 hours at 48 lume.
+- `PayableAmount` = **672.00** (currencyID `XBL`)  
+  What the invoice will charge.
+
 ### Work Report Line
 
 Inside `WorkReportLine`:
 
 - `ID` = **1**  
   The installation work.
+- `WorkItemID` = **INST**  
+  The installation.
+- `WorkItemDescription` = **Six desks assembled and placed.**  
+  The work.
 - `Quantity` = **14** (unitCode `HUR`)  
   Two installers for seven hours, approved by the department.
+- `LineExtensionAmount` = **672.00** (currencyID `XBL`)  
+  14 hours at the rate.
+- `TaxInclusiveLineExtensionAmount` = **672.00** (currencyID `XBL`)  
+  Exempt.
+- `CompletionPercent` = **100**  
+  Finished.
+- `ActivityOriginLocation/Name` = **Lumeport Public Works Department, Civic Square**  
+  Where.
+- `Period/StartDate` = **2026-04-08**  
+  From.
+- `Period/EndDate` = **2026-04-09**  
+  To.
+- `PerformingParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PerformingParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `WorkPhaseReference/ID` = **PH-2**  
+  The second phase of the move.
+- `WorkPhaseReference/WorkPhaseCode` = **Furnish**  
+  Furnishing.
+- `WorkPhaseReference/WorkPhase` = **Furnishing the office**  
+  In words.
+- `WorkPhaseReference/ProgressPercent` = **100**  
+  Done.
+- `WorkPhaseReference/StartDate` = **2026-04-08**  
+  Started.
+- `WorkPhaseReference/EndDate` = **2026-04-09**  
+  Ended.
+- `WorkPhaseReference/WorkOrderDocumentReference/ID` = **LPWD-PO-26-0581**  
+  The order.
+- `DocumentReference/ID` = **BF-CHECK-26-0408**  
+  The installation checklist.
+- `Price/PriceAmount` = **48** (currencyID `XBL`)  
+  Per hour.
+- `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  Exempt.
+- `SubWorkReportLine/ID` = **1.1**  
+  One installer's part.
+- `SubWorkReportLine/WorkItemID` = **INST-1**  
+  The installer.
+- `SubWorkReportLine/WorkItemDescription` = **Installer 1: seven hours.**  
+  The work.
+- `SubWorkReportLine/Quantity` = **7** (unitCode `HUR`)  
+  Seven hours.
+- `SubWorkReportLine/PerformingParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SubWorkReportLine/PerformingParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SubWorkReportLine/ID` = **1.2**  
+  One installer's part.
+- `SubWorkReportLine/WorkItemID` = **INST-2**  
+  The installer.
+- `SubWorkReportLine/WorkItemDescription` = **Installer 2: seven hours.**  
+  The work.
+- `SubWorkReportLine/Quantity` = **7** (unitCode `HUR`)  
+  Seven hours.
+- `SubWorkReportLine/PerformingParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SubWorkReportLine/PerformingParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -242,7 +382,40 @@ Inside `WorkReportLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0582</cbc:ID>
   <cbc:UUID>e84c63f9-b6d1-5eaa-bf75-38181a29b84a</cbc:UUID>
+  <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
+  <cbc:Note>Approved by the department's facilities officer.</cbc:Note>
+  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-26-WR</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:WorkQuantityTotal>
+    <cbc:Quantity unitCode="HUR">14</cbc:Quantity>
+    <cbc:WorkTypeCode>Installation</cbc:WorkTypeCode>
+    <cbc:WorkTypeDescription>Installing office furniture.</cbc:WorkTypeDescription>
+  </cac:WorkQuantityTotal>
+  <cac:ReportedPeriod>
+    <cbc:StartDate>2026-04-08</cbc:StartDate>
+    <cbc:EndDate>2026-04-09</cbc:EndDate>
+  </cac:ReportedPeriod>
+  <cac:OrderReference>
+    <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+  </cac:OrderReference>
+  <cac:ProjectReference>
+    <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
+  </cac:ProjectReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-PHOTO-26-0408</cbc:ID>
+  </cac:AdditionalDocumentReference>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -418,9 +591,84 @@ Inside `WorkReportLine`:
       <cbc:Name>Lumeport Public Works Department</cbc:Name>
     </cac:PartyName>
   </cac:ApproverParty>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+  </cac:TaxTotal>
+  <cac:StatementMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">672.00</cbc:PayableAmount>
+  </cac:StatementMonetaryTotal>
   <cac:WorkReportLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:WorkItemID>INST</cbc:WorkItemID>
+    <cbc:WorkItemDescription>Six desks assembled and placed.</cbc:WorkItemDescription>
     <cbc:Quantity unitCode="HUR">14</cbc:Quantity>
+    <cbc:LineExtensionAmount currencyID="XBL">672.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">672.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:CompletionPercent>100</cbc:CompletionPercent>
+    <cac:ActivityOriginLocation>
+      <cbc:Name>Lumeport Public Works Department, Civic Square</cbc:Name>
+    </cac:ActivityOriginLocation>
+    <cac:Period>
+      <cbc:StartDate>2026-04-08</cbc:StartDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
+    </cac:Period>
+    <cac:PerformingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+    </cac:PerformingParty>
+    <cac:WorkPhaseReference>
+      <cbc:ID>PH-2</cbc:ID>
+      <cbc:WorkPhaseCode>Furnish</cbc:WorkPhaseCode>
+      <cbc:WorkPhase>Furnishing the office</cbc:WorkPhase>
+      <cbc:ProgressPercent>100</cbc:ProgressPercent>
+      <cbc:StartDate>2026-04-08</cbc:StartDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
+      <cac:WorkOrderDocumentReference>
+        <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+      </cac:WorkOrderDocumentReference>
+    </cac:WorkPhaseReference>
+    <cac:DocumentReference>
+      <cbc:ID>BF-CHECK-26-0408</cbc:ID>
+    </cac:DocumentReference>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">48</cbc:PriceAmount>
+    </cac:Price>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:SubWorkReportLine>
+      <cbc:ID>1.1</cbc:ID>
+      <cbc:WorkItemID>INST-1</cbc:WorkItemID>
+      <cbc:WorkItemDescription>Installer 1: seven hours.</cbc:WorkItemDescription>
+      <cbc:Quantity unitCode="HUR">7</cbc:Quantity>
+      <cac:PerformingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:PerformingParty>
+    </cac:SubWorkReportLine>
+    <cac:SubWorkReportLine>
+      <cbc:ID>1.2</cbc:ID>
+      <cbc:WorkItemID>INST-2</cbc:WorkItemID>
+      <cbc:WorkItemDescription>Installer 2: seven hours.</cbc:WorkItemDescription>
+      <cbc:Quantity unitCode="HUR">7</cbc:Quantity>
+      <cac:PerformingParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:PerformingParty>
+    </cac:SubWorkReportLine>
   </cac:WorkReportLine>
 </WorkReport>
 ```

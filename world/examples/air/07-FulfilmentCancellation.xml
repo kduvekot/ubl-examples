@@ -8,10 +8,40 @@
   <cbc:UUID>4068fe1a-3095-5164-a12c-994c102fc830</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>17:53:00</cbc:IssueTime>
+  <cbc:Note>A new despatch advice follows today.</cbc:Note>
   <cbc:CancellationNote>The cargo missed its flight; it goes on the next day's flight under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0327</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:OrderReference>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
+    <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
+    <cbc:IssueDate>2026-05-11</cbc:IssueDate>
+    <cbc:IssueTime>07:50:00</cbc:IssueTime>
+    <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
+    <cbc:OrderTypeCode>230</cbc:OrderTypeCode>
+    <cac:DocumentReference>
+      <cbc:ID>VT-PO-26-0127</cbc:ID>
+    </cac:DocumentReference>
+  </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>KAC-OFFLOAD-26-0513</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Contract>
+    <cbc:ID>LD-DAG-26-0125</cbc:ID>
+  </cac:Contract>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-FC</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
@@ -233,4 +263,14 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:DeliveryCustomerParty>
+  <cac:DespatchSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
 </FulfilmentCancellation>

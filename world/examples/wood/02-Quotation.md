@@ -26,6 +26,12 @@ The sawmill quotes per thousand slats, delivered at the factory.
   The sawmill quotes for the slats.
 - `IssueTime` = **11:34:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Valid for 30 days.**  
+  The validity.
+- `PricingCurrencyCode` = **XBL**  
+  Prices in lume.
+- `LineCountNumeric` = **1**  
+  One line.
 
 ### Validity Period
 
@@ -40,6 +46,31 @@ Inside `RequestForQuotationDocumentReference`:
 
 - `ID` = **VI-DOC-26-0625**  
   The request this quotation answers.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **MS-GTC-2026**  
+  The sawmill's terms of sale.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **VI-PUR-TERMS-2026**  
+  The buyer's purchasing terms, accepted.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **MS-SIG-26-QT**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Marrowdale Sawmill**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Seller Supplier Party
 
@@ -241,6 +272,50 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `PromisedDeliveryPeriod/StartDate` = **2026-03-02**  
+  From the third week.
+- `PromisedDeliveryPeriod/EndDate` = **2026-03-16**  
+  Within two weeks.
+
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **DAP** (schemeID `INCOTERMS`)  
+  Delivered at the factory, as asked.
+
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  By credit transfer.
+
+### Transaction Conditions
+
+Inside `TransactionConditions`:
+
+- `Description` = **Quoted per thousand slats; minimum one truck.**  
+  The conditions.
+
+### Destination Country
+
+Inside `DestinationCountry`:
+
+- `IdentificationCode` = **XU**  
+  Into Urvania.
+
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  No sales tax on an export.
+
 ### Quoted Monetary Total
 
 Inside `QuotedMonetaryTotal`:
@@ -254,6 +329,22 @@ Inside `QuotedMonetaryTotal`:
 
 Inside `QuotationLine`:
 
+- `ID` = **1**  
+  The quotation line.
+- `Note` = **As drawn; ash or oak.**  
+  What is quoted.
+- `Quantity` = **4800** (unitCode `H87`)  
+  The quantity quoted.
+- `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+  The quoted amount.
+- `TaxInclusiveLineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+  No tax on an export.
+- `TotalTaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax on an export.
+- `RequestForQuotationLineID` = **1**  
+  The line of the request.
+- `DocumentReference/ID` = **MS-SPEC-SL1800**  
+  The sawmill's specification.
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **4800** (unitCode `H87`)  
@@ -372,6 +463,20 @@ Inside `QuotationLine`:
   Which dimension.
 - `LineItem/Item/Dimension/Measure` = **38** (unitCode `MMT`)  
   Its size.
+- `SellerProposedSubstituteLineItem/ID` = **1-S**  
+  A substitute the sawmill proposes.
+- `SellerProposedSubstituteLineItem/Quantity` = **4800** (unitCode `H87`)  
+  The same quantity.
+- `SellerProposedSubstituteLineItem/Item/Name` = **Hardwood bench slat 1800 × 95 × 35**  
+  Three millimetres thinner: less waste, five per cent cheaper.
+- `AlternativeLineItem/ID` = **1-A**  
+  An alternative species.
+- `AlternativeLineItem/Quantity` = **4800** (unitCode `H87`)  
+  The same quantity.
+- `AlternativeLineItem/Item/Name` = **Oak bench slat 1800**  
+  Oak instead of ash, at a higher price.
+- `RequestLineReference/LineID` = **1**  
+  The request line answered.
 
 ## The document
 
@@ -386,12 +491,32 @@ Inside `QuotationLine`:
   <cbc:UUID>01317a73-7091-58bf-ad79-782d5646840a</cbc:UUID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>11:34:00</cbc:IssueTime>
+  <cbc:Note>Valid for 30 days.</cbc:Note>
+  <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-03-21</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RequestForQuotationDocumentReference>
     <cbc:ID>VI-DOC-26-0625</cbc:ID>
   </cac:RequestForQuotationDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>MS-GTC-2026</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Contract>
+    <cbc:ID>VI-PUR-TERMS-2026</cbc:ID>
+  </cac:Contract>
+  <cac:Signature>
+    <cbc:ID>MS-SIG-26-QT</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -577,11 +702,42 @@ Inside `QuotationLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:PromisedDeliveryPeriod>
+      <cbc:StartDate>2026-03-02</cbc:StartDate>
+      <cbc:EndDate>2026-03-16</cbc:EndDate>
+    </cac:PromisedDeliveryPeriod>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+  </cac:PaymentMeans>
+  <cac:TransactionConditions>
+    <cbc:Description>Quoted per thousand slats; minimum one truck.</cbc:Description>
+  </cac:TransactionConditions>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+  </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">34560.00</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Note>As drawn; ash or oak.</cbc:Note>
+    <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">34560.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+    <cbc:RequestForQuotationLineID>1</cbc:RequestForQuotationLineID>
+    <cac:DocumentReference>
+      <cbc:ID>MS-SPEC-SL1800</cbc:ID>
+    </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
@@ -695,6 +851,23 @@ Inside `QuotationLine`:
         </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
+    <cac:SellerProposedSubstituteLineItem>
+      <cbc:ID>1-S</cbc:ID>
+      <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Hardwood bench slat 1800 × 95 × 35</cbc:Name>
+      </cac:Item>
+    </cac:SellerProposedSubstituteLineItem>
+    <cac:AlternativeLineItem>
+      <cbc:ID>1-A</cbc:ID>
+      <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Oak bench slat 1800</cbc:Name>
+      </cac:Item>
+    </cac:AlternativeLineItem>
+    <cac:RequestLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:RequestLineReference>
   </cac:QuotationLine>
 </Quotation>
 ```

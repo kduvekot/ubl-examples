@@ -26,6 +26,48 @@ The store wants its own garden furniture line and asks for a quotation.
   The store wants its own garden furniture line.
 - `IssueTime` = **10:00:00**  
   The time of the request; quotations refer to it.
+- `SubmissionDueDate` = **2026-03-07**  
+  Quotations within five days.
+- `Note` = **For the store's own garden line.**  
+  What is asked.
+- `PricingCurrencyCode` = **XBL**  
+  In lume.
+- `LineCountNumeric` = **1**  
+  One line.
+
+### Requested Validity Period
+
+Inside `RequestedValidityPeriod`:
+
+- `DurationMeasure` = **60** (unitCode `DAY`)  
+  Prices for 60 days.
+
+### Catalogue Document Reference
+
+Inside `CatalogueDocumentReference`:
+
+- `ID` = **BM-RANGE-26**  
+  The store's range plan the line belongs to.
+
+### Signature
+
+Inside `Signature`:
+
+- `ID` = **BM-SIG-26-RFQ**  
+  The sender's electronic seal.
+- `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Originator Customer Party
+
+Inside `OriginatorCustomerParty`:
+
+- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Seller Supplier Party
 
@@ -233,10 +275,46 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `DeliveryLocation/Name` = **Brightmarket Stores, goods-in**  
+  Where.
+
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **DAP** (schemeID `INCOTERMS`)  
+  Delivered at the store.
+
+### Destination Country
+
+Inside `DestinationCountry`:
+
+- `IdentificationCode` = **XB**  
+  Bayvarra.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **BM-OWN-BRAND-2026**  
+  The store's own-brand terms.
+
 ### Request For Quotation Line
 
 Inside `RequestForQuotationLine`:
 
+- `Note` = **Optional: seat cushions to match.**  
+  An option.
+- `OptionalLineItemIndicator` = **false**  
+  The set itself is required.
+- `PrivacyCode` = **Confidential**  
+  The store's own design.
+- `SecurityClassificationCode` = **Internal**  
+  Not for publication.
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **20** (unitCode `SET`)  
@@ -275,6 +353,37 @@ Inside `RequestForQuotationLine`:
   <cbc:UUID>3ce8a8e7-a2bb-57d4-9acb-536e0559cfe3</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>10:00:00</cbc:IssueTime>
+  <cbc:SubmissionDueDate>2026-03-07</cbc:SubmissionDueDate>
+  <cbc:Note>For the store's own garden line.</cbc:Note>
+  <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:RequestedValidityPeriod>
+    <cbc:DurationMeasure unitCode="DAY">60</cbc:DurationMeasure>
+  </cac:RequestedValidityPeriod>
+  <cac:CatalogueDocumentReference>
+    <cbc:ID>BM-RANGE-26</cbc:ID>
+  </cac:CatalogueDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-RFQ</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:OriginatorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:OriginatorCustomerParty>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -455,7 +564,25 @@ Inside `RequestForQuotationLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>Brightmarket Stores, goods-in</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+  </cac:DeliveryTerms>
+  <cac:DestinationCountry>
+    <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+  </cac:DestinationCountry>
+  <cac:Contract>
+    <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
+  </cac:Contract>
   <cac:RequestForQuotationLine>
+    <cbc:Note>Optional: seat cushions to match.</cbc:Note>
+    <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
+    <cbc:PrivacyCode>Confidential</cbc:PrivacyCode>
+    <cbc:SecurityClassificationCode>Internal</cbc:SecurityClassificationCode>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>
