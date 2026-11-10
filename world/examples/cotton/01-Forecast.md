@@ -14,8 +14,14 @@ The mill tells the ginnery how many bales it expects to buy this season.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:cotton**  
+  The business process the document belongs to: the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)".
+- `ProfileExecutionID` = **COTTON-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LTM-FC-26-0191**  
   The mill's forecast number.
+- `UUID` = **bd5b89e4-c754-5b5a-b7b9-a43a6223c50d**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-02**  
   Sent at the start of the ginning season.
 - `IssueTime` = **09:00:00**  
@@ -290,7 +296,10 @@ Inside `ForecastLine`:
 <Forecast xmlns="urn:oasis:names:specification:ubl:schema:xsd:Forecast-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-FC-26-0191</cbc:ID>
+  <cbc:UUID>bd5b89e4-c754-5b5a-b7b9-a43a6223c50d</cbc:UUID>
   <cbc:IssueDate>2026-02-02</cbc:IssueDate>
   <cbc:IssueTime>09:00:00</cbc:IssueTime>
   <cbc:ForecastPurposeCode>Order</cbc:ForecastPurposeCode>

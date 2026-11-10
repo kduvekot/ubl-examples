@@ -124,6 +124,10 @@
      "birth_date": "1984-05-17",
      "birthplace": "Ferrano",
      "passport": "XU-P-2210931"
+    },
+    "cost_centre": {
+     "code": "3100",
+     "name": "Raw materials and parts"
     }
    }
   },
@@ -181,6 +185,10 @@
       "party": "5-xu",
       "percent": 100
      }
+    },
+    "cost_centre": {
+     "code": "7100",
+     "name": "Transport costs"
     }
    },
    "fleet": [
@@ -250,7 +258,11 @@
      "valid_until": "2029-12-31",
      "certificate": "XU-ENV-2024-0311"
     },
-    "customs_id": "XU-TR-104548"
+    "customs_id": "XU-TR-104548",
+    "cost_centre": {
+     "code": "4100",
+     "name": "Freight"
+    }
    }
   },
   {
@@ -794,7 +806,11 @@
      "size": "Medium",
      "capital": 2500000
     },
-    "customs_id": "XB-TR-410274"
+    "customs_id": "XB-TR-410274",
+    "cost_centre": {
+     "code": "4410",
+     "name": "Stock purchases"
+    }
    }
   },
   {
@@ -854,6 +870,10 @@
      "type": "Photo sharing",
      "name": "brightmarket",
      "uri": "https://social.example/brightmarket"
+    },
+    "cost_centre": {
+     "code": "6120",
+     "name": "Garden department"
     }
    },
    "fleet": [
@@ -946,7 +966,11 @@
     "language": "EN",
     "tax_exemption": "Public bodies are exempt from the state sales tax",
     "tax_id": "CO-0900002",
-    "customs_id": "XB-TR-410548"
+    "customs_id": "XB-TR-410548",
+    "cost_centre": {
+     "code": "PWD-PARKS-26",
+     "name": "Parks renewal programme 2026"
+    }
    }
   },
   {
@@ -1861,7 +1885,11 @@
      "founded": "1996-01-01",
      "size": "Small"
     },
-    "customs_id": "XL-TR-041859"
+    "customs_id": "XL-TR-041859",
+    "cost_centre": {
+     "code": "500",
+     "name": "Stock for municipal projects"
+    }
    }
   },
   {
@@ -2255,6 +2283,10 @@
      "form": "Ltd",
      "founded": "1996-01-01",
      "size": "Small"
+    },
+    "cost_centre": {
+     "code": "1100",
+     "name": "Timber and materials"
     }
    },
    "fleet": [
@@ -2321,7 +2353,11 @@
      "founded": "1996-01-01",
      "size": "Small"
     },
-    "customs_id": "XB-TR-412603"
+    "customs_id": "XB-TR-412603",
+    "cost_centre": {
+     "code": "2200",
+     "name": "Raw cotton"
+    }
    }
   },
   {
@@ -2374,7 +2410,11 @@
      "founded": "1996-01-01",
      "size": "Small"
     },
-    "customs_id": "XB-TR-412740"
+    "customs_id": "XB-TR-412740",
+    "cost_centre": {
+     "code": "1300",
+     "name": "Raw materials"
+    }
    }
   },
   {
@@ -2490,7 +2530,11 @@
      "founded": "1996-01-01",
      "size": "Small"
     },
-    "customs_id": "XL-TR-042681"
+    "customs_id": "XL-TR-042681",
+    "cost_centre": {
+     "code": "200",
+     "name": "Seed cotton purchases"
+    }
    }
   }
  ]

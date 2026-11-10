@@ -14,8 +14,14 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:sea**  
+  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **SEA-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BF-FI-26-0137**  
   The forwarder's booking number with the ocean carrier.
+- `UUID` = **a28c5575-3d16-5217-93bf-9cf7fe81d417**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-10**  
   The forwarder books the container.
 
@@ -406,7 +412,10 @@ Inside `Shipment`:
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-FI-26-0137</cbc:ID>
+  <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
   <cbc:IssueDate>2026-05-10</cbc:IssueDate>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

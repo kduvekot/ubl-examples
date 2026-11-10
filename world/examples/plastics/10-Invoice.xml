@@ -2,12 +2,19 @@
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-INV-26-0894</cbc:ID>
+  <cbc:UUID>462dcfae-0a9f-5692-9219-92c1bf595e5d</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
+  <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>
@@ -215,7 +222,15 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF89RRINV260894</cbc:InstructionNote>
+    <cbc:PaymentID>RF89RRINV260894</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU45CREV0000418916</cbc:ID>
       <cbc:Name>Rinova Recovery SRU</cbc:Name>
@@ -244,6 +259,24 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XUF">199680</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.rinova.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-04-20</cbc:StartDate>
+      <cbc:EndDate>2026-04-30</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -269,6 +302,9 @@
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="TNE">120</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">9984000</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
       <cbc:Name>Recycled PE granulate</cbc:Name>

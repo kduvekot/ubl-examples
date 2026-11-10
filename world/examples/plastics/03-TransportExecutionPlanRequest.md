@@ -14,8 +14,14 @@ Under CPT the waste processor is the transport user; it asks the barge operator 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:plastics**  
+  The business process the document belongs to: the flow "Recycled plastic granulate by river barge (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **PLASTICS-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **RR-TR-26-0884**  
   The transport user's request number.
+- `UUID` = **256f8176-ee49-5cca-9761-ba9a8673cb84**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Under CPT the seller is the transport user and books the barge.
 
@@ -356,7 +362,10 @@ Inside `Consignment`:
 <TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-TR-26-0884</cbc:ID>
+  <cbc:UUID>256f8176-ee49-5cca-9761-ba9a8673cb84</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>

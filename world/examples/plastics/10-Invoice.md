@@ -14,8 +14,14 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:plastics**  
+  The business process the document belongs to: the flow "Recycled plastic granulate by river barge (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **PLASTICS-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **RR-INV-26-0894**  
   The seller's invoice number.
+- `UUID` = **462dcfae-0a9f-5692-9219-92c1bf595e5d**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-20**  
   Issued once the granulate is on board.
 - `DueDate` = **2026-05-20**  
@@ -24,8 +30,16 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `Note` = **Carriage paid to: the price includes the barge to the river quay.**  
   Why the invoice has no separate freight line.
+- `TaxPointDate` = **2026-04-20**  
+  Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the seller's currency; it has no minor unit.
+- `AccountingCostCode` = **1300**  
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+- `AccountingCost` = **Raw materials**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of invoice lines, as a check on the transfer.
 
 ### Order Reference
 
@@ -261,8 +275,24 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentMeans`:
 
+- `ID` = **1**  
+  The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-05-20**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF89RRINV260894**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF89RRINV260894**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
 - `PayeeFinancialAccount/ID` = **XU45CREV0000418916** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Rinova Recovery SRU**  
@@ -293,6 +323,35 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XU-STD**  
+  The standard terms of Urvania.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 2 % discount when paid within 10 days.**  
+  Urvanian practice: a cash discount for early payment, statutory interest on late payment.
+- `SettlementDiscountPercent` = **2**  
+  The cash discount for early payment.
+- `SettlementDiscountAmount` = **199680** (currencyID `XUF`)  
+  The discount on the amount payable, if paid in time.
+- `PaymentTermsDetailsURI` = **https://www.rinova.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-05-20**  
+  The day the amount is due.
+- `SettlementPeriod/StartDate` = **2026-04-20**  
+  From the invoice date.
+- `SettlementPeriod/EndDate` = **2026-04-30**  
+  For 10 days.
+- `PenaltyInterestRate/InterestRatePercent` = **8**  
+  The interest on late payment.
+- `PenaltyInterestRate/TimeBasisCode` = **Year**  
+  A yearly rate.
+- `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
+  Simple interest, per day late.
 
 ### Tax Total
 
@@ -336,6 +395,8 @@ Inside `InvoiceLine`:
   The quantity delivered.
 - `LineExtensionAmount` = **9984000** (currencyID `XUF`)  
   120 × 83200, rounded to the minor unit of the currency.
+- `OrderLineReference/LineID` = **1**  
+  The order line this invoice line bills.
 - `Item/Description` = **Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.**  
   The seller's description; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/Name` = **Recycled PE granulate**  
@@ -384,12 +445,19 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-INV-26-0894</cbc:ID>
+  <cbc:UUID>462dcfae-0a9f-5692-9219-92c1bf595e5d</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
+  <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>
@@ -597,7 +665,15 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF89RRINV260894</cbc:InstructionNote>
+    <cbc:PaymentID>RF89RRINV260894</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU45CREV0000418916</cbc:ID>
       <cbc:Name>Rinova Recovery SRU</cbc:Name>
@@ -626,6 +702,24 @@ Inside `InvoiceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XUF">199680</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.rinova.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-04-20</cbc:StartDate>
+      <cbc:EndDate>2026-04-30</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -651,6 +745,9 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="TNE">120</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">9984000</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
       <cbc:Name>Recycled PE granulate</cbc:Name>

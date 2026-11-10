@@ -14,8 +14,14 @@ No answer after a month: a reminder.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:carnet**  
+  The business process the document belongs to: the flow "Samples to a trade fair on the island (temporary export)".
+- `ProfileExecutionID` = **CARNET-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **SCC-DOC-26-0727**  
   The sender's number for this document.
+- `UUID` = **e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-08-23**  
   No answer after a month.
 - `ProcedureCode` = **TemporaryAdmission**  
@@ -249,7 +255,10 @@ Inside `GoodsItemPassportCounterfoil`:
 <ProofOfReexportationReminder xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationReminder-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:carnet</cbc:ProfileID>
+  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCC-DOC-26-0727</cbc:ID>
+  <cbc:UUID>e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4</cbc:UUID>
   <cbc:IssueDate>2026-08-23</cbc:IssueDate>
   <cbc:ProcedureCode>TemporaryAdmission</cbc:ProcedureCode>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>

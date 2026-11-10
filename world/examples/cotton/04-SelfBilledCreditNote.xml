@@ -2,10 +2,16 @@
 <SelfBilledCreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:SelfBilledCreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBC-26-0194</cbc:ID>
+  <cbc:UUID>3fe47b86-e662-5cb9-93d0-9366b17fb485</cbc:UUID>
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
       <cbc:ID>SCG-SBI-26-0193</cbc:ID>

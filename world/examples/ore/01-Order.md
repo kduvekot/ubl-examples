@@ -14,14 +14,28 @@ Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:ore**  
+  The business process the document belongs to: the flow "Ore from the mine to the factory (domestic, Urvania)".
+- `ProfileExecutionID` = **ORE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **VI-PO-26-0304**  
   The buyer's order number.
+- `UUID` = **f7a41c69-f150-5204-9582-ff383282ea1c**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-02**  
   The first working day of the month: the monthly ore call-off.
+- `OrderTypeCode` = **220**  
+  UN/EDIFACT 1001 code 220: order.
 - `Note` = **Monthly call-off, one train.**  
   Says in words what the order is for.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the seller's currency, in which the seller's prices are; it has no minor unit.
+- `AccountingCostCode` = **3100**  
+  The buyer's cost centre, to be quoted on the invoice.
+- `AccountingCost` = **Raw materials and parts**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of order lines.
 
 ### Buyer Customer Party
 
@@ -417,10 +431,17 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:ore</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-PO-26-0304</cbc:ID>
+  <cbc:UUID>f7a41c69-f150-5204-9582-ff383282ea1c</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:Note>Monthly call-off, one train.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>

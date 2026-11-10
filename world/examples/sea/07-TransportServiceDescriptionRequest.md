@@ -14,8 +14,14 @@ The distributor asks the ocean carrier for its sailings to the island.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:sea**  
+  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **SEA-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-DOC-26-0129**  
   The sender's number for this document.
+- `UUID` = **85aef8c8-1b9f-512f-8ae1-044576d7ea15**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-08**  
   Asked once the order is accepted.
 - `IssueTime` = **14:00:00**  
@@ -239,7 +245,10 @@ Inside `TransportationService`:
 <TransportServiceDescriptionRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0129</cbc:ID>
+  <cbc:UUID>85aef8c8-1b9f-512f-8ae1-044576d7ea15</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>14:00:00</cbc:IssueTime>
   <cac:SenderParty>

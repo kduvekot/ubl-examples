@@ -14,8 +14,14 @@ The port of loading reports the container loaded on board.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:sea**  
+  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **SEA-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **PL-TS-26-0138**  
   The sender's status report number.
+- `UUID` = **2564cf59-a7e2-5a31-9b4c-e17cc91746d5**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Reported when the container is on board.
 
@@ -352,7 +358,10 @@ Inside `ReceiverParty`:
 <TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>PL-TS-26-0138</cbc:ID>
+  <cbc:UUID>2564cf59-a7e2-5a31-9b4c-e17cc91746d5</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>

@@ -14,8 +14,14 @@ The distributor accepts the change: the urgent part goes by air at an extra char
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:air**  
+  The business process the document belongs to: the flow "An urgent part of the order by air (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **AIR-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-OR-26-0321**  
   The seller's number for its response.
+- `UUID` = **bb1366b0-cfa6-5b51-b032-09e912dd0b93**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
   The distributor accepts the change.
 - `OrderResponseCode` = **AP**  
@@ -215,7 +221,10 @@ Inside `BuyerCustomerParty`:
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
+  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-OR-26-0321</cbc:ID>
+  <cbc:UUID>bb1366b0-cfa6-5b51-b032-09e912dd0b93</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>

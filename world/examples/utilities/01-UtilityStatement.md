@@ -14,8 +14,14 @@ The factory's monthly electricity consumption: meter readings and consumption pe
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:utilities**  
+  The business process the document belongs to: the flow "Electricity, water and telecom (one utility in each country)".
+- `ProfileExecutionID` = **UTILITIES-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **FE-DOC-26-0314**  
   The utility's statement number.
+- `UUID` = **939b6614-b83d-522f-883a-72105c1b71f9**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
 - `UtilityStatementTypeCode` = **Electricity**  
@@ -244,7 +250,10 @@ Inside `SubscriberParty`:
 <UtilityStatement xmlns="urn:oasis:names:specification:ubl:schema:xsd:UtilityStatement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
+  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FE-DOC-26-0314</cbc:ID>
+  <cbc:UUID>939b6614-b83d-522f-883a-72105c1b71f9</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:UtilityStatementTypeCode>Electricity</cbc:UtilityStatementTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>

@@ -14,8 +14,14 @@ The distributor, as importer, declares the goods in Bayvarra and claims the pref
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:road**  
+  The business process the document belongs to: the flow "Finished goods by truck across the land border (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **ROAD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-IM-26-0161**  
   The importer's declaration number.
+- `UUID` = **d05f73ca-d179-5742-b609-b8871aacb98b**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-24**  
   Declared when the goods arrive in Bayvarra.
 
@@ -560,7 +566,10 @@ Inside `AdditionalDocumentReference`:
 <ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-IM-26-0161</cbc:ID>
+  <cbc:UUID>d05f73ca-d179-5742-b609-b8871aacb98b</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cac:ImporterParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

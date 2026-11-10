@@ -14,8 +14,14 @@ The sawmill quotes per thousand slats, delivered at the factory.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:wood**  
+  The business process the document belongs to: the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)".
+- `ProfileExecutionID` = **WOOD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **MS-DOC-26-0626**  
   The seller's quotation number.
+- `UUID` = **01317a73-7091-58bf-ad79-782d5646840a**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-19**  
   The sawmill quotes for the slats.
 
@@ -372,7 +378,10 @@ Inside `QuotationLine`:
 <Quotation xmlns="urn:oasis:names:specification:ubl:schema:xsd:Quotation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-DOC-26-0626</cbc:ID>
+  <cbc:UUID>01317a73-7091-58bf-ad79-782d5646840a</cbc:UUID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-03-21</cbc:EndDate>

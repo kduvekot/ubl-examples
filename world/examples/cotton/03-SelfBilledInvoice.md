@@ -14,14 +14,28 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:cotton**  
+  The business process the document belongs to: the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)".
+- `ProfileExecutionID` = **COTTON-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **SCG-SBI-26-0193**  
   The number the customer gives the self-billed document, under the self-billing agreement.
+- `UUID` = **da6a76fb-cc8f-56c6-bea6-296a7804c3c9**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-07**  
   The ginnery bills itself for the delivery, as the self-billing agreement provides.
+- `DueDate` = **2026-03-24**  
+  The supplier's usual term, which the customer applies to itself.
 - `InvoiceTypeCode` = **389**  
   UN/EDIFACT 1001 code 389: self-billed invoice.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the supplier's currency; it has three decimals.
+- `AccountingCostCode` = **200**  
+  The customer's own cost centre: it books what it billed itself.
+- `AccountingCost` = **Seed cotton purchases**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Despatch Document Reference
 
@@ -244,8 +258,22 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentMeans`:
 
+- `ID` = **1**  
+  The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 30: credit transfer.
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-03-24**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **CORAL-NET**  
+  The payment system the transfer runs over: the domestic clearing.
+- `InstructionNote` = **Quote RF07SCGSBI260193**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF07SCGSBI260193**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
 - `PayeeFinancialAccount/ID` = **XL05BSEL0004817534** (schemeID `urn:ubl-examples:world:account`)  
   The supplier's account, where the customer pays what it billed itself. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Lisavu Cotton Farm**  
@@ -256,6 +284,8 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC**  
   The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/PaymentNote` = **Invoice SCG-SBI-26-0193**  
+  What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BSEL-001**  
   The branch that keeps the account.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
@@ -274,6 +304,27 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XL**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XL-STD**  
+  The standard terms of Lisavu.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **45 days net.**  
+  Island practice: longer terms, simple interest on late payment.
+- `PaymentTermsDetailsURI` = **https://www.lisavufarm.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-03-24**  
+  The day the amount is due.
+- `PenaltyInterestRate/InterestRatePercent` = **6**  
+  The interest on late payment.
+- `PenaltyInterestRate/TimeBasisCode` = **Year**  
+  A yearly rate.
+- `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
+  Simple interest, per day late.
 
 ### Tax Total
 
@@ -349,10 +400,17 @@ Inside `InvoiceLine`:
 <SelfBilledInvoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:SelfBilledInvoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBI-26-0193</cbc:ID>
+  <cbc:UUID>da6a76fb-cc8f-56c6-bea6-296a7804c3c9</cbc:UUID>
   <cbc:IssueDate>2026-02-07</cbc:IssueDate>
+  <cbc:DueDate>2026-03-24</cbc:DueDate>
   <cbc:InvoiceTypeCode>389</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:DespatchDocumentReference>
     <cbc:ID>LCF-DN-26-0192</cbc:ID>
   </cac:DespatchDocumentReference>
@@ -542,13 +600,21 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF07SCGSBI260193</cbc:InstructionNote>
+    <cbc:PaymentID>RF07SCGSBI260193</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL05BSEL0004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
       <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice SCG-SBI-26-0193</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -570,6 +636,18 @@ Inside `InvoiceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XL-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>45 days net.</cbc:Note>
+    <cbc:PaymentTermsDetailsURI>https://www.lisavufarm.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

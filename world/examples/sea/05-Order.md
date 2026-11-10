@@ -14,12 +14,26 @@ Delivery terms CIF port of the island: the order names the buyer's 3PL as delive
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:sea**  
+  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **SEA-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **VT-PO-26-0127**  
   The buyer's order number.
+- `UUID` = **96cdcd1a-b60b-535b-b857-023213a9b16e**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-07**  
   The island buyer orders benches for its city's parks.
+- `OrderTypeCode` = **220**  
+  UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals.
+- `AccountingCostCode` = **500**  
+  The buyer's cost centre, to be quoted on the invoice.
+- `AccountingCost` = **Stock for municipal projects**  
+  The cost centre in words.
+- `LineCountNumeric` = **2**  
+  The number of order lines.
 
 ### Buyer Customer Party
 
@@ -580,9 +594,16 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-PO-26-0127</cbc:ID>
+  <cbc:UUID>96cdcd1a-b60b-535b-b857-023213a9b16e</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>

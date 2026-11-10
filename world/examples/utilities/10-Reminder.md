@@ -14,8 +14,14 @@ The household has not paid by the due date; the utility reminds it of the amount
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:utilities**  
+  The business process the document belongs to: the flow "Electricity, water and telecom (one utility in each country)".
+- `ProfileExecutionID` = **UTILITIES-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **CSWC-DOC-26-0321**  
   The reminder number.
+- `UUID` = **ff7b6a47-db42-5844-b098-ee8d7f1a7e38**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-01**  
   Sent a week after the due date passed without payment.
 - `DocumentCurrencyCode` = **XBL**  
@@ -211,7 +217,10 @@ Inside `ReminderLine`:
 <Reminder xmlns="urn:oasis:names:specification:ubl:schema:xsd:Reminder-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
+  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>CSWC-DOC-26-0321</cbc:ID>
+  <cbc:UUID>ff7b6a47-db42-5844-b098-ee8d7f1a7e38</cbc:UUID>
   <cbc:IssueDate>2026-05-01</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>

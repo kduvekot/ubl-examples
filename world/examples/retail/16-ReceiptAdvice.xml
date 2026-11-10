@@ -2,7 +2,10 @@
 <ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-RA-26-0234</cbc:ID>
+  <cbc:UUID>72e2f38d-9c14-5700-9cf7-82648d72cd8e</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>

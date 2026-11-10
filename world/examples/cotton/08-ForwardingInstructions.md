@@ -14,8 +14,14 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:cotton**  
+  The business process the document belongs to: the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)".
+- `ProfileExecutionID` = **COTTON-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LTM-FI-26-0198**  
   The mill's instruction number.
+- `UUID` = **7991b479-392b-5bc2-90ba-107a0778b62f**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-25**  
   Under FOB the buyer instructs the forwarder for the main carriage.
 
@@ -299,7 +305,10 @@ Inside `Shipment`:
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-FI-26-0198</cbc:ID>
+  <cbc:UUID>7991b479-392b-5bc2-90ba-107a0778b62f</cbc:UUID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>

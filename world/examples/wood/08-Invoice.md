@@ -14,8 +14,14 @@ Slats and delivery. An export from Bayvarra: no sales tax, with the exemption st
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:wood**  
+  The business process the document belongs to: the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)".
+- `ProfileExecutionID` = **WOOD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **MS-INV-26-0635**  
   The seller's invoice number.
+- `UUID` = **ae3fabe1-02f6-56f3-a403-bd58b53f0ab9**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-26**  
   Issued when the slats leave.
 - `DueDate` = **2026-03-28**  
@@ -24,6 +30,12 @@ Slats and delivery. An export from Bayvarra: no sales tax, with the exemption st
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency; it has two decimals.
+- `AccountingCostCode` = **3100**  
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+- `AccountingCost` = **Raw materials and parts**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of invoice lines, as a check on the transfer.
 
 ### Order Reference
 
@@ -254,8 +266,24 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentMeans`:
 
+- `ID` = **1**  
+  The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-03-28**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF83MSINV260635**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF83MSINV260635**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
 - `PayeeFinancialAccount/ID` = **XB77BLUM0004398618** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Marrowdale Sawmill Ltd**  
@@ -286,6 +314,29 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XB-STD**  
+  The standard terms of Bayvarra.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 1.5 % surcharge per month late.**  
+  Bayvarran practice: a surcharge per month of late payment, no discount.
+- `PenaltySurchargePercent` = **1.5**  
+  The surcharge per month of late payment.
+- `PenaltyAmount` = **518.40** (currencyID `XBL`)  
+  The surcharge for the first month late.
+- `PaymentTermsDetailsURI` = **https://www.marrowdalesawmill.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-03-28**  
+  The day the amount is due.
+- `PenaltyPeriod/StartDate` = **2026-03-29**  
+  From the day after the due date.
+- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
+  Per month.
 
 ### Tax Total
 
@@ -457,11 +508,17 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-INV-26-0635</cbc:ID>
+  <cbc:UUID>ae3fabe1-02f6-56f3-a403-bd58b53f0ab9</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:DueDate>2026-03-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>
@@ -671,7 +728,15 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-03-28</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF83MSINV260635</cbc:InstructionNote>
+    <cbc:PaymentID>RF83MSINV260635</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM0004398618</cbc:ID>
       <cbc:Name>Marrowdale Sawmill Ltd</cbc:Name>
@@ -700,6 +765,19 @@ Inside `InvoiceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">518.40</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-03-28</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-03-29</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

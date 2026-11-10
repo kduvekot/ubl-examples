@@ -14,16 +14,30 @@ The carrier invoices the transport to the party that booked it; under FCA that i
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:road**  
+  The business process the document belongs to: the flow "Finished goods by truck across the land border (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **ROAD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **TH-INV-26-0163**  
   The seller's invoice number.
+- `UUID` = **29197a8a-2a1a-57ce-9332-6da8199e7de3**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
   Issued after delivery.
 - `DueDate` = **2026-04-24**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
+- `TaxPointDate` = **2026-03-25**  
+  Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the seller's currency; it has no minor unit.
+- `AccountingCostCode` = **4410**  
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+- `AccountingCost` = **Stock purchases**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of invoice lines, as a check on the transfer.
 
 ### Additional Document Reference
 
@@ -279,8 +293,24 @@ Inside `Delivery`:
 
 Inside `PaymentMeans`:
 
+- `ID` = **1**  
+  The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-04-24**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF06THINV260163**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF06THINV260163**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
 - `PayeeFinancialAccount/ID` = **XU70CREV0000628374** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Trasvia Haulage SRU**  
@@ -311,6 +341,35 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XU-STD**  
+  The standard terms of Urvania.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 2 % discount when paid within 10 days.**  
+  Urvanian practice: a cash discount for early payment, statutory interest on late payment.
+- `SettlementDiscountPercent` = **2**  
+  The cash discount for early payment.
+- `SettlementDiscountAmount` = **895** (currencyID `XUF`)  
+  The discount on the amount payable, if paid in time.
+- `PaymentTermsDetailsURI` = **https://www.trasvia.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-04-24**  
+  The day the amount is due.
+- `SettlementPeriod/StartDate` = **2026-03-25**  
+  From the invoice date.
+- `SettlementPeriod/EndDate` = **2026-04-04**  
+  For 10 days.
+- `PenaltyInterestRate/InterestRatePercent` = **8**  
+  The interest on late payment.
+- `PenaltyInterestRate/TimeBasisCode` = **Year**  
+  A yearly rate.
+- `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
+  Simple interest, per day late.
 
 ### Tax Total
 
@@ -380,11 +439,18 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TH-INV-26-0163</cbc:ID>
+  <cbc:UUID>29197a8a-2a1a-57ce-9332-6da8199e7de3</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:DueDate>2026-04-24</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:TaxPointDate>2026-03-25</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TH-WB-26-0159</cbc:ID>
   </cac:AdditionalDocumentReference>
@@ -618,7 +684,15 @@ Inside `InvoiceLine`:
     </cac:Shipment>
   </cac:Delivery>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-24</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF06THINV260163</cbc:InstructionNote>
+    <cbc:PaymentID>RF06THINV260163</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU70CREV0000628374</cbc:ID>
       <cbc:Name>Trasvia Haulage SRU</cbc:Name>
@@ -647,6 +721,24 @@ Inside `InvoiceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XUF">895</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.trasvia.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-24</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-03-25</cbc:StartDate>
+      <cbc:EndDate>2026-04-04</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>

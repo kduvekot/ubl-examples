@@ -2,7 +2,10 @@
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:ore</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0313</cbc:ID>
+  <cbc:UUID>c1cdbf15-9eb1-59b6-abc7-b3a50c56fdb2</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XUF">17297405</cbc:TotalPaymentAmount>
@@ -205,6 +208,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionID>VI-PAY-26-0304</cbc:InstructionID>
+    <cbc:PaymentID>RF73SMINV260312</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU20CREV0000209458</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
@@ -261,6 +266,9 @@
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XUF">17297405</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
+    <cbc:InvoicingPartyReference>RF73SMINV260312</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>SM-INV-26-0312</cbc:ID>

@@ -54,7 +54,24 @@
     "SUA": "Società urvaniana per azioni (public limited company)",
     "SRU": "Società a responsabilità urvaniana (private limited company)"
    },
-   "region": "Province of Ferrano"
+   "region": "Province of Ferrano",
+   "payment": {
+    "terms": "30 days net; 2 % discount when paid within 10 days.",
+    "due_days": 30,
+    "discount": {
+     "percent": "2",
+     "days": 10
+    },
+    "penalty_interest": {
+     "percent": "8",
+     "basis": "Year"
+    },
+    "system": {
+     "id": "FERRA-RTGS",
+     "name": "Ferra clearing of the central bank of Urvania"
+    },
+    "note": "Urvanian practice: a cash discount for early payment, statutory interest on late payment."
+   }
   },
   "XB": {
    "name": "Bayvarra",
@@ -122,6 +139,19 @@
    "legal_forms": {
     "Corp": "Corporation (public)",
     "Ltd": "Limited company (private)"
+   },
+   "payment": {
+    "terms": "30 days net; 1.5 % surcharge per month late.",
+    "due_days": 30,
+    "penalty_surcharge": {
+     "percent": "1.5",
+     "per": "month"
+    },
+    "system": {
+     "id": "LUMEPAY",
+     "name": "Lumeport interbank payments"
+    },
+    "note": "Bayvarran practice: a surcharge per month of late payment, no discount."
    }
   },
   "XL": {
@@ -178,6 +208,19 @@
    "legal_forms": {
     "Ltd": "Island limited company",
     "SP": "Sole proprietorship"
+   },
+   "payment": {
+    "terms": "45 days net.",
+    "due_days": 45,
+    "penalty_interest": {
+     "percent": "6",
+     "basis": "Year"
+    },
+    "system": {
+     "id": "CORAL-NET",
+     "name": "Coral net of the Bank of Selanu"
+    },
+    "note": "Island practice: longer terms, simple interest on late payment."
    }
   }
  },
@@ -196,5 +239,11 @@
   "timezone": "UTC-1",
   "note": "The world lies in an empty part of the South Atlantic, about 40° South and 15° West: every coordinate in the examples points to open sea on a real map. Map tile (i, j) lies at latitude 39.80 + 0.01·j degrees South and longitude 15.60 − 0.01·i degrees West.",
   "telephone_note": "Telephone numbers use +999, a country code that the ITU keeps in reserve (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country."
+ },
+ "payment_cross_border": {
+  "system": "TRADE-ACCORD-PAY",
+  "name": "Payment link of the Lumeport Trade Accord",
+  "charge_bearer": "SHAR",
+  "note": "Payments between the three countries run over the trade accord's link; charges are shared (ISO 20022 SHAR)."
  }
 }

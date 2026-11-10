@@ -1480,7 +1480,7 @@ def air(n, doc):
         order = kit.order(f, n, doc, 0, "The buyer needs eight side frames urgently.",
                           "Carriage paid to the island's airport for the urgent frames: the distributor pays the air "
                           "freight; the rest of the order stays CIF by sea.", "Selanu airport, cargo terminal")
-        for k in ("TaxTotal", "AnticipatedMonetaryTotal"):
+        for k in ("TaxTotal", "AnticipatedMonetaryTotal", "OrderTypeCode"):
             order.pop(k)
         order["Delivery"] = {"DeliveryTerms": {"ID": V("CPT", "Incoterms 2020: carriage paid to, for this delivery "
                                                               "only.", schemeID="INCOTERMS"),

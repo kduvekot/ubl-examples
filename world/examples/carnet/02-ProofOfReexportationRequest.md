@@ -14,8 +14,14 @@ The island's chamber has no re-export stamp for the samples and asks for proof t
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:carnet**  
+  The business process the document belongs to: the flow "Samples to a trade fair on the island (temporary export)".
+- `ProfileExecutionID` = **CARNET-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **SCC-DOC-26-0726**  
   The sender's number for this document.
+- `UUID` = **3377b749-219b-5bbb-a9d2-7d1101bcbe28**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-07-24**  
   Two months after the fair the samples' re-export is not recorded.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
@@ -233,7 +239,10 @@ Inside `ImportingCustomsParty`:
 <ProofOfReexportationRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:carnet</cbc:ProfileID>
+  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCC-DOC-26-0726</cbc:ID>
+  <cbc:UUID>3377b749-219b-5bbb-a9d2-7d1101bcbe28</cbc:UUID>
   <cbc:IssueDate>2026-07-24</cbc:IssueDate>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ImportingGuarantorParty>

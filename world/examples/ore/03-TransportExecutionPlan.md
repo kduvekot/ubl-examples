@@ -14,8 +14,14 @@ The rail carrier confirms the train, the wagons and the schedule; this is the ag
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:ore**  
+  The business process the document belongs to: the flow "Ore from the mine to the factory (domestic, Urvania)".
+- `ProfileExecutionID` = **ORE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **FRC-TEP-26-0307**  
   The carrier's number for the agreed plan.
+- `UUID` = **c8bf0a9d-d411-54f7-aeb2-97d4e2a86a5c**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-04**  
   The day after the request.
 - `DocumentStatusCode` = **Confirmed**  
@@ -377,7 +383,10 @@ Inside `Consignment`:
 <TransportExecutionPlan xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:ore</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-TEP-26-0307</cbc:ID>
+  <cbc:UUID>c8bf0a9d-d411-54f7-aeb2-97d4e2a86a5c</cbc:UUID>
   <cbc:IssueDate>2026-03-04</cbc:IssueDate>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>

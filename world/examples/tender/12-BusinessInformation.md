@@ -14,8 +14,14 @@ The authority checks the tenderer's registration with the business registry.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:tender**  
+  The business process the document belongs to: the flow "A public tender (Bayvarra)".
+- `ProfileExecutionID` = **TENDER-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BIS-DOC-26-0198**  
   The registry's extract number.
+- `UUID` = **caa9a455-79a7-5aae-9576-1eb0e65da6ee**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-27**  
   The authority checks the tenderer's registration before evaluation.
 
@@ -297,7 +303,10 @@ Inside `BusinessParty`:
 <BusinessInformation xmlns="urn:oasis:names:specification:ubl:schema:xsd:BusinessInformation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BIS-DOC-26-0198</cbc:ID>
+  <cbc:UUID>caa9a455-79a7-5aae-9576-1eb0e65da6ee</cbc:UUID>
   <cbc:IssueDate>2026-02-27</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

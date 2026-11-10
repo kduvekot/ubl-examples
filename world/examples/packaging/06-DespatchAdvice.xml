@@ -2,7 +2,10 @@
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:packaging</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-DA-26-0526</cbc:ID>
+  <cbc:UUID>c1af718a-512a-5aed-8622-6a31ae7211c9</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0525</cbc:ID>

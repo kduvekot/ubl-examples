@@ -2,7 +2,10 @@
 <CataloguePricingUpdate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CataloguePricingUpdate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0219</cbc:ID>
+  <cbc:UUID>cb1037ec-e5d5-5660-b5af-c39c2b7e1438</cbc:UUID>
   <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cac:RelatedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>

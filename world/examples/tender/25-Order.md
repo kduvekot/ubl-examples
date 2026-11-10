@@ -14,12 +14,26 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:tender**  
+  The business process the document belongs to: the flow "A public tender (Bayvarra)".
+- `ProfileExecutionID` = **TENDER-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LPWD-PO-26-0211**  
   The buyer's order number.
+- `UUID` = **0dfaecd7-ab70-522e-912d-0e639d70be1e**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   The first call-off under the awarded contract.
+- `OrderTypeCode` = **220**  
+  UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the buyer's currency, agreed in the contract; it has two decimals.
+- `AccountingCostCode` = **PWD-PARKS-26**  
+  The buyer's cost centre, to be quoted on the invoice.
+- `AccountingCost` = **Parks renewal programme 2026**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of order lines.
 
 ### Contract
 
@@ -498,9 +512,16 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-PO-26-0211</cbc:ID>
+  <cbc:UUID>0dfaecd7-ab70-522e-912d-0e639d70be1e</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:Contract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
   </cac:Contract>

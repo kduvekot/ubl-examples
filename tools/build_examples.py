@@ -26,6 +26,7 @@ Usage: python3 tools/build_examples.py [flow...]            (write; default: eve
 import datetime
 import os
 import sys
+import uuid
 from decimal import ROUND_HALF_UP, Decimal
 
 from lxml import etree
@@ -826,6 +827,18 @@ def main(flow_id, check=False):
         header = {"UBLVersionID": V("2.5", "The documents of the world use UBL 2.5."),
                   "CustomizationID": V(CUSTOMIZATION, "The example world is a customization of UBL: it uses its own "
                                                       "code lists for countries and currencies.")}
+        own = {b[0] for b in MODEL["abies"][doc["doc"]]["bbies"]}
+        if "ProfileID" in own:
+            header["ProfileID"] = V(f"urn:ubl-examples:world:process:{flow_id}", "The business process the document "
+                                    f"belongs to: the flow \"{flow['title']}\".")
+        if "ProfileExecutionID" in own:
+            header["ProfileExecutionID"] = V(f"{flow_id.upper()}-2026-01", "This run of the process: the same in "
+                                                                          "every document of the flow.")
+        if "UUID" in own:
+            header["UUID"] = V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:{flow_id}:{n}:"
+                                                                  f"{doc['doc']}")),
+                               "A universally unique identifier of the document, derived from its place in the world "
+                               "(UUID version 5), so it stays the same on every build.")
         root, reasons = build(doc["doc"], merge(header, content))
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}

@@ -14,8 +14,14 @@ Under DAP the sawmill is the transport user; it books the road carrier across th
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:wood**  
+  The business process the document belongs to: the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)".
+- `ProfileExecutionID` = **WOOD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **MS-TR-26-0628**  
   The transport user's request number.
+- `UUID` = **b76f67b2-bdec-5954-8847-a49b1f0dd043**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-23**  
   Under DAP the sawmill books the truck across the border.
 
@@ -358,7 +364,10 @@ Inside `Consignment`:
 <TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-TR-26-0628</cbc:ID>
+  <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>

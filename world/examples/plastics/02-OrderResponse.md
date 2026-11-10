@@ -14,8 +14,14 @@ The waste processor confirms the lot and the loading date.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:plastics**  
+  The business process the document belongs to: the flow "Recycled plastic granulate by river barge (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **PLASTICS-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **RR-OR-26-0883**  
   The seller's number for its response.
+- `UUID` = **d96e3f6a-2649-56f7-9849-4bc3034c1d57**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   The waste processor confirms the lot.
 - `OrderResponseCode` = **AP**  
@@ -233,7 +239,10 @@ Inside `BuyerCustomerParty`:
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-OR-26-0883</cbc:ID>
+  <cbc:UUID>d96e3f6a-2649-56f7-9849-4bc3034c1d57</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>

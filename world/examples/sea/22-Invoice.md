@@ -14,8 +14,14 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:sea**  
+  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **SEA-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-INV-26-0147**  
   The seller's invoice number.
+- `UUID` = **6043e69c-9119-593c-8528-d6120d07241e**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Issued when the goods are on board.
 - `DueDate` = **2026-06-28**  
@@ -24,6 +30,12 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency; it has two decimals.
+- `AccountingCostCode` = **500**  
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+- `AccountingCost` = **Stock for municipal projects**  
+  The cost centre in words.
+- `LineCountNumeric` = **2**  
+  The number of invoice lines, as a check on the transfer.
 
 ### Order Reference
 
@@ -402,8 +414,24 @@ Inside `Delivery`:
 
 Inside `PaymentMeans`:
 
+- `ID` = **1**  
+  The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-06-28**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **TRADE-ACCORD-PAY**  
+  The payment system the transfer runs over: the trade accord's link between the countries.
+- `InstructionNote` = **Quote RF20LDINV260147**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF20LDINV260147**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `ChargeBearerCode` = **SHAR**  
+  ISO 20022 SHAR: each side pays its own bank's charges.
 - `PayeeFinancialAccount/ID` = **XB21BLUM0002304038** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Harbourline Factoring Ltd**  
@@ -434,6 +462,29 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XB**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XB-STD**  
+  The standard terms of Bayvarra.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 1.5 % surcharge per month late.**  
+  Bayvarran practice: a surcharge per month of late payment, no discount.
+- `PenaltySurchargePercent` = **1.5**  
+  The surcharge per month of late payment.
+- `PenaltyAmount` = **806.67** (currencyID `XBL`)  
+  The surcharge for the first month late.
+- `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-06-28**  
+  The day the amount is due.
+- `PenaltyPeriod/StartDate` = **2026-06-29**  
+  From the day after the due date.
+- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
+  Per month.
 
 ### Allowance Charge
 
@@ -512,6 +563,8 @@ Inside `InvoiceLine`:
   The quantity delivered.
 - `LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
   96 × 520.0, rounded to the minor unit of the currency.
+- `OrderLineReference/LineID` = **1**  
+  The order line this invoice line bills.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -728,6 +781,8 @@ Inside `InvoiceLine`:
   The quantity delivered.
 - `LineExtensionAmount` = **768.00** (currencyID `XBL`)  
   12 × 64.0, rounded to the minor unit of the currency.
+- `OrderLineReference/LineID` = **2**  
+  The order line this invoice line bills.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
@@ -772,11 +827,17 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-INV-26-0147</cbc:ID>
+  <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:DueDate>2026-06-28</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -1103,7 +1164,15 @@ Inside `InvoiceLine`:
     </cac:DeliveryParty>
   </cac:Delivery>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
+    <cbc:PaymentID>RF20LDINV260147</cbc:PaymentID>
+    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM0002304038</cbc:ID>
       <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
@@ -1132,6 +1201,19 @@ Inside `InvoiceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">806.67</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-06-29</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
@@ -1184,6 +1266,9 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="H87">96</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1378,6 +1463,9 @@ Inside `InvoiceLine`:
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="H87">12</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

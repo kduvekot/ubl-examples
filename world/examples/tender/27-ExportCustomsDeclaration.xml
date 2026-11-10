@@ -2,7 +2,10 @@
 <ExportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-EX-26-0215</cbc:ID>
+  <cbc:UUID>50fa98a8-ede0-548d-bf67-6e9e4318b625</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cac:ExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>

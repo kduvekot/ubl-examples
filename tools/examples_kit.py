@@ -117,6 +117,84 @@ def tax_category(rule):
     return out
 
 
+# ---------------------------------------------------------------- payment: terms, means, references
+def rf_reference(text):
+    """An ISO 11649 creditor reference: RF, two check digits (ISO 7064 mod 97-10) and the reference."""
+    ref = "".join(c for c in text.upper() if c.isalnum())[:21]
+    digits = "".join(str(int(c, 36)) for c in ref + "RF00")
+    return f"RF{98 - int(digits) % 97:02d}{ref}"
+
+
+def cross_border(a, b):
+    return PARTY[a]["c"] != PARTY[b]["c"]
+
+
+def payment_terms(flow, seller, buyer, day, due_days, total, cur, number):
+    """The seller country's payment practice (world/countries.json) applied to this invoice."""
+    c = WORLD["countries"][PARTY[seller]["c"]]
+    pay = c["payment"]
+    out = {"ID": V(f"{PARTY[seller]['c']}-STD", f"The standard terms of {c['name']}."),
+           "Note": V(pay["terms"], pay["note"]),
+           "PaymentDueDate": V(flow.date(day + due_days), "The day the amount is due."),
+           "PaymentMeansID": V("1", "The payment means these terms apply to: the credit transfer below.")}
+    if pay.get("discount"):
+        dsc = pay["discount"]
+        out["SettlementDiscountPercent"] = V(dsc["percent"], "The cash discount for early payment.")
+        out["SettlementDiscountAmount"] = amount(total * Decimal(dsc["percent"]) / 100, cur, "The discount on the "
+                                                 "amount payable, if paid in time.")
+        out["SettlementPeriod"] = {"StartDate": V(flow.date(day), "From the invoice date."),
+                                   "EndDate": V(flow.date(day + dsc["days"]), f"For {dsc['days']} days.")}
+    if pay.get("penalty_surcharge"):
+        pen = pay["penalty_surcharge"]
+        out["PenaltySurchargePercent"] = V(pen["percent"], f"The surcharge per {pen['per']} of late payment.")
+        out["PenaltyAmount"] = amount(total * Decimal(pen["percent"]) / 100, cur, "The surcharge for the first month "
+                                                                                  "late.")
+        out["PenaltyPeriod"] = {"StartDate": V(flow.date(day + due_days + 1), "From the day after the due date."),
+                                "DurationMeasure": V("1", "Per month.", unitCode="MON")}
+    if pay.get("penalty_interest"):
+        pi = pay["penalty_interest"]
+        out["PenaltyInterestRate"] = {"InterestRatePercent": V(pi["percent"], "The interest on late payment."),
+                                      "TimeBasisCode": V(pi["basis"], "A yearly rate."),
+                                      "CalculationMethodCode": V("Simple", "Simple interest, per day late.")}
+    if PARTY[seller]["identity"].get("website"):
+        out["PaymentTermsDetailsURI"] = V(PARTY[seller]["identity"]["website"] + "/terms", "The seller's general "
+                                                                                           "terms of payment.")
+    return out
+
+
+def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account, code="30"):
+    """A credit transfer to the payee, with a structured payment reference the bank passes on."""
+    border = cross_border(seller, buyer)
+    system = WORLD["payment_cross_border"]["system"] if border else \
+        WORLD["countries"][PARTY[seller]["c"]]["payment"]["system"]["id"]
+    out = {"ID": V("1", "The first, and only, way to pay."),
+           "PaymentMeansCode": V(code, "UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of "
+                                       "UBL's payment means code list, which code list validation checks.",
+                                 listID="UN/EDIFACT EDED 4461"),
+           "PaymentMeansDescription": V("Credit transfer", "In words."),
+           "PaymentDueDate": V(flow.date(day + due_days), "When the transfer must be credited."),
+           "PaymentChannelCode": V("IBAN", "Paid to an account identified in the format of ISO 13616."),
+           "PaymentRailID": V(system, "The payment system the transfer runs over: "
+                              + ("the trade accord's link between the countries." if border else
+                                 "the domestic clearing.")),
+           "PaymentID": V(rf_reference(number), "The structured creditor reference of ISO 11649 to quote with the "
+                                                "payment, made from the invoice number with its check digits."),
+           "InstructionNote": V(f"Quote {rf_reference(number)}", "What the payer writes in the transfer.")}
+    if border:
+        out["ChargeBearerCode"] = V(WORLD["payment_cross_border"]["charge_bearer"], "ISO 20022 SHAR: each side pays "
+                                                                                     "its own bank's charges.")
+    out["PayeeFinancialAccount"] = account(payee, why_account, note=f"Invoice {number}")
+    return out
+
+
+def cost_centre(pid, why):
+    """The buyer's accounting cost, as code and text, from its identity."""
+    cc = PARTY[pid]["identity"].get("cost_centre")
+    if not cc:
+        return {}
+    return {"AccountingCostCode": V(cc["code"], why), "AccountingCost": V(cc["name"], "The cost centre in words.")}
+
+
 # ---------------------------------------------------------------- lines and totals
 def unit_price(iid, currency):
     """The item's price in `currency`: its own price, or converted at the world's reference rate."""
@@ -188,9 +266,12 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
     out = {
         "ID": V(flow.number(key, buyer, "Order"), "The buyer's order number."),
         "IssueDate": V(flow.date(day), why_date),
+        "OrderTypeCode": V("220", "UN/EDIFACT 1001 code 220: order."),
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency, in which the seller's prices are"
                                               if cur == currency_of(seller) else "the buyer's currency, agreed in the "
                                                                                  "contract"),
+        **cost_centre(buyer, "The buyer's cost centre, to be quoted on the invoice."),
+        "LineCountNumeric": V(str(len(rows)), "The number of order lines."),
         "DeliveryTerms": {"ID": V(doc["values"]["DeliveryTerms/ID"], terms_why, schemeID="INCOTERMS"),
                           "DeliveryLocation": {"Description": V(location, "Where the delivery terms place the "
                                                                           "handover of the goods.")}},
@@ -352,13 +433,14 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         "InvoiceTypeCode": V("380", "UN/EDIFACT 1001 code 380: commercial invoice."),
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency" if cur == currency_of(seller)
                                               else "the buyer's currency, agreed in the contract"),
+        **cost_centre(buyer, "The buyer's cost centre, quoted in its order, so the invoice is booked without "
+                            "asking."),
+        "LineCountNumeric": V(str(len(rows)), "The number of invoice lines, as a check on the transfer."),
         **refs,
-        "PaymentMeans": {
-            "PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of "
-                                        "UBL's payment means code list, which code list validation checks.",
-                                  listID="UN/EDIFACT EDED 4461"),
-            "PayeeFinancialAccount": account(doc["parties"].get("PayeeParty", seller), "The account to pay to.",
-                                             note=f"Invoice {flow.number(key, seller, 'Invoice')}")},
+        "PaymentMeans": payment_means(flow, seller, buyer, doc["parties"].get("PayeeParty", seller), day, due_days,
+                                      flow.number(key, seller, "Invoice"), "The account to pay to."),
+        "PaymentTerms": payment_terms(flow, seller, buyer, day, due_days, base + tax +
+                                      sum(r[2] for r in charge_rows), cur, flow.number(key, seller, "Invoice")),
         "TaxTotal": total,
         "LegalMonetaryTotal": monetary_total(base, tax, cur, sum(r[2] for r in charge_rows)),
         "InvoiceLine": [{
@@ -369,6 +451,11 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "Item": item(d["item"], tax_category(rule)),
             "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
+    if rows_spec is None and "OrderReference" in refs:      # the lines of the deal are the lines of the order
+        for i, line in enumerate(out["InvoiceLine"], 1):
+            line["OrderLineReference"] = {"LineID": V(str(i), "The order line this invoice line bills.")}
+    if "TaxPointDate" not in out and PARTY[seller]["c"] == "XU":
+        out["TaxPointDate"] = V(flow.date(day), "Urvania's value added tax becomes due on the invoice date.")
     if charges:
         out["AllowanceCharge"] = [{"ChargeIndicator": V("true", "A charge, not an allowance: it adds to the amount."),
                                    "AllowanceChargeReason": V(c["reason"], c["why"]),
@@ -390,10 +477,18 @@ def remittance(flow, n, doc, day, why, key="invoice"):
         "TotalPaymentAmount": amount(paid, cur, "The amount transferred: the payable amount of the invoice."),
         "PaymentMeans": {
             "PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.", listID="UN/EDIFACT EDED 4461"),
+            "InstructionID": V(f"{initials(payer)}-PAY-26-{flow.base:04d}", "The payer's own number for the payment "
+                                                                            "order it gave its bank."),
+            "PaymentID": V(rf_reference(flow.numbers[key]), "The creditor reference from the invoice, quoted so the "
+                                                           "payee can match the payment automatically."),
             "PayerFinancialAccount": account(payer, "The account the payer pays from."),
             "PayeeFinancialAccount": account(doc["parties"].get("PayeeParty", payee), "The account stated on the invoice.")},
         "RemittanceAdviceLine": {
             "ID": V("1", "One invoice paid."),
+            "PaymentPurposeCode": V("SUPP", "ISO 20022 purpose code SUPP: payment to a supplier."),
+            "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked "
+                                                                          "to quote."),
+            "BalanceAmount": amount(0, cur, "Nothing remains open on the invoice after this payment."),
             "DebitLineAmount": amount(paid, cur, "The amount of the invoice this payment settles: the whole payable "
                                                  "amount. Paid invoices are debits on a remittance advice, as in the "
                                                  "OASIS example UBL-RemittanceAdvice-2.0-Example."),
@@ -559,6 +654,8 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs):
             "IssueDate": V(flow.date(day), why),
             "CreditNoteTypeCode": V("381", "UN/EDIFACT 1001 code 381: credit note."),
             "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice credited"),
+            **cost_centre(buyer, "The buyer's cost centre, as on the invoice credited."),
+            "LineCountNumeric": V(str(len(rows)), "The number of lines."),
             **refs,
             "TaxTotal": total,
             "LegalMonetaryTotal": monetary_total(base, tax, cur),
@@ -720,6 +817,8 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
                    "The number the customer gives the self-billed document, under the self-billing agreement."),
            "IssueDate": V(flow.date(day), why),
            "DocumentCurrencyCode": currency_line(cur, "the supplier's currency"),
+           **cost_centre(customer, "The customer's own cost centre: it books what it billed itself."),
+           "LineCountNumeric": V(str(len(rows)), "The number of lines."),
            **refs,
            "TaxTotal": total,
            "LegalMonetaryTotal": monetary_total(base, tax, cur),
@@ -730,10 +829,12 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
                    "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     if not credit:
         out["InvoiceTypeCode"] = V("389", "UN/EDIFACT 1001 code 389: self-billed invoice.")
-        out["PaymentMeans"] = {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.",
-                                                     listID="UN/EDIFACT EDED 4461"),
-                               "PayeeFinancialAccount": account(supplier, "The supplier's account, where the customer "
-                                                                          "pays what it billed itself.")}
+        number = flow.numbers[f"self-billed-{n}"]
+        due = WORLD["countries"][PARTY[supplier]["c"]]["payment"]["due_days"]
+        out["DueDate"] = V(flow.date(day + due), "The supplier's usual term, which the customer applies to itself.")
+        out["PaymentMeans"] = payment_means(flow, supplier, customer, supplier, day, due, number,
+                                            "The supplier's account, where the customer pays what it billed itself.")
+        out["PaymentTerms"] = payment_terms(flow, supplier, customer, day, due, base + tax, cur, number)
     else:
         out["CreditNoteTypeCode"] = V("261", "UN/EDIFACT 1001 code 261: self-billed credit note.")
     flow.numbers[f"self-billed-{n}-amount"] = base + tax

@@ -14,14 +14,26 @@ Part of the quantity is needed urgently: delivery by air, CPT island airport, at
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:air**  
+  The business process the document belongs to: the flow "An urgent part of the order by air (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **AIR-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **VT-OC-26-0320**  
   The number of this change.
+- `UUID` = **8d871217-f7db-5dad-9bd8-24d8c75c812d**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-11**  
   The buyer needs eight side frames urgently.
 - `SequenceNumberID` = **1**  
   The first change to the order.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals.
+- `AccountingCostCode` = **500**  
+  The buyer's cost centre, to be quoted on the invoice.
+- `AccountingCost` = **Stock for municipal projects**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of order lines.
 
 ### Order Reference
 
@@ -350,10 +362,16 @@ Inside `OrderLine`:
 <OrderChange xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderChange-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
+  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-OC-26-0320</cbc:ID>
+  <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>

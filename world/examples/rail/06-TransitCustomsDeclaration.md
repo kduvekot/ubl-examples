@@ -14,8 +14,14 @@ The goods travel under customs transit from Urvania to the destination in Bayvar
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:rail**  
+  The business process the document belongs to: the flow "Containers by rail under transit (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **RAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **VI-TD-26-0331**  
   The transit declaration number.
+- `UUID` = **39a0d3b7-c2fe-5e50-8ee2-54287be65033**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Lodged at the office of departure before the train leaves.
 
@@ -677,7 +683,10 @@ Inside `Shipment`:
 <TransitCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransitCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-TD-26-0331</cbc:ID>
+  <cbc:UUID>39a0d3b7-c2fe-5e50-8ee2-54287be65033</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cac:TransitExporterParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>

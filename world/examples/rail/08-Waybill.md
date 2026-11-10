@@ -14,8 +14,14 @@ The rail consignment note goes to the transport user, now the seller.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:rail**  
+  The business process the document belongs to: the flow "Containers by rail under transit (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **RAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **FRC-WB-26-0334**  
   The consignment note number.
+- `UUID` = **2af02244-330b-5e9f-85c5-1ad7dcce9c43**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Issued when the carrier takes over the containers.
 
@@ -634,7 +640,10 @@ Inside `DocumentReference`:
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-WB-26-0334</cbc:ID>
+  <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>

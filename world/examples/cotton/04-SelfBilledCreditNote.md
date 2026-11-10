@@ -14,14 +14,26 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:cotton**  
+  The business process the document belongs to: the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)".
+- `ProfileExecutionID` = **COTTON-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **SCG-SBC-26-0194**  
   The number the customer gives the self-billed document, under the self-billing agreement.
+- `UUID` = **3fe47b86-e662-5cb9-93d0-9366b17fb485**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-14**  
   Issued after classing showed part of the delivery a grade lower.
 - `CreditNoteTypeCode` = **261**  
   UN/EDIFACT 1001 code 261: self-billed credit note.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the supplier's currency; it has three decimals.
+- `AccountingCostCode` = **200**  
+  The customer's own cost centre: it books what it billed itself.
+- `AccountingCost` = **Seed cotton purchases**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Billing Reference
 
@@ -312,10 +324,16 @@ Inside `CreditNoteLine`:
 <SelfBilledCreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:SelfBilledCreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBC-26-0194</cbc:ID>
+  <cbc:UUID>3fe47b86-e662-5cb9-93d0-9366b17fb485</cbc:UUID>
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>261</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
       <cbc:ID>SCG-SBI-26-0193</cbc:ID>

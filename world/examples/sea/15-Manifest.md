@@ -14,8 +14,14 @@ Before arrival the carrier lists the cargo on board for the island's customs.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:sea**  
+  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **SEA-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **TOL-MF-26-0140**  
   The carrier's cargo manifest number.
+- `UUID` = **994b537b-1dd6-518f-bd1f-69b7d6308b90**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-15**  
   Sent to the island's customs before arrival.
 - `ManifestTypeCode` = **Cargo**  
@@ -478,7 +484,10 @@ Inside `Shipment`:
 <Manifest xmlns="urn:oasis:names:specification:ubl:schema:xsd:Manifest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TOL-MF-26-0140</cbc:ID>
+  <cbc:UUID>994b537b-1dd6-518f-bd1f-69b7d6308b90</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:ManifestTypeCode>Cargo</cbc:ManifestTypeCode>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>

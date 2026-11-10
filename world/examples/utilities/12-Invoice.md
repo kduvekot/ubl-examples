@@ -14,8 +14,14 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:utilities**  
+  The business process the document belongs to: the flow "Electricity, water and telecom (one utility in each country)".
+- `ProfileExecutionID` = **UTILITIES-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **ST-INV-26-0322**  
   The seller's invoice number.
+- `UUID` = **d34bf420-eb98-5f5f-9d06-271cb4ca7e5a**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   The monthly bill, issued on the first day of the next month.
 - `DueDate` = **2026-04-23**  
@@ -24,6 +30,12 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XLC**  
   The coral, the seller's currency; it has three decimals.
+- `AccountingCostCode` = **500**  
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+- `AccountingCost` = **Stock for municipal projects**  
+  The cost centre in words.
+- `LineCountNumeric` = **2**  
+  The number of invoice lines, as a check on the transfer.
 
 ### Accounting Supplier Party
 
@@ -195,8 +207,22 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentMeans`:
 
+- `ID` = **1**  
+  The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-04-23**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **CORAL-NET**  
+  The payment system the transfer runs over: the domestic clearing.
+- `InstructionNote` = **Quote RF53STINV260322**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF53STINV260322**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
 - `PayeeFinancialAccount/ID` = **XL88BSEL0004293889** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Selanu Telecom Ltd**  
@@ -227,6 +253,27 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XL**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XL-STD**  
+  The standard terms of Lisavu.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **45 days net.**  
+  Island practice: longer terms, simple interest on late payment.
+- `PaymentTermsDetailsURI` = **https://www.selanutelecom.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-04-23**  
+  The day the amount is due.
+- `PenaltyInterestRate/InterestRatePercent` = **6**  
+  The interest on late payment.
+- `PenaltyInterestRate/TimeBasisCode` = **Year**  
+  A yearly rate.
+- `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
+  Simple interest, per day late.
 
 ### Tax Total
 
@@ -314,11 +361,17 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
+  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>ST-INV-26-0322</cbc:ID>
+  <cbc:UUID>d34bf420-eb98-5f5f-9d06-271cb4ca7e5a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
@@ -471,7 +524,14 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF53STINV260322</cbc:InstructionNote>
+    <cbc:PaymentID>RF53STINV260322</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL88BSEL0004293889</cbc:ID>
       <cbc:Name>Selanu Telecom Ltd</cbc:Name>
@@ -500,6 +560,18 @@ Inside `InvoiceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XL-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>45 days net.</cbc:Note>
+    <cbc:PaymentTermsDetailsURI>https://www.selanutelecom.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

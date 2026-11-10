@@ -14,8 +14,14 @@ The air waybill; the airline's road feeder service, run by the road carrier, is 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:air**  
+  The business process the document belongs to: the flow "An urgent part of the order by air (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **AIR-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **KAC-WB-26-0325**  
   The consignment note number.
+- `UUID` = **cbf5d04c-eecc-510a-b84b-bf76e2526b98**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   The air waybill, issued when the airline accepts the cargo.
 
@@ -522,7 +528,10 @@ Inside `Shipment`:
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
+  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>KAC-WB-26-0325</cbc:ID>
+  <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>

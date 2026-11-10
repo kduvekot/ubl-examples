@@ -14,8 +14,14 @@ The bill of lading goes to the forwarder that booked the freight for the mill; t
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:cotton**  
+  The business process the document belongs to: the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)".
+- `ProfileExecutionID` = **COTTON-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **TOL-BL-26-0205**  
   The bill of lading number.
+- `UUID` = **3321e495-7627-5d35-94f2-0b1a66354dbc**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-02**  
   Issued when the bales are on board.
 
@@ -398,7 +404,10 @@ Inside `Shipment`:
 <BillOfLading xmlns="urn:oasis:names:specification:ubl:schema:xsd:BillOfLading-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TOL-BL-26-0205</cbc:ID>
+  <cbc:UUID>3321e495-7627-5d35-94f2-0b1a66354dbc</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>

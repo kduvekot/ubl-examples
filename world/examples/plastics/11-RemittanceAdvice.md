@@ -14,8 +14,14 @@ The packaging maker pays from Bayvarra to the waste processor's account in Urvan
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:plastics**  
+  The business process the document belongs to: the flow "Recycled plastic granulate by river barge (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **PLASTICS-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **RP-RM-26-0895**  
   The payer's remittance number.
+- `UUID` = **7669d2e2-077d-5a02-a2ec-34db294f8a10**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-19**  
   The packaging maker pays across the border, before the due date.
 - `DocumentCurrencyCode` = **XUF**  
@@ -227,6 +233,10 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer.
+- `InstructionID` = **RP-PAY-26-0882**  
+  The payer's own number for the payment order it gave its bank.
+- `PaymentID` = **RF89RRINV260894**  
+  The creditor reference from the invoice, quoted so the payee can match the payment automatically.
 - `PayerFinancialAccount/ID` = **XB66BLUM0004712805** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Rivermouth Packaging Ltd**  
@@ -292,6 +302,12 @@ Inside `RemittanceAdviceLine`:
   One invoice paid.
 - `DebitLineAmount` = **9984000** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
+- `BalanceAmount` = **0** (currencyID `XUF`)  
+  Nothing remains open on the invoice after this payment.
+- `PaymentPurposeCode` = **SUPP**  
+  ISO 20022 purpose code SUPP: payment to a supplier.
+- `InvoicingPartyReference` = **RF89RRINV260894**  
+  The reference the invoicing party asked to quote.
 - `BillingReference/InvoiceDocumentReference/ID` = **RR-INV-26-0894**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-20**  
@@ -304,7 +320,10 @@ Inside `RemittanceAdviceLine`:
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RP-RM-26-0895</cbc:ID>
+  <cbc:UUID>7669d2e2-077d-5a02-a2ec-34db294f8a10</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XUF">9984000</cbc:TotalPaymentAmount>
@@ -490,6 +509,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionID>RP-PAY-26-0882</cbc:InstructionID>
+    <cbc:PaymentID>RF89RRINV260894</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB66BLUM0004712805</cbc:ID>
       <cbc:Name>Rivermouth Packaging Ltd</cbc:Name>
@@ -546,6 +567,9 @@ Inside `RemittanceAdviceLine`:
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XUF">9984000</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
+    <cbc:InvoicingPartyReference>RF89RRINV260894</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>RR-INV-26-0894</cbc:ID>

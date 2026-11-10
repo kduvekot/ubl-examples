@@ -14,8 +14,14 @@ The cargo missed its flight; the despatch advice is cancelled and a new one foll
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:air**  
+  The business process the document belongs to: the flow "An urgent part of the order by air (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **AIR-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-DOC-26-0328**  
   The sender's number for this document.
+- `UUID` = **4068fe1a-3095-5164-a12c-994c102fc830**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   The flight left without the cargo.
 - `CancellationNote` = **The cargo missed its flight; it goes on the next day's flight under a new despatch advice.**  
@@ -288,7 +294,10 @@ Inside `DeliveryCustomerParty`:
 <FulfilmentCancellation xmlns="urn:oasis:names:specification:ubl:schema:xsd:FulfilmentCancellation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
+  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0328</cbc:ID>
+  <cbc:UUID>4068fe1a-3095-5164-a12c-994c102fc830</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:CancellationNote>The cargo missed its flight; it goes on the next day's flight under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>

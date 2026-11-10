@@ -14,8 +14,14 @@ The store wants its own garden furniture line and asks for a quotation.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:furniture**  
+  The business process the document belongs to: the flow "Furniture for the department store and for public offices (Bayvarra)".
+- `ProfileExecutionID` = **FURNITURE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BS-DOC-26-0567**  
   The buyer's request number.
+- `UUID` = **3ce8a8e7-a2bb-57d4-9acb-536e0559cfe3**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-02**  
   The store wants its own garden furniture line.
 - `IssueTime` = **10:00:00**  
@@ -263,7 +269,10 @@ Inside `RequestForQuotationLine`:
 <RequestForQuotation xmlns="urn:oasis:names:specification:ubl:schema:xsd:RequestForQuotation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0567</cbc:ID>
+  <cbc:UUID>3ce8a8e7-a2bb-57d4-9acb-536e0559cfe3</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>10:00:00</cbc:IssueTime>
   <cac:SellerSupplierParty>

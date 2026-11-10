@@ -14,16 +14,30 @@ The mine invoices the ore; transport is not on this invoice because under FCA th
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:ore**  
+  The business process the document belongs to: the flow "Ore from the mine to the factory (domestic, Urvania)".
+- `ProfileExecutionID` = **ORE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **SM-INV-26-0312**  
   The seller's invoice number.
+- `UUID` = **b47d9e09-122e-55a3-a2d2-dde5a4947c4f**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-11**  
   Issued the day after the goods were despatched and weighed.
 - `DueDate` = **2026-04-10**  
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
+- `TaxPointDate` = **2026-03-11**  
+  Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the seller's currency; it has no minor unit.
+- `AccountingCostCode` = **3100**  
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+- `AccountingCost` = **Raw materials and parts**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of invoice lines, as a check on the transfer.
 
 ### Order Reference
 
@@ -281,8 +295,22 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentMeans`:
 
+- `ID` = **1**  
+  The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+- `PaymentMeansDescription` = **Credit transfer**  
+  In words.
+- `PaymentDueDate` = **2026-04-10**  
+  When the transfer must be credited.
+- `PaymentChannelCode` = **IBAN**  
+  Paid to an account identified in the format of ISO 13616.
+- `PaymentRailID` = **FERRA-RTGS**  
+  The payment system the transfer runs over: the domestic clearing.
+- `InstructionNote` = **Quote RF73SMINV260312**  
+  What the payer writes in the transfer.
+- `PaymentID` = **RF73SMINV260312**  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
 - `PayeeFinancialAccount/ID` = **XU56CREV0000104729** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Serravona Mining SUA**  
@@ -313,6 +341,35 @@ Inside `PaymentMeans`:
   The bank's country.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU**  
   The country where the account is kept.
+
+### Payment Terms
+
+Inside `PaymentTerms`:
+
+- `ID` = **XU-STD**  
+  The standard terms of Urvania.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 2 % discount when paid within 10 days.**  
+  Urvanian practice: a cash discount for early payment, statutory interest on late payment.
+- `SettlementDiscountPercent` = **2**  
+  The cash discount for early payment.
+- `SettlementDiscountAmount` = **345948** (currencyID `XUF`)  
+  The discount on the amount payable, if paid in time.
+- `PaymentTermsDetailsURI` = **https://www.serravona.example/terms**  
+  The seller's general terms of payment.
+- `PaymentDueDate` = **2026-04-10**  
+  The day the amount is due.
+- `SettlementPeriod/StartDate` = **2026-03-11**  
+  From the invoice date.
+- `SettlementPeriod/EndDate` = **2026-03-21**  
+  For 10 days.
+- `PenaltyInterestRate/InterestRatePercent` = **8**  
+  The interest on late payment.
+- `PenaltyInterestRate/TimeBasisCode` = **Year**  
+  A yearly rate.
+- `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
+  Simple interest, per day late.
 
 ### Tax Total
 
@@ -354,6 +411,8 @@ Inside `InvoiceLine`:
   The weighed quantity from the despatch advice, not the ordered quantity.
 - `LineExtensionAmount` = **14414504** (currencyID `XUF`)  
   1788.4 × 8060, rounded to the minor unit of the currency.
+- `OrderLineReference/LineID` = **1**  
+  The order line this invoice line bills.
 - `Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
   The seller's description; item ore-lump of Serravona Mining (world/items.json).
 - `Item/Name` = **Iron ore, lump**  
@@ -388,11 +447,18 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:ore</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SM-INV-26-0312</cbc:ID>
+  <cbc:UUID>b47d9e09-122e-55a3-a2d2-dde5a4947c4f</cbc:UUID>
   <cbc:IssueDate>2026-03-11</cbc:IssueDate>
   <cbc:DueDate>2026-04-10</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:TaxPointDate>2026-03-11</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>
@@ -617,7 +683,14 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-04-10</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF73SMINV260312</cbc:InstructionNote>
+    <cbc:PaymentID>RF73SMINV260312</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU56CREV0000104729</cbc:ID>
       <cbc:Name>Serravona Mining SUA</cbc:Name>
@@ -646,6 +719,24 @@ Inside `InvoiceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
+    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:SettlementDiscountAmount currencyID="XUF">345948</cbc:SettlementDiscountAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.serravona.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-04-10</cbc:PaymentDueDate>
+    <cac:SettlementPeriod>
+      <cbc:StartDate>2026-03-11</cbc:StartDate>
+      <cbc:EndDate>2026-03-21</cbc:EndDate>
+    </cac:SettlementPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">2882901</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -670,6 +761,9 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="TNE">1788.4</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">14414504</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
       <cbc:Name>Iron ore, lump</cbc:Name>

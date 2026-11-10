@@ -14,8 +14,14 @@ The spring catalogue ends; the distributor deletes it before the summer catalogu
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:retail**  
+  The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
+- `ProfileExecutionID` = **RETAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-DOC-26-0237**  
   The sender's number for this document.
+- `UUID` = **3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-19**  
   The spring catalogue is withdrawn before the summer one.
 
@@ -260,7 +266,10 @@ Inside `SellerSupplierParty`:
 <CatalogueDeletion xmlns="urn:oasis:names:specification:ubl:schema:xsd:CatalogueDeletion-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0237</cbc:ID>
+  <cbc:UUID>3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29</cbc:UUID>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>

@@ -14,8 +14,14 @@ The air cargo terminal reports the cargo accepted and built up for the flight.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:air**  
+  The business process the document belongs to: the flow "An urgent part of the order by air (Bayvarra → island Lisavu)".
+- `ProfileExecutionID` = **AIR-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LACT-TS-26-0326**  
   The sender's status report number.
+- `UUID` = **6938a110-04c3-536b-96b3-9bd3bd8bb1c1**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   Reported when the cargo is built up for the flight.
 
@@ -242,7 +248,10 @@ Inside `ReceiverParty`:
 <TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
+  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LACT-TS-26-0326</cbc:ID>
+  <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>

@@ -14,12 +14,26 @@ Delivery terms DAP distributor's siding: no carrier in the order, because the se
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:rail**  
+  The business process the document belongs to: the flow "Containers by rail under transit (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **RAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-PO-26-0325**  
   The buyer's order number.
+- `UUID` = **e3c80bc4-b2b9-5396-a910-bff342f77805**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-06**  
   Full container loads for the summer season.
+- `OrderTypeCode` = **220**  
+  UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XUF**  
   The ferra, the seller's currency, in which the seller's prices are; it has no minor unit.
+- `AccountingCostCode` = **4410**  
+  The buyer's cost centre, to be quoted on the invoice.
+- `AccountingCost` = **Stock purchases**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of order lines.
 
 ### Buyer Customer Party
 
@@ -485,9 +499,16 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:rail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-PO-26-0325</cbc:ID>
+  <cbc:UUID>e3c80bc4-b2b9-5396-a910-bff342f77805</cbc:UUID>
   <cbc:IssueDate>2026-04-06</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

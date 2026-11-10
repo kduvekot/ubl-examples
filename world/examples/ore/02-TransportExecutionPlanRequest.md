@@ -14,8 +14,14 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:ore**  
+  The business process the document belongs to: the flow "Ore from the mine to the factory (domestic, Urvania)".
+- `ProfileExecutionID` = **ORE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **VI-TR-26-0305**  
   The transport user's request number.
+- `UUID` = **1136675e-5400-5624-8e01-dc21b86cbdfe**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-03**  
   The day after the order: the buyer books the train it named in its order.
 
@@ -368,7 +374,10 @@ Inside `Consignment`:
 <TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:ore</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-TR-26-0305</cbc:ID>
+  <cbc:UUID>1136675e-5400-5624-8e01-dc21b86cbdfe</cbc:UUID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>

@@ -14,8 +14,14 @@ The distributor lowers the price of the spare side frame.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:retail**  
+  The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
+- `ProfileExecutionID` = **RETAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-DOC-26-0219**  
   The sender's number for this document.
+- `UUID` = **cb1037ec-e5d5-5660-b5af-c39c2b7e1438**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-20**  
   The distributor lowers a price during the season.
 
@@ -283,7 +289,10 @@ Inside `CataloguePricingUpdateLine`:
 <CataloguePricingUpdate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CataloguePricingUpdate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0219</cbc:ID>
+  <cbc:UUID>cb1037ec-e5d5-5660-b5af-c39c2b7e1438</cbc:UUID>
   <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cac:RelatedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>

@@ -14,12 +14,26 @@ Furniture for the public works offices, installed. Delivery terms DAP the office
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:furniture**  
+  The business process the document belongs to: the flow "Furniture for the department store and for public offices (Bayvarra)".
+- `ProfileExecutionID` = **FURNITURE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LPWD-PO-26-0581**  
   The buyer's order number.
+- `UUID` = **79d5286c-bb4d-5697-8d30-f0cc964b8ddf**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-01**  
   The public works department furnishes its new planning office.
+- `OrderTypeCode` = **220**  
+  UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals.
+- `AccountingCostCode` = **PWD-PARKS-26**  
+  The buyer's cost centre, to be quoted on the invoice.
+- `AccountingCost` = **Parks renewal programme 2026**  
+  The cost centre in words.
+- `LineCountNumeric` = **2**  
+  The number of order lines.
 
 ### Buyer Customer Party
 
@@ -319,9 +333,16 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+  <cbc:UUID>79d5286c-bb4d-5697-8d30-f0cc964b8ddf</cbc:UUID>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

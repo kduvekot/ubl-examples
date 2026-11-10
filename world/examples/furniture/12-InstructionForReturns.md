@@ -14,8 +14,14 @@ The bench set does not sell; the furniture maker asks for the remaining stock ba
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:furniture**  
+  The business process the document belongs to: the flow "Furniture for the department store and for public offices (Bayvarra)".
+- `ProfileExecutionID` = **FURNITURE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BF-DOC-26-0578**  
   The sender's number for its returns.
+- `UUID` = **1e930432-0fbd-5872-a8b6-1646ccb09ff0**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-27**  
   The furniture maker takes back the sets that do not sell.
 
@@ -270,7 +276,10 @@ Inside `InstructionForReturnsLine`:
 <InstructionForReturns xmlns="urn:oasis:names:specification:ubl:schema:xsd:InstructionForReturns-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0578</cbc:ID>
+  <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cac:SellerSupplierParty>
     <cac:Party>

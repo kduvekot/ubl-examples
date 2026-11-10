@@ -14,8 +14,14 @@ The consumer buys a shirt; the receipt shows the state sales tax, the only point
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:packaging**  
+  The business process the document belongs to: the flow "Packaging for the benches, clothing for the store".
+- `ProfileExecutionID` = **PACKAGING-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BS-PR-26-0530**  
   The till's receipt number.
+- `UUID` = **cce7560b-887a-56e6-8fcd-571ce027241e**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-22**  
   A consumer buys two shirts.
 - `DocumentCurrencyCode` = **XBL**  
@@ -262,7 +268,10 @@ Inside `PurchaseReceiptLine`:
 <PurchaseReceipt xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:packaging</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-PR-26-0530</cbc:ID>
+  <cbc:UUID>cce7560b-887a-56e6-8fcd-571ce027241e</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>

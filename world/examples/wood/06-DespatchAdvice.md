@@ -14,8 +14,14 @@ The sawmill announces the slats per lot, so the factory can trace the wood of ev
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:wood**  
+  The business process the document belongs to: the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)".
+- `ProfileExecutionID` = **WOOD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **MS-DA-26-0633**  
   The despatching party's number.
+- `UUID` = **c6cf9b25-d967-5e95-a336-9d69bd3f509d**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-26**  
   The day the truck was loaded at the sawmill.
 
@@ -483,7 +489,10 @@ Inside `DespatchLine`:
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-DA-26-0633</cbc:ID>
+  <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>

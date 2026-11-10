@@ -14,8 +14,14 @@ A promotion next month will lift demand; the distributor needs to know before it
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:retail**  
+  The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
+- `ProfileExecutionID` = **RETAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BS-RE-26-0222**  
   The store's event number.
+- `UUID` = **31926ddb-5dfd-59d6-bb1b-86b3926753e7**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   Announced with the forecast.
 - `RetailEventName` = **Spring garden promotion**  
@@ -277,7 +283,10 @@ Inside `SellerSupplierParty`:
 <RetailEvent xmlns="urn:oasis:names:specification:ubl:schema:xsd:RetailEvent-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-RE-26-0222</cbc:ID>
+  <cbc:UUID>31926ddb-5dfd-59d6-bb1b-86b3926753e7</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
   <cbc:RetailEventStatusCode>Confirmed</cbc:RetailEventStatusCode>

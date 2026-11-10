@@ -14,8 +14,14 @@ The mill announces the delivery with the road carrier it booked.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:packaging**  
+  The business process the document belongs to: the flow "Packaging for the benches, clothing for the store".
+- `ProfileExecutionID` = **PACKAGING-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LTM-DA-26-0526**  
   The despatching party's number.
+- `UUID` = **c1af718a-512a-5aed-8622-6a31ae7211c9**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
   The day the shirts left the mill.
 
@@ -397,7 +403,10 @@ Inside `DespatchLine`:
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:packaging</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-DA-26-0526</cbc:ID>
+  <cbc:UUID>c1af718a-512a-5aed-8622-6a31ae7211c9</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0525</cbc:ID>

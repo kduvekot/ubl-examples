@@ -14,8 +14,14 @@ The manufacturer accepts the order and confirms the collection date at its wareh
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:road**  
+  The business process the document belongs to: the flow "Finished goods by truck across the land border (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **ROAD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **VI-OR-26-0150**  
   The seller's number for its response.
+- `UUID` = **1146579f-1ec8-554d-82aa-cfc09cc9d888**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-17**  
   The manufacturer answers the next day.
 - `OrderResponseCode` = **AP**  
@@ -274,7 +280,10 @@ Inside `Delivery`:
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-OR-26-0150</cbc:ID>
+  <cbc:UUID>1146579f-1ec8-554d-82aa-cfc09cc9d888</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cac:OrderReference>

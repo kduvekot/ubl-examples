@@ -14,8 +14,14 @@ Urvania's chamber proves the samples were re-exported: they came home through Ur
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:carnet**  
+  The business process the document belongs to: the flow "Samples to a trade fair on the island (temporary export)".
+- `ProfileExecutionID` = **CARNET-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **FCC-DOC-26-0728**  
   The sender's number for this document.
+- `UUID` = **a5be84f0-33dc-58b3-97e4-10dea98880ab**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-08-28**  
   Urvania's chamber answers with the proof.
 
@@ -267,7 +273,10 @@ Inside `ReexportationEvidence`:
 <ProofOfReexportation xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:carnet</cbc:ProfileID>
+  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FCC-DOC-26-0728</cbc:ID>
+  <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
   <cac:ExportingCustomsParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

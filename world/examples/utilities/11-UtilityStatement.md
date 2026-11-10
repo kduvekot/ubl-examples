@@ -14,8 +14,14 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:utilities**  
+  The business process the document belongs to: the flow "Electricity, water and telecom (one utility in each country)".
+- `ProfileExecutionID` = **UTILITIES-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **ST-DOC-26-0323**  
   The utility's statement number.
+- `UUID` = **07c60e96-9140-5775-a99d-f7b75b652e52**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
 - `UtilityStatementTypeCode` = **Telephone**  
@@ -194,7 +200,10 @@ Inside `SubscriberParty`:
 <UtilityStatement xmlns="urn:oasis:names:specification:ubl:schema:xsd:UtilityStatement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:utilities</cbc:ProfileID>
+  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>ST-DOC-26-0323</cbc:ID>
+  <cbc:UUID>07c60e96-9140-5775-a99d-f7b75b652e52</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:UtilityStatementTypeCode>Telephone</cbc:UtilityStatementTypeCode>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>

@@ -14,8 +14,14 @@ The award is published; the review body is named for appeals.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:tender**  
+  The business process the document belongs to: the flow "A public tender (Bayvarra)".
+- `ProfileExecutionID` = **TENDER-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LPWD-DOC-26-0207**  
   The notice number.
+- `UUID` = **12583d9b-2491-50ee-89c4-489940d246f5**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-13**  
@@ -372,7 +378,10 @@ Inside `TenderResult`:
 <ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-DOC-26-0207</cbc:ID>
+  <cbc:UUID>12583d9b-2491-50ee-89c4-489940d246f5</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-13</cbc:IssueDate>
   <cac:ContractingParty>

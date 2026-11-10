@@ -14,14 +14,26 @@ The returned bench sets are credited.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:furniture**  
+  The business process the document belongs to: the flow "Furniture for the department store and for public offices (Bayvarra)".
+- `ProfileExecutionID` = **FURNITURE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BF-CN-26-0579**  
   The seller's credit note number.
+- `UUID` = **3eb03476-6b48-5174-b997-aaed7a5b8b5b**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-03**  
   Issued when the returned sets arrived back.
 - `CreditNoteTypeCode` = **381**  
   UN/EDIFACT 1001 code 381: credit note.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the currency of the invoice credited; it has two decimals.
+- `AccountingCostCode` = **6120**  
+  The buyer's cost centre, as on the invoice credited.
+- `AccountingCost` = **Garden department**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of lines.
 
 ### Billing Reference
 
@@ -338,10 +350,16 @@ Inside `CreditNoteLine`:
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-CN-26-0579</cbc:ID>
+  <cbc:UUID>3eb03476-6b48-5174-b997-aaed7a5b8b5b</cbc:UUID>
   <cbc:IssueDate>2026-05-03</cbc:IssueDate>
   <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>BF-INV-26-0575</cbc:ID>

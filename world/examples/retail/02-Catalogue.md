@@ -14,8 +14,14 @@ The distributor's catalogue of items and prices; items carry the identifiers of 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:retail**  
+  The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
+- `ProfileExecutionID` = **RETAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-CAT-26-0218**  
   The provider's catalogue number.
+- `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `Name` = **Lumeway Distribution catalogue**  
   The catalogue's title.
 - `IssueDate` = **2026-04-20**  
@@ -691,7 +697,10 @@ Inside `CatalogueLine`:
 <Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-CAT-26-0218</cbc:ID>
+  <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cac:ValidityPeriod>

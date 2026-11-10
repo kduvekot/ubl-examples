@@ -14,8 +14,14 @@ The barge operator confirms the vessel and the sailing.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:plastics**  
+  The business process the document belongs to: the flow "Recycled plastic granulate by river barge (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **PLASTICS-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **FB-TEP-26-0886**  
   The carrier's number for the agreed plan.
+- `UUID` = **32791589-65d7-5d36-bda8-9b68dad29bdd**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-15**  
   The barge operator confirms the sailing.
 - `DocumentStatusCode` = **Confirmed**  
@@ -411,7 +417,10 @@ Inside `Consignment`:
 <TransportExecutionPlan xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:plastics</cbc:ProfileID>
+  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FB-TEP-26-0886</cbc:ID>
+  <cbc:UUID>32791589-65d7-5d36-bda8-9b68dad29bdd</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>

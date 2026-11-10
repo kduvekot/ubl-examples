@@ -14,12 +14,26 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:wood**  
+  The business process the document belongs to: the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)".
+- `ProfileExecutionID` = **WOOD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BF-PO-26-0637**  
   The buyer's order number.
+- `UUID` = **8e01f6c6-41e2-54ce-8e02-1e6edf7207ba**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-08**  
   The furniture maker orders timber, collected with its own van.
+- `OrderTypeCode` = **220**  
+  UN/EDIFACT 1001 code 220: order.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals.
+- `AccountingCostCode` = **1100**  
+  The buyer's cost centre, to be quoted on the invoice.
+- `AccountingCost` = **Timber and materials**  
+  The cost centre in words.
+- `LineCountNumeric` = **1**  
+  The number of order lines.
 
 ### Buyer Customer Party
 
@@ -289,9 +303,16 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:wood</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-PO-26-0637</cbc:ID>
+  <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
   <cbc:IssueDate>2026-03-08</cbc:IssueDate>
+  <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>

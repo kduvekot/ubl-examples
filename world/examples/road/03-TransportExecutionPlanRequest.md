@@ -14,8 +14,14 @@ The distributor, as transport user, books the truck: collection at the seller's 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:road**  
+  The business process the document belongs to: the flow "Finished goods by truck across the land border (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **ROAD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-TR-26-0151**  
   The transport user's request number.
+- `UUID` = **4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-17**  
   The distributor books the truck once the order is accepted.
 
@@ -400,7 +406,10 @@ Inside `Consignment`:
 <TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-TR-26-0151</cbc:ID>
+  <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

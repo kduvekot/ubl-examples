@@ -14,8 +14,14 @@ To plan production, the furniture maker asks the store for sales and stock data 
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:furniture**  
+  The business process the document belongs to: the flow "Furniture for the department store and for public offices (Bayvarra)".
+- `ProfileExecutionID` = **FURNITURE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BF-DOC-26-0569**  
   The sender's number for its info request.
+- `UUID` = **4b68042b-1268-52c4-acf1-bb66f788d32b**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-12**  
   Asked before the first production run.
 
@@ -290,7 +296,10 @@ Inside `ItemInformationRequestLine`:
 <ItemInformationRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:ItemInformationRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:furniture</cbc:ProfileID>
+  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0569</cbc:ID>
+  <cbc:UUID>4b68042b-1268-52c4-acf1-bb66f788d32b</cbc:UUID>
   <cbc:IssueDate>2026-03-12</cbc:IssueDate>
   <cac:Period>
     <cbc:StartDate>2026-03-16</cbc:StartDate>

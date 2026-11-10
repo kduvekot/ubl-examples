@@ -14,8 +14,14 @@ The retailer forecasts its sales for the coming weeks.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:retail**  
+  The business process the document belongs to: the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)".
+- `ProfileExecutionID` = **RETAIL-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **BS-FC-26-0221**  
   The store's forecast number.
+- `UUID` = **60706c39-36eb-5254-aefe-265082af3657**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   Sent after the catalogue arrived.
 - `ForecastPurposeCode` = **Sales**  
@@ -482,7 +488,10 @@ Inside `ForecastLine`:
 <Forecast xmlns="urn:oasis:names:specification:ubl:schema:xsd:Forecast-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-FC-26-0221</cbc:ID>
+  <cbc:UUID>60706c39-36eb-5254-aefe-265082af3657</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
   <cac:ForecastPeriod>

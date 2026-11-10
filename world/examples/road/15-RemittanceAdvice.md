@@ -14,8 +14,14 @@ The distributor announces the cross-border payment and which invoices it settles
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:road**  
+  The business process the document belongs to: the flow "Finished goods by truck across the land border (Urvania → Bayvarra)".
+- `ProfileExecutionID` = **ROAD-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **LD-RM-26-0166**  
   The payer's remittance number.
+- `UUID` = **5d324406-618b-5169-8bce-e128a07f2637**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   The day the payment is made across the border, before the due date.
 - `DocumentCurrencyCode` = **XUF**  
@@ -239,6 +245,10 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer.
+- `InstructionID` = **LD-PAY-26-0149**  
+  The payer's own number for the payment order it gave its bank.
+- `PaymentID` = **RF35VIINV260164**  
+  The creditor reference from the invoice, quoted so the payee can match the payment automatically.
 - `PayerFinancialAccount/ID` = **XB18BLUM0001466206** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Lumeway Distribution Ltd**  
@@ -304,6 +314,12 @@ Inside `RemittanceAdviceLine`:
   One invoice paid.
 - `DebitLineAmount` = **4862160** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
+- `BalanceAmount` = **0** (currencyID `XUF`)  
+  Nothing remains open on the invoice after this payment.
+- `PaymentPurposeCode` = **SUPP**  
+  ISO 20022 purpose code SUPP: payment to a supplier.
+- `InvoicingPartyReference` = **RF35VIINV260164**  
+  The reference the invoicing party asked to quote.
 - `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0164**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-24**  
@@ -316,7 +332,10 @@ Inside `RemittanceAdviceLine`:
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-RM-26-0166</cbc:ID>
+  <cbc:UUID>5d324406-618b-5169-8bce-e128a07f2637</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
@@ -512,6 +531,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionID>LD-PAY-26-0149</cbc:InstructionID>
+    <cbc:PaymentID>RF35VIINV260164</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB18BLUM0001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
@@ -568,6 +589,9 @@ Inside `RemittanceAdviceLine`:
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XUF">4862160</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
+    <cbc:InvoicingPartyReference>RF35VIINV260164</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0164</cbc:ID>

@@ -14,8 +14,14 @@ The recovery facility reports each movement received to the competent authority.
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
+- `ProfileID` = **urn:ubl-examples:world:process:waste**  
+  The business process the document belongs to: the flow "Production waste to recovery (domestic, Urvania)".
+- `ProfileExecutionID` = **WASTE-2026-01**  
+  This run of the process: the same in every document of the flow.
 - `ID` = **RR-DOC-26-0207**  
   The movement document number.
+- `UUID` = **dbd3deda-0d71-53e4-9a07-a1f9d4add949**  
+  A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Reported when the waste has been received.
 
@@ -444,7 +450,10 @@ Inside `Shipment`:
 <WasteMovement xmlns="urn:oasis:names:specification:ubl:schema:xsd:WasteMovement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:process:waste</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-DOC-26-0207</cbc:ID>
+  <cbc:UUID>dbd3deda-0d71-53e4-9a07-a1f9d4add949</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
