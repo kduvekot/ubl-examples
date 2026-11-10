@@ -8,6 +8,11 @@
   <cbc:UUID>51ffd2ec-220f-52f3-bbda-f00884ed47a2</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>15:59:00</cbc:IssueTime>
+  <cbc:Name>Packing list</cbc:Name>
+  <cbc:Description>The container's contents.</cbc:Description>
+  <cbc:Note>25 pallets.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:OtherInstruction>Keep with the container's documents.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -96,6 +101,14 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ConsignorParty>
+  <cac:CarrierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+    </cac:PartyName>
+  </cac:CarrierParty>
   <cac:FreightForwarderParty>
     <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
@@ -488,4 +501,30 @@
       </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>VT-PO-26-0127</cbc:ID>
+  </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-PL</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </PackingList>

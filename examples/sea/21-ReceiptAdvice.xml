@@ -8,12 +8,34 @@
   <cbc:UUID>5c11e38e-6191-5e5e-892a-38c6eedf1df0</cbc:UUID>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>17:22:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
+  <cbc:DeliveryAcceptanceCode>Partial</cbc:DeliveryAcceptanceCode>
+  <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+  <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
+  <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0145</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>NW-SIG-26-RA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Nalevi Warehousing</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:DeliveryCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
@@ -247,7 +269,18 @@
   </cac:SellerSupplierParty>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Received as despatched.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>
+    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0145</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -428,7 +461,23 @@
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>One box crushed at the port; the frame inside is cracked.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">11</cbc:ReceivedQuantity>
+    <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+    <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+    <cbc:RejectReason>One box crushed at the port; the frame inside is cracked.</cbc:RejectReason>
+    <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+    <cbc:QuantityDiscrepancyCode>Damaged</cbc:QuantityDiscrepancyCode>
+    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>2</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0145</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

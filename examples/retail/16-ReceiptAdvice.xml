@@ -8,12 +8,34 @@
   <cbc:UUID>72e2f38d-9c14-5700-9cf7-82648d72cd8e</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>10:31:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReceiptAdviceTypeCode>Actual</cbc:ReceiptAdviceTypeCode>
+  <cbc:DeliveryAcceptanceCode>Partial</cbc:DeliveryAcceptanceCode>
+  <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+  <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
+  <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BM-GI-PHOTO-26-0510</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>BM-SIG-26-RA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:DeliveryCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
@@ -248,7 +270,26 @@
   </cac:Shipment>
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>One bench arrived in a damaged carton and was refused.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="H87">23</cbc:ReceivedQuantity>
+    <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+    <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
+    <cbc:RejectReason>One bench arrived in a damaged carton and was refused.</cbc:RejectReason>
+    <cbc:RejectActionCode>Credit</cbc:RejectActionCode>
+    <cbc:QuantityDiscrepancyCode>Damaged</cbc:QuantityDiscrepancyCode>
+    <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>
+    <cbc:ReceivedTime>10:40:00</cbc:ReceivedTime>
+    <cbc:TimingComplaintCode>Late</cbc:TimingComplaintCode>
+    <cbc:TimingComplaint>Arrived 40 minutes into the slot; unloading delayed the next truck.</cbc:TimingComplaint>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0229</cbc:ID>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

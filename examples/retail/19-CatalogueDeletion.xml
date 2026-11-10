@@ -6,11 +6,43 @@
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0237</cbc:ID>
   <cbc:UUID>3e11e31a-3c7b-52c6-9a1b-5633b8e1dc29</cbc:UUID>
+  <cbc:Name>Withdrawal of the spring catalogue</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
   <cbc:IssueTime>13:26:00</cbc:IssueTime>
+  <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
+  <cbc:EffectiveTime>00:00:00</cbc:EffectiveTime>
+  <cbc:Note>Replaced by the summer catalogue.</cbc:Note>
+  <cbc:VersionID>1.2</cbc:VersionID>
+  <cbc:Description>The spring catalogue is no longer valid.</cbc:Description>
+  <cac:ValidityPeriod>
+    <cbc:EndDate>2026-06-19</cbc:EndDate>
+  </cac:ValidityPeriod>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:UUID>8fbee548-a66b-588f-b69b-2e8546501907</cbc:UUID>
+    <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+    <cbc:IssueTime>09:00:00</cbc:IssueTime>
+    <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
+    <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Description>Benches and spare parts for resale.</cbc:Description>
+    <cbc:VersionID>1.2</cbc:VersionID>
+    <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
   </cac:DeletedCatalogueReference>
+  <cac:ReferencedContract>
+    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+  </cac:ReferencedContract>
+  <cac:Signature>
+    <cbc:ID>LD-SIG-26-0619</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
   <cac:ReceiverParty>
     <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
     <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
@@ -205,4 +237,14 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:ContractorCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ContractorCustomerParty>
 </CatalogueDeletion>

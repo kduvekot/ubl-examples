@@ -9,10 +9,18 @@
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:54:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Electricity</cbc:UtilityStatementTypeCode>
+  <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>FE-INV-26-0313</cbc:ID>
   </cac:ParentDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FE-TARIFF-2026</cbc:ID>
+    <cbc:DocumentTypeCode>Tariff</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
+  </cac:AdditionalDocumentReference>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranoenergy.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3510</cbc:IndustryClassificationCode>
@@ -191,6 +199,16 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
+  <cac:CustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:CustomerParty>
   <cac:SubscriberParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -199,4 +217,222 @@
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
   </cac:SubscriberParty>
+  <cac:SubscriberConsumption>
+    <cbc:ConsumptionID>FE-CP-4120-01-2603</cbc:ConsumptionID>
+    <cbc:SpecificationTypeCode>Detailed</cbc:SpecificationTypeCode>
+    <cbc:Note>Factory, main connection at 10 kV</cbc:Note>
+    <cbc:TotalMeteredQuantity unitCode="KWH">412800</cbc:TotalMeteredQuantity>
+    <cac:UtilityConsumptionPoint>
+      <cbc:ID>FE-CP-4120-01</cbc:ID>
+      <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
+      <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
+      <cbc:SubscriberType>Industrial</cbc:SubscriberType>
+      <cbc:SubscriberTypeCode>IND</cbc:SubscriberTypeCode>
+      <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
+      <cac:Address>
+        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:BuildingNumber>17</cbc:BuildingNumber>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:Address>
+      <cac:WebSiteAccess>
+        <cbc:URI>https://www.ferranoenergy.example/meter</cbc:URI>
+        <cbc:Password>********</cbc:Password>
+        <cbc:Login>FE-CP-4120-01</cbc:Login>
+      </cac:WebSiteAccess>
+      <cac:UtilityMeter>
+        <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+        <cbc:MeterName>Main meter, factory</cbc:MeterName>
+        <cbc:MeterConstant>40</cbc:MeterConstant>
+        <cbc:MeterConstantCode>Transformer ratio</cbc:MeterConstantCode>
+        <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
+        <cac:MeterReading>
+          <cbc:ID>FE-M-881204-2603</cbc:ID>
+          <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
+          <cbc:MeterReadingTypeCode>M</cbc:MeterReadingTypeCode>
+          <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
+          <cbc:PreviousMeterQuantity unitCode="KWH">52960</cbc:PreviousMeterQuantity>
+          <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
+          <cbc:LatestMeterQuantity unitCode="KWH">63280</cbc:LatestMeterQuantity>
+          <cbc:PreviousMeterReadingMethod>Remote reading</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethodCode>REMOTE</cbc:PreviousMeterReadingMethodCode>
+          <cbc:LatestMeterReadingMethod>Remote reading</cbc:LatestMeterReadingMethod>
+          <cbc:LatestMeterReadingMethodCode>REMOTE</cbc:LatestMeterReadingMethodCode>
+          <cbc:DeliveredQuantity unitCode="KWH">412800</cbc:DeliveredQuantity>
+        </cac:MeterReading>
+        <cac:MeterProperty>
+          <cbc:Name>Accuracy class</cbc:Name>
+          <cbc:NameCode>ACC</cbc:NameCode>
+          <cbc:Value>1</cbc:Value>
+          <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
+        </cac:MeterProperty>
+        <cac:MeterProperty>
+          <cbc:Name>Rated current</cbc:Name>
+          <cbc:ValueQuantity unitCode="AMP">5</cbc:ValueQuantity>
+        </cac:MeterProperty>
+      </cac:UtilityMeter>
+    </cac:UtilityConsumptionPoint>
+    <cac:Consumption>
+      <cbc:UtilityStatementTypeCode>Electricity</cbc:UtilityStatementTypeCode>
+      <cac:MainPeriod>
+        <cbc:StartDate>2026-03-01</cbc:StartDate>
+        <cbc:EndDate>2026-03-31</cbc:EndDate>
+      </cac:MainPeriod>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XUF">2253888</cbc:TaxAmount>
+      </cac:TaxTotal>
+      <cac:EnergyWaterSupply>
+        <cac:ConsumptionReport>
+          <cbc:ID>FE-CP-4120-01-2603</cbc:ID>
+          <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
+          <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
+          <cbc:TotalConsumedQuantity unitCode="KWH">412800</cbc:TotalConsumedQuantity>
+          <cbc:BasicConsumedQuantity unitCode="KWH">412800</cbc:BasicConsumedQuantity>
+          <cac:Period>
+            <cbc:StartDate>2026-03-01</cbc:StartDate>
+            <cbc:EndDate>2026-03-31</cbc:EndDate>
+          </cac:Period>
+          <cac:ConsumptionReportReference>
+            <cbc:ConsumptionReportID>FE-CP-4120-01-2602</cbc:ConsumptionReportID>
+            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
+            <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
+            <cac:Period>
+              <cbc:StartDate>2026-02-01</cbc:StartDate>
+              <cbc:EndDate>2026-02-28</cbc:EndDate>
+            </cac:Period>
+          </cac:ConsumptionReportReference>
+          <cac:ConsumptionHistory>
+            <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+            <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
+            <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
+            <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
+            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+            <cbc:Description>Earlier month.</cbc:Description>
+            <cac:Period>
+              <cbc:StartDate>2026-01-01</cbc:StartDate>
+              <cbc:EndDate>2026-01-31</cbc:EndDate>
+            </cac:Period>
+          </cac:ConsumptionHistory>
+          <cac:ConsumptionHistory>
+            <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+            <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
+            <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
+            <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
+            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+            <cbc:Description>Earlier month.</cbc:Description>
+            <cac:Period>
+              <cbc:StartDate>2026-02-01</cbc:StartDate>
+              <cbc:EndDate>2026-02-28</cbc:EndDate>
+            </cac:Period>
+          </cac:ConsumptionHistory>
+        </cac:ConsumptionReport>
+        <cac:EnergyTaxReport>
+          <cbc:TaxEnergyAmount currencyID="XUF">288840</cbc:TaxEnergyAmount>
+          <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
+          <cbc:TaxEnergyBalanceAmount currencyID="XUF">288840</cbc:TaxEnergyBalanceAmount>
+          <cac:TaxScheme>
+            <cbc:ID>EXC</cbc:ID>
+          </cac:TaxScheme>
+        </cac:EnergyTaxReport>
+        <cac:ConsumptionAverage>
+          <cbc:AverageAmount currencyID="XUF">11269440</cbc:AverageAmount>
+          <cbc:Description>The average over the last three months is 405433 kWh.</cbc:Description>
+        </cac:ConsumptionAverage>
+      </cac:EnergyWaterSupply>
+      <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
+        <cbc:PayableAmount currencyID="XUF">13523328</cbc:PayableAmount>
+      </cac:LegalMonetaryTotal>
+    </cac:Consumption>
+    <cac:SupplierConsumption>
+      <cbc:Description>The supply under the customer's contract.</cbc:Description>
+      <cac:UtilitySupplierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Energy</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilitySupplierParty>
+      <cac:UtilityCustomerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilityCustomerParty>
+      <cac:Consumption>
+        <cbc:UtilityStatementTypeCode>Electricity</cbc:UtilityStatementTypeCode>
+        <cac:MainPeriod>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:MainPeriod>
+        <cac:LegalMonetaryTotal>
+          <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XUF">13523328</cbc:PayableAmount>
+        </cac:LegalMonetaryTotal>
+      </cac:Consumption>
+      <cac:Contract>
+        <cbc:ID>FE-C-0047120</cbc:ID>
+        <cbc:ContractType>Electricity supply</cbc:ContractType>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2024-01-01</cbc:StartDate>
+        </cac:ValidityPeriod>
+      </cac:Contract>
+      <cac:ConsumptionLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
+        <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">13523328</cbc:TaxInclusiveLineExtensionAmount>
+        <cac:Period>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">2253888</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:UtilityItem>
+          <cbc:ID>FE-KWH</cbc:ID>
+          <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
+          <cbc:SubscriberType>Electricity</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode>ELEC</cbc:SubscriberTypeCode>
+          <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
+          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
+          <cbc:CurrentChargeTypeCode>M</cbc:CurrentChargeTypeCode>
+          <cac:TaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>20</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>FE-C-0047120</cbc:ID>
+          </cac:Contract>
+        </cac:UtilityItem>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:ConsumptionLine>
+    </cac:SupplierConsumption>
+  </cac:SubscriberConsumption>
 </UtilityStatement>

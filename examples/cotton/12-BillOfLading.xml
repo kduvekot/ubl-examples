@@ -8,6 +8,11 @@
   <cbc:UUID>3321e495-7627-5d35-94f2-0b1a66354dbc</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>15:19:00</cbc:IssueTime>
+  <cbc:Name>Bill of lading</cbc:Name>
+  <cbc:Description>Shipped on board.</cbc:Description>
+  <cbc:Note>Freight collect.</cbc:Note>
+  <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
+  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
@@ -328,4 +333,36 @@
       </cac:ConsigneeParty>
     </cac:Consignment>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>LTM-FI-26-0198</cbc:ID>
+  </cac:DocumentReference>
+  <cac:ExchangeRate>
+    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>0.4</cbc:CalculationRate>
+  </cac:ExchangeRate>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:Signature>
+    <cbc:ID>TWL-SIG-BL-cotton</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
 </BillOfLading>
