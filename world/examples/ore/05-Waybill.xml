@@ -2,7 +2,7 @@
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>FRC-WB-26-5521</cbc:ID>
+  <cbc:ID>FRC-WB-26-0310</cbc:ID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -118,10 +118,10 @@
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>SM-SH-26-0311</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="TNE">1788.4</cbc:GrossWeightMeasure>
+    <cbc:ID>SM-SH-26-0309</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CN-26-0412</cbc:ID>
+      <cbc:ID>VI-CS-26-0306</cbc:ID>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -133,6 +133,6 @@
     </cac:Consignment>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FRC-TEP-26-1193</cbc:ID>
+    <cbc:ID>FRC-TEP-26-0307</cbc:ID>
   </cac:DocumentReference>
 </Waybill>

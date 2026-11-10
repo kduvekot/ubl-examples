@@ -14,8 +14,8 @@ The rail carrier confirms the train, the wagons and the schedule; this is the ag
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **FRC-TEP-26-1193**  
-  The rail carrier's number for the agreed plan.
+- `ID` = **FRC-TEP-26-0307**  
+  The carrier's number for the agreed plan.
 - `IssueDate` = **2026-03-04**  
   The day after the request.
 - `DocumentStatusCode` = **Confirmed**  
@@ -113,7 +113,7 @@ Inside `TransportServiceProviderParty`:
 
 Inside `TransportExecutionPlanRequestDocumentReference`:
 
-- `ID` = **VI-TR-26-0087**  
+- `ID` = **VI-TR-26-0305**  
   The request this plan answers.
 
 ### Service Start Time Period
@@ -121,15 +121,15 @@ Inside `TransportExecutionPlanRequestDocumentReference`:
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-03-10**  
-  Loading at the mine, as requested.
+  Collection, as requested.
 
 ### Consignment
 
 Inside `Consignment`:
 
-- `ID` = **VI-CN-26-0412**  
+- `ID` = **VI-CS-26-0306**  
   The consignment of the request.
-- `GrossWeightMeasure` = **1800** (unitCode `TNE`)  
+- `GrossWeightMeasure` = **1800000** (unitCode `KGM`)  
   The weight the plan is made for.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
@@ -173,7 +173,7 @@ Inside `Consignment`:
 <TransportExecutionPlan xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>FRC-TEP-26-1193</cbc:ID>
+  <cbc:ID>FRC-TEP-26-0307</cbc:ID>
   <cbc:IssueDate>2026-03-04</cbc:IssueDate>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>
@@ -263,14 +263,14 @@ Inside `Consignment`:
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
   <cac:TransportExecutionPlanRequestDocumentReference>
-    <cbc:ID>VI-TR-26-0087</cbc:ID>
+    <cbc:ID>VI-TR-26-0305</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-03-10</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
-    <cbc:ID>VI-CN-26-0412</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="TNE">1800</cbc:GrossWeightMeasure>
+    <cbc:ID>VI-CS-26-0306</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

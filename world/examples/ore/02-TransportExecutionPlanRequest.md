@@ -14,7 +14,7 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **VI-TR-26-0087**  
+- `ID` = **VI-TR-26-0305**  
   The transport user's request number.
 - `IssueDate` = **2026-03-03**  
   The day after the order: the buyer books the train it named in its order.
@@ -112,15 +112,15 @@ Inside `TransportServiceProviderParty`:
 Inside `ServiceStartTimePeriod`:
 
 - `StartDate` = **2026-03-10**  
-  The day the ore should be loaded at the mine.
+  The day the goods should be collected.
 
 ### Consignment
 
 Inside `Consignment`:
 
-- `ID` = **VI-CN-26-0412**  
-  The buyer's number for this consignment, quoted along the chain.
-- `GrossWeightMeasure` = **1800** (unitCode `TNE`)  
+- `ID` = **VI-CS-26-0306**  
+  The transport user's number for this consignment, quoted along the chain.
+- `GrossWeightMeasure` = **1800000** (unitCode `KGM`)  
   The expected weight: the ordered quantity.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
@@ -164,7 +164,7 @@ Inside `Consignment`:
 <TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VI-TR-26-0087</cbc:ID>
+  <cbc:ID>VI-TR-26-0305</cbc:ID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -256,8 +256,8 @@ Inside `Consignment`:
     <cbc:StartDate>2026-03-10</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:Consignment>
-    <cbc:ID>VI-CN-26-0412</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="TNE">1800</cbc:GrossWeightMeasure>
+    <cbc:ID>VI-CS-26-0306</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

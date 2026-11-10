@@ -14,14 +14,14 @@ Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **VI-PO-26-0412**  
+- `ID` = **VI-PO-26-0304**  
   The buyer's order number.
 - `IssueDate` = **2026-03-02**  
   The first working day of the month: the monthly ore call-off.
 - `Note` = **Monthly call-off, one train.**  
   Says in words what the order is for.
 - `DocumentCurrencyCode` = **XUF**  
-  The ferra, the currency of the domestic trade in Urvania.
+  The ferra, the seller's currency, in which the seller's prices are; it has no minor unit.
 
 ### Buyer Customer Party
 
@@ -147,48 +147,48 @@ Inside `DeliveryTerms`:
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
   Free carrier at the mine: the buyer arranges and pays the main transport, so the order names the carrier the buyer has booked. Stated, because leaving it out would carry no meaning (UBL rule IND6).
 - `DeliveryLocation/Description` = **Mine siding, Serravona**  
-  Where the seller hands the ore to the carrier under FCA.
+  Where the delivery terms place the handover of the goods.
 
 ### Tax Total
 
 Inside `TaxTotal`:
 
 - `TaxAmount` = **2901600** (currencyID `XUF`)  
-  The value added tax the buyer expects to pay. Rounded to whole ferra, which have no minor unit.
+  The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **14508000** (currencyID `XUF`)  
-  The sum of the line amounts at the standard rate.
+  The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **2901600** (currencyID `XUF`)  
-  20 % of the taxable amount, rounded to whole ferra.
+  20 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S**  
-  A domestic supply in Urvania: Urvania's value added tax applies at the standard rate. UN/EDIFACT 5305 code S, standard rate.
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `TaxSubtotal/TaxCategory/Percent` = **20**  
-  The rate of Urvania's value added tax for this category (world/countries.json).
+  The rate for this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
 
 ### Anticipated Monetary Total
 
 Inside `AnticipatedMonetaryTotal`:
 
 - `LineExtensionAmount` = **14508000** (currencyID `XUF`)  
-  1800 tonnes × 8060 ferra.
+  The sum of the line amounts.
 - `PayableAmount` = **17409600** (currencyID `XUF`)  
-  What the buyer expects to pay, value added tax included.
+  What the buyer expects to pay, tax included.
 
 ### Order Line
 
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The first and only line.
+  The line number.
 - `LineItem/Quantity` = **1800** (unitCode `TNE`)  
-  One train: 30 wagons of about 60 tonnes. Tonne is UN/ECE Rec 20 code TNE.
+  One train: 30 wagons of about 60 tonnes.
 - `LineItem/LineExtensionAmount` = **14508000** (currencyID `XUF`)  
-  Quantity times price.
+  Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **8060** (currencyID `XUF`)  
-  The mine's price per tonne (world/items.json).
+  The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `TNE`)  
-  The price is per tonne.
+  The price is per one unit.
 - `LineItem/Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
   The seller's description; item ore-lump of Serravona Mining (world/items.json).
 - `LineItem/Item/Name` = **Iron ore, lump**  
@@ -209,7 +209,7 @@ Inside `OrderLine`:
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VI-PO-26-0412</cbc:ID>
+  <cbc:ID>VI-PO-26-0304</cbc:ID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:Note>Monthly call-off, one train.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>

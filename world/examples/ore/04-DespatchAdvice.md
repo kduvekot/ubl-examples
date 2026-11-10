@@ -14,8 +14,8 @@ The mine announces what was loaded into which wagons, so the factory can plan th
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SM-DA-26-0311**  
-  The mine's despatch advice number.
+- `ID` = **SM-DA-26-0308**  
+  The despatching party's number.
 - `IssueDate` = **2026-03-10**  
   The day the train was loaded and weighed.
 
@@ -23,7 +23,7 @@ The mine announces what was loaded into which wagons, so the factory can plan th
 
 Inside `OrderReference`:
 
-- `ID` = **VI-PO-26-0412**  
+- `ID` = **VI-PO-26-0304**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -118,11 +118,11 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SM-SH-26-0311**  
-  The mine's number for the shipment.
-- `GrossWeightMeasure` = **1788.4** (unitCode `TNE`)  
+- `ID` = **SM-SH-26-0309**  
+  The despatching party's shipment number.
+- `GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
   Weighed on the weighbridge at loading: 30 wagons.
-- `Consignment/ID` = **VI-CN-26-0412**  
+- `Consignment/ID` = **VI-CS-26-0306**  
   The buyer's consignment, quoted back.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -160,9 +160,9 @@ Inside `Shipment`:
 Inside `DespatchLine`:
 
 - `ID` = **1**  
-  The first and only line.
+  The line number.
 - `DeliveredQuantity` = **1788.4** (unitCode `TNE`)  
-  What was loaded, weighed; slightly less than ordered, as with every bulk load.
+  What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
 - `Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
@@ -185,10 +185,10 @@ Inside `DespatchLine`:
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SM-DA-26-0311</cbc:ID>
+  <cbc:ID>SM-DA-26-0308</cbc:ID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cac:OrderReference>
-    <cbc:ID>VI-PO-26-0412</cbc:ID>
+    <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -285,10 +285,10 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>SM-SH-26-0311</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="TNE">1788.4</cbc:GrossWeightMeasure>
+    <cbc:ID>SM-SH-26-0309</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CN-26-0412</cbc:ID>
+      <cbc:ID>VI-CS-26-0306</cbc:ID>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>

@@ -14,8 +14,8 @@ The rail consignment note goes to the party that contracted the carriage, the ma
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **FRC-WB-26-5521**  
-  The rail consignment note number.
+- `ID` = **FRC-WB-26-0310**  
+  The consignment note number.
 - `IssueDate` = **2026-03-10**  
   Issued when the carrier takes over the loaded train.
 
@@ -137,12 +137,12 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SM-SH-26-0311**  
-  The shipment as the mine numbered it.
-- `GrossWeightMeasure` = **1788.4** (unitCode `TNE`)  
+- `ID` = **SM-SH-26-0309**  
+  The shipment as the despatching party numbered it.
+- `GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
   The weight the carrier takes over, from the weighbridge.
-- `Consignment/ID` = **VI-CN-26-0412**  
-  The consignment of the transport plan.
+- `Consignment/ID` = **VI-CS-26-0306**  
+  The consignment of the transport booking.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Valdara Industries**  
@@ -152,7 +152,7 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **FRC-TEP-26-1193**  
+- `ID` = **FRC-TEP-26-0307**  
   The transport plan under which the carriage is performed.
 
 ## The document
@@ -162,7 +162,7 @@ Inside `DocumentReference`:
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>FRC-WB-26-5521</cbc:ID>
+  <cbc:ID>FRC-WB-26-0310</cbc:ID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -278,10 +278,10 @@ Inside `DocumentReference`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>SM-SH-26-0311</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="TNE">1788.4</cbc:GrossWeightMeasure>
+    <cbc:ID>SM-SH-26-0309</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CN-26-0412</cbc:ID>
+      <cbc:ID>VI-CS-26-0306</cbc:ID>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -293,7 +293,7 @@ Inside `DocumentReference`:
     </cac:Consignment>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FRC-TEP-26-1193</cbc:ID>
+    <cbc:ID>FRC-TEP-26-0307</cbc:ID>
   </cac:DocumentReference>
 </Waybill>
 ```

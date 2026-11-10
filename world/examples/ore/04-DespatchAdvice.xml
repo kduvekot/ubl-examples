@@ -2,10 +2,10 @@
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SM-DA-26-0311</cbc:ID>
+  <cbc:ID>SM-DA-26-0308</cbc:ID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cac:OrderReference>
-    <cbc:ID>VI-PO-26-0412</cbc:ID>
+    <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -102,10 +102,10 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>SM-SH-26-0311</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="TNE">1788.4</cbc:GrossWeightMeasure>
+    <cbc:ID>SM-SH-26-0309</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CN-26-0412</cbc:ID>
+      <cbc:ID>VI-CS-26-0306</cbc:ID>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>

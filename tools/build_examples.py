@@ -238,6 +238,9 @@ def fill(el, abie, content, path, reasons, seen):
     for name in content:
         if name not in bbies and name not in asbies:
             raise SystemExit(f"{path}/{name}: not in the UBL 2.5 model")
+    for name, card in [(b[0], b[1]) for b in spec["bbies"]] + [(a[0], a[2]) for a in spec["asbies"]]:
+        if card.startswith("1") and name not in content and name not in ("UBLVersionID",):
+            raise SystemExit(f"{path}/{name}: mandatory in UBL 2.5 ({card}) but missing")
     for name in [b[0] for b in spec["bbies"]]:                    # basic properties first, in model order
         if name not in content:
             continue
@@ -345,7 +348,7 @@ def main(flow_id, check=False):
     return True
 
 
-FLOWS_WITH_EXAMPLES = ["ore"]
+FLOWS_WITH_EXAMPLES = ["ore", "road"]
 
 
 if __name__ == "__main__":

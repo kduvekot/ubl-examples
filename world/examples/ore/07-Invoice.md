@@ -14,29 +14,29 @@ The mine invoices the ore; transport is not on this invoice because under FCA th
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **SM-INV-26-0311**  
+- `ID` = **SM-INV-26-0315**  
   The seller's invoice number.
 - `IssueDate` = **2026-03-11**  
   Issued the day after the goods were despatched and weighed.
 - `DueDate` = **2026-04-10**  
-  Thirty days after the issue date, the payment term of the world's domestic trade.
+  30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
 - `DocumentCurrencyCode` = **XUF**  
-  The ferra, the seller's currency, in the world's currency code list.
+  The ferra, the seller's currency; it has no minor unit.
 
 ### Order Reference
 
 Inside `OrderReference`:
 
-- `ID` = **VI-PO-26-0412**  
+- `ID` = **VI-PO-26-0304**  
   The buyer's order.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **SM-DA-26-0311**  
+- `ID` = **SM-DA-26-0308**  
   The despatch advice of the goods invoiced.
 
 ### Accounting Supplier Party
@@ -132,9 +132,9 @@ Inside `SellerSupplierParty`:
 Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 30: credit transfer, how businesses in Urvania pay. The listID is the identification of UBL's payment means code list, which code list validation checks.
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
 - `PayeeFinancialAccount/ID` = **XU56CREV0000104729** (schemeID `urn:ubl-examples:world:account`)  
-  The seller's account, where the buyer is to pay. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+  The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **CREV**  
   The bank code, the part of every account number that names the bank; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Crevalto Bank**  
@@ -145,17 +145,17 @@ Inside `PaymentMeans`:
 Inside `TaxTotal`:
 
 - `TaxAmount` = **2882901** (currencyID `XUF`)  
-  The value added tax of the invoice. Rounded to whole ferra, which have no minor unit.
+  The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **14414504** (currencyID `XUF`)  
-  The sum of the line amounts at the standard rate.
+  The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **2882901** (currencyID `XUF`)  
-  20 % of the taxable amount, rounded to whole ferra.
+  20 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S**  
-  A domestic supply in Urvania: Urvania's value added tax applies at the standard rate. UN/EDIFACT 5305 code S, standard rate.
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `TaxSubtotal/TaxCategory/Percent` = **20**  
-  The rate of Urvania's value added tax for this category (world/countries.json).
+  The rate for this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
 
 ### Legal Monetary Total
 
@@ -164,9 +164,9 @@ Inside `LegalMonetaryTotal`:
 - `LineExtensionAmount` = **14414504** (currencyID `XUF`)  
   The sum of the line amounts.
 - `TaxExclusiveAmount` = **14414504** (currencyID `XUF`)  
-  The total without tax: the sum of the line amounts, no allowances or charges.
+  The total without tax: the line amounts, no allowances or charges.
 - `TaxInclusiveAmount` = **17297405** (currencyID `XUF`)  
-  The total without tax plus the value added tax.
+  The total without tax plus the tax.
 - `PayableAmount` = **17297405** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
@@ -175,11 +175,11 @@ Inside `LegalMonetaryTotal`:
 Inside `InvoiceLine`:
 
 - `ID` = **1**  
-  The first and only line.
+  The line number.
 - `InvoicedQuantity` = **1788.4** (unitCode `TNE`)  
   The weighed quantity from the despatch advice, not the ordered quantity.
 - `LineExtensionAmount` = **14414504** (currencyID `XUF`)  
-  1788.4 × 8060 ferra, rounded to whole ferra.
+  1788.4 × 8060, rounded to the minor unit of the currency.
 - `Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
   The seller's description; item ore-lump of Serravona Mining (world/items.json).
 - `Item/Name` = **Iron ore, lump**  
@@ -193,11 +193,11 @@ Inside `InvoiceLine`:
 - `Item/CommodityClassification/ItemClassificationCode` = **2601.11** (listID `HS`)  
   Harmonized System subheading of the World Customs Organization; item ore-lump of Serravona Mining (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
-  A domestic supply in Urvania: Urvania's value added tax applies at the standard rate. UN/EDIFACT 5305 code S, standard rate.
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S).
 - `Item/ClassifiedTaxCategory/Percent` = **20**  
-  The rate of Urvania's value added tax for this category (world/countries.json).
+  The rate for this category.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+  UN/EDIFACT 5153 code of the seller's tax: value added tax.
 - `Price/PriceAmount` = **8060** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `TNE`)  
@@ -210,16 +210,16 @@ Inside `InvoiceLine`:
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>SM-INV-26-0311</cbc:ID>
+  <cbc:ID>SM-INV-26-0315</cbc:ID>
   <cbc:IssueDate>2026-03-11</cbc:IssueDate>
   <cbc:DueDate>2026-04-10</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cac:OrderReference>
-    <cbc:ID>VI-PO-26-0412</cbc:ID>
+    <cbc:ID>VI-PO-26-0304</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>SM-DA-26-0311</cbc:ID>
+    <cbc:ID>SM-DA-26-0308</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

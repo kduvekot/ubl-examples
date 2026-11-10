@@ -14,12 +14,12 @@ The manufacturer tells the mine which invoices the transfer pays. Both companies
   The documents of the world use UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world**  
   The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ID` = **VI-RA-26-0398**  
-  The buyer's remittance number.
+- `ID` = **VI-RM-26-0319**  
+  The payer's remittance number.
 - `IssueDate` = **2026-04-09**  
   The day the payment is made, one day before the due date.
 - `DocumentCurrencyCode` = **XUF**  
-  The ferra.
+  The ferra, the currency of the invoice paid; it has no minor unit.
 - `TotalPaymentAmount` = **17297405** (currencyID `XUF`)  
   The amount transferred: the payable amount of the invoice.
 
@@ -100,13 +100,13 @@ Inside `PaymentMeans`:
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer.
 - `PayerFinancialAccount/ID` = **XU20CREV0000209458** (schemeID `urn:ubl-examples:world:account`)  
-  The account the manufacturer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+  The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **CREV**  
   The bank code, the part of every account number that names the bank; identity of Crevalto Bank (world/parties.json).
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Crevalto Bank**  
   The bank; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/ID` = **XU56CREV0000104729** (schemeID `urn:ubl-examples:world:account`)  
-  The mine's account, as stated on its invoice. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+  The account stated on the invoice. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **CREV**  
   The same bank as at PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution, where its name is given; only its code is repeated.
 
@@ -117,11 +117,11 @@ Inside `RemittanceAdviceLine`:
 - `ID` = **1**  
   One invoice paid.
 - `DebitLineAmount` = **17297405** (currencyID `XUF`)  
-  The amount of the invoice that this payment settles: the whole payable amount. The line amounts of a remittance advice are debits for invoices, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
-- `BillingReference/InvoiceDocumentReference/ID` = **SM-INV-26-0311**  
+  The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
+- `BillingReference/InvoiceDocumentReference/ID` = **SM-INV-26-0315**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-11**  
-  The issue date of that invoice, so the reference is unambiguous.
+  Its issue date, so the reference is unambiguous.
 
 ## The document
 
@@ -130,7 +130,7 @@ Inside `RemittanceAdviceLine`:
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ID>VI-RA-26-0398</cbc:ID>
+  <cbc:ID>VI-RM-26-0319</cbc:ID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XUF">17297405</cbc:TotalPaymentAmount>
@@ -233,7 +233,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XUF">17297405</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>SM-INV-26-0311</cbc:ID>
+        <cbc:ID>SM-INV-26-0315</cbc:ID>
         <cbc:IssueDate>2026-03-11</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
