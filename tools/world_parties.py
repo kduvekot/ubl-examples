@@ -16,8 +16,10 @@ something to put in it, and these checks keep it consistent:
     and state, and in a country with states the state follows the
     country's rule;
   * every account is held at a bank of the world in the same country;
-  * e-mail addresses use the reserved .example domain (RFC 2606), so none
-    can belong to a real organisation.
+  * e-mail addresses and websites use the reserved .example domain (RFC
+    2606), and telephone numbers the country code +999 that the ITU keeps in
+    reserve, so none can reach a real organisation;
+  * industry codes are ISIC Rev. 4 classes, and parties referred to exist.
 
 Usage: python3 tools/world_parties.py      (prints the problems, exit 1 if any)
 """
@@ -110,6 +112,17 @@ def check(world):
             if ep in seen_endpoints:
                 problems.append(f"{where}: same electronic address as {seen_endpoints[ep]}")
             seen_endpoints[ep] = p["id"]
+        if idn.get("website") and not idn["website"].split("/")[2].endswith(".example"):
+            problems.append(f"{where}: website {idn['website']} must use the reserved .example domain")
+        phone = idn.get("contact", {}).get("telephone")
+        if phone and not phone.startswith(world["countries"][p["c"]]["phone_prefix"]):
+            problems.append(f"{where}: telephone {phone} must start with {world['countries'][p['c']]['phone_prefix']} "
+                            "(+999 is reserved by the ITU, so the number reaches no one)")
+        if idn.get("industry") and not (len(idn["industry"]) == 4 and idn["industry"].isdigit()):
+            problems.append(f"{where}: industry code {idn['industry']} is not an ISIC Rev. 4 class (4 digits)")
+        for rel, key in ((idn.get("service_provider"), "party"), (idn.get("legal", {}).get("shareholder"), "party")):
+            if rel and rel[key] not in parties:
+                problems.append(f"{where}: refers to unknown party {rel[key]}")
         acc = idn.get("account")
         if acc:
             bank = parties.get(acc["bank"])

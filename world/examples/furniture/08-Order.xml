@@ -10,78 +10,172 @@
   </cac:QuotationDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
+      <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
+      <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4719</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brightmarket Stores</cbc:Name>
       </cac:PartyName>
+      <cac:TradePartyName>
+        <cbc:Name>Brightmarket</cbc:Name>
+      </cac:TradePartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
         <cbc:BuildingNumber>50</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38515</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
         <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Brightmarket Stores</cbc:RegistrationName>
+        <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
         <cbc:CompanyID>20410411</cbc:CompanyID>
+        <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
+        <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Buying office</cbc:Name>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
+      <cac:AdditionalWebSite>
+        <cbc:Name>Online shop</cbc:Name>
+        <cbc:URI>https://shop.brightmarket.example</cbc:URI>
+      </cac:AdditionalWebSite>
+      <cac:SocialMediaProfile>
+        <cbc:Name>brightmarket</cbc:Name>
+        <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
+        <cbc:URI>https://social.example/brightmarket</cbc:URI>
+      </cac:SocialMediaProfile>
     </cac:Party>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
     <cac:Party>
+      <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brackenmere Furniture</cbc:Name>
       </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Joiners Row</cbc:StreetName>
         <cbc:BuildingNumber>14</cbc:BuildingNumber>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71203</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1237398</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Brackenmere Furniture</cbc:RegistrationName>
+        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412466</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Marrowdale</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Trade sales</cbc:Name>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 7120 2466</cbc:Telephone>
         <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>

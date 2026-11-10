@@ -6,74 +6,164 @@
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
   <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
   <cac:SenderParty>
+    <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5022</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Fiumella Barges</cbc:Name>
     </cac:PartyName>
+    <cac:Language>
+      <cbc:ID>en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode>EN</cbc:LocaleCode>
+    </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
       <cbc:BuildingNumber>52</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4170</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Fiumella Barges SRU</cbc:RegistrationName>
       <cbc:CompanyID>XU007347248</cbc:CompanyID>
+      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
+        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Fiumella Barges</cbc:RegistrationName>
+      <cbc:RegistrationName>Fiumella Barges SRU</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-104959</cbc:CompanyID>
+      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+      <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XU:CR</cbc:ID>
+        <cbc:Name>Commercial register of Urvania</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Chartering desk</cbc:Name>
+      <cbc:Department>Operations</cbc:Department>
+      <cbc:Telephone>+999 1 4170 4959</cbc:Telephone>
       <cbc:ElectronicMail>chartering@fiumella.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104959</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
+    <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
     </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104548</cbc:ID>
+    </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Rinova Recovery</cbc:Name>
     </cac:PartyName>
+    <cac:Language>
+      <cbc:ID>en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode>EN</cbc:LocaleCode>
+    </cac:Language>
     <cac:PostalAddress>
+      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:StreetName>Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4140</cbc:PostalZone>
+      <cbc:Region>Province of Ferrano</cbc:Region>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
       <cbc:CompanyID>XU007318479</cbc:CompanyID>
+      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
+        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Rinova Recovery</cbc:RegistrationName>
+      <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-104548</cbc:CompanyID>
+      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+      <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Ferrano</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XU:CR</cbc:ID>
+        <cbc:Name>Commercial register of Urvania</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customer service</cbc:Name>
+      <cbc:Department>Sales</cbc:Department>
+      <cbc:Telephone>+999 1 4140 4548</cbc:Telephone>
       <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
+    <cac:PartyAuthorization>
+      <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
+      <cac:ValidityPeriod>
+        <cbc:EndDate>2029-12-31</cbc:EndDate>
+      </cac:ValidityPeriod>
+      <cac:Certificate>
+        <cbc:ID>XU-ENV-2024-0311</cbc:ID>
+        <cbc:CertificateTypeCode>Permit</cbc:CertificateTypeCode>
+        <cbc:CertificateType>Operating permit</cbc:CertificateType>
+      </cac:Certificate>
+    </cac:PartyAuthorization>
   </cac:ReceiverParty>
   <cac:TransportUserParty>
     <cac:PartyIdentification>
@@ -101,40 +191,83 @@
     <cbc:ID>RR-CS-26-0885</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cac:ConsigneeParty>
+      <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412740</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Rivermouth Packaging</cbc:Name>
       </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
         <cbc:StreetName>Estuary Road</cbc:StreetName>
         <cbc:BuildingNumber>28</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38505</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
         <cbc:CompanyID>CO-1238220</cbc:CompanyID>
+        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
+          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Rivermouth Packaging</cbc:RegistrationName>
+        <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412740</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Order desk</cbc:Name>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:ConsigneeParty>
   </cac:Consignment>
 </TransportExecutionPlan>

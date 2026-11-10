@@ -292,7 +292,8 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of "
                                         "UBL's payment means code list, which code list validation checks.",
                                   listID="UN/EDIFACT EDED 4461"),
-            "PayeeFinancialAccount": account(doc["parties"].get("PayeeParty", seller), "The account to pay to.")},
+            "PayeeFinancialAccount": account(doc["parties"].get("PayeeParty", seller), "The account to pay to.",
+                                             note=f"Invoice {flow.number(key, seller, 'Invoice')}")},
         "TaxTotal": total,
         "LegalMonetaryTotal": monetary_total(base, tax, cur, sum(r[2] for r in charge_rows)),
         "InvoiceLine": [{

@@ -6,62 +6,157 @@
   <cbc:IssueDate>2026-02-05</cbc:IssueDate>
   <cac:DespatchSupplierParty>
     <cac:Party>
+      <cbc:WebsiteURI>https://www.lisavufarm.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0116</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Plantation Road</cbc:StreetName>
         <cbc:BuildingNumber>35</cbc:BuildingNumber>
+        <cbc:Description>Farm track off Plantation Road, past the cotton fields.</cbc:Description>
         <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:District>North coast</cbc:District>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:AddressLine>
+          <cbc:Line>Lisavu Cotton Farm</cbc:Line>
+        </cac:AddressLine>
+        <cac:AddressLine>
+          <cbc:Line>Plantation Road, kilometre 4</cbc:Line>
+        </cac:AddressLine>
+        <cac:AddressLine>
+          <cbc:Line>North coast, Selanu</cbc:Line>
+        </cac:AddressLine>
         <cac:Country>
           <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
+        <cac:LocationCoordinate>
+          <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+          <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">58.80</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+          <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">7.80</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+        </cac:LocationCoordinate>
       </cac:PostalAddress>
+      <cac:PhysicalLocation>
+        <cbc:Description>The cotton fields</cbc:Description>
+        <cbc:InformationURI>https://www.lisavufarm.example</cbc:InformationURI>
+        <cac:LocationCoordinate>
+          <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+          <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">58.80</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+          <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">7.80</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+        </cac:LocationCoordinate>
+      </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
         <cbc:CompanyID>IC42544</cbc:CompanyID>
+        <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>SP</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Sole proprietorship</cbc:CompanyLegalForm>
+        <cbc:SoleProprietorshipIndicator>true</cbc:SoleProprietorshipIndicator>
+        <cbc:EntitySizeCode>Micro</cbc:EntitySizeCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XL:ICR</cbc:ID>
+          <cbc:Name>Island companies register</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Farm office</cbc:Name>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 3 3000 2544</cbc:Telephone>
         <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42544</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:Party>
   </cac:DespatchSupplierParty>
   <cac:DeliveryCustomerParty>
     <cac:Party>
+      <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-042681</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
+      <cac:Language>
+        <cbc:ID>en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode>EN</cbc:LocaleCode>
+      </cac:Language>
       <cac:PostalAddress>
+        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName>Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Selanu Cotton Ginnery</cbc:RegistrationName>
+        <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
         <cbc:CompanyID>IC42681</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XL:ICR</cbc:ID>
+          <cbc:Name>Island companies register</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Cotton sales</cbc:Name>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
         <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:BuyerCustomerParty>

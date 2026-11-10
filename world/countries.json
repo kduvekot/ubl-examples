@@ -45,7 +45,16 @@
     ],
     "postal_zone": "4 digits",
     "subdivisions": null
-   }
+   },
+   "phone_prefix": "+999 1",
+   "timezone": "-1",
+   "register_scheme": "XU:CR",
+   "customs_trader_format": "XU-TR- and 6 digits",
+   "legal_forms": {
+    "SUA": "Società urvaniana per azioni (public limited company)",
+    "SRU": "Società a responsabilità urvaniana (private limited company)"
+   },
+   "region": "Province of Ferrano"
   },
   "XB": {
    "name": "Bayvarra",
@@ -105,6 +114,14 @@
     "west": "Upland State",
     "east": "Coastal State",
     "note": "The state border runs north-south at map column 29: the border region and the distributor are in Upland State, Lumeport and the coast in Coastal State."
+   },
+   "phone_prefix": "+999 2",
+   "timezone": "-1",
+   "register_scheme": "XB:FBR",
+   "customs_trader_format": "XB-TR- and 6 digits",
+   "legal_forms": {
+    "Corp": "Corporation (public)",
+    "Ltd": "Limited company (private)"
    }
   },
   "XL": {
@@ -153,6 +170,14 @@
     ],
     "postal_zone": null,
     "subdivisions": null
+   },
+   "phone_prefix": "+999 3",
+   "timezone": "-1",
+   "register_scheme": "XL:ICR",
+   "customs_trader_format": "XL-TR- and 6 digits",
+   "legal_forms": {
+    "Ltd": "Island limited company",
+    "SP": "Sole proprietorship"
    }
   }
  },
@@ -161,5 +186,15 @@
   "XBL/XLC": 0.4,
   "XUF/XLC": 0.004
  },
- "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral."
+ "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral.",
+ "geography": {
+  "origin": {
+   "latitude_south": 39.8,
+   "longitude_west": 15.6
+  },
+  "degrees_per_tile": 0.01,
+  "timezone": "UTC-1",
+  "note": "The world lies in an empty part of the South Atlantic, about 40° South and 15° West: every coordinate in the examples points to open sea on a real map. Map tile (i, j) lies at latitude 39.80 + 0.01·j degrees South and longitude 15.60 − 0.01·i degrees West.",
+  "telephone_note": "Telephone numbers use +999, a country code that the ITU keeps in reserve (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country."
+ }
 }

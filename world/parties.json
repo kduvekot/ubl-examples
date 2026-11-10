@@ -22,18 +22,36 @@
     "endpoint": "XU:XU-R-104137",
     "contact": {
      "name": "Sales office",
-     "email": "sales@serravona.example"
+     "email": "sales@serravona.example",
+     "telephone": "+999 1 4110 4137",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007289704",
     "address": {
      "StreetName": "Strada della Miniera",
      "BuildingNumber": "10",
      "CityName": "Serravona",
-     "PostalZone": "4110"
+     "PostalZone": "4110",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU56CREV0000104729"
+    },
+    "industry": "0710",
+    "website": "https://www.serravona.example",
+    "language": "EN",
+    "legal": {
+     "form": "SUA",
+     "founded": "1958-06-30",
+     "size": "Large",
+     "capital": 120000000
+    },
+    "site": {
+     "locode": "XUSRV",
+     "description": "The mine and its rail siding",
+     "conditions": "Unpaved access road; heavy vehicles only."
     }
    }
   },
@@ -62,18 +80,47 @@
     "endpoint": "XU:XU-R-104274",
     "contact": {
      "name": "Order desk",
-     "email": "order@valdara.example"
+     "email": "order@valdara.example",
+     "telephone": "+999 1 4120 4274",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007299291",
     "address": {
      "StreetName": "Via delle Officine",
      "BuildingNumber": "17",
      "CityName": "Ferrano",
-     "PostalZone": "4120"
+     "PostalZone": "4120",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU20CREV0000209458"
+    },
+    "industry": "3100",
+    "website": "https://www.valdara.example",
+    "language": "EN",
+    "legal": {
+     "form": "SUA",
+     "founded": "1962-04-12",
+     "size": "Large",
+     "capital": 250000000
+    },
+    "service_provider": {
+     "party": "8-xu",
+     "type": "Warehousing and despatch"
+    },
+    "customs_id": "XU-TR-104274",
+    "employee": {
+     "first": "Davide",
+     "family": "Orsenna",
+     "job": "Sales engineer",
+     "department": "Export sales",
+     "id": "VI-E-0412",
+     "national_id": "XU-NID-55102311",
+     "birth_date": "1984-05-17",
+     "birthplace": "Ferrano",
+     "passport": "XU-P-2210931"
     }
    }
   },
@@ -102,18 +149,34 @@
     "endpoint": "XU:XU-R-104411",
     "contact": {
      "name": "Warehouse office",
-     "email": "warehouse@castrano.example"
+     "email": "warehouse@castrano.example",
+     "telephone": "+999 1 4130 4411",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007308887",
     "address": {
      "StreetName": "Via del Magazzino",
      "BuildingNumber": "24",
      "CityName": "Ferrano",
-     "PostalZone": "4130"
+     "PostalZone": "4130",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU81CREV0000314187"
+    },
+    "industry": "5210",
+    "website": "https://www.castrano.example",
+    "language": "EN",
+    "legal": {
+     "form": "SRU",
+     "founded": "1996-01-01",
+     "size": "Small",
+     "shareholder": {
+      "party": "5-xu",
+      "percent": 100
+     }
     }
    }
   },
@@ -138,19 +201,37 @@
     "endpoint": "XU:XU-R-104548",
     "contact": {
      "name": "Customer service",
-     "email": "customer@rinova.example"
+     "email": "customer@rinova.example",
+     "telephone": "+999 1 4140 4548",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007318479",
     "address": {
      "StreetName": "Via del Riciclo",
      "BuildingNumber": "31",
      "CityName": "Ferrano",
-     "PostalZone": "4140"
+     "PostalZone": "4140",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU45CREV0000418916"
-    }
+    },
+    "industry": "3830",
+    "website": "https://www.rinova.example",
+    "language": "EN",
+    "legal": {
+     "form": "SRU",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "authorization": {
+     "purpose": "Recovery of non-hazardous plastic waste",
+     "valid_until": "2029-12-31",
+     "certificate": "XU-ENV-2024-0311"
+    },
+    "customs_id": "XU-TR-104548"
    }
   },
   {
@@ -174,18 +255,30 @@
     "endpoint": "XU:XU-R-104685",
     "contact": {
      "name": "Freight desk",
-     "email": "freight@ferranorail.example"
+     "email": "freight@ferranorail.example",
+     "telephone": "+999 1 4150 4685",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007328060",
     "address": {
      "StreetName": "Viale della Stazione",
      "BuildingNumber": "38",
      "CityName": "Serravona",
-     "PostalZone": "4150"
+     "PostalZone": "4150",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU09CREV0000523645"
+    },
+    "industry": "4912",
+    "website": "https://www.ferranorail.example",
+    "language": "EN",
+    "legal": {
+     "form": "SRU",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -210,18 +303,35 @@
     "endpoint": "XU:XU-R-104822",
     "contact": {
      "name": "Planning desk",
-     "email": "planning@trasvia.example"
+     "email": "planning@trasvia.example",
+     "telephone": "+999 1 4160 4822",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007337656",
     "address": {
      "StreetName": "Via dei Trasporti",
      "BuildingNumber": "45",
      "CityName": "Ferrano",
-     "PostalZone": "4160"
+     "PostalZone": "4160",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU70CREV0000628374"
+    },
+    "industry": "4923",
+    "website": "https://www.trasvia.example",
+    "language": "EN",
+    "legal": {
+     "form": "SRU",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "authorization": {
+     "purpose": "International road haulage",
+     "valid_until": "2030-06-30",
+     "certificate": "XU-HAUL-2020-0877"
     }
    }
   },
@@ -246,18 +356,30 @@
     "endpoint": "XU:XU-R-104959",
     "contact": {
      "name": "Chartering desk",
-     "email": "chartering@fiumella.example"
+     "email": "chartering@fiumella.example",
+     "telephone": "+999 1 4170 4959",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007347248",
     "address": {
      "StreetName": "Banchina del Fiume",
      "BuildingNumber": "52",
      "CityName": "Ferrano",
-     "PostalZone": "4170"
+     "PostalZone": "4170",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU34CREV0000733103"
+    },
+    "industry": "5022",
+    "website": "https://www.fiumella.example",
+    "language": "EN",
+    "legal": {
+     "form": "SRU",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -287,14 +409,26 @@
     "endpoint": "XU:XU-R-105096",
     "contact": {
      "name": "Terminal control",
-     "email": "terminal@ferranohub.example"
+     "email": "terminal@ferranohub.example",
+     "telephone": "+999 1 4180 5096",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007356833",
     "address": {
      "StreetName": "Via del Terminal",
      "BuildingNumber": "59",
      "CityName": "Ferrano",
-     "PostalZone": "4180"
+     "PostalZone": "4180",
+     "Region": "Province of Ferrano"
+    },
+    "industry": "5221",
+    "website": "https://www.ferranohub.example",
+    "language": "EN",
+    "legal": {
+     "form": "SRU",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -319,16 +453,41 @@
     "endpoint": "XU:XU-R-105233",
     "contact": {
      "name": "Trade services",
-     "email": "trade@crevalto.example"
+     "email": "trade@crevalto.example",
+     "telephone": "+999 1 4100 5233",
+     "department": "Client services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007366425",
     "address": {
      "StreetName": "Piazza della Banca",
      "BuildingNumber": "8",
      "CityName": "Ferrano",
-     "PostalZone": "4100"
+     "PostalZone": "4100",
+     "BuildingName": "Palazzo Crevalto",
+     "Floor": "3",
+     "Room": "301",
+     "Region": "Province of Ferrano"
     },
-    "bank_code": "CREV"
+    "bank_code": "CREV",
+    "industry": "6419",
+    "website": "https://www.crevalto.example",
+    "language": "EN",
+    "legal": {
+     "form": "SUA",
+     "founded": "1921-09-01",
+     "size": "Large",
+     "capital": 900000000,
+     "listing": {
+      "market": "Ferrano Stock Exchange",
+      "code": "FSE",
+      "id": "XU0001042331"
+     }
+    },
+    "branch": {
+     "id": "CREV-001",
+     "name": "Main branch"
+    }
    }
   },
   {
@@ -352,15 +511,21 @@
     "endpoint": "XU:XU-R-105370",
     "contact": {
      "name": "Certificates office",
-     "email": "certificates@camera-ferrano.example"
+     "email": "certificates@camera-ferrano.example",
+     "telephone": "+999 1 4110 5370",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007376017",
     "address": {
      "StreetName": "Piazza del Mercato",
      "BuildingNumber": "15",
      "CityName": "Ferrano",
-     "PostalZone": "4110"
-    }
+     "PostalZone": "4110",
+     "Region": "Province of Ferrano"
+    },
+    "industry": "9411",
+    "language": "EN"
    }
   },
   {
@@ -385,15 +550,23 @@
     "endpoint": "XU:XU-R-105507",
     "contact": {
      "name": "Border office",
-     "email": "border@customs-xu.example"
+     "email": "border@customs-xu.example",
+     "telephone": "+999 1 4120 5507",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00",
+     "telefax": "+999 1 4180 0018"
     },
     "tax_id": "XU007385602",
     "address": {
      "StreetName": "Valico di Confine",
      "BuildingNumber": "22",
      "CityName": "Ferrano",
-     "PostalZone": "4120"
-    }
+     "PostalZone": "4120",
+     "Postbox": "PB 18",
+     "Region": "Province of Ferrano"
+    },
+    "industry": "8411",
+    "language": "EN"
    }
   },
   {
@@ -418,14 +591,25 @@
     "endpoint": "XU:XU-R-105644",
     "contact": {
      "name": "Member services",
-     "email": "member@codana.example"
+     "email": "member@codana.example",
+     "telephone": "+999 1 4130 5644",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007395206",
     "address": {
      "StreetName": "Via dei Codici",
      "BuildingNumber": "29",
      "CityName": "Ferrano",
-     "PostalZone": "4130"
+     "PostalZone": "4130",
+     "Region": "Province of Ferrano"
+    },
+    "industry": "8299",
+    "language": "EN",
+    "legal": {
+     "form": "SRU",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -451,15 +635,21 @@
     "endpoint": "XB:20410137",
     "contact": {
      "name": "Border office",
-     "email": "border@customs-xb.example"
+     "email": "border@customs-xb.example",
+     "telephone": "+999 2 7121 0137",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Border Crossing Road",
      "BuildingNumber": "36",
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
-     "PostalZone": "71213"
-    }
+     "PostalZone": "71213",
+     "CountrySubentityCode": "UL"
+    },
+    "industry": "8411",
+    "language": "EN"
    }
   },
   {
@@ -487,7 +677,10 @@
     "endpoint": "XB:20410274",
     "contact": {
      "name": "Customer service",
-     "email": "customer@lumeway.example"
+     "email": "customer@lumeway.example",
+     "telephone": "+999 2 7121 0274",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "UL-1230822",
     "address": {
@@ -495,12 +688,26 @@
      "BuildingNumber": "43",
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
-     "PostalZone": "71214"
+     "PostalZone": "71214",
+     "BlockName": "Marrowdale Business Park",
+     "PlotIdentification": "Plot 14",
+     "AdditionalStreetName": "Gate 3",
+     "CountrySubentityCode": "UL"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB18BLUM0001466206"
-    }
+    },
+    "industry": "4649",
+    "website": "https://www.lumeway.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1988-10-03",
+     "size": "Medium",
+     "capital": 2500000
+    },
+    "customs_id": "XB-TR-410274"
    }
   },
   {
@@ -524,7 +731,10 @@
     "endpoint": "XB:20410411",
     "contact": {
      "name": "Buying office",
-     "email": "buying@brightmarket.example"
+     "email": "buying@brightmarket.example",
+     "telephone": "+999 2 3851 0411",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1231233",
     "address": {
@@ -532,11 +742,30 @@
      "BuildingNumber": "50",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38515"
+     "PostalZone": "38515",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB79BLUM0001570935"
+    },
+    "industry": "4719",
+    "website": "https://www.brightmarket.example",
+    "language": "EN",
+    "legal": {
+     "form": "Corp",
+     "founded": "1979-02-14",
+     "size": "Large",
+     "capital": 12000000
+    },
+    "trade_name": "Brightmarket",
+    "logo": "BM-LOGO-2024",
+    "shop_website": "https://shop.brightmarket.example",
+    "social": {
+     "type": "Photo sharing",
+     "name": "brightmarket",
+     "uri": "https://social.example/brightmarket"
     }
    }
   },
@@ -563,7 +792,13 @@
      "BuildingNumber": "57",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38516"
+     "PostalZone": "38516",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
+    },
+    "person_name": {
+     "first": "Robin",
+     "family": "Ashdale"
     }
    }
   },
@@ -588,19 +823,32 @@
     "endpoint": "XB:20410548",
     "contact": {
      "name": "Procurement office",
-     "email": "procurement@publicworks-lumeport.example"
+     "email": "procurement@publicworks-lumeport.example",
+     "telephone": "+999 2 3851 0548",
+     "department": "Procurement",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Civic Square",
      "BuildingNumber": "6",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38517"
+     "PostalZone": "38517",
+     "Department": "Procurement office",
+     "MarkAttention": "Head of procurement",
+     "InhouseMail": "Room 2.14",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB07BLUM0001780393"
-    }
+    },
+    "industry": "8411",
+    "language": "EN",
+    "tax_exemption": "Public bodies are exempt from the state sales tax",
+    "tax_id": "CO-0900002",
+    "customs_id": "XB-TR-410548"
    }
   },
   {
@@ -625,7 +873,10 @@
     "endpoint": "XB:20410685",
     "contact": {
      "name": "Bids office",
-     "email": "bids@saltmere.example"
+     "email": "bids@saltmere.example",
+     "telephone": "+999 2 7121 0685",
+     "department": "Procurement",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "UL-1232055",
     "address": {
@@ -633,12 +884,15 @@
      "BuildingNumber": "13",
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
-     "PostalZone": "71218"
+     "PostalZone": "71218",
+     "CountrySubentityCode": "UL"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB68BLUM0001885122"
-    }
+    },
+    "industry": "4290",
+    "language": "EN"
    }
   },
   {
@@ -663,15 +917,22 @@
     "endpoint": "XB:20410822",
     "contact": {
      "name": "Registry",
-     "email": "registry@review-xb.example"
+     "email": "registry@review-xb.example",
+     "telephone": "+999 2 3851 0822",
+     "department": "Procurement",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Justice Row",
      "BuildingNumber": "20",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38519"
-    }
+     "PostalZone": "38519",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
+    },
+    "industry": "8423",
+    "language": "EN"
    }
   },
   {
@@ -695,15 +956,22 @@
     "endpoint": "XB:20410959",
     "contact": {
      "name": "Publications and register",
-     "email": "publications@info-xb.example"
+     "email": "publications@info-xb.example",
+     "telephone": "+999 2 3852 0959",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Civic Square",
      "BuildingNumber": "27",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38520"
-    }
+     "PostalZone": "38520",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
+    },
+    "industry": "8411",
+    "language": "EN"
    }
   },
   {
@@ -728,15 +996,22 @@
     "endpoint": "XB:20411096",
     "contact": {
      "name": "Secretariat",
-     "email": "secretariat@tradeaccord.example"
+     "email": "secretariat@tradeaccord.example",
+     "telephone": "+999 2 3852 1096",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Exchange Street",
      "BuildingNumber": "34",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38521"
-    }
+     "PostalZone": "38521",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
+    },
+    "industry": "9411",
+    "language": "EN"
    }
   },
   {
@@ -760,7 +1035,10 @@
     "endpoint": "XB:20411233",
     "contact": {
      "name": "Client accounts",
-     "email": "client@harbourline.example"
+     "email": "client@harbourline.example",
+     "telephone": "+999 2 3852 1233",
+     "department": "Client services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1233699",
     "address": {
@@ -768,11 +1046,21 @@
      "BuildingNumber": "41",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38522"
+     "PostalZone": "38522",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB21BLUM0002304038"
+    },
+    "industry": "6499",
+    "website": "https://www.harbourline.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -797,16 +1085,37 @@
     "endpoint": "XB:20411370",
     "contact": {
      "name": "Trade services",
-     "email": "trade@bankoflumeport.example"
+     "email": "trade@bankoflumeport.example",
+     "telephone": "+999 2 3852 1370",
+     "department": "Client services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Exchange Street",
      "BuildingNumber": "48",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38523"
+     "PostalZone": "38523",
+     "BuildingName": "Exchange House",
+     "Floor": "3",
+     "Room": "301",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
     },
-    "bank_code": "BLUM"
+    "bank_code": "BLUM",
+    "industry": "6419",
+    "website": "https://www.bankoflumeport.example",
+    "language": "EN",
+    "legal": {
+     "form": "Corp",
+     "founded": "1903-05-20",
+     "size": "Large",
+     "capital": 75000000
+    },
+    "branch": {
+     "id": "BLUM-001",
+     "name": "Main branch"
+    }
    }
   },
   {
@@ -831,7 +1140,10 @@
     "endpoint": "XB:20411507",
     "contact": {
      "name": "Cargo claims",
-     "email": "cargo@wavesure.example"
+     "email": "cargo@wavesure.example",
+     "telephone": "+999 2 3852 1507",
+     "department": "Client services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1234521",
     "address": {
@@ -839,7 +1151,17 @@
      "BuildingNumber": "55",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38524"
+     "PostalZone": "38524",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
+    },
+    "industry": "6512",
+    "website": "https://www.wavesure.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -864,7 +1186,10 @@
     "endpoint": "XB:20411644",
     "contact": {
      "name": "Export desk",
-     "email": "export@bayforth.example"
+     "email": "export@bayforth.example",
+     "telephone": "+999 2 3852 1644",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1234932",
     "address": {
@@ -872,11 +1197,21 @@
      "BuildingNumber": "4",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38525"
+     "PostalZone": "38525",
+     "CitySubdivisionName": "Harbour quarter",
+     "CountrySubentityCode": "CO"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB10BLUM0002618225"
+    },
+    "industry": "5229",
+    "website": "https://www.bayforth.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -909,14 +1244,32 @@
     "endpoint": "XB:20411781",
     "contact": {
      "name": "Port control",
-     "email": "port@port-lumeport.example"
+     "email": "port@port-lumeport.example",
+     "telephone": "+999 2 3852 1781",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Harbour Road",
      "BuildingNumber": "11",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38526"
+     "PostalZone": "38526",
+     "CitySubdivisionName": "Harbour quarter",
+     "CountrySubentityCode": "CO"
+    },
+    "industry": "5222",
+    "website": "https://www.port-lumeport.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "site": {
+     "locode": "XBLMP",
+     "description": "Port of Lumeport",
+     "subsidiary": "Container quay"
     }
    }
   },
@@ -941,7 +1294,10 @@
     "endpoint": "XB:20411918",
     "contact": {
      "name": "Bookings",
-     "email": "bookings@tidewell.example"
+     "email": "bookings@tidewell.example",
+     "telephone": "+999 2 3852 1918",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1235754",
     "address": {
@@ -949,7 +1305,18 @@
      "BuildingNumber": "18",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38527"
+     "PostalZone": "38527",
+     "CitySubdivisionName": "Harbour quarter",
+     "CountrySubentityCode": "CO"
+    },
+    "industry": "5012",
+    "website": "https://www.tidewell.example",
+    "language": "EN",
+    "legal": {
+     "form": "Corp",
+     "founded": "1974-03-01",
+     "size": "Large",
+     "capital": 40000000
     }
    }
   },
@@ -978,7 +1345,10 @@
     "endpoint": "XB:20412055",
     "contact": {
      "name": "Cargo acceptance",
-     "email": "cargo@lumeport-cargo.example"
+     "email": "cargo@lumeport-cargo.example",
+     "telephone": "+999 2 3852 2055",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1236165",
     "address": {
@@ -986,7 +1356,21 @@
      "BuildingNumber": "25",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38528"
+     "PostalZone": "38528",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
+    },
+    "industry": "5223",
+    "website": "https://www.lumeport-cargo.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "site": {
+     "locode": "XBLMA",
+     "description": "Lumeport airport"
     }
    }
   },
@@ -1019,12 +1403,27 @@
     "endpoint": "XL:IC41037",
     "contact": {
      "name": "Port control",
-     "email": "port@port-selanu.example"
+     "email": "port@port-selanu.example",
+     "telephone": "+999 3 3000 1037",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Wharf Road",
      "BuildingNumber": "32",
      "CityName": "Selanu"
+    },
+    "industry": "5222",
+    "website": "https://www.port-selanu.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "site": {
+     "locode": "XLSEL",
+     "description": "Port of Selanu"
     }
    }
   },
@@ -1053,12 +1452,23 @@
     "endpoint": "XL:IC41174",
     "contact": {
      "name": "Import desk",
-     "email": "import@selanu-cargo.example"
+     "email": "import@selanu-cargo.example",
+     "telephone": "+999 3 3000 1174",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Airfield Road",
      "BuildingNumber": "39",
      "CityName": "Selanu"
+    },
+    "industry": "5223",
+    "website": "https://www.selanu-cargo.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -1083,12 +1493,23 @@
     "endpoint": "XL:IC41311",
     "contact": {
      "name": "Cargo sales",
-     "email": "cargo@kelaro.example"
+     "email": "cargo@kelaro.example",
+     "telephone": "+999 3 3000 1311",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Airfield Road",
      "BuildingNumber": "46",
      "CityName": "Selanu"
+    },
+    "industry": "5120",
+    "website": "https://www.kelaro.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -1114,13 +1535,18 @@
     "endpoint": "XL:IC41448",
     "contact": {
      "name": "Import office",
-     "email": "import@customs-xl.example"
+     "email": "import@customs-xl.example",
+     "telephone": "+999 3 3000 1448",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Wharf Road",
      "BuildingNumber": "53",
      "CityName": "Selanu"
-    }
+    },
+    "industry": "8411",
+    "language": "EN"
    }
   },
   {
@@ -1144,7 +1570,10 @@
     "endpoint": "XL:IC41585",
     "contact": {
      "name": "Declarations",
-     "email": "declarations@tevaro.example"
+     "email": "declarations@tevaro.example",
+     "telephone": "+999 3 3000 1585",
+     "department": "Operations",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Wharf Road",
@@ -1154,6 +1583,14 @@
     "account": {
      "bank": "22-xl",
      "number": "XL85BSEL0003456057"
+    },
+    "industry": "5229",
+    "website": "https://www.tevaro.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -1182,7 +1619,10 @@
     "endpoint": "XL:IC41722",
     "contact": {
      "name": "Goods inwards",
-     "email": "goods@nalevi.example"
+     "email": "goods@nalevi.example",
+     "telephone": "+999 3 3000 1722",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Lagoon Road",
@@ -1192,6 +1632,14 @@
     "account": {
      "bank": "22-xl",
      "number": "XL49BSEL0003560786"
+    },
+    "industry": "5210",
+    "website": "https://www.nalevi.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -1216,7 +1664,10 @@
     "endpoint": "XL:IC41859",
     "contact": {
      "name": "Purchasing",
-     "email": "purchasing@velumi.example"
+     "email": "purchasing@velumi.example",
+     "telephone": "+999 3 3000 1859",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Reef Street",
@@ -1226,7 +1677,16 @@
     "account": {
      "bank": "22-xl",
      "number": "XL13BSEL0003665515"
-    }
+    },
+    "industry": "4649",
+    "website": "https://www.velumi.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "customs_id": "XL-TR-041859"
    }
   },
   {
@@ -1250,14 +1710,33 @@
     "endpoint": "XL:IC41996",
     "contact": {
      "name": "Payments",
-     "email": "payments@bankofselanu.example"
+     "email": "payments@bankofselanu.example",
+     "telephone": "+999 3 3000 1996",
+     "department": "Client services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Reef Street",
      "BuildingNumber": "23",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "BuildingName": "Reef House",
+     "Floor": "3",
+     "Room": "301"
     },
-    "bank_code": "BSEL"
+    "bank_code": "BSEL",
+    "industry": "6419",
+    "website": "https://www.bankofselanu.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1965-07-01",
+     "size": "Large",
+     "capital": 9000000
+    },
+    "branch": {
+     "id": "BSEL-001",
+     "name": "Main branch"
+    }
    }
   },
   {
@@ -1281,13 +1760,18 @@
     "endpoint": "XL:IC42133",
     "contact": {
      "name": "Carnet office",
-     "email": "carnet@chamber-selanu.example"
+     "email": "carnet@chamber-selanu.example",
+     "telephone": "+999 3 3000 2133",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Reef Street",
      "BuildingNumber": "30",
      "CityName": "Selanu"
-    }
+    },
+    "industry": "9411",
+    "language": "EN"
    }
   },
   {
@@ -1312,13 +1796,18 @@
     "endpoint": "XL:IC42270",
     "contact": {
      "name": "Ship registry",
-     "email": "ship@maritime-xl.example"
+     "email": "ship@maritime-xl.example",
+     "telephone": "+999 3 3000 2270",
+     "department": "Public services",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Wharf Road",
      "BuildingNumber": "37",
      "CityName": "Selanu"
-    }
+    },
+    "industry": "8413",
+    "language": "EN"
    }
   },
   {
@@ -1347,18 +1836,31 @@
     "endpoint": "XU:XU-R-105781",
     "contact": {
      "name": "Customer service",
-     "email": "customer@ferranoenergy.example"
+     "email": "customer@ferranoenergy.example",
+     "telephone": "+999 1 4130 5781",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "XU007404785",
     "address": {
      "StreetName": "Via della Centrale",
      "BuildingNumber": "44",
      "CityName": "Serravona",
-     "PostalZone": "4130"
+     "PostalZone": "4130",
+     "Region": "Province of Ferrano"
     },
     "account": {
      "bank": "23-xu",
      "number": "XU46CREV0004084431"
+    },
+    "industry": "3510",
+    "website": "https://www.ferranoenergy.example",
+    "language": "EN",
+    "legal": {
+     "form": "SUA",
+     "founded": "1949-01-15",
+     "size": "Large",
+     "capital": 600000000
     }
    }
   },
@@ -1384,7 +1886,10 @@
     "endpoint": "XB:20412192",
     "contact": {
      "name": "Customer service",
-     "email": "customer@coastalwater.example"
+     "email": "customer@coastalwater.example",
+     "telephone": "+999 2 3850 2192",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1236576",
     "address": {
@@ -1392,11 +1897,21 @@
      "BuildingNumber": "51",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38500"
+     "PostalZone": "38500",
+     "CitySubdivisionName": "Harbour quarter",
+     "CountrySubentityCode": "CO"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB52BLUM0004189160"
+    },
+    "industry": "3600",
+    "website": "https://www.coastalwater.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -1422,7 +1937,10 @@
     "endpoint": "XL:IC42407",
     "contact": {
      "name": "Business accounts",
-     "email": "business@selanutelecom.example"
+     "email": "business@selanutelecom.example",
+     "telephone": "+999 3 3000 2407",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Mast Hill Road",
@@ -1432,6 +1950,14 @@
     "account": {
      "bank": "22-xl",
      "number": "XL88BSEL0004293889"
+    },
+    "industry": "6110",
+    "website": "https://www.selanutelecom.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -1461,7 +1987,10 @@
     "endpoint": "XB:20412329",
     "contact": {
      "name": "Sales office",
-     "email": "sales@marrowdalesawmill.example"
+     "email": "sales@marrowdalesawmill.example",
+     "telephone": "+999 2 7120 2329",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "UL-1236987",
     "address": {
@@ -1469,12 +1998,22 @@
      "BuildingNumber": "7",
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
-     "PostalZone": "71202"
+     "PostalZone": "71202",
+     "CountrySubentityCode": "UL"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB77BLUM0004398618"
-    }
+    },
+    "industry": "1610",
+    "website": "https://www.marrowdalesawmill.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "customs_id": "XB-TR-412329"
    }
   },
   {
@@ -1499,7 +2038,10 @@
     "endpoint": "XB:20412466",
     "contact": {
      "name": "Trade sales",
-     "email": "trade@brackenmere.example"
+     "email": "trade@brackenmere.example",
+     "telephone": "+999 2 7120 2466",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "UL-1237398",
     "address": {
@@ -1507,11 +2049,20 @@
      "BuildingNumber": "14",
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
-     "PostalZone": "71203"
+     "PostalZone": "71203",
+     "CountrySubentityCode": "UL"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB41BLUM0004503347"
+    },
+    "industry": "3100",
+    "website": "https://www.brackenmere.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
     }
    }
   },
@@ -1541,7 +2092,10 @@
     "endpoint": "XB:20412603",
     "contact": {
      "name": "Purchasing",
-     "email": "purchasing@lumeporttextile.example"
+     "email": "purchasing@lumeporttextile.example",
+     "telephone": "+999 2 3850 2603",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1237809",
     "address": {
@@ -1549,12 +2103,23 @@
      "BuildingNumber": "21",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38504"
+     "PostalZone": "38504",
+     "CitySubdivisionName": "Harbour quarter",
+     "CountrySubentityCode": "CO"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB05BLUM0004608076"
-    }
+    },
+    "industry": "1312",
+    "website": "https://www.lumeporttextile.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "customs_id": "XB-TR-412603"
    }
   },
   {
@@ -1579,7 +2144,10 @@
     "endpoint": "XB:20412740",
     "contact": {
      "name": "Order desk",
-     "email": "order@rivermouth.example"
+     "email": "order@rivermouth.example",
+     "telephone": "+999 2 3850 2740",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "tax_id": "CO-1238220",
     "address": {
@@ -1587,12 +2155,23 @@
      "BuildingNumber": "28",
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
-     "PostalZone": "38505"
+     "PostalZone": "38505",
+     "CitySubdivisionName": "Old town",
+     "CountrySubentityCode": "CO"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB66BLUM0004712805"
-    }
+    },
+    "industry": "2220",
+    "website": "https://www.rivermouth.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "customs_id": "XB-TR-412740"
    }
   },
   {
@@ -1617,16 +2196,39 @@
     "endpoint": "XL:IC42544",
     "contact": {
      "name": "Farm office",
-     "email": "farm@lisavufarm.example"
+     "email": "farm@lisavufarm.example",
+     "telephone": "+999 3 3000 2544",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Plantation Road",
      "BuildingNumber": "35",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "District": "North coast",
+     "Description": "Farm track off Plantation Road, past the cotton fields."
     },
     "account": {
      "bank": "22-xl",
      "number": "XL05BSEL0004817534"
+    },
+    "industry": "0116",
+    "website": "https://www.lisavufarm.example",
+    "language": "EN",
+    "legal": {
+     "form": "SP",
+     "founded": "2009-08-17",
+     "size": "Micro",
+     "sole_proprietor": true
+    },
+    "address_lines": [
+     "Lisavu Cotton Farm",
+     "Plantation Road, kilometre 4",
+     "North coast, Selanu"
+    ],
+    "site": {
+     "locode": null,
+     "description": "The cotton fields"
     }
    }
   },
@@ -1652,7 +2254,10 @@
     "endpoint": "XL:IC42681",
     "contact": {
      "name": "Cotton sales",
-     "email": "cotton@selanuginnery.example"
+     "email": "cotton@selanuginnery.example",
+     "telephone": "+999 3 3000 2681",
+     "department": "Sales",
+     "hours": "Weekdays 08:00–17:00"
     },
     "address": {
      "StreetName": "Gin Yard Road",
@@ -1662,7 +2267,16 @@
     "account": {
      "bank": "22-xl",
      "number": "XL66BSEL0004922263"
-    }
+    },
+    "industry": "0163",
+    "website": "https://www.selanuginnery.example",
+    "language": "EN",
+    "legal": {
+     "form": "Ltd",
+     "founded": "1996-01-01",
+     "size": "Small"
+    },
+    "customs_id": "XL-TR-042681"
    }
   }
  ]

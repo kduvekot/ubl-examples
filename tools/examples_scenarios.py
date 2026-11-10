@@ -522,10 +522,22 @@ def sea(n, doc):
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment shipped.")}}}})
     if doc["doc"] == "ImportCustomsDeclaration":
-        return kit.import_declaration(f, n, doc, 15, "The customs broker declares the import for the buyer.",
+        out = kit.import_declaration(f, n, doc, 15, "The customs broker declares the import for the buyer.",
                                       "The customs value in coral: the goods' value in lume at the world's reference "
                                       "rate (1 lume = 0.4 coral).",
                                       {"ID": V(f.numbers["bl"], "The bill of lading of the goods.")})
+        out["ImporterParty"] = {
+            "AgentParty": party("3-xl", short=True),
+            "PowerOfAttorney": {"ID": V("POA-TT-2026-014", "The number of the power of attorney the buyer gave its "
+                                                           "customs broker."),
+                                "IssueDate": V("2026-01-05", "Given at the start of the year, for all of the year's "
+                                                             "imports."),
+                                "Description": V("Lodging import declarations and paying duties and taxes on behalf of "
+                                                 "Velumi Trading.", "What the broker may do for the buyer."),
+                                "AgentParty": party("3-xl", short=True),
+                                "MandateDocumentReference": {"ID": V("MAND-2026-014", "The signed mandate kept by the "
+                                                                                      "broker.")}}}
+        return out
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 9, "Sent to the delivery party named in the order when the container "
                                                  "leaves.", "The gross weight of the goods.")
@@ -1398,6 +1410,23 @@ def furniture(n, doc):
 
 def carnet(n, doc):
     f, d = CARNET, doc["doc"]
+    if d == "GoodsItemPassport":
+        e = PARTY["5-xu"]["identity"]["employee"]
+        src = "identity of Valdara Industries (world/parties.json)"
+        out = _carnet(n, doc)
+        out["RepresentativeParty"] = {"Person": {
+            "ID": V(e["id"], f"The employee's staff number; {src}."),
+            "FirstName": V(e["first"], f"The first name of the employee who travels with the samples; {src}."),
+            "FamilyName": V(e["family"], f"Their family name; {src}."),
+            "JobTitle": V(e["job"], f"Their job; {src}."),
+            "NationalID": V(e["national_id"], "The national identity number, which customs may ask for at the border."),
+            "BirthDate": V(e["birth_date"], "The birth date, as in the passport."),
+            "BirthplaceName": V(e["birthplace"], "The place of birth, as in the passport."),
+            "OrganizationDepartment": V(e["department"], f"The department the employee works in; {src}."),
+            "CitizenshipCountry": {"IdentificationCode": V("XU", "The employee is a citizen of Urvania.")},
+            "IdentityDocumentReference": {"ID": V(e["passport"], "The passport the employee travels on."),
+                                          "DocumentType": V("Passport", "The kind of identity document.")}}}
+        return out
     passport = {"GoodsItemPassportID": V(f.numbers.get("carnet", ""), "The carnet the samples travelled under.")}
     if d == "ProofOfReexportationRequest":
         return {**head(f, "por-request", doc, 60, "Two months after the fair the samples' re-export is not recorded."),

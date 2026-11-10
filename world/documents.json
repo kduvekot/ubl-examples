@@ -1628,7 +1628,8 @@
     "ExportingGuarantorParty": "20-xu",
     "ImportingGuarantorParty": "20-xl",
     "ExportingCustomsParty": "19-xu",
-    "ImportingCustomsParty": "19-xl"
+    "ImportingCustomsParty": "19-xl",
+    "RepresentativeParty": "5-xu"
    }
   },
   {
