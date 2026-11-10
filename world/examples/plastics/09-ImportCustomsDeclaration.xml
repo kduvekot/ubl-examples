@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>RP-IM-26-0896</cbc:ID>
+  <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cac:ImporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rivermouth Packaging</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Estuary Road</cbc:StreetName>
+      <cbc:BuildingNumber>28</cbc:BuildingNumber>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38505</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>CO-1238220</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Rivermouth Packaging</cbc:RegistrationName>
+      <cbc:CompanyID>20412740</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Order desk</cbc:Name>
+      <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ImporterParty>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+      <cbc:BuildingNumber>31</cbc:BuildingNumber>
+      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:PostalZone>4140</cbc:PostalZone>
+      <cac:Country>
+        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>XU007318479</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Rinova Recovery</cbc:RegistrationName>
+      <cbc:CompanyID>XU-R-104548</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ConsignorParty>
+  <cac:ConsigneeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rivermouth Packaging</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsigneeParty>
+  <cac:CustomsParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410137</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Border Crossing Road</cbc:StreetName>
+      <cbc:BuildingNumber>36</cbc:BuildingNumber>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71213</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cac:Country>
+        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
+      <cbc:CompanyID>20410137</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Border office</cbc:Name>
+      <cbc:ElectronicMail>border@customs-xb.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:CustomsParty>
+  <cac:Shipment>
+    <cbc:ID>RR-SH-26-0889</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Recycled PE granulate</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">99840.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
+        <cbc:Name>Recycled PE granulate</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>RR-PE-R1</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:item">771030000048</cbc:ID>
+        </cac:StandardItemIdentification>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:ItemClassificationCode listID="HS">3901.10</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:Shipment>
+</ImportCustomsDeclaration>

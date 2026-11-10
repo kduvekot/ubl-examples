@@ -167,6 +167,16 @@ def item(iid, tax=None):
     out = {"Description": V(it["description"], f"The seller's description; {src}."),
            "Name": V(it["name"], f"The item's short name; {src}."),
            "SellersItemIdentification": {"ID": V(it["sellers_id"], f"The seller's own item number; {src}.")}}
+    if it.get("resale_of"):        # a resold item carries the maker's identifiers, customs code and origin
+        orig = ITEM[it["resale_of"]]
+        while orig.get("resale_of"):
+            orig = ITEM[orig["resale_of"]]
+        maker = PARTY[orig["seller"]]["identity"]["name"]
+        out["ManufacturersItemIdentification"] = {"ID": V(orig["sellers_id"], f"The item number of the maker, {maker}: "
+                                                          f"the reseller's item is resale of item {orig['id']} "
+                                                          "(world/items.json).")}
+        it = {**it, "standard_id": orig.get("standard_id"), "hs": orig.get("hs"), "origin": orig.get("origin")}
+        src = f"item {orig['id']} of {maker}, which this item resells (world/items.json)"
     if it.get("standard_id"):
         out["StandardItemIdentification"] = {"ID": V(it["standard_id"], "The world item number issued by the identifier "
                                                      "issuing agency, twelve digits with a check digit; a scheme of the "
@@ -198,6 +208,10 @@ def place_parties(doc, content):
             assoc = next(a for a in MODEL["abies"][abie]["asbies"] if a[0] == step)
             target = assoc[1]
             last = k == len(steps) - 1
+            if isinstance(node.get(step), list) and not last:     # into every repetition, e.g. each catalogue line
+                for sub in node[step]:
+                    place_parties({"doc": target, "parties": {"/".join(steps[k + 1:]): pid}}, sub)
+                break
             if last:
                 if target == "Party":
                     block = party(pid)
@@ -348,7 +362,7 @@ def main(flow_id, check=False):
     return True
 
 
-FLOWS_WITH_EXAMPLES = ["ore", "road"]
+FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail"]
 
 
 if __name__ == "__main__":

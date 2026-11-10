@@ -553,6 +553,20 @@
    },
    "sellers_id": "ST-GB",
    "description": "Mobile data beyond the subscription, per gigabyte."
+  },
+  {
+   "id": "bench-serra-r",
+   "seller": "26-xb",
+   "name": "Park bench Serra 180",
+   "kind": "goods",
+   "unit": "H87",
+   "price": {
+    "amount": 749.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BM-551210",
+   "resale_of": "bench-serra-b",
+   "description": "The Serra park bench in the store's garden department; the state sales tax is added at the till."
   }
  ]
 }
