@@ -88,8 +88,12 @@ def sells(p):
         rows = [("Seller's item ID", f"`{i['sellers_id']}`"), ("Price", f"{money(i['price'])} per {unit}")]
         if i.get("resale_of"):
             o = ITEMS[i["resale_of"]]
-            rows.append(("Resale of", f"{o['name']} by {link(o['seller'])}: world item number `{o['standard_id']}`, "
-                                      f"maker's ID `{o['sellers_id']}`"))
+            maker = o
+            while maker.get("resale_of"):        # follow the resale chain to the maker
+                maker = ITEMS[maker["resale_of"]]
+            via = f", bought from {link(o['seller'])}" if o is not maker else ""
+            rows.append(("Resale of", f"{maker['name']} made by {link(maker['seller'])}{via}: world item number "
+                                      f"`{maker['standard_id']}`, maker's ID `{maker['sellers_id']}`"))
         if i.get("standard_id"):
             rows.append(("World item number", f"`{i['standard_id']}` (issued by {link(world_items.ISSUER)})"))
         if i.get("hs"):
