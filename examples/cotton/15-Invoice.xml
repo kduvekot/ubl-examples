@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>BF-INV-26-0215</cbc:ID>
+  <cbc:IssueDate>2026-03-04</cbc:IssueDate>
+  <cbc:DueDate>2026-04-03</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TOL-BL-26-0209</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Dockside Way</cbc:StreetName>
+        <cbc:BuildingNumber>4</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38525</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Bayforth Forwarding</cbc:RegistrationName>
+        <cbc:CompanyID>20411644</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Export desk</cbc:Name>
+        <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Mill Street</cbc:StreetName>
+        <cbc:BuildingNumber>21</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38504</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>CO-1237809</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeport Textile Mill</cbc:RegistrationName>
+        <cbc:CompanyID>20412603</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:Shipment>
+      <cac:Consignment>
+        <cbc:ID>LTM-CS-26-0204</cbc:ID>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:StreetName>Harbour Road</cbc:StreetName>
+            <cbc:BuildingNumber>18</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38527</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:PartyTaxScheme>
+            <cbc:CompanyID>CO-1235754</cbc:CompanyID>
+            <cac:TaxScheme>
+              <cbc:ID>STT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:PartyTaxScheme>
+          <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Tidewell Ocean Lines</cbc:RegistrationName>
+            <cbc:CompanyID>20411918</cbc:CompanyID>
+          </cac:PartyLegalEntity>
+          <cac:Contact>
+            <cbc:Name>Bookings</cbc:Name>
+            <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
+          </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
+        </cac:CarrierParty>
+      </cac:Consignment>
+    </cac:Shipment>
+  </cac:Delivery>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB10BLUM0002618225</cbc:ID>
+      <cac:FinancialInstitutionBranch>
+        <cac:FinancialInstitution>
+          <cbc:ID>BLUM</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">2950.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">2950.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">2950.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">2950.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">2950.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">2950.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Port-to-port sea freight for one 40-foot container, booked with the ocean carrier.</cbc:Description>
+      <cbc:Name>Sea freight, 40-foot container</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-SEA40</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">2950</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="E48">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

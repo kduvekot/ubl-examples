@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ExportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>SCG-EX-26-0206</cbc:ID>
+  <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+  <cac:ExporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+      <cbc:BuildingNumber>42</cbc:BuildingNumber>
+      <cbc:CityName>Selanu</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Selanu Cotton Ginnery</cbc:RegistrationName>
+      <cbc:CompanyID>IC42681</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Cotton sales</cbc:Name>
+      <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ExporterParty>
+  <cac:CustomsDeclaration>
+    <cbc:ID>SCG-CD-26-0207</cbc:ID>
+    <cac:Shipment>
+      <cbc:ID>SCG-SH-26-0203</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+      <cac:Consignment>
+        <cbc:ID>LTM-CS-26-0204</cbc:ID>
+      </cac:Consignment>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+        <cbc:Description>Cotton lint, compressed bale</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount currencyID="XLC">6055.452</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="KGM">6129</cbc:Quantity>
+        <cac:Item>
+          <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
+          <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>SCG-LINT</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:StandardItemIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:item">773020000137</cbc:ID>
+          </cac:StandardItemIdentification>
+          <cac:OriginCountry>
+            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          </cac:OriginCountry>
+          <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">5201.00</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:GoodsItem>
+    </cac:Shipment>
+    <cac:ConsigneeParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Mill Street</cbc:StreetName>
+        <cbc:BuildingNumber>21</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38504</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>CO-1237809</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeport Textile Mill</cbc:RegistrationName>
+        <cbc:CompanyID>20412603</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:ConsigneeParty>
+    <cac:CustomsParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Island Customs Service</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Wharf Road</cbc:StreetName>
+        <cbc:BuildingNumber>53</cbc:BuildingNumber>
+        <cbc:CityName>Selanu</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
+        <cbc:CompanyID>IC41448</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Import office</cbc:Name>
+        <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:CustomsParty>
+  </cac:CustomsDeclaration>
+</ExportCustomsDeclaration>

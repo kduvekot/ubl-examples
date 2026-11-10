@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+  <cbc:ID>SCG-RM-26-0199</cbc:ID>
+  <cbc:IssueDate>2026-02-16</cbc:IssueDate>
+  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:TotalPaymentAmount currencyID="XLC">3993.000</cbc:TotalPaymentAmount>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+        <cbc:BuildingNumber>42</cbc:BuildingNumber>
+        <cbc:CityName>Selanu</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Selanu Cotton Ginnery</cbc:RegistrationName>
+        <cbc:CompanyID>IC42681</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Cotton sales</cbc:Name>
+        <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lisavu Cotton Farm</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Plantation Road</cbc:StreetName>
+        <cbc:BuildingNumber>35</cbc:BuildingNumber>
+        <cbc:CityName>Selanu</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
+        <cbc:CompanyID>IC42544</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Farm office</cbc:Name>
+        <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42544</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cac:PayerFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XL66BSEL0004922263</cbc:ID>
+      <cac:FinancialInstitutionBranch>
+        <cac:FinancialInstitution>
+          <cbc:ID>BSEL</cbc:ID>
+          <cbc:Name>Bank of Selanu</cbc:Name>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+    </cac:PayerFinancialAccount>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XL05BSEL0004817534</cbc:ID>
+      <cac:FinancialInstitutionBranch>
+        <cac:FinancialInstitution>
+          <cbc:ID>BSEL</cbc:ID>
+        </cac:FinancialInstitution>
+      </cac:FinancialInstitutionBranch>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DebitLineAmount currencyID="XLC">4068.000</cbc:DebitLineAmount>
+    <cac:BillingReference>
+      <cac:SelfBilledInvoiceDocumentReference>
+        <cbc:ID>SCG-SBI-26-0193</cbc:ID>
+      </cac:SelfBilledInvoiceDocumentReference>
+    </cac:BillingReference>
+  </cac:RemittanceAdviceLine>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:CreditLineAmount currencyID="XLC">75.000</cbc:CreditLineAmount>
+    <cac:BillingReference>
+      <cac:SelfBilledCreditNoteDocumentReference>
+        <cbc:ID>SCG-SBC-26-0196</cbc:ID>
+      </cac:SelfBilledCreditNoteDocumentReference>
+    </cac:BillingReference>
+  </cac:RemittanceAdviceLine>
+</RemittanceAdvice>
