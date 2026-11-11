@@ -83,6 +83,19 @@ All prefixes are fictional: GS1 from an unallocated prefix range, Codana's IAC a
 | 2 | (a) Codes held in ID elements carry schemeID = their code list's identifier (about 1,440 additions): TaxCategory/ID `UN/EDIFACT EDED 5305`, TaxScheme/ID `UN/EDIFACT EDED 5153`, Language/ID `ISO 639`, HazardClassID (UN Model Regulations class), DeliveryTerms/ID. The two DeliveryTerms without a scheme get one. Assumed, not yet confirmed by the user: the existing `INCOTERMS` stays as it is, and new external schemeIDs use the listID text. |
 | 1 | Keep today's schemeID names (`urn:ubl-examples:world:XB:register`, `…:item`, `…:endpoint` …). New world schemes follow the same lowercase style (e.g. `…:XB:tax`, `…:payment-system`). The examples show that a schemeID has no fixed format, unlike the listIDs, which mirror UBL. |
 
+## Document identification (UBLVersionID, CustomizationID, ProfileID)
+
+- **UBLVersionID:** the earliest UBL 2 version that defines every element in the document ("Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance"). The build computes it from the version history; it is not always 2.5.
+- **Transaction:** one kind of business message between two roles, with a defined purpose, information content and rules, as in CEN BII and Peppol. One or more document types carry a transaction (billing = Invoice + CreditNote (+ DebitNote); self-billing = SelfBilledInvoice + SelfBilledCreditNote; order-status = DocumentStatusRequest + DocumentStatus). One document type can carry several transactions (ApplicationResponse: invoice-response vs message-level response). Mostly it is one transaction per document type.
+- **CustomizationID** names the transaction specification, versioned, at three levels chained with `#compliant#` (the EN 16931 / Peppol / XRechnung convention):
+  1. **cross-country**, owned by the Trade Accord: `urn:ubl-examples:world:trns:<transaction>:1.0`;
+  2. **national**, owned by a country's authority: e.g. `urn:ubl-examples:world:XU:invoice:1.0` (Urvania's EU-style VAT rules), Bayvarra's rules for public bodies (withholding);
+  3. **community**, a group of parties exchanging among themselves: the retail community (Lumeway ↔ Brightmarket, GS1), the Lumeport port community (sea and customs), Urvania's energy market (power station, grid operator, retailer), public procurement (tender documents); e.g. `urn:ubl-examples:world:community:retail:1.0`.
+
+  Example: `urn:ubl-examples:world:trns:invoice:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0`. The world does not claim EN 16931 compliance. Each specification gets a short public description page on the site. The world's code-list rules can be tied to the specification a document claims.
+- **ProfileID:** generic Accord process profiles, versioned (`…:profile:ordering:1.0`, billing, despatch-receipt, transport, tendering, customs, catalogue, utility-billing …). It no longer names a flow.
+- **ProfileExecutionID:** stays one per flow instance.
+
 ## Separate work items found along the way
 
 - IND5: `retail/10-DocumentStatus.xml` has an empty `cbc:ID` in AdditionalDocumentResponse/DocumentReference. The build's IND5 check covers only aggregates, so it should also check basic elements. Add IND7/IND8/IND9 checks as well.
