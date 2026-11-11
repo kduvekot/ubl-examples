@@ -65,9 +65,13 @@ The supplier's usual term, which the customer applies to itself.</li>
 The day the withholding becomes due.</li>
 <li><code>InvoiceTypeCode</code> = <strong>389</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
-UN/EDIFACT 1001 code 389: self-billed invoice. The code is from the
-world's copy of UN/EDIFACT 1001 Document name: 389 = Self-billed
-invoice.</li>
+UN/EDIFACT 1001 code 389, "An invoice the invoicee is producing instead
+of the seller": exactly what this document is. It repeats what the root
+SelfBilledInvoice already says, as no narrower subtype applies; 380
+would be wrong, since a commercial invoice is the seller's document
+"claiming payment", and the customer claims nothing here, it settles
+what it owes. The code is from the world's copy of UN/EDIFACT 1001
+Document name: 389 = Self-billed invoice.</li>
 <li><code>Note</code> = <strong>Lakau-votee tilala kimii mitavema:
 sehove kulasi tohala lelala tanaha hokake.</strong> (languageID
 <code>qal</code>)<br />
@@ -1952,6 +1956,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">SelfBilledInvoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

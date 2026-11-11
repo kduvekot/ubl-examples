@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of Basel Convention, Annex IV: disposal and recovery operations: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal, Annex IV); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of Basel Convention, Annex IV: disposal and recovery operations: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal, Annex IV (world/codelists/sources/basel/UNEP-CHW-IMPL-CONVTEXT-2025.English.pdf)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>BaselAnnexIVCode</ShortName>
       <LongName xml:lang="en">Basel Convention, Annex IV: disposal and recovery operations (UBL example world)</LongName>
       <LongName Identifier="listID">Basel Convention Annex IV</LongName>
-      <Version>Basel Convention as amended</Version>
+      <Version>Basel Convention text, 2025 edition (Annex IV as amended; the new Annex IV of decision BC-17/15 applies from 1 January 2030)</Version>
       <CanonicalUri>urn:ubl-examples:world:codelist:copy:BaselAnnexIVCode</CanonicalUri>
-      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:BaselAnnexIVCode:Basel Convention as amended</CanonicalVersionUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:BaselAnnexIVCode:Basel Convention text, 2025 edition (Annex IV as amended; the new Annex IV of decision BC-17/15 applies from 1 January 2030)</CanonicalVersionUri>
       <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/BaselAnnexIVCode.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">Secretariat of the Basel Convention (UNEP)</LongName>
@@ -37,7 +37,7 @@
             <SimpleValue>D1</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Deposit into or onto land (e.g. landfill)</SimpleValue>
+            <SimpleValue>Deposit into or onto land, (e.g., landfill, etc.)</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -53,7 +53,7 @@
             <SimpleValue>R1</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Use principally as a fuel or other means to generate energy</SimpleValue>
+            <SimpleValue>Use as a fuel (other than in direct incineration) or other means to generate energy</SimpleValue>
          </Value>
       </Row>
       <Row>

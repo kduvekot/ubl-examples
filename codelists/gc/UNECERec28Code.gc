@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN/ECE Recommendation 28 Codes for types of means of transport: the codes the world uses, and others of the same list. Built from world/codelists/sources/rec28/Rec28_Rev4.2e_2018.csv (Revision 4.2 (2018): Rec28_Rev4.2e_2018.xls, converted to CSV). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNECERec28Code</ShortName>
+      <LongName xml:lang="en">UN/ECE Recommendation 28 Codes for types of means of transport (UBL example world)</LongName>
+      <LongName Identifier="listID">UNECE Recommendation 28</LongName>
+      <Version>Recommendation 28, code list Revision 4.2 (2018); text Revision 3 (2010)</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNECERec28Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNECERec28Code:Recommendation 28, code list Revision 4.2 (2018); text Revision 3 (2010)</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNECERec28Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">UN/CEFACT (UNECE)</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1511</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Full container ship/cellular vessel</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Vessel designed to carry containers only.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>37</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Truck, container</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Automotive vehicle designed for carrying containers.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>395</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Truck, with trailer</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Automotive vehicle designed to pull a trailer, with a trailer attached.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>34</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Van</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Closed automotive vehicle designed for carrying freight.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>341</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Van, delivery</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Automotive vehicle designed for making fast deliveries.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3131</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Truck, with crane for lifting goods, without trailer</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A truck with a crane for lifting goods, without a trailer.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>33</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tractor</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Automotive Vehicle with an engine designed for pulling.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2302</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Train, container</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Train for carrying containers.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>815</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight barge</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Lighter or Barge designed for carrying general cargo, either having no motive power of its own or having only sufficient motive power to perform restricted manoeuvres.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>71</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pipeline</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A line of one or more pipes for continuous transport of liquid or gas commodity.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

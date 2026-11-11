@@ -1076,16 +1076,18 @@ The reference rate.</li>
 <p>Inside <code>DocumentDistribution</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
-A copy.</li>
-<li><code>DocumentTypeCode</code> = <strong>COPY</strong> (listID
-<code>urn:ubl-examples:world:codelist:DocumentCopyTypeCode</code>)<br />
-A copy. The code is from the Trade Accord's document copy type list:
-COPY = Copy.</li>
+The instructions to the forwarder.</li>
+<li><code>DocumentTypeCode</code> =
+<strong>ForwardingInstructions</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document distributed: these instructions. The code is from the Trade
+Accord's UBL document type list: ForwardingInstructions = Forwarding
+Instructions.</li>
 <li><code>DistributionTypeCode</code> = <strong>ELECTRONIC</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
-As this UBL document. The code is from the Trade Accord's distribution
-type list: ELECTRONIC = Electronic.</li>
+Sent as this UBL document. The code is from the Trade Accord's
+distribution type list: ELECTRONIC = Electronic.</li>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20411918</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -1482,7 +1484,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ExchangeRate</span>&gt;</span>
 <span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
 <span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DocumentCopyTypeCode&quot;</span>&gt;COPY&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ForwardingInstructions&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ELECTRONIC&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
 <span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1507,6 +1509,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

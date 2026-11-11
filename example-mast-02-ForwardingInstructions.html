@@ -837,9 +837,9 @@ The lowest allowed.</li>
 The battery packs in the container.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/UNDGCode</code>
 = <strong>3480</strong> (listID
-<code>UN Model Regulations UN number</code>)<br />
+<code>UN Model Regulations Dangerous Goods List</code>)<br />
 The UN number of the battery packs. The code is from the world's copy of
-UN Model Regulations dangerous goods list (UN numbers): 3480 = Lithium
+UN Model Regulations Dangerous Goods List (UN numbers): 3480 = Lithium
 ion batteries (including lithium ion polymer batteries).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/CategoryName</code>
 = <strong>Miscellaneous dangerous goods</strong><br />
@@ -1214,10 +1214,10 @@ require.</strong><br />
 What the shipper adds.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNDGCode</code> =
 <strong>3480</strong> (listID
-<code>UN Model Regulations UN number</code>)<br />
+<code>UN Model Regulations Dangerous Goods List</code>)<br />
 The UN number, from the Dangerous Goods List of the UN Model
 Regulations. The code is from the world's copy of UN Model Regulations
-dangerous goods list (UN numbers): 3480 = Lithium ion batteries
+Dangerous Goods List (UN numbers): 3480 = Lithium ion batteries
 (including lithium ion polymer batteries).</li>
 <li><code>GoodsItem/Item/HazardousItem/UNPackingGroupCode</code> =
 <strong>NA</strong> (listID
@@ -1249,7 +1249,8 @@ The tunnel restriction code for road transport. The code is from the
 world's copy of ADR tunnel restriction code: E.</li>
 <li><code>GoodsItem/Item/HazardousItem/ProperShippingName</code> =
 <strong>Lithium ion batteries</strong><br />
-The proper shipping name.</li>
+The proper shipping name of the UN entry; the build checks that UN
+number, name and class agree with the Dangerous Goods List.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardousCategoryCode</code> =
 <strong>9</strong> (listID
 <code>UN Model Regulations hazard class</code>)<br />
@@ -1263,10 +1264,10 @@ The UN number marked on each package.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardClassID</code> =
 <strong>9</strong> (schemeID
 <code>UN Model Regulations hazard class</code>)<br />
-The UN hazard class. The code is from the world's copy of UN Model
-Regulations hazard class and division: 9 = Miscellaneous dangerous
-substances and articles. An identifier that holds a code names the
-code's list in its schemeID.</li>
+The UN hazard class of the entry. The code is from the world's copy of
+UN Model Regulations hazard class and division: 9 = Miscellaneous
+dangerous substances and articles. An identifier that holds a code names
+the code's list in its schemeID.</li>
 <li><code>GoodsItem/Temperature/AttributeID</code> =
 <strong>TRANSPORT</strong> (schemeID
 <code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code>)<br />
@@ -1343,10 +1344,10 @@ package.</strong><br />
 What the shipper adds.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNDGCode</code> =
 <strong>2911</strong> (listID
-<code>UN Model Regulations UN number</code>)<br />
+<code>UN Model Regulations Dangerous Goods List</code>)<br />
 The UN number, from the Dangerous Goods List of the UN Model
 Regulations. The code is from the world's copy of UN Model Regulations
-dangerous goods list (UN numbers): 2911 = Radioactive material, excepted
+Dangerous Goods List (UN numbers): 2911 = Radioactive material, excepted
 package – instruments or articles.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNPackingGroupCode</code> =
 <strong>NA</strong> (listID
@@ -1374,7 +1375,8 @@ the world's copy of Emergency Response Guidebook 2024, guide numbers:
 <li><code>GoodsItem/Item/HazardousItem/ProperShippingName</code> =
 <strong>Radioactive material, excepted package - instruments or
 articles</strong><br />
-The proper shipping name.</li>
+The proper shipping name of the UN entry; the build checks that UN
+number, name and class agree with the Dangerous Goods List.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardousCategoryCode</code> =
 <strong>7</strong> (listID
 <code>UN Model Regulations hazard class</code>)<br />
@@ -1387,9 +1389,10 @@ The UN number marked on each package.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardClassID</code> =
 <strong>7</strong> (schemeID
 <code>UN Model Regulations hazard class</code>)<br />
-The UN hazard class. The code is from the world's copy of UN Model
-Regulations hazard class and division: 7 = Radioactive material. An
-identifier that holds a code names the code's list in its schemeID.</li>
+The UN hazard class of the entry. The code is from the world's copy of
+UN Model Regulations hazard class and division: 7 = Radioactive
+material. An identifier that holds a code names the code's list in its
+schemeID.</li>
 <li><code>GoodsItem/Item/HazardousItem/RadioactiveMaterial/Name</code> =
 <strong>Americium-241 sources in smoke detectors</strong><br />
 The material.</li>
@@ -1485,10 +1488,10 @@ The hazard label on the package.</li>
 What the shipper adds.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNDGCode</code> =
 <strong>2920</strong> (listID
-<code>UN Model Regulations UN number</code>)<br />
+<code>UN Model Regulations Dangerous Goods List</code>)<br />
 The UN number, from the Dangerous Goods List of the UN Model
 Regulations. The code is from the world's copy of UN Model Regulations
-dangerous goods list (UN numbers): 2920 = Corrosive liquid, flammable,
+Dangerous Goods List (UN numbers): 2920 = Corrosive liquid, flammable,
 n.o.s..</li>
 <li><code>GoodsItem/Item/HazardousItem/UNPackingGroupCode</code> =
 <strong>II</strong> (listID
@@ -1527,7 +1530,8 @@ pollutant list: N = Not a marine pollutant.</li>
 The technical name, needed with an n.o.s. entry.</li>
 <li><code>GoodsItem/Item/HazardousItem/ProperShippingName</code> =
 <strong>Corrosive liquid, flammable, n.o.s.</strong><br />
-The proper shipping name.</li>
+The proper shipping name of the UN entry; the build checks that UN
+number, name and class agree with the Dangerous Goods List.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardousCategoryCode</code> =
 <strong>8</strong> (listID
 <code>UN Model Regulations hazard class</code>)<br />
@@ -1540,9 +1544,10 @@ The UN number marked on each package.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardClassID</code> =
 <strong>8</strong> (schemeID
 <code>UN Model Regulations hazard class</code>)<br />
-The UN hazard class. The code is from the world's copy of UN Model
-Regulations hazard class and division: 8 = Corrosive substances. An
-identifier that holds a code names the code's list in its schemeID.</li>
+The UN hazard class of the entry. The code is from the world's copy of
+UN Model Regulations hazard class and division: 8 = Corrosive
+substances. An identifier that holds a code names the code's list in its
+schemeID.</li>
 <li><code>GoodsItem/Item/HazardousItem/SecondaryHazard/ID</code> =
 <strong>3</strong> (schemeID
 <code>UN Model Regulations hazard class</code>)<br />
@@ -1885,7 +1890,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:HazardousGoodsTransit</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:LoadedHazardousItem</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-48100-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CategoryName</span>&gt;Miscellaneous dangerous goods&lt;/<span class="kw">cbc:CategoryName</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Lithium ion batteries&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:UpperOrangeHazardPlacardID</span>&gt;90&lt;/<span class="kw">cbc:UpperOrangeHazardPlacardID</span>&gt;</span>
@@ -2023,7 +2028,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;9&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
 <span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;9A&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
 <span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;State of charge below 30 %, as the air rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
 <span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
 <span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
 <span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-A,S-I&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
@@ -2069,7 +2074,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;7&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
 <span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Excepted package: no radioactive label, the UN number on the package.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;2911&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2911&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
 <span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
 <span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
 <span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-I,S-S&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
@@ -2125,7 +2130,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;8&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
 <span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;8&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
 <span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Packed as the rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
 <span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;II&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
 <span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;Medium danger&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
 <span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-E,S-C&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
@@ -2166,6 +2171,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

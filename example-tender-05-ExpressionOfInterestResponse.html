@@ -497,9 +497,12 @@ The exemption as a code of Bayvarra's national list of exemption
 reasons: sale to a public body. The code is from Bayvarra's national
 sales tax exemption reason list: PUBLIC = Sale to a public body.</li>
 <li><code>Party/PartyTaxScheme/ExemptionReason</code> = <strong>Sale to
-a public body</strong><br />
+a public body: public bodies are exempt from the state sales
+tax</strong><br />
 The name of code PUBLIC in Bayvarra's national sales tax exemption
-reason list.</li>
+reason list, followed by the detail of this case: why purchases by this
+party carry no sales tax; identity of Lumeport Public Works Department
+(world/parties.json).</li>
 <li><code>Party/PartyTaxScheme/RegistrationAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 Where the party is registered for the tax.</li>
@@ -788,7 +791,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:tax&quot;</span>&gt;CO-0900002&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;PUBLIC&lt;/<span class="kw">cbc:ExemptionReasonCode</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExemptionReason</span>&gt;Sale to a public body&lt;/<span class="kw">cbc:ExemptionReason</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExemptionReason</span>&gt;Sale to a public body: public bodies are exempt from the state sales tax&lt;/<span class="kw">cbc:ExemptionReason</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
@@ -852,6 +855,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ExpressionOfInterestResponse</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

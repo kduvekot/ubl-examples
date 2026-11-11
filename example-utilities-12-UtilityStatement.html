@@ -725,9 +725,10 @@ The time.</li>
 = <strong>+999 2 7121 474 274</strong><br />
 The distributor in Bayvarra.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
-= <strong>International</strong><br />
+= <strong>International: a call to Bayvarra</strong><br />
 The name of code INT in the Trade Accord's telecommunications service
-category list.</li>
+category list, followed by the detail of this case: the call went to the
+distributor in Bayvarra.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode</code>
 = <strong>INT</strong> (listID
 <code>urn:ubl-examples:world:codelist:TelecomServiceCategoryCode</code>)<br />
@@ -829,9 +830,10 @@ From the morning.</li>
 = <strong>data</strong><br />
 Mobile data, no number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
-= <strong>Roaming</strong><br />
+= <strong>Roaming: mobile data in Bayvarra</strong><br />
 The name of code ROAM in the Trade Accord's telecommunications service
-category list.</li>
+category list, followed by the detail of this case: the phone used
+mobile data on a network in Bayvarra.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode</code>
 = <strong>ROAM</strong> (listID
 <code>urn:ubl-examples:world:codelist:TelecomServiceCategoryCode</code>)<br />
@@ -1691,7 +1693,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CallDate</span>&gt;2026-03-11&lt;/<span class="kw">cbc:CallDate</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CallTime</span>&gt;10:14:00&lt;/<span class="kw">cbc:CallTime</span>&gt;</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ServiceNumberCalled</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:ServiceNumberCalled</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;International&lt;/<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;International: a call to Bayvarra&lt;/<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TelecommunicationsServiceCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TelecomServiceCategoryCode&quot;</span>&gt;INT&lt;/<span class="kw">cbc:TelecommunicationsServiceCategoryCode</span>&gt;</span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MIN&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TelecommunicationsServiceCall</span>&gt;Outgoing&lt;/<span class="kw">cbc:TelecommunicationsServiceCall</span>&gt;</span>
@@ -1737,7 +1739,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CallDate</span>&gt;2026-03-18&lt;/<span class="kw">cbc:CallDate</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CallTime</span>&gt;08:00:00&lt;/<span class="kw">cbc:CallTime</span>&gt;</span>
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ServiceNumberCalled</span>&gt;data&lt;/<span class="kw">cbc:ServiceNumberCalled</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;Roaming&lt;/<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;Roaming: mobile data in Bayvarra&lt;/<span class="kw">cbc:TelecommunicationsServiceCategory</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TelecommunicationsServiceCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TelecomServiceCategoryCode&quot;</span>&gt;ROAM&lt;/<span class="kw">cbc:TelecommunicationsServiceCategoryCode</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:RoamingPartnerName</span>&gt;Lumeport mobile network&lt;/<span class="kw">cbc:RoamingPartnerName</span>&gt;</span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;35&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
@@ -2037,6 +2039,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

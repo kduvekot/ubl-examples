@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of ISO 6346 container size and type code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 6346 (a paid ISO standard; the size and type codes as the standard publishes them)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of ISO 6346 container size and type code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 6346 (a paid ISO standard); size, type group and type codes as the BIC, its registration authority, publishes them (bic-code.org size-type-code and type-code-designation, Table 3: G1 "Passive vents at upper part of cargo space", R1 "Mechanically refrigerated and heated")); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ISO6346Code</ShortName>
@@ -40,7 +40,7 @@
             <SimpleValue>20 ft, 8 ft 6 in high, general purpose</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>General purpose container without ventilation.</SimpleValue>
+            <SimpleValue>General purpose container with passive vents at upper part of cargo space.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -48,10 +48,10 @@
             <SimpleValue>22R1</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>20 ft, 8 ft 6 in high, thermal, refrigerated</SimpleValue>
+            <SimpleValue>20 ft, 8 ft 6 in high, thermal, refrigerated and heated</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Mechanically refrigerated container.</SimpleValue>
+            <SimpleValue>Mechanically refrigerated and heated container.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -70,7 +70,7 @@
             <SimpleValue>40 ft, 8 ft 6 in high, general purpose</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>General purpose container without ventilation.</SimpleValue>
+            <SimpleValue>General purpose container with passive vents at upper part of cargo space.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -81,7 +81,7 @@
             <SimpleValue>40 ft, 9 ft 6 in high, general purpose</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>High cube general purpose container.</SimpleValue>
+            <SimpleValue>High cube general purpose container with passive vents at upper part of cargo space.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -89,10 +89,10 @@
             <SimpleValue>45R1</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>40 ft, 9 ft 6 in high, thermal, refrigerated</SimpleValue>
+            <SimpleValue>40 ft, 9 ft 6 in high, thermal, refrigerated and heated</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>High cube mechanically refrigerated container.</SimpleValue>
+            <SimpleValue>High cube mechanically refrigerated and heated container.</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

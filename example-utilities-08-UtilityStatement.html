@@ -707,18 +707,22 @@ This reading.</li>
 = <strong>1844</strong> (unitCode <code>MTQ</code>)<br />
 The register now.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethod</code>
-= <strong>Read by the customer</strong><br />
+= <strong>Read by the customer: the household sent the
+reading</strong><br />
 The name of code CUSTOMER in the Trade Accord's meter reading method
-list.</li>
+list, followed by the detail of this case: from the utility's record of
+the reading.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethodCode</code>
 = <strong>CUSTOMER</strong> (listID
 <code>urn:ubl-examples:world:codelist:MeterReadingMethodCode</code>)<br />
 As a code. The code is from the Trade Accord's meter reading method
 list: CUSTOMER = Read by the customer.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingMethod</code>
-= <strong>Read by the customer</strong><br />
+= <strong>Read by the customer: the household sent the
+reading</strong><br />
 The name of code CUSTOMER in the Trade Accord's meter reading method
-list.</li>
+list, followed by the detail of this case: from the utility's record of
+the reading.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingMethodCode</code>
 = <strong>CUSTOMER</strong> (listID
 <code>urn:ubl-examples:world:codelist:MeterReadingMethodCode</code>)<br />
@@ -1333,9 +1337,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;1830&lt;/<span class="kw">cbc:PreviousMeterQuantity</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterReadingDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:LatestMeterReadingDate</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;1844&lt;/<span class="kw">cbc:LatestMeterQuantity</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;Read by the customer&lt;/<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;Read by the customer: the household sent the reading&lt;/<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterReadingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MeterReadingMethodCode&quot;</span>&gt;CUSTOMER&lt;/<span class="kw">cbc:PreviousMeterReadingMethodCode</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterReadingMethod</span>&gt;Read by the customer&lt;/<span class="kw">cbc:LatestMeterReadingMethod</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterReadingMethod</span>&gt;Read by the customer: the household sent the reading&lt;/<span class="kw">cbc:LatestMeterReadingMethod</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterReadingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MeterReadingMethodCode&quot;</span>&gt;CUSTOMER&lt;/<span class="kw">cbc:LatestMeterReadingMethodCode</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;14&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MeterReading</span>&gt;</span>
@@ -1533,6 +1537,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

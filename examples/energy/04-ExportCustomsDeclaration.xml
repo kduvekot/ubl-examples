@@ -156,7 +156,7 @@
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">7</cbc:TransportModeCode>
         <cac:TransportMeans>
           <cbc:JourneyID>KG-P1-2603</cbc:JourneyID>
-          <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">PIPELINE</cbc:TransportMeansTypeCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">71</cbc:TransportMeansTypeCode>
         </cac:TransportMeans>
       </cac:ShipmentStage>
       <cac:OriginAddress>

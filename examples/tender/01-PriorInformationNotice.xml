@@ -11,7 +11,6 @@
   <cbc:IssueTime>14:18:00</cbc:IssueTime>
   <cbc:Note>Advance notice of the bench procedure.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cbc:RequestedPublicationDate>2026-01-13</cbc:RequestedPublicationDate>
   <cbc:PlannedDate>2026-01-26</cbc:PlannedDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
@@ -39,11 +38,11 @@
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
     <cac:ContractingPartyType>
       <cbc:PartyTypeCode listID="urn:ubl-examples:world:codelist:ContractingPartyTypeCode">LOCAL</cbc:PartyTypeCode>
-      <cbc:PartyType>Local authority</cbc:PartyType>
+      <cbc:PartyType>Local authority: a department of the city of Lumeport</cbc:PartyType>
     </cac:ContractingPartyType>
     <cac:ContractingActivity>
       <cbc:ActivityTypeCode listID="urn:ubl-examples:world:codelist:AuthorityActivityCode">COMMUNITY</cbc:ActivityTypeCode>
-      <cbc:ActivityType>Housing and community amenities</cbc:ActivityType>
+      <cbc:ActivityType>Housing and community amenities: public works and parks</cbc:ActivityType>
     </cac:ContractingActivity>
     <cac:ContractingRepresentationType>
       <cbc:RepresentationTypeCode listID="urn:ubl-examples:world:codelist:RepresentationTypeCode">OWN</cbc:RepresentationTypeCode>
@@ -90,7 +89,7 @@
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -562,7 +561,7 @@
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-      <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+      <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>

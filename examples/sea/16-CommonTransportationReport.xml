@@ -330,7 +330,7 @@
           </cac:CurrentStatus>
           <cac:Contact>
             <cbc:Name>Bridge</cbc:Name>
-            <cbc:Telephone>+999 3 790 2117</cbc:Telephone>
+            <cbc:Telephone>+999 2 7900 702 117</cbc:Telephone>
           </cac:Contact>
           <cac:OccurrenceLocation>
             <cbc:Name>Selanu fairway buoy</cbc:Name>
@@ -440,7 +440,7 @@
         </cac:ResponsibleOfficerPerson>
       </cac:BallastWaterSummary>
       <cac:ISPSRequirements>
-        <cbc:ID>ISSC-XL-2026-0117</cbc:ID>
+        <cbc:ID>ISSC-XB-2023-0117</cbc:ID>
         <cbc:ValidISSCIndicator>true</cbc:ValidISSCIndicator>
         <cbc:ISSCAbsenceReason>Not applicable: the certificate is on board.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2028-09-30</cbc:ISSCExpiryDate>
@@ -492,10 +492,10 @@
         </cac:ReportLocation>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413014</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
-            <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
+            <cbc:Name>Maritime Administration of Bayvarra</cbc:Name>
           </cac:PartyName>
         </cac:ISSCIssuerParty>
         <cac:SecurityOfficerPerson>
@@ -582,9 +582,6 @@
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:ShipSanitationControlCertificate>
-        <cac:ShipSanitationControlExemptionDocumentReference>
-          <cbc:ID>none</cbc:ID>
-        </cac:ShipSanitationControlExemptionDocumentReference>
       </cac:MaritimeHealthDeclaration>
       <cac:FuelConsumption>
         <cbc:ID>FC-26-19E</cbc:ID>
@@ -619,7 +616,7 @@
     <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
     <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
     <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
-    <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
+    <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
     <cac:MaritimeTransport>
       <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
       <cbc:VesselName>Tidewell Harbour</cbc:VesselName>

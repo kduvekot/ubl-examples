@@ -64,9 +64,12 @@ Set off on the day of payment.</li>
 The day the withholding becomes due.</li>
 <li><code>CreditNoteTypeCode</code> = <strong>261</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
-UN/EDIFACT 1001 code 261: self-billed credit note. The code is from the
-world's copy of UN/EDIFACT 1001 Document name: 261 = Self billed credit
-note.</li>
+UN/EDIFACT 1001 code 261, "A document which indicates that the customer
+is claiming credit in a self billing environment": the customer corrects
+its own self-billed invoice. It repeats what the root
+SelfBilledCreditNote already says, but its definition is exact; 381, the
+supplier's credit note, would not be. The code is from the world's copy
+of UN/EDIFACT 1001 Document name: 261 = Self billed credit note.</li>
 <li><code>Note</code> = <strong>Lakau-votee tetela tamasu tilala kimii
 mitavema.</strong> (languageID <code>qal</code>)<br />
 The note in Lisavan, the sender's language (world/countries.json): As
@@ -1511,6 +1514,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">SelfBilledCreditNote</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: distribution type. How a document is distributed. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: distribution type. How a party receives a distributed document: whether it gets an original or a copy, and how it is sent, following the examples of UBL's definition of DistributionTypeCode ("Collect", "Sent by courier", "Sent scanned copy"). UBL 2.5 deprecated CopyIndicator, MaximumCopiesNumeric, MaximumOriginalsNumeric and PrintQualifier, so original or copy is said here, not in DocumentTypeCode, which gives the type of the distributed document. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>DistributionTypeCode</ShortName>
@@ -42,6 +42,74 @@
    <SimpleCodeList>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>ORIGINALCOURIER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Original, sent by courier</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rikzhek, hastir man barkraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Folue, teketi ninote pakali</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An original on paper, sent to the party by courier.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ORIGINALWITHGOODS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Original, with the goods</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rikzhek, vek drek valnir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Folue, tofuta liape</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An original on paper that travels with the goods to the party, as the transport conventions prescribe for one original of a consignment note.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COLLECT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Collect</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Ranaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hamane</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The party collects the original on paper at the issuer's office.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SCANNEDCOPY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Scanned copy</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Buzrek zuzzir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tafeta tiveto</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A copy of the paper original, scanned and sent electronically, for information.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>ELECTRONIC</SimpleValue>
          </Value>
          <Value ColumnRef="name">
@@ -54,24 +122,24 @@
             <SimpleValue>Tihetaki</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>By message.</SimpleValue>
+            <SimpleValue>The document itself, sent to the party as a UBL message.</SimpleValue>
          </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>PAPER</SimpleValue>
+            <SimpleValue>ELECTRONICCOPY</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Paper</SimpleValue>
+            <SimpleValue>Electronic copy</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Serkrir</SimpleValue>
+            <SimpleValue>Viskir zuzzir</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Silena</SimpleValue>
+            <SimpleValue>Tihetaki tiveto</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>On paper.</SimpleValue>
+            <SimpleValue>A copy sent as a UBL message, for the party's information or records; the original is held or sent elsewhere.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -88,7 +156,7 @@
             <SimpleValue>Navuvi</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Made available on a portal.</SimpleValue>
+            <SimpleValue>Made available to the party on a portal.</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

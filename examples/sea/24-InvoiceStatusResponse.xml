@@ -201,7 +201,7 @@
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
     <cac:RemittanceDocumentReference>
-      <cbc:ID>to follow</cbc:ID>
+      <cbc:ID>VT-RM-26-0150</cbc:ID>
     </cac:RemittanceDocumentReference>
   </cac:Payment>
   <cac:DocumentResponse>

@@ -281,7 +281,7 @@
         <cbc:PlacardNotation>9</cbc:PlacardNotation>
         <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
         <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations UN number">3480</cbc:UNDGCode>
+        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
         <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
@@ -320,7 +320,7 @@
         <cbc:ID>SE-SMK-10-DG</cbc:ID>
         <cbc:PlacardNotation>7</cbc:PlacardNotation>
         <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations UN number">2911</cbc:UNDGCode>
+        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
         <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
@@ -369,7 +369,7 @@
         <cbc:PlacardNotation>8</cbc:PlacardNotation>
         <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
         <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations UN number">2920</cbc:UNDGCode>
+        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
         <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>

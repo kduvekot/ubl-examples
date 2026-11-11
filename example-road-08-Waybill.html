@@ -1110,10 +1110,12 @@ UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's
 default Transport mode (UNECE Recommendation 19) list: 3 = Road
 transport.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransportMeansTypeCode</code>
-= <strong>TRUCKTRAILER</strong> (listID
-<code>urn:ubl-examples:world:codelist:TransportMeansTypeCode</code>)<br />
-The truck pulls a trailer. The code is from the Trade Accord's transport
-means type list: TRUCKTRAILER = Truck with trailer.</li>
+= <strong>395</strong> (listID
+<code>UNECE Recommendation 28</code>)<br />
+The truck pulls a trailer: the carrier's tractor unit 07 with its
+curtain-side trailer. The code is from the world's copy of UN/ECE
+Recommendation 28 Codes for types of means of transport: 395 = Truck,
+with trailer.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransitDirectionCode</code>
 = <strong>EXPORT</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransitDirectionCode</code>)<br />
@@ -1159,12 +1161,12 @@ The same, in words.</li>
 The direction of the journey, as carriers name their services. The code
 is from the Trade Accord's travel direction list: WB = Westbound.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode</code>
-= <strong>TRUCKTRAILER</strong> (listID
-<code>urn:ubl-examples:world:codelist:TransportMeansTypeCode</code>)<br />
+= <strong>395</strong> (listID
+<code>UNECE Recommendation 28</code>)<br />
 The kind of means of transport: tractor unit 07 with curtain-side
 trailer; the fleet of Trasvia Haulage (world/parties.json). The code is
-from the Trade Accord's transport means type list: TRUCKTRAILER = Truck
-with trailer.</li>
+from the world's copy of UN/ECE Recommendation 28 Codes for types of
+means of transport: 395 = Truck, with trailer.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID</code>
 = <strong>UR 4160 KT</strong> (schemeID
 <code>urn:ubl-examples:world:XU:vehicle-register</code>)<br />
@@ -4619,18 +4621,28 @@ of UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
 <p>Inside <code>DocumentDistribution</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
-The first original.</li>
-<li><code>DocumentTypeCode</code> = <strong>ORIGINAL</strong> (listID
-<code>urn:ubl-examples:world:codelist:DocumentCopyTypeCode</code>)<br />
-An original. The code is from the Trade Accord's document copy type
-list: ORIGINAL = Original.</li>
-<li><code>DistributionTypeCode</code> = <strong>PAPER</strong> (listID
+The original for the consignee.</li>
+<li><code>DocumentTypeCode</code> = <strong>Waybill</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document distributed: this waybill. The code is from the Trade
+Accord's UBL document type list: Waybill.</li>
+<li><code>DistributionTypeCode</code> =
+<strong>ORIGINALWITHGOODS</strong> (listID
 <code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
-Handed over on paper. The code is from the Trade Accord's distribution
-type list: PAPER = Paper.</li>
-<li><code>DistributionType</code> = <strong>With the
-goods</strong><br />
-It travels with the goods.</li>
+One of the three originals travels with the goods to the consignee, as
+the convention prescribes. The code is from the Trade Accord's
+distribution type list: ORIGINALWITHGOODS = Original, with the
+goods.</li>
+<li><code>DistributionType</code> = <strong>Rikzhek, vek drek valnir:
+drek trelgir rikzhek</strong> (languageID <code>qau</code>)<br />
+The name of code ORIGINALWITHGOODS in the Trade Accord's distribution
+type list, followed by the detail of this case: the original the
+consignee signs on delivery. In Urvanian, the sender's language.</li>
+<li><code>DistributionType</code> = <strong>Original, with the goods:
+the consignee's original</strong> (languageID <code>en-XU</code>)<br />
+The name of code ORIGINALWITHGOODS in the Trade Accord's distribution
+type list, followed by the detail of this case: the original the
+consignee signs on delivery. In English.</li>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -4642,15 +4654,24 @@ A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The electronic copy.</li>
-<li><code>DocumentTypeCode</code> = <strong>COPY</strong> (listID
-<code>urn:ubl-examples:world:codelist:DocumentCopyTypeCode</code>)<br />
-A copy. The code is from the Trade Accord's document copy type list:
-COPY = Copy.</li>
-<li><code>DistributionTypeCode</code> = <strong>ELECTRONIC</strong>
+<li><code>DocumentTypeCode</code> = <strong>Waybill</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document distributed: this waybill. The code is from the Trade
+Accord's UBL document type list: Waybill.</li>
+<li><code>DistributionTypeCode</code> = <strong>ELECTRONICCOPY</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
-Sent as this UBL document. The code is from the Trade Accord's
-distribution type list: ELECTRONIC = Electronic.</li>
+The receiver of this message gets a copy, for its records; the originals
+are on paper. The code is from the Trade Accord's distribution type
+list: ELECTRONICCOPY = Electronic copy.</li>
+<li><code>DistributionType</code> = <strong>Viskir zuzzir</strong>
+(languageID <code>qau</code>)<br />
+The name of code ELECTRONICCOPY in the Trade Accord's distribution type
+list. In Urvanian, the sender's language.</li>
+<li><code>DistributionType</code> = <strong>Electronic copy</strong>
+(languageID <code>en-XU</code>)<br />
+The name of code ELECTRONICCOPY in the Trade Accord's distribution type
+list. In English.</li>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -5094,7 +5115,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MainCarriageShipmentStage</span>&gt;</span>
 <span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;3&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportMeansTypeCode&quot;</span>&gt;TRUCKTRAILER&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;395&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
 <span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransitDirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransitDirectionCode&quot;</span>&gt;EXPORT&lt;/<span class="kw">cbc:TransitDirectionCode</span>&gt;</span>
 <span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CabotageIndicator</span>&gt;false&lt;/<span class="kw">cbc:CabotageIndicator</span>&gt;</span>
 <span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EstimatedDeliveryDate</span>&gt;2026-03-25&lt;/<span class="kw">cbc:EstimatedDeliveryDate</span>&gt;</span>
@@ -5110,7 +5131,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
 <span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Urvania&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
 <span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TravelDirectionCode&quot;</span>&gt;WB&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportMeansTypeCode&quot;</span>&gt;TRUCKTRAILER&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;395&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
 <span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RoadTransport</span>&gt;</span>
 <span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:LicensePlateID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:vehicle-register&quot;</span>&gt;UR 4160 KT&lt;/<span class="kw">cbc:LicensePlateID</span>&gt;</span>
 <span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TrailerLicensePlateID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:vehicle-register&quot;</span>&gt;UR 4160 TR&lt;/<span class="kw">cbc:TrailerLicensePlateID</span>&gt;</span>
@@ -6349,45 +6370,48 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1669"><a href="#cb1-1669" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-1670"><a href="#cb1-1670" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
 <span id="cb1-1671"><a href="#cb1-1671" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1672"><a href="#cb1-1672" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DocumentCopyTypeCode&quot;</span>&gt;ORIGINAL&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-1673"><a href="#cb1-1673" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;PAPER&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
-<span id="cb1-1674"><a href="#cb1-1674" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span>&gt;With the goods&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
-<span id="cb1-1675"><a href="#cb1-1675" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-1676"><a href="#cb1-1676" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-1677"><a href="#cb1-1677" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1678"><a href="#cb1-1678" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-1679"><a href="#cb1-1679" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-1680"><a href="#cb1-1680" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-1681"><a href="#cb1-1681" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-1682"><a href="#cb1-1682" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-1683"><a href="#cb1-1683" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-1684"><a href="#cb1-1684" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-1685"><a href="#cb1-1685" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1686"><a href="#cb1-1686" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DocumentCopyTypeCode&quot;</span>&gt;COPY&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-1687"><a href="#cb1-1687" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ELECTRONIC&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
-<span id="cb1-1688"><a href="#cb1-1688" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-1689"><a href="#cb1-1689" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-1690"><a href="#cb1-1690" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1691"><a href="#cb1-1691" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-1692"><a href="#cb1-1692" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-1693"><a href="#cb1-1693" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-1694"><a href="#cb1-1694" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-1695"><a href="#cb1-1695" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-1696"><a href="#cb1-1696" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-1697"><a href="#cb1-1697" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-1698"><a href="#cb1-1698" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TH-SIG-TH-WB-26-0159&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1699"><a href="#cb1-1699" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-1700"><a href="#cb1-1700" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-1701"><a href="#cb1-1701" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1702"><a href="#cb1-1702" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-1703"><a href="#cb1-1703" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-1704"><a href="#cb1-1704" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-1705"><a href="#cb1-1705" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-1706"><a href="#cb1-1706" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-1707"><a href="#cb1-1707" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-1708"><a href="#cb1-1708" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
+<span id="cb1-1672"><a href="#cb1-1672" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-1673"><a href="#cb1-1673" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALWITHGOODS&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-1674"><a href="#cb1-1674" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Rikzhek, vek drek valnir: drek trelgir rikzhek&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
+<span id="cb1-1675"><a href="#cb1-1675" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Original, with the goods: the consignee&#39;s original&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
+<span id="cb1-1676"><a href="#cb1-1676" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-1677"><a href="#cb1-1677" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-1678"><a href="#cb1-1678" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-1679"><a href="#cb1-1679" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-1680"><a href="#cb1-1680" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-1681"><a href="#cb1-1681" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-1682"><a href="#cb1-1682" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-1683"><a href="#cb1-1683" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-1684"><a href="#cb1-1684" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-1685"><a href="#cb1-1685" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-1686"><a href="#cb1-1686" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-1687"><a href="#cb1-1687" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-1688"><a href="#cb1-1688" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ELECTRONICCOPY&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-1689"><a href="#cb1-1689" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Viskir zuzzir&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
+<span id="cb1-1690"><a href="#cb1-1690" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Electronic copy&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
+<span id="cb1-1691"><a href="#cb1-1691" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-1692"><a href="#cb1-1692" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-1693"><a href="#cb1-1693" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-1694"><a href="#cb1-1694" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-1695"><a href="#cb1-1695" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-1696"><a href="#cb1-1696" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-1697"><a href="#cb1-1697" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-1698"><a href="#cb1-1698" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-1699"><a href="#cb1-1699" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-1700"><a href="#cb1-1700" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-1701"><a href="#cb1-1701" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TH-SIG-TH-WB-26-0159&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-1702"><a href="#cb1-1702" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-1703"><a href="#cb1-1703" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-1704"><a href="#cb1-1704" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-1705"><a href="#cb1-1705" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-1706"><a href="#cb1-1706" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-1707"><a href="#cb1-1707" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-1708"><a href="#cb1-1708" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-1709"><a href="#cb1-1709" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-1710"><a href="#cb1-1710" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-1711"><a href="#cb1-1711" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

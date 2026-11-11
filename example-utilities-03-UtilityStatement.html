@@ -1092,9 +1092,10 @@ This reading.</li>
 = <strong>135850</strong> (unitCode <code>KWH</code>)<br />
 The register now.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethod</code>
-= <strong>Estimated</strong><br />
+= <strong>Estimated: no access to the meter</strong><br />
 The name of code ESTIMATE in the Trade Accord's meter reading method
-list.</li>
+list, followed by the detail of this case: from the utility's record of
+the reading.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethodCode</code>
 = <strong>ESTIMATE</strong> (listID
 <code>urn:ubl-examples:world:codelist:MeterReadingMethodCode</code>)<br />
@@ -1812,7 +1813,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;117250&lt;/<span class="kw">cbc:PreviousMeterQuantity</span>&gt;</span>
 <span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterReadingDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:LatestMeterReadingDate</span>&gt;</span>
 <span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;135850&lt;/<span class="kw">cbc:LatestMeterQuantity</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;Estimated&lt;/<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;Estimated: no access to the meter&lt;/<span class="kw">cbc:PreviousMeterReadingMethod</span>&gt;</span>
 <span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterReadingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MeterReadingMethodCode&quot;</span>&gt;ESTIMATE&lt;/<span class="kw">cbc:PreviousMeterReadingMethodCode</span>&gt;</span>
 <span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterReadingMethod</span>&gt;Read by the meter reader&lt;/<span class="kw">cbc:LatestMeterReadingMethod</span>&gt;</span>
 <span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LatestMeterReadingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MeterReadingMethodCode&quot;</span>&gt;MANUAL&lt;/<span class="kw">cbc:LatestMeterReadingMethodCode</span>&gt;</span>
@@ -1991,6 +1992,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>2daa2d8</code></p></div></footer>
 </body>
 </html>

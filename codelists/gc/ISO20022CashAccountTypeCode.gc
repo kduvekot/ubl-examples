@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of ISO 20022 ExternalCashAccountType1Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 external code sets, iso20022.org (blocked for automated access, 403)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of ISO 20022 ExternalCashAccountType1Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ISO20022CashAccountTypeCode</ShortName>
       <LongName xml:lang="en">ISO 20022 ExternalCashAccountType1Code (UBL example world)</LongName>
       <LongName Identifier="listID">ISO 20022 ExternalCashAccountType1Code</LongName>
-      <Version>as published by the ISO 20022 RA</Version>
+      <Version>2Q2026 (publication date 28 Aug 2026)</Version>
       <CanonicalUri>urn:ubl-examples:world:codelist:copy:ISO20022CashAccountTypeCode</CanonicalUri>
-      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ISO20022CashAccountTypeCode:as published by the ISO 20022 RA</CanonicalVersionUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ISO20022CashAccountTypeCode:2Q2026 (publication date 28 Aug 2026)</CanonicalVersionUri>
       <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ISO20022CashAccountTypeCode.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">ISO 20022 Registration Authority (SWIFT)</LongName>
@@ -73,7 +73,7 @@
             <SimpleValue>CardAccount</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Account used for card payments only.</SimpleValue>
+            <SimpleValue>Account used for credit card payments.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -84,7 +84,7 @@
             <SimpleValue>Salary</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Account used for the payment of salaries.</SimpleValue>
+            <SimpleValue>Accounts used for salary payments.</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>
