@@ -69,8 +69,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -188,8 +190,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Strada della Miniera**  
-  Street of the postal address. identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Tronraesk Rurtio Drurtruov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Strada della Miniera** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **10**  
   Building number of the postal address. identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/CityName` = **Serravona**  
@@ -436,7 +440,8 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -545,7 +550,8 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Strada della Miniera</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
         <cbc:CityName>Serravona</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>

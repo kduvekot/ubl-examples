@@ -558,8 +558,10 @@ Inside `CustomsDeclaration`:
   The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `ConsigneeParty/PostalAddress/StreetName` = **Reef Street**  
-  Street of the postal address. identity of Velumi Trading (world/parties.json).
+- `ConsigneeParty/PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+- `ConsigneeParty/PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/PostalAddress/CityName` = **Selanu**  
@@ -1191,7 +1193,8 @@ Inside `Signature`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

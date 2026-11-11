@@ -64,8 +64,10 @@ Inside `DespatchSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via del Magazzino**  
-  Street of the postal address. identity of Castrano Logistics (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Bonfuar Punperai** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Castrano Logistics (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via del Magazzino** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Castrano Logistics (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **24**  
   Building number of the postal address. identity of Castrano Logistics (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -281,8 +283,10 @@ Inside `SellerSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -406,8 +410,10 @@ Inside `Shipment`:
   The kind of address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Consignment/CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti**  
-  Street of the postal address. identity of Trasvia Haulage (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/StreetName` = **Ganluar Ranvua Stisrebroe** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Trasvia Haulage (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **45**  
   Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Ferrano**  
@@ -511,8 +517,10 @@ Inside `DespatchLine`:
   The order line this line fulfils.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Name` = **Park bench Serra 180**  
-  The item's short name; item bench-serra of Valdara Industries (world/items.json).
+- `Item/Name` = **Dirrear rirgroov Serra 180** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `Item/Name` = **Park bench Serra 180** (languageID `en`)  
+  The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Keyword` = **park bench**  
@@ -723,8 +731,10 @@ Inside `DespatchLine`:
   The order line this line fulfils.
 - `Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.**  
   The seller's description; item bench-casting of Valdara Industries (world/items.json).
-- `Item/Name` = **Bench side frame casting**  
-  The item's short name; item bench-casting of Valdara Industries (world/items.json).
+- `Item/Name` = **Rirgroov cegae scilceor sesdaa** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
+- `Item/Name` = **Bench side frame casting** (languageID `en`)  
+  The item's name in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180 side frame**  
@@ -948,7 +958,8 @@ Inside `DespatchLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Bonfuar Punperai</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via del Magazzino</cbc:StreetName>
         <cbc:BuildingNumber>24</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
@@ -1145,7 +1156,8 @@ Inside `DespatchLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -1258,7 +1270,8 @@ Inside `DespatchLine`:
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+          <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
           <cbc:BuildingNumber>45</cbc:BuildingNumber>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cbc:PostalZone>4160</cbc:PostalZone>
@@ -1352,7 +1365,8 @@ Inside `DespatchLine`:
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+      <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
       <cbc:Keyword>street furniture</cbc:Keyword>
@@ -1540,7 +1554,8 @@ Inside `DespatchLine`:
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
-      <cbc:Name>Bench side frame casting</cbc:Name>
+      <cbc:Name languageID="qau">Rirgroov cegae scilceor sesdaa</cbc:Name>
+      <cbc:Name languageID="en">Bench side frame casting</cbc:Name>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:BuyersItemIdentification>

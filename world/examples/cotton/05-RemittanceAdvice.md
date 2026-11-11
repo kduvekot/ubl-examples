@@ -53,8 +53,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Gin Yard Road**  
-  Street of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -128,8 +130,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Plantation Road**  
-  Street of the postal address. identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Sifatofu Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **35**  
   Building number of the postal address. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road, past the cotton fields.**  
@@ -352,7 +356,8 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -417,7 +422,8 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Plantation Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Plantation Road</cbc:StreetName>
         <cbc:BuildingNumber>35</cbc:BuildingNumber>
         <cbc:Description>Farm track off Plantation Road, past the cotton fields.</cbc:Description>
         <cbc:CityName>Selanu</cbc:CityName>

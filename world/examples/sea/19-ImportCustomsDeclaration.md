@@ -84,8 +84,10 @@ Inside `ImporterParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Reef Street**  
-  Street of the postal address. identity of Velumi Trading (world/parties.json).
+- `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+- `PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
 - `PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -400,8 +402,10 @@ Inside `CustomsParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Wharf Road**  
-  Street of the postal address. identity of Island Customs Service (world/parties.json).
+- `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Island Customs Service (world/parties.json).
+- `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Island Customs Service (world/parties.json).
 - `PostalAddress/BuildingNumber` = **53**  
   Building number of the postal address. identity of Island Customs Service (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -754,8 +758,10 @@ Inside `Shipment`:
   The kind of address.
 - `ShipmentStage/CustomsAgentParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `ShipmentStage/CustomsAgentParty/PostalAddress/StreetName` = **Wharf Road**  
-  Street of the postal address. identity of Tevaro Customs Brokers (world/parties.json).
+- `ShipmentStage/CustomsAgentParty/PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Tevaro Customs Brokers (world/parties.json).
+- `ShipmentStage/CustomsAgentParty/PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Tevaro Customs Brokers (world/parties.json).
 - `ShipmentStage/CustomsAgentParty/PostalAddress/BuildingNumber` = **60**  
   Building number of the postal address. identity of Tevaro Customs Brokers (world/parties.json).
 - `ShipmentStage/CustomsAgentParty/PostalAddress/CityName` = **Selanu**  
@@ -884,7 +890,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Reef Street</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+      <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -1168,7 +1175,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Wharf Road</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en">Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>53</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -1488,7 +1496,8 @@ Inside `Signature`:
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-          <cbc:StreetName>Wharf Road</cbc:StreetName>
+          <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+          <cbc:StreetName languageID="en">Wharf Road</cbc:StreetName>
           <cbc:BuildingNumber>60</cbc:BuildingNumber>
           <cbc:CityName>Selanu</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

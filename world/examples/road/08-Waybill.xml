@@ -39,7 +39,8 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
       <cbc:BuildingNumber>45</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4160</cbc:PostalZone>
@@ -222,7 +223,8 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -1618,7 +1620,8 @@
     <cac:ReturnAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Bonfuar Punperai</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4130</cbc:PostalZone>
@@ -1632,7 +1635,8 @@
     <cac:OriginAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Bonfuar Punperai</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4130</cbc:PostalZone>

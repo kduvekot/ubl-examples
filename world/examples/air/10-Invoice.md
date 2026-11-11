@@ -303,8 +303,10 @@ Inside `Delivery`:
   The kind of address.
 - `Shipment/Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Shipment/Consignment/CarrierParty/PostalAddress/StreetName` = **Airfield Road**  
-  Street of the postal address. identity of Kelaro Air Cargo (world/parties.json).
+- `Shipment/Consignment/CarrierParty/PostalAddress/StreetName` = **Lupela Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Kelaro Air Cargo (world/parties.json).
+- `Shipment/Consignment/CarrierParty/PostalAddress/StreetName` = **Airfield Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Kelaro Air Cargo (world/parties.json).
 - `Shipment/Consignment/CarrierParty/PostalAddress/BuildingNumber` = **46**  
   Building number of the postal address. identity of Kelaro Air Cargo (world/parties.json).
 - `Shipment/Consignment/CarrierParty/PostalAddress/CityName` = **Selanu**  
@@ -746,7 +748,8 @@ Inside `InvoiceLine`:
           <cac:PostalAddress>
             <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-            <cbc:StreetName>Airfield Road</cbc:StreetName>
+            <cbc:StreetName languageID="qal">Lupela Natii</cbc:StreetName>
+            <cbc:StreetName languageID="en">Airfield Road</cbc:StreetName>
             <cbc:BuildingNumber>46</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>
             <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

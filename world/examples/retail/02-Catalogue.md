@@ -548,8 +548,10 @@ Inside `CatalogueLine`:
   The kind of address.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Via dei Codici**  
-  Street of the postal address. identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Ganluar Ranvua Culsceor** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Via dei Codici** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/BuildingNumber` = **29**  
   Building number of the postal address. identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/CityName` = **Ferrano**  
@@ -1362,7 +1364,8 @@ Inside `CatalogueLine`:
           <cac:PostalAddress>
             <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-            <cbc:StreetName>Via dei Codici</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Ganluar Ranvua Culsceor</cbc:StreetName>
+            <cbc:StreetName languageID="en">Via dei Codici</cbc:StreetName>
             <cbc:BuildingNumber>29</cbc:BuildingNumber>
             <cbc:CityName>Ferrano</cbc:CityName>
             <cbc:PostalZone>4130</cbc:PostalZone>

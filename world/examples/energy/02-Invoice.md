@@ -72,8 +72,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via della Rete**  
-  Street of the postal address. identity of Ferrano Grid (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Rurtio Scerdiesk** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Grid (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via della Rete** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Grid (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **3**  
   Building number of the postal address. identity of Ferrano Grid (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -167,8 +169,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Corso della Repubblica**  
-  Street of the postal address. identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Nedrii Rurtio Nibovae** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -386,8 +390,10 @@ Inside `InvoiceLine`:
   412800 × 6.2, rounded to the minor unit of the currency.
 - `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.**  
   The seller's description; item network-electricity of Ferrano Grid (world/items.json).
-- `Item/Name` = **Electricity network use**  
-  The item's short name; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Name` = **Drangrolstio segoi tronstiov** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Name` = **Electricity network use** (languageID `en`)  
+  The item's name in English, the working language between the countries; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FG-NET-E**  
   The seller's own item number; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -410,8 +416,10 @@ Inside `InvoiceLine`:
   18600 × 6.2, rounded to the minor unit of the currency.
 - `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.**  
   The seller's description; item network-electricity of Ferrano Grid (world/items.json).
-- `Item/Name` = **Electricity network use**  
-  The item's short name; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Name` = **Drangrolstio segoi tronstiov** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Name` = **Electricity network use** (languageID `en`)  
+  The item's name in English, the working language between the countries; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FG-NET-E**  
   The seller's own item number; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -434,8 +442,10 @@ Inside `InvoiceLine`:
   61200 × 1.9, rounded to the minor unit of the currency.
 - `Item/Description` = **Use of the gas distribution network, per kilowatt hour of gas taken at the connection.**  
   The seller's description; item network-gas of Ferrano Grid (world/items.json).
-- `Item/Name` = **Gas network use**  
-  The item's short name; item network-gas of Ferrano Grid (world/items.json).
+- `Item/Name` = **Gribrior segoi tronstiov** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item network-gas of Ferrano Grid (world/items.json).
+- `Item/Name` = **Gas network use** (languageID `en`)  
+  The item's name in English, the working language between the countries; item network-gas of Ferrano Grid (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FG-NET-G**  
   The seller's own item number; item network-gas of Ferrano Grid (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -493,7 +503,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Rete</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Rurtio Scerdiesk</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via della Rete</cbc:StreetName>
         <cbc:BuildingNumber>3</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
@@ -576,7 +587,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
@@ -749,7 +761,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
-      <cbc:Name>Electricity network use</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="en">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
@@ -773,7 +786,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
-      <cbc:Name>Electricity network use</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="en">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
@@ -797,7 +811,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
-      <cbc:Name>Gas network use</cbc:Name>
+      <cbc:Name languageID="qau">Gribrior segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="en">Gas network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-G</cbc:ID>
       </cac:SellersItemIdentification>

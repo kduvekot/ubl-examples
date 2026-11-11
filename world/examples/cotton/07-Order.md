@@ -162,8 +162,10 @@ Inside `SellerSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Gin Yard Road**  
-  Street of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -299,8 +301,10 @@ Inside `OrderLine`:
   One pack of this item.
 - `LineItem/Item/PackSizeNumeric` = **227**  
   The units in one pack: 227 kg in a bale; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `LineItem/Item/Name` = **Cotton lint, compressed bale**  
-  The item's short name; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/Name` = **Tekapa suhema, lafatite senehu** (languageID `qal`)  
+  The item's name in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/Name` = **Cotton lint, compressed bale** (languageID `en`)  
+  The item's name in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `LineItem/Item/BuyersItemIdentification/ID` = **LT-RAW-COT**  
   The number the buyer keeps for this item in its own system (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **SCG-LINT**  
@@ -473,7 +477,8 @@ Inside `OrderLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -580,7 +585,8 @@ Inside `OrderLine`:
         <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
         <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
-        <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+        <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
+        <cbc:Name languageID="en">Cotton lint, compressed bale</cbc:Name>
         <cac:BuyersItemIdentification>
           <cbc:ID>LT-RAW-COT</cbc:ID>
         </cac:BuyersItemIdentification>

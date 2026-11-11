@@ -195,8 +195,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Corso della Repubblica**  
-  Street of the postal address. identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Nedrii Rurtio Nibovae** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -618,7 +620,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>

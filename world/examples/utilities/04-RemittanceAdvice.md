@@ -103,8 +103,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -222,8 +224,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Corso della Repubblica**  
-  Street of the postal address. identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Nedrii Rurtio Nibovae** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -486,7 +490,8 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -595,7 +600,8 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>

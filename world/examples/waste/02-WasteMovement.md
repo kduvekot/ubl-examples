@@ -66,8 +66,10 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Via del Riciclo**  
-  Street of the postal address. identity of Rinova Recovery (world/parties.json).
+- `PostalAddress/StreetName` = **Ganluar Bonfuar Panpea** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
+- `PostalAddress/StreetName` = **Via del Riciclo** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -169,8 +171,10 @@ Inside `ReceiverParty`:
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/Postbox` = **PB 18**  
   The customs office receives its post in a post box. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/StreetName` = **Valico di Confine**  
-  Street of the postal address. identity of Customs Administration of Urvania (world/parties.json).
+- `PostalAddress/StreetName` = **Lisgaov Cisiar Vulgreor** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Customs Administration of Urvania (world/parties.json).
+- `PostalAddress/StreetName` = **Valico di Confine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/BuildingNumber` = **22**  
   Building number of the postal address. identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -256,8 +260,10 @@ Inside `NotifierParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -408,8 +414,10 @@ Inside `Shipment`:
   The kind of address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Consignment/CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti**  
-  Street of the postal address. identity of Trasvia Haulage (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/StreetName` = **Ganluar Ranvua Stisrebroe** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Trasvia Haulage (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **45**  
   Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Ferrano**  
@@ -575,7 +583,8 @@ Inside `DocumentDistribution`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4140</cbc:PostalZone>
@@ -666,7 +675,8 @@ Inside `DocumentDistribution`:
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName>Valico di Confine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Lisgaov Cisiar Vulgreor</cbc:StreetName>
+      <cbc:StreetName languageID="en">Valico di Confine</cbc:StreetName>
       <cbc:BuildingNumber>22</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -745,7 +755,8 @@ Inside `DocumentDistribution`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -881,7 +892,8 @@ Inside `DocumentDistribution`:
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+          <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
           <cbc:BuildingNumber>45</cbc:BuildingNumber>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cbc:PostalZone>4160</cbc:PostalZone>

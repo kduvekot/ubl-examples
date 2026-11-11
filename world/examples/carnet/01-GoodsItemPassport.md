@@ -68,8 +68,10 @@ Inside `IssuerParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Piazza del Mercato**  
-  Street of the postal address. identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PostalAddress/StreetName` = **Nustaar Bonfuar Vostoe** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PostalAddress/StreetName` = **Piazza del Mercato** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/BuildingNumber` = **15**  
   Building number of the postal address. identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -153,8 +155,10 @@ Inside `HolderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -332,8 +336,10 @@ Inside `ImportingGuarantorParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Reef Street**  
-  Street of the postal address. identity of Selanu Chamber of Commerce (world/parties.json).
+- `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Chamber of Commerce (world/parties.json).
+- `PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/BuildingNumber` = **30**  
   Building number of the postal address. identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -399,8 +405,10 @@ Inside `ExportingCustomsParty`:
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/Postbox` = **PB 18**  
   The customs office receives its post in a post box. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/StreetName` = **Valico di Confine**  
-  Street of the postal address. identity of Customs Administration of Urvania (world/parties.json).
+- `PostalAddress/StreetName` = **Lisgaov Cisiar Vulgreor** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Customs Administration of Urvania (world/parties.json).
+- `PostalAddress/StreetName` = **Valico di Confine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/BuildingNumber` = **22**  
   Building number of the postal address. identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -482,8 +490,10 @@ Inside `ImportingCustomsParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Wharf Road**  
-  Street of the postal address. identity of Island Customs Service (world/parties.json).
+- `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Island Customs Service (world/parties.json).
+- `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Island Customs Service (world/parties.json).
 - `PostalAddress/BuildingNumber` = **53**  
   Building number of the postal address. identity of Island Customs Service (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -557,8 +567,10 @@ Inside `Shipment`:
   The quantity declared.
 - `GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/Name` = **Park bench Serra 180**  
-  The item's short name; item bench-serra of Valdara Industries (world/items.json).
+- `GoodsItem/Item/Name` = **Dirrear rirgroov Serra 180** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `GoodsItem/Item/Name` = **Park bench Serra 180** (languageID `en`)  
+  The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/Item/Keyword` = **park bench**  
@@ -912,7 +924,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Piazza del Mercato</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+      <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
@@ -990,7 +1003,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -1152,7 +1166,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Reef Street</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+      <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -1211,7 +1226,8 @@ Inside `Signature`:
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName>Valico di Confine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Lisgaov Cisiar Vulgreor</cbc:StreetName>
+      <cbc:StreetName languageID="en">Valico di Confine</cbc:StreetName>
       <cbc:BuildingNumber>22</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -1286,7 +1302,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Wharf Road</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en">Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>53</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -1356,7 +1373,8 @@ Inside `Signature`:
       <cbc:Quantity unitCode="H87">2</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+        <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
         <cbc:Keyword>park bench</cbc:Keyword>
         <cbc:Keyword>street furniture</cbc:Keyword>

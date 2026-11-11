@@ -66,8 +66,10 @@ Inside `DespatchSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via del Riciclo**  
-  Street of the postal address. identity of Rinova Recovery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Bonfuar Panpea** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via del Riciclo** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -326,8 +328,10 @@ Inside `Shipment`:
   The kind of address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Consignment/CarrierParty/PostalAddress/StreetName` = **Banchina del Fiume**  
-  Street of the postal address. identity of Fiumella Barges (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/StreetName` = **Voncisgroe Bonfuar Lidio** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Fiumella Barges (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/StreetName` = **Banchina del Fiume** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Fiumella Barges (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **52**  
   Building number of the postal address. identity of Fiumella Barges (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Ferrano**  
@@ -413,8 +417,10 @@ Inside `DespatchLine`:
   The order line this line fulfils.
 - `Item/Description` = **Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.**  
   The seller's description; item granulate-pe of Rinova Recovery (world/items.json).
-- `Item/Name` = **Recycled PE granulate**  
-  The item's short name; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/Name` = **Gremefua PE standaboa** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/Name` = **Recycled PE granulate** (languageID `en`)  
+  The item's name in English, the working language between the countries; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/SellersItemIdentification/ID` = **RR-PE-R1**  
   The seller's own item number; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/StandardItemIdentification/ID` = **771030000048** (schemeID `urn:ubl-examples:world:item`)  
@@ -493,7 +499,8 @@ Inside `DespatchLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
@@ -730,7 +737,8 @@ Inside `DespatchLine`:
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+          <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
           <cbc:BuildingNumber>52</cbc:BuildingNumber>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cbc:PostalZone>4170</cbc:PostalZone>
@@ -805,7 +813,8 @@ Inside `DespatchLine`:
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
-      <cbc:Name>Recycled PE granulate</cbc:Name>
+      <cbc:Name languageID="qau">Gremefua PE standaboa</cbc:Name>
+      <cbc:Name languageID="en">Recycled PE granulate</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-PE-R1</cbc:ID>
       </cac:SellersItemIdentification>

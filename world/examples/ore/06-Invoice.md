@@ -72,8 +72,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Viale della Stazione**  
-  Street of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Vociar Rurtio Bigrufuo** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Viale della Stazione** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **38**  
   Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/CityName` = **Serravona**  
@@ -165,8 +167,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -408,8 +412,10 @@ Inside `InvoiceLine`:
   1788.4 × 962, rounded to the minor unit of the currency.
 - `Item/Description` = **Ore from the mine siding to the factory siding, per tonne.**  
   The seller's description; item rail-ore of Ferrano Rail Cargo (world/items.json).
-- `Item/Name` = **Rail freight, ore in bulk wagons**  
-  The item's short name; item rail-ore of Ferrano Rail Cargo (world/items.json).
+- `Item/Name` = **Tedrei sosue, tarbrue fansoa tesdroe cisbroa** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item rail-ore of Ferrano Rail Cargo (world/items.json).
+- `Item/Name` = **Rail freight, ore in bulk wagons** (languageID `en`)  
+  The item's name in English, the working language between the countries; item rail-ore of Ferrano Rail Cargo (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FRC-ORE**  
   The seller's own item number; item rail-ore of Ferrano Rail Cargo (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -469,7 +475,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Viale della Stazione</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+        <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
         <cbc:CityName>Serravona</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
@@ -553,7 +560,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -752,7 +760,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">1720441</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Ore from the mine siding to the factory siding, per tonne.</cbc:Description>
-      <cbc:Name>Rail freight, ore in bulk wagons</cbc:Name>
+      <cbc:Name languageID="qau">Tedrei sosue, tarbrue fansoa tesdroe cisbroa</cbc:Name>
+      <cbc:Name languageID="en">Rail freight, ore in bulk wagons</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FRC-ORE</cbc:ID>
       </cac:SellersItemIdentification>

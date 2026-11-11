@@ -32,7 +32,8 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Viale della Stazione</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+      <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
       <cbc:CityName>Serravona</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
@@ -114,7 +115,8 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -285,7 +287,8 @@
     <cac:Address>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Strada della Miniera</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
       <cbc:BuildingNumber>10</cbc:BuildingNumber>
       <cbc:CityName>Serravona</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
@@ -302,7 +305,8 @@
     <cac:Address>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -392,7 +396,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Strada della Miniera</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
         <cbc:CityName>Serravona</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>

@@ -74,8 +74,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via della Centrale**  
-  Street of the postal address. identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Rurtio Berdrifuar** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via della Centrale** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **44**  
   Building number of the postal address. identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/CityName` = **Serravona**  
@@ -169,8 +171,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Corso della Repubblica**  
-  Street of the postal address. identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Nedrii Rurtio Nibovae** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -388,8 +392,10 @@ Inside `InvoiceLine`:
   18400 × 9800, rounded to the minor unit of the currency.
 - `Item/Description` = **Electricity fed into the grid at the power station, sold by the megawatt hour.**  
   The seller's description; item power-wholesale of Montebrio Power (world/items.json).
-- `Item/Name` = **Electricity, wholesale**  
-  The item's short name; item power-wholesale of Montebrio Power (world/items.json).
+- `Item/Name` = **Drangrolstio, brasbrinvia** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item power-wholesale of Montebrio Power (world/items.json).
+- `Item/Name` = **Electricity, wholesale** (languageID `en`)  
+  The item's name in English, the working language between the countries; item power-wholesale of Montebrio Power (world/items.json).
 - `Item/SellersItemIdentification/ID` = **MB-MWH**  
   The seller's own item number; item power-wholesale of Montebrio Power (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -450,7 +456,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Centrale</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Rurtio Berdrifuar</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via della Centrale</cbc:StreetName>
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
         <cbc:CityName>Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
@@ -533,7 +540,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
@@ -706,7 +714,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">180320000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Electricity fed into the grid at the power station, sold by the megawatt hour.</cbc:Description>
-      <cbc:Name>Electricity, wholesale</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio, brasbrinvia</cbc:Name>
+      <cbc:Name languageID="en">Electricity, wholesale</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>MB-MWH</cbc:ID>
       </cac:SellersItemIdentification>

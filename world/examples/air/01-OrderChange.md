@@ -81,8 +81,10 @@ Inside `BuyerCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Reef Street**  
-  Street of the postal address. identity of Velumi Trading (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -305,8 +307,10 @@ Inside `Delivery`:
   The kind of address.
 - `DeliveryParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `DeliveryParty/PostalAddress/StreetName` = **Lagoon Road**  
-  Street of the postal address. identity of Nalevi Warehousing (world/parties.json).
+- `DeliveryParty/PostalAddress/StreetName` = **Vilafa Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Nalevi Warehousing (world/parties.json).
+- `DeliveryParty/PostalAddress/StreetName` = **Lagoon Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Nalevi Warehousing (world/parties.json).
 - `DeliveryParty/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Nalevi Warehousing (world/parties.json).
 - `DeliveryParty/PostalAddress/CityName` = **Selanu**  
@@ -501,7 +505,8 @@ Inside `OrderLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -704,7 +709,8 @@ Inside `OrderLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Lagoon Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Vilafa Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Lagoon Road</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

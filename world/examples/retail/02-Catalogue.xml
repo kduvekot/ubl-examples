@@ -440,7 +440,8 @@
           <cac:PostalAddress>
             <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-            <cbc:StreetName>Via dei Codici</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Ganluar Ranvua Culsceor</cbc:StreetName>
+            <cbc:StreetName languageID="en">Via dei Codici</cbc:StreetName>
             <cbc:BuildingNumber>29</cbc:BuildingNumber>
             <cbc:CityName>Ferrano</cbc:CityName>
             <cbc:PostalZone>4130</cbc:PostalZone>

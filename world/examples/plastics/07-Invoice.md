@@ -70,8 +70,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Banchina del Fiume**  
-  Street of the postal address. identity of Fiumella Barges (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Voncisgroe Bonfuar Lidio** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Fiumella Barges (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Banchina del Fiume** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Fiumella Barges (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **52**  
   Building number of the postal address. identity of Fiumella Barges (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -163,8 +165,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via del Riciclo**  
-  Street of the postal address. identity of Rinova Recovery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Bonfuar Panpea** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via del Riciclo** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -390,8 +394,10 @@ Inside `InvoiceLine`:
   120 × 1495, rounded to the minor unit of the currency.
 - `Item/Description` = **Bulk cargo down the river to the coast of Bayvarra, per tonne.**  
   The seller's description; item barge-freight of Fiumella Barges (world/items.json).
-- `Item/Name` = **River freight, bulk**  
-  The item's short name; item barge-freight of Fiumella Barges (world/items.json).
+- `Item/Name` = **Valtue sosue, tesdroe** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item barge-freight of Fiumella Barges (world/items.json).
+- `Item/Name` = **River freight, bulk** (languageID `en`)  
+  The item's name in English, the working language between the countries; item barge-freight of Fiumella Barges (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FB-BULK**  
   The seller's own item number; item barge-freight of Fiumella Barges (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -448,7 +454,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+        <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
         <cbc:BuildingNumber>52</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4170</cbc:PostalZone>
@@ -532,7 +539,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
@@ -715,7 +723,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">179400</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Bulk cargo down the river to the coast of Bayvarra, per tonne.</cbc:Description>
-      <cbc:Name>River freight, bulk</cbc:Name>
+      <cbc:Name languageID="qau">Valtue sosue, tesdroe</cbc:Name>
+      <cbc:Name languageID="en">River freight, bulk</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FB-BULK</cbc:ID>
       </cac:SellersItemIdentification>

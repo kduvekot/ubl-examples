@@ -78,8 +78,10 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Viale della Stazione**  
-  Street of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
+- `PostalAddress/StreetName` = **Vociar Rurtio Bigrufuo** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
+- `PostalAddress/StreetName` = **Viale della Stazione** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/BuildingNumber` = **38**  
   Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/CityName` = **Serravona**  
@@ -171,8 +173,10 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -290,8 +294,10 @@ Inside `ConsignorParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Strada della Miniera**  
-  Street of the postal address. identity of Serravona Mining (world/parties.json).
+- `PostalAddress/StreetName` = **Tronraesk Rurtio Drurtruov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Serravona Mining (world/parties.json).
+- `PostalAddress/StreetName` = **Strada della Miniera** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Serravona Mining (world/parties.json).
 - `PostalAddress/BuildingNumber` = **10**  
   Building number of the postal address. identity of Serravona Mining (world/parties.json).
 - `PostalAddress/CityName` = **Serravona**  
@@ -500,7 +506,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Viale della Stazione</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+      <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
       <cbc:CityName>Serravona</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
@@ -582,7 +589,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -689,7 +697,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Strada della Miniera</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
       <cbc:BuildingNumber>10</cbc:BuildingNumber>
       <cbc:CityName>Serravona</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>

@@ -168,8 +168,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Gin Yard Road**  
-  Street of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -461,7 +463,8 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

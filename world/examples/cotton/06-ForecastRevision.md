@@ -185,8 +185,10 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Gin Yard Road**  
-  Street of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
+- `PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
+- `PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -288,8 +290,10 @@ Inside `ForecastRevisionLine`:
   One pack of this item.
 - `SalesItem/Item/PackSizeNumeric` = **227**  
   The units in one pack: 227 kg in a bale; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `SalesItem/Item/Name` = **Cotton lint, compressed bale**  
-  The item's short name; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `SalesItem/Item/Name` = **Tekapa suhema, lafatite senehu** (languageID `qal`)  
+  The item's name in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `SalesItem/Item/Name` = **Cotton lint, compressed bale** (languageID `en`)  
+  The item's name in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `SalesItem/Item/SellersItemIdentification/ID` = **SCG-LINT**  
   The seller's own item number; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `SalesItem/Item/StandardItemIdentification/ID` = **773020000137** (schemeID `urn:ubl-examples:world:item`)  
@@ -473,7 +477,8 @@ Inside `ForecastRevisionLine`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -558,7 +563,8 @@ Inside `ForecastRevisionLine`:
         <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
         <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
-        <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+        <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
+        <cbc:Name languageID="en">Cotton lint, compressed bale</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
         </cac:SellersItemIdentification>

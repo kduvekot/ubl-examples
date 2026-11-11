@@ -72,8 +72,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via dei Trasporti**  
-  Street of the postal address. identity of Trasvia Haulage (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Ranvua Stisrebroe** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Trasvia Haulage (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Trasvia Haulage (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **45**  
   Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -433,8 +435,10 @@ Inside `InvoiceLine`:
   186 × 240.5, rounded to the minor unit of the currency.
 - `Item/Description` = **Full truck load, price per kilometre driven loaded, tolls included.**  
   The seller's description; item road-transport of Trasvia Haulage (world/items.json).
-- `Item/Name` = **Road transport, full truck load**  
-  The item's short name; item road-transport of Trasvia Haulage (world/items.json).
+- `Item/Name` = **Celboar pirbruluo, lutroo tratei postruesk** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item road-transport of Trasvia Haulage (world/items.json).
+- `Item/Name` = **Road transport, full truck load** (languageID `en`)  
+  The item's name in English, the working language between the countries; item road-transport of Trasvia Haulage (world/items.json).
 - `Item/SellersItemIdentification/ID` = **TH-FTL**  
   The seller's own item number; item road-transport of Trasvia Haulage (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **O**  
@@ -496,7 +500,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via dei Trasporti</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
         <cbc:BuildingNumber>45</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4160</cbc:PostalZone>
@@ -801,7 +806,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">44733</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Full truck load, price per kilometre driven loaded, tolls included.</cbc:Description>
-      <cbc:Name>Road transport, full truck load</cbc:Name>
+      <cbc:Name languageID="qau">Celboar pirbruluo, lutroo tratei postruesk</cbc:Name>
+      <cbc:Name languageID="en">Road transport, full truck load</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>TH-FTL</cbc:ID>
       </cac:SellersItemIdentification>

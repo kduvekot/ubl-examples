@@ -40,7 +40,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Centrale</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Rurtio Berdrifuar</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via della Centrale</cbc:StreetName>
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
         <cbc:CityName>Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
@@ -123,7 +124,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
@@ -296,7 +298,8 @@
     <cbc:LineExtensionAmount currencyID="XUF">180320000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Electricity fed into the grid at the power station, sold by the megawatt hour.</cbc:Description>
-      <cbc:Name>Electricity, wholesale</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio, brasbrinvia</cbc:Name>
+      <cbc:Name languageID="en">Electricity, wholesale</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>MB-MWH</cbc:ID>
       </cac:SellersItemIdentification>

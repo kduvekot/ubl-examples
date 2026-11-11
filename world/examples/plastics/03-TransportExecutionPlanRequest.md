@@ -59,8 +59,10 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Via del Riciclo**  
-  Street of the postal address. identity of Rinova Recovery (world/parties.json).
+- `PostalAddress/StreetName` = **Ganluar Bonfuar Panpea** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
+- `PostalAddress/StreetName` = **Via del Riciclo** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -162,8 +164,10 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Banchina del Fiume**  
-  Street of the postal address. identity of Fiumella Barges (world/parties.json).
+- `PostalAddress/StreetName` = **Voncisgroe Bonfuar Lidio** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Fiumella Barges (world/parties.json).
+- `PostalAddress/StreetName` = **Banchina del Fiume** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Fiumella Barges (world/parties.json).
 - `PostalAddress/BuildingNumber` = **52**  
   Building number of the postal address. identity of Fiumella Barges (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -307,8 +311,10 @@ Inside `FromLocation`:
   The kind of address.
 - `Address/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Address/StreetName` = **Banchina del Fiume**  
-  Street of the postal address. identity of Fiumella Barges (world/parties.json).
+- `Address/StreetName` = **Voncisgroe Bonfuar Lidio** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Fiumella Barges (world/parties.json).
+- `Address/StreetName` = **Banchina del Fiume** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Fiumella Barges (world/parties.json).
 - `Address/BuildingNumber` = **52**  
   Building number of the postal address. identity of Fiumella Barges (world/parties.json).
 - `Address/CityName` = **Ferrano**  
@@ -543,7 +549,8 @@ Inside `Consignment`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4140</cbc:PostalZone>
@@ -634,7 +641,8 @@ Inside `Consignment`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+      <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
       <cbc:BuildingNumber>52</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4170</cbc:PostalZone>
@@ -742,7 +750,8 @@ Inside `Consignment`:
     <cac:Address>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Banchina del Fiume</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+      <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
       <cbc:BuildingNumber>52</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4170</cbc:PostalZone>

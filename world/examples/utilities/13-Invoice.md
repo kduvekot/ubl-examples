@@ -83,8 +83,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Mast Hill Road**  
-  Street of the postal address. identity of Selanu Telecom (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Kitata Vekase Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Telecom (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Mast Hill Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Telecom (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **58**  
   Building number of the postal address. identity of Selanu Telecom (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -160,8 +162,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Reef Street**  
-  Street of the postal address. identity of Velumi Trading (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -386,8 +390,10 @@ Inside `InvoiceLine`:
   Where it is.
 - `Item/Description` = **Business telephone and data line, monthly subscription.**  
   The seller's description; item telecom-line of Selanu Telecom (world/items.json).
-- `Item/Name` = **Business telephone line**  
-  The item's short name; item telecom-line of Selanu Telecom (world/items.json).
+- `Item/Name` = **Levise nikeile litile** (languageID `qal`)  
+  The item's name in Lisavan, the seller's language; item telecom-line of Selanu Telecom (world/items.json).
+- `Item/Name` = **Business telephone line** (languageID `en`)  
+  The item's name in English, the working language between the countries; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/SellersItemIdentification/ID` = **ST-BL**  
   The seller's own item number; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **O**  
@@ -416,8 +422,10 @@ Inside `InvoiceLine`:
   Where it is.
 - `Item/Description` = **Mobile data beyond the subscription, per gigabyte.**  
   The seller's description; item telecom-data of Selanu Telecom (world/items.json).
-- `Item/Name` = **Mobile data**  
-  The item's short name; item telecom-data of Selanu Telecom (world/items.json).
+- `Item/Name` = **Livule titefe** (languageID `qal`)  
+  The item's name in Lisavan, the seller's language; item telecom-data of Selanu Telecom (world/items.json).
+- `Item/Name` = **Mobile data** (languageID `en`)  
+  The item's name in English, the working language between the countries; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/SellersItemIdentification/ID` = **ST-GB**  
   The seller's own item number; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **O**  
@@ -480,7 +488,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Mast Hill Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Mast Hill Road</cbc:StreetName>
         <cbc:BuildingNumber>58</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -548,7 +557,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -720,7 +730,8 @@ Inside `InvoiceLine`:
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
-      <cbc:Name>Business telephone line</cbc:Name>
+      <cbc:Name languageID="qal">Levise nikeile litile</cbc:Name>
+      <cbc:Name languageID="en">Business telephone line</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>ST-BL</cbc:ID>
       </cac:SellersItemIdentification>
@@ -749,7 +760,8 @@ Inside `InvoiceLine`:
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
-      <cbc:Name>Mobile data</cbc:Name>
+      <cbc:Name languageID="qal">Livule titefe</cbc:Name>
+      <cbc:Name languageID="en">Mobile data</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>ST-GB</cbc:ID>
       </cac:SellersItemIdentification>

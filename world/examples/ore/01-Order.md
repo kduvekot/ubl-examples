@@ -63,8 +63,10 @@ Inside `BuyerCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -182,8 +184,10 @@ Inside `SellerSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Strada della Miniera**  
-  Street of the postal address. identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Tronraesk Rurtio Drurtruov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Strada della Miniera** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **10**  
   Building number of the postal address. identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/CityName` = **Serravona**  
@@ -311,8 +315,10 @@ Inside `Delivery`:
   The kind of address.
 - `Despatch/CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Despatch/CarrierParty/PostalAddress/StreetName` = **Viale della Stazione**  
-  Street of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
+- `Despatch/CarrierParty/PostalAddress/StreetName` = **Vociar Rurtio Bigrufuo** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
+- `Despatch/CarrierParty/PostalAddress/StreetName` = **Viale della Stazione** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Rail Cargo (world/parties.json).
 - `Despatch/CarrierParty/PostalAddress/BuildingNumber` = **38**  
   Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
 - `Despatch/CarrierParty/PostalAddress/CityName` = **Serravona**  
@@ -433,8 +439,10 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
   The seller's description; item ore-lump of Serravona Mining (world/items.json).
-- `LineItem/Item/Name` = **Iron ore, lump**  
-  The item's short name; item ore-lump of Serravona Mining (world/items.json).
+- `LineItem/Item/Name` = **Rertraa tarbrue, scetriov** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item ore-lump of Serravona Mining (world/items.json).
+- `LineItem/Item/Name` = **Iron ore, lump** (languageID `en`)  
+  The item's name in English, the working language between the countries; item ore-lump of Serravona Mining (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **SM-ORE-L**  
   The seller's own item number; item ore-lump of Serravona Mining (world/items.json).
 - `LineItem/Item/StandardItemIdentification/ID` = **771010000013** (schemeID `urn:ubl-examples:world:item`)  
@@ -488,7 +496,8 @@ Inside `OrderLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -597,7 +606,8 @@ Inside `OrderLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Strada della Miniera</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
         <cbc:CityName>Serravona</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
@@ -716,7 +726,8 @@ Inside `OrderLine`:
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName>Viale della Stazione</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+          <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
           <cbc:BuildingNumber>38</cbc:BuildingNumber>
           <cbc:CityName>Serravona</cbc:CityName>
           <cbc:PostalZone>4150</cbc:PostalZone>
@@ -816,7 +827,8 @@ Inside `OrderLine`:
       </cac:Price>
       <cac:Item>
         <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
-        <cbc:Name>Iron ore, lump</cbc:Name>
+        <cbc:Name languageID="qau">Rertraa tarbrue, scetriov</cbc:Name>
+        <cbc:Name languageID="en">Iron ore, lump</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>SM-ORE-L</cbc:ID>
         </cac:SellersItemIdentification>

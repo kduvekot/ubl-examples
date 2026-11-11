@@ -197,8 +197,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via della Centrale**  
-  Street of the postal address. identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Rurtio Berdrifuar** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via della Centrale** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **44**  
   Building number of the postal address. identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/CityName` = **Serravona**  
@@ -623,7 +625,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Centrale</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Rurtio Berdrifuar</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via della Centrale</cbc:StreetName>
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
         <cbc:CityName>Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>

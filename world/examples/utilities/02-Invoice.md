@@ -96,8 +96,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Corso della Repubblica**  
-  Street of the postal address. identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Nedrii Rurtio Nibovae** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Energy (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -193,8 +195,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -522,8 +526,10 @@ Inside `InvoiceLine`:
   Where it is.
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
   The seller's description; item electricity of Ferrano Energy (world/items.json).
-- `Item/Name` = **Electricity**  
-  The item's short name; item electricity of Ferrano Energy (world/items.json).
+- `Item/Name` = **Drangrolstio** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
+- `Item/Name` = **Electricity** (languageID `en`)  
+  The item's name in English, the working language between the countries; item electricity of Ferrano Energy (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FE-KWH**  
   The seller's own item number; item electricity of Ferrano Energy (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -570,8 +576,10 @@ Inside `InvoiceLine`:
   Where the power was used.
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
   The seller's description; item electricity of Ferrano Energy (world/items.json).
-- `Item/Name` = **Electricity**  
-  The item's short name; item electricity of Ferrano Energy (world/items.json).
+- `Item/Name` = **Drangrolstio** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
+- `Item/Name` = **Electricity** (languageID `en`)  
+  The item's name in English, the working language between the countries; item electricity of Ferrano Energy (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FE-KWH**  
   The seller's own item number; item electricity of Ferrano Energy (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -610,8 +618,10 @@ Inside `InvoiceLine`:
   Where it is.
 - `Item/Description` = **Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.**  
   The seller's description; item gas of Ferrano Energy (world/items.json).
-- `Item/Name` = **Natural gas supply**  
-  The item's short name; item gas of Ferrano Energy (world/items.json).
+- `Item/Name` = **Dilsuo gribrior trindaar** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item gas of Ferrano Energy (world/items.json).
+- `Item/Name` = **Natural gas supply** (languageID `en`)  
+  The item's name in English, the working language between the countries; item gas of Ferrano Energy (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FE-GAS**  
   The seller's own item number; item gas of Ferrano Energy (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S**  
@@ -684,7 +694,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
@@ -770,7 +781,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -1034,7 +1046,8 @@ Inside `InvoiceLine`:
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
-      <cbc:Name>Electricity</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio</cbc:Name>
+      <cbc:Name languageID="en">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-KWH</cbc:ID>
       </cac:SellersItemIdentification>
@@ -1084,7 +1097,8 @@ Inside `InvoiceLine`:
     </cac:Delivery>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
-      <cbc:Name>Electricity</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio</cbc:Name>
+      <cbc:Name languageID="en">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-KWH</cbc:ID>
       </cac:SellersItemIdentification>
@@ -1120,7 +1134,8 @@ Inside `InvoiceLine`:
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
-      <cbc:Name>Natural gas supply</cbc:Name>
+      <cbc:Name languageID="qau">Dilsuo gribrior trindaar</cbc:Name>
+      <cbc:Name languageID="en">Natural gas supply</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-GAS</cbc:ID>
       </cac:SellersItemIdentification>

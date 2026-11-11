@@ -330,6 +330,15 @@ def address(pid):
                               "the map, in its own country and state.", "PostalZone": f"Postal code in {c['name']}'s "
                               f"format ({c['address']['postal_zone']}).", "CountrySubentity": f"The state, part of an "
                               f"address in federal {c['name']}."}.get(k, why.get(k, "")) + f" {src}.")
+    code = c["languages"][0]
+    if code != "en" and "en" in c["languages"] and isinstance(out.get("StreetName"), V):
+        lang = WORLD["languages"][code]["name"]                 # a bilingual country names its streets twice
+        st = out["StreetName"]
+        out["StreetName"] = [V(translate(st.value, code, street=True), f"The street's name in {lang}: {c['name']} "
+                               f"is officially bilingual, and street names are given in both languages "
+                               f"(world/countries.json); {src}.", languageID=code),
+                             V(st.value, f"The street's name in English, the island's other official language; "
+                                         f"{src}.", languageID="en")]
     out["AddressFormatCode"] = V(p["c"], f"The address follows {c['name']}'s address format (world/countries.json): "
                                          f"{' / '.join(c['address']['lines'])}.")
     out["TimezoneOffset"] = V(c["timezone"], "The party's time zone, one hour behind UTC, where the world lies "
@@ -560,13 +569,26 @@ def hazardous_item(it):
     return out
 
 
+def item_names(it, src):
+    """The item's name: in the seller's language and in English when the seller's country speaks another language
+    (Urvanian, Lisavan), each with its languageID; English only for a seller in Bayvarra."""
+    code = WORLD["countries"][PARTY[it["seller"]]["c"]]["languages"][0]
+    if code == "en":
+        return V(it["name"], f"The item's short name; {src}.")
+    lang = WORLD["languages"][code]["name"]
+    return [V(translate(it["name"], code), f"The item's name in {lang}, the seller's language; {src}.",
+              languageID=code),
+            V(it["name"], f"The item's name in English, the working language between the countries; {src}.",
+              languageID="en")]
+
+
 def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref=None):
     """The content of a cac:Item element, from the items layer. `catalogue` is (catalogue number, line) for a
     catalogue line; `catalogue_ref` the catalogue an order line was ordered from."""
     it = ITEM[iid]
     src = f"item {it['id']} of {PARTY[it['seller']]['identity']['name']} (world/items.json)"
     out = {"Description": V(it["description"], f"The seller's description; {src}."),
-           "Name": V(it["name"], f"The item's short name; {src}.")}
+           "Name": item_names(it, src)}
     maker = it
     while maker.get("resale_of"):
         maker = ITEM[maker["resale_of"]]
@@ -930,7 +952,7 @@ def page(n, doc, root, reasons, flow):
 MISSING_WORDS = set()
 
 
-def translate(text, code):
+def translate(text, code, street=False):
     """A text in Urvanian (qau) or Lisavan (qal): the world's invented languages, word by word from their fixed
     vocabularies (world/countries.json). Names, numbers and codes stay as they are; Lisavan has no articles."""
     lex = WORLD["languages"][code].get("lexicon", {})
@@ -942,7 +964,7 @@ def translate(text, code):
                 start = True
             continue
         low = tok.lower()
-        proper = (tok[0].isupper() and not start) or tok in proper_names()
+        proper = (tok[0].isupper() and not start and not street) or tok in proper_names()
         start = False
         if proper:
             out.append(tok)
@@ -958,7 +980,7 @@ def translate(text, code):
             out.append(tok)
             continue
         w = lex[low]
-        out.append(w[0].upper() + w[1:] if tok[0].isupper() else w)
+        out.append(w[0].upper() + w[1:] if tok[0].isupper() or street else w)
     t = "".join(out).strip()
     return t[0].upper() + t[1:] if t else t
 
@@ -972,11 +994,16 @@ def proper_names():
                 [c["name"] for c in WORLD["countries"].values()] + \
                 [c["currency"]["name"] for c in WORLD["countries"].values()] + \
                 [x["name"] for x in WORLD["languages"].values()]
-        PROPER = {w for n in names for w in re.findall(r"[A-Z][A-Za-z'’]*", n)}
+        PROPER = {w for n in names for w in re.findall(r"[A-Z][A-Za-z'’]*", n)} - COMMON_NAME_WORDS
     return PROPER
 
 
 PROPER = None
+COMMON_NAME_WORDS = set("""Accord Administration Agency Air Airport Bank Barges Board Border Brokers Cargo Chamber Coastal
+Commerce Company Cotton Council Customs Department Distribution Energy Engineering Factoring Farm Forwarding Furniture
+Gas Ginnery Grid Haulage Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime
+Mill Mining Ocean Packaging Port Power Procurement Public Rail Recovery Review Sawmill Service State Stores Telecom
+Terminal Textile Trade Trading Warehousing Water Works Coral Lume Ferra English""".split())   # ordinary words in names
 
 
 def bilingual_notes(doc, content):

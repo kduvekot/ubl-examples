@@ -77,8 +77,10 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Mast Hill Road**  
-  Street of the postal address. identity of Selanu Telecom (world/parties.json).
+- `PostalAddress/StreetName` = **Kitata Vekase Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Telecom (world/parties.json).
+- `PostalAddress/StreetName` = **Mast Hill Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Telecom (world/parties.json).
 - `PostalAddress/BuildingNumber` = **58**  
   Building number of the postal address. identity of Selanu Telecom (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -154,8 +156,10 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Reef Street**  
-  Street of the postal address. identity of Velumi Trading (world/parties.json).
+- `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+- `PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
 - `PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -251,8 +255,10 @@ Inside `SubscriberConsumption`:
   The kind of address.
 - `UtilityConsumptionPoint/Address/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `UtilityConsumptionPoint/Address/StreetName` = **Reef Street**  
-  Street of the postal address. identity of Velumi Trading (world/parties.json).
+- `UtilityConsumptionPoint/Address/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+- `UtilityConsumptionPoint/Address/StreetName` = **Reef Street** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
 - `UtilityConsumptionPoint/Address/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `UtilityConsumptionPoint/Address/CityName` = **Selanu**  
@@ -809,7 +815,8 @@ Inside `SubscriberConsumption`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Mast Hill Road</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en">Mast Hill Road</cbc:StreetName>
       <cbc:BuildingNumber>58</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -875,7 +882,8 @@ Inside `SubscriberConsumption`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Reef Street</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+      <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -953,7 +961,8 @@ Inside `SubscriberConsumption`:
       <cac:Address>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

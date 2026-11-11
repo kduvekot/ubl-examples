@@ -72,8 +72,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via del Riciclo**  
-  Street of the postal address. identity of Rinova Recovery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Bonfuar Panpea** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via del Riciclo** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -177,8 +179,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -402,8 +406,10 @@ Inside `InvoiceLine`:
   38.2 × 12350, rounded to the minor unit of the currency.
 - `Item/Description` = **Collection at the factory and recovery of sorted production waste, per tonne collected.**  
   The seller's description; item waste-recovery of Rinova Recovery (world/items.json).
-- `Item/Name` = **Collection and recovery of production waste**  
-  The item's short name; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/Name` = **Mugevoe perpoor vasstifiar stesdrior lusgrildruor pilgrio** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/Name` = **Collection and recovery of production waste** (languageID `en`)  
+  The item's name in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/LifecycleStageCode` = **End-of-life**  
   The stage of the product's life the item belongs to.
 - `Item/LifecycleStageDescription` = **The service handles the production waste at the end of its life, before it is recycled.**  
@@ -467,7 +473,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via del Riciclo</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
@@ -563,7 +570,8 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -742,7 +750,8 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
-      <cbc:Name>Collection and recovery of production waste</cbc:Name>
+      <cbc:Name languageID="qau">Mugevoe perpoor vasstifiar stesdrior lusgrildruor pilgrio</cbc:Name>
+      <cbc:Name languageID="en">Collection and recovery of production waste</cbc:Name>
       <cbc:LifecycleStageCode>End-of-life</cbc:LifecycleStageCode>
       <cbc:LifecycleStageDescription>The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
       <cac:SellersItemIdentification>

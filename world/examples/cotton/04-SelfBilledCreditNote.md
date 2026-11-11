@@ -210,8 +210,10 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Gin Yard Road**  
-  Street of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -285,8 +287,10 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `Party/PostalAddress/StreetName` = **Plantation Road**  
-  Street of the postal address. identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Sifatofu Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **35**  
   Building number of the postal address. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road, past the cotton fields.**  
@@ -593,8 +597,10 @@ Inside `CreditNoteLine`:
   Quantity times price, rounded to the minor unit.
 - `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.**  
   The seller's description; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Item/Name` = **Seed cotton**  
-  The item's short name; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+- `Item/Name` = **Votike tekapa** (languageID `qal`)  
+  The item's name in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+- `Item/Name` = **Seed cotton** (languageID `en`)  
+  The item's name in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
   The seller's own item number; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/StandardItemIdentification/ID` = **773010000123** (schemeID `urn:ubl-examples:world:item`)  
@@ -729,7 +735,8 @@ Inside `CreditNoteLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -794,7 +801,8 @@ Inside `CreditNoteLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Plantation Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Plantation Road</cbc:StreetName>
         <cbc:BuildingNumber>35</cbc:BuildingNumber>
         <cbc:Description>Farm track off Plantation Road, past the cotton fields.</cbc:Description>
         <cbc:CityName>Selanu</cbc:CityName>
@@ -1006,7 +1014,8 @@ Inside `CreditNoteLine`:
     <cbc:LineExtensionAmount currencyID="XLC">75.000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
-      <cbc:Name>Seed cotton</cbc:Name>
+      <cbc:Name languageID="qal">Votike tekapa</cbc:Name>
+      <cbc:Name languageID="en">Seed cotton</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>LCF-SC</cbc:ID>
       </cac:SellersItemIdentification>

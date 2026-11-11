@@ -160,8 +160,10 @@ Inside `AuthorityParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `PostalAddress/StreetName` = **Wharf Road**  
-  Street of the postal address. identity of Maritime Administration of Lisavu (world/parties.json).
+- `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Maritime Administration of Lisavu (world/parties.json).
+- `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/BuildingNumber` = **37**  
   Building number of the postal address. identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -256,8 +258,10 @@ Inside `Shipment`:
   The kind of address.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XL**  
   The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
-- `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Wharf Road**  
-  Street of the postal address. identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **32**  
   Building number of the postal address. identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Selanu**  
@@ -903,7 +907,8 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Wharf Road</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en">Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>37</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -985,7 +990,8 @@ Inside `Signature`:
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-          <cbc:StreetName>Wharf Road</cbc:StreetName>
+          <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+          <cbc:StreetName languageID="en">Wharf Road</cbc:StreetName>
           <cbc:BuildingNumber>32</cbc:BuildingNumber>
           <cbc:CityName>Selanu</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

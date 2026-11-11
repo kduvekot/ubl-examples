@@ -68,8 +68,10 @@ Inside `ExporterParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Via delle Officine**  
-  Street of the postal address. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+- `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano**  
@@ -298,8 +300,10 @@ Inside `EndorserParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Piazza del Mercato**  
-  Street of the postal address. identity of Ferrano Chamber of Commerce (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Nustaar Bonfuar Vostoe** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Chamber of Commerce (world/parties.json).
+- `Party/PostalAddress/StreetName` = **Piazza del Mercato** (languageID `en`)  
+  The street's name in English, the island's other official language; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **15**  
   Building number of the postal address. identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano**  
@@ -393,8 +397,10 @@ Inside `CertificateOfOriginApplication`:
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Name` = **Park bench Serra 180**  
-  The item's short name; item bench-serra of Valdara Industries (world/items.json).
+- `Shipment/GoodsItem/Item/Name` = **Dirrear rirgroov Serra 180** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `Shipment/GoodsItem/Item/Name` = **Park bench Serra 180** (languageID `en`)  
+  The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Keyword` = **park bench**  
@@ -595,8 +601,10 @@ Inside `CertificateOfOriginApplication`:
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.**  
   The seller's description; item bench-casting of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Name` = **Bench side frame casting**  
-  The item's short name; item bench-casting of Valdara Industries (world/items.json).
+- `Shipment/GoodsItem/Item/Name` = **Rirgroov cegae scilceor sesdaa** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
+- `Shipment/GoodsItem/Item/Name` = **Bench side frame casting** (languageID `en`)  
+  The item's name in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/ModelName` = **Serra 180 side frame**  
@@ -784,7 +792,8 @@ Inside `InsuranceEndorsement`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName>Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName>Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
@@ -983,7 +992,8 @@ Inside `InsuranceEndorsement`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Piazza del Mercato</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+        <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
         <cbc:BuildingNumber>15</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
@@ -1063,7 +1073,8 @@ Inside `InsuranceEndorsement`:
         <cbc:Quantity unitCode="H87">96</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-          <cbc:Name>Park bench Serra 180</cbc:Name>
+          <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+          <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
           <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
           <cbc:Keyword>park bench</cbc:Keyword>
           <cbc:Keyword>street furniture</cbc:Keyword>
@@ -1236,7 +1247,8 @@ Inside `InsuranceEndorsement`:
         <cbc:Quantity unitCode="H87">12</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
-          <cbc:Name>Bench side frame casting</cbc:Name>
+          <cbc:Name languageID="qau">Rirgroov cegae scilceor sesdaa</cbc:Name>
+          <cbc:Name languageID="en">Bench side frame casting</cbc:Name>
           <cbc:BrandName>Valdara</cbc:BrandName>
           <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
           <cac:SellersItemIdentification>

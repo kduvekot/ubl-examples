@@ -64,7 +64,10 @@ Polynesian sound like the island's names. Both languages are invented, and
 their codes come from the range ISO 639 reserves for local use, `qaa` to
 `qtz`: `qau` for Urvanian and `qal` for Lisavan. A sender from Urvania or the
 island gives its notes in its own language and in English, each with its
-`languageID`; the texts are made word by word from a fixed invented
+`languageID`, and a seller there names its items in both. The island names
+its streets in both official languages, as Brussels and Canada do: UBL 2.5
+lets an address repeat its street, city and state names, one per
+language; the texts are made word by word from a fixed invented
 vocabulary, the English text being the reference. Real Polynesian languages
 are deliberately not used, and the invented words are checked against
 common words of real languages.

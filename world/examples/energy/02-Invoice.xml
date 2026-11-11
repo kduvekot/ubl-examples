@@ -37,7 +37,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via della Rete</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Rurtio Scerdiesk</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via della Rete</cbc:StreetName>
         <cbc:BuildingNumber>3</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
@@ -120,7 +121,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
@@ -293,7 +295,8 @@
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
-      <cbc:Name>Electricity network use</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="en">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
@@ -317,7 +320,8 @@
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
-      <cbc:Name>Electricity network use</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="en">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
@@ -341,7 +345,8 @@
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
-      <cbc:Name>Gas network use</cbc:Name>
+      <cbc:Name languageID="qau">Gribrior segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="en">Gas network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-G</cbc:ID>
       </cac:SellersItemIdentification>
