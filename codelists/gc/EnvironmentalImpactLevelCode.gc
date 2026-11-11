@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: environmental impact level. The environmental impact of an end-of-life option. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>EnvironmentalImpactLevelCode</ShortName>
+      <LongName xml:lang="en">Environmental impact level (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/EnvironmentalImpactLevelCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LOW</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Low impact</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gakdek hizsaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mavovi nitivu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MEDIUM</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Medium impact</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kraltek hizsaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Filupa nitivu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>HIGH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>High impact</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhukran hizsaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vesue nitivu</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

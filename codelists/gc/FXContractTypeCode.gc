@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: foreign exchange contract type. The kind of contract by which currency is bought. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>FXContractTypeCode</ShortName>
+      <LongName xml:lang="en">Foreign exchange contract type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:FXContractTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:FXContractTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:FXContractTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/FXContractTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SPOT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Spot</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kepuko</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Currency bought for delivery within two business days.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FORWARD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Forward</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Santran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tipaa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Currency bought now at a fixed rate for delivery on a later date.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SWAP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Swap</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nimika</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A spot purchase combined with a forward sale of the same amount, or the reverse.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OPTION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Option</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zeksek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nofani</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The right, not the obligation, to buy or sell currency at a fixed rate.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

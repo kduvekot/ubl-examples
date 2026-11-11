@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: waste type. The kind of waste an item leaves. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>WasteTypeCode</ShortName>
+      <LongName xml:lang="en">Waste type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:WasteTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:WasteTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:WasteTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/WasteTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PACKAGING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katipetu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PLASTIC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Plastic</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kekir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Falaha</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>METAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Metal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drezskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tituho</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WOOD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wood</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stuknaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fifake</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MIXED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mixed waste</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krennan drunvir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vevavi nameve</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

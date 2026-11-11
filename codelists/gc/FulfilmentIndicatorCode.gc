@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: fulfilment indicator. How many properties of a criterion must be fulfilled. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>FulfilmentIndicatorCode</ShortName>
+      <LongName xml:lang="en">Fulfilment indicator (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:FulfilmentIndicatorCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:FulfilmentIndicatorCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:FulfilmentIndicatorCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/FulfilmentIndicatorCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ALL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>All properties</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sul kezzaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Menafe hikifefe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Every property must be fulfilled.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ANY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Any property</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Ran hunek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Notito hakina</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>One property is enough.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

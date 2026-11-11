@@ -12,7 +12,7 @@
   <cbc:Name>Bill of lading</cbc:Name>
   <cbc:Description>Shipped on board.</cbc:Description>
   <cbc:Note>Freight prepaid.</cbc:Note>
-  <cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
+  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
   <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
@@ -33,11 +33,11 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
       <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -46,24 +46,24 @@
       <cbc:CityName>Marrowdale</cbc:CityName>
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -72,25 +72,25 @@
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -120,35 +120,35 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
       <cbc:CompanyID>CO-1235754</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -157,25 +157,25 @@
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
       <cbc:CompanyID>20411918</cbc:CompanyID>
       <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">40000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -205,35 +205,35 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
       <cbc:CompanyID>CO-1234932</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -242,23 +242,23 @@
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -290,10 +290,10 @@
       <cbc:TotalInvoiceAmount currencyID="XBL">50688.00</cbc:TotalInvoiceAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">53778.00</cbc:DeclaredCustomsValueAmount>
       <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
-      <cbc:TariffCode>9401.79</cbc:TariffCode>
+      <cbc:TariffCode>TWL-T-0940</cbc:TariffCode>
       <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
-      <cbc:ShippingPriorityLevelCode>Standard</cbc:ShippingPriorityLevelCode>
-      <cbc:HandlingCode>Deck</cbc:HandlingCode>
+      <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">DECK</cbc:HandlingCode>
       <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
       <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
       <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
@@ -315,15 +315,15 @@
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
           <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-          <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
+          <cbc:StreetName languageID="en-XB">Reef Street</cbc:StreetName>
           <cbc:BuildingNumber>16</cbc:BuildingNumber>
           <cbc:CityName>Selanu</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
@@ -331,23 +331,23 @@
           <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
           <cbc:CompanyID>IC41859</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
             <cbc:ID>XL:ICR</cbc:ID>
             <cbc:Name>Island companies register</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
@@ -379,15 +379,15 @@
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
           <cbc:StreetName languageID="qal">Vilafa Natii</cbc:StreetName>
-          <cbc:StreetName languageID="en">Lagoon Road</cbc:StreetName>
+          <cbc:StreetName languageID="en-XB">Lagoon Road</cbc:StreetName>
           <cbc:BuildingNumber>9</cbc:BuildingNumber>
           <cbc:CityName>Selanu</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
@@ -395,23 +395,23 @@
           <cbc:RegistrationName>Nalevi Warehousing Ltd</cbc:RegistrationName>
           <cbc:CompanyID>IC41722</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
             <cbc:ID>XL:ICR</cbc:ID>
             <cbc:Name>Island companies register</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
@@ -462,14 +462,14 @@
         </cac:PartyName>
       </cac:BillOfLadingHolderParty>
       <cac:OriginalDepartureCountry>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:OriginalDepartureCountry>
       <cac:FinalDestinationCountry>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:FinalDestinationCountry>
       <cac:DeliveryTerms>
         <cbc:ID>CIF</cbc:ID>
-        <cbc:LossRiskResponsibilityCode>Buyer</cbc:LossRiskResponsibilityCode>
+        <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
         <cbc:Amount currencyID="XBL">53778.00</cbc:Amount>
         <cac:DeliveryLocation>
@@ -477,12 +477,13 @@
           <cbc:Name>Port of Selanu</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:DeliveryLocation>
         <cac:AllowanceCharge>
           <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">HD</cbc:AllowanceChargeReasonCode>
           <cbc:AllowanceChargeReason>Terminal handling at Selanu, for the buyer</cbc:AllowanceChargeReason>
           <cbc:Amount currencyID="XBL">185.00</cbc:Amount>
         </cac:AllowanceCharge>
@@ -501,11 +502,13 @@
       </cac:PrepaidPaymentTerms>
       <cac:FreightAllowanceCharge>
         <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Ocean freight, 40-foot container</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="XBL">2700.00</cbc:Amount>
       </cac:FreightAllowanceCharge>
       <cac:ExtraAllowanceCharge>
         <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Bunker surcharge</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="XBL">250.00</cbc:Amount>
       </cac:ExtraAllowanceCharge>
@@ -516,8 +519,8 @@
           <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
           <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
-          <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
-          <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
           <cbc:TradeServiceCode>TWL-ISL</cbc:TradeServiceCode>
           <cac:Stowage>
             <cbc:LocationID>140282</cbc:LocationID>
@@ -536,7 +539,7 @@
             <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
             <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
-            <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
+            <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
             <cac:RegistryCertificateDocumentReference>
               <cbc:ID>REG-XB-S-20117</cbc:ID>
             </cac:RegistryCertificateDocumentReference>
@@ -550,7 +553,7 @@
           <cbc:Name>Port of Lumeport</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:LoadingPortLocation>
@@ -559,7 +562,7 @@
           <cbc:Name>Port of Selanu</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
@@ -584,15 +587,15 @@
           <cbc:Name>Port of Lumeport</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FreightChargeLocation>
       </cac:MainCarriageShipmentStage>
       <cac:PreCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
-        <cbc:ShipmentStageTypeCode>PreCarriage</cbc:ShipmentStageTypeCode>
-        <cbc:ShipmentStageType>Carriage before the main carriage</cbc:ShipmentStageType>
+        <cbc:ShipmentStageTypeCode listID="UN/EDIFACT EDED 8051">10</cbc:ShipmentStageTypeCode>
+        <cbc:ShipmentStageType>Pre-carriage transport</cbc:ShipmentStageType>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
         <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
         <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
@@ -607,7 +610,7 @@
         <cac:TransportMeans>
           <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
-          <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+          <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
             <cbc:LicensePlateID>BV LP 2205</cbc:LicensePlateID>
             <cbc:TrailerLicensePlateID>BV CH 0412</cbc:TrailerLicensePlateID>
@@ -619,6 +622,7 @@
         </cac:DropoffTransportEvent>
         <cac:FreightAllowanceCharge>
           <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
           <cbc:AllowanceChargeReason>Pre-carriage by road</cbc:AllowanceChargeReason>
           <cbc:Amount currencyID="XBL">310.00</cbc:Amount>
         </cac:FreightAllowanceCharge>
@@ -648,15 +652,15 @@
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
-          <cbc:SizeTypeCode>42G1</cbc:SizeTypeCode>
-          <cbc:FullnessIndicationCode>FCL</cbc:FullnessIndicationCode>
+          <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
           <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
           <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
           <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
           <cbc:StowagePositionID>140282</cbc:StowagePositionID>
           <cac:TransportEquipmentSeal>
             <cbc:ID>TWL-S-0884213</cbc:ID>
-            <cbc:SealIssuerTypeCode>Carrier</cbc:SealIssuerTypeCode>
+            <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">CARRIER</cbc:SealIssuerTypeCode>
             <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
           </cac:TransportEquipmentSeal>
           <cac:SupplierParty>
@@ -671,7 +675,7 @@
           </cac:SupplierParty>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-001</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 001 of 025</cbc:ShippingMarks>
@@ -679,7 +683,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-002</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 002 of 025</cbc:ShippingMarks>
@@ -687,7 +691,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-003</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 003 of 025</cbc:ShippingMarks>
@@ -695,7 +699,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-004</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 004 of 025</cbc:ShippingMarks>
@@ -703,7 +707,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-005</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 005 of 025</cbc:ShippingMarks>
@@ -711,7 +715,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-006</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 006 of 025</cbc:ShippingMarks>
@@ -719,7 +723,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-007</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 007 of 025</cbc:ShippingMarks>
@@ -727,7 +731,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-008</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 008 of 025</cbc:ShippingMarks>
@@ -735,7 +739,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-009</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 009 of 025</cbc:ShippingMarks>
@@ -743,7 +747,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-010</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 010 of 025</cbc:ShippingMarks>
@@ -751,7 +755,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-011</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 011 of 025</cbc:ShippingMarks>
@@ -759,7 +763,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-012</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 012 of 025</cbc:ShippingMarks>
@@ -767,7 +771,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-013</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 013 of 025</cbc:ShippingMarks>
@@ -775,7 +779,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-014</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 014 of 025</cbc:ShippingMarks>
@@ -783,7 +787,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-015</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 015 of 025</cbc:ShippingMarks>
@@ -791,7 +795,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-016</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 016 of 025</cbc:ShippingMarks>
@@ -799,7 +803,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-017</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 017 of 025</cbc:ShippingMarks>
@@ -807,7 +811,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-018</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 018 of 025</cbc:ShippingMarks>
@@ -815,7 +819,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-019</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 019 of 025</cbc:ShippingMarks>
@@ -823,7 +827,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-020</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 020 of 025</cbc:ShippingMarks>
@@ -831,7 +835,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-021</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 021 of 025</cbc:ShippingMarks>
@@ -839,7 +843,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-022</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 022 of 025</cbc:ShippingMarks>
@@ -847,7 +851,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-023</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 023 of 025</cbc:ShippingMarks>
@@ -855,7 +859,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-024</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 024 of 025</cbc:ShippingMarks>
@@ -863,7 +867,7 @@
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-025</cbc:ID>
-            <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
@@ -876,7 +880,7 @@
           <cac:Package>
             <cbc:ID>LD-26-025</cbc:ID>
             <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-            <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
             <cac:ContainingTransportEquipment>
               <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
             </cac:ContainingTransportEquipment>
@@ -943,7 +947,7 @@
         <cbc:Name>Port of Selanu</cbc:Name>
         <cac:Address>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FirstArrivalPortLocation>
@@ -952,7 +956,7 @@
         <cbc:Name>Port of Lumeport</cbc:Name>
         <cac:Address>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:LastExitPortLocation>
@@ -961,7 +965,7 @@
       </cac:DocumentReference>
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
-        <cbc:InsuranceTypeCode>AllRisks</cbc:InsuranceTypeCode>
+        <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
         <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
         <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
@@ -1010,35 +1014,35 @@
         <cac:Language>
           <cbc:ID>en</cbc:ID>
           <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Beacon Avenue</cbc:StreetName>
           <cbc:BuildingNumber>55</cbc:BuildingNumber>
           <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38524</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             <cbc:Name>Bayvarra</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
           <cbc:RegistrationName>Wavesure Cargo Insurance Ltd</cbc:RegistrationName>
           <cbc:CompanyID>CO-1234521</cbc:CompanyID>
-          <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+          <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
           <cac:TaxScheme>
             <cbc:ID>STT</cbc:ID>
-            <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+            <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
             <cac:JurisdictionRegionAddress>
               <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:TaxScheme>
@@ -1047,23 +1051,23 @@
           <cbc:RegistrationName>Wavesure Cargo Insurance Ltd</cbc:RegistrationName>
           <cbc:CompanyID>20411507</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
             <cbc:ID>XB:FBR</cbc:ID>
             <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
@@ -1095,14 +1099,14 @@
     <cbc:ID>BF-FI-26-0137</cbc:ID>
   </cac:DocumentReference>
   <cac:ExchangeRate>
-    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>0.4</cbc:CalculationRate>
   </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">ORIGINAL</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">PAPER</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>

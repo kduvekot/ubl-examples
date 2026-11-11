@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: procurement procedure. The kind of procedure by which a contracting authority awards a contract (eForms procurement-procedure-type). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ProcurementProcedureCode</ShortName>
+      <LongName xml:lang="en">Procurement procedure (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ProcurementProcedureCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ProcurementProcedureCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ProcurementProcedureCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ProcurementProcedureCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OPEN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Open procedure</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Huktrir trelhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hafano tevimuse</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Any interested economic operator may tender (eForms open).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RESTRICTED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Restricted procedure</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dazan trelhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fesaosi tevimuse</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Only the candidates invited after a selection may tender (eForms restricted).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NEGOTIATED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Negotiated procedure with prior call</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nastek trelhek vek malzhek stek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vonilali tevimuse tofuta kahala kalivi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The authority negotiates with selected candidates (eForms neg-w-call).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NEGNOCALL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Negotiated procedure without prior call</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nastek trelhek zentul malzhek stek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vonilali tevimuse vekafa kahala kalivi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Allowed only in the cases the rules list (eForms neg-wo-call).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COMPDIALOGUE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Competitive dialogue</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tinaz zhemek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vikifeka piluti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The authority develops the solution in a dialogue with selected candidates (eForms comp-dial).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INNOVATION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Innovation partnership</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hizmaz vilnek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mefatame pilehilu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>For the development and purchase of an innovative product or service (eForms innovation).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DESIGNCONTEST</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Design contest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nengaz skazdir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vakunu tanala</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A plan or design selected by a jury, with or without prizes (eForms notice type for design contests).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

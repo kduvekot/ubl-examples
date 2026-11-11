@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: notice type. The kind of a public procurement notice (eForms notice-type). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>NoticeTypeCode</ShortName>
+      <LongName xml:lang="en">Notice type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:NoticeTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:NoticeTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:NoticeTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/NoticeTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PIN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Prior information notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Malzhek kikskek mudek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kahala felamefe katame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Announces procurements planned (eForms pin-only).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Contract notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Baman mudek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hupeme katame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Calls for competition (eForms cn-standard).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CAN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Contract award notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Baman bemir mudek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hupeme husima katame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Announces the result (eForms can-standard).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BUSREG</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Business registration notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhurstan dradrek mudek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Levise kaletamu katame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Information on an economic operator from a business register.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

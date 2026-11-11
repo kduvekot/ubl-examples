@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN/EDIFACT 7161 Special service description: the codes the world uses, and others of the same list. Built from world/codelists/sources/peppol/UNCL7161.xml (D.16B with later additions (OpenPeppol peppol-bis-invoice-3 via poacc-upgrade-3, commit c3bd29f)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNCL7161Code</ShortName>
+      <LongName xml:lang="en">UN/EDIFACT 7161 Special service description (UBL example world)</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 7161</LongName>
+      <Version>D.16B (OpenPeppol)</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNCL7161Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL7161Code:D.16B (OpenPeppol)</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNCL7161Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">UN/CEFACT</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Advertising</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of providing advertising.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ABK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Miscellaneous</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Miscellaneous services.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ACH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Heat treatment</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of treating with heat.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AEO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Collection and recycling</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of collection and recycling products.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CAB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cartage</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Movement of goods by heavy duty cart or vehicle.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CAT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Special colour service</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Providing a colour which is different from the default colour.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Delivery</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of providing delivery.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight service</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of moving goods, by whatever means, from one place to another.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>HD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Handling</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Handling service.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Packing</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of packing.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Palletizing</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of palletizing.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RAF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Restocking</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of restocking.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SAA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Shipping and handling</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of shipping and handling.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Warehousing</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The service of storing and handling of goods in a warehouse.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ZZZ</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mutually defined</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A code assigned within a code list to be used on an interim basis and as
+            defined among trading partners until a precise code can be assigned to the code
+            list.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

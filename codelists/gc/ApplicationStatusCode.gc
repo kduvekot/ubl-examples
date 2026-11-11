@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: application status. Where an application stands. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ApplicationStatusCode</ShortName>
+      <LongName xml:lang="en">Application status (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ApplicationStatusCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ApplicationStatusCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ApplicationStatusCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ApplicationStatusCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SUBMITTED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Submitted</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krakvan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kakuvolu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Submitted and not yet decided.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>APPROVED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Approved</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rastan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hekii</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Approved.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REJECTED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rejected</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Buzgir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kukesa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Refused.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WITHDRAWN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Withdrawn</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dizstan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Helekita</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Withdrawn by the applicant.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

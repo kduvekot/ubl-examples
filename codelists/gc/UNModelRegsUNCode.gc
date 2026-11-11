@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN Model Regulations dangerous goods list (UN numbers): the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (UN Model Regulations, chapter 3.2 Dangerous Goods List); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNModelRegsUNCode</ShortName>
+      <LongName xml:lang="en">UN Model Regulations dangerous goods list (UN numbers) (UBL example world)</LongName>
+      <LongName Identifier="listID">UN Model Regulations UN number</LongName>
+      <Version>Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNModelRegsUNCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNModelRegsUNCode:Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNModelRegsUNCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3480</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lithium ion batteries (including lithium ion polymer batteries)</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 9.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3481</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lithium ion batteries contained in equipment or packed with equipment</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 9.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3090</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lithium metal batteries</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 9.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2911</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Radioactive material, excepted package – instruments or articles</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 7.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2920</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Corrosive liquid, flammable, n.o.s.</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 8, subsidiary hazard 3.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1202</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gas oil or diesel fuel</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 3.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1203</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Motor spirit or gasoline or petrol</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 3.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1950</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aerosols</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 2.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

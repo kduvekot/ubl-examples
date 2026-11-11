@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: status condition. The condition a status reports, of goods, means of transport, a consignment or a document. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>StatusConditionCode</ShortName>
+      <LongName xml:lang="en">Status condition (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:StatusConditionCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:StatusConditionCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:StatusConditionCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/StatusConditionCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SCHEDULED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Scheduled</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krazhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lihomalo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Planned for the time given.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ONTIME</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>On time</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rek baz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lelala satiti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Running to plan.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DELAYED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Delayed</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Suzzan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Puloko</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Behind the plan.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>READY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ready</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skuznir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tukika</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Packed and ready for collection.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INTRANSIT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>In transit</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trek skarsir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tefata nonato</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>On its way.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RELEASED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Released</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kedan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Teneki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Released by customs or another authority.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DAMAGED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Damaged</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stakdir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mekilo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Damaged.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MATCHED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Matched</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vakdrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nofeni</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An invoice agrees with the order and the receipt (three-way match).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MISMATCHED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Not matched</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drurkraz vakdrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hivile nofeni</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An invoice does not agree with the order or the receipt.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

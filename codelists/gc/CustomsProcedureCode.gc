@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: customs procedure. The customs procedures of the Trade Accord's common customs data model. A code is the requested procedure (two digits) followed by the previous procedure (two digits, 00 if there was none). The Accord is a free trade area, not a customs union: the procedures are common, the tariffs national. Requested and previous procedures: 10 release for free circulation, 20 temporary admission, 30 export, 35 re-export, 40 transit, 50 customs warehousing, 00 no previous procedure. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CustomsProcedureCode</ShortName>
+      <LongName xml:lang="en">Customs procedure (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CustomsProcedureCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CustomsProcedureCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CustomsProcedureCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CustomsProcedureCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Release for free circulation, no previous procedure</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tinnul gan nudrir sarskir, sarhek zhakhul trelhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kofupe kifupa tipako potikusi, lelaha naepa tevimuse</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods imported and released for free circulation directly.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1020</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Release for free circulation after temporary admission</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tinnul gan nudrir sarskir skuskan stenkan skirgan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kofupe kifupa tipako potikusi lelova vohehafi nihikope</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods temporarily admitted that stay in the country.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1040</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Release for free circulation after transit</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tinnul gan nudrir sarskir skuskan skarsir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kofupe kifupa tipako potikusi lelova nonato</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods released at the office of destination of a transit.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1050</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Release for free circulation from a customs warehouse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tinnul gan nudrir sarskir mir sir garsul mazmul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kofupe kifupa tipako potikusi lesama viope filumuve</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods taken out of a customs warehouse into free circulation.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Temporary admission, no previous procedure</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stenkan skirgan, sarhek zhakhul trelhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vohehafi nihikope, lelaha naepa tevimuse</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods brought in for a limited time and a stated purpose, such as a fair, under a guarantee or an ATA carnet.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Export, no previous procedure</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zikman, sarhek zhakhul trelhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hafaso, lelaha naepa tevimuse</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods in free circulation leaving the country.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3520</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Re-export after temporary admission</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Huznir-zikman skuskan stenkan skirgan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kefila-hafaso lelova vohehafi nihikope</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods temporarily admitted leaving the country again.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3550</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Re-export from a customs warehouse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Huznir-zikman mir sir garsul mazmul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kefila-hafaso lesama viope filumuve</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods leaving a customs warehouse for abroad.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transit, no previous procedure</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skarsir, sarhek zhakhul trelhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nonato, lelaha naepa tevimuse</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods carried under customs control to an office of destination.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Customs warehousing, no previous procedure</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Garsul zhekmek, sarhek zhakhul trelhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Viope sasivifa, lelaha naepa tevimuse</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods stored in a customs warehouse without duty paid.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

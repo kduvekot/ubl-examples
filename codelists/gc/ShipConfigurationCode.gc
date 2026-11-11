@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: ship configuration. The design of a vessel by the cargo it is built for. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ShipConfigurationCode</ShortName>
+      <LongName xml:lang="en">Ship configuration (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ShipConfigurationCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ShipConfigurationCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ShipConfigurationCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ShipConfigurationCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FEEDER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Feeder container ship</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zheltir titran krengaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lohane napiali tulatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A small container ship serving ports that the large liners do not call at.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CONTAINERSHIP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Container ship</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Titran krengaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Napiali tulatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A cellular container ship.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DRYBARGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Dry cargo barge</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zaz nirrir bikrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mapeto faleka pusuka</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An inland barge with open holds for dry cargo.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GENERALCARGO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>General cargo ship</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kamir nirrir krengaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tuliki faleka tulatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A ship with holds for break-bulk cargo and containers.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BULKCARRIER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bulk carrier</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vir sundraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mehosa topatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A ship for dry bulk such as ore or grain.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TANKER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tanker</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skamul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nameho</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A ship for liquids in bulk.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

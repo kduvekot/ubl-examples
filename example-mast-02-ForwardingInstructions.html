@@ -59,7 +59,9 @@ time.</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Saltmere Engineering
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 4290 = Construction of other civil engineering projects.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20410685</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
@@ -74,13 +76,19 @@ The trading name; identity of Saltmere Engineering
 English, the language the party does business in.</li>
 <li><code>Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
-<li><code>Language/LocaleCode</code> = <strong>EN</strong><br />
-The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Language/LocaleCode</code> = <strong>en</strong> (listID
+<code>ISO 639</code>)<br />
+The language as a lower-case code of the world's ISO 639 list (ISO 639).
+The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XB</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Bayvarra's address format (world/countries.json),
 one line after the other, a line left out when the address has none of
 its fields: MarkAttention; Department; InhouseMail; Postbox;
@@ -95,7 +103,8 @@ English: the building number is written once. Fields that are not on a
 line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Foundry
 Road</strong><br />
 Street of the postal address. identity of Saltmere Engineering
@@ -114,21 +123,24 @@ Postal code in Bayvarra's format (5 digits). identity of Saltmere
 Engineering (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
-The state or territory, part of an address in federal Bayvarra. identity
-of Saltmere Engineering (world/parties.json).</li>
+The name of code XB-UL in Bayvarra's national state or territory
+list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
-<strong>UL</strong><br />
+<strong>XB-UL</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
 The state or territory as a code of Bayvarra's address scheme
 (world/countries.json). identity of Saltmere Engineering
-(world/parties.json).</li>
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-UL = Upland State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -142,22 +154,25 @@ Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
 tax permit of the state or territory)); identity of Saltmere Engineering
 (world/parties.json).</li>
-<li><code>PartyTaxScheme/TaxLevelCode</code> =
-<strong>State</strong><br />
+<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>STATE</strong>
+(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Bayvarra's state sales tax
-is levied by the states.</li>
+is levied by the states. The code is from the Trade Accord's tax level
+list: STATE = Levied by a state or territory.</li>
 <li><code>PartyTaxScheme/TaxScheme/ID</code> =
 <strong>STT</strong><br />
 UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
 <li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
-<strong>XBL</strong><br />
-The tax is accounted for in the country's currency.</li>
+<strong>XBL</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
 = <strong>Upland State</strong><br />
 The state or territory whose sales tax the party is registered for.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country whose tax this is.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Saltmere
 Engineering</strong><br />
 The name under which the party is registered, with its legal form;
@@ -167,14 +182,18 @@ identity of Saltmere Engineering (world/parties.json).</li>
 Number in the Federal business register of Bayvarra; identity of
 Saltmere Engineering (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country of registration.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -182,12 +201,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The register covers the whole country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Bids office</strong><br />
 The desk that handles this document; identity of Saltmere Engineering
 (world/parties.json).</li>
@@ -238,7 +260,9 @@ identity of Bayforth Forwarding (world/parties.json).</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Bayforth Forwarding
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 5229 = Other transportation support activities.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20411644</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
@@ -253,13 +277,19 @@ The trading name; identity of Bayforth Forwarding
 English, the language the party does business in.</li>
 <li><code>Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
-<li><code>Language/LocaleCode</code> = <strong>EN</strong><br />
-The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Language/LocaleCode</code> = <strong>en</strong> (listID
+<code>ISO 639</code>)<br />
+The language as a lower-case code of the world's ISO 639 list (ISO 639).
+The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XB</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Bayvarra's address format (world/countries.json),
 one line after the other, a line left out when the address has none of
 its fields: MarkAttention; Department; InhouseMail; Postbox;
@@ -274,7 +304,8 @@ English: the building number is written once. Fields that are not on a
 line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Dockside
 Way</strong><br />
 Street of the postal address. identity of Bayforth Forwarding
@@ -296,21 +327,24 @@ Postal code in Bayvarra's format (5 digits). identity of Bayforth
 Forwarding (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
-The state or territory, part of an address in federal Bayvarra. identity
-of Bayforth Forwarding (world/parties.json).</li>
+The name of code XB-CO in Bayvarra's national state or territory
+list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
-<strong>CO</strong><br />
+<strong>XB-CO</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
 The state or territory as a code of Bayvarra's address scheme
 (world/countries.json). identity of Bayforth Forwarding
-(world/parties.json).</li>
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -324,22 +358,25 @@ Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
 tax permit of the state or territory)); identity of Bayforth Forwarding
 (world/parties.json).</li>
-<li><code>PartyTaxScheme/TaxLevelCode</code> =
-<strong>State</strong><br />
+<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>STATE</strong>
+(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Bayvarra's state sales tax
-is levied by the states.</li>
+is levied by the states. The code is from the Trade Accord's tax level
+list: STATE = Levied by a state or territory.</li>
 <li><code>PartyTaxScheme/TaxScheme/ID</code> =
 <strong>STT</strong><br />
 UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
 <li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
-<strong>XBL</strong><br />
-The tax is accounted for in the country's currency.</li>
+<strong>XBL</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The state or territory whose sales tax the party is registered for.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country whose tax this is.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Bayforth
 Forwarding Ltd</strong><br />
 The name under which the party is registered, with its legal form;
@@ -353,24 +390,36 @@ Bayforth Forwarding (world/parties.json).</li>
 The day the company was entered in the register; identity of Bayforth
 Forwarding (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLegalFormCode</code> =
-<strong>Ltd</strong><br />
-The legal form, as abbreviated in Bayvarra (world/countries.json).</li>
+<strong>LTD</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
+The legal form, as a code of Bayvarra's national list: only the listID
+tells the forms of different countries apart. The code is from
+Bayvarra's national company legal form list: LTD = Limited company
+(private).</li>
 <li><code>PartyLegalEntity/CompanyLegalForm</code> = <strong>Limited
 company (private)</strong><br />
-The legal form, in words.</li>
+The name of code LTD in Bayvarra's national company legal form
+list.</li>
 <li><code>PartyLegalEntity/EntitySizeCode</code> =
-<strong>Small</strong><br />
-The size class of the company (micro, small, medium or large); identity
-of Bayforth Forwarding (world/parties.json).</li>
+<strong>SMALL</strong> (listID
+<code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
+The size class follows from the company's 40 persons and its turnover of
+6660000.00 XBL in 2025, by the Trade Accord's limits; identity of
+Bayforth Forwarding (world/parties.json). The code is from the Trade
+Accord's entity size list: SMALL = Small enterprise.</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country of registration.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -378,12 +427,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The register covers the whole country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Export desk</strong><br />
 The desk that handles this document; identity of Bayforth Forwarding
 (world/parties.json).</li>
@@ -444,7 +496,9 @@ identity of Selanu Telecom (world/parties.json).</li>
 <strong>6110</strong> (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Selanu Telecom
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 6110 = Wired telecommunications activities.</li>
 <li><code>Consignment/ConsigneeParty/PartyIdentification/ID</code> =
 <strong>IC42407</strong> (schemeID
 <code>urn:ubl-examples:world:XL:register</code>)<br />
@@ -464,10 +518,13 @@ are invented (world/countries.json).</li>
 <strong>Lisavan</strong><br />
 The language's name in English; in the language itself: Lisavuana.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/AddressTypeCode</code>
-= <strong>Business</strong><br />
-The kind of address.</li>
+= <strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/AddressFormatCode</code>
-= <strong>XL</strong><br />
+= <strong>XL</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Lisavu's address format (world/countries.json), one
 line after the other, a line left out when the address has none of its
 fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
@@ -482,14 +539,15 @@ number is written once. Fields that are not on a line (ID,
 AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XL =
+Address format of Lisavu.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/StreetName</code> =
 <strong>Kitata Vekase Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
 names are given in both languages (world/countries.json); identity of
 Selanu Telecom (world/parties.json).</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/StreetName</code> =
-<strong>Mast Hill Road</strong> (languageID <code>en</code>)<br />
+<strong>Mast Hill Road</strong> (languageID <code>en-XB</code>)<br />
 The street's name in English, the country's other official language;
 identity of Selanu Telecom (world/parties.json).</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/BuildingNumber</code>
@@ -505,9 +563,10 @@ country and state. identity of Selanu Telecom (world/parties.json).</li>
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode</code>
-= <strong>XL</strong><br />
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
@@ -524,24 +583,34 @@ Number in the Island companies register; identity of Selanu Telecom
 The day the company was entered in the register; identity of Selanu
 Telecom (world/parties.json).</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalFormCode</code>
-= <strong>Ltd</strong><br />
-The legal form, as abbreviated in Lisavu (world/countries.json).</li>
+= <strong>LTD</strong> (listID
+<code>urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode</code>)<br />
+The legal form, as a code of Lisavu's national list: only the listID
+tells the forms of different countries apart. The code is from Lisavu's
+national company legal form list: LTD = Island limited company.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalForm</code>
 = <strong>Island limited company</strong><br />
-The legal form, in words.</li>
+The name of code LTD in Lisavu's national company legal form list.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/EntitySizeCode</code>
-= <strong>Small</strong><br />
-The size class of the company (micro, small, medium or large); identity
-of Selanu Telecom (world/parties.json).</li>
+= <strong>SMALL</strong> (listID
+<code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
+The size class follows from the company's 20 persons and its turnover of
+3230000.000 XLC in 2025, by the Trade Accord's limits; identity of
+Selanu Telecom (world/parties.json). The code is from the Trade Accord's
+entity size list: SMALL = Small enterprise.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode</code>
-= <strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+= <strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName</code>
 = <strong>Selanu</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XL</strong><br />
-The country of registration.</li>
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/ID</code>
 = <strong>XL:ICR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -549,12 +618,15 @@ The identifier of the register in the world (world/countries.json).</li>
 = <strong>Island companies register</strong><br />
 The register the company is entered in.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XL</strong><br />
-The register covers the whole country.</li>
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>Consignment/ConsigneeParty/Contact/Name</code> =
 <strong>Business accounts</strong><br />
 The desk that handles this document; identity of Selanu Telecom
@@ -613,7 +685,9 @@ Dangerous goods inside.</li>
 The temperature-controlled air container.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode</code>
 = <strong>AM</strong> (listID <code>UN/EDIFACT EDED 8053</code>)<br />
-UN/EDIFACT 8053 code AM: refrigerated container.</li>
+UN/EDIFACT 8053 code AM: refrigerated container. The code is from UBL's
+default Transport equipment type (UN/EDIFACT 8053) list: AM =
+Refrigerated container.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/RefrigerationOnIndicator</code>
 = <strong>true</strong><br />
 The unit is switched on.</li>
@@ -651,20 +725,31 @@ Lithium-ion packs must not freeze nor overheat.</li>
 = <strong>35</strong> (unitCode <code>CEL</code>)<br />
 The highest allowed.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransportEmergencyCardCode</code>
-= <strong>TEC-90-3480</strong><br />
-The emergency card on board.</li>
+= <strong>TEC9</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code>)<br />
+The emergency card on board. The code is from the Trade Accord's
+transport emergency card list: TEC9 = Emergency card for class 9.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/PackingCriteriaCode</code>
-= <strong>PI965-IA</strong><br />
-IATA packing instruction 965, section IA.</li>
+= <strong>PI965IA</strong> (listID
+<code>urn:ubl-examples:world:codelist:PackingInstructionCode</code>)<br />
+IATA packing instruction 965, section IA. The code is from the Trade
+Accord's air packing instruction list: PI965IA = Packing instruction
+965, section IA.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/HazardousRegulationCode</code>
-= <strong>IATA</strong><br />
-Air: the IATA Dangerous Goods Regulations.</li>
+= <strong>ICA</strong> (listID <code>UN/EDIFACT EDED 8273</code>)<br />
+Air: the IATA Dangerous Goods Regulations. The code is from the world's
+copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA
+ICAO.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/InhalationToxicityZoneCode</code>
-= <strong>None</strong><br />
-Not toxic by inhalation.</li>
+= <strong>NOTTOXIC</strong> (listID
+<code>urn:ubl-examples:world:codelist:InhalationToxicityZoneCode</code>)<br />
+Not toxic by inhalation. The code is from the Trade Accord's inhalation
+toxicity zone list: NOTTOXIC = Not toxic by inhalation.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransportAuthorizationCode</code>
-= <strong>CAO</strong><br />
-Cargo aircraft only.</li>
+= <strong>CAO</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportAuthorizationCode</code>)<br />
+Cargo aircraft only. The code is from the Trade Accord's transport
+authorization list: CAO = Cargo aircraft only.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransitDescription</code>
 = <strong>Cargo aircraft only; state of charge below 30
 %.</strong><br />
@@ -685,8 +770,11 @@ The lowest allowed.</li>
 = <strong>SE-BAT-48100-DG</strong><br />
 The battery packs in the container.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/UNDGCode</code>
-= <strong>3480</strong> (listID <code>UNCL8273</code>)<br />
-UN 3480.</li>
+= <strong>3480</strong> (listID
+<code>UN Model Regulations UN number</code>)<br />
+The UN number of the battery packs. The code is from the world's copy of
+UN Model Regulations dangerous goods list (UN numbers): 3480 = Lithium
+ion batteries (including lithium ion polymer batteries).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/CategoryName</code>
 = <strong>Miscellaneous dangerous goods</strong><br />
 Class 9 in words.</li>
@@ -703,11 +791,16 @@ The UN number on the orange plate.</li>
 = <strong>9</strong><br />
 Class 9.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousTypeCode</code>
-= <strong>Article</strong><br />
-Batteries are articles, not substances.</li>
+= <strong>ARTICLE</strong> (listID
+<code>urn:ubl-examples:world:codelist:HazardousGoodsTypeCode</code>)<br />
+Batteries are articles, not substances. The code is from the Trade
+Accord's dangerous goods type list: ARTICLE = Article.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PackagingDangerLevelCode</code>
-= <strong>None</strong><br />
-Lithium batteries have no packing group.</li>
+= <strong>4</strong> (listID <code>UN/EDIFACT EDED 8339</code>)<br />
+The packaging danger level of UN/EDIFACT 8339 that matches the packing
+group: lithium batteries have none, which 8339 codes as not assigned.
+The code is from the world's copy of UN/EDIFACT 8339 Packaging danger
+level: 4 = Not assigned.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/GrossWeightMeasure</code>
 = <strong>348</strong> (unitCode <code>KGM</code>)<br />
 Six packs, packed.</li>
@@ -730,20 +823,31 @@ name are enough.</li>
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransportEmergencyCardCode</code>
-= <strong>TEC-90-3480</strong><br />
-The emergency card on board.</li>
+= <strong>TEC9</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code>)<br />
+The emergency card on board. The code is from the Trade Accord's
+transport emergency card list: TEC9 = Emergency card for class 9.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/PackingCriteriaCode</code>
-= <strong>PI965-IA</strong><br />
-IATA packing instruction 965, section IA.</li>
+= <strong>PI965IA</strong> (listID
+<code>urn:ubl-examples:world:codelist:PackingInstructionCode</code>)<br />
+IATA packing instruction 965, section IA. The code is from the Trade
+Accord's air packing instruction list: PI965IA = Packing instruction
+965, section IA.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/HazardousRegulationCode</code>
-= <strong>IATA</strong><br />
-Air: the IATA Dangerous Goods Regulations.</li>
+= <strong>ICA</strong> (listID <code>UN/EDIFACT EDED 8273</code>)<br />
+Air: the IATA Dangerous Goods Regulations. The code is from the world's
+copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA
+ICAO.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/InhalationToxicityZoneCode</code>
-= <strong>None</strong><br />
-Not toxic by inhalation.</li>
+= <strong>NOTTOXIC</strong> (listID
+<code>urn:ubl-examples:world:codelist:InhalationToxicityZoneCode</code>)<br />
+Not toxic by inhalation. The code is from the Trade Accord's inhalation
+toxicity zone list: NOTTOXIC = Not toxic by inhalation.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransportAuthorizationCode</code>
-= <strong>CAO</strong><br />
-Cargo aircraft only.</li>
+= <strong>CAO</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportAuthorizationCode</code>)<br />
+Cargo aircraft only. The code is from the Trade Accord's transport
+authorization list: CAO = Cargo aircraft only.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransitDescription</code>
 = <strong>Cargo aircraft only; state of charge below 30
 %.</strong><br />
@@ -785,23 +889,37 @@ The six crates.</li>
 = <strong>6</strong> (unitCode <code>EA</code>)<br />
 Six.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/PackagingTypeCode</code>
-= <strong>CR</strong><br />
-UN/ECE Recommendation 21 code CR: crate.</li>
+= <strong>CR</strong> (listID
+<code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code>)<br />
+UN/ECE Recommendation 21 code CR: crate. The code is from the world's
+copy of UBL's Packaging type (UNECE Recommendation 21) list, with a
+listID: CR = Crate.</li>
 <li><code>Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransportEmergencyCardCode</code>
-= <strong>TEC-90-3480</strong><br />
-The emergency card on board.</li>
+= <strong>TEC9</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code>)<br />
+The emergency card on board. The code is from the Trade Accord's
+transport emergency card list: TEC9 = Emergency card for class 9.</li>
 <li><code>Consignment/TransportHandlingUnit/HazardousGoodsTransit/PackingCriteriaCode</code>
-= <strong>PI965-IA</strong><br />
-IATA packing instruction 965, section IA.</li>
+= <strong>PI965IA</strong> (listID
+<code>urn:ubl-examples:world:codelist:PackingInstructionCode</code>)<br />
+IATA packing instruction 965, section IA. The code is from the Trade
+Accord's air packing instruction list: PI965IA = Packing instruction
+965, section IA.</li>
 <li><code>Consignment/TransportHandlingUnit/HazardousGoodsTransit/HazardousRegulationCode</code>
-= <strong>IATA</strong><br />
-Air: the IATA Dangerous Goods Regulations.</li>
+= <strong>ICA</strong> (listID <code>UN/EDIFACT EDED 8273</code>)<br />
+Air: the IATA Dangerous Goods Regulations. The code is from the world's
+copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA
+ICAO.</li>
 <li><code>Consignment/TransportHandlingUnit/HazardousGoodsTransit/InhalationToxicityZoneCode</code>
-= <strong>None</strong><br />
-Not toxic by inhalation.</li>
+= <strong>NOTTOXIC</strong> (listID
+<code>urn:ubl-examples:world:codelist:InhalationToxicityZoneCode</code>)<br />
+Not toxic by inhalation. The code is from the Trade Accord's inhalation
+toxicity zone list: NOTTOXIC = Not toxic by inhalation.</li>
 <li><code>Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransportAuthorizationCode</code>
-= <strong>CAO</strong><br />
-Cargo aircraft only.</li>
+= <strong>CAO</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportAuthorizationCode</code>)<br />
+Cargo aircraft only. The code is from the Trade Accord's transport
+authorization list: CAO = Cargo aircraft only.</li>
 <li><code>Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransitDescription</code>
 = <strong>Cargo aircraft only; state of charge below 30
 %.</strong><br />
@@ -857,13 +975,24 @@ The world item number issued by the identifier issuing agency, twelve
 digits with a check digit; a scheme of the world, not a GTIN; item
 battery-pack of Saltmere Engineering (world/items.json).</li>
 <li><code>GoodsItem/Item/OriginCountry/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Where the item was produced; item battery-pack of Saltmere Engineering
-(world/items.json).</li>
+(world/items.json). The code is from the world's copy of UBL's Country
+identification (ISO 3166) list: XB = Bayvarra.</li>
+<li><code>GoodsItem/Item/CommodityClassification/CommodityCode</code> =
+<strong>850760</strong> (listID <code>WCO HS 2022</code>)<br />
+The Harmonized System subheading of the World Customs Organization, six
+digits, for customs and trade statistics; item battery-pack of Saltmere
+Engineering (world/items.json). The code is from the world's copy of
+Harmonized Commodity Description and Coding System, 2022 edition
+(subheadings): 850760 = Lithium-ion accumulators.</li>
 <li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
-= <strong>8507.60</strong> (listID <code>HS</code>)<br />
-Harmonized System subheading of the World Customs Organization; item
-battery-pack of Saltmere Engineering (world/items.json).</li>
+= <strong>46420</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
+What the item is, as a subclass of the UN Central Product Classification
+(CPC), the trade classification for goods and services; item
+battery-pack of Saltmere Engineering (world/items.json). The code is
+from the world's copy of UN Central Product Classification, Version 2.1:
+46420 = Electric accumulators.</li>
 <li><code>GoodsItem/Item/HazardousItem/ID</code> =
 <strong>SE-BAT-48100-DG</strong><br />
 The seller's dangerous goods record of the item.</li>
@@ -878,23 +1007,50 @@ The hazard label on the package.</li>
 require.</strong><br />
 What the shipper adds.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNDGCode</code> =
-<strong>3480</strong> (listID <code>UNCL8273</code>)<br />
-The UN number of the UN Model Regulations.</li>
+<strong>3480</strong> (listID
+<code>UN Model Regulations UN number</code>)<br />
+The UN number, from the Dangerous Goods List of the UN Model
+Regulations. The code is from the world's copy of UN Model Regulations
+dangerous goods list (UN numbers): 3480 = Lithium ion batteries
+(including lithium ion polymer batteries).</li>
+<li><code>GoodsItem/Item/HazardousItem/UNPackingGroupCode</code> =
+<strong>NA</strong> (listID
+<code>urn:ubl-examples:world:codelist:UNPackingGroupCode</code>)<br />
+The packing group of the UN entry; NA where the entry has no packing
+group, as for lithium batteries and radioactive material. The code is
+from the Trade Accord's packing group list: NA = No packing group
+assigned.</li>
+<li><code>GoodsItem/Item/HazardousItem/UNPackingGroup</code> =
+<strong>No packing group assigned</strong><br />
+The name of code NA in the Trade Accord's packing group list.</li>
 <li><code>GoodsItem/Item/HazardousItem/EmergencyProceduresCode</code> =
-<strong>F-A, S-I</strong><br />
-The emergency schedules for ships (EmS).</li>
+<strong>F-A,S-I</strong> (listID <code>IMO IMDG EmS</code>)<br />
+The emergency schedules for ships (EmS) of the IMDG Code for this UN
+entry: the fire schedule and the spillage schedule. The code is from the
+world's copy of IMO IMDG Code emergency schedules (EmS): F-A,S-I = Fire
+schedule Alpha, spillage schedule India.</li>
 <li><code>GoodsItem/Item/HazardousItem/MedicalFirstAidGuideCode</code> =
-<strong>147</strong><br />
-The emergency response guide number.</li>
+<strong>147</strong> (listID <code>ERG 2024</code>)<br />
+The guide number of the Emergency Response Guidebook (ERG 2024) for this
+UN number: the world's carriers use the ERG, as the IMDG Code no longer
+gives medical first aid table numbers per UN number. The code is from
+the world's copy of Emergency Response Guidebook 2024, guide numbers:
+147 = Lithium Ion and Sodium Ion Batteries.</li>
 <li><code>GoodsItem/Item/HazardousItem/TunnelRestrictionCode</code> =
-<strong>E</strong><br />
-The tunnel restriction code for road transport.</li>
+<strong>E</strong> (listID
+<code>UNECE ADR tunnel restriction code</code>)<br />
+The tunnel restriction code for road transport. The code is from the
+world's copy of ADR tunnel restriction code: E.</li>
 <li><code>GoodsItem/Item/HazardousItem/ProperShippingName</code> =
 <strong>Lithium ion batteries</strong><br />
 The proper shipping name.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardousCategoryCode</code> =
-<strong>UN</strong><br />
-Classified under the UN Model Regulations.</li>
+<strong>9</strong> (listID
+<code>UN Model Regulations hazard class</code>)<br />
+The hazard class of the goods as a code of the UN Model Regulations'
+classes. The code is from the world's copy of UN Model Regulations
+hazard class and division: 9 = Miscellaneous dangerous substances and
+articles.</li>
 <li><code>GoodsItem/Item/HazardousItem/MarkingID</code> =
 <strong>UN3480</strong><br />
 The UN number marked on each package.</li>
@@ -908,8 +1064,10 @@ The temperature in transport.</li>
 (unitCode <code>CEL</code>)<br />
 Around 20 °C.</li>
 <li><code>GoodsItem/Temperature/MeasureCode</code> =
-<strong>Target</strong><br />
-The target.</li>
+<strong>TARGET</strong> (listID
+<code>urn:ubl-examples:world:codelist:TemperatureQualifierCode</code>)<br />
+The target. The code is from the Trade Accord's temperature qualifier
+list: TARGET = Target.</li>
 <li><code>GoodsItem/Temperature/Description</code> = <strong>Keep away
 from heat.</strong><br />
 Why.</li>
@@ -947,13 +1105,25 @@ The world item number issued by the identifier issuing agency, twelve
 digits with a check digit; a scheme of the world, not a GTIN; item
 smoke-detector of Saltmere Engineering (world/items.json).</li>
 <li><code>GoodsItem/Item/OriginCountry/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Where the item was produced; item smoke-detector of Saltmere Engineering
-(world/items.json).</li>
+(world/items.json). The code is from the world's copy of UBL's Country
+identification (ISO 3166) list: XB = Bayvarra.</li>
+<li><code>GoodsItem/Item/CommodityClassification/CommodityCode</code> =
+<strong>853110</strong> (listID <code>WCO HS 2022</code>)<br />
+The Harmonized System subheading of the World Customs Organization, six
+digits, for customs and trade statistics; item smoke-detector of
+Saltmere Engineering (world/items.json). The code is from the world's
+copy of Harmonized Commodity Description and Coding System, 2022 edition
+(subheadings): 853110 = Burglar or fire alarms and similar
+apparatus.</li>
 <li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
-= <strong>8531.10</strong> (listID <code>HS</code>)<br />
-Harmonized System subheading of the World Customs Organization; item
-smoke-detector of Saltmere Engineering (world/items.json).</li>
+= <strong>46921</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
+What the item is, as a subclass of the UN Central Product Classification
+(CPC), the trade classification for goods and services; item
+smoke-detector of Saltmere Engineering (world/items.json). The code is
+from the world's copy of UN Central Product Classification, Version 2.1:
+46921 = Burglar or fire alarms and similar apparatus.</li>
 <li><code>GoodsItem/Item/HazardousItem/ID</code> =
 <strong>SE-SMK-10-DG</strong><br />
 The seller's dangerous goods record of the item.</li>
@@ -965,21 +1135,45 @@ The class shown on the placard.</li>
 package.</strong><br />
 What the shipper adds.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNDGCode</code> =
-<strong>2911</strong> (listID <code>UNCL8273</code>)<br />
-The UN number of the UN Model Regulations.</li>
+<strong>2911</strong> (listID
+<code>UN Model Regulations UN number</code>)<br />
+The UN number, from the Dangerous Goods List of the UN Model
+Regulations. The code is from the world's copy of UN Model Regulations
+dangerous goods list (UN numbers): 2911 = Radioactive material, excepted
+package – instruments or articles.</li>
+<li><code>GoodsItem/Item/HazardousItem/UNPackingGroupCode</code> =
+<strong>NA</strong> (listID
+<code>urn:ubl-examples:world:codelist:UNPackingGroupCode</code>)<br />
+The packing group of the UN entry; NA where the entry has no packing
+group, as for lithium batteries and radioactive material. The code is
+from the Trade Accord's packing group list: NA = No packing group
+assigned.</li>
+<li><code>GoodsItem/Item/HazardousItem/UNPackingGroup</code> =
+<strong>No packing group assigned</strong><br />
+The name of code NA in the Trade Accord's packing group list.</li>
 <li><code>GoodsItem/Item/HazardousItem/EmergencyProceduresCode</code> =
-<strong>None</strong><br />
-The emergency schedules for ships (EmS).</li>
+<strong>F-I,S-S</strong> (listID <code>IMO IMDG EmS</code>)<br />
+The emergency schedules for ships (EmS) of the IMDG Code for this UN
+entry: the fire schedule and the spillage schedule. The code is from the
+world's copy of IMO IMDG Code emergency schedules (EmS): F-I,S-S = Fire
+schedule India, spillage schedule Sierra.</li>
 <li><code>GoodsItem/Item/HazardousItem/MedicalFirstAidGuideCode</code> =
-<strong>161</strong><br />
-The emergency response guide number.</li>
+<strong>161</strong> (listID <code>ERG 2024</code>)<br />
+The guide number of the Emergency Response Guidebook (ERG 2024) for this
+UN number: the world's carriers use the ERG, as the IMDG Code no longer
+gives medical first aid table numbers per UN number. The code is from
+the world's copy of Emergency Response Guidebook 2024, guide numbers:
+161 = Radioactive Materials (Low Level Radiation).</li>
 <li><code>GoodsItem/Item/HazardousItem/ProperShippingName</code> =
 <strong>Radioactive material, excepted package - instruments or
 articles</strong><br />
 The proper shipping name.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardousCategoryCode</code> =
-<strong>UN</strong><br />
-Classified under the UN Model Regulations.</li>
+<strong>7</strong> (listID
+<code>UN Model Regulations hazard class</code>)<br />
+The hazard class of the goods as a code of the UN Model Regulations'
+classes. The code is from the world's copy of UN Model Regulations
+hazard class and division: 7 = Radioactive material.</li>
 <li><code>GoodsItem/Item/HazardousItem/MarkingID</code> =
 <strong>UN2911</strong><br />
 The UN number marked on each package.</li>
@@ -1011,8 +1205,10 @@ The temperature in transport.</li>
 (unitCode <code>CEL</code>)<br />
 Around 20 °C.</li>
 <li><code>GoodsItem/Temperature/MeasureCode</code> =
-<strong>Target</strong><br />
-The target.</li>
+<strong>TARGET</strong> (listID
+<code>urn:ubl-examples:world:codelist:TemperatureQualifierCode</code>)<br />
+The target. The code is from the Trade Accord's temperature qualifier
+list: TARGET = Target.</li>
 <li><code>GoodsItem/Temperature/Description</code> = <strong>Keep away
 from heat.</strong><br />
 Why.</li>
@@ -1049,13 +1245,25 @@ The world item number issued by the identifier issuing agency, twelve
 digits with a check digit; a scheme of the world, not a GTIN; item
 coating-stripper of Saltmere Engineering (world/items.json).</li>
 <li><code>GoodsItem/Item/OriginCountry/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Where the item was produced; item coating-stripper of Saltmere
-Engineering (world/items.json).</li>
+Engineering (world/items.json). The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
+<li><code>GoodsItem/Item/CommodityClassification/CommodityCode</code> =
+<strong>381400</strong> (listID <code>WCO HS 2022</code>)<br />
+The Harmonized System subheading of the World Customs Organization, six
+digits, for customs and trade statistics; item coating-stripper of
+Saltmere Engineering (world/items.json). The code is from the world's
+copy of Harmonized Commodity Description and Coding System, 2022 edition
+(subheadings): 381400 = Organic composite solvents and thinners, n.e.s.;
+prepared paint or varnish removers.</li>
 <li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
-= <strong>3814.00</strong> (listID <code>HS</code>)<br />
-Harmonized System subheading of the World Customs Organization; item
-coating-stripper of Saltmere Engineering (world/items.json).</li>
+= <strong>35110</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
+What the item is, as a subclass of the UN Central Product Classification
+(CPC), the trade classification for goods and services; item
+coating-stripper of Saltmere Engineering (world/items.json). The code is
+from the world's copy of UN Central Product Classification, Version 2.1:
+35110 = Paints and varnishes and related products.</li>
 <li><code>GoodsItem/Item/HazardousItem/ID</code> =
 <strong>SE-CS-05-DG</strong><br />
 The seller's dangerous goods record of the item.</li>
@@ -1069,26 +1277,44 @@ The hazard label on the package.</li>
 <strong>Packed as the rules require.</strong><br />
 What the shipper adds.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNDGCode</code> =
-<strong>2920</strong> (listID <code>UNCL8273</code>)<br />
-The UN number of the UN Model Regulations.</li>
+<strong>2920</strong> (listID
+<code>UN Model Regulations UN number</code>)<br />
+The UN number, from the Dangerous Goods List of the UN Model
+Regulations. The code is from the world's copy of UN Model Regulations
+dangerous goods list (UN numbers): 2920 = Corrosive liquid, flammable,
+n.o.s..</li>
 <li><code>GoodsItem/Item/HazardousItem/UNPackingGroupCode</code> =
-<strong>II</strong><br />
-The packing group: medium danger.</li>
+<strong>II</strong> (listID
+<code>urn:ubl-examples:world:codelist:UNPackingGroupCode</code>)<br />
+The packing group of the UN entry; NA where the entry has no packing
+group, as for lithium batteries and radioactive material. The code is
+from the Trade Accord's packing group list: II = Medium danger.</li>
 <li><code>GoodsItem/Item/HazardousItem/UNPackingGroup</code> =
 <strong>Medium danger</strong><br />
-In words.</li>
+The name of code II in the Trade Accord's packing group list.</li>
 <li><code>GoodsItem/Item/HazardousItem/EmergencyProceduresCode</code> =
-<strong>F-E, S-C</strong><br />
-The emergency schedules for ships (EmS).</li>
+<strong>F-E,S-C</strong> (listID <code>IMO IMDG EmS</code>)<br />
+The emergency schedules for ships (EmS) of the IMDG Code for this UN
+entry: the fire schedule and the spillage schedule. The code is from the
+world's copy of IMO IMDG Code emergency schedules (EmS): F-E,S-C = Fire
+schedule Echo, spillage schedule Charlie.</li>
 <li><code>GoodsItem/Item/HazardousItem/MedicalFirstAidGuideCode</code> =
-<strong>132</strong><br />
-The emergency response guide number.</li>
+<strong>132</strong> (listID <code>ERG 2024</code>)<br />
+The guide number of the Emergency Response Guidebook (ERG 2024) for this
+UN number: the world's carriers use the ERG, as the IMDG Code no longer
+gives medical first aid table numbers per UN number. The code is from
+the world's copy of Emergency Response Guidebook 2024, guide numbers:
+132 = Flammable Liquids - Corrosive.</li>
 <li><code>GoodsItem/Item/HazardousItem/TunnelRestrictionCode</code> =
-<strong>D/E</strong><br />
-The tunnel restriction code for road transport.</li>
+<strong>D/E</strong> (listID
+<code>UNECE ADR tunnel restriction code</code>)<br />
+The tunnel restriction code for road transport. The code is from the
+world's copy of ADR tunnel restriction code: D/E.</li>
 <li><code>GoodsItem/Item/HazardousItem/MaritimePollutantCode</code> =
-<strong>N</strong><br />
-Not a marine pollutant.</li>
+<strong>N</strong> (listID
+<code>urn:ubl-examples:world:codelist:MarinePollutantCode</code>)<br />
+Not a marine pollutant. The code is from the Trade Accord's marine
+pollutant list: N = Not a marine pollutant.</li>
 <li><code>GoodsItem/Item/HazardousItem/TechnicalName</code> =
 <strong>ethanolamine, propanol</strong><br />
 The technical name, needed with an n.o.s. entry.</li>
@@ -1096,8 +1322,11 @@ The technical name, needed with an n.o.s. entry.</li>
 <strong>Corrosive liquid, flammable, n.o.s.</strong><br />
 The proper shipping name.</li>
 <li><code>GoodsItem/Item/HazardousItem/HazardousCategoryCode</code> =
-<strong>UN</strong><br />
-Classified under the UN Model Regulations.</li>
+<strong>8</strong> (listID
+<code>UN Model Regulations hazard class</code>)<br />
+The hazard class of the goods as a code of the UN Model Regulations'
+classes. The code is from the world's copy of UN Model Regulations
+hazard class and division: 8 = Corrosive substances.</li>
 <li><code>GoodsItem/Item/HazardousItem/MarkingID</code> =
 <strong>UN2920</strong><br />
 The UN number marked on each package.</li>
@@ -1113,9 +1342,6 @@ Shown on a second label.</li>
 <li><code>GoodsItem/Item/HazardousItem/SecondaryHazard/PlacardEndorsement</code>
 = <strong>3</strong><br />
 The flammable liquid label.</li>
-<li><code>GoodsItem/Item/HazardousItem/SecondaryHazard/EmergencyProceduresCode</code>
-= <strong>F-E</strong><br />
-The fire schedule.</li>
 <li><code>GoodsItem/Item/HazardousItem/SecondaryHazard/Extension</code>
 = <strong>Subsidiary risk 3</strong><br />
 In words.</li>
@@ -1132,8 +1358,10 @@ The temperature in transport.</li>
 (unitCode <code>CEL</code>)<br />
 Around 20 °C.</li>
 <li><code>GoodsItem/Temperature/MeasureCode</code> =
-<strong>Target</strong><br />
-The target.</li>
+<strong>TARGET</strong> (listID
+<code>urn:ubl-examples:world:codelist:TemperatureQualifierCode</code>)<br />
+The target. The code is from the Trade Accord's temperature qualifier
+list: TARGET = Target.</li>
 <li><code>GoodsItem/Temperature/Description</code> = <strong>Keep away
 from heat.</strong><br />
 Why.</li>
@@ -1167,34 +1395,34 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Foundry Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;13&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;71218&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Saltmere Engineering&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;UL-1232055&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -1202,20 +1430,20 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Saltmere Engineering&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;20410685&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1245,35 +1473,35 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Dockside Way&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;4&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Harbour quarter&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;38525&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Bayforth Forwarding Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;CO-1234932&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -1282,23 +1510,23 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Bayforth Forwarding Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;20411644&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1996-01-01&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Ltd&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode&quot;</span>&gt;LTD&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Limited company (private)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Small&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EntitySizeCode&quot;</span>&gt;SMALL&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1336,15 +1564,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lisavan&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Kitata Vekase Natii&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en&quot;</span>&gt;Mast Hill Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Mast Hill Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;58&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
@@ -1352,23 +1580,23 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationName</span>&gt;Selanu Telecom Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyID</span>&gt;IC42407&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1996-01-01&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Ltd&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode&quot;</span>&gt;LTD&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Island limited company&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Small&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EntitySizeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EntitySizeCode&quot;</span>&gt;SMALL&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;XL:ICR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Island companies register&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1417,11 +1645,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
 <span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:HazardousGoodsTransit</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;TEC-90-3480&lt;/<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PackingCriteriaCode</span>&gt;PI965-IA&lt;/<span class="kw">cbc:PackingCriteriaCode</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:HazardousRegulationCode</span>&gt;IATA&lt;/<span class="kw">cbc:HazardousRegulationCode</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;None&lt;/<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransportAuthorizationCode</span>&gt;CAO&lt;/<span class="kw">cbc:TransportAuthorizationCode</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransportEmergencyCardCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC9&lt;/<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PackingCriteriaCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PackingInstructionCode&quot;</span>&gt;PI965IA&lt;/<span class="kw">cbc:PackingCriteriaCode</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:HazardousRegulationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8273&quot;</span>&gt;ICA&lt;/<span class="kw">cbc:HazardousRegulationCode</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:InhalationToxicityZoneCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:InhalationToxicityZoneCode&quot;</span>&gt;NOTTOXIC&lt;/<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransportAuthorizationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportAuthorizationCode&quot;</span>&gt;CAO&lt;/<span class="kw">cbc:TransportAuthorizationCode</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransitDescription</span>&gt;Cargo aircraft only; state of charge below 30 %.&lt;/<span class="kw">cbc:TransitDescription</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:AttributeID</span>&gt;Battery&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
@@ -1434,14 +1662,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:HazardousGoodsTransit</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:LoadedHazardousItem</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-48100-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UNCL8273&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CategoryName</span>&gt;Miscellaneous dangerous goods&lt;/<span class="kw">cbc:CategoryName</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Lithium ion batteries&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:UpperOrangeHazardPlacardID</span>&gt;90&lt;/<span class="kw">cbc:UpperOrangeHazardPlacardID</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:LowerOrangeHazardPlacardID</span>&gt;3480&lt;/<span class="kw">cbc:LowerOrangeHazardPlacardID</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:HazardClassID</span>&gt;9&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:HazardousTypeCode</span>&gt;Article&lt;/<span class="kw">cbc:HazardousTypeCode</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PackagingDangerLevelCode</span>&gt;None&lt;/<span class="kw">cbc:PackagingDangerLevelCode</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:HazardousTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:HazardousGoodsTypeCode&quot;</span>&gt;ARTICLE&lt;/<span class="kw">cbc:HazardousTypeCode</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PackagingDangerLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8339&quot;</span>&gt;4&lt;/<span class="kw">cbc:PackagingDangerLevelCode</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;348&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:NetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;312&lt;/<span class="kw">cbc:NetWeightMeasure</span>&gt;</span>
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:NetVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;0.24&lt;/<span class="kw">cbc:NetVolumeMeasure</span>&gt;</span>
@@ -1455,11 +1683,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ContactParty</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:HazardousGoodsTransit</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;TEC-90-3480&lt;/<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:PackingCriteriaCode</span>&gt;PI965-IA&lt;/<span class="kw">cbc:PackingCriteriaCode</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:HazardousRegulationCode</span>&gt;IATA&lt;/<span class="kw">cbc:HazardousRegulationCode</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;None&lt;/<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TransportAuthorizationCode</span>&gt;CAO&lt;/<span class="kw">cbc:TransportAuthorizationCode</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TransportEmergencyCardCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC9&lt;/<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:PackingCriteriaCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PackingInstructionCode&quot;</span>&gt;PI965IA&lt;/<span class="kw">cbc:PackingCriteriaCode</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:HazardousRegulationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8273&quot;</span>&gt;ICA&lt;/<span class="kw">cbc:HazardousRegulationCode</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:InhalationToxicityZoneCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:InhalationToxicityZoneCode&quot;</span>&gt;NOTTOXIC&lt;/<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TransportAuthorizationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportAuthorizationCode&quot;</span>&gt;CAO&lt;/<span class="kw">cbc:TransportAuthorizationCode</span>&gt;</span>
 <span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TransitDescription</span>&gt;Cargo aircraft only; state of charge below 30 %.&lt;/<span class="kw">cbc:TransitDescription</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
 <span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:AttributeID</span>&gt;Battery&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
@@ -1485,16 +1713,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span>&gt;SE-CR-1..6&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;CR&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;CR&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:LoadedHazardousItem</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousGoodsTransit</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;TEC-90-3480&lt;/<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingCriteriaCode</span>&gt;PI965-IA&lt;/<span class="kw">cbc:PackingCriteriaCode</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousRegulationCode</span>&gt;IATA&lt;/<span class="kw">cbc:HazardousRegulationCode</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;None&lt;/<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportAuthorizationCode</span>&gt;CAO&lt;/<span class="kw">cbc:TransportAuthorizationCode</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEmergencyCardCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC9&lt;/<span class="kw">cbc:TransportEmergencyCardCode</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingCriteriaCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PackingInstructionCode&quot;</span>&gt;PI965IA&lt;/<span class="kw">cbc:PackingCriteriaCode</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousRegulationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8273&quot;</span>&gt;ICA&lt;/<span class="kw">cbc:HazardousRegulationCode</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:InhalationToxicityZoneCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:InhalationToxicityZoneCode&quot;</span>&gt;NOTTOXIC&lt;/<span class="kw">cbc:InhalationToxicityZoneCode</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportAuthorizationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportAuthorizationCode&quot;</span>&gt;CAO&lt;/<span class="kw">cbc:TransportAuthorizationCode</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransitDescription</span>&gt;Cargo aircraft only; state of charge below 30 %.&lt;/<span class="kw">cbc:TransitDescription</span>&gt;</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span>&gt;Battery&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
@@ -1529,160 +1757,166 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;772050000117&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
 <span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
 <span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;8507.60&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-48100-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;9&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;9A&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;State of charge below 30 %, as the air rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UNCL8273&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span>&gt;F-A, S-I&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;147&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TunnelRestrictionCode</span>&gt;E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Lithium ion batteries&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span>&gt;UN&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN3480&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span>&gt;9&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Transport&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span>&gt;Target&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Ionisation smoke detector set&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Ten ionisation smoke detectors for the mast&#39;s equipment room, each with a small americium-241 source.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ionisation smoke detector set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;772050000124&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;8531.10&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;7&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Excepted package: no radioactive label, the UN number on the package.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UNCL8273&quot;</span>&gt;2911&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span>&gt;None&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;161&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Radioactive material, excepted package - instruments or articles&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span>&gt;UN&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2911&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span>&gt;7&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Americium-241 sources in smoke detectors&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SpecialFormDescription</span>&gt;Sealed source, not special form.&lt;/<span class="kw">cbc:SpecialFormDescription</span>&gt;</span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransportIndexNumeric</span>&gt;0&lt;/<span class="kw">cbc:TransportIndexNumeric</span>&gt;</span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:FissileCriticalitySafetyIndexNumeric</span>&gt;0&lt;/<span class="kw">cbc:FissileCriticalitySafetyIndexNumeric</span>&gt;</span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Americium-241&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ActivityLevelMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;2Q&quot;</span>&gt;37&lt;/<span class="kw">cbc:ActivityLevelMeasure</span>&gt;</span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Transport&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span>&gt;Target&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
-<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Remover for the protective coating of circuit boards, in 5-litre cans.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
-<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;772050000131&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;3814.00&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;8&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;8&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Packed as the rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UNCL8273&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
-<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span>&gt;II&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
-<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;Medium danger&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
-<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span>&gt;F-E, S-C&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;132&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
-<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TunnelRestrictionCode</span>&gt;D/E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
-<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MaritimePollutantCode</span>&gt;N&lt;/<span class="kw">cbc:MaritimePollutantCode</span>&gt;</span>
-<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TechnicalName</span>&gt;ethanolamine, propanol&lt;/<span class="kw">cbc:TechnicalName</span>&gt;</span>
-<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Corrosive liquid, flammable, n.o.s.&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
-<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span>&gt;UN&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
-<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2920&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
-<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span>&gt;8&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;3&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EmergencyProceduresCode</span>&gt;F-E&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
-<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span>&gt;Flashpoint&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Transport&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span>&gt;Target&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;850760&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;46420&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-48100-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;9&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;9A&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;State of charge below 30 %, as the air rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-A,S-I&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;147&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TunnelRestrictionCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE ADR tunnel restriction code&quot;</span>&gt;E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Lithium ion batteries&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;9&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN3480&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span>&gt;9&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Transport&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureQualifierCode&quot;</span>&gt;TARGET&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Ionisation smoke detector set&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Ten ionisation smoke detectors for the mast&#39;s equipment room, each with a small americium-241 source.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ionisation smoke detector set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;772050000124&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;853110&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;46921&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;7&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Excepted package: no radioactive label, the UN number on the package.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;2911&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-I,S-S&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;161&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Radioactive material, excepted package - instruments or articles&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;7&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2911&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span>&gt;7&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Americium-241 sources in smoke detectors&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SpecialFormDescription</span>&gt;Sealed source, not special form.&lt;/<span class="kw">cbc:SpecialFormDescription</span>&gt;</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransportIndexNumeric</span>&gt;0&lt;/<span class="kw">cbc:TransportIndexNumeric</span>&gt;</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:FissileCriticalitySafetyIndexNumeric</span>&gt;0&lt;/<span class="kw">cbc:FissileCriticalitySafetyIndexNumeric</span>&gt;</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Americium-241&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ActivityLevelMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;2Q&quot;</span>&gt;37&lt;/<span class="kw">cbc:ActivityLevelMeasure</span>&gt;</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Transport&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureQualifierCode&quot;</span>&gt;TARGET&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Remover for the protective coating of circuit boards, in 5-litre cans.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;772050000131&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;381400&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;35110&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;8&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;8&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Packed as the rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations UN number&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;II&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;Medium danger&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-E,S-C&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;132&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TunnelRestrictionCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE ADR tunnel restriction code&quot;</span>&gt;D/E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MaritimePollutantCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MarinePollutantCode&quot;</span>&gt;N&lt;/<span class="kw">cbc:MaritimePollutantCode</span>&gt;</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TechnicalName</span>&gt;ethanolamine, propanol&lt;/<span class="kw">cbc:TechnicalName</span>&gt;</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Corrosive liquid, flammable, n.o.s.&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2920&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span>&gt;8&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;3&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span>&gt;Flashpoint&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Transport&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureQualifierCode&quot;</span>&gt;TARGET&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>aa9c1cc</code></p></div></footer>
 </body>
 </html>

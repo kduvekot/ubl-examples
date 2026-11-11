@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN/EDIFACT 2475 Event time reference: the codes the world uses, and others of the same list. Built from world/codelists/sources/uncefact/timereferencecodelist.json (D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNCL2475Code</ShortName>
+      <LongName xml:lang="en">UN/EDIFACT 2475 Event time reference (UBL example world)</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 2475</LongName>
+      <Version>D22A</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNCL2475Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL2475Code:D22A</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNCL2475Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">UN/CEFACT</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Date of order</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Date of confirmation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Date of invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Date of confirmation of order received</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Date goods handed over for shipment by seller or agent</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>81</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Date of shipment as evidenced by the transport document(s)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

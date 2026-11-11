@@ -10,7 +10,7 @@
   <cbc:IssueTime>08:17:00</cbc:IssueTime>
   <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
   <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
-  <cbc:RetailEventStatusCode>Confirmed</cbc:RetailEventStatusCode>
+  <cbc:RetailEventStatusCode listID="urn:ubl-examples:world:codelist:RetailEventStatusCode">CONFIRMED</cbc:RetailEventStatusCode>
   <cbc:SellerEventID>LD-PROMO-26-03</cbc:SellerEventID>
   <cbc:BuyerEventID>BM-SPRING-GARDEN-26</cbc:BuyerEventID>
   <cbc:Description>Ten per cent off garden furniture for two weeks.</cbc:Description>
@@ -48,35 +48,35 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Market Street</cbc:StreetName>
       <cbc:BuildingNumber>50</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38515</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
       <cbc:CompanyID>CO-1231233</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -85,25 +85,25 @@
       <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
       <cbc:CompanyID>20410411</cbc:CompanyID>
       <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -124,7 +124,7 @@
     <cac:SocialMediaProfile>
       <cbc:ID>10442197</cbc:ID>
       <cbc:Name>brightmarket</cbc:Name>
-      <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
+      <cbc:SocialMediaTypeCode listID="urn:ubl-examples:world:codelist:SocialMediaTypeCode">PHOTO</cbc:SocialMediaTypeCode>
       <cbc:URI>https://social.example/brightmarket</cbc:URI>
     </cac:SocialMediaProfile>
     <cac:ElectronicAddress>
@@ -147,11 +147,11 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
       <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -160,24 +160,24 @@
       <cbc:CityName>Marrowdale</cbc:CityName>
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -186,25 +186,25 @@
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -248,7 +248,7 @@
     <cbc:IssueTime>11:00:00</cbc:IssueTime>
   </cac:EventComment>
   <cac:PromotionalEvent>
-    <cbc:PromotionalEventTypeCode>TPR</cbc:PromotionalEventTypeCode>
+    <cbc:PromotionalEventTypeCode listID="urn:ubl-examples:world:codelist:PromotionalEventTypeCode">TPR</cbc:PromotionalEventTypeCode>
     <cbc:SubmissionDate>2026-04-22</cbc:SubmissionDate>
     <cbc:FirstShipmentAvailabilityDate>2026-04-29</cbc:FirstShipmentAvailabilityDate>
     <cbc:LatestProposalAcceptanceDate>2026-04-26</cbc:LatestProposalAcceptanceDate>
@@ -263,8 +263,8 @@
           </cac:ParticipatingLocationsLocation>
           <cac:RetailPlannedImpact>
             <cbc:Amount currencyID="XBL">17976.00</cbc:Amount>
-            <cbc:ForecastPurposeCode>Sales</cbc:ForecastPurposeCode>
-            <cbc:ForecastTypeCode>Total</cbc:ForecastTypeCode>
+            <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
+            <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
             <cac:Period>
               <cbc:StartDate>2026-05-11</cbc:StartDate>
               <cbc:EndDate>2026-05-24</cbc:EndDate>
@@ -282,10 +282,10 @@
         <cbc:Comment>Benches at the entrance, with a price board.</cbc:Comment>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:EventTacticEnumeration>
-          <cbc:ConsumerIncentiveTacticTypeCode>TPR</cbc:ConsumerIncentiveTacticTypeCode>
-          <cbc:DisplayTacticTypeCode>EndCap</cbc:DisplayTacticTypeCode>
-          <cbc:FeatureTacticTypeCode>Flyer</cbc:FeatureTacticTypeCode>
-          <cbc:TradeItemPackingLabelingTypeCode>Sticker</cbc:TradeItemPackingLabelingTypeCode>
+          <cbc:ConsumerIncentiveTacticTypeCode listID="urn:ubl-examples:world:codelist:ConsumerIncentiveTacticCode">TPR</cbc:ConsumerIncentiveTacticTypeCode>
+          <cbc:DisplayTacticTypeCode listID="urn:ubl-examples:world:codelist:DisplayTacticCode">ENDCAP</cbc:DisplayTacticTypeCode>
+          <cbc:FeatureTacticTypeCode listID="urn:ubl-examples:world:codelist:FeatureTacticCode">FLYER</cbc:FeatureTacticTypeCode>
+          <cbc:TradeItemPackingLabelingTypeCode listID="urn:ubl-examples:world:codelist:PackingLabelingTypeCode">STICKER</cbc:TradeItemPackingLabelingTypeCode>
         </cac:EventTacticEnumeration>
         <cac:Period>
           <cbc:StartDate>2026-05-11</cbc:StartDate>
@@ -295,7 +295,7 @@
     </cac:PromotionalSpecification>
   </cac:PromotionalEvent>
   <cac:MiscellaneousEvent>
-    <cbc:MiscellaneousEventTypeCode>StoreOpening</cbc:MiscellaneousEventTypeCode>
+    <cbc:MiscellaneousEventTypeCode listID="urn:ubl-examples:world:codelist:MiscellaneousEventTypeCode">STOREOPEN</cbc:MiscellaneousEventTypeCode>
     <cac:EventLineItem>
       <cbc:LineNumberNumeric>1</cbc:LineNumberNumeric>
       <cac:SupplyItem>

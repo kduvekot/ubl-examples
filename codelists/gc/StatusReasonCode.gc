@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: status reason. Why a status is as reported. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>StatusReasonCode</ShortName>
+      <LongName xml:lang="en">Status reason (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:StatusReasonCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:StatusReasonCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:StatusReasonCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/StatusReasonCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CLEARED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cleared</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Relhaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Valute</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Customs or the border authority has cleared the goods.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INSPECTION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Held for inspection</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Valhaz gan kaldir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lineki kifupa hekaeta</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An authority holds the goods to inspect them.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WEATHER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Weather</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Truzstek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mateki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Delayed by the weather.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CONGESTION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Congestion</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Salzhaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Makanaa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Delayed by congestion at a port, terminal or border.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

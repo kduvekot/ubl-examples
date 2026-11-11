@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: tariff class. The class of a carrier's tariff a service is charged in. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>TariffClassCode</ShortName>
+      <LongName xml:lang="en">Tariff class (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TariffClassCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:TariffClassCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TariffClassCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TariffClassCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FAK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight all kinds</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Musaz sul zhemir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Miipa menafe nivuni</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>One rate, whatever the goods.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>B</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Basic class</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Mirgek krukdran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Futita pofele</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The basic class of the tariff.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SPECIAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Special commodity rate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Galtan tazzhul trazzhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Notali likalomi kalala</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A rate for named goods.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

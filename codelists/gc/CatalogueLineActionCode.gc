@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: catalogue line action. What the receiver does with a catalogue line to synchronize its copy, as UBL recommends (add, update, delete). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CatalogueLineActionCode</ShortName>
+      <LongName xml:lang="en">Catalogue line action (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CatalogueLineActionCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CatalogueLineActionCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CatalogueLineActionCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CatalogueLineActionCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ADD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Add</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skertir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Saluva</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The line is new.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UPDATE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Update</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krugir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lefeva</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The line changes an earlier one.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DELETE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Delete</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bardrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Venihi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The line is removed.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

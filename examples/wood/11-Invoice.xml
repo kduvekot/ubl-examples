@@ -9,12 +9,12 @@
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>09:54:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-08</cbc:DueDate>
-  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
-  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BF-PO-26-0637</cbc:ID>
   </cac:OrderReference>
@@ -34,34 +34,34 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Timber Lane</cbc:StreetName>
         <cbc:BuildingNumber>7</cbc:BuildingNumber>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71202</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1236987</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -70,23 +70,23 @@
         <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412329</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -118,34 +118,34 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Joiners Row</cbc:StreetName>
         <cbc:BuildingNumber>14</cbc:BuildingNumber>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71203</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1237398</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -154,23 +154,23 @@
         <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412466</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -214,16 +214,16 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
     <cbc:PaymentDueDate>2026-04-08</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF02MSINV260638</cbc:InstructionNote>
     <cbc:PaymentID>RF02MSINV260638</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM0004398618</cbc:ID>
       <cbc:Name>Marrowdale Sawmill Ltd</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
       <cbc:PaymentNote>Invoice MS-INV-26-0638</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BLUM-001</cbc:ID>
@@ -232,24 +232,24 @@
           <cbc:ID>BLUM</cbc:ID>
           <cbc:Name>Bank of Lumeport</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
             <cbc:StreetName>Exchange Street</cbc:StreetName>
             <cbc:BuildingNumber>48</cbc:BuildingNumber>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
@@ -274,7 +274,7 @@
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -302,17 +302,18 @@
         <cbc:ID schemeID="urn:ubl-examples:world:item">772010000065</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:OriginCountry>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
-        <cbc:ItemClassificationCode listID="HS">4407.99</cbc:ItemClassificationCode>
+        <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

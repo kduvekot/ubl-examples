@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: life cycle stage. A stage of a product's life, as the UBL definition names them; each description gives the matching modules of EN 15804. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>LifecycleStageCode</ShortName>
+      <LongName xml:lang="en">Life cycle stage (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:LifecycleStageCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:LifecycleStageCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:LifecycleStageCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/LifecycleStageCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SOURCING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sourcing</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kazman</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tevifa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Raw material supply and its transport (EN 15804 modules A1 and A2).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MANUFACTURING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manufacturing</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vakrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Popekava</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Making the product (EN 15804 module A3).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DISTRIBUTION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Distribution</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rirtan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Teletama</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Transport to the user and installation (EN 15804 modules A4 and A5).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>USAGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Usage</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Helbir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lefake</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Use, maintenance, repair and replacement (EN 15804 modules B1 to B7).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ENDOFLIFE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>End of life</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Temul skul drekvir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nauta mutaki napaki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Deconstruction, transport, waste processing and disposal (EN 15804 modules C1 to C4).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RECOVERY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Recovery</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Balman</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tetafu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Reuse, recovery and recycling beyond the product's life (EN 15804 module D).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

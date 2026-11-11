@@ -8,16 +8,16 @@
   <cbc:UUID>4dda14a2-d50d-5ef3-84d8-980f6cc7eedb</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:42:00</cbc:IssueTime>
-  <cbc:UtilityStatementTypeCode>Gas</cbc:UtilityStatementTypeCode>
+  <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">GAS</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qau">Bazbaz binmaz gan drek stekraz nalbaz sidir; drek zhek trizhul trul stan huldan drek geltaz.</cbc:Note>
-  <cbc:Note languageID="en">Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
+  <cbc:Note languageID="en-XU">Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>FG-INV-26-0150</cbc:ID>
   </cac:ParentDocumentReference>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranogrid.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3513</cbc:IndustryClassificationCode>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3510</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>
     </cac:PartyIdentification>
@@ -29,31 +29,31 @@
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Hekrul Skaz</cbc:StreetName>
-      <cbc:StreetName languageID="en">Via della Rete</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via della Rete</cbc:StreetName>
       <cbc:BuildingNumber>3</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4140</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Ferrano Grid SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU007423962</cbc:CompanyID>
-      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
-        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -62,25 +62,26 @@
       <cbc:RegistrationName>Ferrano Grid SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-106055</cbc:CompanyID>
       <cbc:RegistrationDate>2007-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">80000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XU:CR</cbc:ID>
         <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -112,31 +113,31 @@
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Duznaz Hekrul Skultrir</cbc:StreetName>
-      <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Corso della Repubblica</cbc:StreetName>
       <cbc:BuildingNumber>9</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Ferrano Energy SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU007404785</cbc:CompanyID>
-      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
-        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -145,25 +146,26 @@
       <cbc:RegistrationName>Ferrano Energy SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-105781</cbc:CompanyID>
       <cbc:RegistrationDate>1949-01-15</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XU:CR</cbc:ID>
         <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -208,31 +210,31 @@
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU007299291</cbc:CompanyID>
-      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
-        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -241,25 +243,26 @@
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
       <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XU:CR</cbc:ID>
         <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -267,7 +270,7 @@
         <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-        <cbc:MarketCode>FSE</cbc:MarketCode>
+        <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
       </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
@@ -278,13 +281,13 @@
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       <cac:OtherCommunication>
-        <cbc:ChannelCode>AL</cbc:ChannelCode>
+        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
         <cbc:Value>+999 1 344 474 4274</cbc:Value>
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
       <cbc:ID>5-xu-SP-8-xu</cbc:ID>
-      <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
+      <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
         <cac:PartyIdentification>
@@ -305,7 +308,7 @@
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
     <cbc:ConsumptionID>FG-CP-4120-G1-2603</cbc:ConsumptionID>
-    <cbc:SpecificationTypeCode>Detailed</cbc:SpecificationTypeCode>
+    <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Gas for the coating ovens of the factory.</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="MTQ">1350</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
@@ -313,21 +316,21 @@
       <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
       <cbc:SubscriberID>FE-C-0047121</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
-      <cbc:SubscriberTypeCode>IND</cbc:SubscriberTypeCode>
+      <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="KWH">61200</cbc:TotalDeliveredQuantity>
       <cac:Address>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:Address>
@@ -335,7 +338,7 @@
         <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
         <cbc:MeterName>Rotary gas meter, coating line</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
-        <cbc:MeterConstantCode>Direct</cbc:MeterConstantCode>
+        <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="MTQ">1350</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
           <cbc:ID>FG-G-20417-2603</cbc:ID>
@@ -344,13 +347,13 @@
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
           <cbc:LatestMeterQuantity unitCode="MTQ">29760</cbc:LatestMeterQuantity>
           <cbc:LatestMeterReadingMethod>Remote reading</cbc:LatestMeterReadingMethod>
-          <cbc:LatestMeterReadingMethodCode>REMOTE</cbc:LatestMeterReadingMethodCode>
+          <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">REMOTE</cbc:LatestMeterReadingMethodCode>
           <cbc:DeliveredQuantity unitCode="MTQ">1350</cbc:DeliveredQuantity>
         </cac:MeterReading>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:Consumption>
-      <cbc:UtilityStatementTypeCode>Gas</cbc:UtilityStatementTypeCode>
+      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">GAS</cbc:UtilityStatementTypeCode>
       <cac:MainPeriod>
         <cbc:StartDate>2026-03-01</cbc:StartDate>
         <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -367,7 +370,7 @@
         </cac:ConsumptionReport>
         <cac:EnergyWaterConsumptionCorrection>
           <cbc:CorrectionType>Volume conversion</cbc:CorrectionType>
-          <cbc:CorrectionTypeCode>CONV</cbc:CorrectionTypeCode>
+          <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">CONV</cbc:CorrectionTypeCode>
           <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
           <cbc:GasPressureQuantity unitCode="BAR">4</cbc:GasPressureQuantity>
           <cbc:Description>1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.</cbc:Description>

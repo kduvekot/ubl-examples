@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: shipping priority. The priority a consignment is given in loading and carriage. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ShippingPriorityCode</ShortName>
+      <LongName xml:lang="en">Shipping priority (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ShippingPriorityCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ShippingPriorityCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ShippingPriorityCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ShippingPriorityCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>STANDARD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Standard</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Karzek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kotune</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>No priority: the next departure with room.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PRIORITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Priority</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stazzhir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kifato</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Loaded first, on the first departure with room.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXPRESS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Express</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drahaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nateva</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A dedicated or the fastest service.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

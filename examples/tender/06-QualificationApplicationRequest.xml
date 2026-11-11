@@ -12,10 +12,10 @@
   <cbc:IssueTime>08:25:00</cbc:IssueTime>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
-  <cbc:ProcedureCode>Open</cbc:ProcedureCode>
-  <cbc:QualificationApplicationTypeCode>Regulated</cbc:QualificationApplicationTypeCode>
+  <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
+  <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
   <cbc:WeightScoringMethodologyNote>Pass or fail; no weighting.</cbc:WeightScoringMethodologyNote>
-  <cbc:WeightingTypeCode>None</cbc:WeightingTypeCode>
+  <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">NONE</cbc:WeightingTypeCode>
   <cbc:Note>Answer every criterion.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
@@ -32,12 +32,12 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID>LUM-ADR-000417</cbc:ID>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Civic Square</cbc:StreetName>
         <cbc:BuildingNumber>6</cbc:BuildingNumber>
         <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
@@ -47,33 +47,33 @@
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38517</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>CO-0900002</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
-        <cbc:ExemptionReasonCode>XB-PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
+        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -81,20 +81,20 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>20410548</cbc:CompanyID>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -126,34 +126,34 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Joiners Row</cbc:StreetName>
         <cbc:BuildingNumber>14</cbc:BuildingNumber>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71203</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1237398</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -162,23 +162,23 @@
         <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412466</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -205,19 +205,19 @@
   </cac:ProcurementProjectLot>
   <cac:TenderingCriterion>
     <cbc:ID>CR-TURNOVER</cbc:ID>
-    <cbc:CriterionTypeCode>Economic</cbc:CriterionTypeCode>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
     <cbc:Name>General yearly turnover</cbc:Name>
     <cbc:Description>Turnover of the last three years.</cbc:Description>
     <cbc:WeightNumeric>0</cbc:WeightNumeric>
     <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
-    <cbc:FulfilmentIndicatorTypeCode>All</cbc:FulfilmentIndicatorTypeCode>
-    <cbc:EvaluationMethodTypeCode>PassFail</cbc:EvaluationMethodTypeCode>
+    <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
     <cbc:WeightingConsiderationDescription>Not weighted.</cbc:WeightingConsiderationDescription>
     <cac:ProcurementProjectLotReference>
       <cbc:ID>LOT-1</cbc:ID>
     </cac:ProcurementProjectLotReference>
     <cac:CommodityClassification>
-      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
     <cac:SubTenderingCriterion>
       <cbc:ID>CR-TURNOVER-A</cbc:ID>
@@ -235,7 +235,7 @@
       </cac:Language>
       <cac:JurisdictionRegionAddress>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:JurisdictionRegionAddress>
     </cac:Legislation>
@@ -243,16 +243,16 @@
       <cbc:ID>PG-1</cbc:ID>
       <cbc:Name>Turnover</cbc:Name>
       <cbc:Description>The figures.</cbc:Description>
-      <cbc:PropertyGroupTypeCode>OnTrue</cbc:PropertyGroupTypeCode>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
       <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
-      <cbc:FulfilmentIndicatorTypeCode>All</cbc:FulfilmentIndicatorTypeCode>
+      <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
       <cac:TenderingCriterionProperty>
         <cbc:ID>P-1</cbc:ID>
         <cbc:Name>Yearly turnover</cbc:Name>
         <cbc:Description>Answer: yearly turnover.</cbc:Description>
-        <cbc:TypeCode>Requirement</cbc:TypeCode>
-        <cbc:ValueDataTypeCode>Amount</cbc:ValueDataTypeCode>
-        <cbc:ValueCurrencyCode>XBL</cbc:ValueCurrencyCode>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">REQUIREMENT</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
+        <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
         <cbc:ExpectedAmount currencyID="XBL">250000.00</cbc:ExpectedAmount>
         <cbc:MaximumAmount currencyID="XBL">99999999.00</cbc:MaximumAmount>
         <cbc:MinimumAmount currencyID="XBL">250000.00</cbc:MinimumAmount>
@@ -269,9 +269,9 @@
         <cbc:ID>P-2</cbc:ID>
         <cbc:Name>Years in business</cbc:Name>
         <cbc:Description>Answer: years in business.</cbc:Description>
-        <cbc:TypeCode>Question</cbc:TypeCode>
-        <cbc:ValueDataTypeCode>Quantity</cbc:ValueDataTypeCode>
-        <cbc:ValueUnitCode>ANN</cbc:ValueUnitCode>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
+        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:ValueUnitCode>
         <cbc:ExpectedValueNumeric>3</cbc:ExpectedValueNumeric>
         <cbc:MaximumValueNumeric>200</cbc:MaximumValueNumeric>
         <cbc:MinimumValueNumeric>3</cbc:MinimumValueNumeric>
@@ -282,16 +282,16 @@
         <cbc:ID>P-3</cbc:ID>
         <cbc:Name>Registered in a business register</cbc:Name>
         <cbc:Description>Answer: registered in a business register.</cbc:Description>
-        <cbc:TypeCode>Question</cbc:TypeCode>
-        <cbc:ValueDataTypeCode>Indicator</cbc:ValueDataTypeCode>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
         <cbc:ExpectedID>REG</cbc:ExpectedID>
         <cbc:ExpectedIndicator>true</cbc:ExpectedIndicator>
-        <cbc:ExpectedCode>Registered</cbc:ExpectedCode>
+        <cbc:ExpectedCode listID="urn:ubl-examples:world:codelist:ExpectedResponseCode">REGISTERED</cbc:ExpectedCode>
         <cbc:ExpectedDescription>Entered in a national register.</cbc:ExpectedDescription>
         <cbc:ExpectedURI>https://register.bayvarra.example</cbc:ExpectedURI>
-        <cbc:TranslationTypeCode>None</cbc:TranslationTypeCode>
+        <cbc:TranslationTypeCode listID="urn:ubl-examples:world:codelist:TranslationTypeCode">NONE</cbc:TranslationTypeCode>
         <cbc:CertificationLevelDescription>A plain extract will do.</cbc:CertificationLevelDescription>
-        <cbc:CopyQualityTypeCode>Copy</cbc:CopyQualityTypeCode>
+        <cbc:CopyQualityTypeCode listID="urn:ubl-examples:world:codelist:CopyQualityCode">COPY</cbc:CopyQualityTypeCode>
       </cac:TenderingCriterionProperty>
       <cac:SubsidiaryTenderingCriterionPropertyGroup>
         <cbc:ID>PG-1.1</cbc:ID>
@@ -300,8 +300,8 @@
           <cbc:ID>P-4</cbc:ID>
           <cbc:Name>Share in the consortium</cbc:Name>
           <cbc:Description>Answer: share in the consortium.</cbc:Description>
-          <cbc:TypeCode>Question</cbc:TypeCode>
-          <cbc:ValueDataTypeCode>Percent</cbc:ValueDataTypeCode>
+          <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+          <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">PERCENT</cbc:ValueDataTypeCode>
         </cac:TenderingCriterionProperty>
       </cac:SubsidiaryTenderingCriterionPropertyGroup>
     </cac:TenderingCriterionPropertyGroup>

@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: ubl document type. The document types of UBL 2.5 by their names, for a generic reference to a UBL document whose type the reference element does not say. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UBLDocumentTypeCode</ShortName>
+      <LongName xml:lang="en">UBL document type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:UBLDocumentTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:UBLDocumentTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UBLDocumentTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ApplicationResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Application Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Birskek Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pinenese Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AttachedDocument</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Attached Document</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nizstul Document</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tahini Document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AwardedNotification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Awarded Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zuzskek Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Heako Notification</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BillOfLading</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bill Of Lading</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rir Of Lading</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vafosu Of Lading</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BusinessCard</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Business Card</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhurstan Card</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Levise Card</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BusinessInformation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Business Information</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhurstan Information</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Levise Information</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CallForTenders</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Call For Tenders</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stek For Tenders</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kalivi For Tenders</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Catalogue</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Catalogue</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zukkir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katetaku</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CatalogueDeletion</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Catalogue Deletion</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zukkir Deletion</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katetaku Deletion</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CatalogueItemSpecificationUpdate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Catalogue Item Specification Update</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zukkir Item Specification Update</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katetaku Item Specification Update</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CataloguePricingUpdate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Catalogue Pricing Update</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zukkir Pricing Update</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katetaku Pricing Update</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CatalogueRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Catalogue Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zukkir Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katetaku Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CertificateOfOrigin</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Certificate Of Origin</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vurskek Of Origin</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kamepou Of Origin</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CommonTransportationReport</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Common Transportation Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Buntrir Transportation Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fatoka Transportation Report</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ContractAwardNotice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Contract Award Notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Baman Award Notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hupeme Award Notice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ContractNotice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Contract Notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Baman Notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hupeme Notice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CreditNote</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Credit Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Ruzzhul Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tetela Note</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DebitNote</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Debit Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kuzhek Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Taketa Note</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DeliveryNote</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Delivery Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Badul Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sifopa Note</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DespatchAdvice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Despatch Advice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sekkrek Advice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fetusu Advice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DigitalAgreement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Digital Agreement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dakzek Agreement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katesa Agreement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DigitalCapability</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Digital Capability</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dakzek Capability</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Katesa Capability</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DocumentStatus</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Document Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Milmaz Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sihita Status</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DocumentStatusRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Document Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Milmaz Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sihita Status Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Enquiry</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Enquiry</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gukkul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Naita</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EnquiryResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Enquiry Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gukkul Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Naita Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ExceptionCriteria</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exception Criteria</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skarstir Criteria</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pasiteti Criteria</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ExceptionNotification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exception Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skarstir Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pasiteti Notification</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ExportCustomsDeclaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Export Customs Declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zikman Customs Declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hafaso Customs Declaration</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ExpressionOfInterestRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Expression Of Interest Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krerbir Of Interest Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Heufeka Of Interest Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ExpressionOfInterestResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Expression Of Interest Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krerbir Of Interest Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Heufeka Of Interest Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Forecast</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Forecast</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhalraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Litala</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ForecastRevision</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Forecast Revision</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhalraz Revision</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Litala Revision</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ForwardingInstructions</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Forwarding Instructions</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bukul Instructions</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fokatuka Instructions</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FreightInvoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight Invoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Musaz Invoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Miipa Invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FulfilmentCancellation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fulfilment Cancellation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Naskul Cancellation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Ketahatu Cancellation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GoodsCertificate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Goods Certificate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Valnir Certificate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Liape Certificate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GoodsItemItinerary</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Goods Item Itinerary</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Valnir Item Itinerary</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Liape Item Itinerary</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GoodsItemPassport</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Goods Item Passport</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Valnir Item Passport</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Liape Item Passport</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GuaranteeCertificate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Guarantee Certificate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sulbir Certificate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sakavefe Certificate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ImportCustomsDeclaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Import Customs Declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Balstir Customs Declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Musaka Customs Declaration</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>InstructionForReturns</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Instruction For Returns</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Duzmaz For Returns</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sipatusa For Returns</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>InventoryReport</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Inventory Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skavan Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sakeisa Report</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Invoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Invoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tirnan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tohala</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>InvoiceStatusRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Invoice Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tirnan Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tohala Status Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>InvoiceStatusResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Invoice Status Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tirnan Status Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tohala Status Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ItemInformationRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Item Information Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nalban Information Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mekavu Information Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Manifest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manifest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skalsek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nitinu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Order</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skirtek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Luela</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OrderCancellation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order Cancellation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skirtek Cancellation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Luela Cancellation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OrderChange</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order Change</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skirtek Change</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Luela Change</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OrderResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skirtek Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Luela Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OrderResponseSimple</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order Response Simple</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skirtek Response Simple</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Luela Response Simple</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PackingList</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Packing List</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Neldrek List</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Palavo List</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PriorInformationNotice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Prior Information Notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Malzhek Information Notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kahala Information Notice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ProcurementStatus</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Procurement Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bazsul Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lauseki Status</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ProcurementStatusRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Procurement Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bazsul Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lauseki Status Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ProductActivity</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Product Activity</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhenzhan Activity</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lafafa Activity</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ProofOfReexportation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Proof Of Reexportation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nevek Of Reexportation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lalipu Of Reexportation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ProofOfReexportationReminder</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Proof Of Reexportation Reminder</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nevek Of Reexportation Reminder</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lalipu Of Reexportation Reminder</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ProofOfReexportationRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Proof Of Reexportation Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nevek Of Reexportation Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lalipu Of Reexportation Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PurchaseReceipt</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Purchase Receipt</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sevaz Receipt</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kiose Receipt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>QualificationApplicationRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Qualification Application Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Salskir Application Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lohuvoe Application Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>QualificationApplicationResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Qualification Application Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Salskir Application Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lohuvoe Application Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Quotation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Quotation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maskek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kekipola</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ReceiptAdvice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Receipt Advice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rezkir Advice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nipamo Advice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Reminder</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Reminder</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Guzzhir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tekalu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RemittanceAdvice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Remittance Advice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zenstek Advice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fipumii Advice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RequestForQuotation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Request For Quotation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Muztek For Quotation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kavina For Quotation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RetailEvent</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Retail Event</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stekraz Event</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pamasa Event</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SelfBilledCreditNote</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Self Billed Credit Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hakzek Billed Credit Note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lakau Billed Credit Note</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SelfBilledInvoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Self Billed Invoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hakzek Billed Invoice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lakau Billed Invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Statement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Statement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zharhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Votetaka</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>StockAvailabilityReport</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Stock Availability Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Disan Availability Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Keniti Availability Report</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Tender</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tender</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stezdraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Niane</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TenderContract</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tender Contract</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stezdraz Contract</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Niane Contract</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TenderReceipt</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tender Receipt</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stezdraz Receipt</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Niane Receipt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TenderStatus</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tender Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stezdraz Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Niane Status</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TenderStatusRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tender Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stezdraz Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Niane Status Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TenderWithdrawal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tender Withdrawal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stezdraz Withdrawal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Niane Withdrawal</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TendererQualification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tenderer Qualification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skeran Qualification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vitele Qualification</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TendererQualificationResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tenderer Qualification Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skeran Qualification Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vitele Qualification Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TradeItemLocationProfile</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Trade Item Location Profile</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rizir Item Location Profile</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tipiki Item Location Profile</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransitCustomsDeclaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transit Customs Declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skarsir Customs Declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nonato Customs Declaration</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportExecutionPlan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport Execution Plan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz Execution Plan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiemae Execution Plan</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportExecutionPlanRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport Execution Plan Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz Execution Plan Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiemae Execution Plan Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportProgressStatus</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport Progress Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz Progress Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiemae Progress Status</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportProgressStatusRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport Progress Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz Progress Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiemae Progress Status Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportServiceDescription</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport Service Description</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz Service Description</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiemae Service Description</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportServiceDescriptionRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport Service Description Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz Service Description Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiemae Service Description Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportationStatus</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transportation Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nagir Status</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tevefefa Status</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TransportationStatusRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transportation Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nagir Status Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tevefefa Status Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UnawardedNotification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unawarded Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Negan Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mitikole Notification</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UnsubscribeFromProcedureRequest</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unsubscribe From Procedure Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rarhaz From Procedure Request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nahesatu From Procedure Request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UnsubscribeFromProcedureResponse</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unsubscribe From Procedure Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rarhaz From Procedure Response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nahesatu From Procedure Response</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UtilityStatement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Utility Statement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drirnul Statement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kafiko Statement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WasteMovement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Waste Movement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drunvir Movement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nameve Movement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WasteNotification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Waste Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drunvir Notification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nameve Notification</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Waybill</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Waybill</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dridrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Molei</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WeightStatement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Weight Statement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gargek Statement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tisaki Statement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WorkReport</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Work Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zermir Report</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Limefi Report</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

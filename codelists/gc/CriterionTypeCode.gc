@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: criterion type. The kind of a tendering criterion (ESPD-EDM criterion types). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CriterionTypeCode</ShortName>
+      <LongName xml:lang="en">Criterion type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CriterionTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CriterionTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CriterionTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CriterionTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exclusion ground</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nelrek tarkul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kakapeva leputo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A ground for excluding a tenderer.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ECONOMIC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Economic and financial standing</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sahek stan skakraz bilbaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Veemi tofami salelefo pipila</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A selection criterion on the tenderer's finances.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TECHNICAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Technical and professional ability</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nezsek stan kurgir duzstek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kitunasu tofami vapatoke sefesi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A selection criterion on the tenderer's experience and staff.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SUITABILITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Suitability</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krilman</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vakitupi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A selection criterion on the pursuit of the professional activity.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

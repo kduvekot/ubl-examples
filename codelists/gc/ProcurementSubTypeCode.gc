@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: procurement subtype. How supplies are acquired, or the kind of service with them (eForms contract-nature subtypes of supplies). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ProcurementSubTypeCode</ShortName>
+      <LongName xml:lang="en">Procurement subtype (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ProcurementSubTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ProcurementSubTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ProcurementSubTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ProcurementSubTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PURCHASE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Purchase</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sevaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kiose</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The products are bought.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LEASE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lease</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gizrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Velepe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The products are leased.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RENT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rental</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stinkan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vupahe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The products are rented.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>HIREPURCHASE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Hire purchase</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drurhek sevaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vihaki kiose</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The products are rented and bought in instalments.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INSTALL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Installation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dreknul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nekavolo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The installation of the products bought.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

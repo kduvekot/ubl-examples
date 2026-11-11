@@ -9,8 +9,8 @@
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>11:40:00</cbc:IssueTime>
   <cbc:Note languageID="qal">Mamohe mutaki tohala titutu.</cbc:Note>
-  <cbc:Note languageID="en">Payment of the invoice below.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:Note languageID="en-XL">Payment of the invoice below.</cbc:Note>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XLC">135.566</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
@@ -59,15 +59,15 @@
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
@@ -75,23 +75,24 @@
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
         <cbc:CompanyID>IC41859</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XL:ICR</cbc:ID>
           <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -125,15 +126,15 @@
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
-        <cbc:StreetName languageID="en">Mast Hill Road</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
         <cbc:BuildingNumber>58</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
@@ -141,23 +142,24 @@
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
         <cbc:CompanyID>IC42407</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XL:ICR</cbc:ID>
           <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -183,9 +185,9 @@
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL13BSEL0003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -193,32 +195,32 @@
           <cbc:ID>BSEL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
             <cbc:StreetName>Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayerFinancialAccount>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL88BSEL0004293889</cbc:ID>
       <cbc:Name>Selanu Telecom Ltd</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cbc:BlockchainID>CORAL-NET-L1</cbc:BlockchainID>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
@@ -227,24 +229,24 @@
           <cbc:ID>BSEL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
             <cbc:StreetName>Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
@@ -252,7 +254,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
-    <cbc:PaymentPurposeCode>SUPP</cbc:PaymentPurposeCode>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
     <cac:AccountingSupplierParty>
       <cac:Party>
@@ -287,7 +289,7 @@
     <cac:DocumentReference>
       <cbc:ID>ST-INV-26-0323</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

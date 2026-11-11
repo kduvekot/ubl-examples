@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: transport execution status. Where the carriage of a consignment stands. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>TransportExecutionStatusCode</ShortName>
+      <LongName xml:lang="en">Transport execution status (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TransportExecutionStatusCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:TransportExecutionStatusCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TransportExecutionStatusCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TransportExecutionStatusCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PLANNED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Planned</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skulrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Paheta</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carriage is planned and not yet started.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INPROGRESS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>In progress</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trek tintir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tefata vihefa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carriage is under way.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COMPLETED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Completed</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trulstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Memutipa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are delivered.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CANCELLED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cancelled</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dilstul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Safahanu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carriage will not take place.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

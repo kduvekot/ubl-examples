@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: customs declaration subtype. The subtype of a customs declaration. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CustomsDeclarationSubTypeCode</ShortName>
+      <LongName xml:lang="en">Customs declaration subtype (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CustomsDeclarationSubTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FREECIRC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Release for free circulation</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tinnul gan nudrir sarskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kofupe kifupa tipako potikusi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An import declaration for release for free circulation.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXTTRANSIT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>External transit</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhilskan skarsir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lakuke nonato</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods not in free circulation carried under customs control.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INTTRANSIT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Internal transit</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tungir skarsir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pumuvi nonato</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods in free circulation carried through another territory.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SIMPLIFIED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Simplified declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stezskul ziztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Ketosia kaukelu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A declaration with fewer data, completed later.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SUPPLEMENTARY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supplementary declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gakstaz ziztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vafatite kaukelu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The declaration that completes a simplified one.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

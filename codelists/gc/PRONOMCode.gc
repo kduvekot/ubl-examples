@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of PRONOM file format registry (PUIDs): the codes the world uses, and others of the same list. Built from world/codelists/sources/pronom/fmt-479.xml, pronom/fmt-480.xml, pronom/fmt-481.xml (PRONOM records fmt/479, fmt/480, fmt/481, as published 2026-11-11). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>PRONOMCode</ShortName>
+      <LongName xml:lang="en">PRONOM file format registry (PUIDs) (UBL example world)</LongName>
+      <LongName Identifier="listID">PRONOM</LongName>
+      <Version>as published 2026-11-11</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:PRONOMCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:PRONOMCode:as published 2026-11-11</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/PRONOMCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">The National Archives (UK)</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="mime" Use="optional">
+         <ShortName>MimeType</ShortName>
+         <Data Type="string" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fmt/479</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Acrobat PDF/A - Portable Document Format, version 3a</SimpleValue>
+         </Value>
+         <Value ColumnRef="mime">
+            <SimpleValue>application/pdf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fmt/480</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Acrobat PDF/A - Portable Document Format, version 3b</SimpleValue>
+         </Value>
+         <Value ColumnRef="mime">
+            <SimpleValue>application/pdf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fmt/481</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Acrobat PDF/A - Portable Document Format, version 3u</SimpleValue>
+         </Value>
+         <Value ColumnRef="mime">
+            <SimpleValue>application/pdf</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

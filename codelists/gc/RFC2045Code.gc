@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of RFC 2045 Content-Transfer-Encoding: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (RFC 2045, 6.1 (the tokens as the RFC writes them)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>RFC2045Code</ShortName>
+      <LongName xml:lang="en">RFC 2045 Content-Transfer-Encoding (UBL example world)</LongName>
+      <LongName Identifier="listID">RFC 2045 Content-Transfer-Encoding</LongName>
+      <Version>RFC 2045</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:RFC2045Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:RFC2045Code:RFC 2045</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/RFC2045Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">IETF</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>7bit</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>7bit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8bit</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>8bit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>binary</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>binary</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The data are not encoded.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>quoted-printable</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>quoted-printable</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>base64</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>base64</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

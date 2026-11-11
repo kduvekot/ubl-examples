@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: trade financing instrument. The instrument by which a trade transaction is financed. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>FinancingInstrumentCode</ShortName>
+      <LongName xml:lang="en">Trade financing instrument (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:FinancingInstrumentCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:FinancingInstrumentCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:FinancingInstrumentCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/FinancingInstrumentCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FACTORING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Factoring</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tuzhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pamapeu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The seller sells its receivables to a factor, who collects them.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INVOICEDISC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Invoice discounting</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tirnan gezgir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tohala nakanive</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A lender advances money against the seller's receivables, which the seller still collects.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SCF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supply chain finance</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tazkraz nasaz truzrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kutiti hihamu konaku</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A bank pays the supplier early on the strength of the buyer's approval of the invoice.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DOCCREDIT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Documentary credit</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Veznaz ruzzhul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pamafafa tetela</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The buyer's bank undertakes to pay against the documents named in the credit.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FORFAITING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Forfaiting</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sikdan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mafitipi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A forfaiter buys the seller's medium-term receivables without recourse.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

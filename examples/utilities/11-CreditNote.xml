@@ -8,11 +8,11 @@
   <cbc:UUID>b275185e-048c-56dd-9144-cf9ea28b4f48</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:03:00</cbc:IssueTime>
-  <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
+  <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
   <cbc:Note>The meter test found the meter over-reading by two cubic metres.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
-  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>CSWC-INV-26-0319</cbc:ID>
@@ -32,35 +32,35 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Reservoir Road</cbc:StreetName>
         <cbc:BuildingNumber>51</cbc:BuildingNumber>
         <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38500</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
         <cbc:CompanyID>CO-1236576</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -69,23 +69,23 @@
         <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412192</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -110,18 +110,18 @@
         <cbc:Name>Robin Ashdale</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>
         <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38516</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
@@ -131,9 +131,9 @@
         <cac:FinancialAccount>
           <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
           <cbc:Name>Robin Ashdale</cbc:Name>
-          <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+          <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:FinancialInstitutionBranch>
             <cbc:ID>BLUM-001</cbc:ID>
             <cbc:Name>Main branch</cbc:Name>
@@ -141,24 +141,24 @@
               <cbc:ID>BLUM</cbc:ID>
               <cbc:Name>Bank of Lumeport</cbc:Name>
               <cac:Address>
-                <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+                <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
                 <cbc:StreetName>Exchange Street</cbc:StreetName>
                 <cbc:BuildingNumber>48</cbc:BuildingNumber>
                 <cbc:CityName>Lumeport</cbc:CityName>
                 <cac:Country>
-                  <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
                 </cac:Country>
               </cac:Address>
             </cac:FinancialInstitution>
             <cac:Address>
               <cbc:CityName>Lumeport</cbc:CityName>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitutionBranch>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:FinancialAccount>
       </cac:Person>
@@ -175,7 +175,7 @@
       <cac:TaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-WATER</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">WATER</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -188,7 +188,7 @@
       <cac:TaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -224,9 +224,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-LEVY</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
@@ -250,9 +250,9 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-WATER</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">WATER</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode>Services</cbc:SupplyTypeCode>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>

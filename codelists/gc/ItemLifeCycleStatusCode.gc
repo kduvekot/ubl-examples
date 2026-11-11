@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: item life cycle status. Where an item stands in the seller's range. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ItemLifeCycleStatusCode</ShortName>
+      <LongName xml:lang="en">Item life cycle status (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ItemLifeCycleStatusCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NEW</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>New</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dizkrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kitole</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>New in the range.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ACTIVE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Active</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sezdek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mapele</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>In the range and available.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PHASEOUT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Being phased out</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hasan vunrir maktran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Peneli niteta mulite</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Sold while stock lasts.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DISCONTINUED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Discontinued</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhazul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Limutini</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>No longer sold.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

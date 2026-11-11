@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: response message level. The level at which a receiver answers messages. Shared by RequiredResponseMessageLevelCode (a qualified variant). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ResponseMessageLevelCode</ShortName>
+      <LongName xml:lang="en">Response message level (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ResponseMessageLevelCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ResponseMessageLevelCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ResponseMessageLevelCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ResponseMessageLevelCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TRANSPORT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz drezkaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiemae fumima</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Receipt of the message.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MESSAGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Message response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Setir drezkaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kakatu fumima</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The message is readable and valid.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BUSINESS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Business response</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhurstan drezkaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Levise fumima</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The content is accepted or rejected.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -55,8 +55,10 @@ What it is.</li>
 The kind of bill.</li>
 <li><code>Note</code> = <strong>Freight collect.</strong><br />
 Who has paid the freight.</li>
-<li><code>DocumentStatusCode</code> = <strong>Confirmed</strong><br />
-Issued.</li>
+<li><code>DocumentStatusCode</code> = <strong>Confirmed</strong> (listID
+<code>urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode</code>)<br />
+Issued. The code is from the world's copy of UBL's Document status list,
+with a listID: Confirmed = Document has been confirmed.</li>
 <li><code>DeclaredCarriageValueAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 No value declared.</li>
@@ -72,7 +74,9 @@ identity of Selanu Cotton Ginnery (world/parties.json).</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Selanu Cotton Ginnery
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 0163 = Post-harvest crop activities.</li>
 <li><code>PartyIdentification/ID</code> = <strong>IC42681</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
@@ -96,10 +100,13 @@ are invented (world/countries.json).</li>
 <li><code>Language/Name</code> = <strong>Lisavan</strong><br />
 The language's name in English; in the language itself: Lisavuana.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XL</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XL</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Lisavu's address format (world/countries.json), one
 line after the other, a line left out when the address has none of its
 fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
@@ -114,14 +121,15 @@ number is written once. Fields that are not on a line (ID,
 AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XL =
+Address format of Lisavu.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Tikesa Luhate
 Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
 names are given in both languages (world/countries.json); identity of
 Selanu Cotton Ginnery (world/parties.json).</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Gin Yard
-Road</strong> (languageID <code>en</code>)<br />
+Road</strong> (languageID <code>en-XB</code>)<br />
 The street's name in English, the country's other official language;
 identity of Selanu Cotton Ginnery (world/parties.json).</li>
 <li><code>PostalAddress/BuildingNumber</code> =
@@ -137,9 +145,10 @@ country and state. identity of Selanu Cotton Ginnery
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XL</strong><br />
+<strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
@@ -156,24 +165,34 @@ Ginnery (world/parties.json).</li>
 The day the company was entered in the register; identity of Selanu
 Cotton Ginnery (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLegalFormCode</code> =
-<strong>Ltd</strong><br />
-The legal form, as abbreviated in Lisavu (world/countries.json).</li>
+<strong>LTD</strong> (listID
+<code>urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode</code>)<br />
+The legal form, as a code of Lisavu's national list: only the listID
+tells the forms of different countries apart. The code is from Lisavu's
+national company legal form list: LTD = Island limited company.</li>
 <li><code>PartyLegalEntity/CompanyLegalForm</code> = <strong>Island
 limited company</strong><br />
-The legal form, in words.</li>
+The name of code LTD in Lisavu's national company legal form list.</li>
 <li><code>PartyLegalEntity/EntitySizeCode</code> =
-<strong>Small</strong><br />
-The size class of the company (micro, small, medium or large); identity
-of Selanu Cotton Ginnery (world/parties.json).</li>
+<strong>SMALL</strong> (listID
+<code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
+The size class follows from the company's 22 persons and its turnover of
+3660000.000 XLC in 2025, by the Trade Accord's limits; identity of
+Selanu Cotton Ginnery (world/parties.json). The code is from the Trade
+Accord's entity size list: SMALL = Small enterprise.</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Selanu</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XL</strong><br />
-The country of registration.</li>
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XL:ICR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -181,12 +200,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Island companies register</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XL</strong><br />
-The register covers the whole country.</li>
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>Contact/Name</code> = <strong>Cotton sales</strong><br />
 The desk that handles this document; identity of Selanu Cotton Ginnery
 (world/parties.json).</li>
@@ -235,7 +257,9 @@ identity of Tidewell Ocean Lines (world/parties.json).</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 5012 = Sea and coastal freight water transport.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20411918</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
@@ -250,13 +274,19 @@ The trading name; identity of Tidewell Ocean Lines
 English, the language the party does business in.</li>
 <li><code>Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
-<li><code>Language/LocaleCode</code> = <strong>EN</strong><br />
-The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Language/LocaleCode</code> = <strong>en</strong> (listID
+<code>ISO 639</code>)<br />
+The language as a lower-case code of the world's ISO 639 list (ISO 639).
+The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XB</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Bayvarra's address format (world/countries.json),
 one line after the other, a line left out when the address has none of
 its fields: MarkAttention; Department; InhouseMail; Postbox;
@@ -271,7 +301,8 @@ English: the building number is written once. Fields that are not on a
 line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Harbour
 Road</strong><br />
 Street of the postal address. identity of Tidewell Ocean Lines
@@ -294,21 +325,24 @@ Postal code in Bayvarra's format (5 digits). identity of Tidewell Ocean
 Lines (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
-The state or territory, part of an address in federal Bayvarra. identity
-of Tidewell Ocean Lines (world/parties.json).</li>
+The name of code XB-CO in Bayvarra's national state or territory
+list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
-<strong>CO</strong><br />
+<strong>XB-CO</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
 The state or territory as a code of Bayvarra's address scheme
 (world/countries.json). identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -322,22 +356,25 @@ Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
 tax permit of the state or territory)); identity of Tidewell Ocean Lines
 (world/parties.json).</li>
-<li><code>PartyTaxScheme/TaxLevelCode</code> =
-<strong>State</strong><br />
+<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>STATE</strong>
+(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Bayvarra's state sales tax
-is levied by the states.</li>
+is levied by the states. The code is from the Trade Accord's tax level
+list: STATE = Levied by a state or territory.</li>
 <li><code>PartyTaxScheme/TaxScheme/ID</code> =
 <strong>STT</strong><br />
 UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
 <li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
-<strong>XBL</strong><br />
-The tax is accounted for in the country's currency.</li>
+<strong>XBL</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The state or territory whose sales tax the party is registered for.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country whose tax this is.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Tidewell
 Ocean Lines Corp</strong><br />
 The name under which the party is registered, with its legal form;
@@ -351,18 +388,29 @@ Tidewell Ocean Lines (world/parties.json).</li>
 The day the company was entered in the register; identity of Tidewell
 Ocean Lines (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLegalFormCode</code> =
-<strong>Corp</strong><br />
-The legal form, as abbreviated in Bayvarra (world/countries.json).</li>
+<strong>CORP</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
+The legal form, as a code of Bayvarra's national list: only the listID
+tells the forms of different countries apart. The code is from
+Bayvarra's national company legal form list: CORP = Corporation
+(public).</li>
 <li><code>PartyLegalEntity/CompanyLegalForm</code> = <strong>Corporation
 (public)</strong><br />
-The legal form, in words.</li>
+The name of code CORP in Bayvarra's national company legal form
+list.</li>
 <li><code>PartyLegalEntity/EntitySizeCode</code> =
-<strong>Large</strong><br />
-The size class of the company (micro, small, medium or large); identity
-of Tidewell Ocean Lines (world/parties.json).</li>
+<strong>LARGE</strong> (listID
+<code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
+The size class follows from the company's 776 persons and its turnover
+of 865000000.00 XBL in 2025, by the Trade Accord's limits; identity of
+Tidewell Ocean Lines (world/parties.json). The code is from the Trade
+Accord's entity size list: LARGE = Large enterprise.</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/CorporateStockAmount</code> =
 <strong>40000000</strong> (currencyID <code>XBL</code>)<br />
 The share capital, in lume; identity of Tidewell Ocean Lines
@@ -374,8 +422,9 @@ All shares are paid up.</li>
 <strong>Lumeport</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country of registration.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -383,12 +432,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The register covers the whole country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Bookings</strong><br />
 The desk that handles this document; identity of Tidewell Ocean Lines
 (world/parties.json).</li>
@@ -439,7 +491,9 @@ identity of Bayforth Forwarding (world/parties.json).</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Bayforth Forwarding
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 5229 = Other transportation support activities.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20411644</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
@@ -454,13 +508,19 @@ The trading name; identity of Bayforth Forwarding
 English, the language the party does business in.</li>
 <li><code>Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
-<li><code>Language/LocaleCode</code> = <strong>EN</strong><br />
-The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Language/LocaleCode</code> = <strong>en</strong> (listID
+<code>ISO 639</code>)<br />
+The language as a lower-case code of the world's ISO 639 list (ISO 639).
+The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XB</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Bayvarra's address format (world/countries.json),
 one line after the other, a line left out when the address has none of
 its fields: MarkAttention; Department; InhouseMail; Postbox;
@@ -475,7 +535,8 @@ English: the building number is written once. Fields that are not on a
 line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Dockside
 Way</strong><br />
 Street of the postal address. identity of Bayforth Forwarding
@@ -497,21 +558,24 @@ Postal code in Bayvarra's format (5 digits). identity of Bayforth
 Forwarding (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
-The state or territory, part of an address in federal Bayvarra. identity
-of Bayforth Forwarding (world/parties.json).</li>
+The name of code XB-CO in Bayvarra's national state or territory
+list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
-<strong>CO</strong><br />
+<strong>XB-CO</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
 The state or territory as a code of Bayvarra's address scheme
 (world/countries.json). identity of Bayforth Forwarding
-(world/parties.json).</li>
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -525,22 +589,25 @@ Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
 tax permit of the state or territory)); identity of Bayforth Forwarding
 (world/parties.json).</li>
-<li><code>PartyTaxScheme/TaxLevelCode</code> =
-<strong>State</strong><br />
+<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>STATE</strong>
+(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Bayvarra's state sales tax
-is levied by the states.</li>
+is levied by the states. The code is from the Trade Accord's tax level
+list: STATE = Levied by a state or territory.</li>
 <li><code>PartyTaxScheme/TaxScheme/ID</code> =
 <strong>STT</strong><br />
 UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
 <li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
-<strong>XBL</strong><br />
-The tax is accounted for in the country's currency.</li>
+<strong>XBL</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The state or territory whose sales tax the party is registered for.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country whose tax this is.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Bayforth
 Forwarding Ltd</strong><br />
 The name under which the party is registered, with its legal form;
@@ -554,24 +621,36 @@ Bayforth Forwarding (world/parties.json).</li>
 The day the company was entered in the register; identity of Bayforth
 Forwarding (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLegalFormCode</code> =
-<strong>Ltd</strong><br />
-The legal form, as abbreviated in Bayvarra (world/countries.json).</li>
+<strong>LTD</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
+The legal form, as a code of Bayvarra's national list: only the listID
+tells the forms of different countries apart. The code is from
+Bayvarra's national company legal form list: LTD = Limited company
+(private).</li>
 <li><code>PartyLegalEntity/CompanyLegalForm</code> = <strong>Limited
 company (private)</strong><br />
-The legal form, in words.</li>
+The name of code LTD in Bayvarra's national company legal form
+list.</li>
 <li><code>PartyLegalEntity/EntitySizeCode</code> =
-<strong>Small</strong><br />
-The size class of the company (micro, small, medium or large); identity
-of Bayforth Forwarding (world/parties.json).</li>
+<strong>SMALL</strong> (listID
+<code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
+The size class follows from the company's 40 persons and its turnover of
+6660000.00 XBL in 2025, by the Trade Accord's limits; identity of
+Bayforth Forwarding (world/parties.json). The code is from the Trade
+Accord's entity size list: SMALL = Small enterprise.</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country of registration.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -579,12 +658,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The register covers the whole country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Export desk</strong><br />
 The desk that handles this document; identity of Bayforth Forwarding
 (world/parties.json).</li>
@@ -642,7 +724,9 @@ identity of Lumeport Textile Mill (world/parties.json).</li>
 <strong>1312</strong> (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Lumeport Textile Mill
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 1312 = Weaving of textiles.</li>
 <li><code>Consignment/ConsigneeParty/PartyIdentification/ID</code> =
 <strong>20412603</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -667,13 +751,18 @@ English, the language the party does business in.</li>
 <strong>English</strong><br />
 The language's name.</li>
 <li><code>Consignment/ConsigneeParty/Language/LocaleCode</code> =
-<strong>EN</strong><br />
-The language as a code of UBL's language code list (ISO 639).</li>
+<strong>en</strong> (listID <code>ISO 639</code>)<br />
+The language as a lower-case code of the world's ISO 639 list (ISO 639).
+The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/AddressTypeCode</code>
-= <strong>Business</strong><br />
-The kind of address.</li>
+= <strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/AddressFormatCode</code>
-= <strong>XB</strong><br />
+= <strong>XB</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Bayvarra's address format (world/countries.json),
 one line after the other, a line left out when the address has none of
 its fields: MarkAttention; Department; InhouseMail; Postbox;
@@ -688,7 +777,8 @@ English: the building number is written once. Fields that are not on a
 line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/StreetName</code> =
 <strong>Mill Street</strong><br />
 Street of the postal address. identity of Lumeport Textile Mill
@@ -712,21 +802,24 @@ Postal code in Bayvarra's format (5 digits). identity of Lumeport
 Textile Mill (world/parties.json).</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
-The state or territory, part of an address in federal Bayvarra. identity
-of Lumeport Textile Mill (world/parties.json).</li>
+The name of code XB-CO in Bayvarra's national state or territory
+list.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/CountrySubentityCode</code>
-= <strong>CO</strong><br />
+= <strong>XB-CO</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
 The state or territory as a code of Bayvarra's address scheme
 (world/countries.json). identity of Lumeport Textile Mill
-(world/parties.json).</li>
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/TimezoneOffset</code>
 = <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -741,21 +834,25 @@ State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
 tax permit of the state or territory)); identity of Lumeport Textile
 Mill (world/parties.json).</li>
 <li><code>Consignment/ConsigneeParty/PartyTaxScheme/TaxLevelCode</code>
-= <strong>State</strong><br />
+= <strong>STATE</strong> (listID
+<code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Bayvarra's state sales tax
-is levied by the states.</li>
+is levied by the states. The code is from the Trade Accord's tax level
+list: STATE = Levied by a state or territory.</li>
 <li><code>Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/ID</code>
 = <strong>STT</strong><br />
 UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
 <li><code>Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/CurrencyCode</code>
-= <strong>XBL</strong><br />
-The tax is accounted for in the country's currency.</li>
+= <strong>XBL</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
 <li><code>Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The state or territory whose sales tax the party is registered for.</li>
 <li><code>Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country whose tax this is.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/RegistrationName</code>
 = <strong>Lumeport Textile Mill Ltd</strong><br />
 The name under which the party is registered, with its legal form;
@@ -769,24 +866,36 @@ Lumeport Textile Mill (world/parties.json).</li>
 The day the company was entered in the register; identity of Lumeport
 Textile Mill (world/parties.json).</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalFormCode</code>
-= <strong>Ltd</strong><br />
-The legal form, as abbreviated in Bayvarra (world/countries.json).</li>
+= <strong>LTD</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
+The legal form, as a code of Bayvarra's national list: only the listID
+tells the forms of different countries apart. The code is from
+Bayvarra's national company legal form list: LTD = Limited company
+(private).</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalForm</code>
 = <strong>Limited company (private)</strong><br />
-The legal form, in words.</li>
+The name of code LTD in Bayvarra's national company legal form
+list.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/EntitySizeCode</code>
-= <strong>Small</strong><br />
-The size class of the company (micro, small, medium or large); identity
-of Lumeport Textile Mill (world/parties.json).</li>
+= <strong>SMALL</strong> (listID
+<code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
+The size class follows from the company's 42 persons and its turnover of
+4140000.00 XBL in 2025, by the Trade Accord's limits; identity of
+Lumeport Textile Mill (world/parties.json). The code is from the Trade
+Accord's entity size list: SMALL = Small enterprise.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode</code>
-= <strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+= <strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName</code>
 = <strong>Lumeport</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country of registration.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/ID</code>
 = <strong>XB:FBR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -794,12 +903,15 @@ The identifier of the register in the world (world/countries.json).</li>
 = <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The register covers the whole country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Consignment/ConsigneeParty/Contact/Name</code> =
 <strong>Purchasing</strong><br />
 The desk that handles this document; identity of Lumeport Textile Mill
@@ -860,10 +972,14 @@ The forwarding instructions it was issued on.</li>
 <h3 id="exchange-rate">Exchange Rate</h3>
 <p>Inside <code>ExchangeRate</code>:</p>
 <ul>
-<li><code>SourceCurrencyCode</code> = <strong>XBL</strong><br />
-The freight's currency.</li>
-<li><code>TargetCurrencyCode</code> = <strong>XLC</strong><br />
-The island's currency.</li>
+<li><code>SourceCurrencyCode</code> = <strong>XBL</strong> (listID
+<code>ISO 4217 Alpha</code>)<br />
+The freight's currency. The code is from the world's copy of UBL's
+Currency (ISO 4217) list: XBL = Lume.</li>
+<li><code>TargetCurrencyCode</code> = <strong>XLC</strong> (listID
+<code>ISO 4217 Alpha</code>)<br />
+The island's currency. The code is from the world's copy of UBL's
+Currency (ISO 4217) list: XLC = Coral.</li>
 <li><code>CalculationRate</code> = <strong>0.4</strong><br />
 The reference rate.</li>
 </ul>
@@ -872,10 +988,14 @@ The reference rate.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 Three originals.</li>
-<li><code>DocumentTypeCode</code> = <strong>Original</strong><br />
-Originals.</li>
-<li><code>DistributionTypeCode</code> = <strong>Paper</strong><br />
-On paper, by courier.</li>
+<li><code>DocumentTypeCode</code> = <strong>ORIGINAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:DocumentCopyTypeCode</code>)<br />
+Originals. The code is from the Trade Accord's document copy type list:
+ORIGINAL = Original.</li>
+<li><code>DistributionTypeCode</code> = <strong>PAPER</strong> (listID
+<code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
+On paper, by courier. The code is from the Trade Accord's distribution
+type list: PAPER = Paper.</li>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20411644</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -916,7 +1036,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Bill of lading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Shipped on board.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Freight collect.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusCode</span>&gt;Confirmed&lt;/<span class="kw">cbc:DocumentStatusCode</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode&quot;</span>&gt;Confirmed&lt;/<span class="kw">cbc:DocumentStatusCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DeclaredCarriageValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:DeclaredCarriageValueAmount</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:WebsiteURI</span>&gt;https://www.selanuginnery.example&lt;/<span class="kw">cbc:WebsiteURI</span>&gt;</span>
@@ -935,15 +1055,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lisavan&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Tikesa Luhate Natii&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en&quot;</span>&gt;Gin Yard Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Gin Yard Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;42&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
@@ -951,23 +1071,23 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Selanu Cotton Ginnery Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;IC42681&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1996-01-01&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Ltd&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode&quot;</span>&gt;LTD&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Island limited company&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Small&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EntitySizeCode&quot;</span>&gt;SMALL&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XL:ICR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Island companies register&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -997,35 +1117,35 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Harbour Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;18&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Harbour quarter&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;38527&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Tidewell Ocean Lines Corp&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;CO-1235754&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -1034,25 +1154,25 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Tidewell Ocean Lines Corp&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;20411918&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1974-03-01&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Corp&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode&quot;</span>&gt;CORP&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Corporation (public)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Large&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EntitySizeCode&quot;</span>&gt;LARGE&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CorporateStockAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;40000000&lt;/<span class="kw">cbc:CorporateStockAmount</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FullyPaidSharesIndicator</span>&gt;true&lt;/<span class="kw">cbc:FullyPaidSharesIndicator</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1082,35 +1202,35 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Dockside Way&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;4&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Harbour quarter&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;38525&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Bayforth Forwarding Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;CO-1234932&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -1119,23 +1239,23 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Bayforth Forwarding Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;20411644&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1996-01-01&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Ltd&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode&quot;</span>&gt;LTD&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Limited company (private)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Small&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EntitySizeCode&quot;</span>&gt;SMALL&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1173,35 +1293,35 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
 <span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span>&gt;Mill Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;21&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Harbour quarter&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PostalZone</span>&gt;38504&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationName</span>&gt;Lumeport Textile Mill Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyID</span>&gt;CO-1237809&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -1210,23 +1330,23 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationName</span>&gt;Lumeport Textile Mill Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyID</span>&gt;20412603&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1996-01-01&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;Ltd&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode&quot;</span>&gt;LTD&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Limited company (private)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Small&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EntitySizeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EntitySizeCode&quot;</span>&gt;SMALL&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1258,14 +1378,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTM-FI-26-0198&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ExchangeRate</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span>&gt;XLC&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XLC&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
 <span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;0.4&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
 <span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ExchangeRate</span>&gt;</span>
 <span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
 <span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span>&gt;Original&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span>&gt;Paper&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DocumentCopyTypeCode&quot;</span>&gt;ORIGINAL&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;PAPER&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
 <span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1289,6 +1409,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">BillOfLading</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>aa9c1cc</code></p></div></footer>
 </body>
 </html>

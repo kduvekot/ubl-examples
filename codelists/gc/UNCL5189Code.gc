@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN/EDIFACT 5189 Allowance or charge identification: the codes the world uses, and others of the same list. Built from world/codelists/sources/uncefact/allowancechargeidcodelist.json (D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNCL5189Code</ShortName>
+      <LongName xml:lang="en">UN/EDIFACT 5189 Allowance or charge identification (UBL example world)</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 5189</LongName>
+      <Version>D22A</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNCL5189Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL5189Code:D22A</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNCL5189Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">UN/CEFACT</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>41</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bonus for works ahead of schedule</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>42</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other bonus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>48</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Interest on arrears</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Interest charged on an amount paid after its due date, at the statutory or agreed rate.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>49</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Interest</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>60</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manufacturer's consumer discount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>62</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Due to military status</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>63</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Due to work accident</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>64</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Special agreement</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An allowance the parties have agreed in their contract.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>65</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Production error discount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>66</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>New outlet discount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>67</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sample discount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>68</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>End-of-range discount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>70</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Incoterm discount</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>71</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Point of sales threshold allowance</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>88</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Material surcharge/deduction</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>95</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Discount</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A general discount on the price.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>96</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Insurance</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The cost of insuring the goods.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Special rebate</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A rebate outside the ordinary price terms.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>102</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fixed long term</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>103</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Temporary</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>104</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Standard</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>105</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Yearly turnover</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

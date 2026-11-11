@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of ISO 20022 SequenceType3Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 data dictionary, SequenceType3Code (iso20022.org, blocked for automated access)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ISO20022SequenceTypeCode</ShortName>
+      <LongName xml:lang="en">ISO 20022 SequenceType3Code (UBL example world)</LongName>
+      <LongName Identifier="listID">ISO 20022 SequenceType3Code</LongName>
+      <Version>ISO 20022 message definitions (pain.008)</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:ISO20022SequenceTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ISO20022SequenceTypeCode:ISO 20022 message definitions (pain.008)</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ISO20022SequenceTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">ISO 20022 Registration Authority (SWIFT)</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FRST</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>First</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>First collection of a series of direct debit instructions.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RCUR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Recurring</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Direct debit instruction where the debtor's authorisation is used for regular direct debit transactions initiated by the creditor.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FNAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Final</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Final collection of a series of direct debit instructions.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OOFF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OneOff</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Direct debit instruction where the debtor's authorisation is used to initiate one single direct debit transaction.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RPRE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Represented</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Collection used to re-present previously reversed or returned direct debit transactions.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

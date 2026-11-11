@@ -66,11 +66,14 @@ Published on the register on the day of the extract.</li>
 <li><code>RegulatoryDomain</code> = <strong>Bayvarra public
 procurement</strong><br />
 The rules of the register.</li>
-<li><code>NoticeTypeCode</code> =
-<strong>BusinessRegistration</strong><br />
-A notice of registration information.</li>
-<li><code>NoticeLanguageCode</code> = <strong>EN</strong><br />
-In English.</li>
+<li><code>NoticeTypeCode</code> = <strong>BUSREG</strong> (listID
+<code>urn:ubl-examples:world:codelist:NoticeTypeCode</code>)<br />
+A notice of registration information. The code is from the Trade
+Accord's notice type list: BUSREG = Business registration notice.</li>
+<li><code>NoticeLanguageCode</code> = <strong>en</strong> (listID
+<code>ISO 639</code>)<br />
+In English. The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 </ul>
 <h3 id="additional-notice-language">Additional Notice Language</h3>
 <p>Inside <code>AdditionalNoticeLanguage</code>:</p>
@@ -102,7 +105,9 @@ name are enough.</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Bayvarra Information Service
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 8411 = General public administration activities.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20410959</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
@@ -117,13 +122,19 @@ The trading name; identity of Bayvarra Information Service
 English, the language the party does business in.</li>
 <li><code>Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
-<li><code>Language/LocaleCode</code> = <strong>EN</strong><br />
-The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Language/LocaleCode</code> = <strong>en</strong> (listID
+<code>ISO 639</code>)<br />
+The language as a lower-case code of the world's ISO 639 list (ISO 639).
+The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XB</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Bayvarra's address format (world/countries.json),
 one line after the other, a line left out when the address has none of
 its fields: MarkAttention; Department; InhouseMail; Postbox;
@@ -138,7 +149,8 @@ English: the building number is written once. Fields that are not on a
 line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Civic
 Square</strong><br />
 Street of the postal address. identity of Bayvarra Information Service
@@ -161,21 +173,24 @@ Postal code in Bayvarra's format (5 digits). identity of Bayvarra
 Information Service (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
-The state or territory, part of an address in federal Bayvarra. identity
-of Bayvarra Information Service (world/parties.json).</li>
+The name of code XB-CO in Bayvarra's national state or territory
+list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
-<strong>CO</strong><br />
+<strong>XB-CO</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
 The state or territory as a code of Bayvarra's address scheme
 (world/countries.json). identity of Bayvarra Information Service
-(world/parties.json).</li>
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -188,14 +203,18 @@ identity of Bayvarra Information Service (world/parties.json).</li>
 Number in the Federal business register of Bayvarra; identity of
 Bayvarra Information Service (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country of registration.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -203,12 +222,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The register covers the whole country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Publications and
 register</strong><br />
 The desk that handles this document; identity of Bayvarra Information
@@ -260,7 +282,9 @@ deprecated.</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Lumeport Public Works Department
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 8411 = General public administration activities.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20410548</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
@@ -281,17 +305,23 @@ The trading name; identity of Lumeport Public Works Department
 English, the language the party does business in.</li>
 <li><code>Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
-<li><code>Language/LocaleCode</code> = <strong>EN</strong><br />
-The language as a code of UBL's language code list (ISO 639).</li>
+<li><code>Language/LocaleCode</code> = <strong>en</strong> (listID
+<code>ISO 639</code>)<br />
+The language as a lower-case code of the world's ISO 639 list (ISO 639).
+The code is from the world's copy of ISO 639 Language: en =
+English.</li>
 <li><code>PostalAddress/ID</code> =
 <strong>LUM-ADR-000417</strong><br />
 The address's number in the city's address register; identity of
 Lumeport Public Works Department (world/parties.json).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XB</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Bayvarra's address format (world/countries.json),
 one line after the other, a line left out when the address has none of
 its fields: MarkAttention; Department; InhouseMail; Postbox;
@@ -306,7 +336,8 @@ English: the building number is written once. Fields that are not on a
 line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
-lines.</li>
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Civic
 Square</strong><br />
 Street of the postal address. identity of Lumeport Public Works
@@ -340,21 +371,24 @@ Postal code in Bayvarra's format (5 digits). identity of Lumeport Public
 Works Department (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
-The state or territory, part of an address in federal Bayvarra. identity
-of Lumeport Public Works Department (world/parties.json).</li>
+The name of code XB-CO in Bayvarra's national state or territory
+list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
-<strong>CO</strong><br />
+<strong>XB-CO</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
 The state or territory as a code of Bayvarra's address scheme
 (world/countries.json). identity of Lumeport Public Works Department
-(world/parties.json).</li>
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XB</strong><br />
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -368,18 +402,21 @@ Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
 tax permit of the state or territory)); identity of Lumeport Public
 Works Department (world/parties.json).</li>
-<li><code>PartyTaxScheme/TaxLevelCode</code> =
-<strong>State</strong><br />
+<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>STATE</strong>
+(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Bayvarra's state sales tax
-is levied by the states.</li>
+is levied by the states. The code is from the Trade Accord's tax level
+list: STATE = Levied by a state or territory.</li>
 <li><code>PartyTaxScheme/ExemptionReasonCode</code> =
-<strong>XB-PUBLIC</strong><br />
-The exemption as a code of the world's exemption list
-(world/countries.json): sale to a public body.</li>
-<li><code>PartyTaxScheme/ExemptionReason</code> = <strong>Public bodies
-are exempt from the state sales tax</strong><br />
-Why purchases by this party carry no sales tax; identity of Lumeport
-Public Works Department (world/parties.json).</li>
+<strong>PUBLIC</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code>)<br />
+The exemption as a code of Bayvarra's national list of exemption
+reasons: sale to a public body. The code is from Bayvarra's national
+sales tax exemption reason list: PUBLIC = Sale to a public body.</li>
+<li><code>PartyTaxScheme/ExemptionReason</code> = <strong>Sale to a
+public body</strong><br />
+The name of code PUBLIC in Bayvarra's national sales tax exemption
+reason list.</li>
 <li><code>PartyTaxScheme/RegistrationAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 Where the party is registered for the tax.</li>
@@ -387,20 +424,23 @@ Where the party is registered for the tax.</li>
 <strong>Coastal State</strong><br />
 Its state or territory.</li>
 <li><code>PartyTaxScheme/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-Its country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+Its country. The code is from the world's copy of UBL's Country
+identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyTaxScheme/TaxScheme/ID</code> =
 <strong>STT</strong><br />
 UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
 <li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
-<strong>XBL</strong><br />
-The tax is accounted for in the country's currency.</li>
+<strong>XBL</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The state or territory whose sales tax the party is registered for.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country whose tax this is.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Lumeport
 Public Works Department</strong><br />
 The name under which the party is registered, with its legal form;
@@ -410,14 +450,18 @@ identity of Lumeport Public Works Department (world/parties.json).</li>
 Number in the Federal business register of Bayvarra; identity of
 Lumeport Public Works Department (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The country of registration.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -425,12 +469,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XB</strong><br />
-The register covers the whole country.</li>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Procurement
 office</strong><br />
 The desk that handles this document; identity of Lumeport Public Works
@@ -485,7 +532,9 @@ identity of Valdara Industries (world/parties.json).</li>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
 industry classification; identity of Valdara Industries
-(world/parties.json).</li>
+(world/parties.json). The code is from the world's copy of International
+Standard Industrial Classification of All Economic Activities, Revision
+4: 3100 = Manufacture of furniture.</li>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
@@ -509,10 +558,13 @@ are invented (world/countries.json).</li>
 <li><code>Language/Name</code> = <strong>Urvanian</strong><br />
 The language's name in English; in the language itself: urvanese.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
-<strong>Business</strong><br />
-The kind of address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> =
-<strong>XU</strong><br />
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XU</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
 The address follows Urvania's address format (world/countries.json), one
 line after the other, a line left out when the address has none of its
 fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
@@ -526,14 +578,15 @@ language first, then ' / ', then English: the building number is written
 once. Fields that are not on a line (ID, AddressTypeCode,
 CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
 other than where the post goes. The country is the last line of a postal
-address and is not repeated in the lines.</li>
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Stuzman
 Nulban</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
 street names are given in both languages (world/countries.json);
 identity of Valdara Industries (world/parties.json).</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Via delle
-Officine</strong> (languageID <code>en</code>)<br />
+Officine</strong> (languageID <code>en-XB</code>)<br />
 The street's name in English, the country's other official language; the
 Italian names the British kept are part of English now; identity of
 Valdara Industries (world/parties.json).</li>
@@ -546,7 +599,7 @@ Building number of the postal address. identity of Valdara Industries
 The town's Urvanian name, which its people have always used; identity of
 Valdara Industries (world/parties.json).</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
-(languageID <code>en</code>)<br />
+(languageID <code>en-XB</code>)<br />
 The town's English name, inherited from the Italian; identity of Valdara
 Industries (world/parties.json).</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4120</strong><br />
@@ -561,9 +614,10 @@ Industries (world/parties.json).</li>
 The party's time zone, one hour behind UTC, where the world lies
 (world/countries.json).</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XU</strong><br />
+<strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists).</li>
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
@@ -576,19 +630,22 @@ identity of Valdara Industries (world/parties.json).</li>
 Tax number under Urvania's value added tax (XU and 9 digits, the last a
 check digit (weights 9..2, modulus 11)); identity of Valdara Industries
 (world/parties.json).</li>
-<li><code>PartyTaxScheme/TaxLevelCode</code> =
-<strong>National</strong><br />
+<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>NATIONAL</strong>
+(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Urvania's value added tax
-is levied by the country.</li>
+is levied by the country. The code is from the Trade Accord's tax level
+list: NATIONAL = Levied by the country.</li>
 <li><code>PartyTaxScheme/TaxScheme/ID</code> =
 <strong>VAT</strong><br />
 UN/EDIFACT 5153 code of Urvania's value added tax.</li>
 <li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
-<strong>XUF</strong><br />
-The tax is accounted for in the country's currency.</li>
+<strong>XUF</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.</li>
 <li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XU</strong><br />
-The country whose tax this is.</li>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Valdara
 Industries SUA</strong><br />
 The name under which the party is registered, with its legal form;
@@ -602,18 +659,28 @@ Industries (world/parties.json).</li>
 The day the company was entered in the register; identity of Valdara
 Industries (world/parties.json).</li>
 <li><code>PartyLegalEntity/CompanyLegalFormCode</code> =
-<strong>SUA</strong><br />
-The legal form, as abbreviated in Urvania (world/countries.json).</li>
+<strong>SUA</strong> (listID
+<code>urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode</code>)<br />
+The legal form, as a code of Urvania's national list: only the listID
+tells the forms of different countries apart. The code is from Urvania's
+national company legal form list: SUA = Società urvaniana per azioni
+(public limited company).</li>
 <li><code>PartyLegalEntity/CompanyLegalForm</code> = <strong>Società
 urvaniana per azioni (public limited company)</strong><br />
-The legal form, in words.</li>
+The name of code SUA in Urvania's national company legal form list.</li>
 <li><code>PartyLegalEntity/EntitySizeCode</code> =
-<strong>Large</strong><br />
-The size class of the company (micro, small, medium or large); identity
-of Valdara Industries (world/parties.json).</li>
+<strong>LARGE</strong> (listID
+<code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
+The size class follows from the company's 3083 persons and its turnover
+of 23600000000 XUF in 2025, by the Trade Accord's limits; identity of
+Valdara Industries (world/parties.json). The code is from the Trade
+Accord's entity size list: LARGE = Large enterprise.</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
-<strong>Active</strong><br />
-The register shows the company as active, not in liquidation.</li>
+<strong>ACTIVE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
+The register shows the company as active, not in liquidation. The code
+is from the Trade Accord's company liquidation status list: ACTIVE =
+Active, not in liquidation.</li>
 <li><code>PartyLegalEntity/CorporateStockAmount</code> =
 <strong>250000000</strong> (currencyID <code>XUF</code>)<br />
 The share capital, in ferra; identity of Valdara Industries
@@ -625,8 +692,9 @@ All shares are paid up.</li>
 <strong>Ferrano</strong><br />
 The registered office, as entered in the register.</li>
 <li><code>PartyLegalEntity/RegistrationAddress/Country/IdentificationCode</code>
-= <strong>XU</strong><br />
-The country of registration.</li>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country of registration. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XU:CR</strong><br />
 The identifier of the register in the world (world/countries.json).</li>
@@ -634,12 +702,15 @@ The identifier of the register in the world (world/countries.json).</li>
 <strong>Commercial register of Urvania</strong><br />
 The register the company is entered in.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
-= <strong>Commercial</strong><br />
-A register of businesses, not a register of charities or
-associations.</li>
+= <strong>COMMERCIAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
+A register of businesses, not a register of charities or associations.
+The code is from the Trade Accord's corporate registration type list:
+COMMERCIAL = Commercial register.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XU</strong><br />
-The register covers the whole country.</li>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The register covers the whole country. The code is from the world's copy
+of UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>PartyLegalEntity/SecurityListing/ID</code> =
 <strong>XU0001042501</strong><br />
 The identifier of the listed shares, in the form of an ISIN with the
@@ -649,10 +720,12 @@ world's country code.</li>
 What is listed.</li>
 <li><code>PartyLegalEntity/SecurityListing/MarketName</code> =
 <strong>Ferrano Stock Exchange</strong><br />
-The regulated market where the shares are listed.</li>
+The name of code XFER in the Trade Accord's market identifier list.</li>
 <li><code>PartyLegalEntity/SecurityListing/MarketCode</code> =
-<strong>FSE</strong><br />
-The market's code.</li>
+<strong>XFER</strong> (listID
+<code>urn:ubl-examples:world:codelist:MarketCode</code>)<br />
+The market's code. The code is from the Trade Accord's market identifier
+list: XFER = Ferrano Stock Exchange.</li>
 <li><code>Contact/Name</code> = <strong>Order desk</strong><br />
 The desk that handles this document; identity of Valdara Industries
 (world/parties.json).</li>
@@ -682,8 +755,9 @@ anyone; identity of Valdara Industries (world/parties.json).</li>
 When the desk can be reached; identity of Valdara Industries
 (world/parties.json).</li>
 <li><code>Contact/OtherCommunication/ChannelCode</code> =
-<strong>AL</strong><br />
-UN/EDIFACT 3155 code AL: cellular phone.</li>
+<strong>AL</strong> (listID <code>UN/EDIFACT EDED 3155</code>)<br />
+UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default
+Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.</li>
 <li><code>Contact/OtherCommunication/Value</code> = <strong>+999 1 344
 474 4274</strong><br />
 The sales desk's mobile number, also under the reserved +999.</li>
@@ -691,8 +765,10 @@ The sales desk's mobile number, also under the reserved +999.</li>
 <strong>5-xu-SP-8-xu</strong><br />
 The service contract between the two.</li>
 <li><code>ServiceProviderParty/ServiceTypeCode</code> =
-<strong>Logistics</strong><br />
-The kind of service, as a code.</li>
+<strong>LOGISTICS</strong> (listID
+<code>urn:ubl-examples:world:codelist:ServiceTypeCode</code>)<br />
+The kind of service, as a code. The code is from the Trade Accord's
+service type list: LOGISTICS = Logistics service.</li>
 <li><code>ServiceProviderParty/ServiceType</code> = <strong>Warehousing
 and despatch</strong><br />
 What the service provider does for the party; identity of Valdara
@@ -738,8 +814,11 @@ Its quality certificate.</li>
 <ul>
 <li><code>ID</code> = <strong>CAP-1</strong><br />
 A capability on record.</li>
-<li><code>CapabilityTypeCode</code> = <strong>Production</strong><br />
-Production capacity.</li>
+<li><code>CapabilityTypeCode</code> = <strong>PRODUCTION</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode</code>)<br />
+Production capacity. The code is from the Trade Accord's business
+capability type list: PRODUCTION = Production.</li>
 <li><code>Description</code> = <strong>Steel frame benches, cast,
 galvanised and coated in its own plant.</strong><br />
 What.</li>
@@ -761,9 +840,11 @@ Valid until the next accounts.</li>
 <li><code>WebSite/Name</code> = <strong>Valdara
 Industries</strong><br />
 Its site.</li>
-<li><code>WebSite/WebSiteTypeCode</code> =
-<strong>Company</strong><br />
-A company site.</li>
+<li><code>WebSite/WebSiteTypeCode</code> = <strong>COMPANY</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:WebSiteTypeCode</code>)<br />
+A company site. The code is from the Trade Accord's web site type list:
+COMPANY = Company site.</li>
 <li><code>WebSite/URI</code> = <strong><a
 href="https://www.valdara.example">https://www.valdara.example</a></strong><br />
 The address.</li>
@@ -771,8 +852,11 @@ The address.</li>
 <h3 id="business-party-group">Business Party Group</h3>
 <p>Inside <code>BusinessPartyGroup</code>:</p>
 <ul>
-<li><code>GroupTypeCode</code> = <strong>SameActivity</strong><br />
-Operators with the same registered activity.</li>
+<li><code>GroupTypeCode</code> = <strong>SAMEACTIVITY</strong> (listID
+<code>urn:ubl-examples:world:codelist:BusinessPartyGroupTypeCode</code>)<br />
+Operators with the same registered activity. The code is from the Trade
+Accord's business party group type list: SAMEACTIVITY = Same registered
+activity.</li>
 <li><code>GroupType</code> = <strong>Tenderers in this procedure
 registered for ISIC 3100</strong><br />
 The group.</li>
@@ -798,8 +882,10 @@ name are enough.</li>
 <h3 id="operation-type">Operation Type</h3>
 <p>Inside <code>OperationType</code>:</p>
 <ul>
-<li><code>Code</code> = <strong>Manufacture</strong><br />
-Its operation.</li>
+<li><code>Code</code> = <strong>MANUFACTURE</strong> (listID
+<code>urn:ubl-examples:world:codelist:OperationTypeCode</code>)<br />
+Its operation. The code is from the Trade Accord's operation type list:
+MANUFACTURE = Manufacture.</li>
 <li><code>Description</code> = <strong>Manufacture of furniture for
 public spaces.</strong><br />
 In words.</li>
@@ -807,8 +893,10 @@ In words.</li>
 <h3 id="notice-sub-type">Notice Sub Type</h3>
 <p>Inside <code>NoticeSubType</code>:</p>
 <ul>
-<li><code>SubTypeCode</code> = <strong>Extract</strong><br />
-An extract on request.</li>
+<li><code>SubTypeCode</code> = <strong>EXTRACT</strong> (listID
+<code>urn:ubl-examples:world:codelist:NoticeSubTypeCode</code>)<br />
+An extract on request. The code is from the Trade Accord's notice
+subtype list: EXTRACT = Register extract.</li>
 <li><code>SubTypeDescription</code> = <strong>Extract asked for by a
 contracting authority.</strong><br />
 In words.</li>
@@ -831,8 +919,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:BriefDescription</span>&gt;Valdara Industries: registered, no exclusion grounds recorded.&lt;/<span class="kw">cbc:BriefDescription</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RequestedPublicationDate</span>&gt;2026-02-27&lt;/<span class="kw">cbc:RequestedPublicationDate</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegulatoryDomain</span>&gt;Bayvarra public procurement&lt;/<span class="kw">cbc:RegulatoryDomain</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NoticeTypeCode</span>&gt;BusinessRegistration&lt;/<span class="kw">cbc:NoticeTypeCode</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NoticeLanguageCode</span>&gt;EN&lt;/<span class="kw">cbc:NoticeLanguageCode</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NoticeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NoticeTypeCode&quot;</span>&gt;BUSREG&lt;/<span class="kw">cbc:NoticeTypeCode</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NoticeLanguageCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:NoticeLanguageCode</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalNoticeLanguage</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;qau&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Urvanian&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -859,41 +947,41 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Civic Square&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;27&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Old town&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;38520&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Bayvarra Information Service&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;20410959&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -925,12 +1013,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span>&gt;EN&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LUM-ADR-000417&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Civic Square&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;6&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InhouseMail</span>&gt;Room 2.14&lt;/<span class="kw">cbc:InhouseMail</span>&gt;</span>
@@ -940,33 +1028,33 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;38517&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;CO-0900002&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExemptionReasonCode</span>&gt;XB-PUBLIC&lt;/<span class="kw">cbc:ExemptionReasonCode</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExemptionReason</span>&gt;Public bodies are exempt from the state sales tax&lt;/<span class="kw">cbc:ExemptionReason</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;PUBLIC&lt;/<span class="kw">cbc:ExemptionReasonCode</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExemptionReason</span>&gt;Sale to a public body&lt;/<span class="kw">cbc:ExemptionReason</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -974,20 +1062,20 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;20410548&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1022,31 +1110,31 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Urvanian&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span>&gt;Business&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Stuzman Nulban&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en&quot;</span>&gt;Via delle Officine&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Via delle Officine&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;17&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4120&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Region</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:Region</span>&gt;</span>
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;XU007299291&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;National&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;NATIONAL&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -1055,25 +1143,25 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationDate</span>&gt;1962-04-12&lt;/<span class="kw">cbc:RegistrationDate</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span>&gt;SUA&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode&quot;</span>&gt;SUA&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Società urvaniana per azioni (public limited company)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span>&gt;Large&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;Active&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EntitySizeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EntitySizeCode&quot;</span>&gt;LARGE&lt;/<span class="kw">cbc:EntitySizeCode</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CorporateStockAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;250000000&lt;/<span class="kw">cbc:CorporateStockAmount</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FullyPaidSharesIndicator</span>&gt;true&lt;/<span class="kw">cbc:FullyPaidSharesIndicator</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU:CR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Commercial register of Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;Commercial&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
@@ -1081,7 +1169,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Ordinary shares of Valdara Industries&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketName</span>&gt;Ferrano Stock Exchange&lt;/<span class="kw">cbc:MarketName</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketCode</span>&gt;FSE&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MarketCode&quot;</span>&gt;XFER&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SecurityListing</span>&gt;</span>
 <span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
@@ -1092,13 +1180,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;order@valdara.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OtherCommunication</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ChannelCode</span>&gt;AL&lt;/<span class="kw">cbc:ChannelCode</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 3155&quot;</span>&gt;AL&lt;/<span class="kw">cbc:ChannelCode</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;+999 1 344 474 4274&lt;/<span class="kw">cbc:Value</span>&gt;</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OtherCommunication</span>&gt;</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ServiceProviderParty</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;5-xu-SP-8-xu&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ServiceTypeCode</span>&gt;Logistics&lt;/<span class="kw">cbc:ServiceTypeCode</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ServiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ServiceTypeCode&quot;</span>&gt;LOGISTICS&lt;/<span class="kw">cbc:ServiceTypeCode</span>&gt;</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ServiceType</span>&gt;Warehousing and despatch&lt;/<span class="kw">cbc:ServiceType</span>&gt;</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1125,7 +1213,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BusinessCapability</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CAP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CapabilityTypeCode</span>&gt;Production&lt;/<span class="kw">cbc:CapabilityTypeCode</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CapabilityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode&quot;</span>&gt;PRODUCTION&lt;/<span class="kw">cbc:CapabilityTypeCode</span>&gt;</span>
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Steel frame benches, cast, galvanised and coated in its own plant.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4800000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6000&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
@@ -1138,12 +1226,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:WebSite</span>&gt;</span>
 <span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WebSiteTypeCode</span>&gt;Company&lt;/<span class="kw">cbc:WebSiteTypeCode</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WebSiteTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WebSiteTypeCode&quot;</span>&gt;COMPANY&lt;/<span class="kw">cbc:WebSiteTypeCode</span>&gt;</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:URI</span>&gt;https://www.valdara.example&lt;/<span class="kw">cbc:URI</span>&gt;</span>
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:WebSite</span>&gt;</span>
 <span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BusinessCapability</span>&gt;</span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BusinessPartyGroup</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GroupTypeCode</span>&gt;SameActivity&lt;/<span class="kw">cbc:GroupTypeCode</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GroupTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:BusinessPartyGroupTypeCode&quot;</span>&gt;SAMEACTIVITY&lt;/<span class="kw">cbc:GroupTypeCode</span>&gt;</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GroupType</span>&gt;Tenderers in this procedure registered for ISIC 3100&lt;/<span class="kw">cbc:GroupType</span>&gt;</span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1163,16 +1251,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BusinessPartyGroup</span>&gt;</span>
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OperationType</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Code</span>&gt;Manufacture&lt;/<span class="kw">cbc:Code</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Code</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OperationTypeCode&quot;</span>&gt;MANUFACTURE&lt;/<span class="kw">cbc:Code</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Manufacture of furniture for public spaces.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OperationType</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:NoticeSubType</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SubTypeCode</span>&gt;Extract&lt;/<span class="kw">cbc:SubTypeCode</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SubTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NoticeSubTypeCode&quot;</span>&gt;EXTRACT&lt;/<span class="kw">cbc:SubTypeCode</span>&gt;</span>
 <span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SubTypeDescription</span>&gt;Extract asked for by a contracting authority.&lt;/<span class="kw">cbc:SubTypeDescription</span>&gt;</span>
 <span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:NoticeSubType</span>&gt;</span>
 <span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">BusinessInformation</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>aa9c1cc</code></p></div></footer>
 </body>
 </html>

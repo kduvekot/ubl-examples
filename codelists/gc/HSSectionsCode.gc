@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of Harmonized System 2022, sections: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Harmonized System Nomenclature 2022 edition (WCO), section titles (shortened)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>HSSectionsCode</ShortName>
+      <LongName xml:lang="en">Harmonized System 2022, sections (UBL example world)</LongName>
+      <LongName Identifier="listID">WCO HS 2022 Sections</LongName>
+      <Version>HS 2022</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:HSSectionsCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:HSSectionsCode:HS 2022</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/HSSectionsCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">World Customs Organization</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>I</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Live animals; animal products</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>II</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Vegetable products</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>III</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Animal, vegetable or microbial fats and oils</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>IV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Prepared foodstuffs; beverages, spirits and vinegar; tobacco</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>V</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mineral products</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Products of the chemical or allied industries</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VII</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Plastics and articles thereof; rubber and articles thereof</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VIII</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Raw hides and skins, leather, furskins and articles thereof</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>IX</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wood and articles of wood; cork; basketware</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pulp of wood; paper and paperboard</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Textiles and textile articles</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XII</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Footwear, headgear, umbrellas</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XIII</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Articles of stone, plaster, cement; ceramic products; glass</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XIV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pearls, precious stones and metals; jewellery; coin</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Base metals and articles of base metal</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XVI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Machinery and mechanical appliances; electrical equipment</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XVII</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Vehicles, aircraft, vessels and transport equipment</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XVIII</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Optical, photographic, measuring, medical instruments; clocks; musical instruments</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XIX</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Arms and ammunition</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XX</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Miscellaneous manufactured articles</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>XXI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Works of art, collectors' pieces and antiques</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

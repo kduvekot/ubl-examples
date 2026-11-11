@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of IMO ISPS Code security level: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (International Ship and Port Facility Security Code, part A, section 2); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>IMOISPSCode</ShortName>
+      <LongName xml:lang="en">IMO ISPS Code security level (UBL example world)</LongName>
+      <LongName Identifier="listID">IMO ISPS security level</LongName>
+      <Version>ISPS Code (SOLAS chapter XI-2)</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:IMOISPSCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:IMOISPSCode:ISPS Code (SOLAS chapter XI-2)</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/IMOISPSCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">International Maritime Organization</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Security level 1</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The level for which minimum appropriate protective security measures shall be maintained at all times.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Security level 2</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The level for which appropriate additional protective security measures shall be maintained for a period of time as a result of heightened risk.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Security level 3</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The level for which further specific protective security measures shall be maintained for a limited period of time when a security incident is probable or imminent.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

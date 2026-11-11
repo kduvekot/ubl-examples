@@ -8,7 +8,7 @@
   <cbc:UUID>d96e3f6a-2649-56f7-9849-4bc3034c1d57</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>15:39:00</cbc:IssueTime>
-  <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
+  <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>
@@ -30,31 +30,31 @@
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
-        <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
         <cbc:CompanyID>XU007318479</cbc:CompanyID>
-        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
-          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -63,23 +63,24 @@
         <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
         <cbc:CompanyID>XU-R-104548</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XU:CR</cbc:ID>
           <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -93,15 +94,16 @@
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:PartyAuthorization>
-        <cbc:PurposeCode>R3</cbc:PurposeCode>
+        <cbc:PurposeCode listID="Basel Convention Annex IV">R3</cbc:PurposeCode>
         <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
         <cac:ValidityPeriod>
           <cbc:EndDate>2029-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:Certificate>
           <cbc:ID>XU-ENV-2024-0311</cbc:ID>
-          <cbc:CertificateTypeCode>Permit</cbc:CertificateTypeCode>
-          <cbc:CertificateType>Operating permit</cbc:CertificateType>
+          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
+          <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
+          <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
         </cac:Certificate>
       </cac:PartyAuthorization>
       <cac:ElectronicAddress>
@@ -126,35 +128,35 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Estuary Road</cbc:StreetName>
         <cbc:BuildingNumber>28</cbc:BuildingNumber>
         <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38505</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
         <cbc:CompanyID>CO-1238220</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -163,23 +165,23 @@
         <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20412740</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -195,9 +197,9 @@
       <cac:FinancialAccount>
         <cbc:ID schemeID="urn:ubl-examples:world:account">XB66BLUM0004712805</cbc:ID>
         <cbc:Name>Rivermouth Packaging Ltd</cbc:Name>
-        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:FinancialInstitutionBranch>
           <cbc:ID>BLUM-001</cbc:ID>
           <cbc:Name>Main branch</cbc:Name>
@@ -205,24 +207,24 @@
             <cbc:ID>BLUM</cbc:ID>
             <cbc:Name>Bank of Lumeport</cbc:Name>
             <cac:Address>
-              <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+              <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
               <cbc:StreetName>Exchange Street</cbc:StreetName>
               <cbc:BuildingNumber>48</cbc:BuildingNumber>
               <cbc:CityName>Lumeport</cbc:CityName>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>
           <cac:Address>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitutionBranch>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:FinancialAccount>
       <cac:ElectronicAddress>

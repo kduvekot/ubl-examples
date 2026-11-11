@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN Model Regulations hazard class and division: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (UN Model Regulations, chapter 2.0, 2.0.1.1); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNModelRegsClassCode</ShortName>
+      <LongName xml:lang="en">UN Model Regulations hazard class and division (UBL example world)</LongName>
+      <LongName Identifier="listID">UN Model Regulations hazard class</LongName>
+      <Version>Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNModelRegsClassCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNModelRegsClassCode:Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNModelRegsClassCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Explosives</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gases</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2.1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Flammable gases</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2.2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Non-flammable, non-toxic gases</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2.3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Toxic gases</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Flammable liquids</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4.1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Flammable solids</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4.2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Substances liable to spontaneous combustion</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4.3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Substances which in contact with water emit flammable gases</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5.1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Oxidizing substances</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5.2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Organic peroxides</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>6.1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Toxic substances</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>6.2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Infectious substances</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Radioactive material</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Corrosive substances</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Miscellaneous dangerous substances and articles</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: criterion response. The answer to a requirement of a tendering criterion (ESPD-EDM). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CriterionResponseCode</ShortName>
+      <LongName xml:lang="en">Criterion response (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CriterionResponseCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CriterionResponseCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CriterionResponseCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CriterionResponseCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MET</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Criterion met</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bukan hizdek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pasiluti teasi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The requirement is met.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NOTMET</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Criterion not met</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bukan drurkraz hizdek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pasiluti hivile teasi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The requirement is not met.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NOTAPPLICABLE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Not applicable</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drurkraz mevir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hivile pakotaku</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The requirement does not apply to the tenderer.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

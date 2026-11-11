@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: transport service. The kind of transport service a carrier offers. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>TransportServiceCode</ShortName>
+      <LongName xml:lang="en">Transport service (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TransportServiceCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:TransportServiceCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TransportServiceCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TransportServiceCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FTL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Full truck load</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dan stindrul staz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pamoto vivaha pihopa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>One truck for one consignment, from the place of loading to the place of delivery.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LTL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Part load by road</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bemek staz man kraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lanue pihopa ninote natii</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A consignment that shares the truck with others.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RAILCONT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Container train</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Titran sezhul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Napiali nalasa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Containers on a scheduled container train.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RAILWAGON</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rail wagon load</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kaz tanhek staz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kepisu kehufi pihopa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A whole wagon for one consignment.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RIVERBARGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>River barge</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gakzaz bikrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Napase pusuka</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Carriage on an inland barge.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OCEANCONT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Container liner service</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Titran drulzhek vekrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Napiali sakaa sipaki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Containers on a scheduled liner service by sea.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AIRCARGO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Air cargo</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kir nirrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tilifo faleka</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Carriage as air cargo.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MERCHHAUL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Merchant haulage</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drenzul ranrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kaketa motetu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carriage of a container to or from the port arranged by the merchant, not the shipping line.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CARRHAUL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Carrier haulage</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sundraz ranrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Topatu motetu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carriage of a container to or from the port arranged by the shipping line.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NOTIFY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pre-arrival notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zenkul-marsir mudek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hanaka-fihei katame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carrier gives notice before it arrives.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WEIGH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Weighing</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zikdran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pimeme</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods or the vehicles are weighed.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

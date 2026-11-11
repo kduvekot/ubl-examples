@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: colour. The colour of an item or of a part of it, as a code. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ColourCode</ShortName>
+      <LongName xml:lang="en">Colour (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ColourCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ColourCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ColourCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ColourCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GRY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grey</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Mul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tatike</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Grey, such as Ferro grey (RAL 7011) of the bench frames.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GRN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Green</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sakmul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kehilo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Green, such as moss green (RAL 6005).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BLK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Black</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sarhaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hihafa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Black.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WHT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>White</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhitek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vahee</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>White.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BRN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Brown</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gekgan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kelele</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Brown, such as untreated hardwood.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Red</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sapii</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Red.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BLU</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Blue</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pufeva</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Blue.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

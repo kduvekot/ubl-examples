@@ -19,34 +19,34 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Foundry Road</cbc:StreetName>
       <cbc:BuildingNumber>13</cbc:BuildingNumber>
       <cbc:CityName>Marrowdale</cbc:CityName>
       <cbc:PostalZone>71218</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
       <cbc:CompanyID>UL-1232055</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -54,20 +54,20 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
       <cbc:CompanyID>20410685</cbc:CompanyID>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -97,35 +97,35 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
       <cbc:CompanyID>CO-1234932</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -134,23 +134,23 @@
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -188,15 +188,15 @@
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
           <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
-          <cbc:StreetName languageID="en">Mast Hill Road</cbc:StreetName>
+          <cbc:StreetName languageID="en-XB">Mast Hill Road</cbc:StreetName>
           <cbc:BuildingNumber>58</cbc:BuildingNumber>
           <cbc:CityName>Selanu</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
@@ -204,23 +204,23 @@
           <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
           <cbc:CompanyID>IC42407</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
             <cbc:ID>XL:ICR</cbc:ID>
             <cbc:Name>Island companies register</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
@@ -269,11 +269,11 @@
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:HazardousGoodsTransit>
-            <cbc:TransportEmergencyCardCode>TEC-90-3480</cbc:TransportEmergencyCardCode>
-            <cbc:PackingCriteriaCode>PI965-IA</cbc:PackingCriteriaCode>
-            <cbc:HazardousRegulationCode>IATA</cbc:HazardousRegulationCode>
-            <cbc:InhalationToxicityZoneCode>None</cbc:InhalationToxicityZoneCode>
-            <cbc:TransportAuthorizationCode>CAO</cbc:TransportAuthorizationCode>
+            <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
+            <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
+            <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+            <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
+            <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
             <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
             <cac:MaximumTemperature>
               <cbc:AttributeID>Battery</cbc:AttributeID>
@@ -286,14 +286,14 @@
           </cac:HazardousGoodsTransit>
           <cac:LoadedHazardousItem>
             <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-            <cbc:UNDGCode listID="UNCL8273">3480</cbc:UNDGCode>
+            <cbc:UNDGCode listID="UN Model Regulations UN number">3480</cbc:UNDGCode>
             <cbc:CategoryName>Miscellaneous dangerous goods</cbc:CategoryName>
             <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
             <cbc:UpperOrangeHazardPlacardID>90</cbc:UpperOrangeHazardPlacardID>
             <cbc:LowerOrangeHazardPlacardID>3480</cbc:LowerOrangeHazardPlacardID>
             <cbc:HazardClassID>9</cbc:HazardClassID>
-            <cbc:HazardousTypeCode>Article</cbc:HazardousTypeCode>
-            <cbc:PackagingDangerLevelCode>None</cbc:PackagingDangerLevelCode>
+            <cbc:HazardousTypeCode listID="urn:ubl-examples:world:codelist:HazardousGoodsTypeCode">ARTICLE</cbc:HazardousTypeCode>
+            <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">4</cbc:PackagingDangerLevelCode>
             <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
             <cbc:NetWeightMeasure unitCode="KGM">312</cbc:NetWeightMeasure>
             <cbc:NetVolumeMeasure unitCode="MTQ">0.24</cbc:NetVolumeMeasure>
@@ -307,11 +307,11 @@
               </cac:PartyName>
             </cac:ContactParty>
             <cac:HazardousGoodsTransit>
-              <cbc:TransportEmergencyCardCode>TEC-90-3480</cbc:TransportEmergencyCardCode>
-              <cbc:PackingCriteriaCode>PI965-IA</cbc:PackingCriteriaCode>
-              <cbc:HazardousRegulationCode>IATA</cbc:HazardousRegulationCode>
-              <cbc:InhalationToxicityZoneCode>None</cbc:InhalationToxicityZoneCode>
-              <cbc:TransportAuthorizationCode>CAO</cbc:TransportAuthorizationCode>
+              <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
+              <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
+              <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+              <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
+              <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
               <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
               <cac:MaximumTemperature>
                 <cbc:AttributeID>Battery</cbc:AttributeID>
@@ -337,16 +337,16 @@
             <cac:Package>
               <cbc:ID>SE-CR-1..6</cbc:ID>
               <cbc:Quantity unitCode="EA">6</cbc:Quantity>
-              <cbc:PackagingTypeCode>CR</cbc:PackagingTypeCode>
+              <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
             </cac:Package>
           </cac:LoadedHazardousItem>
         </cac:TransportEquipment>
         <cac:HazardousGoodsTransit>
-          <cbc:TransportEmergencyCardCode>TEC-90-3480</cbc:TransportEmergencyCardCode>
-          <cbc:PackingCriteriaCode>PI965-IA</cbc:PackingCriteriaCode>
-          <cbc:HazardousRegulationCode>IATA</cbc:HazardousRegulationCode>
-          <cbc:InhalationToxicityZoneCode>None</cbc:InhalationToxicityZoneCode>
-          <cbc:TransportAuthorizationCode>CAO</cbc:TransportAuthorizationCode>
+          <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
+          <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
+          <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+          <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
+          <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
           <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
           <cac:MaximumTemperature>
             <cbc:AttributeID>Battery</cbc:AttributeID>
@@ -381,22 +381,25 @@
           <cbc:ID schemeID="urn:ubl-examples:world:item">772050000117</cbc:ID>
         </cac:StandardItemIdentification>
         <cac:OriginCountry>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:ItemClassificationCode listID="HS">8507.60</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
           <cbc:ID>SE-BAT-48100-DG</cbc:ID>
           <cbc:PlacardNotation>9</cbc:PlacardNotation>
           <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
           <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UNCL8273">3480</cbc:UNDGCode>
-          <cbc:EmergencyProceduresCode>F-A, S-I</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode>147</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode>E</cbc:TunnelRestrictionCode>
+          <cbc:UNDGCode listID="UN Model Regulations UN number">3480</cbc:UNDGCode>
+          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
+          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
+          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">147</cbc:MedicalFirstAidGuideCode>
+          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">E</cbc:TunnelRestrictionCode>
           <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode>UN</cbc:HazardousCategoryCode>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN3480</cbc:MarkingID>
           <cbc:HazardClassID>9</cbc:HazardClassID>
         </cac:HazardousItem>
@@ -404,7 +407,7 @@
       <cac:Temperature>
         <cbc:AttributeID>Transport</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode>Target</cbc:MeasureCode>
+        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>
@@ -428,20 +431,23 @@
           <cbc:ID schemeID="urn:ubl-examples:world:item">772050000124</cbc:ID>
         </cac:StandardItemIdentification>
         <cac:OriginCountry>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:ItemClassificationCode listID="HS">8531.10</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
           <cbc:ID>SE-SMK-10-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
           <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UNCL8273">2911</cbc:UNDGCode>
-          <cbc:EmergencyProceduresCode>None</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode>161</cbc:MedicalFirstAidGuideCode>
+          <cbc:UNDGCode listID="UN Model Regulations UN number">2911</cbc:UNDGCode>
+          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
+          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
+          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">161</cbc:MedicalFirstAidGuideCode>
           <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode>UN</cbc:HazardousCategoryCode>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2911</cbc:MarkingID>
           <cbc:HazardClassID>7</cbc:HazardClassID>
           <cac:RadioactiveMaterial>
@@ -459,7 +465,7 @@
       <cac:Temperature>
         <cbc:AttributeID>Transport</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode>Target</cbc:MeasureCode>
+        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>
@@ -483,33 +489,33 @@
           <cbc:ID schemeID="urn:ubl-examples:world:item">772050000131</cbc:ID>
         </cac:StandardItemIdentification>
         <cac:OriginCountry>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:ItemClassificationCode listID="HS">3814.00</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
           <cbc:ID>SE-CS-05-DG</cbc:ID>
           <cbc:PlacardNotation>8</cbc:PlacardNotation>
           <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
           <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UNCL8273">2920</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode>II</cbc:UNPackingGroupCode>
+          <cbc:UNDGCode listID="UN Model Regulations UN number">2920</cbc:UNDGCode>
+          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
           <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode>F-E, S-C</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode>132</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode>D/E</cbc:TunnelRestrictionCode>
-          <cbc:MaritimePollutantCode>N</cbc:MaritimePollutantCode>
+          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">132</cbc:MedicalFirstAidGuideCode>
+          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">D/E</cbc:TunnelRestrictionCode>
+          <cbc:MaritimePollutantCode listID="urn:ubl-examples:world:codelist:MarinePollutantCode">N</cbc:MaritimePollutantCode>
           <cbc:TechnicalName>ethanolamine, propanol</cbc:TechnicalName>
           <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode>UN</cbc:HazardousCategoryCode>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2920</cbc:MarkingID>
           <cbc:HazardClassID>8</cbc:HazardClassID>
           <cac:SecondaryHazard>
             <cbc:ID>3</cbc:ID>
             <cbc:PlacardNotation>3</cbc:PlacardNotation>
             <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
-            <cbc:EmergencyProceduresCode>F-E</cbc:EmergencyProceduresCode>
             <cbc:Extension>Subsidiary risk 3</cbc:Extension>
           </cac:SecondaryHazard>
           <cac:FlashpointTemperature>
@@ -521,7 +527,7 @@
       <cac:Temperature>
         <cbc:AttributeID>Transport</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode>Target</cbc:MeasureCode>
+        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>

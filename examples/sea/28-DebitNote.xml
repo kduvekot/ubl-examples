@@ -10,14 +10,14 @@
   <cbc:IssueTime>10:30:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-21</cbc:DueDate>
   <cbc:Note languageID="qal">Lapetato vivuse mafute sopule nalahiki tilala mitavema.</cbc:Note>
-  <cbc:Note languageID="en">The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
-  <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
+  <cbc:Note languageID="en-XL">The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
+  <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
-  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode>XLC</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode>XLC</cbc:PricingCurrencyCode>
-  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TaxCurrencyCode>
+  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PricingCurrencyCode>
+  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
+  <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -26,7 +26,7 @@
     <cbc:EndDate>2026-05-19</cbc:EndDate>
   </cac:InvoicePeriod>
   <cac:DiscrepancyResponse>
-    <cbc:ResponseCode>Packaging</cbc:ResponseCode>
+    <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">2</cbc:ResponseCode>
     <cbc:Description>Heat-treatment mark illegible on pallet LD-26-007.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
@@ -59,7 +59,7 @@
     <cbc:IssueDate>2026-05-07</cbc:IssueDate>
     <cac:WorkPhaseReference>
       <cbc:ID>PH-1</cbc:ID>
-      <cbc:WorkPhaseCode>Supply</cbc:WorkPhaseCode>
+      <cbc:WorkPhaseCode listID="urn:ubl-examples:world:codelist:WorkPhaseCode">SUPPLY</cbc:WorkPhaseCode>
     </cac:WorkPhaseReference>
   </cac:ProjectReference>
   <cac:BuyerAssignedReference>
@@ -98,11 +98,11 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
         <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
         <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -111,24 +111,24 @@
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71214</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -137,25 +137,25 @@
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20410274</cbc:CompanyID>
         <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -192,15 +192,15 @@
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
@@ -208,23 +208,24 @@
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
         <cbc:CompanyID>IC41859</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XL:ICR</cbc:ID>
           <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -282,17 +283,17 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
     <cbc:PaymentDueDate>2026-06-21</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF75VTDOC260153</cbc:InstructionNote>
     <cbc:PaymentID>RF75VTDOC260153</cbc:PaymentID>
-    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL13BSEL0003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cbc:PaymentNote>Invoice VT-DOC-26-0153</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
@@ -301,24 +302,24 @@
           <cbc:ID>BSEL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
             <cbc:StreetName>Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
@@ -326,31 +327,31 @@
     <cbc:Note>30 days net.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:TaxExchangeRate>
   <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>2.5</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:PaymentExchangeRate>
   <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
@@ -400,7 +401,7 @@
     <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
     <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
     <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-    <cbc:PaymentPurposeCode>GOVT</cbc:PaymentPurposeCode>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SCVE</cbc:PaymentPurposeCode>
     <cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-05-18</cbc:StartDate>
@@ -472,6 +473,7 @@
     </cac:TaxTotal>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">WH</cbc:AllowanceChargeReasonCode>
       <cbc:AllowanceChargeReason>Storage while held</cbc:AllowanceChargeReason>
       <cbc:Amount currencyID="XLC">12.750</cbc:Amount>
       <cbc:BaseAmount currencyID="XLC">38.500</cbc:BaseAmount>

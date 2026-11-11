@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: meter reading method. How a meter reading was obtained, for both the previous and the latest reading. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>MeterReadingMethodCode</ShortName>
+      <LongName xml:lang="en">Meter reading method (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:MeterReadingMethodCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:MeterReadingMethodCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:MeterReadingMethodCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/MeterReadingMethodCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REMOTE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Remote reading</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Takstan banzan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Futopa lemita</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Read over the network.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SMART</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Smart meter reading</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tintek geltaz banzan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tevotu vakini lemita</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Sent by a smart meter at set intervals.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MANUAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Read by the meter reader</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skezrir man drek geltaz besir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Leapa ninote vakini vihie</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CUSTOMER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Read by the customer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skezrir man drek nakhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Leapa ninote milake</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ESTIMATE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Estimated</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bukaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lenehuo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Estimated, for instance when the meter could not be reached.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PROFILE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Load profile</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Staz kuzvir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pihopa teati</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Derived from a standard load profile.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

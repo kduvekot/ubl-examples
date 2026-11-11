@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Harmonized System Nomenclature 2022 edition (WCO); the subheadings written as six digits, as customs data carry them); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>WCOHS2022Code</ShortName>
+      <LongName xml:lang="en">Harmonized Commodity Description and Coding System, 2022 edition (subheadings) (UBL example world)</LongName>
+      <LongName Identifier="listID">WCO HS 2022</LongName>
+      <Version>HS 2022</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:WCOHS2022Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:WCOHS2022Code:HS 2022</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/WCOHS2022Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">World Customs Organization</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>260111</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Iron ores and concentrates, non-agglomerated</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>271121</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Natural gas, in gaseous state</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>381400</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Organic composite solvents and thinners, n.e.s.; prepared paint or varnish removers</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>390110</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Polyethylene having a specific gravity of less than 0.94, in primary forms</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>392010</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other plates, sheets, film, foil and strip, of polymers of ethylene</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>392321</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sacks and bags (including cones), of polymers of ethylene</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>440799</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wood sawn or chipped lengthwise, of a thickness exceeding 6 mm: other</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>520100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cotton, not carded or combed</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>620520</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Men's or boys' shirts, of cotton</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>732599</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other cast articles of iron or steel: other</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>850760</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lithium-ion accumulators</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>853110</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Burglar or fire alarms and similar apparatus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>940169</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other seats, with wooden frames: other</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>940179</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other seats, with metal frames: other</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>940330</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wooden furniture of a kind used in offices</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

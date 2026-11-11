@@ -8,10 +8,10 @@
   <cbc:UUID>9d4c84eb-3f06-549a-83fe-14010b43c0bb</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
   <cbc:IssueTime>11:39:00</cbc:IssueTime>
-  <cbc:TypeCode>Phytosanitary</cbc:TypeCode>
+  <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
   <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
   <cbc:Note languageID="qal">Helatasa momai kelalahu filumuve.</cbc:Note>
-  <cbc:Note languageID="en">Inspected at the ginnery's warehouse.</cbc:Note>
+  <cbc:Note languageID="en-XL">Inspected at the ginnery's warehouse.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-02-28</cbc:StartDate>
@@ -19,7 +19,7 @@
   </cac:ValidityPeriod>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>
-      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
     </cac:Country>
   </cac:ApplicableTerritoryAddress>
   <cac:ExporterParty>
@@ -39,15 +39,15 @@
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
-      <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Gin Yard Road</cbc:StreetName>
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
@@ -55,23 +55,24 @@
       <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
       <cbc:CompanyID>IC42681</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XL:ICR</cbc:ID>
         <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -104,35 +105,35 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Mill Street</cbc:StreetName>
       <cbc:BuildingNumber>21</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38504</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
       <cbc:CompanyID>CO-1237809</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -141,23 +142,23 @@
       <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20412603</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -220,35 +221,35 @@
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-      <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
       <cbc:CompanyID>IC42133</cbc:CompanyID>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XL:ICR</cbc:ID>
         <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -295,7 +296,7 @@
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
         <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
-        <cbc:Name languageID="en">Cotton lint, compressed bale</cbc:Name>
+        <cbc:Name languageID="en-XL">Cotton lint, compressed bale</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
         </cac:SellersItemIdentification>
@@ -303,12 +304,13 @@
           <cbc:ID schemeID="urn:ubl-examples:world:item">773020000137</cbc:ID>
         </cac:StandardItemIdentification>
         <cac:OriginCountry>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:NatureCode>XI</cbc:NatureCode>
-          <cbc:CargoTypeCode>GEN</cbc:CargoTypeCode>
-          <cbc:ItemClassificationCode listID="HS">5201.00</cbc:ItemClassificationCode>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">XI</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:AdditionalItemProperty>
           <cbc:Name>Grade</cbc:Name>
@@ -321,13 +323,14 @@
         <cac:OriginAddress>
           <cbc:Region>North coast</cbc:Region>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:OriginAddress>
         <cac:Certificate>
           <cbc:ID>XL-CLS-2026-0042</cbc:ID>
-          <cbc:CertificateTypeCode>Cottonclassing</cbc:CertificateTypeCode>
-          <cbc:CertificateType>Cotton classing</cbc:CertificateType>
+          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">COTTONCLASS</cbc:CertificateTypeCode>
+          <cbc:CertificateType languageID="qal">Tekapa vekona</cbc:CertificateType>
+          <cbc:CertificateType languageID="en-XL">Cotton classing</cbc:CertificateType>
           <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
           <cac:IssuerParty>
             <cac:PartyIdentification>
@@ -373,7 +376,7 @@
     </cac:IssuerParty>
     <cac:AttestationLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:TypeCode>Pest</cbc:TypeCode>
+      <cbc:TypeCode listID="urn:ubl-examples:world:codelist:AttestationTypeCode">PEST</cbc:TypeCode>
       <cbc:Description>Boll weevil: none found.</cbc:Description>
       <cac:CriterionItem>
         <cbc:ID>XB-PH-07</cbc:ID>
@@ -390,7 +393,7 @@
   </cac:Attestation>
   <cac:GoodsProcessing>
     <cbc:ID>SCG-PROC-26</cbc:ID>
-    <cbc:TypeCode>Ginning</cbc:TypeCode>
+    <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsProcessingTypeCode">GINNING</cbc:TypeCode>
     <cbc:Description>Ginned, cleaned and pressed into bales.</cbc:Description>
     <cbc:Note>At the Selanu cotton ginnery.</cbc:Note>
     <cac:Period>
@@ -406,14 +409,14 @@
       </cac:PartyName>
     </cac:ProcessingParty>
     <cac:CriterionItem>
-      <cbc:TypeCode>Processing</cbc:TypeCode>
+      <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsProcessingTypeCode">PROCESSING</cbc:TypeCode>
       <cbc:CriterionDescription>Seed removed; lint only.</cbc:CriterionDescription>
       <cac:DeclaredPropertyItem>
         <cbc:Name>Cotton lint</cbc:Name>
       </cac:DeclaredPropertyItem>
     </cac:CriterionItem>
     <cac:SubGoodsProcessing>
-      <cbc:TypeCode>Pressing</cbc:TypeCode>
+      <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsProcessingTypeCode">PRESSING</cbc:TypeCode>
       <cbc:Description>Bales of about 227 kg.</cbc:Description>
     </cac:SubGoodsProcessing>
   </cac:GoodsProcessing>

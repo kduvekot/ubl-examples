@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: payment status. Where a payment stands. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>PaymentStatusCode</ShortName>
+      <LongName xml:lang="en">Payment status (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:PaymentStatusCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:PaymentStatusCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:PaymentStatusCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/PaymentStatusCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>APPROVED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Payment approved</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rikrir rastan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mamohe hekii</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The payment is approved and will be made.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PENDING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Payment pending</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rikrir trezek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mamohe kifiti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The payment awaits approval.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PAID</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Paid</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nopeto</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The payment has been made.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REJECTED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Payment rejected</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rikrir buzgir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mamohe kukesa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The payment was refused.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

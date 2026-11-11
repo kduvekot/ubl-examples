@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: air packing instruction. The packing instruction dangerous goods are packed under for carriage by air, following the IATA Dangerous Goods Regulations. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>PackingInstructionCode</ShortName>
+      <LongName xml:lang="en">Air packing instruction (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:PackingInstructionCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:PackingInstructionCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:PackingInstructionCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/PackingInstructionCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PI965IA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Packing instruction 965, section IA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Neldrek duzmaz 965, zhardraz IA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Palavo sipatusa 965, sunota IA</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Lithium ion batteries, packed alone, above the limits of section IB.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PI965IB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Packing instruction 965, section IB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Neldrek duzmaz 965, zhardraz IB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Palavo sipatusa 965, sunota IB</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Lithium ion batteries, packed alone, within the limits of section IB.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PI966</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Packing instruction 966</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Neldrek duzmaz 966</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Palavo sipatusa 966</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Lithium ion batteries packed with equipment.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PI967</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Packing instruction 967</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Neldrek duzmaz 967</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Palavo sipatusa 967</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Lithium ion batteries contained in equipment.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: company legal form. The legal forms of companies in Bayvarra. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CompanyLegalFormCode</ShortName>
+      <LongName xml:lang="en">Company legal form (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/XB-CompanyLegalFormCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Government of Bayvarra</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CORP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Corporation (public)</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Abbreviated Corp in a company's name.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LTD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Limited company (private)</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Abbreviated Ltd in a company's name.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LLP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Limited liability partnership</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

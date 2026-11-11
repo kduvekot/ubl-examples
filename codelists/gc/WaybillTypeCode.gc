@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: waybill type. The kind of waybill by the legal regime of the carriage. The descriptions give the matching UN/EDIFACT 1001 code. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>WaybillTypeCode</ShortName>
+      <LongName xml:lang="en">Waybill type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:WaybillTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:WaybillTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:WaybillTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/WaybillTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CMR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Road consignment note (CMR)</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kraz silsan mek (CMR)</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Natii lutatehi tamasu (CMR)</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A consignment note under the Convention on the Contract for the International Carriage of Goods by Road (UN/EDIFACT 1001: 730).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CIM</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rail consignment note (CIM)</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kaz silsan mek (CIM)</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kepisu lutatehi tamasu (CIM)</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A consignment note under the Uniform Rules concerning the Contract of International Carriage of Goods by Rail (UN/EDIFACT 1001: 720).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AWB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Air waybill</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kir dridrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tilifo molei</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An air waybill under the Montreal Convention (UN/EDIFACT 1001: 740).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CMNI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Inland waterway waybill (CMNI)</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drinbir nerhul dridrir (CMNI)</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kulama mimeta molei (CMNI)</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A non-negotiable transport document under the Budapest Convention on the Contract for the Carriage of Goods by Inland Waterway (UN/EDIFACT 1001: 700, waybill; 711 is a negotiable bill of lading).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SEA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sea waybill</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Haztraz dridrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Talate molei</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A non-negotiable transport document for carriage by sea (UN/EDIFACT 1001: 700).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

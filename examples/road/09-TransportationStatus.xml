@@ -11,16 +11,16 @@
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
-  <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:Note languageID="en-XU">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
-  <cbc:TransportationStatusTypeCode>Progress</cbc:TransportationStatusTypeCode>
-  <cbc:TransportExecutionStatusCode>InProgress</cbc:TransportExecutionStatusCode>
+  <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">PROGRESS</cbc:TransportationStatusTypeCode>
+  <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0152</cbc:ID>
     <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
     <cac:Status>
-      <cbc:ConditionCode>InTransit</cbc:ConditionCode>
+      <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">INTRANSIT</cbc:ConditionCode>
       <cbc:Description>All 25 pallets on board.</cbc:Description>
     </cac:Status>
     <cac:ConsigneeParty>
@@ -38,11 +38,11 @@
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
         <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
         <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -51,24 +51,24 @@
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71214</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -77,25 +77,25 @@
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20410274</cbc:CompanyID>
         <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -127,31 +127,31 @@
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
-        <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via dei Trasporti</cbc:StreetName>
         <cbc:BuildingNumber>45</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4160</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
         <cbc:CompanyID>XU007337656</cbc:CompanyID>
-        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
-          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -160,23 +160,24 @@
         <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
         <cbc:CompanyID>XU-R-104822</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XU:CR</cbc:ID>
           <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -196,8 +197,9 @@
         </cac:ValidityPeriod>
         <cac:Certificate>
           <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
-          <cbc:CertificateTypeCode>Permit</cbc:CertificateTypeCode>
-          <cbc:CertificateType>Operating permit</cbc:CertificateType>
+          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
+          <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
+          <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
         </cac:Certificate>
       </cac:PartyAuthorization>
       <cac:ElectronicAddress>
@@ -210,18 +212,18 @@
     <cbc:IdentificationID>TH-26-04471-E03</cbc:IdentificationID>
     <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
     <cbc:OccurrenceTime>08:55:00</cbc:OccurrenceTime>
-    <cbc:TransportEventTypeCode>BorderCrossing</cbc:TransportEventTypeCode>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">BORDERCROSS</cbc:TransportEventTypeCode>
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
     <cac:ReportedShipment>
       <cbc:ID>CL-SH-26-0154</cbc:ID>
     </cac:ReportedShipment>
     <cac:CurrentStatus>
-      <cbc:ConditionCode>OnTime</cbc:ConditionCode>
+      <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">ONTIME</cbc:ConditionCode>
       <cbc:ReferenceDate>2026-03-25</cbc:ReferenceDate>
       <cbc:ReferenceTime>10:00:00</cbc:ReferenceTime>
       <cbc:Description>In transit in Bayvarra, expected at the distribution centre on time.</cbc:Description>
-      <cbc:StatusReasonCode>Cleared</cbc:StatusReasonCode>
+      <cbc:StatusReasonCode listID="urn:ubl-examples:world:codelist:StatusReasonCode">CLEARED</cbc:StatusReasonCode>
       <cbc:StatusReason>Customs released the goods at the border.</cbc:StatusReason>
       <cbc:SequenceID>3</cbc:SequenceID>
       <cbc:Text>Driver resting in Marrowdale tonight under the driving-time rules.</cbc:Text>
@@ -231,11 +233,11 @@
       <cac:DocumentationAttachment>
         <cac:ExternalReference>
           <cbc:URI>https://www.trasvia.example/tracking/TH-26-04471/seal.jpg</cbc:URI>
-          <cbc:MimeCode>image/jpeg</cbc:MimeCode>
+          <cbc:MimeCode listID="IANA Media Types">image/jpeg</cbc:MimeCode>
         </cac:ExternalReference>
       </cac:DocumentationAttachment>
       <cac:SubStatus>
-        <cbc:ConditionCode>Released</cbc:ConditionCode>
+        <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">RELEASED</cbc:ConditionCode>
         <cbc:Description>Import declaration accepted by Bayvarra's customs.</cbc:Description>
       </cac:SubStatus>
       <cac:Condition>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: economic operator role. The role of an economic operator in a tender (ESPD-EDM economic-operator-role). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>EconomicOperatorRoleCode</ShortName>
+      <LongName xml:lang="en">Economic operator role (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:EconomicOperatorRoleCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:EconomicOperatorRoleCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:EconomicOperatorRoleCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/EconomicOperatorRoleCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LEAD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Consortium lead</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dranvan rarkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hupapule femai</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Leads a group of economic operators (ESPD GROUP_LEAD).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MEMBER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Consortium member</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dranvan zhurdan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hupapule vonali</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Another member of the group (ESPD GROUP_MEMBER).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SOLE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sole tenderer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zasan skeran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fomofa vitele</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Tenders alone (ESPD SCLE).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SUBCONTRACTOR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Subcontractor</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zheksir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pakoula</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A subcontractor whose capacities are relied on (ESPD OERON).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

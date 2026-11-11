@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: contract nature. The main nature of a public contract (eForms contract-nature). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ContractNatureCode</ShortName>
+      <LongName xml:lang="en">Contract nature (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ContractNatureCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ContractNatureCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ContractNatureCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ContractNatureCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SUPPLIES</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Supplies</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kriztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kekule</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The purchase, lease or rental of products (eForms supplies).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SERVICES</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Services</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Mebaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kafeni</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Services (eForms services).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WORKS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Works</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vilzek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fafene</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The execution of works (eForms works).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COMBINED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Combined</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zarir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vemena</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A mix of the above (eForms combined).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>
