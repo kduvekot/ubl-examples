@@ -50,6 +50,12 @@ The decisions taken in the review of `codelist-classification.md`, in order.
 
 | ID-Q | Decision |
 |---|---|
+| 8 | Address registers at the level that fits each country:
+- **XU:** one national register (BAG-like, about 16 digits: municipality code + serial), `…:XU:address-register`.
+- **XB:** state registers (`…:XB:CO:address-register`, UL, NT), plus the Lumeport city register `…:XB:lumeport:address-register` for addresses inside the city (`LUM-ADR-000417`).
+- **XL:** the post office's delivery point numbers (no postcodes; PostNL/UDPRN-like), `…:XL:delivery-point`.
+
+Address/ID is 0..1, so each address gets the one register that applies. IDs go only where they make sense: party postal addresses and delivery addresses, not item origins or bank branches. Formats go in countries.json and are checked, including that the register matches the address's state or city. |
 | 7 | **An identification convention per party**, covering everything it identifies:
 - **GS1:** GTIN for items, GLN for party and locations, SSCC for logistic units, GRAI for returnable assets. Parties: Lumeway Distribution 6-xb, Brightmarket Stores 26-xb, the furniture maker 37-xb.
 - **ISO via Codana (31-xu):** the Codana item number (ISO 15459 style), an ISO 6523 organisation identifier with a fictional ICD, ISO 15459 licence plates. Parties: Valdara 5-xu, the 3PL 8-xu, the packaging maker, the power station, the grid operator.
