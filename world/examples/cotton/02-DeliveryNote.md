@@ -90,14 +90,12 @@ Inside `DespatchSupplierParty`:
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `Party/PostalAddress/StreetName` = **Sifatofu Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en`)  
   The street's name in English, the country's other official language; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PostalAddress/BuildingNumber` = **35**  
-  Building number of the postal address. identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PostalAddress/Description` = **Farm track off Plantation Road, past the cotton fields.**  
+- `Party/PostalAddress/Description` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
   How to find the farm, which has no house number on a street. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
@@ -105,12 +103,14 @@ Inside `DespatchSupplierParty`:
   The district of the island, used to find a farm off the main roads. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/AddressLine/Line` = **Lisavu Cotton Farm**  
-  The address as the farm writes it, line by line: rural addresses on the island are not fully structured.
-- `Party/PostalAddress/AddressLine/Line` = **Plantation Road, kilometre 4**  
-  The address as the farm writes it, line by line: rural addresses on the island are not fully structured.
-- `Party/PostalAddress/AddressLine/Line` = **North coast, Selanu**  
-  The address as the farm writes it, line by line: rural addresses on the island are not fully structured.
+- `Party/PostalAddress/AddressLine/Line` = **Sifatofu Natii / Plantation Road**  
+  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
+- `Party/PostalAddress/AddressLine/Line` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
+  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
+- `Party/PostalAddress/AddressLine/Line` = **North coast**  
+  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
+- `Party/PostalAddress/AddressLine/Line` = **Selanu**  
+  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL**  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
@@ -215,7 +215,7 @@ Inside `DeliveryCustomerParty`:
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
@@ -403,19 +403,21 @@ Inside `DespatchLine`:
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
         <cbc:StreetName languageID="en">Plantation Road</cbc:StreetName>
-        <cbc:BuildingNumber>35</cbc:BuildingNumber>
-        <cbc:Description>Farm track off Plantation Road, past the cotton fields.</cbc:Description>
+        <cbc:Description>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Description>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:District>North coast</cbc:District>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:AddressLine>
-          <cbc:Line>Lisavu Cotton Farm</cbc:Line>
+          <cbc:Line>Sifatofu Natii / Plantation Road</cbc:Line>
         </cac:AddressLine>
         <cac:AddressLine>
-          <cbc:Line>Plantation Road, kilometre 4</cbc:Line>
+          <cbc:Line>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Line>
         </cac:AddressLine>
         <cac:AddressLine>
-          <cbc:Line>North coast, Selanu</cbc:Line>
+          <cbc:Line>North coast</cbc:Line>
+        </cac:AddressLine>
+        <cac:AddressLine>
+          <cbc:Line>Selanu</cbc:Line>
         </cac:AddressLine>
         <cac:Country>
           <cbc:IdentificationCode>XL</cbc:IdentificationCode>

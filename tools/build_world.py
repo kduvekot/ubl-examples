@@ -57,12 +57,8 @@ def label(p):
 def address_lines(p):
     """The postal address in the format of the party's country (world/countries.json)."""
     a = p["identity"]["address"]
-    fmt = world["countries"][p["c"]]["address"]["lines"]
-    out = []
-    for line in fmt:
-        words = [a.get(k, "") for k in line.split()]
-        out.append(" ".join(w for w in words if w))
-    return out + [world["countries"][p["c"]]["name"]]
+    fields = {k: [v] for k, v in a.items()}
+    return world_data.address_lines(world["countries"][p["c"]]["address"], fields) + [world["countries"][p["c"]]["name"]]
 
 import world_items  # noqa: E402
 CODES = world_items.codes()

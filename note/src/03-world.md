@@ -76,6 +76,24 @@ vocabulary, the English text being the reference. Real Polynesian languages
 are deliberately not used, and the invented words are checked against
 common words of real languages.
 
+Each country also has an address format (`address` in `world/countries.json`),
+which fixes the lines of an address: first the optional lines (attention,
+department, in-house mail, post box, building, floor and room), then the
+street and number (street first in Urvania, number first in Bayvarra and on
+the island), additional street, block and plot, quarter, and last the town
+line (postal code before the town in Urvania; the town, state and postal code
+in Bayvarra), with the province in Urvania and the district and a
+description of the way on the island. A field the address does not have is
+left out with its line. A name in two languages is written on its line in
+both, the national language first, then ` / `, then English, and the number
+once: `<Urvanian street> / <English street> 12` in Urvania, `35 <Lisavan
+street> / <English street>` on the island. Every address that has a street, a
+building number or a post box carries the code of its country's format in
+`AddressFormatCode`, and where a party writes its address in
+`AddressLine` elements, one function makes the lines from the structured
+fields, so they cannot disagree. The build checks all three. A farm on the
+island has no house number: its track is described instead ("at kilometre 4").
+
 Each country also has its own payment practice, which every invoice of a
 seller there follows. Urvania gives 2 % discount for payment within ten
 days and charges statutory interest on late payment; Bayvarra charges a

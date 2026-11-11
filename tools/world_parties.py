@@ -103,7 +103,7 @@ def check(world):
         if not st and a.get("CountrySubentity"):
             problems.append(f"{where}: its country has no states")
         for k in ("StreetName", "BuildingNumber"):
-            if not a.get(k):
+            if not a.get(k) and not (k == "BuildingNumber" and a.get("Description")):   # a farm has no house number
                 problems.append(f"{where}: address without {k}")
         mail = idn.get("contact", {}).get("email", "")
         if mail and not mail.endswith(".example"):

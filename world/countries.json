@@ -62,11 +62,22 @@
    },
    "address": {
     "lines": [
+     "MarkAttention",
+     "Department",
+     "InhouseMail",
+     "Postbox",
+     "BuildingName",
+     "Floor Room",
      "StreetName BuildingNumber",
-     "PostalZone CityName"
+     "AdditionalStreetName",
+     "BlockName PlotIdentification",
+     "CitySubdivisionName",
+     "PostalZone CityName",
+     "Region"
     ],
     "postal_zone": "4 digits",
-    "subdivisions": null
+    "subdivisions": null,
+    "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
    },
    "phone_prefix": "+999 1",
    "timezone": "-1",
@@ -158,14 +169,24 @@
    },
    "address": {
     "lines": [
+     "MarkAttention",
+     "Department",
+     "InhouseMail",
+     "Postbox",
+     "BuildingName",
+     "Floor Room",
      "BuildingNumber StreetName",
+     "AdditionalStreetName",
+     "BlockName PlotIdentification",
+     "CitySubdivisionName",
      "CityName CountrySubentity PostalZone"
     ],
     "postal_zone": "5 digits",
     "subdivisions": {
      "UL": "Upland State",
      "CO": "Coastal State"
-    }
+    },
+    "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
    },
    "subdivision_rule": {
     "column": 29,
@@ -259,11 +280,23 @@
    },
    "address": {
     "lines": [
+     "MarkAttention",
+     "Department",
+     "InhouseMail",
+     "Postbox",
+     "BuildingName",
+     "Floor Room",
      "BuildingNumber StreetName",
+     "AdditionalStreetName",
+     "BlockName PlotIdentification",
+     "CitySubdivisionName",
+     "Description",
+     "District",
      "CityName"
     ],
     "postal_zone": null,
-    "subdivisions": null
+    "subdivisions": null,
+    "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
    },
    "phone_prefix": "+999 3",
    "timezone": "-1",

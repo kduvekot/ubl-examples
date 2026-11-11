@@ -2469,10 +2469,9 @@
     },
     "address": {
      "StreetName": "Plantation Road",
-     "BuildingNumber": "35",
      "CityName": "Selanu",
      "District": "North coast",
-     "Description": "Farm track off Plantation Road, past the cotton fields."
+     "Description": "Farm track off Plantation Road at kilometre 4, past the cotton fields."
     },
     "account": {
      "bank": "22-xl",
@@ -2488,11 +2487,7 @@
      "sole_proprietor": true,
      "registration_expires": "2026-12-31"
     },
-    "address_lines": [
-     "Lisavu Cotton Farm",
-     "Plantation Road, kilometre 4",
-     "North coast, Selanu"
-    ],
+    "address_lines": true,
     "site": {
      "locode": null,
      "description": "The cotton fields"

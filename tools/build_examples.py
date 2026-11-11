@@ -297,6 +297,40 @@ def legal_entity(pid):
     return out
 
 
+def address_format_code(code):
+    c = WORLD["countries"][code]
+    return V(code, f"The address follows {c['name']}'s address format (world/countries.json), one line after the "
+                   f"other, a line left out when the address has none of its fields: "
+                   f"{'; '.join(c['address']['lines'])}. {c['address']['line_rule']}")
+
+
+def check_addresses(root, where):
+    """Every address agrees with its country's format: a structured address (street, building number or post box)
+    has an AddressFormatCode, it is the code of the address's country, and its AddressLine elements are the lines
+    the format makes of the structured fields."""
+    for e in root.iter():
+        if not isinstance(e.tag, str):
+            continue
+        kids = {}
+        for k in e:
+            if isinstance(k.tag, str):
+                kids.setdefault(etree.QName(k).localname, []).append(k)
+        if not kids.keys() & {"StreetName", "BuildingNumber", "Postbox"}:
+            continue
+        name = f"{where}: {etree.QName(e).localname} of {etree.QName(e.getparent()).localname}"
+        country = kids["Country"][0].find("{*}IdentificationCode").text
+        if "AddressFormatCode" not in kids:
+            raise SystemExit(f"{name} has no AddressFormatCode")
+        if kids["AddressFormatCode"][0].text != country:
+            raise SystemExit(f"{name}: AddressFormatCode {kids['AddressFormatCode'][0].text} is not its country {country}")
+        if "AddressLine" in kids:
+            fields = {n: [k.text for k in v] for n, v in kids.items() if n not in world_data.NOT_ON_A_LINE}
+            want = world_data.address_lines(WORLD["countries"][country]["address"], fields)
+            got = [l.find("{*}Line").text for l in kids["AddressLine"]]
+            if got != want:
+                raise SystemExit(f"{name}: AddressLine {got} differs from the lines of the format {want}")
+
+
 def address(pid):
     p = PARTY[pid]
     idn, c = p["identity"], WORLD["countries"][p["c"]]
@@ -348,13 +382,16 @@ def address(pid):
                                  languageID=code),
                                V(a["CityName"], f"The town's English name, inherited from the Italian; {src}.",
                                  languageID="en")]
-    out["AddressFormatCode"] = V(p["c"], f"The address follows {c['name']}'s address format (world/countries.json): "
-                                         f"{' / '.join(c['address']['lines'])}.")
+    out["AddressFormatCode"] = address_format_code(p["c"])
     out["TimezoneOffset"] = V(c["timezone"], "The party's time zone, one hour behind UTC, where the world lies "
                                              "(world/countries.json).")
     if idn.get("address_lines"):
-        out["AddressLine"] = [{"Line": V(line, "The address as the farm writes it, line by line: rural addresses on "
-                                               "the island are not fully structured.")} for line in idn["address_lines"]]
+        fields = {k: [x.value for x in v] if isinstance(v, list) else [v.value] for k, v in out.items()}
+        out["AddressLine"] = [{"Line": V(line, f"One line of the address as the farm writes it, made from the fields "
+                                               f"above in {c['name']}'s address format (world/countries.json), so "
+                                               "that lines and fields agree. A name in both languages is given in "
+                                               "both on the line, the national language first.")}
+                              for line in world_data.address_lines(c["address"], fields)]
     out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}: a user-assigned ISO 3166-1 code, in the world's "
                                                       "country code list (world/codelists)."),
                       "Name": V(c["name"], "The country's name, for readers of the address.")}
@@ -432,6 +469,7 @@ def institution(pid):
             "Address": {"StreetName": V(a["StreetName"], f"The bank's head office; {src}."),
                         "BuildingNumber": V(a["BuildingNumber"], f"Its building number; {src}."),
                         "CityName": V(a["CityName"], f"Its town; {src}."),
+                        "AddressFormatCode": address_format_code(p["c"]),
                         "Country": {"IdentificationCode": V(p["c"], "The bank's country.")}}}
 
 
@@ -1078,6 +1116,7 @@ def main(flow_id, check=False):
                                "A universally unique identifier of the document, derived from its place in the world "
                                "(UUID version 5), so it stays the same on every build.")
         root, reasons = build(doc["doc"], merge(header, content))
+        check_addresses(root, f"{flow_id} {n} {doc['doc']}")
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}
         for name, data in files.items():

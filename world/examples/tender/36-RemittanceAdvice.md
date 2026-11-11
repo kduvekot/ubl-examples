@@ -69,7 +69,7 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json): BuildingNumber StreetName / CityName CountrySubentity PostalZone.
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `Party/PostalAddress/StreetName` = **Civic Square**  
   Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **6**  
@@ -176,7 +176,7 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
@@ -306,6 +306,8 @@ Inside `PaymentMeans`:
   The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
   The bank; identity of Bank of Lumeport (world/parties.json).
+- `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB**  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
   The bank's head office; identity of Bank of Lumeport (world/parties.json).
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
@@ -338,6 +340,8 @@ Inside `PaymentMeans`:
   The bank code, the part of every account number that names the bank; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Crevalto Bank**  
   The bank; identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XU**  
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Piazza della Banca**  
   The bank's head office; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **8**  
@@ -634,6 +638,7 @@ Inside `RemittanceAdviceLine`:
           <cbc:ID>BLUM</cbc:ID>
           <cbc:Name>Bank of Lumeport</cbc:Name>
           <cac:Address>
+            <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
             <cbc:StreetName>Exchange Street</cbc:StreetName>
             <cbc:BuildingNumber>48</cbc:BuildingNumber>
             <cbc:CityName>Lumeport</cbc:CityName>
@@ -666,6 +671,7 @@ Inside `RemittanceAdviceLine`:
           <cbc:ID>CREV</cbc:ID>
           <cbc:Name>Crevalto Bank</cbc:Name>
           <cac:Address>
+            <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
             <cbc:StreetName>Piazza della Banca</cbc:StreetName>
             <cbc:BuildingNumber>8</cbc:BuildingNumber>
             <cbc:CityName>Ferrano</cbc:CityName>

@@ -67,7 +67,7 @@ Inside `IssuerParty`:
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `PostalAddress/StreetName` = **Trazhek Han Zhatrir** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/StreetName` = **Piazza del Mercato** (languageID `en`)  
@@ -156,7 +156,7 @@ Inside `HolderParty`:
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
@@ -339,7 +339,7 @@ Inside `ImportingGuarantorParty`:
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
@@ -406,7 +406,7 @@ Inside `ExportingCustomsParty`:
 - `PostalAddress/AddressTypeCode` = **Postal**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `PostalAddress/Postbox` = **PB 18**  
   The customs office receives its post in a post box. identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/StreetName` = **Birran Stir Trurdrek** (languageID `qau`)  
@@ -495,7 +495,7 @@ Inside `ImportingCustomsParty`:
 - `PostalAddress/AddressTypeCode` = **Business**  
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json): BuildingNumber StreetName / CityName.
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
 - `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Island Customs Service (world/parties.json).
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
