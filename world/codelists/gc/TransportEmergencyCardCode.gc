@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: transport emergency card. The Trade Accord's instructions in writing for the crew, one card per hazard class, following the class-based instructions in writing of ADR (5.4.3). The build checks that the card matches the class of the goods. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: transport emergency card. The Trade Accord's instructions in writing for the crew, one card per hazard class, following the instructions in writing of ADR (5.4.3), which give the actions per danger label, primary or subsidiary: a card is also the emergency procedure for a subsidiary hazard of its class. The build checks that the card matches the class of the goods, or of the subsidiary hazard it is given for. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>TransportEmergencyCardCode</ShortName>

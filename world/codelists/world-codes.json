@@ -188,6 +188,26 @@
    ]
   },
   {
+   "element": "EmergencyProceduresCode",
+   "address": "*[local-name()='SecondaryHazard']/cbc:EmergencyProceduresCode",
+   "lists": [
+    "TransportEmergencyCard"
+   ],
+   "parents": [
+    "SecondaryHazard"
+   ]
+  },
+  {
+   "element": "EmergencyProceduresCode",
+   "address": "*[local-name()='HazardousItem']/cbc:EmergencyProceduresCode",
+   "lists": [
+    "IMDGEmS"
+   ],
+   "parents": [
+    "HazardousItem"
+   ]
+  },
+  {
    "element": "ProcedureCode",
    "address": "*[local-name()='ProofOfReexportationReminder']/cbc:ProcedureCode",
    "lists": [
@@ -1382,13 +1402,6 @@
    "address": "cbc:HazardousRegulationCode",
    "lists": [
     "UNCL8273"
-   ]
-  },
-  {
-   "element": "EmergencyProceduresCode",
-   "address": "cbc:EmergencyProceduresCode",
-   "lists": [
-    "IMDGEmS"
    ]
   },
   {

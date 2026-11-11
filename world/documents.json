@@ -130,7 +130,14 @@
      "from": "17-xb",
      "to": "17-xl",
      "carrier": "12-xl",
-     "why": "The flight to the island."
+     "why": "The flight to the island.",
+     "load": {
+      "ulds": [],
+      "bulk": [
+       "bench-casting-b"
+      ],
+      "why": "One skid of eight boxed side frames, lashed in the aft bulk compartment."
+     }
     },
     {
      "mode": "road",
@@ -178,7 +185,14 @@
      "from": "17-xb",
      "to": "17-xl",
      "carrier": "12-xl",
-     "why": "Flown to the island for the fair."
+     "why": "Flown to the island for the fair.",
+     "load": {
+      "ulds": [],
+      "bulk": [
+       "bench-serra"
+      ],
+      "why": "The two sample benches, wrapped and lashed in the aft bulk compartment: at 1.8 m they do not fit an LD3 container."
+     }
     },
     {
      "mode": "road",
@@ -199,7 +213,14 @@
      "from": "17-xl",
      "to": "17-xb",
      "carrier": "12-xl",
-     "why": "Flown back."
+     "why": "Flown back.",
+     "load": {
+      "ulds": [],
+      "bulk": [
+       "bench-serra"
+      ],
+      "why": "The two sample benches, wrapped and lashed in the aft bulk compartment: at 1.8 m they do not fit an LD3 container."
+     }
     },
     {
      "mode": "road",
@@ -358,7 +379,31 @@
      "from": "17-xb",
      "to": "17-xl",
      "carrier": "12-xl",
-     "why": "A cargo-aircraft-only flight to the island."
+     "why": "A cargo-aircraft-only flight to the island.",
+     "load": {
+      "ulds": [
+       {
+        "id": "RKN41207K0",
+        "type": "RKN",
+        "position": "MD-2",
+        "items": [
+         "battery-pack"
+        ],
+        "why": "The lithium-ion packs in the active container, kept between 5 and 35 °C, at a position the crew can reach (cargo aircraft only)."
+       },
+       {
+        "id": "AKE20514K0",
+        "type": "AKE",
+        "position": "MD-6",
+        "items": [
+         "smoke-detector",
+         "coating-stripper"
+        ],
+        "why": "The smoke detectors (class 7, excepted package) and the coating stripper (class 8, subsidiary hazard 3) share a container: class 7 needs no segregation (IATA DGR Table 9.3.A, note 1). The stripper's flammable label keeps it away from the lithium batteries (DGR 9.3.2.1.3), so its container is four positions aft of theirs."
+       }
+      ],
+      "bulk": []
+     }
     },
     {
      "mode": "road",

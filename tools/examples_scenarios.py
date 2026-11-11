@@ -5690,8 +5690,11 @@ def mast_consignment(f, full):
                                        "Measure": V("60", "Thermal runaway risk.", unitCode="CEL")},
               "AdditionalTemperature": {"AttributeID": V("STORAGE", "Recommended storage."),
                                         "Measure": V("20", "Around 20 °C.", unitCode="CEL")},
-              "PositionOnBoardStowage": {"LocationID": V("MD-L2", "Main deck, position L2."),
-                                         "Location": V("Main deck, accessible", "Where it flies.")},
+              "PositionOnBoardStowage": {"LocationID": V("MD-2", "Main deck, LD3 position 2 from the front "
+                                                                  "(world/parties.json, the aircraft's positions)."),
+                                         "Location": V("Main deck, accessible", "Where it flies: cargo aircraft "
+                                                                                 "only packages must be accessible "
+                                                                                 "to the crew.")},
               "Package": {"Quantity": qty(6, "EA", "Six crates, one battery pack in each; each crate is listed with "
                                                    "its own number in the unit load device below."),
                           "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: crate.")},
@@ -5722,9 +5725,49 @@ def mast_consignment(f, full):
                  "PowerIndicator": V("true", "Battery-powered cooling and heating."),
                  "MinimumTemperature": lo, "MaximumTemperature": hi,
                  "LoadedHazardousItem": loaded, "HazardousGoodsTransit": loaded["HazardousGoodsTransit"]}
+    ake = f"AKE20514{PARTY['12-xl']['identity']['airline_designator']}"
+    det, strip = ITEM["smoke-detector"], ITEM["coating-stripper"]
+
+    def loaded_item(it, q, unit, gross, why_pos):
+        hz = it["hazard"]
+        return {"ID": V(f"{it['sellers_id']}-DG", f"The {it['name'].lower()} in the container."),
+                "UNDGCode": V(hz["un"][2:], "The UN number."),
+                "ProperShippingName": V(hz["name"], "As on the declaration."),
+                "HazardClassID": V(hz["class"], f"Class {hz['class']}."),
+                "PackagingDangerLevelCode": V(build_examples.PACKAGING_DANGER_LEVEL[hz.get("pg", "NA")],
+                                              "The packaging danger level of UN/EDIFACT 8339 that matches the packing "
+                                              "group" + (f" {hz['pg']}." if hz.get("pg") else
+                                                         ": the entry has none, which 8339 codes as not assigned.")),
+                "GrossWeightMeasure": qty(gross, "KGM", "Packed."),
+                "Quantity": qty(q, unit, "As ordered."),
+                "PositionOnBoardStowage": {"LocationID": V("MD-6", why_pos)}}
+    second = {"ID": V(ake, "The second air container, numbered as unit load devices are: its type AKE (an LD3 "
+                           "container), its serial number 20514 and the designator of its owner, the airline."),
+              "HazardousRiskIndicator": V("true", "Dangerous goods inside."),
+              "TransportEquipment": {
+                  "ID": V(ake, "The container."),
+                  "TransportEquipmentTypeCode": V("UL", "UN/EDIFACT 8053 code UL: unit load device.",
+                                                  listID="UN/EDIFACT EDED 8053"),
+                  "DangerousGoodsApprovedIndicator": V("true", "Loaded with dangerous goods."),
+                  "LoadedHazardousItem": [
+                      loaded_item(det, 1, "SET", Decimal(str(det["gross_kg"])),
+                                  "Main deck, LD3 position 6. The smoke detectors are an excepted package of class 7, "
+                                  "which needs no segregation from other classes (IATA DGR Table 9.3.A, note 1), so "
+                                  "they share the container with the stripper."),
+                      loaded_item(strip, 20, "LTR", Decimal(20) * Decimal(str(strip["gross_kg"])),
+                                  "Main deck, LD3 position 6, four positions aft of the batteries: the stripper bears "
+                                  "a class 3 label for its subsidiary hazard, and lithium-ion batteries of packing "
+                                  "instruction 965 section IA must not be stowed next to, or where a fire could reach, "
+                                  "packages with a class 3 label (IATA DGR 9.3.2.1.3).")]},
+              "Package": [{"ID": V("SE-BX-1", "The box of smoke detectors, the engineering company's own number."),
+                           "Quantity": qty(1, "EA", "One box: the set of ten."),
+                           "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box.")}] +
+                         [{"ID": V(f"SE-CA-{k}", f"Can {k} of four of coating stripper."),
+                           "Quantity": qty(1, "EA", "One can of five litres."),
+                           "PackagingTypeCode": V("CA", "UN/ECE Recommendation 21 code CA: can.")} for k in range(1, 5)]}
     out = {"HazardousRiskIndicator": V("true", "The consignment holds dangerous goods."),
            "HazardousItemNotificationParty": party("27-xb", short=True),
-           "TransportHandlingUnit": {"ID": V(uld, "The container as a handling unit."),
+           "TransportHandlingUnit": [{"ID": V(uld, "The container as a handling unit."),
                                      "HazardousRiskIndicator": V("true", "Dangerous goods inside."),
                                      "HazardousGoodsTransit": loaded["HazardousGoodsTransit"],
                                      "MinimumTemperature": lo, "MaximumTemperature": hi,
@@ -5738,7 +5781,8 @@ def mast_consignment(f, full):
                                                                "temperature and shocks on the way, for tracing a "
                                                                "battery that is damaged."),
                                                   "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: "
-                                                                               "crate.")} for k in range(1, 7)]}}
+                                                                               "crate.")} for k in range(1, 7)]},
+                                     second]}
     if full:
         out["MainCarriageShipmentStage"] = {
             "ID": V("1", "The flight."), "TransportModeCode": V("4", "Air transport.",

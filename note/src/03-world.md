@@ -423,6 +423,20 @@ flow names must carry one of its legs. Domestic jobs go to a carrier of
 that country: a truck of one country driving within another would be
 cabotage, which only happens where a document says so.
 
+An air leg also says how the goods are loaded, and the build checks that the
+load fits the island airline's ATR 72-600F, as ATR's fact sheet gives it: at
+most 9,200 kg, 75 m³ and seven LD3 containers, each within its own maximum
+weight, and loose pieces that pass the 2.94 × 1.80 m cargo door into the aft
+bulk compartment. The sample benches, at 1.8 m, fly loose. Dangerous goods are
+stowed as the IATA Dangerous Goods Regulations ask: the smoke detectors (class
+7, an excepted package) may share a container with the corrosive coating
+stripper, because class 7 needs no segregation, but the stripper's flammable
+subsidiary label keeps it away from the lithium batteries, which must not be
+stowed next to a package with a class 3 label. A subsidiary hazard has no
+emergency schedule of its own in the IMDG Code, which gives one per UN entry;
+the road rules give the crew's actions per hazard label, so the subsidiary
+hazard names the Accord's emergency card of its class.
+
 The vehicles on the map are these legs: one truck, train, barge, ship or
 aircraft per leg, travelling the way the build found for it, from the
 from-party to the to-party, and a leg flown the same way by the same carrier

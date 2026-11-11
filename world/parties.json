@@ -1982,9 +1982,45 @@
      "kind": "air",
      "name": "ATR 72-600F freighter of Kelaro Air Cargo",
      "type": "ATF",
-     "description": "An ATR 72-600F, the new-built freighter of the ATR 72-600 series (IATA aircraft type code ATF, ICAO type designator AT72): seven LD3 positions on the main deck (one of them for the active temperature-controlled RKN container), about 9,200 kg payload and 75 m³, a large cargo door of 2.95 × 1.80 m. A freighter, so it can carry the lithium batteries that are for cargo aircraft only.",
+     "description": "An ATR 72-600F, the new-built freighter of the ATR 72-600 series (IATA aircraft type code ATF, ICAO type designator AT72): seven LD3 positions on the main deck (one of them for the active temperature-controlled RKN container), about 9,200 kg payload and 75 m³, a large cargo door of 2.94 × 1.80 m. A freighter, so it can carry the lithium batteries that are for cargo aircraft only.",
      "aircraft": "QL-KXA",
-     "flight": "KXL207"
+     "flight": "KXL207",
+     "capacity": {
+      "payload_kg": 9200,
+      "volume_m3": 75.0,
+      "uld_positions": [
+       "MD-1",
+       "MD-2",
+       "MD-3",
+       "MD-4",
+       "MD-5",
+       "MD-6",
+       "MD-7"
+      ],
+      "uld_position_type": "LD3",
+      "door_mm": [
+       2940,
+       1800
+      ],
+      "bulk": "aft bulk compartment",
+      "source": "ATR 72-600F fact sheet (atr-aircraft.com/wp-content/uploads/2022/06/ATR_Fiche72-600F-3.pdf): 7 LD3 or 5 pallets 88 × 108 in or 9 pallets 88 × 62 in, plus aft bulk cargo in all configurations; large cargo door 2.94 × 1.8 m; max gross volume 75.0 m³; max structural payload 9,200 kg. The seven LD3 positions are numbered from the front."
+     },
+     "ulds": {
+      "AKE": {
+       "name": "LD3 container (AKE)",
+       "tare_kg": 82,
+       "max_gross_kg": 1588,
+       "volume_m3": 4.3,
+       "source": "typical values of an aluminium AKE: tare about 82 kg, maximum gross 1,588 kg (3,500 lb), internal volume about 4.3 m³ (manufacturers' and airlines' data sheets; they vary by make)"
+      },
+      "RKN": {
+       "name": "active temperature-controlled LD3 container (RKN)",
+       "tare_kg": 635,
+       "max_gross_kg": 1588,
+       "volume_m3": 2.3,
+       "source": "Envirotainer RKN e1 technical specification: tare 635 kg, maximum gross 1,588 kg, maximum net 953 kg, internal volume 2.3 m³"
+      }
+     }
     }
    ]
   },

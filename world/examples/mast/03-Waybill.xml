@@ -446,7 +446,7 @@
               <cbc:Measure unitCode="CEL">20</cbc:Measure>
             </cac:AdditionalTemperature>
             <cac:PositionOnBoardStowage>
-              <cbc:LocationID>MD-L2</cbc:LocationID>
+              <cbc:LocationID>MD-2</cbc:LocationID>
               <cbc:Location>Main deck, accessible</cbc:Location>
             </cac:PositionOnBoardStowage>
             <cac:Package>
@@ -514,6 +514,64 @@
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
           <cbc:TraceID>SE-DL-26-0006</cbc:TraceID>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>AKE20514K0</cbc:ID>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        <cac:TransportEquipment>
+          <cbc:ID>AKE20514K0</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">UL</cbc:TransportEquipmentTypeCode>
+          <cbc:DangerousGoodsApprovedIndicator>true</cbc:DangerousGoodsApprovedIndicator>
+          <cac:LoadedHazardousItem>
+            <cbc:ID>SE-SMK-10-DG</cbc:ID>
+            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
+            <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
+            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
+            <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">4</cbc:PackagingDangerLevelCode>
+            <cbc:GrossWeightMeasure unitCode="KGM">3</cbc:GrossWeightMeasure>
+            <cbc:Quantity unitCode="SET">1</cbc:Quantity>
+            <cac:PositionOnBoardStowage>
+              <cbc:LocationID>MD-6</cbc:LocationID>
+            </cac:PositionOnBoardStowage>
+          </cac:LoadedHazardousItem>
+          <cac:LoadedHazardousItem>
+            <cbc:ID>SE-CS-05-DG</cbc:ID>
+            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
+            <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
+            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
+            <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">2</cbc:PackagingDangerLevelCode>
+            <cbc:GrossWeightMeasure unitCode="KGM">25</cbc:GrossWeightMeasure>
+            <cbc:Quantity unitCode="LTR">20</cbc:Quantity>
+            <cac:PositionOnBoardStowage>
+              <cbc:LocationID>MD-6</cbc:LocationID>
+            </cac:PositionOnBoardStowage>
+          </cac:LoadedHazardousItem>
+        </cac:TransportEquipment>
+        <cac:Package>
+          <cbc:ID>SE-BX-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CA-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CA-2</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CA-3</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CA-4</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
         </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>

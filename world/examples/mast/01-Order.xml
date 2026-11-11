@@ -334,6 +334,7 @@
             <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
             <cbc:PlacardNotation>3</cbc:PlacardNotation>
             <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
+            <cbc:EmergencyProceduresCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC3</cbc:EmergencyProceduresCode>
             <cbc:Extension>Subsidiary risk 3</cbc:Extension>
           </cac:SecondaryHazard>
           <cac:FlashpointTemperature>

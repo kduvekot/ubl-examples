@@ -743,6 +743,11 @@ def check_dangerous_goods(root, where):
         un, level = li.findtext(f"{{{NS_CBC}}}UNDGCode"), li.findtext(f"{{{NS_CBC}}}PackagingDangerLevelCode")
         if un in groups and level is not None and PACKAGING_DANGER_LEVEL[groups[un]] != level:
             raise SystemExit(f"{where}: UN {un}: packaging danger level {level} does not match packing group {groups[un]}")
+    for sh in root.iter(f"{{{NS_CAC}}}SecondaryHazard"):
+        card, cls = sh.findtext(f"{{{NS_CBC}}}EmergencyProceduresCode"), sh.findtext(f"{{{NS_CBC}}}ID")
+        if card is not None and card != f"TEC{cls.split('.')[0]}":
+            raise SystemExit(f"{where}: emergency procedures {card} of a secondary hazard of class {cls} are not the "
+                             "card of that class")
     for e in root.iter(f"{{{NS_CBC}}}TransportEmergencyCardCode"):
         if e.text != "TECGEN" and e.text[3:] not in classes:
             raise SystemExit(f"{where}: emergency card {e.text} is not the card of a class of the goods "
@@ -780,7 +785,15 @@ def hazardous_item(it):
         out["SecondaryHazard"] = {"ID": V(hz["sub"], "The subsidiary hazard: flammable."),
                                   "PlacardNotation": V(hz["sub"], "Shown on a second label."),
                                   "PlacardEndorsement": V("3", "The flammable liquid label."),
-                                  "Extension": V("Subsidiary risk 3", "In words.")}
+                                  "Extension": V("Subsidiary risk 3", "In words."),
+                                  "EmergencyProceduresCode": V(f"TEC{hz['sub']}", "The emergency procedures for the "
+                                                               "subsidiary hazard: the Trade Accord's emergency card "
+                                                               f"for class {hz['sub']}. The IMDG Code gives one pair "
+                                                               "of emergency schedules for the whole UN entry (on the "
+                                                               "item above), not one per hazard; the instructions in "
+                                                               "writing of road transport (ADR 5.4.3), which the "
+                                                               "Accord's cards follow, give the actions per danger "
+                                                               "label, the subsidiary hazard's label included.")}
         out["FlashpointTemperature"] = {"AttributeID": V("FLASHPOINT", "Closed cup."),
                                         "Measure": V(hz["flash"], "The flashpoint.", unitCode="CEL")}
         out["MaritimePollutantCode"] = V("N", "Not a marine pollutant.")
@@ -1523,6 +1536,114 @@ def check_unit_ids(flow_id, roots):
                                      f"{counts[e.text][1]} says {counts[e.text][0]}")
 
 
+# ---------------------------------------------------------------- air legs: the aircraft's capacity, DG stowage
+LITHIUM_IA = {"3480", "3090"}                        # PI 965 / PI 968, section IA or IB (IATA DGR 9.3.2.1.3)
+LITHIUM_APART = ("1", "2.1", "3", "4.1", "5.1")      # labels lithium batteries are kept apart from (1.4S excepted)
+NO_SEGREGATION = ("1.4S", "6", "7", "9")             # not in IATA DGR Table 9.3.A (note 1)
+
+
+def labels(it):
+    """The hazard labels of an item's package: its class and its subsidiary hazard."""
+    hz = it.get("hazard")
+    return [hz["class"]] + ([hz["sub"]] if hz.get("sub") else []) if hz else []
+
+
+def air_load_problems(world, deals):
+    """Every air leg's load fits the aircraft of its carrier (world/parties.json, fleet capacity and ULD types):
+    payload, volume, LD3 positions, each ULD's maximum gross weight, the cargo door for bulk pieces, every item of the
+    flow's deal loaded once; and the dangerous goods are stowed as the IATA DGR asks: lithium batteries of PI 965/968
+    section IA apart from class 1 (not 1.4S), 2.1, 3, 4.1 and 5.1 labels, not in the same ULD nor in a position next to
+    it (9.3.2.1.3), and two classes of Table 9.3.A in one ULD only where the world has checked the table (none yet)."""
+    out = []
+    party = {p["id"]: p for p in world["parties"]}
+    for f in world["flows"]:
+        for leg in f.get("legs", []):
+            if leg["mode"] != "air":
+                continue
+            where = f"flow {f['id']}: air leg {leg['from']} -> {leg['to']}"
+            plane = next(v for v in party[leg["carrier"]].get("fleet", []) if v["kind"] == "air")
+            cap, types = plane["capacity"], plane["ulds"]
+            load = leg.get("load")
+            if load is None:
+                out.append(f"{where}: no load (ulds, bulk) given")
+                continue
+            deal = {d["item"]: Decimal(str(d["ordered"])) for d in deals[f["id"]]}
+            placed = [i for u in load["ulds"] for i in u["items"]] + load["bulk"]
+            if sorted(placed) != sorted(deal):
+                out.append(f"{where}: loads {sorted(placed)}, but the flow carries {sorted(deal)}")
+                continue
+            gross = {i: deal[i] * Decimal(str(maker_item(i, "gross_kg")["gross_kg"])) for i in deal}
+            weight = sum(gross.values()) + sum(Decimal(types[u["type"]]["tare_kg"]) for u in load["ulds"])
+            volume = Decimal("0")
+            positions = [u["position"] for u in load["ulds"]]
+            if len(positions) > len(cap["uld_positions"]) or len(set(positions)) != len(positions) or \
+                    not set(positions) <= set(cap["uld_positions"]):
+                out.append(f"{where}: ULD positions {positions} are not distinct positions of the aircraft")
+            for u in load["ulds"]:
+                t = types[u["type"]]
+                g = sum(gross[i] for i in u["items"]) + t["tare_kg"]
+                volume += Decimal(str(t["volume_m3"]))
+                if g > t["max_gross_kg"]:
+                    out.append(f"{where}: ULD {u['id']} weighs {g} kg, above its maximum of {t['max_gross_kg']} kg")
+                if not u["id"].startswith(u["type"]):
+                    out.append(f"{where}: ULD {u['id']} is not numbered as a {u['type']}")
+            door = sorted(cap["door_mm"])
+            for i in load["bulk"]:
+                dims = {d[0]: Decimal(d[1]) for d in maker_item(i, "dimensions").get("dimensions", [])}
+                if {"LENGTH", "DEPTH", "HEIGHT"} <= set(dims):
+                    small = sorted([dims["LENGTH"], dims["DEPTH"], dims["HEIGHT"]])
+                    if small[0] > door[0] or small[1] > door[1]:
+                        out.append(f"{where}: {i} does not pass the cargo door {cap['door_mm']} mm")
+                    volume += deal[i] * small[0] * small[1] * small[2] / Decimal(10 ** 9)
+            if weight > cap["payload_kg"]:
+                out.append(f"{where}: {weight} kg is above the payload of {cap['payload_kg']} kg")
+            if volume > Decimal(str(cap["volume_m3"])):
+                out.append(f"{where}: {volume} m³ is above the volume of {cap['volume_m3']} m³")
+            index = {p: k for k, p in enumerate(cap["uld_positions"])}
+            for u in load["ulds"]:
+                table = {lb for i in u["items"] for lb in labels(ITEM[i]) if lb not in NO_SEGREGATION}
+                if len({tuple(labels(ITEM[i])) for i in u["items"] if set(labels(ITEM[i])) & table}) > 1:
+                    out.append(f"{where}: ULD {u['id']} mixes classes of IATA DGR Table 9.3.A; check the table")
+                lithium = any(ITEM[i].get("hazard", {}).get("un", "")[2:] in LITHIUM_IA for i in u["items"])
+                if not lithium:
+                    continue
+                for v in load["ulds"]:
+                    near = v is u or abs(index[v["position"]] - index[u["position"]]) <= 1
+                    bad = [i for i in v["items"] if any(lb == a or (a == "1" and lb[0] == "1" and lb != "1.4S")
+                                                        for lb in labels(ITEM[i]) for a in LITHIUM_APART)]
+                    if near and bad:
+                        out.append(f"{where}: lithium batteries in {u['id']} next to {', '.join(bad)} in {v['id']} "
+                                   "(IATA DGR 9.3.2.1.3)")
+    return out
+
+
+def maker_item(iid, key):
+    """The item that carries a fact of the maker (its weight, its dimensions): the item itself, or the one it
+    resells."""
+    it = ITEM[iid]
+    while it.get("resale_of") and key not in it:
+        it = ITEM[it["resale_of"]]
+    return it
+
+
+def check_air_uld_ids(flow_id, roots):
+    """A ULD a document of the flow names (a transport handling unit numbered as unit load devices are) is one of the
+    ULDs its air legs load, and every ULD loaded is named where the flow lists handling units."""
+    flow = next(f for f in WORLD["flows"] if f["id"] == flow_id)
+    loaded = {u["id"] for leg in flow.get("legs", []) if leg.get("load") for u in leg["load"]["ulds"]}
+    named = set()
+    for name, root in roots:
+        for thu in root.iter(f"{{{NS_CAC}}}TransportHandlingUnit"):
+            tid = thu.findtext(f"{{{NS_CBC}}}ID")
+            if tid and re.fullmatch(r"[A-Z]{3}\d{5}[A-Z0-9]{2}", tid):
+                named.add(tid)
+                if tid not in loaded:
+                    raise SystemExit(f"world/examples/{flow_id}/{name}: ULD {tid} is not loaded on an air leg of the "
+                                     "flow (world/documents.json)")
+    if named and loaded - named:
+        raise SystemExit(f"flow {flow_id}: ULDs {sorted(loaded - named)} are loaded but named in no document")
+
+
 def xmlname(n, doc):
     return f"{n:02d}-{doc['doc']}.xml"
 
@@ -1598,6 +1719,7 @@ def main(flow_id, check=False):
         if not check:
             print(f"world/examples/{flow_id}/{xmlname(n, doc)}: {len(reasons)} values")
     check_reference_uuids(flow_id, roots)
+    check_air_uld_ids(flow_id, roots)
     check_unit_ids(flow_id, roots)
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}
@@ -1622,6 +1744,11 @@ if __name__ == "__main__":
     import build_examples        # run through the module, so the scenarios share its classes
     args = [a for a in sys.argv[1:] if a != "--check"]
     ok = all([build_examples.main(f, check="--check" in sys.argv) for f in (args or FLOWS_WITH_EXAMPLES)])
+    import examples_scenarios
+    air = build_examples.air_load_problems(WORLD, {k: v.deal for k, v in examples_scenarios.FLOWS.items()})
+    if air:
+        print("\n".join(air), file=sys.stderr)
+        ok = False
     for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
         print(f"note: {note}", file=sys.stderr)
     if build_examples.UNBOUND:
