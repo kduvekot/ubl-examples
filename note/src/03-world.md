@@ -152,7 +152,9 @@ exemption reasons, Bayvarra's states and Urvania's customs tariff.
   or where a standard is the authority for its domain: the IMO for
   emergency schedules and security levels, the WCO for the Harmonized
   System, the UN for product classification (CPC) and dangerous goods,
-  ISO 20022 for payments, EPSG for coordinates, PRONOM for file formats.
+  ISO 20022 for payments, EPSG for coordinates, PRONOM for file formats,
+  UN/ECE Recommendation 28 for means of transport and, as it refers air
+  transport there, IATA's aircraft type codes.
   UBL is not "EDIFACT in XML", so a UN/EDIFACT list is not used just because
   it exists. Each is a world copy of the codes the world uses, with others of
   the same list, made from the copy of the source kept in
@@ -187,6 +189,25 @@ Some choices differ from common practice, on purpose:
 - **Invoice periods.** `InvoicePeriod/DescriptionCode` describes the
   period (a month), as UBL defines it, not the tax point date code that
   EN 16931 puts there.
+- **Document distribution.** `DocumentDistribution/DocumentTypeCode`
+  gives the type of the distributed document (a bill of lading), and
+  `DistributionTypeCode` how the party receives it, original or copy: an
+  original by courier, a scanned copy, the electronic document itself.
+  UBL 2.5 deprecated the elements that said this before (`CopyIndicator`,
+  `MaximumCopiesNumeric`, `MaximumOriginalsNumeric`, `PrintQualifier`),
+  and an original is not a type of document.
+- **Self-billing.** Where the customer bills itself, as the cotton gin
+  does for the farms' seed cotton, the world uses UBL's own
+  `SelfBilledInvoice` and `SelfBilledCreditNote`, never an `Invoice` with
+  type code 389 as EN 16931 and Peppol BIS do (their syntax binding has
+  only Invoice and CreditNote). UBL 2.5 defines Invoice as "A document used
+  to request payment" and SelfBilledInvoice as "An Invoice document created
+  by the Customer (rather than the Supplier) in a Self Billing
+  relationship"; its semantic definitions (§4.7) are what a document must
+  conform to (§7.2). The type codes are UN/EDIFACT 1001 389 and 261: they
+  repeat the root element, but their definitions are exact ("An invoice the
+  invoicee is producing instead of the seller"), while 380 is a document
+  "claiming payment".
 - **Procurement.** The Accord's procurement rules are modelled on the EU's,
   without being EU law: its lists give the matching eForms or ESPD code.
 - **Customs.** The Accord is a free trade area, not a customs union: it has

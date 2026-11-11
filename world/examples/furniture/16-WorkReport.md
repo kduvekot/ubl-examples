@@ -251,8 +251,8 @@ Inside `BuyerCustomerParty`:
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body**  
-  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
+- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
 - `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
@@ -374,8 +374,8 @@ Inside `WorkReportLine`:
   The second phase of the move.
 - `WorkPhaseReference/WorkPhaseCode` = **FURNISH** (listID `urn:ubl-examples:world:codelist:WorkPhaseCode`)  
   Furnishing. The code is from the Trade Accord's work phase list: FURNISH = Furnishing.
-- `WorkPhaseReference/WorkPhase` = **Furnishing**  
-  The name of code FURNISH in the Trade Accord's work phase list.
+- `WorkPhaseReference/WorkPhase` = **Furnishing: the new office is furnished**  
+  The name of code FURNISH in the Trade Accord's work phase list, followed by the detail of this case: the phase of the move it reports.
 - `WorkPhaseReference/ProgressPercent` = **100**  
   Done.
 - `WorkPhaseReference/StartDate` = **2026-04-08**  
@@ -595,7 +595,7 @@ Inside `WorkReportLine`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -697,7 +697,7 @@ Inside `WorkReportLine`:
     <cac:WorkPhaseReference>
       <cbc:ID>PH-2</cbc:ID>
       <cbc:WorkPhaseCode listID="urn:ubl-examples:world:codelist:WorkPhaseCode">FURNISH</cbc:WorkPhaseCode>
-      <cbc:WorkPhase>Furnishing</cbc:WorkPhase>
+      <cbc:WorkPhase>Furnishing: the new office is furnished</cbc:WorkPhase>
       <cbc:ProgressPercent>100</cbc:ProgressPercent>
       <cbc:StartDate>2026-04-08</cbc:StartDate>
       <cbc:EndDate>2026-04-09</cbc:EndDate>

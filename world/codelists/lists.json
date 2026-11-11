@@ -367,8 +367,8 @@
    "name": "ISO 20022 ExternalCashAccountType1Code",
    "listID": "ISO 20022 ExternalCashAccountType1Code",
    "agency": "ISO 20022 Registration Authority (SWIFT)",
-   "version": "as published by the ISO 20022 RA",
-   "reference": "ISO 20022 external code sets, iso20022.org (blocked for automated access, 403)",
+   "version": "2Q2026 (publication date 28 Aug 2026)",
+   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release",
    "codes": {
     "CACC": [
      "Current",
@@ -384,11 +384,11 @@
     ],
     "CARD": [
      "CardAccount",
-     "Account used for card payments only."
+     "Account used for credit card payments."
     ],
     "SLRY": [
      "Salary",
-     "Account used for the payment of salaries."
+     "Accounts used for salary payments."
     ]
    }
   },
@@ -449,16 +449,16 @@
    "name": "ISO 20022 ExternalServiceLevel1Code",
    "listID": "ISO 20022 ExternalServiceLevel1Code",
    "agency": "ISO 20022 Registration Authority (SWIFT)",
-   "version": "as published by the ISO 20022 RA",
-   "reference": "ISO 20022 external code sets, iso20022.org (blocked for automated access, 403)",
+   "version": "2Q2026 (publication date 28 Aug 2026)",
+   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release",
    "codes": {
     "NURG": [
-     "NonUrgentPayment",
-     "Payment must be executed as a non-urgent transaction, which is not to be processed by a real-time gross settlement system."
+     "NonurgentPayment",
+     "Payment must be executed as a non-urgent transaction, which is typically identified as an ACH or low value transaction."
     ],
     "URGP": [
      "UrgentPayment",
-     "Payment must be executed as an urgent transaction cleared through a real-time gross settlement system."
+     "Payment must be executed as an urgent transaction cleared through a real-time gross settlement system, which is typically identified as a wire or high value transaction."
     ],
     "SDVA": [
      "SameDayValue",
@@ -471,8 +471,8 @@
    "name": "ISO 20022 ExternalPurpose1Code",
    "listID": "ISO 20022 ExternalPurpose1Code",
    "agency": "ISO 20022 Registration Authority (SWIFT)",
-   "version": "as published by the ISO 20022 RA",
-   "reference": "ISO 20022 external code sets, iso20022.org (blocked for automated access, 403)",
+   "version": "2Q2026 (publication date 28 Aug 2026)",
+   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release",
    "codes": {
     "SUPP": [
      "SupplierPayment",
@@ -912,51 +912,45 @@
     "861": ""
    }
   },
-  "TransportMeansType": {
-   "scope": "regional",
-   "name": "Transport means type",
-   "description": "The kind of vehicle, vessel, aircraft or installation that carries goods. The descriptions name the nearest code of UNECE Recommendation 28 where its published list has one; the world's own list is used because the codes of Recommendation 28 for barges, trucks with trailers and pipelines could not be checked against a published copy.",
+  "UNECERec28": {
+   "scope": "external",
+   "name": "UN/ECE Recommendation 28 Codes for types of means of transport",
+   "listID": "UNECE Recommendation 28",
+   "agency": "UN/CEFACT (UNECE)",
+   "version": "Recommendation 28, code list Revision 4.2 (2018); text Revision 3 (2010)",
+   "reference": "UN/CEFACT Trade Facilitation Recommendation No. 28, Codes for Types of Means of Transport",
+   "source": {
+    "format": "rec28",
+    "file": "rec28/Rec28_Rev4.2e_2018.csv",
+    "version": "Revision 4.2 (2018): Rec28_Rev4.2e_2018.xls, converted to CSV"
+   },
    "codes": {
-    "BOXTRUCK": [
-     "Box truck",
-     "A rigid truck with a closed box body."
-    ],
-    "TRUCKTRAILER": [
-     "Truck with trailer",
-     "A truck or tractor unit pulling a trailer or container chassis (UNECE Recommendation 28, 3100 series)."
-    ],
-    "CRANETRUCK": [
-     "Truck with crane",
-     "A truck with its own crane for loading (UNECE Recommendation 28, 3131 Truck, with crane for lifting goods, without trailer)."
-    ],
-    "VAN": [
-     "Van",
-     "A light delivery van."
-    ],
-    "FARMTRACTOR": [
-     "Farm tractor with trailers",
-     "A farm tractor pulling trailers, for goods off the public road network."
-    ],
-    "FREIGHTTRAIN": [
-     "Freight train",
-     "A train of freight wagons (UNECE Recommendation 28, 2302 Train, container; 2301 Blocktrain)."
-    ],
-    "DRYBARGE": [
-     "Dry cargo barge",
-     "An inland waterway vessel for dry cargo."
-    ],
-    "CONTAINERSHIP": [
-     "Container ship",
-     "A sea-going ship for containers (UNECE Recommendation 28, 1511 Full container ship/cellular vessel)."
-    ],
-    "CARGOAIRCRAFT": [
-     "Cargo aircraft",
-     "An aircraft that carries cargo only (UNECE Recommendation 28, 4000 Aircraft, type unknown)."
-    ],
-    "PIPELINE": [
-     "Pipeline",
-     "A fixed pipeline for gas or liquids."
-    ]
+    "1511": "",
+    "37": "",
+    "395": "",
+    "34": "",
+    "341": "",
+    "3131": "",
+    "33": "",
+    "2302": "",
+    "815": "",
+    "71": ""
+   }
+  },
+  "IATAAircraftType": {
+   "scope": "external",
+   "name": "IATA SSIM aircraft type codes",
+   "listID": "IATA SSIM Aircraft Types",
+   "agency": "International Air Transport Association",
+   "version": "IATA SSIM Appendix A, as OpenTravelData gives it",
+   "reference": "IATA Standard Schedules Information Manual (SSIM), Appendix A: aircraft types. Recommendation 28 refers air transport to these codes. The SSIM is not public; the codes are from OpenTravelData, and ATF is confirmed by further secondary sources (world/codelists/sources/PROVENANCE.md).",
+   "source": {
+    "format": "optd-aircraft",
+    "file": "optd/optd_aircraft.csv",
+    "version": "OpenTravelData optd_aircraft.csv, commit cfc7b82"
+   },
+   "codes": {
+    "ATF": "The ATR 72-600F of Kelaro Air Cargo: a new-built freighter of the ATR 72-600 series."
    }
   },
   "ShipConfiguration": {
@@ -1687,15 +1681,15 @@
    "listID": "ISO 6346",
    "agency": "International Organization for Standardization",
    "version": "ISO 6346:2022",
-   "reference": "ISO 6346 (a paid ISO standard; the size and type codes as the standard publishes them)",
+   "reference": "ISO 6346 (a paid ISO standard); size, type group and type codes as the BIC, its registration authority, publishes them (bic-code.org size-type-code and type-code-designation, Table 3: G1 \"Passive vents at upper part of cargo space\", R1 \"Mechanically refrigerated and heated\")",
    "codes": {
     "22G1": [
      "20 ft, 8 ft 6 in high, general purpose",
-     "General purpose container without ventilation."
+     "General purpose container with passive vents at upper part of cargo space."
     ],
     "22R1": [
-     "20 ft, 8 ft 6 in high, thermal, refrigerated",
-     "Mechanically refrigerated container."
+     "20 ft, 8 ft 6 in high, thermal, refrigerated and heated",
+     "Mechanically refrigerated and heated container."
     ],
     "22U1": [
      "20 ft, 8 ft 6 in high, open top",
@@ -1703,15 +1697,15 @@
     ],
     "42G1": [
      "40 ft, 8 ft 6 in high, general purpose",
-     "General purpose container without ventilation."
+     "General purpose container with passive vents at upper part of cargo space."
     ],
     "45G1": [
      "40 ft, 9 ft 6 in high, general purpose",
-     "High cube general purpose container."
+     "High cube general purpose container with passive vents at upper part of cargo space."
     ],
     "45R1": [
-     "40 ft, 9 ft 6 in high, thermal, refrigerated",
-     "High cube mechanically refrigerated container."
+     "40 ft, 9 ft 6 in high, thermal, refrigerated and heated",
+     "High cube mechanically refrigerated and heated container."
     ]
    }
   },
@@ -1787,19 +1781,19 @@
    "listID": "IMO INF Code",
    "agency": "International Maritime Organization",
    "version": "INF Code (SOLAS chapter VII, part D)",
-   "reference": "International Code for the Safe Carriage of Packaged Irradiated Nuclear Fuel, Plutonium and High-Level Radioactive Wastes on board Ships, 1.3",
+   "reference": "International Code for the Safe Carriage of Packaged Irradiated Nuclear Fuel, Plutonium and High-Level Radioactive Wastes on board Ships (INF Code), resolution MSC.88(71), 1.1.2",
    "codes": {
     "INF1": [
-     "INF.1 ship",
-     "Certified to carry INF cargo with an aggregate activity less than 4,000 TBq (the Code writes INF.1)."
+     "Class INF 1 ship",
+     "Ships which are certified to carry INF cargo with an aggregate activity less than 4,000 TBq. The Code writes \"Class INF 1\"; the code leaves out the space."
     ],
     "INF2": [
-     "INF.2 ship",
-     "Certified to carry irradiated nuclear fuel or high-level radioactive wastes with an aggregate activity less than 2 × 10^6 TBq."
+     "Class INF 2 ship",
+     "Ships which are certified to carry irradiated nuclear fuel or high-level radioactive wastes with an aggregate activity less than 2 × 10^6 TBq and ships which are certified to carry plutonium with an aggregate activity less than 2 × 10^5 TBq."
     ],
     "INF3": [
-     "INF.3 ship",
-     "Certified to carry irradiated nuclear fuel or high-level radioactive wastes and plutonium with no restriction of the maximum aggregate activity."
+     "Class INF 3 ship",
+     "Ships which are certified to carry irradiated nuclear fuel or high-level radioactive wastes and ships which are certified to carry plutonium with no restriction of the maximum aggregate activity of the materials."
     ]
    }
   },
@@ -1808,11 +1802,11 @@
    "name": "ITU-R M.1371 AIS navigational status",
    "listID": "ITU-R M.1371 Navigational status",
    "agency": "International Telecommunication Union",
-   "version": "ITU-R M.1371-5",
-   "reference": "Recommendation ITU-R M.1371, Annex 2, message 1, navigational status",
+   "version": "ITU-R M.1371-6 (02/2026)",
+   "reference": "Recommendation ITU-R M.1371-6 (02/2026), Annex 7, A7-3.1 Messages 1, 2, 3: position reports, Table 46, navigational status",
    "codes": {
     "0": [
-     "Under way using engine",
+     "Under way",
      ""
     ],
     "1": [
@@ -1840,16 +1834,16 @@
      ""
     ],
     "7": [
-     "Engaged in fishing",
+     "Engaged fishing",
      ""
     ],
     "8": [
-     "Under way sailing",
+     "Under way under sailing only",
      ""
     ],
     "15": [
-     "Not defined",
-     "The default."
+     "Undefined (default)",
+     "Also used by AIS-SART under test, MOB-AIS under test or EPIRB-AIS under test."
     ]
    }
   },
@@ -2108,10 +2102,10 @@
   },
   "UNModelRegsUN": {
    "scope": "external",
-   "name": "UN Model Regulations dangerous goods list (UN numbers)",
-   "listID": "UN Model Regulations UN number",
+   "name": "UN Model Regulations Dangerous Goods List (UN numbers)",
+   "listID": "UN Model Regulations Dangerous Goods List",
    "agency": "United Nations",
-   "version": "Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition",
+   "version": "Recommendations on the Transport of Dangerous Goods, Model Regulations, 23rd revised edition (2023), the edition the codes were confirmed against (BAM DGG-Info, \"Detailinfo UN Rec. 23rd rev. ed.\"; the 24th revised edition of 2025 could not be read, UNECE blocks automated access)",
    "reference": "UN Model Regulations, chapter 3.2 Dangerous Goods List",
    "codes": {
     "3480": [
@@ -2146,6 +2140,20 @@
      "Aerosols",
      "Class 2."
     ]
+   },
+   "entries_note": "classes: the class or division of each UN entry, subsidiary: its subsidiary hazard; both from the Dangerous Goods List (column 3 and 4), as BAM DGG-Info gives it. The build checks that every dangerous goods item has the class and proper shipping name of its UN number.",
+   "classes": {
+    "3480": "9",
+    "3481": "9",
+    "3090": "9",
+    "2911": "7",
+    "2920": "8",
+    "1202": "3",
+    "1203": "3",
+    "1950": "2"
+   },
+   "subsidiary": {
+    "2920": "3"
    }
   },
   "UNModelRegsClass": {
@@ -2153,7 +2161,7 @@
    "name": "UN Model Regulations hazard class and division",
    "listID": "UN Model Regulations hazard class",
    "agency": "United Nations",
-   "version": "Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition",
+   "version": "Recommendations on the Transport of Dangerous Goods, Model Regulations, 23rd revised edition (2023), the edition the codes were confirmed against (BAM DGG-Info, \"Detailinfo UN Rec. 23rd rev. ed.\"; the 24th revised edition of 2025 could not be read, UNECE blocks automated access)",
    "reference": "UN Model Regulations, chapter 2.0, 2.0.1.1",
    "codes": {
     "1": [
@@ -2979,11 +2987,11 @@
    "name": "Basel Convention, Annex IV: disposal and recovery operations",
    "listID": "Basel Convention Annex IV",
    "agency": "Secretariat of the Basel Convention (UNEP)",
-   "version": "Basel Convention as amended",
-   "reference": "Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal, Annex IV",
+   "version": "Basel Convention text, 2025 edition (Annex IV as amended; the new Annex IV of decision BC-17/15 applies from 1 January 2030)",
+   "reference": "Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal, Annex IV (world/codelists/sources/basel/UNEP-CHW-IMPL-CONVTEXT-2025.English.pdf)",
    "codes": {
     "D1": [
-     "Deposit into or onto land (e.g. landfill)",
+     "Deposit into or onto land, (e.g., landfill, etc.)",
      ""
     ],
     "D10": [
@@ -2991,7 +2999,7 @@
      ""
     ],
     "R1": [
-     "Use principally as a fuel or other means to generate energy",
+     "Use as a fuel (other than in direct incineration) or other means to generate energy",
      ""
     ],
     "R2": [
@@ -5132,38 +5140,35 @@
   "DistributionType": {
    "scope": "regional",
    "name": "Distribution type",
-   "description": "How a document is distributed.",
+   "description": "How a party receives a distributed document: whether it gets an original or a copy, and how it is sent, following the examples of UBL's definition of DistributionTypeCode (\"Collect\", \"Sent by courier\", \"Sent scanned copy\"). UBL 2.5 deprecated CopyIndicator, MaximumCopiesNumeric, MaximumOriginalsNumeric and PrintQualifier, so original or copy is said here, not in DocumentTypeCode, which gives the type of the distributed document.",
    "codes": {
+    "ORIGINALCOURIER": [
+     "Original, sent by courier",
+     "An original on paper, sent to the party by courier."
+    ],
+    "ORIGINALWITHGOODS": [
+     "Original, with the goods",
+     "An original on paper that travels with the goods to the party, as the transport conventions prescribe for one original of a consignment note."
+    ],
+    "COLLECT": [
+     "Collect",
+     "The party collects the original on paper at the issuer's office."
+    ],
+    "SCANNEDCOPY": [
+     "Scanned copy",
+     "A copy of the paper original, scanned and sent electronically, for information."
+    ],
     "ELECTRONIC": [
      "Electronic",
-     "By message."
+     "The document itself, sent to the party as a UBL message."
     ],
-    "PAPER": [
-     "Paper",
-     "On paper."
+    "ELECTRONICCOPY": [
+     "Electronic copy",
+     "A copy sent as a UBL message, for the party's information or records; the original is held or sent elsewhere."
     ],
     "PORTAL": [
      "Portal",
-     "Made available on a portal."
-    ]
-   }
-  },
-  "DocumentCopyType": {
-   "scope": "regional",
-   "name": "Document copy type",
-   "description": "Whether a distributed document is an original or a copy.",
-   "codes": {
-    "ORIGINAL": [
-     "Original",
-     ""
-    ],
-    "COPY": [
-     "Copy",
-     ""
-    ],
-    "DUPLICATE": [
-     "Duplicate",
-     "A second original."
+     "Made available to the party on a portal."
     ]
    }
   },
@@ -7785,7 +7790,10 @@
   },
   {
    "element": "TransportMeansTypeCode",
-   "list": "TransportMeansType"
+   "list": [
+    "UNECERec28",
+    "IATAAircraftType"
+   ]
   },
   {
    "element": "ShipConfigurationCode",
@@ -8677,14 +8685,8 @@
   },
   {
    "element": "DistributionTypeCode",
-   "list": "DistributionType"
-  },
-  {
-   "element": "DocumentTypeCode",
-   "list": "DocumentCopyType",
-   "parents": [
-    "DocumentDistribution"
-   ]
+   "list": "DistributionType",
+   "text": "DistributionType"
   },
   {
    "element": "DocumentTypeCode",
@@ -8697,6 +8699,7 @@
     "DocumentReference",
     "AdditionalDocumentReference",
     "DigitalDocumentMetadata",
+    "DocumentDistribution",
     "RemittanceDocumentDistribution",
     "RequiredCertificationDocumentReference"
    ]

@@ -1649,7 +1649,13 @@
     "storage": "murkrir",
     "temperature": "skezkir",
     "thickness": "stelnir",
-    "width": "gazdir"
+    "width": "gazdir",
+    "collect": "ranaz",
+    "scanned": "buzrek",
+    "sent": "hastir",
+    "consignee's": "trelgir",
+    "must": "skukek",
+    "producer": "stelskek"
    }
   },
   "qal": {
@@ -2703,7 +2709,13 @@
     "storage": "nitulo",
     "temperature": "lisaheke",
     "thickness": "leluvole",
-    "width": "tonava"
+    "width": "tonava",
+    "collect": "hamane",
+    "scanned": "tafeta",
+    "sent": "teketi",
+    "consignee's": "vamomoli",
+    "must": "kakita",
+    "producer": "titome"
    }
   },
   "en": {

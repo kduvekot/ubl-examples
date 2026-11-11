@@ -18,7 +18,7 @@ from decimal import Decimal
 
 import codelists
 import world_ids
-from build_examples import ITEM, PARTY, WORLD, V, account, amount, item, money, price, qty
+from build_examples import ITEM, PARTY, WORLD, V, Detail, account, amount, item, money, price, qty
 
 CODES = {"Order": "PO", "OrderResponse": "OR", "OrderChange": "OC", "Invoice": "INV", "CreditNote": "CN",
          "DespatchAdvice": "DA", "ReceiptAdvice": "RA", "RemittanceAdvice": "RM",
@@ -34,6 +34,9 @@ CODES = {"Order": "PO", "OrderResponse": "OR", "OrderChange": "OC", "Invoice": "
 
 
 def initials(pid):
+    """The prefix of a party's document numbers: its initials, or an airline's ICAO-style designator."""
+    if PARTY[pid]["identity"].get("airline_icao"):
+        return PARTY[pid]["identity"]["airline_icao"]
     words = [w for w in PARTY[pid]["identity"]["name"].replace("'", "").split() if w.lower() not in ("of", "and", "the")]
     return "".join(w[0] for w in words)[:4].upper()
 
@@ -336,8 +339,6 @@ def price_block(iid, currency=None):
                     "TargetCurrencyCode": V(currency, "The currency of the order."),
                     "SourceCurrencyBaseRate": V("1", "The rate is for one unit of the seller's currency."),
                     "TargetCurrencyBaseRate": V("1", "Given in single units of the order's currency."),
-                    "ExchangeMarketID": V("World reference rate", "The rate the world's central banks publish "
-                                                                  "(world/countries.json)."),
                     "CalculationRate": V(f"{r.normalize():f}", "The world's reference rate (world/countries.json)."),
                     "MathematicOperatorCode": V("Multiply", "The seller's price times the rate gives the order price."),
                     "Date": V("2026-01-02", "The reference rate of the first working day of the year, fixed in the "
@@ -756,12 +757,18 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
            "IssueLocation": {"Name": V(PARTY[leg["from"]]["identity"]["name"], "Where the carrier took over the "
                                                                              "goods and issued the note.")},
            "DocumentDistribution": [
-               {"ID": V("1", "The first original."), "DocumentTypeCode": V("ORIGINAL", "An original."),
-                "DistributionTypeCode": V("PAPER", "Handed over on paper."),
-                "DistributionType": V("With the goods", "It travels with the goods."),
+               {"ID": V("1", "The original for the consignee."),
+                "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
+                "DistributionTypeCode": V("ORIGINALWITHGOODS", "One of the three originals travels with the goods to "
+                                                               "the consignee, as the convention prescribes."),
+                "DistributionType": Detail("the consignee's original", "the original the consignee signs on "
+                                                                         "delivery."),
                 "Party": party_short(leg["to"])},
-               {"ID": V("2", "The electronic copy."), "DocumentTypeCode": V("COPY", "A copy."),
-                "DistributionTypeCode": V("ELECTRONIC", "Sent as this UBL document."),
+               {"ID": V("2", "The electronic copy."),
+                "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
+                "DistributionTypeCode": V("ELECTRONICCOPY", "The receiver of this message gets a copy, for its "
+                                                            "records; the originals are on paper."),
+                "DistributionType": V("Electronic copy", "In words."),
                 "Party": party_short(doc["to"])}],
            "Signature": {"ID": V(f"{initials(carrier)}-SIG-{number}", "The carrier's signature on taking over the "
                                                                       "goods."),
@@ -1119,7 +1126,12 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
                    "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
                    "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     if not credit:
-        out["InvoiceTypeCode"] = V("389", "UN/EDIFACT 1001 code 389: self-billed invoice.")
+        out["InvoiceTypeCode"] = V("389", "UN/EDIFACT 1001 code 389, \"An invoice the invoicee is producing instead "
+                                          "of the seller\": exactly what this document is. It repeats what the root "
+                                          "SelfBilledInvoice already says, as no narrower subtype applies; 380 "
+                                          "would be wrong, since a commercial invoice is the seller's document "
+                                          "\"claiming payment\", and the customer claims nothing here, it settles "
+                                          "what it owes.")
         number = flow.numbers[f"self-billed-{n}"]
         due = WORLD["countries"][PARTY[supplier]["c"]]["payment"]["due_days"]
         out["DueDate"] = V(flow.date(day + due), "The supplier's usual term, which the customer applies to itself.")
@@ -1127,7 +1139,11 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
                                             "The supplier's account, where the customer pays what it billed itself.")
         out["PaymentTerms"] = payment_terms(flow, supplier, customer, day, due, base + tax, cur, number)
     else:
-        out["CreditNoteTypeCode"] = V("261", "UN/EDIFACT 1001 code 261: self-billed credit note.")
+        out["CreditNoteTypeCode"] = V("261", "UN/EDIFACT 1001 code 261, \"A document which indicates that the "
+                                             "customer is claiming credit in a self billing environment\": the "
+                                             "customer corrects its own self-billed invoice. It repeats what the "
+                                             "root SelfBilledCreditNote already says, but its definition is exact; "
+                                             "381, the supplier's credit note, would not be.")
     flow.numbers[f"self-billed-{n}-amount"] = base + tax
     flow.numbers[f"self-billed-{n}-date"] = flow.date(day)
     return out
@@ -1181,7 +1197,9 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
     out["RegistrationNationality"] = V(WORLD["countries"][c]["name"], "The same, in words.")
     if direction:
         out["DirectionCode"] = V(direction, "The direction of the journey, as carriers name their services.")
-    out["TransportMeansTypeCode"] = V(f["type"], f"The kind of means of transport: {f['name'].lower()}; {src}.")
+    kind = f["name"] if f["name"][:2].isupper() else f["name"][0].lower() + f["name"][1:]
+    out["TransportMeansTypeCode"] = V(f["type"], f"The kind of means of transport: {kind}; {src}."
+                                      + (f" {f['description']}" if f.get("description") else ""))
     if f["kind"] == "road":
         out["RoadTransport"] = {"LicensePlateID": V(f["plate"], f"The registration plate of the truck; {src}.")}
         if f.get("trailer"):

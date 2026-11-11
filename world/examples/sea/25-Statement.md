@@ -18,7 +18,7 @@ The factor, who now owns the receivables, sends the statement of account on beha
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **HF-ST-26-0150**  
+- `ID` = **HF-ST-26-0151**  
   The factor's statement number.
 - `UUID` = **16a04e73-7f53-554f-be69-453ee6e81d9c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -603,7 +603,7 @@ Inside `StatementLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HF-ST-26-0150</cbc:ID>
+  <cbc:ID>HF-ST-26-0151</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>08:43:00</cbc:IssueTime>

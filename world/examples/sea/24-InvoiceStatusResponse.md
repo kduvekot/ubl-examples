@@ -260,8 +260,8 @@ Inside `Payment`:
   The reference rate.
 - `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
   The invoice.
-- `RemittanceDocumentReference/ID` = **to follow**  
-  The remittance advice will follow with the payment.
+- `RemittanceDocumentReference/ID` = **VT-RM-26-0150**  
+  The remittance advice the buyer prepared with the payment order; it is sent on the payment day.
 
 ### Document Response
 
@@ -478,7 +478,7 @@ Inside `DocumentResponse`:
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
     <cac:RemittanceDocumentReference>
-      <cbc:ID>to follow</cbc:ID>
+      <cbc:ID>VT-RM-26-0150</cbc:ID>
     </cac:RemittanceDocumentReference>
   </cac:Payment>
   <cac:DocumentResponse>

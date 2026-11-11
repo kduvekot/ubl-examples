@@ -2,7 +2,7 @@
 
 *Example 16 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Common Transportation Report in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-COMMON-TRANSPORTATION-REPORT-SCHEMA)*
 
-The ship flies the island's flag; before entering port the carrier reports to the maritime administration, which also issued the ship's security certificate.
+Before entering Selanu the carrier reports to the island's maritime administration, the port state authority there. The ship flies Bayvarra's flag, so its security certificate was issued by Bayvarra's maritime administration, the flag state.
 
 [The XML file](16-CommonTransportationReport.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -426,8 +426,8 @@ Inside `Shipment`:
   Expected on time. The code is from the Trade Accord's status condition list: ONTIME = On time.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Name` = **Bridge**  
   Whom to call.
-- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Telephone` = **+999 3 790 2117**  
-  The ship's phone, in the island's maritime range (79), as the ship flies the island's flag.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Telephone` = **+999 2 7900 702 117**  
+  The ship's phone, a Bayvarran mobile number, as the ship flies Bayvarra's flag.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceLocation/Name` = **Selanu fairway buoy**  
   Where the pilot boards.
 - `ShipmentStage/ShipStoreArticle/ID` = **ST-1**  
@@ -554,8 +554,8 @@ Inside `Shipment`:
   The family name.
 - `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/RoleCode` = **CHIEFOFFICER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
   The person's role on board. The code is from the Trade Accord's role on board list: CHIEFOFFICER = Chief officer.
-- `ShipmentStage/ISPSRequirements/ID` = **ISSC-XL-2026-0117**  
-  The number of the ship's International Ship Security Certificate.
+- `ShipmentStage/ISPSRequirements/ID` = **ISSC-XB-2023-0117**  
+  The number of the ship's International Ship Security Certificate, issued by its flag state, Bayvarra.
 - `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **true**  
   The ship holds a valid security certificate.
 - `ShipmentStage/ISPSRequirements/ISSCAbsenceReason` = **Not applicable: the certificate is on board.**  
@@ -606,10 +606,10 @@ Inside `Shipment`:
   Where.
 - `ShipmentStage/ISPSRequirements/ReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
   Where.
-- `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **IC42270** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
-- `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name` = **Maritime Administration of Lisavu**  
-  The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
+- `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **20413014** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship. Its identifier and name are enough (world/parties.json, referenced).
+- `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name` = **Maritime Administration of Bayvarra**  
+  Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship. Its identifier and name are enough (world/parties.json, referenced).
 - `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/FirstName` = **Elsbeth**  
   The chief officer, also the ship's medical officer.
 - `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/FamilyName` = **Marrin**  
@@ -706,8 +706,6 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyName/Name` = **Port of Lumeport**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/ID` = **none**  
-  No exemption: the ship holds the control certificate.
 - `ShipmentStage/FuelConsumption/ID` = **FC-26-19E**  
   The fuel of the voyage.
 - `ShipmentStage/FuelConsumption/FuelTypeCode` = **MGO** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
@@ -745,8 +743,8 @@ Inside `TransportMeans`:
   The same, in words.
 - `DirectionCode` = **EB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
   The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: EB = Eastbound.
-- `TransportMeansTypeCode` = **CONTAINERSHIP** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
-  The kind of means of transport: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json). The code is from the Trade Accord's transport means type list: CONTAINERSHIP = Container ship.
+- `TransportMeansTypeCode` = **1511** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: tidewell Harbour; the fleet of Tidewell Ocean Lines (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 1511 = Full container ship/cellular vessel.
 - `MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `MaritimeTransport/VesselName` = **Tidewell Harbour**  
@@ -766,7 +764,7 @@ Inside `TransportMeans`:
 - `MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
 - `MaritimeTransport/INFShipClassCode` = **INF1** (listID `IMO INF Code`)  
-  IMO INF class 1: may not carry irradiated fuel in quantity. The code is from the world's copy of IMO INF Code ship class: INF1 = INF.1 ship.
+  Class INF 1 under the IMO INF Code: certified for INF cargo of an aggregate activity below 4,000 TBq only. The code is from the world's copy of IMO INF Code ship class: INF1 = Class INF 1 ship.
 - `MaritimeTransport/AntennaLocus` = **Mast, 28 m above the waterline**  
   Where the AIS antenna is.
 - `MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
@@ -774,7 +772,7 @@ Inside `TransportMeans`:
 - `MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
   The port the vessel is registered in.
 - `MaritimeTransport/VesselDynamics/NavigationStatusCode` = **0** (listID `ITU-R M.1371 Navigational status`)  
-  AIS status 0: under way using engine. The code is from the world's copy of ITU-R M.1371 AIS navigational status: 0 = Under way using engine.
+  The AIS navigational status: under way. The code is from the world's copy of ITU-R M.1371 AIS navigational status: 0 = Under way.
 - `MaritimeTransport/VesselDynamics/AtAnchorageIndicator` = **false**  
   Not at anchor.
 - `MaritimeTransport/VesselDynamics/CourseOverGroundDirection` = **088**  
@@ -1137,7 +1135,7 @@ Inside `Signature`:
           </cac:CurrentStatus>
           <cac:Contact>
             <cbc:Name>Bridge</cbc:Name>
-            <cbc:Telephone>+999 3 790 2117</cbc:Telephone>
+            <cbc:Telephone>+999 2 7900 702 117</cbc:Telephone>
           </cac:Contact>
           <cac:OccurrenceLocation>
             <cbc:Name>Selanu fairway buoy</cbc:Name>
@@ -1247,7 +1245,7 @@ Inside `Signature`:
         </cac:ResponsibleOfficerPerson>
       </cac:BallastWaterSummary>
       <cac:ISPSRequirements>
-        <cbc:ID>ISSC-XL-2026-0117</cbc:ID>
+        <cbc:ID>ISSC-XB-2023-0117</cbc:ID>
         <cbc:ValidISSCIndicator>true</cbc:ValidISSCIndicator>
         <cbc:ISSCAbsenceReason>Not applicable: the certificate is on board.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2028-09-30</cbc:ISSCExpiryDate>
@@ -1299,10 +1297,10 @@ Inside `Signature`:
         </cac:ReportLocation>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413014</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
-            <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
+            <cbc:Name>Maritime Administration of Bayvarra</cbc:Name>
           </cac:PartyName>
         </cac:ISSCIssuerParty>
         <cac:SecurityOfficerPerson>
@@ -1389,9 +1387,6 @@ Inside `Signature`:
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:ShipSanitationControlCertificate>
-        <cac:ShipSanitationControlExemptionDocumentReference>
-          <cbc:ID>none</cbc:ID>
-        </cac:ShipSanitationControlExemptionDocumentReference>
       </cac:MaritimeHealthDeclaration>
       <cac:FuelConsumption>
         <cbc:ID>FC-26-19E</cbc:ID>
@@ -1426,7 +1421,7 @@ Inside `Signature`:
     <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
     <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
     <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
-    <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
+    <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
     <cac:MaritimeTransport>
       <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
       <cbc:VesselName>Tidewell Harbour</cbc:VesselName>

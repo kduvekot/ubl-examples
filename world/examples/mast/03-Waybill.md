@@ -18,9 +18,9 @@ The air waybill for cargo aircraft only, with the dangerous goods on it.
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **MAST-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **KAC-WB-26-0717**  
+- `ID` = **KXL-WB-26-0717**  
   The consignment note number.
-- `CarrierAssignedID` = **KAC-AWB-26-0713**  
+- `CarrierAssignedID` = **KXL-AWB-26-0713**  
   The carrier's own number for the carriage.
 - `UUID` = **bf007d9d-013c-5ef5-8c7c-b450b24811d3**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -445,15 +445,15 @@ Inside `Shipment`:
   Air transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 4 = Air transport.
 - `Consignment/MainCarriageShipmentStage/HazardousRiskIndicator` = **true**  
   Dangerous goods on the flight.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **KAC209**  
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **KXL209**  
   The cargo flight of the day.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XL** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Lisavu**  
   The same, in words.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **CARGOAIRCRAFT** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
-  The kind of means of transport: freighter of kelaro air cargo; the fleet of Kelaro Air Cargo (world/parties.json). The code is from the Trade Accord's transport means type list: CARGOAIRCRAFT = Cargo aircraft.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/AirTransport/AircraftID` = **QL-KAC** (schemeID `urn:ubl-examples:world:XL:aircraft-register`)  
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **ATF** (listID `IATA SSIM Aircraft Types`)  
+  The kind of means of transport: ATR 72-600F freighter of Kelaro Air Cargo; the fleet of Kelaro Air Cargo (world/parties.json). An ATR 72-600F, the new-built freighter of the ATR 72-600 series (IATA aircraft type code ATF, ICAO type designator AT72): seven LD3 positions on the main deck (one of them for the active temperature-controlled RKN container), about 9,200 kg payload and 75 m³, a large cargo door of 2.95 × 1.80 m. A freighter, so it can carry the lithium batteries that are for cargo aircraft only. The code is from the world's copy of IATA SSIM aircraft type codes: ATF = ATR 72 Freighter.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/AirTransport/AircraftID` = **QL-KXA** (schemeID `urn:ubl-examples:world:XL:aircraft-register`)  
   The aircraft's registration: the nationality mark QL of Lisavu, a mark no real state uses, and three letters; the fleet of Kelaro Air Cargo (world/parties.json). The schemeID names the scheme it is from: the civil aircraft register of Lisavu (the nationality mark QL, a hyphen and three letters).
 - `Consignment/TransportHandlingUnit/ID` = **RKN41207K0**  
   The container as a handling unit.
@@ -509,8 +509,8 @@ Inside `Shipment`:
   The lowest allowed.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ID` = **SE-BAT-48100-DG**  
   The battery packs in the container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/UNDGCode` = **3480** (listID `UN Model Regulations UN number`)  
-  The UN number of the battery packs. The code is from the world's copy of UN Model Regulations dangerous goods list (UN numbers): 3480 = Lithium ion batteries (including lithium ion polymer batteries).
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/UNDGCode` = **3480** (listID `UN Model Regulations Dangerous Goods List`)  
+  The UN number of the battery packs. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 3480 = Lithium ion batteries (including lithium ion polymer batteries).
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/CategoryName` = **Miscellaneous dangerous goods**  
   Class 9 in words.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ProperShippingName` = **Lithium ion batteries**  
@@ -655,23 +655,29 @@ Inside `Shipment`:
 Inside `DocumentDistribution`:
 
 - `ID` = **1**  
-  The first original.
-- `DocumentTypeCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:DocumentCopyTypeCode`)  
-  An original. The code is from the Trade Accord's document copy type list: ORIGINAL = Original.
-- `DistributionTypeCode` = **PAPER** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  Handed over on paper. The code is from the Trade Accord's distribution type list: PAPER = Paper.
-- `DistributionType` = **With the goods**  
-  It travels with the goods.
+  The original for the consignee.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ORIGINALWITHGOODS** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
+- `DistributionType` = **Folue, tofuta liape: vamomoli folue** (languageID `qal`)  
+  The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In Lisavan, the sender's language.
+- `DistributionType` = **Original, with the goods: the consignee's original** (languageID `en-XL`)  
+  The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In English.
 - `Party/PartyIdentification/ID` = **IC41174** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Selanu Airport Cargo**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The electronic copy.
-- `DocumentTypeCode` = **COPY** (listID `urn:ubl-examples:world:codelist:DocumentCopyTypeCode`)  
-  A copy. The code is from the Trade Accord's document copy type list: COPY = Copy.
-- `DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  Sent as this UBL document. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ELECTRONICCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The receiver of this message gets a copy, for its records; the originals are on paper. The code is from the Trade Accord's distribution type list: ELECTRONICCOPY = Electronic copy.
+- `DistributionType` = **Tihetaki tiveto** (languageID `qal`)  
+  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In Lisavan, the sender's language.
+- `DistributionType` = **Electronic copy** (languageID `en-XL`)  
+  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In English.
 - `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Bayforth Forwarding**  
@@ -681,7 +687,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **KAC-SIG-KAC-WB-26-0717**  
+- `ID` = **KXL-SIG-KXL-WB-26-0717**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -697,8 +703,8 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KAC-WB-26-0717</cbc:ID>
-  <cbc:CarrierAssignedID>KAC-AWB-26-0713</cbc:CarrierAssignedID>
+  <cbc:ID>KXL-WB-26-0717</cbc:ID>
+  <cbc:CarrierAssignedID>KXL-AWB-26-0713</cbc:CarrierAssignedID>
   <cbc:UUID>bf007d9d-013c-5ef5-8c7c-b450b24811d3</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -1045,12 +1051,12 @@ Inside `Signature`:
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:TransportMeans>
-          <cbc:JourneyID>KAC209</cbc:JourneyID>
+          <cbc:JourneyID>KXL209</cbc:JourneyID>
           <cbc:RegistrationNationalityID schemeID="ISO 3166">XL</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
-          <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CARGOAIRCRAFT</cbc:TransportMeansTypeCode>
+          <cbc:TransportMeansTypeCode listID="IATA SSIM Aircraft Types">ATF</cbc:TransportMeansTypeCode>
           <cac:AirTransport>
-            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KAC</cbc:AircraftID>
+            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KXA</cbc:AircraftID>
           </cac:AirTransport>
         </cac:TransportMeans>
       </cac:MainCarriageShipmentStage>
@@ -1094,7 +1100,7 @@ Inside `Signature`:
           </cac:HazardousGoodsTransit>
           <cac:LoadedHazardousItem>
             <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-            <cbc:UNDGCode listID="UN Model Regulations UN number">3480</cbc:UNDGCode>
+            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
             <cbc:CategoryName>Miscellaneous dangerous goods</cbc:CategoryName>
             <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
             <cbc:UpperOrangeHazardPlacardID>90</cbc:UpperOrangeHazardPlacardID>
@@ -1213,9 +1219,10 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">ORIGINAL</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">PAPER</cbc:DistributionTypeCode>
-    <cbc:DistributionType>With the goods</cbc:DistributionType>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALWITHGOODS</cbc:DistributionTypeCode>
+    <cbc:DistributionType languageID="qal">Folue, tofuta liape: vamomoli folue</cbc:DistributionType>
+    <cbc:DistributionType languageID="en-XL">Original, with the goods: the consignee's original</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
@@ -1227,8 +1234,10 @@ Inside `Signature`:
   </cac:DocumentDistribution>
   <cac:DocumentDistribution>
     <cbc:ID>2</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">COPY</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
+    <cbc:DistributionType languageID="qal">Tihetaki tiveto</cbc:DistributionType>
+    <cbc:DistributionType languageID="en-XL">Electronic copy</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -1239,7 +1248,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>KAC-SIG-KAC-WB-26-0717</cbc:ID>
+    <cbc:ID>KXL-SIG-KXL-WB-26-0717</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

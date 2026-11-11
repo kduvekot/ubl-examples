@@ -458,8 +458,10 @@
     <cbc:ID>RR-REC-26-0412</cbc:ID>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
-    <cbc:DistributionType>A copy for the producer, who must keep it with the notification.</cbc:DistributionType>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
+    <cbc:DistributionType languageID="qau">Viskir zuzzir: drek stelskek skukek kazhek skukstek vek drek duntraz</cbc:DistributionType>
+    <cbc:DistributionType languageID="en-XU">Electronic copy: the producer must keep it with the notification</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

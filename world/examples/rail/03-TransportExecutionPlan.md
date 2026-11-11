@@ -672,8 +672,8 @@ Inside `Consignment`:
   The same, in words.
 - `MainCarriageShipmentStage/TransportMeans/DirectionCode` = **WB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
   The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: WB = Westbound.
-- `MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **FREIGHTTRAIN** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
-  The kind of means of transport: container train ferrano–marrowdale; the fleet of Ferrano Rail Cargo (world/parties.json). The code is from the Trade Accord's transport means type list: FREIGHTTRAIN = Freight train.
+- `MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **2302** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: container train Ferrano–Marrowdale; the fleet of Ferrano Rail Cargo (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 2302 = Train, container.
 - `MainCarriageShipmentStage/TransportMeans/RailTransport/TrainID` = **FRC 4417**  
   The train number; the fleet of Ferrano Rail Cargo (world/parties.json).
 - `MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
@@ -1206,7 +1206,7 @@ Inside `Consignment`:
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
         <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
-        <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">FREIGHTTRAIN</cbc:TransportMeansTypeCode>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">2302</cbc:TransportMeansTypeCode>
         <cac:RailTransport>
           <cbc:TrainID>FRC 4417</cbc:TrainID>
         </cac:RailTransport>

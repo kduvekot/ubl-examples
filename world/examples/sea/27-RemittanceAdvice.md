@@ -18,7 +18,7 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VT-RM-26-0152**  
+- `ID` = **VT-RM-26-0150**  
   The payer's remittance number.
 - `UUID` = **e979bb12-c34b-549e-a55c-2eaa6ba06d08**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -476,7 +476,7 @@ Inside `RemittanceAdviceLine`:
 - `DocumentReference/IssueDate` = **2026-05-14**  
   Its issue date.
 - `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's ubl document type list: Invoice.
+  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's UBL document type list: Invoice.
 - `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -497,7 +497,7 @@ Inside `RemittanceAdviceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
   A party referred to from another party's details: its identifier and name are enough.
-- `BillingReference/CreditNoteDocumentReference/ID` = **LD-CN-26-0151**  
+- `BillingReference/CreditNoteDocumentReference/ID` = **LD-CN-26-0152**  
   The credit note deducted.
 - `BillingReference/CreditNoteDocumentReference/IssueDate` = **2026-06-15**  
   Its issue date.
@@ -511,7 +511,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-RM-26-0152</cbc:ID>
+  <cbc:ID>VT-RM-26-0150</cbc:ID>
   <cbc:UUID>e979bb12-c34b-549e-a55c-2eaa6ba06d08</cbc:UUID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
   <cbc:IssueTime>15:43:00</cbc:IssueTime>
@@ -961,7 +961,7 @@ Inside `RemittanceAdviceLine`:
     </cac:BeneficiaryParty>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
-        <cbc:ID>LD-CN-26-0151</cbc:ID>
+        <cbc:ID>LD-CN-26-0152</cbc:ID>
         <cbc:IssueDate>2026-06-15</cbc:IssueDate>
       </cac:CreditNoteDocumentReference>
     </cac:BillingReference>

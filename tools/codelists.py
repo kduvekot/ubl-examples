@@ -112,7 +112,23 @@ def _epsg(path):
     return {str(d["Code"]): {"name": d["Name"], "description": f"{d['Kind']} coordinate reference system"}}
 
 
-READERS = {"cefact": _cefact, "peppol": _peppol, "cpc": _cpc, "iso639": _iso639, "mic": _mic, "epsg": _epsg}
+def _rec28(path):
+    """UN/ECE Recommendation 28, code list Revision 4.2: the CSV made once from UNECE's spreadsheet (see
+    world/codelists/sources/PROVENANCE.md), so the build needs no spreadsheet reader."""
+    with open(path, encoding="utf-8") as f:
+        return {r["code"]: {"name": r["name"], "description": r["description"]} for r in csv.DictReader(f)}
+
+
+def _optd_aircraft(path):
+    """OpenTravelData's table of IATA aircraft type codes (a secondary source: IATA SSIM Appendix A is not public)."""
+    with open(path, encoding="utf-8") as f:
+        return {r["iata_code"]: {"name": r["model"] if r["model"].startswith(r["manufacturer"])
+                                 else f"{r['manufacturer']} {r['model']}",
+                                 "description": f"ICAO type designator {r['icao_code']}; {r['nb_engines']} engines."}
+                for r in csv.DictReader(f, delimiter="^")}
+
+
+READERS = {"rec28": _rec28, "optd-aircraft": _optd_aircraft, "cefact": _cefact, "peppol": _peppol, "cpc": _cpc, "iso639": _iso639, "mic": _mic, "epsg": _epsg}
 
 
 def source_codes(spec):
@@ -226,10 +242,11 @@ def choose(b, code, list_id_given=None):
 def describe(lst):
     """Where a list comes from, in words, for the reason pages."""
     s = lst["scope"]
+    name = lst["name"] if lst["name"][:2].isupper() else lst["name"].lower()     # keep an acronym: UBL document type
     if s == "regional":
-        return f"the Trade Accord's {lst['name'].lower()} list"
+        return f"the Trade Accord's {name} list"
     if s in ("XU", "XB", "XL"):
-        return f"{world_data.load()['countries'][s]['name']}'s national {lst['name'].lower()} list"
+        return f"{world_data.load()['countries'][s]['name']}'s national {name} list"
     if s == "external":
         return f"the world's copy of {lst['name']}"
     if s == "ubl-copy":

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of UN Model Regulations dangerous goods list (UN numbers): the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (UN Model Regulations, chapter 3.2 Dangerous Goods List); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of UN Model Regulations Dangerous Goods List (UN numbers): the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (UN Model Regulations, chapter 3.2 Dangerous Goods List); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>UNModelRegsUNCode</ShortName>
-      <LongName xml:lang="en">UN Model Regulations dangerous goods list (UN numbers) (UBL example world)</LongName>
-      <LongName Identifier="listID">UN Model Regulations UN number</LongName>
-      <Version>Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</Version>
+      <LongName xml:lang="en">UN Model Regulations Dangerous Goods List (UN numbers) (UBL example world)</LongName>
+      <LongName Identifier="listID">UN Model Regulations Dangerous Goods List</LongName>
+      <Version>Recommendations on the Transport of Dangerous Goods, Model Regulations, 23rd revised edition (2023), the edition the codes were confirmed against (BAM DGG-Info, "Detailinfo UN Rec. 23rd rev. ed."; the 24th revised edition of 2025 could not be read, UNECE blocks automated access)</Version>
       <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNModelRegsUNCode</CanonicalUri>
-      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNModelRegsUNCode:Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</CanonicalVersionUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNModelRegsUNCode:Recommendations on the Transport of Dangerous Goods, Model Regulations, 23rd revised edition (2023), the edition the codes were confirmed against (BAM DGG-Info, "Detailinfo UN Rec. 23rd rev. ed."; the 24th revised edition of 2025 could not be read, UNECE blocks automated access)</CanonicalVersionUri>
       <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNModelRegsUNCode.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">United Nations</LongName>

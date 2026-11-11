@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0151</cbc:ID>
+  <cbc:ID>LD-CN-26-0152</cbc:ID>
   <cbc:UUID>2d2cd2d8-031b-5aba-b59f-4e3ba799184e</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:49:00</cbc:IssueTime>
@@ -36,13 +36,13 @@
     <cbc:ID>LD-DAG-26-0125</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:StatementDocumentReference>
-    <cbc:ID>HF-ST-26-0150</cbc:ID>
+    <cbc:ID>HF-ST-26-0151</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
   </cac:OriginatorDocumentReference>
   <cac:ProjectReference>
-    <cbc:ID>Harbour parks Selanu</cbc:ID>
+    <cbc:ID>VT-PRJ-26-07</cbc:ID>
   </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>VT-CLAIMS</cbc:BuyerReferenceCode>

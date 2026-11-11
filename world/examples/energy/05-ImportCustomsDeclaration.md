@@ -399,8 +399,8 @@ Inside `Shipment`:
   UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 7 = Fixed transport installations.
 - `ShipmentStage/TransportMeans/JourneyID` = **KG-P1-2603**  
   The month's flow through the pipeline.
-- `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **PIPELINE** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
-  The gas arrives by pipeline. The code is from the Trade Accord's transport means type list: PIPELINE = Pipeline.
+- `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **71** (listID `UNECE Recommendation 28`)  
+  The gas arrives by pipeline. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 71 = Pipeline.
 
 ## The document
 
@@ -728,7 +728,7 @@ Inside `Shipment`:
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">7</cbc:TransportModeCode>
       <cac:TransportMeans>
         <cbc:JourneyID>KG-P1-2603</cbc:JourneyID>
-        <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">PIPELINE</cbc:TransportMeansTypeCode>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">71</cbc:TransportMeansTypeCode>
       </cac:TransportMeans>
     </cac:ShipmentStage>
   </cac:Shipment>

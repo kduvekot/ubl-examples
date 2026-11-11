@@ -460,14 +460,24 @@ Inside `ExchangeRate`:
 Inside `DocumentDistribution`:
 
 - `ID` = **1**  
-  Three originals.
-- `DocumentTypeCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:DocumentCopyTypeCode`)  
-  Originals. The code is from the Trade Accord's document copy type list: ORIGINAL = Original.
-- `DistributionTypeCode` = **PAPER** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  On paper, by courier. The code is from the Trade Accord's distribution type list: PAPER = Paper.
-- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The full set of three originals.
+- `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this bill of lading. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `DistributionTypeCode` = **ORIGINALCOURIER** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The originals go by courier to the Bank of Selanu, which holds a mortgage on the bales and releases the bills when the mill has paid. The code is from the Trade Accord's distribution type list: ORIGINALCOURIER = Original, sent by courier.
+- `Party/PartyIdentification/ID` = **IC41996** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Bayforth Forwarding**  
+- `Party/PartyName/Name` = **Bank of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
+  The consignee's copy.
+- `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this bill of lading. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `DistributionTypeCode` = **SCANNEDCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  A scanned copy for the mill, so it can plan the collection of the bales. The code is from the Trade Accord's distribution type list: SCANNEDCOPY = Scanned copy.
+- `Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeport Textile Mill**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
@@ -849,14 +859,27 @@ Inside `Signature`:
   </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">ORIGINAL</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">PAPER</cbc:DistributionTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALCOURIER</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41996</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Bayforth Forwarding</cbc:Name>
+        <cbc:Name>Bank of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">SCANNEDCOPY</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

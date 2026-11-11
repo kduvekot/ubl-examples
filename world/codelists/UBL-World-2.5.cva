@@ -55,7 +55,8 @@
       <ValueList xml:id="RecordStatus" uri="gc/RecordStatusCode.gc" />
       <ValueList xml:id="ProfileStatus" uri="gc/ProfileStatusCode.gc" />
       <ValueList xml:id="UNCL1001" uri="gc/UNCL1001Code.gc" />
-      <ValueList xml:id="TransportMeansType" uri="gc/TransportMeansTypeCode.gc" />
+      <ValueList xml:id="UNECERec28" uri="gc/UNECERec28Code.gc" />
+      <ValueList xml:id="IATAAircraftType" uri="gc/IATAAircraftTypeCode.gc" />
       <ValueList xml:id="ShipConfiguration" uri="gc/ShipConfigurationCode.gc" />
       <ValueList xml:id="TransportService" uri="gc/TransportServiceCode.gc" />
       <ValueList xml:id="TravelDirection" uri="gc/TravelDirectionCode.gc" />
@@ -242,7 +243,6 @@
       <ValueList xml:id="TimingComplaint" uri="gc/TimingComplaintCode.gc" />
       <ValueList xml:id="DespatchAdviceType" uri="gc/DespatchAdviceTypeCode.gc" />
       <ValueList xml:id="DistributionType" uri="gc/DistributionTypeCode.gc" />
-      <ValueList xml:id="DocumentCopyType" uri="gc/DocumentCopyTypeCode.gc" />
       <ValueList xml:id="DocumentType" uri="gc/DocumentTypeCode.gc" />
       <ValueList xml:id="UBLDocumentType" uri="gc/UBLDocumentTypeCode.gc" />
       <ValueList xml:id="IANACharset" uri="gc/IANACharsetCode.gc" />
@@ -365,8 +365,7 @@
       <Context address="*[local-name()='CatalogueLine']/cbc:ActionCode" values="CatalogueLineAction" metadata="code" />
       <Context address="*[local-name()='TransactionConditions']/cbc:ActionCode" values="ConditionsAction" metadata="code" />
       <Context address="*[local-name()='ForecastRevision']/cbc:PurposeCode" values="ForecastPurpose" metadata="code" />
-      <Context address="*[local-name()='DocumentDistribution']/cbc:DocumentTypeCode" values="DocumentCopyType" metadata="code" />
-      <Context address="*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode" values="UBLDocumentType UNCL1001 DocumentType" metadata="code" />
+      <Context address="*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='DocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode" values="UBLDocumentType UNCL1001 DocumentType" metadata="code" />
       <Context address="*[local-name()='Signature']/cbc:ReasonCode" values="SignatureReason" metadata="code" />
       <Context address="*[local-name()='Response']/cbc:ResponseCode" values="UNCL4343" metadata="code" />
       <Context address="*[local-name()='DiscrepancyResponse']/cbc:ResponseCode" values="UNCL4465" metadata="code" />
@@ -437,7 +436,7 @@
       <Context address="cbc:CreditNoteTypeCode" values="UNCL1001" metadata="code" />
       <Context address="cbc:DebitNoteTypeCode" values="UNCL1001" metadata="code" />
       <Context address="cbc:OrderTypeCode" values="UNCL1001" metadata="code" />
-      <Context address="cbc:TransportMeansTypeCode" values="TransportMeansType" metadata="code" />
+      <Context address="cbc:TransportMeansTypeCode" values="UNECERec28 IATAAircraftType" metadata="code" />
       <Context address="cbc:ShipConfigurationCode" values="ShipConfiguration" metadata="code" />
       <Context address="cbc:TransportServiceCode" values="TransportService" metadata="code" />
       <Context address="cbc:DirectionCode" values="TravelDirection" metadata="code" />

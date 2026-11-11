@@ -458,8 +458,8 @@ Inside `Shipment`:
   The same, in words.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **DS** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
   The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: DS = Downstream.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **DRYBARGE** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
-  The kind of means of transport: fiumella iv; the fleet of Fiumella Barges (world/parties.json). The code is from the Trade Accord's transport means type list: DRYBARGE = Dry cargo barge.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **815** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: fiumella IV; the fleet of Fiumella Barges (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 815 = Freight barge.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XU-IW-08042** (schemeID `urn:ubl-examples:world:vessel`)  
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Fiumella IV**  
@@ -617,23 +617,29 @@ Inside `DocumentReference`:
 Inside `DocumentDistribution`:
 
 - `ID` = **1**  
-  The first original.
-- `DocumentTypeCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:DocumentCopyTypeCode`)  
-  An original. The code is from the Trade Accord's document copy type list: ORIGINAL = Original.
-- `DistributionTypeCode` = **PAPER** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  Handed over on paper. The code is from the Trade Accord's distribution type list: PAPER = Paper.
-- `DistributionType` = **With the goods**  
-  It travels with the goods.
+  The original for the consignee.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ORIGINALWITHGOODS** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
+- `DistributionType` = **Rikzhek, vek drek valnir: drek trelgir rikzhek** (languageID `qau`)  
+  The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In Urvanian, the sender's language.
+- `DistributionType` = **Original, with the goods: the consignee's original** (languageID `en-XU`)  
+  The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In English.
 - `Party/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Rivermouth Packaging**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The electronic copy.
-- `DocumentTypeCode` = **COPY** (listID `urn:ubl-examples:world:codelist:DocumentCopyTypeCode`)  
-  A copy. The code is from the Trade Accord's document copy type list: COPY = Copy.
-- `DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  Sent as this UBL document. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ELECTRONICCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The receiver of this message gets a copy, for its records; the originals are on paper. The code is from the Trade Accord's distribution type list: ELECTRONICCOPY = Electronic copy.
+- `DistributionType` = **Viskir zuzzir** (languageID `qau`)  
+  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In Urvanian, the sender's language.
+- `DistributionType` = **Electronic copy** (languageID `en-XU`)  
+  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In English.
 - `Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Rinova Recovery**  
@@ -1020,7 +1026,7 @@ Inside `Signature`:
           <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
           <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">DS</cbc:DirectionCode>
-          <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">DRYBARGE</cbc:TransportMeansTypeCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">815</cbc:TransportMeansTypeCode>
           <cac:MaritimeTransport>
             <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XU-IW-08042</cbc:VesselID>
             <cbc:VesselName>Fiumella IV</cbc:VesselName>
@@ -1148,9 +1154,10 @@ Inside `Signature`:
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">ORIGINAL</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">PAPER</cbc:DistributionTypeCode>
-    <cbc:DistributionType>With the goods</cbc:DistributionType>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALWITHGOODS</cbc:DistributionTypeCode>
+    <cbc:DistributionType languageID="qau">Rikzhek, vek drek valnir: drek trelgir rikzhek</cbc:DistributionType>
+    <cbc:DistributionType languageID="en-XU">Original, with the goods: the consignee's original</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
@@ -1162,8 +1169,10 @@ Inside `Signature`:
   </cac:DocumentDistribution>
   <cac:DocumentDistribution>
     <cbc:ID>2</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">COPY</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
+    <cbc:DistributionType languageID="qau">Viskir zuzzir</cbc:DistributionType>
+    <cbc:DistributionType languageID="en-XU">Electronic copy</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>

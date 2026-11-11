@@ -63,7 +63,7 @@ Inside `OrderReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KAC-OFFLOAD-26-0513**  
+- `ID` = **KXL-OFFLOAD-26-0513**  
   The airline's offload notice.
 
 ### Contract
@@ -415,7 +415,7 @@ Inside `BeneficiaryParty`:
     </cac:DocumentReference>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KAC-OFFLOAD-26-0513</cbc:ID>
+    <cbc:ID>KXL-OFFLOAD-26-0513</cbc:ID>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>LD-DAG-26-0125</cbc:ID>

@@ -624,8 +624,8 @@ Inside `Consignment`:
   The same, in words.
 - `MainCarriageShipmentStage/TransportMeans/DirectionCode` = **DS** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
   The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: DS = Downstream.
-- `MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **DRYBARGE** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
-  The kind of means of transport: fiumella iv; the fleet of Fiumella Barges (world/parties.json). The code is from the Trade Accord's transport means type list: DRYBARGE = Dry cargo barge.
+- `MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **815** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: fiumella IV; the fleet of Fiumella Barges (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 815 = Freight barge.
 - `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XU-IW-08042** (schemeID `urn:ubl-examples:world:vessel`)  
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Fiumella IV**  
@@ -1154,7 +1154,7 @@ Inside `Consignment`:
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
         <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">DS</cbc:DirectionCode>
-        <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">DRYBARGE</cbc:TransportMeansTypeCode>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">815</cbc:TransportMeansTypeCode>
         <cac:MaritimeTransport>
           <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XU-IW-08042</cbc:VesselID>
           <cbc:VesselName>Fiumella IV</cbc:VesselName>

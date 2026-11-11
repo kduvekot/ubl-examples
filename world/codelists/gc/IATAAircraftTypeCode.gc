@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of IATA SSIM aircraft type codes: the codes the world uses, and others of the same list. Built from world/codelists/sources/optd/optd_aircraft.csv (OpenTravelData optd_aircraft.csv, commit cfc7b82). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>IATAAircraftTypeCode</ShortName>
+      <LongName xml:lang="en">IATA SSIM aircraft type codes (UBL example world)</LongName>
+      <LongName Identifier="listID">IATA SSIM Aircraft Types</LongName>
+      <Version>IATA SSIM Appendix A, as OpenTravelData gives it</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:IATAAircraftTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:IATAAircraftTypeCode:IATA SSIM Appendix A, as OpenTravelData gives it</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/IATAAircraftTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">International Air Transport Association</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ATF</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ATR 72 Freighter</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The ATR 72-600F of Kelaro Air Cargo: a new-built freighter of the ATR 72-600 series.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

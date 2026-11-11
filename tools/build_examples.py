@@ -49,7 +49,8 @@ DEPRECATED = "(Deprecated)"
 
 WORLD = world_data.load()
 MODEL = world_docs.load_model()
-PARTY = {p["id"]: p for p in WORLD["parties"]}
+REFERENCED = {p["id"] for p in WORLD.get("referenced", [])}      # parties only referred to: identifier and name
+PARTY = {p["id"]: p for p in WORLD["parties"] + WORLD.get("referenced", [])}
 ITEM = {i["id"]: i for i in WORLD["items"]}
 CUR = {c["currency"]["code"]: c["currency"] for c in WORLD["countries"].values()}
 
@@ -59,6 +60,12 @@ class V:
     """A value with its reason, and optional attributes (currencyID, unitCode, schemeID ...)."""
     def __init__(self, value, why, **attrs):
         self.value, self.why, self.attrs = value, why, attrs
+
+
+class Detail(V):
+    """The specific detail of the case for the text partner of a code (RejectReason beside RejectReasonCode): the
+    builder writes the code's meaning from its list, ": " and this detail (decision P6). A text partner given as a
+    plain V gets the meaning alone."""
 
 
 def money(amount, currency):
@@ -160,7 +167,8 @@ def party(pid, short=False):
                                  f"{scheme['name'].lower()} is levied by the "
                                  f"{'states' if scheme.get('levied_by') == 'state' else 'country'}.")}
         if idn.get("tax_exemption"):
-            tax["ExemptionReason"] = V(idn["tax_exemption"], f"Why purchases by this party carry no sales tax; {src}.")
+            tax["ExemptionReason"] = Detail(idn["tax_exemption"][0].lower() + idn["tax_exemption"][1:],
+                                            f"why purchases by this party carry no sales tax; {src}.")
             code = next((v for k, v in c["tax"].get("exemption_codes", {}).items()
                          if idn.get("tax_exemption_kind") == k), None)
             if code:
@@ -533,7 +541,9 @@ def party_again(pid, first):
     """A later mention of a party already given in full in this document: its identifier and name only."""
     idn = PARTY[pid]["identity"]
     why = (f"The same party as at {first}, where its full details are given; only its identifier and name are repeated."
-           if first else "A party referred to from another party's details: its identifier and name are enough.")
+           if first else f"{PARTY[pid]['what']} Its identifier and name are enough (world/parties.json, referenced)."
+           if pid in REFERENCED else "A party referred to from another party's details: its identifier and name are "
+                                     "enough.")
     out = {"PartyName": {"Name": V(idn["name"], why)}}
     if idn.get("registry_id"):
         out["PartyIdentification"] = {"ID": V(idn["registry_id"], why, schemeID=register_scheme(PARTY[pid]["c"]))}
@@ -667,6 +677,51 @@ def item_property(pr, src):
 PACKAGING_DANGER_LEVEL = {"I": "1", "II": "2", "III": "3", "NA": "4"}   # UN packing group -> UN/EDIFACT 8339
 
 
+def dangerous_goods_problem(un, name, cls, sub=None):
+    """Whether a UN number, its proper shipping name and its class agree with the Dangerous Goods List of the UN Model
+    Regulations (world/codelists/lists.json, UNModelRegsUN; decision P2). The proper shipping name is compared without
+    case, with a dash for an en dash and without the entry's lower-case additions in brackets, such as "(including
+    lithium ion polymer batteries)". None if they agree, else the problem."""
+    lst = codelists.load()["lists"]["UNModelRegsUN"]
+    if un not in lst["codes"]:
+        return f"UN {un} is not in the world's Dangerous Goods List"
+
+    def norm(t):
+        return re.sub(r"\s+", " ", re.sub(r"\s*\([^)]*\)", "", t.replace("\u2013", "-"))).strip().casefold()
+    if norm(name) != norm(lst["codes"][un]["name"]):
+        return f"UN {un}: proper shipping name '{name}' is not the entry's '{lst['codes'][un]['name']}'"
+    if cls != lst["classes"][un]:
+        return f"UN {un}: class {cls}, but the entry is class {lst['classes'][un]}"
+    if sub != lst["subsidiary"].get(un):
+        return f"UN {un}: subsidiary hazard {sub}, but the entry has {lst['subsidiary'].get(un)}"
+    return None
+
+
+def check_dangerous_goods_items():
+    """Every dangerous item of world/items.json has the class and proper shipping name of its UN number."""
+    for it in WORLD["items"]:
+        hz = it.get("hazard")
+        if hz:
+            why = dangerous_goods_problem(hz["un"][2:], hz["name"], hz["class"], hz.get("sub"))
+            if why:
+                raise SystemExit(f"world/items.json: {it['id']}: {why}")
+
+
+def check_classifications(root, where):
+    """An item's CPC Ver.2.1 code (ItemClassificationCode) is the one the official correspondence gives for its HS
+    subheading (CommodityCode), as in world/items.json (tools/world_items.py, decision P5)."""
+    for it in root.iter(f"{{{NS_CAC}}}Item"):
+        cpc = [e.text for e in it.findall(f"{{{NS_CAC}}}CommodityClassification/{{{NS_CBC}}}ItemClassificationCode")
+               if e.get("listID") == "UN CPC Ver.2.1"]
+        hs = [e.text for e in it.findall(f"{{{NS_CAC}}}CommodityClassification/{{{NS_CBC}}}CommodityCode")
+              if e.get("listID") == "WCO HS 2022"]
+        for c in cpc:
+            for h in hs:
+                why = world_items.cpc_hs_problem(c, h, where)
+                if why:
+                    raise SystemExit(why)
+
+
 def check_dangerous_goods(root, where):
     """The dangerous goods data agree within a document: the packaging danger level (UN/EDIFACT 8339) of a UN number
     is its packing group (I-1, II-2, III-3, NA-4), the hazardous category is the class, and an emergency card is the
@@ -676,6 +731,10 @@ def check_dangerous_goods(root, where):
         un, pg = hi.findtext(f"{{{NS_CBC}}}UNDGCode"), hi.findtext(f"{{{NS_CBC}}}UNPackingGroupCode")
         cls, cat = hi.findtext(f"{{{NS_CBC}}}HazardClassID"), hi.findtext(f"{{{NS_CBC}}}HazardousCategoryCode")
         groups[un] = pg
+        sub = hi.findtext(f"{{{NS_CAC}}}SecondaryHazard/{{{NS_CBC}}}ID")
+        why = dangerous_goods_problem(un, hi.findtext(f"{{{NS_CBC}}}ProperShippingName") or "", cls, sub)
+        if why:
+            raise SystemExit(f"{where}: {why}")
         if cat is not None and cat != cls:
             raise SystemExit(f"{where}: HazardousCategoryCode {cat} is not the class {cls} of UN {un}")
     for e in root.iter(f"{{{NS_CBC}}}HazardClassID"):
@@ -695,8 +754,9 @@ def hazardous_item(it):
     hz = it["hazard"]
     out = {"ID": V(f"{it['sellers_id']}-DG", "The seller's dangerous goods record of the item."),
            "UNDGCode": V(hz["un"][2:], "The UN number, from the Dangerous Goods List of the UN Model Regulations."),
-           "ProperShippingName": V(hz["name"], "The proper shipping name."),
-           "HazardClassID": V(hz["class"], "The UN hazard class."),
+           "ProperShippingName": V(hz["name"], "The proper shipping name of the UN entry; the build checks that UN "
+                                               "number, name and class agree with the Dangerous Goods List."),
+           "HazardClassID": V(hz["class"], "The UN hazard class of the entry."),
            "HazardousCategoryCode": V(hz["class"], "The hazard class of the goods as a code of the UN Model "
                                                     "Regulations' classes."),
            "EmergencyProceduresCode": V(hz["ems"], "The emergency schedules for ships (EmS) of the IMDG Code for this "
@@ -1174,16 +1234,27 @@ def with_code_lists(content, path, bbies):
         text = b.get("text")
         if text and text in content and not isinstance(val, list):
             lst = codelists.choose(b, val.value, out[name].attrs["listID"])
-            why = f"The name of code {val.value} in {codelists.describe(lst)}."
+            given = content[text]
+            detail = given.value if isinstance(given, Detail) else None
+            case = given.why[0].lower() + given.why[1:] if given.why[1:2].islower() else given.why
+            why = f"The name of code {val.value} in {codelists.describe(lst)}" + (
+                f", followed by the detail of this case: {case.rstrip('.')}." if detail else ".")
             langs = [l for l in WORLD["countries"][PARTY[SENDER]["c"]]["languages"] if l != "en"] \
                 if SENDER and bbies[text][1].endswith("n") else []
             langs = [l for l in langs if l in codelists.LANGS.get(lst["scope"], [])]
+
+            def words(lang):
+                t = codelists.name_in(lst, val.value, lang)
+                if not detail:
+                    return t
+                d = detail if lang == "en" else translate(detail, lang)
+                return f"{t}: {d[0].lower() + d[1:] if detail[0].islower() else d}"
             if langs:
-                out[text] = [V(codelists.name_in(lst, val.value, l), f"{why} In {WORLD['languages'][l]['name']}, "
-                               "the sender's language.", languageID=l) for l in langs] + \
-                            [V(codelists.name_in(lst, val.value, "en"), f"{why} In English.", languageID="en")]
+                out[text] = [V(words(l), f"{why} In {WORLD['languages'][l]['name']}, the sender's language.",
+                               languageID=l) for l in langs] + \
+                            [V(words("en"), f"{why} In English.", languageID="en")]
             else:
-                out[text] = V(codelists.name_in(lst, val.value, "en"), why)
+                out[text] = V(words("en"), why)
     return out
 
 
@@ -1458,6 +1529,7 @@ def xmlname(n, doc):
 
 def main(flow_id, check=False):
     import examples_scenarios
+    check_dangerous_goods_items()
     flow = next(f for f in WORLD["flows"] if f["id"] == flow_id)
     docs = [d for d in WORLD["documents"] if d["flow"] == flow_id]
     scenario = examples_scenarios.SCENARIOS[flow_id]
@@ -1508,6 +1580,7 @@ def main(flow_id, check=False):
         check_addresses(root, f"{flow_id} {n} {doc['doc']}")
         check_payment_means(root, f"{flow_id} {n} {doc['doc']}")
         check_dangerous_goods(root, f"{flow_id} {n} {doc['doc']}")
+        check_classifications(root, f"{flow_id} {n} {doc['doc']}")
         check_formats(root, f"{flow_id} {n} {doc['doc']}")
         check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
@@ -1549,6 +1622,8 @@ if __name__ == "__main__":
     import build_examples        # run through the module, so the scenarios share its classes
     args = [a for a in sys.argv[1:] if a != "--check"]
     ok = all([build_examples.main(f, check="--check" in sys.argv) for f in (args or FLOWS_WITH_EXAMPLES)])
+    for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
+        print(f"note: {note}", file=sys.stderr)
     if build_examples.UNBOUND:
         print(f"code elements without a code list in world/codelists/lists.json ({len(build_examples.UNBOUND)}):",
               ", ".join(f"{e} in {p}" for e, p in sorted(build_examples.UNBOUND)), file=sys.stderr)

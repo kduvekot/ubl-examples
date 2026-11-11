@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of ITU-R M.1371 AIS navigational status: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Recommendation ITU-R M.1371, Annex 2, message 1, navigational status); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of ITU-R M.1371 AIS navigational status: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Recommendation ITU-R M.1371-6 (02/2026), Annex 7, A7-3.1 Messages 1, 2, 3: position reports, Table 46, navigational status); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ITUAISNavStatusCode</ShortName>
       <LongName xml:lang="en">ITU-R M.1371 AIS navigational status (UBL example world)</LongName>
       <LongName Identifier="listID">ITU-R M.1371 Navigational status</LongName>
-      <Version>ITU-R M.1371-5</Version>
+      <Version>ITU-R M.1371-6 (02/2026)</Version>
       <CanonicalUri>urn:ubl-examples:world:codelist:copy:ITUAISNavStatusCode</CanonicalUri>
-      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ITUAISNavStatusCode:ITU-R M.1371-5</CanonicalVersionUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ITUAISNavStatusCode:ITU-R M.1371-6 (02/2026)</CanonicalVersionUri>
       <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ITUAISNavStatusCode.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">International Telecommunication Union</LongName>
@@ -37,7 +37,7 @@
             <SimpleValue>0</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Under way using engine</SimpleValue>
+            <SimpleValue>Under way</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -93,7 +93,7 @@
             <SimpleValue>7</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Engaged in fishing</SimpleValue>
+            <SimpleValue>Engaged fishing</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -101,7 +101,7 @@
             <SimpleValue>8</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Under way sailing</SimpleValue>
+            <SimpleValue>Under way under sailing only</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -109,10 +109,10 @@
             <SimpleValue>15</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Not defined</SimpleValue>
+            <SimpleValue>Undefined (default)</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The default.</SimpleValue>
+            <SimpleValue>Also used by AIS-SART under test, MOB-AIS under test or EPIRB-AIS under test.</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

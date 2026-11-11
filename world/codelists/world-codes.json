@@ -448,17 +448,7 @@
   },
   {
    "element": "DocumentTypeCode",
-   "address": "*[local-name()='DocumentDistribution']/cbc:DocumentTypeCode",
-   "lists": [
-    "DocumentCopyType"
-   ],
-   "parents": [
-    "DocumentDistribution"
-   ]
-  },
-  {
-   "element": "DocumentTypeCode",
-   "address": "*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode",
+   "address": "*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='DocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode",
    "lists": [
     "UBLDocumentType",
     "UNCL1001",
@@ -468,6 +458,7 @@
     "DocumentReference",
     "AdditionalDocumentReference",
     "DigitalDocumentMetadata",
+    "DocumentDistribution",
     "RemittanceDocumentDistribution",
     "RequiredCertificationDocumentReference"
    ]
@@ -1045,7 +1036,8 @@
    "element": "TransportMeansTypeCode",
    "address": "cbc:TransportMeansTypeCode",
    "lists": [
-    "TransportMeansType"
+    "UNECERec28",
+    "IATAAircraftType"
    ]
   },
   {
@@ -5379,22 +5371,31 @@
     "861"
    ]
   },
-  "TransportMeansType": {
-   "listID": "urn:ubl-examples:world:codelist:TransportMeansTypeCode",
-   "scope": "regional",
-   "name": "Transport means type",
-   "location": "world/codelists/gc/TransportMeansTypeCode.gc",
+  "UNECERec28": {
+   "listID": "UNECE Recommendation 28",
+   "scope": "external",
+   "name": "UN/ECE Recommendation 28 Codes for types of means of transport",
+   "location": "world/codelists/gc/UNECERec28Code.gc",
    "codes": [
-    "BOXTRUCK",
-    "TRUCKTRAILER",
-    "CRANETRUCK",
-    "VAN",
-    "FARMTRACTOR",
-    "FREIGHTTRAIN",
-    "DRYBARGE",
-    "CONTAINERSHIP",
-    "CARGOAIRCRAFT",
-    "PIPELINE"
+    "1511",
+    "37",
+    "395",
+    "34",
+    "341",
+    "3131",
+    "33",
+    "2302",
+    "815",
+    "71"
+   ]
+  },
+  "IATAAircraftType": {
+   "listID": "IATA SSIM Aircraft Types",
+   "scope": "external",
+   "name": "IATA SSIM aircraft type codes",
+   "location": "world/codelists/gc/IATAAircraftTypeCode.gc",
+   "codes": [
+    "ATF"
    ]
   },
   "ShipConfiguration": {
@@ -5967,9 +5968,9 @@
    ]
   },
   "UNModelRegsUN": {
-   "listID": "UN Model Regulations UN number",
+   "listID": "UN Model Regulations Dangerous Goods List",
    "scope": "external",
-   "name": "UN Model Regulations dangerous goods list (UN numbers)",
+   "name": "UN Model Regulations Dangerous Goods List (UN numbers)",
    "location": "world/codelists/gc/UNModelRegsUNCode.gc",
    "codes": [
     "3480",
@@ -7615,20 +7616,13 @@
    "name": "Distribution type",
    "location": "world/codelists/gc/DistributionTypeCode.gc",
    "codes": [
+    "ORIGINALCOURIER",
+    "ORIGINALWITHGOODS",
+    "COLLECT",
+    "SCANNEDCOPY",
     "ELECTRONIC",
-    "PAPER",
+    "ELECTRONICCOPY",
     "PORTAL"
-   ]
-  },
-  "DocumentCopyType": {
-   "listID": "urn:ubl-examples:world:codelist:DocumentCopyTypeCode",
-   "scope": "regional",
-   "name": "Document copy type",
-   "location": "world/codelists/gc/DocumentCopyTypeCode.gc",
-   "codes": [
-    "ORIGINAL",
-    "COPY",
-    "DUPLICATE"
    ]
   },
   "DocumentType": {

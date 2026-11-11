@@ -413,7 +413,7 @@ Inside `RemittanceAdviceLine`:
 - `DocumentReference/IssueDate` = **2026-03-11**  
   Its issue date.
 - `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's ubl document type list: Invoice.
+  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 

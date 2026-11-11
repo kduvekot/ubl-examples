@@ -445,11 +445,11 @@ Inside `ExchangeRate`:
 Inside `DocumentDistribution`:
 
 - `ID` = **1**  
-  A copy.
-- `DocumentTypeCode` = **COPY** (listID `urn:ubl-examples:world:codelist:DocumentCopyTypeCode`)  
-  A copy. The code is from the Trade Accord's document copy type list: COPY = Copy.
+  The instructions to the forwarder.
+- `DocumentTypeCode` = **ForwardingInstructions** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: these instructions. The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
 - `DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  As this UBL document. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
+  Sent as this UBL document. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
 - `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Bayforth Forwarding**  
@@ -831,7 +831,7 @@ Inside `Signature`:
   </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">COPY</cbc:DocumentTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>

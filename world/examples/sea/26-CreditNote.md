@@ -18,7 +18,7 @@ One boxed side frame arrived crushed; the distributor credits it, and the buyer 
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LD-CN-26-0151**  
+- `ID` = **LD-CN-26-0152**  
   The seller's credit note number.
 - `UUID` = **2d2cd2d8-031b-5aba-b59f-4e3ba799184e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -86,7 +86,7 @@ Inside `ContractDocumentReference`:
 
 Inside `StatementDocumentReference`:
 
-- `ID` = **HF-ST-26-0150**  
+- `ID` = **HF-ST-26-0151**  
   The factor's statement the invoice is on.
 
 ### Originator Document Reference
@@ -100,8 +100,8 @@ Inside `OriginatorDocumentReference`:
 
 Inside `ProjectReference`:
 
-- `ID` = **Harbour parks Selanu**  
-  The buyer's project.
+- `ID` = **VT-PRJ-26-07**  
+  The buyer's project: the harbour parks of Selanu.
 
 ### Buyer Assigned Reference
 
@@ -454,7 +454,7 @@ Inside `CreditNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0151</cbc:ID>
+  <cbc:ID>LD-CN-26-0152</cbc:ID>
   <cbc:UUID>2d2cd2d8-031b-5aba-b59f-4e3ba799184e</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:49:00</cbc:IssueTime>
@@ -486,13 +486,13 @@ Inside `CreditNoteLine`:
     <cbc:ID>LD-DAG-26-0125</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:StatementDocumentReference>
-    <cbc:ID>HF-ST-26-0150</cbc:ID>
+    <cbc:ID>HF-ST-26-0151</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
   </cac:OriginatorDocumentReference>
   <cac:ProjectReference>
-    <cbc:ID>Harbour parks Selanu</cbc:ID>
+    <cbc:ID>VT-PRJ-26-07</cbc:ID>
   </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>VT-CLAIMS</cbc:BuyerReferenceCode>

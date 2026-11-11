@@ -324,11 +324,13 @@
           emergency schedules and security levels, the WCO for the
           Harmonized System, the UN for product classification (CPC) and
           dangerous goods, ISO 20022 for payments, EPSG for coordinates,
-          PRONOM for file formats. UBL is not &quot;EDIFACT in
-          XML&quot;, so a UN/EDIFACT list is not used just because it
-          exists. Each is a world copy of the codes the world uses, with
-          others of the same list, made from the copy of the source kept
-          in <literal>world/codelists/sources</literal>; its
+          PRONOM for file formats, UN/ECE Recommendation 28 for means of
+          transport and, as it refers air transport there, IATA's
+          aircraft type codes. UBL is not &quot;EDIFACT in XML&quot;, so
+          a UN/EDIFACT list is not used just because it exists. Each is
+          a world copy of the codes the world uses, with others of the
+          same list, made from the copy of the source kept in
+          <literal>world/codelists/sources</literal>; its
           <literal>listID</literal> is in UBL's text style, such as
           <literal>UN/EDIFACT EDED 1001</literal> or
           <literal>WCO HS 2022</literal>. No code of such a list is
@@ -399,6 +401,43 @@
           <literal>InvoicePeriod/DescriptionCode</literal> describes the
           period (a month), as UBL defines it, not the tax point date
           code that EN 16931 puts there.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Document distribution.</emphasis>
+          <literal>DocumentDistribution/DocumentTypeCode</literal> gives
+          the type of the distributed document (a bill of lading), and
+          <literal>DistributionTypeCode</literal> how the party receives
+          it, original or copy: an original by courier, a scanned copy,
+          the electronic document itself. UBL 2.5 deprecated the
+          elements that said this before
+          (<literal>CopyIndicator</literal>,
+          <literal>MaximumCopiesNumeric</literal>,
+          <literal>MaximumOriginalsNumeric</literal>,
+          <literal>PrintQualifier</literal>), and an original is not a
+          type of document.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Self-billing.</emphasis> Where the
+          customer bills itself, as the cotton gin does for the farms'
+          seed cotton, the world uses UBL's own
+          <literal>SelfBilledInvoice</literal> and
+          <literal>SelfBilledCreditNote</literal>, never an
+          <literal>Invoice</literal> with type code 389 as EN 16931 and
+          Peppol BIS do (their syntax binding has only Invoice and
+          CreditNote). UBL 2.5 defines Invoice as &quot;A document used
+          to request payment&quot; and SelfBilledInvoice as &quot;An
+          Invoice document created by the Customer (rather than the
+          Supplier) in a Self Billing relationship&quot;; its semantic
+          definitions (§4.7) are what a document must conform to (§7.2).
+          The type codes are UN/EDIFACT 1001 389 and 261: they repeat
+          the root element, but their definitions are exact (&quot;An
+          invoice the invoicee is producing instead of the
+          seller&quot;), while 380 is a document &quot;claiming
+          payment&quot;.
         </para>
       </listitem>
       <listitem>

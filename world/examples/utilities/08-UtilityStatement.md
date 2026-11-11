@@ -337,12 +337,12 @@ Inside `SubscriberConsumption`:
   This reading.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterQuantity` = **1844** (unitCode `MTQ`)  
   The register now.
-- `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethod` = **Read by the customer**  
-  The name of code CUSTOMER in the Trade Accord's meter reading method list.
+- `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethod` = **Read by the customer: the household sent the reading**  
+  The name of code CUSTOMER in the Trade Accord's meter reading method list, followed by the detail of this case: from the utility's record of the reading.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethodCode` = **CUSTOMER** (listID `urn:ubl-examples:world:codelist:MeterReadingMethodCode`)  
   As a code. The code is from the Trade Accord's meter reading method list: CUSTOMER = Read by the customer.
-- `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingMethod` = **Read by the customer**  
-  The name of code CUSTOMER in the Trade Accord's meter reading method list.
+- `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingMethod` = **Read by the customer: the household sent the reading**  
+  The name of code CUSTOMER in the Trade Accord's meter reading method list, followed by the detail of this case: from the utility's record of the reading.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingMethodCode` = **CUSTOMER** (listID `urn:ubl-examples:world:codelist:MeterReadingMethodCode`)  
   As a code. The code is from the Trade Accord's meter reading method list: CUSTOMER = Read by the customer.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/DeliveredQuantity` = **14** (unitCode `MTQ`)  
@@ -800,9 +800,9 @@ Inside `SubscriberConsumption`:
           <cbc:PreviousMeterQuantity unitCode="MTQ">1830</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
           <cbc:LatestMeterQuantity unitCode="MTQ">1844</cbc:LatestMeterQuantity>
-          <cbc:PreviousMeterReadingMethod>Read by the customer</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethod>Read by the customer: the household sent the reading</cbc:PreviousMeterReadingMethod>
           <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">CUSTOMER</cbc:PreviousMeterReadingMethodCode>
-          <cbc:LatestMeterReadingMethod>Read by the customer</cbc:LatestMeterReadingMethod>
+          <cbc:LatestMeterReadingMethod>Read by the customer: the household sent the reading</cbc:LatestMeterReadingMethod>
           <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">CUSTOMER</cbc:LatestMeterReadingMethodCode>
           <cbc:DeliveredQuantity unitCode="MTQ">14</cbc:DeliveredQuantity>
         </cac:MeterReading>

@@ -489,8 +489,8 @@ Inside `SubscriberConsumption`:
   This reading.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterQuantity` = **135850** (unitCode `KWH`)  
   The register now.
-- `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethod` = **Estimated**  
-  The name of code ESTIMATE in the Trade Accord's meter reading method list.
+- `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethod` = **Estimated: no access to the meter**  
+  The name of code ESTIMATE in the Trade Accord's meter reading method list, followed by the detail of this case: from the utility's record of the reading.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethodCode` = **ESTIMATE** (listID `urn:ubl-examples:world:codelist:MeterReadingMethodCode`)  
   As a code. The code is from the Trade Accord's meter reading method list: ESTIMATE = Estimated.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingMethod` = **Read by the meter reader**  
@@ -1069,7 +1069,7 @@ Inside `SubscriberConsumption`:
           <cbc:PreviousMeterQuantity unitCode="KWH">117250</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
           <cbc:LatestMeterQuantity unitCode="KWH">135850</cbc:LatestMeterQuantity>
-          <cbc:PreviousMeterReadingMethod>Estimated</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethod>Estimated: no access to the meter</cbc:PreviousMeterReadingMethod>
           <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">ESTIMATE</cbc:PreviousMeterReadingMethodCode>
           <cbc:LatestMeterReadingMethod>Read by the meter reader</cbc:LatestMeterReadingMethod>
           <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">MANUAL</cbc:LatestMeterReadingMethodCode>

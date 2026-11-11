@@ -665,8 +665,10 @@ Inside `CertificateOfOriginApplication`:
   The goods were made in Urvania, and the certificate is issued there. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `DocumentDistribution/ID` = **1**  
   The importer's copy.
-- `DocumentDistribution/DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  As this document. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
+- `DocumentDistribution/DocumentTypeCode` = **CertificateOfOrigin** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this certificate. The code is from the Trade Accord's UBL document type list: CertificateOfOrigin = Certificate Of Origin.
+- `DocumentDistribution/DistributionTypeCode` = **ELECTRONICCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The importer gets a copy as a message; it declares the origin at import. The code is from the Trade Accord's distribution type list: ELECTRONICCOPY = Electronic copy.
 - `DocumentDistribution/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `DocumentDistribution/Party/PartyName/Name` = **Lumeway Distribution**  
@@ -1351,7 +1353,8 @@ Inside `InsuranceEndorsement`:
     </cac:IssuingCountry>
     <cac:DocumentDistribution>
       <cbc:ID>1</cbc:ID>
-      <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CertificateOfOrigin</cbc:DocumentTypeCode>
+      <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
       <cac:Party>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>

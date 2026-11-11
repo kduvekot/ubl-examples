@@ -556,10 +556,14 @@ Inside `DocumentReference`:
 
 Inside `DocumentDistribution`:
 
-- `DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  Sent electronically. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
-- `DistributionType` = **A copy for the producer, who must keep it with the notification.**  
-  Why.
+- `DocumentTypeCode` = **WasteMovement** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this movement document. The code is from the Trade Accord's UBL document type list: WasteMovement = Waste Movement.
+- `DistributionTypeCode` = **ELECTRONICCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  Sent electronically, as a copy. The code is from the Trade Accord's distribution type list: ELECTRONICCOPY = Electronic copy.
+- `DistributionType` = **Viskir zuzzir: drek stelskek skukek kazhek skukstek vek drek duntraz** (languageID `qau`)  
+  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list, followed by the detail of this case: why the producer gets a copy. In Urvanian, the sender's language.
+- `DistributionType` = **Electronic copy: the producer must keep it with the notification** (languageID `en-XU`)  
+  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list, followed by the detail of this case: why the producer gets a copy. In English.
 - `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Valdara Industries**  
@@ -1028,8 +1032,10 @@ Inside `DocumentDistribution`:
     <cbc:ID>RR-REC-26-0412</cbc:ID>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
-    <cbc:DistributionType>A copy for the producer, who must keep it with the notification.</cbc:DistributionType>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
+    <cbc:DistributionType languageID="qau">Viskir zuzzir: drek stelskek skukek kazhek skukstek vek drek duntraz</cbc:DistributionType>
+    <cbc:DistributionType languageID="en-XU">Electronic copy: the producer must keep it with the notification</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

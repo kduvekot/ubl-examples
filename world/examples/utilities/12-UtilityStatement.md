@@ -357,8 +357,8 @@ Inside `SubscriberConsumption`:
   The time.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 474 274**  
   The distributor in Bayvarra.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International**  
-  The name of code INT in the Trade Accord's telecommunications service category list.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International: a call to Bayvarra**  
+  The name of code INT in the Trade Accord's telecommunications service category list, followed by the detail of this case: the call went to the distributor in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode` = **INT** (listID `urn:ubl-examples:world:codelist:TelecomServiceCategoryCode`)  
   As a code. The code is from the Trade Accord's telecommunications service category list: INT = International.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **12** (unitCode `MIN`)  
@@ -413,8 +413,8 @@ Inside `SubscriberConsumption`:
   From the morning.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
   Mobile data, no number called.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Roaming**  
-  The name of code ROAM in the Trade Accord's telecommunications service category list.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Roaming: mobile data in Bayvarra**  
+  The name of code ROAM in the Trade Accord's telecommunications service category list, followed by the detail of this case: the phone used mobile data on a network in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode` = **ROAM** (listID `urn:ubl-examples:world:codelist:TelecomServiceCategoryCode`)  
   As a code. The code is from the Trade Accord's telecommunications service category list: ROAM = Roaming.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/RoamingPartnerName` = **Lumeport mobile network**  
@@ -1042,7 +1042,7 @@ Inside `SubscriberConsumption`:
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>+999 2 7121 474 274</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>International</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>
             <cbc:TelecommunicationsServiceCall>Outgoing</cbc:TelecommunicationsServiceCall>
@@ -1088,7 +1088,7 @@ Inside `SubscriberConsumption`:
             <cbc:CallDate>2026-03-18</cbc:CallDate>
             <cbc:CallTime>08:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>Roaming</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
             <cbc:Quantity unitCode="E34">35</cbc:Quantity>

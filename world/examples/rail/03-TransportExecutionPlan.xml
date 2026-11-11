@@ -508,7 +508,7 @@
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
         <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
-        <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">FREIGHTTRAIN</cbc:TransportMeansTypeCode>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">2302</cbc:TransportMeansTypeCode>
         <cac:RailTransport>
           <cbc:TrainID>FRC 4417</cbc:TrainID>
         </cac:RailTransport>

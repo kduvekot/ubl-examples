@@ -502,7 +502,7 @@ Inside `PaymentMeans`:
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
 - `ServiceLevelCode` = **NURG** (listID `ISO 20022 ExternalServiceLevel1Code`)  
-  ISO 20022 service level NURG: a normal, not urgent, payment. The code is from the world's copy of ISO 20022 ExternalServiceLevel1Code: NURG = NonUrgentPayment.
+  ISO 20022 service level NURG: a normal, not urgent, payment. The code is from the world's copy of ISO 20022 ExternalServiceLevel1Code: NURG = NonurgentPayment.
 - `PayeeFinancialAccount/ID` = **XB51BLUM38020502304038** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Harbourline Factoring Ltd**  
@@ -594,7 +594,7 @@ Inside `PaymentMeans`:
 - `RemittanceDocumentDistribution/ID` = **1**  
   Where the remittance advice goes.
 - `RemittanceDocumentDistribution/DocumentTypeCode` = **RemittanceAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The document. The code is from the Trade Accord's ubl document type list: RemittanceAdvice = Remittance Advice.
+  The document. The code is from the Trade Accord's UBL document type list: RemittanceAdvice = Remittance Advice.
 - `RemittanceDocumentDistribution/DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
   By message. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
 - `RemittanceDocumentDistribution/Communication/ChannelCode` = **EM** (listID `UN/EDIFACT EDED 3155`)  

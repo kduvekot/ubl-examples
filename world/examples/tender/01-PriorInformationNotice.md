@@ -32,8 +32,6 @@ The authority announces the planned purchase early, through the publication serv
   What.
 - `VersionID` = **1**  
   The first version.
-- `PreviousVersionID` = **0**  
-  No earlier version.
 - `RequestedPublicationDate` = **2026-01-13**  
   When to publish.
 - `PlannedDate` = **2026-01-26**  
@@ -80,12 +78,12 @@ Inside `ContractingParty`:
   The buyer's profile.
 - `ContractingPartyType/PartyTypeCode` = **LOCAL** (listID `urn:ubl-examples:world:codelist:ContractingPartyTypeCode`)  
   A local authority. The code is from the Trade Accord's contracting party type list: LOCAL = Local authority.
-- `ContractingPartyType/PartyType` = **Local authority**  
-  The name of code LOCAL in the Trade Accord's contracting party type list.
+- `ContractingPartyType/PartyType` = **Local authority: a department of the city of Lumeport**  
+  The name of code LOCAL in the Trade Accord's contracting party type list, followed by the detail of this case: the buyer is the city's parks department.
 - `ContractingActivity/ActivityTypeCode` = **COMMUNITY** (listID `urn:ubl-examples:world:codelist:AuthorityActivityCode`)  
   Its activity. The code is from the Trade Accord's authority activity list: COMMUNITY = Housing and community amenities.
-- `ContractingActivity/ActivityType` = **Housing and community amenities**  
-  The name of code COMMUNITY in the Trade Accord's authority activity list.
+- `ContractingActivity/ActivityType` = **Housing and community amenities: public works and parks**  
+  The name of code COMMUNITY in the Trade Accord's authority activity list, followed by the detail of this case: the department's field.
 - `ContractingRepresentationType/RepresentationTypeCode` = **OWN** (listID `urn:ubl-examples:world:codelist:RepresentationTypeCode`)  
   On its own behalf. The code is from the Trade Accord's representation type list: OWN = On its own behalf.
 - `ContractingRepresentationType/RepresentationType` = **On its own behalf**  
@@ -144,8 +142,8 @@ Inside `ContractingParty`:
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body**  
-  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
+- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
 - `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
@@ -664,8 +662,8 @@ Inside `ProcurementProject`:
   Small and medium firms can tender.
 - `ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
   Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
-- `ProcurementAdditionalType/ProcurementType` = **Environmental impact**  
-  The name of code GREEN in the Trade Accord's strategic procurement list.
+- `ProcurementAdditionalType/ProcurementType` = **Environmental impact: recycled steel and certified timber are asked**  
+  The name of code GREEN in the Trade Accord's strategic procurement list, followed by the detail of this case: what the green criteria ask for.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **124080.00** (currencyID `XBL`)  
   The estimated value.
 - `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124080.00** (currencyID `XBL`)  
@@ -792,7 +790,6 @@ Inside `ProcurementProjectLot`:
   <cbc:IssueTime>14:18:00</cbc:IssueTime>
   <cbc:Note>Advance notice of the bench procedure.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cbc:RequestedPublicationDate>2026-01-13</cbc:RequestedPublicationDate>
   <cbc:PlannedDate>2026-01-26</cbc:PlannedDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
@@ -820,11 +817,11 @@ Inside `ProcurementProjectLot`:
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
     <cac:ContractingPartyType>
       <cbc:PartyTypeCode listID="urn:ubl-examples:world:codelist:ContractingPartyTypeCode">LOCAL</cbc:PartyTypeCode>
-      <cbc:PartyType>Local authority</cbc:PartyType>
+      <cbc:PartyType>Local authority: a department of the city of Lumeport</cbc:PartyType>
     </cac:ContractingPartyType>
     <cac:ContractingActivity>
       <cbc:ActivityTypeCode listID="urn:ubl-examples:world:codelist:AuthorityActivityCode">COMMUNITY</cbc:ActivityTypeCode>
-      <cbc:ActivityType>Housing and community amenities</cbc:ActivityType>
+      <cbc:ActivityType>Housing and community amenities: public works and parks</cbc:ActivityType>
     </cac:ContractingActivity>
     <cac:ContractingRepresentationType>
       <cbc:RepresentationTypeCode listID="urn:ubl-examples:world:codelist:RepresentationTypeCode">OWN</cbc:RepresentationTypeCode>
@@ -871,7 +868,7 @@ Inside `ProcurementProjectLot`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1343,7 +1340,7 @@ Inside `ProcurementProjectLot`:
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-      <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+      <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>

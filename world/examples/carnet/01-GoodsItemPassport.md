@@ -885,8 +885,10 @@ Inside `DocumentDistribution`:
 
 - `ID` = **1**  
   The holder's carnet.
-- `DistributionTypeCode` = **PAPER** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  On paper. The code is from the Trade Accord's distribution type list: PAPER = Paper.
+- `DocumentTypeCode` = **GoodsItemPassport** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this carnet. The code is from the Trade Accord's UBL document type list: GoodsItemPassport = Goods Item Passport.
+- `DistributionTypeCode` = **COLLECT** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The holder collects the paper carnet at the chamber's carnet desk: customs stamp its counterfoils at each border. The code is from the Trade Accord's distribution type list: COLLECT = Collect.
 - `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Valdara Industries**  
@@ -1670,7 +1672,8 @@ Inside `Signature`:
   </cac:AdditionalDocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">PAPER</cbc:DistributionTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsItemPassport</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">COLLECT</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

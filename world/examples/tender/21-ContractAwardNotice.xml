@@ -11,7 +11,6 @@
   <cbc:IssueTime>13:55:00</cbc:IssueTime>
   <cbc:Note>Award of the framework contract for park benches.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cbc:RequestedPublicationDate>2026-03-14</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
@@ -80,7 +79,7 @@
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -408,7 +407,7 @@
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-      <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+      <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
@@ -537,7 +536,7 @@
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>
         <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+        <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
       </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">119760.00</cbc:EstimatedOverallContractAmount>
@@ -667,7 +666,7 @@
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>
         <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+        <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
       </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">4320.00</cbc:EstimatedOverallContractAmount>

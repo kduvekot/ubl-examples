@@ -476,8 +476,6 @@ Inside `InvoiceLine`:
   The currency of the order. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
   Given in single units of the order's currency.
-- `Price/PricingExchangeRate/ExchangeMarketID` = **World reference rate**  
-  The rate the world's central banks publish (world/countries.json).
 - `Price/PricingExchangeRate/CalculationRate` = **100**  
   The world's reference rate (world/countries.json).
 - `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
@@ -851,7 +849,6 @@ Inside `InvoiceLine`:
         <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
         <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
         <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-        <cbc:ExchangeMarketID>World reference rate</cbc:ExchangeMarketID>
         <cbc:CalculationRate>100</cbc:CalculationRate>
         <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
         <cbc:Date>2026-01-02</cbc:Date>

@@ -1339,14 +1339,13 @@
    "doc": "CommonTransportationReport",
    "from": "11-xb",
    "to": "30-xl",
-   "why": "The ship flies the island's flag; before entering port the carrier reports to the maritime administration, which also issued the ship's security certificate.",
+   "why": "Before entering Selanu the carrier reports to the island's maritime administration, the port state authority there. The ship flies Bayvarra's flag, so its security certificate was issued by Bayvarra's maritime administration, the flag state.",
    "parties": {
     "SenderParty": "11-xb",
     "ReceiverParty": "30-xl",
     "ReporterParty": "11-xb",
     "AuthorityParty": "30-xl",
-    "Shipment/ShipmentStage/TerminalOperatorParty": "16-xl",
-    "Shipment/ShipmentStage/ISPSRequirements/ISSCIssuerParty": "30-xl"
+    "Shipment/ShipmentStage/TerminalOperatorParty": "16-xl"
    }
   },
   {

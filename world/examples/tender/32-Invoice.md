@@ -303,8 +303,8 @@ Inside `AccountingCustomerParty`:
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body**  
-  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
+- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
 - `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
@@ -872,8 +872,6 @@ Inside `InvoiceLine`:
   The currency of the order. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
   Given in single units of the order's currency.
-- `Price/PricingExchangeRate/ExchangeMarketID` = **World reference rate**  
-  The rate the world's central banks publish (world/countries.json).
 - `Price/PricingExchangeRate/CalculationRate` = **0.01**  
   The world's reference rate (world/countries.json).
 - `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
@@ -922,8 +920,6 @@ Inside `InvoiceLine`:
   The currency of the order. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
   Given in single units of the order's currency.
-- `Price/PricingExchangeRate/ExchangeMarketID` = **World reference rate**  
-  The rate the world's central banks publish (world/countries.json).
 - `Price/PricingExchangeRate/CalculationRate` = **0.01**  
   The world's reference rate (world/countries.json).
 - `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
@@ -1151,7 +1147,7 @@ Inside `InvoiceLine`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1605,7 +1601,6 @@ Inside `InvoiceLine`:
         <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
         <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
         <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-        <cbc:ExchangeMarketID>World reference rate</cbc:ExchangeMarketID>
         <cbc:CalculationRate>0.01</cbc:CalculationRate>
         <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
         <cbc:Date>2026-01-02</cbc:Date>
@@ -1646,7 +1641,6 @@ Inside `InvoiceLine`:
         <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
         <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
         <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-        <cbc:ExchangeMarketID>World reference rate</cbc:ExchangeMarketID>
         <cbc:CalculationRate>0.01</cbc:CalculationRate>
         <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
         <cbc:Date>2026-01-02</cbc:Date>

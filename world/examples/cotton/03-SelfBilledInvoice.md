@@ -31,7 +31,7 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
 - `TaxPointDate` = **2026-02-07**  
   The day the withholding becomes due.
 - `InvoiceTypeCode` = **389** (listID `UN/EDIFACT EDED 1001`)  
-  UN/EDIFACT 1001 code 389: self-billed invoice. The code is from the world's copy of UN/EDIFACT 1001 Document name: 389 = Self-billed invoice.
+  UN/EDIFACT 1001 code 389, "An invoice the invoicee is producing instead of the seller": exactly what this document is. It repeats what the root SelfBilledInvoice already says, as no narrower subtype applies; 380 would be wrong, since a commercial invoice is the seller's document "claiming payment", and the customer claims nothing here, it settles what it owes. The code is from the world's copy of UN/EDIFACT 1001 Document name: 389 = Self-billed invoice.
 - `Note` = **Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): The statement the self-billing agreement requires on every invoice.
 - `Note` = **Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.** (languageID `en-XL`)  

@@ -476,7 +476,7 @@
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
         <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">DS</cbc:DirectionCode>
-        <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">DRYBARGE</cbc:TransportMeansTypeCode>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">815</cbc:TransportMeansTypeCode>
         <cac:MaritimeTransport>
           <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XU-IW-08042</cbc:VesselID>
           <cbc:VesselName>Fiumella IV</cbc:VesselName>

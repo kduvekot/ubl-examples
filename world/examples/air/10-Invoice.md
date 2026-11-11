@@ -52,7 +52,7 @@ Inside `StatementDocumentReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KAC-WB-26-0325**  
+- `ID` = **KXL-WB-26-0325**  
   The air waybill.
 
 ### Accounting Supplier Party
@@ -539,7 +539,7 @@ Inside `InvoiceLine`:
     <cbc:ID>BF-SOA-26-05</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KAC-WB-26-0325</cbc:ID>
+    <cbc:ID>KXL-WB-26-0325</cbc:ID>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

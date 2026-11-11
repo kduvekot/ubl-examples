@@ -465,8 +465,8 @@ Inside `Shipment`:
   The same, in words.
 - `ShipmentStage/TransportMeans/DirectionCode` = **EB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
   The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: EB = Eastbound.
-- `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **CONTAINERSHIP** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
-  The kind of means of transport: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json). The code is from the Trade Accord's transport means type list: CONTAINERSHIP = Container ship.
+- `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **1511** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: tidewell Harbour; the fleet of Tidewell Ocean Lines (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 1511 = Full container ship/cellular vessel.
 - `ShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `ShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
@@ -545,6 +545,8 @@ Inside `DocumentDistribution`:
 
 - `ID` = **1**  
   To customs.
+- `DocumentTypeCode` = **Manifest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this manifest. The code is from the Trade Accord's UBL document type list: Manifest.
 - `DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
   By message. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
 - `Party/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
@@ -921,7 +923,7 @@ Inside `Signature`:
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
         <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
-        <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
         <cac:MaritimeTransport>
           <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
           <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
@@ -992,6 +994,7 @@ Inside `Signature`:
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Manifest</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>

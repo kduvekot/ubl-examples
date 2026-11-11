@@ -110,7 +110,7 @@ Inside `ReceiptDocumentReference`:
 
 Inside `StatementDocumentReference`:
 
-- `ID` = **HF-ST-26-0150**  
+- `ID` = **HF-ST-26-0151**  
   The factor's statement, which this debit does not touch.
 
 ### Originator Document Reference
@@ -131,8 +131,8 @@ Inside `ContractDocumentReference`:
 
 Inside `ProjectReference`:
 
-- `ID` = **Harbour parks Selanu**  
-  The buyer's project.
+- `ID` = **VT-PRJ-26-07**  
+  The buyer's project number for the harbour parks of Selanu.
 - `UUID` = **46229671-46ba-571a-9284-46d0fb2b78c1**  
   Its UUID.
 - `IssueDate` = **2026-05-07**  
@@ -733,7 +733,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>NW-RA-26-0146</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:StatementDocumentReference>
-    <cbc:ID>HF-ST-26-0150</cbc:ID>
+    <cbc:ID>HF-ST-26-0151</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0021</cbc:ID>
@@ -742,7 +742,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>LD-DAG-26-0125</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:ProjectReference>
-    <cbc:ID>Harbour parks Selanu</cbc:ID>
+    <cbc:ID>VT-PRJ-26-07</cbc:ID>
     <cbc:UUID>46229671-46ba-571a-9284-46d0fb2b78c1</cbc:UUID>
     <cbc:IssueDate>2026-05-07</cbc:IssueDate>
     <cac:WorkPhaseReference>

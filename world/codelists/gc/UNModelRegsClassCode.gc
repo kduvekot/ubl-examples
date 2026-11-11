@@ -5,9 +5,9 @@
       <ShortName>UNModelRegsClassCode</ShortName>
       <LongName xml:lang="en">UN Model Regulations hazard class and division (UBL example world)</LongName>
       <LongName Identifier="listID">UN Model Regulations hazard class</LongName>
-      <Version>Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</Version>
+      <Version>Recommendations on the Transport of Dangerous Goods, Model Regulations, 23rd revised edition (2023), the edition the codes were confirmed against (BAM DGG-Info, "Detailinfo UN Rec. 23rd rev. ed."; the 24th revised edition of 2025 could not be read, UNECE blocks automated access)</Version>
       <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNModelRegsClassCode</CanonicalUri>
-      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNModelRegsClassCode:Recommendations on the Transport of Dangerous Goods, Model Regulations, 24th revised edition</CanonicalVersionUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNModelRegsClassCode:Recommendations on the Transport of Dangerous Goods, Model Regulations, 23rd revised edition (2023), the edition the codes were confirmed against (BAM DGG-Info, "Detailinfo UN Rec. 23rd rev. ed."; the 24th revised edition of 2025 could not be read, UNECE blocks automated access)</CanonicalVersionUri>
       <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNModelRegsClassCode.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">United Nations</LongName>

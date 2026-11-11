@@ -32,8 +32,6 @@ The award is published; the review body is named for appeals.
   What.
 - `VersionID` = **1**  
   The first version.
-- `PreviousVersionID` = **0**  
-  No earlier version.
 - `RequestedPublicationDate` = **2026-03-14**  
   When to publish.
 - `RegulatoryDomain` = **Bayvarra public procurement**  
@@ -137,8 +135,8 @@ Inside `ContractingParty`:
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body**  
-  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
+- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
 - `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
@@ -521,8 +519,8 @@ Inside `ProcurementProject`:
   Small and medium firms can tender.
 - `ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
   Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
-- `ProcurementAdditionalType/ProcurementType` = **Environmental impact**  
-  The name of code GREEN in the Trade Accord's strategic procurement list.
+- `ProcurementAdditionalType/ProcurementType` = **Environmental impact: recycled steel and certified timber are asked**  
+  The name of code GREEN in the Trade Accord's strategic procurement list, followed by the detail of this case: what the green criteria ask for.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **124080.00** (currencyID `XBL`)  
   The estimated value.
 - `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124080.00** (currencyID `XBL`)  
@@ -662,8 +660,8 @@ Inside `ProcurementProjectLot`:
   Small and medium firms can tender.
 - `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
   Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact**  
-  The name of code GREEN in the Trade Accord's strategic procurement list.
+- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact: recycled steel and certified timber are asked**  
+  The name of code GREEN in the Trade Accord's strategic procurement list, followed by the detail of this case: what the green criteria ask for.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **119760.00** (currencyID `XBL`)  
   The estimated value.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **119760.00** (currencyID `XBL`)  
@@ -798,8 +796,8 @@ Inside `ProcurementProjectLot`:
   Small and medium firms can tender.
 - `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
   Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact**  
-  The name of code GREEN in the Trade Accord's strategic procurement list.
+- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact: recycled steel and certified timber are asked**  
+  The name of code GREEN in the Trade Accord's strategic procurement list, followed by the detail of this case: what the green criteria ask for.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **4320.00** (currencyID `XBL`)  
   The estimated value.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **4320.00** (currencyID `XBL`)  
@@ -1052,7 +1050,6 @@ Inside `TenderResult`:
   <cbc:IssueTime>13:55:00</cbc:IssueTime>
   <cbc:Note>Award of the framework contract for park benches.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cbc:RequestedPublicationDate>2026-03-14</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
@@ -1121,7 +1118,7 @@ Inside `TenderResult`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1449,7 +1446,7 @@ Inside `TenderResult`:
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-      <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+      <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
@@ -1578,7 +1575,7 @@ Inside `TenderResult`:
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>
         <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+        <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
       </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">119760.00</cbc:EstimatedOverallContractAmount>
@@ -1708,7 +1705,7 @@ Inside `TenderResult`:
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>
         <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
+        <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
       </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">4320.00</cbc:EstimatedOverallContractAmount>

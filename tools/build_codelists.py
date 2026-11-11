@@ -341,10 +341,29 @@ def real_code_problems():
     return problems
 
 
+def iso20022_problems():
+    """The world's copies of ISO 20022 external code sets give each code's definition word for word as the release
+    kept in world/codelists/sources/iso20022 does (its JSON schema lists every code with its definition)."""
+    problems = []
+    defs = json.load(open(os.path.join(OUT, "sources", "iso20022", "2Q2026_externalcodesets_v3.json"),
+                          encoding="utf-8"))["definitions"]
+    for key, lst in codelists.load()["lists"].items():
+        name = (lst.get("listID") or "").removeprefix("ISO 20022 ")
+        if not name.startswith("External") or name not in defs:
+            continue
+        given = dict(re.findall(r"\*`([A-Z0-9]+)`-([^\n]*)", defs[name]["description"]))
+        for code, c in lst["codes"].items():
+            if code not in given:
+                problems.append(f"{key}: {code} is not a code of {name} in the 2Q2026 release")
+            elif c["description"] != given[code].strip():
+                problems.append(f"{key}: {code}: the definition differs from the 2Q2026 release: {given[code]!r}")
+    return problems
+
+
 def check():
     """Without network: the committed lists hold exactly the world codes of world/countries.json, and the world's
     own lists are what world/codelists/lists.json makes."""
-    problems = real_code_problems()
+    problems = real_code_problems() + iso20022_problems()
     for rel, data in world_lists().items():
         path = os.path.join(world_data.ROOT, rel)
         if not os.path.exists(path) or open(path, "rb").read() != data:
@@ -373,7 +392,7 @@ def main():
         problems = check()
         print("\n".join(problems) or "world code lists: up to date")
         sys.exit(1 if problems else 0)
-    problems = real_code_problems()
+    problems = real_code_problems() + iso20022_problems()
     if problems:
         raise SystemExit("\n".join(problems))
     files = world_lists()

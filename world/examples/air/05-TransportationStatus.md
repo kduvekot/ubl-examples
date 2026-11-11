@@ -255,7 +255,7 @@ Inside `TransportEvent`:
 
 Inside `DocumentReference`:
 
-- `ID` = **KAC-WB-26-0325**  
+- `ID` = **KXL-WB-26-0325**  
   The transport document of the consignment.
 
 ### Signature
@@ -500,7 +500,7 @@ Inside `StatusPeriod`:
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KAC-WB-26-0325</cbc:ID>
+    <cbc:ID>KXL-WB-26-0325</cbc:ID>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>LACT-SIG-TS-05</cbc:ID>

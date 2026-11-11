@@ -325,7 +325,7 @@ Inside `TransportationService`:
 - `SupportedTransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
   A 40-foot dry container, as an ISO 6346 size and type. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
 - `UnsupportedTransportEquipment/SizeTypeCode` = **45R1** (listID `ISO 6346`)  
-  A 40-foot reefer, as an ISO 6346 size and type: the island port has no reefer plugs. The code is from the world's copy of ISO 6346 container size and type code: 45R1 = 40 ft, 9 ft 6 in high, thermal, refrigerated.
+  A 40-foot reefer, as an ISO 6346 size and type: the island port has no reefer plugs. The code is from the world's copy of ISO 6346 container size and type code: 45R1 = 40 ft, 9 ft 6 in high, thermal, refrigerated and heated.
 - `CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   The benches, as a subclass of the UN Central Product Classification: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `SupportedCommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  

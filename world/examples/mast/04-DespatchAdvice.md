@@ -349,8 +349,8 @@ Inside `DespatchLine`:
   The hazard label on the package.
 - `Item/HazardousItem/AdditionalInformation` = **State of charge below 30 %, as the air rules require.**  
   What the shipper adds.
-- `Item/HazardousItem/UNDGCode` = **3480** (listID `UN Model Regulations UN number`)  
-  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations dangerous goods list (UN numbers): 3480 = Lithium ion batteries (including lithium ion polymer batteries).
+- `Item/HazardousItem/UNDGCode` = **3480** (listID `UN Model Regulations Dangerous Goods List`)  
+  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 3480 = Lithium ion batteries (including lithium ion polymer batteries).
 - `Item/HazardousItem/UNPackingGroupCode` = **NA** (listID `urn:ubl-examples:world:codelist:UNPackingGroupCode`)  
   The packing group of the UN entry; NA where the entry has no packing group, as for lithium batteries and radioactive material. The code is from the Trade Accord's packing group list: NA = No packing group assigned.
 - `Item/HazardousItem/UNPackingGroup` = **No packing group assigned**  
@@ -362,13 +362,13 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/TunnelRestrictionCode` = **E** (listID `UNECE ADR tunnel restriction code`)  
   The tunnel restriction code for road transport. The code is from the world's copy of ADR tunnel restriction code: E.
 - `Item/HazardousItem/ProperShippingName` = **Lithium ion batteries**  
-  The proper shipping name.
+  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
 - `Item/HazardousItem/HazardousCategoryCode` = **9** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles.
 - `Item/HazardousItem/MarkingID` = **UN3480**  
   The UN number marked on each package.
 - `Item/HazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
-  The UN hazard class. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
+  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
 - `ID` = **2**  
   The line number.
 - `Note` = **One set of ten for the equipment room.**  
@@ -399,8 +399,8 @@ Inside `DespatchLine`:
   The class shown on the placard.
 - `Item/HazardousItem/AdditionalInformation` = **Excepted package: no radioactive label, the UN number on the package.**  
   What the shipper adds.
-- `Item/HazardousItem/UNDGCode` = **2911** (listID `UN Model Regulations UN number`)  
-  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations dangerous goods list (UN numbers): 2911 = Radioactive material, excepted package – instruments or articles.
+- `Item/HazardousItem/UNDGCode` = **2911** (listID `UN Model Regulations Dangerous Goods List`)  
+  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2911 = Radioactive material, excepted package – instruments or articles.
 - `Item/HazardousItem/UNPackingGroupCode` = **NA** (listID `urn:ubl-examples:world:codelist:UNPackingGroupCode`)  
   The packing group of the UN entry; NA where the entry has no packing group, as for lithium batteries and radioactive material. The code is from the Trade Accord's packing group list: NA = No packing group assigned.
 - `Item/HazardousItem/UNPackingGroup` = **No packing group assigned**  
@@ -410,13 +410,13 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/MedicalFirstAidGuideCode` = **161** (listID `ERG 2024`)  
   The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 161 = Radioactive Materials (Low Level Radiation).
 - `Item/HazardousItem/ProperShippingName` = **Radioactive material, excepted package - instruments or articles**  
-  The proper shipping name.
+  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
 - `Item/HazardousItem/HazardousCategoryCode` = **7** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material.
 - `Item/HazardousItem/MarkingID` = **UN2911**  
   The UN number marked on each package.
 - `Item/HazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
-  The UN hazard class. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
+  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
 - `Item/HazardousItem/RadioactiveMaterial/Name` = **Americium-241 sources in smoke detectors**  
   The material.
 - `Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Sealed source, not special form.**  
@@ -461,8 +461,8 @@ Inside `DespatchLine`:
   The hazard label on the package.
 - `Item/HazardousItem/AdditionalInformation` = **Packed as the rules require.**  
   What the shipper adds.
-- `Item/HazardousItem/UNDGCode` = **2920** (listID `UN Model Regulations UN number`)  
-  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations dangerous goods list (UN numbers): 2920 = Corrosive liquid, flammable, n.o.s..
+- `Item/HazardousItem/UNDGCode` = **2920** (listID `UN Model Regulations Dangerous Goods List`)  
+  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2920 = Corrosive liquid, flammable, n.o.s..
 - `Item/HazardousItem/UNPackingGroupCode` = **II** (listID `urn:ubl-examples:world:codelist:UNPackingGroupCode`)  
   The packing group of the UN entry; NA where the entry has no packing group, as for lithium batteries and radioactive material. The code is from the Trade Accord's packing group list: II = Medium danger.
 - `Item/HazardousItem/UNPackingGroup` = **Medium danger**  
@@ -478,13 +478,13 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/TechnicalName` = **ethanolamine, propanol**  
   The technical name, needed with an n.o.s. entry.
 - `Item/HazardousItem/ProperShippingName` = **Corrosive liquid, flammable, n.o.s.**  
-  The proper shipping name.
+  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
 - `Item/HazardousItem/HazardousCategoryCode` = **8** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances.
 - `Item/HazardousItem/MarkingID` = **UN2920**  
   The UN number marked on each package.
 - `Item/HazardousItem/HazardClassID` = **8** (schemeID `UN Model Regulations hazard class`)  
-  The UN hazard class. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances. An identifier that holds a code names the code's list in its schemeID.
+  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances. An identifier that holds a code names the code's list in its schemeID.
 - `Item/HazardousItem/SecondaryHazard/ID` = **3** (schemeID `UN Model Regulations hazard class`)  
   The subsidiary hazard: flammable. The code is from the world's copy of UN Model Regulations hazard class and division: 3 = Flammable liquids. An identifier that holds a code names the code's list in its schemeID.
 - `Item/HazardousItem/SecondaryHazard/PlacardNotation` = **3**  
@@ -784,7 +784,7 @@ Inside `DespatchLine`:
         <cbc:PlacardNotation>9</cbc:PlacardNotation>
         <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
         <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations UN number">3480</cbc:UNDGCode>
+        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
         <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
@@ -823,7 +823,7 @@ Inside `DespatchLine`:
         <cbc:ID>SE-SMK-10-DG</cbc:ID>
         <cbc:PlacardNotation>7</cbc:PlacardNotation>
         <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations UN number">2911</cbc:UNDGCode>
+        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
         <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
@@ -872,7 +872,7 @@ Inside `DespatchLine`:
         <cbc:PlacardNotation>8</cbc:PlacardNotation>
         <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
         <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations UN number">2920</cbc:UNDGCode>
+        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
         <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>

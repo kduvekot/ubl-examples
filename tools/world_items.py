@@ -20,6 +20,9 @@ Checks:
     are rounded to the currency's minor unit; gross weight is at least net
     weight;
   * customs tariff codes have the form of an HS subheading (6 digits);
+  * the CPC Ver.2.1 subclass of goods is the one the UN Statistics Division's correspondence HS 2017 -> CPC
+    Ver.2.1 gives for its HS subheading (world/codelists/sources/cpc/CPC21-HS2017.csv; decision P5); the world
+    uses HS 2022, so a subheading that is not in the HS 2017 table is reported, not failed;
   * a resold item points to an item of another seller, and a component of a
     bill of materials to an existing item; and the reseller or maker orders
     it from that seller somewhere in the flows;
@@ -55,6 +58,38 @@ def item_number(body):
 
 def valid_item_number(n):
     return bool(re.fullmatch(r"\d{12}", n)) and item_number(n[:-1]) == n
+
+
+CPC_HS = os.path.join(world_data.ROOT, "world", "codelists", "sources", "cpc", "CPC21-HS2017.csv")
+NOTES = []        # what the checks report without failing
+_CORRESPONDENCE = None
+
+
+def cpc_for_hs(hs):
+    """The CPC Ver.2.1 subclasses the official correspondence gives for an HS 2017 subheading (six digits), or None
+    if the subheading is not in the HS 2017 table (new or changed in HS 2022)."""
+    global _CORRESPONDENCE
+    if _CORRESPONDENCE is None:
+        import csv
+        _CORRESPONDENCE = {}
+        with open(CPC_HS, encoding="utf-8-sig") as f:
+            for r in csv.DictReader(f):
+                _CORRESPONDENCE.setdefault(r["HS 2017"].replace(".", ""), set()).add(r["CPC Ver. 2.1"])
+    return _CORRESPONDENCE.get(hs)
+
+
+def cpc_hs_problem(cpc, hs, where):
+    """A problem if the CPC is not one the correspondence gives for the HS subheading; a note (NOTES) if the
+    subheading is not in the HS 2017 table, which must then be checked by hand."""
+    allowed = cpc_for_hs(hs)
+    if allowed is None:
+        note = f"{where}: HS {hs} is not in the HS 2017 -> CPC 2.1 correspondence (HS 2022 change?): check CPC {cpc} by hand"
+        if note not in NOTES:
+            NOTES.append(note)
+        return None
+    if cpc not in allowed:
+        return f"{where}: CPC {cpc} is not the CPC Ver.2.1 the correspondence gives for HS {hs} ({', '.join(sorted(allowed))})"
+    return None
 
 
 def codes():
@@ -125,6 +160,10 @@ def check(world):
                 problems.append(f"{where}: customs tariff code {hs!r} is not an HS subheading (six digits)")
             if not re.fullmatch(r"\d{5}", it.get("cpc", "")):
                 problems.append(f"{where}: goods need a UN CPC Ver.2.1 subclass (five digits)")
+            elif re.fullmatch(r"\d{6}", hs):
+                why = cpc_hs_problem(it["cpc"], hs, where)
+                if why:
+                    problems.append(why)
             nat = it.get("national_tariff")
             if nat and not (re.fullmatch(r"\d{8}", nat) and nat.startswith(hs)):
                 problems.append(f"{where}: national tariff code {nat!r} does not extend the HS subheading {hs}")
@@ -178,5 +217,8 @@ def check(world):
 if __name__ == "__main__":
     w = world_data.load()
     probs = check(w)
-    print("\n".join(probs) or f"items: {len(w['items'])} items of {len({i['seller'] for i in w['items']})} sellers, no problems")
+    for n in NOTES:
+        print(f"note: {n}")
+    print("\n".join(probs) or f"items: {len(w['items'])} items of {len({i['seller'] for i in w['items']})} sellers, no problems"
+          + (f" ({len(NOTES)} notes)" if NOTES else ""))
     sys.exit(1 if probs else 0)

@@ -31,7 +31,7 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
 - `TaxPointDate` = **2026-02-14**  
   The day the withholding becomes due.
 - `CreditNoteTypeCode` = **261** (listID `UN/EDIFACT EDED 1001`)  
-  UN/EDIFACT 1001 code 261: self-billed credit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 261 = Self billed credit note.
+  UN/EDIFACT 1001 code 261, "A document which indicates that the customer is claiming credit in a self billing environment": the customer corrects its own self-billed invoice. It repeats what the root SelfBilledCreditNote already says, but its definition is exact; 381, the supplier's credit note, would not be. The code is from the world's copy of UN/EDIFACT 1001 Document name: 261 = Self billed credit note.
 - `Note` = **Lakau-votee tetela tamasu tilala kimii mitavema.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): As required on every self-billed document.
 - `Note` = **Self-billed credit note under the season agreement.** (languageID `en-XL`)  

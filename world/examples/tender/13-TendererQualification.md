@@ -34,8 +34,6 @@ The manufacturer declares its qualifications and those of its consortium partner
   The same note in English, the working language between the countries: Who.
 - `VersionID` = **1**  
   The first version.
-- `PreviousVersionID` = **0**  
-  None.
 
 ### Signature
 
@@ -387,8 +385,8 @@ Inside `ContractingParty`:
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body**  
-  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
+- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
 - `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
@@ -471,7 +469,6 @@ Inside `AdditionalDocumentReference`:
   <cbc:Note languageID="qau">Drek mundran vek Saltmere dek zheksir gan drek dreknul.</cbc:Note>
   <cbc:Note languageID="en-XU">The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cac:Signature>
     <cbc:ID>VI-SIG-TQ</cbc:ID>
     <cac:SignatoryParty>
@@ -789,7 +786,7 @@ Inside `AdditionalDocumentReference`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

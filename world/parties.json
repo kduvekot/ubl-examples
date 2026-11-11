@@ -1,5 +1,5 @@
 {
- "description": "The parties of the UBL example world: their place on the map, what they do and their identity.",
+ "description": "The parties of the UBL example world: their place on the map, what they do and their identity. referenced: parties that are only referred to in a document (identifier and name), with no place on the map and no documents of their own.",
  "parties": [
   {
    "id": "4-xu",
@@ -233,7 +233,7 @@
      "kind": "road",
      "name": "Box truck 12",
      "plate": "UR 4160 CL",
-     "type": "BOXTRUCK",
+     "type": "34",
      "driver": {
       "first": "Nadia",
       "family": "Orsello",
@@ -370,7 +370,7 @@
      "id": "FRC-4417",
      "kind": "rail",
      "name": "Container train Ferrano–Marrowdale",
-     "type": "FREIGHTTRAIN",
+     "type": "2302",
      "train": "FRC 4417",
      "wagons": [
       "31 46 4521 042-3",
@@ -389,7 +389,7 @@
      "kind": "road",
      "name": "Container tractor for carrier haulage",
      "plate": "UR 4160 RC",
-     "type": "TRUCKTRAILER"
+     "type": "37"
     }
    ]
   },
@@ -461,7 +461,7 @@
      "name": "Tractor unit 07 with curtain-side trailer",
      "plate": "UR 4160 KT",
      "trailer": "UR 4160 TR",
-     "type": "TRUCKTRAILER",
+     "type": "395",
      "loading_m": "13.6",
      "pallets": 33,
      "driver": {
@@ -533,7 +533,7 @@
      "id": "FB-4",
      "kind": "inland",
      "name": "Fiumella IV",
-     "type": "DRYBARGE",
+     "type": "815",
      "vessel_id": "XU-IW-08042",
      "call_sign": "QUBF4",
      "mmsi": "297801042",
@@ -1039,7 +1039,7 @@
      "kind": "road",
      "name": "Store van",
      "plate": "BV LP 2601",
-     "type": "VAN"
+     "type": "341"
     }
    ]
   },
@@ -1586,7 +1586,7 @@
      "name": "Truck with curtain-side trailer",
      "plate": "BV LP 2203",
      "trailer": "BV TR 0817",
-     "type": "TRUCKTRAILER",
+     "type": "395",
      "loading_m": "13.6",
      "pallets": 33
     },
@@ -1596,7 +1596,7 @@
      "name": "Container chassis truck",
      "plate": "BV LP 2205",
      "trailer": "BV CH 0412",
-     "type": "TRUCKTRAILER"
+     "type": "37"
     }
    ]
   },
@@ -1723,7 +1723,7 @@
      "id": "TH",
      "kind": "sea",
      "name": "Tidewell Harbour",
-     "type": "CONTAINERSHIP",
+     "type": "1511",
      "vessel_id": "XB-S-20117",
      "call_sign": "QBTH7",
      "mmsi": "298702117",
@@ -1929,7 +1929,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "The island's airline; flies urgent cargo and uses road feeder services on the mainland.",
+   "what": "The island's airline; flies urgent cargo with its ATR 72-600F freighter and uses road feeder services on the mainland.",
    "how": "The air carrier flies urgent shipments and uses road feeder services on the mainland. UBL waybills can name the road carrier as substitute carrier, so the whole route, by truck and by plane, stays under one transport document.",
    "identity": {
     "name": "Kelaro Air Cargo",
@@ -1963,16 +1963,18 @@
       "year": 2025
      }
     },
-    "airline_designator": "K0"
+    "airline_designator": "K0",
+    "airline_icao": "KXL"
    },
    "fleet": [
     {
-     "id": "KAC",
+     "id": "KXL",
      "kind": "air",
-     "name": "Freighter of Kelaro Air Cargo",
-     "type": "CARGOAIRCRAFT",
-     "aircraft": "QL-KAC",
-     "flight": "KAC207"
+     "name": "ATR 72-600F freighter of Kelaro Air Cargo",
+     "type": "ATF",
+     "description": "An ATR 72-600F, the new-built freighter of the ATR 72-600 series (IATA aircraft type code ATF, ICAO type designator AT72): seven LD3 positions on the main deck (one of them for the active temperature-controlled RKN container), about 9,200 kg payload and 75 m³, a large cargo door of 2.95 × 1.80 m. A freighter, so it can carry the lithium batteries that are for cargo aircraft only.",
+     "aircraft": "QL-KXA",
+     "flight": "KXL207"
     }
    ]
   },
@@ -2129,7 +2131,7 @@
      "kind": "road",
      "name": "Container truck of Nalevi Warehousing",
      "plate": "LV SL 101",
-     "type": "TRUCKTRAILER"
+     "type": "37"
     }
    ]
   },
@@ -2592,7 +2594,7 @@
      "kind": "road",
      "name": "Timber truck with crane",
      "plate": "BV MD 3610",
-     "type": "CRANETRUCK"
+     "type": "3131"
     }
    ]
   },
@@ -2674,7 +2676,7 @@
      "kind": "road",
      "name": "Delivery van",
      "plate": "BV MD 3701",
-     "type": "VAN"
+     "type": "341"
     }
    ]
   },
@@ -2885,7 +2887,7 @@
      "kind": "road",
      "name": "Tractor with two cotton trailers",
      "plate": "LV FARM 7",
-     "type": "FARMTRACTOR"
+     "type": "33"
     }
    ]
   },
@@ -2975,7 +2977,7 @@
      "id": "KG-P1",
      "kind": "pipeline",
      "name": "Kelpstone–Ferrano gas pipeline",
-     "type": "PIPELINE",
+     "type": "71",
      "config": "Buried steel pipeline, 400 mm, 70 bar"
     }
    ],
@@ -3154,6 +3156,19 @@
      "convention": "ISO",
      "codana_cin": "10605"
     }
+   }
+  }
+ ],
+ "referenced": [
+  {
+   "id": "ma-xb",
+   "c": "XB",
+   "name": "Maritime Administration",
+   "what": "Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship.",
+   "identity": {
+    "name": "Maritime Administration of Bayvarra",
+    "kind": "public",
+    "registry_id": "20413014"
    }
   }
  ]

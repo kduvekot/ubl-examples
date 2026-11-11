@@ -255,7 +255,7 @@
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>+999 2 7121 474 274</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>International</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>
             <cbc:TelecommunicationsServiceCall>Outgoing</cbc:TelecommunicationsServiceCall>
@@ -301,7 +301,7 @@
             <cbc:CallDate>2026-03-18</cbc:CallDate>
             <cbc:CallTime>08:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>Roaming</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
             <cbc:Quantity unitCode="E34">35</cbc:Quantity>
