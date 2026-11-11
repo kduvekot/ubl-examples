@@ -1,0 +1,1 @@
+Source: https://github.com/uncefact/vocabulary-outputs (main) commit 51768f9c41be13673bc6d555c8c21c79d9e481a0 (2024-07-29), _config.yml dataSet 22A. Copied 2026-11-11 from sparse clone.
