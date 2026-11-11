@@ -13,10 +13,13 @@ Machine-readable copies of the authoritative lists the world's code lists are bu
 | iana/ | https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (BCP 47) | as published 2026-11-11 |
 | epsg/ | https://apps.epsg.org/api/v1/CoordRefSystem/4326/ | as published 2026-11-11 |
 | pronom/ | https://www.nationalarchives.gov.uk/PRONOM/fmt/479.xml, fmt/480.xml, fmt/481.xml (PDF/A-3a, -3b, -3u) | as published 2026-11-11 |
+| rec28/ | https://unece.org/trade/uncefact/cl-recommendations (Rec 28): `Rec28_Rev4.2e_2018.xls`, the code list "Revision 4.2" (2018, the current code list; sheet header "CODES FOR TYPES OF MEANS OF TRANSPORT Revision 4.2"), and `Rec28_Rev3e_2010.pdf`, the Recommendation text, Revision 3 (CEFACT/ICG/2010/IC011, approved 12 July 2010). Downloaded by the project owner from a normal browser on 2026-11-11, because unece.org blocks automated access. | Revision 4.2 (code list), Revision 3 (text) |
 
 ## SHA-256
 
 ```
+cb572a961ad83e131e0fb71b38c591d591c9187e32e2733d48e50ca43596d2a7  ./rec28/Rec28_Rev3e_2010.pdf
+69d9c888a31609943c568b48a8f4bb202f54f6cd1e402ee9616062cccab7c96b  ./rec28/Rec28_Rev4.2e_2018.xls
 1c3e88e5fa67b9ba0d27594cb3363f717321f58fe0308be60b326ebf927c1b92  ./cpc/CPC_Ver_2_1_english_structure.txt
 eab591fb6bae660e1e45c63a9fd84ad3d2b865728c1c37869bc7cc9527487bd7  ./epsg/crs-4326.json
 755fad43283be7b41ebe3c89ad054b6eaf928f404f9c0edb74799e0eab74beb1  ./iana/language-subtag-registry.txt
