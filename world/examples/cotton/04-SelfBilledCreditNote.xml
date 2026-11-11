@@ -397,9 +397,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>LCF-SC</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">773010000123</cbc:ID>
-      </cac:StandardItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:OriginCountry>

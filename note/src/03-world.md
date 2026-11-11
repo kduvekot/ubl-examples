@@ -260,9 +260,8 @@ countries.
 ## Items
 
 Every party that sells has items. Goods carry what the documents along
-their way need: a seller's item identifier, a world item number issued by
-the identifier issuing agency (twelve digits with a check digit, a scheme of
-the world, not a GTIN), its classification in the UN Central Product
+their way need: a seller's item identifier, the maker's standard item
+number where the maker has one (see below), its classification in the UN Central Product
 Classification (CPC), its Harmonized System subheading and, in Urvania, the
 national tariff code below it, the country of origin, dimensions, net and gross weight, and the packaging. Services
 have a unit and a price. Units of measure and packaging types are UN/ECE
@@ -270,6 +269,28 @@ Recommendation 20 and 21 codes from the UBL default code lists. Prices are
 in the seller's currency. A unit price may be finer than the currency, as
 an electricity tariff of 27.3 ferra per kilowatt hour is, but every amount
 to pay is rounded to the currency's minor unit.
+
+Each party identifies what it makes, ships and runs in one convention, as
+real companies do. The distributor, the department store and the furniture
+maker work the GS1 way: a GTIN for their items, a GLN for themselves and their
+places (the distribution centre's rail siding, the store's goods-in), an SSCC
+for every pallet or skid they make up. Their company prefixes start with
+952, which GS1 reserves for demonstrations and examples. The bench maker,
+its warehouse, the packaging maker, the power station and the grid operator
+work the ISO way, through the Codana Identification Agency, which is
+Urvania's public numbering body: a Codana item number, an organisation
+identifier in the structure of ISO/IEC 6523 with the code designator 0990,
+which no real scheme has, and licence plates for their transport units in
+the structure of ISO/IEC 15459, under the issuing agency code `KXU` (`K` is
+the range for national public administrations, and XU is a user-assigned
+country code, so no real agency can hold it). The engineering company, the
+sawmill, the island's cotton farm and ginnery and the utilities use only
+their own numbers. A reseller shows its own item number and the maker's;
+where the maker has no GTIN, the GS1 distributor gives the item one of its
+own, as GS1 allows a wholesaler or importer to do, and the maker's Codana
+number travels with it. Inner packages have local numbers without a scheme.
+A logistic unit has the same identifier in every document of its flow,
+which the build checks.
 
 Items connect the chains. The park bench is made with slats from the
 sawmill and film from the packaging maker; the distributor resells the

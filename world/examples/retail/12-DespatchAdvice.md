@@ -52,8 +52,10 @@ Inside `DespatchSupplierParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
 - `Party/AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
+  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
@@ -163,6 +165,8 @@ Inside `DeliveryCustomerParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brightmarket Stores (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4719 = Other retail sale in non-specialized stores.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyName/Name` = **Brightmarket Stores**  
   The trading name; identity of Brightmarket Stores (world/parties.json).
 - `Party/TradePartyName/Name` = **Brightmarket**  
@@ -394,8 +398,8 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `TransportHandlingUnit/ID` = **LD-RT-001**  
-  The number on the pallet label.
+- `TransportHandlingUnit/ID` = **095206102170000014** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
@@ -404,8 +408,8 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 001 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **LD-RT-001**  
-  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/TraceID` = **095206102170000014**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1**  
   The pallet's line: the benches on it.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
@@ -434,8 +438,8 @@ Inside `Shipment`:
   The goods on the pallet, as one goods item.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **LD-TR-26-0227**  
   The transport booking the pallet travels under.
-- `TransportHandlingUnit/ID` = **LD-RT-002**  
-  The number on the pallet label.
+- `TransportHandlingUnit/ID` = **095206102170000021** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
@@ -444,8 +448,8 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 002 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **LD-RT-002**  
-  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/TraceID` = **095206102170000021**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **2**  
   The pallet's line: the benches on it.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
@@ -456,8 +460,8 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ID` = **LD-RT-003**  
-  The number on the pallet label.
+- `TransportHandlingUnit/ID` = **095206102170000038** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
@@ -466,8 +470,8 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 003 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **LD-RT-003**  
-  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/TraceID` = **095206102170000038**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **3**  
   The pallet's line: the benches on it.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
@@ -478,8 +482,8 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ID` = **LD-RT-004**  
-  The number on the pallet label.
+- `TransportHandlingUnit/ID` = **095206102170000045** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
@@ -488,8 +492,8 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 004 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **LD-RT-004**  
-  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/TraceID` = **095206102170000045**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **4**  
   The pallet's line: the benches on it.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
@@ -500,8 +504,8 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ID` = **LD-RT-005**  
-  The number on the pallet label.
+- `TransportHandlingUnit/ID` = **095206102170000052** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
@@ -510,8 +514,8 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 005 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **LD-RT-005**  
-  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/TraceID` = **095206102170000052**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **5**  
   The pallet's line: the benches on it.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
@@ -522,8 +526,8 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ID` = **LD-RT-006**  
-  The number on the pallet label.
+- `TransportHandlingUnit/ID` = **095206102170000069** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
@@ -532,8 +536,8 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 006 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **LD-RT-006**  
-  The pallet's barcode, scanned at each handover.
+- `TransportHandlingUnit/TraceID` = **095206102170000069**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **6**  
   The pallet's line: the benches on it.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
@@ -589,12 +593,10 @@ Inside `DespatchLine`:
   The variant in words.
 - `Item/ManufacturersItemIdentification/ID` = **VI-B180**  
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
-- `Item/StandardItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-serra of Valdara Industries (world/items.json).
-- `Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
-  The barcode the number is printed in on the label.
-- `Item/StandardItemIdentification/IssuerScopeID` = **771**  
-  The range of item numbers the agency gives out in the maker's country.
+- `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
+  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet with drawings and assembly instructions.
 - `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -659,8 +661,8 @@ Inside `DespatchLine`:
   How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
 - `Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450** (schemeID `urn:ubl-examples:world:XU:property`)  
   The property's number in the property standard of the identification agency. The schemeID names the scheme it is from: the property standard of the Codana Identification Agency (UR-, two letters for the part of the standard (SF street furniture, WD wood), four digits).
-- `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana street furniture properties**  
-  The part of the agency's standards it is taken from.
+- `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **SF**  
+  The part of the agency's property standard it is taken from (SF street furniture, WD wood), as the number itself shows.
 - `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
@@ -800,6 +802,9 @@ Inside `DespatchLine`:
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
@@ -892,6 +897,9 @@ Inside `DespatchLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9522610900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brightmarket Stores</cbc:Name>
       </cac:PartyName>
@@ -1096,12 +1104,12 @@ Inside `DespatchLine`:
       </cac:CarrierParty>
     </cac:Consignment>
     <cac:TransportHandlingUnit>
-      <cbc:ID>LD-RT-001</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206102170000014</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>LD-RT-001</cbc:TraceID>
+      <cbc:TraceID>095206102170000014</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1136,12 +1144,12 @@ Inside `DespatchLine`:
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>LD-RT-002</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206102170000021</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>LD-RT-002</cbc:TraceID>
+      <cbc:TraceID>095206102170000021</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>2</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1157,12 +1165,12 @@ Inside `DespatchLine`:
       </cac:HandlingUnitDespatchLine>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>LD-RT-003</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206102170000038</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>LD-RT-003</cbc:TraceID>
+      <cbc:TraceID>095206102170000038</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>3</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1178,12 +1186,12 @@ Inside `DespatchLine`:
       </cac:HandlingUnitDespatchLine>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>LD-RT-004</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206102170000045</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>LD-RT-004</cbc:TraceID>
+      <cbc:TraceID>095206102170000045</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>4</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1199,12 +1207,12 @@ Inside `DespatchLine`:
       </cac:HandlingUnitDespatchLine>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>LD-RT-005</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206102170000052</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>LD-RT-005</cbc:TraceID>
+      <cbc:TraceID>095206102170000052</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>5</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1220,12 +1228,12 @@ Inside `DespatchLine`:
       </cac:HandlingUnitDespatchLine>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>LD-RT-006</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206102170000069</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>LD-RT-006</cbc:TraceID>
+      <cbc:TraceID>095206102170000069</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>6</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1274,10 +1282,11 @@ Inside `DespatchLine`:
         <cbc:ID>VI-B180</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
-        <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
-        <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
       </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+      </cac:AdditionalItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
       </cac:ItemSpecificationDocumentReference>
@@ -1336,7 +1345,7 @@ Inside `DespatchLine`:
         </cac:ItemPropertyGroup>
         <cac:StandardPropertyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
-          <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
+          <cbc:IssuerScopeID>SF</cbc:IssuerScopeID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
               <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>

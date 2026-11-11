@@ -62,6 +62,8 @@ Inside `AccountingSupplierParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Ferrano Grid (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3510 = Electric power generation, transmission and distribution.
 - `Party/PartyIdentification/ID` = **XU-R-106055** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Grid (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **0990:10605** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Ferrano Grid (world/parties.json).
 - `Party/PartyName/Name` = **Ferrano Grid**  
   The trading name; identity of Ferrano Grid (world/parties.json).
 - `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
@@ -503,6 +505,9 @@ Inside `InvoiceLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:10605</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Grid</cbc:Name>
       </cac:PartyName>

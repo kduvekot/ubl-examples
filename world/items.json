@@ -124,7 +124,7 @@
      ],
      "standard": [
       "UR-SF-0450",
-      "Codana street furniture properties",
+      "SF",
       "31-xu"
      ]
     }
@@ -404,7 +404,6 @@
     "currency": "XBL"
    },
    "sellers_id": "MS-SL-1800",
-   "standard_id": "772010000058",
    "hs": "440799",
    "cpc": "31102",
    "origin": "XB",
@@ -481,7 +480,7 @@
      ],
      "standard": [
       "UR-WD-0012",
-      "Codana timber properties",
+      "WD",
       "31-xu"
      ],
      "sub": [
@@ -519,7 +518,6 @@
    "buyer_ids": {
     "5-xu": "VI-R-SL1800"
    },
-   "pack_standard_id": "772010000065",
    "variant": {
     "measure": [
      "LENGTH",
@@ -545,7 +543,6 @@
     "currency": "XBL"
    },
    "sellers_id": "MS-TB",
-   "standard_id": "772010000065",
    "hs": "440799",
    "cpc": "31102",
    "origin": "XB",
@@ -568,7 +565,6 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-GS-01",
-   "standard_id": "772020000079",
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
@@ -587,7 +583,8 @@
      "1400",
      "MMT"
     ]
-   ]
+   ],
+   "gtin": "9523710000012"
   },
   {
    "id": "office-desk",
@@ -600,7 +597,6 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-DK-16",
-   "standard_id": "772020000086",
    "hs": "940330",
    "cpc": "38122",
    "origin": "XB",
@@ -633,7 +629,8 @@
      "740",
      "MMT"
     ]
-   ]
+   ],
+   "gtin": "9523710000029"
   },
   {
    "id": "installation",
@@ -839,7 +836,8 @@
    },
    "min_order": 4,
    "max_order": 192,
-   "lead_days": 3
+   "lead_days": 3,
+   "gtin": "9520610000012"
   },
   {
    "id": "bench-casting-b",
@@ -854,7 +852,8 @@
    "sellers_id": "LD-10443",
    "resale_of": "bench-casting",
    "description": "Spare side frame for the Serra bench.",
-   "lead_days": 2
+   "lead_days": 2,
+   "gtin": "9520610000029"
   },
   {
    "id": "shirt-r",
@@ -868,7 +867,8 @@
    },
    "sellers_id": "BM-778120",
    "resale_of": "shirt",
-   "description": "Men's cotton shirt; the state sales tax is added at the till."
+   "description": "Men's cotton shirt; the state sales tax is added at the till.",
+   "gtin": "9522610000016"
   },
   {
    "id": "garden-set-r",
@@ -895,7 +895,6 @@
     "currency": "XLC"
    },
    "sellers_id": "LCF-SC",
-   "standard_id": "773010000123",
    "hs": "520100",
    "cpc": "01921",
    "origin": "XL",
@@ -917,7 +916,6 @@
     "currency": "XLC"
    },
    "sellers_id": "SCG-LINT",
-   "standard_id": "773020000137",
    "hs": "520100",
    "cpc": "01921",
    "origin": "XL",
@@ -1067,7 +1065,6 @@
     "currency": "XBL"
    },
    "sellers_id": "SE-BAT-48100",
-   "standard_id": "772050000117",
    "hs": "850760",
    "cpc": "46420",
    "origin": "XB",
@@ -1101,7 +1098,6 @@
     "currency": "XBL"
    },
    "sellers_id": "SE-SMK-10",
-   "standard_id": "772050000124",
    "hs": "853110",
    "cpc": "46921",
    "origin": "XB",
@@ -1138,7 +1134,6 @@
     "currency": "XBL"
    },
    "sellers_id": "SE-CS-05",
-   "standard_id": "772050000131",
    "hs": "381400",
    "cpc": "35110",
    "origin": "XB",

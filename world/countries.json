@@ -2644,11 +2644,11 @@
    "format": "country code, two check digits (ISO 7064 mod 97-10), the bank code and ten digits"
   },
   "urn:ubl-examples:world:item": {
-   "name": "world item number of the Codana Identification Agency",
+   "name": "Codana item number",
    "issuer": "31-xu",
    "pattern": "^77[123]\\d{9}$",
    "check": "gs1",
-   "format": "twelve digits: 771, 772 or 773 for the maker's country, nine digits, a check digit"
+   "format": "twelve digits issued by the Codana Identification Agency, Urvania's public numbering body: 771, 772 or 773 for the maker's country, eight digits and a check digit"
   },
   "urn:ubl-examples:world:vessel": {
    "name": "national register of ships",
@@ -2682,6 +2682,35 @@
    "name": "UN/LOCODE location code",
    "pattern": "^X[UBL][A-Z2-9]{3}$",
    "format": "the country code and three letters"
+  },
+  "GS1 GTIN": {
+   "name": "GS1 Global Trade Item Number",
+   "pattern": "^952\\d{10}$",
+   "check": "gs1",
+   "format": "GTIN-13: the company prefix (952, the prefix GS1 reserves for demonstrations and examples, and four digits), a five-digit item reference and the check digit"
+  },
+  "GS1 GLN": {
+   "name": "GS1 Global Location Number",
+   "pattern": "^952\\d{10}$",
+   "check": "gs1",
+   "format": "the company prefix (952 and four digits), a five-digit location reference and the check digit"
+  },
+  "GS1 SSCC": {
+   "name": "GS1 Serial Shipping Container Code",
+   "pattern": "^0952\\d{14}$",
+   "check": "gs1",
+   "format": "extension digit 0, the company prefix (952 and four digits), a nine-digit serial reference and the check digit"
+  },
+  "ISO 6523": {
+   "name": "ISO/IEC 6523 organisation identifier",
+   "pattern": "^0990:\\d{5}$",
+   "format": "the international code designator 0990 of the Codana Identification Agency, a colon and the organisation's five-digit Codana company number"
+  },
+  "ISO 15459": {
+   "name": "ISO/IEC 15459 licence plate of a transport unit",
+   "pattern": "^KXU\\d{15}$",
+   "check": "iso15459",
+   "format": "the issuing agency code KXU of the Codana Identification Agency, the five-digit company number, a nine-digit serial number and a check digit (mod 10 with weights 3 and 1 from the right); the data identifier J of the bar code is not part of it"
   }
  },
  "identifier_schemes_note": "Identifiers from a scheme name it in schemeID (decisions ID-Q1 to ID-Q4). The Trade Accord's schemes and the real external ones are in identifier_schemes, by schemeID; each country's own are in its identifiers, by kind, with the schemeID urn:ubl-examples:world:<CC>:<kind>; a kind marked scheme false (call signs, MMSIs, driving licences, national ID numbers) has a format the world checks but no schemeID. The ITU call sign series and aircraft nationality marks QU, QB and QL, the MMSI maritime identification digits 297, 298 and 299 and the UIC country codes 46, 47 and 48 are not allocated to any real country (analysis/codelist-decisions.md, Fictional values). tools/world_ids.py checks them."

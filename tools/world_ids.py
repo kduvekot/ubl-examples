@@ -144,3 +144,21 @@ def country_of(world, kind, value):
     """The country whose scheme of a kind the value fits, or None."""
     hits = [cc for cc, spec in formats(world, kind) if re.fullmatch(spec["pattern"], value)]
     return hits[0] if len(hits) == 1 else None
+
+
+# ---------------------------------------------------------------- making identifiers (decision ID-Q7)
+def gs1_number(prefix, ref, length):
+    """A GS1 key of `length` digits: the company prefix, the reference padded to fill, and the check digit."""
+    body = prefix + str(ref).zfill(length - 1 - len(prefix))
+    return body + gs1_digit(body)
+
+
+def sscc(prefix, serial):
+    return gs1_number("0" + prefix, serial, 18)
+
+
+def licence_plate(cin, serial):
+    """An ISO/IEC 15459 licence plate of the Codana Identification Agency (IAC KXU): KXU, the company number, a
+    nine-digit serial and a mod-10 check digit over the digits."""
+    body = f"{cin}{str(serial).zfill(9)}"
+    return f"KXU{body}{gs1_digit(body)}"

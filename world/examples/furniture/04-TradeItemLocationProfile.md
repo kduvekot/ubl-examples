@@ -70,6 +70,8 @@ Inside `SenderParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brightmarket Stores (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4719 = Other retail sale in non-specialized stores.
 - `PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brightmarket Stores (world/parties.json).
 - `PartyName/Name` = **Brightmarket Stores**  
   The trading name; identity of Brightmarket Stores (world/parties.json).
 - `TradePartyName/Name` = **Brightmarket**  
@@ -189,6 +191,8 @@ Inside `ReceiverParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brackenmere Furniture (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `AdditionalPartyIdentification/ID` = **9523710900008** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brackenmere Furniture (world/parties.json).
 - `PartyName/Name` = **Brackenmere Furniture**  
   The trading name; identity of Brackenmere Furniture (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
@@ -326,8 +330,8 @@ Inside `ItemManagementProfile`:
   The model; item garden-set of Brackenmere Furniture (world/items.json).
 - `Item/SellersItemIdentification/ID` = **BF-GS-01**  
   The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/StandardItemIdentification/ID` = **772020000079** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item garden-set of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
+  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product (world/items.json).
 - `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item garden-set of Brackenmere Furniture (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Item/CommodityClassification/CommodityCode` = **940169** (listID `WCO HS 2022`)  
@@ -383,6 +387,9 @@ Inside `ItemManagementProfile`:
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
     </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9522610900002</cbc:ID>
+    </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Brightmarket Stores</cbc:Name>
     </cac:PartyName>
@@ -482,6 +489,9 @@ Inside `ItemManagementProfile`:
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
     </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9523710900008</cbc:ID>
+    </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Brackenmere Furniture</cbc:Name>
     </cac:PartyName>
@@ -599,7 +609,7 @@ Inside `ItemManagementProfile`:
         <cbc:ID>BF-GS-01</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">772020000079</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>

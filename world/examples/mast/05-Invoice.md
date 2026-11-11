@@ -375,8 +375,6 @@ Inside `InvoiceLine`:
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
   The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
-- `Item/StandardItemIdentification/ID` = **772050000117** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item battery-pack of Saltmere Engineering (world/items.json).
 - `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Item/CommodityClassification/CommodityCode` = **850760** (listID `WCO HS 2022`)  
@@ -443,8 +441,6 @@ Inside `InvoiceLine`:
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-SMK-10**  
   The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
-- `Item/StandardItemIdentification/ID` = **772050000124** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item smoke-detector of Saltmere Engineering (world/items.json).
 - `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Item/CommodityClassification/CommodityCode` = **853110** (listID `WCO HS 2022`)  
@@ -519,8 +515,6 @@ Inside `InvoiceLine`:
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-CS-05**  
   The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
-- `Item/StandardItemIdentification/ID` = **772050000131** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item coating-stripper of Saltmere Engineering (world/items.json).
 - `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Item/CommodityClassification/CommodityCode` = **381400** (listID `WCO HS 2022`)  
@@ -880,9 +874,6 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>SE-BAT-48100</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">772050000117</cbc:ID>
-      </cac:StandardItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:OriginCountry>
@@ -936,9 +927,6 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>SE-SMK-10</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">772050000124</cbc:ID>
-      </cac:StandardItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:OriginCountry>
@@ -1000,9 +988,6 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>SE-CS-05</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">772050000131</cbc:ID>
-      </cac:StandardItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:OriginCountry>

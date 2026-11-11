@@ -87,6 +87,8 @@ Inside `BuyerCustomerParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brightmarket Stores (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4719 = Other retail sale in non-specialized stores.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyName/Name` = **Brightmarket Stores**  
   The trading name; identity of Brightmarket Stores (world/parties.json).
 - `Party/TradePartyName/Name` = **Brightmarket**  
@@ -224,8 +226,10 @@ Inside `SellerSupplierParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
 - `Party/AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
+  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
@@ -339,6 +343,8 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `DeliveryLocation/Description` = **Goods-in, garden department**  
   Where the truck unloads.
 - `DeliveryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -471,12 +477,10 @@ Inside `OrderLine`:
   The variant in words.
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **VI-B180**  
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
-- `LineItem/Item/StandardItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-serra of Valdara Industries (world/items.json).
-- `LineItem/Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
-  The barcode the number is printed in on the label.
-- `LineItem/Item/StandardItemIdentification/IssuerScopeID` = **771**  
-  The range of item numbers the agency gives out in the maker's country.
+- `LineItem/Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
+- `LineItem/Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
+  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0218**  
   The catalogue the item was ordered from.
 - `LineItem/Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
@@ -543,8 +547,8 @@ Inside `OrderLine`:
   How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
 - `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450** (schemeID `urn:ubl-examples:world:XU:property`)  
   The property's number in the property standard of the identification agency. The schemeID names the scheme it is from: the property standard of the Codana Identification Agency (UR-, two letters for the part of the standard (SF street furniture, WD wood), four digits).
-- `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana street furniture properties**  
-  The part of the agency's standards it is taken from.
+- `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **SF**  
+  The part of the agency's property standard it is taken from (SF street furniture, WD wood), as the number itself shows.
 - `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
@@ -709,6 +713,9 @@ Inside `OrderLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9522610900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brightmarket Stores</cbc:Name>
       </cac:PartyName>
@@ -826,6 +833,9 @@ Inside `OrderLine`:
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
@@ -924,6 +934,7 @@ Inside `OrderLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
       <cbc:Description>Goods-in, garden department</cbc:Description>
     </cac:DeliveryLocation>
     <cac:DeliveryParty>
@@ -1014,10 +1025,11 @@ Inside `OrderLine`:
           <cbc:ID>VI-B180</cbc:ID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
-          <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
-          <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
+          <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
         </cac:StandardItemIdentification>
+        <cac:AdditionalItemIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
           <cbc:ID>LD-CAT-26-0218</cbc:ID>
         </cac:CatalogueDocumentReference>
@@ -1079,7 +1091,7 @@ Inside `OrderLine`:
           </cac:ItemPropertyGroup>
           <cac:StandardPropertyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
-            <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
+            <cbc:IssuerScopeID>SF</cbc:IssuerScopeID>
             <cac:IssuerParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>

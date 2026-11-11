@@ -326,6 +326,11 @@ def real_code_problems():
         cur = c["currency"]
         if cur["code"] in taken or cur["numeric"] in numbers:
             problems.append(f"{code}: currency {cur['code']} / {cur['numeric']} is a real ISO 4217 code")
+    icd = codelists.READERS["peppol"](os.path.join(OUT, "sources", "peppol", "ICD.xml"))
+    for sid, spec in world_data.load().get("identifier_schemes", {}).items():   # the Codana ICD is not a real one
+        for code in re.findall(r"\^(\d{4}):", spec["pattern"]) if sid == "ISO 6523" else ():
+            if code in icd:
+                problems.append(f"ISO 6523: the world's code designator {code} is a real ICD ({icd[code]['name']})")
     mic = codelists.READERS["mic"](os.path.join(OUT, "sources", "iso10383", "ISO10383_MIC.csv"))
     for key, lst in codelists.load()["lists"].items():
         for code in lst["codes"] if lst.get("checked_against") == "ISO 10383" else ():

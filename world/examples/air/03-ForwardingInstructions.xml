@@ -23,6 +23,9 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
@@ -282,7 +285,7 @@
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
       </cac:TransportEvent>
       <cac:TransportHandlingUnit>
-        <cbc:ID>LD-AIR-SKID-1</cbc:ID>
+        <cbc:ID schemeID="GS1 SSCC">095206103190000015</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SI</cbc:TransportHandlingUnitTypeCode>
         <cac:ReferencedShipment>
           <cbc:ID>LD-SH-26-0323</cbc:ID>
@@ -291,7 +294,6 @@
           <cbc:ID>LD-AIR-BOX</cbc:ID>
           <cbc:Quantity unitCode="EA">8</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
-          <cbc:TraceID>LD-AIR-0001..0008</cbc:TraceID>
           <cac:ContainedPackage>
             <cbc:ID>LD-AIR-BAG</cbc:ID>
             <cbc:Quantity unitCode="EA">8</cbc:Quantity>

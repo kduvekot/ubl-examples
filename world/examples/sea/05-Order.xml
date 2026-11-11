@@ -92,6 +92,9 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
@@ -359,10 +362,11 @@
           <cbc:ID>VI-B180</cbc:ID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
-          <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
-          <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
+          <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
         </cac:StandardItemIdentification>
+        <cac:AdditionalItemIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
           <cbc:ID>LD-CAT-26-0124</cbc:ID>
         </cac:CatalogueDocumentReference>
@@ -424,7 +428,7 @@
           </cac:ItemPropertyGroup>
           <cac:StandardPropertyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
-            <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
+            <cbc:IssuerScopeID>SF</cbc:IssuerScopeID>
             <cac:IssuerParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
@@ -565,8 +569,11 @@
           <cbc:ID>VI-C180</cbc:ID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9520610000029</cbc:ID>
         </cac:StandardItemIdentification>
+        <cac:AdditionalItemIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
+        </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
           <cbc:ID>LD-CAT-26-0124</cbc:ID>
         </cac:CatalogueDocumentReference>

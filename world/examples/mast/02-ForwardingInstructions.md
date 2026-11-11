@@ -415,10 +415,8 @@ Inside `Shipment`:
   Main deck, position L2.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PositionOnBoardStowage/Location` = **Main deck, accessible**  
   Where it flies.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/ID` = **SE-CR-1..6**  
-  The six crates.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/Quantity` = **6** (unitCode `EA`)  
-  Six.
+  Six crates, one battery pack in each; each crate is listed with its own number in the unit load device below.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransportEmergencyCardCode` = **TEC9** (listID `urn:ubl-examples:world:codelist:TransportEmergencyCardCode`)  
@@ -449,6 +447,42 @@ Inside `Shipment`:
   Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
   The highest allowed.
+- `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-1**  
+  Crate 1 of six: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
+  One battery pack in the crate.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
+- `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-2**  
+  Crate 2 of six: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
+  One battery pack in the crate.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
+- `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-3**  
+  Crate 3 of six: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
+  One battery pack in the crate.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
+- `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-4**  
+  Crate 4 of six: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
+  One battery pack in the crate.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
+- `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-5**  
+  Crate 5 of six: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
+  One battery pack in the crate.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
+- `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-6**  
+  Crate 6 of six: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
+  One battery pack in the crate.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `GoodsItem/ID` = **1**  
   A goods item.
 - `GoodsItem/Description` = **Lithium-ion battery pack 48 V 100 Ah**  
@@ -461,8 +495,6 @@ Inside `Shipment`:
   The item is dangerous goods.
 - `GoodsItem/Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
   The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/StandardItemIdentification/ID` = **772050000117** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item battery-pack of Saltmere Engineering (world/items.json).
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **850760** (listID `WCO HS 2022`)  
@@ -521,8 +553,6 @@ Inside `Shipment`:
   The item is dangerous goods.
 - `GoodsItem/Item/SellersItemIdentification/ID` = **SE-SMK-10**  
   The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/StandardItemIdentification/ID` = **772050000124** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item smoke-detector of Saltmere Engineering (world/items.json).
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **853110** (listID `WCO HS 2022`)  
@@ -589,8 +619,6 @@ Inside `Shipment`:
   The item is dangerous goods.
 - `GoodsItem/Item/SellersItemIdentification/ID` = **SE-CS-05**  
   The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/StandardItemIdentification/ID` = **772050000131** (schemeID `urn:ubl-examples:world:item`)  
-  The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item coating-stripper of Saltmere Engineering (world/items.json).
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **381400** (listID `WCO HS 2022`)  
@@ -994,7 +1022,6 @@ Inside `Shipment`:
               <cbc:Location>Main deck, accessible</cbc:Location>
             </cac:PositionOnBoardStowage>
             <cac:Package>
-              <cbc:ID>SE-CR-1..6</cbc:ID>
               <cbc:Quantity unitCode="EA">6</cbc:Quantity>
               <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
             </cac:Package>
@@ -1024,6 +1051,36 @@ Inside `Shipment`:
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">35</cbc:Measure>
         </cac:MaximumTemperature>
+        <cac:Package>
+          <cbc:ID>SE-CR-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-2</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-3</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-4</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-5</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-6</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -1036,9 +1093,6 @@ Inside `Shipment`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-48100</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000117</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -1086,9 +1140,6 @@ Inside `Shipment`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000124</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -1144,9 +1195,6 @@ Inside `Shipment`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-05</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000131</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>

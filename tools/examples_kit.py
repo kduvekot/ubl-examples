@@ -1279,21 +1279,52 @@ def pallets(flow, deal):
     return units
 
 
-def handling_units(flow, deal, prefix, marks, detail=False):
-    """The pallets of a deal, as transport handling units. Bench pallets (1850 x 650 mm, four benches) may go two
-    high; the pallet of boxed castings (1200 x 800 mm) carries nothing on top."""
+def gln_location(pid, key):
+    """The identifier of a place of a GS1 party: its Global Location Number (decision ID-Q7)."""
+    loc = PARTY[pid]["identity"]["identification"]["locations"][key]
+    return {"ID": V(loc["gln"], f"The Global Location Number of the place, {loc['name'].lower()}: "
+                                f"{PARTY[pid]['identity']['name']} identifies its places the GS1 way, under its company "
+                                "prefix (952, reserved for examples); world/parties.json.", schemeID="GS1 GLN")}
+
+
+def unit_id(owner, flow, k, what="The number on the pallet label"):
+    """The identifier of logistic unit k of a flow, in the identification convention of the party that makes the
+    unit up (decision ID-Q7): an SSCC for a GS1 party, an ISO/IEC 15459 licence plate of the Codana Identification
+    Agency for an ISO party, else the party's own number. The same unit has the same identifier in every document of
+    the flow."""
+    conv = PARTY[owner]["identity"].get("identification", {})
+    serial = f"{flow.base:03d}{k:06d}"
+    name = PARTY[owner]["identity"]["name"]
+    if conv.get("convention") == "GS1":
+        return V(world_ids.sscc(conv["company_prefix"], serial), f"{what}: the unit's SSCC, which {name} gives every "
+                 "logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check "
+                 "digit.", schemeID="GS1 SSCC")
+    if conv.get("convention") == "ISO":
+        return V(world_ids.licence_plate(conv["codana_cin"], serial), f"{what}: the unit's licence plate in the "
+                 f"structure of ISO/IEC 15459, which {name} gives every unit it makes up: the Codana Identification "
+                 "Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar "
+                 "code on the label adds the data identifier J, which the document leaves out.", schemeID="ISO 15459")
+    return V(f"{initials(owner)}-{flow.date(0)[2:4]}-{k:03d}", f"{what}: {name}'s own number for the unit.")
+
+
+def handling_units(flow, deal, owner, marks, detail=False):
+    """The pallets of a deal, as transport handling units, numbered in the convention of the party that makes them
+    up (unit_id). Bench pallets (1850 x 650 mm, four benches) may go two high; the pallet of boxed castings
+    (1200 x 800 mm) carries nothing on top."""
     out = []
     units = pallets(flow, deal)
     for k, it, n_ in units:
         pal = it["package"]["type"] == "PX"
-        x = {"ID": V(f"{prefix}{k:03d}", "The number on the pallet label."),
+        uid = unit_id(owner, flow, k)
+        x = {"ID": uid,
              "TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
              "TotalGoodsItemQuantity": qty(1, "EA", "One kind of goods on the pallet."),
              "TotalPackageQuantity": qty(n_, "EA", f"{n_} benches on the pallet, each wrapped in film." if pal
                                          else f"{n_} boxed side frames on the pallet."),
              "ShippingMarks": V(f"{marks} / {k:03d} of {len(units):03d}", "The marks on the pallet: the consignee's "
                                                                           "mark and the pallet's place in the count."),
-             "TraceID": V(f"{prefix}{k:03d}", "The pallet's barcode, scanned at each handover.")}
+             "TraceID": V(uid.value, "The pallet's barcode, scanned at each handover: it carries the same "
+                                     "number.")}
         if detail:
             x["HandlingCode"] = V("STACK2" if pal else "NOSTACK", "The carrier's handling code: two high, or "
                                                                   "nothing on top.")
@@ -1316,7 +1347,9 @@ def handling_units(flow, deal, prefix, marks, detail=False):
                                                                  "of places, not of articles, so unit C62 (one), "
                                                                  "which allows a half.",
                                                                  unitCode="C62")}
-            x["Package"] = {"ID": V(f"{prefix}{k:03d}-1", "The packages on the pallet."),
+            x["Package"] = {"ID": V(f"{k:03d}-1", "The packages on the pallet, numbered by the pallet and the kind "
+                                                   "of package: an inner package has a local number, without a "
+                                                   "scheme."),
                             "Quantity": qty(n_, "EA", "The packages of this kind on the pallet."),
                             "PackagingTypeCode": V("SW" if pal else "BX", "UN/ECE Recommendation 21: "
                                                    + ("shrinkwrapped, each bench in film" if pal else "box") + "."),
@@ -1326,7 +1359,8 @@ def handling_units(flow, deal, prefix, marks, detail=False):
                                                  "What the packaging is made of."),
                             "ReturnableMaterialIndicator": V("false", "The packaging is not returned."),
                             "PackageLevelCode": V("1", "The inner packaging, below the pallet.")}
-            x["ActualPackage"] = {"ID": V(f"{prefix}{k:03d}", "The pallet itself, as packed."),
+            x["ActualPackage"] = {"ID": V(uid.value, "The pallet itself, as packed: the same unit, so the same "
+                                                     "number.", **uid.attrs),
                                   "Quantity": qty(1, "EA", "One pallet."),
                                   "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
                                   "ReturnableMaterialIndicator": V("true", "The pallet is exchanged with the "

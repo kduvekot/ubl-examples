@@ -446,7 +446,6 @@
               <cbc:Location>Main deck, accessible</cbc:Location>
             </cac:PositionOnBoardStowage>
             <cac:Package>
-              <cbc:ID>SE-CR-1..6</cbc:ID>
               <cbc:Quantity unitCode="EA">6</cbc:Quantity>
               <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
             </cac:Package>
@@ -476,6 +475,36 @@
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">35</cbc:Measure>
         </cac:MaximumTemperature>
+        <cac:Package>
+          <cbc:ID>SE-CR-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-2</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-3</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-4</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-5</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-6</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+        </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
   </cac:Shipment>

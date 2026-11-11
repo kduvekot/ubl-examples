@@ -183,7 +183,7 @@ def road_consignment(f, view):
                                                                         "under."),
                                "IssuerParty": party("19-xu", short=True)},
         "MainCarriageShipmentStage": road_stage(f, True),
-        "TransportHandlingUnit": kit.handling_units(f, d, "CL-26-", "LD MARROWDALE", detail=True)})
+        "TransportHandlingUnit": kit.handling_units(f, d, "8-xu", "LD MARROWDALE", detail=True)})
     return out
 
 
@@ -550,7 +550,8 @@ def rail_container(f, k, full):
         "Despatch": {"ActualDespatchDate": V(f.date(8), "The train left the hub."),
                      "ActualDespatchTime": V("06:50:00", "Ten to seven.")},
         "Delivery": {"LatestDeliveryDate": V(f.date(10), "At the latest."),
-                     "DeliveryLocation": {"Name": V("Rail siding of Lumeway Distribution, Marrowdale", "Where.")}},
+                     "DeliveryLocation": {**kit.gln_location("6-xb", "siding"),
+                                          "Name": V("Rail siding of Lumeway Distribution, Marrowdale", "Where.")}},
         "ShipmentDocumentReference": {"ID": V(f.numbers.get("waybill", "pending"), "The rail consignment note.")}
         if f.numbers.get("waybill") else {"ID": V(f.numbers["tep"], "The transport plan.")}})
     return out
@@ -762,7 +763,8 @@ def barge_goods(f, w):
             "TraceID": V("RR-PE-LOT-26-0416", "The lot on the bags' labels."),
             "Quantity": qty(120, "TNE", "120 tonnes."),
             "OriginAddress": address("7-xu"),
-            "ContainingPackage": {"ID": V("JB-001..120", "The bags, numbered 1 to 120."),
+            "ContainingPackage": {"ID": V("RR-JB-0416", "The 120 bags of the lot as one package entry, with their "
+                                                    "number: the plant numbers its bags by lot."),
                                   "Quantity": qty(120, "EA", "120 bags."),
                                   "PackagingTypeCode": V("JB", "UN/ECE Recommendation 21 code JB: bag, jumbo."),
                                   "PackagingType": V("Jumbo bag of one tonne with four lifting loops", "In words."),
@@ -964,7 +966,8 @@ def retail(n, doc):
         out = kit.order(f, n, doc, 4, "The store replenishes before the promotion.",
                          "Delivered duty paid at the store: the distributor arranges and pays the transport and every "
                          "cost, so the order names only where to deliver.", "Brightmarket Stores, goods-in, Lumeport",
-                         {"Delivery": {"DeliveryLocation": {"Description": V("Goods-in, garden department",
+                         {"Delivery": {"DeliveryLocation": {**kit.gln_location("26-xb", "goods-in"),
+                                                           "Description": V("Goods-in, garden department",
                                                                              "Where the truck unloads.")}},
                           "IssueTime": V("08:15:00", "Sent from the store's replenishment system each morning."),
                           "ValidityPeriod": {"EndDate": V(f.date(6), "The order lapses if not confirmed within two "
@@ -992,7 +995,7 @@ def retail(n, doc):
         out = kit.despatch_advice(f, n, doc, 9, "The day the truck was loaded at the distribution centre.",
                                   "The gross weight loaded.")
         bench = ITEM["bench-serra-b"]
-        units = kit.handling_units(f, f.deal, "LD-RT-", "BRIGHTMARKET LUMEPORT")
+        units = kit.handling_units(f, f.deal, "6-xb", "BRIGHTMARKET LUMEPORT")
         for k, u in enumerate(units, 1):
             u["HandlingUnitDespatchLine"] = {
                 "ID": V(f"{k}", "The pallet's line: the benches on it."),
@@ -1023,7 +1026,7 @@ def retail(n, doc):
         out = kit.receipt_advice(f, n, doc, 10, "The day the goods were unloaded at the store.")
         out["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment received."),
                            "TransportHandlingUnit": {
-                               "ID": V("LD-RT-003", "The pallet with the damaged carton."),
+                               "ID": kit.unit_id("6-xb", f, 3, "The pallet with the damaged carton"),
                                "DamageRemarks": V("One carton torn, the bench's armrest bent.", "What the goods-in "
                                                                                                 "found."),
                                "DamageDocumentationAttachment": {"ExternalReference": {
@@ -1174,7 +1177,7 @@ def sea_equipment(f, detail):
                 "ShipperParty": party("6-xb", short=True),
                 "ResponsibleParty": party("6-xb", short=True),
                 "DocumentReference": {"ID": V("VGM-26-0510", "The signed weight declaration sent to the carrier.")}},
-            "PackagedTransportHandlingUnit": kit.handling_units(f, f.deal, "LD-26-", "VELUMI SELANU"),
+            "PackagedTransportHandlingUnit": kit.handling_units(f, f.deal, "6-xb", "VELUMI SELANU"),
             "GoodsItem": {"ID": V("1", "The goods in the container, as one item for the carrier."),
                           "Description": V("Park benches and spare side frames", "In words."),
                           "GoodsItemContainer": {"ID": V(CONTAINER, "The container the goods are in."),
@@ -1189,7 +1192,7 @@ def sea_equipment(f, detail):
                                            "TransportEquipmentTypeCode": V("TE", "UN/EDIFACT 8053 code TE: "
                                                                                  "trailer.",
                                                                            listID="UN/EDIFACT EDED 8053")},
-            "Package": {"ID": V("LD-26-025", "The pallet of boxed castings, packed last at the doors."),
+            "Package": {"ID": kit.unit_id("6-xb", f, 25, "The pallet of boxed castings, packed last at the doors"),
                         "Quantity": qty(12, "EA", "Twelve boxes."),
                         "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box."),
                         "ContainingTransportEquipment": {"ID": V(CONTAINER, "The container.", schemeID="ISO6346")}}})
@@ -1879,10 +1882,10 @@ def air_consignment(f, doc):
     """The distributor's instructions for the urgent frames: one skid of eight boxes."""
     cid = f.number("consignment", doc["from"], "Consignment")
     goods = Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]["amount"]))
-    box = {"ID": V("LD-AIR-BOX", "The boxes, numbered 1 to 8 on their labels."),
+    box = {"ID": V("LD-AIR-BOX", "The eight boxes as one package entry with their number: inner packages on the "
+                                 "skid have a local identifier, without a scheme."),
            "Quantity": qty(8, "EA", "Eight boxes."),
            "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box."),
-           "TraceID": V("LD-AIR-0001..0008", "The barcodes on the boxes."),
            "MeasurementDimension": [{"AttributeID": V("LENGTH", "Of one box."),
                                      "Measure": V("800", "In millimetres.", unitCode="MMT")},
                                     {"AttributeID": V("WIDTH", "Of one box."),
@@ -1917,7 +1920,7 @@ def air_consignment(f, doc):
             "TransportEvent": kit.event(f, 2, "19:00:00", "Latest acceptance at the cargo terminal for the morning "
                                                           "flight.", done=False),
             "TransportHandlingUnit": {
-                "ID": V("LD-AIR-SKID-1", "The skid the boxes are strapped to."),
+                "ID": kit.unit_id("6-xb", f, 1, "The skid the boxes are strapped to"),
                 "TransportHandlingUnitTypeCode": V("SI", "UN/ECE Recommendation 21 code SI: skid."),
                 "ReferencedShipment": {"ID": V(f.numbers["shipment"], "The distributor's shipment on the skid.")},
                 "Package": box}}
@@ -3266,7 +3269,8 @@ def furniture(n, doc):
                 "SupplyChainActivityDataLine": {
                     "ID": V("1", "The only line."),
                     "SupplyChainActivityTypeCode": V("SALES", "The activity reported: sales to consumers."),
-                    "ActivityOriginLocation": {"Name": V("Brightmarket Stores, garden department, Lumeport",
+                    "ActivityOriginLocation": {**kit.gln_location("26-xb", "garden"),
+                                               "Name": V("Brightmarket Stores, garden department, Lumeport",
                                                          "Where the sales took place.")},
                     "SalesItem": {"Quantity": qty(3, "SET", "Three sets sold in four weeks."), "Item": sets}}}
     if doc["doc"] == "ExceptionNotification":
@@ -3683,7 +3687,8 @@ def furniture(n, doc):
                                                                               "under; it puts returns at the "
                                                                               "maker's cost.")},
                 "Delivery": {"ActualDeliveryDate": V(f.date(61), "The sets were delivered back."),
-                             "DeliveryLocation": {"Name": V("Brackenmere Furniture, Marrowdale", "Where.")}},
+                             "DeliveryLocation": {**kit.gln_location("37-xb", "factory"),
+                                                  "Name": V("Brackenmere Furniture, Marrowdale", "Where.")}},
                 "PayeeParty": party("26-xb", short=True),
                 "BuyerCustomerParty": {"Party": party("37-xb", short=True)},
                 "SellerSupplierParty": {"Party": party("26-xb", short=True)},
@@ -4289,7 +4294,7 @@ def _(f, n, doc, out):
             "Signature": seal(doc["from"], "FRC-SIG-GII"),
             "ReferencedConsignment": {"ID": V(f.numbers["consignment"], "The consignment.")},
             "ReferencedTransportEquipment": {"ID": V(RAIL_BOXES[0], "The first container.", schemeID="ISO6346")},
-            "ReferencedPackage": {"ID": V("CL-26-001", "The first pallet in it.")},
+            "ReferencedPackage": {"ID": kit.unit_id("8-xu", f, 1, "The first pallet in it, made up by the 3PL")},
             "ReferencedGoodsItem": {"ID": V("1", "The benches.")}}
 
 
@@ -5158,7 +5163,8 @@ def _(f, n, doc, out):
             "CatalogueDocumentReference": {"ID": V("BM-RANGE-26", "The store's range plan the line belongs to.")},
             "Signature": seal(doc["from"], "BM-SIG-26-RFQ"),
             "OriginatorCustomerParty": {"Party": party("26-xb", short=True)},
-            "Delivery": {"DeliveryLocation": {"Name": V("Brightmarket Stores, goods-in", "Where.")}},
+            "Delivery": {"DeliveryLocation": {**kit.gln_location("26-xb", "goods-in"),
+                                              "Name": V("Brightmarket Stores, goods-in", "Where.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the store.", schemeID="INCOTERMS")},
             "DestinationCountry": {"IdentificationCode": V("XB", "Bayvarra.")},
             "Contract": {"ID": V("BM-OWN-BRAND-2026", "The store's own-brand terms.")},
@@ -5615,7 +5621,8 @@ def mast_consignment(f, full):
                                         "Measure": V("20", "Around 20 °C.", unitCode="CEL")},
               "PositionOnBoardStowage": {"LocationID": V("MD-L2", "Main deck, position L2."),
                                          "Location": V("Main deck, accessible", "Where it flies.")},
-              "Package": {"ID": V("SE-CR-1..6", "The six crates."), "Quantity": qty(6, "EA", "Six."),
+              "Package": {"Quantity": qty(6, "EA", "Six crates, one battery pack in each; each crate is listed with "
+                                                   "its own number in the unit load device below."),
                           "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: crate.")},
               "HazardousGoodsTransit": {"TransportEmergencyCardCode": V("TEC9", "The emergency card on "
                                                                                      "board."),
@@ -5650,7 +5657,13 @@ def mast_consignment(f, full):
                                      "HazardousRiskIndicator": V("true", "Dangerous goods inside."),
                                      "HazardousGoodsTransit": loaded["HazardousGoodsTransit"],
                                      "MinimumTemperature": lo, "MaximumTemperature": hi,
-                                     "TransportEquipment": equipment}}
+                                     "TransportEquipment": equipment,
+                                     "Package": [{"ID": V(f"SE-CR-{k}", f"Crate {k} of six: the engineering company "
+                                                          "numbers each crate of dangerous goods it packs, so that "
+                                                          "each can be traced; its own number, without a scheme."),
+                                                  "Quantity": qty(1, "EA", "One battery pack in the crate."),
+                                                  "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: "
+                                                                               "crate.")} for k in range(1, 7)]}}
     if full:
         out["MainCarriageShipmentStage"] = {
             "ID": V("1", "The flight."), "TransportModeCode": V("4", "Air transport.",
@@ -5777,8 +5790,9 @@ def sea_with_debit(n, doc):
            "InvoicePeriod": {"StartDate": V(f.date(14), "Held from discharge"), "EndDate": V(f.date(15), "to "
                                                                                                        "release.")},
            "DiscrepancyResponse": {"ResponseCode": V("2", "A packaging fault."),
-                                   "Description": V("Heat-treatment mark illegible on pallet LD-26-007.", "The "
-                                                                                                          "fault.")},
+                                   "Description": V(f"Heat-treatment mark illegible on pallet "
+                                                    f"{kit.unit_id('6-xb', f, 7).value}.", "The fault, with the "
+                                                    "pallet's SSCC.")},
            "OrderReference": {"ID": V(f.numbers["order"], "The order.")},
            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")},
            "DeliveryNoteDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading, the note the goods "

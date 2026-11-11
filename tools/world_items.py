@@ -10,8 +10,11 @@ that the manufacturer's identifiers travel along the chain.
 Checks:
   * units of measure and packaging types are codes of the UBL 2.5 default
     lists (UN/ECE Recommendations 20 and 21);
-  * the world item number of goods, issued by the identifier issuing agency,
-    has a valid check digit and is unique;
+  * goods are identified in their maker's convention (decision ID-Q7): a GTIN
+    under the company prefix of a GS1 party (GS1 prefix 952, reserved for
+    examples), a Codana item number with a valid check digit, or only the
+    seller's own number; a GS1 wholesaler or retailer may give its own GTIN to
+    an item it resells; every number is unique;
   * prices are positive and in the seller's currency; a unit price may have
     more decimals than the currency (up to 4), because only amounts to pay
     are rounded to the currency's minor unit; gross weight is at least net
@@ -91,12 +94,30 @@ def check(world):
         # rounded to the currency's minor units, which the amounts layer checks
         if round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
             problems.append(f"{where}: unit price {pr['amount']} has more than {UNIT_PRICE_DECIMALS} decimals")
+        conv = seller["identity"].get("identification", {})
+        if it.get("gtin"):                # a GTIN under the GS1 company prefix of the party that allocates it
+            if conv.get("convention") != "GS1":
+                problems.append(f"{where}: a GTIN, but {it['seller']} does not identify its items the GS1 way")
+            elif not (re.fullmatch(r"\d{13}", it["gtin"]) and it["gtin"].startswith(conv["company_prefix"])
+                      and item_number(it["gtin"][:-1]) == it["gtin"]):
+                problems.append(f"{where}: GTIN {it['gtin']} is not a GTIN-13 under the company prefix "
+                                f"{conv['company_prefix']} with a valid check digit")
+            elif it["gtin"] in seen:
+                problems.append(f"{where}: same GTIN as {seen[it['gtin']]}")
+            seen[it["gtin"]] = it["id"]
         if it["kind"] == "goods" and not it.get("resale_of"):
             n = it.get("standard_id")
-            if not n or not valid_item_number(n):
-                problems.append(f"{where}: goods need a world item number with a valid check digit")
+            if conv.get("convention") == "GS1":
+                if not it.get("gtin") or n:
+                    problems.append(f"{where}: a GS1 maker identifies its goods by a GTIN only")
+            elif conv.get("convention") == "own":
+                if n:
+                    problems.append(f"{where}: {it['seller']} identifies its goods by its own item numbers only, "
+                                    "not by a Codana item number")
+            elif not n or not valid_item_number(n):
+                problems.append(f"{where}: goods need a Codana item number with a valid check digit")
             elif n in seen:
-                problems.append(f"{where}: same world item number as {seen[n]}")
+                problems.append(f"{where}: same Codana item number as {seen[n]}")
             else:
                 seen[n] = it["id"]
             hs = it.get("hs", "")

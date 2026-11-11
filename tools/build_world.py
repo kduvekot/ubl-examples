@@ -63,6 +63,7 @@ def address_lines(p):
 import world_items  # noqa: E402
 CODES = world_items.codes()
 ITEMS = {i["id"]: i for i in world["items"]}
+PARTIES = {p["id"]: p for p in world["parties"]}
 
 def money(pr):
     cur = next(c["currency"] for c in world["countries"].values() if c["currency"]["code"] == pr["currency"])
@@ -88,10 +89,15 @@ def sells(p):
             while maker.get("resale_of"):        # follow the resale chain to the maker
                 maker = ITEMS[maker["resale_of"]]
             via = f", bought from {link(o['seller'])}" if o is not maker else ""
-            rows.append(("Resale of", f"{maker['name']} made by {link(maker['seller'])}{via}: world item number "
-                                      f"`{maker['standard_id']}`, maker's ID `{maker['sellers_id']}`"))
+            ids = f"Codana item number `{maker['standard_id']}`, " if maker.get("standard_id") else ""
+            ids += f"GTIN `{maker['gtin']}`, " if maker.get("gtin") else ""
+            rows.append(("Resale of", f"{maker['name']} made by {link(maker['seller'])}{via}: {ids}maker's ID "
+                                      f"`{maker['sellers_id']}`"))
+        if i.get("gtin"):
+            rows.append(("GTIN", f"`{i['gtin']}` (GS1, under the company prefix "
+                                 f"`{PARTIES[i['seller']]['identity']['identification']['company_prefix']}`)"))
         if i.get("standard_id"):
-            rows.append(("World item number", f"`{i['standard_id']}` (issued by {link(world_items.ISSUER)})"))
+            rows.append(("Codana item number", f"`{i['standard_id']}` (issued by {link(world_items.ISSUER)})"))
         if i.get("hs"):
             rows.append(("Customs tariff (HS)", f"`{i['hs']}`; origin {world['countries'][i['origin']]['name']}"))
             rows.append(("Product classification (UN CPC Ver.2.1)", f"`{i['cpc']}`"))

@@ -102,10 +102,24 @@ def party(pid, short=False):
                                               f"{c['registry']['name']}; {src}. Later mentions of the same party in "
                                               "this document repeat only this identifier and the name.",
                                               schemeID=register_scheme(p["c"]))}
+        conv = idn.get("identification", {})
+        if conv.get("convention") == "GS1":
+            out["AdditionalPartyIdentification"] = [{"ID": V(
+                conv["gln"], "A further identifier, the party's Global Location Number (the endorsed "
+                "PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, "
+                "under its company prefix, which starts with 952, the prefix GS1 reserves for examples "
+                f"(decision ID-Q7); {src}.", schemeID="GS1 GLN")}]
+        elif conv.get("convention") == "ISO":
+            out["AdditionalPartyIdentification"] = [{"ID": V(
+                f"0990:{conv['codana_cin']}", "A further identifier (the endorsed PartyIdentification holds one "
+                "only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code "
+                "designator 0990 of the Codana Identification Agency and the party's Codana "
+                "company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code "
+                f"designator 0990; {src}.", schemeID="ISO 6523")}]
     if idn.get("customs_id"):
-        out["AdditionalPartyIdentification"] = {"ID": V(idn["customs_id"], "A second identifier: the party's customs "
-                                                        f"trader number, because it imports or exports ({c['customs_trader_format']}); "
-                                                        f"{src}.", schemeID=f"urn:ubl-examples:world:{p['c']}:customs-trader")}
+        out["AdditionalPartyIdentification"] = out.get("AdditionalPartyIdentification", []) + [{"ID": V(
+            idn["customs_id"], "A further identifier: the party's customs trader number, because it imports or exports "
+            f"({c['customs_trader_format']}); {src}.", schemeID=f"urn:ubl-examples:world:{p['c']}:customs-trader")}]
     out["PartyName"] = {"Name": V(idn["name"], f"The trading name; {src}.")}
     if idn.get("trade_name"):
         out["TradePartyName"] = {"Name": V(idn["trade_name"], f"The name the shops trade under, shorter than the company's "
@@ -619,8 +633,10 @@ def item_property(pr, src):
         sid, scope, issuer = pr["standard"]
         out["StandardPropertyIdentification"] = {"ID": V(sid, "The property's number in the property standard of the "
                                                                "identification agency."),
-                                                 "IssuerScopeID": V(scope, "The part of the agency's standards it is "
-                                                                           "taken from."),
+                                                 "IssuerScopeID": V(scope, "The part of the agency's property "
+                                                                           "standard it is taken from (SF street "
+                                                                           "furniture, WD wood), as the number "
+                                                                           "itself shows."),
                                                  "IssuerParty": party(issuer, short=True)}
     if pr.get("sub"):
         out["SubItemProperty"] = [item_property(x, src) for x in pr["sub"]]
@@ -770,22 +786,33 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         out["ManufacturersItemIdentification"] = {"ID": V(maker["sellers_id"], f"The item number of the maker, "
                                                           f"{PARTY[maker['seller']]['identity']['name']}: the "
                                                           f"reseller's item is resale of item {maker['id']}.")}
-    if maker.get("standard_id"):
-        out["StandardItemIdentification"] = {"ID": V(maker["standard_id"], "The world item number issued by the "
-                                                     "identifier issuing agency, twelve digits with a check digit; a "
-                                                     f"scheme of the world, not a GTIN; {msrc}.",
-                                                     schemeID="urn:ubl-examples:world:item")}
+    gtin = it                          # the GTIN: the item's own, or one allocated further up the resale chain
+    while gtin and not gtin.get("gtin"):
+        gtin = ITEM.get(gtin.get("resale_of"))
+    codana = {"ID": V(maker["standard_id"], "The Codana item number of the maker, issued by the Codana "
+                      "Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a "
+                      f"number of the world, not a GTIN; {msrc}.", schemeID="urn:ubl-examples:world:item")} \
+        if maker.get("standard_id") else None
+    if gtin:
+        owner = PARTY[gtin["seller"]]["identity"]["name"]
+        out["StandardItemIdentification"] = {"ID": V(gtin["gtin"], (
+            f"The GTIN {owner} gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves "
+            "that prefix for demonstrations and examples, so the number belongs to no real product"
+            + (f"; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate "
+               "the GTIN where the brand owner has none" if gtin is not maker else "")
+            + f" (world/items.json)."), schemeID="GS1 GTIN")}
+        if codana:
+            out["AdditionalItemIdentification"] = {"ID": V(maker["standard_id"], "The maker's own number for the "
+                                                           "item, its Codana item number, which travels along with "
+                                                           f"the GTIN; {msrc}.", schemeID="urn:ubl-examples:world:item")}
+    elif codana:
+        out["StandardItemIdentification"] = codana
         if maker.get("barcode"):
             out["StandardItemIdentification"]["BarcodeSymbologyID"] = V(maker["barcode"], "The barcode the number "
                                                                         "is printed in on the label.")
             out["StandardItemIdentification"]["IssuerScopeID"] = V(maker["standard_id"][:3], "The range of item "
                                                                    "numbers the agency gives out in the maker's "
                                                                    "country.")
-    if maker.get("pack_standard_id"):
-        out["AdditionalItemIdentification"] = {"ID": V(maker["pack_standard_id"], "The world item number of the "
-                                                       f"pack of {maker['pack']['size']}, the unit the item is traded "
-                                                       "in; the item number above is for one piece.",
-                                                       schemeID="urn:ubl-examples:world:item")}
     if catalogue_ref:
         out["CatalogueDocumentReference"] = {"ID": V(catalogue_ref, "The catalogue the item was ordered from.")}
     if maker.get("spec_doc"):
@@ -1319,6 +1346,30 @@ def check_reference_uuids(flow_id, roots):
                                  f"with UUID {ruuid}, but that document's UUID is {', '.join(sorted(own[rid] - {None}))}")
 
 
+UNIT_SCHEMES = ("GS1 SSCC", "ISO 15459")
+
+
+def check_unit_ids(flow_id, roots):
+    """A logistic unit has one identifier in its maker's convention (decision ID-Q7), and every document of the flow
+    that mentions it agrees: the same value always carries the same schemeID, and where two documents give the
+    unit's package count, the counts agree."""
+    seen, counts = {}, {}
+    for name, root in roots:
+        for e in root.iter(f"{{{NS_CBC}}}ID"):
+            parent = e.getparent()
+            sid = e.get("schemeID")
+            if sid not in UNIT_SCHEMES and e.text not in seen:
+                continue
+            if seen.setdefault(e.text, (sid, name))[0] != sid:
+                raise SystemExit(f"world/examples/{flow_id}/{name}: unit {e.text} with schemeID {sid}, but "
+                                 f"{seen[e.text][1]} gives it {seen[e.text][0]}")
+            total = parent.findtext(f"{{{NS_CBC}}}TotalPackageQuantity")
+            if total is not None:
+                if counts.setdefault(e.text, (total, name))[0] != total:
+                    raise SystemExit(f"world/examples/{flow_id}/{name}: unit {e.text} holds {total} packages, but "
+                                     f"{counts[e.text][1]} says {counts[e.text][0]}")
+
+
 def xmlname(n, doc):
     return f"{n:02d}-{doc['doc']}.xml"
 
@@ -1386,6 +1437,7 @@ def main(flow_id, check=False):
         if not check:
             print(f"world/examples/{flow_id}/{xmlname(n, doc)}: {len(reasons)} values")
     check_reference_uuids(flow_id, roots)
+    check_unit_ids(flow_id, roots)
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow

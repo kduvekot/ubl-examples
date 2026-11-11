@@ -145,6 +145,10 @@
     "cost_centre": {
      "code": "3100",
      "name": "Raw materials and parts"
+    },
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "10427"
     }
    }
   },
@@ -211,6 +215,10 @@
     "cost_centre": {
      "code": "7100",
      "name": "Transport costs"
+    },
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "10441"
     }
    },
    "fleet": [
@@ -876,6 +884,21 @@
     "cost_centre": {
      "code": "4410",
      "name": "Stock purchases"
+    },
+    "identification": {
+     "convention": "GS1",
+     "company_prefix": "9520610",
+     "gln": "9520610900008",
+     "locations": {
+      "siding": {
+       "gln": "9520610900015",
+       "name": "Rail siding of the distribution centre, Marrowdale"
+      },
+      "dc": {
+       "gln": "9520610900022",
+       "name": "Distribution centre, goods-out"
+      }
+     }
     }
    }
   },
@@ -947,6 +970,21 @@
     "cost_centre": {
      "code": "6120",
      "name": "Garden department"
+    },
+    "identification": {
+     "convention": "GS1",
+     "company_prefix": "9522610",
+     "gln": "9522610900002",
+     "locations": {
+      "goods-in": {
+       "gln": "9522610900019",
+       "name": "Goods-in of the Lumeport store"
+      },
+      "garden": {
+       "gln": "9522610900026",
+       "name": "Garden department of the Lumeport store"
+      }
+     }
     }
    },
    "fleet": [
@@ -1100,7 +1138,10 @@
      "number": "XB68BLUM0001885122"
     },
     "industry": "4290",
-    "language": "en"
+    "language": "en",
+    "identification": {
+     "convention": "own"
+    }
    }
   },
   {
@@ -2230,6 +2271,9 @@
       "year": 2025
      },
      "capital": 600000000
+    },
+    "identification": {
+     "convention": "own"
     }
    }
   },
@@ -2287,6 +2331,9 @@
       "currency": "XBL",
       "year": 2025
      }
+    },
+    "identification": {
+     "convention": "own"
     }
    }
   },
@@ -2340,6 +2387,9 @@
       "currency": "XLC",
       "year": 2025
      }
+    },
+    "identification": {
+     "convention": "own"
     }
    }
   },
@@ -2401,7 +2451,10 @@
       "year": 2025
      }
     },
-    "customs_id": "XB-TR-412329"
+    "customs_id": "XB-TR-412329",
+    "identification": {
+     "convention": "own"
+    }
    },
    "fleet": [
     {
@@ -2470,6 +2523,17 @@
     "cost_centre": {
      "code": "1100",
      "name": "Timber and materials"
+    },
+    "identification": {
+     "convention": "GS1",
+     "company_prefix": "9523710",
+     "gln": "9523710900008",
+     "locations": {
+      "factory": {
+       "gln": "9523710900015",
+       "name": "Factory and goods-in, Marrowdale"
+      }
+     }
     }
    },
    "fleet": [
@@ -2608,7 +2672,11 @@
      "code": "1300",
      "name": "Raw materials"
     },
-    "party_account_shown": true
+    "party_account_shown": true,
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "20274"
+    }
    }
   },
   {
@@ -2668,6 +2736,9 @@
     "site": {
      "locode": null,
      "description": "The cotton fields"
+    },
+    "identification": {
+     "convention": "own"
     }
    },
    "fleet": [
@@ -2734,6 +2805,9 @@
     "cost_centre": {
      "code": "200",
      "name": "Seed cotton purchases"
+    },
+    "identification": {
+     "convention": "own"
     }
    }
   },
@@ -2869,7 +2943,11 @@
      },
      "capital": 400000000
     },
-    "customs_id": "XU-TR-105918"
+    "customs_id": "XU-TR-105918",
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "10591"
+    }
    }
   },
   {
@@ -2925,6 +3003,10 @@
       "year": 2025
      },
      "capital": 80000000
+    },
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "10605"
     }
    }
   }

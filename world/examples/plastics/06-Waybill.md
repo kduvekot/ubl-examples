@@ -166,7 +166,7 @@ Inside `ReceiverParty`:
 - `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **XU-TR-104548** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
-  A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery (world/parties.json).
+  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery (world/parties.json).
 - `PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
@@ -304,8 +304,10 @@ Inside `Shipment`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Rivermouth Packaging (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 2220 = Manufacture of plastics products.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:20274** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XB-TR-412740** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Rivermouth Packaging (world/parties.json).
+  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/PartyName/Name` = **Rivermouth Packaging**  
   The trading name; identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/Language/ID` = **en** (schemeID `ISO 639`)  
@@ -574,8 +576,8 @@ Inside `Shipment`:
   The height of one filled bag. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/MeasurementDimension/Measure` = **1300** (unitCode `MMT`)  
   In millimetres.
-- `GoodsItem/ContainingPackage/ID` = **JB-001..120**  
-  The bags, numbered 1 to 120.
+- `GoodsItem/ContainingPackage/ID` = **RR-JB-0416**  
+  The 120 bags of the lot as one package entry, with their number: the plant numbers its bags by lot.
 - `GoodsItem/ContainingPackage/Quantity` = **120** (unitCode `EA`)  
   120 bags.
 - `GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
@@ -879,6 +881,9 @@ Inside `Signature`:
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
         </cac:PartyIdentification>
         <cac:AdditionalPartyIdentification>
+          <cbc:ID schemeID="ISO 6523">0990:20274</cbc:ID>
+        </cac:AdditionalPartyIdentification>
+        <cac:AdditionalPartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412740</cbc:ID>
         </cac:AdditionalPartyIdentification>
         <cac:PartyName>
@@ -1109,7 +1114,7 @@ Inside `Signature`:
         <cbc:Measure unitCode="MMT">1300</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:ContainingPackage>
-        <cbc:ID>JB-001..120</cbc:ID>
+        <cbc:ID>RR-JB-0416</cbc:ID>
         <cbc:Quantity unitCode="EA">120</cbc:Quantity>
         <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">JB</cbc:PackagingTypeCode>
