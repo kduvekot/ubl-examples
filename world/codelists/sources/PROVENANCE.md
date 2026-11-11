@@ -16,10 +16,12 @@ Machine-readable copies of the authoritative lists the world's code lists are bu
 | pronom/ | https://www.nationalarchives.gov.uk/PRONOM/fmt/479.xml, fmt/480.xml, fmt/481.xml (PDF/A-3a, -3b, -3u) | as published 2026-11-11 |
 | rec28/ | https://unece.org/trade/uncefact/cl-recommendations (Rec 28): `Rec28_Rev4.2e_2018.xls`, the code list "Revision 4.2" (2018, the current code list; sheet header "CODES FOR TYPES OF MEANS OF TRANSPORT Revision 4.2"), and `Rec28_Rev3e_2010.pdf`, the Recommendation text, Revision 3 (CEFACT/ICG/2010/IC011, approved 12 July 2010). Downloaded by the project owner from a normal browser on 2026-11-11, because unece.org blocks automated access. | Revision 4.2 (code list), Revision 3 (text) |
 | optd/ | https://raw.githubusercontent.com/opentraveldata/opentraveldata/master/opentraveldata/optd_aircraft.csv (OpenTravelData, CC BY 4.0): IATA aircraft type codes with ICAO codes. A secondary source: the official list, IATA SSIM Appendix A, is not public. ATF = ATR 72 Freighter (ICAO AT72) is confirmed by Airport Coordination Netherlands, "Noise values for slot allocation" S25 (note 22.913.02, 30 August 2024), and by avcodes.co.uk and SeatLink, all read 2026-11-11. | commit cfc7b82f6c96cdf7cd12c7be000bc2e0f82dbdaf |
+| cpc/CPC21-HS2017.csv | https://unstats.un.org/unsd/classifications/Econ/tables/CPC/CPCv21_HS2017/CPC21-HS2017.csv (UN Statistics Division, official correspondence HS 2017 ↔ CPC Ver.2.1; columns HS 2017, HS partial, CPC Ver. 2.1, CPC partial) | as published 2026-11-11 |
 
 ## SHA-256
 
 ```
+a8a4e088e637fd253f6c329f98c7a2f288a23ac2fee79d6529f238c0569f3c5c  ./cpc/CPC21-HS2017.csv
 06c22576347c5b44cb83e1113a0bd2702418cd2fa61838dc1ace37b57a7b2693  ./optd/optd_aircraft.csv
 cb572a961ad83e131e0fb71b38c591d591c9187e32e2733d48e50ca43596d2a7  ./rec28/Rec28_Rev3e_2010.pdf
 69d9c888a31609943c568b48a8f4bb202f54f6cd1e402ee9616062cccab7c96b  ./rec28/Rec28_Rev4.2e_2018.xls
