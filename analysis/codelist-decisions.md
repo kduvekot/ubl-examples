@@ -50,6 +50,12 @@ The decisions taken in the review of `codelist-classification.md`, in order.
 
 | ID-Q | Decision |
 |---|---|
+| 10b | **Payment cards.**
+- **Masking (PCI DSS):** at most the BIN plus the last 4, varying per merchant within that maximum. Brightmarket shows the last 4; the island shop the first 6 + last 4; first 8 + last 4 is allowed for 8-digit BINs (verify).
+- **What goes where:** receipts carry no CV2 and no expiry date. CV2ID, ExpiryDate and ValidityStartDate move to a new pre-authorisation scenario (e.g. a webshop order paid by card), with a full world test PAN.
+- **Fictional numbers:** card numbers use ISO/IEC 7812 MII 9 + the ISO 3166 user-assigned numeric code (9 901 XU, 9 902 XB, 9 903 XL) plus issuer digits and a Luhn check digit. The chip AID uses the ISO/IEC 7816-5 national category `D` + 9xx. Verify both rules.
+- **Card schemes:** LUMECARD (Bayvarran banks' domestic debit, like Interac or Girocard), CORALCARD (the island's, on the coral ledger) and a new Accord-wide international credit scheme (fictional name; no real network names). Cards may be co-badged.
+- NetworkID gets a regional list. IssuerID becomes the BIC-like bank code (ID-Q9). The note gets a paragraph on cards. |
 | 10 | A mix of two ways to identify the issuer of a certificate or licence:
 - **schemeID**, which names the issuer implicitly: for numbers from a national register of licences or registrations, such as the XU haulage licence, the XB forestry registration and the bonded warehouse permit (e.g. `…:XU:haulage-licence`). The scheme stands for the authority's register, so no IssuerParty is needed.
 - **IssuerParty, without a schemeID:** for certificates whose number is only unique within the issuer, such as environmental, test, medical and sanitation certificates, the ship security certificate and digital (X.509) certificates (the issuer is the CA).
