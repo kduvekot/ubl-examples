@@ -10,7 +10,7 @@
   <cbc:IssueTime>11:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:Note languageID="qau">Scinbrodreov dretoe nupoi: vevoe cosciar brunvengior vevoe stinae nupoi vevoe valtue tuluar.</cbc:Note>
+  <cbc:Note languageID="qau">Steskan zhan krir: drek mustek trerzhir drek bikrek krir drek gakzaz nir.</cbc:Note>
   <cbc:Note languageID="en">Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
   <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
@@ -45,10 +45,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
         <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -355,7 +356,7 @@
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
-      <cbc:Name languageID="qau">Gremefua PE standaboa</cbc:Name>
+      <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
       <cbc:Name languageID="en">Recycled PE granulate</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-PE-R1</cbc:ID>

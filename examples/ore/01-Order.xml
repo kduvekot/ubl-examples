@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>11:10:00</cbc:IssueTime>
   <cbc:OrderTypeCode>220</cbc:OrderTypeCode>
-  <cbc:Note languageID="qau">Vebaov scalgraar-trossuar, trirsear singria.</cbc:Note>
+  <cbc:Note languageID="qau">Galmul stek-nek, zan sezhul.</cbc:Note>
   <cbc:Note languageID="en">Monthly call-off, one train.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
@@ -35,10 +35,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -145,10 +146,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
         <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -265,10 +267,11 @@
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
           <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
           <cbc:BuildingNumber>38</cbc:BuildingNumber>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+          <cbc:CityName languageID="en">Serravona</cbc:CityName>
           <cbc:PostalZone>4150</cbc:PostalZone>
           <cbc:Region>Province of Ferrano</cbc:Region>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -366,7 +369,7 @@
       </cac:Price>
       <cac:Item>
         <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
-        <cbc:Name languageID="qau">Rertraa tarbrue, scetriov</cbc:Name>
+        <cbc:Name languageID="qau">Gek trir, zul</cbc:Name>
         <cbc:Name languageID="en">Iron ore, lump</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>SM-ORE-L</cbc:ID>

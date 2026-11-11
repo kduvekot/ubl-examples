@@ -8,7 +8,7 @@
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-06</cbc:IssueDate>
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Vevoe March gribrior dravue, masnao vevoe gucuduesk stesdrior vevoe trorroscaar.</cbc:Note>
+  <cbc:Note languageID="qau">Drek March zhul tirnan, vek drek drastaz skul drek guzzhir.</cbc:Note>
   <cbc:Note languageID="en">The March gas invoice, with the surcharge of the reminder.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">134467200</cbc:TotalDebitAmount>
@@ -35,10 +35,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Rurtio Berdrifuar</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Hekrul Trinskul</cbc:StreetName>
         <cbc:StreetName languageID="en">Via della Centrale</cbc:StreetName>
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

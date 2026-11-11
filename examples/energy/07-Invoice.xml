@@ -140,10 +140,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Duznaz Hekrul Skultrir</cbc:StreetName>
         <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

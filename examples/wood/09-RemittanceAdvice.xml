@@ -8,7 +8,7 @@
   <cbc:UUID>e5f65c03-a244-5c3b-a933-778dccb8be58</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>14:22:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Tipeor stesdrior vevoe dravue denue.</cbc:Note>
+  <cbc:Note languageID="qau">Rikrir skul drek tirnan krirstul.</cbc:Note>
   <cbc:Note languageID="en">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">34800.00</cbc:TotalDebitAmount>
@@ -38,10 +38,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

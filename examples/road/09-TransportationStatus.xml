@@ -10,7 +10,7 @@
   <cbc:IssueTime>09:10:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
-  <cbc:Note languageID="qau">Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.</cbc:Note>
+  <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
@@ -129,10 +129,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
         <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
         <cbc:BuildingNumber>45</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4160</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

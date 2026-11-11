@@ -353,17 +353,23 @@
     </para>
     <para>
       The countries also speak differently. Bayvarra speaks English, the
-      working language between the three countries. Urvania speaks
-      Urvanian, with a Romance sound like its place names; the island is
-      officially bilingual, as many Pacific islands are, in Lisavan and
-      English, Lisavan having a Polynesian sound like the island's
-      names. Both languages are invented, and their codes come from the
-      range ISO 639 reserves for local use, <literal>qaa</literal> to
-      <literal>qtz</literal>: <literal>qau</literal> for Urvanian and
-      <literal>qal</literal> for Lisavan. A sender from Urvania or the
-      island gives its notes in its own language and in English, each
-      with its <literal>languageID</literal>, and a seller there names
-      its items in both. The island names its streets in both official
+      working language between the three countries. Urvania was an
+      Italian territory and then under British rule; the British kept
+      the Italian place and street names, while the people kept their
+      own Urvanian names for the same places. Independent since 1962,
+      Urvania is bilingual, Urvanian and English, and the inherited
+      Italian names count as English: Ferrano is also
+      <emphasis>Ruldraz</emphasis>, and an address gives both, as in
+      Brussels. The island is officially bilingual, as many Pacific
+      islands are, in Lisavan and English, Lisavan having a Polynesian
+      sound like the island's names. Both languages are invented, and
+      their codes come from the range ISO 639 reserves for local use,
+      <literal>qaa</literal> to <literal>qtz</literal>:
+      <literal>qau</literal> for Urvanian and <literal>qal</literal> for
+      Lisavan. A sender from Urvania or the island gives its notes in
+      its own language and in English, each with its
+      <literal>languageID</literal>, and a seller there names its items
+      in both. Both countries name their streets in both official
       languages, as Brussels and Canada do: UBL 2.5 lets an address
       repeat its street, city and state names, one per language; the
       texts are made word by word from a fixed invented vocabulary, the

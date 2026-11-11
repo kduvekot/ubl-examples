@@ -13,7 +13,7 @@
   <cbc:IssueTime>09:38:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
-  <cbc:Note languageID="qau">Gatia dilobaa: labidria, dertrolvae, musgaor.</cbc:Note>
+  <cbc:Note languageID="qau">Gurbul mizstan: dadrek, miran, sundraz.</cbc:Note>
   <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>RR-CS-26-0885</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMNI</cbc:WaybillTypeCode>
@@ -39,10 +39,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Skikzek Han Nestan</cbc:StreetName>
       <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
       <cbc:BuildingNumber>52</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4170</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -122,10 +123,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
       <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4140</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -424,10 +426,11 @@
       <cac:OriginAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
         <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

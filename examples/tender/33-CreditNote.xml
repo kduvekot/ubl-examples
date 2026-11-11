@@ -56,10 +56,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -369,7 +370,7 @@
     </cac:PaymentTerms>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-      <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+      <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
@@ -573,7 +574,7 @@
     </cac:WithholdingTaxTotal>
     <cac:Item>
       <cbc:Description>Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
-      <cbc:Name languageID="qau">Vurrergaor stesdrior mosaesk dirrear rirgroov</cbc:Name>
+      <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
       <cbc:Name languageID="en">Installation of a park bench</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-INST-B</cbc:ID>

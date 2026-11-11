@@ -36,10 +36,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Skikzek Han Nestan</cbc:StreetName>
         <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
         <cbc:BuildingNumber>52</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4170</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -121,10 +122,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
         <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -305,7 +307,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">179400</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Bulk cargo down the river to the coast of Bayvarra, per tonne.</cbc:Description>
-      <cbc:Name languageID="qau">Valtue sosue, tesdroe</cbc:Name>
+      <cbc:Name languageID="qau">Gakzaz musaz, vir</cbc:Name>
       <cbc:Name languageID="en">River freight, bulk</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FB-BULK</cbc:ID>

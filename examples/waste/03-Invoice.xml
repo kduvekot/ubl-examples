@@ -39,10 +39,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
         <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -136,10 +137,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -316,7 +318,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
-      <cbc:Name languageID="qau">Mugevoe perpoor vasstifiar stesdrior lusgrildruor pilgrio</cbc:Name>
+      <cbc:Name languageID="qau">Tuzskaz stan balman skul huntaz drunvir</cbc:Name>
       <cbc:Name languageID="en">Collection and recovery of production waste</cbc:Name>
       <cbc:LifecycleStageCode>End-of-life</cbc:LifecycleStageCode>
       <cbc:LifecycleStageDescription>The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>

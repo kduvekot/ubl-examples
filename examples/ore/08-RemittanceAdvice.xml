@@ -8,7 +8,7 @@
   <cbc:UUID>c1cdbf15-9eb1-59b6-abc7-b3a50c56fdb2</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>12:10:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Tipeor stesdrior vevoe dravue denue.</cbc:Note>
+  <cbc:Note languageID="qau">Rikrir skul drek tirnan krirstul.</cbc:Note>
   <cbc:Note languageID="en">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">17037943</cbc:TotalDebitAmount>
@@ -38,10 +38,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -148,10 +149,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
         <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

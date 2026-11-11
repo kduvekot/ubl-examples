@@ -8,7 +8,7 @@
   <cbc:UUID>7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:30:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Grornuov vevoe pustrurtreor singria lestei?</cbc:Note>
+  <cbc:Note languageID="qau">Kul drek titran sezhul nul?</cbc:Note>
   <cbc:Note languageID="en">Has the container train left?</cbc:Note>
   <cac:Signature>
     <cbc:ID>FRC-SIG-TPSR</cbc:ID>
@@ -37,10 +37,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
       <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
-      <cbc:CityName>Serravona</cbc:CityName>
+      <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+      <cbc:CityName languageID="en">Serravona</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -117,10 +118,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Bonfuar Drardruscuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Han Krazhul</cbc:StreetName>
       <cbc:StreetName languageID="en">Via del Terminal</cbc:StreetName>
       <cbc:BuildingNumber>59</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4180</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

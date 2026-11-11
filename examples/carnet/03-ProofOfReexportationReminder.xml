@@ -90,10 +90,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
       <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

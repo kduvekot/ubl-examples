@@ -9,7 +9,7 @@
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>08:52:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Vevoe cosbrancoar masnao Saltmere stassceov litrencaar scatear vevoe vurrergaor.</cbc:Note>
+  <cbc:Note languageID="qau">Drek mundran vek Saltmere dek zheksir gan drek dreknul.</cbc:Note>
   <cbc:Note languageID="en">The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
@@ -102,10 +102,11 @@
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
           <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
           <cbc:BuildingNumber>17</cbc:BuildingNumber>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en">Ferrano</cbc:CityName>
           <cbc:PostalZone>4120</cbc:PostalZone>
           <cbc:Region>Province of Ferrano</cbc:Region>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

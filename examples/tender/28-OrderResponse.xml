@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>16:15:00</cbc:IssueTime>
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
-  <cbc:Note languageID="qau">Drollibio: gruntroa trorvue, nasgei vevoe tobuesk dresfue.</cbc:Note>
+  <cbc:Note languageID="qau">Zuzstan: skan sakmul, hir drek banzhan vatir.</cbc:Note>
   <cbc:Note languageID="en">Accepted: moss green, at the quoted charge.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:PricingCurrencyCode>XUF</cbc:PricingCurrencyCode>
@@ -43,10 +43,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
