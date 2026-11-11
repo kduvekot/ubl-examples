@@ -69,7 +69,7 @@ Quotations are from CEFACT `documentcodelist.json` ("[Reference United Nations C
 | Goodwill (tender/33, amount 0.00) | for the inconvenience | **100** | "Special rebate" | nearest |
 | One day waived (tender/34) | one day of a penalty waived "as both agree" | **64** | "Special agreement" | good |
 | Two-for discount (packaging/08: "Two shirts: 5.00 off the pair") | multi-buy | **95** | "Discount" | generic (7161 DAK is the exact concept but is a 7161 code) |
-| *Also found:* Classing fee (cotton/04, ChargeIndicator false) | farm bears the fee "as the agreement says" | **64** | "Special agreement" | nearest |
+| *Also found:* Classing fee (cotton/05, ChargeIndicator false) | farm bears the fee "as the agreement says" | **64** | "Special agreement" | nearest |
 | *Also found:* Calls included in subscription (utilities/12) | 100 % allowance | **64** | "Special agreement" | nearest |
 
 **Charges (ChargeIndicator true → 7161)**
@@ -79,7 +79,7 @@ Quotations are from CEFACT `documentcodelist.json` ("[Reference United Nations C
 | Cargo insurance (sea/22, 25) | **no 7161 code** → ABK, or 5189 **96** | ABK "Miscellaneous — Miscellaneous services."; 5189 96 "Insurance" | 7161 does not cover it |
 | Freight and insurance of the CIF invoice (sea/25) | **FC** | "Freight service — The service of moving goods, by whatever means, from one place to another." | partial (freight part) |
 | Sea freight (sea/22, 25) | **FC** | as above | exact |
-| Haulage (cotton/03 "Haulage allowance", ChargeIndicator **true**: the gin pays the farm for bringing the cotton) | **CAB** | "Cartage — Movement of goods by heavy duty cart or vehicle." | good. Its name says "allowance" while it is a charge on the self-billed invoice: check the wording. |
+| Haulage (cotton/04 "Haulage allowance", ChargeIndicator **true**: the gin pays the farm for bringing the cotton) | **CAB** | "Cartage — Movement of goods by heavy duty cart or vehicle." | good. Its name says "allowance" while it is a charge on the self-billed invoice: check the wording. |
 | Heat-treated export pallets (wood/02, 03, 08; ISPM 15) | **ACH** (alt. PL) | "Heat treatment — The service of treating with heat."; PL "Palletizing — The service of palletizing." | good |
 | Home delivery (retail/21) | **DL** | "Delivery — The service of providing delivery." | exact |
 | Packaging disposal (furniture/16, 17) | **AEO** (alt. AEV) | "Collection and recycling — The service of collection and recycling products."; AEV "Environmental protection service" | good |

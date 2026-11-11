@@ -231,8 +231,7 @@ def identifier_problems(world, p):
         if why or idn["bic"][:4] != idn.get("bank_code") or idn["bic"][4:6] != p["c"]:
             out.append(f"{where}: bank identifier {idn['bic']} is not the bank's code, its country and a location "
                        f"(ISO 9362 structure){': ' + why if why else ''}")
-    card = idn.get("card")
-    if card:
+    for card in [idn[k] for k in ("card", "credit_card") if idn.get(k)]:
         issuer = world_parties_party(world, card["issuer"])
         scheme = world["card_schemes"].get(card["scheme"])
         numeric = world["countries"][issuer["c"]]["numeric"]
@@ -246,6 +245,12 @@ def identifier_problems(world, p):
             out.append(f"{where}: chip application {card['aid']} does not start with the scheme's RID {scheme['rid']}")
         elif scheme["rid"][:4] != "D" + world["countries"][scheme["country"]]["numeric"]:
             out.append(f"{where}: the RID {scheme['rid']} is not in the national category D of {scheme['country']}")
+        if bool(card.get("valid_from")) != bool(card.get("expires")) or (card.get("expires") and not (
+                re.fullmatch(r"\d{4}-\d{2}", card["valid_from"]) and re.fullmatch(r"\d{4}-\d{2}", card["expires"])
+                and card["valid_from"] < card["expires"])):
+            out.append(f"{where}: card {card['pan']}: the validity runs from a month (YYYY-MM) to a later month")
+        if card.get("cv2") and not re.fullmatch(r"\d{3}", card["cv2"]):
+            out.append(f"{where}: card {card['pan']}: the security code has three digits")
     a = idn.get("address", {})
     if a.get("ID"):
         out += address_register_problems(world, p, a)

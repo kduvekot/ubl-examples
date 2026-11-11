@@ -6,6 +6,7 @@ its reason. The parties are placed by tools/build_examples.py from
 world/documents.json; party, item and account content comes from the layers;
 lines, amounts and taxes are worked out by tools/examples_kit.py.
 """
+import datetime
 import uuid
 from decimal import Decimal
 
@@ -2059,7 +2060,8 @@ def air(n, doc):
 COTTON = kit.Flow("cotton", "2026-02-02", [
     {"item": "cotton-bale", "ordered": 6129, "why": "27 bales of about 227 kg: one container of lint."}])
 SEED_KG = 18000
-ADVANCE = Decimal("1000.000")      # the ginnery's season advance to the farm
+ADVANCE_KG = 4500                  # the season advance: a quarter of the farm's expected 18,000 kg
+ADVANCE = Decimal("1017.000")      # 4,500 kg at the agreed 0.226 coral, on the prepayment self-billed invoice
 
 
 def cotton(n, doc):
@@ -2132,11 +2134,12 @@ def cotton(n, doc):
         lmt["TaxInclusiveAmount"] = amount(lines_amt + haul, "XLC", "No tax on the island.")
         lmt["PrepaidAmount"] = amount(ADVANCE, "XLC", "The advance paid at the start of the season.")
         lmt["PayableAmount"] = amount(lines_amt + haul - ADVANCE, "XLC", "What the gin still pays.")
-        out["PrepaidPayment"] = {"ID": V("SCG-ADV-26-0012", "The season advance to the farm."),
+        out["PrepaidPayment"] = {"ID": V("SCG-ADV-26-0012", "The payment of the season advance, billed on the "
+                                                            "prepayment self-billed invoice."),
                                  "PaidAmount": amount(ADVANCE, "XLC", "Paid before the harvest, against the first "
                                                                       "deliveries."),
                                  "PaidDate": V(f.date(-20), "Three weeks before the deliveries.")}
-        f.numbers["self-billed-3-amount"] = lines_amt + haul - ADVANCE
+        f.numbers["self-billed-4-amount"] = lines_amt + haul - ADVANCE
         lines = out["InvoiceLine"] if isinstance(out["InvoiceLine"], list) else [out["InvoiceLine"]]
         lines[0]["Delivery"] = {"DeliveryNoteLineReference": {
             "LineID": V("1", "The line of the delivery note the invoice line bills."),
@@ -2148,8 +2151,8 @@ def cotton(n, doc):
                                  "unit_price_why": "The price difference between the agreed grade and the lower grade, "
                                                    "per kilogram.", "why": "The part of the delivery classed lower."}],
                                {"BillingReference": {"SelfBilledInvoiceDocumentReference": {
-                                   "ID": V(f.numbers["self-billed-3"], "The self-billed invoice this corrects."),
-                                   "IssueDate": V(f.numbers["self-billed-3-date"], "Its issue date.")}},
+                                   "ID": V(f.numbers["self-billed-4"], "The self-billed invoice this corrects."),
+                                   "IssueDate": V(f.numbers["self-billed-4-date"], "Its issue date.")}},
                                 "Note": V("Self-billed credit note under the season agreement.", "As required on "
                                                                                                  "every self-billed "
                                                                                                  "document."),
@@ -2183,7 +2186,7 @@ def cotton(n, doc):
                                                                                             "certificate.")}},
                                credit=True)
     if doc["doc"] == "RemittanceAdvice" and doc["from"] == "39-xl":
-        inv, cn = f.numbers["self-billed-3-amount"], f.numbers["self-billed-4-amount"]
+        inv, cn = f.numbers["self-billed-4-amount"], f.numbers["self-billed-5-amount"]
         return {"ID": V(f.number("remittance-farm", doc["from"], "RemittanceAdvice"), "The ginnery's remittance number."),
                 "IssueDate": V(f.date(14), "The ginnery pays the farm after classing."),
                 "DocumentCurrencyCode": kit.currency_line("XLC", "the island's currency"),
@@ -2197,11 +2200,11 @@ def cotton(n, doc):
                      "DebitLineAmount": amount(inv, "XLC", "The amount still due on the self-billed invoice, "
                                                            "after the season advance."),
                      "BillingReference": {"SelfBilledInvoiceDocumentReference": {
-                         "ID": V(f.numbers["self-billed-3"], "The self-billed invoice paid.")}}},
+                         "ID": V(f.numbers["self-billed-4"], "The self-billed invoice paid.")}}},
                     {"ID": V("2", "The self-billed credit note."),
                      "CreditLineAmount": amount(cn, "XLC", "The amount credited, deducted from the payment."),
                      "BillingReference": {"SelfBilledCreditNoteDocumentReference": {
-                         "ID": V(f.numbers["self-billed-4"], "The self-billed credit note set off.")}}}]}
+                         "ID": V(f.numbers["self-billed-5"], "The self-billed credit note set off.")}}}]}
     if doc["doc"] == "ForecastRevision":
         return {"ID": V(f.number("forecast-revision", doc["from"], "ForecastRevision"), "The revision's number."),
                 "IssueDate": V(f.date(20), "Demand for clothing has risen."),
@@ -5051,6 +5054,8 @@ def contact(name, why, tel_of=None, email=None):
 
 @enrich("retail", "Order")
 def _(f, n, doc, out):
+    if doc["from"] != "26-xb":
+        return {}
     return {"BuyerCustomerParty": {"CustomerAssignedAccountID": V("BM-6120", "The store's own number for its "
                                                                              "garden department."),
                                    "SupplierAssignedAccountID": V("LD-C-0418", "The distributor's customer number "
@@ -8088,6 +8093,8 @@ def cotton_refs(f):
 
 @enrich("cotton", "SelfBilledInvoice")
 def _(f, n, doc, out):
+    if out["InvoiceTypeCode"].value == "386":       # the prepayment: no delivery yet, so no withholding or levy
+        return {}
     lmt = out["LegalMonetaryTotal"]
     value = Decimal(out["InvoiceLine"]["LineExtensionAmount"].value if isinstance(out["InvoiceLine"], dict)
                     else out["InvoiceLine"][0]["LineExtensionAmount"].value)
@@ -8098,7 +8105,7 @@ def _(f, n, doc, out):
     lmt["WithholdingTaxTotalAmount"] = amount(wh, "XLC", "Withheld and paid to the island's tax office.")
     lmt["PayableAmount"] = amount(payable, "XLC", "What the gin pays: the cotton and haulage, less the advance and "
                                                   "the withholding, plus the levy the farm collects.")
-    f.numbers["self-billed-3-amount"] = payable
+    f.numbers["self-billed-4-amount"] = payable
     ac = out["AllowanceCharge"]
     ac.update({"PrepaidIndicator": V("false", "Not prepaid: paid with the invoice."),
                "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax on the haulage on the island.")},
@@ -8117,8 +8124,10 @@ def _(f, n, doc, out):
             "BeneficiaryParty": party("40-xb", short=True),
             "AdditionalDocumentReference": {"ID": V("XL-FARM-REG-0412", "The farm's registration, which the "
                                                                         "withholding needs.")},
-            "BillingReference": {"AdditionalDocumentReference": {"ID": V("SCG-ADV-26-0012", "The season advance "
-                                                                                            "deducted.")}},
+            "BillingReference": {"SelfBilledInvoiceDocumentReference": {
+                "ID": V(f.numbers["self-billed-1"], "The prepayment self-billed invoice of the season advance, "
+                                                    "deducted here as the prepaid amount."),
+                "IssueDate": V(f.numbers["self-billed-1-date"], "Its issue date.")}},
             "WorkReportDocumentReference": {"ID": V("SCG-OUT-26-0311", "The gin's outturn report of the lot.")}}
 
 
@@ -8138,7 +8147,7 @@ def _(f, n, doc, out):
                 "PayableAmount": amount(payable, "XLC", "What the farm's account is credited: the price "
                                                         "difference less the fee and the withholding, plus the "
                                                         "levy on it.")})
-    f.numbers["self-billed-4-amount"] = payable
+    f.numbers["self-billed-5-amount"] = payable
     out["CollectionCreditNoteLine"] = cline
     out["LineCountNumeric"] = V("2", "The price difference and the levy on it.")
     return {**cotton_currencies(f, 12), **cotton_refs(f),
@@ -9050,3 +9059,153 @@ def contest(n, doc):
 
 FLOWS["contest"] = CONTEST
 SCENARIOS["contest"] = _with_enrichment("contest", contest)
+
+
+# ---------------------------------------------------------------- cards: a shop on the island, a webshop order
+def island_shop_receipt(n, doc):
+    """Velumi Trading's shop in Selanu sells two of the benches it imported to the cotton farm, paid with the farm's
+    Coralcard at the till; the till prints the first six and the last four digits of the card number."""
+    f = SEA
+    day, time = 40, "10:25:00"
+    out = kit.purchase_receipt(f, n, doc, day, "The farm buys after the season's first cotton payments.",
+                               [{"item": "bench-serra-x", "qty": 2, "why": "Two benches for the pickers' rest place "
+                                                                          "under the trees by the weighing shed."}],
+                               cash=False)
+    total = out["LegalMonetaryTotal"]["PayableAmount"]
+    out.update({"IssueTime": V(time, "Printed at the till."),
+                "Note": V("Collected by the farm with its own trailer.", "Printed on the receipt."),
+                "TransactionDate": V(f.date(day), "The day of the sale."),
+                "TransactionTime": V(time, "The time of the sale."),
+                "CashRegister": {"ID": V("T1", "The shop's only till.")},
+                "PointOfSaleLocation": {"Name": V("Velumi Trading, Reef Street, Selanu", "The shop.")}})
+    out["PaymentMeans"] = {
+        "PaymentMeansCode": V("55", "UN/EDIFACT 4461 code 55: debit card.", listID="UN/EDIFACT EDED 4461"),
+        "CardAccount": {**kit.card_account("38-xl", "1-xl"), "RoleCode": V("HOLDER", "Paid by the card holder.")}}
+    out["Payment"] = {"ID": V("VT-T1-26-0613-0012", "The till's number for the payment."),
+                      "PaidAmount": total, "PaidDate": V(f.date(day), "Paid at the till."),
+                      "PaidTime": V(time, "At the time of the sale."),
+                      "MerchantID": V("CORALCARD-M-0001859", "The shop's merchant number with the card scheme."),
+                      "AuthorizationID": V("C30417", "The approval code of the card issuer, the Bank of Selanu."),
+                      "PaymentTerminalID": V("PT-T1", "The card terminal at the till."),
+                      "StatusCode": V("APPROVED", "The payment was approved.")}
+    return out
+
+
+def sea_complete(n, doc):
+    if doc["doc"] == "PurchaseReceipt":
+        return island_shop_receipt(n, doc)
+    return sea_with_debit(n, doc)
+
+
+SCENARIOS["sea"] = _with_enrichment("sea", sea_complete)
+
+
+def webshop_order(n, doc):
+    """The consumer orders a garden bench set in the store's webshop, to collect in the store, and pays by credit
+    card. A card payment that is not made at a till is authorised before the goods are reserved: the order carries
+    the full card number, its dates and its security code, which PCI DSS allows a merchant to hold until the
+    authorisation and never after; no receipt shows them."""
+    f = RETAIL
+    card = PARTY["c-xb"]["identity"]["credit_card"]
+    issuer = PARTY[card["issuer"]]["identity"]
+    start = f"{card['valid_from']}-01"
+    y, m = (int(x) for x in card["expires"].split("-"))
+    end = (datetime.date(y + m // 12, m % 12 + 1, 1) - datetime.timedelta(days=1)).isoformat()
+    out = kit.order(f, n, doc, 40, "Placed in the webshop on a Sunday evening.",
+                    "Ex works the store: the customer collects the set; there is no transport to arrange.",
+                    "Garden department of the Lumeport store",
+                    {"Note": V("Click and collect: ready in the garden department from Tuesday; bring the card used "
+                               "for the order.", "What the webshop tells the customer."),
+                     "Delivery": {"DeliveryLocation": {**kit.gln_location("26-xb", "garden"),
+                                                       "Name": V("Garden department, Lumeport store", "Where the "
+                                                                                                      "set is "
+                                                                                                      "collected.")},
+                                  "RequestedDeliveryPeriod": {"StartDate": V(f.date(42), "From Tuesday."),
+                                                              "EndDate": V(f.date(49), "The store keeps it a week.")}},
+                     "PaymentMeans": {
+                         "PaymentMeansCode": V("54", "UN/EDIFACT 4461 code 54: credit card.",
+                                               listID="UN/EDIFACT EDED 4461"),
+                         "CardAccount": {
+                             "PrimaryAccountNumberID": V(card["pan"], "The full card number the customer typed in: "
+                                                                      "the store needs it to have the payment "
+                                                                      "authorised. It starts with 9 and the numeric "
+                                                                      "code of the issuer's country (902, Bayvarra), "
+                                                                      "as ISO/IEC 7812 provides for national use, so "
+                                                                      "it is no real card's; its last digit is the "
+                                                                      "Luhn check digit."),
+                             "NetworkID": V(card["scheme"], "Tressa, the Accord-wide credit card scheme."),
+                             "CardTypeCode": V(card["type"], "A credit card."),
+                             "ValidityStartDate": V(start, f"The card is valid from {card['valid_from']}, the "
+                                                           "month printed on it: its first day."),
+                             "ExpiryDate": V(end, f"The card expires at the end of {card['expires']}, the month "
+                                                  "printed on it: its last day. The issuer checks it in the "
+                                                  "authorisation."),
+                             "IssuerID": V(issuer["bic"], f"The card's issuer, {issuer['name']}, by its bank "
+                                                          "identifier.",
+                                           schemeID="urn:ubl-examples:world:bank-identifier"),
+                             "CV2ID": V(card["cv2"], "The card's security code from the back of the card, typed in "
+                                                     "by the customer, so that the issuer can check that the card "
+                                                     "is at hand. PCI DSS allows the store to hold it only until the "
+                                                     "authorisation; it is deleted then and printed nowhere."),
+                             "HolderName": V(card["holder"], "The name on the card, as typed in."),
+                             "RoleCode": V("HOLDER", "The customer pays with its own card.")}}},
+                    deal=[{"item": "garden-set-r", "ordered": 1, "why": "One garden bench set."}],
+                    key="webshop-order")
+    out["ID"] = V(f.number("webshop-order", "26-xb", "Order"), "The webshop's order number: the store's site writes "
+                                                               "the order for the customer and numbers it.")
+    return out
+
+
+def retail_with_webshop(n, doc):
+    if doc["doc"] == "Order" and doc["from"] == "c-xb":
+        return webshop_order(n, doc)
+    return retail_complete(n, doc)
+
+
+SCENARIOS["retail"] = _with_enrichment("retail", retail_with_webshop)
+
+
+# ---------------------------------------------------------------- cotton: the self-billed prepayment of the advance
+def cotton_advance(n, doc):
+    """Before the harvest the ginnery advances the farm a quarter of the value of its expected delivery, and writes
+    the prepayment invoice itself under the self-billing agreement (UN/EDIFACT 1001 code 386). The final self-billed
+    invoice deducts it as the prepaid amount."""
+    f = COTTON
+    day = -20
+    out = kit.self_billed(f, n, doc, day, "Three weeks before the first deliveries, when the farm needs cash for the "
+                                          "picking.",
+                          [{"item": "seed-cotton", "qty": ADVANCE_KG,
+                            "why": "A quarter of the 18,000 kg the farm expects to deliver: the share the season "
+                                   "agreement advances."}],
+                          {"ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement between "
+                                                                                    "farm and ginnery, which sets "
+                                                                                    "the advance and allows the "
+                                                                                    "self-billing.")}})
+    out.update({
+        "InvoiceTypeCode": V("386", "UN/EDIFACT 1001 code 386, prepayment invoice: \"An invoice to pay amounts for "
+                                    "goods and services in advance; these amounts will be subtracted from the final "
+                                    "invoice.\" A subtype the root SelfBilledInvoice does not say by itself (decision "
+                                    "P-SB)."),
+        "Note": V("Self-billed prepayment under the season agreement: the advance is deducted from the first "
+                  "self-billed invoice of the season.", "The statement the self-billing agreement requires, and what "
+                                                        "happens to the advance."),
+        "DueDate": V(f.date(day), "An advance is paid on the day it is billed, not on the island's usual 45 days."),
+        "PaymentTerms": {"Note": V("Paid on issue by transfer. No presumptive tax is withheld and no cotton fund levy "
+                                   "is collected on the advance: both fall on the delivery, in the final self-billed "
+                                   "invoice.", "Why the advance is paid in full.")},
+        "PayeeParty": party("38-xl", short=True),
+        "Signature": {"ID": V("SCG-SIG-26-0001", "The ginnery's seal on the self-billed prepayment invoice."),
+                      "SignatoryParty": party("39-xl", short=True)}})
+    lmt = out["LegalMonetaryTotal"]
+    if Decimal(lmt["PayableAmount"].value) != ADVANCE:
+        raise SystemExit(f"cotton: the advance is {lmt['PayableAmount'].value}, not {ADVANCE}")
+    return out
+
+
+def cotton_with_advance(n, doc):
+    if doc["doc"] == "SelfBilledInvoice" and nth("cotton", n, doc) == 1:
+        return cotton_advance(n, doc)
+    return cotton(n, doc)
+
+
+SCENARIOS["cotton"] = _with_enrichment("cotton", cotton_with_advance)

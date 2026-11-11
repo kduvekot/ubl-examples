@@ -858,6 +858,20 @@
    "gtin": "9520610000029"
   },
   {
+   "id": "bench-serra-x",
+   "seller": "1-xl",
+   "name": "Park bench Serra 180",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 289.0,
+    "currency": "XLC"
+   },
+   "sellers_id": "VT-PB-180",
+   "resale_of": "bench-serra-b",
+   "description": "The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers."
+  },
+  {
    "id": "shirt-r",
    "seller": "26-xb",
    "name": "Cotton shirt",

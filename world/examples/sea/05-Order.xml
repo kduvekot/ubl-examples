@@ -351,6 +351,9 @@
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
         <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>VT-PB-180</cbc:ID>
+        </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>LD-10442</cbc:ID>
           <cbc:ExtendedID>GRY</cbc:ExtendedID>

@@ -1147,6 +1147,21 @@
    }
   },
   {
+   "flow": "retail",
+   "doc": "Order",
+   "from": "c-xb",
+   "to": "26-xb",
+   "why": "The consumer orders a garden bench set in the store's webshop, to collect it in the store, and pays by credit card: the order carries the full card data, security code included, so that the store can have the payment authorised before it reserves the set.",
+   "parties": {
+    "BuyerCustomerParty": "c-xb",
+    "SellerSupplierParty": "26-xb",
+    "Delivery/DeliveryParty": "c-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "EXW"
+   }
+  },
+  {
    "flow": "sea",
    "doc": "BusinessCard",
    "from": "6-xb",
@@ -2799,6 +2814,19 @@
   },
   {
    "flow": "cotton",
+   "doc": "SelfBilledInvoice",
+   "from": "39-xl",
+   "to": "38-xl",
+   "why": "Before the harvest the ginnery advances the farm a quarter of the value of its expected delivery. Under the self-billing agreement it writes the prepayment invoice itself (type 386); the advance is deducted in the final self-billed invoice.",
+   "parties": {
+    "AccountingCustomerParty": "39-xl",
+    "AccountingSupplierParty": "38-xl",
+    "BuyerCustomerParty": "39-xl",
+    "SellerSupplierParty": "38-xl"
+   }
+  },
+  {
+   "flow": "cotton",
    "doc": "Forecast",
    "from": "40-xb",
    "to": "39-xl",
@@ -3211,6 +3239,17 @@
    "parties": {
     "AccountingCustomerParty": "1-xl",
     "AccountingSupplierParty": "6-xb"
+   }
+  },
+  {
+   "flow": "sea",
+   "doc": "PurchaseReceipt",
+   "from": "1-xl",
+   "to": "38-xl",
+   "why": "Velumi Trading sells two of the imported benches in its shop in Selanu to the cotton farm, for the pickers' rest place; the farm pays with its Coralcard, and the till prints the card number with the first six and the last four digits.",
+   "parties": {
+    "AccountingSupplierParty": "1-xl",
+    "AccountingCustomerParty": "38-xl"
    }
   },
   {

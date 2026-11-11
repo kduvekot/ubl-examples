@@ -432,6 +432,8 @@ Inside `OrderLine`:
   The model; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
   The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/BuyersItemIdentification/ID` = **VT-PB-180**  
+  The buyer's own item number: it resells this item as its item bench-serra-x.
 - `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **GRY**  
@@ -1027,6 +1029,9 @@ Inside `OrderLine`:
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
         <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>VT-PB-180</cbc:ID>
+        </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>LD-10442</cbc:ID>
           <cbc:ExtendedID>GRY</cbc:ExtendedID>

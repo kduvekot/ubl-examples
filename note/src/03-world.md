@@ -207,7 +207,9 @@ Some choices differ from common practice, on purpose:
   conform to (§7.2). The type codes are UN/EDIFACT 1001 389 and 261: they
   repeat the root element, but their definitions are exact ("An invoice the
   invoicee is producing instead of the seller"), while 380 is a document
-  "claiming payment".
+  "claiming payment". The gin's advance to a farm before the harvest is a
+  self-billed prepayment invoice, type 386, which the final self-billed
+  invoice deducts as its prepaid amount.
 - **Procurement.** The Accord's procurement rules are modelled on the EU's,
   without being EU law: its lists give the matching eForms or ESPD code.
 - **Customs.** The Accord is a free trade area, not a customs union: it has
@@ -274,7 +276,12 @@ card, Coralcard on the island, and Tressa, an international credit card of
 the banks of all three countries; the names were checked against the real
 card networks. A till receipt shows the card number as the merchant's till
 prints it, never more than the first six and the last four digits, and never
-the card's security code or its dates.
+the card's security code or its dates. The department store's tills print only the last four digits;
+the trading company's shop on the island prints the first six and the last
+four. A webshop order is different: the card is not at hand, so the order
+carries the full number, the card's dates and its security code, and the store
+has the payment authorised before it reserves the goods. PCI DSS allows a
+merchant to hold the security code until the authorisation, never after.
 
 ## Parties
 

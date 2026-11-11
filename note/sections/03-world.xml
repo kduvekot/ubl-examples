@@ -437,7 +437,9 @@
           the root element, but their definitions are exact (&quot;An
           invoice the invoicee is producing instead of the
           seller&quot;), while 380 is a document &quot;claiming
-          payment&quot;.
+          payment&quot;. The gin's advance to a farm before the harvest
+          is a self-billed prepayment invoice, type 386, which the final
+          self-billed invoice deducts as its prepaid amount.
         </para>
       </listitem>
       <listitem>
@@ -543,7 +545,14 @@
       names were checked against the real card networks. A till receipt
       shows the card number as the merchant's till prints it, never more
       than the first six and the last four digits, and never the card's
-      security code or its dates.
+      security code or its dates. The department store's tills print
+      only the last four digits; the trading company's shop on the
+      island prints the first six and the last four. A webshop order is
+      different: the card is not at hand, so the order carries the full
+      number, the card's dates and its security code, and the store has
+      the payment authorised before it reserves the goods. PCI DSS
+      allows a merchant to hold the security code until the
+      authorisation, never after.
     </para>
   </section>
   <section id="S-03-world-parties">

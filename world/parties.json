@@ -1093,6 +1093,16 @@
      "aid": "D9020000011010",
      "holder": "R ASHDALE",
      "issue": "01"
+    },
+    "credit_card": {
+     "pan": "9902382000715526",
+     "scheme": "TRESSACARD",
+     "type": "CREDIT",
+     "issuer": "25-xb",
+     "holder": "R ASHDALE",
+     "valid_from": "2025-03",
+     "expires": "2029-02",
+     "cv2": "731"
     }
    }
   },
@@ -2147,7 +2157,7 @@
    ],
    "h": 3,
    "kind": "office",
-   "what": "Needs the goods: orders from the distributor overseas and pays the invoice.",
+   "what": "Needs the goods: orders from the distributor overseas and pays the invoice. Sells garden and park furniture to island customers from its shop in Selanu.",
    "how": "The commercial buyer orders overseas and pays across borders. UBL lets it order from the distributor's catalogue, follow the goods through despatch and transport, match the invoice to the order and the receipt, and send a remittance advice with its payment.",
    "identity": {
     "name": "Velumi Trading",
@@ -2197,6 +2207,11 @@
      "type": "CREDIT",
      "issuer": "22-xl",
      "holder": "VELUMI TRADING"
+    },
+    "card_mask": {
+     "first": 6,
+     "last": 4,
+     "note": "Velumi Trading's shop till prints the first six and the last four digits of a card number."
     }
    }
   },
@@ -2879,6 +2894,14 @@
     },
     "identification": {
      "convention": "own"
+    },
+    "card": {
+     "pan": "9903512000047186",
+     "scheme": "CORALCARD",
+     "type": "DEBIT",
+     "issuer": "22-xl",
+     "aid": "D9030000011010",
+     "holder": "LISAVU COTTON FARM"
     }
    },
    "fleet": [
