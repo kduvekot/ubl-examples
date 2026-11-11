@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:mast</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>ST-PO-26-0713</cbc:ID>
   <cbc:UUID>b63839e1-7b35-5e81-a17d-ef60734d2fe6</cbc:UUID>
@@ -22,10 +22,11 @@
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">34928611</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
@@ -40,7 +41,7 @@
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42407</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -88,11 +89,12 @@
         <cbc:Name>Saltmere Engineering</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-587295</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Foundry Road</cbc:StreetName>
@@ -109,10 +111,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID>UL-1232055</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1232055</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -124,7 +126,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID>20410685</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
@@ -179,12 +181,12 @@
       <cbc:TaxableAmount currencyID="XBL">14770.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>G</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
@@ -209,9 +211,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-48100</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000117</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -234,7 +233,7 @@
           <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN3480</cbc:MarkingID>
-          <cbc:HazardClassID>9</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
         </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
@@ -255,9 +254,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000124</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -278,7 +274,7 @@
           <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2911</cbc:MarkingID>
-          <cbc:HazardClassID>7</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
           <cac:RadioactiveMaterial>
             <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
             <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
@@ -309,9 +305,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-05</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000131</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -336,15 +329,15 @@
           <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2920</cbc:MarkingID>
-          <cbc:HazardClassID>8</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
           <cac:SecondaryHazard>
-            <cbc:ID>3</cbc:ID>
+            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
             <cbc:PlacardNotation>3</cbc:PlacardNotation>
             <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
             <cbc:Extension>Subsidiary risk 3</cbc:Extension>
           </cac:SecondaryHazard>
           <cac:FlashpointTemperature>
-            <cbc:AttributeID>Flashpoint</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">28</cbc:Measure>
           </cac:FlashpointTemperature>
         </cac:HazardousItem>

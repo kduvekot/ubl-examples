@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <DigitalAgreement xmlns="urn:oasis:names:specification:ubl:schema:xsd:DigitalAgreement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:digital-agreement:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DAG-26-0125</cbc:ID>
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
@@ -45,11 +45,12 @@
       <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-268189</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Exchange Street</cbc:StreetName>
@@ -67,7 +68,7 @@
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeport Trade Accord Council</cbc:RegistrationName>
-      <cbc:CompanyID>20411096</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
@@ -111,17 +112,21 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
@@ -141,10 +146,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -156,7 +161,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20410274</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
         <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -225,10 +230,11 @@
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
@@ -243,7 +249,7 @@
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC41859</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -387,12 +393,12 @@
   <cac:DigitalProcess>
     <cbc:ID>ordering</cbc:ID>
     <cbc:Description>Order, order response and order change.</cbc:Description>
-    <cbc:ProfileID>urn:ubl-examples:world:process:ordering</cbc:ProfileID>
+    <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>ordering-1</cbc:ID>
       <cac:SendingDigitalService>
         <cbc:ID>VT-Order-OUT</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Order</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>
@@ -402,16 +408,24 @@
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XL:IC41859</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-1-xl</cbc:ID>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
         <cac:CertificationDocumentReference>
@@ -420,7 +434,7 @@
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>LD-Order-IN</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Order</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>
@@ -430,16 +444,24 @@
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XB:20410274</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-6-xb</cbc:ID>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>
@@ -451,12 +473,12 @@
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
     <cbc:Description>Invoice, credit note, statement and remittance advice.</cbc:Description>
-    <cbc:ProfileID>urn:ubl-examples:world:process:billing</cbc:ProfileID>
+    <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>billing-1</cbc:ID>
       <cac:SendingDigitalService>
         <cbc:ID>LD-Invoice-OUT</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Invoice</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>
@@ -466,16 +488,24 @@
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XB:20410274</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-6-xb</cbc:ID>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
         <cac:CertificationDocumentReference>
@@ -484,7 +514,7 @@
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>VT-Invoice-IN</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Invoice</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>
@@ -494,16 +524,24 @@
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XL:IC41859</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-1-xl</cbc:ID>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>

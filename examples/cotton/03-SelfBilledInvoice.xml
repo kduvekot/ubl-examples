@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <SelfBilledInvoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:SelfBilledInvoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:cotton</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:self-billing:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBI-26-0193</cbc:ID>
   <cbc:UUID>da6a76fb-cc8f-56c6-bea6-296a7804c3c9</cbc:UUID>
@@ -96,10 +96,11 @@
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">23618907</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
@@ -114,7 +115,7 @@
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42681</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -163,10 +164,11 @@
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">85779006</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
@@ -216,7 +218,7 @@
       </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
-        <cbc:CompanyID>IC42544</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
         <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
@@ -327,19 +329,19 @@
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF07SCGSBI260193</cbc:InstructionNote>
-    <cbc:PaymentID>RF07SCGSBI260193</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF07SCGSBI260193</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XL05BSEL0004817534</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XL67BSEL0020004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cbc:PaymentNote>Invoice SCG-SBI-26-0193</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
-        <cbc:ID>BSEL-001</cbc:ID>
-        <cbc:Name>Main branch</cbc:Name>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
+        <cbc:Name>Market branch</cbc:Name>
         <cac:FinancialInstitution>
-          <cbc:ID>BSEL</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BSELXLSL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
@@ -394,7 +396,7 @@
     <cbc:AccountingCost>Seed cotton haulage</cbc:AccountingCost>
     <cbc:PerUnitAmount currencyID="XLC">0.010</cbc:PerUnitAmount>
     <cac:TaxCategory>
-      <cbc:ID>O</cbc:ID>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
       <cac:TaxScheme>
         <cbc:Name>No general sales tax</cbc:Name>
@@ -441,7 +443,7 @@
       <cbc:TaxableAmount currencyID="XLC">4068.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
@@ -458,12 +460,12 @@
       <cbc:TierRange>Up to 2,000 coral of the delivery's value</cbc:TierRange>
       <cbc:TierRatePercent>1</cbc:TierRatePercent>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>1</cbc:Percent>
         <cbc:TierRange>Up to 2,000 coral of the delivery's value</cbc:TierRange>
         <cbc:TierRatePercent>1</cbc:TierRatePercent>
         <cac:TaxScheme>
-          <cbc:ID>OTH</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
           <cbc:Name>Presumptive tax on farm produce</cbc:Name>
         </cac:TaxScheme>
       </cac:TaxCategory>
@@ -475,12 +477,12 @@
       <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
       <cbc:TierRatePercent>2</cbc:TierRatePercent>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>2</cbc:Percent>
         <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
         <cbc:TierRatePercent>2</cbc:TierRatePercent>
         <cac:TaxScheme>
-          <cbc:ID>OTH</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
           <cbc:Name>Presumptive tax on farm produce</cbc:Name>
         </cac:TaxScheme>
       </cac:TaxCategory>
@@ -535,9 +537,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>LCF-SC</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">773010000123</cbc:ID>
-      </cac:StandardItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:OriginCountry>
@@ -546,7 +545,7 @@
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <PurchaseReceipt xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-PR-26-0239</cbc:ID>
   <cbc:UUID>bcdeb9a7-e515-519a-b488-de52151e844f</cbc:UUID>
@@ -43,6 +43,9 @@
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9522610900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brightmarket Stores</cbc:Name>
       </cac:PartyName>
@@ -50,11 +53,12 @@
         <cbc:Name>Brightmarket</cbc:Name>
       </cac:TradePartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-579130</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
@@ -72,10 +76,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-        <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1231233</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -87,7 +91,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-        <cbc:CompanyID>20410411</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
         <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -143,6 +147,7 @@
         <cbc:Name>Robin Ashdale</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-934215</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
@@ -162,16 +167,16 @@
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
         <cac:FinancialAccount>
-          <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:account">XB64BLUM38010007251840</cbc:ID>
           <cbc:Name>Robin Ashdale</cbc:Name>
           <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
           <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:FinancialInstitutionBranch>
-            <cbc:ID>BLUM-001</cbc:ID>
-            <cbc:Name>Main branch</cbc:Name>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
+            <cbc:Name>Main branch, Exchange Street</cbc:Name>
             <cac:FinancialInstitution>
-              <cbc:ID>BLUM</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
               <cbc:Name>Bank of Lumeport</cbc:Name>
               <cac:Address>
                 <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
@@ -213,6 +218,7 @@
   </cac:PointOfSaleContact>
   <cac:Delivery>
     <cac:DeliveryAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-934215</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Gull Lane</cbc:StreetName>
@@ -257,15 +263,12 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
     <cac:CardAccount>
       <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
-      <cbc:NetworkID>LUMECARD</cbc:NetworkID>
+      <cbc:NetworkID schemeID="urn:ubl-examples:world:codelist:CardSchemeCode">LUMECARD</cbc:NetworkID>
       <cbc:CardTypeCode listID="urn:ubl-examples:world:codelist:CardTypeCode">DEBIT</cbc:CardTypeCode>
-      <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
-      <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
-      <cbc:IssuerID>BLUM</cbc:IssuerID>
+      <cbc:IssuerID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:IssuerID>
       <cbc:IssueNumberID>01</cbc:IssueNumberID>
-      <cbc:CV2ID>***</cbc:CV2ID>
       <cbc:CardChipCode listID="urn:oasis:names:specification:ubl:codelist:gc:ChipCode">Chip</cbc:CardChipCode>
-      <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
+      <cbc:ChipApplicationID>D9020000011010</cbc:ChipApplicationID>
       <cbc:HolderName>R ASHDALE</cbc:HolderName>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:CardAccountRoleCode">HOLDER</cbc:RoleCode>
     </cac:CardAccount>
@@ -276,10 +279,10 @@
     <cbc:AllowanceChargeReason>Home delivery</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">25.00</cbc:Amount>
     <cac:TaxCategory>
-      <cbc:ID>S</cbc:ID>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
       <cbc:Percent>6.5</cbc:Percent>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
@@ -289,10 +292,10 @@
       <cbc:TaxableAmount currencyID="XBL">699.10</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">45.44</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
@@ -334,7 +337,7 @@
         <cbc:ID>BM-551210</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
-          <cbc:AttributeID>Colour</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
           <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
           <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
           <cbc:Description>Frame in Ferro grey</cbc:Description>
@@ -344,10 +347,11 @@
         <cbc:ID>VI-B180</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
-        <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
-        <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
       </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+      </cac:AdditionalItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
       </cac:ItemSpecificationDocumentReference>
@@ -362,11 +366,11 @@
         <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
       <cac:AdditionalItemProperty>
@@ -406,8 +410,8 @@
           <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
         </cac:ItemPropertyGroup>
         <cac:StandardPropertyIdentification>
-          <cbc:ID>UR-SF-0450</cbc:ID>
-          <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
+          <cbc:IssuerScopeID>SF</cbc:IssuerScopeID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
               <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
@@ -427,21 +431,21 @@
         </cac:PartyName>
       </cac:ManufacturerParty>
       <cac:Dimension>
-        <cbc:AttributeID>Length</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1800</cbc:Measure>
         <cbc:Description>Over the armrests</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Depth</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">620</cbc:Measure>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">780</cbc:Measure>
         <cbc:Description>Seat back at its highest point</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Seat height</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SEATHEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">450</cbc:Measure>
         <cbc:Description>Above the ground when anchored</cbc:Description>
         <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>

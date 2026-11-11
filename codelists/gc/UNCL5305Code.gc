@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN/EDIFACT 5305 Duty or tax or fee category: the codes the world uses, and others of the same list. Built from world/codelists/sources/uncefact/taxcategorycodelist.json (D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNCL5305Code</ShortName>
+      <LongName xml:lang="en">UN/EDIFACT 5305 Duty or tax or fee category (UBL example world)</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 5305</LongName>
+      <Version>D22A</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNCL5305Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL5305Code:D22A</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNCL5305Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">UN/CEFACT</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>A</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mixed tax rate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lower rate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exempt for resale</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value Added Tax (VAT) not now due for payment</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value Added Tax (VAT) due from a previous invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>VAT Reverse Charge</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>B</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transferred (VAT)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>C</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Duty paid by supplier</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>D</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value Added Tax (VAT) margin scheme - travel agents</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>E</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exempt from tax</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>F</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value Added Tax (VAT) margin scheme - second-hand goods</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>G</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Free export item, tax not charged</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>H</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Higher rate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>I</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value Added Tax (VAT) margin scheme - works of art Margin scheme — Works of art</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>J</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Value Added Tax (VAT) margin scheme - collector’s items and antiques</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>K</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>VAT exempt for EEA intra-community supply of goods and services</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>L</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Canary Islands general indirect tax</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>M</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tax for production, services and importation in Ceuta and Melilla</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>N</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>standard rate additional VAT</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>O</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Services outside scope of tax</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>S</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Standard rate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Z</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zero rated goods</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

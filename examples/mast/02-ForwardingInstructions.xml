@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:mast</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SE-FI-26-0714</cbc:ID>
   <cbc:UUID>a587c22d-2b9a-58c7-a95e-3c142f8b615c</cbc:UUID>
@@ -17,11 +17,12 @@
       <cbc:Name>Saltmere Engineering</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-587295</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Foundry Road</cbc:StreetName>
@@ -38,10 +39,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1232055</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1232055</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -53,7 +54,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-      <cbc:CompanyID>20410685</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
@@ -95,11 +96,12 @@
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
@@ -117,10 +119,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -132,7 +134,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20411644</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -184,10 +186,11 @@
           <cbc:Name>Selanu Telecom</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">34928611</cbc:ID>
           <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
           <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
@@ -202,7 +205,7 @@
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC42407</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -247,10 +250,10 @@
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
       <cac:TransportHandlingUnit>
-        <cbc:ID>RKN-41207-KC</cbc:ID>
+        <cbc:ID>RKN41207K0</cbc:ID>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:TransportEquipment>
-          <cbc:ID>RKN-41207-KC</cbc:ID>
+          <cbc:ID>RKN41207K0</cbc:ID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">AM</cbc:TransportEquipmentTypeCode>
           <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
           <cbc:AirFlowPercent>40</cbc:AirFlowPercent>
@@ -261,11 +264,11 @@
           <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
           <cbc:PowerIndicator>true</cbc:PowerIndicator>
           <cac:MinimumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
           </cac:MinimumTemperature>
           <cac:MaximumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:HazardousGoodsTransit>
@@ -276,11 +279,11 @@
             <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
             <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
             <cac:MaximumTemperature>
-              <cbc:AttributeID>Battery</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">35</cbc:Measure>
             </cac:MaximumTemperature>
             <cac:MinimumTemperature>
-              <cbc:AttributeID>Battery</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">5</cbc:Measure>
             </cac:MinimumTemperature>
           </cac:HazardousGoodsTransit>
@@ -291,7 +294,7 @@
             <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
             <cbc:UpperOrangeHazardPlacardID>90</cbc:UpperOrangeHazardPlacardID>
             <cbc:LowerOrangeHazardPlacardID>3480</cbc:LowerOrangeHazardPlacardID>
-            <cbc:HazardClassID>9</cbc:HazardClassID>
+            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
             <cbc:HazardousTypeCode listID="urn:ubl-examples:world:codelist:HazardousGoodsTypeCode">ARTICLE</cbc:HazardousTypeCode>
             <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">4</cbc:PackagingDangerLevelCode>
             <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
@@ -314,20 +317,20 @@
               <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
               <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
               <cac:MaximumTemperature>
-                <cbc:AttributeID>Battery</cbc:AttributeID>
+                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
                 <cbc:Measure unitCode="CEL">35</cbc:Measure>
               </cac:MaximumTemperature>
               <cac:MinimumTemperature>
-                <cbc:AttributeID>Battery</cbc:AttributeID>
+                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
                 <cbc:Measure unitCode="CEL">5</cbc:Measure>
               </cac:MinimumTemperature>
             </cac:HazardousGoodsTransit>
             <cac:EmergencyTemperature>
-              <cbc:AttributeID>Emergency</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">EMERGENCY</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">60</cbc:Measure>
             </cac:EmergencyTemperature>
             <cac:AdditionalTemperature>
-              <cbc:AttributeID>Storage</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">STORAGE</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">20</cbc:Measure>
             </cac:AdditionalTemperature>
             <cac:PositionOnBoardStowage>
@@ -335,7 +338,6 @@
               <cbc:Location>Main deck, accessible</cbc:Location>
             </cac:PositionOnBoardStowage>
             <cac:Package>
-              <cbc:ID>SE-CR-1..6</cbc:ID>
               <cbc:Quantity unitCode="EA">6</cbc:Quantity>
               <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
             </cac:Package>
@@ -349,22 +351,58 @@
           <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
           <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
           <cac:MaximumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:MinimumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
           </cac:MinimumTemperature>
         </cac:HazardousGoodsTransit>
         <cac:MinimumTemperature>
-          <cbc:AttributeID>Battery</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">5</cbc:Measure>
         </cac:MinimumTemperature>
         <cac:MaximumTemperature>
-          <cbc:AttributeID>Battery</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">35</cbc:Measure>
         </cac:MaximumTemperature>
+        <cac:Package>
+          <cbc:ID>SE-CR-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0001</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-2</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0002</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-3</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0003</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-4</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0004</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-5</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0005</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-6</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0006</cbc:TraceID>
+        </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -377,9 +415,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-48100</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000117</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -401,11 +436,11 @@
           <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN3480</cbc:MarkingID>
-          <cbc:HazardClassID>9</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
         </cac:HazardousItem>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID>Transport</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
         <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
@@ -427,9 +462,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000124</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -449,7 +481,7 @@
           <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2911</cbc:MarkingID>
-          <cbc:HazardClassID>7</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
           <cac:RadioactiveMaterial>
             <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
             <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
@@ -463,7 +495,7 @@
         </cac:HazardousItem>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID>Transport</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
         <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
@@ -485,9 +517,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-05</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772050000131</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -511,21 +540,21 @@
           <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2920</cbc:MarkingID>
-          <cbc:HazardClassID>8</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
           <cac:SecondaryHazard>
-            <cbc:ID>3</cbc:ID>
+            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
             <cbc:PlacardNotation>3</cbc:PlacardNotation>
             <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
             <cbc:Extension>Subsidiary risk 3</cbc:Extension>
           </cac:SecondaryHazard>
           <cac:FlashpointTemperature>
-            <cbc:AttributeID>Flashpoint</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">28</cbc:Measure>
           </cac:FlashpointTemperature>
         </cac:HazardousItem>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID>Transport</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
         <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>

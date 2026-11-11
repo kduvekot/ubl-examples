@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cva:ContextValueAssociation xmlns:cva="http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/" name="UBL-World-2.5" id="urn:ubl-examples:world:cva">
    <Annotation>
-      <Description>The context/value associations of the UBL example world, made by tools/build_codelists.py from world/codelists/lists.json. Every code element is checked against the list its context names; where a context names several lists, the code's listID chooses one. They replace UBL's own associations for the world's documents.</Description>
+      <Description>The context/value associations of the UBL example world, made by tools/build_codelists.py from world/codelists/lists.json. Every code element is checked against the list its context names; where a context names several lists, the code's listID chooses one. An identifier element that holds a code (TaxCategory/ID, Language/ID, AttributeID ...) is checked the same way, its schemeID naming the list. They replace UBL's own associations for the world's documents.</Description>
    </Annotation>
    <Title>Code lists of the UBL example world</Title>
    <ValueLists>
@@ -307,10 +307,20 @@
       <ValueList xml:id="InsuranceCover" uri="gc/InsuranceCoverCode.gc" />
       <ValueList xml:id="ContractModificationReason" uri="gc/ContractModificationReasonCode.gc" />
       <ValueList xml:id="ValidationResult" uri="gc/ValidationResultCode.gc" />
+      <ValueList xml:id="UNCL5305" uri="gc/UNCL5305Code.gc" />
+      <ValueList xml:id="UNCL5153" uri="gc/UNCL5153Code.gc" />
+      <ValueList xml:id="Incoterms" uri="gc/IncotermsCode.gc" />
+      <ValueList xml:id="DimensionAttribute" uri="gc/DimensionAttributeCode.gc" />
+      <ValueList xml:id="TemperatureAttribute" uri="gc/TemperatureAttributeCode.gc" />
+      <ValueList xml:id="OtherAttribute" uri="gc/OtherAttributeCode.gc" />
+      <ValueList xml:id="CardScheme" uri="gc/CardSchemeCode.gc" />
    </ValueLists>
    <InstanceMetadataSets>
       <InstanceMetadataSet xml:id="code">
          <InstanceMetadata address="@listID" identification="LongName[@Identifier='listID']" />
+      </InstanceMetadataSet>
+      <InstanceMetadataSet xml:id="scheme">
+         <InstanceMetadata address="@schemeID" identification="LongName[@Identifier='listID']" />
       </InstanceMetadataSet>
    </InstanceMetadataSets>
    <Contexts>
@@ -364,6 +374,16 @@
       <Context address="*[local-name()='UtilityConsumptionPoint']/cbc:SubscriberTypeCode" values="SubscriberType" metadata="code" />
       <Context address="*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode" values="EmissionBoundary" metadata="code" />
       <Context address="*[local-name()='WasteGenerated']/cbc:WasteTypeCode" values="WasteType" metadata="code" />
+      <Context address="*[local-name()='TaxCategory']/cbc:ID | *[local-name()='ClassifiedTaxCategory']/cbc:ID | *[local-name()='ApplicableTaxCategory']/cbc:ID" values="UNCL5305" metadata="scheme" />
+      <Context address="*[local-name()='TaxScheme']/cbc:ID" values="UNCL5153" metadata="scheme" />
+      <Context address="*[local-name()='Language']/cbc:ID | *[local-name()='AdditionalNoticeLanguage']/cbc:ID | *[local-name()='DefaultLanguage']/cbc:ID | *[local-name()='RequestedLanguage']/cbc:ID" values="Language" metadata="scheme" />
+      <Context address="*[local-name()='SecondaryHazard']/cbc:ID" values="UNModelRegsClass" metadata="scheme" />
+      <Context address="*[local-name()='DeliveryTerms']/cbc:ID" values="Incoterms" metadata="scheme" />
+      <Context address="*[local-name()='Dimension']/cbc:AttributeID | *[local-name()='MeasurementDimension']/cbc:AttributeID | *[local-name()='RangeDimension']/cbc:AttributeID" values="DimensionAttribute" metadata="scheme" />
+      <Context address="*[local-name()='Temperature']/cbc:AttributeID | *[local-name()='AdditionalTemperature']/cbc:AttributeID | *[local-name()='BallastWaterTemperature']/cbc:AttributeID | *[local-name()='EmergencyTemperature']/cbc:AttributeID | *[local-name()='FlashpointTemperature']/cbc:AttributeID | *[local-name()='MaximumTemperature']/cbc:AttributeID | *[local-name()='MinimumTemperature']/cbc:AttributeID" values="TemperatureAttribute" metadata="scheme" />
+      <Context address="*[local-name()='Condition']/cbc:AttributeID" values="OtherAttribute TemperatureAttribute" metadata="scheme" />
+      <Context address="*[local-name()='FloorSpaceMeasurementDimension']/cbc:AttributeID | *[local-name()='PalletSpaceMeasurementDimension']/cbc:AttributeID | *[local-name()='TotalCapacityDimension']/cbc:AttributeID | *[local-name()='PhysicalAttribute']/cbc:AttributeID" values="OtherAttribute" metadata="scheme" />
+      <Context address="*[local-name()='CardAccount']/cbc:NetworkID" values="CardScheme" metadata="scheme" />
       <Context address="cbc:CurrencyCode" values="Currency" metadata="code" />
       <Context address="cbc:DocumentCurrencyCode" values="Currency" metadata="code" />
       <Context address="cbc:PaymentAlternativeCurrencyCode" values="Currency" metadata="code" />
@@ -644,6 +664,8 @@
       <Context address="cbc:InsuranceTypeCode" values="InsuranceCover" metadata="code" />
       <Context address="cbc:ModificationReasonCode" values="ContractModificationReason" metadata="code" />
       <Context address="cbc:ValidationResultCode" values="ValidationResult" metadata="code" />
+      <Context address="cbc:HazardClassID" values="UNModelRegsClass" metadata="scheme" />
+      <Context address="cbc:RegistrationNationalityID" values="Country" metadata="scheme" />
       <Context address="@currencyID" values="Currency" />
       <Context address="cbc:ActivityLevelMeasure/@unitCode | cbc:AllocatedEnergyMeasure/@unitCode | cbc:AltitudeMeasure/@unitCode | cbc:BaseUnitMeasure/@unitCode | cbc:ChargeableWeightMeasure/@unitCode | cbc:ComparedValueMeasure/@unitCode | cbc:ConsumptionMeasure/@unitCode | cbc:DurationMeasure/@unitCode | cbc:EstimatedGeneratedUntilNextPortMeasure/@unitCode | cbc:FuelConsumptionMeasure/@unitCode | cbc:GrossMassMeasure/@unitCode | cbc:GrossTonnageMeasure/@unitCode | cbc:GrossVolumeMeasure/@unitCode | cbc:GrossWeightMeasure/@unitCode | cbc:LatitudeDegreesMeasure/@unitCode | cbc:LatitudeMinutesMeasure/@unitCode | cbc:LeadTimeMeasure/@unitCode | cbc:LoadingLengthMeasure/@unitCode | cbc:LongitudeDegreesMeasure/@unitCode | cbc:LongitudeMinutesMeasure/@unitCode | cbc:MaxDedicatedStorageCapacityMeasure/@unitCode | cbc:MaximumDataLossDurationMeasure/@unitCode | cbc:MaximumIncidentNotificationDurationMeasure/@unitCode | cbc:MaximumMeasure/@unitCode | cbc:MeanTimeToRecoverDurationMeasure/@unitCode | cbc:Measure/@unitCode | cbc:MinimumDownTimeScheduleDurationMeasure/@unitCode | cbc:MinimumMeasure/@unitCode | cbc:MinimumResponseTimeDurationMeasure/@unitCode | cbc:NetNetWeightMeasure/@unitCode | cbc:NetTonnageMeasure/@unitCode | cbc:NetVolumeMeasure/@unitCode | cbc:NetWeightMeasure/@unitCode | cbc:PostEventNotificationDurationMeasure/@unitCode | cbc:PreEventNotificationDurationMeasure/@unitCode | cbc:RateOfTurnMeasure/@unitCode | cbc:ResponseMeasure/@unitCode | cbc:RetainedOnBoardMeasure/@unitCode | cbc:SalinityMeasure/@unitCode | cbc:SeaHeightMeasure/@unitCode | cbc:SegregatedBallastMeasure/@unitCode | cbc:SourceValueMeasure/@unitCode | cbc:SpeedOverGroundMeasure/@unitCode | cbc:TareWeightMeasure/@unitCode | cbc:ToBeDeliveredMeasure/@unitCode | cbc:TotalBallastWaterCapacityMeasure/@unitCode | cbc:TotalBallastWaterOnBoardMeasure/@unitCode | cbc:ValueBaseMeasure/@unitCode | cbc:ValueMeasure/@unitCode | cbc:VolumeMeasure/@unitCode | cbc:WasteMeasure/@unitCode" values="UnitOfMeasure" />
       <Context address="cbc:ActualTemperatureReductionQuantity/@unitCode | cbc:BackorderQuantity/@unitCode | cbc:BaseQuantity/@unitCode | cbc:BasicConsumedQuantity/@unitCode | cbc:BatchQuantity/@unitCode | cbc:ChargeableQuantity/@unitCode | cbc:ChildConsignmentQuantity/@unitCode | cbc:ConsignmentQuantity/@unitCode | cbc:ConsumerUnitQuantity/@unitCode | cbc:ConsumptionEnergyQuantity/@unitCode | cbc:ConsumptionWaterQuantity/@unitCode | cbc:ContentUnitQuantity/@unitCode | cbc:CreditedQuantity/@unitCode | cbc:CrewQuantity/@unitCode | cbc:CustomsTariffQuantity/@unitCode | cbc:DebitedQuantity/@unitCode | cbc:DeliveredQuantity/@unitCode | cbc:DifferenceTemperatureReductionQuantity/@unitCode | cbc:EmployeeQuantity/@unitCode | cbc:EstimatedConsumedQuantity/@unitCode | cbc:EstimatedOverallContractQuantity/@unitCode | cbc:ExpectedOperatorQuantity/@unitCode | cbc:ExpectedQuantity/@unitCode | cbc:GasPressureQuantity/@unitCode | cbc:InvoicedQuantity/@unitCode | cbc:LatestMeterQuantity/@unitCode | cbc:MaximumBackorderQuantity/@unitCode | cbc:MaximumOperatorQuantity/@unitCode | cbc:MaximumOrderQuantity/@unitCode | cbc:MaximumQuantity/@unitCode | cbc:MaximumVariantQuantity/@unitCode | cbc:MinimumBackorderQuantity/@unitCode | cbc:MinimumInventoryQuantity/@unitCode | cbc:MinimumOrderQuantity/@unitCode | cbc:MinimumQuantity/@unitCode | cbc:MultipleOrderQuantity/@unitCode | cbc:NormalTemperatureReductionQuantity/@unitCode | cbc:OperatingYearsQuantity/@unitCode | cbc:OutstandingQuantity/@unitCode | cbc:OversupplyQuantity/@unitCode | cbc:PackQuantity/@unitCode | cbc:PassengerQuantity/@unitCode | cbc:PerformanceValueQuantity/@unitCode | cbc:PreviousMeterQuantity/@unitCode | cbc:Quantity/@unitCode | cbc:ReceivedElectronicTenderQuantity/@unitCode | cbc:ReceivedForeignTenderQuantity/@unitCode | cbc:ReceivedQuantity/@unitCode | cbc:ReceivedTenderQuantity/@unitCode | cbc:RejectedQuantity/@unitCode | cbc:ResponseQuantity/@unitCode | cbc:ReturnableQuantity/@unitCode | cbc:SharesNumberQuantity/@unitCode | cbc:ShortQuantity/@unitCode | cbc:TanksExchangedQuantity/@unitCode | cbc:TanksInBallastQuantity/@unitCode | cbc:TanksNotExchangedQuantity/@unitCode | cbc:TargetInventoryQuantity/@unitCode | cbc:ThresholdQuantity/@unitCode | cbc:TimeDeltaDaysQuantity/@unitCode | cbc:TotalBallastTanksOnBoardQuantity/@unitCode | cbc:TotalConsumedQuantity/@unitCode | cbc:TotalDeadPersonQuantity/@unitCode | cbc:TotalDeliveredQuantity/@unitCode | cbc:TotalGoodsItemQuantity/@unitCode | cbc:TotalIllPersonQuantity/@unitCode | cbc:TotalMeteredQuantity/@unitCode | cbc:TotalPackageQuantity/@unitCode | cbc:TotalPackagesQuantity/@unitCode | cbc:TotalTransportHandlingUnitQuantity/@unitCode | cbc:ValueQuantity/@unitCode | cbc:VarianceQuantity/@unitCode" values="UnitOfMeasure" />

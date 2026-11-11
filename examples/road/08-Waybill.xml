@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:road</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TH-WB-26-0159</cbc:ID>
   <cbc:CarrierAssignedID>TH-CMR-26-0149</cbc:CarrierAssignedID>
@@ -33,10 +33,11 @@
       <cbc:Name>Trasvia Haulage</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160203746888095</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
@@ -54,10 +55,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU007337656</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007337656</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -68,7 +69,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
@@ -106,7 +107,7 @@
         <cbc:EndDate>2030-06-30</cbc:EndDate>
       </cac:ValidityPeriod>
       <cac:Certificate>
-        <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
         <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
         <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
@@ -124,17 +125,21 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
@@ -154,10 +159,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -169,7 +174,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20410274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -214,16 +219,20 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
@@ -241,10 +250,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU007299291</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -255,7 +264,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
       <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
@@ -281,7 +290,7 @@
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042501</cbc:ID>
+        <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
@@ -300,7 +309,7 @@
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
-      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ID>VI-SP-2026-01</cbc:ID>
       <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
@@ -394,7 +403,7 @@
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:FinalDestinationCountry>
       <cac:DeliveryTerms>
-        <cbc:ID>FCA</cbc:ID>
+        <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
         <cbc:SpecialTerms>The buyer's carrier presents the truck; the seller loads it.</cbc:SpecialTerms>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>The risk passes on loading at the 3PL's warehouse.</cbc:LossRisk>
@@ -418,13 +427,13 @@
         </cac:TransitPeriod>
         <cac:TransportMeans>
           <cbc:JourneyID>TH-26-04471</cbc:JourneyID>
-          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
           <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
           <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
-            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
-            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 KT</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 TR</cbc:TrailerLicensePlateID>
           </cac:RoadTransport>
           <cac:OwnerParty>
             <cac:PartyIdentification>
@@ -435,7 +444,7 @@
             </cac:PartyName>
           </cac:OwnerParty>
           <cac:MeasurementDimension>
-            <cbc:AttributeID>Loading length</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
             <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
           </cac:MeasurementDimension>
         </cac:TransportMeans>
@@ -482,42 +491,42 @@
         </cac:DriverPerson>
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-001</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000015</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 001 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-001</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000015</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-001</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000015</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-001-1</cbc:ID>
+          <cbc:ID>001-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -527,42 +536,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-002</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000022</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 002 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-002</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000022</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-002</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000022</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-002-1</cbc:ID>
+          <cbc:ID>002-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -572,42 +581,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-003</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000039</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 003 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-003</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000039</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-003</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000039</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-003-1</cbc:ID>
+          <cbc:ID>003-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -617,42 +626,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-004</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000046</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 004 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-004</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000046</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-004</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000046</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-004-1</cbc:ID>
+          <cbc:ID>004-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -662,42 +671,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-005</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000053</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 005 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-005</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000053</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-005</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000053</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-005-1</cbc:ID>
+          <cbc:ID>005-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -707,42 +716,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-006</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000060</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 006 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-006</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000060</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-006</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000060</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-006-1</cbc:ID>
+          <cbc:ID>006-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -752,42 +761,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-007</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000077</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 007 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-007</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000077</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-007</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000077</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-007-1</cbc:ID>
+          <cbc:ID>007-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -797,42 +806,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-008</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000084</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 008 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-008</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000084</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-008</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000084</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-008-1</cbc:ID>
+          <cbc:ID>008-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -842,42 +851,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-009</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000091</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 009 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-009</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000091</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-009</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000091</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-009-1</cbc:ID>
+          <cbc:ID>009-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -887,42 +896,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-010</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000107</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 010 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-010</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000107</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-010</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000107</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-010-1</cbc:ID>
+          <cbc:ID>010-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -932,42 +941,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-011</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000114</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 011 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-011</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000114</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-011</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000114</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-011-1</cbc:ID>
+          <cbc:ID>011-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -977,42 +986,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-012</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000121</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 012 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-012</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000121</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-012</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000121</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-012-1</cbc:ID>
+          <cbc:ID>012-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1022,42 +1031,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-013</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000138</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 013 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-013</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000138</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-013</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000138</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-013-1</cbc:ID>
+          <cbc:ID>013-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1067,42 +1076,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-014</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000145</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 014 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-014</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000145</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-014</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000145</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-014-1</cbc:ID>
+          <cbc:ID>014-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1112,42 +1121,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-015</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000152</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 015 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-015</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000152</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-015</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000152</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-015-1</cbc:ID>
+          <cbc:ID>015-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1157,42 +1166,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-016</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000169</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 016 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-016</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000169</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-016</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000169</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-016-1</cbc:ID>
+          <cbc:ID>016-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1202,42 +1211,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-017</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000176</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 017 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-017</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000176</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-017</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000176</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-017-1</cbc:ID>
+          <cbc:ID>017-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1247,42 +1256,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-018</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000183</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 018 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-018</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000183</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-018</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000183</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-018-1</cbc:ID>
+          <cbc:ID>018-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1292,42 +1301,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-019</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000190</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 019 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-019</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000190</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-019</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000190</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-019-1</cbc:ID>
+          <cbc:ID>019-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1337,42 +1346,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-020</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000206</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 020 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-020</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000206</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-020</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000206</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-020-1</cbc:ID>
+          <cbc:ID>020-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1382,42 +1391,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-021</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000213</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 021 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-021</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000213</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-021</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000213</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-021-1</cbc:ID>
+          <cbc:ID>021-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1427,42 +1436,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-022</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000220</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 022 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-022</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000220</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-022</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000220</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-022-1</cbc:ID>
+          <cbc:ID>022-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1472,42 +1481,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-023</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000237</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 023 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-023</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000237</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-023</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000237</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-023-1</cbc:ID>
+          <cbc:ID>023-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1517,42 +1526,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-024</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000244</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 024 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-024</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000244</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-024</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000244</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-024-1</cbc:ID>
+          <cbc:ID>024-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
@@ -1562,42 +1571,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>CL-26-025</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU104411490000251</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">NOSTACK</cbc:HandlingCode>
         <cbc:HandlingInstructions>Load on top: nothing may be stacked on the boxes.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 025 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>CL-26-025</cbc:TraceID>
+        <cbc:TraceID>KXU104411490000251</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID>CL-26-025</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU104411490000251</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1200</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">800</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">900</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">0.96</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">1</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
-          <cbc:ID>CL-26-025-1</cbc:ID>
+          <cbc:ID>025-1</cbc:ID>
           <cbc:Quantity unitCode="EA">12</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>

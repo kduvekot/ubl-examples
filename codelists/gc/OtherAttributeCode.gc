@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: attribute. Other attributes measured or described: space, capacity, colour and conditions. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>OtherAttributeCode</ShortName>
+      <LongName xml:lang="en">Attribute (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:OtherAttributeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:OtherAttributeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:OtherAttributeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/OtherAttributeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COLOUR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Colour</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maksul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vefete</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The colour of an item or of a part of it.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FLOORSPACE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Floor space</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kridraz herdrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pafake fuvihu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The floor area a thing takes.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PALLETPLACES</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pallet places</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stuzzhek tilkrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kafofi finepa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The number of pallet places a thing takes.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEU</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Container capacity</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Titran gustan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Napiali hetipa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A capacity in twenty-foot equivalent units.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SEAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Seal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Binstaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hutie</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The state of a seal.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WEIGHT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Weight</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gargek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tisaki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The weight of a thing.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

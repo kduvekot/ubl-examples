@@ -280,6 +280,30 @@
             the world's code lists, and which code element uses which
           </entry>
         </row>
+        <row>
+          <entry>
+            Specifications
+          </entry>
+          <entry>
+            <literal>world/specifications.json</literal>
+          </entry>
+          <entry>
+            the transactions, national and community specifications and
+            process profiles the documents claim
+          </entry>
+        </row>
+        <row>
+          <entry>
+            UBL versions
+          </entry>
+          <entry>
+            <literal>world/ubl-versions.json</literal>
+          </entry>
+          <entry>
+            the first UBL 2 version of each element, from the published
+            models of UBL 2.0 to 2.5
+          </entry>
+        </row>
       </tbody>
     </tgroup>
   </informaltable>
@@ -573,6 +597,93 @@
       </listitem>
     </itemizedlist>
   </section>
+  <section id="S-03-world-identifiers">
+    <title>Identifiers</title>
+    <para>
+      An identifier that comes from a scheme names it in
+      <literal>schemeID</literal>; one that only its sender assigns,
+      such as a document number or a line number, does not. The world's
+      own schemes have lowercase URNs, as its first ones had
+      (<literal>urn:ubl-examples:world:XB:register</literal>,
+      <literal>urn:ubl-examples:world:endpoint</literal>), and a
+      country's scheme carries its code
+      (<literal>urn:ubl-examples:world:XU:tax</literal>,
+      <literal>urn:ubl-examples:world:XB:vehicle-register</literal>).
+      Real schemes keep the name their standard gives them, in the text
+      style of UBL's <literal>listID</literal>s:
+      <literal>ISO 11649</literal> for the creditor references,
+      <literal>ISO 6166</literal> for the securities,
+      <literal>ISO6346</literal> for the containers. Each scheme has its
+      format in <literal>world/countries.json</literal>, with its check
+      digit where it has one, and the build checks every identifier
+      against it, as it checks the telephone numbers. A
+      <literal>schemeID</literal> has no fixed format; the examples show
+      two.
+    </para>
+    <para>
+      A code held in an identifier element, such as the tax category in
+      <literal>TaxCategory/ID</literal>, the language in
+      <literal>Language/ID</literal>, the hazard class or the Incoterms
+      rule in <literal>DeliveryTerms/ID</literal>, names its code list
+      in <literal>schemeID</literal>, with the list's
+      <literal>listID</literal>
+      (<literal>UN/EDIFACT EDED 5305</literal>,
+      <literal>ISO 639</literal>), and the world's code list validation
+      checks it like any code. What a dimension or a temperature is
+      (<literal>AttributeID</literal>) is a code too, from three lists
+      of the Trade Accord: one for dimensions
+      (<literal>LENGTH</literal>, <literal>SEATHEIGHT</literal> …), each
+      mapped to the UN/EDIFACT 6313 measured attribute in its
+      description, one for temperatures (<literal>STORAGE</literal>,
+      <literal>PRODUCT</literal>, <literal>AMBIENT</literal> …) and one
+      for the rest (<literal>COLOUR</literal>,
+      <literal>PALLETPLACES</literal>, <literal>TEU</literal> …).
+    </para>
+    <para>
+      Vehicles are registered nationally: plates, aircraft and railway
+      wagons each have a national scheme. A wagon number follows the
+      UIC's twelve digits with its check digit. Driving licences and
+      identity numbers carry no <literal>schemeID</literal>: the element
+      already says what they are, and the person's country says whose.
+      Values that would look like real ones are made visibly fictional
+      in the right format: the call signs and aircraft nationality marks
+      use the series <literal>QU</literal>, <literal>QB</literal> and
+      <literal>QL</literal>, which the ITU has not allocated, the ships'
+      MMSIs the unallocated maritime identification digits 297, 298 and
+      299, and the wagons the UIC country codes 46, 47 and 48, which no
+      railway uses. A container owner code is one the container register
+      of the Bureau International des Containers does not hold, looked
+      up on its public site.
+    </para>
+    <para>
+      Certificates and licences name their issuer in one of two ways. A
+      number from a national register, such as Urvania's haulage
+      licences and waste permits, Bayvarra's forestry register or its
+      customs' register of bonded warehouses, names the register in
+      <literal>schemeID</literal>, and with it the authority that keeps
+      it, so no issuer party is needed. A certificate whose number is
+      unique only with its issuer, such as an environmental, medical or
+      sanitation certificate or the X.509 certificate of an access
+      point, has no <literal>schemeID</literal> and names its issuer in
+      <literal>IssuerParty</literal>.
+    </para>
+    <para>
+      Payment cards follow ISO/IEC 7812 in a range real cards cannot
+      use: the major industry identifier 9, which is for national use,
+      followed by the numeric code of the issuer's country (901, 902 and
+      903 are user-assigned in ISO 3166), the issuer's digits and a Luhn
+      check digit. A chip application starts with its card scheme's
+      application provider identifier from the national category
+      <literal>D</literal> of ISO/IEC 7816-5 with the same country code.
+      The Accord has three card schemes: Lumecard, the Bayvarran banks'
+      domestic debit card, Coralcard on the island, and Tressa, an
+      international credit card of the banks of all three countries; the
+      names were checked against the real card networks. A till receipt
+      shows the card number as the merchant's till prints it, never more
+      than the first six and the last four digits, and never the card's
+      security code or its dates.
+    </para>
+  </section>
   <section id="S-03-world-parties">
     <title>Parties</title>
     <para>
@@ -623,16 +734,35 @@
       the island has short 7-digit numbers. Account numbers follow the
       structure of ISO 13616 with its check digits, using the world's
       country codes, but they are not called IBANs, because the world's
-      countries are not registered IBAN countries.
+      countries are not registered IBAN countries. Each country writes
+      the bank and the branch into the account number in its own way:
+      Bayvarra the bank code and a British-style six-digit sort code,
+      Urvania the Italian-style ABI and CAB codes, the island the bank
+      code and a three-digit branch number. A bank is identified across
+      the countries by a code in the structure of ISO 9362, the BIC,
+      with the world's country codes (<literal>BLUMXBLX</literal>),
+      which the Trade Accord's payment link gives out, and its branch by
+      the national code; the build checks that every account number
+      holds the codes of its bank and branch.
+    </para>
+    <para>
+      An address has a number in its country's address register where it
+      is a party's postal address or a delivery address: in Urvania one
+      national register, like the Dutch one, sixteen digits starting
+      with the code of the municipality; in Bayvarra a register per
+      state, except in Lumeport, which keeps the city's own register
+      (<literal>LUM-ADR-000417</literal>); on the island the post
+      office's numbers of its delivery points, as the island has no
+      postal codes. The build checks that the register is the one of the
+      address's state or city.
     </para>
   </section>
   <section id="S-03-world-items">
     <title>Items</title>
     <para>
       Every party that sells has items. Goods carry what the documents
-      along their way need: a seller's item identifier, a world item
-      number issued by the identifier issuing agency (twelve digits with
-      a check digit, a scheme of the world, not a GTIN), its
+      along their way need: a seller's item identifier, the maker's
+      standard item number where the maker has one (see below), its
       classification in the UN Central Product Classification (CPC), its
       Harmonized System subheading and, in Urvania, the national tariff
       code below it, the country of origin, dimensions, net and gross
@@ -642,6 +772,33 @@
       currency. A unit price may be finer than the currency, as an
       electricity tariff of 27.3 ferra per kilowatt hour is, but every
       amount to pay is rounded to the currency's minor unit.
+    </para>
+    <para>
+      Each party identifies what it makes, ships and runs in one
+      convention, as real companies do. The distributor, the department
+      store and the furniture maker work the GS1 way: a GTIN for their
+      items, a GLN for themselves and their places (the distribution
+      centre's rail siding, the store's goods-in), an SSCC for every
+      pallet or skid they make up. Their company prefixes start with
+      952, which GS1 reserves for demonstrations and examples. The bench
+      maker, its warehouse, the packaging maker, the power station and
+      the grid operator work the ISO way, through the Codana
+      Identification Agency, which is Urvania's public numbering body: a
+      Codana item number, an organisation identifier in the structure of
+      ISO/IEC 6523 with the code designator 0990, which no real scheme
+      has, and licence plates for their transport units in the structure
+      of ISO/IEC 15459, under the issuing agency code
+      <literal>KXU</literal> (<literal>K</literal> is the range for
+      national public administrations, and XU is a user-assigned country
+      code, so no real agency can hold it). The engineering company, the
+      sawmill, the island's cotton farm and ginnery and the utilities
+      use only their own numbers. A reseller shows its own item number
+      and the maker's; where the maker has no GTIN, the GS1 distributor
+      gives the item one of its own, as GS1 allows a wholesaler or
+      importer to do, and the maker's Codana number travels with it.
+      Inner packages have local numbers without a scheme. A logistic
+      unit has the same identifier in every document of its flow, which
+      the build checks.
     </para>
     <para>
       Items connect the chains. The park bench is made with slats from
@@ -719,6 +876,43 @@
       carry one of its legs. Domestic jobs go to a carrier of that
       country: a truck of one country driving within another would be
       cabotage, which only happens where a document says so.
+    </para>
+  </section>
+  <section id="S-03-world-specifications">
+    <title>Specifications</title>
+    <para>
+      Every document says which specification it follows.
+      <literal>CustomizationID</literal> names a
+      <emphasis>transaction</emphasis>: one kind of business message
+      between two roles, with a purpose, a content and rules, as in CEN
+      BII and Peppol. One or more document types carry a transaction
+      (billing is the invoice, the credit note and the debit note), and
+      one document type can carry several (an application response that
+      answers an invoice is not one that answers a message). The
+      specification has up to three levels, chained with
+      <literal>#compliant#</literal> as EN 16931, Peppol and XRechnung
+      chain theirs: the Trade Accord's transaction
+      (<literal>urn:ubl-examples:world:trns:billing:1.0</literal>), a
+      national specification built on it, such as Urvania's invoice
+      rules for its value added tax or Bayvarra's rules for bills to its
+      public bodies, and the specification of a community that exchanges
+      among itself: the retail community of the distributor and the
+      store, the port community of Lumeport, Urvania's energy market and
+      public procurement. <literal>ProfileID</literal> names one of the
+      Accord's generic process profiles (ordering, billing, transport,
+      customs …), versioned, and no longer the flow;
+      <literal>ProfileExecutionID</literal> still names the run of the
+      process. Each specification has a short public page, and the build
+      checks that every identifier a document uses has one. The world
+      claims no compliance with real specifications such as EN 16931.
+    </para>
+    <para>
+      <literal>UBLVersionID</literal> gives the earliest UBL 2 version
+      that defines every element the document uses, as its definition
+      asks. The build computes it from the published models of UBL 2.0
+      to 2.5. For now every example needs 2.5: nearly all use elements
+      that UBL 2.5 added, such as the electronic address and the further
+      party identification.
     </para>
   </section>
   <section id="S-03-world-who-sends-and-who-receives">

@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Specifications · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=cfc6fda70b">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="examples.html">Examples</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="specifications">Specifications</h1>
+<p>Every document of the world says which specifications it follows.
+<code>CustomizationID</code> names the transaction specification at up
+to three levels, chained with <code>#compliant#</code>, as EN 16931,
+Peppol and XRechnung do: the Trade Accord's transaction, a national
+specification built on it, and a community's specification.
+<code>ProfileID</code> names the Accord's process profile the document
+belongs to. These are the specifications of the world; the world claims
+no compliance with real ones such as EN 16931.</p>
+<h2 id="transactions-of-the-trade-accord">Transactions of the Trade
+Accord</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Identifier</th>
+<th>Document types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="world-spec-transaction-billing.html">Billing</a></td>
+<td><code>urn:ubl-examples:world:trns:billing:1.0</code></td>
+<td>Invoice, CreditNote, DebitNote</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-self-billing.html">Self-billing</a></td>
+<td><code>urn:ubl-examples:world:trns:self-billing:1.0</code></td>
+<td>SelfBilledInvoice, SelfBilledCreditNote</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-order-status.html">Order
+status</a></td>
+<td><code>urn:ubl-examples:world:trns:order-status:1.0</code></td>
+<td>DocumentStatusRequest, DocumentStatus</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-invoice-status.html">Invoice
+status</a></td>
+<td><code>urn:ubl-examples:world:trns:invoice-status:1.0</code></td>
+<td>InvoiceStatusRequest, InvoiceStatusResponse</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-catalogue.html">Catalogue</a></td>
+<td><code>urn:ubl-examples:world:trns:catalogue:1.0</code></td>
+<td>Catalogue, CataloguePricingUpdate, CatalogueItemSpecificationUpdate,
+CatalogueDeletion</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-transport-progress-status.html">Transport
+progress status</a></td>
+<td><code>urn:ubl-examples:world:trns:transport-progress-status:1.0</code></td>
+<td>TransportProgressStatusRequest, TransportProgressStatus</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-transportation-status.html">Transportation
+status</a></td>
+<td><code>urn:ubl-examples:world:trns:transportation-status:1.0</code></td>
+<td>TransportationStatusRequest, TransportationStatus</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-transport-service-description.html">Transport
+service description</a></td>
+<td><code>urn:ubl-examples:world:trns:transport-service-description:1.0</code></td>
+<td>TransportServiceDescriptionRequest, TransportServiceDescription</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-proof-of-reexportation.html">Proof
+of re-exportation</a></td>
+<td><code>urn:ubl-examples:world:trns:proof-of-reexportation:1.0</code></td>
+<td>ProofOfReexportationRequest, ProofOfReexportationReminder,
+ProofOfReexportation</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-expression-of-interest.html">Expression of
+interest</a></td>
+<td><code>urn:ubl-examples:world:trns:expression-of-interest:1.0</code></td>
+<td>ExpressionOfInterestRequest, ExpressionOfInterestResponse</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-qualification-application.html">Qualification
+application</a></td>
+<td><code>urn:ubl-examples:world:trns:qualification-application:1.0</code></td>
+<td>QualificationApplicationRequest,
+QualificationApplicationResponse</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-tenderer-qualification.html">Tenderer
+qualification</a></td>
+<td><code>urn:ubl-examples:world:trns:tenderer-qualification:1.0</code></td>
+<td>TendererQualification, TendererQualificationResponse</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-procurement-status.html">Procurement
+status</a></td>
+<td><code>urn:ubl-examples:world:trns:procurement-status:1.0</code></td>
+<td>ProcurementStatusRequest, ProcurementStatus</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-unsubscribe-from-procedure.html">Unsubscribe
+from procedure</a></td>
+<td><code>urn:ubl-examples:world:trns:unsubscribe-from-procedure:1.0</code></td>
+<td>UnsubscribeFromProcedureRequest,
+UnsubscribeFromProcedureResponse</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-award-notification.html">Award
+notification</a></td>
+<td><code>urn:ubl-examples:world:trns:award-notification:1.0</code></td>
+<td>AwardedNotification, UnawardedNotification</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-tender.html">Tender</a></td>
+<td><code>urn:ubl-examples:world:trns:tender:1.0</code></td>
+<td>Tender, TenderReceipt, TenderWithdrawal</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-forecast.html">Forecast</a></td>
+<td><code>urn:ubl-examples:world:trns:forecast:1.0</code></td>
+<td>Forecast, ForecastRevision</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-exception.html">Exception</a></td>
+<td><code>urn:ubl-examples:world:trns:exception:1.0</code></td>
+<td>ExceptionCriteria, ExceptionNotification</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-invoice-response.html">Invoice
+response</a></td>
+<td><code>urn:ubl-examples:world:trns:invoice-response:1.0</code></td>
+<td>ApplicationResponse</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-bill-of-lading.html">Bill of
+lading</a></td>
+<td><code>urn:ubl-examples:world:trns:bill-of-lading:1.0</code></td>
+<td>BillOfLading</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-business-card.html">Business
+card</a></td>
+<td><code>urn:ubl-examples:world:trns:business-card:1.0</code></td>
+<td>BusinessCard</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-business-information.html">Business
+information</a></td>
+<td><code>urn:ubl-examples:world:trns:business-information:1.0</code></td>
+<td>BusinessInformation</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-call-for-tenders.html">Call for
+tenders</a></td>
+<td><code>urn:ubl-examples:world:trns:call-for-tenders:1.0</code></td>
+<td>CallForTenders</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-catalogue-request.html">Catalogue
+request</a></td>
+<td><code>urn:ubl-examples:world:trns:catalogue-request:1.0</code></td>
+<td>CatalogueRequest</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-certificate-of-origin.html">Certificate of
+origin</a></td>
+<td><code>urn:ubl-examples:world:trns:certificate-of-origin:1.0</code></td>
+<td>CertificateOfOrigin</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-common-transportation-report.html">Common
+transportation report</a></td>
+<td><code>urn:ubl-examples:world:trns:common-transportation-report:1.0</code></td>
+<td>CommonTransportationReport</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-contract-award-notice.html">Contract
+award notice</a></td>
+<td><code>urn:ubl-examples:world:trns:contract-award-notice:1.0</code></td>
+<td>ContractAwardNotice</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-contract-notice.html">Contract
+notice</a></td>
+<td><code>urn:ubl-examples:world:trns:contract-notice:1.0</code></td>
+<td>ContractNotice</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-delivery-note.html">Delivery
+note</a></td>
+<td><code>urn:ubl-examples:world:trns:delivery-note:1.0</code></td>
+<td>DeliveryNote</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-despatch-advice.html">Despatch
+advice</a></td>
+<td><code>urn:ubl-examples:world:trns:despatch-advice:1.0</code></td>
+<td>DespatchAdvice</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-digital-agreement.html">Digital
+agreement</a></td>
+<td><code>urn:ubl-examples:world:trns:digital-agreement:1.0</code></td>
+<td>DigitalAgreement</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-digital-capability.html">Digital
+capability</a></td>
+<td><code>urn:ubl-examples:world:trns:digital-capability:1.0</code></td>
+<td>DigitalCapability</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-export-customs-declaration.html">Export
+customs declaration</a></td>
+<td><code>urn:ubl-examples:world:trns:export-customs-declaration:1.0</code></td>
+<td>ExportCustomsDeclaration</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-forwarding-instructions.html">Forwarding
+instructions</a></td>
+<td><code>urn:ubl-examples:world:trns:forwarding-instructions:1.0</code></td>
+<td>ForwardingInstructions</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-fulfilment-cancellation.html">Fulfilment
+cancellation</a></td>
+<td><code>urn:ubl-examples:world:trns:fulfilment-cancellation:1.0</code></td>
+<td>FulfilmentCancellation</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-goods-certificate.html">Goods
+certificate</a></td>
+<td><code>urn:ubl-examples:world:trns:goods-certificate:1.0</code></td>
+<td>GoodsCertificate</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-goods-item-itinerary.html">Goods
+item itinerary</a></td>
+<td><code>urn:ubl-examples:world:trns:goods-item-itinerary:1.0</code></td>
+<td>GoodsItemItinerary</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-goods-item-passport.html">Goods item
+passport</a></td>
+<td><code>urn:ubl-examples:world:trns:goods-item-passport:1.0</code></td>
+<td>GoodsItemPassport</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-guarantee-certificate.html">Guarantee
+certificate</a></td>
+<td><code>urn:ubl-examples:world:trns:guarantee-certificate:1.0</code></td>
+<td>GuaranteeCertificate</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-import-customs-declaration.html">Import
+customs declaration</a></td>
+<td><code>urn:ubl-examples:world:trns:import-customs-declaration:1.0</code></td>
+<td>ImportCustomsDeclaration</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-instruction-for-returns.html">Instruction
+for returns</a></td>
+<td><code>urn:ubl-examples:world:trns:instruction-for-returns:1.0</code></td>
+<td>InstructionForReturns</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-inventory-report.html">Inventory
+report</a></td>
+<td><code>urn:ubl-examples:world:trns:inventory-report:1.0</code></td>
+<td>InventoryReport</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-item-information-request.html">Item
+information request</a></td>
+<td><code>urn:ubl-examples:world:trns:item-information-request:1.0</code></td>
+<td>ItemInformationRequest</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-manifest.html">Manifest</a></td>
+<td><code>urn:ubl-examples:world:trns:manifest:1.0</code></td>
+<td>Manifest</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-order.html">Order</a></td>
+<td><code>urn:ubl-examples:world:trns:order:1.0</code></td>
+<td>Order</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-order-cancellation.html">Order
+cancellation</a></td>
+<td><code>urn:ubl-examples:world:trns:order-cancellation:1.0</code></td>
+<td>OrderCancellation</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-order-change.html">Order
+change</a></td>
+<td><code>urn:ubl-examples:world:trns:order-change:1.0</code></td>
+<td>OrderChange</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-order-response.html">Order
+response</a></td>
+<td><code>urn:ubl-examples:world:trns:order-response:1.0</code></td>
+<td>OrderResponse</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-packing-list.html">Packing
+list</a></td>
+<td><code>urn:ubl-examples:world:trns:packing-list:1.0</code></td>
+<td>PackingList</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-prior-information-notice.html">Prior
+information notice</a></td>
+<td><code>urn:ubl-examples:world:trns:prior-information-notice:1.0</code></td>
+<td>PriorInformationNotice</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-product-activity.html">Product
+activity</a></td>
+<td><code>urn:ubl-examples:world:trns:product-activity:1.0</code></td>
+<td>ProductActivity</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-purchase-receipt.html">Purchase
+receipt</a></td>
+<td><code>urn:ubl-examples:world:trns:purchase-receipt:1.0</code></td>
+<td>PurchaseReceipt</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-quotation.html">Quotation</a></td>
+<td><code>urn:ubl-examples:world:trns:quotation:1.0</code></td>
+<td>Quotation</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-receipt-advice.html">Receipt
+advice</a></td>
+<td><code>urn:ubl-examples:world:trns:receipt-advice:1.0</code></td>
+<td>ReceiptAdvice</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-reminder.html">Reminder</a></td>
+<td><code>urn:ubl-examples:world:trns:reminder:1.0</code></td>
+<td>Reminder</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-remittance-advice.html">Remittance
+advice</a></td>
+<td><code>urn:ubl-examples:world:trns:remittance-advice:1.0</code></td>
+<td>RemittanceAdvice</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-request-for-quotation.html">Request
+for quotation</a></td>
+<td><code>urn:ubl-examples:world:trns:request-for-quotation:1.0</code></td>
+<td>RequestForQuotation</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-retail-event.html">Retail
+event</a></td>
+<td><code>urn:ubl-examples:world:trns:retail-event:1.0</code></td>
+<td>RetailEvent</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-statement.html">Statement</a></td>
+<td><code>urn:ubl-examples:world:trns:statement:1.0</code></td>
+<td>Statement</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-tender-contract.html">Tender
+contract</a></td>
+<td><code>urn:ubl-examples:world:trns:tender-contract:1.0</code></td>
+<td>TenderContract</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-trade-item-location-profile.html">Trade
+item location profile</a></td>
+<td><code>urn:ubl-examples:world:trns:trade-item-location-profile:1.0</code></td>
+<td>TradeItemLocationProfile</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-transit-customs-declaration.html">Transit
+customs declaration</a></td>
+<td><code>urn:ubl-examples:world:trns:transit-customs-declaration:1.0</code></td>
+<td>TransitCustomsDeclaration</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-transport-execution-plan.html">Transport
+execution plan</a></td>
+<td><code>urn:ubl-examples:world:trns:transport-execution-plan:1.0</code></td>
+<td>TransportExecutionPlan</td>
+</tr>
+<tr>
+<td><a
+href="world-spec-transaction-transport-execution-plan-request.html">Transport
+execution plan request</a></td>
+<td><code>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</code></td>
+<td>TransportExecutionPlanRequest</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-utility-statement.html">Utility
+statement</a></td>
+<td><code>urn:ubl-examples:world:trns:utility-statement:1.0</code></td>
+<td>UtilityStatement</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-waste-movement.html">Waste
+movement</a></td>
+<td><code>urn:ubl-examples:world:trns:waste-movement:1.0</code></td>
+<td>WasteMovement</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-waste-notification.html">Waste
+notification</a></td>
+<td><code>urn:ubl-examples:world:trns:waste-notification:1.0</code></td>
+<td>WasteNotification</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-waybill.html">Waybill</a></td>
+<td><code>urn:ubl-examples:world:trns:waybill:1.0</code></td>
+<td>Waybill</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-weight-statement.html">Weight
+statement</a></td>
+<td><code>urn:ubl-examples:world:trns:weight-statement:1.0</code></td>
+<td>WeightStatement</td>
+</tr>
+<tr>
+<td><a href="world-spec-transaction-work-report.html">Work
+report</a></td>
+<td><code>urn:ubl-examples:world:trns:work-report:1.0</code></td>
+<td>WorkReport</td>
+</tr>
+</tbody>
+</table>
+<h2 id="national-specifications">National specifications</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Identifier</th>
+<th>Document types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="world-spec-national-XB-public-billing.html">Billing rules
+for public bodies of Bayvarra</a></td>
+<td><code>urn:ubl-examples:world:XB:public-billing:1.0</code></td>
+<td>Invoice, CreditNote</td>
+</tr>
+<tr>
+<td><a href="world-spec-national-XU-invoice.html">Invoice rules of
+Urvania</a></td>
+<td><code>urn:ubl-examples:world:XU:invoice:1.0</code></td>
+<td>Invoice, CreditNote</td>
+</tr>
+</tbody>
+</table>
+<h2 id="community-specifications">Community specifications</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Identifier</th>
+<th>Document types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="world-spec-community-retail.html">Retail community</a></td>
+<td><code>urn:ubl-examples:world:community:retail:1.0</code></td>
+<td>every document type the members exchange</td>
+</tr>
+<tr>
+<td><a href="world-spec-community-port-lumeport.html">Lumeport port
+community</a></td>
+<td><code>urn:ubl-examples:world:community:port-lumeport:1.0</code></td>
+<td>ForwardingInstructions, PackingList, BillOfLading, Waybill,
+Manifest, CommonTransportationReport, TransportationStatus,
+TransportationStatusRequest, TransportServiceDescription,
+TransportServiceDescriptionRequest, WeightStatement,
+ExportCustomsDeclaration, ImportCustomsDeclaration</td>
+</tr>
+<tr>
+<td><a href="world-spec-community-energy-xu.html">Urvania energy
+market</a></td>
+<td><code>urn:ubl-examples:world:community:energy-xu:1.0</code></td>
+<td>every document type the members exchange</td>
+</tr>
+<tr>
+<td><a href="world-spec-community-procurement.html">Public procurement
+community</a></td>
+<td><code>urn:ubl-examples:world:community:procurement:1.0</code></td>
+<td>PriorInformationNotice, ContractNotice, CallForTenders,
+ExpressionOfInterestRequest, ExpressionOfInterestResponse,
+QualificationApplicationRequest, QualificationApplicationResponse,
+ProcurementStatusRequest, ProcurementStatus,
+UnsubscribeFromProcedureRequest, UnsubscribeFromProcedureResponse,
+BusinessInformation, TendererQualification,
+TendererQualificationResponse, GuaranteeCertificate, Tender,
+TenderReceipt, TenderWithdrawal, ContractAwardNotice,
+AwardedNotification, UnawardedNotification, TenderContract</td>
+</tr>
+</tbody>
+</table>
+<h2 id="process-profiles">Process profiles</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Identifier</th>
+<th>Document types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="world-spec-profile-utility-billing.html">Utility
+billing</a></td>
+<td><code>urn:ubl-examples:world:profile:utility-billing:1.0</code></td>
+<td>UtilityStatement, Invoice, CreditNote, Reminder,
+RemittanceAdvice</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-ordering.html">Ordering</a></td>
+<td><code>urn:ubl-examples:world:profile:ordering:1.0</code></td>
+<td>Order, OrderResponse, OrderChange, OrderCancellation,
+DocumentStatusRequest, DocumentStatus</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-billing.html">Billing</a></td>
+<td><code>urn:ubl-examples:world:profile:billing:1.0</code></td>
+<td>Invoice, CreditNote, DebitNote, SelfBilledInvoice,
+SelfBilledCreditNote, ApplicationResponse, InvoiceStatusRequest,
+InvoiceStatusResponse, Reminder, Statement, RemittanceAdvice</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-despatch-receipt.html">Despatch and
+receipt</a></td>
+<td><code>urn:ubl-examples:world:profile:despatch-receipt:1.0</code></td>
+<td>DespatchAdvice, ReceiptAdvice, DeliveryNote, FulfilmentCancellation,
+InstructionForReturns, WorkReport</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-transport.html">Transport</a></td>
+<td><code>urn:ubl-examples:world:profile:transport:1.0</code></td>
+<td>TransportExecutionPlanRequest, TransportExecutionPlan,
+ForwardingInstructions, Waybill, BillOfLading, PackingList,
+WeightStatement, Manifest, CommonTransportationReport,
+TransportationStatusRequest, TransportationStatus,
+TransportProgressStatusRequest, TransportProgressStatus,
+GoodsItemItinerary, TransportServiceDescriptionRequest,
+TransportServiceDescription</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-customs.html">Customs</a></td>
+<td><code>urn:ubl-examples:world:profile:customs:1.0</code></td>
+<td>ExportCustomsDeclaration, ImportCustomsDeclaration,
+TransitCustomsDeclaration, CertificateOfOrigin, GoodsCertificate</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-temporary-admission.html">Temporary
+admission</a></td>
+<td><code>urn:ubl-examples:world:profile:temporary-admission:1.0</code></td>
+<td>GoodsItemPassport, ProofOfReexportationRequest,
+ProofOfReexportationReminder, ProofOfReexportation</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-waste-shipment.html">Waste
+shipment</a></td>
+<td><code>urn:ubl-examples:world:profile:waste-shipment:1.0</code></td>
+<td>WasteNotification, WasteMovement</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-tendering.html">Tendering</a></td>
+<td><code>urn:ubl-examples:world:profile:tendering:1.0</code></td>
+<td>PriorInformationNotice, ContractNotice, CallForTenders,
+ExpressionOfInterestRequest, ExpressionOfInterestResponse,
+QualificationApplicationRequest, QualificationApplicationResponse,
+ProcurementStatusRequest, ProcurementStatus,
+UnsubscribeFromProcedureRequest, UnsubscribeFromProcedureResponse,
+BusinessInformation, TendererQualification,
+TendererQualificationResponse, GuaranteeCertificate, Tender,
+TenderReceipt, TenderWithdrawal, ContractAwardNotice,
+AwardedNotification, UnawardedNotification, TenderContract</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-catalogue.html">Catalogue</a></td>
+<td><code>urn:ubl-examples:world:profile:catalogue:1.0</code></td>
+<td>CatalogueRequest, Catalogue, CataloguePricingUpdate,
+CatalogueItemSpecificationUpdate, CatalogueDeletion,
+ItemInformationRequest</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-sourcing.html">Sourcing</a></td>
+<td><code>urn:ubl-examples:world:profile:sourcing:1.0</code></td>
+<td>RequestForQuotation, Quotation</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-collaboration.html">Collaborative
+planning</a></td>
+<td><code>urn:ubl-examples:world:profile:collaboration:1.0</code></td>
+<td>Forecast, ForecastRevision, RetailEvent, InventoryReport,
+TradeItemLocationProfile, ExceptionCriteria, ExceptionNotification,
+ProductActivity</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-retail-sale.html">Retail sale</a></td>
+<td><code>urn:ubl-examples:world:profile:retail-sale:1.0</code></td>
+<td>PurchaseReceipt</td>
+</tr>
+<tr>
+<td><a href="world-spec-profile-onboarding.html">Onboarding</a></td>
+<td><code>urn:ubl-examples:world:profile:onboarding:1.0</code></td>
+<td>BusinessCard, DigitalAgreement, DigitalCapability</td>
+</tr>
+</tbody>
+</table>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>d920be0</code></p></div></footer>
+</body>
+</html>
