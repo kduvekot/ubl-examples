@@ -50,6 +50,7 @@ The decisions taken in the review of `codelist-classification.md`, in order.
 
 | ID-Q | Decision |
 |---|---|
+| 6 | Lowercase for every language code: the `languageID` attribute (BCP 47 / RFC 5646, `xsd:language`) and the coded elements and Language/ID (ISO 639). A world Language list follows the ISO 639-2 Registration Authority (Library of Congress), not UBL's copy: lowercase codes, B and T codes as separate entries, no duplicates, `qau`/`qal` added as local-use codes, listID `ISO 639`. The world CVA uses it instead of UBL's list. `build_codelists.py` fetches the LoC list and records the date. LocaleCode and the tender language codes become `en`. |
 | 5 | (b) AttributeID uses regional lists, one per meaning: a dimension list (LENGTH, WIDTH, HEIGHT, DEPTH, THICKNESS, SEATHEIGHT, BENCHLENGTH, LOADINGLENGTH, SLOT …, each mapped to UNCL 6313 in its description), shared by Dimension, MeasurementDimension and RangeDimension; a temperature list (STORAGE, TRANSPORT, FLASHPOINT, EMERGENCY, PRODUCT, AMBIENT …); and a list for the other attributes (COLOUR, PALLETPLACES, FLOORSPACE, TEU, SEAL …). schemeID = the list's URN (ID-Q2). |
 | 4 | (b) Make values that look real visibly fictional, in the right format: item numbers with a non-company GS1 prefix (world scheme, check digit kept); container owner codes checked as free; call signs, MMSI, aircraft prefixes and the ULD owner from unallocated or world blocks (one rule for all ITU-based ones); the ULD owner a world airline. |
 | 3 | National schemes in today's style for licence plates, aircraft registrations and rail wagon numbers (e.g. `…:XB:vehicle-register`), with formats in countries.json checked like the phone numbers. Aircraft prefixes are chosen with ID-Q4; wagon numbers follow the UIC 12-digit structure with check digit. Driving licences and national ID numbers get no schemeID. |
@@ -83,4 +84,13 @@ The decisions taken in the review of `codelist-classification.md`, in order.
   - Reachable: EPSG, PRONOM, UN CPC, the ISO 10383 MIC list, ISO 4217 (SIX), DCSA, IMO and Peppol docs.
   - **Authoritative alternative for the UNCL lists: UN/CEFACT's own GitHub repository `uncefact/vocabulary-outputs`** (the JSON code lists in `_data/*codelist.json`). It is reachable. It confirms UNCL 4435 (PaymentMeansChannelCodeList: 1 ordinary post … 5 S.W.I.F.T., 6 other transmission networks, 8 Fedwire, 14 national ACH, 15 other ACH, ZZZ).
   - It also explains Q3. UN/CEFACT itself calls the 4465 content "AllowanceChargeReasonCodeList" (95 = Small order processing service charge) and the 5189 content "AllowanceChargeIdCodeList" (95 = Discount, 100 = Special rebate). UBL's default list follows the UN/CEFACT naming; only its listID label `UN/EDIFACT EDED 5189` is wrong. Decision Q3 (b) stands: EN 16931 uses 5189 for the allowance reason code.
+- **For the OASIS UBL TC** (findings to report):
+  1. AllowanceChargeReasonCode default list: listID `UN/EDIFACT EDED 5189`, but its content is UNCL 4465. UN/CEFACT calls 4465 "AllowanceChargeReasonCodeList", so the content follows UN/CEFACT and only the label is wrong.
+  2. The Language default list (`LanguageCode-2.4.gc`, version 2020-04-17, identical in the UBL 2.4 and 2.5 packages, LocationUri still 2.3). Its source is the ISO 639-2 RA table at the Library of Congress.
+     - The codes are uppercased, while ISO 639 and BCP 47 recommend lowercase; the list's own cross-reference column keeps them lowercase.
+     - Alpha-3 B/T pairs are merged into one code value (`GER (B) DEU (T)`, `DUT (B) NLD (T)`, `FRE (B) FRA (T)` …), each twice, so `DEU`, `NLD`, `FRA` etc. are not valid codes.
+     - The local-use range is a single literal `QAA-QTZ`, which no real code can match.
+  3. PackagingType default list: its listID contains a line break.
+  4. Nine default lists have no listID (Chip, DocumentStatus, LineStatus, Latitude/LongitudeDirection, Operator, SubstitutionStatus, WeekDay, ReceiptAdviceType), and ReceiptAdviceTypeCode has a default list but no CVA context.
+  5. The CVA has no context for `@languageID`.
 - Q31: codes not yet checked against the published lists. UNCL 1001 351/711/720/730/740, 5189/7161 choices, UN CPC Ver.2.1 codes, plus the ones the classification marks "verify". unece.org blocked this environment on 2026-11-11.
