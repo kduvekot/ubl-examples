@@ -8,9 +8,9 @@ Sources referred to below:
 
 | Short name | What | URL / location | Version |
 |---|---|---|---|
-| CEFACT | UN/CEFACT vocabulary JSON code lists | github.com/uncefact/vocabulary-outputs `_data/*codelist.json`, main @ 51768f9 (2024-07-29); `_config.yml` says `dataSet: '22A'`. Copies: `sources/uncefact-vocabulary-outputs/` | D.22A-based, names only (no descriptions) |
-| PEPPOL-BIL | Peppol BIS Billing 3.0 code lists | git clone github.com/OpenPEPPOL/peppol-bis-invoice-3 @ 38d693d (2026-11-04), `structure/codelist/` → `sources/peppol-bis-invoice-3/` | UNCL lists D.16B (7161 with later additions) |
-| PEPPOL-UP3 | Peppol BIS 3 (post-award) code lists | git clone github.com/OpenPEPPOL/poacc-upgrade-3 @ c3bd29f (2025-11-20) → `sources/poacc-upgrade-3/` | UNCL1001 full D.17A, 8273 D.23A, 6313/4343 subsets D.17A |
+| CEFACT | UN/CEFACT vocabulary JSON code lists | github.com/uncefact/vocabulary-outputs `_data/*codelist.json`, main @ 51768f9 (2024-07-29); `_config.yml` says `dataSet: '22A'`. Copies: `world/codelists/sources/uncefact/` (and `uncefact-vocabulary/` for the delivery terms) | D.22A-based, names only (no descriptions) |
+| PEPPOL-BIL | Peppol BIS Billing 3.0 code lists | git clone github.com/OpenPEPPOL/peppol-bis-invoice-3 @ 38d693d (2026-11-04), `structure/codelist/`; the ICD list is kept in `world/codelists/sources/peppol/ICD.xml` | UNCL lists D.16B (7161 with later additions) |
+| PEPPOL-UP3 | Peppol BIS 3 (post-award) code lists | git clone github.com/OpenPEPPOL/poacc-upgrade-3 @ c3bd29f (2025-11-20); UNCL 1001, 5387, 7161 and Rec 21 are kept in `world/codelists/sources/peppol/` | UNCL1001 full D.17A, 8273 D.23A, 6313/4343 subsets D.17A |
 
 unece.org, service.unece.org, iso.org (Cloudflare), the iso20022.org external code sets, phmsa.dot.gov, the gs1.org web pages and github.com web pages (not git) returned 403.
 
@@ -111,13 +111,13 @@ Quotations are from CEFACT `documentcodelist.json` ("[Reference United Nations C
 
 **EmS.** Source: BAM DGG-Info (Bundesanstalt für Materialforschung, German federal database), "Detailinfo IMDG-Code, Amdt. 42-24". The free public IMDG text is not available (the IMDG Code is a paid IMO publication).
 
-- **UN 3480**: https://www.dgg.bam.de/dgginfo/detailinfo/imdg/qiiwcmqpnmffsyq — "Unfallmerkblätter (EmS) F-A , … S-I", "Feuer-Unfallmerkblatt A (Alfa): Allgemeines Feuer Unfallmerkblatt", "Leckage-Unfallmerkblatt I (India) für: Entzündbare feste Stoffe". **Confirmed `F-A,S-I`.**
-- **UN 2920** (generic n.o.s. entry, PG II): https://www.dgg.bam.de/dgginfo/detailinfo/imdg/cgxnlqz9 — "Emergency Schedules (EmS) F-E , … Fire Schedule E (Echo) for: Non-water-reactive flammable liquids … S-C Spillage Schedule C (Charlie) for: Flammable, corrosive liquids". **Confirmed `F-E,S-C`.**
+- **UN 3480**: https://www.dgg.bam.de/dgginfo/detailinfo/imdg/2jk48rcn (the URL first used, …/imdg/qiiwcmqpnmffsyq, now redirects there; checked 2026-11-11) — "Unfallmerkblätter (EmS) F-A , … S-I", "Feuer-Unfallmerkblatt A (Alfa): Allgemeines Feuer Unfallmerkblatt", "Leckage-Unfallmerkblatt I (India) für: Entzündbare feste Stoffe". **Confirmed `F-A,S-I`.**
+- **UN 2920** (generic n.o.s. entry, PG II): https://www.dgg.bam.de/dgginfo/detailinfo/imdg/cgxnlqz9 (still resolves, 2026-11-11: "UN-Nr.: 2920 Klasse: 8") — "Emergency Schedules (EmS) F-E , … Fire Schedule E (Echo) for: Non-water-reactive flammable liquids … S-C Spillage Schedule C (Charlie) for: Flammable, corrosive liquids". **Confirmed `F-E,S-C`.**
 - **UN 2911** (instruments, solid): BAM radioactive module https://www.dgg.bam.de/dggradio/en/show/fopisxi353gvokc46mpq23ia4i — "IMDG-Code, Amdt. 42-24 … EmS F-I, S-S MFAG 20 ERG-Code 7L". **Confirmed `F-I,S-S`** (Q7's "verify" is resolved).
 
 **MFAG column.** BAM's IMDG detail pages have an "MFAG No." field that is **empty** for UN 3480 and UN 2920. The IMDG detail page also quotes the requirement that "the emergency response information in accordance with 5.4.3.2 of the IMDG Code shall include … (EmS) and the Medical First Aid Guide … (MFAG)", so MFAG survives as a separate IMO publication. BAM's radioactive module still gives "MFAG 20" for UN 2911, so a table number exists outside the DGL. **Not verifiable from primary text** (the IMDG Code is paywalled); the evidence suggests the DGL has no MFAG column. Q13's use of the ERG stands.
 
-**ERG 2024.** PHMSA returned 403. NOAA CAMEO Chemicals (US government) states "Emergency Response Guidebook (ERG, 2024)", with guide PDFs saved in `sources/noaa-cameo-erg/`:
+**ERG 2024.** PHMSA returned 403. NOAA CAMEO Chemicals (US government) states "Emergency Response Guidebook (ERG, 2024)", with guide PDFs saved in `world/codelists/sources/erg2024/` (Guide_128, 132, 147, 153, 161, 171):
 
 - UN 3480 → "Response Guide 147". Guide_147.pdf title: "**Lithium Ion and Sodium Ion Batteries**".
 - UN 2911 → "Response Guide 161". Guide_161.pdf: "**Radioactive Materials (Low Level Radiation)**".
