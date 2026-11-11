@@ -1,0 +1,46 @@
+# Check whether the authoritative sources of the world's code lists can be
+# reached from a GitHub runner. Each source is fetched once; the job summary
+# shows the HTTP status, the size and whether a bot-protection page came back.
+name: Check code list sources
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch the sources
+        run: |
+          set -u
+          check() {
+            local name="$1" url="$2" code size blocked
+            code=$(curl -sS -L -m 60 -A "Mozilla/5.0 (compatible; ubl-examples source check)" \
+                   -o body.tmp -w '%{http_code}' "$url" 2>err.tmp) || code="error: $(head -c 120 err.tmp)"
+            size=$(wc -c < body.tmp 2>/dev/null || echo 0)
+            blocked=no
+            grep -qiE 'cloudflare|attention required|access denied|you have been blocked' body.tmp 2>/dev/null && blocked=yes
+            echo "| $name | $code | $size | $blocked | $url |" >> "$GITHUB_STEP_SUMMARY"
+            rm -f body.tmp err.tmp
+          }
+          {
+            echo "| Source | HTTP | Bytes | Blocked page | URL |"
+            echo "|---|---|---|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+          for n in 1001 2005 4435 5189 7161 8339; do
+            check "UNCL $n (D.23A)" "https://service.unece.org/trade/untdid/d23a/tred/tred$n.htm"
+          done
+          check "UN/ECE Rec 20/21 (UNECE site)" "https://unece.org/trade/uncefact/cl-recommendations"
+          check "EPSG 4326" "https://epsg.org/crs_4326/WGS-84.html"
+          check "PRONOM fmt/480" "https://www.nationalarchives.gov.uk/PRONOM/fmt/480"
+          check "UN CPC Ver.2.1" "https://unstats.un.org/unsd/classifications/Econ/cpc"
+          check "ISO 10383 MIC list" "https://www.iso20022.org/market-identifier-codes"
+          check "ISO 4217 list (SIX)" "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml"
+          check "ISO 20022 external code sets" "https://www.iso20022.org/catalogue-messages/additional-content-messages/external-code-sets"
+          check "DCSA standards" "https://dcsa.org/standards"
+          check "IMO IMDG Code" "https://www.imo.org/en/OurWork/Safety/Pages/DangerousGoods-default.aspx"
+          check "Peppol BIS Billing 3.0" "https://docs.peppol.eu/poacc/billing/3.0/"
+          cat "$GITHUB_STEP_SUMMARY"
