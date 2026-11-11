@@ -97,7 +97,7 @@
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -189,7 +189,7 @@
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -308,7 +308,7 @@
           <cbc:Name>Export desk</cbc:Name>
           <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
           <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

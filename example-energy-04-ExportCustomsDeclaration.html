@@ -244,11 +244,15 @@ The job of the person who answers at the desk; identity of Kelpstone Gas
 <li><code>Contact/Department</code> = <strong>Commercial</strong><br />
 The department the desk belongs to; identity of Kelpstone Gas
 (world/parties.json).</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 3852
-2877</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Kelpstone Gas
-(world/parties.json).</li>
+<li><code>Contact/Telephone</code> = <strong>+999 2 38522
+12877</strong><br />
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the
+trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of
+Kelpstone Gas (world/parties.json).</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:gas@kelpstone.example">gas@kelpstone.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -549,10 +553,15 @@ Power (world/parties.json).</li>
 <strong>Trading</strong><br />
 The department the desk belongs to; identity of Montebrio Power
 (world/parties.json).</li>
-<li><code>ConsigneeParty/Contact/Telephone</code> = <strong>+999 1 4130
-5918</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Montebrio Power
+<li><code>ConsigneeParty/Contact/Telephone</code> = <strong>+999 1 0413
+55918</strong><br />
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Urvania's own plan: Open numbering, kept
+from Italian times: the area code starts with 0 and stays in the number,
+also from abroad; the longer the area code, the shorter the number:
+Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
+Mobiles start with 3 and have 10 digits. identity of Montebrio Power
 (world/parties.json).</li>
 <li><code>ConsigneeParty/Contact/ElectronicMail</code> = <strong><a
 href="mailto:trading@montebrio.example">trading@montebrio.example</a></strong><br />
@@ -684,10 +693,14 @@ services</strong><br />
 The department the desk belongs to; identity of Customs and Border
 Service of Bayvarra (world/parties.json).</li>
 <li><code>CustomsParty/Contact/Telephone</code> = <strong>+999 2 7121
-0137</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Customs and Border
-Service of Bayvarra (world/parties.json).</li>
+337 137</strong><br />
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the
+trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of
+Customs and Border Service of Bayvarra (world/parties.json).</li>
 <li><code>CustomsParty/Contact/ElectronicMail</code> = <strong><a
 href="mailto:border@customs-xb.example">border@customs-xb.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -812,7 +825,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Gas sales&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Gas sales manager&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Commercial&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 3852 2877&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38522 12877&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;gas@kelpstone.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -960,7 +973,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Energy trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Energy trader&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Trading&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 4130 5918&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 0413 55918&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;trading@montebrio.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 07:00–19:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1022,7 +1035,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Border office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Public service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Public services&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 0137&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 337 137&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;border@customs-xb.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1035,6 +1048,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ExportCustomsDeclaration</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ba73ac8</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0dd3e74</code></p></div></footer>
 </body>
 </html>

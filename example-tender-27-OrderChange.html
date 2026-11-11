@@ -297,11 +297,15 @@ Public Works Department (world/parties.json).</li>
 <strong>Procurement</strong><br />
 The department the desk belongs to; identity of Lumeport Public Works
 Department (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 3851
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 2648
 0548</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Lumeport Public Works
-Department (world/parties.json).</li>
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the
+trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of
+Lumeport Public Works Department (world/parties.json).</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:procurement@publicworks-lumeport.example">procurement@publicworks-lumeport.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -503,10 +507,15 @@ Industries (world/parties.json).</li>
 <li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to; identity of Valdara Industries
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 1 4120
+<li><code>Party/Contact/Telephone</code> = <strong>+999 1 041 518
 4274</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Valdara Industries
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Urvania's own plan: Open numbering, kept
+from Italian times: the area code starts with 0 and stays in the number,
+also from abroad; the longer the area code, the shorter the number:
+Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
+Mobiles start with 3 and have 10 digits. identity of Valdara Industries
 (world/parties.json).</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:order@valdara.example">order@valdara.example</a></strong><br />
@@ -520,7 +529,7 @@ When the desk can be reached; identity of Valdara Industries
 <strong>AL</strong><br />
 UN/EDIFACT 3155 code AL: cellular phone.</li>
 <li><code>Party/Contact/OtherCommunication/Value</code> = <strong>+999 1
-7000 4274</strong><br />
+344 474 4274</strong><br />
 The sales desk's mobile number, also under the reserved +999.</li>
 <li><code>Party/ServiceProviderParty/ID</code> =
 <strong>5-xu-SP-8-xu</strong><br />
@@ -881,7 +890,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Procurement office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Procurement officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Procurement&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 3851 0548&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2648 0548&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;procurement@publicworks-lumeport.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -975,12 +984,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Order desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customer service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 4120 4274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 518 4274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;order@valdara.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OtherCommunication</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ChannelCode</span>&gt;AL&lt;/<span class="kw">cbc:ChannelCode</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;+999 1 7000 4274&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;+999 1 344 474 4274&lt;/<span class="kw">cbc:Value</span>&gt;</span>
 <span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OtherCommunication</span>&gt;</span>
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ServiceProviderParty</span>&gt;</span>
@@ -1106,6 +1115,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderChange</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ba73ac8</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0dd3e74</code></p></div></footer>
 </body>
 </html>

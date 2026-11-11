@@ -277,11 +277,15 @@ Stores (world/parties.json).</li>
 <li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to; identity of Brightmarket Stores
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 3851
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 2511
 0411</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Brightmarket Stores
-(world/parties.json).</li>
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the
+trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of
+Brightmarket Stores (world/parties.json).</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:buying@brightmarket.example">buying@brightmarket.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -321,7 +325,7 @@ UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 <li><code>DeliveryContact/Name</code> = <strong>Goods-in, garden
 department</strong><br />
 Whom the driver reports to.</li>
-<li><code>DeliveryContact/Telephone</code> = <strong>+999 2 3851
+<li><code>DeliveryContact/Telephone</code> = <strong>+999 2 38 2511
 0411</strong><br />
 The number.</li>
 <li><code>AccountingContact/Name</code> = <strong>Accounts
@@ -333,7 +337,7 @@ The address, under the reserved .example domain.</li>
 <li><code>BuyerContact/Name</code> = <strong>Garden department
 buyer</strong><br />
 Who placed the order.</li>
-<li><code>BuyerContact/Telephone</code> = <strong>+999 2 3851
+<li><code>BuyerContact/Telephone</code> = <strong>+999 2 38 2511
 0411</strong><br />
 The number.</li>
 </ul>
@@ -522,11 +526,15 @@ Distribution (world/parties.json).</li>
 <li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to; identity of Lumeway Distribution
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121
-0274</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Lumeway Distribution
-(world/parties.json).</li>
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 474
+274</strong><br />
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the
+trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of
+Lumeway Distribution (world/parties.json).</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:customer@lumeway.example">customer@lumeway.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -548,8 +556,8 @@ UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 <li><code>DespatchContact/Name</code> = <strong>Dispatch
 office</strong><br />
 Who despatches.</li>
-<li><code>DespatchContact/Telephone</code> = <strong>+999 2 7121
-0274</strong><br />
+<li><code>DespatchContact/Telephone</code> = <strong>+999 2 7121 474
+274</strong><br />
 The number.</li>
 <li><code>AccountingContact/Name</code> = <strong>Accounts
 receivable</strong><br />
@@ -560,8 +568,8 @@ The address, under the reserved .example domain.</li>
 <li><code>SellerContact/Name</code> = <strong>Key account manager,
 retail</strong><br />
 The store's contact at the distributor.</li>
-<li><code>SellerContact/Telephone</code> = <strong>+999 2 7121
-0274</strong><br />
+<li><code>SellerContact/Telephone</code> = <strong>+999 2 7121 474
+274</strong><br />
 The number.</li>
 </ul>
 <h3 id="delivery">Delivery</h3>
@@ -1184,7 +1192,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Buying office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customer service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 3851 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2511 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;buying@brightmarket.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1205,7 +1213,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryContact</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Goods-in, garden department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 3851 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2511 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryContact</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AccountingContact</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Accounts payable&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1213,7 +1221,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AccountingContact</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BuyerContact</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Garden department buyer&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 3851 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2511 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BuyerContact</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
@@ -1301,7 +1309,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Customer service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customer service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 0274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;customer@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1312,7 +1320,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DespatchContact</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Dispatch office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 0274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DespatchContact</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AccountingContact</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Accounts receivable&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1320,7 +1328,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AccountingContact</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SellerContact</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Key account manager, retail&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 0274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SellerContact</span>&gt;</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Delivery</span>&gt;</span>
@@ -1600,6 +1608,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ba73ac8</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0dd3e74</code></p></div></footer>
 </body>
 </html>

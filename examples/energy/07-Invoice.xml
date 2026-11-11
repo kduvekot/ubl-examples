@@ -113,7 +113,7 @@
         <cbc:Name>Gas sales</cbc:Name>
         <cbc:JobTitle>Gas sales manager</cbc:JobTitle>
         <cbc:Department>Commercial</cbc:Department>
-        <cbc:Telephone>+999 2 3852 2877</cbc:Telephone>
+        <cbc:Telephone>+999 2 38522 12877</cbc:Telephone>
         <cbc:ElectronicMail>gas@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -198,7 +198,7 @@
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 4130 5781</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
         <cbc:ElectronicMail>customer@ferranoenergy.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

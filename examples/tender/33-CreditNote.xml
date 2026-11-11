@@ -120,12 +120,12 @@
         <cbc:Name>Order desk</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         <cac:OtherCommunication>
           <cbc:ChannelCode>AL</cbc:ChannelCode>
-          <cbc:Value>+999 1 7000 4274</cbc:Value>
+          <cbc:Value>+999 1 344 474 4274</cbc:Value>
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
@@ -236,7 +236,7 @@
         <cbc:Name>Procurement office</cbc:Name>
         <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
-        <cbc:Telephone>+999 2 3851 0548</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

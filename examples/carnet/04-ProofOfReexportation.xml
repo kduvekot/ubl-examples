@@ -79,8 +79,8 @@
       <cbc:Name>Border office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 1 4120 5507</cbc:Telephone>
-      <cbc:Telefax>+999 1 4180 0018</cbc:Telefax>
+      <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
+      <cbc:Telefax>+999 1 041 326 0018</cbc:Telefax>
       <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -139,7 +139,7 @@
       <cbc:Name>Carnet office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2133</cbc:Telephone>
+      <cbc:Telephone>+999 3 723 2133</cbc:Telephone>
       <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -215,7 +215,7 @@
       <cbc:Name>Certificates office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 1 4110 5370</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 990 5370</cbc:Telephone>
       <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

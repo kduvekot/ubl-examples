@@ -90,7 +90,7 @@
       <cbc:Name>Bookings</cbc:Name>
       <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -149,7 +149,7 @@
       <cbc:Name>Ship registry</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2270</cbc:Telephone>
+      <cbc:Telephone>+999 3 720 2270</cbc:Telephone>
       <cbc:ElectronicMail>ship@maritime-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -250,7 +250,7 @@
           <cbc:Name>Port control</cbc:Name>
           <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 3 3000 1037</cbc:Telephone>
+          <cbc:Telephone>+999 3 727 1037</cbc:Telephone>
           <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
@@ -327,7 +327,7 @@
           </cac:CurrentStatus>
           <cac:Contact>
             <cbc:Name>Bridge</cbc:Name>
-            <cbc:Telephone>+999 2 3900 2117</cbc:Telephone>
+            <cbc:Telephone>+999 3 790 2117</cbc:Telephone>
           </cac:Contact>
           <cac:OccurrenceLocation>
             <cbc:Name>Selanu fairway buoy</cbc:Name>

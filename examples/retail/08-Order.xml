@@ -118,7 +118,7 @@
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -139,7 +139,7 @@
     </cac:Party>
     <cac:DeliveryContact>
       <cbc:Name>Goods-in, garden department</cbc:Name>
-      <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
     </cac:DeliveryContact>
     <cac:AccountingContact>
       <cbc:Name>Accounts payable</cbc:Name>
@@ -147,7 +147,7 @@
     </cac:AccountingContact>
     <cac:BuyerContact>
       <cbc:Name>Garden department buyer</cbc:Name>
-      <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
     </cac:BuyerContact>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
@@ -235,7 +235,7 @@
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -246,7 +246,7 @@
     </cac:Party>
     <cac:DespatchContact>
       <cbc:Name>Dispatch office</cbc:Name>
-      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
     </cac:DespatchContact>
     <cac:AccountingContact>
       <cbc:Name>Accounts receivable</cbc:Name>
@@ -254,7 +254,7 @@
     </cac:AccountingContact>
     <cac:SellerContact>
       <cbc:Name>Key account manager, retail</cbc:Name>
-      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
     </cac:SellerContact>
   </cac:SellerSupplierParty>
   <cac:Delivery>

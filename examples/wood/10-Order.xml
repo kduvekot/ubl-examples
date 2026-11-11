@@ -87,7 +87,7 @@
         <cbc:Name>Trade sales</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7120 2466</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
         <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -174,7 +174,7 @@
         <cbc:Name>Sales office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7120 2329</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 929 329</cbc:Telephone>
         <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

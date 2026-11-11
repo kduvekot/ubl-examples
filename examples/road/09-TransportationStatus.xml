@@ -104,7 +104,7 @@
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -185,7 +185,7 @@
         <cbc:Name>Planning desk</cbc:Name>
         <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
         <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -260,7 +260,7 @@
     </cac:ResponsibleParty>
     <cac:Contact>
       <cbc:Name>Planning desk</cbc:Name>
-      <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
     </cac:Contact>
     <cac:Location>
       <cbc:Name>Land border crossing Urvania–Bayvarra</cbc:Name>

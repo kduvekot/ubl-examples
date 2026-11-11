@@ -99,12 +99,12 @@
         <cbc:Name>Order desk</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         <cac:OtherCommunication>
           <cbc:ChannelCode>AL</cbc:ChannelCode>
-          <cbc:Value>+999 1 7000 4274</cbc:Value>
+          <cbc:Value>+999 1 344 474 4274</cbc:Value>
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
@@ -219,7 +219,7 @@
         <cbc:Name>Sales office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 4110 4137</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 24137</cbc:Telephone>
         <cbc:ElectronicMail>sales@serravona.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -323,7 +323,7 @@
           <cbc:Name>Freight desk</cbc:Name>
           <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 1 4150 4685</cbc:Telephone>
+          <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
           <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

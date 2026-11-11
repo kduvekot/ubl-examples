@@ -86,7 +86,7 @@
       <cbc:Name>Certificates office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 1 4110 5370</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 990 5370</cbc:Telephone>
       <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -178,12 +178,12 @@
       <cbc:Name>Order desk</cbc:Name>
       <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       <cac:OtherCommunication>
         <cbc:ChannelCode>AL</cbc:ChannelCode>
-        <cbc:Value>+999 1 7000 4274</cbc:Value>
+        <cbc:Value>+999 1 344 474 4274</cbc:Value>
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
@@ -241,7 +241,7 @@
       </cac:CitizenshipCountry>
       <cac:Contact>
         <cbc:Name>Mobile on the road</cbc:Name>
-        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
       </cac:Contact>
       <cac:IdentityDocumentReference>
         <cbc:ID>XU-P-2210931</cbc:ID>
@@ -313,7 +313,7 @@
       <cbc:Name>Carnet office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2133</cbc:Telephone>
+      <cbc:Telephone>+999 3 723 2133</cbc:Telephone>
       <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -390,8 +390,8 @@
       <cbc:Name>Border office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 1 4120 5507</cbc:Telephone>
-      <cbc:Telefax>+999 1 4180 0018</cbc:Telefax>
+      <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
+      <cbc:Telefax>+999 1 041 326 0018</cbc:Telefax>
       <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -450,7 +450,7 @@
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 1448</cbc:Telephone>
+      <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

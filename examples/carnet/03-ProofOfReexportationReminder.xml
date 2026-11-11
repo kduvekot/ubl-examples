@@ -66,7 +66,7 @@
       <cbc:Name>Carnet office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2133</cbc:Telephone>
+      <cbc:Telephone>+999 3 723 2133</cbc:Telephone>
       <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -142,7 +142,7 @@
       <cbc:Name>Certificates office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 1 4110 5370</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 990 5370</cbc:Telephone>
       <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -201,7 +201,7 @@
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 1448</cbc:Telephone>
+      <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

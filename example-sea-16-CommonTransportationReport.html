@@ -227,11 +227,15 @@ Ocean Lines (world/parties.json).</li>
 <li><code>Contact/Department</code> = <strong>Operations</strong><br />
 The department the desk belongs to; identity of Tidewell Ocean Lines
 (world/parties.json).</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 3852
+<li><code>Contact/Telephone</code> = <strong>+999 2 38 2418
 1918</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the
+trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of
+Tidewell Ocean Lines (world/parties.json).</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:bookings@tidewell.example">bookings@tidewell.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -351,11 +355,14 @@ Administration of Lisavu (world/parties.json).</li>
 services</strong><br />
 The department the desk belongs to; identity of Maritime Administration
 of Lisavu (world/parties.json).</li>
-<li><code>Contact/Telephone</code> = <strong>+999 3 3000
+<li><code>Contact/Telephone</code> = <strong>+999 3 720
 2270</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Maritime
-Administration of Lisavu (world/parties.json).</li>
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Lisavu's own plan: A small island: 7-digit
+numbers without area codes; fixed lines start with 72, mobiles with 77,
+ships with 79. identity of Maritime Administration of Lisavu
+(world/parties.json).</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:ship@maritime-xl.example">ship@maritime-xl.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -571,10 +578,12 @@ Selanu (world/parties.json).</li>
 The department the desk belongs to; identity of Port of Selanu
 (world/parties.json).</li>
 <li><code>ShipmentStage/TerminalOperatorParty/Contact/Telephone</code> =
-<strong>+999 3 3000 1037</strong><br />
-Telephone under +999, a country code the ITU keeps in reserve (ITU-T
-E.164), so the number reaches no one; identity of Port of Selanu
-(world/parties.json).</li>
+<strong>+999 3 727 1037</strong><br />
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Lisavu's own plan: A small island: 7-digit
+numbers without area codes; fixed lines start with 72, mobiles with 77,
+ships with 79. identity of Port of Selanu (world/parties.json).</li>
 <li><code>ShipmentStage/TerminalOperatorParty/Contact/ElectronicMail</code>
 = <strong><a
 href="mailto:port@port-selanu.example">port@port-selanu.example</a></strong><br />
@@ -724,8 +733,9 @@ Expected on time.</li>
 = <strong>Bridge</strong><br />
 Whom to call.</li>
 <li><code>ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Telephone</code>
-= <strong>+999 2 3900 2117</strong><br />
-The ship's satellite phone.</li>
+= <strong>+999 3 790 2117</strong><br />
+The ship's phone, in the island's maritime range (79), as the ship flies
+the island's flag.</li>
 <li><code>ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceLocation/Name</code>
 = <strong>Selanu fairway buoy</strong><br />
 Where the pilot boards.</li>
@@ -1372,7 +1382,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Bookings&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Operations planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 3852 1918&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2418 1918&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;bookings@tidewell.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1431,7 +1441,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ship registry&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Public service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Public services&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 3000 2270&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 720 2270&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;ship@maritime-xl.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1532,7 +1542,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Port control&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Operations planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 3000 1037&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 727 1037&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;port@port-selanu.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1609,7 +1619,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CurrentStatus</span>&gt;</span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Bridge&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 3900 2117&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 790 2117&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:OccurrenceLocation</span>&gt;</span>
 <span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Selanu fairway buoy&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1927,6 +1937,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CommonTransportationReport</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>ba73ac8</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0dd3e74</code></p></div></footer>
 </body>
 </html>
