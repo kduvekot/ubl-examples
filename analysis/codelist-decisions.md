@@ -50,6 +50,11 @@ The decisions taken in the review of `codelist-classification.md`, in order.
 
 | ID-Q | Decision |
 |---|---|
+| 10 | A mix of two ways to identify the issuer of a certificate or licence:
+- **schemeID**, which names the issuer implicitly: for numbers from a national register of licences or registrations, such as the XU haulage licence, the XB forestry registration and the bonded warehouse permit (e.g. `…:XU:haulage-licence`). The scheme stands for the authority's register, so no IssuerParty is needed.
+- **IssuerParty, without a schemeID:** for certificates whose number is only unique within the issuer, such as environmental, test, medical and sanitation certificates, the ship security certificate and digital (X.509) certificates (the issuer is the CA).
+
+Fix along the way: `XB-FOR-2025-118` against its reference `XB-FOR-REG-0118` (align them, or explain them as two numbers), and `ACCORD-CERT-1-xl`, which has an internal party ID in the value. |
 | 9 | (c) Both layers, as in reality. FinancialInstitution/ID gets a BIC-like Accord-wide code (ISO 9362 structure with the world's country codes, e.g. `BLUMXBLX`, scheme `urn:ubl-examples:world:bank-identifier`, issued under the Trade Accord's payment link). FinancialInstitutionBranch/ID gets the national branch code in each country's style: XB a British-style sort code (6 digits), XU Italian-style ABI/CAB (5 + 5 digits), XL a 3-digit branch number, each with a national scheme. The account numbers (ISO 13616 structure) must contain the matching bank or branch code, which the build checks; regenerate them if needed. Each bank gets a few branches. |
 | 8 | Address registers at the level that fits each country:
 - **XU:** one national register (BAG-like, about 16 digits: municipality code + serial), `…:XU:address-register`.
